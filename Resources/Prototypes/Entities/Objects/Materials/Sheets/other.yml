@@ -188,7 +188,8 @@
 - type: entity
   parent: [SheetOtherBase, FoodBase]
   id: SheetUranium
-  name: uranium
+  name: uranium sheet
+  description: A sheet of unenriched uranium.
   suffix: Full
   components:
   - type: Material
@@ -197,7 +198,7 @@
   - type: BadFood
   - type: PhysicalComposition
     materialComposition:
-      Uranium: 100
+      Uranium: 500
   - type: Stack
     stackType: Uranium
     baseLayer: base
@@ -211,6 +212,8 @@
     - state: uranium_3
       map: ["base"]
   - type: Appearance
+  - type: RadiationSource
+    intensity: 0.2
   - type: Item
     heldPrefix: uranium
   - type: Extractable
