@@ -321,6 +321,8 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
 
+## DAT FUKKEN ARTIFACT
+
 - type: entity
   parent: GeneratorRTG
   id: TheArtifact
@@ -395,3 +397,9 @@
   - type: IgnitionSource
     temperature: 800
     ignited: true
+  - type: AmbientSound
+    range: 5
+    volume: -10
+    sound:
+      path: /Audio/Ambience/anomaly_scary.ogg
+  
