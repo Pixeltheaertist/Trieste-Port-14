@@ -55,12 +55,12 @@
       enabled: true
       color: plum
       radius: 3.5
-      softness: 1
+      softness: 0.5
       autoRot: true
       castShadows: false
     - type: Lightning
-      canArc: false
-      shockDamage: 30
+      canArc: true
+      shockDamage: 45
 
 - type: entity
   name: charged lightning
