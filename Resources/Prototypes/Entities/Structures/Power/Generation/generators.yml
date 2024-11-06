@@ -333,9 +333,6 @@
     sprite: Structures/Power/Generation/artifact.rsi
     layers:
       - state: artifact_1
-  - type: PowerMonitoringDevice
-    sprite: Structures/Power/Generation/rtg.rsi
-    state: rtg_damaged
   - type: RadiationSource
     intensity: 10
   - type: LightningArcShooter
@@ -343,12 +340,11 @@
     maxLightningArc: 5
     shootMinInterval: 2
     shootMaxInterval: 4
-    shootRange: 7
-    lightningPrototype: Lightning
+    shootRange: 15
+    lightningPrototype: LightningRevenant
   - type: GravityWell
-    baseRadialAcceleration: 15
-    maxRange: 8
-  - type: Electrified
+    baseRadialAcceleration: 150
+    maxRange: 20
   - type: Fixtures
     fixtures:
       fix1:
