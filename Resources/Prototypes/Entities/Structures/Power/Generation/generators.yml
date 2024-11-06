@@ -392,3 +392,6 @@
         - Delaminator
     alertLevelOnActivate: delta
     alertLevelOnDeactivate: green
+  - type: IgnitionSource
+    temperature: 800
+    ignited: true
