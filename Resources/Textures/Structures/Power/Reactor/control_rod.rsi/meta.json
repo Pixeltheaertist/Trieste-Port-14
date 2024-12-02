@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by Coles_Magnum",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+  	{
+      "name": "stage0"
+    },
+    {
+      "name": "stage1"
+    },
+    {
+      "name": "stage2"
+    },
+    {
+      "name": "stage3"
+    },
+    {
+      "name": "stage4"
+    },
+    {
+      "name": "stage5"
+    },
+    {
+      "name": "stage6"
+    },
+    {
+      "name": "stage7"
+    },
+    {
+      "name": "stage8"
+    },
+    {
+      "name": "stage9"
+    },
+    {
+      "name": "stage10"
+    }
+  ]
+}

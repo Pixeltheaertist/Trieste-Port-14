@@ -1,0 +1,84 @@
+- type: entity
+  id: ControlRod
+  description: A machine designed to control and moderate fission.
+  parent: BaseMachinePowered
+  name: control rod block
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: DeviceList
+  - type: DeviceNetwork
+    deviceNetId: Wired
+  - type: SignalReceiver
+    inputs:
+      ControlRodReceiver: []
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+    - shape:
+        !type:PhysShapeAabb
+        bounds: "-0.4,-0.5,0.4,0.3"
+      density: 190
+      mask:
+      - MachineMask
+      layer:
+      - MachineLayer
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Sprite
+    sprite: Structures/Power/Reactor/control_rod.rsi
+    state: stage0
+    netsync: false
+    snapCardinals: true
+  - type: Anchorable
+  - type: Pullable
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/metalbreak.ogg
+  - type: ApcPowerReceiver
+    powerLoad: 400
+  - type: Appearance
+    visuals:
+    - type: GenericEnumVisualizer
+      key: enum.ControlRodVisuals.Status
+      layer: 0
+      states:
+        enum.ControlRodStatus.Stage0: stage0
+        enum.ControlRodStatus.Stage1: stage1
+        enum.ControlRodStatus.Stage2: stage2
+        enum.ControlRodStatus.Stage3: stage3
+        enum.ControlRodStatus.Stage4: stage4
+        enum.ControlRodStatus.Stage5: stage5
+        enum.ControlRodStatus.Stage6: stage6
+        enum.ControlRodStatus.Stage7: stage7
+        enum.ControlRodStatus.Stage8: stage8
+        enum.ControlRodStatus.Stage9: stage9
+        enum.ControlRodStatus.Stage10: stage10
+  - type: AtmosExposed
+  - type: Temperature
+    heatDamageThreshold: 5500
+    specificHeat: 2500 #pretty heat resistant, god help you if it does overheat though
+    heatDamage:
+      types:
+        Heat: 0.8
+  - type: StaticPrice
+    price: 500
+  - type: RadiationBlocker
+    resistance: 0 #retracted by default
+  - type: ControlRod
+    baseResistance: 1
