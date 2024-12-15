@@ -45,3 +45,15 @@
   name: Ocean Man - Ween
   path:
     path: /Audio/Jukebox/ocean_man.ogg
+
+- type: jukebox
+  id: heartshapedhull
+  name: Heart Shaped Hull - grog1193
+  path:
+    path: /Audio/Jukebox/heartshapedhull.ogg
+
+- type: jukebox
+  id: fukkikerta
+  name: Fukkikerta - Kasane Teto
+  path:
+    path: /Audio/Jukebox/fukkikerta.ogg
