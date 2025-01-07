@@ -685,27 +685,30 @@ public sealed partial class ShuttleSystem
     /// Tries to dock with the target grid, otherwise falls back to proximity.
     /// This bypasses FTL travel time.
     /// </summary>
-    public bool TryFTLDock(EntityUid shuttleUid, ShuttleComponent component, EntityUid targetUid, string? priorityTag = null)
+   public bool TryFTLDock(EntityUid shuttleUid, EntityUid targetUid, TransformComponent? xform = null, TransformComponent? targetXform = null)
+{
+    // Resolve transforms if they are not already passed
+    if (!Resolve(shuttleUid, ref xform) || !Resolve(targetUid, ref targetXform))
     {
-        if (!_xformQuery.TryGetComponent(shuttleUid, out var shuttleXform) ||
-            !_xformQuery.TryGetComponent(targetUid, out var targetXform) ||
-            targetXform.MapUid == null ||
-            !targetXform.MapUid.Value.IsValid())
-        {
-            return false;
-        }
+        return false;
+    }
 
-        var config = _dockSystem.GetDockingConfig(shuttleUid, targetUid, priorityTag);
+    if (HasComp<ArrivalShuttleComponent>(shuttleUid))
+    {
+        // Get docking configuration for the specific arrival shuttle docking
+        var config = _dockSystem.GetDockingConfig(shuttleUid, targetUid);
 
         if (config != null)
         {
-            FTLDock((shuttleUid, shuttleXform), config);
+            FTLDock(shuttleUid, config);
+            Log.Info($"{shuttleUid} is forcing a dock as per coded");
             return true;
         }
-
-        TryFTLProximity(shuttleUid, targetUid, shuttleXform, targetXform);
-        return false;
     }
+
+    return TryFTLProximity(shuttleUid, targetUid, xform, targetXform);
+}
+
 
     /// <summary>
     /// Forces an FTL dock.
@@ -850,22 +853,32 @@ public sealed partial class ShuttleSystem
     /// <summary>
     /// Tries to arrive nearby without overlapping with other grids.
     /// </summary>
-    public bool TryFTLProximity(EntityUid shuttleUid, EntityUid targetUid, TransformComponent? xform = null, TransformComponent? targetXform = null)
+   public bool TryFTLProximity(EntityUid shuttleUid, EntityUid targetUid, TransformComponent? xform = null, TransformComponent? targetXform = null)
+{
+    // Check if the shuttle has the ArrivalShuttleComponent
+    if (HasComp<ArrivalShuttleComponent>(shuttleUid))
     {
-        if (!Resolve(targetUid, ref targetXform) ||
-            targetXform.MapUid == null ||
-            !targetXform.MapUid.Value.IsValid() ||
-            !Resolve(shuttleUid, ref xform))
-        {
-            return false;
-        }
-
-        if (!TryGetFTLProximity(shuttleUid, targetUid, out var coords, out var angle, xform, targetXform))
-            return false;
-
-        _transform.SetCoordinates(shuttleUid, xform, coords, rotation: angle);
-        return true;
+        // If the shuttle has the ArrivalShuttleComponent, skip the proximity check
+        // and directly try docking to the target's docking port
+        return TryFTLDock(shuttleUid, targetUid, xform, targetXform);
     }
+
+    // Regular FTL proximity logic for other shuttles
+    if (!Resolve(targetUid, ref targetXform) ||
+        targetXform.MapUid == null ||
+        !targetXform.MapUid.Value.IsValid() ||
+        !Resolve(shuttleUid, ref xform))
+    {
+        return false;
+    }
+
+    if (!TryGetFTLProximity(shuttleUid, targetUid, out var coords, out var angle, xform, targetXform))
+        return false;
+
+    _transform.SetCoordinates(shuttleUid, xform, coords, rotation: angle);
+    return true;
+}
+
 
     /// <summary>
     /// Flattens / deletes everything under the grid upon FTL.
