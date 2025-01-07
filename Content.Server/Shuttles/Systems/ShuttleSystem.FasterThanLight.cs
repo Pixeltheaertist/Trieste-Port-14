@@ -756,6 +756,7 @@ public sealed partial class ShuttleSystem
         if (TryComp<MapGridComponent>(targetXform.GridUid, out var targetGrid))
         {
             targetLocalAABB = targetGrid.LocalAABB;
+            Log.Info($"Shuttle is spawning nearby, ya done fucked up somewhere!");
         }
         else
         {
@@ -847,6 +848,7 @@ public sealed partial class ShuttleSystem
         }
 
         coordinates = new EntityCoordinates(targetXform.MapUid.Value, spawnPos);
+        Log.Info($"Shuttle is spawning nearby, ya done fucked up somewhere!");
         return true;
     }
 
@@ -876,6 +878,7 @@ public sealed partial class ShuttleSystem
         return false;
 
     _transform.SetCoordinates(shuttleUid, xform, coords, rotation: angle);
+    Log.Info($"Shuttle is spawning nearby, ya done fucked up somewhere!");
     return true;
 }
 
