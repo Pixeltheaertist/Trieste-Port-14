@@ -14,5 +14,7 @@ namespace Content.Server.GameTicking.Rules.Components
     public sealed partial class TheThingyRuleComponent : Component
     {
     
+        public List<EntityUid> AssignedPlayers = new();
+        
     }
 }
