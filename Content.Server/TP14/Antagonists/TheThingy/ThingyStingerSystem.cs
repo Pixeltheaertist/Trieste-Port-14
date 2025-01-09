@@ -36,8 +36,7 @@ namespace Content.Server.Thingy.Systems
 
         if (!_hands.TryPickupAnyHand(user, stinger))
         {
-            // Hands are full, stinger cannot be held, don't drop it
-            // You could notify the player here if needed
+            // Hands are full
             return;
         }
 
