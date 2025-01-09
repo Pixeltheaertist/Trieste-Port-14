@@ -32,6 +32,11 @@ namespace Content.Server.GameTicking.Rules
         {
 
             Log.Info($"{uid} has become a Thingy");
+            EnsureComp<DevourerComponent>(uid);
+            foreach (var eater in EntityManager.EntityQuery<DevourerComponent>())
+                {
+                    eater.StructureDevourTime = 1000f;
+                }
         
         }
 
