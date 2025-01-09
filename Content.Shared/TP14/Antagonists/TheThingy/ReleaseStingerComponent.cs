@@ -16,15 +16,6 @@ public sealed partial class ReleaseStingerComponent : Component
     [DataField("actionWithdrawl", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
     public string? ActionWithdrawl = "ActionPullBackStinger";
 
-    [DataField("ActionEntity")]
-    public EntityUid? ActionEntity;
-
-    /// <summary>
-    /// The action id for pulling back the stinger.
-    /// </summary>
-    [DataField(required: true)]
-    public EntProtoId<InstantActionComponent> PullBackAction = string.Empty;
-
     [DataField, AutoNetworkedField]
     public EntityUid? ActionEntity;
 
