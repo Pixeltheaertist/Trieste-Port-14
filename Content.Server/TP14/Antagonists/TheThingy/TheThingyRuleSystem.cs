@@ -1,6 +1,17 @@
 using Content.Server.Mind;
+using Content.Shared.Mind;
 using Content.Server.Roles;
 using Content.Server.GameTicking.Rules;
+using Content.Server.Antag;
+using Content.Server.GameTicking.Rules.Components;
+using Content.Server.Roles;
+using Content.Shared.Roles;
+using Content.Shared.Roles.Jobs;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
+using System.Linq;
+using System.Text;
+
 
 namespace Content.Server.GameTicking.Rules
 {
@@ -18,7 +29,6 @@ namespace Content.Server.GameTicking.Rules
 
         private void AfterEntitySelected(Entity<TheThingyRuleComponent> ent, ref AfterAntagEntitySelectedEvent args)
         {
-            // Ensure only one player is selected for the rule
             AssignTheThingyRule(args.EntityUid, ent);
         }
 
@@ -29,24 +39,16 @@ namespace Content.Server.GameTicking.Rules
                 return;
 
             // Custom briefing message to assign
-            string customBriefing = "You have been selected for a special task by TheThingy Corporation!";
+            string customBriefing = "You are a Mimic. You found this body many years ago on the sea floor, limp and lifeless. You wandered the barren seas for decades, living off of fish and drifters, slowly learning these creatures' dialect through the radio. Now, you are here, your new feeding grounds.";
 
-            // Send the custom briefing message to the player
             _antag.SendBriefing(player, customBriefing, null, "sound/notification.ogg");
 
-            // Assign a role with the briefing
             _roleSystem.MindAddRole(mindId, new RoleBriefingComponent
             {
                 Briefing = customBriefing
             }, mind, true);
 
-            // Assign the rule to the player
-            component.AssignedPlayers.Add(player);
+            EnsureComp<TheThingyRuleComponent>(player);
         }
-    }
-
-    public class TheThingyRuleComponent : Component
-    {
-        public List<EntityUid> AssignedPlayers = new();
     }
 }
