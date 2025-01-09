@@ -28,6 +28,9 @@ public sealed partial class AdminVerbSystem
     private const string DefaultNukeOpRule = "LoneOpsSpawn";
 
     [ValidatePrototypeId<EntityPrototype>]
+    private const string DefaultTheThingyRule = "TheThingy";
+
+    [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultRevsRule = "Revolutionary";
 
     [ValidatePrototypeId<EntityPrototype>]
