@@ -36,3 +36,6 @@ roles-antag-thief-objective = Add some NT property to your personal collection w
 
 roles-antag-dragon-name = Space Dragon
 roles-antag-dragon-objective = Create a carp army to take over this quadrant.
+
+roles-antag-the-thingy-name = The Thingy
+roles-antag-the-thingy-objective = Hunt your prey. Masquarade among the citizens in your costume. Don't get outed as the vile puppeteer that you are.
