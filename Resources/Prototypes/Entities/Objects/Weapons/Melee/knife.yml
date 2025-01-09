@@ -285,3 +285,28 @@
         Piercing: 15
   - type: Item
     sprite: Objects/Weapons/Melee/throwing_knife.rsi
+
+- type: entity
+  name: bony stinger
+  parent: BaseKnife
+  id: ThingyStinger
+  description: A bloody, bony shiv sticking out from your arm. It can quickly bring prey to your knees.
+  components:
+  - type: MeleeWeapon
+    attackRate: 1
+    damage:
+      types:
+        Slash: 14
+  - type: Item
+    sprite: Objects/Weapons/Melee/ThingyStinger.rsi
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/ThingyStinger.rsi
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        reagents:
+        - ReagentId: DrifterToxin
+          Quantity: 20
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 2
