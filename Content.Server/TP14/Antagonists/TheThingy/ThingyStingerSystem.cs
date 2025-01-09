@@ -41,6 +41,8 @@ namespace Content.Server.Thingy.Systems
         }
 
         comp.SpawnedStingerEntity = stinger;
+        _actionsSystem.RemoveAction(user, ref stinger.ActionEntity, stinger.Action);
+        _actionsSystem.AddAction(user, ref stinger.ActionEntity, stinger.ActionWithdrawl);
     }
 
     private void OnPullBackStinger(Entity<ReleaseStingerComponent> ent, ref PullBackStingerEvent args)
@@ -56,6 +58,8 @@ namespace Content.Server.Thingy.Systems
         QueueDel(stinger);
 
         comp.SpawnedStingerEntity = null;
+        _actionsSystem.AddAction(user, ref stinger.ActionEntity, stinger.Action);
+        _actionsSystem.RemoveAction(user, ref stinger.ActionEntity, stinger.ActionWithdrawl);
     }
 }
 
