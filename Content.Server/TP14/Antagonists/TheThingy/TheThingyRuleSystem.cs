@@ -25,6 +25,14 @@ namespace Content.Server.GameTicking.Rules
         {
             base.Initialize();
             SubscribeLocalEvent<TheThingyRuleComponent, AfterAntagEntitySelectedEvent>(AfterEntitySelected);
+            SubscribeLocalEvent<TheThingyRuleComponent, ComponentInit>(OnCompInit);
+        }
+
+         private void OnCompInit(EntityUid uid, ComputerComponent component, ComponentInit args)
+        {
+
+            Log.Info($"{uid} has become a Thingy");
+        
         }
 
         private void AfterEntitySelected(Entity<TheThingyRuleComponent> ent, ref AfterAntagEntitySelectedEvent args)
