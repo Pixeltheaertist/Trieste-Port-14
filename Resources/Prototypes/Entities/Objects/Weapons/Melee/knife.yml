@@ -310,3 +310,4 @@
   - type: MeleeChemicalInjector
     solution: melee
     transferAmount: 2
+  - type: Unremoveable
