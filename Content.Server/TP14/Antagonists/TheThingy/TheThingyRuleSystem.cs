@@ -15,6 +15,7 @@ using Robust.Shared.Audio;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Actions;
 using Content.Shared.Devour.Components;
+using Content.Server.Containers;
 
 
 namespace Content.Server.GameTicking.Rules
@@ -39,7 +40,7 @@ namespace Content.Server.GameTicking.Rules
 
             Log.Info($"{uid} has become a Thingy and is now able to consume people.");
             var eater = EnsureComp<DevourerComponent>(uid);
-            eater.StructureDevourTime = 1000f;
+            eater.StructureDevourTime = 100f;
             eater.FoodPreference = FoodPreference.Humanoid; // he likey the humanoids
             eater.SoundStructureDevour = new SoundPathSpecifier("/Audio/Machines/airlock_creaking.ogg") // replace this with a gross absorbing sound effect
             eater.Stomach = ContainerSystem.EnsureContainer<Container>(uid, "stomach");
