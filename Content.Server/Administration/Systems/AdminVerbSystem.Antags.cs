@@ -66,6 +66,20 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(traitor);
 
+         Verb theThingy = new()
+        {
+            Text = Loc.GetString("admin-verb-text-make-initial-infected"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "InitialInfected"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<TheThingyRuleComponent>(targetPlayer, DefaultTheThingyRule);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("roles-antag-the-thingy-name"),
+        };
+        args.Verbs.Add(initialInfected);
+
         Verb initialInfected = new()
         {
             Text = Loc.GetString("admin-verb-text-make-initial-infected"),
