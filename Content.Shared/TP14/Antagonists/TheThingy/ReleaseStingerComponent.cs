@@ -23,7 +23,7 @@ public sealed partial class ReleaseStingerComponent : Component
     /// Item to create with the action
     /// </summary>
     [DataField(required: true)]
-    public EntProtoId SpawnedPrototype = string.Empty;
+    public EntProtoId SpawnedPrototype = "ThingyStinger";
 
     /// <summary>
     /// The entity that represents the stinger (for pulling it back).
