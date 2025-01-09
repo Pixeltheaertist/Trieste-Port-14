@@ -9,11 +9,15 @@ namespace Content.Shared.Thingy.Components;
 [Access(typeof(SharedItemCreatorSystem))]
 public sealed partial class ReleaseStingerComponent : Component
 {
-    /// <summary>
-    /// The action id for creating an item.
-    /// </summary>
-    [DataField(required: true)]
-    public EntProtoId<InstantActionComponent> Action = string.Empty;
+
+    [DataField("action", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+    public string? Action = "ActionCreateStinger";
+
+    [DataField("actionWithdrawl", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+    public string? ActionWithdrawl = "ActionPullBackStinger";
+
+    [DataField("ActionEntity")]
+    public EntityUid? ActionEntity;
 
     /// <summary>
     /// The action id for pulling back the stinger.
