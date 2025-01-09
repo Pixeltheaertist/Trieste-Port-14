@@ -16,6 +16,8 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Actions;
 using Content.Shared.Devour.Components;
 using Content.Server.Containers;
+using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
 
 
 namespace Content.Server.GameTicking.Rules
