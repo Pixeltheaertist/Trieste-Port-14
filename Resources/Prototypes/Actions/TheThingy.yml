@@ -1,1 +1,28 @@
+- type: entity
+  id: ActionCreateStinger
+  name: Release stinger
+  description: A bony stinger snaps out from your wrist, ready to incapacitate your prey.
+  components:
+  - type: InstantAction
+    useDelay: 0.5
+    icon:
+      sprite: Objects/Weapons/Throwable/throwing_star.rsi
+      state: icon
+    itemIconStyle: NoItem
+    priority: -10
+    event: !type:CreateStingerEvent {}
+
+- type: entity
+  id: ActionPullBackStinger
+  name: Retract stinger
+  description: Retract your stinger back into concealment.
+  components:
+  - type: InstantAction
+    useDelay: 0.5
+    icon:
+      sprite: Objects/Weapons/Throwable/throwing_star.rsi
+      state: icon
+    itemIconStyle: NoItem
+    priority: -10
+    event: !type:PullBackStingerEvent {}
 
