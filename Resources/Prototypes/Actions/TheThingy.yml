@@ -4,7 +4,7 @@
   description: A bony stinger snaps out from your wrist, ready to incapacitate your prey.
   components:
   - type: InstantAction
-    useDelay: 0.5
+    useDelay: 60
     icon:
       sprite: Objects/Weapons/Throwable/throwing_star.rsi
       state: icon
