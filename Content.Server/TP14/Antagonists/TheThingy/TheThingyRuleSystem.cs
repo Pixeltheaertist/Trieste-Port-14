@@ -13,6 +13,8 @@ using System.Linq;
 using System.Text;
 using Robust.Shared.Audio;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Actions;
+using Content.Shared.Devour.Components;
 
 
 namespace Content.Server.GameTicking.Rules
@@ -23,6 +25,7 @@ namespace Content.Server.GameTicking.Rules
         [Dependency] private readonly SharedRoleSystem _roleSystem = default!;
         [Dependency] private readonly AntagSelectionSystem _antag = default!;
         [Dependency] private readonly SharedHandsSystem _hands = default!;
+        [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
 
         public override void Initialize()
         {
@@ -39,10 +42,13 @@ namespace Content.Server.GameTicking.Rules
             eater.StructureDevourTime = 1000f;
             eater.FoodPreference = FoodPreference.Humanoid; // he likey the humanoids
             eater.SoundStructureDevour = new SoundPathSpecifier("/Audio/Machines/airlock_creaking.ogg") // replace this with a gross absorbing sound effect
+            eater.Stomach = ContainerSystem.EnsureContainer<Container>(uid, "stomach");
+            _actionsSystem.AddAction(uid, ref eater.DevourActionEntity, eater.DevourAction);
+
+             var stinger = EnsureComp<ReleaseStingerComponent>(uid);
             
-            var star = Spawn(comp.SpawnedPrototype, Transform(user).Coordinates);
-            _hands.TryPickupAnyHand(user, star);
-        
+            _actionsSystem.AddAction(uid, ref stinger.ActionEntity, stinger.Action);
+            _actionsSystem.AddAction(uid, ref stinger.ActionEntity, stinger.ActionWithdrawl);
         }
 
         private void AfterEntitySelected(Entity<TheThingyRuleComponent> ent, ref AfterAntagEntitySelectedEvent args)
