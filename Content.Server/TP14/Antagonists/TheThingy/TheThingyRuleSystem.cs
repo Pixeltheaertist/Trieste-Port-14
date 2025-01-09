@@ -11,6 +11,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
 using System.Text;
+using Robust.Shared.Audio;
+using Content.Shared.Hands.EntitySystems;
 
 
 namespace Content.Server.GameTicking.Rules
@@ -20,23 +22,26 @@ namespace Content.Server.GameTicking.Rules
         [Dependency] private readonly MindSystem _mindSystem = default!;
         [Dependency] private readonly SharedRoleSystem _roleSystem = default!;
         [Dependency] private readonly AntagSelectionSystem _antag = default!;
+        [Dependency] private readonly SharedHandsSystem _hands = default!;
 
         public override void Initialize()
         {
             base.Initialize();
             SubscribeLocalEvent<TheThingyRuleComponent, AfterAntagEntitySelectedEvent>(AfterEntitySelected);
-            SubscribeLocalEvent<TheThingyRuleComponent, ComponentInit>(OnCompInit);
+            SubscribeLocalEvent<TheThingyComponent, ComponentInit>(OnCompInit);
         }
 
-         private void OnCompInit(EntityUid uid, ComputerComponent component, ComponentInit args)
+         private void OnCompInit(EntityUid uid, TheThingyComponent component, ComponentInit args)
         {
 
-            Log.Info($"{uid} has become a Thingy");
-            EnsureComp<DevourerComponent>(uid);
-            foreach (var eater in EntityManager.EntityQuery<DevourerComponent>())
-                {
-                    eater.StructureDevourTime = 1000f;
-                }
+            Log.Info($"{uid} has become a Thingy and is now able to consume people.");
+            var eater = EnsureComp<DevourerComponent>(uid);
+            eater.StructureDevourTime = 1000f;
+            eater.FoodPreference = FoodPreference.Humanoid; // he likey the humanoids
+            eater.SoundStructureDevour = new SoundPathSpecifier("/Audio/Machines/airlock_creaking.ogg") // replace this with a gross absorbing sound effect
+            
+            var star = Spawn(comp.SpawnedPrototype, Transform(user).Coordinates);
+            _hands.TryPickupAnyHand(user, star);
         
         }
 
@@ -62,6 +67,7 @@ namespace Content.Server.GameTicking.Rules
             }, mind, true);
 
             EnsureComp<TheThingyRuleComponent>(player);
+             EnsureComp<TheThingyComponent>(player);
         }
     }
 }
