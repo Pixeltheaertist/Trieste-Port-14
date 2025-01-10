@@ -188,6 +188,28 @@
         prototype: Traitor
 
 - type: entity
+  id: TheThingy
+  parent: BaseGameRule
+  components:
+  - type: GameRule
+    minPlayers: 5
+  - type: TheThingyRule
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ TheThingy ]
+      max: 3
+      playerRatio: 5
+      briefing:
+        text: the-thingy-role-greeting
+        color: CornflowerBlue
+      components:
+      - type: ReleaseStinger
+      - type: TheThingy
+      mindComponents:
+      - type: TheThingyRole
+        prototype: TheThingy
+
+- type: entity
   id: Revolutionary
   parent: BaseGameRule
   components:
