@@ -66,18 +66,8 @@ namespace Content.Server.GameTicking.Rules
             if (!_mindSystem.TryGetMind(player, out var mindId, out var mind))
                 return;
 
-            // Custom briefing message to assign
-            string customBriefing = "You are a Mimic. You found this body many years ago on the sea floor, limp and lifeless. You wandered the barren seas for decades, living off of fish and drifters, slowly learning these creatures' dialect through the radio. Now, you are here, your new feeding grounds.";
-
-            _antag.SendBriefing(player, customBriefing, null, "sound/notification.ogg");
-
-            _roleSystem.MindAddRole(mindId, new RoleBriefingComponent
-            {
-                Briefing = customBriefing
-            }, mind, true);
-
             EnsureComp<TheThingyRuleComponent>(player);
-             EnsureComp<TheThingyComponent>(player);
+            EnsureComp<TheThingyComponent>(player);
         }
     }
 }
