@@ -35,6 +35,7 @@ namespace Content.Server.GameTicking.Rules
             base.Initialize();
             SubscribeLocalEvent<TheThingyRuleComponent, AfterAntagEntitySelectedEvent>(AfterEntitySelected);
             SubscribeLocalEvent<TheThingyComponent, ComponentInit>(OnCompInit);
+            SubscribeLocalEvent<ReleaseStingerComponent, ComponentInit>(OnCompInitStinger);
         }
 
          private void OnCompInit(EntityUid uid, TheThingyComponent component, ComponentInit args)
@@ -47,13 +48,13 @@ namespace Content.Server.GameTicking.Rules
             eater.SoundStructureDevour = new SoundPathSpecifier("/Audio/Machines/airlock_creaking.ogg") // replace this with a gross absorbing sound effect
             eater.Stomach = ContainerSystem.EnsureContainer<Container>(uid, "stomach");
             _actionsSystem.AddAction(uid, ref eater.DevourActionEntity, eater.DevourAction);
+        }
 
-             var stinger = EnsureComp<ReleaseStingerComponent>(uid);
-            
+         private void OnCompInit(EntityUid uid, ReleaseStingerComponent stinger, ComponentInit args)
+        {
             _actionsSystem.AddAction(uid, ref stinger.ActionEntity, stinger.Action);
             _actionsSystem.AddAction(uid, ref stinger.ActionEntity, stinger.ActionWithdrawl);
         }
-
         private void AfterEntitySelected(Entity<TheThingyRuleComponent> ent, ref AfterAntagEntitySelectedEvent args)
         {
             AssignTheThingyRule(args.EntityUid, ent);
