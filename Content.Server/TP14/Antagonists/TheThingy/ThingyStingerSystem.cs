@@ -5,6 +5,12 @@ using Content.Shared.Actions;
 
 namespace Content.Server.Thingy.Systems
 {
+
+    // Summary
+    // This system allows players that have been selected as a Thingy antagonist to be able to release and withdrawl their incapacitating bone stinger.
+    // It is added as an action on init, allowing them to release or conceal it on command. The actual stinger incapacitating system uses DrifterToxin and is in knife.yml
+    // Summary
+    
     public sealed class ThingyStingerSystem : EntitySystem
 {
     [Dependency] private readonly SharedHandsSystem _hands = default!;
