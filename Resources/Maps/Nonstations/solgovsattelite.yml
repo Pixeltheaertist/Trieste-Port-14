@@ -25,7 +25,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: SolGov Sattelite
+      name: SolGov Comms Hub
     - type: Transform
     - type: Parallax
       parallax: TriesteSpace
