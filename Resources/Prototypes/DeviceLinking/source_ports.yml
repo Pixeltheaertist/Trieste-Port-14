@@ -154,3 +154,9 @@
   id: PowerDischarging
   name: signal-port-name-power-discharging
   description: signal-port-description-power-discharging
+
+- type: sourcePort
+  id: ControlRodSender
+  name: "Control Rod Console"
+  description: "Control Rod Sender Port"
+  defaultLinks: [ ControlRodReceiver ]

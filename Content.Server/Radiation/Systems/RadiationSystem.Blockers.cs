@@ -20,6 +20,13 @@ public partial class RadiationSystem
         SubscribeLocalEvent<RadiationGridResistanceComponent, EntityTerminatingEvent>(OnGridRemoved);
     }
 
+    public void SetBlocking(EntityUid uid, RadiationBlockerComponent comp, float blocking)
+    {
+        RemoveTile(uid, comp);
+        comp.RadResistance = blocking;
+        AddTile(uid, comp);
+    }
+
     private void OnInit(EntityUid uid, RadiationBlockerComponent component, ComponentInit args)
     {
         if (!component.Enabled)

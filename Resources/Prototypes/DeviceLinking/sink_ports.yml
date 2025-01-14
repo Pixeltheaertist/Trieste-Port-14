@@ -112,3 +112,8 @@
   id: SetParticleSigma
   name: signal-port-name-set-particle-sigma
   description: signal-port-description-set-particle-sigma
+
+- type: sinkPort
+  id: ControlRodReceiver
+  name: "Control Rod"
+  description: "Control Rod Receiver"

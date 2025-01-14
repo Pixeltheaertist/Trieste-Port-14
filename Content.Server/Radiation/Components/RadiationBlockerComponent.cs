@@ -6,7 +6,6 @@ namespace Content.Server.Radiation.Components;
 ///     Blocks radiation when placed on tile.
 /// </summary>
 [RegisterComponent]
-[Access(typeof(RadiationSystem))]
 public sealed partial class RadiationBlockerComponent : Component
 {
     /// <summary>
@@ -18,6 +17,7 @@ public sealed partial class RadiationBlockerComponent : Component
     /// <summary>
     ///     How many rads per second does the blocker absorb?
     /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
     [DataField("resistance")]
     public float RadResistance = 1f;
 
