@@ -2,6 +2,7 @@
 
 ## General
 
+shell-server-cannot = Server cannot do this.
 shell-command-success = Command successful
 shell-invalid-command = Invalid command.
 shell-invalid-command-specific = Invalid {$commandName} command.

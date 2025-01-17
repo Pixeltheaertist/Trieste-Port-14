@@ -1,4 +1,5 @@
 using Content.Server.Chemistry.Components;
+using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
@@ -6,7 +7,6 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using Content.Shared.Physics;
 using Content.Shared.Throwing;
-using Content.Shared.Chemistry.EntitySystems;
 using JetBrains.Annotations;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -25,10 +25,9 @@ namespace Content.Server.Chemistry.EntitySystems
         [Dependency] private readonly IPrototypeManager _protoManager = default!;
         [Dependency] private readonly SharedMapSystem _map = default!;
         [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-        [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
+        [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
         [Dependency] private readonly ThrowingSystem _throwing = default!;
         [Dependency] private readonly ReactiveSystem _reactive = default!;
-        [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
 
         private const float ReactTime = 0.125f;
 
@@ -70,7 +69,7 @@ namespace Content.Server.Chemistry.EntitySystems
 
                 _throwing.TryThrow(vapor, dir, speed, user: user);
 
-                var distance = (target.Position - _transformSystem.GetWorldPosition(vaporXform)).Length();
+                var distance = (target.Position - vaporXform.WorldPosition).Length();
                 var time = (distance / physics.LinearVelocity.Length());
                 despawn.Lifetime = MathF.Min(aliveTime, time);
             }
@@ -123,7 +122,7 @@ namespace Content.Server.Chemistry.EntitySystems
                     var reagent = _protoManager.Index<ReagentPrototype>(reagentQuantity.Reagent.Prototype);
 
                     var reaction =
-                        reagent.ReactionTile(tile, (reagentQuantity.Quantity / vapor.TransferAmount) * 0.25f, EntityManager, reagentQuantity.Reagent.Data);
+                        reagent.ReactionTile(tile, (reagentQuantity.Quantity / vapor.TransferAmount) * 0.25f, EntityManager);
 
                     if (reaction > reagentQuantity.Quantity)
                     {

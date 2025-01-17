@@ -26,13 +26,8 @@ public interface IGridSpawnGroup
     /// </summary>
     public float MinimumDistance { get; }
 
-    /// <summary>
-    /// Maximum distance to spawn away from the station.
-    /// </summary>
-    public float MaximumDistance { get;  }
-
     /// <inheritdoc />
-    public ProtoId<LocalizedDatasetPrototype>? NameDataset { get; }
+    public ProtoId<DatasetPrototype>? NameDataset { get; }
 
     /// <inheritdoc />
     int MinCount { get; set; }
@@ -72,10 +67,8 @@ public sealed class DungeonSpawnGroup : IGridSpawnGroup
     /// <inheritdoc />
     public float MinimumDistance { get; }
 
-    public float MaximumDistance { get; }
-
     /// <inheritdoc />
-    public ProtoId<LocalizedDatasetPrototype>? NameDataset { get; }
+    public ProtoId<DatasetPrototype>? NameDataset { get; }
 
     /// <inheritdoc />
     public int MinCount { get; set; } = 1;
@@ -101,12 +94,8 @@ public sealed class GridSpawnGroup : IGridSpawnGroup
 {
     public List<ResPath> Paths = new();
 
-    /// <inheritdoc />
     public float MinimumDistance { get; }
-
-    /// <inheritdoc />
-    public float MaximumDistance { get; }
-    public ProtoId<LocalizedDatasetPrototype>? NameDataset { get; }
+    public ProtoId<DatasetPrototype>? NameDataset { get; }
     public int MinCount { get; set; } = 1;
     public int MaxCount { get; set; } = 1;
     public ComponentRegistry AddComponents { get; set; } = new();

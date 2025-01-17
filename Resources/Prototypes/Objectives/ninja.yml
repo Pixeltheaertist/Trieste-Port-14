@@ -6,10 +6,10 @@
   - type: Objective
     # difficulty isn't used since all objectives are picked
     difficulty: 1.5
-    issuer: objective-issuer-spiderclan
+    issuer: spiderclan
   - type: RoleRequirement
     roles:
-      mindRoles:
+      components:
       - NinjaRole
 
 - type: entity

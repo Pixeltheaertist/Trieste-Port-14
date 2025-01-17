@@ -20,7 +20,7 @@
     sprite: Objects/Weapons/Guns/Ammunition/Boxes/pistol.rsi
   - type: MagazineVisuals
     magState: mag
-    steps: 3
+    steps: 2
     zeroVisible: false
   - type: Appearance
 

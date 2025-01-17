@@ -1,5 +1,5 @@
 - type: entity
-  name: food cart
+  name: Food Cart
   id: FoodCartBase
   abstract: true
   parent: BaseStructureDynamic

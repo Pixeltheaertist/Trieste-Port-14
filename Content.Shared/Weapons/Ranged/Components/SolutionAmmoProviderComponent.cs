@@ -5,38 +5,38 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 
 namespace Content.Shared.Weapons.Ranged.Components;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true), Access(typeof(SharedGunSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(SharedGunSystem))]
 public sealed partial class SolutionAmmoProviderComponent : Component
 {
     /// <summary>
     /// The solution where reagents are extracted from for the projectile.
     /// </summary>
-    [DataField(required: true), AutoNetworkedField]
+    [DataField("solutionId", required: true), AutoNetworkedField]
     public string SolutionId = default!;
 
     /// <summary>
     /// How much reagent it costs to fire once.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField("fireCost"), ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
     public float FireCost = 5;
 
     /// <summary>
     /// The amount of shots currently available.
     /// used for network predictions.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField("shots"), ViewVariables, AutoNetworkedField]
     public int Shots;
 
     /// <summary>
     /// The max amount of shots the gun can fire.
     /// used for network prediction
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField("maxShots"), ViewVariables, AutoNetworkedField]
     public int MaxShots;
 
     /// <summary>
     /// The prototype that's fired by the gun.
     /// </summary>
-    [DataField("proto")]
-    public EntProtoId Prototype;
+    [DataField("proto", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>)), ViewVariables(VVAccess.ReadWrite)]
+    public string Prototype = default!;
 }

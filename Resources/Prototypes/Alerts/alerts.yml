@@ -13,7 +13,6 @@
     - alertType: Ensnared
     - category: Buckled
     - alertType: Pulling
-    - alertType: Walking
     - category: Piloting
     - alertType: Corporeal
     - alertType: Stun
@@ -28,7 +27,7 @@
 
 - type: entity
   id: AlertSpriteView
-  categories: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu  ]
   components:
   - type: Sprite
     layers:
@@ -115,7 +114,7 @@
 - type: alert
   id: Fire
   icons: [ /Textures/Interface/Alerts/Fire/fire.png ]
-  clickEvent: !type:ResistFireAlertEvent
+  onClick: !type:ResistFire  { }
   name: alerts-on-fire-name
   description: alerts-on-fire-desc
 
@@ -155,14 +154,6 @@
   description: alerts-weightless-desc
 
 - type: alert
-  id: Walking
-  icons:
-  - sprite: /Textures/Interface/Alerts/walking.rsi
-    state: walking
-  name: alerts-walking-name
-  description: alerts-walking-desc
-
-- type: alert
   id: Stun
   icons:
   - sprite: /Textures/Objects/Weapons/Melee/stunbaton.rsi #Should probably draw a proper icon
@@ -172,14 +163,14 @@
 
 - type: alert
   id: Handcuffed
-  clickEvent: !type:RemoveCuffsAlertEvent
+  onClick: !type:RemoveCuffs  { }
   icons: [ /Textures/Interface/Alerts/Handcuffed/Handcuffed.png ]
   name: alerts-handcuffed-name
   description: alerts-handcuffed-desc
 
 - type: alert
   id: Ensnared
-  clickEvent: !type:RemoveEnsnareAlertEvent
+  onClick: !type:RemoveEnsnare  { }
   icons:
   - sprite: /Textures/Interface/Alerts/ensnared.rsi
     state: ensnared
@@ -189,7 +180,7 @@
 - type: alert
   id: Buckled
   category: Buckled
-  clickEvent: !type:UnbuckleAlertEvent
+  onClick: !type:Unbuckle  { }
   icons: [ /Textures/Interface/Alerts/Buckle/buckled.png ]
   name: alerts-buckled-name
   description: alerts-buckled-desc
@@ -311,7 +302,7 @@
 - type: alert
   id: Internals
   category: Internals
-  clickEvent: !type:ToggleInternalsAlertEvent
+  onClick: !type:ToggleInternals {}
   icons:
   - sprite: /Textures/Interface/Alerts/internals.rsi
     state: internal0
@@ -327,7 +318,7 @@
 - type: alert
   id: PilotingShuttle
   category: Piloting
-  clickEvent: !type:StopPilotingAlertEvent
+  onClick: !type:StopPiloting { }
   icons: [ /Textures/Interface/Alerts/piloting.png ]
   name: alerts-piloting-name
   description: alerts-piloting-desc
@@ -401,27 +392,27 @@
   id: VowOfSilence
   icons: [ /Textures/Interface/Alerts/Abilities/silenced.png ]
   name: alerts-vow-silence-name
-  clickEvent: !type:BreakVowAlertEvent
+  onClick: !type:BreakVow  { }
   description: alerts-vow-silence-desc
 
 - type: alert
   id: VowBroken
   icons: [ /Textures/Interface/Actions/scream.png ]
   name: alerts-vow-broken-name
-  clickEvent: !type:RetakeVowAlertEvent
+  onClick: !type:RetakeVow  { }
   description: alerts-vow-broken-desc
 
 - type: alert
   id: Pulled
   icons: [ /Textures/Interface/Alerts/Pull/pulled.png ]
-  clickEvent: !type:StopBeingPulledAlertEvent
+  onClick: !type:StopBeingPulled  { }
   name: alerts-pulled-name
   description: alerts-pulled-desc
 
 - type: alert
   id: Pulling
   icons: [ /Textures/Interface/Alerts/Pull/pulling.png ]
-  clickEvent: !type:StopPullingAlertEvent
+  onClick: !type:StopPulling  { }
   name: alerts-pulling-name
   description: alerts-pulling-desc
 
@@ -462,14 +453,6 @@
     state: icon
   name: alerts-pacified-name
   description: alerts-pacified-desc
-
-- type: alert
-  id: Adrenaline
-  icons:
-  - sprite: Mobs/Species/Human/organs.rsi
-    state: heart-on
-  name: alerts-adrenaline-name
-  description: alerts-adrenaline-desc
 
 - type: alert
   id: Debug1

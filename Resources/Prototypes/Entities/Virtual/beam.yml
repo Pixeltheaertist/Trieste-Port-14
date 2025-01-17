@@ -2,7 +2,7 @@
 - type: entity
   id: VirtualBeamEntityController
   name: BEAM ENTITY YOU SHOULD NOT SEE THIS
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
     - type: Beam
     - type: TimedDespawn

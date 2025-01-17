@@ -83,6 +83,16 @@
   - UplinkNtExplosives
 
 - type: listing
+  id: UplinkSlashBang
+  name: uplink-slashbang-name
+  description: uplink-slashbang-desc
+  productEntity: TP14SlashBang
+  cost:
+    BluespaceCrystal: 7
+  categories:
+  - UplinkNtExplosives
+
+- type: listing
   id: UplinkEnergyBomb
   name: uplink-energybomb-name
   description: uplink-energybomb-desc

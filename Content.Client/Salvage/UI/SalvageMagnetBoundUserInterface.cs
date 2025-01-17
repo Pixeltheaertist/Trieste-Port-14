@@ -1,5 +1,4 @@
 using System.Linq;
-using Content.Client.Message;
 using Content.Shared.Salvage;
 using Content.Shared.Salvage.Magnet;
 using Robust.Client.UserInterface;
@@ -22,9 +21,13 @@ public sealed class SalvageMagnetBoundUserInterface : BoundUserInterface
     {
         base.Open();
 
-        _window = this.CreateWindow<OfferingWindow>();
-        _window.Title = Loc.GetString("salvage-magnet-window-title");
-        _window.OpenCenteredLeft();
+        if (_window is null)
+        {
+            _window = new OfferingWindow();
+            _window.Title = Loc.GetString("salvage-magnet-window-title");
+            _window.OnClose += Close;
+            _window.OpenCenteredLeft();
+        }
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
@@ -53,9 +56,9 @@ public sealed class SalvageMagnetBoundUserInterface : BoundUserInterface
             option.Claimed = current.ActiveSeed == seed;
             var claimIndex = i;
 
-            option.ClaimPressed += _ =>
+            option.ClaimPressed += args =>
             {
-                SendMessage(new MagnetClaimOfferEvent
+                SendMessage(new MagnetClaimOfferEvent()
                 {
                     Index = claimIndex
                 });
@@ -64,7 +67,7 @@ public sealed class SalvageMagnetBoundUserInterface : BoundUserInterface
             switch (offer)
             {
                 case AsteroidOffering asteroid:
-                    option.Title = Loc.GetString($"dungeon-config-proto-{asteroid.Id}");
+                    option.Title = Loc.GetString($"dungeon-config-proto-{asteroid.DungeonConfig.ID}");
                     var layerKeys = asteroid.MarkerLayers.Keys.ToList();
                     layerKeys.Sort();
 
@@ -72,20 +75,20 @@ public sealed class SalvageMagnetBoundUserInterface : BoundUserInterface
                     {
                         var count = asteroid.MarkerLayers[resource];
 
-                        var container = new BoxContainer
+                        var container = new BoxContainer()
                         {
                             Orientation = BoxContainer.LayoutOrientation.Horizontal,
                             HorizontalExpand = true,
                         };
 
-                        var resourceLabel = new Label
+                        var resourceLabel = new Label()
                         {
                             Text = Loc.GetString("salvage-magnet-resources",
                                 ("resource", resource)),
                             HorizontalAlignment = Control.HAlignment.Left,
                         };
 
-                        var countLabel = new Label
+                        var countLabel = new Label()
                         {
                             Text = Loc.GetString("salvage-magnet-resources-count", ("count", count)),
                             HorizontalAlignment = Control.HAlignment.Right,
@@ -99,41 +102,25 @@ public sealed class SalvageMagnetBoundUserInterface : BoundUserInterface
                     }
 
                     break;
-                case DebrisOffering debris:
-                    option.Title = Loc.GetString($"salvage-magnet-debris-{debris.Id}");
-                    break;
                 case SalvageOffering salvage:
-                    option.Title = Loc.GetString($"salvage-map-wreck");
-
-                    var salvContainer = new BoxContainer
-                    {
-                        Orientation = BoxContainer.LayoutOrientation.Horizontal,
-                        HorizontalExpand = true,
-                    };
-
-                    var sizeLabel = new Label
-                    {
-                        Text = Loc.GetString("salvage-map-wreck-desc-size"),
-                        HorizontalAlignment = Control.HAlignment.Left,
-                    };
-
-                    var sizeValueLabel = new RichTextLabel
-                    {
-                        HorizontalAlignment = Control.HAlignment.Right,
-                        HorizontalExpand = true,
-                    };
-                    sizeValueLabel.SetMarkup(Loc.GetString(salvage.SalvageMap.SizeString));
-
-                    salvContainer.AddChild(sizeLabel);
-                    salvContainer.AddChild(sizeValueLabel);
-
-                    option.AddContent(salvContainer);
+                    option.Title = Loc.GetString($"salvage-map-proto-{salvage.SalvageMap.ID}");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
 
             _window.AddOption(option);
+        }
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+
+        if (disposing)
+        {
+            _window?.Close();
+            _window?.Dispose();
         }
     }
 }

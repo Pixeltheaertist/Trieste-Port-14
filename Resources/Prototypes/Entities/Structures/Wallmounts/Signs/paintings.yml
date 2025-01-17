@@ -6,7 +6,7 @@
   - type: WallMount
     arc: 360
   - type: Sprite
-    drawdepth: WallMountedItems
+    drawdepth: WallTops
     sprite: Structures/Wallmounts/paintings.rsi
 
 - type: entity

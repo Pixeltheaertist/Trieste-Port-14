@@ -15,7 +15,6 @@
     unfoldedHideLayers:
     - Snout
   - type: Mask
-    disableOnFolded: true
   - type: IngestionBlocker
   - type: IdentityBlocker
     coverage: MOUTH
@@ -29,7 +28,6 @@
   - type: Tag
     tags:
     - Bandana
-    - ClothMade
   - type: HideLayerClothing
     slots:
     - Snout
@@ -69,8 +67,8 @@
     sprite: Clothing/Head/Bandanas/botany.rsi
   - type: Tag
     tags:
-    - WhitelistChameleon
     - ClothMade
+    - WhitelistChameleon
 
 - type: entity
   parent: ClothingMaskBandanaBase

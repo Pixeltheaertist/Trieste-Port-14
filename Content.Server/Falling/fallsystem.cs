@@ -13,7 +13,6 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.GameObjects;
 using Content.Shared.Gravity;
-using Robust.Server.GameObjects;
 
 namespace Content.Server.Falling
 {
@@ -25,9 +24,6 @@ namespace Content.Server.Falling
         [Dependency] private readonly PopupSystem _popup = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly EntityLookupSystem _lookup = default!;
-
-        [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
-
 
         private const int MaxRandomTeleportAttempts = 20; // The # of times it's going to try to find a valid spot to randomly teleport an object
 
@@ -82,26 +78,25 @@ namespace Content.Server.Falling
         }
 
         private void TeleportRandomly(EntityUid owner, FallSystemComponent component)
-{
-    var coords = Transform(owner).Coordinates;
-    var newCoords = coords; // Start with the current coordinates
-
-    for (var i = 0; i < MaxRandomTeleportAttempts; i++)
-    {
-        // Generate a random offset based on a defined radius
-        var offset = _random.NextVector2(component.MaxRandomRadius);
-        newCoords = coords.Offset(offset);
-
-        // Check if the new coordinates are free of static entities
-        if (!_lookup.GetEntitiesIntersecting(newCoords.ToMap(EntityManager, _transformSystem), LookupFlags.Static).Any())
         {
-            break; // Found a valid location
+            var coords = Transform(owner).Coordinates;
+            var newCoords = coords; // Start with the current coordinates
+
+            for (var i = 0; i < MaxRandomTeleportAttempts; i++)
+            {
+                // Generate a random offset based on a defined radius
+                var offset = _random.NextVector2(component.MaxRandomRadius);
+                newCoords = coords.Offset(offset);
+
+                // Check if the new coordinates are free of static entities
+                if (!_lookup.GetEntitiesIntersecting(newCoords.ToMap(EntityManager), LookupFlags.Static).Any())
+                {
+                    break; // Found a valid location
+                }
+            }
+
+            // Set the new coordinates to teleport the entity
+            Transform(owner).Coordinates = newCoords;
         }
-    }
-
-    // Set the new coordinates to teleport the entity
-    Transform(owner).Coordinates = newCoords;
-}
-
     }
 }

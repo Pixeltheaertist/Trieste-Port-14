@@ -43,7 +43,6 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     [UISystemDependency] private readonly ClientInventorySystem _inventory = default!;
     [UISystemDependency] private readonly StationSpawningSystem _spawn = default!;
     [UISystemDependency] private readonly GuidebookSystem _guide = default!;
-    [UISystemDependency] private readonly LoadoutSystem _loadouts = default!;
 
     private CharacterSetupGui? _characterSetup;
     private HumanoidProfileEditor? _profileEditor;
@@ -273,13 +272,12 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _logManager,
             _playerManager,
             _prototypeManager,
-            _resourceCache,
             _requirements,
             _markings);
 
         _profileEditor.OnOpenGuidebook += _guide.OpenHelp;
 
-        _characterSetup = new CharacterSetupGui(_profileEditor);
+        _characterSetup = new CharacterSetupGui(EntityManager, _prototypeManager, _resourceCache, _preferencesManager, _profileEditor);
 
         _characterSetup.CloseButton.OnPressed += _ =>
         {
@@ -366,7 +364,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
                 if (!_prototypeManager.TryIndex(loadout.Prototype, out var loadoutProto))
                     continue;
 
-                _spawn.EquipStartingGear(uid, loadoutProto);
+                _spawn.EquipStartingGear(uid, _prototypeManager.Index(loadoutProto.Equipment));
             }
         }
     }
@@ -389,51 +387,36 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
                     if (!_prototypeManager.TryIndex(loadout.Prototype, out var loadoutProto))
                         continue;
 
-                    // TODO: Need some way to apply starting gear to an entity and replace existing stuff coz holy fucking shit dude.
+                    // TODO: Need some way to apply starting gear to an entity coz holy fucking shit dude.
+                    var loadoutGear = _prototypeManager.Index(loadoutProto.Equipment);
+
                     foreach (var slot in slots)
                     {
-                        // Try startinggear first
-                        if (_prototypeManager.TryIndex(loadoutProto.StartingGear, out var loadoutGear))
+                        var itemType = loadoutGear.GetGear(slot.Name);
+
+                        if (_inventory.TryUnequip(dummy, slot.Name, out var unequippedItem, silent: true, force: true, reparent: false))
                         {
-                            var itemType = ((IEquipmentLoadout) loadoutGear).GetGear(slot.Name);
-
-                            if (_inventory.TryUnequip(dummy, slot.Name, out var unequippedItem, silent: true, force: true, reparent: false))
-                            {
-                                EntityManager.DeleteEntity(unequippedItem.Value);
-                            }
-
-                            if (itemType != string.Empty)
-                            {
-                                var item = EntityManager.SpawnEntity(itemType, MapCoordinates.Nullspace);
-                                _inventory.TryEquip(dummy, item, slot.Name, true, true);
-                            }
+                            EntityManager.DeleteEntity(unequippedItem.Value);
                         }
-                        else
+
+                        if (itemType != string.Empty)
                         {
-                            var itemType = ((IEquipmentLoadout) loadoutProto).GetGear(slot.Name);
-
-                            if (_inventory.TryUnequip(dummy, slot.Name, out var unequippedItem, silent: true, force: true, reparent: false))
-                            {
-                                EntityManager.DeleteEntity(unequippedItem.Value);
-                            }
-
-                            if (itemType != string.Empty)
-                            {
-                                var item = EntityManager.SpawnEntity(itemType, MapCoordinates.Nullspace);
-                                _inventory.TryEquip(dummy, item, slot.Name, true, true);
-                            }
+                            var item = EntityManager.SpawnEntity(itemType, MapCoordinates.Nullspace);
+                            _inventory.TryEquip(dummy, item, slot.Name, true, true);
                         }
                     }
                 }
             }
         }
 
-        if (!_prototypeManager.TryIndex(job.StartingGear, out var gear))
+        if (job.StartingGear == null)
             return;
+
+        var gear = _prototypeManager.Index<StartingGearPrototype>(job.StartingGear);
 
         foreach (var slot in slots)
         {
-            var itemType = ((IEquipmentLoadout) gear).GetGear(slot.Name);
+            var itemType = gear.GetGear(slot.Name);
 
             if (_inventory.TryUnequip(dummy, slot.Name, out var unequippedItem, silent: true, force: true, reparent: false))
             {
@@ -455,21 +438,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     {
         EntityUid dummyEnt;
 
-        EntProtoId? previewEntity = null;
-        if (humanoid != null && jobClothes)
-        {
-            job ??= GetPreferredJob(humanoid);
-
-            previewEntity = job.JobPreviewEntity ?? (EntProtoId?)job?.JobEntity;
-        }
-
-        if (previewEntity != null)
-        {
-            // Special type like borg or AI, do not spawn a human just spawn the entity.
-            dummyEnt = EntityManager.SpawnEntity(previewEntity, MapCoordinates.Nullspace);
-            return dummyEnt;
-        }
-        else if (humanoid is not null)
+        if (humanoid is not null)
         {
             var dummy = _prototypeManager.Index<SpeciesPrototype>(humanoid.Species).DollPrototype;
             dummyEnt = EntityManager.SpawnEntity(dummy, MapCoordinates.Nullspace);
@@ -483,8 +452,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         if (humanoid != null && jobClothes)
         {
-            DebugTools.Assert(job != null);
-
+            job ??= GetPreferredJob(humanoid);
             GiveDummyJobClothes(dummyEnt, humanoid, job);
 
             if (_prototypeManager.HasIndex<RoleLoadoutPrototype>(LoadoutSystem.GetJobPrototype(job.ID)))

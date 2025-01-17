@@ -8,7 +8,6 @@ using Content.Shared.Atmos;
 using Content.Shared.Atmos.Monitor;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
-using Content.Shared.Power;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map.Components;
 
@@ -17,6 +16,7 @@ namespace Content.Server.Doors.Systems
     public sealed class FirelockSystem : SharedFirelockSystem
     {
         [Dependency] private readonly SharedDoorSystem _doorSystem = default!;
+        [Dependency] private readonly AtmosAlarmableSystem _atmosAlarmable = default!;
         [Dependency] private readonly AtmosphereSystem _atmosSystem = default!;
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         [Dependency] private readonly SharedMapSystem _mapping = default!;

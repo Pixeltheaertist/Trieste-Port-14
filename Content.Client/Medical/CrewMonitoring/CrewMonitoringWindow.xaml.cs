@@ -23,27 +23,22 @@ namespace Content.Client.Medical.CrewMonitoring;
 [GenerateTypedNameReferences]
 public sealed partial class CrewMonitoringWindow : FancyWindow
 {
-    [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    private readonly IEntityManager _entManager;
+    private readonly IPrototypeManager _prototypeManager;
     private readonly SpriteSystem _spriteSystem;
 
     private NetEntity? _trackedEntity;
     private bool _tryToScrollToListFocus;
     private Texture? _blipTexture;
 
-    public CrewMonitoringWindow()
+    public CrewMonitoringWindow(string stationName, EntityUid? mapUid)
     {
         RobustXamlLoader.Load(this);
-        IoCManager.InjectDependencies(this);
 
+        _entManager = IoCManager.Resolve<IEntityManager>();
+        _prototypeManager = IoCManager.Resolve<IPrototypeManager>();
         _spriteSystem = _entManager.System<SpriteSystem>();
 
-        NavMap.TrackedEntitySelectedAction += SetTrackedEntityFromNavMap;
-
-    }
-
-    public void Set(string stationName, EntityUid? mapUid)
-    {
         _blipTexture = _spriteSystem.Frame0(new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/NavMap/beveled_circle.png")));
 
         if (_entManager.TryGetComponent<TransformComponent>(mapUid, out var xform))
@@ -54,6 +49,8 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
 
         StationName.AddStyleClass("LabelBig");
         StationName.Text = stationName;
+
+        NavMap.TrackedEntitySelectedAction += SetTrackedEntityFromNavMap;
         NavMap.ForceNavMapUpdate();
     }
 
@@ -156,11 +153,6 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
         // Populate departments
         foreach (var sensor in departmentSensors)
         {
-            if (!string.IsNullOrEmpty(SearchLineEdit.Text)
-                && !sensor.Name.Contains(SearchLineEdit.Text, StringComparison.CurrentCultureIgnoreCase)
-                && !sensor.Job.Contains(SearchLineEdit.Text, StringComparison.CurrentCultureIgnoreCase))
-                continue;
-
             var coordinates = _entManager.GetCoordinates(sensor.Coordinates);
 
             // Add a button that will hold a username and other details
@@ -262,7 +254,7 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
             mainContainer.AddChild(jobContainer);
 
             // Job icon
-            if (_prototypeManager.TryIndex<JobIconPrototype>(sensor.JobIcon, out var proto))
+            if (_prototypeManager.TryIndex<StatusIconPrototype>(sensor.JobIcon, out var proto))
             {
                 var jobIcon = new TextureRect()
                 {

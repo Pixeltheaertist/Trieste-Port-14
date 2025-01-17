@@ -8,6 +8,9 @@
   },
   "states": [
     {
+      "name": "tacoshell"
+    },
+    {
       "name": "beeftaco"
     },
     {

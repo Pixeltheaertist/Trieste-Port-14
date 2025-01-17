@@ -1,4 +1,3 @@
-using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Audio;
 
 namespace Content.Shared.Weapons.Ranged.Components;
@@ -7,7 +6,6 @@ namespace Content.Shared.Weapons.Ranged.Components;
 /// Chamber + mags in one package. If you need just magazine then use <see cref="MagazineAmmoProviderComponent"/>
 /// </summary>
 [RegisterComponent, AutoGenerateComponentState]
-[Access(typeof(SharedGunSystem))]
 public sealed partial class ChamberMagazineAmmoProviderComponent : MagazineAmmoProviderComponent
 {
     /// <summary>
@@ -21,12 +19,6 @@ public sealed partial class ChamberMagazineAmmoProviderComponent : MagazineAmmoP
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("autoCycle"), AutoNetworkedField]
     public bool AutoCycle = true;
-
-    /// <summary>
-    /// Can the gun be racked, which opens and then instantly closes the bolt to cycle a round.
-    /// </summary>
-    [ViewVariables(VVAccess.ReadWrite), DataField("canRack"), AutoNetworkedField]
-    public bool CanRack = true;
 
     [ViewVariables(VVAccess.ReadWrite), DataField("soundBoltClosed"), AutoNetworkedField]
     public SoundSpecifier? BoltClosedSound = new SoundPathSpecifier("/Audio/Weapons/Guns/Bolt/rifle_bolt_closed.ogg");

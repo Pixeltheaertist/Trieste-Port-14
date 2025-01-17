@@ -2,14 +2,6 @@
 - type: htnCompound
   id: IdleCompound
   branches:
-    - tasks:
-        - !type:HTNPrimitiveTask
-          operator: !type:WaitOperator
-            key: IdleTime
-          preconditions:
-            - !type:KeyExistsPrecondition
-              key: IdleTime
-
     # Pick a new spot and wait there.
     - preconditions:
         - !type:BuckledPrecondition

@@ -61,9 +61,6 @@ public sealed class ChasingWalkSystem : VirtualController
 
     private void ChangeTarget(EntityUid uid, ChasingWalkComponent component)
     {
-        if (component.ChasingComponent.Count <= 0)
-            return;
-
         //We find our coordinates and calculate the radius of the target search.
         var xform = Transform(uid);
         var range = component.MaxChaseRadius;

@@ -11,6 +11,6 @@
   parent:
   - BaseStation
   - BaseStationSyndicate
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
     - type: Transform

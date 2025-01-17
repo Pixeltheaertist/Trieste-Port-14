@@ -12,7 +12,7 @@
 - type: entity
   id: VirtualElectrocutionLoadHVPower
   parent: VirtualElectrocutionLoadBase
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: NodeContainer
     nodes:
@@ -26,7 +26,7 @@
 - type: entity
   id: VirtualElectrocutionLoadMVPower
   parent: VirtualElectrocutionLoadBase
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: NodeContainer
     nodes:
@@ -40,7 +40,7 @@
 - type: entity
   id: VirtualElectrocutionLoadApc
   parent: VirtualElectrocutionLoadBase
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: NodeContainer
     nodes:

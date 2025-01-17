@@ -12,10 +12,4 @@ public sealed partial class SalvageMapPrototype : IPrototype
     /// Relative directory path to the given map, i.e. `Maps/Salvage/template.yml`
     /// </summary>
     [DataField(required: true)] public ResPath MapPath;
-
-    /// <summary>
-    /// String that describes the size of the map.
-    /// </summary>
-    [DataField(required: true)]
-    public LocId SizeString;
 }

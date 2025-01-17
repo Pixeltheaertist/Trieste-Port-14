@@ -35,7 +35,6 @@
     interfaces:
       enum.TransferAmountUiKey.Key:
         type: TransferAmountBoundUserInterface
-  - type: DnaSubstanceTrace
 
 - type: entity
   parent: DrinkBase
@@ -79,9 +78,6 @@
     solution: drink
   - type: FitsInDispenser
     solution: drink
-  - type: Tag
-    tags:
-      - DrinkGlass
 
 # Transformable container - normal glass
 - type: entity
@@ -1115,18 +1111,18 @@
 
 - type: entity
   parent: DrinkGlass
-  id: DrinkIrishSlammer
-  suffix: irish slammer
+  id: DrinkIrishCarBomb
+  suffix: irish car bomb
   components:
   - type: SolutionContainerManager
     solutions:
       drink:
         maxVol: 30
         reagents:
-        - ReagentId: IrishSlammer
+        - ReagentId: IrishCarBomb
           Quantity: 30
   - type: Icon
-    sprite: Objects/Consumable/Drinks/irishslammer.rsi
+    sprite: Objects/Consumable/Drinks/irishcarbomb.rsi
     state: icon
 
 - type: entity
@@ -1999,7 +1995,7 @@
 - type: entity
   parent: DrinkGlass
   id: DrinkTheMartinez
-  suffix: the martinez
+  suffix: The Martinez
   components:
     - type: SolutionContainerManager
       solutions:
@@ -2142,7 +2138,7 @@
   parent: DrinkGlassBase
   id: DrinkWaterJug
   name: water jug
-  description: Stay hydrated.
+  description: Stay hydrated
   components:
   - type: SolutionContainerManager
     solutions:

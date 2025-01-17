@@ -25,7 +25,7 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
-  - type: ProtectedFromStepTriggers
+  - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
 
 - type: entity
@@ -53,8 +53,7 @@
   - type: PressureProtection
     highPressureMultiplier: 0.04
   - type: TemperatureProtection
-    heatingCoefficient: 0.005
-    coolingCoefficient: 0.05
+    coefficient: 0.005
   - type: FireProtection
     reduction: 0.65 # doesnt have a full seal so not as good
   - type: Armor
@@ -68,7 +67,7 @@
     sprintModifier: 0.7
   - type: HeldSpeedModifier
   - type: GroupExamine
-  - type: ProtectedFromStepTriggers
+  - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
 
 - type: entity
@@ -85,8 +84,7 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    heatingCoefficient: 0.001
-    coolingCoefficient: 0.05
+    coefficient: 0.001
   - type: FireProtection
     reduction: 0.8 # atmos firesuit offers best protection, hardsuits are a little vulnerable
   - type: Armor
@@ -100,7 +98,7 @@
     sprintModifier: 0.8
   - type: HeldSpeedModifier
   - type: GroupExamine
-  - type: ProtectedFromStepTriggers
+  - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
 
 - type: entity
@@ -115,7 +113,7 @@
     modifiers:
       coefficients:
         Heat: 0.90
-        Radiation: 0.01
+        Radiation: 0.001
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/rad.rsi
   - type: GroupExamine
@@ -125,11 +123,11 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
-  - type: ProtectedFromStepTriggers
+  - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
 
 - type: entity
-  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseToggleClothing, BaseMajorContraband]
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseToggleClothing]
   id: ClothingOuterSuitSpaceNinja
   name: space ninja suit
   description: This black technologically advanced, cybernetically-enhanced suit provides many abilities like invisibility or teleportation.
@@ -143,8 +141,7 @@
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    heatingCoefficient: 0.01
-    coolingCoefficient: 0.01
+    coefficient: 0.01
   - type: Armor
     modifiers:
       coefficients:
@@ -155,7 +152,6 @@
   # phase cloak
   - type: ToggleClothing
     action: ActionTogglePhaseCloak
-    disableOnUnequip: true
   - type: ComponentToggler
     parent: true
     components:
@@ -164,7 +160,6 @@
       lastVisibility: 0.1
   - type: PowerCellDraw
     drawRate: 1.8 # 200 seconds on the default cell
-  - type: ToggleCellDraw
   # throwing star ability
   - type: ItemCreator
     action: ActionCreateThrowingStar
@@ -188,9 +183,6 @@
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellSmall
         disableEject: true
-        whitelist:
-          tags:
-            - PowerCell
 
 - type: entity
   parent: ClothingOuterBase
@@ -202,7 +194,7 @@
     sprite: Clothing/OuterClothing/Suits/chicken.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/chicken.rsi
-  - type: ProtectedFromStepTriggers
+  - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
 
 - type: entity
@@ -240,7 +232,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
-  - type: ProtectedFromStepTriggers
+  - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
 
 - type: entity
@@ -263,7 +255,7 @@
   - type: Construction
     graph: ClothingOuterSuitIan
     node: suit
-  - type: ProtectedFromStepTriggers
+  - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
 
 - type: entity
@@ -294,7 +286,6 @@
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    heatingCoefficient: 0.01
-    coolingCoefficient: 0.01
+    coefficient: 0.01
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCarp

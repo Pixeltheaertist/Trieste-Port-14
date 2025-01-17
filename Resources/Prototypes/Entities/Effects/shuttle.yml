@@ -1,6 +1,6 @@
 - type: entity
   id: FtlVisualizerEntity
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   description: Visualizer for shuttles arriving. You shouldn't see this!
   components:
   - type: FtlVisualizer

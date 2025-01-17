@@ -4,7 +4,6 @@ using Content.Server.Power.NodeGroups;
 using Content.Server.Tools;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
-using Content.Shared.Tools.Systems;
 using Content.Shared.Verbs;
 using JetBrains.Annotations;
 using Robust.Shared.Utility;
@@ -28,10 +27,10 @@ namespace Content.Server.Power.EntitySystems
 
         private void OnAfterInteractUsing(EntityUid uid, CableComponent component, AfterInteractUsingEvent args)
         {
-            if (args.Handled || args.Target == null || !args.CanReach || !_toolSystem.HasQuality(args.Used, SharedToolSystem.PulseQuality))
+            if (args.Handled || args.Target == null || !args.CanReach || !_toolSystem.HasQuality(args.Used, "Pulsing"))
                 return;
 
-            var markup = FormattedMessage.FromMarkupOrThrow(GenerateCableMarkup(uid));
+            var markup = FormattedMessage.FromMarkup(GenerateCableMarkup(uid));
             _examineSystem.SendExamineTooltip(args.User, uid, markup, false, false);
             args.Handled = true;
         }
@@ -46,7 +45,7 @@ namespace Content.Server.Power.EntitySystems
 
                 // Pulsing is hardcoded here because I don't think it needs to be more complex than that right now.
                 // Update if I'm wrong.
-                var enabled = held != null && _toolSystem.HasQuality(held.Value, SharedToolSystem.PulseQuality);
+                var enabled = held != null && _toolSystem.HasQuality(held.Value, "Pulsing");
                 var verb = new ExamineVerb
                 {
                     Disabled = !enabled,
@@ -56,7 +55,7 @@ namespace Content.Server.Power.EntitySystems
                     Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/zap.svg.192dpi.png")),
                     Act = () =>
                     {
-                        var markup = FormattedMessage.FromMarkupOrThrow(GenerateCableMarkup(uid));
+                        var markup = FormattedMessage.FromMarkup(GenerateCableMarkup(uid));
                         _examineSystem.SendExamineTooltip(args.User, uid, markup, false, false);
                     }
                 };

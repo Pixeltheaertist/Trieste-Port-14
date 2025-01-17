@@ -1,4 +1,3 @@
-using Content.Shared.Clothing.EntitySystems;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Clothing.Components;

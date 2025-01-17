@@ -16,7 +16,6 @@
     state: box
     layers:
     - state: box
-      map: ["closeLayer"]
     - state: box-open
       map: ["openLayer"]
       visible: false
@@ -80,7 +79,6 @@
     state: box-closed
     layers:
     - state: box-closed
-      map: ["closeLayer"]
     - state: box-open
       map: ["openLayer"]
       visible: false
@@ -211,18 +209,13 @@
   # TODO make these entitystorage again + placeablesurface after entity storage ECS gets merged.
   - type: Storage
     grid:
-    - 0,0,3,1
+    - 0,0,1,1
     maxItemSize: Normal
-    whitelist:
-      components:
-      - Utensil
-      tags:
-      - Pizza
   - type: Item
     sprite: Objects/Consumable/Food/Baked/pizza.rsi
     heldPrefix: box
     shape:
-    - 0,0,2,1
+    - 0,0,1,1
   - type: Appearance
   - type: EntityStorageVisuals
     stateDoorOpen: box-open
@@ -270,21 +263,6 @@
     - id: FoodPizzaDonkpocket
       prob: 0.10
       orGroup: Pizza
-    - id: FoodPizzaCotton
-      prob: 0.10
-      orGroup: Pizza
-    - id: KnifePlastic
-  
-- type: entity
-  name: pizza box
-  parent: FoodBoxPizzaFilled
-  id: FoodBoxPizzaCotton
-  suffix: Cotton Pizza
-  components:
-  - type: StorageFill
-    contents:
-    - id: FoodPizzaCotton
-    - id: KnifePlastic
 
 # Nugget
 
@@ -299,7 +277,6 @@
     state: box
     layers:
     - state: box
-      map: ["closeLayer"]
     - state: box-open
       map: ["openLayer"]
       visible: false
@@ -493,7 +470,6 @@
     state: box
     layers:
     - state: box
-      map: ["closeLayer"]
     - state: box-open
       map: ["openLayer"]
   - type: Item
@@ -589,7 +565,7 @@
 
 - type: entity
   id: HappyHonkNukie
-  parent: [HappyHonk, BaseSyndicateContraband]
+  parent: HappyHonk
   name: robust nukie meal
   description: A sus meal with a potentially explosive surprise.
   suffix: Toy Unsafe
@@ -693,7 +669,7 @@
   id: FoodMealHappyHonkClown
   parent: HappyHonk
   suffix: random food spawner meal
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: StorageFill
     contents:
@@ -704,8 +680,6 @@
       - id: DrinkColaCan
         orGroup: DrinkPool
       - id: DrinkLemonLimeCan
-        orGroup: DrinkPool
-      - id: DrinkLemonLimeCranberryCan
         orGroup: DrinkPool
       - id: DrinkIcedTeaCan
         orGroup: DrinkPool

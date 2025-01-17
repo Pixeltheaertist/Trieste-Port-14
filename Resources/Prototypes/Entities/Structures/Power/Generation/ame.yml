@@ -29,8 +29,8 @@
         layer:
         - WallLayer
   - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallicStrong
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
   - type: Destructible
     thresholds:
     - trigger:
@@ -108,7 +108,7 @@
     mediumVoltageNode: ame
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   parent: AmeController
   id: AmeControllerUnanchored
   suffix: Unanchored
@@ -153,8 +153,8 @@
         layer:
         - WallLayer
   - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallicStrong
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
   - type: Destructible
     thresholds:
     - trigger:

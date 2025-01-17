@@ -1,6 +1,4 @@
 using Content.Server.Spawners.EntitySystems;
-using Content.Shared.Roles;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server.Spawners.Components;
 
@@ -22,7 +20,7 @@ public sealed partial class ContainerSpawnPointComponent : Component, ISpawnPoin
     /// An optional job specifier
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public ProtoId<JobPrototype>? Job;
+    public string? Job;
 
     /// <summary>
     /// The type of spawn point

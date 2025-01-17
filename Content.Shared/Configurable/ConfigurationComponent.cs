@@ -1,6 +1,5 @@
 using System.Text.RegularExpressions;
 using Content.Shared.Tools;
-using Content.Shared.Tools.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
@@ -14,7 +13,7 @@ namespace Content.Shared.Configurable
         public Dictionary<string, string?> Config = new();
 
         [DataField("qualityNeeded", customTypeSerializer: typeof(PrototypeIdSerializer<ToolQualityPrototype>))]
-        public string QualityNeeded = SharedToolSystem.PulseQuality;
+        public string QualityNeeded = "Pulsing";
 
         [DataField("validation")]
         public Regex Validation = new("^[a-zA-Z0-9 ]*$", RegexOptions.Compiled);

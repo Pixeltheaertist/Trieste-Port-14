@@ -60,7 +60,7 @@
   id: BulletDebug
   name: bang, ded bullet
   parent: BaseBullet
-  categories: [ Debug, HideSpawnMenu ]
+  noSpawn: true
   suffix: DEBUG
   components:
   - type: Tag

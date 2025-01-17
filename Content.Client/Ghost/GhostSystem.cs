@@ -99,8 +99,8 @@ namespace Content.Client.Ghost
             if (args.Handled)
                 return;
 
-            var locId = GhostVisibility ? "ghost-gui-toggle-ghost-visibility-popup-off" : "ghost-gui-toggle-ghost-visibility-popup-on";
-            Popup.PopupEntity(Loc.GetString(locId), args.Performer);
+            Popup.PopupEntity(Loc.GetString("ghost-gui-toggle-ghost-visibility-popup"), args.Performer);
+
             if (uid == _playerManager.LocalEntity)
                 ToggleGhostVisibility();
 

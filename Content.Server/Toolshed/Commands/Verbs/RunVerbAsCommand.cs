@@ -15,10 +15,10 @@ public sealed class RunVerbAsCommand : ToolshedCommand
 
     [CommandImplementation]
     public IEnumerable<NetEntity> RunVerbAs(
-            IInvocationContext ctx,
+            [CommandInvocationContext] IInvocationContext ctx,
             [PipedArgument] IEnumerable<NetEntity> input,
-            EntityUid runner,
-            string verb
+            [CommandArgument] ValueRef<NetEntity> runner,
+            [CommandArgument] string verb
         )
     {
         _verb ??= GetSys<SharedVerbSystem>();
@@ -26,14 +26,17 @@ public sealed class RunVerbAsCommand : ToolshedCommand
 
         foreach (var i in input)
         {
-            if (EntityManager.Deleted(runner) && runner.IsValid())
-                ctx.ReportError(new DeadEntity(runner));
+            var runnerNet = runner.Evaluate(ctx);
+            var runnerEid = EntityManager.GetEntity(runnerNet);
+
+            if (EntityManager.Deleted(runnerEid) && runnerEid.IsValid())
+                ctx.ReportError(new DeadEntity(runnerEid));
 
             if (ctx.GetErrors().Any())
                 yield break;
 
             var eId = EntityManager.GetEntity(i);
-            var verbs = _verb.GetLocalVerbs(eId, runner, Verb.VerbTypes, true);
+            var verbs = _verb.GetLocalVerbs(eId, runnerEid, Verb.VerbTypes, true);
 
             // if the "verb name" is actually a verb-type, try run any verb of that type.
             var verbType = Verb.VerbTypes.FirstOrDefault(x => x.Name == verb);
@@ -42,7 +45,7 @@ public sealed class RunVerbAsCommand : ToolshedCommand
                 var verbTy = verbs.FirstOrDefault(v => v.GetType() == verbType);
                 if (verbTy != null)
                 {
-                    _verb.ExecuteVerb(verbTy, runner, eId, forced: true);
+                    _verb.ExecuteVerb(verbTy, runnerEid, eId, forced: true);
                     yield return i;
                 }
             }
@@ -51,7 +54,7 @@ public sealed class RunVerbAsCommand : ToolshedCommand
             {
                 if (verbTy.Text.ToLowerInvariant() == verb)
                 {
-                    _verb.ExecuteVerb(verbTy, runner, eId, forced: true);
+                    _verb.ExecuteVerb(verbTy, runnerEid, eId, forced: true);
                     yield return i;
                 }
             }

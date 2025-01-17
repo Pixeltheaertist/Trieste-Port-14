@@ -44,7 +44,7 @@
     sprite: Objects/Tools/cable-coils.rsi
     state: coilall-30
   product: CrateEngineeringCableBulk
-  cost: 600
+  cost: 750
   category: cargoproduct-category-name-engineering
   group: market
 
@@ -144,6 +144,6 @@
     sprite: Structures/Piping/Atmospherics/Portable/portable_sheater.rsi
     state: sheaterOff
   product: CrateEngineeringSpaceHeater
-  cost: 350
+  cost: 300
   category: cargoproduct-category-name-engineering
   group: market

@@ -1,12 +1,13 @@
-﻿using Robust.Shared.Prototypes;
+﻿using Content.Shared.Singularity.Components;
 
 namespace Content.Server.ParticleAccelerator.Components;
 
 [RegisterComponent]
 public sealed partial class ParticleAcceleratorEmitterComponent : Component
 {
-    [DataField]
-    public EntProtoId EmittedPrototype = "ParticlesProjectile";
+    [DataField("emittedPrototype")]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public string EmittedPrototype = "ParticlesProjectile";
 
     [DataField("emitterType")]
     [ViewVariables(VVAccess.ReadWrite)]

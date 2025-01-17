@@ -1,6 +1,6 @@
 ﻿- type: entity
   id: Tippy
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: Sprite
     netsync: false

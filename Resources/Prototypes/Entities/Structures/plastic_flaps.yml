@@ -39,7 +39,7 @@
     key: walls
     mode: NoSprite
   - type: StaticPrice
-    price: 100
+    price: 83
 
 - type: entity
   id: PlasticFlapsClear

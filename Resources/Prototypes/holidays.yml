@@ -68,8 +68,8 @@
   beginMonth: March
 
 - type: holiday
-  id: Easter
-  name: holiday-name-easter
+  id: holiday-name-easter
+  name: Easter
   shouldCelebrate:
     !type:Computus { }
 
@@ -320,8 +320,8 @@
     weekday: Thursday
 
 - type: holiday
-  id: Halloween
-  name: holiday-name-halloween
+  id: holiday-name-halloween
+  name: Halloween
   beginDay: 31
   beginMonth: October
   greet:
@@ -383,8 +383,8 @@
     weekday: Thursday
 
 - type: holiday
-  id: Sinterklaas
-  name: holiday-name-sinterklaas
+  id: holiday-name-sinterklaas
+  name: Sinterklaas
   beginDay: 5
   beginMonth: December
 
@@ -407,8 +407,8 @@
   beginMonth: December
 
 - type: holiday
-  id: Christmas
-  name: holiday-name-christmas
+  id: holiday-name-christmas
+  name: Christmas
   beginDay: 24
   endDay: 26
   beginMonth: December

@@ -44,8 +44,8 @@
 
 - type: entity
   id: ActionOpenStorageImplant
-  name: Toggle Storage Implant
-  description: Opens or closes the storage implant embedded under your skin
+  name: Open Storage Implant
+  description: Opens the storage implant embedded under your skin
   components:
   - type: InstantAction
     itemIconStyle: BigAction
@@ -54,7 +54,6 @@
       sprite: Clothing/Back/Backpacks/backpack.rsi
       state: icon
     event: !type:OpenStorageImplantEvent
-    useDelay: 1
 
 - type: entity
   parent: BaseSuicideAction
@@ -161,6 +160,20 @@
       sprite: Clothing/OuterClothing/Hardsuits/lingspacesuit.rsi
       state: icon
     event: !type:UseDnaScramblerImplantEvent
+
+- type: entity
+  id: ActionMorphGeras
+  name: Morph into Geras
+  description:  Morphs you into a Geras - a miniature version of you which allows you to move fast, at the cost of your inventory.
+  components:
+  - type: InstantAction
+    itemIconStyle: BigAction
+    useDelay: 10 # prevent spam
+    priority: -20
+    icon:
+      sprite: Mobs/Aliens/slimes.rsi
+      state: blue_adult_slime
+    event: !type:MorphIntoGeras
 
 - type: entity
   id: ActionToggleSuitPiece
@@ -280,8 +293,6 @@
     checkCanInteract: false
     checkConsciousness: false
     event: !type:WakeActionEvent
-    startDelay: true
-    useDelay: 2
 
 - type: entity
   id: ActionActivateHonkImplant
@@ -319,8 +330,8 @@
 
 - type: entity
   id: ActionToggleWagging
-  name: Wagging Tail
-  description: Start or stop wagging your tail.
+  name: action-name-toggle-wagging
+  description: action-description-toggle-wagging
   components:
     - type: InstantAction
       icon: { sprite: Mobs/Customization/reptilian_parts.rsi, state: tail_smooth_behind }

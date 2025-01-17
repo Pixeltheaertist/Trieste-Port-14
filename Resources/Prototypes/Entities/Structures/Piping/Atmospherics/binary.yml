@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   parent: GasPipeBase
   abstract: true
   id: GasBinaryBase
@@ -31,14 +31,6 @@
   placement:
     mode: SnapgridCenter
   components:
-  - type: ExtensionCableReceiver
-  - type: LightningTarget
-    priority: 1
-  - type: ApcPowerReceiver
-    powerLoad: 200
-  - type: Rotatable
-  - type: Transform
-    noRot: false
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump.rsi
     layers:
@@ -57,13 +49,10 @@
   - type: PipeColorVisuals
   - type: GasPressurePump
     enabled: false
-  - type: ActivatableUI
-    key: enum.GasPressurePumpUiKey.Key
-  - type: ActivatableUIRequiresAnchor
   - type: UserInterface
     interfaces:
-      enum.GasPressurePumpUiKey.Key:
-        type: GasPressurePumpBoundUserInterface
+        enum.GasPressurePumpUiKey.Key:
+          type: GasPressurePumpBoundUserInterface
   - type: Construction
     graph: GasBinary
     node: pressurepump
@@ -73,9 +62,7 @@
     range: 5
     sound:
       path: /Audio/Ambience/Objects/gas_pump.ogg
-  - type: AtmosMonitoringConsoleDevice
-    navMapBlip: GasFlowRegulator
-    
+
 - type: entity
   parent: GasBinaryBase
   id: GasVolumePump
@@ -84,14 +71,6 @@
   placement:
     mode: SnapgridCenter
   components:
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: ApcPowerReceiver
-      powerLoad: 200
-    - type: Rotatable
-    - type: Transform
-      noRot: false
     - type: Sprite
       sprite: Structures/Piping/Atmospherics/pump.rsi
       layers:
@@ -132,9 +111,7 @@
       examinableAddress: true
       prefix: device-address-prefix-volume-pump
     - type: WiredNetworkConnection
-    - type: AtmosMonitoringConsoleDevice
-      navMapBlip: GasFlowRegulator
-    
+
 - type: entity
   parent: GasBinaryBase
   id: GasPassiveGate
@@ -163,9 +140,7 @@
       range: 5
       sound:
         path: /Audio/Ambience/Objects/gas_hiss.ogg
-    - type: AtmosMonitoringConsoleDevice
-      navMapBlip: GasValve
-      
+
 - type: entity
   parent: GasBinaryBase
   id: GasValve
@@ -213,9 +188,7 @@
       range: 5
       sound:
         path: /Audio/Ambience/Objects/gas_hiss.ogg
-    - type: AtmosMonitoringConsoleDevice
-      navMapBlip: GasValve
-      
+
 - type: entity
   parent: GasBinaryBase
   id: SignalControlledValve
@@ -224,7 +197,6 @@
   placement:
     mode: SnapgridCenter
   components:
-  - type: StationAiWhitelist
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump.rsi
     layers:
@@ -274,9 +246,7 @@
     range: 5
     sound:
       path: /Audio/Ambience/Objects/gas_hiss.ogg
-  - type: AtmosMonitoringConsoleDevice
-    navMapBlip: GasValve
-      
+
 - type: entity
   parent: GasBinaryBase
   id: GasPort
@@ -305,9 +275,7 @@
     - type: Construction
       graph: GasBinary
       node: port
-    - type: AtmosMonitoringConsoleDevice
-      navMapBlip: GasVentOpening
-      
+
 - type: entity
   parent: GasVentPump
   id: GasDualPortVentPump
@@ -363,9 +331,7 @@
           pipeDirection: South
     - type: AmbientSound
       enabled: true
-    - type: AtmosMonitoringConsoleDevice
-      navMapBlip: GasVentOpening
-      
+
 - type: entity
   parent: [ BaseMachine, ConstructibleMachine ]
   id: GasRecycler
@@ -427,9 +393,7 @@
         acts: ["Destruction"]
   - type: Machine
     board: GasRecyclerMachineCircuitboard
-  - type: AtmosMonitoringConsoleDevice
-    navMapBlip: GasValve
-    
+
 - type: entity
   parent: GasBinaryBase
   id: HeatExchanger
@@ -469,31 +433,3 @@
   - type: Construction
     graph: GasBinary
     node: radiator
-  - type: AtmosMonitoringConsoleDevice
-    navMapBlip: Thermoregulator
-
-- type: entity
-  parent: HeatExchanger
-  id: HeatExchangerBend
-  suffix: Bend
-  components:
-    - type: Sprite
-      layers:
-      - sprite: Structures/Piping/Atmospherics/pipe.rsi
-        state: pipeBend
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: heBend
-        map: [ "enum.SubfloorLayers.FirstLayer" ]
-    - type: NodeContainer
-      nodes:
-        inlet:
-          !type:PipeNode
-          nodeGroupID: Pipe
-          pipeDirection: South
-        outlet:
-          !type:PipeNode
-          nodeGroupID: Pipe
-          pipeDirection: West
-    - type: Construction
-      graph: GasBinary
-      node: bendradiator

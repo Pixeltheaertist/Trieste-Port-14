@@ -35,17 +35,6 @@
   id: stationOxygen
   lowerBound: !type:AlarmThresholdSetting
     threshold: 0.10
-  upperBound: !type:AlarmThresholdSetting
-    threshold: 0.3
-  lowerWarnAround: !type:AlarmThresholdSetting
-    threshold: 1.5
-  upperWarnAround: !type:AlarmThresholdSetting
-    threshold: 0.8
-
-- type: alarmThreshold
-  id: stationNitrogen
-  lowerBound: !type:AlarmThresholdSetting
-    threshold: 0.10
   lowerWarnAround: !type:AlarmThresholdSetting
     threshold: 1.5
 
@@ -108,17 +97,3 @@
   upperWarnAround: !type:AlarmThresholdSetting
     threshold: 0.2
 
-
-- type: alarmThreshold
-  id: voxOxygen
-  upperBound: !type:AlarmThresholdSetting
-    threshold: 0.02 # 2%
-  upperWarnAround: !type:AlarmThresholdSetting
-    threshold: 0.5 # 1%
-
-- type: alarmThreshold
-  id: voxNitrogen
-  lowerBound: !type:AlarmThresholdSetting
-    threshold: 0.8 # danger below 80% nitrogen
-  lowerWarnAround: !type:AlarmThresholdSetting
-    threshold: 1.125 # warning below 90%

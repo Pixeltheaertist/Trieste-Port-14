@@ -1,8 +1,6 @@
-using System.Diagnostics.CodeAnalysis;
-using Content.Client.Power.Components;
+﻿using Content.Client.Power.Components;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
-using Content.Shared.Examine;
 using Robust.Shared.GameStates;
 
 namespace Content.Client.Power.EntitySystems;
@@ -12,13 +10,7 @@ public sealed class PowerReceiverSystem : SharedPowerReceiverSystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<ApcPowerReceiverComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<ApcPowerReceiverComponent, ComponentHandleState>(OnHandleState);
-    }
-
-    private void OnExamined(Entity<ApcPowerReceiverComponent> ent, ref ExaminedEvent args)
-    {
-        args.PushMarkup(GetExamineText(ent.Comp.Powered));
     }
 
     private void OnHandleState(EntityUid uid, ApcPowerReceiverComponent component, ref ComponentHandleState args)
@@ -27,17 +19,5 @@ public sealed class PowerReceiverSystem : SharedPowerReceiverSystem
             return;
 
         component.Powered = state.Powered;
-    }
-
-    public override bool ResolveApc(EntityUid entity, [NotNullWhen(true)] ref SharedApcPowerReceiverComponent? component)
-    {
-        if (component != null)
-            return true;
-
-        if (!TryComp(entity, out ApcPowerReceiverComponent? receiver))
-            return false;
-
-        component = receiver;
-        return true;
     }
 }

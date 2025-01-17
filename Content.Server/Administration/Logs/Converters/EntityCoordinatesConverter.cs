@@ -1,5 +1,5 @@
 ﻿using System.Text.Json;
-using Content.Shared.Station.Components;
+using Content.Server.Station.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 

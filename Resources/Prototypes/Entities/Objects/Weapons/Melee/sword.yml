@@ -4,8 +4,6 @@
   abstract: true
   components:
   - type: Sharp
-  - type: Execution
-    doAfterDuration: 4.0
   - type: MeleeWeapon
     wideAnimationRotation: -135
   - type: Sprite
@@ -15,9 +13,6 @@
   - type: Utensil
     types:
       - Knife
-  - type: Tool
-    qualities:
-    - Slicing
 
 - type: entity
   name: corporate sabre
@@ -43,15 +38,10 @@
     tags:
     - CaptainSabre
   - type: DisarmMalus
-  - type: SentienceTarget
-    flavorKind: station-event-random-sentience-flavor-inanimate
-    weight: 0.0002 # 5,000 times less likely than 1 regular animal
-  - type: PirateAccent
-    # not putting a BlockMovement component here cause that's funny.
 
 - type: entity
   name: katana
-  parent: [ BaseSword, BaseMajorContraband ]
+  parent: BaseSword
   id: Katana
   description: Ancient craftwork made with not so ancient plasteel.
   components:
@@ -101,7 +91,7 @@
 
 - type: entity
   name: machete
-  parent: [ BaseSword, BaseMajorContraband ]
+  parent: BaseSword
   id: Machete
   description: A large, vicious looking blade.
   components:
@@ -122,7 +112,7 @@
 
 - type: entity
   name: claymore
-  parent: [ BaseSword, BaseMajorContraband ]
+  parent: BaseSword
   id: Claymore
   description: An ancient war blade.
   components:
@@ -144,7 +134,7 @@
 
 - type: entity
   name: cutlass
-  parent: [ BaseSword, BaseMajorContraband ]
+  parent: BaseSword
   id: Cutlass
   description: A wickedly curved blade, often seen in the hands of pirates and raiders.
   components:
@@ -164,8 +154,8 @@
   - type: DisarmMalus
 
 - type: entity
-  name: throngler
-  parent: [ BaseSword, BaseMajorContraband ]
+  name: The Throngler
+  parent: BaseSword
   id: Throngler
   description: Why would you make this?
   components:
@@ -190,6 +180,3 @@
       size: Ginormous
       sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi
     - type: DisarmMalus
-    - type: Grammar
-      attributes:
-        proper: true

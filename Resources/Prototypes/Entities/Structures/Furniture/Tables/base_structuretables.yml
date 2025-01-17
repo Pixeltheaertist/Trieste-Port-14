@@ -6,7 +6,7 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: StructuralInorganic
+    damageContainer: Inorganic
     damageModifierSet: Metallic
   - type: PlaceableSurface
   - type: Fixtures
@@ -32,6 +32,8 @@
     bonkDamage:
       types:
         Blunt: 4
+    bonkSound: !type:SoundCollectionSpecifier
+      collection: TrayHit
   - type: Clickable
   - type: FootstepModifier
     footstepSoundCollection:

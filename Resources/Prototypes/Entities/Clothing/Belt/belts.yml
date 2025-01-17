@@ -456,7 +456,7 @@
   - type: Appearance
 
 - type: entity
-  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseRestrictedContraband]
+  parent: ClothingBeltStorageBase
   id: ClothingBeltSecurity
   name: security belt
   description: Can hold security gear like handcuffs and flashes.
@@ -465,8 +465,6 @@
     sprite: Clothing/Belt/security.rsi
   - type: Clothing
     sprite: Clothing/Belt/security.rsi
-  - type: ExplosionResistance
-    damageCoefficient: 0.9
   - type: Storage
     whitelist:
       tags:
@@ -489,6 +487,7 @@
         - CartridgeAmmo
         - DoorRemote
         - Whistle
+        - HolosignProjector
         - BalloonPopper
   - type: ItemMapper
     mapLayers:
@@ -508,7 +507,7 @@
   - type: Appearance
 
 - type: entity
-  parent: [ClothingBeltBase, ClothingSlotBase, BaseCommandContraband]
+  parent: [ClothingBeltBase, ClothingSlotBase]
   id: ClothingBeltSheath
   name: sabre sheath
   description: An ornate sheath designed to hold an officer's blade.
@@ -542,7 +541,7 @@
 # Belts without visualizers
 
 - type: entity
-  parent: [ClothingBeltAmmoProviderBase, BaseRestrictedContraband]
+  parent: ClothingBeltAmmoProviderBase
   id: ClothingBeltBandolier
   name: bandolier
   description: A bandolier for holding shotgun ammunition.
@@ -589,7 +588,7 @@
     - 0,0,3,1
 
 - type: entity
-  parent: [ClothingBeltStorageBase, BaseSyndicateContraband]
+  parent: ClothingBeltStorageBase
   id: ClothingBeltSyndieHolster
   name: syndicate shoulder holster
   description: A deep shoulder holster capable of holding many types of ballistics.
@@ -613,7 +612,7 @@
 - type: entity
   parent: ClothingBeltSecurity
   id: ClothingBeltSecurityWebbing
-  name: security carrier
+  name: security webbing
   description: Unique and versatile chest rig, can hold security gear.
   components:
   - type: Sprite
@@ -622,7 +621,7 @@
     sprite: Clothing/Belt/securitywebbing.rsi
 
 - type: entity
-  parent: [ ClothingBeltStorageBase, BaseSecurityCargoContraband ]
+  parent: ClothingBeltStorageBase
   id: ClothingBeltMercWebbing
   name: mercenary webbing
   description: Ideal for storing everything from ammo to weapons and combat essentials.
@@ -644,7 +643,7 @@
     sprite: Clothing/Belt/salvagewebbing.rsi
 
 - type: entity
-  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseSyndicateContraband]
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase]
   id: ClothingBeltMilitaryWebbing
   name: chest rig
   description: A set of tactical webbing worn by Syndicate boarding parties.
@@ -673,29 +672,19 @@
 
 - type: entity
   parent: ClothingBeltBase
-  id: ClothingBeltSuspendersRed
-  name: red suspenders
+  id: ClothingBeltSuspenders
+  name: suspenders
   description: For holding your pants up.
   components:
   - type: Tag
     tags:
     - MimeBelt
   - type: Sprite
-    sprite: Clothing/Belt/suspenders_red.rsi
+    sprite: Clothing/Belt/suspenders.rsi
     state: icon
   - type: Clothing
-    sprite: Clothing/Belt/suspenders_red.rsi
+    sprite: Clothing/Belt/suspenders.rsi
     quickEquip: true
-
-- type: entity
-  parent: ClothingBeltSuspendersRed
-  id: ClothingBeltSuspendersBlack
-  name: black suspenders
-  components:
-  - type: Sprite
-    sprite: Clothing/Belt/suspenders_black.rsi
-  - type: Clothing
-    sprite: Clothing/Belt/suspenders_black.rsi
 
 - type: entity
   parent: ClothingBeltStorageBase

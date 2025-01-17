@@ -1,5 +1,4 @@
-using System.Linq;
-using Content.Shared.Lathe;
+﻿using System.Linq;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
 using JetBrains.Annotations;
@@ -13,7 +12,6 @@ public abstract class SharedResearchSystem : EntitySystem
 {
     [Dependency] protected readonly IPrototypeManager PrototypeManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedLatheSystem _lathe = default!;
 
     public override void Initialize()
     {
@@ -157,42 +155,42 @@ public abstract class SharedResearchSystem : EntitySystem
         if (includeTier)
         {
             disciplinePrototype ??= PrototypeManager.Index(technology.Discipline);
-            description.AddMarkupOrThrow(Loc.GetString("research-console-tier-discipline-info",
+            description.AddMarkup(Loc.GetString("research-console-tier-discipline-info",
                 ("tier", technology.Tier), ("color", disciplinePrototype.Color), ("discipline", Loc.GetString(disciplinePrototype.Name))));
             description.PushNewline();
         }
 
         if (includeCost)
         {
-            description.AddMarkupOrThrow(Loc.GetString("research-console-cost", ("amount", technology.Cost)));
+            description.AddMarkup(Loc.GetString("research-console-cost", ("amount", technology.Cost)));
             description.PushNewline();
         }
 
         if (includePrereqs && technology.TechnologyPrerequisites.Any())
         {
-            description.AddMarkupOrThrow(Loc.GetString("research-console-prereqs-list-start"));
+            description.AddMarkup(Loc.GetString("research-console-prereqs-list-start"));
             foreach (var recipe in technology.TechnologyPrerequisites)
             {
                 var techProto = PrototypeManager.Index(recipe);
                 description.PushNewline();
-                description.AddMarkupOrThrow(Loc.GetString("research-console-prereqs-list-entry",
+                description.AddMarkup(Loc.GetString("research-console-prereqs-list-entry",
                     ("text", Loc.GetString(techProto.Name))));
             }
             description.PushNewline();
         }
 
-        description.AddMarkupOrThrow(Loc.GetString("research-console-unlocks-list-start"));
+        description.AddMarkup(Loc.GetString("research-console-unlocks-list-start"));
         foreach (var recipe in technology.RecipeUnlocks)
         {
             var recipeProto = PrototypeManager.Index(recipe);
             description.PushNewline();
-            description.AddMarkupOrThrow(Loc.GetString("research-console-unlocks-list-entry",
-                ("name", _lathe.GetRecipeName(recipeProto))));
+            description.AddMarkup(Loc.GetString("research-console-unlocks-list-entry",
+                ("name",recipeProto.Name)));
         }
         foreach (var generic in technology.GenericUnlocks)
         {
             description.PushNewline();
-            description.AddMarkupOrThrow(Loc.GetString("research-console-unlocks-list-entry-generic",
+            description.AddMarkup(Loc.GetString("research-console-unlocks-list-entry-generic",
                 ("text", Loc.GetString(generic.UnlockDescription))));
         }
 

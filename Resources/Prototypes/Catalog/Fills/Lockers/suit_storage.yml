@@ -44,7 +44,7 @@
   suffix: Prisoner EVA
   components:
   - type: StorageFill
-    contents:
+    contents:   
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitEVAPrisoner
         - id: ClothingHeadHelmetEVALarge
@@ -150,10 +150,13 @@
   parent: SuitStorageBase
   suffix: Chief Engineer
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:NestedSelector
-        tableId: FillChiefEngineerHardsuit
+  - type: StorageFill
+    contents:
+        - id: OxygenTankFilled
+        - id: JetpackVoidFilled
+        - id: ClothingShoesBootsMagAdv
+        - id: ClothingOuterHardsuitEngineeringWhite
+        - id: ClothingMaskBreath
   - type: AccessReader
     access: [["ChiefEngineer"]]
 
@@ -163,10 +166,11 @@
   parent: SuitStorageBase
   suffix: Chief Medical Officer
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:NestedSelector
-        tableId: FillChiefMedicalOfficerHardsuit
+  - type: StorageFill
+    contents:
+        - id: OxygenTankFilled
+        - id: ClothingOuterHardsuitMedical
+        - id: ClothingMaskBreathMedical
   - type: AccessReader
     access: [ [ "ChiefMedicalOfficer" ] ]
 
@@ -176,10 +180,11 @@
   parent: SuitStorageBase
   suffix: Research Director
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:NestedSelector
-        tableId: FillResearchDirectorHardsuit
+  - type: StorageFill
+    contents:
+        - id: OxygenTankFilled
+        - id: ClothingOuterHardsuitRd
+        - id: ClothingMaskBreath
   - type: AccessReader
     access: [ [ "ResearchDirector" ] ]
 
@@ -189,10 +194,12 @@
   parent: SuitStorageBase
   suffix: Head of Security
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:NestedSelector
-        tableId: FillHeadOfSecurityHardsuit
+  - type: StorageFill
+    contents:
+        - id: OxygenTankFilled
+        - id: JetpackSecurityFilled
+        - id: ClothingOuterHardsuitSecurityRed
+        - id: ClothingMaskGasSwat
   - type: AccessReader
     access: [["HeadOfSecurity"]]
 
@@ -216,10 +223,11 @@
   parent: SuitStorageBase
   suffix: Captain
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:NestedSelector
-        tableId: FillCaptainHardsuit
+  - type: StorageFill
+    contents:
+        - id: OxygenTankFilled
+        - id: ClothingOuterHardsuitCap
+        - id: ClothingMaskGasCaptain
   - type: AccessReader
     access: [["Captain"]]
 
@@ -229,10 +237,12 @@
   parent: SuitStorageBase
   suffix: Salvage
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:NestedSelector
-        tableId: FillSalvageSpecialistHardsuitSpatio
+  - type: StorageFill
+    contents:
+      - id: OxygenTankFilled
+      - id: ClothingShoesBootsMag
+      - id: ClothingOuterHardsuitSpatio
+      - id: ClothingMaskGasExplorer
   - type: AccessReader
     access: [["Salvage"]]
 

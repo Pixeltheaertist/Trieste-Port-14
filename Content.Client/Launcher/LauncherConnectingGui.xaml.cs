@@ -28,16 +28,14 @@ namespace Content.Client.Launcher
         private readonly IRobustRandom _random;
         private readonly IPrototypeManager _prototype;
         private readonly IConfigurationManager _cfg;
-        private readonly IClipboardManager _clipboard;
 
         public LauncherConnectingGui(LauncherConnecting state, IRobustRandom random,
-            IPrototypeManager prototype, IConfigurationManager config, IClipboardManager clipboard)
+            IPrototypeManager prototype, IConfigurationManager config)
         {
             _state = state;
             _random = random;
             _prototype = prototype;
             _cfg = config;
-            _clipboard = clipboard;
 
             RobustXamlLoader.Load(this);
 
@@ -46,11 +44,8 @@ namespace Content.Client.Launcher
             Stylesheet = IoCManager.Resolve<IStylesheetManager>().SheetSpace;
 
             ChangeLoginTip();
-            RetryButton.OnPressed += ReconnectButtonPressed;
             ReconnectButton.OnPressed += ReconnectButtonPressed;
-
-            CopyButton.OnPressed += CopyButtonPressed;
-            CopyButtonDisconnected.OnPressed += CopyButtonDisconnectedPressed;
+            RetryButton.OnPressed += ReconnectButtonPressed;
             ExitButton.OnPressed += _ => _state.Exit();
 
             var addr = state.Address;
@@ -81,24 +76,6 @@ namespace Content.Client.Launcher
             }
 
             _state.RetryConnect();
-        }
-
-        private void CopyButtonPressed(BaseButton.ButtonEventArgs args)
-        {
-            CopyText(ConnectFailReason.Text);
-        }
-
-        private void CopyButtonDisconnectedPressed(BaseButton.ButtonEventArgs args)
-        {
-            CopyText(DisconnectReason.Text);
-        }
-
-        private void CopyText(string? text)
-        {
-            if (!string.IsNullOrEmpty(text))
-            {
-                _clipboard.SetText(text);
-            }
         }
 
         private void ConnectFailReasonChanged(string? reason)

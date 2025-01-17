@@ -31,19 +31,19 @@ public sealed class CharacterInfoSystem : EntitySystem
         var entity = args.SenderSession.AttachedEntity.Value;
 
         var objectives = new Dictionary<string, List<ObjectiveInfo>>();
-        var jobTitle = Loc.GetString("character-info-no-profession");
+        var jobTitle = "No Profession";
         string? briefing = null;
         if (_minds.TryGetMind(entity, out var mindId, out var mind))
         {
             // Get objectives
-            foreach (var objective in mind.Objectives)
+            foreach (var objective in mind.AllObjectives)
             {
                 var info = _objectives.GetInfo(objective, mindId, mind);
                 if (info == null)
                     continue;
 
                 // group objectives by their issuer
-                var issuer = Comp<ObjectiveComponent>(objective).LocIssuer;
+                var issuer = Comp<ObjectiveComponent>(objective).Issuer;
                 if (!objectives.ContainsKey(issuer))
                     objectives[issuer] = new List<ObjectiveInfo>();
                 objectives[issuer].Add(info.Value);

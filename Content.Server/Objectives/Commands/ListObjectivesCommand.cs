@@ -33,7 +33,7 @@ namespace Content.Server.Objectives.Commands
             }
 
             shell.WriteLine($"Objectives for player {player.UserId}:");
-            var objectives = mind.Objectives.ToList();
+            var objectives = mind.AllObjectives.ToList();
             if (objectives.Count == 0)
             {
                 shell.WriteLine("None.");

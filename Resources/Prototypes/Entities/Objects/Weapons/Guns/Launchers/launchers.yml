@@ -22,9 +22,9 @@
 
 - type: entity
   name: china lake
-  parent: [BaseWeaponLauncher, BaseGunWieldable, BaseSyndicateContraband]
+  parent: [BaseWeaponLauncher, BaseGunWieldable]
   id: WeaponLauncherChinaLake
-  description: PLOOP.
+  description: PLOOP
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Launchers/china_lake.rsi
@@ -55,7 +55,7 @@
 
 - type: entity
   name: RPG-7
-  parent: [ BaseWeaponLauncher, BaseMajorContraband ]
+  parent: BaseWeaponLauncher
   id: WeaponLauncherRocket
   description: A modified ancient rocket-propelled grenade launcher.
   components:
@@ -169,7 +169,6 @@
     - type: ItemToggle
       onUse: false
     - type: PowerCellDraw
-    - type: ToggleCellDraw
     - type: Sprite
       sprite: Objects/Weapons/Guns/Launchers/tether_gun.rsi
       layers:
@@ -217,7 +216,6 @@
     - type: ItemToggle
       onUse: false
     - type: PowerCellDraw
-    - type: ToggleCellDraw
     - type: Sprite
       sprite: Objects/Weapons/Guns/Launchers/force_gun.rsi
       layers:
@@ -263,6 +261,7 @@
         - state: base
         - state: base-unshaded
           map: [ "unshaded" ]
+          shader: unshaded
           visible: true
     - type: UseDelay
       delay: 1.5
@@ -273,7 +272,6 @@
           unshaded:
             True: { state: base-unshaded }
             False: { state: base-unshaded-off }
-    - type: PacifismAllowedGun
 
 # Admeme
 - type: entity
@@ -362,7 +360,7 @@
   parent: WeaponLauncherMultipleRocket
   id: WeaponLauncherAdmemeMeteorLarge
   suffix: Admeme
-  description: It fires large meteors.
+  description: It fires large meteors
   components:
   - type: BallisticAmmoProvider
     whitelist:

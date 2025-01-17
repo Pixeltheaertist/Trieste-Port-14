@@ -14,7 +14,6 @@ using Robust.Shared.Audio.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Plankton;
 using System.Linq;
-using Content.Shared.Paper;
 
 namespace Content.Server.Plankton;
 
@@ -155,7 +154,7 @@ public sealed class PlanktonScannerSystem : EntitySystem
             _metaSystem.SetEntityName(report, Loc.GetString("plankton-analysis-report-title", ("id", $"Plankton Scan Report")));
             _audioSystem.PlayPvs(scanner.PrintSound, uid);
 
-   //         _paper.SetContent(report, message);
+            _paper.SetContent(report, message);
         }
     }
 

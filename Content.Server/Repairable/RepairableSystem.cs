@@ -46,9 +46,6 @@ namespace Content.Server.Repairable
                 ("target", uid),
                 ("tool", args.Used!));
             _popup.PopupEntity(str, uid, args.User);
-
-            var ev = new RepairedEvent((uid, component), args.User);
-            RaiseLocalEvent(uid, ref ev);
         }
 
         public async void Repair(EntityUid uid, RepairableComponent component, InteractUsingEvent args)
@@ -75,13 +72,4 @@ namespace Content.Server.Repairable
             args.Handled = _toolSystem.UseTool(args.Used, args.User, uid, delay, component.QualityNeeded, new RepairFinishedEvent(), component.FuelCost);
         }
     }
-
-    /// <summary>
-    /// Event raised on an entity when its successfully repaired.
-    /// </summary>
-    /// <param name="Ent"></param>
-    /// <param name="User"></param>
-    [ByRefEvent]
-    public readonly record struct RepairedEvent(Entity<RepairableComponent> Ent, EntityUid User);
-
 }

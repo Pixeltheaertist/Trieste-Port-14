@@ -1,9 +1,7 @@
-using System.Globalization;
 using Content.Shared.Access.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Hands.Components;
-using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
 using Content.Shared.PDA;
 using Content.Shared.Roles;
@@ -22,45 +20,12 @@ public abstract class SharedIdCardSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-
         SubscribeLocalEvent<IdCardComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<TryGetIdentityShortInfoEvent>(OnTryGetIdentityShortInfo);
-        SubscribeLocalEvent<EntityRenamedEvent>(OnRename);
-    }
-
-    private void OnRename(ref EntityRenamedEvent ev)
-    {
-        // When a player gets renamed their id card is renamed as well to match.
-        // Unfortunately since TryFindIdCard will succeed if the entity is also a card this means that the card will
-        // keep renaming itself unless we return early.
-        // We also do not include the PDA itself being renamed, as that triggers the same event (e.g. for chameleon PDAs).
-        if (HasComp<IdCardComponent>(ev.Uid) || HasComp<PdaComponent>(ev.Uid))
-            return;
-
-        if (TryFindIdCard(ev.Uid, out var idCard))
-            TryChangeFullName(idCard, ev.NewName, idCard);
     }
 
     private void OnMapInit(EntityUid uid, IdCardComponent id, MapInitEvent args)
     {
         UpdateEntityName(uid, id);
-    }
-
-    private void OnTryGetIdentityShortInfo(TryGetIdentityShortInfoEvent ev)
-    {
-        if (ev.Handled)
-        {
-            return;
-        }
-
-        string? title = null;
-        if (TryFindIdCard(ev.ForActor, out var idCard) && !(ev.RequestForAccessLogging && idCard.Comp.BypassLogging))
-        {
-            title = ExtractFullTitle(idCard);
-        }
-
-        ev.Title = title;
-        ev.Handled = true;
     }
 
     /// <summary>
@@ -117,7 +82,6 @@ public abstract class SharedIdCardSystem : EntitySystem
     /// </summary>
     /// <remarks>
     /// If provided with a player's EntityUid to the player parameter, adds the change to the admin logs.
-    /// Actually works with the LocalizedJobTitle DataField and not with JobTitle.
     /// </remarks>
     public bool TryChangeJobTitle(EntityUid uid, string? jobTitle, IdCardComponent? id = null, EntityUid? player = null)
     {
@@ -136,9 +100,9 @@ public abstract class SharedIdCardSystem : EntitySystem
             jobTitle = null;
         }
 
-        if (id.LocalizedJobTitle == jobTitle)
+        if (id.JobTitle == jobTitle)
             return true;
-        id.LocalizedJobTitle = jobTitle;
+        id.JobTitle = jobTitle;
         Dirty(uid, id);
         UpdateEntityName(uid, id);
 
@@ -150,7 +114,7 @@ public abstract class SharedIdCardSystem : EntitySystem
         return true;
     }
 
-    public bool TryChangeJobIcon(EntityUid uid, JobIconPrototype jobIcon, IdCardComponent? id = null, EntityUid? player = null)
+    public bool TryChangeJobIcon(EntityUid uid, StatusIconPrototype jobIcon, IdCardComponent? id = null, EntityUid? player = null)
     {
         if (!Resolve(uid, ref id))
         {
@@ -183,7 +147,7 @@ public abstract class SharedIdCardSystem : EntitySystem
         foreach (var department in _prototypeManager.EnumeratePrototypes<DepartmentPrototype>())
         {
             if (department.Roles.Contains(job.ID))
-                id.JobDepartments.Add(department.ID);
+                id.JobDepartments.Add("department-" + department.ID);
         }
 
         Dirty(uid, id);
@@ -240,7 +204,7 @@ public abstract class SharedIdCardSystem : EntitySystem
         if (!Resolve(uid, ref id))
             return;
 
-        var jobSuffix = string.IsNullOrWhiteSpace(id.LocalizedJobTitle) ? string.Empty : $" ({id.LocalizedJobTitle})";
+        var jobSuffix = string.IsNullOrWhiteSpace(id.JobTitle) ? string.Empty : $" ({id.JobTitle})";
 
         var val = string.IsNullOrWhiteSpace(id.FullName)
             ? Loc.GetString(id.NameLocId,
@@ -249,11 +213,5 @@ public abstract class SharedIdCardSystem : EntitySystem
                 ("fullName", id.FullName),
                 ("jobSuffix", jobSuffix));
         _metaSystem.SetEntityName(uid, val);
-    }
-
-    private static string ExtractFullTitle(IdCardComponent idCardComponent)
-    {
-        return $"{idCardComponent.FullName} ({CultureInfo.CurrentCulture.TextInfo.ToTitleCase(idCardComponent.LocalizedJobTitle ?? string.Empty)})"
-            .Trim();
     }
 }

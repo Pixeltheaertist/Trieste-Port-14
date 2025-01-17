@@ -5,12 +5,8 @@
   minLimit: 0
   maxLimit: 3
   loadouts:
-  - FlowerWreath
-  - Hairflower
-  - Headphones
   - PlushieLizard
   - PlushieSpaceLizard
-  - ThreeCandles
   - Lighter
   - CigPackGreen
   - CigPackRed
@@ -22,31 +18,13 @@
   - ClothingNeckAromanticPin
   - ClothingNeckAsexualPin
   - ClothingNeckBisexualPin
-  - ClothingNeckGayPin
   - ClothingNeckIntersexPin
   - ClothingNeckLesbianPin
   - ClothingNeckNonBinaryPin
   - ClothingNeckPansexualPin
-  - ClothingNeckOmnisexualPin
   - ClothingNeckTransPin
   - ClothingNeckAutismPin
   - ClothingNeckGoldAutismPin
-  - TowelColorBlack
-  - TowelColorDarkBlue
-  - TowelColorDarkGreen
-  - TowelColorGold
-  - TowelColorGray
-  - TowelColorGreen
-  - TowelColorLightBlue
-  - TowelColorLightBrown
-  - TowelColorMaroon
-  - TowelColorMime
-  - TowelColorOrange
-  - TowelColorPurple
-  - TowelColorRed
-  - TowelColorSilver
-  - TowelColorWhite
-  - TowelColorYellow
 
 - type: loadoutGroup
   id: Glasses
@@ -73,23 +51,7 @@
   loadouts:
   - EmergencyNitrogen
   - EmergencyOxygen
-  - LoadoutSpeciesVoxNitrogen
-
-- type: loadoutGroup
-  id: GroupEVATank
-  name: loadout-group-EVA-tank
-  hidden: true
-  loadouts:
   - LoadoutSpeciesEVANitrogen
-  - LoadoutSpeciesEVAOxygen
-
-- type: loadoutGroup
-  id: GroupPocketTankDouble
-  name: loadout-group-pocket-tank-double
-  hidden: true
-  loadouts:
-  - LoadoutSpeciesPocketDoubleNitrogen
-  - LoadoutSpeciesPocketDoubleOxygen
 
 # Command
 - type: loadoutGroup
@@ -202,13 +164,6 @@
   - CommonBackpack
   - CommonSatchel
   - CommonDuffel
-
-- type: loadoutGroup
-  id: PassengerNeck
-  name: loadout-group-passenger-neck
-  minLimit: 0
-  loadouts:
-  - Mantle
 
 - type: loadoutGroup
   id: PassengerOuterClothing
@@ -429,16 +384,13 @@
   minLimit: 0
   loadouts:
   - JesterHat
-  - JesterAltHat
 
 - type: loadoutGroup
   id: ClownJumpsuit
   name: loadout-group-clown-jumpsuit
   loadouts:
   - ClownSuit
-  - ClownSkirt
   - JesterSuit
-  - JesterAltSuit
 
 - type: loadoutGroup
   id: ClownBackpack
@@ -471,7 +423,7 @@
   loadouts:
   - EmergencyNitrogenClown
   - EmergencyOxygenClown
-  - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesEVANitrogen
 
 - type: loadoutGroup
   id: MimeHead
@@ -511,23 +463,6 @@
   minLimit: 0
   loadouts:
   - MimeWintercoat
-
-- type: loadoutGroup
-  id: MimeBelt
-  name: loadout-group-mime-belt
-  loadouts:
-  - MimeSuspendersRed
-  - MimeSuspendersBlack
-
-- type: loadoutGroup
-  id: SurvivalMime
-  name: loadout-group-survival-mime
-  minLimit: 2
-  hidden: true
-  loadouts:
-  - EmergencyNitrogenMime
-  - EmergencyOxygenMime
-  - LoadoutSpeciesVoxNitrogen
 
 - type: loadoutGroup
   id: MusicianJumpsuit
@@ -811,7 +746,7 @@
   loadouts:
   - EmergencyNitrogenExtended
   - EmergencyOxygenExtended
-  - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesEVANitrogen
 
 # Science
 - type: loadoutGroup
@@ -994,7 +929,6 @@
   - SecurityHelmet
   - SecurityBeret
   - SecurityHat
-  - TrooperHat
 
 - type: loadoutGroup
   id: SecurityJumpsuit
@@ -1006,7 +940,6 @@
   - SecurityJumpskirtGrey
   - SeniorOfficerJumpsuit
   - SeniorOfficerJumpskirt
-  - TrooperUniform
 
 - type: loadoutGroup
   id: SecurityBackpack
@@ -1035,6 +968,7 @@
   id: SecurityShoes
   name: loadout-group-security-shoes
   loadouts:
+  - CombatBoots
   - JackBoots
   - SecurityWinterBoots
 
@@ -1072,10 +1006,10 @@
 - type: loadoutGroup
   id: DetectiveOuterClothing
   name: loadout-group-detective-outerclothing
+  minLimit: 0
   loadouts:
   - DetectiveArmorVest
   - DetectiveCoat
-  - DetectiveCoatGrey
 
 - type: loadoutGroup
   id: SecurityCadetJumpsuit
@@ -1092,14 +1026,7 @@
   loadouts:
   - EmergencyNitrogenSecurity
   - EmergencyOxygenSecurity
-  - LoadoutSpeciesVoxNitrogen
-
-- type: loadoutGroup
-  id: SecurityStar
-  name: loadout-group-security-star
-  minLimit: 0
-  loadouts:
-  - SecStar
+  - LoadoutSpeciesEVANitrogen
 
 # Medical
 - type: loadoutGroup
@@ -1281,7 +1208,7 @@
   loadouts:
   - EmergencyNitrogenMedical
   - EmergencyOxygenMedical
-  - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesEVANitrogen
 
 # Wildcards
 - type: loadoutGroup
@@ -1290,13 +1217,6 @@
   loadouts:
   - ReporterJumpsuit
   - JournalistJumpsuit
-
-- type: loadoutGroup
-  id: PsychologistJumpsuit
-  name: loadout-group-psychologist-jumpsuit
-  loadouts:
-  - PsychologistJumpsuit
-  - PsychologistJumpskirt
 
 - type: loadoutGroup
   id: BoxerJumpsuit
@@ -1323,7 +1243,7 @@
   loadouts:
   - EmergencyNitrogenSyndicate
   - EmergencyOxygenSyndicate
-  - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesEVANitrogen
 
 - type: loadoutGroup
   id: GroupSpeciesBreathTool

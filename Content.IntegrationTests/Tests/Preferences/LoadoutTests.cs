@@ -3,6 +3,7 @@ using Content.Server.Station.Systems;
 using Content.Shared.Inventory;
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
+using Content.Shared.Roles.Jobs;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 
@@ -17,6 +18,10 @@ public sealed class LoadoutTests
   id: PlayTimeLoadoutTester
 
 - type: loadout
+  id: TestJumpsuit
+  equipment: TestJumpsuit
+
+- type: startingGear
   id: TestJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorGrey
@@ -67,7 +72,10 @@ public sealed class LoadoutTests
 
             profile.SetLoadout(new RoleLoadout("LoadoutTester"));
 
-            var tester = stationSystem.SpawnPlayerMob(testMap.GridCoords, job: "LoadoutTester", profile, station: null);
+            var tester = stationSystem.SpawnPlayerMob(testMap.GridCoords, job: new JobComponent()
+            {
+                Prototype = "LoadoutTester"
+            }, profile, station: null);
 
             var slotQuery = inventorySystem.GetSlotEnumerator(tester);
             var checkedCount = 0;

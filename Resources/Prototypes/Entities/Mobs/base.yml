@@ -41,16 +41,11 @@
   - type: CameraRecoil
   - type: MindContainer
   - type: MovementSpeedModifier
+  - type: Polymorphable
+  - type: StatusIcon
   - type: RequireProjectileTarget
     active: False
   - type: FallSystem
-
-- type: entity
-  save: false
-  id: MobPolymorphable
-  abstract: true
-  components:
-  - type: Polymorphable
 
 # Used for mobs that have health and can take damage.
 - type: entity
@@ -105,8 +100,6 @@
     - Piercing
     - Heat
     - Shock
-    - Cold
-    - Caustic
   - type: DamageOnHighSpeedImpact
     damage:
       types:

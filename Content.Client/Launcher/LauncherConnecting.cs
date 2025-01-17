@@ -19,7 +19,6 @@ namespace Content.Client.Launcher
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly IClipboardManager _clipboard = default!;
 
         private LauncherConnectingGui? _control;
 
@@ -59,7 +58,7 @@ namespace Content.Client.Launcher
 
         protected override void Startup()
         {
-            _control = new LauncherConnectingGui(this, _random, _prototypeManager, _cfg, _clipboard);
+            _control = new LauncherConnectingGui(this, _random, _prototypeManager, _cfg);
 
             _userInterfaceManager.StateRoot.AddChild(_control);
 

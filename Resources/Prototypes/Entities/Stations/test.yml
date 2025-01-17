@@ -6,6 +6,6 @@
     - BaseStationJobsSpawning
     - BaseStationRecords
     - BaseStationAlertLevels
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
     - type: Transform

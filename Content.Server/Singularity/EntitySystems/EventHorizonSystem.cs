@@ -11,9 +11,7 @@ using Content.Shared.Tag;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
-using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 
 namespace Content.Server.Singularity.EntitySystems;
@@ -30,21 +28,16 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
     [Dependency] private readonly IMapManager _mapMan = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
     #endregion Dependencies
-
-    private EntityQuery<PhysicsComponent> _physicsQuery;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        _physicsQuery = GetEntityQuery<PhysicsComponent>();
-
         SubscribeLocalEvent<MapGridComponent, EventHorizonAttemptConsumeEntityEvent>(PreventConsume);
+        SubscribeLocalEvent<GhostComponent, EventHorizonAttemptConsumeEntityEvent>(PreventConsume);
         SubscribeLocalEvent<StationDataComponent, EventHorizonAttemptConsumeEntityEvent>(PreventConsume);
         SubscribeLocalEvent<EventHorizonComponent, MapInitEvent>(OnHorizonMapInit);
         SubscribeLocalEvent<EventHorizonComponent, StartCollideEvent>(OnStartCollide);
@@ -102,7 +95,7 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
             return;
 
         // Handle singularities some admin smited into a locker.
-        if (_containerSystem.TryGetContainingContainer((uid, xform, null), out var container)
+        if (_containerSystem.TryGetContainingContainer(uid, out var container, transform: xform)
         && !AttemptConsumeEntity(uid, container.Owner, eventHorizon))
         {
             // Locker is indestructible. Consume everything else in the locker instead of magically teleporting out.
@@ -166,19 +159,24 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
     /// Attempts to consume all entities within a given distance of an entity;
     /// Excludes the center entity.
     /// </summary>
-    public void ConsumeEntitiesInRange(EntityUid uid, float range, PhysicsComponent? body = null, EventHorizonComponent? eventHorizon = null)
+    public void ConsumeEntitiesInRange(EntityUid uid, float range, TransformComponent? xform = null, EventHorizonComponent? eventHorizon = null)
     {
-        if (!Resolve(uid, ref body, ref eventHorizon))
+        if (!Resolve(uid, ref xform, ref eventHorizon))
             return;
 
-        // TODO: Should be sundries + static-sundries but apparently this is load-bearing for SpawnAndDeleteAllEntitiesInTheSameSpot so go figure.
-        foreach (var entity in _lookup.GetEntitiesInRange(uid, range, flags: LookupFlags.Uncontained))
+        var range2 = range * range;
+        var xformQuery = EntityManager.GetEntityQuery<TransformComponent>();
+        var epicenter = _xformSystem.GetWorldPosition(xform, xformQuery);
+        foreach (var entity in _lookup.GetEntitiesInRange(_xformSystem.GetMapCoordinates(uid, xform), range, flags: LookupFlags.Uncontained))
         {
             if (entity == uid)
                 continue;
+            if (!xformQuery.TryGetComponent(entity, out var entityXform))
+                continue;
 
-            // See TODO above
-            if (_physicsQuery.TryComp(entity, out var otherBody) && !_physics.IsHardCollidable((uid, null, body), (entity, null, otherBody)))
+            // GetEntitiesInRange gets everything in a _square_ centered on the given position, but we are a _circle_. If we don't have this check and the station is rotated it is possible for the singularity to reach _outside of the containment field_ and eat the emitters.
+            var displacement = _xformSystem.GetWorldPosition(entityXform, xformQuery) - epicenter;
+            if (displacement.LengthSquared() > range2)
                 continue;
 
             AttemptConsumeEntity(uid, entity, eventHorizon);
@@ -216,7 +214,7 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
                 if (_containerSystem.Insert(entity, target_container))
                     break;
 
-                _containerSystem.TryGetContainingContainer((target_container.Owner, null, null), out target_container);
+                _containerSystem.TryGetContainingContainer(target_container.Owner, out target_container);
             }
 
             // If we couldn't or there was no container to insert into just dump them to the map/grid.
@@ -255,7 +253,7 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
 
         var ev = new TilesConsumedByEventHorizonEvent(tiles, gridId, grid, hungry, eventHorizon);
         RaiseLocalEvent(hungry, ref ev);
-        _mapSystem.SetTiles(gridId, grid, tiles);
+        grid.SetTiles(tiles);
     }
 
     /// <summary>
@@ -308,7 +306,7 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
         foreach (var grid in grids)
         {
             // TODO: Remover grid.Owner when this iterator returns entityuids as well.
-            AttemptConsumeTiles(uid, _mapSystem.GetTilesIntersecting(grid.Owner, grid.Comp, circle), grid, grid, eventHorizon);
+            AttemptConsumeTiles(uid, grid.Comp.GetTilesIntersecting(circle), grid, grid, eventHorizon);
         }
     }
 
@@ -320,11 +318,11 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
     /// </summary>
     public void ConsumeEverythingInRange(EntityUid uid, float range, TransformComponent? xform = null, EventHorizonComponent? eventHorizon = null)
     {
-        if (!Resolve(uid, ref eventHorizon))
+        if (!Resolve(uid, ref xform, ref eventHorizon))
             return;
 
         if (eventHorizon.ConsumeEntities)
-            ConsumeEntitiesInRange(uid, range, null, eventHorizon);
+            ConsumeEntitiesInRange(uid, range, xform, eventHorizon);
         if (eventHorizon.ConsumeTiles)
             ConsumeTilesInRange(uid, range, xform, eventHorizon);
     }
@@ -472,7 +470,7 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
     {
         var drop_container = args.Container;
         if (drop_container is null)
-            _containerSystem.TryGetContainingContainer((uid, null, null), out drop_container);
+            _containerSystem.TryGetContainingContainer(uid, out drop_container);
 
         foreach (var container in comp.GetAllContainers())
         {

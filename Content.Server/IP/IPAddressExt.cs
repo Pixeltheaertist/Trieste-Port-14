@@ -61,12 +61,6 @@ namespace Content.Server.IP
 
         public static bool IsInSubnet(this System.Net.IPAddress address, System.Net.IPAddress maskAddress, int maskLength)
         {
-            if (maskAddress.AddressFamily != address.AddressFamily)
-            {
-                // We got something like an IPV4-Address for an IPv6-Mask. This is not valid.
-                return false;
-            }
-
             if (maskAddress.AddressFamily == AddressFamily.InterNetwork)
             {
                 // Convert the mask address to an unsigned integer.
@@ -95,7 +89,7 @@ namespace Content.Server.IP
 
                 if (maskAddressBits.Length != ipAddressBits.Length)
                 {
-                    return false;
+                    throw new ArgumentException("Length of IP Address and Subnet Mask do not match.");
                 }
 
                 // Compare the prefix bits.

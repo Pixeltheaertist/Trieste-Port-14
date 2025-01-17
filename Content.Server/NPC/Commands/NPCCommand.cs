@@ -16,7 +16,6 @@ public sealed class NPCCommand : IConsoleCommand
     {
         if (shell.Player is not { } playerSession)
         {
-            shell.WriteError(Loc.GetString("shell-cannot-run-command-from-server"));
             return;
         }
 

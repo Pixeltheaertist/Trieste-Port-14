@@ -77,17 +77,16 @@ public sealed class TraitorRuleTest
         await pair.SetAntagPreference(TraitorAntagRoleName, true);
 
         // Add the game rule
-        TraitorRuleComponent traitorRule = null;
+        var gameRuleEnt = ticker.AddGameRule(TraitorGameRuleProtoId);
+        Assert.That(entMan.TryGetComponent<TraitorRuleComponent>(gameRuleEnt, out var traitorRule));
+
+        // Ready up
+        ticker.ToggleReadyAll(true);
+        Assert.That(ticker.PlayerGameStatuses.Values.All(x => x == PlayerGameStatus.ReadyToPlay));
+
+        // Start the round
         await server.WaitPost(() =>
         {
-            var gameRuleEnt = ticker.AddGameRule(TraitorGameRuleProtoId);
-            Assert.That(entMan.TryGetComponent<TraitorRuleComponent>(gameRuleEnt, out traitorRule));
-
-            // Ready up
-            ticker.ToggleReadyAll(true);
-            Assert.That(ticker.PlayerGameStatuses.Values.All(x => x == PlayerGameStatus.ReadyToPlay));
-
-            // Start the round
             ticker.StartRound();
             // Force traitor mode to start (skip the delay)
             ticker.StartGameRule(gameRuleEnt);

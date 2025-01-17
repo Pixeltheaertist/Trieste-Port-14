@@ -28,6 +28,7 @@ guide-entry-chef = Chef
 guide-entry-medical = Medical
 guide-entry-medicaldoctor = Medical Doctor
 guide-entry-chemist = Chemist
+guide-entry-medicine = Medicine
 guide-entry-brute = Advanced Brute Medication
 guide-entry-botanicals = Botanicals
 guide-entry-cloning = Cloning
@@ -58,19 +59,16 @@ guide-entry-controls = Controls
 guide-entry-radio = Radio and Speech
 
 guide-entry-references = Tables & References
-guide-entry-chemicals = Chemicals
 guide-entry-drinks = Drinks
 guide-entry-foodrecipes = Food Recipes
-
+guide-entry-chemicals = Chemicals
 guide-entry-elements = Elements
-guide-entry-medicine = Medicine
 guide-entry-narcotics = Narcotics
 guide-entry-pyrotechnics = Pyrotechnic
 guide-entry-toxins = Toxins
 guide-entry-foods = Foods
 guide-entry-biological = Biological
-guide-entry-botanical = Botanical
-guide-entry-special = Special
+guide-entry-botanical = Botanicals
 guide-entry-others = Others
 
 guide-entry-antagonists = Antagonists
@@ -80,7 +78,6 @@ guide-entry-zombies = Zombies
 guide-entry-revolutionaries = Revolutionaries
 guide-entry-minor-antagonists = Minor Antagonists
 guide-entry-space-ninja = Space Ninja
-guide-entry-thieves = Thieves
 
 guide-entry-rules = Server Rules
 guide-entry-rules-core-only = Core Only Ruleset
@@ -131,8 +128,6 @@ guide-entry-rules-s7 = S7
 guide-entry-rules-s8 = S8
 guide-entry-rules-s9 = S9
 guide-entry-rules-s10 = S10
-guide-entry-rules-mrp-m0 = MRP Rules
-guide-entry-rules-m1 = M1
 guide-entry-rules-space-law = Space Law
 guide-entry-rules-sl-crime-list = Crime List
 guide-entry-rules-sl-controlled-substances = Controlled Substances

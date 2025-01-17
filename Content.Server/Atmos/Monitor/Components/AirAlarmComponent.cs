@@ -11,11 +11,13 @@ namespace Content.Server.Atmos.Monitor.Components;
 [RegisterComponent]
 public sealed partial class AirAlarmComponent : Component
 {
-    [DataField] public AirAlarmMode CurrentMode { get; set; } = AirAlarmMode.Filtering;
-    [DataField] public bool AutoMode { get; set; } = true;
+    [ViewVariables] public AirAlarmMode CurrentMode { get; set; } = AirAlarmMode.Filtering;
+    [ViewVariables] public bool AutoMode { get; set; } = true;
 
     // Remember to null this afterwards.
     [ViewVariables] public IAirAlarmModeUpdate? CurrentModeUpdater { get; set; }
+
+    [ViewVariables] public AirAlarmTab CurrentTab { get; set; }
 
     public readonly HashSet<string> KnownDevices = new();
     public readonly Dictionary<string, GasVentPumpData> VentData = new();

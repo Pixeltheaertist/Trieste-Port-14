@@ -5,7 +5,6 @@ using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.Nodes;
 using Content.Server.Power.Components;
 using Content.Shared.Atmos;
-using Content.Shared.Power;
 
 namespace Content.Server.Power.Generator;
 

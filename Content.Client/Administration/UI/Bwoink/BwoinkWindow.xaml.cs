@@ -30,11 +30,7 @@ namespace Content.Client.Administration.UI.Bwoink
                 }
             };
 
-            OnOpen += () =>
-            {
-                Bwoink.ChannelSelector.StopFiltering();
-                Bwoink.PopulateList();
-            };
+            OnOpen += () => Bwoink.PopulateList();
         }
     }
 }

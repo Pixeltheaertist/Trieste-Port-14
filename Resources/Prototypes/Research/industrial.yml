@@ -11,23 +11,10 @@
   cost: 7500
   recipeUnlocks:
   - MiningDrill
-  - MineralScannerEmpty
+  - BorgModuleMining
   - OreProcessorIndustrialMachineCircuitboard
+  - OreBagOfHolding
   - ClothingMaskWeldingGas
-
-- type: technology
-  id: SpaceScanning
-  name: research-technology-space-scanning
-  icon:
-    sprite: Objects/Tools/handheld_mass_scanner.rsi
-    state: icon
-  discipline: Industrial
-  tier: 1
-  cost: 5000
-  recipeUnlocks:
-  - RadarConsoleCircuitboard
-  - HandHeldMassScanner
-  - BorgModuleGPS
 
 - type: technology
   id: AdvancedPowercells
@@ -41,7 +28,6 @@
   recipeUnlocks:
   - PowerCellHigh
   - TurboItemRechargerCircuitboard
-  - SMESAdvancedMachineCircuitboard
 
 - type: technology
   id: MechanicalCompression
@@ -83,6 +69,7 @@
   - PortableGeneratorPacmanMachineCircuitboard
   - PortableGeneratorSuperPacmanMachineCircuitboard
   - PortableGeneratorJrPacmanMachineCircuitboard
+  - PowerComputerCircuitboard #the actual solar panel itself should be in here
   - SolarControlComputerCircuitboard
   - SolarTrackerElectronics
   - EmitterCircuitboard
@@ -119,7 +106,34 @@
   - RipleyPeripheralsElectronics
   - MechEquipmentGrabber
 
+- type: technology
+  id: Grappling
+  name: research-technology-grappling
+  icon:
+    sprite: Objects/Weapons/Guns/Launchers/grappling_gun.rsi
+    state: base
+  discipline: Industrial
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - WeaponGrapplingGun
+  - BorgModuleGrapplingGun
+
 # Tier 2
+
+- type: technology
+  id: SpaceScanning
+  name: research-technology-space-scanning
+  icon:
+    sprite: Objects/Tools/handheld_mass_scanner.rsi
+    state: icon
+  discipline: Industrial
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - RadarConsoleCircuitboard
+  - HandHeldMassScanner
+  - BorgModuleGPS
 
 - type: technology
   id: Shuttlecraft
@@ -149,8 +163,6 @@
   - HellfireFreezerMachineCircuitBoard
   - PortableScrubberMachineCircuitBoard
   - HolofanProjector
-  technologyPrerequisites:
-  - AtmosphericTech
 
 - type: technology
   id: AdvancedToolsTechnology
@@ -166,20 +178,7 @@
     - PowerDrill
     - JawsOfLife
     - BorgModuleAdvancedTool
-
-- type: technology
-  id: MassExcavation
-  name: research-technology-excavation
-  icon:
-    sprite: Objects/Tools/handdrilldiamond.rsi
-    state: handdrill
-  discipline: Industrial
-  tier: 2
-  cost: 12500
-  recipeUnlocks:
-    - OreBagOfHolding
-    - MiningDrillDiamond
-    - AdvancedMineralScannerEmpty
+    - BorgModuleRCD
 
 # Tier 3
 

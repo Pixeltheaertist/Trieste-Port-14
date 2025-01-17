@@ -9,12 +9,7 @@ namespace Content.Client.UserInterface.Controls
     {
         public float Progress;
 
-        private readonly ProgressColorSystem _progressColor;
-
-        public ProgressTextureRect()
-        {
-            _progressColor = IoCManager.Resolve<IEntityManager>().System<ProgressColorSystem>();
-        }
+        private readonly ProgressColorSystem _progressColor = IoCManager.Resolve<IEntityManager>().System<ProgressColorSystem>();
 
         protected override void Draw(DrawingHandleScreen handle)
         {

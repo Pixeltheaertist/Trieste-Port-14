@@ -29,10 +29,19 @@ public sealed class MindCommand : ToolshedCommand
     }
 
     [CommandImplementation("control")]
-    public EntityUid Control(IInvocationContext ctx, [PipedArgument] EntityUid target, ICommonSession player)
+    public EntityUid Control(
+            [CommandInvocationContext] IInvocationContext ctx,
+            [PipedArgument] EntityUid target,
+            [CommandArgument] ValueRef<ICommonSession> playerRef)
     {
         _mind ??= GetSys<SharedMindSystem>();
 
+        var player = playerRef.Evaluate(ctx);
+        if (player is null)
+        {
+            ctx.ReportError(new NotForServerConsoleError());
+            return target;
+        }
 
         if (!_mind.TryGetMind(player, out var mindId, out var mind))
         {

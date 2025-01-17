@@ -104,7 +104,7 @@
 - type: entity
   id: Vapor
   name: "vapor"
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: SolutionContainerManager
     solutions:
@@ -136,7 +136,7 @@
 - type: entity
   id: BigVapor
   parent: Vapor
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: Sprite
     sprite: Effects/chempuff.rsi

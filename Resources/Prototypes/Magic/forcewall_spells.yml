@@ -1,6 +1,6 @@
-- type: entity
+﻿- type: entity
   id: ActionForceWall
-  name: forcewall
+  name: Forcewall
   description: Creates a magical barrier.
   components:
   - type: InstantAction

@@ -5,7 +5,6 @@
   description: A little bit of nature contained in a pot.
   abstract: true
   components:
-  - type: SpriteFade
   - type: Transform
     noRot: true
   - type: InteractionOutline
@@ -25,18 +24,15 @@
     offset: "0.0,0.3"
     sprite: Structures/Furniture/potted_plants.rsi
     noRot: true
-  - type: Speech
-    speechVerb: Plant # for pais (In the secret stash)
+  - type: PottedPlantHide
   - type: SecretStash
-    tryInsertItemSound: /Audio/Effects/plant_rustle.ogg
-    tryRemoveItemSound: /Audio/Effects/plant_rustle.ogg
-    secretStashName: secret-stash-plant
+    secretPartName: secret-stash-part-plant
   - type: ContainerContainer
     containers:
       stash: !type:ContainerSlot {}
   - type: Pullable
   - type: Damageable
-    damageContainer: StructuralInorganic # The pot. Not the plant. Or is it plastic?
+    damageContainer: Inorganic # The pot. Not the plant. Or is it plastic?
   - type: Destructible
     thresholds:
     - trigger:

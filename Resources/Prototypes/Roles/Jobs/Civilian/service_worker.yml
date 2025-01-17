@@ -1,4 +1,4 @@
-- type: job
+﻿- type: job
   id: ServiceWorker
   name: job-name-serviceworker
   description: job-description-serviceworker
@@ -6,6 +6,7 @@
   startingGear: ServiceWorkerGear
   icon: "JobIconServiceWorker"
   supervisors: job-supervisors-service
+  canBeAntag: false
   access:
   - Service
   - Maintenance

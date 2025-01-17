@@ -18,15 +18,18 @@
     agentName: thief-round-end-agent-name
     definitions:
     - prefRoles: [ Thief ]
-      max: 3
-      playerRatio: 15
+      maxRange:
+        min: 1
+        max: 3
+      playerRatio: 1
       lateJoinAdditional: true
       allowNonHumans: true
       multiAntagSetting: NotExclusive
       startingGear: ThiefGear
       components:
       - type: Pacified
-      mindRoles:
-      - MindRoleThief
+      mindComponents:
+      - type: ThiefRole
+        prototype: Thief
       briefing:
         sound: "/Audio/Misc/thief_greeting.ogg"

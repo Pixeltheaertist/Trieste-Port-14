@@ -25,7 +25,7 @@
   - type: StaticPrice
     price: 0
   - type: StackPrice
-    price: 2.25
+    price: 1
   - type: PhysicalComposition
     materialComposition:
       Steel: 15

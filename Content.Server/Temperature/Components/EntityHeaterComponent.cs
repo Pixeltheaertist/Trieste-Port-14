@@ -1,6 +1,5 @@
 using Content.Server.Temperature.Systems;
 using Content.Shared.Temperature;
-using Robust.Shared.Audio;
 
 namespace Content.Server.Temperature.Components;
 
@@ -22,10 +21,4 @@ public sealed partial class EntityHeaterComponent : Component
     /// </summary>
     [DataField]
     public EntityHeaterSetting Setting = EntityHeaterSetting.Off;
-
-    /// <summary>
-    /// An optional sound that plays when the setting is changed.
-    /// </summary>
-    [DataField]
-    public SoundPathSpecifier? SettingSound;
 }

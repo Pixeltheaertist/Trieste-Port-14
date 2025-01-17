@@ -1,4 +1,4 @@
-- type: constructionGraph
+﻿- type: constructionGraph
   id: BlastDoor
   start: start
   graph:
@@ -47,7 +47,7 @@
           steps:
             - tag: DoorElectronics
               store: board
-              name: door electronics
+              name: Door Electronics
               icon:
                 sprite: "Objects/Misc/module.rsi"
                 state: "door_electronics"

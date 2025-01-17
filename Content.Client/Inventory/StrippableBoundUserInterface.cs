@@ -17,7 +17,6 @@ using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Strip.Components;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
-using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Input;
@@ -30,13 +29,10 @@ namespace Content.Client.Inventory
     [UsedImplicitly]
     public sealed class StrippableBoundUserInterface : BoundUserInterface
     {
-        [Dependency] private readonly IPlayerManager _player = default!;
         [Dependency] private readonly IUserInterfaceManager _ui = default!;
-
         private readonly ExamineSystem _examine;
         private readonly InventorySystem _inv;
         private readonly SharedCuffableSystem _cuffable;
-        private readonly StrippableSystem _strippable;
 
         [ViewVariables]
         private const int ButtonSeparation = 4;
@@ -45,7 +41,7 @@ namespace Content.Client.Inventory
         public const string HiddenPocketEntityId = "StrippingHiddenEntity";
 
         [ViewVariables]
-        private StrippingMenu? _strippingMenu;
+        private readonly StrippingMenu? _strippingMenu;
 
         [ViewVariables]
         private readonly EntityUid _virtualHiddenEntity;
@@ -55,32 +51,33 @@ namespace Content.Client.Inventory
             _examine = EntMan.System<ExamineSystem>();
             _inv = EntMan.System<InventorySystem>();
             _cuffable = EntMan.System<SharedCuffableSystem>();
-            _strippable = EntMan.System<StrippableSystem>();
 
+            // TODO update name when identity changes
+            var title = Loc.GetString("strippable-bound-user-interface-stripping-menu-title", ("ownerName", Identity.Name(Owner, EntMan)));
+            _strippingMenu = new StrippingMenu(title, this);
+            _strippingMenu.OnClose += Close;
+
+            // TODO use global entity
+            // BUIs are opened and closed while applying comp sates, so spawning entities here is probably not the best idea.
             _virtualHiddenEntity = EntMan.SpawnEntity(HiddenPocketEntityId, MapCoordinates.Nullspace);
         }
 
         protected override void Open()
         {
             base.Open();
-
-            _strippingMenu = this.CreateWindow<StrippingMenu>();
-            _strippingMenu.OnDirty += UpdateMenu;
-            _strippingMenu.Title = Loc.GetString("strippable-bound-user-interface-stripping-menu-title", ("ownerName", Identity.Name(Owner, EntMan)));
-
             _strippingMenu?.OpenCenteredLeft();
         }
 
         protected override void Dispose(bool disposing)
         {
+            base.Dispose(disposing);
+
+            EntMan.DeleteEntity(_virtualHiddenEntity);
+
             if (!disposing)
                 return;
 
-            if (_strippingMenu != null)
-                _strippingMenu.OnDirty -= UpdateMenu;
-
-            EntMan.DeleteEntity(_virtualHiddenEntity);
-            base.Dispose(disposing);
+            _strippingMenu?.Dispose();
         }
 
         public void DirtyMenu()
@@ -104,7 +101,7 @@ namespace Content.Client.Inventory
                 }
             }
 
-            if (EntMan.TryGetComponent<HandsComponent>(Owner, out var handsComp) && handsComp.CanBeStripped)
+            if (EntMan.TryGetComponent<HandsComponent>(Owner, out var handsComp))
             {
                 // good ol hands shit code. there is a GuiHands comparer that does the same thing... but these are hands
                 // and not gui hands... which are different...
@@ -142,7 +139,7 @@ namespace Content.Client.Inventory
                     StyleClasses = { StyleBase.ButtonOpenRight }
                 };
 
-                button.OnPressed += (_) => SendPredictedMessage(new StrippingEnsnareButtonPressed());
+                button.OnPressed += (_) => SendMessage(new StrippingEnsnareButtonPressed());
 
                 _strippingMenu.SnareContainer.AddChild(button);
             }
@@ -183,7 +180,7 @@ namespace Content.Client.Inventory
             // So for now: only stripping & examining
             if (ev.Function == EngineKeyFunctions.Use)
             {
-                SendPredictedMessage(new StrippingSlotButtonPressed(slot.SlotName, slot is HandButton));
+                SendMessage(new StrippingSlotButtonPressed(slot.SlotName, slot is HandButton));
                 return;
             }
 
@@ -191,15 +188,9 @@ namespace Content.Client.Inventory
                 return;
 
             if (ev.Function == ContentKeyFunctions.ExamineEntity)
-            {
                 _examine.DoExamine(slot.Entity.Value);
-                ev.Handle();
-            }
             else if (ev.Function == EngineKeyFunctions.UseSecondary)
-            {
                 _ui.GetUIController<VerbMenuUIController>().OpenVerbMenu(slot.Entity.Value);
-                ev.Handle();
-            }
         }
 
         private void AddInventoryButton(EntityUid invUid, string slotId, InventoryComponent inv)
@@ -210,8 +201,7 @@ namespace Content.Client.Inventory
             var entity = container.ContainedEntity;
 
             // If this is a full pocket, obscure the real entity
-            // this does not work for modified clients because they are still sent the real entity
-            if (entity != null && _strippable.IsStripHidden(slotDef, _player.LocalEntity))
+            if (entity != null && slotDef.StripHidden)
                 entity = _virtualHiddenEntity;
 
             var button = new SlotButton(new SlotData(slotDef, container));

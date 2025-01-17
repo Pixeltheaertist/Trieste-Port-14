@@ -184,7 +184,7 @@
 - # Spawned by the client-side circulator examine code to indicate the inlet/outlet direction.
   type: entity
   id: TegCirculatorArrow
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
     - type: Sprite
       sprite: Markers/teg_arrow.rsi

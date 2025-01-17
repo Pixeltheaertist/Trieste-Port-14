@@ -56,19 +56,18 @@
   metabolisms:
     Poison:
       effects:
-      - !type:Emote
-        emote: Yawn
-        showInChat: true
-        probability: 0.1
       - !type:MovespeedModifier
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
       - !type:GenericStatusEffect
-        key: Drowsiness
-        component: Drowsiness
-        time: 4
-        type: Add
+        conditions:
+        - !type:ReagentThreshold
+          reagent: ChloralHydrate
+          min: 10
+        key: ForcedSleep
+        component: ForcedSleeping
         refresh: false
+        type: Add
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
@@ -456,6 +455,8 @@
       effects:
       - !type:HealthChange
         conditions:
+        - !type:ReagentThreshold
+          min: 1
         - !type:OrganType
           type: Animal # Applying damage to the mobs with lower metabolism capabilities
         damage:
@@ -464,6 +465,8 @@
       - !type:ChemVomit
         probability: 0.04 #Scaled for time, not metabolismrate.
         conditions:
+          - !type:ReagentThreshold
+            min: 3
           - !type:OrganType
             type: Animal
 
@@ -593,8 +596,8 @@
       - !type:GenericStatusEffect
         key: Pacified
         component: Pacified
+        refresh: false
         type: Add
-        time: 4
 
 - type: reagent
   id: Honk

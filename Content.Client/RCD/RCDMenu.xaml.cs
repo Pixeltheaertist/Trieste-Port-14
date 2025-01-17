@@ -20,37 +20,31 @@ public sealed partial class RCDMenu : RadialMenu
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
 
-    private SharedPopupSystem _popup;
-    private SpriteSystem _sprites;
+    private readonly SpriteSystem _spriteSystem;
+    private readonly SharedPopupSystem _popup;
 
     public event Action<ProtoId<RCDPrototype>>? SendRCDSystemMessageAction;
 
     private EntityUid _owner;
 
-    public RCDMenu()
+    public RCDMenu(EntityUid owner, RCDMenuBoundUserInterface bui)
     {
         IoCManager.InjectDependencies(this);
         RobustXamlLoader.Load(this);
 
+        _spriteSystem = _entManager.System<SpriteSystem>();
         _popup = _entManager.System<SharedPopupSystem>();
-        _sprites = _entManager.System<SpriteSystem>();
 
-        OnChildAdded += AddRCDMenuButtonOnClickActions;
-    }
+        _owner = owner;
 
-    public void SetEntity(EntityUid uid)
-    {
-        _owner = uid;
-        Refresh();
-    }
-
-    public void Refresh()
-    {
         // Find the main radial container
         var main = FindControl<RadialContainer>("Main");
 
+        if (main == null)
+            return;
+
         // Populate secondary radial containers
-        if (!_entManager.TryGetComponent<RCDComponent>(_owner, out var rcd))
+        if (!_entManager.TryGetComponent<RCDComponent>(owner, out var rcd))
             return;
 
         foreach (var protoId in rcd.AvailablePrototypes)
@@ -62,10 +56,14 @@ public sealed partial class RCDMenu : RadialMenu
                 continue;
 
             var parent = FindControl<RadialContainer>(proto.Category);
+
+            if (parent == null)
+                continue;
+
             var tooltip = Loc.GetString(proto.SetName);
 
             if ((proto.Mode == RcdMode.ConstructTile || proto.Mode == RcdMode.ConstructObject) &&
-                proto.Prototype != null && _protoManager.TryIndex(proto.Prototype, out var entProto, logError: false))
+                proto.Prototype != null && _protoManager.TryIndex(proto.Prototype, out var entProto))
             {
                 tooltip = Loc.GetString(entProto.Name);
             }
@@ -86,7 +84,7 @@ public sealed partial class RCDMenu : RadialMenu
                 {
                     VerticalAlignment = VAlignment.Center,
                     HorizontalAlignment = HAlignment.Center,
-                    Texture = _sprites.Frame0(proto.Sprite),
+                    Texture = _spriteSystem.Frame0(proto.Sprite),
                     TextureScale = new Vector2(2f, 2f),
                 };
 
@@ -114,9 +112,11 @@ public sealed partial class RCDMenu : RadialMenu
 
         // Set up menu actions
         foreach (var child in Children)
-        {
             AddRCDMenuButtonOnClickActions(child);
-        }
+
+        OnChildAdded += AddRCDMenuButtonOnClickActions;
+
+        SendRCDSystemMessageAction += bui.SendRCDSystemMessage;
     }
 
     private static string OopsConcat(string a, string b)
@@ -153,7 +153,7 @@ public sealed partial class RCDMenu : RadialMenu
                         var name = Loc.GetString(proto.SetName);
 
                         if (proto.Prototype != null &&
-                            _protoManager.TryIndex(proto.Prototype, out var entProto, logError: false))
+                            _protoManager.TryIndex(proto.Prototype, out var entProto))
                             name = entProto.Name;
 
                         msg = Loc.GetString("rcd-component-change-build-mode", ("name", name));

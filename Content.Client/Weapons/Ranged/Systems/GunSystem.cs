@@ -77,7 +77,6 @@ public sealed partial class GunSystem : SharedGunSystem
         base.Initialize();
         UpdatesOutsidePrediction = true;
         SubscribeLocalEvent<AmmoCounterComponent, ItemStatusCollectMessage>(OnAmmoCounterCollect);
-        SubscribeLocalEvent<AmmoCounterComponent, UpdateClientAmmoEvent>(OnUpdateClientAmmo);
         SubscribeAllEvent<MuzzleFlashEvent>(OnMuzzleFlash);
 
         // Plays animated effects on the client.
@@ -87,16 +86,9 @@ public sealed partial class GunSystem : SharedGunSystem
         InitializeSpentAmmo();
     }
 
-    private void OnUpdateClientAmmo(EntityUid uid, AmmoCounterComponent ammoComp, ref UpdateClientAmmoEvent args)
-    {
-        UpdateAmmoCount(uid, ammoComp);
-    }
-
     private void OnMuzzleFlash(MuzzleFlashEvent args)
     {
-        var gunUid = GetEntity(args.Uid);
-
-        CreateEffect(gunUid, args, gunUid);
+        CreateEffect(GetEntity(args.Uid), args);
     }
 
     private void OnHitscan(HitscanEvent ev)
@@ -163,7 +155,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
         var useKey = gun.UseKey ? EngineKeyFunctions.Use : EngineKeyFunctions.UseSecondary;
 
-        if (_inputSystem.CmdStates.GetState(useKey) != BoundKeyState.Down && !gun.BurstActivated)
+        if (_inputSystem.CmdStates.GetState(useKey) != BoundKeyState.Down)
         {
             if (gun.ShotCounter != 0)
                 EntityManager.RaisePredictiveEvent(new RequestStopShootEvent { Gun = GetNetEntity(gunUid) });
@@ -279,7 +271,7 @@ public sealed partial class GunSystem : SharedGunSystem
         PopupSystem.PopupEntity(message, uid.Value, user.Value);
     }
 
-    protected override void CreateEffect(EntityUid gunUid, MuzzleFlashEvent message, EntityUid? tracked = null)
+    protected override void CreateEffect(EntityUid gunUid, MuzzleFlashEvent message, EntityUid? user = null)
     {
         if (!Timing.IsFirstTimePredicted)
             return;
@@ -288,7 +280,7 @@ public sealed partial class GunSystem : SharedGunSystem
         // TODO: Check to see why invalid entities are firing effects.
         if (gunUid == EntityUid.Invalid)
         {
-            Log.Debug($"Invalid Entity sent MuzzleFlashEvent (proto: {message.Prototype}, gun: {ToPrettyString(gunUid)})");
+            Log.Debug($"Invalid Entity sent MuzzleFlashEvent (proto: {message.Prototype}, user: {user})");
             return;
         }
 
@@ -312,10 +304,10 @@ public sealed partial class GunSystem : SharedGunSystem
         var ent = Spawn(message.Prototype, coordinates);
         TransformSystem.SetWorldRotationNoLerp(ent, message.Angle);
 
-        if (tracked != null)
+        if (user != null)
         {
             var track = EnsureComp<TrackUserComponent>(ent);
-            track.User = tracked;
+            track.User = user;
             track.Offset = Vector2.UnitX / 2f;
         }
 

@@ -1,4 +1,4 @@
-using Content.Server.Ghost;
+using Content.Server.GameTicking;
 using Content.Server.Morgue.Components;
 using Content.Server.Storage.Components;
 using Content.Server.Storage.EntitySystems;
@@ -13,6 +13,8 @@ using Content.Shared.Standing;
 using Content.Shared.Storage;
 using Content.Shared.Storage.Components;
 using Content.Shared.Verbs;
+using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
@@ -23,7 +25,7 @@ public sealed class CrematoriumSystem : EntitySystem
 {
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly GhostSystem _ghostSystem = default!;
+    [Dependency] private readonly GameTicker _ticker = default!;
     [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
@@ -36,7 +38,7 @@ public sealed class CrematoriumSystem : EntitySystem
 
         SubscribeLocalEvent<CrematoriumComponent, ExaminedEvent>(OnExamine);
         SubscribeLocalEvent<CrematoriumComponent, GetVerbsEvent<AlternativeVerb>>(AddCremateVerb);
-        SubscribeLocalEvent<CrematoriumComponent, SuicideByEnvironmentEvent>(OnSuicideByEnvironment);
+        SubscribeLocalEvent<CrematoriumComponent, SuicideEvent>(OnSuicide);
         SubscribeLocalEvent<ActiveCrematoriumComponent, StorageOpenAttemptEvent>(OnAttemptOpen);
     }
 
@@ -144,15 +146,16 @@ public sealed class CrematoriumSystem : EntitySystem
         _audio.PlayPvs(component.CremateFinishSound, uid);
     }
 
-    private void OnSuicideByEnvironment(EntityUid uid, CrematoriumComponent component, SuicideByEnvironmentEvent args)
+    private void OnSuicide(EntityUid uid, CrematoriumComponent component, SuicideEvent args)
     {
         if (args.Handled)
             return;
+        args.SetHandled(SuicideKind.Heat);
 
         var victim = args.Victim;
         if (TryComp(victim, out ActorComponent? actor) && _minds.TryGetMind(victim, out var mindId, out var mind))
         {
-            _ghostSystem.OnGhostAttempt(mindId, false, mind: mind);
+            _ticker.OnGhostAttempt(mindId, false, mind: mind);
 
             if (mind.OwnedEntity is { Valid: true } entity)
             {
@@ -176,7 +179,6 @@ public sealed class CrematoriumSystem : EntitySystem
         }
         _entityStorage.CloseStorage(uid);
         Cremate(uid, component);
-        args.Handled = true;
     }
 
     public override void Update(float frameTime)

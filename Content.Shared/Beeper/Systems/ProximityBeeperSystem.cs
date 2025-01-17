@@ -12,6 +12,8 @@ namespace Content.Shared.Beeper.Systems;
 /// </summary>
 public sealed class ProximityBeeperSystem : EntitySystem
 {
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly ProximityDetectionSystem _proximity = default!;
     [Dependency] private readonly BeeperSystem _beeper = default!;
 
     /// <inheritdoc/>
@@ -37,6 +39,6 @@ public sealed class ProximityBeeperSystem : EntitySystem
 
     private void OnNewProximityTarget(EntityUid owner, ProximityBeeperComponent proxBeeper, ref NewProximityTargetEvent args)
     {
-        _beeper.SetMute(owner, args.Target == null);
+        _beeper.SetMute(owner, args.Target != null);
     }
 }

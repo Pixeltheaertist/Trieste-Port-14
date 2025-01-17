@@ -1,6 +1,6 @@
 - type: entity
   id: AmbientSoundSourceFlies
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: AmbientSound
     volume: -5

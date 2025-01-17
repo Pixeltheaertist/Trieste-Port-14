@@ -67,11 +67,6 @@
           False: { visible: false }
   - type: PlantHolder
     drawWarnings: true
-    wateringSound:
-      path: /Audio/Effects/Fluids/slosh.ogg
-      params:
-        volume: -6
-        variation: 0.20
   - type: Destructible
     thresholds:
     - trigger:
@@ -96,7 +91,6 @@
   - type: GuideHelp
     guides:
     - Botany
-    - Chemicals
 
 - type: entity
   parent: hydroponicsTray

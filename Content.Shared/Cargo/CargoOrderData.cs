@@ -48,7 +48,7 @@ namespace Content.Shared.Cargo
         // public int RequesterId;
         [DataField]
         public string Reason { get; private set; }
-        public  bool Approved;
+        public  bool Approved => Approver is not null;
         [DataField]
         public string? Approver;
 
@@ -61,11 +61,6 @@ namespace Content.Shared.Cargo
             OrderQuantity = amount;
             Requester = requester;
             Reason = reason;
-        }
-
-        public void SetApproverData(string? approver)
-        {
-            Approver = approver;
         }
 
         public void SetApproverData(string? fullName, string? jobTitle)

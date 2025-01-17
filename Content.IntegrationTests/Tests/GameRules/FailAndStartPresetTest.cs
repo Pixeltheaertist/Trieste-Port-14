@@ -1,4 +1,4 @@
-#nullable enable
+﻿#nullable enable
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Presets;
 using Content.Shared.CCVar;
@@ -36,7 +36,7 @@ public sealed class FailAndStartPresetTest
 - type: entity
   id: TestRule
   parent: BaseGameRule
-  categories: [ GameRules ]
+  noSpawn: true
   components:
   - type: GameRule
     minPlayers: 0
@@ -45,7 +45,7 @@ public sealed class FailAndStartPresetTest
 - type: entity
   id: TestRuleTenPlayers
   parent: BaseGameRule
-  categories: [ GameRules ]
+  noSpawn: true
   components:
   - type: GameRule
     minPlayers: 10

@@ -25,13 +25,13 @@ traitor-death-match-end-round-description-entry = {$originalName}'s PDA, with {$
 
 # TraitorRole
 traitor-role-greeting =
-    You are an agent sent by {$corporation} on behalf of [color = darkred]The Syndicate.[/color]
+    You are an agent sent by {$corporation} on behalf of The Syndicate.
     Your objectives and codewords are listed in the character menu.
     Use the uplink loaded into your PDA to buy the tools you'll need for this mission.
     Death to Trieste!
 traitor-role-codewords =
-    The codewords are: [color = lightgray]
-    {$codewords}.[/color]
+    The codewords are:
+    {$codewords}.
     Codewords can be used in regular conversation to identify yourself discretely to other syndicate agents.
     Listen for them, and keep them secret.
 traitor-role-uplink-code =

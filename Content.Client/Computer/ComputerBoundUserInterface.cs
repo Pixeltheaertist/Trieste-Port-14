@@ -1,5 +1,4 @@
 using Robust.Client.GameObjects;
-using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.CustomControls;
 
 namespace Content.Client.Computer
@@ -11,6 +10,8 @@ namespace Content.Client.Computer
     [Virtual]
     public class ComputerBoundUserInterface<TWindow, TState> : ComputerBoundUserInterfaceBase where TWindow : BaseWindow, IComputerWindow<TState>, new() where TState : BoundUserInterfaceState
     {
+        [Dependency] private readonly IDynamicTypeFactory _dynamicTypeFactory = default!;
+
         [ViewVariables]
         private TWindow? _window;
 
@@ -18,8 +19,10 @@ namespace Content.Client.Computer
         {
             base.Open();
 
-            _window = this.CreateWindow<TWindow>();
+            _window = (TWindow) _dynamicTypeFactory.CreateInstance(typeof(TWindow));
             _window.SetupComputerWindow(this);
+            _window.OnClose += Close;
+            _window.OpenCentered();
         }
 
         // Alas, this constructor has to be copied to the subclass. :(
@@ -37,6 +40,16 @@ namespace Content.Client.Computer
             }
 
             _window.UpdateState((TState) state);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+
+            if (disposing)
+            {
+                _window?.Dispose();
+            }
         }
 
         protected override void ReceiveMessage(BoundUserInterfaceMessage message)

@@ -1,4 +1,3 @@
-using Content.Shared.Item.ItemToggle.Components;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
@@ -9,6 +8,7 @@ namespace Content.Shared.PowerCell;
 /// </summary>
 /// <remarks>
 /// With ActivatableUI it will activate and deactivate when the ui is opened and closed, drawing power inbetween.
+/// Requires <see cref="ItemToggleComponent"/> to work.
 /// </remarks>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
 public sealed partial class PowerCellDrawComponent : Component
@@ -30,8 +30,9 @@ public sealed partial class PowerCellDrawComponent : Component
     #endregion
 
     /// <summary>
-    /// Whether drawing is enabled.
+    /// Whether drawing is enabled, regardless of ItemToggle.
     /// Having no cell will still disable it.
+    /// Only use this if you really don't want it to use power for some time.
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool Enabled = true;

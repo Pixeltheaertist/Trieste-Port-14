@@ -30,9 +30,9 @@
           ejectOnInteract: true
           whitelist:
             components:
-            - SpraySafety
+            - FireExtinguisher
     - type: Damageable
-      damageContainer: StructuralInorganic
+      damageContainer: Inorganic
       damageModifierSet: Metallic
     - type: Destructible
       thresholds:

@@ -28,7 +28,7 @@
 
 #Syndicate EVA Helmet
 - type: entity
-  parent: [ ClothingHeadEVAHelmetBase, BaseSyndicateContraband ]
+  parent: ClothingHeadEVAHelmetBase
   id: ClothingHeadHelmetSyndicate
   name: syndicate EVA helmet
   description: A simple, stylish EVA helmet. Designed for maximum humble space-badassery.
@@ -62,8 +62,7 @@
   - type: Clothing
     sprite: Clothing/Head/Helmets/paramedhelm.rsi
   - type: TemperatureProtection
-    heatingCoefficient: 0.1
-    coolingCoefficient: 0.1
+    coefficient: 0.1
   - type: Armor
     modifiers:
       coefficients:
@@ -75,7 +74,7 @@
   parent: ClothingHeadEVAHelmetBase
   id: ClothingHeadHelmetAncient
   name: NTSRA void helmet
-  description: An ancient space helmet, designed by the NTSRA branch of CentComm.
+  description: An ancient space helmet, designed by the NTSRA branch of CentCom.
   components:
   - type: Sprite
     sprite: Clothing/Head/Helmets/ancientvoidsuit.rsi

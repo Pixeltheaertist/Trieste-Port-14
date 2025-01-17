@@ -5,12 +5,6 @@
     count: 3
 
 - type: localizedDataset
-  id: BruiseOMatGoodbyes
-  values:
-    prefix: thankyou-bruiseomat-
-    count: 28
-
-- type: localizedDataset
   id: ChangGoodbyes
   values:
     prefix: thankyou-chang-
@@ -38,12 +32,6 @@
   id: RobustSoftdrinksGoodbyes
   values:
     prefix: thankyou-cola-
-    count: 4
-
-- type: localizedDataset
-  id: DrGibbGoodbyes
-  values:
-    prefix: thankyou-gibb-
     count: 4
 
 - type: localizedDataset
@@ -111,9 +99,3 @@
   values:
     prefix: thankyou-syndiedrobe-
     count: 5
-
-- type: localizedDataset
-  id: PrideDrobeGoodbyes
-  values:
-    prefix: thankyou-pride-
-    count: 3

@@ -34,11 +34,10 @@ public sealed class GatewayGeneratorSystem : EntitySystem
     [Dependency] private readonly GatewaySystem _gateway = default!;
     [Dependency] private readonly MetaDataSystem _metadata = default!;
     [Dependency] private readonly SharedMapSystem _maps = default!;
-    [Dependency] private readonly SharedSalvageSystem _salvage = default!;
     [Dependency] private readonly TileSystem _tile = default!;
 
-    [ValidatePrototypeId<LocalizedDatasetPrototype>]
-    private const string PlanetNames = "NamesBorer";
+    [ValidatePrototypeId<DatasetPrototype>]
+    private const string PlanetNames = "names_borer";
 
     // TODO:
     // Fix shader some more
@@ -103,7 +102,7 @@ public sealed class GatewayGeneratorSystem : EntitySystem
         var mapId = _mapManager.CreateMap();
         var mapUid = _mapManager.GetMapEntityId(mapId);
 
-        var gatewayName = _salvage.GetFTLName(_protoManager.Index<LocalizedDatasetPrototype>(PlanetNames), seed);
+        var gatewayName = SharedSalvageSystem.GetFTLName(_protoManager.Index<DatasetPrototype>(PlanetNames), seed);
         _metadata.SetEntityName(mapUid, gatewayName);
 
         var origin = new Vector2i(random.Next(-MaxOffset, MaxOffset), random.Next(-MaxOffset, MaxOffset));
@@ -139,7 +138,7 @@ public sealed class GatewayGeneratorSystem : EntitySystem
         // Create the gateway.
         var gatewayUid = SpawnAtPosition(generator.Proto, originCoords);
         var gatewayComp = Comp<GatewayComponent>(gatewayUid);
-        _gateway.SetDestinationName(gatewayUid, FormattedMessage.FromMarkupOrThrow($"[color=#D381C996]{gatewayName}[/color]"), gatewayComp);
+        _gateway.SetDestinationName(gatewayUid, FormattedMessage.FromMarkup($"[color=#D381C996]{gatewayName}[/color]"), gatewayComp);
         _gateway.SetEnabled(gatewayUid, true, gatewayComp);
         generator.Generated.Add(mapUid);
     }

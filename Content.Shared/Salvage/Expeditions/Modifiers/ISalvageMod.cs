@@ -5,7 +5,7 @@ public interface ISalvageMod
     /// <summary>
     /// Player-friendly version describing this modifier.
     /// </summary>
-    LocId Description { get; }
+    string Description { get; }
 
     /// <summary>
     /// Cost for difficulty modifiers.

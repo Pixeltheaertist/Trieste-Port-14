@@ -58,13 +58,13 @@
                   min: 2
                   max: 2
     - type: StaticPrice
-      price: 100
+      price: 50
 
 #Security Shields
 
 - type: entity
   name: riot shield
-  parent: [ BaseShield, BaseRestrictedContraband ]
+  parent: BaseShield
   id: RiotShield
   description: A large tower shield. Good for controlling crowds.
   components:
@@ -85,7 +85,7 @@
 
 - type: entity
   name: riot laser shield
-  parent: [ BaseShield, BaseRestrictedContraband ]
+  parent: BaseShield
   id: RiotLaserShield
   description: A riot shield built for withstanding lasers, but not much else.
   components:
@@ -105,7 +105,7 @@
 
 - type: entity
   name: riot bullet shield
-  parent: [ BaseShield, BaseRestrictedContraband ]
+  parent: BaseShield
   id: RiotBulletShield
   description: A ballistic riot shield built for withstanding bullets, but not much else.
   components:
@@ -368,7 +368,7 @@
 
 - type: entity
   name: energy shield
-  parent: [BaseItem, BaseSyndicateContraband]
+  parent: BaseItem
   id: EnergyShield
   description: Exotic energy shield, when folded, can even fit in your pocket.
   components:
@@ -416,7 +416,6 @@
       radius: 1.5
       energy: 2
       color: blue
-    - type: ItemTogglePointLight
     - type: Reflect
       reflectProb: 0.95
       reflects:

@@ -67,13 +67,11 @@
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.SharedBagOpenVisuals.BagState: # You don't have to use both of these if its not necessary.
-        closeLayer:
-          Open: { visible: false }
-          Closed: { visible: true }
+      enum.SharedBagOpenVisuals.BagState:
         openLayer:
           Open: { visible: true }
           Closed: { visible: false }
+
 
 # PowerCellSlot parents
 - type: entity

@@ -286,7 +286,7 @@
     - !type:NearbyAccessRule
       access:
         - Engineering
-      range: 2.5
+      range: 3
 
 - type: rules
   id: NearMaintenance

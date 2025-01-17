@@ -17,8 +17,8 @@
     - type: DeviceNetworkRequiresPower
     - type: InteractionOutline
     - type: Damageable
-      damageContainer: StructuralInorganic
-      damageModifierSet: StructuralMetallicStrong
+      damageContainer: Inorganic
+      damageModifierSet: Metallic
     - type: RCDDeconstructable
       cost: 4
       delay: 6
@@ -115,13 +115,11 @@
       color: Red
       enabled: false
       castShadows: false
-    - type: NavMapDoor
 
 - type: entity
   id: Firelock
   parent: BaseFirelock
   components:
-  - type: StationAiWhitelist
   - type: ContainerContainer
     containers:
       board: !type:Container
@@ -139,7 +137,6 @@
   parent: Firelock
   name: glass firelock
   components:
-    - type: StationAiWhitelist
     - type: Sprite
       sprite: Structures/Doors/Airlocks/Glass/firelock.rsi
     - type: Occluder
@@ -165,7 +162,6 @@
   parent: Firelock
   name: firelock
   components:
-    - type: StationAiWhitelist
     - type: Sprite
       sprite: Structures/Doors/edge_door_hazard.rsi
       snapCardinals: false

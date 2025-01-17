@@ -1,7 +1,6 @@
 using System.Linq;
 using System.Numerics;
 using Content.Server.Administration;
-using Content.Server.Chat.Managers;
 using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.GameTicking;
@@ -11,7 +10,6 @@ using Content.Server.Screens.Components;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Server.Spawners.Components;
-using Content.Server.Spawners.EntitySystems;
 using Content.Server.Station.Components;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
@@ -19,7 +17,6 @@ using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Damage.Components;
 using Content.Shared.DeviceNetwork;
-using Content.Shared.GameTicking;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Parallax.Biomes;
@@ -31,7 +28,6 @@ using Robust.Shared.Collections;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 using Robust.Shared.Map;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -47,22 +43,17 @@ public sealed class ArrivalsSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _cfgManager = default!;
     [Dependency] private readonly IConsoleHost _console = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPrototypeManager _protoManager = default!;
-
     [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IChatManager _chat = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly BiomeSystem _biomes = default!;
     [Dependency] private readonly GameTicker _ticker = default!;
     [Dependency] private readonly MapLoaderSystem _loader = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly DeviceNetworkSystem _deviceNetworkSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ShuttleSystem _shuttles = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
     [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly ActorSystem _actor = default!;
 
     private EntityQuery<PendingClockInComponent> _pendingQuery;
     private EntityQuery<ArrivalsBlacklistComponent> _blacklistQuery;
@@ -72,6 +63,11 @@ public sealed class ArrivalsSystem : EntitySystem
     /// If enabled then spawns players on an alternate map so they can take a shuttle to the station.
     /// </summary>
     public bool Enabled { get; private set; }
+
+    /// <summary>
+    /// Flags if all players must arrive via the Arrivals system, or if they can spawn in other ways.
+    /// </summary>
+    public bool Forced { get; private set; }
 
     /// <summary>
     /// Flags if all players spawning at the departure terminal have godmode until they leave the terminal.
@@ -94,8 +90,6 @@ public sealed class ArrivalsSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<PlayerSpawningEvent>(HandlePlayerSpawning, before: new []{ typeof(SpawnPointSystem)}, after: new [] { typeof(ContainerSpawnPointSystem)});
-
         SubscribeLocalEvent<StationArrivalsComponent, StationPostInitEvent>(OnStationPostInit);
 
         SubscribeLocalEvent<ArrivalsShuttleComponent, ComponentStartup>(OnShuttleStartup);
@@ -105,17 +99,17 @@ public sealed class ArrivalsSystem : EntitySystem
         SubscribeLocalEvent<ArrivalsShuttleComponent, FTLStartedEvent>(OnArrivalsFTL);
         SubscribeLocalEvent<ArrivalsShuttleComponent, FTLCompletedEvent>(OnArrivalsDocked);
 
-        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(SendDirections);
-
         _pendingQuery = GetEntityQuery<PendingClockInComponent>();
         _blacklistQuery = GetEntityQuery<ArrivalsBlacklistComponent>();
         _mobQuery = GetEntityQuery<MobStateComponent>();
 
         // Don't invoke immediately as it will get set in the natural course of things.
         Enabled = _cfgManager.GetCVar(CCVars.ArrivalsShuttles);
+        Forced = _cfgManager.GetCVar(CCVars.ForceArrivals);
         ArrivalsGodmode = _cfgManager.GetCVar(CCVars.GodmodeArrivals);
 
         _cfgManager.OnValueChanged(CCVars.ArrivalsShuttles, SetArrivals);
+        _cfgManager.OnValueChanged(CCVars.ForceArrivals, b => Forced = b);
         _cfgManager.OnValueChanged(CCVars.GodmodeArrivals, b => ArrivalsGodmode = b);
 
         // Command so admins can set these for funsies
@@ -299,20 +293,16 @@ public sealed class ArrivalsSystem : EntitySystem
     private void DumpChildren(EntityUid uid, ref FTLStartedEvent args)
     {
         var toDump = new List<Entity<TransformComponent>>();
-        FindDumpChildren(uid, toDump);
+        DumpChildren(uid, ref args, toDump);
         foreach (var (ent, xform) in toDump)
         {
             var rotation = xform.LocalRotation;
             _transform.SetCoordinates(ent, new EntityCoordinates(args.FromMapUid!.Value, Vector2.Transform(xform.LocalPosition, args.FTLFrom)));
             _transform.SetWorldRotation(ent, args.FromRotation + rotation);
-            if (_actor.TryGetSession(ent, out var session))
-            {
-                _chat.DispatchServerMessage(session!, Loc.GetString("latejoin-arrivals-dumped-from-shuttle"));
-            }
         }
     }
 
-    private void FindDumpChildren(EntityUid uid, List<Entity<TransformComponent>> toDump)
+    private void DumpChildren(EntityUid uid, ref FTLStartedEvent args, List<Entity<TransformComponent>> toDump)
     {
         if (_pendingQuery.HasComponent(uid))
             return;
@@ -328,7 +318,7 @@ public sealed class ArrivalsSystem : EntitySystem
         var children = xform.ChildEnumerator;
         while (children.MoveNext(out var child))
         {
-            FindDumpChildren(child, toDump);
+            DumpChildren(child, ref args, toDump);
         }
     }
 
@@ -337,10 +327,8 @@ public sealed class ArrivalsSystem : EntitySystem
         if (ev.SpawnResult != null)
             return;
 
-        // We use arrivals as the default spawn so don't check for job prio.
-
         // Only works on latejoin even if enabled.
-        if (!Enabled || _ticker.RunLevel != GameRunLevel.InRound)
+        if (!Enabled || !Forced && _ticker.RunLevel != GameRunLevel.InRound)
             return;
 
         if (!HasComp<StationArrivalsComponent>(ev.Station))
@@ -381,20 +369,6 @@ public sealed class ArrivalsSystem : EntitySystem
             EnsureComp<GodmodeComponent>(ev.SpawnResult.Value);
     }
 
-    private void SendDirections(PlayerSpawnCompleteEvent ev)
-    {
-        if (!Enabled || !ev.LateJoin || ev.Silent || !_pendingQuery.HasComp(ev.Mob))
-            return;
-
-        var arrival = NextShuttleArrival();
-
-        var message = arrival is not null
-            ? Loc.GetString("latejoin-arrivals-direction-time", ("time", $"{arrival:mm\\:ss}"))
-            : Loc.GetString("latejoin-arrivals-direction");
-
-        _chat.DispatchServerMessage(ev.Player, message);
-    }
-
     private bool TryTeleportToMapSpawn(EntityUid player, EntityUid stationId, TransformComponent? transform = null)
     {
         if (!Resolve(player, ref transform))
@@ -418,10 +392,6 @@ public sealed class ArrivalsSystem : EntitySystem
         {
             // Move the player to a random late-join spawnpoint.
             _transform.SetCoordinates(player, transform, _random.Pick(possiblePositions));
-            if (_actor.TryGetSession(player, out var session))
-            {
-                _chat.DispatchServerMessage(session!, Loc.GetString("latejoin-arrivals-teleport-to-spawn"));
-            }
             return true;
         }
 
@@ -512,54 +482,64 @@ public sealed class ArrivalsSystem : EntitySystem
         SetupArrivalsStation();
     }
 
-    private void SetupArrivalsStation()
+private void SetupArrivalsStation()
+{
+    // Setup for the first map
+    var mapId1 = _mapManager.CreateMap();
+    var mapUid1 = _mapManager.GetMapEntityId(mapId1);
+    _mapManager.AddUninitializedMap(mapId1);
+
+    if (!_loader.TryLoad(mapId1, _cfgManager.GetCVar(CCVars.ArrivalsMap), out var uids1))
     {
-        var mapUid = _mapSystem.CreateMap(out var mapId, false);
-        _metaData.SetEntityName(mapUid, Loc.GetString("map-name-terminal"));
-
-        if (!_loader.TryLoad(mapId, _cfgManager.GetCVar(CCVars.ArrivalsMap), out var uids))
-        {
-            return;
-        }
-
-        foreach (var id in uids)
-        {
-            EnsureComp<ArrivalsSourceComponent>(id);
-            EnsureComp<ProtectedGridComponent>(id);
-            EnsureComp<PreventPilotComponent>(id);
-        }
-
-        // Setup planet arrivals if relevant
-        if (_cfgManager.GetCVar(CCVars.ArrivalsPlanet))
-        {
-            var template = _random.Pick(_arrivalsBiomeOptions);
-            _biomes.EnsurePlanet(mapUid, _protoManager.Index(template));
-            var restricted = new RestrictedRangeComponent
-            {
-                Range = 32f
-            };
-            AddComp(mapUid, restricted);
-        }
-
-        _mapSystem.InitializeMap(mapId);
-
-        var mapUid2 = _mapSystem.CreateMap(out var mapId2, false);
-
-        if (!_loader.TryLoad(mapId2, _cfgManager.GetCVar(CCVars.Arrivals2Map), out var uids2)) // edit here to change the map, bozo
-     {
-            return;
-     }
-
-        _mapSystem.InitializeMap(mapId2);
-
-        // Handle roundstart stations.
-        var query = AllEntityQuery<StationArrivalsComponent>();
-
-        while (query.MoveNext(out var uid, out var comp))
-        {
-            SetupShuttle(uid, comp);
-        }
+        return;
     }
+
+    foreach (var id in uids1)
+    {
+        EnsureComp<ArrivalsSourceComponent>(id);
+        EnsureComp<ProtectedGridComponent>(id);
+        EnsureComp<PreventPilotComponent>(id);
+    }
+
+    // Setup planet arrivals for the first map if relevant
+    if (_cfgManager.GetCVar(CCVars.ArrivalsPlanet))
+    {
+        var template1 = _random.Pick(_arrivalsBiomeOptions);
+        _biomes.EnsurePlanet(mapUid1, _protoManager.Index(template1));
+        var restricted1 = new RestrictedRangeComponent
+        {
+            Range = 32f
+        };
+        AddComp(mapUid1, restricted1);
+    }
+
+    _mapManager.DoMapInitialize(mapId1);
+
+    // Setup for the ocean surface map
+    var mapId2 = _mapManager.CreateMap();
+    var mapUid2 = _mapManager.GetMapEntityId(mapId2);
+    _mapManager.AddUninitializedMap(mapId2);
+    var restricted2 = new RestrictedRangeComponent // adds The Fog, preventing players from meandering too far across the ocean surface
+        {
+            Range = 120f
+        };
+        AddComp(mapUid2, restricted2);
+
+    if (!_loader.TryLoad(mapId2, _cfgManager.GetCVar(CCVars.Arrivals2Map), out var uids2)) // edit here to change the map, bozo
+    {
+        return;
+    }
+
+    _mapManager.DoMapInitialize(mapId2);
+
+    // Handle roundstart stations for both maps.
+    var query1 = AllEntityQuery<StationArrivalsComponent>();
+    while (query1.MoveNext(out var uid1, out var comp1))
+    {
+        SetupShuttle(uid1, comp1);
+    }
+}
+
 
     private void SetArrivals(bool obj)
     {
@@ -608,10 +588,10 @@ public sealed class ArrivalsSystem : EntitySystem
             return;
 
         // Spawn arrivals on a dummy map then dock it to the source.
-        var dummpMapEntity = _mapSystem.CreateMap(out var dummyMapId);
+        var dummyMap = _mapManager.CreateMap();
 
         if (TryGetArrivals(out var arrivals) &&
-            _loader.TryLoad(dummyMapId, component.ShuttlePath.ToString(), out var shuttleUids))
+            _loader.TryLoad(dummyMap, component.ShuttlePath.ToString(), out var shuttleUids))
         {
             component.Shuttle = shuttleUids[0];
             var shuttleComp = Comp<ShuttleComponent>(component.Shuttle);
@@ -623,7 +603,7 @@ public sealed class ArrivalsSystem : EntitySystem
         }
 
         // Don't start the arrivals shuttle immediately docked so power has a time to stabilise?
-        var timer = AddComp<TimedDespawnComponent>(dummpMapEntity);
+        var timer = AddComp<TimedDespawnComponent>(_mapManager.GetMapEntityId(dummyMap));
         timer.Lifetime = 15f;
     }
 }

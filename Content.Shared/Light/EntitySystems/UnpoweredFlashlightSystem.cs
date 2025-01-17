@@ -13,8 +13,6 @@ namespace Content.Shared.Light.EntitySystems;
 
 public sealed class UnpoweredFlashlightSystem : EntitySystem
 {
-    // TODO: Split some of this to ItemTogglePointLight
-
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;

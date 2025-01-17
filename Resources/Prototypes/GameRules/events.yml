@@ -1,73 +1,32 @@
-- type: entityTable
-  id: BasicCalmEventsTable
-  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
-    children:
-    - id: AnomalySpawn
-    - id: BluespaceArtifact
-    - id: BluespaceLocker
-    - id: BreakerFlip
-    - id: BureaucraticError
-    - id: ClericalError
-    - id: CockroachMigration
-    - id: GasLeak
-    - id: GreytideVirus
-    - id: IonStorm # its calm like 90% of the time smh
-    - id: KudzuGrowth
-    - id: MassHallucinations
-    - id: MimicVendorRule
-    - id: MouseMigration
-    - id: PowerGridCheck
-    - id: RandomSentience
-    - id: SlimesSpawn
-    - id: SolarFlare
-    - id: SnakeSpawn
-    - id: SpiderClownSpawn
-    - id: SpiderSpawn
-    - id: VentClog
-
-- type: entityTable
-  id: BasicAntagEventsTable
-  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
-    children:
-    - id: ClosetSkeleton
-    - id: DragonSpawn
-    - id: KingRatMigration
-    - id: NinjaSpawn
-    - id: RevenantSpawn
-    - id: SleeperAgents
-    - id: ZombieOutbreak
-    - id: LoneOpsSpawn
-    - id: DerelictCyborgSpawn
-
 - type: entity
   id: BaseStationEvent
   parent: BaseGameRule
   abstract: true
   components:
-  - type: GameRule
-    delay:
-      min:  10
-      max:  20
+    - type: GameRule
+      delay:
+        min:  10
+        max:  20
 
 - type: entity
   id: BaseStationEventShortDelay
   parent: BaseGameRule
   abstract: true
   components:
-  - type: GameRule
-    delay:
-      min:  10
-      max:  20
+    - type: GameRule
+      delay:
+        min:  10
+        max:  20
 
 - type: entity
   id: BaseStationEventLongDelay
   parent: BaseGameRule
   abstract: true
   components:
-  - type: GameRule
-    delay:
-      min:  40
-      max:  60
+    - type: GameRule
+      delay:
+        min:  40
+        max:  60
 
 - type: entity
   id: AnomalySpawn
@@ -128,8 +87,6 @@
     weight: 3
     duration: 1
   - type: BureaucraticErrorRule
-    ignoredJobs:
-    - StationAi
 
 - type: entity
   id: ClericalError
@@ -137,7 +94,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-clerical-error-announcement
-    minimumPlayers: 15
+    minimumPlayers: 10
     weight: 5
     duration: 1
   - type: ClericalErrorRule
@@ -149,7 +106,7 @@
   - type: StationEvent
     weight: 5
     duration: 1
-    minimumPlayers: 10
+    minimumPlayers: 5
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
 
@@ -161,13 +118,10 @@
     weight: 6.5
     earliestStart: 40
     reoccurrenceDelay: 20
-    minimumPlayers: 20
-    duration: null
-  - type: SpaceSpawnRule
-    spawnDistance: 0
+    minimumPlayers: 15
+  - type: AntagRandomSpawn
   - type: AntagSpawner
     prototype: MobDragon
-  - type: DragonRule
   - type: AntagObjectives
     objectives:
     - CarpRiftsObjective
@@ -179,57 +133,11 @@
       min: 1
       max: 1
       pickPlayer: false
-      mindRoles:
-      - MindRoleDragon
-
-- type: entity
-  parent: BaseGameRule
-  id: NinjaSpawn
-  components:
-  - type: StationEvent
-    weight: 6
-    duration: null
-    earliestStart: 30
-    reoccurrenceDelay: 20
-    minimumPlayers: 30
-  - type: SpaceSpawnRule
-  - type: AntagLoadProfileRule
-  - type: AntagObjectives
-    objectives:
-    - StealResearchObjective
-    - DoorjackObjective
-    - SpiderChargeObjective
-    - TerrorObjective
-    - MassArrestObjective
-    - NinjaSurviveObjective
-  - type: AntagSelection
-    agentName: ninja-round-end-agent-name
-    definitions:
-    - spawnerPrototype: SpawnPointGhostSpaceNinja
-      min: 1
-      max: 1
-      pickPlayer: false
-      startingGear: SpaceNinjaGear
-      roleLoadout:
-      - RoleSurvivalEVA
-      briefing:
-        text: ninja-role-greeting
-        color: Green
-        sound: /Audio/Misc/ninja_greeting.ogg
-      components:
-      - type: SpaceNinja
-      - type: NpcFactionMember
-        factions:
-        - Syndicate
-      - type: AutoImplant
-        implants:
-        - DeathAcidifierImplant
-      - type: RandomMetadata
-        nameSegments:
-        - names_ninja_title
-        - names_ninja
-      mindRoles:
-      - MindRoleNinja
+      mindComponents:
+      - type: DragonRole
+        prototype: Dragon
+      - type: RoleBriefing
+        briefing: dragon-role-briefing
 
 - type: entity
   parent: BaseGameRule
@@ -239,7 +147,7 @@
     weight: 7.5
     duration: 1
     earliestStart: 45
-    minimumPlayers: 20
+    minimumPlayers: 15
   - type: RandomSpawnRule
     prototype: MobRevenant
 
@@ -271,10 +179,92 @@
   components:
   - type: StationEvent
     earliestStart: 15
-    minimumPlayers: 15
+    minimumPlayers: 10
     weight: 7
     duration: 240
   - type: KudzuGrowthRule
+
+- type: entity
+  id: MouseMigration
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    earliestStart: 15
+    weight: 6
+    duration: 50
+  - type: VentCrittersRule
+    entries:
+    - id: MobMouse
+      prob: 0.02
+    - id: MobMouse1
+      prob: 0.02
+    - id: MobMouse2
+      prob: 0.02
+    - id: MobMouseCancer
+      prob: 0.001
+
+- type: entity
+  id: DrifterMigration
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-leg-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    earliestStart: 5
+    weight: 8
+    duration: 50
+  - type: VentCrittersRule
+    entries:
+    - id: TP14MobDrifter
+      prob: 0.8
+# Events always spawn a critter regardless of Probability https://github.com/space-wizards/space-station-14/issues/28480 I added the Rat King to their own event with a player cap.
+
+- type: entity
+  id: KingRatMigration
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    earliestStart: 15
+    weight: 6
+    duration: 50
+    minimumPlayers: 30 # Hopefully this is enough for the Rat King's potential Army (it was not, raised from 15 -> 30)
+  - type: VentCrittersRule
+    entries:
+    - id: MobMouse
+      prob: 0.02
+    - id: MobMouse1
+      prob: 0.02
+    - id: MobMouse2
+      prob: 0.02
+    - id: MobMouseCancer
+      prob: 0.001
+    specialEntries:
+    - id: SpawnPointGhostRatKing
+      prob: 0.001
+
+- type: entity
+  id: CockroachMigration
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    weight: 6
+    duration: 50
+  - type: VentCrittersRule
+    entries:
+    - id: MobCockroach
+      prob: 0.03
+    - id: MobMothroach
+      prob: 0.008
 
 - type: entity
   id: PowerGridCheck
@@ -287,7 +277,7 @@
     startAudio:
       path: /Audio/Announcements/power_off.ogg
       params:
-        volume: -4
+       volume: -4
     duration: 60
     maxDuration: 120
   - type: PowerGridCheckRule
@@ -356,27 +346,6 @@
       prob: 0.02
 
 - type: entity
-  id: SnakeSpawn
-  parent: BaseStationEventShortDelay
-  components:
-  - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
-    earliestStart: 20
-    minimumPlayers: 15
-    weight: 5
-    duration: 60
-  - type: VentCrittersRule
-    entries:
-    - id: MobPurpleSnake
-      prob: 0.02
-    - id: MobSmallPurpleSnake
-      prob: 0.02
-    - id: MobCobraSpace
-      prob: 0.02
-
-- type: entity
   id: SpiderSpawn
   parent: BaseStationEventShortDelay
   components:
@@ -415,9 +384,9 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    earliestStart: 90
-    minimumPlayers: 40
-    weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
+    earliestStart: 50
+    minimumPlayers: 20
+    weight: 2
     duration: 1
   - type: ZombieRule
   - type: AntagSelection
@@ -440,43 +409,9 @@
       - type: ZombifyOnDeath
       - type: IncurableZombie
       - type: InitialInfected
-      mindRoles:
-      - MindRoleInitialInfected
-
-- type: entity
-  parent: BaseNukeopsRule
-  id: LoneOpsSpawn
-  components:
-  - type: StationEvent
-    earliestStart: 35
-    weight: 5.5
-    minimumPlayers: 20
-    duration: 1
-  - type: RuleGrids
-  - type: LoadMapRule
-    mapPath: /Maps/Shuttles/ShuttleEvent/striker.yml
-  - type: NukeopsRule
-    roundEndBehavior: Nothing
-  - type: AntagSelection
-    definitions:
-    - spawnerPrototype: SpawnPointLoneNukeOperative
-      min: 1
-      max: 1
-      pickPlayer: false
-      startingGear: SyndicateLoneOperativeGearFull
-      roleLoadout:
-      - RoleSurvivalNukie
-      components:
-      - type: NukeOperative
-      - type: RandomMetadata
-        nameSegments:
-        - SyndicateNamesPrefix
-        - SyndicateNamesNormal
-      - type: NpcFactionMember
-        factions:
-        - Syndicate
-      mindRoles:
-      - MindRoleNukeops
+      mindComponents:
+      - type: InitialInfectedRole
+        prototype: InitialInfected
 
 - type: entity
   parent: BaseTraitorRule
@@ -491,7 +426,6 @@
     startAudio:
       path: /Audio/Announcements/intercept.ogg
     duration: null # the rule has to last the whole round not 1 second
-    occursDuringRoundEnd: false
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     definitions:
@@ -503,8 +437,9 @@
       blacklist:
         components:
         - AntagImmune
-      mindRoles:
-      - MindRoleTraitorSleeper
+      mindComponents:
+      - type: TraitorRole
+        prototype: TraitorSleeper
 
 - type: entity
   id: MassHallucinations
@@ -523,6 +458,45 @@
       collection: Paracusia
 
 - type: entity
+  id: ImmovableRodSpawn
+  parent: BaseGameRule
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-immovable-rod-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    weight: 3.5
+    duration: 1
+    earliestStart: 30
+    minimumPlayers: 20
+  - type: ImmovableRodRule
+    rodPrototypes:
+    - id: ImmovableRodKeepTilesStill
+      prob: 0.95
+      orGroup: rodProto
+    - id: ImmovableRodMop
+      prob: 0.0072
+      orGroup: rodProto
+    - id: ImmovableRodShark
+      prob: 0.0072
+      orGroup: rodProto
+    - id: ImmovableRodClown
+      prob: 0.0072
+      orGroup: rodProto
+    - id: ImmovableRodBanana
+      prob: 0.0072
+      orGroup: rodProto
+    - id: ImmovableRodHammer
+      prob: 0.0072
+      orGroup: rodProto
+    - id: ImmovableRodThrongler
+      prob: 0.0072
+      orGroup: rodProto
+    - id: ImmovableRodGibstick
+      prob: 0.0072
+      orGroup: rodProto
+
+- type: entity
   parent: BaseGameRule
   id: IonStorm
   components:
@@ -533,54 +507,53 @@
   - type: IonStormRule
 
 - type: entity
-  id: MimicVendorRule
-  parent: BaseGameRule
-  components:
-  - type: StationEvent
-    earliestStart: 0
-    minimumPlayers: 20
-    maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
-    weight: 5
-  - type: MobReplacementRule
-
-- type: entity
-  id: GreytideVirus
+  id: WhaleMigration
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
+    startAnnouncement: whale-migration
     startAudio:
-      path: /Audio/Announcements/attention.ogg
-    weight: 5
-    minimumPlayers: 25
-    reoccurrenceDelay: 20
-  - type: GreytideVirusRule
-    accessGroups:
-    - Cargo
-    - Command
-    - Engineering
-    - Research
-    - Security
-    - Service
-    blacklist:
-    - External # don't space everything
+      path: /Audio/Effects/whale_groan.ogg
+    earliestStart: 20
+    minimumPlayers: 0
+    weight: 6
+    duration: 300
+  - type: MassHallucinationsRule
+    minTimeBetweenIncidents: 10
+    maxTimeBetweenIncidents: 40
+    maxSoundDistance: 7
+    sweetwaterOnly: true # Makes it so that mass hallucination sounds can only be heard on Sweetwater, (ex. ocean-specific sounds)
+    sounds:
+      collection: WhaleMigration
 
 - type: entity
-  parent: BaseGameRule
-  id: DerelictCyborgSpawn
+  id: DeathWhaleMigration
+  parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    weight: 5
-    earliestStart: 15
-    reoccurrenceDelay: 20
-    minimumPlayers: 4
-    duration: null
-  - type: SpaceSpawnRule
-    spawnDistance: 0
-  - type: AntagSpawner
-    prototype: PlayerBorgDerelict
-  - type: AntagSelection
-    definitions:
-    - spawnerPrototype: SpawnPointGhostDerelictCyborg
-      min: 1
-      max: 1
-      pickPlayer: false
+    startAnnouncement: death-whale-migration
+    startAudio:
+      path: /Audio/Effects/whale_groan.ogg
+    StartAnnouncementColor: "#Ff0000" # red
+    EndAnnouncementColor: "#228B22" # green
+    earliestStart: 20
+    minimumPlayers: 5
+    weight: 6
+    duration: 300
+  - type: MassHallucinationsRule
+    minTimeBetweenIncidents: 0.1
+    maxTimeBetweenIncidents: 40
+    maxSoundDistance: 7
+    sweetwaterOnly: true
+    sounds:
+      collection: WhaleMigration
+  - type: OceanSpawnRule
+    prototype: MobDeathWhale
+
+# Ocean Spawn Rule Template
+#
+#- type: OceanSpawnRule
+#    target: (target location component)
+#    prototype: (creature prototpe)
+#    amount: (amount of spawned creatures)
+

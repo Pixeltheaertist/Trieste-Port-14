@@ -128,6 +128,7 @@
     price: 400
   - type: BadFood
   - type: NonSpreaderZombie
+  - type: PreventSpiller
   - type: Damageable
     damageContainer: Biological
   - type: Respirator # changed to asphyx for consistency/it works - lye

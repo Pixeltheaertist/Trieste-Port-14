@@ -12,7 +12,6 @@
   - type: Item
     size: Small
   - type: Appearance
-  - type: ArrivalsBlacklist
   - type: SwapTeleporter
     teleporterWhitelist:
       tags:

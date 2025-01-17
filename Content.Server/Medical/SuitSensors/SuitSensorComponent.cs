@@ -14,43 +14,37 @@ public sealed partial class SuitSensorComponent : Component
     /// <summary>
     ///     Choose a random sensor mode when item is spawned.
     /// </summary>
-    [DataField]
+    [DataField("randomMode")]
     public bool RandomMode = true;
 
     /// <summary>
     ///     If true user can't change suit sensor mode
     /// </summary>
-    [DataField]
+    [DataField("controlsLocked")]
     public bool ControlsLocked = false;
-
-    /// <summary>
-    ///  How much time it takes to change another player's sensors
-    /// </summary>
-    [DataField]
-    public float SensorsTime = 1.75f;
 
     /// <summary>
     ///     Current sensor mode. Can be switched by user verbs.
     /// </summary>
-    [DataField]
+    [DataField("mode")]
     public SuitSensorMode Mode = SuitSensorMode.SensorOff;
 
     /// <summary>
     ///     Activate sensor if user wear it in this slot.
     /// </summary>
-    [DataField]
+    [DataField("activationSlot")]
     public string ActivationSlot = "jumpsuit";
 
     /// <summary>
     /// Activate sensor if user has this in a sensor-compatible container.
     /// </summary>
-    [DataField]
+    [DataField("activationContainer")]
     public string? ActivationContainer;
 
     /// <summary>
     ///     How often does sensor update its owners status (in seconds). Limited by the system update rate.
     /// </summary>
-    [DataField]
+    [DataField("updateRate")]
     public TimeSpan UpdateRate = TimeSpan.FromSeconds(2f);
 
     /// <summary>
@@ -62,7 +56,7 @@ public sealed partial class SuitSensorComponent : Component
     /// <summary>
     ///     Next time when sensor updated owners status
     /// </summary>
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+    [DataField("nextUpdate", customTypeSerializer:typeof(TimeOffsetSerializer))]
     [AutoPausedField]
     public TimeSpan NextUpdate = TimeSpan.Zero;
 

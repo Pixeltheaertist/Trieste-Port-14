@@ -1,6 +1,6 @@
 # Hacky for the stress test so don't even consider adding to this
 - type: entity
-  name: burrower
+  name: Burrower
   id: MobXeno
   parent: SimpleSpaceMobBase
   description: They mostly come at night. Mostly.
@@ -121,7 +121,7 @@
     speechVerb: LargeMob
 
 - type: entity
-  name: praetorian
+  name: Praetorian
   parent: MobXeno
   id: MobXenoPraetorian
   components:
@@ -154,7 +154,7 @@
         - MobLayer
 
 - type: entity
-  name: drone
+  name: Drone
   parent: MobXeno
   id: MobXenoDrone
   components:
@@ -191,7 +191,7 @@
         - MobLayer
 
 - type: entity
-  name: queen
+  name: Queen
   parent: MobXeno
   id: MobXenoQueen
   components:
@@ -230,7 +230,7 @@
     - CannotSuicide
 
 - type: entity
-  name: ravager
+  name: Ravager
   parent: MobXeno
   id: MobXenoRavager
   components:
@@ -267,7 +267,7 @@
         - MobLayer
 
 - type: entity
-  name: runner
+  name: Runner
   parent: MobXeno
   id: MobXenoRunner
   components:
@@ -297,7 +297,7 @@
         - MobLayer
 
 - type: entity
-  name: rouny
+  name: Rouny
   parent: MobXenoRunner
   id: MobXenoRouny
   components:
@@ -312,7 +312,7 @@
       amount: 3
 
 - type: entity
-  name: spitter
+  name: Spitter
   parent: MobXeno
   id: MobXenoSpitter
   components:
@@ -378,10 +378,6 @@
         Base: dead_purple_snake
       Dead:
         Base: dead_purple_snake
-  - type: Butcherable
-    spawned:
-    - id: FoodMeatSnake
-      amount: 4
   - type: Grammar
     attributes:
       proper: true
@@ -448,9 +444,5 @@
         Base: dead_small_purple_snake
       Dead:
         Base: dead_small_purple_snake
-  - type: Butcherable
-    spawned:
-    - id: FoodMeatSnake
-      amount: 2
   - type: SolutionTransfer
     maxTransferAmount: 1

@@ -15,6 +15,7 @@
   parent: [ClothingShoesBaseButcherable, ClothingSlotBase]
   id: ClothingShoesClownBase
   components:
+  - type: WaddleWhenWorn
   - type: ItemSlots
     slots:
       item:
@@ -40,8 +41,6 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepClown
-      params:
-        variation: 0.17
   # for H.O.N.K. construction
   - type: Tag
     tags:
@@ -61,8 +60,6 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepSlip
-      params:
-        variation: 0.10
   - type: Construction
     graph: BananaClownShoes
     node: shoes
@@ -83,8 +80,6 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepClown
-      params:
-        variation: 0.17
   - type: PointLight
     enabled: true
     radius: 3
@@ -114,14 +109,9 @@
   - type: Clothing
     sprite: Clothing/Shoes/Specific/galoshes.rsi
   - type: NoSlip
-  - type: SlowedOverSlippery
-    slowdownModifier: 0.7
-  - type: SpeedModifierContactCapClothing
-    maxContactSprintSlowdown: 0.7
-    maxContactWalkSlowdown: 0.7
 
 - type: entity
-  parent: [ClothingShoesBaseButcherable, BaseMajorContraband]
+  parent: ClothingShoesBaseButcherable
   id: ClothingShoesSpaceNinja
   name: space ninja shoes
   description: A pair of nano-enhanced boots with built-in magnetic suction cups.
@@ -136,8 +126,6 @@
     # ninja are masters of sneaking around relatively quickly, won't break cloak
     walkModifier: 1.1
     sprintModifier: 1.3
-  - type: FootstepModifier
-    footstepSoundCollection: null
 
 - type: entity
   parent: ClothingShoesBaseButcherable
@@ -223,8 +211,6 @@
     - type: FootstepModifier
       footstepSoundCollection:
         collection: FootstepJester
-        params:
-          variation: 0.07
 
 - type: entity
   parent: ClothingShoesClown
@@ -284,5 +270,3 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepSkates
-      params:
-        variation: 0.08

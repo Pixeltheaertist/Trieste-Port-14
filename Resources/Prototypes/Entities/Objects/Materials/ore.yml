@@ -23,6 +23,17 @@
           - ItemMask
         restitution: 0.3
         friction: 0.2
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   parent: OreBase
@@ -37,7 +48,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawGold: 100
+      RawGold: 500
   - type: Extractable
     grindableSolutionName: goldore
   - type: SolutionContainerManager
@@ -46,8 +57,6 @@
         reagents:
         - ReagentId: Gold
           Quantity: 10
-  - type: Item
-    heldPrefix: gold
 
 - type: entity
   parent: GoldOre
@@ -70,7 +79,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawDiamond: 100
+      RawDiamond: 500
   - type: Extractable
     grindableSolutionName: diamondore
   - type: SolutionContainerManager
@@ -79,8 +88,6 @@
         reagents:
         - ReagentId: Carbon
           Quantity: 20
-  - type: Item
-    heldPrefix: diamond
 
 - type: entity
   parent: DiamondOre
@@ -103,7 +110,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawIron: 100
+      RawIron: 500
   - type: Extractable
     grindableSolutionName: ironore
   - type: SolutionContainerManager
@@ -112,8 +119,6 @@
         reagents:
         - ReagentId: Iron
           Quantity: 10
-  - type: Item
-    heldPrefix: iron
 
 - type: entity
   id: SteelOre1
@@ -136,7 +141,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawPlasma: 100
+      RawPlasma: 500
   - type: PointLight
     radius: 1.2
     energy: 0.6
@@ -150,8 +155,6 @@
         reagents:
         - ReagentId: Plasma
           Quantity: 10
-  - type: Item
-    heldPrefix: plasma
 
 - type: entity
   parent: PlasmaOre
@@ -174,7 +177,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawSilver: 100
+      RawSilver: 500
   - type: Extractable
     grindableSolutionName: silverore
   - type: SolutionContainerManager
@@ -183,8 +186,6 @@
         reagents:
         - ReagentId: Silver
           Quantity: 10
-  - type: Item
-    heldPrefix: silver
 
 - type: entity
   parent: SilverOre
@@ -207,7 +208,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawQuartz: 100
+      RawQuartz: 500
   - type: Extractable
     grindableSolutionName: quartzore
   - type: SolutionContainerManager
@@ -216,8 +217,6 @@
         reagents:
         - ReagentId: Silicon
           Quantity: 10
-  - type: Item
-    heldPrefix: spacequartz
 
 - type: entity
   parent: SpaceQuartz
@@ -240,7 +239,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawUranium: 100
+      RawUranium: 500
   - type: PointLight
     radius: 1.2
     energy: 0.8
@@ -257,8 +256,6 @@
         - ReagentId: Radium
           Quantity: 2
         canReact: false
-  - type: Item
-    heldPrefix: uranium
 
 - type: entity
   parent: UraniumOre
@@ -281,7 +278,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawBananium: 100
+      RawBananium: 500
   - type: PointLight
     radius: 1.2
     energy: 1
@@ -299,8 +296,6 @@
           Quantity: 2
         - ReagentId: Honk
           Quantity: 5
-  - type: Item
-    heldPrefix: bananium
 
 - type: entity
   parent: BananiumOre
@@ -339,9 +334,7 @@
           Quantity: 0.1
   - type: PhysicalComposition
     materialComposition:
-      Coal: 100
-  - type: Item
-    heldPrefix: coal
+      Coal: 500
 
 - type: entity
   parent: Coal
@@ -350,30 +343,6 @@
   components:
   - type: Stack
     count: 1
-
-- type: entity
-  parent: Coal
-  id: Coal5
-  suffix: Five
-  components:
-  - type: Stack
-    count: 5
-
-- type: entity
-  parent: Coal
-  id: Coal10
-  suffix: Ten
-  components:
-  - type: Stack
-    count: 10
-
-- type: entity
-  parent: Coal
-  id: Coal15
-  suffix: Fifteen
-  components:
-  - type: Stack
-    count: 15
 
 - type: entity
   parent: OreBase
@@ -388,7 +357,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawSalt: 100
+      RawSalt: 500
   - type: Extractable
     grindableSolutionName: saltore
   - type: SolutionContainerManager
@@ -399,8 +368,6 @@
           Quantity: 10
         - ReagentId: Iodine
           Quantity: 5
-  - type: Item
-    heldPrefix: salt
 
 - type: entity
   parent: SaltOre

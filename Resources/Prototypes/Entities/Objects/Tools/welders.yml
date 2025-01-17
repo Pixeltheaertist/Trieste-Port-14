@@ -95,7 +95,6 @@
     radius: 1.5
     color: orange
     netsync: false
-  - type: ItemTogglePointLight
   - type: Appearance
   - type: RequiresEyeProtection
   - type: PhysicalComposition

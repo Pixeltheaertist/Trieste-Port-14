@@ -31,7 +31,7 @@
   id: BaseBoardTabletop
   name: baseboard
   abstract: true
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: Tag
     tags:

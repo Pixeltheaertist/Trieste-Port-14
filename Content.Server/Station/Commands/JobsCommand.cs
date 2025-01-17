@@ -30,7 +30,7 @@ public sealed class JobsCommand : ToolshedCommand
         => stations.SelectMany(Jobs);
 
     [CommandImplementation("job")]
-    public JobSlotRef Job([PipedArgument] EntityUid station, Prototype<JobPrototype> job)
+    public JobSlotRef Job([PipedArgument] EntityUid station, [CommandArgument] Prototype<JobPrototype> job)
     {
         _jobs ??= GetSys<StationJobsSystem>();
 
@@ -38,7 +38,7 @@ public sealed class JobsCommand : ToolshedCommand
     }
 
     [CommandImplementation("job")]
-    public IEnumerable<JobSlotRef> Job([PipedArgument] IEnumerable<EntityUid> stations, Prototype<JobPrototype> job)
+    public IEnumerable<JobSlotRef> Job([PipedArgument] IEnumerable<EntityUid> stations, [CommandArgument] Prototype<JobPrototype> job)
         => stations.Select(x => Job(x, job));
 
     [CommandImplementation("isinfinite")]
@@ -50,41 +50,63 @@ public sealed class JobsCommand : ToolshedCommand
         => jobs.Select(x => IsInfinite(x, inverted));
 
     [CommandImplementation("adjust")]
-    public JobSlotRef Adjust([PipedArgument] JobSlotRef @ref, int by)
+    public JobSlotRef Adjust(
+        [CommandInvocationContext] IInvocationContext ctx,
+        [PipedArgument] JobSlotRef @ref,
+        [CommandArgument] ValueRef<int> by
+        )
     {
         _jobs ??= GetSys<StationJobsSystem>();
-        _jobs.TryAdjustJobSlot(@ref.Station, @ref.Job, by, true, true);
+        _jobs.TryAdjustJobSlot(@ref.Station, @ref.Job, by.Evaluate(ctx), true, true);
         return @ref;
     }
 
     [CommandImplementation("adjust")]
-    public IEnumerable<JobSlotRef> Adjust([PipedArgument] IEnumerable<JobSlotRef> @ref, int by)
-        => @ref.Select(x => Adjust(x, by));
+    public IEnumerable<JobSlotRef> Adjust(
+        [CommandInvocationContext] IInvocationContext ctx,
+        [PipedArgument] IEnumerable<JobSlotRef> @ref,
+        [CommandArgument] ValueRef<int> by
+    )
+        => @ref.Select(x => Adjust(ctx, x, by));
 
 
     [CommandImplementation("set")]
-    public JobSlotRef Set([PipedArgument] JobSlotRef @ref, int by)
+    public JobSlotRef Set(
+        [CommandInvocationContext] IInvocationContext ctx,
+        [PipedArgument] JobSlotRef @ref,
+        [CommandArgument] ValueRef<int> by
+    )
     {
         _jobs ??= GetSys<StationJobsSystem>();
-        _jobs.TrySetJobSlot(@ref.Station, @ref.Job, by, true);
+        _jobs.TrySetJobSlot(@ref.Station, @ref.Job, by.Evaluate(ctx), true);
         return @ref;
     }
 
     [CommandImplementation("set")]
-    public IEnumerable<JobSlotRef> Set([PipedArgument] IEnumerable<JobSlotRef> @ref, int by)
-        => @ref.Select(x => Set(x, by));
+    public IEnumerable<JobSlotRef> Set(
+        [CommandInvocationContext] IInvocationContext ctx,
+        [PipedArgument] IEnumerable<JobSlotRef> @ref,
+        [CommandArgument] ValueRef<int> by
+    )
+        => @ref.Select(x => Set(ctx, x, by));
 
     [CommandImplementation("amount")]
-    public int Amount([PipedArgument] JobSlotRef @ref)
+    public int Amount(
+        [CommandInvocationContext] IInvocationContext ctx,
+        [PipedArgument] JobSlotRef @ref
+    )
     {
         _jobs ??= GetSys<StationJobsSystem>();
         _jobs.TryGetJobSlot(@ref.Station, @ref.Job, out var slots);
-        return slots ?? 0;
+        return (int)(slots ?? 0);
     }
 
     [CommandImplementation("amount")]
-    public IEnumerable<int> Amount([PipedArgument] IEnumerable<JobSlotRef> @ref)
-        => @ref.Select(Amount);
+    public IEnumerable<int> Amount(
+        [CommandInvocationContext] IInvocationContext ctx,
+        [PipedArgument] IEnumerable<JobSlotRef> @ref
+    )
+        => @ref.Select(x => Amount(ctx, x));
 }
 
 // Used for Toolshed queries.

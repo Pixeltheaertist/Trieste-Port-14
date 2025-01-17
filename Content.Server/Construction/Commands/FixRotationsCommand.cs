@@ -6,102 +6,103 @@ using Content.Shared.Tag;
 using Robust.Shared.Console;
 using Robust.Shared.Map.Components;
 
-namespace Content.Server.Construction.Commands;
-
-[AdminCommand(AdminFlags.Mapping)]
-public sealed class FixRotationsCommand : IConsoleCommand
+namespace Content.Server.Construction.Commands
 {
-    [Dependency] private readonly IEntityManager _entManager = default!;
-
-    // ReSharper disable once StringLiteralTypo
-    public string Command => "fixrotations";
-    public string Description => "Sets the rotation of all occluders, low walls and windows to south.";
-    public string Help => $"Usage: {Command} <gridId> | {Command}";
-
-    public void Execute(IConsoleShell shell, string argsOther, string[] args)
+    [AdminCommand(AdminFlags.Mapping)]
+    public sealed class FixRotationsCommand : IConsoleCommand
     {
-        var player = shell.Player;
-        EntityUid? gridId;
-        var xformQuery = _entManager.GetEntityQuery<TransformComponent>();
+        [Dependency] private readonly IEntityManager _entManager = default!;
 
-        switch (args.Length)
+        // ReSharper disable once StringLiteralTypo
+        public string Command => "fixrotations";
+        public string Description => "Sets the rotation of all occluders, low walls and windows to south.";
+        public string Help => $"Usage: {Command} <gridId> | {Command}";
+
+        public void Execute(IConsoleShell shell, string argsOther, string[] args)
         {
-            case 0:
-                if (player?.AttachedEntity is not { Valid: true } playerEntity)
-                {
-                    shell.WriteError("Only a player can run this command.");
-                    return;
-                }
+            var player = shell.Player;
+            EntityUid? gridId;
+            var xformQuery = _entManager.GetEntityQuery<TransformComponent>();
 
-                gridId = xformQuery.GetComponent(playerEntity).GridUid;
-                break;
-            case 1:
-                if (!NetEntity.TryParse(args[0], out var idNet) || !_entManager.TryGetEntity(idNet, out var id))
-                {
-                    shell.WriteError($"{args[0]} is not a valid entity.");
-                    return;
-                }
+            switch (args.Length)
+            {
+                case 0:
+                    if (player?.AttachedEntity is not {Valid: true} playerEntity)
+                    {
+                        shell.WriteError("Only a player can run this command.");
+                        return;
+                    }
 
-                gridId = id;
-                break;
-            default:
-                shell.WriteLine(Help);
+                    gridId = xformQuery.GetComponent(playerEntity).GridUid;
+                    break;
+                case 1:
+                    if (!NetEntity.TryParse(args[0], out var idNet) || !_entManager.TryGetEntity(idNet, out var id))
+                    {
+                        shell.WriteError($"{args[0]} is not a valid entity.");
+                        return;
+                    }
+
+                    gridId = id;
+                    break;
+                default:
+                    shell.WriteLine(Help);
+                    return;
+            }
+
+            if (!_entManager.TryGetComponent(gridId, out MapGridComponent? grid))
+            {
+                shell.WriteError($"No grid exists with id {gridId}");
                 return;
-        }
-
-        if (!_entManager.TryGetComponent(gridId, out MapGridComponent? grid))
-        {
-            shell.WriteError($"No grid exists with id {gridId}");
-            return;
-        }
-
-        if (!_entManager.EntityExists(gridId))
-        {
-            shell.WriteError($"Grid {gridId} doesn't have an associated grid entity.");
-            return;
-        }
-
-        var changed = 0;
-        var tagSystem = _entManager.EntitySysManager.GetEntitySystem<TagSystem>();
-
-
-        var enumerator = xformQuery.GetComponent(gridId.Value).ChildEnumerator;
-        while (enumerator.MoveNext(out var child))
-        {
-            if (!_entManager.EntityExists(child))
-            {
-                continue;
             }
 
-            var valid = false;
-
-            // Occluders should only count if the state of it right now is enabled.
-            // This prevents issues with edge firelocks.
-            if (_entManager.TryGetComponent<OccluderComponent>(child, out var occluder))
+            if (!_entManager.EntityExists(gridId))
             {
-                valid |= occluder.Enabled;
+                shell.WriteError($"Grid {gridId} doesn't have an associated grid entity.");
+                return;
             }
-            // low walls & grilles
-            valid |= _entManager.HasComponent<SharedCanBuildWindowOnTopComponent>(child);
-            // cables
-            valid |= _entManager.HasComponent<CableComponent>(child);
-            // anything else that might need this forced
-            valid |= tagSystem.HasTag(child, "ForceFixRotations");
-            // override
-            valid &= !tagSystem.HasTag(child, "ForceNoFixRotations");
 
-            if (!valid)
-                continue;
+            var changed = 0;
+            var tagSystem = _entManager.EntitySysManager.GetEntitySystem<TagSystem>();
 
-            var childXform = xformQuery.GetComponent(child);
 
-            if (childXform.LocalRotation != Angle.Zero)
+            var enumerator = xformQuery.GetComponent(gridId.Value).ChildEnumerator;
+            while (enumerator.MoveNext(out var child))
             {
-                childXform.LocalRotation = Angle.Zero;
-                changed++;
+                if (!_entManager.EntityExists(child))
+                {
+                    continue;
+                }
+
+                var valid = false;
+
+                // Occluders should only count if the state of it right now is enabled.
+                // This prevents issues with edge firelocks.
+                if (_entManager.TryGetComponent<OccluderComponent>(child, out var occluder))
+                {
+                    valid |= occluder.Enabled;
+                }
+                // low walls & grilles
+                valid |= _entManager.HasComponent<SharedCanBuildWindowOnTopComponent>(child);
+                // cables
+                valid |= _entManager.HasComponent<CableComponent>(child);
+                // anything else that might need this forced
+                valid |= tagSystem.HasTag(child, "ForceFixRotations");
+                // override
+                valid &= !tagSystem.HasTag(child, "ForceNoFixRotations");
+
+                if (!valid)
+                    continue;
+
+                var childXform = xformQuery.GetComponent(child);
+
+                if (childXform.LocalRotation != Angle.Zero)
+                {
+                    childXform.LocalRotation = Angle.Zero;
+                    changed++;
+                }
             }
+
+            shell.WriteLine($"Changed {changed} entities. If things seem wrong, reconnect.");
         }
-
-        shell.WriteLine($"Changed {changed} entities. If things seem wrong, reconnect.");
     }
 }

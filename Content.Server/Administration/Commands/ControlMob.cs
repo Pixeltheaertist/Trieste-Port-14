@@ -17,7 +17,7 @@ namespace Content.Server.Administration.Commands
         {
             if (shell.Player is not { } player)
             {
-                shell.WriteError(Loc.GetString("shell-cannot-run-command-from-server"));
+                shell.WriteLine("shell-server-cannot");
                 return;
             }
 

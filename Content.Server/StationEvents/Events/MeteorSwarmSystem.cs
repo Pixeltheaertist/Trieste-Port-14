@@ -28,13 +28,9 @@ public sealed class MeteorSwarmSystem : GameRuleSystem<MeteorSwarmComponent>
 
         component.WaveCounter = component.Waves.Next(RobustRandom);
 
-        // we don't want to send to players who aren't in game (i.e. in the lobby)
-        Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
-
         if (component.Announcement is { } locId)
-            _chat.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(locId), playSound: false, colorOverride: Color.Gold);
-
-        _audio.PlayGlobal(component.AnnouncementSound, allPlayersInGame, true);
+            _chat.DispatchGlobalAnnouncement(Loc.GetString(locId), playSound: false, colorOverride: Color.Gold);
+        _audio.PlayGlobal(component.AnnouncementSound, Filter.Broadcast(), true);
     }
 
     protected override void ActiveTick(EntityUid uid, MeteorSwarmComponent component, GameRuleComponent gameRule, float frameTime)

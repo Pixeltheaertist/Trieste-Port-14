@@ -16,7 +16,7 @@ public sealed class DamagedByFlashingSystem : EntitySystem
     {
         _damageable.TryChangeDamage(ent, ent.Comp.FlashDamage);
 
-        //TODO: It would be more logical if different flashes had different power,
+        //To Do: It would be more logical if different flashes had different power,
         //and the damage would be inflicted depending on the strength of the flash.
     }
 }

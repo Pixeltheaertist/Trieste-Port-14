@@ -32,23 +32,23 @@ public sealed class PettableFriendSystem : EntitySystem
     {
         var (uid, comp) = ent;
         var user = args.User;
-        if (args.Handled || !_exceptionQuery.TryComp(uid, out var exceptionComp))
+        if (args.Handled || !_exceptionQuery.TryGetComponent(uid, out var exceptionComp))
+            return;
+
+        if (_useDelayQuery.TryGetComponent(uid, out var useDelay) && !_useDelay.TryResetDelay((uid, useDelay), true))
             return;
 
         var exception = (uid, exceptionComp);
-        if (!_factionException.IsIgnored(exception, user))
+        if (_factionException.IsIgnored(exception, user))
         {
-            // you have made a new friend :)
-            _popup.PopupClient(Loc.GetString(comp.SuccessString, ("target", uid)), user, user);
-            _factionException.IgnoreEntity(exception, user);
-            args.Handled = true;
+            _popup.PopupClient(Loc.GetString(comp.FailureString, ("target", uid)), user, user);
             return;
         }
 
-        if (_useDelayQuery.TryComp(uid, out var useDelay) && !_useDelay.TryResetDelay((uid, useDelay), true))
-            return;
-
-        _popup.PopupClient(Loc.GetString(comp.FailureString, ("target", uid)), user, user);
+        // you have made a new friend :)
+        _popup.PopupClient(Loc.GetString(comp.SuccessString, ("target", uid)), user, user);
+        _factionException.IgnoreEntity(exception, user);
+        args.Handled = true;
     }
 
     private void OnRehydrated(Entity<PettableFriendComponent> ent, ref GotRehydratedEvent args)

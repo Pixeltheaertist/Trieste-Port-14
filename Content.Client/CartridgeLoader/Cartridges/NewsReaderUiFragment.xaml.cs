@@ -31,7 +31,7 @@ public sealed partial class NewsReaderUiFragment : BoxContainer
         Author.Visible = true;
 
         PageName.Text = article.Title;
-        PageText.SetMarkupPermissive(article.Content);
+        PageText.SetMarkup(article.Content);
 
         PageNum.Text = $"{targetNum}/{totalNum}";
 

@@ -90,8 +90,6 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
             _searchText = args.Text;
 
             UpdateVisibleButtons();
-            // Reset scroll bar so they can see the relevant results.
-            GhostScroll.SetScrollValue(Vector2.Zero);
         }
     }
 }

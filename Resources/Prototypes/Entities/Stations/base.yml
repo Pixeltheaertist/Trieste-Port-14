@@ -52,6 +52,9 @@
             - type: TradeStation
           paths:
             - /Maps/Shuttles/trading_outpost.yml
+        mining: !type:GridSpawnGroup
+          paths:
+          - /Maps/Shuttles/mining.yml
         # Spawn last
         ruins: !type:GridSpawnGroup
           hide: true
@@ -60,7 +63,6 @@
           maxCount: 2
           stationGrid: false
           paths:
-          - /Maps/Ruins/abandoned_outpost.yml
           - /Maps/Ruins/chunked_tcomms.yml
           - /Maps/Ruins/biodome_satellite.yml
           - /Maps/Ruins/derelict.yml
@@ -71,9 +73,8 @@
           - /Maps/Ruins/whiteship_ancient.yml
           - /Maps/Ruins/whiteship_bluespacejumper.yml
         vgroid: !type:DungeonSpawnGroup
-          minimumDistance: 300
-          maximumDistance: 350
-          nameDataset: NamesBorer
+          minimumDistance: 1000
+          nameDataset: names_borer
           stationGrid: false
           addComponents:
           - type: Gravity

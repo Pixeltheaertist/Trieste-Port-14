@@ -11,7 +11,7 @@
   - type: WallMount
     arc: 360
   - type: Sprite
-    drawdepth: WallMountedItems
+    drawdepth: Objects
     sprite: Structures/Wallmounts/barsign.rsi
     state: empty
   - type: ApcPowerReceiver
@@ -28,8 +28,6 @@
     interfaces:
       enum.BarSignUiKey.Key:
         type: BarSignBoundUserInterface
-      enum.WiresUiKey.Key:
-        type: WiresBoundUserInterface
   - type: Appearance
   - type: Destructible
     thresholds:
@@ -39,11 +37,6 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: StationAiWhitelist
-  - type: WiresPanel
-  - type: Wires
-    boardName: wires-board-name-barsign
-    layoutId: BarSign
 
 - type: entity
   parent: BaseBarSign
@@ -55,7 +48,7 @@
 #- type: entity
 #  id: LargeBarSign
 #  name: large bar sign
-#  categories: [ HideSpawnMenu ]
+#  noSpawn: true
 #  components:
 #  - type: Clickable
 #  - type: InteractionOutline

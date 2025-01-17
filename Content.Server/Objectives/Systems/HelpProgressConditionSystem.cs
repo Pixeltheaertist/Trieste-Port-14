@@ -45,7 +45,10 @@ public sealed class HelpProgressConditionSystem : EntitySystem
             return;
         }
 
-        var traitors = _traitorRule.GetOtherTraitorMindsAliveAndConnected(args.Mind).ToHashSet();
+        var traitors = _traitorRule.GetOtherTraitorMindsAliveAndConnected(args.Mind)
+            .Select(pair => pair.Item1)
+            .ToHashSet();
+        var removeList = new List<EntityUid>();
 
         // cant help anyone who is tasked with helping:
         // 1. thats boring
@@ -53,26 +56,19 @@ public sealed class HelpProgressConditionSystem : EntitySystem
         foreach (var traitor in traitors)
         {
             // TODO: replace this with TryComp<ObjectivesComponent>(traitor) or something when objectives are moved out of mind
-            if (!TryComp<MindComponent>(traitor.Id, out var mind))
+            if (!TryComp<MindComponent>(traitor, out var mind))
                 continue;
 
-            foreach (var objective in mind.Objectives)
+            foreach (var objective in mind.AllObjectives)
             {
                 if (HasComp<HelpProgressConditionComponent>(objective))
-                    traitors.RemoveWhere(x => x.Mind == mind);
+                    removeList.Add(traitor);
             }
         }
 
-        // Can't have multiple objectives to help/save the same person
-        foreach (var objective in args.Mind.Objectives)
+        foreach (var tot in removeList)
         {
-            if (HasComp<RandomTraitorAliveComponent>(objective) || HasComp<RandomTraitorProgressComponent>(objective))
-            {
-                if (TryComp<TargetObjectiveComponent>(objective, out var help))
-                {
-                    traitors.RemoveWhere(x => x.Id == help.Target);
-                }
-            }
+            traitors.Remove(tot);
         }
 
         // no more helpable traitors
@@ -82,7 +78,7 @@ public sealed class HelpProgressConditionSystem : EntitySystem
             return;
         }
 
-        _target.SetTarget(uid, _random.Pick(traitors).Id, target);
+        _target.SetTarget(uid, _random.Pick(traitors), target);
     }
 
     private float GetProgress(EntityUid target)
@@ -92,7 +88,7 @@ public sealed class HelpProgressConditionSystem : EntitySystem
 
         if (TryComp<MindComponent>(target, out var mind))
         {
-            foreach (var objective in mind.Objectives)
+            foreach (var objective in mind.AllObjectives)
             {
                 // this has the potential to loop forever, anything setting target has to check that there is no HelpProgressCondition.
                 var info = _objectives.GetInfo(objective, target, mind);

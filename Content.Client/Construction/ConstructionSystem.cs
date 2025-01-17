@@ -26,6 +26,7 @@ namespace Content.Client.Construction
     {
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+        [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
         [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
         [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
         [Dependency] private readonly PopupSystem _popupSystem = default!;

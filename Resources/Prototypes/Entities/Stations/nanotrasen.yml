@@ -24,7 +24,7 @@
     - BaseStationSiliconLawCrewsimov
     - BaseStationAllEventsEligible
     - BaseStationNanotrasen
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
     - type: Transform
 
@@ -34,7 +34,7 @@
     - BaseStation
     - BaseStationAlertLevels
     - BaseStationNanotrasen
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
     - type: Transform
 
@@ -45,7 +45,7 @@
   - BaseStationJobsSpawning
   - BaseStationRecords
   - BaseStationNanotrasen
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
     - type: Transform
 

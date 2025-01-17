@@ -3,12 +3,11 @@ using Content.Server.Audio;
 using Content.Server.Light.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Light;
 using Content.Shared.Light.Components;
-using Content.Shared.Power;
-using Content.Shared.Station.Components;
 using Robust.Server.GameObjects;
 using Color = Robust.Shared.Maths.Color;
 
@@ -153,7 +152,7 @@ public sealed class EmergencyLightSystem : SharedEmergencyLightSystem
         else
         {
             _battery.SetCharge(entity.Owner, battery.CurrentCharge + entity.Comp.ChargingWattage * frameTime * entity.Comp.ChargingEfficiency, battery);
-            if (_battery.IsFull(entity, battery))
+            if (battery.IsFullyCharged)
             {
                 if (TryComp<ApcPowerReceiverComponent>(entity.Owner, out var receiver))
                 {

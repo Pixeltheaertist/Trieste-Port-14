@@ -3,6 +3,10 @@
   name: job-name-pilot
   description: job-description-pilot
   playTimeTracker: JobBasinTech
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Expeditionary
+      time: 3600 # 1 hr
   icon: "JobIconShaftMiner"
   startingGear: PilotGear
   supervisors: job-supervisors-qm

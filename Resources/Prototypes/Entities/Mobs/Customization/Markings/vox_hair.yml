@@ -95,7 +95,7 @@
   speciesRestriction: [Vox]
   sprites:
     - sprite: Mobs/Customization/vox_hair.rsi
-      state: long_braid_s
+      state: afro_s
 
 - type: marking
   id: VoxHairMange
@@ -170,15 +170,6 @@
       state: shortquills_s
 
 - type: marking
-  id: VoxHairSpotty
-  bodyPart: Hair
-  markingCategory: Hair
-  speciesRestriction: [Vox]
-  sprites:
-    - sprite: Mobs/Customization/vox_hair.rsi
-      state: spotty_s
-
-- type: marking
   id: VoxHairSurf
   bodyPart: Hair
   markingCategory: Hair
@@ -196,15 +187,6 @@
     - sprite: Mobs/Customization/vox_hair.rsi
       state: tielquills_s
 
-- type: marking
-  id: VoxHairWiseBraid
-  bodyPart: Hair
-  markingCategory: Hair
-  speciesRestriction: [Vox]
-  sprites:
-    - sprite: Mobs/Customization/vox_hair.rsi
-      state: wise_braid_s
-      
 - type: marking
   id: VoxHairYasu
   bodyPart: Hair

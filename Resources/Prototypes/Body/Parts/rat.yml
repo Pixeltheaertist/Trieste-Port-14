@@ -4,7 +4,7 @@
   id: TorsoRat
   name: "animal torso"
   parent: PartAnimal
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: BodyPart
     partType: Torso

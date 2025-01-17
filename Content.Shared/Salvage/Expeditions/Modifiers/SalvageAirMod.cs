@@ -17,7 +17,7 @@ public sealed partial class SalvageAirMod : IPrototype, IBiomeSpecificMod
 
     /// <inheritdoc/>
     [DataField("desc")]
-    public LocId Description { get; private set; } = string.Empty;
+    public string Description { get; private set; } = string.Empty;
 
     /// <inheritdoc/>
     [DataField("cost")]

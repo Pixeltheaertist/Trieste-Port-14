@@ -1,29 +1,25 @@
 # Markers
 - type: entity
   id: SalvageShuttleMarker
-  name: salvage shuttle marker
+  name: Salvage shuttle marker
   parent: FTLPoint
 
 # Biome mods -> at least 1 required
 - type: salvageBiomeMod
   id: Caves
-  desc: salvage-biome-mod-caves
   biome: Caves
 
 - type: salvageBiomeMod
   id: Grasslands
-  desc: salvage-biome-mod-grasslands
   biome: Grasslands
 
 - type: salvageBiomeMod
   id: Snow
-  desc: salvage-biome-mod-snow
   cost: 1
   biome: Snow
 
 - type: salvageBiomeMod
   id: Lava
-  desc: salvage-biome-mod-lava
   cost: 2
   biome: Lava
 
@@ -36,38 +32,36 @@
 # Light mods -> required
 - type: salvageLightMod
   id: Daylight
-  desc: salvage-light-mod-daylight
+  desc: Daylight
   color: "#D8B059"
   biomes:
     - Grasslands
 
 - type: salvageLightMod
   id: Lavalight
-  desc: salvage-light-mod-daylight
+  desc: Daylight
   color: "#A34931"
   biomes:
     - Lava
 
 - type: salvageLightMod
   id: Evening
-  desc: salvage-light-mod-evening
+  desc: Evening
   color: "#2b3143"
 
 - type: salvageLightMod
   id: Night
-  desc: salvage-light-mod-night
+  desc: Night time
   cost: 1
   color: null
 
 # Temperatures
 - type: salvageTemperatureMod
   id: RoomTemp
-  desc: salvage-temperature-mod-room-temperature
   cost: 0
 
 - type: salvageTemperatureMod
   id: Hot
-  desc: salvage-temperature-mod-hot
   cost: 1
   temperature: 323.15 # 50C
   biomes:
@@ -78,7 +72,7 @@
 
 - type: salvageTemperatureMod
   id: Burning
-  desc: salvage-temperature-mod-high-temperature
+  desc: High temperature
   cost: 2
   temperature: 423.15 # 200C
   biomes:
@@ -88,7 +82,7 @@
 
 - type: salvageTemperatureMod
   id: Melting
-  desc: salvage-temperature-mod-extreme-heat
+  desc: Extreme heat
   cost: 4
   temperature: 1273.15 # 1000C hot hot hot
   biomes:
@@ -96,7 +90,6 @@
 
 - type: salvageTemperatureMod
   id: Cold
-  desc: salvage-temperature-mod-cold
   cost: 1
   temperature: 275.15 # 2C
   biomes:
@@ -107,7 +100,7 @@
 
 - type: salvageTemperatureMod
   id: Tundra
-  desc: salvage-temperature-mod-low-temperature
+  desc: Low temperature
   cost: 2
   temperature: 263.15 # -40C
   biomes:
@@ -116,7 +109,7 @@
 
 - type: salvageTemperatureMod
   id: Frozen
-  desc: salvage-temperature-mod-extreme-cold
+  desc: Extreme cold
   cost: 4
   temperature: 123.15 # -150C
   biomes:
@@ -125,7 +118,7 @@
 # Air mixtures
 - type: salvageAirMod
   id: Space
-  desc: salvage-air-mod-no-atmosphere
+  desc: No atmosphere
   space: true
   cost: 2
   biomes:
@@ -135,7 +128,6 @@
 - type: salvageAirMod
   id: Breathable
   cost: 0
-  desc: salvage-air-mod-breathable-atmosphere
   gases:
     - 21.824779 # oxygen
     - 82.10312 # nitrogen
@@ -143,7 +135,7 @@
 - type: salvageAirMod
   id: Sleepy
   cost: 1
-  desc: salvage-air-mod-dangerous-atmosphere
+  desc: Dangerous atmosphere
   gases:
     - 21.824779 # oxygen
     - 72.10312 # nitrogen
@@ -163,7 +155,7 @@
 - type: salvageAirMod
   id: Poisoned
   cost: 2
-  desc: salvage-air-mod-dangerous-atmosphere
+  desc: Dangerous atmosphere
   gases:
     - 21.824779 # oxygen
     - 77.10312 # nitrogen
@@ -178,7 +170,7 @@
 - type: salvageAirMod
   id: Poison
   cost: 3
-  desc: salvage-air-mod-toxic-atmosphere
+  desc: Toxic atmosphere
   gases:
     - 21.824779 # oxygen
     - 0
@@ -191,7 +183,7 @@
 - type: salvageAirMod
   id: Plasma
   cost: 4
-  desc: salvage-air-mod-toxic-atmosphere
+  desc: Toxic atmosphere
   gases:
     - 0
     - 0
@@ -204,7 +196,7 @@
 - type: salvageAirMod
   id: Burnable
   cost: 5
-  desc: salvage-air-mod-volatile-atmosphere
+  desc: Volatile atmosphere
   gases:
     - 21.824779 # oxygen
     - 0
@@ -228,7 +220,6 @@
 #  For now just simple 1-dungeon setups
 - type: salvageDungeonMod
   id: Experiment
-  desc: salvage-dungeon-mod-experiment
   proto: Experiment
   biomes:
     #- LowDesert
@@ -236,28 +227,24 @@
 
 - type: salvageDungeonMod
   id: LavaBrig
-  desc: salvage-dungeon-mod-lava-brig
   proto: LavaBrig
   biomes:
     - Lava
 
 - type: salvageDungeonMod
   id: Mineshaft
-  desc: salvage-dungeon-mod-mineshaft
   proto: Mineshaft
   biomes:
     - Caves
 
 - type: salvageDungeonMod
   id: SnowyLabs
-  desc: salvage-dungeon-mod-snowy-labs
   proto: SnowyLabs
   biomes:
     - Snow
-
+    
 - type: salvageDungeonMod
   id: Haunted
-  desc: salvage-dungeon-mod-haunted
   proto: Haunted
   biomes:
     - Caves

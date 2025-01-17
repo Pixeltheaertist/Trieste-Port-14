@@ -1,7 +1,6 @@
 using JetBrains.Annotations;
 using Content.Shared.MassMedia.Systems;
 using Content.Shared.MassMedia.Components;
-using Robust.Client.UserInterface;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -10,6 +9,8 @@ namespace Content.Client.MassMedia.Ui;
 [UsedImplicitly]
 public sealed class NewsWriterBoundUserInterface : BoundUserInterface
 {
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
+
     [ViewVariables]
     private NewsWriterMenu? _menu;
 
@@ -20,15 +21,25 @@ public sealed class NewsWriterBoundUserInterface : BoundUserInterface
 
     protected override void Open()
     {
-        _menu = this.CreateWindow<NewsWriterMenu>();
+        _menu = new NewsWriterMenu(_gameTiming);
+
+        _menu.OpenCentered();
+        _menu.OnClose += Close;
 
         _menu.ArticleEditorPanel.PublishButtonPressed += OnPublishButtonPressed;
         _menu.DeleteButtonPressed += OnDeleteButtonPressed;
 
-        _menu.CreateButtonPressed += OnCreateButtonPressed;
-        _menu.ArticleEditorPanel.ArticleDraftUpdated += OnArticleDraftUpdated;
-
         SendMessage(new NewsWriterArticlesRequestMessage());
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+        if (!disposing)
+            return;
+
+        _menu?.Close();
+        _menu?.Dispose();
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
@@ -37,7 +48,7 @@ public sealed class NewsWriterBoundUserInterface : BoundUserInterface
         if (state is not NewsWriterBoundUserInterfaceState cast)
             return;
 
-        _menu?.UpdateUI(cast.Articles, cast.PublishEnabled, cast.NextPublish, cast.DraftTitle, cast.DraftContent);
+        _menu?.UpdateUI(cast.Articles, cast.PublishEnabled, cast.NextPublish);
     }
 
     private void OnPublishButtonPressed()
@@ -69,15 +80,5 @@ public sealed class NewsWriterBoundUserInterface : BoundUserInterface
             return;
 
         SendMessage(new NewsWriterDeleteMessage(articleNum));
-    }
-
-    private void OnCreateButtonPressed()
-    {
-        SendMessage(new NewsWriterRequestDraftMessage());
-    }
-
-    private void OnArticleDraftUpdated(string title, string content)
-    {
-        SendMessage(new NewsWriterSaveDraftMessage(title, content));
     }
 }

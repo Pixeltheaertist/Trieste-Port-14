@@ -308,9 +308,6 @@
     - id: PlushieArachind
       prob: 0.01
       orGroup: Plushies
-    - id: PlushieThrongler #hehe
-      prob: 0.0005
-      orGroup: Plushies
     #useful
     - id: AmeJar
       prob: 0.01
@@ -345,10 +342,7 @@
     - id: Lamp
       prob: 0.01
       orGroup: Useful
-    - id: FloraTreeLarge
-      prob: 0.01
-      orGroup: Useful
-    - id: LightTree #Funny mobs maybe
+    - id: FloraTreeLarge05
       prob: 0.01
       orGroup: Useful
     #notuseful

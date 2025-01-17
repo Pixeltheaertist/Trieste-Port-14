@@ -1,15 +1,13 @@
 using Content.Server.Chemistry.Components;
+using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
-using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Placeable;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Power;
-using Content.Server.Chemistry.Containers.EntitySystems;
 
 namespace Content.Server.Chemistry.EntitySystems
 {

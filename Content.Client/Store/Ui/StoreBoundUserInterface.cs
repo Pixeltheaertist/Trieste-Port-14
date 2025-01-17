@@ -2,7 +2,6 @@ using Content.Shared.Store;
 using JetBrains.Annotations;
 using System.Linq;
 using Content.Shared.Store.Components;
-using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client.Store.Ui;
@@ -19,7 +18,7 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
     private string _search = string.Empty;
 
     [ViewVariables]
-    private HashSet<ListingDataWithCostModifiers> _listings = new();
+    private HashSet<ListingData> _listings = new();
 
     public StoreBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
@@ -27,13 +26,16 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
 
     protected override void Open()
     {
-        _menu = this.CreateWindow<StoreMenu>();
+        _menu = new StoreMenu();
         if (EntMan.TryGetComponent<StoreComponent>(Owner, out var store))
             _menu.Title = Loc.GetString(store.Name);
 
+        _menu.OpenCentered();
+        _menu.OnClose += Close;
+
         _menu.OnListingButtonPressed += (_, listing) =>
         {
-            SendMessage(new StoreBuyListingMessage(listing.ID));
+            SendMessage(new StoreBuyListingMessage(listing));
         };
 
         _menu.OnCategoryButtonPressed += (_, category) =>
@@ -68,7 +70,6 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
                 _listings = msg.Listings;
 
                 _menu?.UpdateBalance(msg.Balance);
-
                 UpdateListingsWithSearchFilter();
                 _menu?.SetFooterVisibility(msg.ShowFooter);
                 _menu?.UpdateRefund(msg.AllowRefund);
@@ -76,12 +77,21 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
         }
     }
 
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+        if (!disposing)
+            return;
+        _menu?.Close();
+        _menu?.Dispose();
+    }
+
     private void UpdateListingsWithSearchFilter()
     {
         if (_menu == null)
             return;
 
-        var filteredListings = new HashSet<ListingDataWithCostModifiers>(_listings);
+        var filteredListings = new HashSet<ListingData>(_listings);
         if (!string.IsNullOrEmpty(_search))
         {
             filteredListings.RemoveWhere(listingData => !ListingLocalisationHelpers.GetLocalisedNameOrEntityName(listingData, _prototypeManager).Trim().ToLowerInvariant().Contains(_search) &&

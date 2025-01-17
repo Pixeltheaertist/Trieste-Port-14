@@ -1,5 +1,4 @@
 using Content.Client.Verbs;
-using Content.Shared.Verbs;
 using JetBrains.Annotations;
 using Robust.Shared.Console;
 

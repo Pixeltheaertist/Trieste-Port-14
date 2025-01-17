@@ -78,11 +78,8 @@ public sealed partial class GatherableSystem : EntitySystem
             }
             var getLoot = _proto.Index(table);
             var spawnLoot = getLoot.GetSpawns(_random);
-            foreach (var loot in spawnLoot)
-            {
-                var spawnPos = pos.Offset(_random.NextVector2(component.GatherOffset));
-                Spawn(loot, spawnPos);
-            }
+            var spawnPos = pos.Offset(_random.NextVector2(component.GatherOffset));
+            Spawn(spawnLoot[0], spawnPos);
         }
     }
 }

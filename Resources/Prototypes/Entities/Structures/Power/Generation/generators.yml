@@ -52,7 +52,7 @@
   - type: Anchorable
   - type: Pullable
   - type: Damageable
-    damageContainer: StructuralInorganic
+    damageContainer: Inorganic
     damageModifierSet: Metallic
   - type: PacifismDangerousAttack
   - type: Destructible
@@ -144,7 +144,7 @@
 # Construction Frames
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   id: BaseGeneratorWallmountFrame
   name: wallmount generator frame
   description: A construction frame for a wallmount generator.

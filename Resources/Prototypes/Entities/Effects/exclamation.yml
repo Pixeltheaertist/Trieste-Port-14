@@ -1,7 +1,7 @@
 - type: entity
   id: Exclamation
   name: exclamation
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   save: false
   components:
     - type: Transform
@@ -22,7 +22,7 @@
 - type: entity
   id: WhistleExclamation
   name: exclamation
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
     - type: Sprite
       sprite: Structures/Storage/closet.rsi

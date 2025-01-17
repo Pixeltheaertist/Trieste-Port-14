@@ -25,8 +25,6 @@
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
         color: "#cd7314"
-      Burn:
-        sprite: Mobs/Effects/burn_damage.rsi
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -84,9 +82,10 @@
           - MobMask
         layer:
           - MobLayer
+  - type: Inventory
+    templateId: diona
   - type: Speech
     speechVerb: Plant
-    allowedEmotes: ['Chirp']
   - type: Vocal
     sounds:
       Male: UnisexDiona
@@ -102,27 +101,13 @@
     actionPrototype: DionaGibAction
     allowedStates:
     - Dead
-  - type: Inventory
-    templateId: diona
-    femaleDisplacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: jumpsuit-female
 
 - type: entity
   parent: BaseSpeciesDummy
   id: MobDionaDummy
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
-  - type: HumanoidAppearance
-    species: Diona
   - type: Inventory
     templateId: diona
-    femaleDisplacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: jumpsuit-female
+  - type: HumanoidAppearance
+    species: Diona

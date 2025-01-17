@@ -4,20 +4,18 @@ using Content.Shared.Containers.ItemSlots;
 using Content.Shared.PDA;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
+using Robust.Shared.Configuration;
 
 namespace Content.Client.PDA
 {
     [UsedImplicitly]
     public sealed class PdaBoundUserInterface : CartridgeLoaderBoundUserInterface
     {
-        private readonly PdaSystem _pdaSystem;
-
         [ViewVariables]
         private PdaMenu? _menu;
 
         public PdaBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
         {
-            _pdaSystem = EntMan.System<PdaSystem>();
         }
 
         protected override void Open()
@@ -26,13 +24,14 @@ namespace Content.Client.PDA
 
             if (_menu == null)
                 CreateMenu();
+
+            _menu?.OpenCenteredLeft();
         }
 
         private void CreateMenu()
         {
-            _menu = this.CreateWindow<PdaMenu>();
-            _menu.OpenCenteredLeft();
-
+            _menu = new PdaMenu();
+            _menu.OnClose += Close;
             _menu.FlashLightToggleButton.OnToggled += _ =>
             {
                 SendMessage(new PdaToggleFlashlightMessage());
@@ -94,14 +93,9 @@ namespace Content.Client.PDA
             if (state is not PdaUpdateState updateState)
                 return;
 
-            if (_menu == null)
-            {
-                _pdaSystem.Log.Error("PDA state received before menu was created.");
-                return;
-            }
-
-            _menu.UpdateState(updateState);
+            _menu?.UpdateState(updateState);
         }
+
 
         protected override void AttachCartridgeUI(Control cartridgeUIFragment, string? title)
         {
@@ -122,6 +116,15 @@ namespace Content.Client.PDA
         protected override void UpdateAvailablePrograms(List<(EntityUid, CartridgeComponent)> programs)
         {
             _menu?.UpdateAvailablePrograms(programs);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            if (!disposing)
+                return;
+
+            _menu?.Dispose();
         }
 
         private PdaBorderColorComponent? GetBorderColorComponent()

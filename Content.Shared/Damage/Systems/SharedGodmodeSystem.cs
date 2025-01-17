@@ -21,7 +21,7 @@ public abstract class SharedGodmodeSystem : EntitySystem
 
     private void OnSlipAttempt(EntityUid uid, GodmodeComponent component, SlipAttemptEvent args)
     {
-        args.NoSlip = true;
+        args.Cancel();
     }
 
     private void OnBeforeDamageChanged(EntityUid uid, GodmodeComponent component, ref BeforeDamageChangedEvent args)

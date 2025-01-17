@@ -1,13 +1,9 @@
-using System.Linq;
 using System.Numerics;
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.Explosion.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Damage;
-using Content.Shared.Database;
 using Content.Shared.Explosion;
 using Content.Shared.Explosion.Components;
-using Content.Shared.Explosion.EntitySystems;
 using Content.Shared.Maps;
 using Content.Shared.Physics;
 using Content.Shared.Projectiles;
@@ -17,7 +13,6 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Dynamics;
-using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -210,8 +205,7 @@ public sealed partial class ExplosionSystem
         MapCoordinates epicenter,
         HashSet<EntityUid> processed,
         string id,
-        float? fireStacks,
-        EntityUid? cause)
+        float? fireStacks)
     {
         var size = grid.Comp.TileSize;
         var gridBox = new Box2(tile * size, (tile + 1) * size);
@@ -219,7 +213,7 @@ public sealed partial class ExplosionSystem
         // get the entities on a tile. Note that we cannot process them directly, or we get
         // enumerator-changed-while-enumerating errors.
         List<(EntityUid, TransformComponent)> list = new();
-        var state = (list, processed, EntityManager.TransformQuery);
+        var state = (list, processed, _transformQuery);
 
         // get entities:
         lookup.DynamicTree.QueryAabb(ref state, GridQueryCallback, gridBox, true);
@@ -230,7 +224,7 @@ public sealed partial class ExplosionSystem
         // process those entities
         foreach (var (uid, xform) in list)
         {
-            ProcessEntity(uid, epicenter, damage, throwForce, id, xform, fireStacks, cause);
+            ProcessEntity(uid, epicenter, damage, throwForce, id, xform, fireStacks);
         }
 
         // process anchored entities
@@ -240,7 +234,7 @@ public sealed partial class ExplosionSystem
         foreach (var entity in _anchored)
         {
             processed.Add(entity);
-            ProcessEntity(entity, epicenter, damage, throwForce, id, null, fireStacks, cause);
+            ProcessEntity(entity, epicenter, damage, throwForce, id, null, fireStacks);
         }
 
         // Walls and reinforced walls will break into girders. These girders will also be considered turf-blocking for
@@ -276,7 +270,7 @@ public sealed partial class ExplosionSystem
         {
             // Here we only throw, no dealing damage. Containers n such might drop their entities after being destroyed, but
             // they should handle their own damage pass-through, with their own damage reduction calculation.
-            ProcessEntity(uid, epicenter, null, throwForce, id, xform, null, cause);
+            ProcessEntity(uid, epicenter, null, throwForce, id, xform, null);
         }
 
         return !tileBlocked;
@@ -312,13 +306,12 @@ public sealed partial class ExplosionSystem
         MapCoordinates epicenter,
         HashSet<EntityUid> processed,
         string id,
-        float? fireStacks,
-        EntityUid? cause)
+        float? fireStacks)
     {
         var gridBox = Box2.FromDimensions(tile * DefaultTileSize, new Vector2(DefaultTileSize, DefaultTileSize));
         var worldBox = spaceMatrix.TransformBox(gridBox);
         var list = new List<(EntityUid, TransformComponent)>();
-        var state = (list, processed, invSpaceMatrix, lookup.Owner, EntityManager.TransformQuery, gridBox, _transformSystem);
+        var state = (list, processed, invSpaceMatrix, lookup.Owner, _transformQuery, gridBox, _transformSystem);
 
         // get entities:
         lookup.DynamicTree.QueryAabb(ref state, SpaceQueryCallback, worldBox, true);
@@ -329,7 +322,7 @@ public sealed partial class ExplosionSystem
         foreach (var (uid, xform) in state.Item1)
         {
             processed.Add(uid);
-            ProcessEntity(uid, epicenter, damage, throwForce, id, xform, fireStacks, cause);
+            ProcessEntity(uid, epicenter, damage, throwForce, id, xform, fireStacks);
         }
 
         if (throwForce <= 0)
@@ -343,7 +336,7 @@ public sealed partial class ExplosionSystem
 
         foreach (var (uid, xform) in list)
         {
-            ProcessEntity(uid, epicenter, null, throwForce, id, xform, fireStacks, cause);
+            ProcessEntity(uid, epicenter, null, throwForce, id, xform, fireStacks);
         }
     }
 
@@ -441,28 +434,13 @@ public sealed partial class ExplosionSystem
         float throwForce,
         string id,
         TransformComponent? xform,
-        float? fireStacksOnIgnite,
-        EntityUid? cause)
+        float? fireStacksOnIgnite)
     {
         if (originalDamage != null)
         {
             GetEntitiesToDamage(uid, originalDamage, id);
             foreach (var (entity, damage) in _toDamage)
             {
-                if (damage.GetTotal() > 0 && TryComp<ActorComponent>(entity, out var actorComponent))
-                {
-                    // Log damage to player entities only, cause this will create a massive amount of log spam otherwise.
-                    if (cause != null)
-                    {
-                        _adminLogger.Add(LogType.ExplosionHit, LogImpact.Medium, $"Explosion of {ToPrettyString(cause):actor} dealt {damage.GetTotal()} damage to {ToPrettyString(entity):subject}");
-                    }
-                    else
-                    {
-                        _adminLogger.Add(LogType.ExplosionHit, LogImpact.Medium, $"Explosion at {epicenter:epicenter} dealt {damage.GetTotal()} damage to {ToPrettyString(entity):subject}");
-                    }
-
-                }
-
                 // TODO EXPLOSIONS turn explosions into entities, and pass the the entity in as the damage origin.
                 _damageableSystem.TryChangeDamage(entity, damage, ignoreResistances: true);
 
@@ -488,12 +466,9 @@ public sealed partial class ExplosionSystem
             && physics.BodyType == BodyType.Dynamic)
         {
             var pos = _transformSystem.GetWorldPosition(xform);
-            var dir = pos - epicenter.Position;
-            if (dir.IsLengthZero())
-                dir = _robustRandom.NextVector2().Normalized();
             _throwingSystem.TryThrow(
                 uid,
-                dir,
+                 pos - epicenter.Position,
                 physics,
                 xform,
                 _projectileQuery,
@@ -512,8 +487,7 @@ public sealed partial class ExplosionSystem
         List<(Vector2i GridIndices, Tile Tile)> damagedTiles,
         ExplosionPrototype type)
     {
-        if (_tileDefinitionManager[tileRef.Tile.TypeId] is not ContentTileDefinition tileDef
-            || tileDef.Indestructible)
+        if (_tileDefinitionManager[tileRef.Tile.TypeId] is not ContentTileDefinition tileDef)
             return;
 
         if (!CanCreateVacuum)
@@ -670,11 +644,8 @@ sealed class Explosion
 
     private readonly IEntityManager _entMan;
     private readonly ExplosionSystem _system;
-    private readonly SharedMapSystem _mapSystem;
 
     public readonly EntityUid VisualEnt;
-
-    public readonly EntityUid? Cause;
 
     /// <summary>
     ///     Initialize a new instance for processing
@@ -692,14 +663,10 @@ sealed class Explosion
         bool canCreateVacuum,
         IEntityManager entMan,
         IMapManager mapMan,
-        EntityUid visualEnt,
-        EntityUid? cause,
-        SharedMapSystem mapSystem)
+        EntityUid visualEnt)
     {
         VisualEnt = visualEnt;
-        Cause = cause;
         _system = system;
-        _mapSystem = mapSystem;
         ExplosionType = explosionType;
         _tileSetIntensity = tileSetIntensity;
         Epicenter = epicenter;
@@ -862,8 +829,7 @@ sealed class Explosion
                     Epicenter,
                     ProcessedEntities,
                     ExplosionType.ID,
-                    ExplosionType.FireStacks,
-                    Cause);
+                    ExplosionType.FireStacks);
 
                 // If the floor is not blocked by some dense object, damage the floor tiles.
                 if (canDamageFloor)
@@ -881,8 +847,7 @@ sealed class Explosion
                     Epicenter,
                     ProcessedEntities,
                     ExplosionType.ID,
-                    ExplosionType.FireStacks,
-                    Cause);
+                    ExplosionType.FireStacks);
             }
 
             if (!MoveNext())
@@ -906,7 +871,7 @@ sealed class Explosion
         {
             if (list.Count > 0 && _entMan.EntityExists(grid.Owner))
             {
-                _mapSystem.SetTiles(grid.Owner, grid, list);
+                grid.SetTiles(list);
             }
         }
         _tileUpdateDict.Clear();
@@ -923,5 +888,4 @@ public sealed class QueuedExplosion
     public float TotalIntensity, Slope, MaxTileIntensity, TileBreakScale;
     public int MaxTileBreak;
     public bool CanCreateVacuum;
-    public EntityUid? Cause; // The entity that exploded, for logging purposes.
 }

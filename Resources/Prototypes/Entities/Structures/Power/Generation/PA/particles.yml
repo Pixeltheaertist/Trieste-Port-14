@@ -3,7 +3,7 @@
   description: Accelerated particles.
   id: ParticlesProjectile
   parent: BaseBullet
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
     - type: Sprite
       layers:
@@ -54,7 +54,7 @@
   description: Accelerated negative particles.
   id: AntiParticlesProjectile
   parent: ParticlesProjectile
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: Sprite
     layers:

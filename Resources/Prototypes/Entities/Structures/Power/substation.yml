@@ -52,8 +52,8 @@
     supplyRampTolerance: 5000
     supplyRampRate: 1000
   - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallicStrong
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
   - type: PacifismDangerousAttack
   - type: Destructible
     thresholds:
@@ -112,7 +112,7 @@
 # Compact Wall Substation Base
 - type: entity
   id: BaseSubstationWall
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   name: wallmount substation
   description: A substation designed for compact shuttles and spaces.
   placement:
@@ -183,8 +183,8 @@
     supplyRampTolerance: 5000
     supplyRampRate: 1000
   - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallicStrong
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
   - type: PacifismDangerousAttack
   - type: Destructible
     thresholds:
@@ -256,9 +256,9 @@
 # Construction Frame
 - type: entity
   id: BaseSubstationWallFrame
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   name: wallmount substation frame
-  description: A substation frame for construction.
+  description: A substation frame for construction
   placement:
     mode: SnapgridCenter
   components:

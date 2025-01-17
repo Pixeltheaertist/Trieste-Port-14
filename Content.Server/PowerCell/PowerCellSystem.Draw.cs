@@ -1,4 +1,5 @@
 using Content.Server.Power.Components;
+using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.PowerCell;
 using Content.Shared.PowerCell.Components;
 
@@ -13,11 +14,11 @@ public sealed partial class PowerCellSystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-        var query = EntityQueryEnumerator<PowerCellDrawComponent, PowerCellSlotComponent>();
+        var query = EntityQueryEnumerator<PowerCellDrawComponent, PowerCellSlotComponent, ItemToggleComponent>();
 
-        while (query.MoveNext(out var uid, out var comp, out var slot))
+        while (query.MoveNext(out var uid, out var comp, out var slot, out var toggle))
         {
-            if (!comp.Enabled)
+            if (!comp.Enabled || !toggle.Activated)
                 continue;
 
             if (Timing.CurTime < comp.NextUpdateTime)
@@ -30,6 +31,8 @@ public sealed partial class PowerCellSystem
 
             if (_battery.TryUseCharge(batteryEnt.Value, comp.DrawRate, battery))
                 continue;
+
+            Toggle.TryDeactivate((uid, toggle));
 
             var ev = new PowerCellSlotEmptyEvent();
             RaiseLocalEvent(uid, ref ev);
@@ -57,10 +60,7 @@ public sealed partial class PowerCellSystem
         var canUse = !args.Ejected && HasActivatableCharge(uid, component);
 
         if (!canDraw)
-        {
-            var ev = new PowerCellSlotEmptyEvent();
-            RaiseLocalEvent(uid, ref ev);
-        }
+            Toggle.TryDeactivate(uid);
 
         if (canUse != component.CanUse || canDraw != component.CanDraw)
         {

@@ -25,30 +25,24 @@ public sealed class FaxVisualsSystem : EntitySystem
         if (args.Sprite == null)
             return;
 
-        if (_player.HasRunningAnimation(uid, "faxecute"))
-            return;
-
-        if (_appearance.TryGetData(uid, FaxMachineVisuals.VisualState, out FaxMachineVisualState visuals) &&
-            visuals == FaxMachineVisualState.Inserting)
+        if (_appearance.TryGetData(uid, FaxMachineVisuals.VisualState, out FaxMachineVisualState visuals) && visuals == FaxMachineVisualState.Inserting)
         {
-            _player.Play(uid,
-                new Animation()
+            _player.Play(uid, new Animation()
+            {
+                Length = TimeSpan.FromSeconds(2.4),
+                AnimationTracks =
                 {
-                    Length = TimeSpan.FromSeconds(2.4),
-                    AnimationTracks =
+                    new AnimationTrackSpriteFlick()
                     {
-                        new AnimationTrackSpriteFlick()
+                        LayerKey = FaxMachineVisuals.VisualState,
+                        KeyFrames =
                         {
-                            LayerKey = FaxMachineVisuals.VisualState,
-                            KeyFrames =
-                            {
-                                new AnimationTrackSpriteFlick.KeyFrame(component.InsertingState, 0f),
-                                new AnimationTrackSpriteFlick.KeyFrame("icon", 2.4f),
-                            },
-                        },
-                    },
-                },
-                "faxecute");
+                            new AnimationTrackSpriteFlick.KeyFrame(component.InsertingState, 0f),
+                            new AnimationTrackSpriteFlick.KeyFrame("icon", 2.4f),
+                        }
+                    }
+                }
+            }, "faxecute");
         }
     }
 }

@@ -10,7 +10,11 @@ namespace Content.Server.Access;
 public sealed class AddAccessLogCommand : ToolshedCommand
 {
     [CommandImplementation]
-    public void AddAccessLog(IInvocationContext ctx, EntityUid input, float seconds, string accessor)
+    public void AddAccessLog(
+        [CommandInvocationContext] IInvocationContext ctx,
+        [CommandArgument] EntityUid input,
+        [CommandArgument] float seconds,
+        [CommandArgument] ValueRef<string> accessor)
     {
         var accessReader = EnsureComp<AccessReaderComponent>(input);
 
@@ -19,14 +23,19 @@ public sealed class AddAccessLogCommand : ToolshedCommand
             ctx.WriteLine($"WARNING: Surpassing the limit of the log by {accessLogCount - accessReader.AccessLogLimit+1} entries!");
 
         var accessTime = TimeSpan.FromSeconds(seconds);
-        accessReader.AccessLog.Enqueue(new AccessRecord(accessTime, accessor));
+        var accessName = accessor.Evaluate(ctx)!;
+        accessReader.AccessLog.Enqueue(new AccessRecord(accessTime, accessName));
         ctx.WriteLine($"Successfully added access log to {input} with this information inside:\n " +
                       $"Time of access: {accessTime}\n " +
-                      $"Accessed by: {accessor}");
+                      $"Accessed by: {accessName}");
     }
 
     [CommandImplementation]
-    public void AddAccessLogPiped(IInvocationContext ctx, [PipedArgument] EntityUid input, float seconds, string accessor)
+    public void AddAccessLogPiped(
+        [CommandInvocationContext] IInvocationContext ctx,
+        [PipedArgument] EntityUid input,
+        [CommandArgument] float seconds,
+        [CommandArgument] ValueRef<string> accessor)
     {
         AddAccessLog(ctx, input, seconds, accessor);
     }

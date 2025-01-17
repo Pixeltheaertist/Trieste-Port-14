@@ -8,7 +8,6 @@
     sprite: Objects/Consumable/Smokeables/Cigarettes/Cartons/green.rsi
     layers:
       - state: closed
-        map: ["closeLayer"]
       - state: open
         map: ["openLayer"]
   - type: Item

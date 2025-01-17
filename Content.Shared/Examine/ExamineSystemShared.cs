@@ -18,7 +18,6 @@ namespace Content.Shared.Examine
 {
     public abstract partial class ExamineSystemShared : EntitySystem
     {
-        [Dependency] private readonly OccluderSystem _occluder = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
         [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
         [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
@@ -117,25 +116,12 @@ namespace Content.Shared.Examine
             if (EntityManager.GetComponent<TransformComponent>(examiner).MapID != target.MapId)
                 return false;
 
-            // Do target InRangeUnoccluded which has different checks.
-            if (examined != null)
-            {
-                return InRangeUnOccluded(
-                    examiner,
-                    examined.Value,
-                    GetExaminerRange(examiner),
-                    predicate: predicate,
-                    ignoreInsideBlocker: true);
-            }
-            else
-            {
-                return InRangeUnOccluded(
-                    examiner,
-                    target,
-                    GetExaminerRange(examiner),
-                    predicate: predicate,
-                    ignoreInsideBlocker: true);
-            }
+            return InRangeUnOccluded(
+                _transform.GetMapCoordinates(examiner),
+                target,
+                GetExaminerRange(examiner),
+                predicate: predicate,
+                ignoreInsideBlocker: true);
         }
 
         /// <summary>
@@ -196,9 +182,12 @@ namespace Content.Shared.Examine
                 length = MaxRaycastRange;
             }
 
+            var occluderSystem = Get<OccluderSystem>();
+            IoCManager.Resolve(ref entMan);
+
             var ray = new Ray(origin.Position, dir.Normalized());
-            var rayResults = _occluder
-                .IntersectRayWithPredicate(origin.MapId, ray, length, state, predicate, false);
+            var rayResults = occluderSystem
+                .IntersectRayWithPredicate(origin.MapId, ray, length, state, predicate, false).ToList();
 
             if (rayResults.Count == 0) return true;
 
@@ -206,13 +195,13 @@ namespace Content.Shared.Examine
 
             foreach (var result in rayResults)
             {
-                if (!TryComp(result.HitEntity, out OccluderComponent? o))
+                if (!entMan.TryGetComponent(result.HitEntity, out OccluderComponent? o))
                 {
                     continue;
                 }
 
                 var bBox = o.BoundingBox;
-                bBox = bBox.Translated(_transform.GetWorldPosition(result.HitEntity));
+                bBox = bBox.Translated(entMan.GetComponent<TransformComponent>(result.HitEntity).WorldPosition);
 
                 if (bBox.Contains(origin.Position) || bBox.Contains(other.Position))
                 {
@@ -227,14 +216,7 @@ namespace Content.Shared.Examine
 
         public bool InRangeUnOccluded(EntityUid origin, EntityUid other, float range = ExamineRange, Ignored? predicate = null, bool ignoreInsideBlocker = true)
         {
-            var ev = new InRangeOverrideEvent(origin, other);
-            RaiseLocalEvent(origin, ref ev);
-
-            if (ev.Handled)
-            {
-                return ev.InRange;
-            }
-
+            var entMan = IoCManager.Resolve<IEntityManager>();
             var originPos = _transform.GetMapCoordinates(origin);
             var otherPos = _transform.GetMapCoordinates(other);
 
@@ -243,14 +225,16 @@ namespace Content.Shared.Examine
 
         public bool InRangeUnOccluded(EntityUid origin, EntityCoordinates other, float range = ExamineRange, Ignored? predicate = null, bool ignoreInsideBlocker = true)
         {
+            var entMan = IoCManager.Resolve<IEntityManager>();
             var originPos = _transform.GetMapCoordinates(origin);
-            var otherPos = _transform.ToMapCoordinates(other);
+            var otherPos = other.ToMap(entMan, _transform);
 
             return InRangeUnOccluded(originPos, otherPos, range, predicate, ignoreInsideBlocker);
         }
 
         public bool InRangeUnOccluded(EntityUid origin, MapCoordinates other, float range = ExamineRange, Ignored? predicate = null, bool ignoreInsideBlocker = true)
         {
+            var entMan = IoCManager.Resolve<IEntityManager>();
             var originPos = _transform.GetMapCoordinates(origin);
 
             return InRangeUnOccluded(originPos, other, range, predicate, ignoreInsideBlocker);
@@ -266,12 +250,11 @@ namespace Content.Shared.Examine
             }
 
             var hasDescription = false;
-            var metadata = MetaData(entity);
 
             //Add an entity description if one is declared
-            if (!string.IsNullOrEmpty(metadata.EntityDescription))
+            if (!string.IsNullOrEmpty(EntityManager.GetComponent<MetaDataComponent>(entity).EntityDescription))
             {
-                message.AddText(metadata.EntityDescription);
+                message.AddText(EntityManager.GetComponent<MetaDataComponent>(entity).EntityDescription);
                 hasDescription = true;
             }
 
@@ -373,7 +356,7 @@ namespace Content.Shared.Examine
             var totalMessage = new FormattedMessage(Message);
             parts.Sort(Comparison);
 
-            if (_hasDescription && parts.Count > 0)
+            if (_hasDescription)
             {
                 totalMessage.PushNewline();
             }
@@ -384,8 +367,6 @@ namespace Content.Shared.Examine
                 if (part.DoNewLine && parts.Last() != part)
                     totalMessage.PushNewline();
             }
-
-            totalMessage.TrimEnd();
 
             return totalMessage;
         }
@@ -411,10 +392,8 @@ namespace Content.Shared.Examine
         private void PopGroup()
         {
             DebugTools.Assert(_currentGroupPart != null);
-            if (_currentGroupPart != null && !_currentGroupPart.Message.IsEmpty)
-            {
+            if (_currentGroupPart != null)
                 Parts.Add(_currentGroupPart);
-            }
 
             _currentGroupPart = null;
         }
@@ -451,7 +430,7 @@ namespace Content.Shared.Examine
         /// <seealso cref="PushMessage"/>
         public void PushMarkup(string markup, int priority=0)
         {
-            PushMessage(FormattedMessage.FromMarkupOrThrow(markup), priority);
+            PushMessage(FormattedMessage.FromMarkup(markup), priority);
         }
 
         /// <summary>
@@ -499,7 +478,7 @@ namespace Content.Shared.Examine
         /// <seealso cref="AddMessage"/>
         public void AddMarkup(string markup, int priority=0)
         {
-            AddMessage(FormattedMessage.FromMarkupOrThrow(markup), priority);
+            AddMessage(FormattedMessage.FromMarkup(markup), priority);
         }
 
         /// <summary>

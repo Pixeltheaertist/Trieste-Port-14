@@ -1,5 +1,4 @@
 using Content.Shared.Actions;
-using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
@@ -8,9 +7,21 @@ namespace Content.Shared.Silicons.Laws.Components;
 /// <summary>
 /// This is used for entities which are bound to silicon laws and can view them.
 /// </summary>
-[RegisterComponent, NetworkedComponent, Access(typeof(SharedSiliconLawSystem))]
+[RegisterComponent, Access(typeof(SharedSiliconLawSystem))]
 public sealed partial class SiliconLawBoundComponent : Component
 {
+    /// <summary>
+    /// The sidebar action that toggles the laws screen.
+    /// </summary>
+    [DataField]
+    public EntProtoId ViewLawsAction = "ActionViewLaws";
+
+    /// <summary>
+    /// The action for toggling laws. Stored here so we can remove it later.
+    /// </summary>
+    [DataField]
+    public EntityUid? ViewLawsActionEntity;
+
     /// <summary>
     /// The last entity that provided laws to this entity.
     /// </summary>

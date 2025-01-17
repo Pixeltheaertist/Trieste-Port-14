@@ -7,7 +7,6 @@
     snap:
     - Wallmount
   components:
-  - type: StationAiWhitelist
   - type: WallMount
     arc: 360
   - type: Clickable
@@ -50,7 +49,6 @@
     snap:
     - Wallmount
   components:
-  - type: StationAiWhitelist
   - type: WallMount
     arc: 360
   - type: Clickable
@@ -148,7 +146,6 @@
   placement:
     mode: SnapgridCenter
   components:
-    - type: StationAiWhitelist
     - type: Clickable
     - type: InteractionOutline
     - type: Sprite
@@ -239,7 +236,7 @@
   id: LockableButton
   name: lockable button
   parent: SignalButtonDirectional
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: Appearance
   - type: Lock
@@ -499,7 +496,7 @@
 - type: entity
   id: ButtonFrame
   name: button frame
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   description: It's a frame to help distinguish switches visually.
   placement:
     mode: SnapgridCenter

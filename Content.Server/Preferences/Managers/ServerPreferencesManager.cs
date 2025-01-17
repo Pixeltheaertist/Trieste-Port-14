@@ -250,6 +250,7 @@ namespace Content.Server.Preferences.Managers
 
         /// <summary>
         /// Retrieves preferences for the given username from storage.
+        /// Creates and saves default preferences if they are not found, then returns them.
         /// </summary>
         public PlayerPreferences GetPreferences(NetUserId userId)
         {
@@ -264,6 +265,7 @@ namespace Content.Server.Preferences.Managers
 
         /// <summary>
         /// Retrieves preferences for the given username from storage or returns null.
+        /// Creates and saves default preferences if they are not found, then returns them.
         /// </summary>
         public PlayerPreferences? GetPreferencesOrNull(NetUserId? userId)
         {

@@ -40,7 +40,6 @@ public sealed class NukeSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly AppearanceSystem _appearance = default!;
@@ -169,21 +168,12 @@ public sealed class NukeSystem : EntitySystem
         if (component.Status == NukeStatus.ARMED)
             return;
 
-        // Nuke has to have the disk in it to be moved
-        if (!component.DiskSlot.HasItem)
-        {
-            var msg = Loc.GetString("nuke-component-cant-anchor-toggle");
-            _popups.PopupEntity(msg, uid, args.Actor, PopupType.MediumCaution);
-            return;
-        }
-
         // manually set transform anchor (bypassing anchorable)
         // todo: it will break pullable system
         var xform = Transform(uid);
         if (xform.Anchored)
         {
             _transform.Unanchor(uid, xform);
-            _itemSlots.SetLock(uid, component.DiskSlot, true);
         }
         else
         {
@@ -192,7 +182,7 @@ public sealed class NukeSystem : EntitySystem
 
             var worldPos = _transform.GetWorldPosition(xform);
 
-            foreach (var tile in _map.GetTilesIntersecting(xform.GridUid.Value, grid, new Circle(worldPos, component.RequiredFloorRadius), false))
+            foreach (var tile in grid.GetTilesIntersecting(new Circle(worldPos, component.RequiredFloorRadius), false))
             {
                 if (!tile.IsSpace(_tileDefManager))
                     continue;
@@ -205,7 +195,6 @@ public sealed class NukeSystem : EntitySystem
 
             _transform.SetCoordinates(uid, xform, xform.Coordinates.SnapToGrid());
             _transform.AnchorEntity(uid, xform);
-            _itemSlots.SetLock(uid, component.DiskSlot, false);
         }
 
         UpdateUserInterface(uid, component);
@@ -236,7 +225,7 @@ public sealed class NukeSystem : EntitySystem
 
     private void OnClearButtonPressed(EntityUid uid, NukeComponent component, NukeKeypadClearMessage args)
     {
-        _audio.PlayPvs(component.KeypadPressSound, uid);
+        _audio.PlayEntity(component.KeypadPressSound, Filter.Pvs(uid), uid, true);
 
         if (component.Status != NukeStatus.AWAIT_CODE)
             return;
@@ -354,12 +343,12 @@ public sealed class NukeSystem : EntitySystem
                 {
                     component.Status = NukeStatus.AWAIT_ARM;
                     component.RemainingTime = component.Timer;
-                    _audio.PlayPvs(component.AccessGrantedSound, uid);
+                    _audio.PlayEntity(component.AccessGrantedSound, Filter.Pvs(uid), uid, true);
                 }
                 else
                 {
                     component.EnteredCode = "";
-                    _audio.PlayPvs(component.AccessDeniedSound, uid);
+                    _audio.PlayEntity(component.AccessDeniedSound, Filter.Pvs(uid), uid, true);
                 }
 
                 break;
@@ -428,9 +417,7 @@ public sealed class NukeSystem : EntitySystem
         // Don't double-dip on the octave shifting
         component.LastPlayedKeypadSemitones = number == 0 ? component.LastPlayedKeypadSemitones : semitoneShift;
 
-        var opts = component.KeypadPressSound.Params;
-        opts = AudioHelpers.ShiftSemitone(opts, semitoneShift).AddVolume(-5f);
-        _audio.PlayPvs(component.KeypadPressSound, uid, opts);
+        _audio.PlayEntity(component.KeypadPressSound, Filter.Pvs(uid), uid, true, AudioHelpers.ShiftSemitone(semitoneShift).WithVolume(-5f));
     }
 
     public string GenerateRandomNumberString(int length)
@@ -477,7 +464,7 @@ public sealed class NukeSystem : EntitySystem
         // warn a crew
         var announcement = Loc.GetString("nuke-component-announcement-armed",
             ("time", (int) component.RemainingTime),
-            ("location", FormattedMessage.RemoveMarkupOrThrow(_navMap.GetNearestBeaconString((uid, nukeXform)))));
+            ("location", FormattedMessage.RemoveMarkup(_navMap.GetNearestBeaconString((uid, nukeXform)))));
         var sender = Loc.GetString("nuke-component-announcement-sender");
         _chatSystem.DispatchStationAnnouncement(stationUid ?? uid, announcement, sender, false, null, Color.Red);
 
@@ -606,7 +593,7 @@ public sealed class NukeSystem : EntitySystem
         {
             BreakOnDamage = true,
             BreakOnMove = true,
-            NeedHand = true,
+            NeedHand = true
         };
 
         if (!_doAfter.TryStartDoAfter(doAfter))

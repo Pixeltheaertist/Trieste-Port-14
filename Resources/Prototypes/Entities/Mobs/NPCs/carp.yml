@@ -39,10 +39,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        40: Dead
-    - type: MovementSpeedModifier
-      baseWalkSpeed: 2.5
-      baseSprintSpeed: 3.5
+        50: Dead
     - type: Stamina
       critThreshold: 100
     - type: DamageStateVisuals
@@ -57,9 +54,6 @@
       spawned:
         - id: FoodMeatFishCarp
           amount: 2
-        - id: MaterialToothSpaceCarp1
-          amount: 1
-          maxAmount: 4
     - type: MeleeWeapon
       altDisarm: false
       angle: 0
@@ -68,8 +62,8 @@
         path: /Audio/Effects/bite.ogg
       damage:
         types:
-          Blunt: 5
-          Slash: 7
+          Piercing: 5
+          Slash: 10
     - type: TypingIndicator
       proto: alien
     - type: Tag
@@ -170,8 +164,6 @@
       name: ghost-role-information-sentient-carp-name
       description: ghost-role-information-sentient-carp-description
       rules: ghost-role-information-space-dragon-summoned-carp-rules
-      mindRoles:
-      - MindRoleGhostRoleTeamAntagonist
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -224,7 +216,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        150: Dead
+        180: Dead
     - type: Stamina
       critThreshold: 150
     - type: DamageStateVisuals
@@ -242,13 +234,10 @@
       spawned:
         - id: FoodMeatFishCarp
           amount: 4
-        - id: MaterialToothSharkminnow1
-          amount: 1
-          maxAmount: 3
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 10
+          Slash: 12
           Bloodloss: 5
 
 - type: entity

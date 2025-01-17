@@ -17,7 +17,6 @@ public sealed class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealthIconsCo
 {
     [Dependency] private readonly IPrototypeManager _prototypeMan = default!;
 
-    [ViewVariables]
     public HashSet<string> DamageContainers = new();
 
     public override void Initialize()
@@ -25,7 +24,6 @@ public sealed class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealthIconsCo
         base.Initialize();
 
         SubscribeLocalEvent<DamageableComponent, GetStatusIconsEvent>(OnGetStatusIconsEvent);
-        SubscribeLocalEvent<ShowHealthIconsComponent, AfterAutoHandleStateEvent>(OnHandleState);
     }
 
     protected override void UpdateInternal(RefreshEquipmentHudEvent<ShowHealthIconsComponent> component)
@@ -45,11 +43,6 @@ public sealed class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealthIconsCo
         DamageContainers.Clear();
     }
 
-    private void OnHandleState(Entity<ShowHealthIconsComponent> ent, ref AfterAutoHandleStateEvent args)
-    {
-        RefreshOverlay(ent);
-    }
-
     private void OnGetStatusIconsEvent(Entity<DamageableComponent> entity, ref GetStatusIconsEvent args)
     {
         if (!IsActive)
@@ -60,17 +53,17 @@ public sealed class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealthIconsCo
         args.StatusIcons.AddRange(healthIcons);
     }
 
-    private IReadOnlyList<HealthIconPrototype> DecideHealthIcons(Entity<DamageableComponent> entity)
+    private IReadOnlyList<StatusIconPrototype> DecideHealthIcons(Entity<DamageableComponent> entity)
     {
         var damageableComponent = entity.Comp;
 
         if (damageableComponent.DamageContainerID == null ||
             !DamageContainers.Contains(damageableComponent.DamageContainerID))
         {
-            return Array.Empty<HealthIconPrototype>();
+            return Array.Empty<StatusIconPrototype>();
         }
 
-        var result = new List<HealthIconPrototype>();
+        var result = new List<StatusIconPrototype>();
 
         // Here you could check health status, diseases, mind status, etc. and pick a good icon, or multiple depending on whatever.
         if (damageableComponent?.DamageContainerID == "Biological")

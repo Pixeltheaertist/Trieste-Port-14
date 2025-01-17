@@ -46,6 +46,5 @@ job-description-scientist = Research alien artifacts, unlock new technologies, b
 job-description-security = Catch criminals and enemies of freedom, enforce the law, and ensure that the platform does not fall into disarray.
 job-description-serviceworker = Learn the basics of bartending, cooking, and growing plants.
 job-description-visitor = Enjoy your visit on the platform.
-job-description-station-ai = Follow your laws, serve the crew.
 job-description-warden = Patrol the security department, ensure that no one is stealing from the armory, and make sure that all prisoners are processed and let out when their time is up.
-job-description-zookeeper = Put on a joyful display of cute animals and drifters for all the citizens to see.
+job-description-zookeeper = Put on a joyful display of cute animals and drifters for all the citizens to see. Currently available on Gemini Station.

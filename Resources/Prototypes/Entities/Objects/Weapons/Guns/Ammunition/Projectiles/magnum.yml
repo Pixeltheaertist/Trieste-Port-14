@@ -2,7 +2,7 @@
   id: BulletMagnum
   name: bullet (.45 magnum)
   parent: BaseBullet
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: Projectile
     damage:
@@ -13,7 +13,7 @@
   id: BulletMagnumPractice
   name: bullet (.45 magnum practice)
   parent: BaseBulletPractice
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: Projectile
     damage:
@@ -24,7 +24,7 @@
   id: BulletMagnumIncendiary
   parent: BaseBulletIncendiary
   name: bullet (.45 magnum incendiary)
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: Projectile
     damage:
@@ -36,7 +36,7 @@
   id: BulletMagnumAP
   name: bullet (.45 magnum armor-piercing)
   parent: BaseBulletAP
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: Projectile
     damage:
@@ -48,7 +48,7 @@
   id: BulletMagnumUranium
   name: bullet (.45 magnum uranium)
   parent: BaseBulletUranium
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
   - type: Projectile
     damage:

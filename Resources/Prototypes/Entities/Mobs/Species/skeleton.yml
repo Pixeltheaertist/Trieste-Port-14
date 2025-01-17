@@ -102,25 +102,11 @@
   - type: FireVisuals
     alternateState: Standing
   - type: FlashImmunity
-  - type: Inventory
-    femaleDisplacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: jumpsuit-female
 
 - type: entity
   parent: BaseSpeciesDummy
   id: MobSkeletonPersonDummy
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
   components:
-  - type: HumanoidAppearance
-    species: Skeleton
-  - type: Inventory
-    femaleDisplacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: jumpsuit-female
+    - type: HumanoidAppearance
+      species: Skeleton
