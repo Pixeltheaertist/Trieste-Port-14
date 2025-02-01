@@ -18,3 +18,20 @@
     rarePrototypes:
       - ShadowTree
     rareChance: 0.05
+
+- type: entity
+  id: RandomForagePlant
+  name: random forage plant spawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    state: plant
+    layers:
+      - state: red
+      - sprite: Objects/Decoration/Flora/Forage/trenchlight_weed.rsi
+        state: plant
+  - type: RandomSpawner
+    prototypes:
+    - SerpentsMane
+    - TrenchlightWeed
+    chance: 0.6
