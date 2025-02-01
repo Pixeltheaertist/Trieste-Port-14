@@ -1,0 +1,133 @@
+- type: entity
+  parent: BaseStructure
+  id: BaseForagePlant
+  abstract: true
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 15
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  parent: BaseForagePlant
+  id: BaseForagePlantRegrowing
+  abstract: true
+  components:
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.RegrowVisuals.Regrowing:
+        enum.RegrowVisuals.Layer:
+          True: { state: plant-regrowing }
+          False: { state: plant }
+
+- type: entity
+  parent: BaseForagePlantRegrowing
+  id: SerpentsMane
+  name: serpent's mane
+  description: This plant tries to ward off potential predators by imitating an animal. The currents will make it's light stem move around, scaring off other creatures and the unexperienced.
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Flora/Forage/serpents_mane.rsi
+  - type: Icon
+    sprite: _TP/Objects/Flora/Forage/serpents_mane.rsi
+    state: plant
+  - type: Forage
+    regrowTime: 300
+    loot:
+      All: SerpentsManeGather
+
+- type: entityLootTable
+  id: SerpentsManeGather
+  entries:
+  - id: SerpentsManeBulb
+
+- type: entity
+  parent: FoodInjectableBase
+  id: SerpentsManeBulb
+  name: serpent's mane bulb
+  description: Rich in chemicals Serpents Mane is known for. Due to a high risk of overdosing, it is not advised to utilize without refining first.
+  components:
+  - type: Produce
+  - type: Sprite
+    sprite: _TP/Objects/Flora/Forage/serpents_mane.rsi
+    state: bulb
+    scale: 0.7, 0.7
+  - type: FlavorProfile
+    flavors:
+      - spaceshroom
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Teratin
+        Quantity: 16
+      - ReagentId: Hiscylin
+        Quantity: 10
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Teratin
+          Quantity: 16
+        - ReagentId: Hiscylin
+          Quantity: 10
+
+- type: entity
+  parent: BaseForagePlantRegrowing
+  id: TrenchlightWeed
+  name: trenchlight weed
+  description: An invasive species, brought to the planet from Limoris-2b by inter-sector cargo ships. It's known for it's moderate healing properties even before proper processing.
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Flora/Forage/trenchlight_weed.rsi
+  - type: Icon
+    sprite: _TP/Objects/Flora/Forage/trenchlight_weed.rsi
+    state: plant
+  - type: Forage
+    regrowTime: 300
+    loot:
+      All: TrenchlightWeed
+
+- type: entityLootTable
+  id: TrenchlightWeed
+  entries:
+  - id: TrenchlightLeaf
+
+- type: entity
+  parent: FoodInjectableBase
+  id: TrenchlightLeaf
+  name: trenchlight leaf
+  description: The leaves of Trenchlight weed. It's known as a snack to expedition teams due to it's medicinal properties.
+  components:
+  - type: Produce
+  - type: Sprite
+    sprite: _TP/Objects/Flora/Forage/trenchlight_weed.rsi
+    state: leaf
+    scale: 0.7, 0.7
+  - type: FlavorProfile
+    flavors:
+      - spaceshroom
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Vounarin
+        Quantity: 4
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Vounarin
+          Quantity: 4

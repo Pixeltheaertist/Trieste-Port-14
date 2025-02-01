@@ -1,0 +1,9 @@
+- type: reaction
+  id: VounarinPlus
+  reactants:
+    Vounarin:
+      amount: 1
+    Fersilicite:
+      amount: 1
+  products:
+    VounarinPlus: 2
