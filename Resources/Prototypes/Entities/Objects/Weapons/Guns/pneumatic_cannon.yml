@@ -31,6 +31,9 @@
     container: storagebase
   - type: PneumaticCannon
   - type: Storage
+    blacklist:
+      tags:
+      - Harpoon
     maxItemSize: Normal
     grid:
     - 0,0,1,1
