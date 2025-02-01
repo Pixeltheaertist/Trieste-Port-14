@@ -257,7 +257,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 6
-        - ReagentId: CarpoToxin
+        - ReagentId: FishOil
           Quantity: 3
   - type: Tag
     tags:
@@ -542,7 +542,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 6
-        - ReagentId: CarpoToxin
+        - ReagentId: FishOil
           Quantity: 15
   - type: Tag
     tags:
