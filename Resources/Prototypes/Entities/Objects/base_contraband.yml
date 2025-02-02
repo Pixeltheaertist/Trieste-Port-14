@@ -165,3 +165,11 @@
   - type: Contraband
     severity: GrandTheft
     allowedDepartments: [ Command ]
+
+# Trieste
+- type: entity
+  id: BaseNanotransenContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Nanotrasen

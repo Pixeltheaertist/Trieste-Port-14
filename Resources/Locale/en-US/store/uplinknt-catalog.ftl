@@ -87,3 +87,6 @@ uplink-lottery-desc = Redirects a grand lottery shipment to you. We have no idea
 
 uplink-energybomb-name = cascade bomb
 uplink-energybomb-desc = A newer prototype, capable of producing a atom-sized resonance cascade on-site. Releases extreme amounts of energy and violently absorbs body heat.
+
+uplink-lawboard-name = NanoTraitor Lawboard
+uplink-lawboard-desc = A specially printed law-board, capable of overwriting an AIs laws and convert them to your side.

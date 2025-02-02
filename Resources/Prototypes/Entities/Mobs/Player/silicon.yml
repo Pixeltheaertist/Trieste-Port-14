@@ -276,6 +276,21 @@
   - type: SiliconLawProvider
     laws: NutimovLawset
 
+
+# Triest Lawset
+- type: entity
+  id: NanoTraitorCircuitBoard
+  parent: [BaseElectronics, BaseNanotransenContraband]
+  name: NanoTraitor Law Board
+  description: An electronics board containing an illegal lawset
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: NanotraitorStatic
+
+
 # Items
 - type: entity
   id: Intellicard

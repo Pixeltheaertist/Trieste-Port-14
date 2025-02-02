@@ -221,6 +221,17 @@
   - UplinkNtDisruption
 
 - type: listing
+  id: UplinkNanoTraitorLawBoard
+  name: uplink-lawboard-name
+  description: uplink-lawboard-desc
+  productEntity: NanoTraitorCircuitBoard
+  cost:
+    BluespaceCrystal: 8
+  categories:
+  - UplinkNtDisruption
+
+
+- type: listing
   id: UplinkAnnouncementPad
   name: uplink-announcer-name
   description: uplink-announcer-desc
