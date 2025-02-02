@@ -37,9 +37,11 @@
   - Electrolysis
   reactants:
     SeaWater:
-      amount: 1
+      amount: 5
   products:
-    TableSalt: 1
+    Hydrogen: 3
+    Oxygen: 1.5
+    Chlorine: 0.5
 
 - type: reaction
   id: Diethylamine
