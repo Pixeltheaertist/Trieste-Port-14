@@ -14,6 +14,7 @@
   - Salvage
   - Maintenance
   - External
+  - Cargo 
   special:
   - !type:AddComponentSpecial
     components:
