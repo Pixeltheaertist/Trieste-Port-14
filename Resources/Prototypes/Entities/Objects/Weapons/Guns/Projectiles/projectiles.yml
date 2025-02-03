@@ -726,7 +726,7 @@
   noSpawn: true
   components:
   - type: Sprite
-    sprite: Objects\Weapons\Guns\Projectiles\explosive_harpoons.rsi
+    sprite: Objects/Weapons/Guns/Projectiles/explosive_harpoons.rsi
     layers:
       - state: explosive
   - type: ExplodeOnTrigger
