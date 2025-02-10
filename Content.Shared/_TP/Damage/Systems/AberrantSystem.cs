@@ -14,7 +14,7 @@ public sealed class AberrantSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<AberrantDamageOnHitComponent, MeleeHitEvent>(OnMeleeHit);
-        //SubscribeLocalEvent<>();
+        //SubscribeLocalEvent<>(); - when chat refactor happens can easily add an event for chat hearing
     }
     // do something on update
     public override void Update(float frameTime)
