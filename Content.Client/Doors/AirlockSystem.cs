@@ -97,8 +97,7 @@ public sealed class AirlockSystem : SharedAirlockSystem
                 ||  state == DoorState.Opening
                 ||  state == DoorState.Denying
                 || (state == DoorState.Open && comp.OpenUnlitVisible)
-                || (state == DoorState.Closed && powered) // Lamp fix, Taken from Adventure space(Thank you Zeneganto)
-                || (_appearanceSystem.TryGetData<bool>(uid, DoorVisuals.ClosedLights, out var closedLights, args.Component) && closedLights))
+                || (state == DoorState.Closed && comp.OpenUnlitVisible)) // Lamp fix, ported from Adventure Space
                     && !boltedVisible && !emergencyLightsVisible;
         }
 
