@@ -1,0 +1,32 @@
+- type: entity
+  parent: BaseHeaterMachine
+  id: ChemistryColdplate
+  name: coldplate
+  description: "!etalptoh eht :ygolonhcet gnitaeh rekaeb ni noitnevni tsewen ruo ,sevaworcim eht fo tnednecsed ehT"
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/hotplate.rsi
+    drawdepth: SmallObjects
+    snapCardinals: true
+    layers:
+    - state: icon
+    - state: on
+      map: ["enum.SolutionHeaterVisuals.IsOn"]
+      shader: unshaded
+  - type: SolutionHeater
+    heatPerSecond: -160
+  - type: ItemPlacer
+    whitelist:
+      components:
+      - FitsInDispenser
+  - type: PlaceableSurface
+    placeCentered: true
+    positionOffset: 0, 0.25
+  - type: Machine
+    board: HotplateMachineCircuitboard
+  - type: GenericVisualizer
+    visuals:
+      enum.SolutionHeaterVisuals.IsOn:
+        enum.SolutionHeaterVisuals.IsOn:
+          True: { visible: true }
+          False: { visible: false }
