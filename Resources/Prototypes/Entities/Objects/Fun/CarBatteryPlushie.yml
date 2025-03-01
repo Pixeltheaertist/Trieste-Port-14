@@ -9,7 +9,7 @@
     tags:
       - Payload
   - type: Item
-    sprite: Objects/Misc/skub.rsi
+    sprite: Objects/Misc/CarBatteryPlush.rsi
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Effects/PowerSink/electric.ogg
