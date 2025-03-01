@@ -134,7 +134,7 @@
     - id: StrangePill
       prob: 0.20
     - id: FoodJonkpocketBanana
-      prob: 0.5
+      prob: 0.3
     # Tools
     - !type:NestedSelector
       tableId: MaintToolsTable
