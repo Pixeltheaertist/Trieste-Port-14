@@ -355,6 +355,9 @@
       prob: 0.01
       orGroup: Useful
     #notuseful
+    - id: FoodBoxJonkpocketJonk
+      prob: 0.0001
+      orGroup: NotUseful
     - id: LidSalami
       prob: 0.01
       orGroup: NotUseful
