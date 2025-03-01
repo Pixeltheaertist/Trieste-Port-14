@@ -5,11 +5,11 @@
   description: A plushie that looks like a car battery? It's soft and squishy. Jellids love it.
   components:
   - type: Sprite
-    sprite: Objects/Misc/CarBatteryPlush.rsi
+    sprite: /Objects/Misc/CarBatteryPlush.rsi
     tags:
       - Payload
   - type: Item
-    sprite: Objects/Misc/CarBatteryPlush.rsi
+    sprite: /Objects/Misc/CarBatteryPlush.rsi
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Effects/PowerSink/electric.ogg
