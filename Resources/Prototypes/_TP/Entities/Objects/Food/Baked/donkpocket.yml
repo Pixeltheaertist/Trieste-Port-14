@@ -21,6 +21,6 @@
         - ReagentId: MuteToxin
           Quantity: 10
   - type: Sprite
-    sprite: _TP/Objects/Consumable/JonkPockets.rsi
+    sprite: _TP/Objects/Consumable/jonkpockets.rsi
     state: jonked-banana
     # note: Add a chemical that causes clwun polymorph when availible. Commented out omnizine since.. a cursed donk pocket SHOULD NOT heal
