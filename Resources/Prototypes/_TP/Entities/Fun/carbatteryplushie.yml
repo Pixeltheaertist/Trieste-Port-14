@@ -1,15 +1,17 @@
 - type: entity
   parent: BaseItem
-  id: CarBatteryPlushie
+  id: carbatteryplushie
   name: Car battery plushie
   description: A plushie that looks like a car battery? It's soft and squishy. Jellids love it.
   components:
   - type: Sprite
-    sprite: /Objects/Misc/CarBatteryPlush.rsi
+    sprite: _TP/Objects/Misc/carbatteryplush.rsi
+    state: icon
+    size: Medium #BECAUSE ITS A CAR BATTERY, JUST PLUSHIE
     tags:
       - Payload
   - type: Item
-    sprite: /Objects/Misc/CarBatteryPlush.rsi
+    sprite: _TP/Objects/Misc/carbatteryplush.rsi
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Effects/PowerSink/electric.ogg

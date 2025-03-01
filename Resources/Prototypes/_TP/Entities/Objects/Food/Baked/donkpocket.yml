@@ -1,0 +1,26 @@
+#jonk pocket
+
+- type: entity
+  name: Jonk pocket
+  parent: FoodDonkpocketBase
+  id: FoodJonkpocketBanana
+  description: A cursed jonk pocket, made with not-so fresh clowns. This is what Jonk! Co. does to it's competitor's..
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - sadness
+      - metallic
+      - cheap
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: MuteToxin
+          Quantity: 10
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/JonkPockets.rsi
+    state: jonked-banana
+    # note: Add a chemical that causes clwun polymorph when availible. Commented out omnizine since.. a cursed donk pocket SHOULD NOT heal
