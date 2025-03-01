@@ -12,3 +12,6 @@ ent-SMESAdvanced = продвинутый СМЭС
 ent-SMESAdvancedEmpty = { ent-SMESAdvanced }
     .suffix = Пустой
     .desc = { ent-SMESAdvanced.desc }
+ent-SMESPlatform = продвинутый СМЭС
+    .suffix = Продвинутый, 30МДж
+    .desc = Модернизированный МСП, способный использовать гораздо больше энергии. Подзаряжается с помощью артефакта в Сладкой воде.

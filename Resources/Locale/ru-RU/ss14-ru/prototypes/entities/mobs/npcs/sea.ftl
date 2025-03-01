@@ -1,0 +1,12 @@
+ent-TP14MobFish = Рыба
+    .suffix = Море
+    .desc = Это рыба.
+ent-TP14MobFish2 = Рыба
+    .suffix = Море
+    .desc = Это рыба.
+ent-TP14MobFish3 = Рыба
+    .suffix = Море
+    .desc = Это рыба.
+ent-TP14MobFishMimic = Рыба
+    .suffix = Море, Мимик
+    .desc = Это рыба.

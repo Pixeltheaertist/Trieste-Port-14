@@ -13,3 +13,5 @@ ent-ClothingHeadHelmetVoidParamed = пустотный шлем парамеди
     .desc = Пустотный шлем, предназначенный для парамедиков.
 ent-ClothingHeadHelmetAncient = пустотный шлем NTSRA
     .desc = Древний космический шлем, разработанный по заказу Центком поразделением NTSRA - ассоциацией космических исследований Nanotrasen.
+ent-ClothingHeadHelmetCosplay = потрепанный шлем
+    .desc = Здесь душно, жарко, и из-за этого ничего не видно.

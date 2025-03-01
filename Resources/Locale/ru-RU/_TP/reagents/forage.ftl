@@ -1,9 +1,9 @@
-reagent-name-teratin = teratin
-reagent-desc-teratin = A natural medicine with overdose potential.
-reagent-name-hiscylin = hiscylin
-reagent-desc-hiscylin = A natural medicine with overdose potential.
+reagent-name-teratin = тератин
+reagent-desc-teratin = Натуральное лекарство, способное вызвать передозировку.
+reagent-name-hiscylin = хисцилин
+reagent-desc-hiscylin = Натуральное лекарство, способное вызвать передозировку.
 
-reagent-name-vounarin = vounarin
-reagent-desc-vounarin = A natural medicine with overdose potential.
-reagent-name-vounarin-plus = vounarin plus
-reagent-desc-vounarin-plus = A natural medicine with overdose potential.
+reagent-name-vounarin = вунарин
+reagent-desc-vounarin = Натуральное лекарство, способное вызвать передозировку.
+reagent-name-vounarin-plus = вунарин плюс
+reagent-desc-vounarin-plus = Натуральное лекарство, способное вызвать передозировку.
