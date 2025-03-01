@@ -769,3 +769,17 @@
       - id: GoldenBikeHorn
         prob: 0.1
         orGroup: GiftPool
+
+- type: entity
+  parent: FoodBoxDonkpocket
+  id: FoodBoxJonkpocketJonk
+  name: box of banana flavoured jonk-pockets
+  components:
+  - type: Sprite
+    state: jonked-banana-box
+  - type: Item
+    sprite: Objects/Consumable/Food/Baked/donkpocket.rsi
+  - type: StorageFill
+    contents:
+    - id: FoodJonkpocketBanana
+      amount: 6
