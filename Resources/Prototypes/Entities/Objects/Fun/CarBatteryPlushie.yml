@@ -6,6 +6,7 @@
   components:
   - type: Sprite
     sprite: /Objects/Misc/CarBatteryPlush.rsi
+    state: icon
     tags:
       - Payload
   - type: Item
