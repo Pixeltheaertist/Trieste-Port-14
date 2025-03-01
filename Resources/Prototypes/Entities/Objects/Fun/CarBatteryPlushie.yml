@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseItem
-  id: Skub
-  name: skub
+  id: CarBatteryPlushie
+  name: Car battery plushie
   description: A plushie that looks like a car battery? It's soft and squishy. Jellids love it.
   components:
   - type: Sprite
