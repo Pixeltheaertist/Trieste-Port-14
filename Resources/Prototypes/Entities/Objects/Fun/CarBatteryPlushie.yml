@@ -2,21 +2,19 @@
   parent: BaseItem
   id: Skub
   name: skub
-  description: Skub is the fifth Chaos God.
+  description: A plushie that looks like a car battery? It's soft and squishy. Jellids love it.
   components:
   - type: Sprite
-    sprite: Objects/Misc/skub.rsi
-    state: icon
-  - type: Tag
+    sprite: Objects/Misc/CarBatteryPlush.rsi
     tags:
       - Payload
   - type: Item
     sprite: Objects/Misc/skub.rsi
   - type: EmitSoundOnUse
     sound:
-      collection: Skub
+      path: /Audio/Effects/PowerSink/electric.ogg
   - type: EmitSoundOnTrigger
     sound:
-      collection: Skub
+      path: /Audio/Effects/PowerSink/electric.ogg
   - type: UseDelay
-    delay: 2.0
+    delay: 3.0
