@@ -69,3 +69,5 @@ ent-ClothingBackpackDuffelSyndicateDecoyKitFilled = { ent-ClothingBackpackDuffel
 
 # Corvax-HiddenDesc-End
 
+ent-ClothingBackpackDuffelNtCburnFilled = комплект двуствольного ружья
+    .desc = Надпись на ремешке гласит: "Переверни и сожги, агент".

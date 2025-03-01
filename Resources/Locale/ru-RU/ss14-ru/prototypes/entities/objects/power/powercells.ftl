@@ -51,3 +51,12 @@ ent-PowerCageMediumEmpty = { ent-PowerCageMedium }
 ent-PowerCageHighEmpty = { ent-PowerCageHigh }
     .suffix = Пустой
     .desc = { ent-PowerCageHigh.desc }
+
+ent-TP14MagCellAdvanced = продвинутая батарея NT
+    .desc = Перезаряжаемая энергетическая батарея для использования с совместимым энергетическим оружием NT. Эта батарея имеет увеличенную емкость.
+ent-TP14MagCellDisabler = истощающая батарея NT
+    .desc = Перезаряжаемая энергетическая батарея NT. Позволяет стреляет разрядами, отводящими энергию.
+ent-TP14MagCellExperimental = экспериментальная батарея NT
+    .desc = Перезаряжаемая энергетическая батарея NT. С этой батарей у оружия есть экспериментальный микрореактор для самозарядки.
+ent-TP14BaseMagCell = стандартная батарея NT
+    .desc = Перезаряжаемая энергетическая обычная батарея NT.
