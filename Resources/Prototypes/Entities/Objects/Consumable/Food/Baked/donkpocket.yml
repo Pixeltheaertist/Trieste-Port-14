@@ -404,7 +404,7 @@
       food:
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 8
         - ReagentId: MuteToxin
           Quantity: 10
   - type: Sprite
