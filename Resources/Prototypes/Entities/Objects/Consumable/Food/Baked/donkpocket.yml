@@ -405,8 +405,8 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 5
-        #- ReagentId: Omnizine
-        #  Quantity: 2
+        - ReagentId: MuteToxin
+          Quantity: 10
   - type: Sprite
     state: jonked-banana
     # note: Add a chemical that causes clwun polymorph when availible. Commented out omnizine since.. a cursed donk pocket SHOULD NOT heal
