@@ -1,9 +1,7 @@
 - type: soundCollection
   id: LobbyMusic
   files:
-    - /Audio/Lobby/thunderdome.ogg
     - /Audio/Lobby/absconditus.ogg
-    - /Audio/Lobby/space_asshole.ogg
     - /Audio/Lobby/endless_space.ogg
     - /Audio/Lobby/singuloose.ogg
     - /Audio/Lobby/comet_haley.ogg
@@ -15,3 +13,13 @@
     - /Audio/Lobby/lasers_rip_apart_the_bulkhead.ogg
     - /Audio/Lobby/every_light_is_blinking_at_once.ogg
     - /Audio/Lobby/atomicamnesiammx.ogg
+    # Open Space edit. Made by RaidGo
+    - /Audio/OpenSpace/Lobby/Bluespace.ogg
+    - /Audio/OpenSpace/Lobby/Codebrain.ogg
+    - /Audio/OpenSpace/Lobby/Downtown.ogg
+    - /Audio/OpenSpace/Lobby/Exploring.ogg
+    - /Audio/OpenSpace/Lobby/Galaxies_and_echoes.ogg
+    - /Audio/OpenSpace/Lobby/Metropolis.ogg
+    - /Audio/OpenSpace/Lobby/Phoronindustry.ogg
+    - /Audio/OpenSpace/Lobby/Runner_in_motion.ogg
+    - /Audio/OpenSpace/Lobby/PhoronLeak.ogg

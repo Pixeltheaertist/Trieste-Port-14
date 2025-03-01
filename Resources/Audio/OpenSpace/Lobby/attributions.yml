@@ -1,0 +1,8 @@
+- files: ["Galaxies_and_echoes.ogg"]
+  license: "CC-SA-3.0"
+  copyright: "Made by AI"
+
+- files: ["Metropolis.ogg", "Bluespace.ogg", "Downtown.ogg", "Runner_in_motion.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Made by Duke Gniess"
+  source: "https://soundcloud.com/dukegneiss"
