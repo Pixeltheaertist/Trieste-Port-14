@@ -3,6 +3,7 @@
   table: !type:GroupSelector
     children:
     - id: PlushieBee
+    - id: carbatteryplushie #Trieste, cant easily implement in _TP
     - id: PlushieNar
       weight: 0.5
     - id: PlushieRatvar

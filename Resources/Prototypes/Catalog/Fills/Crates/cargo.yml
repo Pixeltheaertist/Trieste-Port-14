@@ -272,6 +272,9 @@
       prob: 0.01
       orGroup: Swag
     #plushies
+    - id: carbatteryplushie
+      prob: 0.01
+      orGroup: Plushies
     - id: PlushieRGBee
       prob: 0.01
       orGroup: Plushies
