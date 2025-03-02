@@ -102,3 +102,5 @@ ent-WallChromiteCobblebrick = хромитовая булыжниковая ст
     .desc = { ent-WallCobblebrick.desc }
 ent-WallAndesiteCobblebrick = андезитовая булыжниковая стена
     .desc = { ent-WallCobblebrick.desc }
+ent-TP14WallRockIndestructible = нерушимая каменная стена
+    .desc = Возникшая из-за экстремального давления и нескончаемых пирокластических слоев, эта стена с таким же успехом могла бы быть неразрушимой.

@@ -79,3 +79,5 @@ ent-PoweredlightGreen = { ent-Poweredlight }
 ent-AlwaysPoweredlightGreen = { ent-AlwaysPoweredWallLight }
     .suffix = Всегда запитанный, Зелёный
     .desc = { ent-AlwaysPoweredWallLight.desc }
+ent-PoweredSmallLightWaterProof = светильник
+    .desc = Светильник. Если в нем установлена электрическая лампочка, он потребляет энергию и излучает свет.

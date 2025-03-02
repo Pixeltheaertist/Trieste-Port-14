@@ -15,3 +15,5 @@ ent-SyndicateBombFake = { ent-SyndicateBomb }
 ent-DebugHardBomb = DEBUG бомба
     .desc = Господи, она сейчас взорвётся.
     .suffix = DEBUG
+ent-TP14EnergyBomb = каскадная бомба
+    .desc = Усовершенствованная бомба, способная создавать сверхмикроскопический резонансный каскад.

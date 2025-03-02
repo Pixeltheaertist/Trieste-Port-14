@@ -6,3 +6,5 @@ ent-HandHeldMassScannerEmpty = { ent-HandHeldMassScanner }
 ent-HandHeldMassScannerBorg = { ent-HandHeldMassScanner }
     .suffix = Борг
     .desc = { ent-HandHeldMassScanner.desc }
+ent-HandHeldAnnouncementPad = портативная консоль связи
+    .desc = Отличное портативное устройство, которое подключается к системе оповещения Платформы. Перед использованием обязательно удалите свой идентификатор.

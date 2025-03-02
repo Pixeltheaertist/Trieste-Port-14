@@ -85,3 +85,6 @@ ent-BorgModuleMartyr = кроваво-красный модуль киборга
     .desc = { ent-BaseBorgModule.desc }
     .suffix = модуль киборга Мученик
 # Corvax-HiddenDesc-End
+ent-BorgModuleNanotrasenWeapon = наступательный модуль-киборг
+    .desc = Технология, которая дает киборгам новые способности.
+    .suffix = модуль NT
