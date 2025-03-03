@@ -23,4 +23,28 @@
   - type: Sprite
     sprite: _TP/Objects/Consumable/jonkpockets.rsi
     state: jonked-banana
-    # note: Add a chemical that causes clwun polymorph when availible. Commented out omnizine since.. a cursed donk pocket SHOULD NOT heal
+    # note: Add a chemical that causes clwun polymorph when availible, and replace the mute toxin with it.
+
+- type: entity
+  name: purified jonk pocket
+  parent: FoodDonkpocket
+  id: FoodJonkpocketBananaPurified
+  description: A purified jonk pocket, the souls trapped in this food have been freed, and the meat is now fresh.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bread
+      - meaty
+      - holy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Omnizine
+          Quantity: 10 # Yes, ten omnizine. Given the rarity of jonk pockets, and the fact that this recipe requires holy water, this is more than fair.
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/jonkpockets.rsi
+    state: jonked-banana-Purified

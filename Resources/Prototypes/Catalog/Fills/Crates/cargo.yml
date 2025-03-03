@@ -272,7 +272,7 @@
       prob: 0.01
       orGroup: Swag
     #plushies
-    - id: carbatteryplushie
+    - id: carbatteryplushie #TP
       prob: 0.01
       orGroup: Plushies
     - id: PlushieRGBee
@@ -355,7 +355,7 @@
       prob: 0.01
       orGroup: Useful
     #notuseful
-    - id: FoodBoxJonkpocketJonk
+    - id: FoodBoxJonkpocketJonk #TP
       prob: 0.0001
       orGroup: NotUseful
     - id: LidSalami

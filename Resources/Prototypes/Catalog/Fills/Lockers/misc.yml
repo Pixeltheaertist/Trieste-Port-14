@@ -133,8 +133,8 @@
     children:
     - id: StrangePill
       prob: 0.20
-    - id: FoodJonkpocketBanana
-      prob: 0.3
+    - id: FoodJonkpocketBanana #TP
+      prob: 0.1
     # Tools
     - !type:NestedSelector
       tableId: MaintToolsTable
