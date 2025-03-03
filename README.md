@@ -69,3 +69,5 @@ Ermucat - Programming
 Slckstr - Bugfixing
 
 FatherCheese - Programming
+
+Powsu - Programming, Spriting
