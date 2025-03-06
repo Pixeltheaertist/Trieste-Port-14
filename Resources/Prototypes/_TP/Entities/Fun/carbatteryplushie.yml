@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseItem
-  id: carbatteryplushie
+  id: TP14carbatteryplushie
   name: Car battery plushie
   description: A plushie that looks like a car battery? It's soft and squishy. Jellids love it.
   components:

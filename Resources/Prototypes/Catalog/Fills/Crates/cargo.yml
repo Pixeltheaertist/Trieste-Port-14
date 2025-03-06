@@ -272,7 +272,7 @@
       prob: 0.01
       orGroup: Swag
     #plushies
-    - id: carbatteryplushie #TP
+    - id: TP14carbatteryplushie #TP
       prob: 0.01
       orGroup: Plushies
     - id: PlushieRGBee
