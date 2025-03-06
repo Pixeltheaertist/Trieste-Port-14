@@ -54,16 +54,26 @@ public sealed class AberrantSystem : EntitySystem
         }
     }
 
-    private void ChangeAberrant(AberrantComponent component, float amount)
-    {
-        component.AberrantDamage += amount;
-    }
-
     public void TryChangeAberrant(EntityUid uid, float amount)
     {
         if(EntityManager.TryGetComponent(uid, out AberrantComponent? aberrant))
         {
-            ChangeAberrant(aberrant, amount);
+            ChangeAberrant(uid, aberrant, amount);
         }
+    }
+    private void ChangeAberrant(EntityUid uid, AberrantComponent component, float amount)
+    {
+        component.AberrantDamage += amount;
+        if (component.AberrantDamage < component.Thresholds[0])
+        {
+
+            CleanUp(uid);
+        }
+    }
+
+    private void CleanUp(EntityUid uid)
+    {
+        //Removes any aberrant effects that are no longer needed
+
     }
 }
