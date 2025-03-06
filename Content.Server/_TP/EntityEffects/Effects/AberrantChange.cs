@@ -1,4 +1,5 @@
-﻿using Content.Shared.EntityEffects;
+﻿using Content.Shared._TP.Damage.Systems;
+using Content.Shared.EntityEffects;
 using Robust.Shared.Prototypes;
 using JetBrains.Annotations;
 using Content.Shared.FixedPoint;
@@ -22,7 +23,7 @@ namespace Content.Server._TP.EntityEffects.Effects
 
         public override void Effect(EntityEffectBaseArgs args)
         {
-            var scale = FixedPoint2.New(1);
+            args.EntityManager.System<AberrantSystem>().TryChangeAberrant(args.TargetEntity, AberrantDamage);
         }
     }
 }
