@@ -48,4 +48,3 @@
   name: damage-group-metaphysical
   damageTypes:
   - Holy
-  - Aberrant # Represents both the mental strain and eldritch assaults of aberrant entities.
