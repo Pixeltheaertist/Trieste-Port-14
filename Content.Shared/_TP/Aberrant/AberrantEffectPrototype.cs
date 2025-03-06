@@ -18,7 +18,6 @@ public sealed partial class AberrantEffectPrototype : IPrototype
     /// </summary>
     [DataField("effects")]
     public List<AberrantEffect> Effects= new();
-
 }
 
 [Serializable]
