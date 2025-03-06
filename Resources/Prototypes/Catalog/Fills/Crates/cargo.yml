@@ -355,7 +355,7 @@
       prob: 0.01
       orGroup: Useful
     #notuseful
-    - id: FoodBoxJonkpocketJonk #TP
+    - id: TP14FoodBoxJonkpocketJonk #TP
       prob: 0.0001
       orGroup: NotUseful
     - id: LidSalami

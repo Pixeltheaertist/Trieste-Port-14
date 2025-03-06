@@ -133,7 +133,7 @@
     children:
     - id: StrangePill
       prob: 0.20
-    - id: FoodJonkpocketBanana #TP
+    - id: TP14FoodJonkpocketBanana #TP
       prob: 0.1
     # Tools
     - !type:NestedSelector

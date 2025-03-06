@@ -1583,12 +1583,12 @@
 - type: microwaveMealRecipe #TP
   id: RecipePurifiedJonkPocket
   name: warm donk pocket recipe
-  result: FoodJonkpocketBananaPurified
+  result: TP14FoodJonkpocketBananaPurified
   time: 5
   reagents:
     Holywater: 5
   solids:
-    FoodJonkpocketBanana: 1
+    TP14FoodJonkpocketBanana: 1
 
 - type: microwaveMealRecipe
   id: RecipeWarmDankpocket

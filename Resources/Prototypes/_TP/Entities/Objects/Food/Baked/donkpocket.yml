@@ -3,7 +3,7 @@
 - type: entity
   name: Jonk pocket
   parent: FoodDonkpocketBase
-  id: FoodJonkpocketBanana
+  id: TP14FoodJonkpocketBanana
   description: A cursed jonk pocket, made with not-so fresh clowns. This is what Jonk! Co. does to it's competitor's..
   components:
   - type: FlavorProfile
@@ -28,7 +28,7 @@
 - type: entity
   name: purified jonk pocket
   parent: FoodDonkpocket
-  id: FoodJonkpocketBananaPurified
+  id: TP14FoodJonkpocketBananaPurified
   description: A purified jonk pocket, the souls trapped in this food have been freed, and the meat is now fresh.
   components:
   - type: FlavorProfile
