@@ -1,0 +1,16 @@
+# jonk pockets
+- type: entity
+  parent: FoodBoxDonkpocket
+  id: TP14FoodBoxJonkpocketJonk
+  name: box of banana flavoured jonk-pockets
+  description: A box of jonk pockets, a thick, green and corruptive goo oozes from the box, and the smell of rotten bananas fills the air.
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/jonkpockets.rsi
+    state: jonked-banana-box
+  - type: Item
+    sprite: _TP/Objects/Consumable/jonkpockets.rsi
+  - type: StorageFill
+    contents:
+    - id: TP14FoodJonkpocketBanana
+      amount: 6

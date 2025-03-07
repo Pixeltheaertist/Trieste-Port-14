@@ -1,0 +1,50 @@
+#jonk pocket
+
+- type: entity
+  name: Jonk pocket
+  parent: FoodDonkpocketBase
+  id: TP14FoodJonkpocketBanana
+  description: A cursed jonk pocket, made with not-so fresh clowns. This is what Jonk! Co. does to it's competitor's..
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - sadness
+      - metallic
+      - cheap
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: MuteToxin
+          Quantity: 10
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/jonkpockets.rsi
+    state: jonked-banana
+    # note: Add a chemical that causes clwun polymorph when availible, and replace the mute toxin with it.
+
+- type: entity
+  name: purified jonk pocket
+  parent: FoodDonkpocket
+  id: TP14FoodJonkpocketBananaPurified
+  description: A purified jonk pocket, the souls trapped in this food have been freed, and the meat is now fresh.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bread
+      - meaty
+      - holy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Omnizine
+          Quantity: 10 # Yes, ten omnizine. Given the rarity of jonk pockets, and the fact that this recipe requires holy water, this is more than fair.
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/jonkpockets.rsi
+    state: jonked-banana-Purified

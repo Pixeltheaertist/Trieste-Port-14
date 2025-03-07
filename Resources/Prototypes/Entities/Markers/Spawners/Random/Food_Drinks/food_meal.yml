@@ -71,6 +71,7 @@
       - FoodSoupBungo
       - FoodMealCornInButter
       - FoodSoupStew
+      - TP14FoodBurritoBowl #TP
     chance: 0.8
     offset: 0.0
     #rare

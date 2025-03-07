@@ -200,7 +200,7 @@
   components:
   - type: StationEvent
     earliestStart: 0
-    minimumPlayers: 20 # need at least a LITTLE prey
+    minimumPlayers: 10 # need at least a LITTLE prey
     maxOccurrences: 1
     weight: 6
   - type: OceanSpawnRule

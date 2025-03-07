@@ -1,0 +1,22 @@
+- type: entity
+  parent: BaseItem
+  id: TP14carbatteryplushie
+  name: Car battery plushie
+  description: A plushie that looks like a car battery? It's soft and squishy. Jellids love it.
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Misc/carbatteryplush.rsi
+    state: icon
+    size: Medium #BECAUSE ITS A CAR BATTERY, JUST PLUSHIE
+    tags:
+      - Payload
+  - type: Item
+    sprite: _TP/Objects/Misc/carbatteryplush.rsi
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Effects/PowerSink/electric.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Effects/PowerSink/electric.ogg
+  - type: UseDelay
+    delay: 3.0
