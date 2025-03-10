@@ -1,7 +1,6 @@
 - type: reagent
   id: CrudeOil
   name: reagent-name-crude-oil
-  group: Biological
   desc: reagent-desc-crude-oil
   physicalDesc: reagent-physical-desc-sticky
   color: "#1a1a1a"
@@ -22,3 +21,231 @@
           types:
             Poison: 3
             Cellular: .25
+
+- type: reagent
+  id: LessCrudeOil
+  name: reagent-name-less-crude-oil
+  desc: reagent-desc-less-crude-oil
+  physicalDesc: reagent-physical-desc-sticky
+  color: "#333333"
+  flavor: bitter
+  slippery: true
+  pricePerUnit: 6
+  metabolisms:
+    Poison:
+      effects:
+      - !type:ChemVomit
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 3
+
+- type: reagent
+  id: EvenLessCrudeOil
+  name: reagent-name-even-less-crude-oil
+  desc: reagent-desc-even-less-crude-oil
+  physicalDesc: reagent-physical-desc-sticky
+  color: "#333333"
+  flavor: bitter
+  slippery: true
+  pricePerUnit: 10
+  metabolisms:
+    Poison:
+      effects:
+      - !type:ChemVomit
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 2
+
+- type: reagent
+  id: RefinedOil
+  name: reagent-name-refined-oil
+  desc: reagent-desc-refined-oil
+  physicalDesc: reagent-physical-desc-sticky
+  color: "#666666"
+  flavor: bitter
+  slippery: true
+  pricePerUnit: 80
+  metabolisms:
+    Poison:
+      effects:
+      - !type:ChemVomit
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 2
+
+- type: reagent
+  id: HyperRefinedOil
+  name: reagent-name-hyper-refined-oil
+  desc: reagent-desc-hyper-refined-oil
+  physicalDesc: reagent-physical-desc-sticky
+  color: "#666680"
+  flavor: bitter
+  slippery: true
+  pricePerUnit: 300
+  metabolisms:
+    Poison:
+      effects:
+      - !type:ChemVomit
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 2
+
+- type: reagent
+  id: ExoticOil
+  name: reagent-name-exotic-oil
+  desc: reagent-desc-exotic-oil
+  physicalDesc: reagent-physical-desc-sticky
+  color: "#6666bd"
+  flavor: bitter
+  slippery: true
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 10
+            Slash: 10
+
+- type: reagent
+  id: ExoticPoison
+  name: reagent-name-exotic-poison
+  desc: reagent-desc-exotic-poison
+  physicalDesc: reagent-physical-desc-sticky
+  color: "#6600ff"
+  flavor: bitter
+  slippery: true
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 20
+            Slash: 20
+            Blunt: 20
+            Cellular: 20
+            Caustic: 20
+
+- type: reagent
+  id: JuiceThatMakesYouExplode
+  name: reagent-name-juice-that
+  desc: reagent-desc-juice-that
+  physicalDesc: reagent-physical-desc-sticky
+  color: "#66ffff"
+  flavor: bitter
+  slippery: true
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Blunt: 2000
+      - !type:ExplosionReactionEffect
+        explosionType: Default 
+        intensityPerUnit: 150
+        intensitySlope: 3
+
+- type: reagent
+  id: DesoxyephedrinePlus
+  name: reagent-name-desoxyephedrine-plus
+  desc: reagent-desc-desoxyephedrine-plus
+  physicalDesc: reagent-physical-desc-translucent
+  color: "#FAFAFA"
+  group: Narcotics
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 0.75
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+        damage:
+          types:
+            Poison: 5 
+            Asphyxiation: 5
+    Narcotic:
+      effects:
+      - !type:MovespeedModifier
+        walkSpeedModifier: 5
+        sprintSpeedModifier: 5
+      - !type:GenericStatusEffect
+        key: Stutter
+        component: StutteringAccent
+      - !type:Jitter
+      - !type:GenericStatusEffect
+        key: Stun
+        time: 30
+        type: Remove
+      - !type:GenericStatusEffect
+        key: KnockedDown
+        time: 30
+        type: Remove
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Haloperidol
+          max: 0.01
+        key: Drowsiness
+        time: 100
+        type: Remove
+    Medicine:
+      effects:
+      - !type:ResetNarcolepsy
+        conditions:
+        - !type:ReagentThreshold
+          min: 1
+
+
+- type: reagent
+  id: Petroleum
+  name: reagent-name-petroleum
+  desc: reagent-desc-petroleum
+  physicalDesc: reagent-physical-desc-oily
+  color: "#25221a"
+  flavor: bitter
+  slippery: true
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 3
+
+- type: reagent
+  id: Naphtha
+  name: reagent-name-naphtha
+  desc: reagent-desc-naphtha
+  physicalDesc: reagent-physical-desc-oily
+  color: "#EDA41B"
+  flavor: bitter
+  slippery: true
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 3

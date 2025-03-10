@@ -1,0 +1,136 @@
+- type: reaction
+  id: OilRefinementStage1
+  minTemp: 300
+  reactants:
+    CrudeOil:
+      amount: 1
+  products:
+    Petroleum: 0.2
+    LessCrudeOil: 0.8
+
+- type: reaction
+  id: OilRefinementStage2
+  minTemp: 350
+  reactants:
+    LessCrudeOil:
+      amount: 1
+  products:
+    EvenLessCrudeOil: 0.6
+    Naphtha: 0.4
+
+- type: reaction
+  id: OilRefinementStage3
+  minTemp: 500
+  reactants:
+    EvenLessCrudeOil:
+      amount: 1
+  products:
+    RefinedOil: 0.5
+    Oil: 0.5
+
+- type: reaction
+  id: OilRefinementStage4
+  minTemp: 1000
+  reactants:
+    RefinedOil:
+      amount: 1
+    SulfuricAcid:
+      amount: 1
+  products:
+    HyperRefinedOil: 0.5
+
+- type: reaction
+  id: OilRefinementStage5
+  maxTemp: 100
+  reactants:
+    HyperRefinedOil:
+      amount: 1
+    Blood:
+      amount: 1
+    SeaWater:
+      amount: 1
+  products:
+    ExoticOil: .25
+
+- type: reaction
+  id: ExoticOilMedical
+  reactants:
+    ExoticOil:
+      amount: 1
+    Bicaridine:
+      amount: 1
+  products:
+    Omnizine: 1
+
+- type: reaction
+  id: ExoticPoison
+  reactants:
+    ExoticOil:
+      amount: 1
+    Blood:
+      amount: 20
+  products:
+    ExoticPoison: 1
+
+- type: reaction
+  id: ExoticNarcotics
+  reactants:
+    ExoticOil:
+      amount: 1
+    Desoxyephedrine:
+      amount: 1
+  products:
+    DesoxyephedrinePlus: 1
+
+- type: reaction
+  id: ExoticPoisonRefinement
+  reactants:
+    ExoticPoison:
+      amount: 1
+    Blood:
+      amount: 99
+  products:
+    JuiceThatMakesYouExplode: 1
+
+- type: reaction
+  id: ExoticLaserWeapon
+  reactants:
+    ExoticOil:
+      amount: 1
+    Iron:
+      amount: 20
+    Plasma:
+      amount: 20
+    Radium:
+      amount: 20
+    Fresium:
+      amount: 20
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: WeaponAdvancedLaser
+
+
+- type: reaction
+  id: PetroleumWeldingFuel
+  minTemp: 300
+  reactants:
+    Petroleum:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    WeldingFuel: 1
+
+- type: reaction
+  id: NaphthaRefinement
+  minTemp: 1075
+  reactants:
+    Naphtha:
+      amount: 0.25
+    Carbon:
+      amount: 0.25
+    Oxygen:
+      amount: 0.025
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: SheetPlastic1
