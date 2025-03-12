@@ -5,9 +5,9 @@ namespace Content.Shared._TP.Aberrant;
 /// <summary>
 /// This is a prototype for...
 /// </summary>
-[Prototype("aberrantEffect")]
+[Prototype("aberrantEffectCommpound")]
 [DataDefinition]
-public sealed partial class AberrantEffectPrototype : IPrototype
+public sealed partial class AberrantEffectCompoundPrototype : IPrototype
 {
     /// <inheritdoc/>
     [IdDataField]
@@ -17,16 +17,19 @@ public sealed partial class AberrantEffectPrototype : IPrototype
     ///     Stores the effects making up this effect. List incase we want compound effects
     /// </summary>
     [DataField("effects")]
-    public List<AberrantEffect> Effects= new();
+    public List<AberrantEffect> Effects = new();
 }
 
-[Serializable]
+[Prototype("aberrantEffect")]
 [DataDefinition]
-public partial struct AberrantEffect
+public sealed partial class AberrantEffectPrototype : IPrototype
 {
-    [DataField("id")]
-    public EntProtoId? PrototypeId = null;
+    [IdDatafield]
+    public string ID { get; private set;} = default!;
 
+    ///<summary>
+    ///    Component for an aberrant effect
+    ///</summary>
     [DataField]
     public List<Component> Components = new();
 }
