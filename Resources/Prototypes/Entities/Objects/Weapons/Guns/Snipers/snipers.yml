@@ -47,6 +47,15 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
 
+- type: entity #TP
+  name: Kardashev-Mosin??
+  parent: [BaseWeaponSniper, BaseGunWieldable, BaseMinorContraband]
+  id: TPWeaponSniperMosinBad
+  description: This was once a weapon used in endless trench warfare. However it has been turned in to the authorities, and bent. Now, it can be used for shooting yourself. Uses .30 rifle ammo.
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/PewPewWeapons/bolt_gun_wood_but_bad.rsi/
+
 - type: entity
   name: Hristov
   parent: [BaseWeaponSniper, BaseGunWieldable, BaseSyndicateContraband]
