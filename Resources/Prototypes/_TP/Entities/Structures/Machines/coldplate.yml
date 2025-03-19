@@ -23,7 +23,7 @@
     placeCentered: true
     positionOffset: 0, 0.25
   - type: Machine
-    board: HotplateMachineCircuitboard
+    board: ColdplateMachineCircuitboard
   - type: GenericVisualizer
     visuals:
       enum.SolutionHeaterVisuals.IsOn:
