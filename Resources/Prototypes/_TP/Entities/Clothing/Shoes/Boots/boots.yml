@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: TP14ClothingShoesBootsDarkPerformer
+  name: dark performer's boots
+  description: These boots provide great traction for when you're up on stage.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Shoes/Boots/TP14darkperformer.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Shoes/Boots/TP14darkperformer.rsi
