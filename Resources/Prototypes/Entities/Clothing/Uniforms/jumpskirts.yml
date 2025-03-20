@@ -899,3 +899,14 @@
     tags:
     - ClownSuit
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: TP14ClothingUniformJumpskirtDarkPerformer
+  name: psychologist suitskirt
+  description: The true AI, once hired by AI to fight off Hatsune Miku. Real story.
+  components:
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpskirt/darkperformer.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpskirt/darkperformer.rsi
