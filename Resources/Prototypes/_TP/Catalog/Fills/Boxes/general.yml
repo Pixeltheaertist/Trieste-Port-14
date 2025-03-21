@@ -6,7 +6,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: P14ClothingShoesBootsDarkPerformer
+      - id: TP14ClothingShoesBootsDarkPerformer
       - id: TP14ClothingUniformJumpskirtDarkPerformer
       - id: ClothingHeadHatHairflower
       - id: FoodBreadBaguette
