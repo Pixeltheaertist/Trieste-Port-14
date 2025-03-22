@@ -19,6 +19,7 @@
             Chef: [ 1, 2 ]
             Bartender: [ 1, 2 ]
             ServiceWorker: [ 2, 3 ]
+            Reporter: [ 1, 1 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 2, 2 ]
