@@ -1,0 +1,5 @@
+- type: startingGear
+  id: TP14MechStepfatherLoadout
+  equipment:
+    id: SalvageIDCard
+    pocket1: TP14PinpointerPilot
