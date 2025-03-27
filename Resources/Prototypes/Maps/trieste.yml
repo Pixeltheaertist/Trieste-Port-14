@@ -24,12 +24,13 @@
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 2, 2 ]
             StationEngineer: [ 4, 4 ]
-            TechnicalAssistant: [ 3, 3 ]
+            TechnicalAssistant: [ 2, 3 ]
             #medical
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 2, 2 ]
             MedicalDoctor: [ 3, 3 ]
             MedicalIntern: [ 2, 2 ]
+            Paramedic: [ 1, 1 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
@@ -39,7 +40,7 @@
             Detective: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
-            CargoTechnician: [ 3, 3 ]
+            CargoTechnician: [ 2, 3 ]
             #expeditionary
             SalvageSpecialist: [ 2, 2 ]
             BasinEngi: [ 2, 2 ]
@@ -54,7 +55,7 @@
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 4, 4 ]
-            ResearchAssistant: [ 2, 2 ]
+            ResearchAssistant: [ 1, 2 ]
             #silicon
             Borg: [ 2, 2 ]
             StationAi: [ 1, 1 ]
