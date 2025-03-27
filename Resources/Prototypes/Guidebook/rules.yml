@@ -391,7 +391,7 @@
   name: guide-entry-rules-mrp-m0
   ruleEntry: true
   priority: 60
-  text: "/ServerInfo/Guidebook/ServerRules/MRPRules/RuleM0.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/_TP/MRPRules/RuleM0.xml"
   children:
   - RuleM1
   - RuleM3
@@ -403,29 +403,56 @@
   name: guide-entry-rules-m1
   ruleEntry: true
   priority: 10
-  text: "/ServerInfo/Guidebook/ServerRules/MRPRules/RuleM1DoNotPowergame.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/_TP/MRPRules/RuleM1DoNotPowergame.xml"
 
 - type: guideEntry
   id: RuleM3
   name: guide-entry-rules-m3
   ruleEntry: true
   priority: 10
-  text: "/ServerInfo/Guidebook/ServerRules/MRPRules/RuleM3Metagame.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/_TP/MRPRules/RuleM3Metagame.xml"
+
+- type: guideEntry
+  id: RuleM4
+  name: guide-entry-rules-m4
+  ruleEntry: true
+  priority: 10
+  text: "/ServerInfo/Guidebook/ServerRules/_TP/MRPRules/RuleM4NormalPerson.xml"
 
 - type: guideEntry
   id: RuleM6
   name: guide-entry-rules-m6
   ruleEntry: true
   priority: 10
-  text: "/ServerInfo/Guidebook/ServerRules/MRPRules/RuleM6.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/_TP/MRPRules/RuleM6.xml"
 
 - type: guideEntry
   id: RuleM8
   name: guide-entry-rules-m8
   ruleEntry: true
   priority: 10
-  text: "/ServerInfo/Guidebook/ServerRules/MRPRules/RuleM8.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/_TP/MRPRules/RuleM8.xml"
 
+- type: guideEntry
+  id: RuleM10
+  name: guide-entry-rules-m10
+  ruleEntry: true
+  priority: 10
+  text: "/ServerInfo/Guidebook/ServerRules/_TP/MRPRules/RuleM10RoleAbandonment.xml"
+
+- type: guideEntry
+  id: RuleM11
+  name: guide-entry-rules-m11
+  ruleEntry: true
+  priority: 10
+  text: "/ServerInfo/Guidebook/ServerRules/_TP/MRPRules/RuleM11SecCom.xml"
+
+- type: guideEntry
+  id: RuleM12
+  name: guide-entry-rules-m12
+  ruleEntry: true
+  priority: 10
+  text: "/ServerInfo/Guidebook/ServerRules/_TP/MRPRules/RuleM12PerformRole.xml"
 
 - type: guideEntry
   id: SpaceLaw
