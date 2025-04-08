@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseHeaterMachine
-  id: ChemistryColdplate
+  id: TP14ChemistryColdplate
   name: coldplate
   description: "!etalptoh eht :ygolonhcet gnitaeh rekaeb ni noitnevni tsewen ruo ,sevaworcim eht fo tnednecsed ehT"
   components:

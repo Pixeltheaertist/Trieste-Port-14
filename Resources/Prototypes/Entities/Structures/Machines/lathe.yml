@@ -441,7 +441,7 @@
     - ChemMasterMachineCircuitboard
     - CondenserMachineCircuitBoard
     - HotplateMachineCircuitboard
-    - ColdplateMachineCircuitboard 
+    - TP14ColdplateMachineCircuitboard 
     - UniformPrinterMachineCircuitboard
     - FloorGreenCircuit
     - FloorBlueCircuit
