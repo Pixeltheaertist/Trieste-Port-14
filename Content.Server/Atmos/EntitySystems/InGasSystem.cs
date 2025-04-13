@@ -67,74 +67,6 @@ public sealed class InGasSystem : EntitySystem
         }
 
    public override void Update(float frameTime)
-<<<<<<< HEAD
-    {
-        _timer += frameTime;
-
-        if (_timer < UpdateTimer)
-            return;
-
-        _timer -= UpdateTimer;
-
-        var enumerator = EntityQueryEnumerator<InGasComponent, DamageableComponent>();
-        while (enumerator.MoveNext(out var uid, out var inGas, out var damageable))
-        {
-            if (!inGas.DamagedByGas)
-            {
-                continue;
-            }
-
-            bool currentlyInWater = InWater(uid);
-            inGas.InWater = currentlyInWater;
-
-
-            // Update the water state in the component
-
-            // Raise the event depending on whether it's entering or exiting water
-            if (currentlyInWater)
-            {
-                RaiseLocalEvent(new InWaterEvent(uid));
-            }
-            else
-            {
-                RaiseLocalEvent(new OutOfWaterEvent(uid));
-            }
-
-
-            if (!currentlyInWater)
-            {
-                if (inGas.TakingDamage)
-                {
-                    inGas.TakingDamage = false;
-                    _alerts.ClearAlertCategory(uid, inGas.BreathingAlertCategory);
-                    _adminLog.Add(LogType.Electrocution, $"Entity {uid} is no longer taking damage from water.");
-                }
-                continue;
-            }
-
-            var totalDamage = FixedPoint2.Zero;
-            foreach (var (damageType, _) in inGas.Damage.DamageDict)
-            {
-                if (!damageable.Damage.DamageDict.TryGetValue(damageType, out var damage))
-                    continue;
-                totalDamage += damage;
-            }
-
-            if (totalDamage >= inGas.MaxDamage)
-            {
-                continue;
-            }
-
-            _damageable.TryChangeDamage(uid, inGas.Damage, true);
-            if (!inGas.TakingDamage)
-            {
-                inGas.TakingDamage = true;
-                _adminLog.Add(LogType.Electrocution, $"Entity {uid} is now taking damage from water.");
-                _alerts.ShowAlert(uid, inGas.DamageAlert, 1);
-            }
-        }
-    }
-=======
         {
             _timer += frameTime;
 
@@ -201,6 +133,4 @@ public sealed class InGasSystem : EntitySystem
                 }
             }
         }
->>>>>>> e366697b8d4f526513545cbe9f323750595eaf3b
 }
-
