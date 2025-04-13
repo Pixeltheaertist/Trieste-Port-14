@@ -14,19 +14,17 @@ public sealed partial class AberrantEffectPrototype : IPrototype
     public string ID { get; private set;} = default!;
 
     /// <summary>
-    ///     Stores the effects making up this effect. List incase we want compound effects
+    ///     Components making up the effect go here. Also works for compound effects if we wanna be fancy
+    ///     This should be things like shuddering, or other brief effects
     /// </summary>
-    [DataField("effects")]
-    public List<AberrantEffect> Effects= new();
-}
+    [DataField("temporaryComponents", serverOnly: true)]
+    public ComponentRegistry Components = new();
 
-[Serializable]
-[DataDefinition]
-public partial struct AberrantEffect
-{
-    [DataField("id")]
-    public EntProtoId? PrototypeId = null;
-
-    [DataField]
-    public List<Component> Components = new();
+    /// <summary>
+    /// Components that are permanently added to an entity when the effect's node is entered.
+    /// This will be things like that 'madman' antag that was mentioned in discord
+    /// Yes I am stealing a lot of arti code
+    /// </summary>
+    [DataField("permanentComponents")]
+    public ComponentRegistry PermanentComponents = new();
 }
