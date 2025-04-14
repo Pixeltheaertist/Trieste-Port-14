@@ -922,6 +922,8 @@ namespace Content.Client.Lobby.UI
                     if (!_requirements.IsAllowed(job, (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter, out var reason))
                     {
                         selector.LockRequirements(reason);
+                        Profile = Profile?.WithoutJob(job);
+                        SetDirty();
                     }
                     else
                     {
