@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
@@ -114,6 +115,13 @@ namespace Content.Shared.Preferences
             }
 
             return result;
+        }
+
+        public HumanoidCharacterProfile? GetRandomProfile()
+        {
+            var random = IoCManager.Resolve<IRobustRandom>();
+            var pool = Characters.Values.Where(p => p is HumanoidCharacterProfile { Enabled: true }).ToList();
+            return pool.Count == 0 ? null : random.Pick(pool) as HumanoidCharacterProfile;
         }
 
         public bool HasAntagPreference(ICollection<ProtoId<AntagPrototype>> antagList)
