@@ -826,10 +826,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text[]")
                         .HasColumnName("construction_favorites");
 
-                    b.Property<int>("SelectedCharacterSlot")
-                        .HasColumnType("integer")
-                        .HasColumnName("selected_character_slot");
-
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid")
                         .HasColumnName("user_id");
