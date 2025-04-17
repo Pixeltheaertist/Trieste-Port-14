@@ -2,6 +2,7 @@
   id: Dragon
   hostile:
     - NanoTrasen
+    - NanoTrasenTraitor
     - Syndicate
     - Xeno
     - PetsNT
@@ -14,6 +15,7 @@
   hostile:
   - SimpleHostile
   - Syndicate
+  - NanoTrasenTraitor
   - Xeno
   - Zombie
   - Revolutionary
@@ -43,6 +45,7 @@
   hostile:
   - NanoTrasen
   - Syndicate
+  - NanoTrasenTraitor
   - Passive
   - PetsNT
   - Zombie
@@ -57,6 +60,7 @@
   hostile:
   - NanoTrasen
   - SimpleHostile
+  - NanoTrasenTraitor
   - Xeno
   - PetsNT
   - Zombie
@@ -67,6 +71,7 @@
   id: Xeno
   hostile:
   - NanoTrasen
+  - NanoTrasenTraitor
   - Syndicate
   - Passive
   - PetsNT
@@ -79,6 +84,7 @@
   hostile:
   - NanoTrasen
   - SimpleNeutral
+  - NanoTrasenTraitor
   - SimpleHostile
   - Syndicate
   - Passive
@@ -91,6 +97,7 @@
   hostile:
   - NanoTrasen
   - Zombie
+  - NanoTrasenTraitor
   - SimpleHostile
   - Dragon
   - AllHostile
@@ -99,6 +106,7 @@
   id: AllHostile
   hostile:
   - NanoTrasen
+  - NanoTrasenTraitor
   - Dragon
   - Mouse
   - Passive
@@ -109,3 +117,15 @@
   - Xeno
   - Zombie
   - Revolutionary
+
+- type: npcFaction
+  id: NanoTrasenTraitor
+  hostile:
+  - NanoTrasen
+  - SimpleHostile
+  - Syndicate
+  - Xeno
+  - PetsNT
+  - Zombie
+  - Dragon
+  - AllHostile
