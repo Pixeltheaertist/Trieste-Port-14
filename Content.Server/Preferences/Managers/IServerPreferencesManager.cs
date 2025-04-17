@@ -26,5 +26,6 @@ namespace Content.Server.Preferences.Managers
         Task SetProfile(NetUserId userId, int slot, ICharacterProfile profile);
         Task SetConstructionFavorites(NetUserId userId, List<ProtoId<ConstructionPrototype>> favorites);
         Task SetJobPriorities(NetUserId userId, Dictionary<ProtoId<JobPrototype>, JobPriority> jobPriorities);
+        Task DeleteProfile(NetUserId userId, int slot);
     }
 }
