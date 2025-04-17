@@ -10,6 +10,7 @@
     bodyType: Static
   - type: Transform
     noRot: true
+  - type: FallSystem
   - type: Fixtures
     fixtures:
       fix1:
