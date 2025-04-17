@@ -1,0 +1,6 @@
+- type: aberrantEffect
+  id: AberrantEffectHallucination
+  effects:
+  - type: aberrantEffect
+    components:
+    - !type: AberrantFeeling
