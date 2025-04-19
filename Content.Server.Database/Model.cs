@@ -423,8 +423,6 @@ namespace Content.Server.Database
 
         public List<ProfileRoleLoadout> Loadouts { get; } = new();
 
-        [Column("pref_unavailable")] public DbPreferenceUnavailableMode PreferenceUnavailable { get; set; }
-
         public bool Enabled { get; set; }
 
         public int PreferenceId { get; set; }
@@ -555,13 +553,6 @@ namespace Content.Server.Database
     }
 
     #endregion
-
-    public enum DbPreferenceUnavailableMode
-    {
-        // These enum values HAVE to match the ones in PreferenceUnavailableMode in Shared.
-        StayInLobby = 0,
-        SpawnAsOverflow,
-    }
 
     public class AssignedUserId
     {
