@@ -108,6 +108,9 @@ public sealed partial class HumanoidAppearanceComponent : Component
     [DataField]
     public Dictionary<HumanoidVisualLayers, DisplacementData> MarkingsDisplacement = new();
 
+    /// <summary>
+    /// The profile that this entity was originally spawned with.
+    /// </summary>
     public HumanoidCharacterProfile? BaseProfile;
 }
 
