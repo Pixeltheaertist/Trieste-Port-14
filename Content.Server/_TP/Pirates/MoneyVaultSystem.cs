@@ -17,7 +17,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Content.Shared.TP.Components;
 
-namespace Content.Server.Cargo.Systems
+namespace Content.Server.TP14
 {
     public sealed partial class CargoSystem
     {
@@ -30,9 +30,21 @@ namespace Content.Server.Cargo.Systems
 
         private void InitializeConsole()
         {
+            SubscribeLocalEvent<MoneyVaultComponent, ExaminedEvent>(OnExamine);
             SubscribeLocalEvent<MoneyVaultComponent, InteractUsingEvent>(OnInteractUsing);
             Reset();
         }
+
+         private void OnExamine(EntityUid uid, MoneyVaultComponent component, ExaminedEvent args)
+    {
+        if (!args.IsInDetailsRange)
+            return;
+
+        var currentAmount = component.VaultAmount;
+        var text = "money-vault-amount";
+
+        args.PushMarkup(Loc.GetString(text));
+    }
 
         private void OnInteractUsing(EntityUid uid, MoneyVaultComponent component, ref InteractUsingEvent args)
         {
