@@ -8,7 +8,11 @@ namespace Content.Shared.TP.Components;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class MoneyVaultComponent : Component
-{
-    [DataField("VaultAmount")]
+{   // How much money is currently stored in the vault
+    [DataField("vaultAmount")]
     public float VaultAmount = 0f;
+
+    // How much money the greentext target is
+    [DataField("targetAmount")]
+    public float TargetAmount = 20000f;
 }
