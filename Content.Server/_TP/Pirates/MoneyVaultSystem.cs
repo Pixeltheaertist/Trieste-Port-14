@@ -15,6 +15,7 @@ using Content.Shared.Paper;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared.TP.Components;
 
 namespace Content.Server.Cargo.Systems
 {
