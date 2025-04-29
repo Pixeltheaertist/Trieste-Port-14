@@ -5,6 +5,7 @@ using Content.Server.Chat.Managers;
 using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.GameTicking;
+using Content.Server.Maps;
 using Content.Server.GameTicking.Events;
 using Content.Server.Parallax;
 using Content.Server.Screens.Components;
@@ -518,6 +519,27 @@ public sealed class ArrivalsSystem : EntitySystem
     var mapId1 = _mapManager.CreateMap();
     var mapUid1 = _mapManager.GetMapEntityId(mapId1);
     _mapManager.AddUninitializedMap(mapId1);
+
+    EnsureComp<StationDataComponent>(mapUid1);
+    if (!TryComp<StationDataComponent>(mapUid1, out var data)
+    {
+        Log.Error("No StationDataComponent found!");
+        return;
+    }
+
+    if (!TryComp<StationDataComponent>(mapUid1, out var data)
+    {
+        Log.Error("No StationDataComponent found!");
+        return;
+    }
+
+     if (!_protoManager.TryIndex<GameMapPrototype>(data.SweetwaterProto, out var sweetwaterProto))
+        {
+            Log.Error("Terminal prototype not found!");
+            return;
+        }
+
+    data.StationConfig = sweetwaterProto;
 
     if (!_loader.TryLoad(mapId1, _cfgManager.GetCVar(CCVars.ArrivalsMap), out var uids1))
     {
