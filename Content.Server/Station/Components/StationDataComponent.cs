@@ -2,6 +2,7 @@
 using Content.Server.Station.Systems;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
 using Robust.Shared.Utility;
+using Content.Server.Maps;
 
 namespace Content.Server.Station.Components;
 
@@ -17,6 +18,9 @@ public sealed partial class StationDataComponent : Component
     /// </summary>
     [DataField("stationConfig")]
     public StationConfig? StationConfig = null;
+
+   [DataField("sweetwaterProto", customTypeSerializer:typeof(PrototypeIdSerializer<GameMapPrototype>))]
+   public string SweetwaterProto = "Terminal";
 
     /// <summary>
     /// List of all grids this station is part of.
