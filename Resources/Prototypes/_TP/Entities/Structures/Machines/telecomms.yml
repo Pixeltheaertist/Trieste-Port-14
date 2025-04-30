@@ -1,0 +1,39 @@
+- type: entity
+  parent: BaseMachinePowered
+  id: _TP14WallmountTelecommsServer
+  name: wallmount telecommunications server
+  description: When powered and filled with encryption keys it allows radio headset communication.
+  components:
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: Structures/Power/Generation/wallmount_generator.rsi
+    layers:
+    - state: panel
+    - state: on
+      shader: unshaded
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -9
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/server_fans.ogg
+  - type: EncryptionKeyHolder
+    keysExtractionMethod: Prying
+    keySlots: 10
+  - type: TelecomServer
+  - type: ContainerContainer
+    containers:
+      key_slots: !type:Container
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeyCargo
+      - EncryptionKeyEngineering
+      - EncryptionKeyMedical
+      - EncryptionKeyScience
+      - EncryptionKeySecurity
+      - EncryptionKeyService
+      - EncryptionKeyCommand
