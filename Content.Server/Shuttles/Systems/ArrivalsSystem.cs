@@ -28,6 +28,7 @@ using Content.Shared.Salvage;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Tiles;
 using Robust.Server.GameObjects;
+using Robust.Server.Maps;
 using Robust.Shared.Collections;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
@@ -524,23 +525,22 @@ public sealed class ArrivalsSystem : EntitySystem
                 {
                     LoadMap = false,
                 };
-                
+
      var stationName = "Sweetwater";
 
      var SweetwaterName = "Terminal";
 
-     if (!prototypeManager.TryIndex<GameMapPrototype>(SweetwaterName, out var gameMap))
+     if (!_protoManager.TryIndex<GameMapPrototype>(SweetwaterName, out var gameMap)) //wrong here
             {
                 Log.Error("Cannot find Sweetwater prototype!");
                 return;
             }
 
-    // if (!_loader.TryLoad(mapId1, _cfgManager.GetCVar(CCVars.ArrivalsMap), out var uids1))
-   // {
-   //     return;
-   // }
-
-   gameTicker.LoadGameMap(gameMap, mapId1, loadOptions, stationName);
+     if (!_loader.TryLoad(mapId1, _cfgManager.GetCVar(CCVars.ArrivalsMap), out var uids1))
+    {
+        return; //needed to be uncommented
+    }
+    _ticker.LoadGameMap(gameMap, mapId1, loadOptions, stationName);
 
     foreach (var id in uids1)
     {
