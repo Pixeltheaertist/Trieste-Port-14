@@ -1,6 +1,7 @@
 ﻿using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Utility;
 using Content.Server.Maps;
 
