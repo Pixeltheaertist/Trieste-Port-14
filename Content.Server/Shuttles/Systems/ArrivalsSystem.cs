@@ -520,31 +520,27 @@ public sealed class ArrivalsSystem : EntitySystem
     var mapUid1 = _mapManager.GetMapEntityId(mapId1);
     _mapManager.AddUninitializedMap(mapId1);
 
-    EnsureComp<StationDataComponent>(mapUid1);
-    if (!TryComp<StationDataComponent>(mapUid1, out var data)
-    {
-        Log.Error("No StationDataComponent found!");
-        return;
-    }
+     var loadOptions = new MapLoadOptions()
+                {
+                    LoadMap = false,
+                };
+                
+     var stationName = "Sweetwater";
 
-    if (!TryComp<StationDataComponent>(mapUid1, out var data)
-    {
-        Log.Error("No StationDataComponent found!");
-        return;
-    }
+     var SweetwaterName = "Terminal";
 
-     if (!_protoManager.TryIndex<GameMapPrototype>(data.SweetwaterProto, out var sweetwaterProto))
-        {
-            Log.Error("Terminal prototype not found!");
-            return;
-        }
+     if (!prototypeManager.TryIndex<GameMapPrototype>(SweetwaterName, out var gameMap))
+            {
+                Log.Error("Cannot find Sweetwater prototype!");
+                return;
+            }
 
-    data.StationConfig = sweetwaterProto;
+    // if (!_loader.TryLoad(mapId1, _cfgManager.GetCVar(CCVars.ArrivalsMap), out var uids1))
+   // {
+   //     return;
+   // }
 
-    if (!_loader.TryLoad(mapId1, _cfgManager.GetCVar(CCVars.ArrivalsMap), out var uids1))
-    {
-        return;
-    }
+   gameTicker.LoadGameMap(gameMap, mapId1, loadOptions, stationName);
 
     foreach (var id in uids1)
     {
