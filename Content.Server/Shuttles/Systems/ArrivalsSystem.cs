@@ -530,7 +530,7 @@ public sealed class ArrivalsSystem : EntitySystem
 
      var SweetwaterName = "Terminal";
 
-     if (!_protoManager.TryIndex<GameMapPrototype>(SweetwaterName, out var gameMap)) //wrong here
+     if (!_protoManager.TryIndex<GameMapPrototype>(SweetwaterName, out var gameMap))
             {
                 Log.Error("Cannot find Sweetwater prototype!");
                 return;
