@@ -51,6 +51,7 @@
   - type: Clothing
     sprite: Clothing/Mask/gassyndicate.rsi
   - type: FlashImmunity
+  - type: WaterBlocker
   - type: EyeProtection
   - type: Armor
     modifiers:
@@ -66,6 +67,7 @@
   name: atmospheric gas mask
   description: Improved gas mask utilized by atmospheric technicians. It's flameproof!
   components:
+  - type: WaterBlocker
   - type: Sprite
     sprite: Clothing/Mask/gasatmos.rsi
   - type: Clothing
@@ -83,6 +85,7 @@
   components:
   - type: Sprite
     sprite: Clothing/Mask/gascaptain.rsi
+  - type: WaterBlocker
   - type: Clothing
     sprite: Clothing/Mask/gascaptain.rsi
   - type: BreathMask
@@ -100,6 +103,7 @@
     sprite: Clothing/Mask/gascentcom.rsi
   - type: BreathMask
   - type: IngestionBlocker
+  - type: WaterBlocker
 
 - type: entity
   parent: [ClothingMaskGas, BaseCargoContraband]
@@ -111,6 +115,7 @@
     sprite: Clothing/Mask/gasexplorer.rsi
   - type: Clothing
     sprite: Clothing/Mask/gasexplorer.rsi
+  - type: WaterBlocker
   - type: Armor
     modifiers:
       coefficients:
@@ -177,6 +182,7 @@
   components:
   - type: Item
     size: Tiny
+  - type: WaterBlocker
   - type: Sprite
     sprite: Clothing/Mask/breath.rsi
   - type: Clothing
@@ -207,6 +213,7 @@
     sprite: Clothing/Mask/clown.rsi
   - type: BreathMask
   - type: IdentityBlocker
+  - type: WaterBlocker
   - type: Tag
     tags:
     - ClownMask
@@ -219,6 +226,7 @@
   parent: ClothingMaskClownBase
   id: ClothingMaskClown
   components:
+  - type: WaterBlocker
   - type: Tag
     tags:
     - ClownMask
@@ -233,6 +241,7 @@
   id: ClothingMaskClownBanana
   name: banana clown wig and mask
   components:
+  - type: WaterBlocker
   - type: Sprite
     sprite: Clothing/Mask/clown_banana.rsi
   - type: Clothing
@@ -247,6 +256,7 @@
   name: security clown wig and mask
   description: A debatably oxymoronic but protective mask and wig.
   components:
+  - type: WaterBlocker
   - type: Sprite
     sprite: Clothing/Mask/clown_security.rsi
   - type: Clothing
@@ -374,6 +384,7 @@
   name: swat gas mask
   description: A elite issue Security gas mask.
   components:
+  - type: WaterBlocker
   - type: Sprite
     sprite: Clothing/Mask/swat.rsi
   - type: Clothing
@@ -400,6 +411,7 @@
   name: mercenary gas mask
   description: Slightly outdated, but reliable military-style gas mask.
   components:
+  - type: WaterBlocker
   - type: Sprite
     sprite: Clothing/Mask/merc.rsi
   - type: Clothing
@@ -418,6 +430,7 @@
   name: ert gas mask
   description: The gas mask of the elite squad of the ERT.
   components:
+  - type: WaterBlocker
   - type: Sprite
     sprite: Clothing/Mask/ert.rsi
   - type: Clothing
@@ -446,6 +459,7 @@
   name: death squad gas mask
   description: A unique gas mask for the NT's most elite squad.
   components:
+  - type: WaterBlocker
   - type: Sprite
     sprite: Clothing/Mask/squadron.rsi
   - type: Clothing

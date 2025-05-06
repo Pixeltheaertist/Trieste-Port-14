@@ -1,0 +1,138 @@
+# This is the Storm Array, a device that "siphons lighting" offscreen.
+# It constantly heats up the room around it, and needs to have it's temperature carefully monitored to prevent a meltdown.
+# It also gives occasional warnings and spawning sparks while taking damage, eventually exploding.
+
+- type: entity
+  parent: BaseGenerator
+  id: TP14StormArray
+  name: storm array
+  description: The core of a massive array of lightning rods, siphoning searing energy from the eternal storm above. Must be kept cool.
+  suffix: 100kW
+  placement:
+    mode: AlignTileAny
+  components:
+  - type: Physics
+    bodyType: Static
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Engineering
+  - type: ActiveRadio
+    channels:
+    - Engineering
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.5,-1.5,1.5,1.5"
+        density: 50
+        mask:
+        - LargeMobMask
+        layer:
+        - WallLayer
+  - type: PowerSupplier
+    supplyRate: 100000
+  - type: RadiantTemperature # Constantly heats the air around it
+  - type: GuideHelp
+    guides:
+    - StormArray
+    - Power
+  - type: Damageable
+    damageContainer: StructuralInorganic
+  - type: Anchorable
+    delay: 999999
+  - type: Temperature
+    heatDamageThreshold: 500
+    coldDamageThreshold: -9999 # Doesn't take damage from cold
+    currentTemperature: 100.15
+    specificHeat: 42
+    coldDamage:
+      types:
+        Cold: 0 
+    heatDamage:
+      types:
+        Heat: 5 # Recieves 5 heat damage every second it's overheating
+  - type: Electrified
+    onHandInteract: true
+    onInteractUsing: true
+    onBump: true
+    requirePower: false
+    highVoltageNode: input
+  - type: Sprite
+    sprite: _TP/Structures/Machines/StormArray.rsi # Might need to make the folder name lowercase, server compresses files weird sometimes.
+    state: storm_array
+  - type: DamageVisuals
+    thresholds: [100, 200, 400]
+    damageDivisor: 4
+    trackAllDamage: true
+    damageOverlay:
+      sprite: Structures/Windows/cracks.rsi
+  - type: AmbientSound
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/buzzing.ogg
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 200
+    intensitySlope: 30
+    maxIntensity: 120
+  - type: SpeakOnTrigger
+    pack: StormArrayWarnings
+  - type: Destructible # Gives warnings every 100 damage, eventually exploding
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              EffectSparks:
+                min: 1
+                max: 5
+          - !type:TriggerBehavior
+      - trigger:
+          !type:DamageTrigger
+          damage: 400
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              EffectSparks:
+                min: 1
+                max: 5
+          - !type:TriggerBehavior
+      - trigger:
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+          - !type:TriggerBehavior
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              EffectSparks:
+                min: 1
+                max: 5
+      - trigger:
+          !type:DamageTrigger
+          damage: 500
+        behaviors:
+          - !type:ExplodeBehavior 
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 300
+        behaviors:
+          - !type:PopupBehavior 
+            popup: "The array rumbles and hisses!"
+            popupType: LargeCaution
+          - !type:TriggerBehavior
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              EffectSparks:
+                min: 1
+                max: 5
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak

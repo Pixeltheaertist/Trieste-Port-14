@@ -3,6 +3,7 @@ using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 using Content.Shared.Interaction;
+using Robust.Shared.Audio;
 
 namespace Content.Server.Atmos.Components;
 
@@ -21,7 +22,13 @@ public sealed partial class InGasComponent : Component
     public int GasId = 9;
 
     ///  <summary>
-    ///     amount of gas needed to trigger effect in mols.
+    ///     Sound to rumble underwater.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier RumbleSound = new SoundPathSpecifier("/Audio/Ambience/Objects/gravity_gen_hum.ogg");
+
+    ///  <summary>
+    ///     Amount of gas needed to trigger effect in mols.
     /// </summary>
     [DataField("gasThreshold"), ViewVariables(VVAccess.ReadWrite)]
     public float GasThreshold = 0.1f;

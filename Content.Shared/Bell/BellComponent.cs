@@ -24,6 +24,9 @@ public sealed partial class BellComponent : Component
     /// </summary>
     [DataField]
     public List<BellDestination> Destinations = new();
+
+    [DataField]
+    public bool CanMove = true;
 }
 
 /// <summary>

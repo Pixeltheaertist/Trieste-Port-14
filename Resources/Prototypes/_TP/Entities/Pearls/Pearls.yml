@@ -1,0 +1,47 @@
+- type: entity
+  name: pearl
+  parent: BaseItem
+  id: TP14BasePearl
+  description: 'A plain white data pearl, devoid of any etchings or imperfections.'
+  components:
+  - type: Pearl
+    pearlMessage: "This pearl is completely blank."
+  - type: Sprite
+    sprite: Textures/_TP/Objects/Pearl.rsi
+    state: icon
+    color: "#Ffffff"
+  - type: Item
+    size: Tiny
+  - type: Paper
+    sound: /Audio/Machines/scan_finish.ogg
+    contentSize: 99999999 # Pearls can store much more data than paper
+  - type: ActivatableUI
+    key: enum.PaperUiKey.Key
+    requiresComplex: false
+  - type: UserInterface
+    interfaces:
+      enum.PaperUiKey.Key:
+        type: PaperBoundUserInterface
+  - type: PaperVisuals
+    headerImagePath: "/Textures/Interface/Paper/paper_background_black.svg.96dpi.png"
+    backgroundImagePath: "/Textures/Interface/Paper/paper_background_black.svg.96dpi.png"
+    backgroundModulate: "#3a434a"
+    backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
+    contentMargin: 32.0, 16.0, 32.0, 0.0
+    blankText: pearl-ui-blank-page-message
+    fontAccentColor: "#03A062"
+
+- type: entity
+  name: pearl
+  parent: TP14BasePearl
+  id: TP14PearlShark
+  description: 'A plain purple data pearl, devoid of any etchings or imperfections.'
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/pearl.rsi
+    state: icon
+    color: "#800080"
+  - type: Pearl
+    pearlMessage: "The shark has the silly.
+                   The shork does the silly.
+                   The shonk is the silly."

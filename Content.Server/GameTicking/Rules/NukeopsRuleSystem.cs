@@ -39,10 +39,10 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     [Dependency] private readonly TagSystem _tag = default!;
 
     [ValidatePrototypeId<CurrencyPrototype>]
-    private const string TelecrystalCurrencyPrototype = "Telecrystal";
+    private const string TelecrystalCurrencyPrototype = "BluespaceCrystal";
 
     [ValidatePrototypeId<TagPrototype>]
-    private const string NukeOpsUplinkTagPrototype = "NukeOpsUplink";
+    private const string NukeOpsUplinkTagPrototype = "CascadeOpsUplink";
 
     public override void Initialize()
     {

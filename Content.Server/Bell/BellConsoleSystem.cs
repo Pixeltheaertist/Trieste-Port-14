@@ -112,6 +112,11 @@ public sealed class BellConsoleSystem : SharedBellConsoleSystem
         if (ent.Comp.Platform is not { } platform ||
             !TryComp<BellComponent>(platform, out var elevator))
             return;
+            
+        if (!elevator.CanMove)
+        {
+            return;
+        }
 
         if (args.Index < 0 || args.Index > elevator.Destinations.Count)
             return;

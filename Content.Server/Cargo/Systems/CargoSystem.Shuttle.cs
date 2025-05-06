@@ -8,6 +8,7 @@ using Content.Shared.GameTicking;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Robust.Shared.Audio;
+using Content.Shared.Salvage.Fulton;
 
 namespace Content.Server.Cargo.Systems;
 
@@ -232,9 +233,27 @@ public sealed partial class CargoSystem
         var ev = new EntitySoldEvent(toSell);
         RaiseLocalEvent(ref ev);
 
+
         foreach (var ent in toSell)
         {
-            Del(ent);
+
+            // TRIESTE EDIT!!
+            // This'll allow items being sold to "launch" into the air, waiting be intercepted by trade vessels or whatnot
+
+            var metadata = MetaData(ent);
+            var curTime = _timing.CurTime;
+            var fulton = EnsureComp<FultonedComponent>(ent);
+            fulton.Beacon = gridUid;
+            fulton.FultonDuration = TimeSpan.FromMinutes(9999999); // 19 years (should be a negligible amount of lag since they get abstracted)
+            fulton.NextFulton = _timing.CurTime; // Should be relatively immediate
+            fulton.Removeable = false;
+
+            // TRIESTE EDIT!!!
+
+           if (fulton.NextFulton < curTime)
+           {
+              Del(ent);
+           }
         }
 
         return true;

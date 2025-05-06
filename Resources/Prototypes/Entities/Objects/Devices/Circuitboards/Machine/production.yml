@@ -458,6 +458,22 @@
       Glass: 2
 
 - type: entity
+  id: JellidPortableScrubberMachineCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: jellid portable scrubber machine board
+  description: A machine printed circuit board for a jellid portable scrubber.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: JellidPortableScrubber
+    stackRequirements:
+      MatterBin: 1
+      Manipulator: 2
+      Cable: 5
+      Glass: 2
+
+- type: entity
   id: SpaceHeaterMachineCircuitBoard
   parent: BaseMachineCircuitboard
   name: space heater machine board

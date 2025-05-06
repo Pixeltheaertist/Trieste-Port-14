@@ -18,4 +18,9 @@ mech-name = { CAPITALIZE(THE($owner)) }'s Rotund Stepfather
 mech-name-raw = {$name}'s Rotund Stepfather
 
 mech-brick-popup = The mech's circuits loudly pop and fizzle out!
-mech-scramble-popup = The mech's circuits are overloaded with electricity!
+mech-scramble-popup = The mech's circuits are overloaded with electricity!'
+
+pilot-assignment-switch = Switch pilot status
+
+pilot-currently-yes = Target pilot status: [color=green]authorized[/color]
+pilot-currently-no = Target pilot status: [color=red]unauthorized[/color]

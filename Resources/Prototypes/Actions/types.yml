@@ -21,6 +21,18 @@
     checkCanInteract: false
 
 - type: entity
+  id: ActionGravityJump
+  name: Jump
+  description: You take a leap forward!
+  components:
+  - type: InstantAction
+    useDelay: 8
+    icon:
+      sprite: Interface/Actions/actions_mecha.rsi
+      state: mech_savannah
+    event: !type:GravityJumpEvent {}
+
+- type: entity
   id: ActionTurnUndead
   name: Turn Undead
   description: Succumb to your infection and become a zombie.

@@ -46,13 +46,14 @@ public sealed partial class SpaceHeaterComponent : Component
     /// <summary>
     ///     The delta from the target temperature after which the space heater switch mode while in Auto. Value should account for the thermomachine temperature tolerance.
     /// </summary>
-    [DataField]
+    [DataField("autoModeSwitchThreshold")]
     [ViewVariables(VVAccess.ReadWrite)]
     public float AutoModeSwitchThreshold = 0.8f;
 
     /// <summary>
     ///     Current electrical power consumption, in watts, of the space heater at medium power level. Passed to the thermomachine component.
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField("powerConsumption")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public float PowerConsumption = 3500f;
 }

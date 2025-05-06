@@ -32,6 +32,9 @@ namespace Content.Server.Nuke
         [DataField("cooldown")]
         public int Cooldown = 30;
 
+        [DataField("isArtifact")]
+        public bool IsArtifact = false;
+
         /// <summary>
         ///     The <see cref="ItemSlot"/> that stores the nuclear disk. The entity whitelist, sounds, and some other
         ///     behaviours are specified by this <see cref="ItemSlot"/> definition. Make sure the whitelist, is correct

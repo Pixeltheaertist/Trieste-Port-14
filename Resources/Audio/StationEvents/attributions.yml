@@ -8,6 +8,11 @@
   copyright: "Created by Donchan"
   source: "https://www.youtube.com/watch?v=4nUpeYLKUns"
 
+- files: ["the_approaching_storm.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "Created by Nighty"
+  source: "https://m.youtube.com/watch?v=VHWQYVaEbQ4"
+
 - files: ["countdown.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Created by qwertyquerty"

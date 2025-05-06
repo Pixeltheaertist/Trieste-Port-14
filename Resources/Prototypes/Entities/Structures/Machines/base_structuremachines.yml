@@ -10,6 +10,14 @@
     bodyType: Static
   - type: Transform
     noRot: true
+  - type: InGas
+    gasId: 9
+    damagedByGas: false
+    crushDepth: 9999 # Extreme crush depth to prevent unintended destruction
+    gasThreshold: 9999
+    damage:
+      types:
+        Shock: 5
   - type: Fixtures
     fixtures:
       fix1:
@@ -71,6 +79,14 @@
   - type: LightningTarget
     priority: 1
   - type: FallSystem
+  - type: InGas
+    gasId: 9
+    damagedByGas: false
+    crushDepth: 9999 # Extreme crush depth to prevent unintended destruction
+    gasThreshold: 9999
+    damage:
+      types:
+        Shock: 5
 
 - type: entity
   abstract: true

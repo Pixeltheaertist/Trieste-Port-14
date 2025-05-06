@@ -1,0 +1,457 @@
+# DENATURING
+# 2 ingredients: 450K
+# 3 ingredients: 500K
+# 4-5 ingredients: 600K
+# 6 ingredients OR unique: 700K
+# If a chem requires a certain heat to mix, raise it's denaturing threshold accordingly.
+
+- type: reaction
+  id: DyloveneDenaturing
+  impact: Low
+  minTemp: 500
+  reactants:
+    Dylovene:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: BicaridineDenaturing
+  impact: Low
+  minTemp: 450
+  reactants:
+    Bicaridine:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: DermalineDenaturing
+  impact: Low
+  minTemp: 600
+  reactants:
+    Dermaline:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: DexalinDenaturing
+  impact: Low
+  minTemp: 500
+  reactants:
+    Dexalin:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: CryoxadoneDenaturing
+  impact: Low
+  minTemp: 500
+  reactants:
+    DexalinPlus:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: EpinephrineDenaturing
+  impact: Low
+  minTemp: 600
+  reactants:
+   Epinephrine:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id:  HyronalinDenaturing
+  impact: Low
+  minTemp: 450
+  reactants:
+   Hyronalin:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: IpecacDenaturing
+  impact: Low
+  minTemp: 500
+  reactants:
+   Ipecac:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: InaprovalineDenaturing
+  impact: Low
+  minTemp: 500
+  reactants:
+   Inaprovaline:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: KelotaneDenaturing
+  impact: Low
+  minTemp: 500
+  reactants:
+    Kelotane:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: LeporazineDenaturing
+  impact: Low
+  minTemp: 600
+  reactants:
+    Leporazine:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: PhalanximineDenaturing
+  impact: Low
+  minTemp: 500
+  reactants:
+    Phalanximine:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: SiderlacDenaturing
+  impact: Low
+  minTemp: 450
+  reactants:
+    Siderlac:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: SynaptizineDenaturing
+  impact: Low
+  minTemp: 500
+  reactants:
+    Synaptizine:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+    
+- type: reaction
+  id: TranexamicAcidDenaturing
+  impact: Low
+  minTemp: 500
+  reactants:
+    TranexamicAcid:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: TricordrazineDenaturing
+  impact: Low
+  minTemp: 450
+  reactants:
+    Tricordrazine:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: UltravasculineDenaturing
+  impact: Low
+  minTemp: 500
+  reactants:
+    Ultravasculine:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: EthyloxyephedrineDenaturing
+  impact: Low
+  minTemp: 500
+  reactants:
+    Ethyloxyephedrine:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: DiphenylmethylamineDenaturing
+  impact: Low
+  minTemp: 500
+  reactants:
+    Diphenylmethylamine:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: LacerinolDenaturing
+  impact: Low
+  minTemp: 600
+  reactants:
+    Lacerinol:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: BruizineDenaturing
+  impact: Low
+  minTemp: 600
+  reactants:
+    Bruizine:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: PyrazineDenaturing
+  impact: Low
+  minTemp: 590
+  reactants:
+    Pyrazine:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: InsuzineDenaturing
+  impact: Low
+  minTemp: 600
+  reactants:
+    Insuzine:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: EphedrineDenaturing
+  impact: Low
+  minTemp: 450
+  reactants:
+    Ephedrine:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: StimulantsDenaturing
+  impact: Low
+  minTemp: 600
+  reactants:
+    Stimulants:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: THCDenaturing
+  impact: Low
+  minTemp: 450
+  reactants:
+    THC:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: BloodDenaturing
+  impact: Low
+  minTemp: 450
+  reactants:
+    Blood:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+    
+- type: reaction
+  id: SlimeDenaturing
+  impact: Low
+  minTemp: 450
+  reactants:
+    Slime:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+- type: reaction
+  id: CopperBloodDenaturing
+  impact: Low
+  minTemp: 450
+  reactants:
+    CopperBlood:
+      amount: 1
+  effects:
+  - !type:PopupMessage
+    messages: [ "denaturing" ]
+    type: Pvs
+    visualType: SmallCaution
+  products:
+    DenaturedProteins: 1
+
+#- type: reaction
+#  id: Denaturing
+#  impact: Low
+#  minTemp: 300
+#  reactants:
+#    :
+#      amount: 1
+#  products:
+#    DenaturedProteins: 1
+
+
+
+
+
+# END OF DENATURING

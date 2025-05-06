@@ -49,3 +49,4 @@ job-description-visitor = Enjoy your visit on the platform.
 job-description-station-ai = You are Trieste's illegal un-authorized AI core. Keep your citizens safe, and follow your laws.
 job-description-warden = Patrol the security department, ensure that no one is stealing from the armory, and make sure that all prisoners are processed and let out when their time is up.
 job-description-zookeeper = Put on a joyful display of cute animals and drifters for all the citizens to see.
+job-description-cburn = Your orders are simple. Trieste Port has been infected by an unknown class-IV parasite. Sterilize the site, and any citizens showing signs of infection. No exceptions.

@@ -11,11 +11,11 @@ emergency-shuttle-command-dock-desc = Calls the emergency shuttle and docks it t
 emergency-shuttle-command-launch-desc = Early launches the emergency shuttle if possible.
 
 # Emergency shuttle
-emergency-shuttle-left = The Emergency Shuttle has left the station. Estimate {$transitTime} seconds until the shuttle arrives at SolGov.
-emergency-shuttle-launch-time = The emergency shuttle will launch in {$consoleAccumulator} seconds.
-emergency-shuttle-docked = The Emergency Shuttle has docked {$direction} of the station, {$location}. It will leave in {$time} seconds.{$extended}
-emergency-shuttle-good-luck = The Emergency Shuttle is unable to find a station. Good luck.
-emergency-shuttle-nearby = The Emergency Shuttle is unable to find a valid docking port. It has warped in {$direction} of the station, {$location}. It will leave in {$time} seconds.{$extended}
+emergency-shuttle-left = The SolGov evacuation vessel has left the station. Estimate {$transitTime} seconds until the shuttle arrives at SolGov.
+emergency-shuttle-launch-time = The SolGov evacuation vessel will launch in {$consoleAccumulator} seconds.
+emergency-shuttle-docked = The SolGov evacuation vessel has docked {$direction} of the platform, {$location}. It will leave in {$time} seconds.{$extended}
+emergency-shuttle-good-luck = The SolGov evacuation vessel is unable to find Trieste. Good luck.
+emergency-shuttle-nearby = The SolGov evacuation vessel is unable to find a valid docking port. (Ping Pix and remind his ass to add waste zone landing)
 emergency-shuttle-extended = {" "}Launch time has been extended due to inconvenient circumstances.
 
 # Emergency shuttle console popup / announcement
@@ -25,7 +25,7 @@ emergency-shuttle-console-auth-revoked = Early launch authorization revoked, {$r
 emergency-shuttle-console-denied = Access denied
 
 # UI
-emergency-shuttle-console-window-title = Emergency Shuttle Console
+emergency-shuttle-console-window-title = SolGov Ship Console
 emergency-shuttle-ui-engines = ENGINES:
 emergency-shuttle-ui-idle = Idle
 emergency-shuttle-ui-repeal-all = Repeal All

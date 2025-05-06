@@ -1,6 +1,9 @@
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Materials;
 using Robust.Shared.GameStates;
+using Content.Shared.Chemistry.Reagent;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Chemistry.Components;
 
@@ -19,4 +22,7 @@ public sealed partial class SolutionComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public Solution Solution = new();
+
+   [DataField("floodReagent", customTypeSerializer:typeof(PrototypeIdSerializer<ReagentPrototype>))]
+   public string FloodReagent = "SeaWater";
 }

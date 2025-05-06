@@ -48,6 +48,9 @@ public sealed partial class GunComponent : Component
     [DataField, AutoNetworkedField]
     public float CameraRecoilScalar = 1f;
 
+    [DataField]
+    public bool Waterproof = false;
+
     /// <summary>
     /// A scalar value applied to the vector governing camera recoil.
     /// If 0, there will be no camera recoil.

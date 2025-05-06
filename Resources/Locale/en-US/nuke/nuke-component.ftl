@@ -1,9 +1,10 @@
 nuke-component-cant-anchor-floor = The anchoring bolts fail to lock into the floor!
-nuke-component-announcement-sender = Artifact Control Module
+nuke-component-announcement-sender = Artifact Observation Center
 nuke-component-announcement-armed = WARNING: The Artifact's self-containment field has grown dangerously unstable. Massive energy readings detected. {$time} seconds until class-IV resonance cascade ocurrs. Recontain immediately.
+nuke-component-announcement-armed = W-W-WARNI-NG: CLASS-IV RESONANCE CASCADE DETECTED. REALITY DELAMINATION IN PROGRESS. EVACUATE.
 nuke-component-announcement-unarmed = Artifact containment fields have returned to full stability. No further danger detected.
 nuke-component-announcement-send-codes = Attention! Self-destruction codes have been sent to designated fax machines.
-nuke-component-doafter-warning = You start fiddling with wires and knobs in order to disarm the nuke.. This may take a while.
+nuke-component-doafter-warning = You start fiddling with the shaking machinery... this could take a bit..
 
 # Nuke UI
 nuke-user-interface-title = Nuclear Fission Explosive
@@ -41,6 +42,9 @@ nuke-codes-fax-paper-name = nuclear authentication codes
 
 # Nuke disk slot
 nuke-slot-component-slot-name-disk = Disk
+
+# Delaminator slot
+nuke-slot-component-slot-name-delaminator = Delaminator
 
 ## Examine
 nuke-examine-armed = Hey uh, why's that [color=red]red light[/color] blinking?

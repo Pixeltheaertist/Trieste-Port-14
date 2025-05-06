@@ -6,6 +6,7 @@
   components:
   - type: Transform
     anchored: true
+  - type: FallSystem
   - type: Clickable
   - type: Physics
     bodyType: Static

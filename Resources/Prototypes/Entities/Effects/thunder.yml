@@ -1,0 +1,55 @@
+- type: entity
+  id: AdminInstantEffectThunder
+  suffix: Thunder
+  parent: AdminInstantEffectBase
+  components:
+  - type: PointLight
+    energy: 4
+    enabled: true
+    radius: 100
+    softness: 1000
+  - type: SoundOnTrigger
+    sound: /Audio/Effects/tesla_collapse.ogg
+  - type: TriggerOnSpawn
+  - type: TimedDespawn
+    lifetime: 0.2
+
+
+- type: entity
+  id: Storm
+  suffix: Eldritch Thunder
+  parent: AdminInstantEffectBase
+  components:
+  - type: PointLight
+    energy: 14
+    enabled: true
+    radius: 300
+    softness: -100
+    color: "#CBC3E3"
+  - type: SoundOnTrigger
+    sound: /Audio/Effects/tesla_collapse.ogg
+  - type: TriggerOnSpawn
+  - type: TimedDespawn
+    lifetime: 0.2
+
+- type: entity
+  id: Eldritch
+  suffix: Eldritch Strike
+  parent: AdminInstantEffectThunder
+  components:
+  - type: PointLight
+    energy: 100
+    enabled: true
+    radius: 200
+    softness: -100
+    color: "#CBC3E3"
+  - type: ExplodeOnTrigger
+  - type: EmpOnTrigger
+    range: 3
+    disableDuration: 3
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 7
+    intensitySlope: 3
+    totalIntensity: 30 # about a ~4 tile radius
+    canCreateVacuum: false

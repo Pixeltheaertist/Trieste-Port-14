@@ -25,7 +25,7 @@ public sealed class WeatherSystem : SharedWeatherSystem
         SubscribeLocalEvent<WeatherComponent, ComponentHandleState>(OnWeatherHandleState);
     }
 
-    protected override void Run(EntityUid uid, WeatherData weather, WeatherPrototype weatherProto, float frameTime)
+    public override void Run(EntityUid uid, WeatherData weather, WeatherPrototype weatherProto, float frameTime)
     {
         base.Run(uid, weather, weatherProto, frameTime);
 
@@ -120,7 +120,7 @@ public sealed class WeatherSystem : SharedWeatherSystem
         comp.Occlusion = occlusion;
     }
 
-    protected override bool SetState(EntityUid uid, WeatherState state, WeatherComponent comp, WeatherData weather, WeatherPrototype weatherProto)
+    public override bool SetState(EntityUid uid, WeatherState state, WeatherComponent comp, WeatherData weather, WeatherPrototype weatherProto)
     {
         if (!base.SetState(uid, state, comp, weather, weatherProto))
             return false;
@@ -134,7 +134,7 @@ public sealed class WeatherSystem : SharedWeatherSystem
         return true;
     }
 
-    private void OnWeatherHandleState(EntityUid uid, WeatherComponent component, ref ComponentHandleState args)
+    public void OnWeatherHandleState(EntityUid uid, WeatherComponent component, ref ComponentHandleState args)
     {
         if (args.Current is not WeatherComponentState state)
             return;

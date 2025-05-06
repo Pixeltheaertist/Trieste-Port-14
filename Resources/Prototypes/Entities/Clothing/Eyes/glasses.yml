@@ -58,6 +58,7 @@
   name: engineering goggles #less confusion
   description: Green-tinted goggles using a proprietary polymer that provides protection from eye damage of all types.
   components:
+  - type: WaterBlocker
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/meson.rsi
   - type: Clothing
@@ -246,6 +247,7 @@
   name: chemical analysis goggles
   description: Goggles that can scan the chemical composition of a solution.
   components:
+    - type: WaterBlocker
     - type: Sprite
       sprite: Clothing/Eyes/Glasses/science.rsi
     - type: Clothing

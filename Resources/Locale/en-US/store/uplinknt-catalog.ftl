@@ -7,11 +7,23 @@ uplink-pistol-Mk58-desc = A standard NT pistol issued to security officers. Warr
 uplink-CaptainSabre-name = Corporate saber
 uplink-CaptainSabre-desc = A blade normally bestowed to NT captains, however this one's owner was underperforming. High-quality guaranteed!
 
+uplink-rpg-name = Multi-RPG Launcher
+uplink-rpg-desc = A handheld, multiple rocket-propelled grenade launcher
+
+uplink-rocket-name = RPG Shell
+uplink-rocket-desc = A shell designed for a RPG-class weapon
+
+uplink-35auto-name = .35 auto box
+uplink-35auto-desc = A box containing 3 .35 auto magazines
+
 uplink-blaster-name = BM-138 power blaster
 uplink-blaster-desc = A robust energy weapon that utilizes MagCells to accelerate charged particles. Comes with a MagCell slot and a free MagCell.
 
 uplink-carbine-name = NT-331 energy carbine
 uplink-carbine-desc = The follower of the BM-138, capable of energizing particles at a faster rate. Comes with a MagCell slot.
+
+uplink-atreides-name = Atreides
+uplink-atreides-desc = A compact submachine gun, packing a serious short-term punch. Uses .35 auto ammo.
 
 uplink-bluehardsuit-name = Storm-blue pressure suit
 uplink-bluehardsuit-desc = A NT-Certified pressure suit graded for 11 kilometers of ocean pressure. Painted in NT Storm Blue.

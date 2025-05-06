@@ -4,6 +4,7 @@
   name: blindfold
   description: The bind leading the blind.
   components:
+  - type: WaterBlocker
   - type: Sprite
     sprite: Clothing/Eyes/Misc/blindfold.rsi
   - type: Clothing

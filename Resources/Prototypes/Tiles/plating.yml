@@ -71,6 +71,7 @@
   friction: 0.3
   isSpace: true
   itemDrop: PartRodMetal1
+  indestructible: true
   heatCapacity: 10000
 
 - type: tile

@@ -9,6 +9,16 @@
   group: market
 
 - type: cargoProduct
+  id: AtmosphericsWater
+  icon:
+    sprite: Structures/Storage/canister.rsi
+    state: grey
+  product: TP14WaterCanister
+  cost: 1500
+  category: cargoproduct-category-name-atmospherics
+  group: market
+
+- type: cargoProduct
   id: AtmosphericsOxygen
   icon:
     sprite: Structures/Storage/canister.rsi

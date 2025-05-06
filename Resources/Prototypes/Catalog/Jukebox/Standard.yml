@@ -39,9 +39,3 @@
   name: PigeonBeans - Sunset
   path:
     path: /Audio/Jukebox/sunset.ogg
-    
-- type: jukebox
-  id: oceanman
-  name: Ocean Man - Ween
-  path:
-    path: /Audio/Jukebox/ocean_man.ogg

@@ -1,7 +1,12 @@
-- files: ["planet.png"]
+- files: ["land.png"]
   license: "CC-BY-NC-SA-3.0"
-  copyright: "by Adipemdragon for tgstation, taken at commit 3839e860a7f3102b1488285d3319f61bbfe1fa51 from parallax.dmi"
-  source: "https://github.com/tgstation/tgstation"
+  copyright: "Made by Pixeltheaertist for Trieste Port"
+  source: "PixeltheAertist"
+
+- files: ["Trieste.png"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Made by Pixeltheaertist for Trieste Port"
+  source: "PixeltheAertist"
 
 - files: ["KettleParallaxNeb.png", "KettleParallaxBG.png", "AspidParallaxBG.png", "AspidParallaxBG.png"]
   license: "CC0-1.0"
@@ -15,8 +20,8 @@
 
 - files: ["Asteroids.png"]
   license: "CC-BY-NC-SA-3.0"
-  copyright: "taken from tgstation on https://github.com/tgstation/tgstation/commit/3df5d3b42bfb6b3b5adba1067ab41f83816255bb from parallax.dmi"
-  source: "https://github.com/tgstation/tgstation"
+  copyright: "Blanked by Pixeltheaertist for Trieste Port"
+  source: "nothin"
 
 - files: ["core_planet.png"]
   license: "CC-BY-NC-SA-3.0"

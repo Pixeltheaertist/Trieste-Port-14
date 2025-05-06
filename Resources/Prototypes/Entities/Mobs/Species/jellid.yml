@@ -17,6 +17,7 @@
   - type: Body
     prototype: Jellid
     requiredLegs: 2
+  - type: WaterBlocker
   - type: Electrified
     shockTime: 2
   - type: IgnitionSource
@@ -98,10 +99,10 @@
   - type: Respirator
     damage:
       types:
-        Bloodloss: 1
+        Burn: 1
     damageRecovery:
       types:
-        Bloodloss: -0.5 # hopefully shouldn't be OP
+        Burn: -0.5 # hopefully shouldn't be OP
     maxSaturation: 15
     gaspEmote: Scream
   - type: Inventory

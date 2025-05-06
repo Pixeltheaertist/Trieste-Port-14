@@ -106,6 +106,7 @@
   name: base space helmet
   components:
   - type: BreathMask
+  - type: WaterBlocker
   - type: Item
     size: Normal
   - type: PressureProtection
@@ -141,6 +142,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: BreathMask
+  - type: WaterBlocker
   - type: Sprite
     state: icon # default state used by most inheritors
   - type: Clickable
@@ -193,6 +195,7 @@
       map: [ "light" ]
   - type: Clothing
     equippedPrefix: off
+  - type: WaterBlocker
   - type: ToggleableLightVisuals
   - type: PointLight
     enabled: false

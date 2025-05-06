@@ -8,6 +8,7 @@ using Content.Shared.Damage.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
 using Content.Server.Popups;
+using Content.Shared._TP;
 using Content.Shared.Popups;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
@@ -28,9 +29,7 @@ namespace Content.Server.Falling
         [Dependency] private readonly PopupSystem _popup = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly EntityLookupSystem _lookup = default!;
-
         [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
-
 
         private const int MaxRandomTeleportAttempts = 20; // The # of times it's going to try to find a valid spot to randomly teleport an object
 
@@ -38,6 +37,23 @@ namespace Content.Server.Falling
         {
             base.Initialize();
             SubscribeLocalEvent<FallSystemComponent, EntParentChangedMessage>(OnEntParentChanged);
+        }
+
+        public override void Update(float frameTime)
+        {
+
+            foreach (var entity in EntityQuery<JumpingComponent>())
+            {
+                var EntityParent = Transform(entity.Owner).ParentUid;
+
+                if (HasComp<TriesteAirspaceComponent>(EntityParent) && !entity.IsJumping)
+                {
+                    if (TryComp<FallSystemComponent>(entity.Owner, out var fallSystemComponent))
+                    {
+                        HandleFall(entity.Owner, fallSystemComponent);
+                    }
+                }
+            }
         }
 
         private void OnEntParentChanged(EntityUid owner, FallSystemComponent component, EntParentChangedMessage args) // called when the entity changes parents
@@ -69,15 +85,28 @@ namespace Content.Server.Falling
                 return;
             }
 
-            if (HasComp<TriesteComponent>(args.OldParent))
+            if (HasComp<JumpingComponent>(owner))
             {
+                return;
+            }
 
-                var destination = EntityManager.EntityQuery<FallingDestinationComponent>().FirstOrDefault();
-                if (destination != null)
-                {
-                  // Teleport to the first destination's coordinates
-                  Transform(owner).Coordinates = Transform(destination.Owner).Coordinates;
-                }
+            var OwnerParent = Transform(owner).ParentUid;
+            if (!HasComp<TriesteAirspaceComponent>(OwnerParent))
+            {
+                return;
+            }
+
+            HandleFall(owner, component);
+        }
+
+        private void HandleFall(EntityUid owner, FallSystemComponent component)
+        {
+            var destination = EntityManager.EntityQuery<FallingDestinationComponent>().FirstOrDefault();
+            if (destination != null)
+            {
+                // Teleport to the first destination's coordinates
+                Transform(owner).Coordinates = Transform(destination.Owner).Coordinates;
+            }
             else
             {
                 // If there's no destination, something broke
@@ -96,35 +125,34 @@ namespace Content.Server.Falling
                 DamageDict = { ["Blunt"] = 80f }
             };
             _damageable.TryChangeDamage(owner, damage, origin: owner);
+
             // Causes a popup
             _popup.PopupEntity(Loc.GetString("fell-to-seafloor"), owner, PopupType.LargeCaution);
+
             // Randomly teleports you in a radius around the landing zone
             TeleportRandomly(owner, component);
-
-            }
         }
 
         private void TeleportRandomly(EntityUid owner, FallSystemComponent component)
-{
-    var coords = Transform(owner).Coordinates;
-    var newCoords = coords; // Start with the current coordinates
-
-    for (var i = 0; i < MaxRandomTeleportAttempts; i++)
-    {
-        // Generate a random offset based on a defined radius
-        var offset = _random.NextVector2(component.MaxRandomRadius);
-        newCoords = coords.Offset(offset);
-
-        // Check if the new coordinates are free of static entities
-        if (!_lookup.GetEntitiesIntersecting(newCoords.ToMap(EntityManager, _transformSystem), LookupFlags.Static).Any())
         {
-            break; // Found a valid location
+            var coords = Transform(owner).Coordinates;
+            var newCoords = coords; // Start with the current coordinates
+
+            for (var i = 0; i < MaxRandomTeleportAttempts; i++)
+            {
+                // Generate a random offset based on a defined radius
+                var offset = _random.NextVector2(component.MaxRandomRadius);
+                newCoords = coords.Offset(offset);
+
+                // Check if the new coordinates are free of static entities
+                if (!_lookup.GetEntitiesIntersecting(newCoords.ToMap(EntityManager, _transformSystem), LookupFlags.Static).Any())
+                {
+                    break; // Found a valid location
+                }
+            }
+
+            // Set the new coordinates to teleport the entity
+            Transform(owner).Coordinates = newCoords;
         }
-    }
-
-    // Set the new coordinates to teleport the entity
-    Transform(owner).Coordinates = newCoords;
-}
-
     }
 }

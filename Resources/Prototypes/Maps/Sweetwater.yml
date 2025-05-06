@@ -1,10 +1,10 @@
 - type: gameMap
-  id: Sweetwater
+  id: Terminal
   mapName: Sweetwater
   mapPath: /Maps/Misc/terminal.yml
   minPlayers: 0
   stations:
-    Sweetwater:
+    Terminal:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup

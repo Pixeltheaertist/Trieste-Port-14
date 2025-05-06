@@ -1,0 +1,31 @@
+﻿- type: entity
+  parent: BaseItem
+  id: TP14PearlScanner
+  name: pearl reader
+  description: A device capable to acessing and outputting the information inside a data pearl.
+  components:
+    - type: Sprite
+      sprite: Objects/Specific/Planktonics.rsi
+      state: icon
+    - type: Item
+      sprite: Objects/Specific/Planktonics.rsi
+    - type: PearlScanner
+    - type: UseDelay
+      delay: 5
+    - type: Tag
+      tags:
+      - PearlReader
+
+- type: entity
+  parent: BaseItem
+  id: TP14PearlInscriber
+  name: pearl inscriber
+  description: A machine capable to inputting information into a data pearl.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mining/mineral_scanner.rsi
+    layers:
+    - state: icon
+  - type: Tag
+    tags:
+    - PearlEditor

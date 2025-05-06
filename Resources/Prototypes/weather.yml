@@ -127,6 +127,40 @@
       volume: -6
 
 - type: weather
+  id: CloudStorm
+  sprite:
+    sprite: /Textures/Effects/atmospherics.rsi
+    state: nitryl
+  sound:
+    path: /Audio/Effects/Weather/snowstorm.ogg
+    params:
+      loop: true
+      volume: -4
+
+- type: weather
+  id: SmogStorm
+  sprite:
+    sprite: /Textures/Effects/atmospherics.rsi
+    state: nitryl
+    color: "#808080" # Test this see if it works
+  sound:
+    path: /Audio/Effects/Weather/snowstorm.ogg
+    params:
+      loop: true
+      volume: -5
+
+- type: weather
+  id: Clear
+  sprite:
+    sprite: /Textures/Effects/atmospherics.rsi
+    state: clear
+  sound:
+    path: /Audio/Effects/Weather/snowstorm.ogg
+    params:
+      loop: true
+      volume: -100
+
+- type: weather
   id: Storm
   sprite:
     sprite: /Textures/Effects/weather.rsi

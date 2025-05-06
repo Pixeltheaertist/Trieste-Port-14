@@ -122,3 +122,10 @@
     threshold: 0.8 # danger below 80% nitrogen
   lowerWarnAround: !type:AlarmThresholdSetting
     threshold: 1.125 # warning below 90%
+
+- type: alarmThreshold
+  id: jellidWater
+  lowerBound: !type:AlarmThresholdSetting
+    threshold: 0.8 # danger below 80% water
+  lowerWarnAround: !type:AlarmThresholdSetting
+    threshold: 1.125 # warning below 90%

@@ -1,51 +1,47 @@
 ﻿<Document>
-# Station and Shifts
+# Trieste Info
 
-Every round of SS14 is a [bold]self-contained shift[/bold] that takes place on one of many different stations.
+   Trieste Port is very different from other SS14 servers, both in setting and mechanics.
+   Check out the Lore page for the story and lore of the server.
 
-Rounds typically last from [color=cyan]45 to 90 minutes[/color], but players are free to leave and join at any point during a round.
+   Trieste Port takes place on an old ex-NT oil rig, on a ocean world in the outer rim. You play as Anti-NT settlers who have made this settlement as a free port from Megacorporations.
 
-## Shuttle Terminal
-If you join in the middle of a shift, you will likely spawn on the [color=lime]shuttle terminal[/color].
-Here you can grab drinks, conversate with other players, and wait for the shuttle to take you to the station.
+# What's New?
 
-Screens on the walls will give you an ETA for the shuttle.
-When it arrives, simply walk on to be transported to the station.
+   Trieste has a few new mechanics you should be aware of:
 
-Make sure to stay inside the terminal and to not stand in the shuttle landing zone. [color=#EB2D3A][bold]You can be crushed by shuttles flying in[/bold][/color]
+   - Falling: If you step off the platform or throw something off, it will fall into the Waste Zone below. Go south if you fall, there's a ladder you can climb to go back up.
+   
+   - Cold Air: Trieste (the platform) is very cold. Wear a jacket if you're outside for a long time, and turn on the heaters inside buildings to keep them toasty.
+   
+   - The Diving Bell: The map is separated in two main sections: Trieste and Sweetwater. 
+   
+     > Trieste contains the Bridge, Kitchen, Hydroponics, Stage, Security, Cargo, Medical, Detective, Court, and Reporter.
+   
+     > Sweetwater contains the Bar, Science, Engineering, Salvage, Janitorial and Library. Also most of the Maintenence shafts and the actual Basin.
+   
+   - No space in my space game???: That's right, this fork takes place ON A PLANET! Most of salvage happens on the Basin, under the sea. This is where mining and salvaging wrecks can happen, as well as hunting fauna. (Not all fauna likes being hunted, however)
+   
+   - Chemical Denaturing: To prevent people from Lavabeakering (heating a beaker to the temperature of the sun to instantly mix things), chemicals now denature and become useless if their temperature is too high. Plasma also explodes.
 
-## Navigation
-Every station has a wide variety of locations to visit.
-These range from specific departments where work happens to common areas where you can relax and chat with others.
+   - NT agents: Not just Syndies anymore, when you roll a Traitor, you have a 50/50 chance to either be aligned with Nanotrasen or The Syndicate, each with their own uplinks and currencies.
 
-<Box>
-  <GuideEntityEmbed Entity="StationMap"/>
-  <GuideEntityEmbed Entity="SignDirectionalDorms" Caption="Directional Signs"/>
-  <GuideEntityEmbed Entity="SignBridge" Caption="Marker Signs"/>
-</Box>
+   - The Artifact: Sweetwater is powered by The Artifact. This makes almost infinite energy, but must be taken care of. Pretty much a mixed Tesla and Singularity, don't let the rods break or it'll reap havoc.
 
-[color=cyan]Station maps[/color] give you an overview of the entire station with colored markers denoting locations of different things.
-Regular [color=cyan]signs[/color] on walls can point you to different departments.
+   - Flooding: Due to the fact that Sweetwater is underwater, hull breaches are considerably more dangerous than spacings. Water kills the unprotected fast, and it's freezing. It also breaks lights. Be weary! 
+     > Sweetwater has built in draining systems and bulkheads to manage floods once they are sealed, give it time. This can be sped up with compact scrubbers, however.
 
-## Leaving the Station
-At the end of the shift [color=gray](barring a [color=red][bold]nuclear disaster[/bold][/color])[/color], you will leave the station via the [color=lime]evac shuttle[/color].
-When it's called, an announcement will play on the station alerting the crew and signaling its [color=cyan]arrival in 10 minutes.[/color]
-Once it arrives, you'll need to make your way over to it, board it, and then survive the trip to [bold]Central Command[/bold].
+   - Jellids: Jellids are a new race, a "jellyfish people". They can only breathe water, and use a breathing apparatus to manage their internal water with a water tank.
+     > Jellids cannot get any nutrition from food. They instead must charge themselves by holding a battery (or any battery operated device) and siphon charge from it. (This happens automatically)
+     > Jellids are also immune to Basin pressure (they are not, however, immune to Trench pressure)
+     > The in-lore Jellid naming scheme is generally two names of stars (AKA, Sirius Erindani). Not enforced by any means in practice.
 
-The round doesn't officially end until you reach [bold]Central Command[/bold]
+   - The Rotund Stepfather (and Pilot): The Stepfather and The Pilot are co-dependent roles that must work together. The stepfather is a sentient mech which must follow the Pilot's orders. The pilot must manage the mech and use it to complete their operations on the Basin.
+     > As a Stepfather, your laws are: "Protect the Pilot, Uphold your pilot's orders, and Stay with your pilot" in that order. Consider them Borg laws.
+     > The Stepfather has one hand and an ID slot to assist the Pilot with. It's also common courtesy to hand control over the mech to the pilot when they board.
 
-<Box>
-  <GuideEntityEmbed Entity="CryogenicSleepUnit"/>
-</Box>
+   - Water Purification: If you boil Sea Water, it will turn into Water Vapor and Salt. The Water Vapor can be re-condensed into drinking water. The Settler Outpost has a facility with this ability built in.
 
-If you need to leave a round early, you can do so through a [color=lime]cyrogenic sleep unit[/color].
-Simply going inside and leaving the game will store your belongings and ensure that they are not stolen or misused.
-
-## More Info
-Learning the controls? [textlink="Click here to read about the different controls" link="Controls"]
-
-Don't know how to perform a job? [textlink="Click here to jump to a list of departments" link="Jobs"]
-
-Keep dying? [textlink="Click here to see a survival guide" link="Survival"]
+   - Settlers: Did you die? Fall into the Trench, mugged by Drifters, thrown off the Platform? That's alright! You can respawn as a Settler, with your very own outpost! It comes retrofitted with everything you'd need to do most things, so have fun!
 
 </Document>

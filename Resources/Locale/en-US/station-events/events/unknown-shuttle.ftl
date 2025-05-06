@@ -1,1 +1,1 @@
-station-event-unknown-shuttle-incoming = Attention! An unidentified space shuttle has been spotted approaching your sector.
+station-event-unknown-shuttle-incoming = An unknown vessel has entered Trieste airspace.

@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
 using Content.Server.Cargo.Components;
 using Content.Server.Labels.Components;
 using Content.Server.Station.Components;
@@ -15,6 +16,8 @@ using Content.Shared.Paper;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared.Salvage.Fulton;
+using Robust.Shared.Timing;
 
 namespace Content.Server.Cargo.Systems
 {
@@ -502,8 +505,10 @@ namespace Content.Server.Cargo.Systems
         /// </summary>
         private bool FulfillOrder(CargoOrderData order, EntityCoordinates spawn, string? paperProto)
         {
+
+            var offsetSpawn = spawn.Offset(new Vector2(1000, 1000));
             // Create the item itself
-            var item = Spawn(order.ProductId, spawn);
+            var item = Spawn(order.ProductId, offsetSpawn);
 
             // Ensure the item doesn't start anchored
             _transformSystem.Unanchor(item, Transform(item));

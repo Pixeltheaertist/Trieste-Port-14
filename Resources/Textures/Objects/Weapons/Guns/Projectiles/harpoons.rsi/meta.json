@@ -24,6 +24,12 @@
       "directions": 4
     },
     {
+      "name": "boomtip"
+    },
+    {
+      "name": "explosive"
+    },
+    {
       "name": "inhand-right",
       "directions": 4
     }

@@ -2,7 +2,7 @@
 - type: weightedRandom
   id: NinjaThreats
   weights:
-    Dragon: 1
+    Dragon: 0 # IVE FOUND YOU, YOU PIECE OF SHIT
     Revenant: 1
 
 - type: ninjaHackingThreat

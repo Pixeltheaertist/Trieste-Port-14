@@ -1,0 +1,14 @@
+{
+    "version":1,
+    "size":{
+        "x":96,
+        "y":96
+    },
+    "license":"CC-BY-SA-3.0",
+    "copyright":"Created by PixeltheAertist for TP14",
+    "states":[
+        {
+            "name":"storm_array"
+        }
+    ]
+}

@@ -9,6 +9,16 @@
   group: market
 
 - type: cargoProduct
+  id: EngineeringAdvancedSMES
+  icon:
+    sprite: Structures/Power/smes.rsi
+    state: smes-og1
+  product: SMESPlatform
+  cost: 10000
+  category: cargoproduct-category-name-engineering
+  group: market
+
+- type: cargoProduct
   id: EngineeringCableMv
   icon:
     sprite: Objects/Tools/cable-coils.rsi

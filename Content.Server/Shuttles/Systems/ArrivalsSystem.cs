@@ -48,7 +48,7 @@ public sealed class ArrivalsSystem : EntitySystem
     [Dependency] private readonly IConsoleHost _console = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
-
+    [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IChatManager _chat = default!;
@@ -77,6 +77,8 @@ public sealed class ArrivalsSystem : EntitySystem
     /// Flags if all players spawning at the departure terminal have godmode until they leave the terminal.
     /// </summary>
     public bool ArrivalsGodmode { get; private set; }
+
+    public string biomeTemplate = "OceanWorld";
 
     /// <summary>
     ///     The first arrival is a little early, to save everyone 10s
@@ -113,7 +115,7 @@ public sealed class ArrivalsSystem : EntitySystem
         Enabled = _cfgManager.GetCVar(CCVars.ArrivalsShuttles);
         ArrivalsGodmode = _cfgManager.GetCVar(CCVars.GodmodeArrivals);
 
-        _cfgManager.OnValueChanged(CCVars.ArrivalsShuttles, SetArrivals);
+        _cfgManager.OnValueChanged(CCVars.SweetwaterEnabled, SetArrivals);
         _cfgManager.OnValueChanged(CCVars.GodmodeArrivals, b => ArrivalsGodmode = b);
 
         // Command so admins can set these for funsies
@@ -158,10 +160,10 @@ public sealed class ArrivalsSystem : EntitySystem
         switch (args[0])
         {
             case "enable":
-                _cfgManager.SetCVar(CCVars.ArrivalsShuttles, true);
+                _cfgManager.SetCVar(CCVars.SweetwaterEnabled, true);
                 break;
             case "disable":
-                _cfgManager.SetCVar(CCVars.ArrivalsShuttles, false);
+                _cfgManager.SetCVar(CCVars.SweetwaterEnabled, false);
                 break;
             case "returns":
                 var existing = _cfgManager.GetCVar(CCVars.ArrivalsReturns);
@@ -546,6 +548,15 @@ public sealed class ArrivalsSystem : EntitySystem
     var mapId2 = _mapManager.CreateMap();
     var mapUid2 = _mapManager.GetMapEntityId(mapId2);
     _mapManager.AddUninitializedMap(mapId2);
+
+     if (!_protoManager.TryIndex<BiomeTemplatePrototype>(biomeTemplate, out var biomeProto))
+        {
+            return;
+        }
+
+        var biomeSystem = _entManager.System<BiomeSystem>();
+        var mapOceanUid2 = _mapManager.GetMapEntityId(mapId2);
+        biomeSystem.EnsurePlanet(mapOceanUid2, biomeProto); // PLZ WORK
 
     if (!_loader.TryLoad(mapId2, _cfgManager.GetCVar(CCVars.Arrivals2Map), out var uids2)) // edit here to change the map, bozo
     {

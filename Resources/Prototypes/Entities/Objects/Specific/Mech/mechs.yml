@@ -328,6 +328,7 @@
       path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
       params:
         volume: -15
+  - type: Stepfather
   - type: Mech
     baseState: stepfather
     openState: stepfather
@@ -368,6 +369,10 @@
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
+  - type: ContainerFill
+    containers:
+      cell_slot:
+      - PowerCellHigh
   - type: ItemSlots
     slots:
       cell_slot:
@@ -453,6 +458,9 @@
     showOverlays: false
     allowRevives: true
   - type: Examiner
+  - type: GuideHelp
+    guides:
+    - Stepfather
  # - type: Loadout
    #   prototypes: [Stepfather] #gives the stepfather the Pilot Pinpointer to find their pilot
 

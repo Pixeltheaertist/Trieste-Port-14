@@ -16,6 +16,7 @@
     soundHit:
       collection: MetalThud
   - type: CombatMode
+  - type: WaterBlocker
   - type: NoSlip
   - type: StaticPrice
     price: 1250

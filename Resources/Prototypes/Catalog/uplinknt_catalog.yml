@@ -11,12 +11,32 @@
   - UplinkNtWeaponry
 
 - type: listing
+  id: UplinkRPG7
+  name: uplink-rpg-name
+  description: uplink-rpg-desc
+  productEntity: WeaponLauncherMultipleRocket
+  cost:
+    BluespaceCrystal: 16
+  categories:
+  - UplinkNtWeaponry
+
+- type: listing
+  id: UplinkAtreides
+  name: uplink-atreides-name
+  description: uplink-atreides-desc
+  productEntity: WeaponSubMachineGunAtreides
+  cost:
+    BluespaceCrystal: 8
+  categories:
+  - UplinkNtWeaponry
+  
+- type: listing
   id: UplinkEnergyCarbine
   name: uplink-carbine-name
   description: uplink-carbine-desc
   productEntity: TP14WeaponEnergyCarbine
   cost:
-    BluespaceCrystal: 15 # this shit is STRONG-strong. TODO: Cascade Ops DO NOT get this
+    BluespaceCrystal: 11
   categories:
   - UplinkNtWeaponry
 
@@ -46,7 +66,7 @@
   description: uplink-pistol-N1984-desc
   productEntity: WeaponPistolN1984
   cost:
-    BluespaceCrystal: 8
+    BluespaceCrystal: 7
   categories:
   - UplinkNtWeaponry
 
@@ -56,7 +76,7 @@
   description: uplink-pistol-Mk58-desc
   productEntity: WeaponPistolMk58
   cost:
-    BluespaceCrystal: 2
+    BluespaceCrystal: 3
   categories:
   - UplinkNtWeaponry
 
@@ -105,12 +125,32 @@
   - UplinkNtAmmo
 
 - type: listing
+  id: UplinkRocket
+  name: uplink-rocket-name
+  description: uplink-rocket-desc
+  productEntity: CartridgeRocket
+  cost:
+    BluespaceCrystal: 4
+  categories:
+  - UplinkNtAmmo
+
+- type: listing
+  id: Uplink35Auto
+  name: uplink-35auto-name
+  description: uplink-35auto-desc
+  productEntity: BoxMagazinePistolSubMachineGun
+  cost:
+    BluespaceCrystal: 5
+  categories:
+  - UplinkNtAmmo
+
+- type: listing
   id: UplinkMagCellDisabler
   name: uplink-disabler-name
   description: uplink-disabler-desc
   productEntity: TP14MagCellDisabler
   cost:
-    BluespaceCrystal: 6
+    BluespaceCrystal: 5
   categories:
   - UplinkNtAmmo
 
@@ -150,7 +190,7 @@
   description: uplink-magcellexp-desc
   productEntity: TP14MagCellExperimental
   cost:
-    BluespaceCrystal: 12
+    BluespaceCrystal: 10
   categories:
   - UplinkNtAmmo
 
@@ -229,7 +269,6 @@
     BluespaceCrystal: 8
   categories:
   - UplinkNtDisruption
-
 
 - type: listing
   id: UplinkAnnouncementPad

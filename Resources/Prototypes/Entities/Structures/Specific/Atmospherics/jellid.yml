@@ -1,0 +1,52 @@
+- type: entity
+  abstract: true
+  parent: AirSensorBase
+  id: AirSensorJellidBase
+  suffix: Jellid Atmosphere
+  components:
+  - type: AtmosMonitor
+    gasThresholdPrototypes:
+      Oxygen: danger
+      Nitrogen: danger
+      CarbonDioxide: danger
+      Plasma: danger
+      Tritium: danger
+      WaterVapor: danger
+      Ammonia: danger
+      NitrousOxide: danger
+      Frezon: danger
+      Water: jellidWater
+
+- type: entity
+  parent: [AirSensorJellidBase, AirSensor]
+  id: AirSensorJellid
+
+- type: entity
+  parent: [AirSensorJellidBase, GasVentPump]
+  id: GasVentPumpJellid
+
+- type: entity
+  parent: [AirSensorJellidBase, GasVentScrubber]
+  id: GasVentScrubberJellid
+  components:
+  - type: GasVentScrubber
+    wideNet: true # Air alarm with auto mode overrides filters with hardcoded defaults so default to widenet
+    filterGases:
+    - Oxygen # filter out everything but water
+    - Nitrogen
+    - CarbonDioxide
+    - Plasma
+    - Tritium
+    - WaterVapor
+    - Ammonia
+    - NitrousOxide
+    - Frezon
+
+# use this to prevent overriding filters with hardcoded defaults
+- type: entity
+  parent: AirAlarm
+  id: AirAlarmJellid
+  suffix: Jellid Atmosphere, auto mode disabled
+  components:
+  - type: AirAlarm
+    autoMode: false

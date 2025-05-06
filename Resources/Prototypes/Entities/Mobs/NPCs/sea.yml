@@ -192,12 +192,12 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      1: Dead
+      5: Dead
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 1 # Gibs immidiately upon being disturbed
+        damage: 5 # Gibs immidiately upon being disturbed
       behaviors:
       - !type:GibBehavior { }
   - type: NonSpreaderZombie

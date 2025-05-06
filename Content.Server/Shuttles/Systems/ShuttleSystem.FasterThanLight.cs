@@ -150,6 +150,7 @@ public sealed partial class ShuttleSystem
         Log.Debug($"Setup hyperspace map at {mapUid}");
         DebugTools.Assert(!_mapSystem.IsPaused(mapId));
         var parallax = EnsureComp<ParallaxComponent>(mapUid);
+        ftlMap.Parallax = "Sea";
         parallax.Parallax = ftlMap.Parallax;
 
         return mapUid;

@@ -937,6 +937,9 @@
   id: NukeOpsUplink
 
 - type: Tag
+  id: CascadeOpsUplink
+
+- type: Tag
   id: Ointment
 
 - type: Tag
@@ -1004,6 +1007,12 @@
 
 - type: Tag
   id: Plunger
+
+- type: Tag
+  id: PearlEditor
+
+- type: Tag
+  id: PearlReader
 
 - type: Tag
   id: PlushieCarp

@@ -336,6 +336,14 @@
   - type: PowerMonitoringDevice
     sprite: Structures/Power/Generation/rtg.rsi
     state: rtg_damaged
+  - type: TileSpawnAnomaly
+    entries:
+    - settings:
+        spawnOnPulse: false
+        minAmount: 100
+        maxAmount: 200
+        maxRange: 300
+      floor: FloorChromite
   - type: RadiationSource
     intensity: 10
   - type: LightningArcShooter
@@ -376,6 +384,7 @@
   - type: Nuke
     explosionType: Cryo
     maxIntensity: 100
+    isArtifact: true
     intensitySlope: 5
     totalIntensity: 5000000
     diskSlot:
@@ -388,7 +397,7 @@
         components:
         - NukeDisk
     resonanceSlot:
-      name: nuke-slot-component-slot-name-disk
+      name: nuke-slot-component-slot-name-delaminator
       insertSound:
         path: /Audio/Machines/terminal_insert_disc.ogg
       ejectSound:

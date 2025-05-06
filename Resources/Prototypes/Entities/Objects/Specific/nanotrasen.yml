@@ -73,3 +73,15 @@
     balance:
       BluespaceCrystal: 40
 
+- type: entity
+  parent: BaseUplinkRadio
+  id: NanotrasenUplinkRadioCascade40TC
+  suffix: 40 BC, CascOps
+  components:
+  - type: Store
+    balance:
+      BluespaceCrystal: 40
+  - type: Tag
+    tags:
+    - CascadeOpsUplink
+
