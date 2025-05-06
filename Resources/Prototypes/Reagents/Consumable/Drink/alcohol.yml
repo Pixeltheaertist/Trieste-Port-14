@@ -203,6 +203,8 @@
           shouldHave: false
       - !type:Drunk
         boozePower: 2
+      - !type:AberrantChange #TP - drinking helps the horrors
+        aberrantDamage: -0.5
 
 - type: reagent
   id: Gin
