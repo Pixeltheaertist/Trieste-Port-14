@@ -10,6 +10,9 @@
   id: MagCell
 
 - type: Tag
+  id: Table
+
+- type: Tag
   id: Airlock
 
 - type: Tag
