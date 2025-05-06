@@ -1,0 +1,69 @@
+- type: entity
+  id: ShadowDimensionFillSpawner
+  name: Shadow dimension filler
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - sprite: Structures/Walls/solid_rust.rsi
+        state: full
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      prob: 0.9
+      children:
+      - id: PuddleBlood
+
+- type: entity
+  id: ShadowDimensionBarrierSpawner
+  name: Shadow dimension barrier
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - sprite: Structures/Walls/solid_rust.rsi
+        state: full
+        color: "#ff66cc"
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      prob: 0.9
+      children:
+      - id: WallSolidRust
+        weight: 10
+
+- type: entity
+  id: ShadowDimensionLootSpawner
+  name: Shadow dimension loot
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Structures/Decoration/crystal.rsi
+        state: crystal_grey
+        color: "#ff66cc"
+  - type: RandomSpawner
+    chance: 0.5
+    prototypes:
+    - ArtifactFragment1
+    - SalvageSpawnerScrapCommon
+    - SalvageCanisterSpawner
+    - SalvageSpawnerTreasure
+    - SalvageSpawnerEquipment
+    - SalvageSpawnerScrapValuable
+
+- type: entity
+  id: ShadowDimensionEpicLootSpawner
+  name: Shadow dimension epic loot
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Structures/Decoration/crystal.rsi
+        state: crystal_grey
+        color: "#ff66cc"
+  - type: RandomSpawner
+    prototypes:
+    - SalvageSpawnerScrapValuable
+    - SalvageSpawnerEquipmentValuable
+    - SalvageSpawnerTreasureValuable

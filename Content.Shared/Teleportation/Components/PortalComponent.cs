@@ -36,7 +36,7 @@ public sealed partial class PortalComponent : Component
     ///     Shouldn't be able to teleport people to centcomm or the eshuttle from the station
     /// </remarks>
     [DataField("canTeleportToOtherMaps"), ViewVariables(VVAccess.ReadWrite)]
-    public bool CanTeleportToOtherMaps = true;
+    public bool CanTeleportToOtherMaps = false;
 
     /// <summary>
     ///     Maximum distance that portals can teleport to, in all cases. Mostly this matters for linked portals.
@@ -53,4 +53,10 @@ public sealed partial class PortalComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public bool RandomTeleport = true;
+
+    /// <summary>
+    /// You can disable teleportation
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool Enable = true;
 }
