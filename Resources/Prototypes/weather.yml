@@ -1,4 +1,28 @@
 - type: weather
+  id: TestRain
+  sprite:
+    sprite: /Textures/Effects/weather.rsi
+    state: hybrisa_rain_light
+  sound:
+    path:
+      /Audio/Effects/Weather/rain.ogg
+    params:
+      loop: true
+      volume: -6
+
+- type: weather
+  id: TestStorm
+  sprite:
+    sprite: /Textures/Effects/weather.rsi
+    state: hybrisa_rain
+  sound:
+    path: /Audio/Effects/Weather/rain_heavy.ogg
+    params:
+      loop: true
+      volume: -6
+
+
+- type: weather
   id: Ashfall
   sprite:
     sprite: /Textures/Effects/weather.rsi
