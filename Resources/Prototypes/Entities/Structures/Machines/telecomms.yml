@@ -184,6 +184,8 @@
     sprite: _TP/Structures/Machines/array.rsi
     layers:
     - state: array_INTACT
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
   - type: Destructible
     thresholds:
     - trigger:
