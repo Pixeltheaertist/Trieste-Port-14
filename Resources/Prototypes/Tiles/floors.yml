@@ -1556,6 +1556,20 @@
   weather: true
 
 - type: tile
+  id: FloorAsteroidSandDisplaced
+  parent: FloorAsteroidSand
+  name: tiles-seabed-sand
+  edgeSprites:
+    SouthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    NorthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    NorthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    SouthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    South: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    East: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    North: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    West: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+
+- type: tile
   id: FloorAsteroidSandRed
   name: tiles-asteroid-sand
   sprite: /Textures/Tiles/Asteroid/asteroid_red.png
