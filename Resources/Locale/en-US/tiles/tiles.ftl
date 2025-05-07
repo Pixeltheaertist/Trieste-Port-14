@@ -103,6 +103,7 @@ tiles-dark-grass-floor = dark grass floor
 tiles-light-grass-floor = light grass floor
 tiles-dirt-floor = dirt floor
 tiles-asteroid-sand = asteroid sand
+tiles-seabed-sand = seabed sand
 tiles-asteroid-sand-dug = dug asteroid sand
 tiles-asteroid-tile = asteroid tile
 tiles-asteroid-plating = asteroid plating
