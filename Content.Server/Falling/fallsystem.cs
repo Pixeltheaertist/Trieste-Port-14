@@ -20,7 +20,7 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Revenant.Components;
 //Summary
 // This system is the core piece of Trieste Port's falling system. Our "smoke and mirrors", if you will.
-// It checks on both ParentChange and an Update loop for proper timing and confirmation. Doing this, it checks if an entity with the "FallSystemComponent"'s parent.
+// It checks on both ParentChange and an Update loop for proper timing and confirmation. Doing this, it checks the parent of entities with the "FallSystemComponent".
 // If said parent has the "TriesteAirSpaceComponent", then that means the entity is currently floating in Trieste's "airspace"
 // After, it checks if said entity has the "JumpingComponent". This component marks when an entity is jumping. If an entity is currently in the air, it does not make them fall.
 // If an entity is in the air, and is not jumping, it forces them to fall by teleporting them in a wide range around a marker in the "falling zone". 
