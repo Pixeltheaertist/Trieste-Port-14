@@ -1559,6 +1559,7 @@
   id: FloorAsteroidSandDisplaced
   parent: FloorAsteroidSand
   name: tiles-seabed-sand
+  # deconstructTools: [ Digging ] # Must be dug up?
   edgeSprites:
     SouthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
     NorthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
