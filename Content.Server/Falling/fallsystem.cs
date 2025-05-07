@@ -18,7 +18,15 @@ using Robust.Server.GameObjects;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Revenant.Components;
-
+//Summary
+// This system is the core piece of Trieste Port's falling system. Our "smoke and mirrors", if you will.
+// It checks on both ParentChange and an Update loop for proper timing and confirmation. Doing this, it checks if an entity with the "FallSystemComponent"'s parent.
+// If said parent has the "TriesteAirSpaceComponent", then that means the entity is currently floating in Trieste's "airspace"
+// After, it checks if said entity has the "JumpingComponent". This component marks when an entity is jumping. If an entity is currently in the air, it does not make them fall.
+// If an entity is in the air, and is not jumping, it forces them to fall by teleporting them in a wide range around a marker in the "falling zone". 
+// Finally, it applies knockdown and 80 blunt damage, as well as a popup informing of the fall. Anything with FallSystemComponent will be affected by the gravity, unless it is a ghost, flying mob, AI, or revenant.
+// This means that one can hypothetically position a ship near Trieste, jump off of it onto the platform, and back, without falling.
+//Summary
 namespace Content.Server.Falling
 {
     public sealed class FallSystem : EntitySystem
