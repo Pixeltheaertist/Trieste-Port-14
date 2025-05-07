@@ -91,46 +91,56 @@ namespace Content.Server.Falling
                 return;
             }
 
-            if (HasComp<GhostComponent>(owner))
-            {
-                return;
-            }
-
-            if (HasComp<NoFTLComponent>(owner))
-            {
-                return;
-            }
-
-            if (HasComp<CanMoveInAirComponent>(owner))
-            {
-                return;
-            }
-
-            if (HasComp<RevenantComponent>(owner))
-            {
-                return;
-            }
-
-            if (HasComp<JumpingComponent>(owner))
-            {
-                return;
-            }
-
             var OwnerParent = Transform(owner).ParentUid;
+            // If yer not in Trieste airspace, FUCK OFF
             if (!HasComp<TriesteAirspaceComponent>(OwnerParent))
             {
                 return;
             }
 
+            // For observers
+            if (HasComp<GhostComponent>(owner))
+            {
+                return;
+            }
+
+            // For things like AI
+            if (HasComp<NoFTLComponent>(owner))
+            {
+                return;
+            }
+
+            // Flying enemies and mobs
+            if (HasComp<CanMoveInAirComponent>(owner))
+            {
+                return;
+            }
+
+            // Revenants aren't ghosts for some reason
+            if (HasComp<RevenantComponent>(owner))
+            {
+                return;
+            }
+
+            // Jumping is handled more specifically in the update loop
+            if (HasComp<JumpingComponent>(owner))
+            {
+                return;
+            }
+
+            // YYYYEEEEEEEEEEEEETTT!!
             HandleFall(owner, component);
         }
 
+        // Finds your destination
         private void HandleFall(EntityUid owner, FallSystemComponent component)
         {
+            // Hey, look! It's your destination
             var destination = EntityManager.EntityQuery<FallingDestinationComponent>().FirstOrDefault();
             if (destination != null)
             {
                 // Teleport to the first destination's coordinates
+                // Teleports you to the destination
                 Transform(owner).Coordinates = Transform(destination.Owner).Coordinates;
             }
             else
@@ -145,7 +155,7 @@ namespace Content.Server.Falling
             _stun.TryKnockdown(owner, stunTime, refresh: true);
             _stun.TryStun(owner, stunTime, refresh: true);
 
-            // Defines the damage being dealt
+            // Defines the damage being dealt, ouch!
             var damage = new DamageSpecifier
             {
                 DamageDict = { ["Blunt"] = 80f }
@@ -155,7 +165,7 @@ namespace Content.Server.Falling
             // Causes a popup
             _popup.PopupEntity(Loc.GetString("fell-to-seafloor"), owner, PopupType.LargeCaution);
 
-            // Randomly teleports you in a radius around the landing zone
+            // Randomly teleports you in a radius around the landing zone (this is pretty much damn near instantaneous in paralell with the rest of the code, so it's fine to happen after the teleport)
             TeleportRandomly(owner, component);
         }
 
@@ -164,7 +174,7 @@ namespace Content.Server.Falling
             var coords = Transform(owner).Coordinates;
             var newCoords = coords; // Start with the current coordinates
 
-            for (var i = 0; i < MaxRandomTeleportAttempts; i++)
+            for (var i = 0; i < MaxRandomTeleportAttempts; i++) // Does this for a set amount of time before giving up, or else it'll get stuck and constantly try to find a site
             {
                 // Generate a random offset based on a defined radius
                 var offset = _random.NextVector2(component.MaxRandomRadius);
@@ -178,6 +188,7 @@ namespace Content.Server.Falling
             }
 
             // Set the new coordinates to teleport the entity
+            // GET TELEPORTED, IDIOT
             Transform(owner).Coordinates = newCoords;
         }
     }
