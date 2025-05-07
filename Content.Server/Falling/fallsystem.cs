@@ -39,19 +39,37 @@ namespace Content.Server.Falling
             SubscribeLocalEvent<FallSystemComponent, EntParentChangedMessage>(OnEntParentChanged);
         }
 
-        public override void Update(float frameTime)
+        public override void Update(float frameTime) // Update loop my beloathed
         {
-
-            foreach (var entity in EntityQuery<JumpingComponent>())
+            foreach (var entity in EntityQuery<FallSystemComponent>()) // Find all entities with the FallSystem component
             {
-                var EntityParent = Transform(entity.Owner).ParentUid;
+                var EntityParent = Transform(entity.Owner).ParentUid; // Get the entity's parent UID
 
-                if (HasComp<TriesteAirspaceComponent>(EntityParent) && !entity.IsJumping)
+                // If our entity's parent has the TriesteAirspaceComponent, we know that it's currently in the air
+                if (HasComp<TriesteAirspaceComponent>(EntityParent))
                 {
-                    if (TryComp<FallSystemComponent>(entity.Owner, out var fallSystemComponent))
-                    {
+                        // Confirm if the entity is actively jumping. If so, skip over them.
+                        if (TryComp<JumpingComponent>(entity.Owner, out var jumping))
+                        {
+                            if (jumping.IsJumping)
+                            {
+                             continue;
+                            }
+                             else
+                            {
+                                // YEET THINE ENTITY
+                             HandleFall(entity.Owner, entity);
+                             continue;
+                            }
+                        }
+                        // YEET THINE ENTITY PART TWO
                         HandleFall(entity.Owner, fallSystemComponent);
-                    }
+                        continue;
+                }
+                else
+                {
+                    // Otherwise, skip over the entity and continue down the loop
+                    continue;
                 }
             }
         }
