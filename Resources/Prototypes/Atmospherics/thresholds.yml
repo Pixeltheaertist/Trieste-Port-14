@@ -124,8 +124,12 @@
     threshold: 1.125 # warning below 90%
 
 - type: alarmThreshold
-  id: jellidWater
+  id: freezerTemperature
+  upperBound: !type:AlarmThresholdSetting
+    threshold: 335.15 # T-38.15C (235) + 100
   lowerBound: !type:AlarmThresholdSetting
-    threshold: 0.8 # danger below 80% water
+    threshold: 135.15 # T-38.15C (235) - 100
+  upperWarnAround: !type:AlarmThresholdSetting
+    threshold: 0.8
   lowerWarnAround: !type:AlarmThresholdSetting
-    threshold: 1.125 # warning below 90%
+    threshold: 1.1

@@ -12,7 +12,6 @@ using Robust.Shared.Random;
 using Content.Server.Ghost;
 using Content.Server.Light.Components;
 using Content.Server.Chat.Systems;
-using Content.Server.Event.Systems;
 using Robust.Shared.Timing;
 using Content.Shared.TP14.Bell.Components;
 using Robust.Shared.Audio;

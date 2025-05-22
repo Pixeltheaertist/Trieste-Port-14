@@ -244,12 +244,6 @@
     pocket1: FlashlightLantern
     pocket2: CrowbarRed
 
-#stepfather
-- type: startingGear
-  id: Stepfather
-  equipment:
-    pocket1: PinpointerPilot
-
 #CMO Disaster Victim
 - type: startingGear
   id: DisasterVictimCMO

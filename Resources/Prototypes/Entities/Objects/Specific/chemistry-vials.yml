@@ -8,6 +8,7 @@
   components:
   - type: Tag
     tags:
+    - Trash
     - CentrifugeCompatible
   - type: PhysicalComposition
     materialComposition:
@@ -103,19 +104,78 @@
   - type: DnaSubstanceTrace
 
 - type: entity
+  parent: BaseItem
+  id: BorgVial
+  name: integrated vial
+  description: An internal compartment installed into a cyborg. Rated for 30 units of any liquid.
+  components:
+  # All this shit is here to avoid inheriting breakable, since borgs can't replace broken vials.
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/vial.rsi
+    layers:
+      - state: vial-1
+      - state: vial-1-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
+    fillBaseName: vial-1-
+    inHandsMaxFillLevels: 4
+    inHandsFillBaseName: -fill-
+  - type: Drink
+    solution: beaker
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 30
+  - type: MixableSolution
+    solution: beaker
+  - type: RefillableSolution
+    solution: beaker
+  - type: DrainableSolution
+    solution: beaker
+  - type: ExaminableSolution
+    solution: beaker
+  - type: DrawableSolution
+    solution: beaker
+  - type: SolutionTransfer
+    maxTransferAmount: 30
+    canChangeTransferAmount: true
+  - type: SolutionItemStatus
+    solution: beaker
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Item
+    size: Tiny
+    sprite: Objects/Specific/Chemistry/vial.rsi
+    shape:
+    - 0,0,0,0
+  - type: MeleeWeapon
+    soundNoDamage:
+      path: "/Audio/Effects/Fluids/splat.ogg"
+    damage:
+      types:
+        Blunt: 0
+
+- type: entity
   id: VestineChemistryVial
   parent: BaseChemistryEmptyVial
   suffix: vestine
   components:
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: Vestine
-              Quantity: 30
-    - type: Tag
-      tags: []
+  - type: Label
+    currentLabel: reagent-name-vestine
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 30
+        reagents:
+        - ReagentId: Vestine
+          Quantity: 30
+  - type: Tag
+    tags: []
 
 
 - type: entity
@@ -252,8 +312,8 @@
 
 - type: entity
   id: OxygenChemistryVial
-  name:  oxygen vial
   parent: BaseChemistryEmptyVial
+  suffix: oxygen
   components:
     - type: SolutionContainerManager
       solutions:
@@ -265,8 +325,8 @@
 
 - type: entity
   id: NitrogenChemistryVial
-  name: nitrogen vial
   parent: BaseChemistryEmptyVial
+  suffix: nitrogen
   components:
     - type: SolutionContainerManager
       solutions:
@@ -278,8 +338,8 @@
 
 - type: entity
   id: HydrogenChemistryVial
-  name: hydrogen vial
   parent: BaseChemistryEmptyVial
+  suffix: hydrogen
   components:
     - type: SolutionContainerManager
       solutions:
@@ -291,8 +351,8 @@
 
 - type: entity
   id: LithiumChemistryVial
-  name: lithium vial
   parent: BaseChemistryEmptyVial
+  suffix: lithium
   components:
     - type: SolutionContainerManager
       solutions:
@@ -304,8 +364,8 @@
 
 - type: entity
   id: SodiumChemistryVial
-  name: sodium vial
   parent: BaseChemistryEmptyVial
+  suffix: sodium
   components:
     - type: SolutionContainerManager
       solutions:
@@ -317,8 +377,8 @@
 
 - type: entity
   id: PotassiumChemistryVial
-  name: potassium vial
   parent: BaseChemistryEmptyVial
+  suffix: potassium
   components:
     - type: SolutionContainerManager
       solutions:
@@ -330,8 +390,8 @@
 
 - type: entity
   id: RadiumChemistryVial
-  name: radium vial
   parent: BaseChemistryEmptyVial
+  suffix: radium
   components:
     - type: SolutionContainerManager
       solutions:
@@ -343,8 +403,8 @@
 
 - type: entity
   id: IronChemistryVial
-  name: iron vial
   parent: BaseChemistryEmptyVial
+  suffix: iron
   components:
     - type: SolutionContainerManager
       solutions:
@@ -356,8 +416,8 @@
 
 - type: entity
   id: CopperChemistryVial
-  name: copper vial
   parent: BaseChemistryEmptyVial
+  suffix: copper
   components:
     - type: SolutionContainerManager
       solutions:
@@ -369,8 +429,8 @@
 
 - type: entity
   id: GoldChemistryVial
-  name: gold vial
   parent: BaseChemistryEmptyVial
+  suffix: gold
   components:
     - type: SolutionContainerManager
       solutions:
@@ -381,41 +441,55 @@
               Quantity: 30
 
 - type: entity
-  id: MercuryChemistryVial
-  name: mercury vial
+  id: PlasmaChemistryVial
   parent: BaseChemistryEmptyVial
+  suffix: plasma
   components:
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: Mercury
-              Quantity: 30
+  - type: Label
+    currentLabel: reagent-name-plasma
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 10
+        reagents:
+          - ReagentId: Plasma
+            Quantity: 10
+
+- type: entity
+  id: MercuryChemistryVial
+  parent: BaseChemistryEmptyVial
+  suffix: mercury
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 30
+        reagents:
+        - ReagentId: Mercury
+          Quantity: 30
 
 - type: entity
   id: SilverChemistryVial
-  name: silver vial
   parent: BaseChemistryEmptyVial
+  suffix: silver
   components:
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: Silver
-              Quantity: 30
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 30
+        reagents:
+        - ReagentId: Silver
+          Quantity: 30
 
 - type: entity
   id: SugarChemistryVial
-  name:  sugar vial
   parent: BaseChemistryEmptyVial
+  suffix: sugar
   components:
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: Sugar
-              Quantity: 30
-
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 30
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 30

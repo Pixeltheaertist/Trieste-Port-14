@@ -8,7 +8,7 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobChemist
-      time: 3600 #1 hrs
+      time: 9000 #2.5 hrs
     - !type:RoleTimeRequirement
       role: JobMedicalDoctor
       time: 3600 #1 hrs

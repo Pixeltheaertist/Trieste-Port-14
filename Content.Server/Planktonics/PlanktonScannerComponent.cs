@@ -1,10 +1,8 @@
-﻿namespace Content.Server.Plankton;
-using Content.Server.Xenoarchaeology.XenoArtifacts;
-using Content.Shared.Construction.Prototypes;
-using Robust.Shared.Audio;
-using Robust.Shared.Serialization.TypeSerializers.Implementations;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+﻿using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+
+namespace Content.Server.Planktonics;
 
 [RegisterComponent]
 public sealed partial class PlanktonScannerComponent : Component

@@ -1,25 +1,14 @@
-using Robust.Shared.Utility;
+using Content.Server.Falling;
 using Content.Server.Popups;
-using Content.Server.Xenoarchaeology.Equipment.Components;
-using Content.Server.Xenoarchaeology.XenoArtifacts;
-using Content.Shared.Interaction;
+using Content.Server.Roles;
+using Content.Shared.Examine;
+using Content.Shared.Humanoid;
+using Content.Shared.Paper;
 using Content.Shared.Timing;
 using Content.Shared.Verbs;
-using Robust.Shared.Prototypes;
-using Content.Server.Paper;
-using Robust.Server.GameObjects;
-using Robust.Shared.Serialization;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Content.Shared.Examine;
-using Content.Shared.Plankton;
-using System.Linq;
-using Content.Server.Falling;
-using Content.Shared.Paper;
-using Content.Shared.Humanoid;
-using Content.Server.Roles;
 
-namespace Content.Server.TP.Systems;
+namespace Content.Server._TP;
 
 public sealed class PilotAssignmentSystem : EntitySystem
 {
@@ -71,9 +60,9 @@ public sealed class PilotAssignmentSystem : EntitySystem
         if (!args.IsInDetailsRange)
             return;
 
-         var text = "pilot-currently-yes";
+        var text = "pilot-currently-yes";
 
-         if (!TryComp<HumanoidAppearanceComponent>(args.Examined, out var target))
+        if (!TryComp<HumanoidAppearanceComponent>(args.Examined, out var target))
             return;
 
         if (!TryComp<StepfatherComponent>(args.Examiner, out var stepfather))

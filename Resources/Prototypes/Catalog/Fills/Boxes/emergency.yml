@@ -19,25 +19,6 @@
     - state: emergencytank
 
 - type: entity
-  parent: BoxCardboard
-  id: BoxSurvivalJellid
-  name: survival box
-  description: It's a box with basic internals inside.
-  suffix: Standard Jellid
-  components:
-  - type: StorageFill
-    contents:
-    - id: ClothingMaskBreath
-    - id: TP14WaterTankEmergencyFilled
-    - id: EmergencyMedipen
-    - id: Flare
-    - id: PowerCellSmall
-  - type: Sprite
-    layers:
-    - state: internals
-    - state: emergencytank
-
-- type: entity
   parent: BoxSurvival
   id: BoxSurvivalNitrogen
   suffix: Standard N2
@@ -253,6 +234,20 @@
     - state: nitrogentank
   - type: Label
     currentLabel: reagent-name-nitrogen
+
+- type: entity
+  parent: BoxSurvival
+  id: BoxMimeMoth
+  suffix: Mime, Emergency moth
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskBreath
+    - id: EmergencyOxygenTankFilled
+    - id: EmergencyMedipen
+    - id: Flare
+    - id: FoodBreadBaguetteCotton
+    - id: DrinkWaterBottleFull
 
 - type: entity
   parent: BoxCardboard

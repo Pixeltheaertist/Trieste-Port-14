@@ -7,7 +7,7 @@
   - type: Pearl
     pearlMessage: "This pearl is completely blank."
   - type: Sprite
-    sprite: Textures/_TP/Objects/Pearl.rsi
+    sprite: Textures/_TP/Objects/pearl.rsi
     state: icon
     color: "#Ffffff"
   - type: Item

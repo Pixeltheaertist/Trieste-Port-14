@@ -1,25 +1,11 @@
-using Content.Server.Shuttles.Components;
-using Content.Shared.Gravity;
-using Robust.Shared.Map;
-using Content.Server._TP.Shuttles_components;
-using Content.Server.Shuttles.Systems;
-using Content.Shared.Shuttles.Systems;
-using Robust.Shared.Prototypes;
-using Content.Server.Shuttles.Events;
-using Content.Server.Falling;
-using System.Linq;
-using Content.Server.Station.Components;
-using Robust.Server.GameObjects;
-using Robust.Shared.Random;
+using System.Numerics;
 using Content.Server.Chat.Systems;
 using Content.Shared.Camera;
-using System.Numerics;
-using Robust.Shared.Player;
 using Content.Shared.Weather;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Random;
 
-
-namespace Content.Server._TP.Weather;
+namespace Content.Server._TP.RWEvent;
 
 public sealed class DeathRainSystem : EntitySystem
 {

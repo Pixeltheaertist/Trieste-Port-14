@@ -1,0 +1,6 @@
+- type: latheRecipe
+  id: PaperJellid
+  result: TP14PaperJellid
+  completetime: 1
+  materials:
+    Steel: 15

@@ -32,11 +32,11 @@ traitor-role-greeting =
 traitor-role-codewords =
     The codewords are: [color = lightgray]
     {$codewords}.[/color]
-    Codewords can be used in regular conversation to identify yourself discretely to other syndicate agents.
+    Codewords can be used in regular conversation to identify yourself discreetly to other syndicate agents.
     Listen for them, and keep them secret.
 traitor-role-uplink-code =
-    Set your ringtone to the notes {$code} to lock or unlock your uplink.
-    Remember to lock it after, or the Platform's crew will easily open it too!
+    Set your ringtone to the notes [color = lightgray]{$code}[/color] to lock or unlock your uplink.
+    Remember to lock it after, or the stations crew will easily open it too!
 
 # don't need all the flavour text for character menu
 traitor-role-codewords-short =
@@ -44,11 +44,14 @@ traitor-role-codewords-short =
     {$codewords}.
 traitor-role-uplink-code-short = Your uplink code is {$code}. Set it as your PDA ringtone to access uplink.
 
+traitor-role-uplink-implant =
+    Your uplink implant has been activated, access it from your hotbar.
+    The uplink is secure unless someone removes it from your body.
 
 # NT traitor
 
 traitor-role-greeting-nt =
-    You are an agent sent by CentCom on behalf of Nanotrasen.
+    You are an agent sent by CentCom on behalf of NanoTrasen.
     Your objectives and codewords are listed in the character menu.
     Use the uplink installed in your brain to buy the tools you'll need for this mission.
     Death to Trieste!
@@ -58,7 +61,8 @@ traitor-role-codewords-nt =
     Codewords can be used in regular conversation to identify yourself discretely to other Nanotrasen agents.
     Listen for them, and keep them secret.
 traitor-role-uplink-code-nt =
-    Remember, your implant allows you to access your gear.
+    Set your ringtone to the notes [color = lightgray]{$code}[/color] to lock or unlock your uplink.
+    Remember to lock it after, or the stations crew will easily open it too!
 
 # don't need all the flavour text for character menu
 traitor-role-codewords-short-nt =

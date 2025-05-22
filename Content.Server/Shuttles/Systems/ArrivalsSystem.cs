@@ -2,7 +2,6 @@ using System.Linq;
 using System.Numerics;
 using Content.Server.Administration;
 using Content.Server.Chat.Managers;
-using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
@@ -19,6 +18,7 @@ using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Damage.Components;
 using Content.Shared.DeviceNetwork;
+using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.GameTicking;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Components;
@@ -26,16 +26,19 @@ using Content.Shared.Parallax.Biomes;
 using Content.Shared.Salvage;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Tiles;
-using Robust.Server.GameObjects;
 using Robust.Shared.Collections;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Spawners;
 using Robust.Shared.Timing;
-using TimedDespawnComponent = Robust.Shared.Spawners.TimedDespawnComponent;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -44,25 +47,24 @@ namespace Content.Server.Shuttles.Systems;
 /// </summary>
 public sealed class ArrivalsSystem : EntitySystem
 {
+    [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IConfigurationManager _cfgManager = default!;
     [Dependency] private readonly IConsoleHost _console = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IChatManager _chat = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+    [Dependency] private readonly ActorSystem _actor = default!;
     [Dependency] private readonly BiomeSystem _biomes = default!;
+    [Dependency] private readonly DeviceNetworkSystem _deviceNetworkSystem = default!;
     [Dependency] private readonly GameTicker _ticker = default!;
     [Dependency] private readonly MapLoaderSystem _loader = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly DeviceNetworkSystem _deviceNetworkSystem = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ShuttleSystem _shuttles = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
     [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly ActorSystem _actor = default!;
 
     private EntityQuery<PendingClockInComponent> _pendingQuery;
     private EntityQuery<ArrivalsBlacklistComponent> _blacklistQuery;
@@ -74,11 +76,14 @@ public sealed class ArrivalsSystem : EntitySystem
     public bool Enabled { get; private set; }
 
     /// <summary>
+    /// The biome template for the ocean surface.
+    /// </summary>
+    public string BiomeTemplate = "OceanWorld";
+
+    /// <summary>
     /// Flags if all players spawning at the departure terminal have godmode until they leave the terminal.
     /// </summary>
     public bool ArrivalsGodmode { get; private set; }
-
-    public string biomeTemplate = "OceanWorld";
 
     /// <summary>
     ///     The first arrival is a little early, to save everyone 10s
@@ -87,7 +92,7 @@ public sealed class ArrivalsSystem : EntitySystem
 
     private readonly List<ProtoId<BiomeTemplatePrototype>> _arrivalsBiomeOptions = new()
     {
-        "OceanWorld",
+        "OceanWorld"
     };
 
     public override void Initialize()
@@ -512,69 +517,68 @@ public sealed class ArrivalsSystem : EntitySystem
         SetupArrivalsStation();
     }
 
-  private void SetupArrivalsStation()
-{
-    // Setup for the first map
-    var mapId1 = _mapManager.CreateMap();
-    var mapUid1 = _mapManager.GetMapEntityId(mapId1);
-    _mapManager.AddUninitializedMap(mapId1);
-
-    if (!_loader.TryLoad(mapId1, _cfgManager.GetCVar(CCVars.ArrivalsMap), out var uids1))
+    private void SetupArrivalsStation()
     {
-        return;
-    }
-
-    foreach (var id in uids1)
-    {
-        EnsureComp<ArrivalsSourceComponent>(id);
-        EnsureComp<PreventPilotComponent>(id);
-    }
-
-    // Setup planet arrivals for the first map if relevant
-    if (_cfgManager.GetCVar(CCVars.ArrivalsPlanet))
-    {
-        var template1 = _random.Pick(_arrivalsBiomeOptions);
-        _biomes.EnsurePlanet(mapUid1, _protoManager.Index(template1));
-        var restricted1 = new RestrictedRangeComponent
-        {
-            Range = 32f
-        };
-        AddComp(mapUid1, restricted1);
-    }
-
-    _mapManager.DoMapInitialize(mapId1);
-
-    // Setup for the ocean surface map
-    var mapId2 = _mapManager.CreateMap();
-    var mapUid2 = _mapManager.GetMapEntityId(mapId2);
-    _mapManager.AddUninitializedMap(mapId2);
-
-     if (!_protoManager.TryIndex<BiomeTemplatePrototype>(biomeTemplate, out var biomeProto))
-        {
+        // A check to make sure that Sweetwater and the Ocean don't load FOUR TIMES. -Cookie
+        if (EntityQuery<ArrivalsSourceComponent>().Any())
             return;
+
+        // Sweetwater
+        var path = new ResPath(_cfgManager.GetCVar(CCVars.ArrivalsMap));
+        _mapSystem.CreateMap(out var mapId, runMapInit: false);
+        var mapUid = _mapSystem.GetMap(mapId);
+
+        if (!_loader.TryLoadMap(path, out var map, out var grids))
+            return;
+
+        _metaData.SetEntityName(mapUid, "SWEETWATER");
+        _mapSystem.InitializeMap((Entity<MapComponent?>) map!, true);
+
+        // Setup planet arrivals
+        if (_cfgManager.GetCVar(CCVars.ArrivalsPlanet))
+        {
+            var template = _random.Pick(_arrivalsBiomeOptions);
+            _biomes.EnsurePlanet(mapUid, _protoManager.Index(template));
+            var restricted = new RestrictedRangeComponent
+            {
+                Range = 32f
+            };
+            AddComp(mapUid, restricted);
         }
 
-        var biomeSystem = _entManager.System<BiomeSystem>();
-        var mapOceanUid2 = _mapManager.GetMapEntityId(mapId2);
-        biomeSystem.EnsurePlanet(mapOceanUid2, biomeProto); // PLZ WORK
+        // Ocean
+        var path2 = new ResPath(_cfgManager.GetCVar(CCVars.Arrivals2Map));
+        _mapSystem.CreateMap(out var mapId2, runMapInit: false);
+        var mapUid2 = _mapSystem.GetMap(mapId2);
 
-    if (!_loader.TryLoad(mapId2, _cfgManager.GetCVar(CCVars.Arrivals2Map), out var uids2)) // edit here to change the map, bozo
-    {
-        return;
+        if (!_loader.TryLoadMap(path2, out var map2, out var grids2))
+            return;
+
+        _metaData.SetEntityName(mapUid2, "OCEAN");
+        _mapSystem.InitializeMap((Entity<MapComponent?>) map2!, true);
+
+        // Handle roundstart stations.
+        var query = AllEntityQuery<StationArrivalsComponent>();
+
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            //SetupShuttle(uid, comp);
+        }
     }
-
-    _mapManager.DoMapInitialize(mapId2);
-}
 
     private void SetArrivals(bool obj)
     {
+        if (obj == Enabled)
+            return;
+
         Enabled = obj;
 
         if (Enabled)
         {
-            SetupArrivalsStation();
-            var query = AllEntityQuery<StationArrivalsComponent>();
+            if (!EntityQuery<ArrivalsSourceComponent>().Any())
+                SetupArrivalsStation();
 
+            var query = AllEntityQuery<StationArrivalsComponent>();
             while (query.MoveNext(out var sUid, out var comp))
             {
                 //SetupShuttle(sUid, comp);
@@ -613,12 +617,12 @@ public sealed class ArrivalsSystem : EntitySystem
             return;
 
         // Spawn arrivals on a dummy map then dock it to the source.
-        var dummpMapEntity = _mapSystem.CreateMap(out var dummyMapId);
+        var dummyMapEntity = _mapSystem.CreateMap(out var dummyMapId);
 
         if (TryGetArrivals(out var arrivals) &&
-            _loader.TryLoad(dummyMapId, component.ShuttlePath.ToString(), out var shuttleUids))
+            _loader.TryLoadGrid(dummyMapId, component.ShuttlePath, out var shuttle))
         {
-            component.Shuttle = shuttleUids[0];
+            component.Shuttle = shuttle.Value;
             var shuttleComp = Comp<ShuttleComponent>(component.Shuttle);
             var arrivalsComp = EnsureComp<ArrivalsShuttleComponent>(component.Shuttle);
             arrivalsComp.Station = uid;
@@ -628,7 +632,7 @@ public sealed class ArrivalsSystem : EntitySystem
         }
 
         // Don't start the arrivals shuttle immediately docked so power has a time to stabilise?
-        var timer = AddComp<TimedDespawnComponent>(dummpMapEntity);
+        var timer = AddComp<TimedDespawnComponent>(dummyMapEntity);
         timer.Lifetime = 15f;
     }
 }

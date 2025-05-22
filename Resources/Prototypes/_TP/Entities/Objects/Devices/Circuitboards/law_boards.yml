@@ -1,0 +1,11 @@
+- type: entity
+  id: TP14NanoTraitorCircuitBoard
+  parent: BaseElectronics
+  name: law board (NanoTrasen)
+  description: An electronics board containing specialized NT laws.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: NTTraitor

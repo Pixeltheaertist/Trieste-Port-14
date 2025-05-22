@@ -1,0 +1,12 @@
+# Roof
+- type: rcd
+  id: TP14MarkerInside
+  category: WallsAndFlooring
+  sprite: /Textures/Interface/Radial/RCD/solid_wall.png
+  mode: ConstructObject
+  prototype: TP14MarkerInside
+  cost: 4
+  delay: 2
+  collisionMask: FullTileMask
+  rotation: Fixed
+  fx: EffectRCDConstruct2

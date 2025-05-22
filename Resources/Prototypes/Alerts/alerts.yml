@@ -161,6 +161,7 @@
     state: walking
   name: alerts-walking-name
   description: alerts-walking-desc
+  clientHandled: true
 
 - type: alert
   id: Stun
@@ -307,15 +308,6 @@
     state: battery1
   name: alerts-no-battery-name
   description: alerts-no-battery-desc
-
-- type: alert
-  id: JellidBatteryNone
-  category: Battery
-  icons:
-  - sprite: /Textures/Interface/Alerts/battery.rsi
-    state: battery0
-  name: jellid-alerts-no-battery-name
-  description: jellid-alerts-no-battery-desc
 
 - type: alert
   id: Internals

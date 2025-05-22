@@ -57,11 +57,15 @@ namespace Content.Server.Atmos.EntitySystems
                     _physics.SetBodyStatus(uid, body, BodyStatus.OnGround);
                 }
 
-                if (TryComp<FixturesComponent>(uid, out var fixtures))
+                if (TryComp<FixturesComponent>(uid, out var fixtures)
+                    && TryComp<MovedByPressureComponent>(uid, out var component))
                 {
                     foreach (var (id, fixture) in fixtures.Fixtures)
                     {
-                        _physics.AddCollisionMask(uid, id, fixture, (int) CollisionGroup.TableLayer, manager: fixtures);
+                        if (component.TableLayerRemoved.Contains(id))
+                        {
+                            _physics.AddCollisionMask(uid, id, fixture, (int)CollisionGroup.TableLayer, manager: fixtures);
+                        }
                     }
                 }
             }
@@ -81,9 +85,13 @@ namespace Content.Server.Atmos.EntitySystems
 
             foreach (var (id, fixture) in fixtures.Fixtures)
             {
-                _physics.RemoveCollisionMask(uid, id, fixture, (int) CollisionGroup.TableLayer, manager: fixtures);
+                // Mark fixtures that have TableLayer removed
+                if ((fixture.CollisionMask & (int)CollisionGroup.TableLayer) != 0)
+                {
+                    component.TableLayerRemoved.Add(id);
+                    _physics.RemoveCollisionMask(uid, id, fixture, (int)CollisionGroup.TableLayer, manager: fixtures);
+                }
             }
-
             // TODO: Make them dynamic type? Ehh but they still want movement so uhh make it non-predicted like weightless?
             // idk it's hard.
 
@@ -91,39 +99,53 @@ namespace Content.Server.Atmos.EntitySystems
             _activePressures.Add((uid, component));
         }
 
-        private void HighPressureMovements(Entity<GridAtmosphereComponent> gridAtmosphere, TileAtmosphere tile, EntityQuery<PhysicsComponent> bodies, EntityQuery<TransformComponent> xforms, EntityQuery<MovedByPressureComponent> pressureQuery, EntityQuery<MetaDataComponent> metas)
+        private void HighPressureMovements(Entity<GridAtmosphereComponent> gridAtmosphere,
+            TileAtmosphere tile,
+            EntityQuery<PhysicsComponent> bodies,
+            EntityQuery<TransformComponent> xforms,
+            EntityQuery<MovedByPressureComponent> pressureQuery,
+            EntityQuery<MetaDataComponent> metas)
         {
             // TODO ATMOS finish this
-        bool isWaterPresent = false;
-        bool isWaterTooMuch = false;
+            bool isWaterPresent = false;
+            bool isWaterTooMuch = false;
 
-        if (tile.Air != null)
-        {
-            // Check the moles of gasId 9 (water)
-            if (tile.Air.GetMoles(9) >= 5)  // Adjust the last threshhold as needed
+            if (tile.Air != null)
             {
-                isWaterPresent = true;
-            }
+                // Check the moles of gasId 9 (water)
+                if (tile.Air.GetMoles(9) >= 5) // Adjust the last threshhold as needed
+                {
+                    isWaterPresent = true;
+                }
 
-            if (tile.Air.GetMoles(9) >= 200)
-            {
-                isWaterTooMuch = true;
-            }
+                if (tile.Air.GetMoles(9) >= 200)
+                {
+                    isWaterTooMuch = true;
+                }
 
-        }
+            }
 
             // Don't play the space wind sound on tiles that are on fire...
             if (tile.PressureDifference > 15 && !tile.Hotspot.Valid)
             {
-                if (_spaceWindSoundCooldown == 0 && !string.IsNullOrEmpty(SpaceWindSound) && !isWaterPresent && !isWaterTooMuch)
+                if (_spaceWindSoundCooldown == 0 && !string.IsNullOrEmpty(SpaceWindSound) && !isWaterPresent &&
+                    !isWaterTooMuch)
                 {
                     var coordinates = _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.GridIndices);
-                    _audio.PlayPvs(SpaceWindSound, coordinates, AudioParams.Default.WithVariation(0.125f).WithVolume(MathHelper.Clamp(tile.PressureDifference / 10, 10, 100)));
+                    _audio.PlayPvs(SpaceWindSound,
+                        coordinates,
+                        AudioParams.Default.WithVariation(0.125f)
+                            .WithVolume(MathHelper.Clamp(tile.PressureDifference / 10, 10, 100)));
                 }
-                if (_spaceWindSoundCooldown <= 3 && !string.IsNullOrEmpty(WaterMoveSound) && isWaterPresent && !isWaterTooMuch)
+
+                if (_spaceWindSoundCooldown <= 3 && !string.IsNullOrEmpty(WaterMoveSound) && isWaterPresent &&
+                    !isWaterTooMuch)
                 {
-                     var coordinates = _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.GridIndices);
-                    _audio.PlayPvs(WaterMoveSound, coordinates, AudioParams.Default.WithVariation(0.125f).WithVolume(MathHelper.Clamp(tile.PressureDifference / 10, 10, 100)));
+                    var coordinates = _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.GridIndices);
+                    _audio.PlayPvs(WaterMoveSound,
+                        coordinates,
+                        AudioParams.Default.WithVariation(0.125f)
+                            .WithVolume(MathHelper.Clamp(tile.PressureDifference / 10, 10, 100)));
                 }
             }
 
@@ -143,56 +165,62 @@ namespace Content.Server.Atmos.EntitySystems
             {
                 return;
             }
+
             if (tile.Air.GetMoles(9) <= 150) // Make sure water is involved in the space wind
             {
 
-            // Used by ExperiencePressureDifference to correct push/throw directions from tile-relative to physics world.
-                    var gridWorldRotation = xforms.GetComponent(gridAtmosphere).WorldRotation;
-                    Log.Info($"Water is involved in the pressure changes! WOWZERS!");
+                // Used by ExperiencePressureDifference to correct push/throw directions from tile-relative to physics world.
+                var gridWorldRotation = _transformSystem.GetWorldRotation(gridAtmosphere);
+                Log.Info("Water is involved in the pressure changes! WOWZERS!");
 
-            // If we're using monstermos, smooth out the yeet direction to follow the flow
-                    if (MonstermosEqualization)
+                // If we're using monstermos, smooth out the yeet direction to follow the flow
+                if (MonstermosEqualization)
+                {
+                    // We step through tiles according to the pressure direction on the current tile.
+                    // The goal is to get a general direction of the airflow in the area.
+                    // 3 is the magic number - enough to go around corners, but not U-turns.
+                    var curTile = tile;
+                    for (var i = 0; i < 3; i++)
                     {
-                // We step through tiles according to the pressure direction on the current tile.
-                // The goal is to get a general direction of the airflow in the area.
-                // 3 is the magic number - enough to go around corners, but not U-turns.
-                        var curTile = tile;
-                        for (var i = 0; i < 3; i++)
-                        {
-                            if (curTile.PressureDirection == AtmosDirection.Invalid
-                                || !curTile.AdjacentBits.IsFlagSet(curTile.PressureDirection))
-                                break;
-                            curTile = curTile.AdjacentTiles[curTile.PressureDirection.ToIndex()]!;
-                        }
-
-                        if (curTile != tile)
-                            tile.PressureSpecificTarget = curTile;
+                        if (curTile.PressureDirection == AtmosDirection.Invalid
+                            || !curTile.AdjacentBits.IsFlagSet(curTile.PressureDirection))
+                            break;
+                        curTile = curTile.AdjacentTiles[curTile.PressureDirection.ToIndex()]!;
                     }
 
-                    _entSet.Clear();
-                    _lookup.GetLocalEntitiesIntersecting(tile.GridIndex, tile.GridIndices, _entSet, 0f);
+                    if (curTile != tile)
+                        tile.PressureSpecificTarget = curTile;
+                }
 
-                    foreach (var entity in _entSet)
+                _entSet.Clear();
+                _lookup.GetLocalEntitiesIntersecting(tile.GridIndex, tile.GridIndices, _entSet, 0f);
+
+                foreach (var entity in _entSet)
+                {
+                    // Ideally containers would have their own EntityQuery internally or something given recursively it may need to slam GetComp<T> anyway.
+                    // Also, don't care about static bodies (but also due to collisionwakestate can't query dynamic directly atm).
+                    if (!bodies.TryGetComponent(entity, out var body) ||
+                        !pressureQuery.TryGetComponent(entity, out var pressure) ||
+                        !pressure.Enabled)
+                        continue;
+
+                    if (_containers.IsEntityInContainer(entity, metas.GetComponent(entity)))
+                        continue;
+
+                    var pressureMovements = EnsureComp<MovedByPressureComponent>(entity);
+                    if (pressure.LastHighPressureMovementAirCycle < gridAtmosphere.Comp.UpdateCounter)
                     {
-                        // Ideally containers would have their own EntityQuery internally or something given recursively it may need to slam GetComp<T> anyway.
-                        // Also, don't care about static bodies (but also due to collisionwakestate can't query dynamic directly atm).
-                        if (!bodies.TryGetComponent(entity, out var body) ||
-                            !pressureQuery.TryGetComponent(entity, out var pressure) ||
-                            !pressure.Enabled)
-                            continue;
-
-                        if (_containers.IsEntityInContainer(entity, metas.GetComponent(entity))) continue;
-
-                        var pressureMovements = EnsureComp<MovedByPressureComponent>(entity);
-                        if (pressure.LastHighPressureMovementAirCycle < gridAtmosphere.Comp.UpdateCounter)
-                        {
-                            // tl;dr YEET
-                            ExperiencePressureDifference(
+                        // tl;dr YEET
+                        ExperiencePressureDifference(
                             (entity, pressureMovements),
                             gridAtmosphere.Comp.UpdateCounter,
                             tile.PressureDifference,
-                            tile.PressureDirection, 0,
-                            tile.PressureSpecificTarget != null ? _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.PressureSpecificTarget.GridIndices) : EntityCoordinates.Invalid,
+                            tile.PressureDirection,
+                            0,
+                            tile.PressureSpecificTarget != null
+                                ? _mapSystem.ToCenterCoordinates(tile.GridIndex,
+                                    tile.PressureSpecificTarget.GridIndices)
+                                : EntityCoordinates.Invalid,
                             gridWorldRotation,
                             xforms.GetComponent(entity),
                             body);

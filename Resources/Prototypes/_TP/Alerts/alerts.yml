@@ -1,0 +1,8 @@
+- type: alert
+  id: JellidBatteryNone
+  category: Battery
+  icons:
+  - sprite: /Textures/Interface/Alerts/battery.rsi
+    state: battery0
+  name: jellid-alerts-no-battery-name
+  description: jellid-alerts-no-battery-desc

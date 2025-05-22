@@ -170,7 +170,7 @@
     - state: robotics_label
 
 - type: entity
-  parent: [ EncryptionKey, BaseSecurityContraband ]
+  parent: [ EncryptionKey, BaseSecurityLawyerContraband ]
   id: EncryptionKeySecurity
   name: security encryption key
   description: An encryption key used by security.
@@ -213,20 +213,6 @@
     layers:
     - state: crypt_red
     - state: synd_label
-
-- type: entity
-  parent: EncryptionKey
-  id: TP14EncryptionKeyNanotrasen
-  name: nanotrasen encryption key
-  description: An encryption key used by... corporate... people?
-  components:
-    - type: EncryptionKey
-      channels:
-        - Nanotrasen
-      defaultChannel: Nanotrasen
-    - type: Sprite
-      layers:
-        - state: crypt_rusted
 
 - type: entity
   parent: EncryptionKey

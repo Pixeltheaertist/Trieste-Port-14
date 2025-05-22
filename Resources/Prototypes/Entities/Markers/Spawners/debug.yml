@@ -13,29 +13,4 @@
     prototypes:
     - MobHuman
 
-- type: entity
-  name: InsideMarker
-  id: TP14MarkerInside
-  parent: MarkerBase
-  suffix: blocks rain
-  components:
-  - type: Sprite
-    sprite: Markers/inside.rsi
-    state: default
-  - type: UnderRoof
-  - type: BlockWeather
-  placement:
-    mode: SnapgridCenter
-
-- type: entity
-  name: LightingMarker
-  id: TP14MarkerLightning
-  parent: MarkerBase
-  suffix: center of lightning
-  components:
-  - type: Sprite
-    sprite: Markers/inside.rsi
-    state: default
-  - type: LightningMarker
-
 

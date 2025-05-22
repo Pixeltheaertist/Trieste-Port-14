@@ -35,13 +35,6 @@
     - Vox
     - JellidPerson
 
-- type: loadoutEffectGroup
-  id: WaterBreather
-  effects:
-  - !type:SpeciesLoadoutEffect
-    species:
-    - JellidPerson
-
 # Basic
 - type: loadout
   id: EmergencyOxygen
@@ -51,15 +44,6 @@
   storage:
     back:
     - BoxSurvival
-
-- type: loadout
-  id: EmergencyWater
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WaterBreather
-  storage:
-    back:
-    - BoxSurvivalJellid
 
 - type: loadout
   id: EmergencyNitrogen
@@ -90,11 +74,29 @@
     - BoxHugNitrogen
 
 # Mime
+- type: loadoutEffectGroup
+  id: OxygenBreatherMime
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Arachnid
+    - Diona
+    - Dwarf
+    - Human
+    - Reptilian
+
+- type: loadoutEffectGroup
+  id: OxygenBreatherMimeMoth
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Moth
+
 - type: loadout
   id: EmergencyOxygenMime
   effects:
   - !type:GroupLoadoutEffect
-    proto: OxygenBreather
+    proto: OxygenBreatherMime
   storage:
     back:
     - BoxMime
@@ -108,6 +110,14 @@
     back:
     - BoxMimeNitrogen
 
+- type: loadout
+  id: EmergencySpeciesMothMime
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OxygenBreatherMimeMoth
+  storage:
+    back:
+    - BoxMimeMoth
 
 # Engineering / Extended
 - type: loadout
@@ -195,14 +205,6 @@
     proto: EffectSpeciesVox
   equipment:
     suitstorage: NitrogenTankFilled
-
-- type: loadout
-  id: LoadoutSpeciesJellidWater
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WaterBreather
-  equipment:
-    suitstorage: TP14WaterTankFilled
 
 # Full EVA Tank, Any Species
 - type: loadout

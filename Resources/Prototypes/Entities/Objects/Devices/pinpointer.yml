@@ -110,11 +110,11 @@
     targetName: the station
 
 - type: entity
-  parent: PinpointerBase
-  name: pilot pinpointer
-  description: A built-in tracking device designed to keep track of your pilot.
-  id: TP14PinpointerPilot
-  suffix: Station
+  parent: [ PinpointerBase, BaseXenoborgContraband ]
+  id: PinpointerMothership
+  name: core pinpointer
+  suffix: Mothership
+  description: A handheld tracking device that leads to the direction of the mothership core.
   components:
   - type: Sprite
     layers:
@@ -127,6 +127,5 @@
   - type: Icon
     state: pinpointer-station
   - type: Pinpointer
-    component: ExpedPilot
-    targetName: The Pilot
-  - type: Unremoveable
+    component: XenoborgMothership
+    targetName: the mothership

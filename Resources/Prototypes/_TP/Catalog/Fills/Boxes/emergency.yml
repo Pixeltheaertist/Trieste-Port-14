@@ -1,0 +1,18 @@
+- type: entity
+  parent: BoxCardboard
+  id: BoxSurvivalJellid
+  name: survival box
+  description: It's a box with basic internals inside.
+  suffix: Standard Jellid
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskBreathNeck
+    - id: TP14WaterTankEmergencyFilled
+    - id: EmergencyMedipen
+    - id: Flare
+    - id: PowerCellSmall
+  - type: Sprite
+    layers:
+    - state: internals
+    - state: emergencytank

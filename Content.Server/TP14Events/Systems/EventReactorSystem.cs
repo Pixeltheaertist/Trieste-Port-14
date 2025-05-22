@@ -1,15 +1,12 @@
-﻿using Content.Server.Ghost;
-using Content.Server.Light.Components;
-using Content.Server.Xenoarchaeology.XenoArtifacts.Effects.Components;
-using Content.Server.Xenoarchaeology.XenoArtifacts.Events;
+﻿using Content.Server.Chat.Systems;
 using Content.Server.Event.Components;
-using Robust.Shared.Random;
-using Content.Server.Chat.Systems;
-using Robust.Shared.Prototypes;
-using Content.Shared.Radiation.Components;
+using Content.Server.Ghost;
+using Content.Server.Light.Components;
 using Content.Shared.Explosion.Components;
+using Content.Shared.Radiation.Components;
+using Robust.Shared.Random;
 
-namespace Content.Server.Event.Systems;
+namespace Content.Server.TP14Events.Systems;
 
 /// <summary>
 /// This handles reactor events like light flickering and global announcements for the floatsam event.

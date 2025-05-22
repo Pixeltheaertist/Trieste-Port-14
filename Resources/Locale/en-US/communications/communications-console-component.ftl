@@ -25,3 +25,4 @@ comms-console-announcement-title-station = Communications Console
 comms-console-announcement-title-centcom = SolGov
 comms-console-announcement-title-nukie = Nanotrasen Cascade Operative
 comms-console-announcement-title-station-ai = P.A.I.L
+comms-console-announcement-title-wizard = Wizard

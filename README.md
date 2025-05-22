@@ -36,7 +36,7 @@ Note that some assets are licensed under the non-commercial [CC-BY-NC-SA 3.0](ht
 
 ## Contributors
 
-TRIESTE PORT wouldn't be possible without all these wonderful people helping to make this project come to life. 
+TRIESTE PORT wouldn't be possible without all these wonderful people helping to make this project come to life.
 Making a project like this has been a dream of mine forever, thank you all so much for helping to make it come true. <3
 
 Pixeltheaertist - Project Lead
@@ -75,7 +75,7 @@ Powsu - Programming, Spriting
 
 IamSidzilla - Mapping, Spriting
 
-Lev - Spriting 
+Lev - Spriting
 
 T4D2 - Programming
 

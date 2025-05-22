@@ -356,6 +356,7 @@
     nameSegments:
     - BookHintAppearances
     - BookTypes
+    nameFormat: name-format-book
   - type: RandomSprite
     available:
       - cover:
@@ -493,20 +494,3 @@
       color: gold
   - type: Paper
     content: book-text-atmos-vents
-
-- type: entity
-  parent: BookBase
-  id: TP14BookPirateCode
-  name: "The Pirate Code"
-  description: An old, tattered book. The author reads "John Cutlass". The inside contains the rules all pirates live by.
-  components:
-  - type: Sprite
-    layers:
-    - state: paper
-    - state: cover_old
-    - state: decor_wingette
-      color: "#28a15a"
-    - state: icon_skull
-    - state: icon_corner
-  - type: Paper
-    content: book-text-pirate-code

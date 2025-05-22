@@ -1,22 +1,15 @@
-using Robust.Shared.Utility;
+using System.Linq;
 using Content.Server.Popups;
-using Content.Server.Xenoarchaeology.Equipment.Components;
-using Content.Server.Xenoarchaeology.XenoArtifacts;
+using Content.Shared.Examine;
 using Content.Shared.Interaction;
+using Content.Shared.Paper;
+using Content.Shared.Plankton;
 using Content.Shared.Timing;
 using Content.Shared.Verbs;
-using Robust.Shared.Prototypes;
-using Content.Server.Paper;
-using Robust.Server.GameObjects;
-using Robust.Shared.Serialization;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Content.Shared.Examine;
-using Content.Shared.Plankton;
-using System.Linq;
-using Content.Shared.Paper;
+using Robust.Shared.Utility;
 
-namespace Content.Server.Plankton;
+namespace Content.Server.Planktonics;
 
 public sealed class PlanktonScannerSystem : EntitySystem
 {
@@ -28,13 +21,13 @@ public sealed class PlanktonScannerSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<PlanktonScannerComponent, BeforeRangedInteractEvent>(OnBeforeRangedInteract);
-        SubscribeLocalEvent<PlanktonScannerComponent, GetVerbsEvent<UtilityVerb>>(AddScanVerb);
-        SubscribeLocalEvent<PlanktonScannerComponent, GetVerbsEvent<ActivationVerb>>(AddToggleAnalysisVerb);
-        SubscribeLocalEvent<PlanktonScannerComponent, ExaminedEvent>(OnExamine);
+        SubscribeLocalEvent<Planktonics.PlanktonScannerComponent, BeforeRangedInteractEvent>(OnBeforeRangedInteract);
+        SubscribeLocalEvent<Planktonics.PlanktonScannerComponent, GetVerbsEvent<UtilityVerb>>(AddScanVerb);
+        SubscribeLocalEvent<Planktonics.PlanktonScannerComponent, GetVerbsEvent<ActivationVerb>>(AddToggleAnalysisVerb);
+        SubscribeLocalEvent<Planktonics.PlanktonScannerComponent, ExaminedEvent>(OnExamine);
     }
 
-    private void OnBeforeRangedInteract(EntityUid uid, PlanktonScannerComponent component, BeforeRangedInteractEvent args)
+    private void OnBeforeRangedInteract(EntityUid uid, Planktonics.PlanktonScannerComponent component, BeforeRangedInteractEvent args)
 {
     if (args.Handled || !args.CanReach || !args.Target.HasValue)
         return;
@@ -49,7 +42,7 @@ public sealed class PlanktonScannerSystem : EntitySystem
 }
 
 
-    private void AddScanVerb(EntityUid uid, PlanktonScannerComponent component, GetVerbsEvent<UtilityVerb> args)
+    private void AddScanVerb(EntityUid uid, Planktonics.PlanktonScannerComponent component, GetVerbsEvent<UtilityVerb> args)
     {
         if (!args.CanAccess)
             return;
@@ -69,7 +62,7 @@ public sealed class PlanktonScannerSystem : EntitySystem
         args.Verbs.Add(verb);
     }
 
-    private void AddToggleAnalysisVerb(EntityUid uid, PlanktonScannerComponent component, GetVerbsEvent<ActivationVerb> args)
+    private void AddToggleAnalysisVerb(EntityUid uid, Planktonics.PlanktonScannerComponent component, GetVerbsEvent<ActivationVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract)
             return;
@@ -86,14 +79,14 @@ public sealed class PlanktonScannerSystem : EntitySystem
     }
 
 
-    private void TryToggleAnalysis((EntityUid, PlanktonScannerComponent) data, EntityUid user)
+    private void TryToggleAnalysis((EntityUid, Planktonics.PlanktonScannerComponent) data, EntityUid user)
 {
     var (uid, component) = data;
     component.AnalysisMode = !component.AnalysisMode;
 }
 
 
-    private void CreatePopup(EntityUid uid, EntityUid target, PlanktonComponent component, PlanktonScannerComponent scanner)
+    private void CreatePopup(EntityUid uid, EntityUid target, PlanktonComponent component, Planktonics.PlanktonScannerComponent scanner)
     {
         if (TryComp(uid, out UseDelayComponent? useDelay)
             && !_useDelay.TryResetDelay((uid, useDelay), true))
@@ -159,7 +152,7 @@ public sealed class PlanktonScannerSystem : EntitySystem
         }
     }
 
-    private void OnExamine(EntityUid uid, PlanktonScannerComponent component, ExaminedEvent args)
+    private void OnExamine(EntityUid uid, Planktonics.PlanktonScannerComponent component, ExaminedEvent args)
     {
         if (!args.IsInDetailsRange)
             return;

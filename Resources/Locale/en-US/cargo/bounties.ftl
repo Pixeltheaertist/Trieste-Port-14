@@ -70,6 +70,9 @@ bounty-item-tooth-space-carp = Space Carp Tooth
 bounty-item-tooth-sharkminnow = Sharkminnow Tooth
 bounty-item-drifter = Drifter Corpse
 bounty-item-fish = Fish
+bounty-item-ring = Ring
+bounty-item-remains = Hivelord Remains
+bounty-item-plates = Goliath Hide Plates
 
 bounty-description-artifact = SolGov is requesting an alien artifact for research purposes. We are willing to pay handsomely for it.
 bounty-description-baseball-bat = The Intergalactic Little League is having a championship two sectors over, but forgot all their bats! They are requesting aid.

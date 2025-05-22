@@ -1,0 +1,77 @@
+- type: entity
+  id: DrifterMigration
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-leg-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    earliestStart: 5
+    weight: 8
+    duration: 50
+  - type: VentCrittersRule
+    entries:
+    - id: TP14MobDrifter
+      prob: 0.8
+
+- type: entity
+  id: MimicMigration
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-leg-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    earliestStart: 5
+    weight: 8
+    duration: 20
+  - type: VentCrittersRule
+    entries:
+    - id: TP14MobMimic
+      prob: 0.3
+
+- type: entity
+  id: WhaleMigration
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: whale-migration
+    startAudio:
+      path: /Audio/Effects/whale_groan.ogg
+    earliestStart: 20
+    minimumPlayers: 0
+    weight: 6
+    duration: 300
+  - type: MassHallucinationsRule
+    minTimeBetweenIncidents: 10
+    maxTimeBetweenIncidents: 40
+    maxSoundDistance: 7
+    sweetwaterOnly: true # Makes it so that mass hallucination sounds can only be heard on Sweetwater, (ex. ocean-specific sounds)
+    sounds:
+      collection: WhaleMigration
+
+- type: entity
+  id: DeathWhaleMigration
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    earliestStart: 0
+    minimumPlayers: 5
+    maxOccurrences: 1 #
+    weight: 5
+  - type: OceanSpawnRule
+    prototype: MobDeathWhale
+    amount: 5
+
+- type: entity
+  id: TheThingyEmergence
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    earliestStart: 0
+    minimumPlayers: 10 # need at least a LITTLE prey
+    maxOccurrences: 1
+    weight: 6
+  - type: OceanSpawnRule
+    prototype: RandomHumanoidTheThingy
+    amount: 1

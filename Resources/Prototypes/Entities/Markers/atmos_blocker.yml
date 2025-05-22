@@ -86,7 +86,7 @@
 - type: entity
   name: Atmos Fix Freezer Marker
   id: AtmosFixFreezerMarker
-  description: "Change air temp to 235K, for freezer with a big of wiggle room to get set up."
+  description: "Change air temp to 235K, for freezer with a bit of wiggle room to get set up."
   parent: MarkerBase
   components:
     - type: Sprite
@@ -101,23 +101,6 @@
       mode: 6
 
 - type: entity
-  name: Atmos Fix Water Marker
-  id: TP14AtmosFixWaterMarker
-  description: "Water @ gas miner pressure, T20C"
-  parent: MarkerBase
-  components:
-    - type: Sprite
-      layers:
-        - sprite: Markers/atmos.rsi # {
-          state: base
-          shader: unshaded
-        - sprite: Markers/atmos.rsi
-          shader: unshaded # }
-          state: watervapour
-    - type: AtmosFixMarker
-      mode: 7
-
-- type: entity
   parent: AtmosFixNitrogenMarker
   id: AtmosFixVoxMarker
   suffix: Vox Atmosphere
@@ -126,20 +109,3 @@
   - type: AtmosFixMarker
     mode: 8
 
-- type: entity
-  name: Atmos Fix Abyss Marker
-  suffix: (Extremely High Pressure, Trench)
-  id: TP14AtmosFixWaterTrenchMarker
-  description: "Water @ trench pressure, T20C"
-  parent: MarkerBase
-  components:
-    - type: Sprite
-      layers:
-        - sprite: Markers/atmos.rsi # {
-          state: base
-          shader: unshaded
-        - sprite: Markers/atmos.rsi
-          shader: unshaded # }
-          state: plasma
-    - type: AtmosFixMarker # EXTREMELY high pressure. Only abyssal suits will prevent you from being popped like a balloon.
-      mode: 9

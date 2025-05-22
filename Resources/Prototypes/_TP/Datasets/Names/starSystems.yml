@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: starSystems
+  values:
+    prefix: names-jellid-dataset-
+    count: 88

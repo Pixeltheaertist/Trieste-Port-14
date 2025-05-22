@@ -1,4 +1,4 @@
-thief-backpack-window-title = thief toolbox
+thief-backpack-window-title = thieving kit
 
 thief-backpack-window-description =
     Inside are your tools of the trade, which will dissolve when you're ready.
@@ -39,7 +39,7 @@ thief-backpack-category-syndie-name = syndie kit
 thief-backpack-category-syndie-description =
     Trinkets from a disavowed past, or stolen from a careless agent?
     You've made some connections. Whiskey, echo...
-    Includes: An Emag, Interdyne cigs, a Syndicate codeword,
+    Includes: An Emag, Access Breaker, Interdyne cigs, a Syndicate codeword,
     a Radio Jammer, a lighter and some strange red crystals.
 
 thief-backpack-category-sleeper-name = sleeper kit
@@ -62,17 +62,3 @@ thief-backpack-category-smuggler-description =
     Don't forget to link your fulton.
     Includes: Fulton beacon, 10 fultons, 3 smoke grenades,
     and an invisible crate to hide valuable loot.
-
-nanotraitor-borg-medical-name = Medical Specialization
-nanotraitor-borg-category-medical-description =
-    Contains advanced treatment and medical equipment for combat healing. Comes with a small charged sidearm.
-
-nanotraitor-borg-syndicate-name = Syndicate Specialization
-nanotraitor-borg-category-syndicate-description =
-    Contains equipment salvaged from a syndicate cyborg, augmented to fit onto NT-brand machinery. 
-    Includes a double esword, machete and laser pistol.
-
-nanotraitor-borg-engineering-name = Engineering Specialization
-nanotraitor-borg-category-engineering-description =
-    Contains advanced engineering equipment for all construction-based needs. 
-    Includes an RCD, advanced toolset, and a small charged sidearm.

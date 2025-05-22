@@ -38,81 +38,6 @@
     fireCost: 50
 
 - type: entity
-  name: NT standard magcell
-  description: A rechargeable energy magazine. For use with compatible NT energy weaponry.
-  id: TP14BaseMagCell
-  suffix: Full
-  parent: BasePowerCell
-  components:
-  - type: Contraband
-    severity: Nanotrasen
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/MagCell.rsi
-    layers:
-    - state: icon
-  - type: Battery
-    maxCharge: 4000
-    startingCharge: 4000
-  - type: ProjectileBatteryAmmoProvider
-    proto: NtBolt
-    fireCost: 400  #10 shots
-  - type: Tag
-    tags:
-      - MagCell
-
-- type: entity
-  name: NT exhaustion magcell
-  description: A rechargeable energy magazine. This one fires energy draining bolts.
-  id: TP14MagCellDisabler
-  suffix: Full
-  parent: TP14BaseMagCell
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/MagCell.rsi
-    layers:
-    - state: icon
-  - type: Battery
-    maxCharge: 4000
-    startingCharge: 4000
-  - type: ProjectileBatteryAmmoProvider
-    proto: BulletDisabler
-    fireCost: 800  #5 shots
-  - type: Tag
-    tags:
-      - MagCell
-
-- type: entity
-  name: NT advanced magcell
-  description: A rechargeable energy magazine for use with compatible NT energy weaponry. This one has an expanded capacity.
-  id: TP14MagCellAdvanced
-  suffix: Full
-  parent: TP14BaseMagCell
-  components:
-  - type: Battery
-    maxCharge: 20000
-    startingCharge: 20000
-  - type: ProjectileBatteryAmmoProvider
-    proto: NtBolt
-    fireCost: 800  #25 shots
-
-- type: entity
-  name: NT experimental magcell
-  description: A rechargeable energy magazine for use with compatible NT energy weaponry. This one has an experimental micro-reactor to self recharge.
-  id: TP14MagCellExperimental
-  suffix: Full
-  parent: TP14BaseMagCell
-  components:
-  - type: Battery
-    maxCharge: 4000
-    startingCharge: 4000
-  - type: ProjectileBatteryAmmoProvider
-    proto: NtBolt
-    fireCost: 400 #10 shots
-  - type: BatterySelfRecharger
-    autoRecharge: true
-    autoRechargeRate: 40 # Takes 100 seconds to recharge itself.
-
-- type: entity
   name: potato battery
   description: Someone's stuck two nails and some wire in a large potato. Somehow it provides a little charge.
   id: PowerCellPotato
@@ -168,6 +93,18 @@
   - type: Battery
     maxCharge: 360
     startingCharge: 0
+
+- type: entity
+  parent: PowerCellSmall
+  id: PowerCellSmallNuclear
+  name: small-capacity nuclear power cell
+  description: A self rechargeable power cell, designed for fast recharge rate at the expense of capacity.
+  components:
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 36 # 10 seconds to recharge
+    autoRechargePause: true
+    autoRechargePauseTime: 30
 
 - type: entity
   name: medium-capacity power cell
@@ -353,9 +290,6 @@
   - type: Tag
     tags:
       - PowerCage
-  - type: HitscanBatteryAmmoProvider
-    proto: RedShuttleLaser
-    fireCost: 150
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8

@@ -22,7 +22,7 @@
         prob: 0.15
       - id: HarmonicaInstrument
         prob: 0.15
- 
+
 - type: entity
   id: ToolboxElectricalFilled
   name: electrical toolbox
@@ -82,7 +82,7 @@
     - id: MysteryFigureBox
       prob: 0.5
     - id: BookRandom
-      amount: 2 
+      amount: 2
     - id: CrayonMime
     - id: CrayonRainbow
 
@@ -107,8 +107,9 @@
 
 - type: entity
   parent: ToolboxMechanical
-  id: ToolboxNanotrasenFilled
-  suffix: Filled
+  id: ToolboxMechanicalFilledAllTools
+  name: mechanical toolbox
+  suffix: Filled, all tools
   components:
   - type: StorageFill
     contents:

@@ -75,6 +75,10 @@ public sealed class InGasSystem : EntitySystem
 
             _timer -= UpdateTimer;
 
+            // A list of entities we want to process
+            // We were getting an InvalidOperationException, so this -should- fix it. -Cookie
+            var entitiesToProcess = new List<(EntityUid uid, InGasComponent inGas, DamageableComponent damageable)>();
+
             var enumerator = EntityQueryEnumerator<InGasComponent, DamageableComponent>();
             while (enumerator.MoveNext(out var uid, out var inGas, out var damageable))
             {
@@ -83,12 +87,17 @@ public sealed class InGasSystem : EntitySystem
                     continue;
                 }
 
-                bool currentlyInWater = InWater(uid);
+                entitiesToProcess.Add((uid, inGas, damageable));
+            }
+
+            // Now process the entities
+            foreach (var (uid, inGas, damageable) in entitiesToProcess)
+            {
+
+            var currentlyInWater = InWater(uid);
                 inGas.InWater = currentlyInWater;
 
-
                 // Update the water state in the component
-
                 // Raise the event depending on whether it's entering or exiting water
                 if (currentlyInWater)
                 {
@@ -98,7 +107,6 @@ public sealed class InGasSystem : EntitySystem
                 {
                     RaiseLocalEvent(new OutOfWaterEvent(uid));
                 }
-
 
                 if (!currentlyInWater)
                 {

@@ -1,21 +1,25 @@
-﻿- type: guideEntry # Default for forks and stuff. Should not be listed anywhere if the server is using a custom ruleset.
+﻿# Only one of those rulesets will appear on the server at any given time.
+# They all have a priority of 10 so they appear 2nd by default (after priority 0 and before priority 20)
+
+- type: guideEntry # Default for forks and stuff. Should not be listed anywhere if the server is using a custom ruleset.
   id: DefaultRuleset
   name: guide-entry-rules
   ruleEntry: true
+  priority: 10
   text: "/ServerInfo/Guidebook/ServerRules/DefaultRules.xml"
 
 - type: guideEntry
   id: CoreRuleset
   name: guide-entry-rules-core-only
   ruleEntry: true
-  priority: 0
+  priority: 10
   text: "/ServerInfo/Guidebook/ServerRules/WizDenCoreOnlyRules.xml"
 
 - type: guideEntry
   id: StandardRuleset
   name: guide-entry-rules-lrp
   ruleEntry: true
-  priority: 5
+  priority: 10
   text: "/ServerInfo/Guidebook/ServerRules/WizDenLRPRules.xml"
 
 - type: guideEntry
@@ -29,14 +33,14 @@
   id: RoleTypes
   name: guide-entry-rules-role-types
   ruleEntry: true
-  priority: 20
+  priority: 10
   text: "/ServerInfo/Guidebook/ServerRules/RoleTypes.xml"
 
 - type: guideEntry
   id: CoreRules
   name: guide-entry-rules-core
   ruleEntry: true
-  priority: 30
+  priority: 10
   text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC0.xml"
   children:
   - RuleC1
@@ -453,20 +457,6 @@
   ruleEntry: true
   priority: 10
   text: "/ServerInfo/Guidebook/ServerRules/_TP/MRPRules/RuleM12PerformRole.xml"
-
-- type: guideEntry
-  id: SpaceLaw
-  name: guide-entry-rules-space-law
-  priority: 1
-  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
-  children:
-  - SpaceLawCrimeList
-
-- type: guideEntry
-  id: SpaceLawCrimeList
-  name: guide-entry-rules-sl-crime-list
-  priority: 5
-  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
 
 - type: guideEntry
   id: BanTypes

@@ -36,6 +36,7 @@
     - Traitor
     - Revolutionary
     - Zombie
+    - Wizard
     - KesslerSyndromeScheduler
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
@@ -56,6 +57,7 @@
     - Traitor
     - Revolutionary
     - Zombie
+    - Wizard
     - BasicStationEventScheduler
     - KesslerSyndromeScheduler
     - MeteorSwarmMildScheduler
@@ -144,6 +146,7 @@
   description: traitor-description
   showInVote: false
   rules:
+    - DummyNonAntagChance
     - Traitor
     - SubGamemodesRule
     - BasicStationEventScheduler
@@ -182,6 +185,7 @@
   showInVote: false
   rules:
     - Nukeops
+    - DummyNonAntagChance
     - SubGamemodesRule
     - BasicStationEventScheduler
     - BasicRoundstartVariation
@@ -196,6 +200,7 @@
   description: rev-description
   showInVote: false
   rules:
+    - DummyNonAntagChance
     - Revolutionary
     - SubGamemodesRule
     - BasicStationEventScheduler

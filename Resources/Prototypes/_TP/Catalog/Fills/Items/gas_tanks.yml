@@ -1,0 +1,60 @@
+
+- type: entity
+  id: TP14WaterTankEmergencyFilled
+  name: emergency water tank
+  parent: EmergencyOxygenTank
+  suffix: Filled
+  description: A tank designed to hold small amounts of water. It won't last long, but it works.
+  components:
+  - type: GasTank
+    outputPressure: 21.3
+    air:
+      # 31 minutes
+      volume: 5
+      moles:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 2.051379050
+      temperature: 293.15
+
+- type: entity
+  id: TP14WaterTankFilled
+  name: water tank
+  parent: OxygenTank
+  suffix: Filled
+  description: A robust tank designed to store sea water
+  components:
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+    - suitStorage
+    sprite: Objects/Tanks/water.rsi
+  - type: Sprite
+    sprite: Objects/Tanks/water.rsi
+  - type: Item
+    sprite: Objects/Tanks/water.rsi
+  - type: GasTank
+    outputPressure: 21.3
+    air:
+      # 31 minutes
+      volume: 5
+      moles:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 2.051379050
+      temperature: 293.15

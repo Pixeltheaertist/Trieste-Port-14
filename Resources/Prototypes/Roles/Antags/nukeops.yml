@@ -51,11 +51,11 @@
     shoes: ClothingShoesBootsCombatFilled
     id: NanotrasenPDA
     pocket1: DoubleEmergencyOxygenTankFilled
-    pocket2: TP14BaseUplinkRadioNT
+    pocket2: TP14BaseUplinkRadioNT #TP
     belt: ClothingBeltMilitaryWebbing
   storage:
     back:
-    - TP14WeaponNtBlaster
+    - TP14WeaponNtBlaster #TP
     - DeathAcidifierImplanter
 
 #Nuclear Operative Gear
@@ -90,7 +90,7 @@
     - SawAdvanced
     - Cautery
     - CombatKnife
-    - TP14WeaponNtBlaster
+    - TP14WeaponNtBlaster #TP
     - HandheldHealthAnalyzer
     - CombatMedipen
     - DeathAcidifierImplanter

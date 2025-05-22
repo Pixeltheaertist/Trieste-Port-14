@@ -14,11 +14,6 @@
     - Jellid
 
 - type: guideEntry
-  id: Jellid
-  name: species-name-jellid
-  text: "/ServerInfo/Guidebook/Mobs/Jellid.xml"
-
-- type: guideEntry
   id: Arachnid
   name: species-name-arachnid
   text: "/ServerInfo/Guidebook/Mobs/Arachnid.xml"

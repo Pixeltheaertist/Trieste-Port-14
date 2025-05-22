@@ -7,6 +7,15 @@
     - !type:OverallPlaytimeRequirement
       time: 18000 #5 hrs. Platform 2nd in command. Some playtime should be required (also they'll get this for sec anyways)
     - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 3600 # 1 hr
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 3600 # 1 hr
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 3600 # 1 hr
+    - !type:DepartmentTimeRequirement
       department: Security
       time: 3600 # 1 hr
     - !type:DepartmentTimeRequirement

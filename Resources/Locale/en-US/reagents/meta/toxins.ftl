@@ -90,3 +90,6 @@ reagent-desc-mimicrium = A highly effective, but rare liquid used by deep sea am
 
 reagent-name-seagulltoxin = seagull poop
 reagent-desc-seagulltoxin = The droppings of sky rats. Definitely not safe to eat.
+
+reagent-name-toxintrash = trash
+reagent-desc-toxintrash = An awful-smelling fluid. Deadly to non-vox.

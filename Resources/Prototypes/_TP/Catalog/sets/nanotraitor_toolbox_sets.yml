@@ -1,0 +1,36 @@
+- type: thiefBackpackSet
+  id: TP14EngineeringSet
+  name: nanotraitor-borg-engineering-name
+  description: nanotraitor-borg-category-engineering-description
+  sprite:
+    sprite: Mobs/Silicon/chassis.rsi
+    state: engineer
+  content:
+  - BorgModuleAdvancedTool
+  - BorgModuleConstruction
+  - BorgModuleRCD
+  - BorgModuleNanotrasenWeapon
+
+- type: thiefBackpackSet
+  id: TP14SyndicateSet
+  name: nanotraitor-borg-syndicate-name
+  description: nanotraitor-borg-category-syndicate-description
+  sprite:
+    sprite: Mobs/Silicon/chassis.rsi
+    state: synd_sec
+  content:
+  - BorgModuleEsword
+  - BorgModuleSyndicateWeapon
+
+- type: thiefBackpackSet
+  id: TP14MedicalSet
+  name: nanotraitor-borg-medical-name
+  description: nanotraitor-borg-category-medical-description
+  sprite:
+    sprite: Mobs/Silicon/chassis.rsi
+    state: medical
+  content:
+  - BorgModuleAdvancedTreatment
+  - BorgModuleDefibrillator
+  - BorgModuleTreatment
+  - BorgModuleNanotrasenWeapon

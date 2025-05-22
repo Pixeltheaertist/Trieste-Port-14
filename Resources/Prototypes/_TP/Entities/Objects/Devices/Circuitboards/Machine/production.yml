@@ -9,3 +9,20 @@
       stackRequirements:
         Capacitor: 2
         Glass: 1
+
+- type: entity
+  id: JellidPortableScrubberMachineCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: jellid portable scrubber machine board
+  description: A machine printed circuit board for a jellid portable scrubber.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: JellidPortableScrubber
+    stackRequirements:
+      MatterBin: 1
+      Manipulator: 2
+      Cable: 5
+      Glass: 2
+

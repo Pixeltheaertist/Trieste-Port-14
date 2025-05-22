@@ -18,3 +18,9 @@ bounty-console-flavor-right = Active transponder: TRIESTE_PORT_AUTHORITY
 
 bounty-manifest-header = [font size=14][bold]Official requisitions manifest[/bold] (ID#{$id})[/font]
 bounty-manifest-list-start = Item manifest:
+
+bounty-console-tab-available-label = Available
+bounty-console-tab-history-label = History
+bounty-console-history-empty-label = No bounty history found
+bounty-console-history-notice-completed-label = [color=limegreen]Completed[/color]
+bounty-console-history-notice-skipped-label = [color=red]Skipped[/color] by {$id}

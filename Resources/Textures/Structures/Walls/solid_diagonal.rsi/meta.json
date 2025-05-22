@@ -12,6 +12,12 @@
         },
         {
             "name": "state1"
+        },
+        {
+            "name": "solid0"
+        },
+        {
+            "name": "solid1"
         }
     ]
 }

@@ -1,0 +1,13 @@
+- type: microwaveMealRecipe
+  id: TP14RecipeBurritoBowl
+  name: burrito bowl recipe
+  result: TP14FoodBurritoBowl
+  time: 30
+  reagents:
+    Water: 10
+  solids:
+    FoodDough: 1
+    FoodCabbage: 2
+    FoodCheeseSlice: 2
+    FoodOnionSlice: 2
+    FoodBowlBig: 1

@@ -1,0 +1,22 @@
+- type: entity
+  id: TP14ToolboxNanoTrasenFilled
+  name: undetermined borging kit
+  description: This is where your borg's specialization lies.
+  parent: [ BaseItem, BaseNanotransenContraband ]
+  suffix: NanoTrasen, Filled
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/Toolboxes/toolbox_thief.rsi
+    state: icon
+  - type: ThiefUndeterminedBackpack
+    possibleSets:
+    - ToolsSet
+    - TP14EngineeringSet
+    - TP14MedicalSet
+    - TP14SyndicateSet
+  - type: ActivatableUI
+    key: enum.ThiefBackpackUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ThiefBackpackUIKey.Key:
+        type: ThiefBackpackBoundUserInterface

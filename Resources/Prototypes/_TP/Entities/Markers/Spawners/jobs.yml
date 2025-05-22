@@ -1,0 +1,23 @@
+- type: entity
+  id: TP14SpawnPointPilot
+  parent: SpawnPointJobBase
+  name: pilot
+  components:
+  - type: SpawnPoint
+    job_id: Pilot
+  - type: Sprite
+    layers:
+    - state: green
+    - state: salvagespecialist
+
+- type: entity
+  id: TP14SpawnPointBasinTech
+  parent: SpawnPointJobBase
+  name: basintechnician
+  components:
+  - type: SpawnPoint
+    job_id: BasinEngi
+  - type: Sprite
+    layers:
+    - state: green
+    - state: salvagespecialist

@@ -1,7 +1,6 @@
 nuke-component-cant-anchor-floor = The anchoring bolts fail to lock into the floor!
 nuke-component-announcement-sender = Artifact Observation Center
-nuke-component-announcement-armed = WARNING: The Artifact's self-containment field has grown dangerously unstable. Massive energy readings detected. {$time} seconds until class-IV resonance cascade ocurrs. Recontain immediately.
-nuke-component-announcement-armed = W-W-WARNI-NG: CLASS-IV RESONANCE CASCADE DETECTED. REALITY DELAMINATION IN PROGRESS. EVACUATE.
+nuke-component-announcement-armed = WARNING: The Artifact's self-containment field has grown dangerously unstable. Massive energy readings detected. {$time} seconds until class-IV resonance cascade occurs. Re-contain immediately.
 nuke-component-announcement-unarmed = Artifact containment fields have returned to full stability. No further danger detected.
 nuke-component-announcement-send-codes = Attention! Self-destruction codes have been sent to designated fax machines.
 nuke-component-doafter-warning = You start fiddling with the shaking machinery... this could take a bit..

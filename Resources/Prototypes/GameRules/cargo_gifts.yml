@@ -16,7 +16,7 @@
     - id: GiftsVendingRestock
 
 # Game Rules
-    
+
 - type: entity
   id: CargoGiftsBase
   parent: BaseGameRule
@@ -213,19 +213,5 @@
       SecurityRiot: 2
       SecurityRestraints: 2
       SecurityNonLethal: 2
+      SecurityNonlethalThrowables: 1
 
-- type: entity
-  id: GiftsExpedHarpoons
-  parent: CargoGiftsBase
-  components:
-  - type: StationEvent
-    weight: 3
-    duration: 120
-    earliestStart: 20
-    minimumPlayers: 20
-  - type: CargoGiftsRule
-    description: cargo-gift-exped-harpoons
-    dest: cargo-gift-dest-exped
-    gifts:
-      TP14HarpoonGun: 3
-      TP14Harpoon: 6

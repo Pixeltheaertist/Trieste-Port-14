@@ -1,0 +1,6 @@
+#stepfather
+- type: startingGear
+  id: Stepfather
+  equipment:
+    id: SalvagePDA
+  #  pocket1: TP14PinpointerPilot # Commented out for now, not sure why. - Cookie

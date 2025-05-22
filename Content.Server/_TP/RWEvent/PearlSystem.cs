@@ -1,24 +1,11 @@
-using Robust.Shared.Utility;
 using Content.Server.Popups;
-using Content.Server.Xenoarchaeology.Equipment.Components;
-using Content.Server.Xenoarchaeology.XenoArtifacts;
 using Content.Shared.Interaction;
+using Content.Shared.Paper;
 using Content.Shared.Timing;
 using Content.Shared.Verbs;
-using Robust.Shared.Prototypes;
-using Content.Server.Paper;
-using Robust.Server.GameObjects;
-using Robust.Shared.Serialization;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Content.Shared.Examine;
-using Content.Shared.Plankton;
-using System.Linq;
-using Content.Shared.Paper;
-using Content.Server._TP;
-using Content.Server.TP.Event.Components;
 
-namespace Content.Server.TP.Event.Systems;
+namespace Content.Server._TP.RWEvent;
 
 public sealed class PearlScannerSystem : EntitySystem
 {
@@ -84,5 +71,5 @@ public sealed class PearlScannerSystem : EntitySystem
 
         if (TryComp<PaperComponent>(report, out var paperComp))
             _paper.SetContent((report, paperComp), message);
-        }
     }
+}

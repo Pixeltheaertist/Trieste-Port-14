@@ -1,0 +1,24 @@
+- type: entity
+  parent: BaseItem
+  id: TP14BlackboxRecorder
+  name: blackbox record
+  description: The ship's last logs.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/clownrecorder.rsi
+    state: icon
+  - type: EmitSoundOnUse
+    sound:
+      collection: Blackbox
+  - type: EmitSoundOnActivate
+    sound:
+      collection: Blackbox
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: Blackbox
+  - type: UseDelay
+    delay: 30.0
+  - type: Tag
+    tags:
+    - ClownRecorder
+    - Payload

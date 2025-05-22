@@ -1,0 +1,38 @@
+- type: entity
+  name: bony spine
+  parent: Shiv
+  id: TP14ThingySpine
+  description: A vile spine of bone created by a Thingy. It's extremely sharp, and hollow.
+  components:
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Piercing: 9
+    angle: 0
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/Thingy.rsi
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        reagents:
+        - ReagentId: DrifterToxin
+          Quantity: 10
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 2
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+    offset: -0.15,0.0
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    ignoreResistances: false
+    damage:
+      types:
+        Piercing: 9
+  - type: ThrowingAngle
+    angle: 225
+    angularVelocity: false

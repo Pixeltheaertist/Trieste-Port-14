@@ -66,29 +66,6 @@
       maximumEntitiesSpawned: 1
 
 - type: entity
-  name: Fish Timed Spawner
-  id: FishTimedSpawner
-  parent: MarkerBase
-  components:
-    - type: Sprite
-      layers:
-        - state: blue
-        - sprite: Mobs/Animals/fish.rsi
-          state: icon-0
-        - state: timed
-    - type: Timer
-    - type: TimedSpawner
-      prototypes:
-        - TP14MobFish
-        - TP14MobFish2
-        - TP14MobFish3
-        - TP14MobFishMimic
-      chance: 0.5
-      intervalSeconds: 540
-      minimumEntitiesSpawned: 1
-      maximumEntitiesSpawned: 3
-
-- type: entity
   name: Cockroach Timed Spawner
   id: CockroachTimedSpawner
   parent: MouseTimedSpawner

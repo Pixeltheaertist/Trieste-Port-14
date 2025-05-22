@@ -1,0 +1,158 @@
+
+- type: entity
+  parent: GeneratorRTG
+  id: TP14TheArtifact
+  name: The Artifact
+  description: An ancient power generation device, the lifeblood of Sweetwater and Trieste.
+  components:
+  - type: PowerSupplier
+    supplyRate: 0
+  - type: Sprite
+    sprite: Structures/Power/Generation/artifact.rsi
+    layers:
+    - state: artifact_1
+  - type: PowerMonitoringDevice
+    sprite: Structures/Power/Generation/rtg.rsi
+    state: rtg_damaged
+  - type: TileSpawnAnomaly
+    entries:
+    - settings:
+        spawnOnPulse: false
+        minAmount: 100
+        maxAmount: 200
+        maxRange: 300
+      floor: FloorChromite
+  - type: RadiationSource
+    intensity: 10
+  - type: LightningArcShooter
+    arcDepth: 4
+    maxLightningArc: 5
+    shootMinInterval: 2
+    shootMaxInterval: 4
+    shootRange: 7
+    lightningPrototype: Lightning
+  - type: GravityWell
+    baseRadialAcceleration: 15
+    maxRange: 8
+  - type: Electrified
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.5,-1.5,1.5,1.5"
+        density: 50
+        mask:
+        - LargeMobMask
+        layer:
+        - WallLayer
+  - type: PointLight
+    enabled: true
+    radius: 10
+    color: "#4080FF"
+  - type: SingularityDistortion
+    falloffPower: 2
+    intensity: -1000
+  - type: ItemSlots
+  - type: ContainerContainer
+    containers:
+      Artifact: !type:ContainerSlot
+  - type: Anchorable
+    delay: 9999
+  - type: Nuke
+    explosionType: Cryo
+    maxIntensity: 100
+    isArtifact: true
+    intensitySlope: 5
+    totalIntensity: 5000000
+    diskSlot:
+      name: nuke-slot-component-slot-name-disk
+      insertSound:
+        path: /Audio/Machines/terminal_insert_disc.ogg
+      ejectSound:
+        path: /Audio/Machines/terminal_insert_disc.ogg
+      whitelist:
+        components:
+        - NukeDisk
+    resonanceSlot:
+      name: nuke-slot-component-slot-name-delaminator
+      insertSound:
+        path: /Audio/Machines/terminal_insert_disc.ogg
+      ejectSound:
+        path: /Audio/Machines/terminal_insert_disc.ogg
+      whitelist:
+        components:
+        - Delaminator
+    alertLevelOnActivate: delta
+    alertLevelOnDeactivate: green
+
+# Nuclear Reactor
+# This is SOLELY for the Settler Outpost, since they shouldn't have to constantly worry about power.
+# Easily powers an outpost for a long time without needing a refuel.
+- type: entity
+  parent: PortableGeneratorSuperPacman
+  id: TP14NuclearReactor
+  name: nuclear reactor
+  description: A reactor that violently enriches and detonates uranium to generate energy. Shockingly safe.
+  suffix: Settlers ONLY
+  placement:
+    mode: AlignTileAny
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: AmbientSound
+    enabled: false
+    range: 4
+    volume: -4
+    sound:
+      path: /Audio/Effects/shuttle_thruster.ogg
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: Structures/Machines/station_anchor.rsi
+    layers:
+    - state: station_anchor
+      map: ["base"]
+    - state: station_anchor_unlit
+      shader: unshaded
+      map: ["unlit"]
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerChargeVisuals.Active:
+        unlit:
+          True: { visible: True }
+          False: { visible: False }
+  - type: Appearance
+  - type: FuelGenerator
+    minTargetPower: 10000
+    maxTargetPower: 100000
+    targetPower: 50000
+    optimalPower: 50000
+    optimalBurnRate: 0.006666666
+    fuelEfficiencyConstant: 0.1
+  - type: PowerSupplier
+    supplyRampRate: 5000
+    supplyRampTolerance: 1500
+  - type: GeneratorExhaustGas
+    gasType: Tritium
+    moleRatio: 0.005
+  - type: PortableGenerator
+    startChance: 1
+  - type: SolidFuelGeneratorAdapter
+    fuelMaterial: Uranium
+    multiplier: 0.01
+  - type: MaterialStorage
+    storageLimit: 3000
+    materialWhiteList: [Uranium]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.7,-0.7,0.7,0.7"
+        density: 190
+        mask:
+        - LargeMobMask
+        layer:
+        - WallLayer
