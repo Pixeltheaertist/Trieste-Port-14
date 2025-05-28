@@ -23,7 +23,17 @@
         damage:
           types:
             Cold:
-              15
+              10
+      - !type:AdjustTemperature
+        conditions:
+        - !type:OrganType
+          type: Jellid
+          shouldHave: false
+        - !type:ReagentThreshold
+          min: 0.5
+        - !type:Temperature
+          min: 10.00
+        amount: -50000
       - !type:PopupMessage
         type: Local
         messages: [ "water-in-lungs" ]

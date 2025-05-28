@@ -235,13 +235,13 @@
       weight: 4
     - id: CigaretteDylovene
       weight: 4
-    - id: CigaretteDermaline
+    - id: CigaretteMarrow
       weight: 4
     - id: CigaretteArithrazine
       weight: 4
-    - id: CigaretteBicaridine
+    - id: CigarettePlatelet
       weight: 4
-    - id: CigaretteDexalin
+    - id: CigaretteOxygenated
       weight: 4
     - id: CigaretteHaloperidol
       weight: 6

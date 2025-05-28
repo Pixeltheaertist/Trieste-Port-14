@@ -1,0 +1,35 @@
+- type: entity
+  id: MachineIncubator
+  parent: BaseTabletopChemicalMachine
+  name: incubator
+  description: Keeps things warm
+  components:
+  - type: SolutionContainerMixer
+    mixDuration: 30
+    mixingSound:
+      path: /Audio/Machines/buzz_loop.ogg
+      params:
+        volume: -5
+  - type: ReactionMixer
+    reactionTypes:
+    - Incubation
+  - type: Sprite
+    sprite: _TP/Structures/Machines/Medical/incubator.rsi
+    offset: "0.0,0.4"
+    layers:
+    - state: base
+    - state: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+      shader: unshaded
+  - type: GenericVisualizer
+    visuals:
+      enum.SolutionContainerMixerVisuals.Mixing:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: {state: "heating"}
+          False: {state: "unshaded"}
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: True }
+          False: { visible: False }
+  - type: Machine
+    board: IncubatorMachineCircuitboard

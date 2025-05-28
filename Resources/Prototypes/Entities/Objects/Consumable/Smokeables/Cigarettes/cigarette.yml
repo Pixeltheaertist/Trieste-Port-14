@@ -145,7 +145,7 @@
             Quantity: 10
 
 - type: entity
-  id: CigaretteDermaline
+  id: CigaretteMarrow
   parent: SoakedCigarette
   name: Aloe Peanut Butter Medley
   components:
@@ -156,7 +156,7 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: Dermaline
+          - ReagentId: HyperMarrow
             Quantity: 10
 
 - type: entity
@@ -190,7 +190,7 @@
             Quantity: 10
 
 - type: entity
-  id: CigaretteBicaridine
+  id: CigarettePlatelet
   parent: SoakedCigarette
   name: Wet Dog Enhanced Cigarette
   components:
@@ -201,11 +201,11 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: Bicaridine
+          - ReagentId: HyperPlatelet
             Quantity: 10
 
 - type: entity
-  id: CigaretteDexalin
+  id: CigaretteOxygenated
   parent: SoakedCigarette
   name: Rocky Mountain Musk
   components:
@@ -216,7 +216,7 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: Dexalin
+          - ReagentId: OxygenatedSaline
             Quantity: 10
 
 - type: entity

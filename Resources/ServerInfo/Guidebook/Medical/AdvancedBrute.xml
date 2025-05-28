@@ -1,28 +1,33 @@
 <Document>
   
-  # Specialized Brute Chemicals
+So sombody is really hurt? Lets do something about that!
 
-  Nanotrasen's greatest scientists have synthesized three more specific brute chemicals! Each one heals a specific damage subtype.
+# Temperature Based Treatment
 
-  <GuideReagentEmbed Reagent="Bruizine"/>
-  <GuideReagentEmbed Reagent="Puncturase"/>
-  <GuideReagentEmbed Reagent="Lacerinol"/>
+<GuideReagentEmbed Reagent="Lexodine"/>
+<GuideReagentEmbed Reagent="HyperPlatelet"/>
+<GuideReagentEmbed Reagent="HyperMarrow"/>
 
-  # Razorium
+These three meds heal all of their associated damage, but temperature augments them
+The two hyper ones are protein based, while the Lexodine is a standard med
 
-  [color=red]USE CAUTION[/color] when using the aforementioned specialized brute chemicals. Should one mix together with a different type of brute chemical, the resulting mixture will create a dangerous chemical known as Razorium!
-  <GuideReagentEmbed Reagent="Razorium"/>
-  To avoid this, make sure the patient is done metabolizing one brute medication before giving them another. Keep an eye on the rate their health is changing.
+Lexodine heals burn, cold, and shock.
 
-  [bold]Some examples of mixtures that create Razorium are as follows:[/bold]
+Cold when the body temp is hot
+Shock when the body temp is average
+and Heat while the body temp is cold
 
-  Bicaridine and Puncturase
+Hyper Marrow also treats burns, but not as quick
+However, it has the same temperature modulation, lasts far longer, and can also treat caustic!
 
-  Puncturase and Lacerinol
+Hyper Platelets function the same, but with Blunt, Pierce, and Slash
 
-  Bruizine and Bicaridine
+Do avoid mixing the two Hyper Proteins, however, as that can desabilise the paitents genome!
 
-  Lacerinol and Bruizine
+If that happens, you might want to use some
 
-  Please note that [bold]any[/bold] combination of these 4 chemicals will likely mix and create Razorium! Be careful when creating these chemicals, as they contain Bicaridine. Any leftover Bicaridine will likely mix to create Razorium!
+<GuideReagentEmbed Reagent="StabilisationProtein"/>
+
+To get the denatured proteins needed to start protein production, you should heat up either blood or some inaprov, both are easy to get and both can denature.
+  
 </Document>

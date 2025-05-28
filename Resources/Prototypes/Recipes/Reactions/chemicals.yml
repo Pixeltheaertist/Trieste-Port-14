@@ -63,17 +63,15 @@
   products:
     Phenol: 2
 
-- type: reaction
-  id: Acetone
-  reactants:
-    Oil:
-      amount: 1
-    WeldingFuel:
-      amount: 1
-    Oxygen:
-      amount: 1
-  products:
-    Acetone: 2
+#- type: reaction # TP14
+#  id: Acetone
+#  reactants:
+#    Oil:
+#      amount: 1
+#    Oxygen:
+#      amount: 1
+#  products:
+#    Acetone: 2
 
 - type: reaction
   id: FoamingAgent

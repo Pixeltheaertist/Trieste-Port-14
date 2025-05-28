@@ -432,7 +432,7 @@
 # Pills
 - type: entity
   name: pill
-  suffix: Dexalin 10u
+  suffix: OxySaline 10u
   parent: Pill
   id: PillDexalin
   components:
@@ -441,23 +441,23 @@
   - type: Sprite
     state: pill16
   - type: Label
-    currentLabel: dexalin 10u
+    currentLabel: oxy-saline 10u
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 20
         reagents:
-        - ReagentId: Dexalin
+        - ReagentId: OxygenatedSaline
           Quantity: 10
 
 - type: entity
   name: pill canister
   parent: PillCanister
   id: PillCanisterDexalin
-  suffix: Dexalin 10u, 7
+  suffix: OxySaline 10u, 7
   components:
   - type: Label
-    currentLabel: dexalin 10u
+    currentLabel: oxy-saline 10u
   - type: StorageFill
     contents:
     - id: PillDexalin
@@ -630,7 +630,7 @@
 
 - type: entity
   name: pill
-  suffix: Kelotane 10u
+  suffix: Lexodine 10u
   parent: Pill
   id: PillKelotane
   components:
@@ -639,23 +639,23 @@
   - type: Sprite
     state: pill4
   - type: Label
-    currentLabel: kelotane 10u
+    currentLabel: lexodine 10u
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 20
         reagents:
-        - ReagentId: Kelotane
+        - ReagentId: Lexodine
           Quantity: 10
 
 - type: entity
   name: pill canister
   parent: PillCanister
   id: PillCanisterKelotane
-  suffix: Kelotane 10u, 5
+  suffix: Lexodine 10u, 5
   components:
   - type: Label
-    currentLabel: kelotane 10u
+    currentLabel: lexodine 10u
   - type: StorageFill
     contents:
     - id: PillKelotane
@@ -663,7 +663,7 @@
 
 - type: entity
   name: pill
-  suffix: Dermaline 10u
+  suffix: Hyper-Marrow 10u
   parent: Pill
   id: PillDermaline
   components:
@@ -672,23 +672,23 @@
   - type: Sprite
     state: pill8
   - type: Label
-    currentLabel: dermaline 10u
+    currentLabel: hyper-marrow 10u
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 20
         reagents:
-        - ReagentId: Dermaline
+        - ReagentId: HyperMarrow
           Quantity: 10
 
 - type: entity
   name: pill canister
   parent: PillCanister
   id: PillCanisterDermaline
-  suffix: Dermaline 10u, 5
+  suffix: Hyper-Marrow 10u, 5
   components:
   - type: Label
-    currentLabel: dermaline 10u
+    currentLabel: hyper-marrow 10u
   - type: StorageFill
     contents:
     - id: PillDermaline
@@ -742,35 +742,35 @@
 
 - type: entity
   name: pill
-  suffix: Bicaridine 10u
+  suffix: Hyper-Platelet 10u
   parent: Pill
-  id: PillBicaridine
+  id: PillHyperPlatelet
   components:
   - type: Pill
     pillType: 4
   - type: Sprite
     state: pill5
   - type: Label
-    currentLabel: bicaridine 10u
+    currentLabel: hyper-platelet 10u
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 20
         reagents:
-        - ReagentId: Bicaridine
+        - ReagentId: HyperPlatelet
           Quantity: 10
 
 - type: entity
   name: pill canister
   parent: PillCanister
-  id: PillCanisterBicaridine
-  suffix: Bicaridine 10u, 5
+  id: PillCanisterHyperPlatelet
+  suffix: HyperPlatelet 10u, 5
   components:
   - type: Label
-    currentLabel: bicaridine 10u
+    currentLabel: hyper-platelet 10u
   - type: StorageFill
     contents:
-    - id: PillBicaridine
+    - id: PillHyperPlatelet
       amount: 5
 
 - type: entity
@@ -892,7 +892,7 @@
       prob: 0.10
       maxAmount: 7
       orGroup: RandomPill
-    - id: PillBicaridine
+    - id: PillHyperPlatelet
       prob: 0.10
       maxAmount: 7
       orGroup: RandomPill
@@ -964,33 +964,33 @@
           Quantity: 15
 
 - type: entity
-  suffix: bicaridine
+  suffix: hyper-platelet
   parent: PrefilledSyringe
-  id: SyringeBicaridine
+  id: SyringeHyperPlatelet
   components:
   - type: Label
-    currentLabel: reagent-name-bicaridine
+    currentLabel: reagent-name-hyper-platelet
   - type: SolutionContainerManager
     solutions:
       injector:
         maxVol: 15
         reagents:
-        - ReagentId: Bicaridine
+        - ReagentId: HyperPlatelet
           Quantity: 15
 
 - type: entity
-  suffix: dermaline
+  suffix: hyper-marrow
   parent: PrefilledSyringe
   id: SyringeDermaline
   components:
   - type: Label
-    currentLabel: reagent-name-dermaline
+    currentLabel: reagent-name-hyper-marrow
   - type: SolutionContainerManager
     solutions:
       injector:
         maxVol: 15
         reagents:
-        - ReagentId: Dermaline
+        - ReagentId: HyperMarrow
           Quantity: 15
 
 - type: entity
@@ -1134,7 +1134,7 @@
   id: RandomSafePillTable
   table: !type:GroupSelector
     children:
-    - id: PillBicaridine
+    - id: PillHyperPlatelet
     - id: PillCharcoal
     - id: PillCopper
     - id: PillDermaline
@@ -1151,7 +1151,7 @@
   id: RandomSafeSyringeTable
   table: !type:GroupSelector
     children:
-    - id: SyringeBicaridine
+    - id: SyringeHyperPlatelet
     - id: SyringeDermaline
     - id: SyringeEphedrine
     - id: SyringeEthylredoxrazine

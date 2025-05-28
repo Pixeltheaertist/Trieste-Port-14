@@ -1,16 +1,13 @@
 <Document>
 
-# Core Medications
+## Starting Medications
 
-These medications are almost always useful to medbay in one way or another.
+Shift has started and you dont quite know what to do? Use these basic medications untill chem gets some more advanced ones out
 
-<GuideReagentEmbed Reagent="Bicaridine"/>
-<GuideReagentEmbed Reagent="Kelotane"/>
-<GuideReagentEmbed Reagent="Dermaline"/>
+<GuideReagentEmbed Reagent="SaltWaterSolutionBrute"/>
+<GuideReagentEmbed Reagent="SaltWaterSolutionBurn"/>
 <GuideReagentEmbed Reagent="Dylovene"/>
 <GuideReagentEmbed Reagent="Inaprovaline"/>
-<GuideReagentEmbed Reagent="Dexalin"/>
-<GuideReagentEmbed Reagent="DexalinPlus"/>
 <GuideReagentEmbed Reagent="Iron"/>
 
 # Specialty Medications
@@ -29,8 +26,9 @@ These medications tend to have specific use cases.
 
 # All Medications
 
-This is a list of -all- medications available, including ones previously listed.
+This is a list of -all- medications available, including both standard and protein based medications.
 
 <GuideReagentGroupEmbed Group="Medicine"/>
-
+<GuideReagentGroupEmbed Group="Protein"/>
+  
 </Document>

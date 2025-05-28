@@ -7,3 +7,118 @@
       amount: 1
   products:
     VounarinPlus: 2
+
+- type: reaction
+  id: Calordine
+  maxtemp: 70
+  reactants:
+      Carbon:
+        amount: 1
+      Oxygen:
+        amount: 1
+      Hydrogen:
+        amount: 1
+      Ephedrine:
+        amount: 1
+  products:
+      Calordine: 5
+
+- type: reaction
+  id: Cryodine
+  mintemp: 310
+  reactants:
+      OxygenatedSaline:
+        amount: 1
+      SeaWater:
+        amount: 1
+      Oxygen:
+        amount: 1
+  products:
+      Cryodine: 3
+
+- type: reaction
+  id: Somnuzine
+  maxtemp: 20
+  reactants:
+      Cryodine:
+        amount: 1
+      SeaWater:
+        amount: 1
+      Inaprovaline:
+        amount: 1
+  products:
+      Somnuzine: 3
+
+- type: reaction
+  id: AntiCaustic
+  requiredMixerCategories:
+  - Centrifuge
+  reactants:
+      Lime:
+        amount: 1
+      Calcium:
+        amount: 1
+      Carbon:
+        amount: 1
+      SeaWater:
+        amount: 1
+  products:
+      AntiCaustic: 3
+
+- type: reaction
+  id: Leparadine
+  requiredMixerCategories:
+  - Electrolysis
+  reactants:
+      Acetone:
+        amount: 1
+      Cryodine:
+        amount: 1
+      Phosphorus:
+        amount: 1
+      Oxygen:
+        amount: 1
+  products:
+      Leparadine: 4
+
+- type: reaction
+  id: Lexodine
+  requiredMixerCategories:
+  - Centrifuge
+  reactants:
+      Leparadine:
+        amount: 1
+      Leporazine:
+        amount: 1
+      Calcium:
+        amount: 1
+      Ash:
+        amount: 1
+      SeaWater:
+        amount: 1
+  products:
+      Lexodine: 4
+
+- type: reaction
+  id: SeaWaterSolutionBrute
+  reactants:
+    Sulfur:
+      amount: 1
+    SeaWater:
+      amount: 1
+    Ethanol:
+      amount: 1
+  products:
+    SeaWaterSolutionBrute: 3
+
+- type: reaction
+  id: SeaWaterSolutionBurn
+  reactants:
+    Lithium:
+      amount: 1
+    SeaWater:
+      amount: 1
+    Ethanol:
+      amount: 1
+  products:
+    SeaWaterSolutionBurn: 3  
