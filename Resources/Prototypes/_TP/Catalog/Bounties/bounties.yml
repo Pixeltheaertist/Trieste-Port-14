@@ -1,0 +1,21 @@
+- type: cargoBounty
+  id: BountyDrifter
+  reward: 7500
+  description: bounty-description-drifter
+  entries:
+  - name: bounty-item-drifter
+    amount: 1
+    whitelist:
+      tags:
+      - Drifter
+
+- type: cargoBounty
+  id: BountyMimic
+  reward: 12500
+  description: bounty-description-mimic
+  entries:
+  - name: bounty-item-mimic
+    amount: 1
+    whitelist:
+      tags:
+      - Mimic

@@ -69,17 +69,17 @@
       tags:
       - CarrotFries
 
-- type: cargoBounty
-  id: BountyCarp
-  reward: 12500
-  description: bounty-description-carp
-  idPrefix: SG
-  entries:
-  - name: bounty-item-carp
-    amount: 1
-    whitelist:
-      tags:
-      - Carp
+# - type: cargoBounty # Trieste - commented out
+#   id: BountyCarp
+#   reward: 12500
+#   description: bounty-description-carp
+#   idPrefix: SG
+#   entries:
+#   - name: bounty-item-carp
+#     amount: 1
+#     whitelist:
+#       tags:
+#       - Carp
 
 - type: cargoBounty
   id: BountyClownCostume
@@ -119,17 +119,17 @@
       tags:
       - Crayon
 
-- type: cargoBounty
-  id: BountyCubanCarp
-  reward: 16000
-  description: bounty-description-cuban-carp
-  idPrefix: SG
-  entries:
-  - name: bounty-item-cuban-carp
-    amount: 1
-    whitelist:
-      tags:
-      - CubanCarp
+# - type: cargoBounty # Trieste - commented out
+#   id: BountyCubanCarp
+#   reward: 16000
+#   description: bounty-description-cuban-carp
+#   idPrefix: SG
+#   entries:
+#   - name: bounty-item-cuban-carp
+#     amount: 1
+#     whitelist:
+#       tags:
+#       - CubanCarp
 
 - type: cargoBounty
   id: BountyDonut
@@ -434,16 +434,16 @@
       tags:
       - Trash
 
-- type: cargoBounty
-  id: BountyAnomalyCore
-  reward: 10000
-  description: bounty-description-anomaly-core
-  entries:
-  - name: bounty-item-anomaly-core
-    amount: 1
-    whitelist:
-      components:
-      - AnomalyCore
+# - type: cargoBounty # Trieste - commented out
+#   id: BountyAnomalyCore
+#   reward: 10000
+#   description: bounty-description-anomaly-core
+#   entries:
+#   - name: bounty-item-anomaly-core
+#     amount: 1
+#     whitelist:
+#       components:
+#       - AnomalyCore
 
 - type: cargoBounty
   id: BountyBorgModule
@@ -754,57 +754,57 @@
       components:
       - Flash
 
-- type: cargoBounty
-  id: BountyTeethSpaceCarp
-  reward: 7500
-  description: bounty-description-tooth-space-carp
-  entries:
-  - name: bounty-item-tooth-space-carp
-    amount: 8
-    whitelist:
-      tags:
-      - ToothSpaceCarp
+# - type: cargoBounty # Trieste - commented out
+#   id: BountyTeethSpaceCarp
+#   reward: 7500
+#   description: bounty-description-tooth-space-carp
+#   entries:
+#   - name: bounty-item-tooth-space-carp
+#     amount: 8
+#     whitelist:
+#       tags:
+#       - ToothSpaceCarp
 
-- type: cargoBounty
-  id: BountyTeethSharkminnow
-  reward: 15000
-  description: bounty-description-tooth-sharkminnow
-  entries:
-  - name: bounty-item-tooth-sharkminnow
-    amount: 5
-    whitelist:
-      tags:
-      - ToothSharkminnow
+# - type: cargoBounty # Trieste - commented out
+#   id: BountyTeethSharkminnow
+#   reward: 15000
+#   description: bounty-description-tooth-sharkminnow
+#   entries:
+#   - name: bounty-item-tooth-sharkminnow
+#     amount: 5
+#     whitelist:
+#       tags:
+#       - ToothSharkminnow
 
-- type: cargoBounty
-  id: BountyPlates
-  reward: 20000
-  description: bounty-description-plates
-  entries:
-  - name: bounty-item-plates
-    amount: 4
-    whitelist:
-      tags:
-      - GoliathPlate
+# - type: cargoBounty # Trieste - commented out
+#   id: BountyPlates
+#   reward: 20000
+#   description: bounty-description-plates
+#   entries:
+#   - name: bounty-item-plates
+#     amount: 4
+#     whitelist:
+#       tags:
+#       - GoliathPlate
 
-- type: cargoBounty
-  id: BountyRemains
-  reward: 15000
-  description: bounty-description-remains
-  entries:
-  - name: bounty-item-remains
-    amount: 2
-    whitelist:
-      tags:
-      - HivelordRemains
+# - type: cargoBounty # Trieste - commented out
+#   id: BountyRemains
+#   reward: 15000
+#   description: bounty-description-remains
+#   entries:
+#   - name: bounty-item-remains
+#     amount: 2
+#     whitelist:
+#       tags:
+#       - HivelordRemains
 
-- type: cargoBounty
-  id: BountyRing
-  reward: 12500
-  description: bounty-description-ring
-  entries:
-  - name: bounty-item-ring
-    amount: 2
-    whitelist:
-      tags:
-      - Ring
+# - type: cargoBounty # Trieste - commented out
+#   id: BountyRing
+#   reward: 12500
+#   description: bounty-description-ring
+#   entries:
+#   - name: bounty-item-ring
+#     amount: 2
+#     whitelist:
+#       tags:
+#       - Ring
