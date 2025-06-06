@@ -32,7 +32,8 @@
   # Duplicate guide entries are currently not supported
   # TODO GUIDEBOOK Maybe allow duplicate entries?
   - Botanicals
-  - AdvancedBrute
+  - Proteins #TP14 
+  #- AdvancedBrute #TP14
 
 - type: guideEntry
   id: Medicine

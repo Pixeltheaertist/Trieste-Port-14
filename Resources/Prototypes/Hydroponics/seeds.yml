@@ -1177,7 +1177,7 @@
       Min: 1
       Max: 2
       PotencyDivisor: 50
-    Bicaridine:
+    ActivatedProtein:
       Min: 1
       Max: 20
       PotencyDivisor: 5
@@ -1203,7 +1203,7 @@
       Min: 1
       Max: 10
       PotencyDivisor: 10
-    Dermaline:
+    Lexodine:
       Min: 1
       Max: 10
       PotencyDivisor: 10
@@ -1231,7 +1231,7 @@
       Min: 1
       Max: 2
       PotencyDivisor: 50
-    Bicaridine:
+    HyperPlatelet:
       Min: 1
       Max: 20
       PotencyDivisor: 5
@@ -1285,11 +1285,11 @@
       Min: 1
       Max: 2
       PotencyDivisor: 10
-    Bicaridine:
+    HyperPlatelet:
       Min: 1
       Max: 5
       PotencyDivisor: 20
-    Kelotane:
+    Lexodine:
       Min: 1
       Max: 5
       PotencyDivisor: 20

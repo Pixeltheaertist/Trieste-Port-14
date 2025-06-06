@@ -45,6 +45,8 @@
           amount: 1
         - id: JugRadium
           amount: 1
+        - id: JugCalcium #TP
+          amount: 1
 
 - type: entity
   id: CrateChemistryD

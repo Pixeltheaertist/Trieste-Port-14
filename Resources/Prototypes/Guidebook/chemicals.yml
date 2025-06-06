@@ -5,6 +5,7 @@
   children:
   - Elements
   - Medicine
+  - Protein # TP14
   - Narcotics
   - Pyrotechnic
   - Toxins
