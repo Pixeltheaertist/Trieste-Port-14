@@ -49,7 +49,7 @@ namespace Content.Server.Falling
                 var transform = Transform(entity);
                 if (TryComp(transform.GridUid, out var grid)
                 {
-                    return; // If on a grid, no falling allowed
+                    continue; // If on a grid, no falling allowed
                 }
 
                 if (HasComp<TriesteAirspaceComponent>(EntityParent) && !entity.IsJumping)
