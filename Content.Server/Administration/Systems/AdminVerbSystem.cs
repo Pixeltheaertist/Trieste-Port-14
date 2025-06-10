@@ -137,7 +137,7 @@ namespace Content.Server.Administration.Systems
                     args.Verbs.Add(new Verb()
                     {
                         Text = Loc.GetString("admin-player-actions-spawn"),
-                        Category = VerbCategory.Admin,
+                        Category = VerbCategory.Spawn,
                         Act = () =>
                         {
                             if (!_transformSystem.TryGetMapOrGridCoordinates(args.Target, out var coords))
@@ -212,7 +212,8 @@ namespace Content.Server.Administration.Systems
                     args.Verbs.Add(new Verb
                     {
                         Text = Loc.GetString("admin-player-actions-respawn"),
-                        Category = VerbCategory.Admin,
+                        Priority = -1,
+                        Category = VerbCategory.Spawn,
                         Act = () =>
                         {
                             _console.ExecuteCommand(player, $"respawn \"{mind.UserId}\"");
