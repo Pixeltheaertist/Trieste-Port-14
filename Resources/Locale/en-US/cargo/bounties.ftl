@@ -89,6 +89,7 @@ bounty-description-cuban-carp = To celebrate the birth of Castro XXVII, ship one
 bounty-description-donk-pocket = Hauler TX-999 here, I'm a bit peckish. Y'all got any donk pockets you could fly up?
 bounty-description-donut = The Sheriff on Alai-III is feeling a bit down. We're requesting a shipment of donuts to cheer him up.
 bounty-description-figurine = The vice president's son saw an ad for action figures on the telescreen and now he won't shut up about them. Ship some to ease his complaints.
+bounty-description-flashes = GREETINGS \[Station] WE REQUIRE 6 FLASHES DUE TO A NORMAL \[TrainingExercise] WITH SECURITY. EVERYTHING IS \[Normal].
 bounty-description-flesh-monster = Reports of fleshy lifeforms have dramatically risen in the Rim. If have any samples, our research vessel will take them off your hands.
 bounty-description-flower = This is hauler alpha-gamma-echo, I... forgot my anniversary. Could you send up some flowers?
 bounty-description-galaxythistle = After a particularly nasty foam backpressure from a scrubber, a high-ranking officer got badly poisoned. Send us some galaxythistle so we can prepare him a homeopathic remedy.

@@ -911,9 +911,6 @@
   id: MicrowaveMachineBoard
 
 - type: Tag
-  id: Drifter
-
-- type: Tag
   id: Fish
 
 - type: Tag

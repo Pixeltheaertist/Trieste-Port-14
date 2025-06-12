@@ -74,9 +74,7 @@ namespace Content.Server._TP.Falling.Systems
 
                 var transform = _transformSystem.GetGrid(uid);
                 if (transform != null)
-                {
                     continue; // Still on a grid, don't fall
-                }
 
                 var entityParent = _transformSystem.GetParentUid(uid);
                 if (HasComp<TriesteAirspaceComponent>(entityParent))
@@ -84,6 +82,10 @@ namespace Content.Server._TP.Falling.Systems
                     // Check if they should be exempt from falling
                     if (ExemptFromFalling(uid))
                         continue;
+
+                    // Now check if they've been knocked down (aka slipped)
+                    if (TryComp<KnockedDownComponent>(uid, out _))
+                        HandleFall(uid, fallComp);
 
                     // Force stop climbing if they're in airspace
                     if (TryComp<ClimbingComponent>(uid, out var climbComp) && climbComp.IsClimbing)
@@ -164,11 +166,6 @@ namespace Content.Server._TP.Falling.Systems
             }
 
             if (HasComp<JumpingComponent>(owner))
-            {
-                return true;
-            }
-
-            if (HasComp<FultonComponent>(owner))
             {
                 return true;
             }
