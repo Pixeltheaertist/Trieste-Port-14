@@ -1,3 +1,5 @@
+using Content.Shared.Construction.Prototypes;
+using Robust.Shared.Prototypes;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared.Construction.Prototypes;
@@ -19,12 +21,17 @@ namespace Content.Shared.Preferences
     {
         private Dictionary<int, ICharacterProfile> _characters;
 
-        public PlayerPreferences(IEnumerable<KeyValuePair<int, ICharacterProfile>> characters, Color adminOOCColor, List<ProtoId<ConstructionPrototype>> constructionFavorites, Dictionary<ProtoId<JobPrototype>, JobPriority> jobPriorities)
+        public PlayerPreferences(
+            IEnumerable<KeyValuePair<int, ICharacterProfile>> characters,
+            Color adminOOCColor,
+            List<ProtoId<ConstructionPrototype>> constructionFavorites,
+            Dictionary<ProtoId<JobPrototype>, JobPriority> jobPriorities,
+            bool sanitizePriorities = true)
         {
             _characters = new Dictionary<int, ICharacterProfile>(characters);
             AdminOOCColor = adminOOCColor;
             ConstructionFavorites = constructionFavorites;
-            JobPriorities = SanitizeJobPriorities(jobPriorities);
+            JobPriorities = sanitizePriorities ? SanitizeJobPriorities(jobPriorities) : jobPriorities;
         }
 
         private static Dictionary<ProtoId<JobPrototype>, JobPriority> SanitizeJobPriorities(Dictionary<ProtoId<JobPrototype>, JobPriority> jobPriorities)

@@ -70,11 +70,13 @@ namespace Content.Server.Database
 
             var constructionFavorites = new List<ProtoId<ConstructionPrototype>>(prefs.ConstructionFavorites.Count);
             foreach (var favorite in prefs.ConstructionFavorites)
+            {
                 constructionFavorites.Add(new ProtoId<ConstructionPrototype>(favorite));
+            }
 
             var jobPriorities = prefs.JobPriorities.ToDictionary(j => new ProtoId<JobPrototype>(j.JobName), j => (JobPriority) j.Priority);
 
-            return new PlayerPreferences(profiles, Color.FromHex(prefs.AdminOOCColor), constructionFavorites, jobPriorities);
+            return new PlayerPreferences(profiles, Color.FromHex(prefs.AdminOOCColor), constructionFavorites, jobPriorities, sanitizePriorities: false);
         }
 
         public async Task SaveCharacterSlotAsync(NetUserId userId, ICharacterProfile? profile, int slot)
@@ -188,8 +190,9 @@ namespace Content.Server.Database
                 new[] {new KeyValuePair<int, ICharacterProfile>(0, defaultProfile)},
                 Color.FromHex(prefs.AdminOOCColor),
                 [],
-                priorities
-                );
+                priorities,
+                sanitizePriorities: false
+            );
         }
 
         public async Task SaveAdminOOCColorAsync(NetUserId userId, Color color)
@@ -211,7 +214,9 @@ namespace Content.Server.Database
 
             var favorites = new List<string>(constructionFavorites.Count);
             foreach (var favorite in constructionFavorites)
+            {
                 favorites.Add(favorite.Id);
+            }
             prefs.ConstructionFavorites = favorites;
 
             await db.DbContext.SaveChangesAsync();
