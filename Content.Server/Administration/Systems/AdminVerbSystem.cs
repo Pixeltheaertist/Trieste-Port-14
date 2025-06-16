@@ -19,6 +19,9 @@ using Content.Shared.GameTicking;
 using Content.Shared.Inventory;
 using Content.Shared.Mind.Components;
 using Content.Shared.Popups;
+using Content.Shared.Preferences;
+using Content.Shared.Silicons.Laws.Components;
+using Content.Shared.Silicons.StationAi;
 using Content.Shared.Verbs;
 using Robust.Server.Console;
 using Robust.Server.GameObjects;
@@ -70,6 +73,7 @@ namespace Content.Server.Administration.Systems
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly SiliconLawSystem _siliconLawSystem = default!;
         [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoidAppearance = default!;
+        [Dependency] private readonly IServerPreferencesManager _prefsManager = default!;
 
         private readonly Dictionary<ICommonSession, List<EditSolutionsEui>> _openSolutionUis = new();
 
