@@ -1,4 +1,4 @@
-﻿<Document>
+<Document>
 # Chemicals
 
 Chemicals are a powerful tool that can cause a variety of effects when consumed. Some can be found in plants, purchased from cargo, or be synthesized through combination with other chemicals.
@@ -10,6 +10,9 @@ Knowing different types of chemicals and their effects is important for being ab
 
 ## Medicine
 <GuideReagentGroupEmbed Group="Medicine"/>
+
+## Proteins
+<GuideReagentGroupEmbed Group="Protein"/>
 
 ## Narcotics
 <GuideReagentGroupEmbed Group="Narcotics"/>

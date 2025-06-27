@@ -1,0 +1,6 @@
+- type: mixingCategory
+  id: Incubation
+  verbText: mixing-verb-incubation
+  icon:
+    sprite: _TP/Structures/Machines/Medical/incubator.rsi
+    state: base

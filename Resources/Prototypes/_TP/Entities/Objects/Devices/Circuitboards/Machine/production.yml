@@ -27,6 +27,22 @@
       Glass: 2
 
 - type: entity
+  id: IncubatorMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: incubator machine board
+  description: A machine printed circuit board for an incubator.
+  components:
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: MachineIncubator
+      stackRequirements:
+        Capacitor: 1
+        Glass: 1
+        Steel: 1
+        Manipulator: 1
+        
+- type: entity
   id: TP14SMESAdvancedMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: trieste's advanced SMES machine board

@@ -997,12 +997,16 @@
   - type: XAEFoam
     replaceDescription: true
     reagents:
-    - Dermaline
+    #- Dermaline TP14
+    - HyperMarrow # TP14
     - Arithrazine
-    - Bicaridine
+    #- Bicaridine TP14 
+    - HyperPlatelet
     - Inaprovaline
-    - Kelotane
-    - Dexalin
+    #- Kelotane TP14
+    #- Dexalin TP14
+    - Lexodine # TP14
+    - OxygenatedSaline # TP14
     - Omnizine
 
 - type: entity
@@ -1041,12 +1045,12 @@
       maxVol: 500
       canReact: false
     possibleChemicals:
-    - Dermaline
+    #- Dermaline TP14
     - Arithrazine
-    - Bicaridine
+    #- Bicaridine TP 14
     - Inaprovaline
-    - Kelotane
-    - Dexalin
+    #- Kelotane TP14
+    #- Dexalin TP14
     - Omnizine
     - Napalm
     - Toxin

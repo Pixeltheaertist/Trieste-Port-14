@@ -95,3 +95,188 @@
         damage:
           groups:
             Burn: -1.5
+
+- type: reagent
+  id: Calordine
+  name: reagent-name-calordine
+  group: Medicine
+  desc: reagent-desc-calordine
+  physicalDesc: reagent-physical-desc-bubbling
+  color: "#ff9e1c"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:AdjustTemperature
+        amount: 20000
+
+- type: reagent
+  id: Cryodine
+  name: reagent-name-cryodine
+  group: Medicine
+  desc: reagent-desc-cryodine
+  physicalDesc: reagent-physical-desc-frosty
+  color: "#1cc5ff"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:AdjustTemperature
+        amount: -20000
+
+- type: reagent
+  id: Somnuzine
+  name: reagent-name-somnuzine
+  group: Medicine
+  desc: reagent-desc-somnuzine
+  physicalDesc: reagent-physical-desc-frosty
+  color: "#1c54ff"
+  metabolisms:
+    Medicine:
+      metabolismRate: .1
+      effects:
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          min: 20
+        amount: -20000
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:Temperature
+          max: 250
+        key: ForcedSleep
+        component: ForcedSleeping
+        refresh: false
+        type: add
+      - !type:HealthChange
+        conditions:
+        - !type:Temperature
+          max: 250
+        damage:
+          types:
+            Cold: -15
+            Asphyxiation: -5
+
+- type: reagent
+  id: AntiCausic
+  name: reagent-name-anti-caustic
+  group: Medicine
+  desc: reagent-desc-anti-caustic
+  physicalDesc: reagent-physical-desc-frosty
+  color: "#bcc390"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+         damage:
+           types:
+             Caustic: -3
+
+- type: reagent
+  id: Leparadine
+  name: reagent-name-leparadine
+  group: Medicine
+  desc: reagent-desc-leparadine
+  physicalDesc: reagent-physical-desc-pungent
+  flavor: medicine
+  color: "#6b19b7"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: -4
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          min: 293.15
+        amount: -100000 
+
+- type: reagent
+  id: Lexodine
+  name: reagent-name-lexodine
+  group: Medicine
+  desc: reagent-desc-lexodine
+  physicalDesc: reagent-physical-desc-pungent
+  flavor: medicine
+  color: "#7a7082"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:Temperature
+          min: 305
+        damage:
+          types:
+            Cold: -1
+            Heat: -10
+            Shock: -2
+      - !type:HealthChange
+        conditions:
+        - !type:Temperature
+          max: 305
+          min: 285
+        damage:
+          types:
+            Cold: -1
+            Heat: -1
+            Shock: -10
+      - !type:HealthChange
+        conditions:
+        - !type:Temperature
+          max: 285
+        damage:
+          types:
+            Cold: -10
+            Heat: -1
+            Shock: -2
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          min: 310
+        amount: -200000
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          max: 280
+        amount: 200000
+
+- type: reagent
+  id: SeaWaterSolutionBrute
+  name: reagent-name-saltwater-solution-brute
+  group: Medicine
+  desc: reagent-desc-saltwater-solution-brute
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: alcohol
+  color: "#b05b3c"
+  recognizable: true
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -3
+      - !type:Drunk
+        boozePower: .25
+
+- type: reagent
+  id: SeaWaterSolutionBurn
+  name: reagent-name-saltwater-solution-burn
+  group: Medicine
+  desc: reagent-desc-saltwater-solution-burn
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: alcohol
+  color: "#b05b3c"
+  recognizable: true
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: -1
+            Cold: -1
+            Shock: -1
+      - !type:Drunk
+        boozePower: .25

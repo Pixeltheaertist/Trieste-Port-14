@@ -1,0 +1,14 @@
+- type: entity
+  parent: Jug
+  suffix: calcium
+  id: JugCalcium
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Label
+    currentLabel: reagent-name-calcium
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: Calcium
+          Quantity: 200

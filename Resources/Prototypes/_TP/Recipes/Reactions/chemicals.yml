@@ -57,7 +57,7 @@
   reactants:
     ExoticOil:
       amount: 1
-    Bicaridine:
+    HyperPlatelet:
       amount: 1
   products:
     Omnizine: 1
@@ -134,3 +134,13 @@
   effects:
     - !type:CreateEntityReactionEffect
       entity: SheetPlastic1
+
+- type: reaction
+  id: Acetone
+  reactants:
+    Petroleum:
+      amount: 1
+    Oxygen:
+      amount: 1
+  products:
+    Acetone: 2
