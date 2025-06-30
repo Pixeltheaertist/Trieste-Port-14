@@ -30,7 +30,7 @@
     sprite: Mobs/Silicon/chassis.rsi
     state: medical
   content:
-  - BorgModuleAdvancedTreatment
-  - BorgModuleDefibrillator
-  - BorgModuleTreatment
+  - BorgModuleAdvancedChemical
+  - BorgModuleRescue
+  - BorgModuleTopicals
   - BorgModuleNanotrasenWeapon
