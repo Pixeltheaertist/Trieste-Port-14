@@ -21,56 +21,11 @@
     DenaturedProteins: 1
 
 - type: reaction
-  id: BicaridineDenaturing
-  impact: Low
-  minTemp: 450
-  reactants:
-    Bicaridine:
-      amount: 1
-  effects:
-  - !type:PopupMessage
-    messages: [ "denaturing" ]
-    type: Pvs
-    visualType: SmallCaution
-  products:
-    DenaturedProteins: 1
-
-- type: reaction
-  id: DermalineDenaturing
-  impact: Low
-  minTemp: 600
-  reactants:
-    Dermaline:
-      amount: 1
-  effects:
-  - !type:PopupMessage
-    messages: [ "denaturing" ]
-    type: Pvs
-    visualType: SmallCaution
-  products:
-    DenaturedProteins: 1
-
-- type: reaction
-  id: DexalinDenaturing
-  impact: Low
-  minTemp: 500
-  reactants:
-    Dexalin:
-      amount: 1
-  effects:
-  - !type:PopupMessage
-    messages: [ "denaturing" ]
-    type: Pvs
-    visualType: SmallCaution
-  products:
-    DenaturedProteins: 1
-
-- type: reaction
   id: CryoxadoneDenaturing
   impact: Low
   minTemp: 500
   reactants:
-    DexalinPlus:
+    Cryoxadone:
       amount: 1
   effects:
   - !type:PopupMessage
@@ -131,21 +86,6 @@
   minTemp: 500
   reactants:
    Inaprovaline:
-      amount: 1
-  effects:
-  - !type:PopupMessage
-    messages: [ "denaturing" ]
-    type: Pvs
-    visualType: SmallCaution
-  products:
-    DenaturedProteins: 1
-
-- type: reaction
-  id: KelotaneDenaturing
-  impact: Low
-  minTemp: 500
-  reactants:
-    Kelotane:
       amount: 1
   effects:
   - !type:PopupMessage
@@ -291,51 +231,6 @@
     DenaturedProteins: 1
 
 - type: reaction
-  id: LacerinolDenaturing
-  impact: Low
-  minTemp: 600
-  reactants:
-    Lacerinol:
-      amount: 1
-  effects:
-  - !type:PopupMessage
-    messages: [ "denaturing" ]
-    type: Pvs
-    visualType: SmallCaution
-  products:
-    DenaturedProteins: 1
-
-- type: reaction
-  id: BruizineDenaturing
-  impact: Low
-  minTemp: 600
-  reactants:
-    Bruizine:
-      amount: 1
-  effects:
-  - !type:PopupMessage
-    messages: [ "denaturing" ]
-    type: Pvs
-    visualType: SmallCaution
-  products:
-    DenaturedProteins: 1
-
-- type: reaction
-  id: PyrazineDenaturing
-  impact: Low
-  minTemp: 590
-  reactants:
-    Pyrazine:
-      amount: 1
-  effects:
-  - !type:PopupMessage
-    messages: [ "denaturing" ]
-    type: Pvs
-    visualType: SmallCaution
-  products:
-    DenaturedProteins: 1
-
-- type: reaction
   id: InsuzineDenaturing
   impact: Low
   minTemp: 600
@@ -449,9 +344,6 @@
 #      amount: 1
 #  products:
 #    DenaturedProteins: 1
-
-
-
 
 
 # END OF DENATURING

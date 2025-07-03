@@ -1,0 +1,4 @@
+- type: guideEntry
+  id: Proteins
+  name: guide-entry-proteins
+  text: "/ServerInfo/_TP/Guidebook/Medical/Proteins.xml"

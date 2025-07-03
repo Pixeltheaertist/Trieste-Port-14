@@ -438,7 +438,7 @@
           Quantity: 18
         - ReagentId: Vitamin
           Quantity: 7
-        - ReagentId: Dexalin ##This is probably a reference to something but I don't get it
+        - ReagentId: OxygenatedSaline 
           Quantity: 6.5
         - ReagentId: Epinephrine
           Quantity: 2

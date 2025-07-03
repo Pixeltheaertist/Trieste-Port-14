@@ -380,7 +380,7 @@
         - ReagentSlimePax
         - ReagentSlimeNocturine
         - ReagentSlimeTHC
-        - ReagentSlimeBicaridine
+        # - ReagentSlimeBicaridine
         - ReagentSlimeToxin
         - ReagentSlimeNapalm
         - ReagentSlimeOmnizine
@@ -464,22 +464,22 @@
         state: alive
         color: "#808080"
 
-- type: entity
-  id: ReagentSlimeBicaridine
-  parent: ReagentSlime
-  suffix: Bicaridine
-  components:
-  - type: Bloodstream
-    bloodReagent: Bicaridine
-  - type: PointLight
-    color: "#ffaa00"
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: Mobs/Aliens/elemental.rsi
-    layers:
-      - map: [ "enum.DamageStateVisualLayers.Base" ]
-        state: alive
-        color: "#ffaa00"
+#- type: entity
+#  id: ReagentSlimeBicaridine
+#  parent: ReagentSlime
+#  suffix: Bicaridine
+#  components:
+#  - type: Bloodstream
+#    bloodReagent: Bicaridine
+#  - type: PointLight
+#    color: "#ffaa00"
+#  - type: Sprite
+#    drawdepth: Mobs
+#    sprite: Mobs/Aliens/elemental.rsi
+#    layers:
+#      - map: [ "enum.DamageStateVisualLayers.Base" ]
+#        state: alive
+#        color: "#ffaa00"
 
 - type: entity
   id: ReagentSlimeToxin

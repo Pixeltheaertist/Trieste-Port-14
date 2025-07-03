@@ -81,7 +81,8 @@
   - ChemMasterMachineCircuitboard
   - CondenserMachineCircuitBoard
   - HotplateMachineCircuitboard
-  - TP14ColdplateMachineCircuitboard # TP
+  - TP14ColdplateMachineCircuitboard # TP14
+  - IncubatorMachineCircuitboard # TP14
 
 ## Dynamic
 

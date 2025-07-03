@@ -1,0 +1,8 @@
+- type: reagent
+  id: Calcium
+  name: reagent-name-calcium
+  group: Elements
+  desc: reagent-desc-calcium
+  physicalDesc: reagent-physical-desc-grainy
+  flavor: bitter
+  color: "#ffffff"

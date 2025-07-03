@@ -249,3 +249,10 @@
         damage:
           types:
             Poison: 3
+
+- type: reagent
+  id: Lime
+  name: reagent-name-lime
+  desc: reagent-desc-lime
+  physicalDesc: reagent-physical-desc-chalky
+  color: "#ffffff"

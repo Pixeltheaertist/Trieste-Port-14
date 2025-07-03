@@ -1,0 +1,5 @@
+- type: guideEntry
+  id: Protein
+  name: guide-entry-protein
+  text: "/ServerInfo/_TP/Guidebook/ChemicalTabs/Protein.xml"
+  filterEnabled: True
