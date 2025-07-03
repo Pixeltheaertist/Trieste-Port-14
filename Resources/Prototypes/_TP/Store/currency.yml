@@ -1,0 +1,6 @@
+- type: currency
+  id: BluespaceCrystal
+  displayName: store-currency-display-bluespace-crystal
+  cash:
+    1: BluespaceCrystal1
+  canWithdraw: true

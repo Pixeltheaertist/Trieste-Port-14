@@ -10,3 +10,17 @@
       - id: TP14ClothingUniformJumpskirtDarkPerformer
       - id: ClothingHeadHatHairflower
       - id: FoodBreadBaguette
+
+- type: entity
+  name: nanotrasen encryption key box
+  parent: BoxEncryptionKeyPassenger
+  id: BoxEncryptionKeyNanotrasen
+  description: Two Nanotrasen encryption keys for the price of one. What a deal!!
+  components:
+  - type: Item
+    size: Normal
+  - type: StorageFill
+    contents:
+      - id: TP14EncryptionKeyNanotrasen
+        amount: 2
+  - type: Storage
