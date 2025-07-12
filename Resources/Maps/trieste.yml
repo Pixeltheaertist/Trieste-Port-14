@@ -44195,7 +44195,7 @@ entities:
 
         3.4 Are any of the departments completely destroyed and/or non-functional?
 
-        \[  ] Sci     \[  ] Engi  \[  ] Service         \[  ] Cargo        
+        \[  ] Sci     \[  ] Engi  \[  ] Service         \[  ] Cargo
 
         \[  ] Med  \[  ] Sec   \[  ] Command    \[  ] The Bar
 
@@ -44207,13 +44207,13 @@ entities:
 
         4.1 Please describe a brief and descriptive account of the incident:
 
-        [color=#002AAF]Command Member broke into bridge and proceeded to take the axe from the case while the overseer was distracted. 
+        [color=#002AAF]Command Member broke into bridge and proceeded to take the axe from the case while the overseer was distracted.
 
-        Member claimed to "not have taken it", however P.A.I.L surveillance logs show them walking into the bridge around the time and date provided. 
+        Member claimed to "not have taken it", however P.A.I.L surveillance logs show them walking into the bridge around the time and date provided.
 
-        A state of emergency was immediately declared as that was a beloved fire axe, which had won the Overseer five awards in bravery and justice. 
+        A state of emergency was immediately declared as that was a beloved fire axe, which had won the Overseer five awards in bravery and justice.
 
-        A SolGov fax was received upon hearing this, issuing the immediate execution of the Command Member. Shortly after the department was raided by the Trieste Security Team, however the Command Member was nowhere to be found. 
+        A SolGov fax was received upon hearing this, issuing the immediate execution of the Command Member. Shortly after the department was raided by the Trieste Security Team, however the Command Member was nowhere to be found.
 
         This situation is still under investigation.
 
@@ -44497,7 +44497,7 @@ entities:
 
         3.4 Are any of the departments completely destroyed and/or non-functional?
 
-        \[  ] Sci     \[  ] Engi  \[  ] Service         \[  ] Cargo        
+        \[  ] Sci     \[  ] Engi  \[  ] Service         \[  ] Cargo
 
         \[  ] Med  \[  ] Sec   \[  ] Command   \[  ] The Bar
 
@@ -44507,7 +44507,7 @@ entities:
         [head=3][head=2]Incident Summary[/head][/head]
 
 
-        4.1 Please describe the incident: 
+        4.1 Please describe the incident:
 
         [color=#red]  [/color]
 
@@ -44516,14 +44516,14 @@ entities:
         [italic][bold]You may sign your name here if you would like to be followed up with directly in regards to the incident. If you would rather remain anonymous, you may do so.[/bold][/italic]
 
 
-        Officer on Duty: 
+        Officer on Duty:
 
         [color=red]  [/color]
 
         ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
 
-        Incident Reporter: 
+        Incident Reporter:
 
         [color=red]  [/color]
 
@@ -44791,7 +44791,7 @@ entities:
 
         \[  ] Unknown (not responding to revival attempts)
 
-        \[  ] Other: [color=red]  [/color]     
+        \[  ] Other: [color=red]  [/color]
                ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
   - uid: 7942
     components:
@@ -44863,7 +44863,7 @@ entities:
 
         [head=3][head=2]Legality[/head][/head]
 
-        If illegal items are found to be in the possession of the searched individual they will be confiscated and the individual may be detained at the officers discretion. 
+        If illegal items are found to be in the possession of the searched individual they will be confiscated and the individual may be detained at the officers discretion.
 
 
         [bold]Legal items must be returned after a search.[/bold]

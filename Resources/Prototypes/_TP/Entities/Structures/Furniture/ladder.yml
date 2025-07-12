@@ -1,32 +1,36 @@
 - type: entity
-  id: TP14LadderDownBase
   parent: BaseStructure
-  name: Ladder down
+  id: TP14LadderBase
+  abstract: true
   description: WEEEEE.
   components:
-  - type: Transform
-  - type: Climbable
-  - type: Clickable
-  - type: Ladderdown
-  - type: Sprite
-    sprite: Structures/Furniture/ladder.rsi
-    state: down
-  - type: Anchorable
-    delay: 99999
+    - type: Transform
+    - type: Climbable
+    - type: Clickable
 
 - type: entity
-  id: TP14LadderUpBase
-  parent: BaseStructure
-  name: Ladder up
-  description: WEEEEE.
+  parent: TP14LadderBase
+  id: TP14LadderDown
+  name: Ladder
+  suffix: down
   components:
-  - type: Transform
-  - type: Climbable
-  - type: Clickable
-  - type: Ladderup
-  - type: Sprite
-    sprite: Structures/Furniture/ladder.rsi
-    state: up
-  - type: Anchorable
-    delay: 99999
+    - type: Ladder
+      thisSide: down
+      targetSide: up
+    - type: Sprite
+      sprite: _TP/Structures/Furniture/ladder.rsi
+      state: down
+
+- type: entity
+  parent: TP14LadderBase
+  id: TP14LadderUp
+  name: Ladder
+  suffix: up
+  components:
+    - type: Ladder
+      thisSide: up
+      targetSide: down
+    - type: Sprite
+      sprite: _TP/Structures/Furniture/ladder.rsi
+      state: up
 

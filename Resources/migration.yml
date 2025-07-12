@@ -385,8 +385,8 @@ PiezoHarpoon: TP14PiezoHarpoon
 WeaponBlaster: TP14WeaponBlaster
 WeaponNtBlaster: TP14WeaponNtBlaster
 WeaponEnergyCarbine: TP14WeaponEnergyCarbine
-LadderDownBase: TP14LadderDownBase
-LadderUpBase: TP14LadderUpBase
+LadderDownBase: TP14LadderDown
+LadderUpBase: TP14LadderUp
 TelecomRelay: TP14TelecomRelay
 EncryptionKeyNanotrasen: TP14EncryptionKeyNanotrasen
 WeaponTrident: TP14WeaponTrident
@@ -697,3 +697,7 @@ SuitStorageBasic: SuitStorageEVA
 
 # 2025-06-07
 BaseOilDrum: TP14BaseOilDrum
+
+# 2025-07-12
+TP14LadderDownBase: TP14LadderDown
+TP14LadderUpBase: TP14LadderUp
