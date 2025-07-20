@@ -580,35 +580,36 @@
   categories:
   - UplinkNtDeception
 
-- type: listing
-  id: UplinkAgentIDCardNT
-  name: uplink-agent-id-card-name
-  description: uplink-agent-id-card-desc
-  productEntity: AgentIDCard
-  cost:
-    BluespaceCrystal: 3
-  categories:
-  - UplinkNtDeception
+# a couple of the following items are just made again for some reason? it prevents me from running the local host so ill probably just hashtag them out and hope nothing goes wrong.
+# - type: listing
+#   id: UplinkAgentIDCardNT
+#   name: uplink-agent-id-card-name
+#   description: uplink-agent-id-card-desc
+#   productEntity: AgentIDCard
+#   cost:
+#     BluespaceCrystal: 3
+#   categories:
+#   - UplinkNtDeception
 
-- type: listing
-  id: UplinkStealthBoxNT
-  name: uplink-stealth-box-name
-  description: uplink-stealth-box-desc
-  productEntity: StealthBox
-  cost:
-    BluespaceCrystal: 5
-  categories:
-  - UplinkNtDeception
+# - type: listing
+#   id: UplinkStealthBoxNT
+#   name: uplink-stealth-box-name
+#   description: uplink-stealth-box-desc
+#   productEntity: StealthBox
+#   cost:
+#     BluespaceCrystal: 5
+#   categories:
+#   - UplinkNtDeception
 
-- type: listing
-  id: UplinkChameleonProjectorNT
-  name: uplink-chameleon-projector-name
-  description: uplink-chameleon-projector-desc
-  productEntity: ChameleonProjector
-  cost:
-    BluespaceCrystal: 7
-  categories:
-  - UplinkNtDeception
+# - type: listing
+#   id: UplinkChameleonProjectorNT
+#   name: uplink-chameleon-projector-name
+#   description: uplink-chameleon-projector-desc
+#   productEntity: ChameleonProjector
+#   cost:
+#     BluespaceCrystal: 7
+#   categories:
+#   - UplinkNtDeception
 
 - type: listing
   id: UplinkEncryptionKeyNanotrasen
