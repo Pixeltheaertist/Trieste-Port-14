@@ -7,16 +7,16 @@ namespace Content.Server._TP.Aberrant.EntitySystems;
 /// <summary>
 /// This handles...
 /// </summary>
-public sealed class AberrantFeelingSystem : EntitySystem
+public sealed class AberrantEffectFeelingSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
-        SubscribeLocalEvent<AberrantFeelingComponent, AberrantTriggerEvent>(OnActivate);
+        SubscribeLocalEvent<AberrantEffectFeelingComponent, AberrantTriggerEvent>(OnActivate);
     }
 
-    private void OnActivate(EntityUid uid, AberrantFeelingComponent component, AberrantTriggerEvent args)
+    private void OnActivate(EntityUid uid, AberrantEffectFeelingComponent component, AberrantTriggerEvent args)
     {
 
     }
