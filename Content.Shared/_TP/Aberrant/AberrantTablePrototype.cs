@@ -1,5 +1,6 @@
 ﻿using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
+using Content.Shared.Random;
 
 namespace Content.Shared._TP.Aberrant;
 
@@ -9,11 +10,15 @@ namespace Content.Shared._TP.Aberrant;
 /// </summary>
 [Prototype("aberrantTable")]
 [DataDefinition]
-public sealed partial class AberrantTablePrototype : IPrototype
+public sealed partial class AberrantTablePrototype : IWeightedRandomPrototype
 {
     /// <inheritdoc/>
     [IdDataField]
     public string ID { get; private set;} = default!;
+
+    [DataField(customTypeSerializer: typeof(PrototypeIdDictionarySerializer<float, AberrantEffectPrototype>))]
+
+    public Dictionary<string, float> Weights { get; private set; } = new();
 
     //[DataField("effects")]
     //public Dictionary<AberrantEffect, float> Effects= new();

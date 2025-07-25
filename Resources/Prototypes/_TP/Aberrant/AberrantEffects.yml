@@ -3,4 +3,35 @@
   effects:
   - type: aberrantEffect
     components:
-    - !type: AberrantFeeling
+    - type: AberrantEffectFeeling
+
+- type: aberrantEffect
+  id: AberrantEffectForceSpeech
+
+
+- type: aberrantEffect
+  id: AberrantEffectShudder
+
+
+- type: aberrantEffect
+  id: aberrantEffectAnomInfect
+
+
+- type: aberrantEffect
+  id: aberrantEffectDrifterSpawn
+
+
+- type: aberrantEffect
+  id: AberrantEffectFishSpawn
+
+
+- type: aberrantEffect
+  id: AberrantEffectSeaGrassSpawn
+
+
+- type: aberrantEffect
+  id: AberrantEffectFlood
+
+
+- type: aberrantEffect
+

@@ -1,0 +1,14 @@
+- type: AberrantTablePrototype
+  id: aberrantEffectsLow
+  weights:
+    AberrantEffectHallucination: 1
+
+- type: AberrantTablePrototype
+  id: aberrantEffectsMedium
+  weights:
+    AberrantEffectHallucination: 1
+
+- type: AberrantTablePrototype
+  id: aberrantEffectsHigh
+  weights:
+    AberrantEffectHallucination: 1
