@@ -32,6 +32,8 @@ public sealed class AberrantSystem : EntitySystem
             if (aberrant.AberrantDamage >= aberrant.Thresholds[2])
             {
                 //run highest tier event
+                // select event
+                RaiseNetworkEvent();
             }
             else if (aberrant.AberrantDamage >= aberrant.Thresholds[1])
             {
