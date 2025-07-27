@@ -6,5 +6,6 @@
 [RegisterComponent]
 public sealed partial class AberrantDamageOnHitComponent : Component
 {
-    
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float Amount = 10;
 }

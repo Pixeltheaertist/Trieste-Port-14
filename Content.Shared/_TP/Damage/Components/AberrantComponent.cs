@@ -1,7 +1,7 @@
 ﻿namespace Content.Shared._TP.Damage.Components;
 
 /// <summary>
-/// This is used for...
+/// Component for entities that take aberrant damage
 /// </summary>
 [RegisterComponent]
 public sealed partial class AberrantComponent : Component

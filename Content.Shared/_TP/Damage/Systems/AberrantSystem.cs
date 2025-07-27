@@ -14,6 +14,7 @@ public sealed class AberrantSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<AberrantDamageOnHitComponent, MeleeHitEvent>(OnMeleeHit);
+        //SubscribeLocalEvent<>();
     }
     // do something on update
     public override void Update(float frameTime)
@@ -45,6 +46,24 @@ public sealed class AberrantSystem : EntitySystem
 
     private void OnMeleeHit(EntityUid uid, AberrantDamageOnHitComponent component, MeleeHitEvent args)
     {
+        // get the entity that was hit
+        var targets = args.HitEntities;
+        foreach (var entity in targets)
+        {
+            TryChangeAberrant(entity, component.Amount);
+        }
+    }
 
+    private void ChangeAberrant(AberrantComponent component, float amount)
+    {
+        component.AberrantDamage += amount;
+    }
+
+    public void TryChangeAberrant(EntityUid uid, float amount)
+    {
+        if(EntityManager.TryGetComponent(uid, out AberrantComponent? aberrant))
+        {
+            ChangeAberrant(aberrant, amount);
+        }
     }
 }
