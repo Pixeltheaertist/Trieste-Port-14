@@ -23,7 +23,7 @@ namespace Content.Server._TP.EntityEffects.Effects
 
         public override void Effect(EntityEffectBaseArgs args)
         {
-            args.EntityManager.System<AberrantSystem>().TryChangeAberrant(args.TargetEntity, AberrantDamage);
+            args.EntityManager.System<AberrantDamageSystem>().TryChangeAberrant(args.TargetEntity, AberrantDamage);
         }
     }
 }

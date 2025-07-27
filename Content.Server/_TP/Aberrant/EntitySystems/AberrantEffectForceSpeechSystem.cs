@@ -25,22 +25,19 @@ public sealed class AberrantEffectForceSpeechSystem : EntitySystem
 
     private void OnActivate(EntityUid uid, AberrantEffectForceSpeechComponent component, AberrantTriggerEvent args)
     {
-        if (args.Target == null)
-            return;
         //select thing to say
         string speech = _random.Pick(_prototypeManager.Index(component.SpeechDataset));
-        if (component.type == "Speech")
+        switch (component.type)
         {
-            _chatSystem.TrySendInGameICMessage(uid, speech, InGameICChatType.Whisper, false, false);
-        }
-        else if (component.type == "Emote")
-        {
-            _chatSystem.TryEmoteWithChat(args.Target.Value, component.SpeechDataset, ChatTransmitRange.Normal);
-        }
-        else
-        {
-            //unknown type, do nothing
-            return;
+            case "Speech":
+                _chatSystem.TrySendInGameICMessage(uid, speech, InGameICChatType.Whisper, false, false);
+                break;
+            case "Emote":
+                _chatSystem.TryEmoteWithChat(uid, speech, ChatTransmitRange.Normal);
+                break;
+            default:
+                //unknown type, do nothing
+                return;
         }
         RemComp<AberrantEffectForceSpeechComponent>(uid);
     }
