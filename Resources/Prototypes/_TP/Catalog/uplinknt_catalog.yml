@@ -460,7 +460,7 @@
   id: UplinkAccessBreakerNT
   name: uplink-access-breaker-name
   description: uplink-access-breaker-desc
-  productEntity: AccessBreaker
+  productEntity: NTAccessBreaker
   cost:
     BluespaceCrystal: 4
   categories:
