@@ -142,4 +142,3 @@ public sealed class InGasSystem : EntitySystem
             }
         }
 }
-

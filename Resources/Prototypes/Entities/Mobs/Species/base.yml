@@ -292,6 +292,7 @@
         Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing
+  - type: Aberrant
 
 - type: entity
   save: false
