@@ -8,12 +8,12 @@
     enabled: true
     radius: 100
     softness: 1000
-  - type: SoundOnTrigger
-    sound: /Audio/Effects/tesla_collapse.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+    path: /Audio/Effects/tesla_collapse.ogg
   - type: TriggerOnSpawn
   - type: TimedDespawn
     lifetime: 0.2
-
 
 - type: entity
   id: Storm
@@ -26,8 +26,9 @@
     radius: 300
     softness: -100
     color: "#CBC3E3"
-  - type: SoundOnTrigger
-    sound: /Audio/Effects/tesla_collapse.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Effects/tesla_collapse.ogg
   - type: TriggerOnSpawn
   - type: TimedDespawn
     lifetime: 0.2

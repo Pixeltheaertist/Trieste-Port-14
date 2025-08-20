@@ -46,6 +46,6 @@
       visible: false
       map: [ "enum.WeldableLayers.BaseWelded" ]
   - type: EntityStorageVisuals
-    stateBaseClosed: h2o # Temporary
+    stateBaseClosed: h2o
     stateDoorOpen: h2o_open
     stateDoorClosed: h2o_door

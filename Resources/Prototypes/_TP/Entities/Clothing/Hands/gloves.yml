@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingHandsBase, BaseGrandTheftContraband]
+  parent: [ClothingHandsBase, BaseNanotrasenContraband]
   id: ClothingHandsKnuckleDustersNT
   name: Nanotrasen knuckle dusters
   description: "24karat gold infused with plasteel and branded with the Nanotrasen logo. Used by Quartermasters and NT agents alike"

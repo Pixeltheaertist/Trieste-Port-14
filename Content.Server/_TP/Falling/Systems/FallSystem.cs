@@ -191,7 +191,7 @@ namespace Content.Server._TP.Falling.Systems
             // Stuns the fall-ee for five seconds
             var stunTime = TimeSpan.FromSeconds(5);
             _stun.TryKnockdown(owner, stunTime, refresh: true);
-            _stun.TryStun(owner, stunTime, refresh: true);
+            _stun.TryAddStunDuration(owner, stunTime);
 
             // Defines the damage being dealt
             var damage = new DamageSpecifier

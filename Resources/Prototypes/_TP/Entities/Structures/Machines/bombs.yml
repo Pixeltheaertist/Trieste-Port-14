@@ -39,6 +39,7 @@
     canCreateVacuum: false
   - type: Defusable
     disposable: false
-  - type: OnUseTimerTrigger
+  - type: TimerTrigger
     delay: 110
-    delayOptions: [110, 240, 300, 600, 900]
+    amount: !type:RangeNumberSelector
+      range: 100, 900

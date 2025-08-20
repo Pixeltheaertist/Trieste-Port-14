@@ -1,8 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Content.Server.GameTicking;
-using Content.Server.GameTicking.Rules;
-using Content.Server.GameTicking.Rules.Components;
+using Content.Server.Codewords;
 using Content.Server.Traitor.Components;
 using Content.Shared.Paper;
 using Robust.Shared.Random;
@@ -12,10 +10,9 @@ namespace Content.Server.Traitor.Systems;
 
 public sealed class TraitorCodePaperSystem : EntitySystem
 {
-    [Dependency] private readonly GameTicker _gameTicker = default!;
-    [Dependency] private readonly TraitorRuleSystem _traitorRuleSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly PaperSystem _paper = default!;
+    [Dependency] private readonly CodewordSystem _codewordSystem = default!;
 
     public override void Initialize()
     {
@@ -62,48 +59,17 @@ public sealed class TraitorCodePaperSystem : EntitySystem
     private bool TryGetTraitorCode([NotNullWhen(true)] out string? traitorCode, TraitorCodePaperComponent codePaperComp)
     {
         traitorCode = null;
+
         var codesMessage = new FormattedMessage();
-        List<string> codeList = new();
+        var codeList = _codewordSystem.GetCodewords(codePaperComp.CodewordFaction).ToList();
 
-        // First, we check if the Traitor gamerule has been added.
-        // If it has, get the traitor component and then check if it's NT or Syndicate.
-        // Then we add them to the codelist range.
-        if (_gameTicker.IsGameRuleAdded<TraitorRuleComponent>())
-        {
-            var rules = _gameTicker.GetAddedGameRules();
-            foreach (var ruleEnt in rules)
-            {
-                if (TryComp(ruleEnt, out TraitorRuleComponent? traitorComp))
-                {
-                    var codewords = codePaperComp.CodewordFaction == "NanoTrasen"
-                        ? traitorComp.NanoTrasenCodewords
-                        : traitorComp.SyndicateCodewords;
-
-                    codeList.AddRange(codewords.ToList());
-                }
-            }
-        }
-
-        // Now we check if the codelist is empty.
-        // If it is, we check if we can add fake codewords for the faction and do so.
-        // Otherwise, we set it to none.
         if (codeList.Count == 0)
         {
-            if (codePaperComp.FakeCodewords)
-            {
-                codeList = _traitorRuleSystem.GenerateTraitorCodewords(
-                        new TraitorRuleComponent(),
-                        codePaperComp.CodewordFaction)
-                    .ToList();
-            }
-            else
-            {
-                codeList = [Loc.GetString("traitor-codes-none")];
-            }
+            codeList = codePaperComp.FakeCodewords
+                ? _codewordSystem.GenerateCodewords(codePaperComp.CodewordGenerator).ToList()
+                : [Loc.GetString("traitor-codes-none")];
         }
 
-        // Now we shuffle the codelist to be in a random order.
-        // Then we count the codewords. Every code is a new line on the paper.
         _random.Shuffle(codeList);
 
         var i = 0;

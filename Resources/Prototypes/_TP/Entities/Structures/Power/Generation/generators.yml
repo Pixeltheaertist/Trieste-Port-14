@@ -1,4 +1,3 @@
-
 - type: entity
   parent: GeneratorRTG
   id: TP14TheArtifact
@@ -157,7 +156,6 @@
         layer:
         - WallLayer
 
-
 - type: entity
   parent: BaseGenerator
   id: GeneratoradvRTG
@@ -165,45 +163,45 @@
   description: An advanced radioisotope generator specially made by Triese's engineers for long-term power supply.
   suffix: 15kW
   components:
-    - type: PowerSupplier
-      supplyRate: 15000
-    - type: Sprite
-      sprite: _TP/Structures/Power/advrtg.rsi
-      state: advrtg
-    - type: PowerMonitoringDevice
-      sprite: _TP/Structures/Power/advrtg.rsi
-      state: advrtg
-      # its stronger so logically itd be louder?
-    - type: AmbientSound
-      range: 10
-      sound: 
-       path: /Audio/Ambience/Objects/buzzing.ogg
-    - type: GuideHelp
-      guides:
-      - RTG
-      - Power
-    - type: Destructible
-      thresholds: 
-        - trigger:
-           !type:DamageTrigger
-           damage: 800
-          behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-        - trigger:
-           !type:DamageTrigger
-           damage: 500
-          behaviors:
-          - !type:PlaySoundBehavior 
-            sound:
-              collection: MetalBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              GeneratoradvRTGDamaged:
-                min: 1
-                max: 1
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
+  - type: PowerSupplier
+    supplyRate: 15000
+  - type: Sprite
+    sprite: _TP/Structures/Power/advrtg.rsi
+    state: advrtg
+  - type: PowerMonitoringDevice
+    sprite: _TP/Structures/Power/advrtg.rsi
+    state: advrtg
+    # its stronger so logically itd be louder?
+  - type: AmbientSound
+    range: 10
+    sound:
+      path: /Audio/Ambience/Objects/buzzing.ogg
+  - type: GuideHelp
+    guides:
+    - RTG
+    - Power
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 800
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          GeneratoradvRTGDamaged:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   parent: GeneratoradvRTG
@@ -212,43 +210,43 @@
   description: An advanced radioisotope generator specially made by Triese's engineers for long-term power supply. This one has damaged shielding.
   suffix: 15kW
   components:
-    - type: PowerSupplier
-      supplyRate: 15000
-    - type: Sprite
-      sprite: _TP/Structures/Power/advrtg.rsi
-      layers: 
-        - state: advrtg_damaged
-        - state: rtg_glow
-    - type: PowerMonitoringDevice
-      sprite: _TP/Structures/Power/advrtg.rsi
-      state: advrtg_damaged
-    - type: RadiationSource
-      intensity: 3
-    - type: Destructible
-      thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 150
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
-            damage: 100
-          behaviors:
-            - !type:PlaySoundBehavior 
-              sound:
-                collection: MetalBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 1
-                  max: 5
-                SheetUranium1:
-                  min: 1
-                  max: 5
-                IngotSilver1:
-                  min: 1
-                  max: 5
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+  - type: PowerSupplier
+    supplyRate: 15000
+  - type: Sprite
+    sprite: _TP/Structures/Power/advrtg.rsi
+    layers:
+    - state: advrtg_damaged
+    - state: rtg_glow
+  - type: PowerMonitoringDevice
+    sprite: _TP/Structures/Power/advrtg.rsi
+    state: advrtg_damaged
+  - type: RadiationSource
+    intensity: 3
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 5
+          SheetUranium1:
+            min: 1
+            max: 5
+          IngotSilver1:
+            min: 1
+            max: 5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

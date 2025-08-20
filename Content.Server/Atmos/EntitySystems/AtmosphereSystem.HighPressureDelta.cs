@@ -7,6 +7,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
@@ -14,13 +15,16 @@ namespace Content.Server.Atmos.EntitySystems
 {
     public sealed partial class AtmosphereSystem
     {
+        private static readonly ProtoId<SoundCollectionPrototype> DefaultSpaceWindSounds = "SpaceWind";
+
         private const int SpaceWindSoundCooldownCycles = 1000;
 
         private int _spaceWindSoundCooldown = 0;
 
         [ViewVariables(VVAccess.ReadWrite)]
-        public string? SpaceWindSound { get; private set; } = "/Audio/Effects/space_wind.ogg";
+        public SoundSpecifier? SpaceWindSound { get; private set; } = new SoundCollectionSpecifier(DefaultSpaceWindSounds, AudioParams.Default.WithVariation(0.125f));
         public string? WaterMoveSound { get; private set; } = "/Audio/Effects/water_move.ogg";
+
 
         private readonly HashSet<Entity<MovedByPressureComponent>> _activePressures = new(8);
 
@@ -128,7 +132,7 @@ namespace Content.Server.Atmos.EntitySystems
             // Don't play the space wind sound on tiles that are on fire...
             if (tile.PressureDifference > 15 && !tile.Hotspot.Valid)
             {
-                if (_spaceWindSoundCooldown == 0 && !string.IsNullOrEmpty(SpaceWindSound) && !isWaterPresent &&
+                if (_spaceWindSoundCooldown == 0 && SpaceWindSound == null && !isWaterPresent &&
                     !isWaterTooMuch)
                 {
                     var coordinates = _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.GridIndices);
@@ -229,7 +233,7 @@ namespace Content.Server.Atmos.EntitySystems
             }
             else
             {
-                Log.Error($"Water is not involved in this, PANIC!");
+                Log.Error("Water is not involved in this, PANIC!");
             }
         }
 

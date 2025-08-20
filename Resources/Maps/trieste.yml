@@ -2797,7 +2797,7 @@ entities:
     components:
     - type: Transform
       parent: 7404
-    - type: InstantAction
+    - type: Action
       originalIconColor: '#FFFFFFFF'
       container: 7404
 - proto: ActionToggleJetpack
@@ -2806,7 +2806,7 @@ entities:
     components:
     - type: Transform
       parent: 7404
-    - type: InstantAction
+    - type: Action
       originalIconColor: '#FFFFFFFF'
       container: 7404
 - proto: ActionToggleLight
@@ -2815,14 +2815,14 @@ entities:
     components:
     - type: Transform
       parent: 400
-    - type: InstantAction
+    - type: Action
       originalIconColor: '#FFFFFFFF'
       container: 400
   - uid: 8321
     components:
     - type: Transform
       parent: 8320
-    - type: InstantAction
+    - type: Action
       originalIconColor: '#FFFFFFFF'
       container: 8320
 - proto: AirAlarm

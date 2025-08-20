@@ -1,0 +1,6 @@
+- type: codewordGenerator
+  id: NanoTrasenTraitorCodewordGenerator
+  words:
+  - Adjectives
+  - Verbs
+  amount: 4

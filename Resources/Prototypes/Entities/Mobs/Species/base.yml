@@ -85,6 +85,7 @@
     horizontalRotation: 90
   - type: HumanoidAppearance
     species: Human
+  - type: TypingIndicator
   - type: SlowOnDamage
     speedModifierThresholds:
       60: 0.7
@@ -123,24 +124,18 @@
       - !type:WashCreamPieReaction
   - type: StatusEffects
     allowed:
-    - Stun
-    - KnockedDown
-    - SlowedDown
     - Stutter
-    - SeeingRainbows
     - Electrocution
     - Drunk
     - SlurredSpeech
     - RatvarianLanguage
     - PressureImmunity
     - Muted
-    - ForcedSleep
     - TemporaryBlindness
     - Pacified
     - StaminaModifier
     - Flashed
     - RadiationProtection
-    - Drowsiness
     - Adrenaline
   - type: Body
     prototype: Human
@@ -172,6 +167,7 @@
   - type: SleepEmitSound
   - type: SSDIndicator
   - type: StandingState
+  - type: Crawler
   - type: Dna
   - type: MindContainer
     showExamineInfo: true
@@ -292,6 +288,7 @@
         Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing
+  - type: StunVisuals
 
 - type: entity
   save: false

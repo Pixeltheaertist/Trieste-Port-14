@@ -33,7 +33,7 @@
   - !type:SpeciesLoadoutEffect
     species:
     - Vox
-    - JellidPerson
+    - JellidPerson # TP
 
 # Basic
 - type: loadout

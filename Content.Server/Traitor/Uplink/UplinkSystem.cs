@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server.Codewords;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Store.Systems;
 using Content.Server.StoreDiscount.Systems;
@@ -23,12 +24,12 @@ public sealed class UplinkSystem : EntitySystem
     [Dependency] private readonly SharedSubdermalImplantSystem _subdermalImplant = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
 
-    [ValidatePrototypeId<CurrencyPrototype>]
-    public const string TelecrystalCurrencyPrototype = "Telecrystal";
-    private const string FallbackUplinkImplant = "UplinkImplant";
-    private const string FallbackUplinkCatalog = "UplinkUplinkImplanter";
-    // NT specific
-    private const string FallbackUplinkImplantNT = "UplinkImplantNT";
+    public static readonly ProtoId<CurrencyPrototype> TelecrystalCurrencyPrototype = "Telecrystal";
+    private static readonly EntProtoId FallbackUplinkImplant = "UplinkImplant";
+    private static readonly ProtoId<ListingPrototype> FallbackUplinkCatalog = "UplinkUplinkImplanter";
+
+    // TP specific
+    private static readonly EntProtoId FallbackUplinkImplantNT = "UplinkImplantNT";
 
     /// <summary>
     /// Adds an uplink to the target
@@ -92,14 +93,6 @@ public sealed class UplinkSystem : EntitySystem
     /// </summary>
     private bool ImplantUplink(EntityUid user, FixedPoint2 balance, bool giveDiscounts)
     {
-        // This TryComp and ImplantProto are specific to TP14.
-        if (!TryComp<TraitorRuleComponent>(user, out var traitorRule))
-        {
-            return false;
-        }
-
-        var implantProto = traitorRule.GiveUplinkNT ? FallbackUplinkImplantNT : FallbackUplinkImplant;
-
         if (!_proto.TryIndex<ListingPrototype>(FallbackUplinkCatalog, out var catalog))
             return false;
 
@@ -110,6 +103,16 @@ public sealed class UplinkSystem : EntitySystem
             balance = 0;
         else
             balance = balance - cost;
+
+        // This TryComp and ImplantProto are specific to TP14.
+        if (!TryComp<TraitorRuleComponent>(user, out var traitorRule))
+        {
+            return false;
+        }
+
+        var implantProto = traitorRule.GiveUplinkNT
+            ? FallbackUplinkImplantNT
+            : FallbackUplinkImplant;
 
         var implant = _subdermalImplant.AddImplant(user, implantProto);
 

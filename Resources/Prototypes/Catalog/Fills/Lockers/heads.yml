@@ -7,6 +7,9 @@
     - id: CargoBountyComputerCircuitboard
     - id: CargoRequestComputerCircuitboard
     - id: CargoSaleComputerCircuitboard
+    - id: CargoShuttleConsoleCircuitboard
+    - id: SalvageMagnetMachineCircuitboard
+    - id: SalvageJobBoardComputerCircuitboard
     - id: CigPackGreen
       prob: 0.50
     - id: ClothingHeadsetAltCargo
@@ -40,7 +43,7 @@
     - id: ClothingHeadsetAltCommand
     - id: ClothingOuterArmorCaptainCarapace
     - id: CommsComputerCircuitboard
-    - id: DoorRemoteCommand
+    - id: DoorRemoteCustom
     - id: MedalCase
     - id: NukeDisk
     - id: PinpointerNuclear
