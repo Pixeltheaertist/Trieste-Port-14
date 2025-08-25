@@ -58,9 +58,10 @@ namespace Content.Server.Preferences.Managers
 
             // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
             if (message.Profile == null)
-                _sawmill.Error($"User {userId} sent a {nameof(MsgUpdateCharacter)} with a null profile in slot {message.Slot}.");
+                _sawmill.Error(
+                    $"User {userId} sent a {nameof(MsgUpdateCharacter)} with a null profile in slot {message.Slot}.");
             else
-                SetProfile(userId, message.Slot, message.Profile).Wait();
+                SetProfile(userId, message.Slot, message.Profile);
         }
 
         public async Task SetProfile(NetUserId userId, int slot, ICharacterProfile profile)
@@ -235,7 +236,7 @@ namespace Content.Server.Preferences.Managers
             prefsData.Prefs = new PlayerPreferences(profiles, curPrefs.AdminOOCColor, curPrefs.ConstructionFavorites, curPrefs.JobPriorities);
 
             if (ShouldStorePrefs(session.Channel.AuthType))
-                _db.SaveCharacterSlotAsync(userId, profile, slot).Wait();
+                _db.SaveCharacterSlotAsync(userId, profile, slot);
         }
 
         /// <summary>
