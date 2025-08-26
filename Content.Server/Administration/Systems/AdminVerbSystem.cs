@@ -17,10 +17,12 @@ using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
+using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Mind.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Popups;
+using Content.Shared.Preferences;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Verbs;
@@ -36,6 +38,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Toolshed;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Server.Preferences.Managers;
 using static Content.Shared.Configurable.ConfigurationComponent;
 
 namespace Content.Server.Administration.Systems
@@ -67,6 +70,8 @@ namespace Content.Server.Administration.Systems
         [Dependency] private readonly AdminFrozenSystem _freeze = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly SiliconLawSystem _siliconLawSystem = default!;
+        [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoidAppearance = default!;
+        [Dependency] private readonly IServerPreferencesManager _prefsManager = default!;
 
         private readonly Dictionary<ICommonSession, List<EditSolutionsEui>> _openSolutionUis = new();
 
@@ -88,7 +93,7 @@ namespace Content.Server.Administration.Systems
 
         private void AddAdminVerbs(GetVerbsEvent<Verb> args)
         {
-            if (!EntityManager.TryGetComponent(args.User, out ActorComponent? actor))
+            if (!TryComp(args.User, out ActorComponent? actor))
                 return;
 
             var player = actor.PlayerSession;
@@ -131,30 +136,36 @@ namespace Content.Server.Administration.Systems
                     args.Verbs.Add(prayerVerb);
 
                     // Spawn - Like respawn but on the spot.
-                    args.Verbs.Add(new Verb()
+                    var pref = _prefsManager.GetPreferences(targetActor.PlayerSession.UserId);
+                    foreach (var (slot, profile) in pref.Characters)
                     {
-                        Text = Loc.GetString("admin-player-actions-spawn"),
-                        Category = VerbCategory.Admin,
-                        Act = () =>
+                        if (profile is not HumanoidCharacterProfile humanoid)
+                            continue;
+
+                        args.Verbs.Add(new Verb()
                         {
-                            if (!_transformSystem.TryGetMapOrGridCoordinates(args.Target, out var coords))
+                            Text = $"{slot}. {profile.Name}",
+                            Category = VerbCategory.Spawn,
+                            Act = () =>
                             {
-                                _popup.PopupEntity(Loc.GetString("admin-player-spawn-failed"), args.User, args.User);
-                                return;
-                            }
+                                if (!_transformSystem.TryGetMapOrGridCoordinates(args.Target, out var coords))
+                                {
+                                    _popup.PopupEntity(Loc.GetString("admin-player-spawn-failed"), args.User, args.User);
+                                    return;
+                                }
 
-                            var stationUid = _stations.GetOwningStation(args.Target);
+                                var stationUid = _stations.GetOwningStation(args.Target);
 
-                            var profile = _gameTicker.GetPlayerProfile(targetActor.PlayerSession);
-                            var mobUid = _spawning.SpawnPlayerMob(coords.Value, null, profile, stationUid);
+                                var mobUid = _spawning.SpawnPlayerMob(coords.Value, null, humanoid, stationUid);
 
-                            if (_mindSystem.TryGetMind(args.Target, out var mindId, out var mindComp))
-                                _mindSystem.TransferTo(mindId, mobUid, true, mind: mindComp);
+                                if (_mindSystem.TryGetMind(args.Target, out var mindId, out var mindComp))
+                                    _mindSystem.TransferTo(mindId, mobUid, true, mind: mindComp);
 
-                        },
-                        ConfirmationPopup = true,
-                        Impact = LogImpact.High,
-                    });
+                            },
+                            ConfirmationPopup = true,
+                            Impact = LogImpact.High,
+                        });
+                    }
 
                     // Clone - Spawn but without the mind transfer, also spawns at the user's coordinates not the target's
                     args.Verbs.Add(new Verb()
@@ -170,8 +181,7 @@ namespace Content.Server.Administration.Systems
                             }
 
                             var stationUid = _stations.GetOwningStation(args.Target);
-
-                            var profile = _gameTicker.GetPlayerProfile(targetActor.PlayerSession);
+                            var profile = _humanoidAppearance.GetBaseProfile(args.Target);
                             _spawning.SpawnPlayerMob(coords.Value, null, profile, stationUid);
                         },
                         ConfirmationPopup = true,
@@ -210,7 +220,8 @@ namespace Content.Server.Administration.Systems
                     args.Verbs.Add(new Verb
                     {
                         Text = Loc.GetString("admin-player-actions-respawn"),
-                        Category = VerbCategory.Admin,
+                        Priority = -1,
+                        Category = VerbCategory.Spawn,
                         Act = () =>
                         {
                             _console.ExecuteCommand(player, $"respawn \"{mindComp.UserId}\"");
@@ -395,7 +406,7 @@ namespace Content.Server.Administration.Systems
 
         private void AddDebugVerbs(GetVerbsEvent<Verb> args)
         {
-            if (!EntityManager.TryGetComponent(args.User, out ActorComponent? actor))
+            if (!TryComp(args.User, out ActorComponent? actor))
                 return;
 
             var player = actor.PlayerSession;
@@ -408,7 +419,7 @@ namespace Content.Server.Administration.Systems
                     Text = Loc.GetString("delete-verb-get-data-text"),
                     Category = VerbCategory.Debug,
                     Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/delete_transparent.svg.192dpi.png")),
-                    Act = () => EntityManager.DeleteEntity(args.Target),
+                    Act = () => Del(args.Target),
                     Impact = LogImpact.Medium,
                     ConfirmationPopup = true
                 };
@@ -451,7 +462,7 @@ namespace Content.Server.Administration.Systems
             // Make Sentient verb
             if (_groupController.CanCommand(player, "makesentient") &&
                 args.User != args.Target &&
-                !EntityManager.HasComponent<MindContainerComponent>(args.Target))
+                !HasComp<MindContainerComponent>(args.Target))
             {
                 Verb verb = new()
                 {
@@ -517,7 +528,7 @@ namespace Content.Server.Administration.Systems
 
             // Get Disposal tube direction verb
             if (_groupController.CanCommand(player, "tubeconnections") &&
-                EntityManager.TryGetComponent(args.Target, out DisposalTubeComponent? tube))
+                TryComp(args.Target, out DisposalTubeComponent? tube))
             {
                 Verb verb = new()
                 {
@@ -544,7 +555,7 @@ namespace Content.Server.Administration.Systems
             }
 
             if (_groupController.CanAdminMenu(player) &&
-                EntityManager.TryGetComponent(args.Target, out ConfigurationComponent? config))
+                TryComp(args.Target, out ConfigurationComponent? config))
             {
                 Verb verb = new()
                 {
@@ -558,7 +569,7 @@ namespace Content.Server.Administration.Systems
 
             // Add verb to open Solution Editor
             if (_groupController.CanCommand(player, "addreagent") &&
-                EntityManager.HasComponent<SolutionContainerManagerComponent>(args.Target))
+                HasComp<SolutionContainerManagerComponent>(args.Target))
             {
                 Verb verb = new()
                 {
@@ -605,7 +616,7 @@ namespace Content.Server.Administration.Systems
         {
             _openSolutionUis[session].Remove(eui);
             if (_openSolutionUis[session].Count == 0)
-              _openSolutionUis.Remove(session);
+                _openSolutionUis.Remove(session);
         }
 
         private void Reset(RoundRestartCleanupEvent ev)
