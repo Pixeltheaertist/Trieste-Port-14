@@ -42,11 +42,11 @@
             Asphyxiation: 1
             Piercing: 2
       - !type:GenericStatusEffect
+        key: Jitter
+        time: 2.0
         conditions:
         - !type:ReagentThreshold
           min: 6
-        key: Jitter
-        time: 2.0
 
 - type: reagent
   id: Vounarin
@@ -139,13 +139,13 @@
           min: 20
         amount: -20000
       - !type:GenericStatusEffect
-        conditions:
-        - !type:Temperature
-          max: 250
         key: ForcedSleep
         component: ForcedSleeping
         refresh: false
         type: add
+        conditions:
+        - !type:Temperature
+          max: 250
       - !type:HealthChange
         conditions:
         - !type:Temperature
@@ -189,7 +189,7 @@
         conditions:
         - !type:Temperature
           min: 293.15
-        amount: -100000 
+        amount: -100000
 
 - type: reagent
   id: Lexodine

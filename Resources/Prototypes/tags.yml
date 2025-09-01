@@ -34,6 +34,9 @@
   id: AppraisalTool
 
 - type: Tag
+  id: Apron
+
+- type: Tag
   id: Arrow
 
 - type: Tag
@@ -41,6 +44,9 @@
 
 - type: Tag
   id: ATVKeys
+
+- type: Tag
+  id: Backpack
 
 - type: Tag
   id: Balloon
@@ -229,9 +235,6 @@
   id: CanPilot
 
 - type: Tag
-  id: CapacitorStockPart
-
-- type: Tag
   id: CaptainSabre
 
 - type: Tag
@@ -354,6 +357,9 @@
   id: ComputerTelevisionCircuitboard
 
 - type: Tag
+  id: ConstructionMaterial
+
+- type: Tag
   id: ConveyorAssembly
 
 - type: Tag
@@ -453,6 +459,9 @@
   id: Diagonal
 
 - type: Tag
+  id: Diamond
+
+- type: Tag
   id: Dice
 
 - type: Tag
@@ -520,6 +529,33 @@
 
 - type: Tag
   id: EmitterBolt
+
+- type: Tag
+  id: EncryptionCargo
+
+- type: Tag
+  id: EncryptionCommand
+
+- type: Tag
+  id: EncryptionCommon
+
+- type: Tag
+  id: EncryptionElse
+
+- type: Tag
+  id: EncryptionEngineering
+
+- type: Tag
+  id: EncryptionMedical
+
+- type: Tag
+  id: EncryptionScience
+
+- type: Tag
+  id: EncryptionSecurity
+
+- type: Tag
+  id: EncryptionService
 
 - type: Tag
   id: Enzyme
@@ -617,6 +653,9 @@
 
 - type: Tag
   id: Goat
+
+- type: Tag
+  id: GoldenPlunger
 
 - type: Tag
   id: Goliath
@@ -808,6 +847,9 @@
   id: Knife
 
 - type: Tag
+  id: KnockdownImmune
+
+- type: Tag
   id: LavaBrig
 
 - type: Tag
@@ -870,9 +912,6 @@
   id: MagazineShotgun
 
 - type: Tag
-  id: MagazineMagnumSubMachineGun
-
-- type: Tag
   id: MagazinePistolSubMachineGun
 
 - type: Tag
@@ -920,6 +959,9 @@
   id: MimeHappyHonk
 
 - type: Tag
+  id: FakeMindShieldImplant
+
+- type: Tag
   id: MindTransferTarget
 
 - type: Tag
@@ -950,6 +992,9 @@
   id: Multitool
 
 - type: Tag
+  id: Mushroom
+
+- type: Tag
   id: NoBlockAnchoring
 
 - type: Tag
@@ -977,6 +1022,21 @@
   id: Ore
 
 - type: Tag
+  id: OreBananium
+
+- type: Tag
+  id: OreGold
+
+- type: Tag
+  id: OrePlasma
+
+- type: Tag
+  id: OreSilver
+
+- type: Tag
+  id: OreUranium
+
+- type: Tag
   id: Packet
 
 - type: Tag
@@ -1002,6 +1062,9 @@
 
 - type: Tag
   id: PercussionInstrument
+
+- type: Tag
+  id: PetOnly
 
 - type: Tag
   id: PetWearable
@@ -1059,6 +1122,12 @@
 
 - type: Tag
   id: PlushieCarp
+
+- type: Tag
+  id: PlushieCarpHolo
+
+- type: Tag
+  id: PlushieCarpMagi
 
 - type: Tag
   id: PlushieGhost
@@ -1119,6 +1188,9 @@
   id: ReinforcedGlassShard
 
 - type: Tag
+  id: RemoteSignaller
+
+- type: Tag
   id: ReptilianFood
 
 - type: Tag
@@ -1155,16 +1227,25 @@
   id: RollingPin
 
 - type: Tag
+  id: Ruminant
+
+- type: Tag
   id: SaltShaker
 
 - type: Tag
   id: SalvageExperiment
 
 - type: Tag
+  id: SalvageScrap
+
+- type: Tag
   id: Scarf
 
 - type: Tag
   id: Screwdriver
+
+- type: Tag # Flags items that scurrets can wear in their back and outerwear slots.
+  id: ScurretWearable
 
 - type: Tag
   id: SecBeltEquip
@@ -1219,6 +1300,9 @@
 
 - type: Tag
   id: Slice # sliced fruit, vegetables, pizza etc.
+
+- type: Tag
+  id: SlowImmune
 
 - type: Tag
   id: SmallAIChip
@@ -1285,6 +1369,9 @@
 
 - type: Tag
   id: StringInstrument
+
+- type: Tag
+  id: StunImmune
 
 - type: Tag
   id: SubdermalImplant
@@ -1380,6 +1467,9 @@
   id: UraniumGlassShard
 
 - type: Tag
+  id: UtilityBelt
+
+- type: Tag
   id: Vegetable
 
 - type: Tag
@@ -1437,6 +1527,9 @@
   id: Wine
 
 - type: Tag
+  id: WireBrush
+
+- type: Tag
   id: Wirecutter
 
 - type: Tag
@@ -1477,5 +1570,4 @@
 
 - type: Tag
   id: XenoborgModuleStealth
-
 # ALPHABETICAL

@@ -1,4 +1,4 @@
-﻿## Phrases used for where central command got this information.
+## Phrases used for where central command got this information.
 random-sentience-event-data-1 = scans from my long-range sensors
 random-sentience-event-data-2 = my sophisticated probabilistic models
 random-sentience-event-data-3 = my omnipotence
@@ -37,3 +37,5 @@ station-event-random-sentience-flavor-primate = primate
 station-event-random-sentience-flavor-kobold = kobold
 station-event-random-sentience-flavor-slime = slime
 station-event-random-sentience-flavor-inanimate = inanimate
+
+station-event-random-sentience-flavor-scurret = scurret

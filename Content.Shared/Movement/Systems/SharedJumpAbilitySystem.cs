@@ -4,7 +4,7 @@ using Content.Shared.Throwing;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
 
-namespace Content.Shared._TP.Movement.Systems;
+namespace Content.Shared.Movement.Systems;
 
 public sealed class SharedJumpAbilitySystem : EntitySystem
 {
@@ -16,6 +16,7 @@ public sealed class SharedJumpAbilitySystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+
         SubscribeLocalEvent<JumpAbilityComponent, GravityJumpEvent>(OnGravityJump);
     }
 

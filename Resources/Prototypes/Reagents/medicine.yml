@@ -83,9 +83,8 @@
         key: Jitter
         time: 3.0
         type: Remove
-      - !type:GenericStatusEffect
-        key: Drowsiness
-        component: Drowsiness
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
         time: 1.5
         type: Add
         refresh: false
@@ -186,7 +185,7 @@
         - !type:HealthChange
           conditions:
           - !type:Temperature
-            # this is a little arbitrary but they gotta be pretty cold
+            # this is a little arbitrary, but they have to be pretty cold
             max: 213.0
           damage:
           # todo scale with temp like SS13
@@ -318,7 +317,7 @@
       effects:
       - !type:HealthChange
         conditions:
-          # they gotta be in crit first
+        # they gotta be in crit first
         - !type:MobStateCondition
           mobstate: Critical
         - !type:ReagentThreshold
@@ -393,7 +392,7 @@
           min: 30
         damage:
           types:
-           Heat: 2
+            Heat: 2
       - !type:Jitter
         conditions:
         - !type:ReagentThreshold
@@ -430,7 +429,7 @@
       effects:
       - !type:HealthChange
         conditions:
-          # they gotta be in crit first
+        # they gotta be in crit first
         - !type:MobStateCondition
           mobstate: Critical
         damage:
@@ -519,16 +518,16 @@
             Heat: 0.5
       - !type:HealthChange
         conditions:
-          - !type:ReagentThreshold
-            min: 30
+        - !type:ReagentThreshold
+          min: 30
         damage:
           types:
             Poison: 3
       - !type:ChemVomit
         probability: 0.15
         conditions:
-          - !type:ReagentThreshold
-            min: 30
+        - !type:ReagentThreshold
+          min: 30
       - !type:GenericStatusEffect
         key: PressureImmunity
         component: PressureImmunity
@@ -554,12 +553,12 @@
   flavor: medicine
   color: "#c8ff75"
   plantMetabolism:
-    - !type:PlantAdjustToxins
-      amount: 6
-    - !type:PlantPhalanximine
-      conditions:
-      - !type:ReagentThreshold
-        min: 4
+  - !type:PlantAdjustToxins
+    amount: 6
+  - !type:PlantPhalanximine
+    conditions:
+    - !type:ReagentThreshold
+      min: 4
   metabolisms:
     Medicine:
       metabolismRate: 0.1
@@ -624,10 +623,10 @@
   metabolisms:
     Medicine:
       effects:
-        - !type:CureZombieInfection
-          conditions:
-            - !type:ReagentThreshold
-              min: 10
+      - !type:CureZombieInfection
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
 
 - type: reagent
   id: AmbuzolPlus
@@ -640,11 +639,11 @@
   metabolisms:
     Medicine:
       effects:
-        - !type:CureZombieInfection
-          innoculate: true
-          conditions:
-            - !type:ReagentThreshold
-              min: 5
+      - !type:CureZombieInfection
+        innoculate: true
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
 
 - type: reagent
   id: PulpedBananaPeel
@@ -671,10 +670,10 @@
   metabolisms:
     Drink:
       effects:
-        - !type:SatiateThirst
-          factor: 6
-        - !type:ModifyBloodLevel
-          amount: 6
+      - !type:SatiateThirst
+        factor: 6
+      - !type:ModifyBloodLevel
+        amount: 6
 
 - type: reagent
   id: Siderlac
@@ -738,8 +737,8 @@
         key: KnockedDown
         time: 3.0
         type: Remove
-      - !type:GenericStatusEffect
-        key: SeeingRainbows
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
         time: 15.0
         type: Remove
 
@@ -911,8 +910,8 @@
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
-      - !type:GenericStatusEffect
-        key: Drowsiness
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
         time: 10
         type: Remove
       - !type:ResetNarcolepsy
@@ -936,8 +935,8 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:GenericStatusEffect
-        key: Drowsiness
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
         time: 10
         type: Remove
       - !type:ResetNarcolepsy
@@ -1211,14 +1210,14 @@
   metabolisms:
     Medicine:
       effects:
-        - !type:ReduceRotting
-          seconds: 20
-          conditions:
-          #Patient must be dead and in a cryo tube (or something cold)
-          - !type:Temperature
-            max: 150.0
-          - !type:MobStateCondition
-            mobstate: Dead
+      - !type:ReduceRotting
+        seconds: 20
+        conditions:
+        #Patient must be dead and in a cryo tube (or something cold)
+        - !type:Temperature
+          max: 150.0
+        - !type:MobStateCondition
+          mobstate: Dead
 
 - type: reagent
   id: Necrosol
@@ -1309,12 +1308,8 @@
         damage:
           types:
             Poison: 2
-      - !type:GenericStatusEffect
-        conditions:
-        - !type:ReagentThreshold
-          min: 30
-        key: SeeingRainbows
-        component: SeeingRainbows
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
         type: Add
         time: 8
         refresh: false
@@ -1354,8 +1349,8 @@
         refresh: false
       - !type:HealthChange
         conditions:
-          - !type:ReagentThreshold
-            min: 20
+        - !type:ReagentThreshold
+          min: 20
         damage:
           types:
             Poison: 1
@@ -1375,9 +1370,8 @@
         emote: Yawn
         showInChat: true
         probability: 0.1
-      - !type:GenericStatusEffect
-        key: Drowsiness
-        component: Drowsiness
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
         time: 4
         type: Add
         refresh: false
@@ -1385,8 +1379,8 @@
         key: Jitter
         time: 4.0
         type: Remove
-      - !type:GenericStatusEffect
-        key: SeeingRainbows
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
         time: 10.0
         type: Remove
       - !type:AdjustReagent

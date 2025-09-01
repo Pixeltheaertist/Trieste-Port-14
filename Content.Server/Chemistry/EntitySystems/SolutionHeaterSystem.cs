@@ -10,6 +10,7 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Power;
 using Content.Server.Chemistry.Containers.EntitySystems;
+using Content.Server.Hands.Systems;
 
 namespace Content.Server.Chemistry.EntitySystems
 {
@@ -18,6 +19,7 @@ namespace Content.Server.Chemistry.EntitySystems
         [Dependency] private readonly PowerReceiverSystem _powerReceiver = default!;
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         [Dependency] private readonly SolutionContainerSystem _solutionContainer = default!;
+        [Dependency] private readonly HandsSystem _hands = default!;
 
         /// <inheritdoc/>
         public override void Initialize()
@@ -79,64 +81,62 @@ namespace Content.Server.Chemistry.EntitySystems
         }
 
         public override void Update(float frameTime)
-{
-    base.Update(frameTime);
-
-    // Define energy variable that will be reused
-    float energy;
-
-    // First, check for placed entities and heat their solutions.
-    var query = EntityQueryEnumerator<ActiveSolutionHeaterComponent, SolutionHeaterComponent, ItemPlacerComponent>();
-    while (query.MoveNext(out _, out _, out var heater, out var placer))
-    {
-        foreach (var heatingEntity in placer.PlacedEntities)
         {
-            // Only heat solutions in containers that have the necessary component
-            if (!TryComp<SolutionContainerManagerComponent>(heatingEntity, out var container))
-                continue;
+            base.Update(frameTime);
 
-            // Calculate energy based on the heater's heat rate
-            energy = heater.HeatPerSecond * frameTime;
+            // Define energy variable that will be reused
+            float energy;
 
-            // Apply thermal energy to the solutions in the container
-            foreach (var (_, soln) in _solutionContainer.EnumerateSolutions((heatingEntity, container)))
+            // First, check for placed entities and heat their solutions.
+            var query =
+                EntityQueryEnumerator<ActiveSolutionHeaterComponent, SolutionHeaterComponent, ItemPlacerComponent>();
+            while (query.MoveNext(out _, out _, out var heater, out var placer))
             {
-                _solutionContainer.AddThermalEnergy(soln, energy);
+                foreach (var heatingEntity in placer.PlacedEntities)
+                {
+                    // Only heat solutions in containers that have the necessary component
+                    if (!TryComp<SolutionContainerManagerComponent>(heatingEntity, out var container))
+                        continue;
+
+                    // Calculate energy based on the heater's heat rate
+                    energy = heater.HeatPerSecond * frameTime;
+
+                    // Apply thermal energy to the solutions in the container
+                    foreach (var (_, soln) in _solutionContainer.EnumerateSolutions((heatingEntity, container)))
+                    {
+                        _solutionContainer.AddThermalEnergy(soln, energy);
+                    }
+                }
+            }
+
+            // Now check for players holding valid items that need heating
+            var playerQuery = EntityQueryEnumerator<HandsComponent>();
+            while (playerQuery.MoveNext(out var playerUid, out var handsComponent))
+            {
+
+                if (!HasComp<JellidComponent>(playerUid))
+                {
+                    continue;
+                }
+
+                if (_hands.GetActiveItem(playerUid) is not { } heldItem)
+                {
+                    continue;
+                }
+
+                if (!TryComp<SolutionContainerManagerComponent>(heldItem, out var container))
+                {
+                    continue;
+                }
+
+                float energy2 = 0f;
+                energy2 = 30f * frameTime; // God, forgive me for my hardcodedness
+
+                foreach (var (_, soln) in _solutionContainer.EnumerateSolutions((heldItem, container)))
+                {
+                    _solutionContainer.AddThermalEnergy(soln, energy2);
+                }
             }
         }
-    }
-
-    // Now check for players holding valid items that need heating
-var playerQuery = EntityQueryEnumerator<HandsComponent>();
-while (playerQuery.MoveNext(out var playerUid, out var handsComponent))
-{
-
-    if (!HasComp<JellidComponent>(playerUid))
-    {
-        continue;
-    }
-
-    if (handsComponent.ActiveHand?.HeldEntity is not EntityUid heldItem)
-    {
-        continue;
-    }
-
-    if (!TryComp<SolutionContainerManagerComponent>(heldItem, out var container))
-    {
-        continue;
-    }
-
-    float energy2 = 0f;
-    energy2 = 30f * frameTime; // God, forgive me for my hardcodedness
-
-    foreach (var (_, soln) in _solutionContainer.EnumerateSolutions((heldItem, container)))
-    {
-        _solutionContainer.AddThermalEnergy(soln, energy2);
-    }
-}
-
-}
-
-
     }
 }

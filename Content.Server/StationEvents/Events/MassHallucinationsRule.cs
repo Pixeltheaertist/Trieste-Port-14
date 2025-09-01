@@ -9,6 +9,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Content.Shared.Random.Rules;
 using Content.Server.Station.Components;
+using Content.Shared.Station.Components;
 
 namespace Content.Server.StationEvents.Events;
 
