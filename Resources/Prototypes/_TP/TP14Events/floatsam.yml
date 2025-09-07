@@ -1,6 +1,5 @@
 # The following objects are intended for the Floatsam trieste game mode
-# The dark-matter reactor has a 1 hour 30 minute meltdown timer, in which it explodes destroying pretty much the whole map it's placed on.
-# IT CURRENTLY SPAMS ANNOUNCEMENTS WHEN IT EXPLODES, IDK WHY SO JUST NOTE THAT.
+# The dark-matter reactor has a 1-hour 30-minute meltdown timer, in which it explodes, destroying pretty much the whole map it's placed on.
 
 - type: entity
   id: TP14DarkMatterReactor
@@ -111,7 +110,7 @@
     volume: 3
     range: 7
     sound:
-      path: /Audio/Misc/siren.ogg
+      path: /Audio/Misc/gamma.ogg
   - type: MeleeSound
     soundGroups:
       Brute:

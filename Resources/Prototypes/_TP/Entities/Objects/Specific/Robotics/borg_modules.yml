@@ -1,0 +1,11 @@
+- type: entity
+  id: BorgModuleNanotrasenWeapon
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: offensive cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: service
+  - type: ItemBorgModule
+    hands:
+    - item: WeaponNtBlaster

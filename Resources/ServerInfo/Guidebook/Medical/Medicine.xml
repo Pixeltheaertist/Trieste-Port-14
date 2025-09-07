@@ -4,8 +4,8 @@
 
 Shift has started and you dont quite know what to do? Use these basic medications untill chem gets some more advanced ones out
 
-<GuideReagentEmbed Reagent="SaltWaterSolutionBrute"/>
-<GuideReagentEmbed Reagent="SaltWaterSolutionBurn"/>
+<GuideReagentEmbed Reagent="SeaWaterSolutionBrute"/>
+<GuideReagentEmbed Reagent="SeaWaterSolutionBurn"/>
 <GuideReagentEmbed Reagent="Dylovene"/>
 <GuideReagentEmbed Reagent="Inaprovaline"/>
 <GuideReagentEmbed Reagent="Iron"/>
@@ -30,5 +30,5 @@ This is a list of -all- medications available, including both standard and prote
 
 <GuideReagentGroupEmbed Group="Medicine"/>
 <GuideReagentGroupEmbed Group="Protein"/>
-  
+
 </Document>

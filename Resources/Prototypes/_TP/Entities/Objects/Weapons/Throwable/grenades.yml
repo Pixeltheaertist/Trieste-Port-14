@@ -30,7 +30,7 @@
       baseRadialAcceleration: -200
       baseTangentialAcceleration: -7
       gravPulsePeriod: 0.01
-    - type: SoundOnTrigger
+    - type: EmitSoundOnTrigger
       sound:
         path: /Audio/Effects/pop_high.ogg
         params:

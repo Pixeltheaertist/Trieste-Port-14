@@ -299,6 +299,7 @@
   components:
   - type: RCD
     availablePrototypes:
+    - TP14MarkerInside # TP14
     - WallSolid
     - FloorSteel
     - Plating

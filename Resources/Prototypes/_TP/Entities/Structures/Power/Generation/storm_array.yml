@@ -1,5 +1,5 @@
 # This is the Storm Array, a device that "siphons lighting" offscreen.
-# It constantly heats up the room around it, and needs to have it's temperature carefully monitored to prevent a meltdown.
+# It constantly heats up the surrounding room and needs to have its temperature carefully monitored to prevent a meltdown.
 # It also gives occasional warnings and spawning sparks while taking damage, eventually exploding.
 
 - type: entity
@@ -24,7 +24,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-1.5,-1.5,1.5,1.5"
+          bounds: "-1.0,-1.0,1.0,0.10"
         density: 50
         mask:
         - LargeMobMask
@@ -48,7 +48,7 @@
     specificHeat: 42
     coldDamage:
       types:
-        Cold: 0 
+        Cold: 0
     heatDamage:
       types:
         Heat: 5 # Recieves 5 heat damage every second it's overheating
@@ -61,6 +61,7 @@
   - type: Sprite
     sprite: _TP/Structures/Machines/StormArray.rsi # Might need to make the folder name lowercase, server compresses files weird sometimes.
     state: storm_array
+    drawdepth: Mobs
   - type: DamageVisuals
     thresholds: [100, 200, 400]
     damageDivisor: 4
@@ -114,7 +115,7 @@
           !type:DamageTrigger
           damage: 500
         behaviors:
-          - !type:ExplodeBehavior 
+          - !type:ExplodeBehavior
           - !type:PlaySoundBehavior
             sound:
               collection: MetalBreak
@@ -124,7 +125,7 @@
           !type:DamageTrigger
           damage: 300
         behaviors:
-          - !type:PopupBehavior 
+          - !type:PopupBehavior
             popup: "The array rumbles and hisses!"
             popupType: LargeCaution
           - !type:TriggerBehavior
