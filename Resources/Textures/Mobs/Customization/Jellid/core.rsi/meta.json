@@ -1,0 +1,39 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Eye made by PixeltheAertist, modified by Levtobecontinued",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "crown_primary",
+            "directions": 4
+        },
+        {
+            "name": "crown_secondary",
+            "directions": 4
+        },
+        {
+            "name": "crown_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "tri_primary",
+            "directions": 4
+        },
+        {
+            "name": "tri_secondary",
+            "directions": 4
+        },
+        {
+            "name": "tri_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "multi_core",
+            "directions": 4
+        }
+    ]
+}
