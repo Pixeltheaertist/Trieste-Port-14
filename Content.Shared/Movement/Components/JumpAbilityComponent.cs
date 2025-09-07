@@ -1,4 +1,5 @@
 using Content.Shared.Actions;
+using Content.Shared.Movement.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
@@ -9,7 +10,7 @@ namespace Content.Shared.Movement.Components;
 /// To give the jump action to an entity use <see cref="ActionGrantComponent"/> and <see cref="ItemActionGrantComponent"/>.
 /// The basic action prototype is "ActionGravityJump".
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(SharedJumpAbilitySystem))]
 public sealed partial class JumpAbilityComponent : Component
 {
     /// <summary>
@@ -32,3 +33,4 @@ public sealed partial class JumpAbilityComponent : Component
 }
 
 public sealed partial class GravityJumpEvent : InstantActionEvent;
+

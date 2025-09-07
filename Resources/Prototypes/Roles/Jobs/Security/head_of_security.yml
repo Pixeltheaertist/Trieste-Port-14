@@ -12,7 +12,7 @@
       time: 3600 #1 hr, knowing how to use the tools is important
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 10800
+      time: 18000 #5 hrs
     - !type:DepartmentTimeRequirement
       department: Security
       time: 7200
@@ -53,3 +53,11 @@
     back:
     - Flash
     - SpeedLoaderMagnum
+
+- type: chameleonOutfit
+  id: HeadOfSecurityChameleonOutfit
+  job: HeadOfSecurity
+  hasMindShield: true
+  equipment:
+    mask: ClothingMaskGasSecurity
+    neck: ClothingNeckCloakHos

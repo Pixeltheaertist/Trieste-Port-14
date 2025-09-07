@@ -30,6 +30,7 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
 using Content.Shared.Hands.Components;
 using Content.Server.Chemistry.EntitySystems;
+using Content.Shared.Hands.EntitySystems;
 
 namespace Content.Server.Atmos.EntitySystems
 {
@@ -50,6 +51,7 @@ namespace Content.Server.Atmos.EntitySystems
         [Dependency] private readonly UseDelaySystem _useDelay = default!;
         [Dependency] private readonly AudioSystem _audio = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
+        [Dependency] private readonly SharedHandsSystem _hands = default!;
 
         private EntityQuery<InventoryComponent> _inventoryQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
@@ -120,7 +122,7 @@ namespace Content.Server.Atmos.EntitySystems
 
             var otherEnt = args.OtherEntity;
 
-            if (!EntityManager.TryGetComponent(otherEnt, out FlammableComponent? flammable))
+            if (!TryComp(otherEnt, out FlammableComponent? flammable))
                 return;
 
             //Only ignite when the colliding fixture is projectile or ignition.
@@ -283,7 +285,7 @@ namespace Content.Server.Atmos.EntitySystems
             // This is intended so that matches & candles can re-use code for un-shaded layers on in-hand sprites.
             // However, this could cause conflicts if something is ACTUALLY both a toggleable light and flammable.
             // if that ever happens, then fire visuals will need to implement their own in-hand sprite management.
-            _appearance.SetData(uid, ToggleableLightVisuals.Enabled, flammable.OnFire, appearance);
+            _appearance.SetData(uid, ToggleableVisuals.Enabled, flammable.OnFire, appearance);
         }
 
         public void AdjustFireStacks(EntityUid uid, float relativeFireStacks, FlammableComponent? flammable = null, bool ignite = false)
@@ -395,7 +397,7 @@ namespace Content.Server.Atmos.EntitySystems
             flammable.Resisting = true;
 
             _popup.PopupEntity(Loc.GetString("flammable-component-resist-message"), uid, uid);
-            _stunSystem.TryParalyze(uid, TimeSpan.FromSeconds(2f), true);
+            _stunSystem.TryUpdateParalyzeDuration(uid, TimeSpan.FromSeconds(2f));
 
             // TODO FLAMMABLE: Make this not use TimerComponent...
             uid.SpawnTimer(2000, () =>
@@ -472,9 +474,14 @@ namespace Content.Server.Atmos.EntitySystems
                     if (_inventoryQuery.TryComp(uid, out var inv))
                         _inventory.RelayEvent((uid, inv), ref ev);
 
-                    _damageableSystem.TryChangeDamage(uid, flammable.Damage * flammable.FireStacks * ev.Multiplier, interruptsDoAfters: false);
+                    _damageableSystem.TryChangeDamage(uid,
+                        flammable.Damage * flammable.FireStacks * ev.Multiplier,
+                        interruptsDoAfters: false);
 
-                    AdjustFireStacks(uid, flammable.FirestackFade * (flammable.Resisting ? 10f : 1f), flammable, flammable.OnFire);
+                    AdjustFireStacks(uid,
+                        flammable.FirestackFade * (flammable.Resisting ? 10f : 1f),
+                        flammable,
+                        flammable.OnFire);
                 }
                 else
                 {
@@ -483,29 +490,30 @@ namespace Content.Server.Atmos.EntitySystems
             }
 
             var playerQuery = EntityQueryEnumerator<HandsComponent>();
-        while (playerQuery.MoveNext(out var playerUid, out var handsComponent))
-       {
-           if (!HasComp<JellidComponent>(playerUid))
-              {
-                  continue;
-              }
+            while (playerQuery.MoveNext(out var playerUid, out var handsComponent))
+            {
 
-           if (handsComponent.ActiveHand?.HeldEntity is not EntityUid heldItem)
-               {
-                   continue;
-               }
+                if (!HasComp<JellidComponent>(playerUid))
+                {
+                    continue;
+                }
 
-           if (!TryComp<FlammableComponent>(heldItem, out var flammable))
-              {
-            continue;
-              }
+                if (_hands.GetActiveItem(playerUid) is not { } heldItem)
+                {
+                    continue;
+                }
 
-        AdjustFireStacks(heldItem, flammable.FireStacks, flammable);
-        if (flammable.FireStacks >= 0)
-        {
-            Ignite(heldItem, heldItem, flammable, playerUid);
-        }
-      }
+                if (!TryComp<FlammableComponent>(heldItem, out var flammable))
+                {
+                    continue;
+                }
+
+                AdjustFireStacks(heldItem, flammable.FireStacks, flammable);
+                if (flammable.FireStacks >= 0)
+                {
+                    Ignite(heldItem, heldItem, flammable, playerUid);
+                }
+            }
         }
     }
 }

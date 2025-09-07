@@ -42,6 +42,7 @@
   id: TP14TelecomRelayDestroyed
   name: communications array
   description: It once broadcasted signals into the far distance. It's broken now, though.
+  suffix: destroyed
   components:
   - type: Sprite
     sprite: _TP/Structures/Machines/array.rsi

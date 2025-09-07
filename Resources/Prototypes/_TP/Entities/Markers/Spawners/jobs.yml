@@ -13,7 +13,7 @@
 - type: entity
   id: TP14SpawnPointBasinTech
   parent: SpawnPointJobBase
-  name: basintechnician
+  name: basin technician
   components:
   - type: SpawnPoint
     job_id: BasinEngi
