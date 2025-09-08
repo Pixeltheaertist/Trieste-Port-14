@@ -45,10 +45,10 @@
   description: "Filters air out of water to breathe."
   components:
   - type: Sprite
-    sprite: Mobs/Species/Slime/organs.rsi
+    sprite: Mobs/Species/Jellids/organs.rsi
     layers:
-    - state: lung-l-slime
-    - state: lung-r-slime
+    - state: lung-l-jellid
+    - state: lung-r-jellid
   - type: Lung
     alert: Lysis
   - type: Metabolizer
