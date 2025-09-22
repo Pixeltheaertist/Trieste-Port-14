@@ -1,4 +1,5 @@
 ﻿using Content.Server.Clothing.Systems;
+using Content.Server.Humanoid;
 using Content.Server.Preferences.Managers;
 using Content.Shared.Clothing;
 using Content.Shared.Clothing.Components;
@@ -24,6 +25,7 @@ public sealed class ChameleonControllerSystem : SharedChameleonControllerSystem
     [Dependency] private readonly ChameleonClothingSystem _chameleonClothingSystem = default!;
     [Dependency] private readonly IServerPreferencesManager _preferences = default!;
     [Dependency] private readonly UseDelaySystem _delay = default!;
+    [Dependency] private readonly HumanoidAppearanceSystem _appearance = default!;
 
     public override void Initialize()
     {
@@ -86,10 +88,7 @@ public sealed class ChameleonControllerSystem : SharedChameleonControllerSystem
         if (!TryComp<ActorComponent>(user, out var actorComponent))
             return;
 
-        var userId = actorComponent.PlayerSession.UserId;
-        var prefs = _preferences.GetPreferences(userId);
-
-        if (prefs.SelectedCharacter is not HumanoidCharacterProfile profile)
+        if (_appearance.GetBaseProfile(user.Value) is not HumanoidCharacterProfile profile)
             return;
 
         var jobProtoId = LoadoutSystem.GetJobPrototype(jobPrototype.ID);
