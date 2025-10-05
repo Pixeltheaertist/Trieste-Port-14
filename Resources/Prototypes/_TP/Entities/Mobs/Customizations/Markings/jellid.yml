@@ -1,10 +1,10 @@
+## Jellid Mantles
 ---
 - type: marking
   id: JellidMantle
   bodyPart: Hair
-  markingCategory: Hair
-  speciesRestriction:
-  - Jellid
+  markingCategory: HeadTop
+  speciesRestriction: [Jellid]
   sprites:
   - sprite: Mobs/Customization/Jellid/mantles.rsi
     state: head_mantle
@@ -12,9 +12,8 @@
 - type: marking
   id: JellidBox
   bodyPart: Hair
-  markingCategory: Hair
-  speciesRestriction:
-  - Jellid
+  markingCategory: HeadTop
+  speciesRestriction: [Jellid]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/Jellid/mantles.rsi
@@ -23,9 +22,8 @@
 - type: marking
   id: JellidEgg
   bodyPart: Hair
-  markingCategory: Hair
-  speciesRestriction:
-  - Jellid
+  markingCategory: HeadTop
+  speciesRestriction: [Jellid]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/Jellid/mantles.rsi
@@ -34,11 +32,99 @@
     state: egg_secondary
 
 - type: marking
+  id: JellidComb
+  bodyPart: Hair
+  markingCategory: HeadTop
+  speciesRestriction: [Jellid]
+  followSkinColor: true
+  sprites:
+  - sprite: Mobs/Customization/Jellid/mantles.rsi
+    state: comb_primary
+  - sprite: Mobs/Customization/Jellid/mantles.rsi
+    state: comb_secondary
+  - sprite: Mobs/Customization/Jellid/mantles.rsi
+    state: comb_tertiary
+
+- type: marking
+  id: JellidCrystal
+  bodyPart: Hair
+  markingCategory: HeadTop
+  speciesRestriction: [Jellid]
+  followSkinColor: true
+  sprites:
+  - sprite: Mobs/Customization/Jellid/mantles.rsi
+    state: crystal_mantle
+
+- type: marking
+  id: JellidManOWar
+  bodyPart: Hair
+  markingCategory: HeadTop
+  speciesRestriction: [Jellid]
+  followSkinColor: true
+  sprites:
+  - sprite: Mobs/Customization/Jellid/mantles.rsi
+    state: manowar_primary
+  - sprite: Mobs/Customization/Jellid/mantles.rsi
+    state: manowar_secondary
+
+- type: marking
+  id: JellidMoon
+  bodyPart: Hair
+  markingCategory: HeadTop
+  speciesRestriction: [Jellid]
+  followSkinColor: true
+  sprites:
+  - sprite: Mobs/Customization/Jellid/mantles.rsi
+    state: moon_mantle
+
+- type: marking
+  id: JellidPhantom
+  bodyPart: Hair
+  markingCategory: HeadTop
+  speciesRestriction: [Jellid]
+  followSkinColor: true
+  sprites:
+  - sprite: Mobs/Customization/Jellid/mantles.rsi
+    state: phantom_primary
+  - sprite: Mobs/Customization/Jellid/mantles.rsi
+    state: phantom_secondary
+
+- type: marking
+  id: JellidSpotted
+  bodyPart: Hair
+  markingCategory: HeadTop
+  speciesRestriction: [Jellid]
+  followSkinColor: true
+  sprites:
+  - sprite: Mobs/Customization/Jellid/mantles.rsi
+    state: spotted_primary
+  - sprite: Mobs/Customization/Jellid/mantles.rsi
+    state: spotted_secondary
+
+- type: marking
+  id: JellidStellarid
+  bodyPart: Hair
+  markingCategory: HeadTop
+  speciesRestriction: [Jellid]
+  followSkinColor: true
+  sprites:
+  - sprite: Mobs/Customization/Jellid/mantles.rsi
+    state: stellarid_primary
+  - sprite: Mobs/Customization/Jellid/mantles.rsi
+    state: stellarid_secondary
+
+## Jellid cores
+
+- type: marking
   id: JellidCrown
-  bodyPart: Head
+  bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction:
-  - Jellid
+  speciesRestriction: [Jellid]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: true
   sprites:
   - sprite: Mobs/Customization/Jellid/core.rsi
     state: crown_primary
@@ -49,20 +135,28 @@
 
 - type: marking
   id: JellidMulti
-  bodyPart: Head
+  bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction:
-  - Jellid
+  speciesRestriction: [Jellid]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: true
   sprites:
   - sprite: Mobs/Customization/Jellid/core.rsi
     state: multi_core
 
 - type: marking
   id: JellidTri
-  bodyPart: Head
+  bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction:
-  - Jellid
+  speciesRestriction: [Jellid]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: true
   sprites:
   - sprite: Mobs/Customization/Jellid/core.rsi
     state: tri_primary

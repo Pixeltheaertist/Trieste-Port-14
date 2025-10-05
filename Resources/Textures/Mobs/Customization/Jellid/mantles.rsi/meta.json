@@ -22,6 +22,58 @@
         {
             "name": "egg_secondary",
             "directions": 4
+        },
+        {
+            "name": "comb_primary",
+            "directions": 4
+        },
+        {
+            "name": "comb_secondary",
+            "directions": 4
+        },
+        {
+            "name": "comb_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "crystal_mantle",
+            "directions": 4
+        },
+        {
+            "name": "manowar_primary",
+            "directions": 4
+        },
+        {
+            "name": "manowar_secondary",
+            "directions": 4
+        },
+        {
+            "name": "moon_mantle",
+            "directions": 4
+        },
+        {
+            "name": "phantom_primary",
+            "directions": 4
+        },
+        {
+            "name": "phantom_secondary",
+            "directions": 4
+        },
+        {
+            "name": "spotted_primary",
+            "directions": 4
+        },
+        {
+            "name": "spotted_secondary",
+            "directions": 4
+        },
+        {
+            "name": "stellarid_primary",
+            "directions": 4
+        },
+        {
+            "name": "stellarid_secondary",
+            "directions": 4
         }
     ]
 }

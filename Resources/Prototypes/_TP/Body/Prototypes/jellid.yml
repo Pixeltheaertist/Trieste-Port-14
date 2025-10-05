@@ -15,7 +15,7 @@
       - right leg
       - left leg
       organs:
-        core: SentientSlimeCore
+        core: JellidCore
         lungs: OrganWaterLungs
     right arm:
       part: RightArmSlime

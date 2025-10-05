@@ -1,8 +1,8 @@
 - type: entity
-  id: TP14_JellidCore
+  id: JellidCore
   parent: [BaseItem, OrganHumanBrain]
-  name: Jellid Core
-  description: "The source of a Jellid's sight and thought, it pulses and hums slightly."
+  name: Jellid core
+  description: "The source of incredible, unending electricity, It looks like it might sting a little if you pick it up."
   components:
   - type: Sprite
     sprite: Mobs/Species/Jellids/organs.rsi
@@ -31,7 +31,7 @@
           Quantity: 5
       organ:
         reagents:
-        - ReagentId: Seawater
+        - ReagentId: Slime
           Quantity: 10
   - type: Item
     size: Small
@@ -70,4 +70,7 @@
         canReact: false
   - type: Item
     size: Small
-    heldPrefix: lungs
+    heldPrefix: Lungs
+
+
+

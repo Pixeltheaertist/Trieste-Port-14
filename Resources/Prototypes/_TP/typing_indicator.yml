@@ -1,0 +1,8 @@
+- type: typingIndicator
+  id: jellid
+  spritePath: /Textures/_TP/Effects/speech.rsi
+  typingState: jellid0
+  idleState: jellid3
+  offset: 0, 0.125
+
+

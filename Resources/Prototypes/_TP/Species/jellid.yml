@@ -41,9 +41,24 @@
   onlyWhitelisted: true
   points:
     Hair:
+      points: 0
+      required: false
+    FacialHair:
+      points: 0
+      required: false
+    Tail:
+      points: 0
+      required: false
+    Head:
+      points: 1
+      required: false
+    HeadTop:
       points: 1
       required: true
       defaultMarkings: [ JellidMantle ] # The mantle is hair, so if they put a helmet on it's hidden.
+    HeadSide:
+      points: 0
+      required: false
     Chest:
       points: 1
       required: false
@@ -52,9 +67,6 @@
       required: false
     Arms:
       points: 4
-      required: false
-    Head:
-      points: 1
       required: false
 
 - type: humanoidBaseSprite

@@ -45,7 +45,7 @@
     speechSounds: Slime
     allowedEmotes: ['Squish']
   - type: TypingIndicator
-    proto: slime
+    proto: jellid
   - type: Vocal
     sounds:
       Unsexed: MaleSlime
