@@ -20,7 +20,7 @@ public sealed partial class CCVars
     ///     URL of the Discord webhook which will relay all ahelp messages.
     /// </summary>
     public static readonly CVarDef<string> DiscordAHelpWebhook =
-        CVarDef.Create("discord.ahelp_webhook", "https://discord.com/api/webhooks/1331429329283846186/r_r27oUDN792V3UsH6I9daTwDyBN8sRlGz5jXML_5-mTCjAu_cRlVQjrjLFOdg5bqcWd", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+        CVarDef.Create("discord.ahelp_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
     /// <summary>
     ///     The server icon to use in the Discord ahelp embed footer.
