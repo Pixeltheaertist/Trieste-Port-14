@@ -1,0 +1,12 @@
+- type: entity
+  name: akita neru day bag
+  parent: ClothingBackpackDuffel
+  id: BoxBrightPerformer
+  description: Happy Akita Neru Day!
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingShoesBootsBrightPerformer
+      - id: ClothingUniformJumpskirtBrightPerformer
+      - id: ClothingHeadBrightPerformerWig
+      - id: PersonalAI
