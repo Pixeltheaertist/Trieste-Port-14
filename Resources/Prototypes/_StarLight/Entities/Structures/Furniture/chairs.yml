@@ -1,0 +1,70 @@
+- type: entity
+  name: regal chair
+  id: ChairRegal
+  parent: UnanchoredChairBase
+  description: A gilded chair. You think this might be paint actually.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Chairs/regal_chair.rsi
+    state: base
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 1
+            max: 1
+  - type: Tag
+    tags:
+    - Wooden
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  name: regal throne
+  id: ChairThrone
+  parent: ChairBase
+  description: A gaudy throne made of gold. Its too heavy to move.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Chairs/throne.rsi
+    state: base
+
+- type: entity
+  name: comfy chair
+  id: ComfyChair
+  parent: ChairBase
+  description: It looks comfy.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Chairs/comfy_chair.rsi
+    layers:
+    - state: base
+      color: "#767e82"
+    noRot: true
+  - type: Icon
+    sprite: _Starlight/Structures/Furniture/Chairs/comfy_chair.rsi
+    state: base
+  - type: Construction
+    graph: Seat
+    node: chairComfy

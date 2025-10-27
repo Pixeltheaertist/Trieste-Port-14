@@ -1,0 +1,177 @@
+- type: entity
+  name: diner booth end left
+  id: DinerEndLeft
+  parent: SeatBase
+  description: It looks like cheap plastic, and smells like fries.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/diner_end_left.rsi
+    state: base
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: diner booth end right
+  id: DinerEndRight
+  parent: SeatBase
+  description: It looks like cheap plastic, and smells like fries.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/diner_end_right.rsi
+    state: base
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: diner booth middle
+  id: DinerMiddle
+  parent: SeatBase
+  description: It looks like cheap plastic, and smells like fries.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/diner_middle.rsi
+    state: base
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: fancy sofa end left
+  id: SofaFancyEndLeft
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/fancy_end_left.rsi
+    state: base
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: fancy sofa end right
+  id: SofaFancyEndRight
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/fancy_end_right.rsi
+    state: base
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: fancy sofa middle
+  id: SofaFancyMiddle
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/fancy_middle.rsi
+    state: base
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa corner
+  id: SofaCorner
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_corner.rsi
+    layers:
+    - state: base
+      color: "#767e82"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa end left
+  id: SofaEndLeft
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_end_left.rsi
+    layers:
+    - state: base
+      color: "#767e82"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa end right
+  id: SofaEndRight
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_end_right.rsi
+    layers:
+    - state: base
+      color: "#767e82"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa middle
+  id: SofaMiddle
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_middle.rsi
+    layers:
+    - state: base
+      color: "#767e82"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
