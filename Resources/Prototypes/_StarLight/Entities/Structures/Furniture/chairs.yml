@@ -1,3 +1,4 @@
+#Regal Chair
 - type: entity
   name: regal chair
   id: ChairRegal
@@ -40,6 +41,7 @@
   - type: StaticPrice
     price: 250
 
+#Regal Throne
 - type: entity
   name: regal throne
   id: ChairThrone
@@ -50,8 +52,20 @@
     sprite: _Starlight/Structures/Furniture/Chairs/throne.rsi
     state: base
 
+#Sleek Office Chair
+- type: entity
+  name: sleek office chair
+  id: ChairOfficeSleek
+  parent: OfficeChairBase
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Chairs/sleek_office_chair.rsi
+    state: base
+
+#Comfy Chair Gray (Basic/Default)
 - type: entity
   name: comfy chair
+  suffix: Gray
   id: ComfyChair
   parent: ChairBase
   description: It looks comfy.
@@ -68,3 +82,93 @@
   - type: Construction
     graph: Seat
     node: chairComfy
+
+#Comfy Chair White
+- type: entity
+  name: comfy chair
+  suffix: White
+  id: ComfyChairWhite
+  parent: ChairBase
+  description: It looks comfy.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Chairs/comfy_chair.rsi
+    layers:
+    - state: base
+      color: "#ebebeb"
+    noRot: true
+  - type: Icon
+    sprite: _Starlight/Structures/Furniture/Chairs/comfy_chair.rsi
+    state: base
+
+#Comfy Chair Blue
+- type: entity
+  name: comfy chair
+  suffix: Blue
+  id: ComfyChairBlue
+  parent: ChairBase
+  description: It looks comfy.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Chairs/comfy_chair.rsi
+    layers:
+    - state: base
+      color: "#334e6d"
+    noRot: true
+  - type: Icon
+    sprite: _Starlight/Structures/Furniture/Chairs/comfy_chair.rsi
+    state: base
+
+#Comfy Chair Red
+- type: entity
+  name: comfy chair
+  suffix: Red
+  id: ComfyChairRed
+  parent: ChairBase
+  description: It looks comfy.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Chairs/comfy_chair.rsi
+    layers:
+    - state: base
+      color: "#8c4141"
+    noRot: true
+  - type: Icon
+    sprite: _Starlight/Structures/Furniture/Chairs/comfy_chair.rsi
+    state: base
+
+#Comfy Chair Green
+- type: entity
+  name: comfy chair
+  suffix: Green
+  id: ComfyChairGreen
+  parent: ChairBase
+  description: It looks comfy.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Chairs/comfy_chair.rsi
+    layers:
+    - state: base
+      color: "#3c9950"
+    noRot: true
+  - type: Icon
+    sprite: _Starlight/Structures/Furniture/Chairs/comfy_chair.rsi
+    state: base
+
+#Comfy Chair Brown
+- type: entity
+  name: comfy chair
+  suffix: Brown
+  id: ComfyChairBrown
+  parent: ChairBase
+  description: It looks comfy.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Chairs/comfy_chair.rsi
+    layers:
+    - state: base
+      color: "#6e594f"
+    noRot: true
+  - type: Icon
+    sprite: _Starlight/Structures/Furniture/Chairs/comfy_chair.rsi
+    state: base

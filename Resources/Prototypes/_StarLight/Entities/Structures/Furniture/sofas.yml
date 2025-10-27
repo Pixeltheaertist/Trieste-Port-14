@@ -1,5 +1,7 @@
+#Diner Booth
 - type: entity
-  name: diner booth end left
+  name: diner booth
+  suffix: End Left
   id: DinerEndLeft
   parent: SeatBase
   description: It looks like cheap plastic, and smells like fries.
@@ -16,7 +18,8 @@
     price: 35
 
 - type: entity
-  name: diner booth end right
+  name: diner booth
+  suffix: End Right
   id: DinerEndRight
   parent: SeatBase
   description: It looks like cheap plastic, and smells like fries.
@@ -33,7 +36,8 @@
     price: 35
 
 - type: entity
-  name: diner booth middle
+  name: diner booth
+  suffix: Middle
   id: DinerMiddle
   parent: SeatBase
   description: It looks like cheap plastic, and smells like fries.
@@ -49,8 +53,10 @@
   - type: StaticPrice
     price: 35
 
+#Sofa Fancy
 - type: entity
-  name: fancy sofa end left
+  name: fancy sofa
+  suffix: End Left
   id: SofaFancyEndLeft
   parent: SeatBase
   description: It looks comfy.
@@ -67,7 +73,8 @@
     price: 35
 
 - type: entity
-  name: fancy sofa end right
+  name: fancy sofa
+  suffix: End Right
   id: SofaFancyEndRight
   parent: SeatBase
   description: It looks comfy.
@@ -84,7 +91,8 @@
     price: 35
 
 - type: entity
-  name: fancy sofa middle
+  name: fancy sofa
+  suffix: Middle
   id: SofaFancyMiddle
   parent: SeatBase
   description: It looks comfy.
@@ -100,8 +108,10 @@
   - type: StaticPrice
     price: 35
 
+#Sofa Gray
 - type: entity
-  name: sofa corner
+  name: sofa
+  suffix: Corner. Gray
   id: SofaCorner
   parent: SeatBase
   description: It looks comfy.
@@ -120,7 +130,8 @@
     price: 35
 
 - type: entity
-  name: sofa end left
+  name: sofa
+  suffix: End Left. Gray
   id: SofaEndLeft
   parent: SeatBase
   description: It looks comfy.
@@ -139,7 +150,8 @@
     price: 35
 
 - type: entity
-  name: sofa end right
+  name: sofa
+  suffix: End Right. Gray
   id: SofaEndRight
   parent: SeatBase
   description: It looks comfy.
@@ -158,7 +170,8 @@
     price: 35
 
 - type: entity
-  name: sofa middle
+  name: sofa
+  suffix: Middle. Gray
   id: SofaMiddle
   parent: SeatBase
   description: It looks comfy.
@@ -171,6 +184,411 @@
     layers:
     - state: base
       color: "#767e82"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+#Sofa White
+- type: entity
+  name: sofa
+  suffix: Corner. White
+  id: SofaCornerWhite
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_corner.rsi
+    layers:
+    - state: base
+      color: "#ebebeb"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa
+  suffix: End Left. White
+  id: SofaEndLeftWhite
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_end_left.rsi
+    layers:
+    - state: base
+      color: "#ebebeb"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa
+  suffix: End Right. White
+  id: SofaEndRightWhite
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_end_right.rsi
+    layers:
+    - state: base
+      color: "#ebebeb"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa
+  suffix: Middle. White
+  id: SofaMiddleWhite
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_middle.rsi
+    layers:
+    - state: base
+      color: "#ebebeb"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+#Sofa Blue
+- type: entity
+  name: sofa
+  suffix: Corner. Blue
+  id: SofaCornerBlue
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_corner.rsi
+    layers:
+    - state: base
+      color: "#334e6d"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa
+  suffix: End Left. Blue
+  id: SofaEndLeftBlue
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_end_left.rsi
+    layers:
+    - state: base
+      color: "#334e6d"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa
+  suffix: End Right. Blue
+  id: SofaEndRightBlue
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_end_right.rsi
+    layers:
+    - state: base
+      color: "#334e6d"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa
+  suffix: Middle. Blue
+  id: SofaMiddleBlue
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_middle.rsi
+    layers:
+    - state: base
+      color: "#334e6d"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+#Sofa Red
+- type: entity
+  name: sofa
+  suffix: Corner. Red
+  id: SofaCornerRed
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_corner.rsi
+    layers:
+    - state: base
+      color: "#8c4141"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa
+  suffix: End Left. Red
+  id: SofaEndLeftRed
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_end_left.rsi
+    layers:
+    - state: base
+      color: "#8c4141"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa
+  suffix: End Right. Red
+  id: SofaEndRightRed
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_end_right.rsi
+    layers:
+    - state: base
+      color: "#8c4141"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa
+  suffix: Middle. Red
+  id: SofaMiddleRed
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_middle.rsi
+    layers:
+    - state: base
+      color: "#8c4141"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+#Sofa Green
+- type: entity
+  name: sofa
+  suffix: Corner. Green
+  id: SofaCornerGreen
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_corner.rsi
+    layers:
+    - state: base
+      color: "#3c9950"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa
+  suffix: End Left. Green
+  id: SofaEndLeftGreen
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_end_left.rsi
+    layers:
+    - state: base
+      color: "#3c9950"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa
+  suffix: End Right. Green
+  id: SofaEndRightGreen
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_end_right.rsi
+    layers:
+    - state: base
+      color: "#3c9950"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa
+  suffix: Middle. Green
+  id: SofaMiddleGreen
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_middle.rsi
+    layers:
+    - state: base
+      color: "#3c9950"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+#Sofa Brown
+- type: entity
+  name: sofa
+  suffix: Corner. Brown
+  id: SofaCornerBrown
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_corner.rsi
+    layers:
+    - state: base
+      color: "#6e594f"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa
+  suffix: End Left. Brown
+  id: SofaEndLeftBrown
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_end_left.rsi
+    layers:
+    - state: base
+      color: "#6e594f"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa
+  suffix: End Right. Brown
+  id: SofaEndRightBrown
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_end_right.rsi
+    layers:
+    - state: base
+      color: "#6e594f"
+  - type: Physics
+    bodyType: Static
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  name: sofa
+  suffix: Middle. Brown
+  id: SofaMiddleBrown
+  parent: SeatBase
+  description: It looks comfy.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Sofas/sofa_middle.rsi
+    layers:
+    - state: base
+      color: "#6e594f"
   - type: Physics
     bodyType: Static
   - type: StaticPrice

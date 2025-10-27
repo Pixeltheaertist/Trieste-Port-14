@@ -1,5 +1,7 @@
+#Chapel Pew
 - type: entity
-  name: Wood Pew End Left
+  name: Wood Pew
+  suffix: End Left
   id: PewEndLeft
   parent: ChairBase
   components:
@@ -8,7 +10,8 @@
     state: base
 
 - type: entity
-  name: Wood Pew End Right
+  name: Wood Pew
+  suffix: End Right
   id: PewEndRight
   parent: ChairBase
   components:
@@ -17,7 +20,8 @@
     state: base
 
 - type: entity
-  name: Wood Pew Middle
+  name: Wood Pew
+  suffix: Middle
   id: PewMiddle
   parent: ChairBase
   components:
@@ -25,8 +29,10 @@
     sprite: _Starlight/Structures/Furniture/Benches/pew_middle.rsi
     state: base
 
+#Bench White
 - type: entity
-  name: comfortable bench corner
+  name: comfortable bench
+  suffix: Corner. White
   id: BenchComfyCorner
   parent: SeatBase
   description: A bench with an extremely comfortable backrest.
@@ -46,7 +52,8 @@
     price: 35
 
 - type: entity
-  name: comfortable bench end left
+  name: comfortable bench
+  suffix: End Left. White
   id: BenchComfyEndLeft
   parent: SeatBase
   description: A bench with an extremely comfortable backrest.
@@ -66,7 +73,8 @@
     price: 35
 
 - type: entity
-  name: comfortable bench end right
+  name: comfortable bench
+  suffix: End Right. White
   id: BenchComfyEndRight
   parent: SeatBase
   description: A bench with an extremely comfortable backrest.
@@ -86,7 +94,8 @@
     price: 35
 
 - type: entity
-  name: comfortable bench middle
+  name: comfortable bench
+  suffix: Middle. White
   id: BenchComfyMiddle
   parent: SeatBase
   description: A bench with an extremely comfortable backrest.
@@ -105,7 +114,7 @@
   - type: StaticPrice
     price: 35
 
-
+#Bench Red
 - type: entity
   id: BenchRedComfy
   suffix: Solo. Red
@@ -173,6 +182,7 @@
     - state: cover
       color: "#8c4141"
 
+#Bench Blue
 - type: entity
   id: BenchBlueComfy
   suffix: Solo. Blue
@@ -239,3 +249,133 @@
       color: "#767e82"
     - state: cover
       color: "#334e6d"
+
+#Bench Gray
+- type: entity
+  id: BenchGrayComfy
+  suffix: Solo. Gray
+  parent: BenchComfy
+  components:
+  - type: Sprite
+    layers:
+    - state: bench_solo_base
+      color: "#767e82"
+    - state: bench_solo_cover
+      color: "#767e82"
+
+- type: entity
+  id: BenchGrayComfyCorner
+  suffix: Corner. Gray
+  parent: BenchComfy
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Benches/bench_corner.rsi
+    layers:
+    - state: base
+      color: "#767e82"
+    - state: cover
+      color: "#767e82"
+
+- type: entity
+  id: BenchGrayComfyEndLeft
+  suffix: End Left. Gray
+  parent: BenchComfy
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Benches/bench_end_left.rsi
+    layers:
+    - state: base
+      color: "#767e82"
+    - state: cover
+      color: "#767e82"
+
+- type: entity
+  id: BenchGrayComfyEndRight
+  suffix: End Right. Gray
+  parent: BenchComfy
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Benches/bench_end_right.rsi
+    layers:
+    - state: base
+      color: "#767e82"
+    - state: cover
+      color: "#767e82"
+
+- type: entity
+  id: BenchGrayComfyMiddle
+  suffix: Middle. Gray
+  parent: BenchComfy
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Benches/bench_middle.rsi
+    layers:
+    - state: base
+      color: "#767e82"
+    - state: cover
+      color: "#767e82"
+
+#Bench Green
+- type: entity
+  id: BenchGreenComfy
+  suffix: Solo. Green
+  parent: BenchComfy
+  components:
+  - type: Sprite
+    layers:
+    - state: bench_solo_base
+      color: "#767e82"
+    - state: bench_solo_cover
+      color: "#3c9950"
+
+- type: entity
+  id: BenchGreenComfyCorner
+  suffix: Corner. Green
+  parent: BenchComfy
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Benches/bench_corner.rsi
+    layers:
+    - state: base
+      color: "#767e82"
+    - state: cover
+      color: "#3c9950"
+
+- type: entity
+  id: BenchGreenComfyEndLeft
+  suffix: End Left. Green
+  parent: BenchComfy
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Benches/bench_end_left.rsi
+    layers:
+    - state: base
+      color: "#767e82"
+    - state: cover
+      color: "#3c9950"
+
+- type: entity
+  id: BenchGreenComfyEndRight
+  suffix: End Right. Green
+  parent: BenchComfy
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Benches/bench_end_right.rsi
+    layers:
+    - state: base
+      color: "#767e82"
+    - state: cover
+      color: "#3c9950"
+
+- type: entity
+  id: BenchGreenComfyMiddle
+  suffix: Middle. Green
+  parent: BenchComfy
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Furniture/Benches/bench_middle.rsi
+    layers:
+    - state: base
+      color: "#767e82"
+    - state: cover
+      color: "#3c9950"
