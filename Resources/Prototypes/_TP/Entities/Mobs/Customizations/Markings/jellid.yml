@@ -4,113 +4,104 @@
   id: JellidMantle
   bodyPart: Hair
   markingCategory: HeadTop
-  speciesRestriction: [Jellid]
+  speciesRestriction: [JellidPerson]
   sprites:
-  - sprite: Mobs/Customization/Jellid/mantles.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/mantles.rsi
     state: head_mantle
 
 - type: marking
   id: JellidBox
   bodyPart: Hair
   markingCategory: HeadTop
-  speciesRestriction: [Jellid]
-  followSkinColor: true
+  speciesRestriction: [JellidPerson]
   sprites:
-  - sprite: Mobs/Customization/Jellid/mantles.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/mantles.rsi
     state: box_mantle
 
 - type: marking
   id: JellidEgg
   bodyPart: Hair
   markingCategory: HeadTop
-  speciesRestriction: [Jellid]
-  followSkinColor: true
+  speciesRestriction: [JellidPerson]
   sprites:
-  - sprite: Mobs/Customization/Jellid/mantles.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/mantles.rsi
     state: egg_primary
-  - sprite: Mobs/Customization/Jellid/mantles.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/mantles.rsi
     state: egg_secondary
 
 - type: marking
   id: JellidComb
   bodyPart: Hair
   markingCategory: HeadTop
-  speciesRestriction: [Jellid]
-  followSkinColor: true
+  speciesRestriction: [JellidPerson]
   sprites:
-  - sprite: Mobs/Customization/Jellid/mantles.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/mantles.rsi
     state: comb_primary
-  - sprite: Mobs/Customization/Jellid/mantles.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/mantles.rsi
     state: comb_secondary
-  - sprite: Mobs/Customization/Jellid/mantles.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/mantles.rsi
     state: comb_tertiary
 
 - type: marking
   id: JellidCrystal
   bodyPart: Hair
   markingCategory: HeadTop
-  speciesRestriction: [Jellid]
-  followSkinColor: true
+  speciesRestriction: [JellidPerson]
   sprites:
-  - sprite: Mobs/Customization/Jellid/mantles.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/mantles.rsi
     state: crystal_mantle
 
 - type: marking
   id: JellidManOWar
   bodyPart: Hair
   markingCategory: HeadTop
-  speciesRestriction: [Jellid]
-  followSkinColor: true
+  speciesRestriction: [JellidPerson]
   sprites:
-  - sprite: Mobs/Customization/Jellid/mantles.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/mantles.rsi
     state: manowar_primary
-  - sprite: Mobs/Customization/Jellid/mantles.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/mantles.rsi
     state: manowar_secondary
 
 - type: marking
   id: JellidMoon
   bodyPart: Hair
   markingCategory: HeadTop
-  speciesRestriction: [Jellid]
-  followSkinColor: true
+  speciesRestriction: [JellidPerson]
   sprites:
-  - sprite: Mobs/Customization/Jellid/mantles.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/mantles.rsi
     state: moon_mantle
 
 - type: marking
   id: JellidPhantom
   bodyPart: Hair
   markingCategory: HeadTop
-  speciesRestriction: [Jellid]
-  followSkinColor: true
+  speciesRestriction: [JellidPerson]
   sprites:
-  - sprite: Mobs/Customization/Jellid/mantles.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/mantles.rsi
     state: phantom_primary
-  - sprite: Mobs/Customization/Jellid/mantles.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/mantles.rsi
     state: phantom_secondary
 
 - type: marking
   id: JellidSpotted
   bodyPart: Hair
   markingCategory: HeadTop
-  speciesRestriction: [Jellid]
-  followSkinColor: true
+  speciesRestriction: [JellidPerson]
   sprites:
-  - sprite: Mobs/Customization/Jellid/mantles.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/mantles.rsi
     state: spotted_primary
-  - sprite: Mobs/Customization/Jellid/mantles.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/mantles.rsi
     state: spotted_secondary
 
 - type: marking
   id: JellidStellarid
   bodyPart: Hair
   markingCategory: HeadTop
-  speciesRestriction: [Jellid]
-  followSkinColor: true
+  speciesRestriction: [JellidPerson]
   sprites:
-  - sprite: Mobs/Customization/Jellid/mantles.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/mantles.rsi
     state: stellarid_primary
-  - sprite: Mobs/Customization/Jellid/mantles.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/mantles.rsi
     state: stellarid_secondary
 
 ## Jellid cores
@@ -119,48 +110,277 @@
   id: JellidCrown
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Jellid]
+  speciesRestriction: [JellidPerson]
   coloring:
     default:
       type:
         !type:EyeColoring
         negative: true
   sprites:
-  - sprite: Mobs/Customization/Jellid/core.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/core.rsi
     state: crown_primary
-  - sprite: Mobs/Customization/Jellid/core.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/core.rsi
     state: crown_secondary
-  - sprite: Mobs/Customization/Jellid/core.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/core.rsi
     state: crown_tertiary
 
 - type: marking
   id: JellidMulti
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Jellid]
+  speciesRestriction: [JellidPerson]
   coloring:
     default:
       type:
         !type:EyeColoring
         negative: true
   sprites:
-  - sprite: Mobs/Customization/Jellid/core.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/core.rsi
     state: multi_core
 
 - type: marking
   id: JellidTri
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Jellid]
+  speciesRestriction: [JellidPerson]
   coloring:
     default:
       type:
         !type:EyeColoring
         negative: true
   sprites:
-  - sprite: Mobs/Customization/Jellid/core.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/core.rsi
     state: tri_primary
-  - sprite: Mobs/Customization/Jellid/core.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/core.rsi
     state: tri_secondary
-  - sprite: Mobs/Customization/Jellid/core.rsi
+  - sprite: _TP/Mobs/Customization/Jellid/core.rsi
     state: tri_tertiary
+
+
+
+# Arms
+
+- type: marking
+  id: JellidLArmGradient
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [JellidPerson]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Jellid/arms.rsi
+    state: jellid_gradient_l_arm
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+
+- type: marking
+  id: JellidLHandGradient
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [JellidPerson]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Jellid/arms.rsi
+    state: jellid_gradient_l_hand
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+
+- type: marking
+  id: JellidRArmGradient
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [JellidPerson]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Jellid/arms.rsi
+    state: jellid_gradient_r_arm
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+
+- type: marking
+  id: JellidRHandGradient
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [JellidPerson]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Jellid/arms.rsi
+    state: jellid_gradient_r_hand
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+
+- type: marking
+  id: JellidLArmSpots
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [JellidPerson]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Jellid/arms.rsi
+    state: jellid_spots_l_arm
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+
+- type: marking
+  id: JellidLHandSpots
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [JellidPerson]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Jellid/arms.rsi
+    state: jellid_spots_l_hand
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+
+- type: marking
+  id: JellidRArmSpots
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [JellidPerson]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Jellid/arms.rsi
+    state: jellid_spots_r_arm
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+
+- type: marking
+  id: JellidRHandSpots
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [JellidPerson]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Jellid/arms.rsi
+    state: jellid_spots_r_hand
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+
+#Legs
+
+- type: marking
+  id: JellidLLegGradient
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [JellidPerson]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Jellid/legs.rsi
+    state: jellid_gradient_l_leg
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+
+- type: marking
+  id: JellidLFootGradient
+  bodyPart: LFoot
+  markingCategory: Legs
+  speciesRestriction: [JellidPerson]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Jellid/legs.rsi
+    state: jellid_gradient_l_foot
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+
+- type: marking
+  id: JellidRLegGradient
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [JellidPerson]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Jellid/legs.rsi
+    state: jellid_gradient_r_leg
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+
+- type: marking
+  id: JellidRFootGradient
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [JellidPerson]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Jellid/legs.rsi
+    state: jellid_gradient_r_foot
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+
+- type: marking
+  id: JellidLLegSpots
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [JellidPerson]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Jellid/legs.rsi
+    state: jellid_spots_l_leg
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+
+- type: marking
+  id: JellidLFootSpots
+  bodyPart: LFoot
+  markingCategory: Legs
+  speciesRestriction: [JellidPerson]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Jellid/legs.rsi
+    state: jellid_spots_l_foot
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+
+- type: marking
+  id: JellidRLegSpots
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [JellidPerson]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Jellid/legs.rsi
+    state: jellid_spots_r_leg
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+
+- type: marking
+  id: JellidRFootSpots
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [JellidPerson]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Jellid/legs.rsi
+    state: jellid_spots_r_foot
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+
+# Chest
+
+- type: marking
+  id: JellidTorsoSpots
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [JellidPerson]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Jellid/chest.rsi
+    state: jellid_spots_torso
+  coloring:
+    default:
+      type:
+        !type:EyeColoring

@@ -1,11 +1,11 @@
 - type: entity
-  id: JellidCore
+  id: TP14JellidCore
   parent: [BaseItem, OrganHumanBrain]
   name: Jellid core
   description: "The source of incredible, unending electricity, It looks like it might sting a little if you pick it up."
   components:
   - type: Sprite
-    sprite: Mobs/Species/Jellids/organs.rsi
+    sprite: _TP/Mobs/Species/Jellids/organs.rsi
     state: brain-jellid
   - type: Stomach
   - type: Metabolizer
@@ -39,13 +39,13 @@
 
 
 - type: entity
-  id: OrganWaterLungs
+  id: TP14OrganWaterLungs
   parent: BaseHumanOrgan
   name: gills
   description: "Filters air out of water to breathe."
   components:
   - type: Sprite
-    sprite: Mobs/Species/Jellids/organs.rsi
+    sprite: _TP/Mobs/Species/Jellids/organs.rsi
     layers:
     - state: lung-l-jellid
     - state: lung-r-jellid
@@ -70,6 +70,11 @@
         canReact: false
   - type: Item
     size: Small
+    inhandVisuals:
+      left:
+      - state: lungs-inhand-left
+      right:
+      - state: lungs-inhand-right
     heldPrefix: Lungs
 
 

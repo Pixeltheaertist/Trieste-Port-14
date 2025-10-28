@@ -51,6 +51,22 @@ marking-JellidTri-tri_primary = Primary
 marking-JellidTri-tri_secondary = Secondary
 marking-JellidTri-tri_tertiary = Tertiary
 
+marking-JellidTorsoSpots = Spots Torso
 
+marking-JellidLArmGradient = Left Arm Gradient
+marking-JellidLArmSpots = Left Arm Spots
+marking-JellidLHandGradient = Left Hand Gradient
+marking-JellidLHandSpots = Left Hand Spots
+marking-JellidRArmGradient = Right Arm Gradient
+marking-JellidRArmSpots = Right Arm Spots
+marking-JellidRHandGradient = Right Hand Gradient
+marking-JellidRHandSpots = Right Hand Spots
 
-
+marking-JellidLFootGradient = Left Foot Gradient
+marking-JellidLFootSpots = Left Foot Spots
+marking-JellidLLegGradient = Left Leg Gradient
+marking-JellidLLegSpots = Left Leg Spots
+marking-JellidRFootGradient = Right Foot Gradient
+marking-JellidRFootSpots = Right Foot Spots
+marking-JellidRLegGradient = Right Leg Gradient
+marking-JellidRLegSpots = Right Leg Spots
