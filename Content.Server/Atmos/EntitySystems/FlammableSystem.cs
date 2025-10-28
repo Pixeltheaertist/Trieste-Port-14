@@ -30,7 +30,10 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
 using Content.Shared.Hands.Components;
 using Content.Server.Chemistry.EntitySystems;
+using Content.Shared._TP.Jellids;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Tag;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Atmos.EntitySystems
 {
@@ -52,6 +55,7 @@ namespace Content.Server.Atmos.EntitySystems
         [Dependency] private readonly AudioSystem _audio = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly SharedHandsSystem _hands = default!;
+        [Dependency] private readonly TagSystem _tag = default!;
 
         private EntityQuery<InventoryComponent> _inventoryQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
@@ -408,6 +412,9 @@ namespace Content.Server.Atmos.EntitySystems
             });
         }
 
+        // TP14 Specific
+        private static readonly ProtoId<TagPrototype> FireproofTag = "PreventsFire";
+
         public override void Update(float frameTime)
         {
             // process all fire events
@@ -492,10 +499,22 @@ namespace Content.Server.Atmos.EntitySystems
             var playerQuery = EntityQueryEnumerator<HandsComponent>();
             while (playerQuery.MoveNext(out var playerUid, out var handsComponent))
             {
-
                 if (!HasComp<JellidComponent>(playerUid))
                 {
                     continue;
+                }
+
+                if (_inventory.TryGetSlotEntity(playerUid, "gloves", out var glovesUid))
+                {
+                    if (!HasComp<TagComponent>(glovesUid))
+                    {
+                        continue;
+                    }
+
+                    if (_tag.HasTag(glovesUid.Value, FireproofTag))
+                    {
+                        continue;
+                    }
                 }
 
                 if (_hands.GetActiveItem(playerUid) is not { } heldItem)

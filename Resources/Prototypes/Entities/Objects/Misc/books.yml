@@ -174,7 +174,7 @@
   id: BookEngineersHandbook
   parent: BaseGuidebook
   name: engineer's handbook
-  description: A handbook about engineering written by Nanotrasen.
+  description: A handbook about engineering written by Nanotrasen, and has additions for Trieste Port.
   components:
   - type: Sprite
     layers:

@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Content.Server.Atmos.Components;
 using Content.Server.Chemistry.EntitySystems;
+using Content.Shared._TP.Jellids;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
 using Content.Shared.Overlays;

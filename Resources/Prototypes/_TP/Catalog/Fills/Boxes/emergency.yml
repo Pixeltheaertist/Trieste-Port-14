@@ -12,6 +12,7 @@
     - id: EmergencyMedipen
     - id: Flare
     - id: PowerCellSmall
+    - id: TP14ClothingHandsGlovesFireproof
   - type: Sprite
     layers:
     - state: internals

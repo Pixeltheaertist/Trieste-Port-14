@@ -41,7 +41,7 @@
         - PillCanisterDylovene
         - PillCanisterHyperPlatelet
         - PillCanisterLexodine
-        - PillCanisterOxygenated
+        # - PillCanisterOxygenated # Please do not include non-existant entities UNTIL you add them! -Cookie
         - HandheldHealthAnalyzer
         - ClothingHandsGlovesLatex
       rareChance: 0.1

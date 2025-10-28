@@ -58,3 +58,29 @@
       PowerCell:
         amount: 8
         defaultPrototype: PowerCellMedium
+
+- type: entity
+  id: TP14AtmosphericThrusterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: atmospheric thruster machine board
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: AtmosphericThruster
+    stackRequirements:
+      Manipulator: 4
+      Steel: 5
+
+- type: entity
+  id: TP14LargePropellerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: large propeller machine board
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: TP14LargePropeller
+    stackRequirements:
+      Manipulator: 4
+      Steel: 10

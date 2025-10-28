@@ -328,7 +328,7 @@
 - type: guideEntry
   id: StormArray
   name: guide-entry-storm-array
-  text: "/ServerInfo/Guidebook/Engineering/StormArray.xml"
+  text: "/ServerInfo/_TP/Guidebook/Engineering/StormArray.xml"
 
 - type: guideEntry
   id: AME

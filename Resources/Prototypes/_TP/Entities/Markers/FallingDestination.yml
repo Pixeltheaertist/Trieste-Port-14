@@ -10,6 +10,8 @@
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
-    drawdepth: Overdoors
     sprite: Markers/cross.rsi
+    layers:
+    - state: blue
+    drawdepth: Overdoors
   - type: FallingDestination

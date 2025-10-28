@@ -1,0 +1,19 @@
+- type: entity
+  id: RandomHumanoidSettler
+  name: planetary settler
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner-yellow
+  - type: RandomHumanoidSpawner
+    settings: PlanetarySettler
+
+- type: entity
+  id: RandomHumanoidTheThingy
+  name: the thingy
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner-yellow
+  - type: RandomHumanoidSpawner
+    settings: TheThingy

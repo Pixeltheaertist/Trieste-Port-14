@@ -3,6 +3,9 @@
   parent: BaseComputer
   id: BaseComputerBell
   components:
+  - type: Construction
+    graph: ""
+    node: computer
   - type: Sprite
     layers:
     - map: [ "computerLayerBody" ]

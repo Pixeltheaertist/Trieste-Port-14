@@ -1,7 +1,6 @@
 job-description-technical-assistant = Learn the basics of managing the platform's power, as well as sealing any floods.
 job-description-atmostech = Optimize the platoform's atmospherics setup, and synthesize rare gases to use or sell.
 job-description-bartender = Manage the bar and keep it lively, give out drinks, and listen to the resident's stories.
-job-description-basintech = Maintain expeditionary equipment and the comms relay. Repair old wrecks as FOBs for expeditions.
 job-description-botanist = Grow food for the chef, drugs for the hospital, and other plants to keep yourself entertained.
 job-description-borg = Half-human, Half-machine. Follow your laws, serve the platform, and hound the science team for upgrades.
 job-description-boxer = Fight your way to the top! Challenge the head of personnel and get brigged when you win. Currently available on Core and Origin Station.
@@ -35,7 +34,6 @@ job-description-librarian = Manage the library, give out knowledge to any who se
 job-description-mime = Entertain the citizens through non-vocal means, and engage with light rivalry with the clown.
 job-description-musician = Entertain the residents with your unique musical talent, and acquire new instruments to mess around with.
 job-description-passenger = Live out your life on the platform. Slip and fall to your death.
-job-description-pilot = Pilot your Rotund Stepfather mechanical unit and assist the expeditionaries with their work. Ignore protocol II and die horribly.
 job-description-psychologist = Provide emotional support to traumatized citizens. Currently available on Box, Marathon and Origin Stations.
 job-description-qm = Keep the Platform's money in check. Supervise your techies. Oversee cargo procurement and selling.
 job-description-rd = Manage the science department, unlocking technologies, acquiring & researching artifacts, and performing experiments.

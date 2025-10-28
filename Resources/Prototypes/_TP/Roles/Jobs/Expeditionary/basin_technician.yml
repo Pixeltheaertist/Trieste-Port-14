@@ -1,12 +1,10 @@
-# The ID is set to 'BasinEngi', as 'BasinTech' will
-# break the loadout screen for whatever reason. - Cookie (FatherCheese)
 - type: job
-  id: BasinEngi
+  id: TP14BasinTech
   name: job-name-basintech
   description: job-description-basintech
-  playTimeTracker: JobBasinEngi
+  playTimeTracker: TP14BasinTechTracker
   icon: "JobIconShaftMiner"
-  startingGear: BasinEngiGear
+  startingGear: TP14BasinTechGear
   supervisors: job-supervisors-qm
   access:
   - Salvage
@@ -14,8 +12,19 @@
   - External
 
 - type: startingGear
-  id: BasinEngiGear
+  id: TP14BasinTechGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
-    id: BasinTechPDA
+    id: TP14BasinTechPDA
     ears: ClothingHeadsetMining
+
+- type: chameleonOutfit
+  id: TP14BasinTechChameleonOutfit
+  job: TP14BasinTech
+  equipment:
+    head: ClothingHeadHatCargosoft
+    eyes: ClothingEyesGlassesCheapSunglasses
+    mask: ClothingMaskGasExplorer
+    outerClothing: ClothingOuterWinterMiner
+    neck: ClothingNeckScarfStripedBrown
+    gloves: ClothingHandsGlovesColorBlack

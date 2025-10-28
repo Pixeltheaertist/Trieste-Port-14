@@ -170,5 +170,5 @@
       flatReductions:
         Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
   - type: Loadout
-    prototypes: [Stepfather]
+    prototypes: [TP14StepfatherGear]
   - type: Alerts

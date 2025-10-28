@@ -5,5 +5,5 @@
   color: "#846DCF"
   roles:
   - SalvageSpecialist
-  - BasinEngi
-  - Pilot
+  - TP14BasinTech
+  - TP14Pilot

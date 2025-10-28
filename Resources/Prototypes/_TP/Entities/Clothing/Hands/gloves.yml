@@ -24,3 +24,21 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHandsBase
+  id: TP14ClothingHandsGlovesFireproof
+  name: fire-proof gloves
+  description: High-Quality fire-proof gloves, made specifically for the local Jellids.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Hands/Gloves/fireproof.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Hands/Gloves/fireproof.rsi
+  - type: Fiber
+    fiberMaterial: fibers-rubber
+    fiberColor: fibers-white
+  - type: FingerprintMask
+  - type: Tag
+    tags:
+    - PreventsFire

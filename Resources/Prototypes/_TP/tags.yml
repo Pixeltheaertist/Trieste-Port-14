@@ -4,3 +4,6 @@
 
 - type: Tag
   id: Mimic
+
+- type: Tag
+  id: PreventsFire

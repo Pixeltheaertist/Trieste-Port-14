@@ -9,6 +9,7 @@ using Content.Shared.Implants;
 using Content.Shared.Inventory;
 using Content.Shared.Mind;
 using Content.Shared.PDA;
+using Content.Shared.Radio.Components;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
 using Robust.Shared.Prototypes;
@@ -137,7 +138,8 @@ public sealed class UplinkSystem : EntitySystem
                 if (!pdaUid.ContainedEntity.HasValue)
                     continue;
 
-                if (HasComp<PdaComponent>(pdaUid.ContainedEntity.Value) || HasComp<StoreComponent>(pdaUid.ContainedEntity.Value))
+                if (HasComp<PdaComponent>(pdaUid.ContainedEntity.Value)
+                    && HasComp<StoreComponent>(pdaUid.ContainedEntity.Value))
                     return pdaUid.ContainedEntity.Value;
             }
         }

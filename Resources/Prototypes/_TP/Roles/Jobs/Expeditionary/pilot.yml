@@ -1,10 +1,10 @@
 - type: job
-  id: Pilot
+  id: TP14Pilot
   name: job-name-pilot
   description: job-description-pilot
-  playTimeTracker: JobPilot
+  playTimeTracker: TP14PilotTracker
   icon: "JobIconShaftMiner"
-  startingGear: PilotGear
+  startingGear: TP14PilotGear
   supervisors: job-supervisors-qm
   access:
   - Salvage
@@ -20,11 +20,21 @@
     - type: ExpedPilot # Allows them to use their mech
 
 - type: startingGear
-  id: PilotGear
+  id: TP14PilotGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMercenary
-    id: PilotPDA
+    id: TP14PilotPDA
     ears: ClothingHeadsetMining
     gloves: ClothingHandsGlovesFingerless
     head: ClothingHeadHatHardhatArmored # protect the pilot
 
+- type: chameleonOutfit
+  id: PilotGearChameleonOutfit
+  job: TP14Pilot
+  equipment:
+    head: ClothingHeadHatHardhatArmored
+    mask: ClothingMaskGasExplorer
+    neck: ClothingNeckScarfStripedBrown
+    outerClothing: ClothingOuterWinterMiner
+    gloves: ClothingHandsGlovesFingerless
+    shoes: ClothingShoesColorBlack

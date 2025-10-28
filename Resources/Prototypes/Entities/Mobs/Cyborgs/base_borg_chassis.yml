@@ -332,7 +332,7 @@
     tags:
     - Borg
   - type: AccessReader
-    access: [["Command"], ["Research"]]
+    access: [["Command"], ["Research"], ["SettlerAccess"]]
   - type: ShowJobIcons
   - type: InteractionPopup
     interactSuccessSound:

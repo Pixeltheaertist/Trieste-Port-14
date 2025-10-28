@@ -1,5 +1,10 @@
+# NOTE - ALL loadouts must start with 'Job', followed by the Role's ID.
+# Example: JobID: "TP14ButtSlapper", LoadoutID: "JobTP14ButtSlapper". P.S. Pix pls add butt slapper role
+
+# Expeditionary
+
 - type: roleLoadout
-  id: JobPilot
+  id: JobTP14Pilot
   groups:
   - GroupTankHarness
   - SalvageSpecialistBackpack
@@ -11,7 +16,7 @@
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
-  id: JobBasinEngi
+  id: JobTP14BasinTech
   groups:
   - GroupTankHarness
   - SalvageSpecialistBackpack
@@ -22,3 +27,13 @@
   - Trinkets
   - GroupSpeciesBreathTool
 
+# Civilian
+
+- type: roleLoadout
+  id: JobTP14Settler
+  groups:
+  - GroupTankHarness
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool

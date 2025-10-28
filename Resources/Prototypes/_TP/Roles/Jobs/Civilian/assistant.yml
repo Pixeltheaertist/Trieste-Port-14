@@ -1,0 +1,11 @@
+- type: job
+  id: TP14Settler
+  name: job-name-settler
+  description: job-description-settler
+  playTimeTracker: JobSettler
+  startingGear: TP14SettlerGear
+  icon: "JobIconPassenger"
+  supervisors: job-supervisors-everyone
+  access:
+  - TP14SettlerAccessLevel
+  - Maintenance

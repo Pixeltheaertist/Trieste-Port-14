@@ -4,7 +4,7 @@
   name: pilot
   components:
   - type: SpawnPoint
-    job_id: Pilot
+    job_id: TP14Pilot
   - type: Sprite
     layers:
     - state: green
@@ -16,7 +16,7 @@
   name: basin technician
   components:
   - type: SpawnPoint
-    job_id: BasinEngi
+    job_id: TP14BasinTech
   - type: Sprite
     layers:
     - state: green

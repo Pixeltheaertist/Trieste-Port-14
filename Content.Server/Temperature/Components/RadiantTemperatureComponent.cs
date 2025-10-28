@@ -1,7 +1,5 @@
 // Credit to git pull https://github.com/space-wizards/space-station-14/pull/32087
 
-using Content.Shared.Atmos;
-
 namespace Content.Server.Temperature.Components;
 
 /// <summary>

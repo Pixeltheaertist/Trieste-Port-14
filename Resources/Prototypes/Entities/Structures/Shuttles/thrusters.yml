@@ -239,59 +239,6 @@
       visible: false
 
 - type: entity
-  id: AtmosphericThruster
-  name: atmospheric thruster
-  parent: [ BaseThruster, ConstructibleMachine ]
-  description: A propeller that allows a craft to hover in atmospheric conditions. Essential for in-atmosphere flight.
-  components:
-  - type: Machine
-    board: ThrusterMachineCircuitboard # Change this later to use it's own board
-  - type: AtmosphericThruster
-  - type: AmbientSound
-    enabled: false
-    range: 7
-    volume: -4
-    sound:
-       path: /Audio/Effects/atmospheric_thruster.ogg # Changet this to a really loud helicopter
-  - type: Thruster
-    damage:
-      types:
-        Slash: 40
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
-      behaviors:
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
-    - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
-        - !type:PlaySoundBehavior
-          sound:
-            collection: MetalBreak
-        - !type:ChangeConstructionNodeBehavior
-          node: machineFrame
-  - type: Sprite
-    sprite: Structures/Shuttles/thruster.rsi
-    layers:
-    - state: base
-      map: ["enum.ThrusterVisualLayers.Base"]
-    - state: thrust
-      map: ["enum.ThrusterVisualLayers.ThrustOn"]
-      shader: unshaded
-      visible: false
-    - state: thrust_burn_unshaded
-      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
-      shader: unshaded
-      visible: false
-      offset: 0, 1
-
-- type: entity
   id: RustedThruster
   parent: BaseStructureDynamic
   name: rusted thruster

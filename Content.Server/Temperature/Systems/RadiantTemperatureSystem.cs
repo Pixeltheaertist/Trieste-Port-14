@@ -44,9 +44,9 @@ public sealed class RadiantTemperatureSystem : EntitySystem
 
         // Clamps the heat transferred to not overshoot
         // This is just taken straight from GasThermoMachineSystem.cs
-        var Cin = _atmosphere.GetHeatCapacity(mixture, true);
+        var cin = _atmosphere.GetHeatCapacity(mixture, true);
         var dT = entity.Comp.GoalTemperature - mixture.Temperature;
-        var dQLim = dT * Cin;
+        var dQLim = dT * cin;
         var scale = 1f;
         if (Math.Abs(dQ) > Math.Abs(dQLim))
         {
@@ -55,6 +55,5 @@ public sealed class RadiantTemperatureSystem : EntitySystem
 
         var dQActual = dQ * scale;
         _atmosphere.AddHeat(mixture, dQActual);
-
     }
 }
