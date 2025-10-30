@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseItem
   id: TP14PiezoCrystalShard
+  suffix: Trieste, Sea
   name: piezo crystal shard
   description:  A small piece of of a shattered piezo crystal.
   components:

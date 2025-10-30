@@ -4,7 +4,8 @@
   name: burrito bowl
   parent: FoodBowlBase
   id: TP14FoodBurritoBowl
-  description: A delicious burrito bowl, fresh from a spaceotle sponsored-chef! 
+  description: A delicious burrito bowl, fresh from a spaceotle sponsored-chef!
+  suffix: Trieste, Food
   components:
   - type: FlavorProfile
     flavors:
@@ -26,7 +27,7 @@
           Quantity: 18
         - ReagentId: Rice
           Quantity: 7
-        - ReagentId: Protein 
+        - ReagentId: Protein
           Quantity: 6.5
         - ReagentId: Vitamin
           Quantity: 2

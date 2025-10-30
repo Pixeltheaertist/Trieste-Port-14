@@ -1,8 +1,8 @@
 - type: entity
   abstract: true
   parent: AirSensorBase
-  id: AirSensorJellidBase
-  suffix: Jellid Atmosphere
+  id: TP14AirSensorJellidBase
+  suffix: TP14, Engi, Jellid
   components:
   - type: AtmosMonitor
     gasThresholdPrototypes:
@@ -18,16 +18,16 @@
       Water: jellidWater
 
 - type: entity
-  parent: [AirSensorJellidBase, AirSensor]
-  id: AirSensorJellid
+  parent: [ TP14AirSensorJellidBase, AirSensor ]
+  id: TP14AirSensorJellid
 
 - type: entity
-  parent: [AirSensorJellidBase, GasVentPump]
-  id: GasVentPumpJellid
+  parent: [ TP14AirSensorJellidBase, GasVentPump ]
+  id: TP14GasVentPumpJellid
 
 - type: entity
-  parent: [AirSensorJellidBase, GasVentScrubber]
-  id: GasVentScrubberJellid
+  parent: [ TP14AirSensorJellidBase, GasVentScrubber ]
+  id: TP14GasVentScrubberJellid
   components:
   - type: GasVentScrubber
     wideNet: true # Air alarm with auto mode overrides filters with hardcoded defaults so default to widenet
@@ -45,8 +45,8 @@
 # use this to prevent overriding filters with hardcoded defaults
 - type: entity
   parent: AirAlarm
-  id: AirAlarmJellid
-  suffix: Jellid Atmosphere, auto mode disabled
+  id: TP14AirAlarmJellid
+  suffix: Trieste, Engi, Jellid, Auto-Mode Disabled
   components:
   - type: AirAlarm
     autoMode: false

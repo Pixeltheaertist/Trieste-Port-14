@@ -1,9 +1,13 @@
-# PUT YOUR TAGS IN ALPHABETICAL ORDER
+# PUT YOUR TAGS IN ALPHABETICAL ORDER. 'TP14' is exempt. (So just ignore it!)
+
 - type: Tag
   id: Drifter
 
 - type: Tag
   id: Mimic
+
+- type: Tag
+  id: TP14OvenMachineBoard
 
 - type: Tag
   id: PreventsFire

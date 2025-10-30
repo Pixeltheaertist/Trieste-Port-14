@@ -409,7 +409,7 @@ WaterTankFilled: TP14WaterTankFilled
 AtmosFixWaterMarker: TP14AtmosFixWaterMarker
 MarkerInside: TP14MarkerInside
 MobJellidPerson: TP14MobJellidPerson
-PaperJellid: TP14PaperJellid
+PaperJellid: Paper
 FallingDestinationMarker: TP14FallingDestinationMarker
 SpawnPointPilot: TP14SpawnPointPilot
 SpawnPointBasinTech: TP14SpawnPointBasinTech
@@ -779,3 +779,42 @@ BasinTechIDCard: TP14BasinTechIDCard
 PilotPDA: TP14PilotPDA
 PilotIDCard: TP14PilotIDCard
 SettlerIDCard: TP14SettlerIDCard
+
+# 2025-10-23
+SerpentsMane: TP14SerpentsMane
+TrenchlightWeed: TP14TrenchlightWeed
+
+# 2025-10-24
+PoweredSmallLightWaterProof: TP14PoweredSmallLightWaterProof
+
+# 2025-10-25
+ClothingHeadsetAltCaskie: TP14ClothingHeadsetAltCaskie
+ClothingHandsKnuckleDustersNT: TP14ClothingHandsKnuckleDustersNT
+FishTimedSpawner: TP14FishTimedSpawner
+SpawnMobFish: TP14SpawnMobFish
+SpawnMobDrifter: TP14SpawnMobDrifter
+ReagentSlimePlatelet: TP14ReagentSlimePlatelet
+MobJellidPersonDummy: TP14MobJellidPersonDummy
+TP14_NTvape: TP14NTVape
+PlanktonSeparator: TP14PlanktonSeparator
+PlanktonVial: TP14PlanktonVial
+BorgModuleNanotrasenWeapon: TP14BorgModuleNanotrasenWeapon
+JugCalcium: TP14JugCalcium
+BluespaceCrystal1: TP14BluespaceCrystal1
+BluespaceCrystal5: TP14BluespaceCrystal5
+BluespaceCrystal10: TP14BluespaceCrystal10
+NTAccessBreakerUnlimited: TP14NTAccessBreakerUnlimited
+NTAccessBreaker: TP14NTAccessBreaker
+Pumpjack: TP14Pumpjack
+JellidPortableScrubber: TP14JellidPortableScrubber
+AtmosphericThruster: TP14AtmosphericThruster
+AirSensorJellid: TP14AirSensorJellid
+GasVentPumpJellid: TP14GasVentPumpJellid
+GasVentScrubberJellid: TP14GasVentScrubberJellid
+AirAlarmJellid: TP14AirAlarmJellid
+TP14PaperJellid: Paper
+
+# 2025-10-26
+TP14JellidProofPaperBin5: PaperBin5
+TP14JellidProofPaperBin10: PaperBin10
+TP14JellidProofPaperBin20: PaperBin20

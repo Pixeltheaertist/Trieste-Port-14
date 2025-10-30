@@ -1,6 +1,7 @@
 - type: entity
   id: TP14SpawnPointPilot
   parent: SpawnPointJobBase
+  suffix: Trieste, Expeditionary, Job Spawn
   name: pilot
   components:
   - type: SpawnPoint
@@ -13,6 +14,7 @@
 - type: entity
   id: TP14SpawnPointBasinTech
   parent: SpawnPointJobBase
+  suffix: Trieste, Expeditionary, Job Spawn
   name: basin technician
   components:
   - type: SpawnPoint

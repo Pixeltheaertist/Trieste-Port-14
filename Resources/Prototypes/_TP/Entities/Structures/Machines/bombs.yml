@@ -3,6 +3,7 @@
   id: TP14EnergyBomb
   name: cascade bomb
   description: An advanced bomb that can produce a hyper-microscopic resonance cascade.
+  suffix: Trieste, Weapon
   components:
   - type: Wires
     layoutId: Defusable

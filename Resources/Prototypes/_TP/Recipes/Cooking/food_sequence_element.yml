@@ -1,9 +1,0 @@
-- type: foodSequenceElement
-  id: MeatCutletBurger
-  sprites:
-  - sprite: Objects/Consumable/Food/meat.rsi
-    state: cutlet-cooked
-  tags:
-  - Cooked
-  - Cutlet
-  - Meat

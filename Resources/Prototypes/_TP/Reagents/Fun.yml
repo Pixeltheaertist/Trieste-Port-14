@@ -1,5 +1,5 @@
 - type: reagent
-  id: HorrificLaughter
+  id: TP14HorrificLaughter
   name: reagent-name-horrific-laughter
   group: Toxins
   desc: reagent-desc-horrific-laughter
@@ -13,7 +13,7 @@
       metabolismRate: 0.25
       effects:
       - !type:Emote
-        emote: TP14_HorrificGiggle
+        emote: TP14HorrificGiggle
         probability: 0.3
       - !type:PopupMessage
         type: Local
@@ -21,12 +21,12 @@
         messages: [ "laughter-effect-control-laughter" ]
         probability: 0.2
       - !type:Polymorph
-        prototype: ArtifactCluwne 
+        prototype: ArtifactCluwne
         conditions:
         - !type:ReagentThreshold
           min: 50
       - !type:AdjustReagent
-        reagent: HorrificLaughter
+        reagent: TP14HorrificLaughter
         amount: -20
         conditions:
         - !type:ReagentThreshold

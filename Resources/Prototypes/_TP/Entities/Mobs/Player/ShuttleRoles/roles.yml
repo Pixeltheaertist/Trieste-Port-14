@@ -1,19 +1,27 @@
 - type: entity
   id: RandomHumanoidSettler
   name: planetary settler
+  suffix: Trieste, Random, Spawner
+  parent: MarkerBase
   components:
   - type: Sprite
-    sprite: Structures/Decoration/banner.rsi
-    state: banner-yellow
+    layers:
+    - state: red
+    - sprite: Structures/Decoration/banner.rsi
+      state: banner-yellow
   - type: RandomHumanoidSpawner
     settings: PlanetarySettler
 
 - type: entity
+  parent: MarkerBase
   id: RandomHumanoidTheThingy
+  suffix: Trieste, Random, Spawner
   name: the thingy
   components:
   - type: Sprite
-    sprite: Structures/Decoration/banner.rsi
-    state: banner-yellow
+    layers:
+    - state: red
+    - sprite: Structures/Decoration/banner.rsi
+      state: banner-yellow
   - type: RandomHumanoidSpawner
     settings: TheThingy

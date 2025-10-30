@@ -33,6 +33,7 @@
   - BiogeneratorMachineCircuitboard
   - UniformPrinterMachineCircuitboard
   - MicrowaveMachineCircuitboard
+  - TP14OvenMachineCircuitboardRecipe # TP
   - ReagentGrinderMachineCircuitboard
   - ElectricGrillMachineCircuitboard
   - BoozeDispenserMachineCircuitboard

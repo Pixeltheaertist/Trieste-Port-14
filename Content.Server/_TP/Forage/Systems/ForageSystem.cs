@@ -5,14 +5,12 @@ using Content.Shared.GameTicking;
 using Content.Shared.Interaction;
 using Content.Shared.Tag;
 using Robust.Server.GameObjects;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Server._TP.Forage;
+namespace Content.Server._TP.Forage.Systems;
 
 public sealed class ForageSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly DestructibleSystem _destructible = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
@@ -26,17 +24,17 @@ public sealed class ForageSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ForageComponent, ActivateInWorldEvent>(OnActivate);
-        SubscribeLocalEvent<ForageComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<Components.ForageComponent, ActivateInWorldEvent>(OnActivate);
+        SubscribeLocalEvent<Components.ForageComponent, ComponentInit>(OnInit);
     }
 
-    private void OnInit(Entity<ForageComponent> ent, ref ComponentInit args)
+    private void OnInit(Entity<Components.ForageComponent> ent, ref ComponentInit args)
     {
         ent.Comp.LastForagedTime = -ent.Comp.RegrowTime;
         UpdateAppearance(ent, false);
     }
 
-    private void OnActivate(Entity<ForageComponent> forageable, ref ActivateInWorldEvent args)
+    private void OnActivate(Entity<Components.ForageComponent> forageable, ref ActivateInWorldEvent args)
     {
         if (args.Handled || !args.Complex)
             return;
@@ -45,7 +43,7 @@ public sealed class ForageSystem : EntitySystem
         args.Handled = true;
     }
 
-    private void Forage(Entity<ForageComponent> ent, EntityUid? forager = null)
+    private void Forage(Entity<Components.ForageComponent> ent, EntityUid? forager = null)
     {
         if (IsRegrowing(ent.Comp))
             return;
@@ -80,7 +78,7 @@ public sealed class ForageSystem : EntitySystem
 
     public override void Update(float frameTime)
     {
-        var query = EntityQueryEnumerator<ForageComponent>();
+        var query = EntityQueryEnumerator<Components.ForageComponent>();
         while (query.MoveNext(out var ent, out var forage))
         {
             var isRegrowing = IsRegrowing(forage);
@@ -91,12 +89,12 @@ public sealed class ForageSystem : EntitySystem
         }
     }
 
-    private void UpdateAppearance(Entity<ForageComponent> ent, bool isRegrowing)
+    private void UpdateAppearance(Entity<Components.ForageComponent> ent, bool isRegrowing)
     {
         _appearance.SetData(ent, RegrowVisuals.Regrowing, isRegrowing);
     }
 
-    private bool IsRegrowing(ForageComponent comp)
+    private bool IsRegrowing(Components.ForageComponent comp)
     {
         return _gameTicker.RoundDuration() < comp.LastForagedTime + comp.RegrowTime;
     }

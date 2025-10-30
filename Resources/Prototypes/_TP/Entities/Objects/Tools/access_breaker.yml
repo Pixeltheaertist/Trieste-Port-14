@@ -1,7 +1,7 @@
 - type: entity
-  parent: [BaseItem]
-  id: NTAccessBreakerUnlimited
-  suffix: Unlimited
+  parent: [ BaseItem, BaseNanotrasenContraband ]
+  id: TP14NTAccessBreakerUnlimited
+  suffix: Trieste, NanoTraitor, Unlimited
   name: authentication disruptor
   description: A repurposed access configurator, specialized to unlock and erase access from digital locks.
   components:
@@ -16,9 +16,9 @@
     severity: Nanotrasen
 
 - type: entity
-  parent: NTAccessBreakerUnlimited
-  id: NTAccessBreaker
-  suffix: Limited
+  parent: TP14NTAccessBreakerUnlimited
+  id: TP14NTAccessBreaker
+  suffix: Trieste, NanoTraitor, Limited
   components:
   - type: LimitedCharges
   - type: AutoRecharge

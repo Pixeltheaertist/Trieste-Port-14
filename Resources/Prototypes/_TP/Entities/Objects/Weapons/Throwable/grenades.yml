@@ -3,11 +3,11 @@
   description: A NT-brand beachball. This one is strangely firm.
   parent: BaseGrenade
   id: TP14BeachballGrenade
+  suffix: Trieste, NanoTraitor, Weapon
   components:
   - type: Item
     size: Normal
-    sprite: Objects/Fun/toys.rsi
-    heldPrefix: beachb
+    sprite: Objects/Fun/Balls/beach_ball.rsi
   - type: Destructible
     thresholds:
     - trigger:
@@ -20,8 +20,8 @@
       types:
         Blunt: 10
   - type: Sprite
-    sprite: Objects/Fun/toys.rsi
-    state: beachball
+    sprite: Objects/Fun/Balls/beach_ball.rsi
+    state: icon
   - type: TwoStageTrigger
     triggerDelay: 2.14
     components:

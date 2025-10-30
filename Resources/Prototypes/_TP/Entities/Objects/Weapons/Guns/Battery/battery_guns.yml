@@ -3,6 +3,7 @@
   parent: BaseWeaponBatterySmall
   id: TP14WeaponBlaster
   description: A reliable energy weapon found across the frontier sectors of the galaxy.
+  suffix: Trieste, Weapon
   components:
   - type: Tag
     tags:
@@ -31,8 +32,9 @@
     fireCost: 60
 
 - type: entity
-  parent: [BaseWeaponBattery, BaseNanotrasenContraband]  # Changed from BaseWeaponPowerCellSmall
+  parent: [ BaseWeaponBattery, BaseNanotrasenContraband ]  # Changed from BaseWeaponPowerCellSmall
   id: TP14WeaponNtBlaster
+  suffix: Trieste, NanoTraitor, Weapon
   name: BM-138 power blaster
   description: A Nanotrasen blaster pistol, utilized by operatives and agents. Contains a magazine port for power cells.
   components:
@@ -66,6 +68,7 @@
   name: NT-331 energy carbine
   parent: [ TP14WeaponNtBlaster, BaseGunWieldable ]
   id: TP14WeaponEnergyCarbine
+  suffix: Trieste, NanoTraitor, Weapon
   description: An advanced particle machine gun used by NT operatives. It has a slot for power cells.
   components:
   - type: Item

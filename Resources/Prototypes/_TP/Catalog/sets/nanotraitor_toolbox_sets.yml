@@ -9,7 +9,7 @@
   - BorgModuleAdvancedTool
   - BorgModuleConstruction
   - BorgModuleRCD
-  - BorgModuleNanotrasenWeapon
+  - TP14BorgModuleNanotrasenWeapon
 
 - type: thiefBackpackSet
   id: TP14SyndicateSet
@@ -33,4 +33,4 @@
   - BorgModuleAdvancedChemical
   - BorgModuleRescue
   - BorgModuleTopicals
-  - BorgModuleNanotrasenWeapon
+  - TP14BorgModuleNanotrasenWeapon

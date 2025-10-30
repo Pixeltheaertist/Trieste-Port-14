@@ -2,6 +2,7 @@
   name: Rotund Stepfather Spawner
   id: TP14SpawnMechStepfather
   parent: MarkerBase
+  suffix: Trieste, Expeditionary, Job Spawn
   components:
   - type: Sprite
     layers:

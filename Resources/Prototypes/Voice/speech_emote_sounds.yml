@@ -40,7 +40,7 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
-    TP14_HorrificGiggle:
+    TP14HorrificGiggle:
       collection: CluwneScreams
 
 - type: emoteSounds
@@ -84,7 +84,7 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
-    TP14_HorrificGiggle:
+    TP14HorrificGiggle:
       collection: CluwneScreams
 
 - type: emoteSounds
@@ -110,7 +110,7 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: DeathGasp
-    TP14_HorrificGiggle:
+    TP14HorrificGiggle:
       collection: CluwneScreams
 
 - type: emoteSounds
@@ -136,7 +136,7 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
-    TP14_HorrificGiggle:
+    TP14HorrificGiggle:
       collection: CluwneScreams
 
 - type: emoteSounds
@@ -180,11 +180,11 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
-    TP14_HorrificGiggle:
+    TP14HorrificGiggle:
       collection: CluwneScreams
   params:
     variation: 0.125
-   
+
 - type: emoteSounds
   id: FemaleSlime
   sounds:
@@ -226,7 +226,7 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
-    TP14_HorrificGiggle:
+    TP14HorrificGiggle:
       collection: CluwneScreams
   params:
     variation: 0.125
@@ -244,7 +244,7 @@
       collection: Weh
     Hew:
       collection: Hew
-    TP14_HorrificGiggle:
+    TP14HorrificGiggle:
       collection: CluwneScreams
   params:
     variation: 0.125
@@ -269,7 +269,7 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: DeathGasp
-    TP14_HorrificGiggle:
+    TP14HorrificGiggle:
       collection: CluwneScreams
   params:
     variation: 0.125
@@ -297,7 +297,7 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: DeathGasp
-    TP14_HorrificGiggle:
+    TP14HorrificGiggle:
       collection: CluwneScreams
 
 - type: emoteSounds
@@ -339,7 +339,7 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
-    TP14_HorrificGiggle:
+    TP14HorrificGiggle:
       collection: CluwneScreams
   params:
     variation: 0.125
@@ -384,7 +384,7 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
-    TP14_HorrificGiggle:
+    TP14HorrificGiggle:
       collection: CluwneScreams
   params:
     variation: 0.125
@@ -415,7 +415,7 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MothDeathGasp
-    TP14_HorrificGiggle:
+    TP14HorrificGiggle:
       collection: CluwneScreams
 
 - type: emoteSounds

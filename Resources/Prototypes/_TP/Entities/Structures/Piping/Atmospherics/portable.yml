@@ -1,8 +1,9 @@
 - type: entity
-  id: JellidPortableScrubber
-  parent: [BaseMachinePowered, SmallConstructibleMachine, StructureWheeled]
+  id: TP14JellidPortableScrubber
+  parent: [ BaseMachinePowered, SmallConstructibleMachine, StructureWheeled ]
   name: jellid portable scrubber
   description: It scrubs, portably! This one scrubs water instead of air.
+  suffix: Trieste, Engi, Jellid
   components:
   - type: Transform
     anchored: false

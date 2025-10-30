@@ -1,6 +1,7 @@
 - type: entity
   name: Fish Spawner
-  id: SpawnMobFish
+  id: TP14SpawnMobFish
+  suffix: Trieste, Random, Sea, Spawner
   parent: MarkerBase
   components:
   - type: Sprite
@@ -14,8 +15,9 @@
 
 - type: entity
   name: Drifter Spawner
-  id: SpawnMobDrifter
+  id: TP14SpawnMobDrifter
   parent: MarkerBase
+  suffix: Trieste,  Drifter, Random, Sea,
   components:
   - type: Sprite
     layers:
@@ -25,3 +27,13 @@
   - type: ConditionalSpawner
     prototypes:
     - TP14MobDrifter
+
+- type: entity
+  parent: SpawnMobCrab
+  id: TP14SpawnMobOceanicCrab
+  suffix: Trieste, Sea, Spawner
+  name: oceanic crab spawner
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - TP14MobSeaCrab

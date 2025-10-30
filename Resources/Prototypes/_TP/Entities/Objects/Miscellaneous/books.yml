@@ -1,6 +1,7 @@
 - type: entity
   parent: BookBase
   id: TP14BookPirateCode
+  suffix: Trieste
   name: "The Pirate Code"
   description: An old, tattered book. The author reads "John Cutlass". The inside contains the rules all pirates live by.
   components:

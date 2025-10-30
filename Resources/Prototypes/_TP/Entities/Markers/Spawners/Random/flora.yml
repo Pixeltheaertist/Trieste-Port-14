@@ -3,12 +3,13 @@
   name: random forage plant spawner
   categories: [ Spawner ]
   parent: MarkerBase
+  suffix: Trieste, Sea, Random
   components:
   - type: Sprite
     sprite: /Textures/_TP/Objects/Flora/Forage/trenchlight_weed.rsi
     state: plant
   - type: RandomSpawner
     prototypes:
-    - SerpentsMane
-    - TrenchlightWeed
+    - TP14SerpentsMane
+    - TP14TrenchlightWeed # TODO - Add the new flora to here, when we have harvest-ables!
     chance: 0.6

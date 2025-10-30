@@ -2,7 +2,7 @@
   id: TP14WaterTankEmergencyFilled
   name: emergency water tank
   parent: EmergencyOxygenTank
-  suffix: Filled
+  suffix: Trieste, Filled
   description: A tank designed to hold small amounts of water. It won't last long, but it works.
   components:
   - type: Sprite
@@ -32,7 +32,7 @@
   id: TP14WaterTankFilled
   name: water tank
   parent: OxygenTank
-  suffix: Filled
+  suffix: Trieste, Filled
   description: A robust tank designed to store sea water
   components:
   - type: Clothing

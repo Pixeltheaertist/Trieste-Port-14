@@ -1,0 +1,5 @@
+- type: stack
+  id: BluespaceCrystal
+  name: bluespace crystal
+  icon: Objects/Specific/Syndicate/telecrystal.rsi
+  spawn: TP14BluespaceCrystal1

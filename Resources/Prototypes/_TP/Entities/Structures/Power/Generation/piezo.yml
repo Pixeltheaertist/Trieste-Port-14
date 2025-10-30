@@ -2,7 +2,8 @@
   id: TP14PiezoCrystal
   parent: BaseStructure
   name: piezo crystal
-  description: An electrically charged crystal capable of releasing occasional bursts of localized static which can be used for electricity.
+  description: An electrically charged crystal capable of releasing occasional bursts of localized static.
+  suffix: Trieste, Sea
   components:
   - type: Sprite
     sprite: Objects/Piezo.rsi

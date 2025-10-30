@@ -1,6 +1,8 @@
+# Abstract Entities
+
 - type: entity
   parent: BaseStructure
-  id: BaseForagePlant
+  id: TP14BaseForagePlant
   abstract: true
   components:
   - type: Fixtures
@@ -21,8 +23,8 @@
             acts: [ "Destruction" ]
 
 - type: entity
-  parent: BaseForagePlant
-  id: BaseForagePlantRegrowing
+  parent: TP14BaseForagePlant
+  id: TP14BaseForagePlantRegrowing
   abstract: true
   components:
   - type: Appearance
@@ -33,11 +35,16 @@
           True: { state: plant-regrowing }
           False: { state: plant }
 
+
+# Plants
+
+# Serpents Mane
 - type: entity
-  parent: BaseForagePlantRegrowing
-  id: SerpentsMane
+  parent: TP14BaseForagePlantRegrowing
+  id: TP14SerpentsMane
+  suffix: Trieste, Forage
   name: serpent's mane
-  description: This plant tries to ward off potential predators by imitating an animal. The currents will make it's light stem move around, scaring off other creatures and the unexperienced.
+  description: This plant tries to ward off potential predators by imitating an animal. The currents will make its light stem move around, scaring off other creatures and the unexperienced.
   components:
   - type: Sprite
     sprite: _TP/Objects/Flora/Forage/serpents_mane.rsi
@@ -50,11 +57,296 @@
       All: !type:NestedSelector
         tableId: SerpentsManeGather
 
-- type: entityTable
-  id: SerpentsManeGather
-  table: !type:AllSelector
-    children:
-    - id: SerpentsManeBulb
+# Trenchlight Weed
+- type: entity
+  parent: TP14BaseForagePlantRegrowing
+  id: TP14TrenchlightWeed
+  suffix: Trieste, Forage
+  name: trenchlight weed
+  description: An invasive species, brought to the planet from Limoris-2b by inter-sector cargo ships. It's known for its moderate healing properties even before proper processing.
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Flora/Forage/trenchlight_weed.rsi
+  - type: Icon
+    sprite: _TP/Objects/Flora/Forage/trenchlight_weed.rsi
+    state: plant
+  - type: Forage
+    regrowTime: 300
+    loot:
+      All: !type:NestedSelector
+        tableId: TrenchlightWeed
+
+# TODO - Add harvesting to these four types! (Cotton-Bulb, Saltshroom, Shweat, and xicholoma)
+# Cotton-Bulb
+- type: entity
+  parent: TP14BaseForagePlant
+  id: TP14CottonBulbBase
+  abstract: true
+  name: cotton-bulb
+  description: This invertebrate has a hardy base, yet a very soft and glowing cotton-like bulb on the ends. Bioluminescent predators like to hide within for unexpecting prey when they feed.
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Flora/Forage/cotton_bulb.rsi
+  - type: PointLight
+    enabled: true
+    softness: 1
+    color: "#7A3B30"
+
+- type: entity
+  parent: TP14CottonBulbBase
+  id: TP14CottonBulbLarge
+  suffix: Trieste, Forage, Large
+  components:
+  - type: Sprite
+    state: large
+  - type: PointLight
+    radius: 5.0
+    energy: 3
+    falloff: 10
+
+- type: entity
+  parent: TP14CottonBulbBase
+  id: TP14CottonBulbMedium
+  suffix: Trieste, Forage, Medium
+  components:
+  - type: Sprite
+    state: medium
+  - type: PointLight
+    radius: 3.5
+    energy: 6
+    falloff: 5
+
+- type: entity
+  parent: TP14CottonBulbBase
+  id: TP14CottonBulbSmall
+  suffix: Trieste, Forage, Small
+  components:
+  - type: Sprite
+    state: small
+  - type: PointLight
+    radius: 2.0
+    energy: 9
+    falloff: 2.5
+
+- type: entity
+  parent: MarkerBase
+  categories: [ Spawner ]
+  id: TP14CottonBulbRandom
+  suffix: Trieste, Forage, Random
+  name: random cotton-bulb spawner
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _TP/Objects/Flora/Forage/cotton_bulb.rsi
+        state: medium
+  - type: RandomSpawner
+    prototypes:
+      - TP14CottonBulbLarge
+      - TP14CottonBulbMedium
+      - TP14CottonBulbSmall
+    chance: 1
+
+# Saltshroom
+- type: entity
+  parent: TP14BaseForagePlant
+  id: TP14SaltshroomBase
+  abstract: true
+  name: saltshroom
+  description: A cyan seaweed. Its ends have a sticky residue to collect Trieste's ocean salt, aquatic waste, and microscopic prey for nutrients.
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Flora/Forage/saltshroom.rsi
+
+- type: entity
+  parent: TP14SaltshroomBase
+  id: TP14SaltshroomLarge
+  suffix: Trieste, Forage, Large
+  components:
+  - type: Sprite
+    state: large
+
+- type: entity
+  parent: TP14SaltshroomBase
+  id: TP14SaltshroomMedium
+  suffix: Trieste, Forage, Medium
+  components:
+  - type: Sprite
+    state: medium
+
+- type: entity
+  parent: TP14SaltshroomBase
+  id: TP14SaltshroomSmall
+  suffix: Trieste, Forage, Small
+  components:
+  - type: Sprite
+    state: small
+
+- type: entity
+  parent: MarkerBase
+  categories: [ Spawner ]
+  id: TP14SaltshroomRandom
+  suffix: Trieste, Forage, Random
+  name: random saltshroom spawner
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _TP/Objects/Flora/Forage/saltshroom.rsi
+        state: medium
+    state: medium
+  - type: RandomSpawner
+    prototypes:
+      - TP14SaltshroomLarge
+      - TP14SaltshroomMedium
+      - TP14SaltshroomSmall
+    chance: 1
+
+# Shweat
+- type: entity
+  parent: TP14BaseForagePlant
+  categories: [ Spawner ]
+  id: TP14ShweatBase
+  abstract: true
+  name: shweat
+  description: Seemingly sulfur-coated tubes from a volcanic vent. The exterior shell is made of a hard, almost metallic material and is often crushed by Jellids for spice. The interior, however, is a extraordinarily sweet jelly.
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Flora/Forage/shweat.rsi
+
+- type: entity
+  parent: TP14ShweatBase
+  id: TP14ShweatLarge
+  suffix: Trieste, Forage, Large
+  components:
+  - type: Sprite
+    state: large
+
+- type: entity
+  parent: TP14ShweatBase
+  id: TP14ShweatMedium
+  suffix: Trieste, Forage, Medium
+  components:
+  - type: Sprite
+    state: medium
+
+- type: entity
+  parent: TP14ShweatBase
+  id: TP14ShweatSmall
+  suffix: Trieste, Forage, Small
+  components:
+  - type: Sprite
+    state: small
+
+- type: entity
+  parent: MarkerBase
+  categories: [ Spawner ]
+  id: TP14ShweatRandom
+  suffix: Trieste, Forage, Random
+  name: random shweat spawner
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _TP/Objects/Flora/Forage/shweat.rsi
+        state: medium
+    state: medium
+  - type: RandomSpawner
+    prototypes:
+      - TP14ShweatLarge
+      - TP14ShweatMedium
+      - TP14ShweatSmall
+    chance: 1
+
+- type: entity
+  parent: TP14BaseForagePlant
+  id: TP14XicholomaBase
+  abstract: true
+  name: xicholoma
+  description: An invasive species crashed down from space long ago. It's seemingly more organic and life-like than other plants, and rumbles lightly.
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Flora/Forage/xicholoma.rsi
+
+- type: entity
+  parent: TP14XicholomaBase
+  id: TP14XicholomaLarge
+  suffix: Trieste, Forage, Large
+  components:
+  - type: Sprite
+    state: large
+
+- type: entity
+  parent: TP14XicholomaBase
+  id: TP14XicholomaMedium
+  suffix: Trieste, Forage, Medium
+  components:
+  - type: Sprite
+    state: medium
+
+- type: entity
+  parent: TP14XicholomaBase
+  id: TP14XicholomaSmall
+  suffix: Trieste, Forage, Small
+  components:
+  - type: Sprite
+    state: small
+
+- type: entity
+  parent: MarkerBase
+  categories: [ Spawner ]
+  id: TP14XicholomaRandom
+  suffix: Trieste, Forage, Random
+  name: random xicholoma spawner
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _TP/Objects/Flora/Forage/xicholoma.rsi
+        state: medium
+  - type: RandomSpawner
+    prototypes:
+      - TP14XicholomaLarge
+      - TP14XicholomaMedium
+      - TP14XicholomaSmall
+    chance: 1
+
+- type: entity
+  parent: MarkerBase
+  categories: [ Spawner ]
+  id: TP14ReefSpawnerTenByTen
+  suffix: Trieste, Forage, 10x10
+  name: sweetwater reef spawner
+  components:
+  - type: Sprite
+    sprite: Markers/cross.rsi
+    layers:
+    - state: red
+    scale: 5, 5
+  - type: ReefSpawner
+    entities:
+      TP14CottonBulbLarge: 0.10
+      TP14CottonBulbMedium: 0.25
+      TP14CottonBulbSmall: 0.25
+
+      TP14SaltshroomLarge: 0.10
+      TP14SaltshroomMedium: 0.25
+      TP14SaltshroomSmall: 0.25
+
+      TP14SerpentsMane: 0.25
+      TP14TrenchlightWeed: 0.25
+
+      TP14XicholomaLarge: 0.05
+      TP14XicholomaMedium: 0.10
+      TP14XicholomaSmall: 0.10
+    tileChance: 0.20
+    radius: 5
+  - type: MapText
+    text: "reef spawner"
+    fontSize: 16
+
+
+# Harvested Entities
 
 - type: entity
   parent: FoodInjectableBase
@@ -88,29 +380,6 @@
           Quantity: 10
 
 - type: entity
-  parent: BaseForagePlantRegrowing
-  id: TrenchlightWeed
-  name: trenchlight weed
-  description: An invasive species, brought to the planet from Limoris-2b by inter-sector cargo ships. It's known for it's moderate healing properties even before proper processing.
-  components:
-  - type: Sprite
-    sprite: _TP/Objects/Flora/Forage/trenchlight_weed.rsi
-  - type: Icon
-    sprite: _TP/Objects/Flora/Forage/trenchlight_weed.rsi
-    state: plant
-  - type: Forage
-    regrowTime: 300
-    loot:
-      All: !type:NestedSelector
-        tableId: TrenchlightWeed
-
-- type: entityTable
-  id: TrenchlightWeed
-  table: !type:AllSelector
-    children:
-    - id: TrenchlightLeaf
-
-- type: entity
   parent: FoodInjectableBase
   id: TrenchlightLeaf
   name: trenchlight leaf
@@ -135,3 +404,18 @@
         reagents:
         - ReagentId: Vounarin
           Quantity: 4
+
+
+# Gathering
+
+- type: entityTable
+  id: SerpentsManeGather
+  table: !type:AllSelector
+    children:
+    - id: SerpentsManeBulb
+
+- type: entityTable
+  id: TrenchlightWeed
+  table: !type:AllSelector
+    children:
+    - id: TrenchlightLeaf

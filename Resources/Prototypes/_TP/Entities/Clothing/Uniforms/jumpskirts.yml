@@ -1,6 +1,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: TP14ClothingUniformJumpskirtDarkPerformer
+  suffix: Trieste
   name: dark performer's jumpskirt
   description: The true AI, once hired by SolGov to fight off Hatsune Miku. Real story.
   components:

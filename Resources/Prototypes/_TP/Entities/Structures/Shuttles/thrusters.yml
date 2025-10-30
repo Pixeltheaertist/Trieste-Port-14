@@ -1,8 +1,9 @@
 - type: entity
-  id: AtmosphericThruster
+  id: TP14AtmosphericThruster
   name: atmospheric thruster
   parent: [ BaseThruster, ConstructibleMachine ]
   description: A thruster that allows a craft to hover in atmospheric conditions. Essential for in-atmosphere flight.
+  suffix: Trieste, Planetary
   components:
   - type: Machine
     board: TP14AtmosphericThrusterMachineCircuitboard
@@ -43,8 +44,8 @@
 
 - type: entity
   id: TP14AtmosphericThrusterUnanchored
-  parent: AtmosphericThruster
-  suffix: Unanchored
+  parent: TP14AtmosphericThruster
+  suffix: Trieste, Planetary, Unanchored
   components:
   - type: Transform
     anchored: false
@@ -56,6 +57,7 @@
   name: large propeller
   parent: [ BaseThruster, ConstructibleMachine ]
   description: A propeller that allows a craft to hover in atmospheric conditions. Essential for in-atmosphere flight.
+  suffix: Trieste, Planetary, Unanchored
   components:
   - type: Machine
     board: TP14AtmosphericThrusterMachineCircuitboard

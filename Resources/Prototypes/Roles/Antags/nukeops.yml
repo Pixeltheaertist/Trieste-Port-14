@@ -45,7 +45,7 @@
     back: ClothingBackpackDuffel
     mask: ClothingMaskGasERT
     eyes: ClothingEyesHudSyndicate
-    ears: ClothingHeadsetAltCaskie
+    ears: TP14ClothingHeadsetAltCaskie
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitERTLeader
     shoes: ClothingShoesBootsCombatFilled

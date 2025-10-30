@@ -1,6 +1,7 @@
 - type: entity
   id: TP14ColdplateMachineCircuitboard
   parent: BaseMachineCircuitboard
+  suffix: Trieste
   name: coldplate machine board
   description: A machine printed circuit board for a coldplate.
   components:
@@ -13,13 +14,14 @@
 - type: entity
   id: JellidPortableScrubberMachineCircuitBoard
   parent: BaseMachineCircuitboard
+  suffix: Trieste, Jellid
   name: jellid portable scrubber machine board
   description: A machine printed circuit board for a jellid portable scrubber.
   components:
   - type: Sprite
     state: engineering
   - type: MachineBoard
-    prototype: JellidPortableScrubber
+    prototype: TP14JellidPortableScrubber
     stackRequirements:
       Manipulator: 3
       Cable: 5
@@ -28,6 +30,7 @@
 - type: entity
   id: IncubatorMachineCircuitboard
   parent: BaseMachineCircuitboard
+  suffix: Trieste, Medical
   name: incubator machine board
   description: A machine printed circuit board for an incubator.
   components:
@@ -43,6 +46,7 @@
 - type: entity
   id: TP14SMESAdvancedMachineCircuitboard
   parent: BaseMachineCircuitboard
+  suffix: Trieste
   name: trieste's advanced SMES machine board
   description: A machine printed circuit board for a trieste-speciifc Advanced SMES.
   components:
@@ -62,12 +66,13 @@
 - type: entity
   id: TP14AtmosphericThrusterMachineCircuitboard
   parent: BaseMachineCircuitboard
+  suffix: Trieste, Planetary
   name: atmospheric thruster machine board
   components:
   - type: Sprite
     state: supply
   - type: MachineBoard
-    prototype: AtmosphericThruster
+    prototype: TP14AtmosphericThruster
     stackRequirements:
       Manipulator: 4
       Steel: 5
@@ -75,6 +80,7 @@
 - type: entity
   id: TP14LargePropellerMachineCircuitboard
   parent: BaseMachineCircuitboard
+  suffix: Trieste, Planetary
   name: large propeller machine board
   components:
   - type: Sprite
@@ -84,3 +90,21 @@
     stackRequirements:
       Manipulator: 4
       Steel: 10
+
+- type: entity
+  id: TP14OvenMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  suffix: Trieste, Service
+  name: oven machine board
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: TP14KitchenOven
+      stackRequirements:
+        Manipulator: 2
+        Glass: 4
+        Cable: 4
+    - type: Tag
+      tags:
+      - TP14OvenMachineBoard

@@ -1,6 +1,7 @@
 - type: entity
   parent: ClothingShoesBaseButcherable
   id: TP14ClothingShoesBootsDarkPerformer
+  suffix: Trieste
   name: dark performer's boots
   description: With these, you could dance, and be a ninja in the night!
   components:

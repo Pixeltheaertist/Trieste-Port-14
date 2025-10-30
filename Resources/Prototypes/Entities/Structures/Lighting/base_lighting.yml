@@ -389,7 +389,7 @@
   - type: PointLight
     enabled: true
     radius: 5
-    energy: 0.5
+    energy: 1 # TP14 specific
     softness: 3
     color: "#ba473f"
   - type: PoweredLight
@@ -437,30 +437,6 @@
       types:
         Heat: 2
     popupText: powered-light-component-burn-hand
-
-- type: entity
-  id: PoweredSmallLightWaterProof
-  suffix: Waterproof
-  parent: PoweredSmallLightEmpty
-  components:
-  - type: Sprite
-    state: base
-  - type: PointLight
-    enabled: true
-  - type: PoweredLight
-    hasLampOnSpawn: LightBulb
-  - type: DamageOnInteract
-    damage:
-      types:
-        Heat: 2
-    popupText: powered-light-component-burn-hand
-  - type: InGas
-    gasId: 9
-    damagedByGas: false # waterproof
-    gasThreshold: 75
-    damage:
-      types:
-        Blunt: 3
 
 #Emergency Lights
 - type: entity

@@ -3,6 +3,7 @@
   id: TP14WaterCanister
   name: water canister
   description: It's GAS canister! Who the hell put water in it?
+  suffix: Trieste
   components:
   - type: Sprite
     layers:

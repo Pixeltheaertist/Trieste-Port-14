@@ -26,3 +26,9 @@
   parent: [ BaseCircuitboardRecipe, BaseSupplyMachineRecipeCategory ]
   id: TP14LargePropellerMachineCircuitboardRecipe
   result: TP14LargePropellerMachineCircuitboard
+
+# Service
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseServiceMachineRecipeCategory ]
+  id: TP14OvenMachineCircuitboardRecipe
+  result: TP14OvenMachineCircuitboard

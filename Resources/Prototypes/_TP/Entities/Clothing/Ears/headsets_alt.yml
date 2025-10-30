@@ -1,8 +1,9 @@
 - type: entity
   parent: ClothingHeadsetAltCentCom
-  id: ClothingHeadsetAltCaskie
+  id: TP14ClothingHeadsetAltCaskie
+  suffix: Trieste, NanoTraitor Operative
   name: operative headset
-  description: A modular earpiece assigned to Nanotrasen footsoldiers.
+  description: A modular earpiece assigned to NanoTrasen footsoldiers.
   components:
   - type: ContainerFill
     containers:

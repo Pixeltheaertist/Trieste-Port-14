@@ -2,7 +2,8 @@
   parent: TelecomServer
   id: TP14TelecomRelay
   name: communications array
-  description: Boosts recieved radio signals across a wide range, allowing communication across vast distances
+  description: Boosts received radio signals across a wide range, allowing communication across vast distances.
+  suffix: Trieste, Engi
   components:
   - type: Relay
   - type: AmbientOnPowered
@@ -42,7 +43,7 @@
   id: TP14TelecomRelayDestroyed
   name: communications array
   description: It once broadcasted signals into the far distance. It's broken now, though.
-  suffix: destroyed
+  suffix: Trieste, Engi, Destroyed
   components:
   - type: Sprite
     sprite: _TP/Structures/Machines/array.rsi

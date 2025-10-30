@@ -1,7 +1,7 @@
 - type: entity
   id: TP14ClosetEmergencyH2OFilledRandom
   parent: TP14ClosetEmergencyH2O
-  suffix: Filled, Random
+  suffix: Trieste, Filled, Random
   components:
   - type: EntityTableContainerFill
     containers:
@@ -11,7 +11,7 @@
 - type: entity
   parent: TP14ClosetWallEmergencyH2O
   id: TP14ClosetWallEmergencyH20FilledRandom
-  suffix: Filled, Random
+  suffix: Trieste, Filled, Random
   components:
   - type: EntityTableContainerFill
     containers:

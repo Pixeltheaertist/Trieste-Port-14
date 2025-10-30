@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Made by SentryPrimis with permission given for use in Trieste Port 14.",
+    "size": {
+        "x": 48,
+        "y": 48
+    },
+    "states": [
+        {
+            "name": "large",
+            "directions": 1
+        },
+        {
+            "name": "medium",
+            "directions": 1
+        },
+        {
+            "name": "small",
+            "directions": 1
+        }
+    ]
+}

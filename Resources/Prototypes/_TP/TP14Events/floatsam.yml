@@ -5,7 +5,7 @@
   id: TP14DarkMatterReactor
   name: dark-matter reactor
   description: A standard reactor used on long-haul starships. This one looks badly damaged.
-  suffix: Event (1 hour 30 min meltdown timer)
+  suffix: Trieste, Event (1 hour 30 min meltdown timer)
   placement:
     mode: SnapgridCenter
   components:

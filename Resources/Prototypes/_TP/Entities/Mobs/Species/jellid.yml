@@ -8,7 +8,8 @@
   - MobAtmosExposed
   - MobCombat
   - MobDamageable
-  id: BaseMobJellidPerson
+  id: TP14BaseMobJellidPerson
+  suffix: Trieste, Jellid
   abstract: true
   components:
   - type: Icon
@@ -48,6 +49,8 @@
     proto: slime
   - type: Vocal
     sounds:
+      Male: MaleSlime # Male and Female are only here for the dev environment. - Cookie (FatherCheese)
+      Female: MaleSlime
       Unsexed: MaleSlime
   - type: Temperature
     heatDamageThreshold: 400
@@ -122,7 +125,8 @@
 
 - type: entity
   parent: MobHumanDummy
-  id: MobJellidPersonDummy
+  id: TP14MobJellidPersonDummy
+  categories: [ HideSpawnMenu ]
   noSpawn: true
   components:
     - type: HumanoidAppearance

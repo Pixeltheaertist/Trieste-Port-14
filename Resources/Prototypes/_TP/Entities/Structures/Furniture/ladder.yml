@@ -11,8 +11,9 @@
 - type: entity
   parent: TP14LadderBase
   id: TP14LadderDown
-  name: Ladder
-  suffix: down
+  name: ladder
+  description: Going up?
+  suffix: Trieste, Goes Up
   components:
     - type: Ladder
       thisSide: down
@@ -24,8 +25,9 @@
 - type: entity
   parent: TP14LadderBase
   id: TP14LadderUp
-  name: Ladder
-  suffix: up
+  name: ladder
+  description: Going down?
+  suffix: Trieste, Goes Down
   components:
     - type: Ladder
       thisSide: up

@@ -4,8 +4,9 @@
 - type: entity
   name: pearl
   parent: BaseItem
-  id: TP14BasePearl # Hypothetically, a single pearl can hold the entire script of The Bee Movie. However in practice this only lags out the local client, so it's FINEEEE.
+  id: TP14BasePearl # Hypothetically, a single pearl can hold the entire script of The Bee Movie. However, in practice this only lags out the local client, so it's FINEEEE.
   description: 'A plain white data pearl, devoid of any etchings or imperfections.'
+  suffix: Trieste
   components:
   - type: Pearl
     pearlMessage: "This pearl is completely blank."
@@ -38,13 +39,14 @@
   name: pearl
   parent: TP14BasePearl
   id: TP14PearlShark
+  suffix: Trieste, Admeme
   description: 'A plain purple data pearl, devoid of any etchings or imperfections.'
   components:
   - type: Sprite
     sprite: _TP/Objects/pearl.rsi
     state: icon
     color: "#800080"
-  - type: Pearl
+  - type: Pearl # Someone on adminbus requested this, idk what it means
     pearlMessage: "The shark has the silly.
-                   The shork does the silly. # Someone on adminbus requested this, idk what it means
+                   The shork does the silly.
                    The shonk is the silly."

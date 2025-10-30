@@ -1,6 +1,7 @@
+using Content.Server._TP.Forage.Systems;
 using Content.Shared.EntityTable.EntitySelectors;
 
-namespace Content.Server._TP.Forage;
+namespace Content.Server._TP.Forage.Components;
 
 [RegisterComponent, Access(typeof(ForageSystem)), AutoGenerateComponentPause]
 public sealed partial class ForageComponent : Component

@@ -3,7 +3,7 @@
   parent: BaseItem
   description: Used to store liquid gold
   id: TP14BaseOilDrum
-  suffix: Empty
+  suffix: Trieste, Petrochem, Empty
   components:
   - type: Sprite
     sprite: _TP/Structures/Storage/Drums.rsi
@@ -34,7 +34,7 @@
 - type: entity
   parent: TP14BaseOilDrum
   id: TP14BaseOilDrumCrudeOil
-  suffix: Filled, Crude Oil
+  suffix: Trieste, Petrochem, Filled, Crude Oil
   components:
   - type: SolutionContainerManager
     solutions:

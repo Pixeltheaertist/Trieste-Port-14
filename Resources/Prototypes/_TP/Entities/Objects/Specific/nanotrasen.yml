@@ -1,8 +1,8 @@
 - type: entity
   name: bluespace crystal
-  parent: BaseItem
+  parent: [ BaseItem, BaseNanotrasenContraband ]
   id: TP14BluespaceCrystal
-  suffix: 20 BC
+  suffix: Trieste, NanoTraitor, 20 BC
   description: It feels like it's everywhere and nowhere at the same time.
   components:
   - type: Sprite
@@ -26,15 +26,15 @@
 
 - type: entity
   parent: TP14BluespaceCrystal
-  id: BluespaceCrystal1
-  suffix: 1 BC
+  id: TP14BluespaceCrystal1
+  suffix: Trieste, NanoTraitor, 1 BC
   components:
   - type: Stack
     count: 1
 
 - type: entity
   parent: TP14BluespaceCrystal
-  id: BluespaceCrystal5
+  id: TP14BluespaceCrystal5
   suffix: 5 BC
   components:
   - type: Stack
@@ -42,7 +42,7 @@
 
 - type: entity
   parent: TP14BluespaceCrystal
-  id: BluespaceCrystal10
+  id: TP14BluespaceCrystal10
   suffix: 10 BC
   components:
   - type: Stack

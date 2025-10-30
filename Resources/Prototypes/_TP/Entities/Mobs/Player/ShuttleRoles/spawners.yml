@@ -1,7 +1,8 @@
 - type: entity
-  name: Settler spawner
+  name: settler spawner
   id: TP14PlanetarySettlerSpawner
   parent: MarkerBase
+  suffix: Trieste, Random, Spawner
   components:
   - type: Sprite
     layers:
@@ -16,6 +17,7 @@
   name: The Thingy spawner
   id: TP14TheThingySpawner
   parent: MarkerBase
+  suffix: Trieste, Random, Spawner
   components:
   - type: Sprite
     layers:

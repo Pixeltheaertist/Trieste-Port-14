@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseFlatpack
   id: TP14AdvancedSMESFlatpack
+  suffix: Trieste, Engineering
   name: advanced SMES flatpack
   description: A flatpack used for constructing a trieste-specific advanced SMES.
   components:

@@ -57,8 +57,8 @@ private const float NoMotion_Mult = 0.75f; // Multiplier for the nomotion varian
 
         SubscribeLocalEvent<WaterViewerComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<WaterViewerComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<WaterBlockerComponent, GotEquippedEvent>(OnEquipped);
-        SubscribeLocalEvent<WaterBlockerComponent, GotUnequippedEvent>(OnUnequipped);
+        SubscribeLocalEvent<Shared.WaterBlockerComponent, GotEquippedEvent>(OnEquipped);
+        SubscribeLocalEvent<Shared.WaterBlockerComponent, GotUnequippedEvent>(OnUnequipped);
         SubscribeLocalEvent<WaterViewerComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<WaterViewerComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
     }
@@ -82,14 +82,14 @@ private const float NoMotion_Mult = 0.75f; // Multiplier for the nomotion varian
         }
     }
 
-    private void OnEquipped(Entity<WaterBlockerComponent> ent, ref GotEquippedEvent args)
+    private void OnEquipped(Entity<Shared.WaterBlockerComponent> ent, ref GotEquippedEvent args)
     {
-        EnsureComp<WaterBlockerComponent>(args.Equipee);
+        EnsureComp<Shared.WaterBlockerComponent>(args.Equipee);
     }
 
-    private void OnUnequipped(Entity<WaterBlockerComponent> ent, ref GotUnequippedEvent args)
+    private void OnUnequipped(Entity<Shared.WaterBlockerComponent> ent, ref GotUnequippedEvent args)
     {
-        _entityManager.RemoveComponent<WaterBlockerComponent>(args.Equipee);
+        _entityManager.RemoveComponent<Shared.WaterBlockerComponent>(args.Equipee);
     }
 
     private void OnShutdown(Entity<WaterViewerComponent> ent, ref ComponentShutdown args)

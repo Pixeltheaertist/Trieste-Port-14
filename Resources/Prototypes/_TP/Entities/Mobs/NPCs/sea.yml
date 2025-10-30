@@ -1,6 +1,7 @@
 - type: entity
   name: drifter
   id: TP14MobDrifter
+  suffix: Trieste, Sea
   parent: MobSpaceBasic
   description: A spindly, opportunistic predator which injects prey with a paralyzing agent before siphoning their blood.
   components:
@@ -65,6 +66,7 @@
   name: Fish
   parent: SimpleSpaceMobBase
   id: TP14MobFish
+  suffix: Trieste, Sea
   description: It's a fish.
   components:
   - type: Body
@@ -143,6 +145,7 @@
   name: Fish
   parent: TP14MobFish
   id: TP14MobFish2
+  suffix: Trieste, Sea
   description: It's a fish.
   components:
   - type: Sprite
@@ -162,6 +165,7 @@
   name: Fish
   parent: TP14MobFish
   id: TP14MobFish3
+  suffix: Trieste, Sea
   description: It's a fish.
   components:
   - type: Sprite
@@ -179,7 +183,7 @@
 
 - type: entity
   name: Fish
-  suffix: mimic
+  suffix: Trieste, Sea, Mimic
   parent: TP14MobFish
   id: TP14MobFishMimic
   components:
@@ -346,3 +350,11 @@
         - MobLayer
   - type: MovementSpeedModifier
     baseWalkSpeed : 0
+
+- type: entity
+  parent: MobCrab
+  id: TP14MobSeaCrab
+  suffix: Trieste, Sea
+  components:
+  - type: Body
+    prototype: TP14AnimalOceanicCrab

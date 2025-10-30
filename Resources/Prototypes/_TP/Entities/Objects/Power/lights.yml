@@ -1,0 +1,27 @@
+- type: entity
+  parent: BaseLightTube
+  name: underwater light tube
+  id: TP14LightTubeInterior
+  suffix: Trieste, Sea
+  description: A light fixture.
+  components:
+  - type: LightBulb
+    color: "#8FC4BC" # A mix of 4000K and Seafoam
+    lightEnergy: 2
+    lightRadius: 8
+    lightSoftness: 6
+    PowerUse: 20 # Lower power use for an underwater base
+
+- type: entity
+  parent: BaseLightbulb
+  name: emergency light tube
+  id: TP14LightBulbEmergency
+  suffix: Trieste, Sweetwater
+  description: An emergency light bulb.
+  components:
+  - type: LightBulb
+    color: "#FF0000" # RED
+    lightEnergy: 1
+    lightRadius: 4
+    lightSoftness: 8
+    PowerUse: 5 # VERY low power use

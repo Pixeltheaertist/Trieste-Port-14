@@ -1,11 +1,11 @@
 - type: entity
-  id: TP14_NTvape
-  parent: BaseVape
-  name: Nanotrasen branded vape
+  id: TP14NTVape
+  parent: [ BaseVape, BaseNanotrasenContraband ]
+  name: NanoTrasen branded vape
   description: "Now even you can rep your favorite mega-corp while hotboxing sweetwater. (WARNING:Pour only water into the vape)"
   components:
   - type: Sprite
     sprite: _TP/Objects/Consumable/Smokeables/Vapes/vape-standard.rsi
     state: icon
-  
+
 

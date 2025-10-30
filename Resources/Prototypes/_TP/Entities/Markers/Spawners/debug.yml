@@ -2,7 +2,7 @@
   name: InsideMarker
   id: TP14MarkerInside
   parent: MarkerBase
-  suffix: blocks rain
+  suffix: Trieste, Surface, Blocks Weather
   components:
   - type: Sprite
     sprite: Markers/inside.rsi
@@ -16,7 +16,7 @@
   name: LightingMarker
   id: TP14MarkerLightning
   parent: MarkerBase
-  suffix: center of lightning
+  suffix: Trieste, Surface, Lightning
   components:
   - type: Sprite
     sprite: Markers/inside.rsi

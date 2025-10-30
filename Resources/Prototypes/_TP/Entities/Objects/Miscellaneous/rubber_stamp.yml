@@ -1,7 +1,8 @@
 - type: entity
   name: solgov rubber stamp
-  parent: [RubberStampBase, BaseCommandContraband]
+  parent: [ RubberStampBase, BaseCommandContraband ]
   id: TP14RubberStampSG
+  suffix: Trieste, SolGov
   categories: [ DoNotMap ]
   components:
   - type: Stamp

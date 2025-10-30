@@ -1,6 +1,7 @@
 - type: entity
   parent: BasePDA
   id: TP14PilotPDA
+  suffix: Trieste, Exped
   name: pilot PDA
   description: Protocol III, protect the PDA.
   components:
@@ -24,6 +25,7 @@
 - type: entity
   parent: BasePDA
   id: TP14BasinTechPDA
+  suffix: Trieste, Exped
   name: basin technician PDA
   description: It's completely waterlogged.
   components:

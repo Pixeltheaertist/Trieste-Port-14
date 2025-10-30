@@ -1,8 +1,9 @@
 - type: entity
-  id: Pumpjack
+  id: TP14Pumpjack
   parent: BaseMachinePowered
-  name: Pumpjack
-  description: A machine used to liberate oil from deep underground
+  suffix: Trieste, Petrochem
+  name: pumpjack
+  description: A machine used to liberate oil from deep underground.
   placement:
     mode: SnapgridCenter
   components:

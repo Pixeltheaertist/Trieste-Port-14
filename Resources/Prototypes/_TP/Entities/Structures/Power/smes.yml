@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseSMES
   id: TP14SMESAdvanced
-  suffix: Advanced, Trieste, 100MJ
+  suffix: Trieste, Engi, 100MJ
   name: advanced SMES
   description: The highest capacity superconducting magnetic energy storage (SMES) unit. It was modified from a standard unit after Trieste Port was founded.
   components:
@@ -50,7 +50,7 @@
 - type: entity
   parent: TP14SMESAdvanced
   id: TP14SMESAdvancedEmpty
-  suffix: Trieste, Empty
+  suffix: Trieste, Engi, Empty
   components:
   - type: Battery
     startingCharge: 0

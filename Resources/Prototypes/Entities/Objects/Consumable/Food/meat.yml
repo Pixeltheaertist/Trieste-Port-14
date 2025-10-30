@@ -1976,7 +1976,7 @@
     node: cutlet
   - type: FoodSequenceElement
     entries:
-      Burger: MeatCutletBurger
+      Burger: MeatCutlet
       Taco: MeatCutlet
   - type: Item
     inhandVisuals:

@@ -1,8 +1,6 @@
 using JetBrains.Annotations;
-using Content.Server.Atmos.EntitySystems;
-using Content.Server.Atmos.Components;
 
-namespace Content.Shared.Interaction;
+namespace Content.Server.Atmos.Components;
 
 /// <summary>
 /// Raised when an entity enters water in the world.

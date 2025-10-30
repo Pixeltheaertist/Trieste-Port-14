@@ -1,6 +1,7 @@
 - type: entity
   id: TP14MechStepfather
-  parent: [BaseMech, BaseMob, StripableInventoryBase]
+  parent: [ BaseMech, BaseMob, StripableInventoryBase ]
+  suffix: Trieste, Exped
   name: Rotund Stepfather
   description: A rugged deep-sea mining unit, designed to work in tandem with a Pilot. The onboard AI operates the primary clamp while the pilot operates the modules.
   components:

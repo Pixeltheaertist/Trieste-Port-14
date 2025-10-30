@@ -6,7 +6,7 @@
   sprites: MobJellidSprites
   defaultSkinTone: "#b8b8b8"
   markingLimits: MobJellidMarkingLimits
-  dollPrototype: MobJellidPersonDummy
+  dollPrototype: TP14MobJellidPersonDummy
   skinColoration: Hues
   maleFirstNames: starSystems
   femaleFirstNames: starSystems

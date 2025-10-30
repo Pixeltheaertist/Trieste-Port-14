@@ -2,6 +2,7 @@
   parent: [ BaseSubdermalImplant, StorePresetUplinkNT ]
   categories: [ HideSpawnMenu ]
   id: UplinkImplantNT
+  suffix: Trieste, NanoTraitor
   name: NT uplink implant
   description: This implant lets the user access a hidden NT uplink at will.
   noSpawn: true

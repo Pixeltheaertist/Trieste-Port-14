@@ -1,0 +1,81 @@
+# Small Lights
+
+- type: entity
+  id: TP14PoweredSmallLightWaterProof
+  suffix: Trieste, Waterproof, Sea
+  parent: PoweredSmallLightEmpty
+  name: Exterior Cage Lamp
+  components:
+  - type: Sprite
+    state: base
+  - type: PointLight
+    enabled: true
+  - type: PoweredLight
+    hasLampOnSpawn: LightBulb
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 2
+    popupText: powered-light-component-burn-hand
+  - type: InGas
+    gasId: 9
+    damagedByGas: false # waterproof
+    gasThreshold: 75
+    damage:
+      types:
+        Blunt: 3
+
+- type: entity
+  id: TP14PoweredSmallLightEmergency
+  suffix: Trieste, Waterproof, Always Powered
+  parent: SmallLight
+  name: Emergency Cage lamp
+  components:
+  - type: Sprite
+    state: base
+  - type: PointLight
+    enabled: true
+    color: "#FF0000"
+    radius: 4
+    energy: 2
+    softness: 8
+    autoRot: true
+    castShadows: true
+  - type: PoweredLight
+    hasLampOnSpawn: TP14LightBulbEmergency
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 2
+    popupText: powered-light-component-burn-hand
+  - type: InGas
+    gasId: 9
+    damagedByGas: false # waterproof
+    gasThreshold: 75
+    damage:
+      types:
+        Blunt: 3
+
+# Wall Lights
+
+- type: entity
+  id: TP14WallLightInterior
+  description: "A light fixture. Draws power and produces light when equipped with a light tube."
+  suffix: Trieste, Sweetwater
+  parent: Poweredlight
+  name: Interior Wall Light
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: TP14LightTubeInterior
+  - type: PointLight
+    color: "#8FC4BC"
+    radius: 8
+    energy: 2
+    softness: 6
+    autoRot: true
+    castShadows: true
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 2
+    popupText: powered-light-component-burn-hand

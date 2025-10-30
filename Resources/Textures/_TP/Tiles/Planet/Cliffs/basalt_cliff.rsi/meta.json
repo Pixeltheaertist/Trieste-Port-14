@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from https://github.com/tgstation/tgstation/tree/f116442e34fe3e941a1df474bb57bb410dd177a3/icons/turf and modified, modified further by Cookie (FatherCheese) for Trieste Port 14",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "side",
+            "directions": 4
+        },
+        {
+            "name": "corner",
+            "directions": 4
+        },
+        {
+            "name": "corner_small",
+            "directions": 4
+        }
+    ]
+}

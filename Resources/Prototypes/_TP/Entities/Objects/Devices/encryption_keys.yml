@@ -1,6 +1,7 @@
 - type: entity
-  parent: EncryptionKey
+  parent: [ EncryptionKey, BaseNanotrasenContraband ]
   id: TP14EncryptionKeyNanotrasen
+  suffix: Trieste, NanoTraitor
   name: nanotrasen encryption key
   description: An encryption key used by... corporate... people?
   components:

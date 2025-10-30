@@ -1,9 +1,9 @@
 - type: entity
-  id: PlanktonSeparator
-  parent: [StorageTank, StructureWheeled]
+  id: TP14PlanktonSeparator
+  parent: [ StorageTank, StructureWheeled ]
   name: plankton separator
   description: A liquid tank with an advanced filter, capable to divvying up plankton species.
-  suffix: Empty
+  suffix: Trieste, Science, Empty
   components:
   - type: PlanktonSeparator
   - type: StaticPrice
