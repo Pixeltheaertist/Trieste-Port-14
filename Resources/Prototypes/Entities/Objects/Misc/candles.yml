@@ -288,6 +288,9 @@
     color: "#e39c40"
     radius: 2.5
     power: 10
+  - type: Tag # TP14
+    tags:
+    - TP14MagicCandle
 
 - type: entity
   name: magic red candle

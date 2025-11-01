@@ -4,6 +4,9 @@
   id: Drifter
 
 - type: Tag
+  id: TP14MagicCandle
+
+- type: Tag
   id: Mimic
 
 - type: Tag

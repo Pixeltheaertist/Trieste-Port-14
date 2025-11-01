@@ -53,14 +53,17 @@ namespace Content.Server._TP.Falling.Systems
                 // If it was, and it's not jumping anymore, it will fall.
                 // At the end we set wasJumping to IsJumping.
                 var entityParent = _transformSystem.GetParentUid(uid);
-                if (HasComp<TriesteAirspaceComponent>(entityParent) &&
+                if (HasComp<TriesteComponent>(entityParent) &&
                     jumpComp is { IsJumping: false, WasJumping: true })
                 {
                     if (TryComp<Components.FallSystemComponent>(uid, out var fallSystemComponent))
                         HandleFall(uid, fallSystemComponent);
                 }
 
-                jumpComp.WasJumping = jumpComp.IsJumping;
+                if (transform != null)
+                {
+                    jumpComp.WasJumping = jumpComp.IsJumping;
+                }
             }
 
             // This part catches if the player has climbed over the railing
@@ -77,7 +80,7 @@ namespace Content.Server._TP.Falling.Systems
                     continue; // Still on a grid, don't fall
 
                 var entityParent = _transformSystem.GetParentUid(uid);
-                if (HasComp<TriesteAirspaceComponent>(entityParent))
+                if (HasComp<TriesteComponent>(entityParent))
                 {
                     // Check if they should be exempt from falling
                     if (ExemptFromFalling(uid))
