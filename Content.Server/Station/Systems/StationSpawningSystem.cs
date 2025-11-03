@@ -142,6 +142,8 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             }
         }
 
+        var originalCharacterName = profile?.Name ?? MetaData(entity.Value).EntityName;
+
         if (loadout != null)
         {
             EquipRoleLoadout(entity.Value, loadout, roleProto!);
@@ -158,7 +160,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
         if (prototype != null && TryComp(entity.Value, out MetaDataComponent? metaData))
         {
-            SetPdaAndIdCardData(entity.Value, metaData.EntityName, prototype, station);
+            SetPdaAndIdCardData(entity.Value, originalCharacterName, prototype, station);
         }
 
         DoJobSpecials(job, entity.Value);

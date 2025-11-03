@@ -245,6 +245,7 @@ public abstract class SharedIdCardSystem : EntitySystem
 
         if (id.FullName == fullName)
             return true;
+
         id.FullName = fullName;
         Dirty(uid, id);
         UpdateEntityName(uid, id);
@@ -254,6 +255,7 @@ public abstract class SharedIdCardSystem : EntitySystem
             _adminLogger.Add(LogType.Identity, LogImpact.Low,
                 $"{ToPrettyString(player.Value):player} has changed the name of {ToPrettyString(uid):entity} to {fullName} ");
         }
+
         return true;
     }
 
@@ -272,11 +274,9 @@ public abstract class SharedIdCardSystem : EntitySystem
         var jobSuffix = string.IsNullOrWhiteSpace(id.LocalizedJobTitle) ? string.Empty : $" ({id.LocalizedJobTitle})";
 
         var val = string.IsNullOrWhiteSpace(id.FullName)
-            ? Loc.GetString(id.NameLocId,
-                ("jobSuffix", jobSuffix))
-            : Loc.GetString(id.FullNameLocId,
-                ("fullName", id.FullName),
-                ("jobSuffix", jobSuffix));
+            ? Loc.GetString(id.NameLocId, ("jobSuffix", jobSuffix))
+            : Loc.GetString(id.FullNameLocId, ("fullName", id.FullName), ("jobSuffix", jobSuffix));
+
         _metaSystem.SetEntityName(uid, val);
     }
 

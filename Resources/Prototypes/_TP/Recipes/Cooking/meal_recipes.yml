@@ -11,3 +11,10 @@
     FoodCheeseSlice: 2
     FoodOnionSlice: 2
     FoodBowlBig: 1
+
+- type: deepFryingRecipe
+  id: TP14RecipeFries
+  name: fish sticks recipe
+  result: FoodMealFries
+  time: 15
+  ingredient: FoodPotato

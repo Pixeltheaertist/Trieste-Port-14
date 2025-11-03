@@ -1,0 +1,45 @@
+- type: entity
+  parent: [ BaseMachinePowered, SmallConstructibleMachine ]
+  id: TP14KitchenDeepFryer
+  suffix: Trieste, Service, Empty
+  name: deep fryer
+  description: Can be used to fry delicious food, or all of sci's gold.
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 0 # Off by default
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      fryer_slots: !type:ContainerSlot
+  - type: DeepFryer
+  - type: ExaminableSolution
+    solution: fryer
+  - type: ItemSlots
+    slots:
+      fryer_slots:
+        ejectOnInteract: true
+  - type: RefillableSolution
+    solution: fryer
+  - type: SolutionItemStatus
+    solution: fryer
+  - type: Sprite
+    sprite: Structures/Machines/electric_grill.rsi
+    state: icon
+    drawdepth: SmallObjects
+    snapCardinals: true
+  - type: SolutionContainerManager
+    solutions:
+      fryer:
+        maxVol: 100
+
+- type: entity
+  parent: TP14KitchenDeepFryer
+  id: TP14KitchenDeepFryerFull
+  suffix: Trieste, Service, Full
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      fryer:
+        reagents:
+        - ReagentId: OilOlive
+          Quantity: 100

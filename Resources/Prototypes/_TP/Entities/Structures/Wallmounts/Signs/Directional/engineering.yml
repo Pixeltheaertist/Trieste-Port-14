@@ -35,12 +35,12 @@
     offset: 0, -0.25
 
 
-# Enginering
+# Engineering
 - type: entity
   parent: TP14BaseSignDirectional
   id: TP14SignDirectionalEngi
   suffix: Trieste, Engi, Wall-Sign
-  name: engi wall sign
+  name: engineering wall sign
   description: A direction sign, pointing out which way the Engineering department is.
   components:
   - type: Sprite
@@ -66,6 +66,43 @@
 - type: entity
   parent: TP14SignDirectionalEngi
   id: TP14SignDirectionalEngiAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# Petrochem
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalPetrochem
+  suffix: Trieste, Petrochem, Wall-Sign
+  name: petrochem wall sign
+  description: A direction sign, pointing out which way the Petrochem department is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background # Colorable background layer
+      color: "#800080" # Ourple
+    - state: text_petrochem # The text
+  - type: AtmosPipeLayers # Use pipe layers for multi-tile signs.
+    alternativePrototypes:
+      Primary: TP14SignDirectionalPetrochem
+      Secondary: TP14SignDirectionalPetrochemAlt1
+      Tertiary: TP14SignDirectionalPetrochemAlt2
+
+- type: entity
+  parent: TP14SignDirectionalPetrochem
+  id: TP14SignDirectionalPetrochemAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalPetrochem
+  id: TP14SignDirectionalPetrochemAlt2
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite

@@ -76,10 +76,6 @@
             "directions": 4
         },
         {
-            "name": "text_grav",
-            "directions": 4
-        },
-        {
             "name": "text_hop",
             "directions": 4
         },

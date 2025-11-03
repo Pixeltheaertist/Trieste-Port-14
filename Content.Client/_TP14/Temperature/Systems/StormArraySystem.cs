@@ -16,6 +16,8 @@ public sealed class StormArraySystem : EntitySystem
 
     public override void Initialize()
     {
+        base.Initialize();
+
         SubscribeLocalEvent<StormArrayComponent, ClientExaminedEvent>(OnExaminedEvent);
     }
 

@@ -181,3 +181,77 @@
   components:
   - type: Sprite
     offset: 0, -0.25
+
+
+# Janitorial
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalJanitor
+  suffix: Trieste, Service, Wall-Sign
+  name: janitor wall sign
+  description: A direction sign, pointing out which way the Janitor room is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#90EE90" # Light-green
+    - state: text_jani
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalJanitor
+      Secondary: TP14SignDirectionalJanitorAlt1
+      Tertiary: TP14SignDirectionalJanitorAlt2
+
+- type: entity
+  parent: TP14SignDirectionalJanitor
+  id: TP14SignDirectionalJanitorAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalJanitor
+  id: TP14SignDirectionalJanitorAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# Library
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalLibrary
+  suffix: Trieste, Service, Wall-Sign
+  name: library wall sign
+  description: A direction sign, pointing out which way the Library is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#90EE90" # Light-green
+    - state: text_library
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalLibrary
+      Secondary: TP14SignDirectionalLibraryAlt1
+      Tertiary: TP14SignDirectionalLibraryAlt2
+
+- type: entity
+  parent: TP14SignDirectionalLibrary
+  id: TP14SignDirectionalLibraryAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalLibrary
+  id: TP14SignDirectionalLibraryAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25

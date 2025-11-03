@@ -47,13 +47,14 @@ public sealed partial class LoadoutWindow : FancyWindow
         {
             var name = loadout.EntityName;
 
-            LoadoutNameLabel.Text = proto.NameDataset == null ?
-                Loc.GetString("loadout-name-edit-label") :
-                Loc.GetString("loadout-name-edit-label-dataset");
+            LoadoutNameLabel.Text = proto.NameDataset == null
+                ? Loc.GetString("loadout-name-edit-label")
+                : Loc.GetString("loadout-name-edit-label-dataset");
 
             RoleNameEdit.ToolTip = Loc.GetString(
                 "loadout-name-edit-tooltip",
                 ("max", _maxLoadoutNameLength));
+
             RoleNameEdit.Text = name ?? string.Empty;
             RoleNameEdit.OnTextChanged += args => OnNameChanged?.Invoke(args.Text);
         }
