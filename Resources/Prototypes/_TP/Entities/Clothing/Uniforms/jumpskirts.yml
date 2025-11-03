@@ -9,3 +9,26 @@
     sprite: _TP/Clothing/Uniforms/Jumpskirt/TP14darkperformer.rsi
   - type: Clothing
     sprite: _TP/Clothing/Uniforms/Jumpskirt/TP14darkperformer.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: TP14ClothingUniformJumpskirtMedicalNurseDress
+  name: Nurse Dress
+  description: An old school nurse dress, It's a wonder Trieste still stocks these.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpskirt/nurse_dress.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpskirt/nurse_dress.rsi
+
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: TP14ClothingUniformJumpskirtScience
+  name: mad science jumpskirt
+  description: NOT SCIENTIFICALLY POSSIBLE!!
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpskirt/TP14_science.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpskirt/TP14_science.rsi

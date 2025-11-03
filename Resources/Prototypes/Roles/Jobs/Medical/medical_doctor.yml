@@ -24,7 +24,7 @@
   id: DoctorGear
   equipment:
     ears: ClothingHeadsetMedical
-    belt: ClothingBeltMedicalFilled
+    belt: TP14ClothingBeltStorageMedicalPouchFilled
   #storage:
     #back:
     #- Stuff

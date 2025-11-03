@@ -60,7 +60,7 @@ namespace Content.Server._TP.Falling.Systems
                         HandleFall(uid, fallSystemComponent);
                 }
 
-                if (transform != null)
+                if (transform != null && jumpComp.WasJumping != jumpComp.IsJumping)
                 {
                     jumpComp.WasJumping = jumpComp.IsJumping;
                 }
@@ -122,7 +122,7 @@ namespace Content.Server._TP.Falling.Systems
                 return;
 
             var ownerParent = Transform(owner).ParentUid;
-            if (!HasComp<TriesteAirspaceComponent>(ownerParent))
+            if (!HasComp<TriesteComponent>(ownerParent))
             {
                 return;
             }

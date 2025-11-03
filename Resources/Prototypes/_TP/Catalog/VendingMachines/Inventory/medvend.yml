@@ -1,0 +1,35 @@
+- type: vendingMachineInventory
+  id: MedVendInventory
+  startingInventory:
+    TP14ClothingUniformMedical: 2
+    TP14ClothingUniformMedicalbloody: 2
+    TP14ClothingUniformJumpskirtMedicalNurseDress: 2
+    ClothingUniformJumpskirtVirology: 2
+    TP14ClothingBeltStorageMedicalPouch: 2
+    TP14ClothingOuterCoatMedical: 2
+    TP14ClothingOuterCoatMedicalGreen: 2
+    ClothingOuterCoatLabViro: 2
+    ClothingOuterWinterViro: 2
+    TP14ClothingHeadMedicalBucket: 3
+    ClothingMaskSterile: 2
+    ClothingBackpackVirology: 2
+    ClothingBackpackSatchelVirology: 2
+    ClothingBackpackDuffelVirology: 2
+    ClothingHeadNurseHat: 4
+    ClothingShoesColorWhite: 4
+    ClothingHandsGlovesLatex: 4
+    ClothingHandsGlovesNitrile: 2
+    ClothingHeadsetMedical: 42
+    ClothingOuterHospitalGown: 5
+    UniformScrubsColorGreen: 4
+    UniformScrubsColorBlue: 4
+    UniformScrubsColorPurple: 4
+    ClothingHeadHatSurgcapGreen: 4
+    ClothingHeadHatSurgcapBlue: 4
+    ClothingHeadHatSurgcapPurple: 4
+    ClothingShoesBootsWinterMed: 2
+  contrabandInventory:
+    ClothingUniformJumpskirtOfLife: 1
+    ToyFigurineMedicalDoctor: 1
+    ToyFigurineParamedic: 1
+    ToyFigurineChiefMedicalOfficer: 1

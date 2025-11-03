@@ -1,8 +1,8 @@
 - type: entity
-  parent: [ ClothingHandsBase, BaseNanotrasenContraband ]
+  parent: [ClothingHandsBase, BaseNanotrasenContraband]
   id: TP14ClothingHandsKnuckleDustersNT
+  name: Nanotrasen knuckle dusters
   suffix: Trieste, NanoTraitor
-  name: NanoTrasen knuckle dusters
   description: "24karat gold infused with plasteel and branded with the Nanotrasen logo. Used by Quartermasters and NT agents alike"
   components:
   - type: Sprite

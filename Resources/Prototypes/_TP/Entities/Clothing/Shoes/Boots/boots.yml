@@ -9,3 +9,30 @@
     sprite: _TP/Clothing/Shoes/Boots/TP14darkperformer.rsi
   - type: Clothing
     sprite: _TP/Clothing/Shoes/Boots/TP14darkperformer.rsi
+
+- type: entity
+  parent: [ClothingShoesMilitaryBase, BaseSecurityContraband]
+  id: TP14ClothingShoesBootsHardy
+  name: hardy workboots
+  description: Standard issue SEC boots, long lasting and tough, they'll see you through anything
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Shoes/Boots/hardy_boots.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Shoes/Boots/hardy_boots.rsi
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
+
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: TP14ClothingShoesWorkboots
+  name: cargo workboots
+  description: Waterproof workboots, issued for use in Trieste's harbor
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Shoes/Boots/work_boots.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Shoes/Boots/work_boots.rsi
+  - type: Matchbox
+

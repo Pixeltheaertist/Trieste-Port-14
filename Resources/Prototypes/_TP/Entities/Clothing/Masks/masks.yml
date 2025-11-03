@@ -1,0 +1,40 @@
+- type: entity
+  parent: ClothingMaskClownBase
+  id: TP14ClothingMaskWearyClown
+  name: weary clown mask
+  description: A sad clown is a tragic clown, at least they have a mask.
+  components:
+  - type: WaterBlocker
+  - type: Sprite
+    sprite: _TP/Clothing/Mask/weary_mask.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Mask/weary_mask.rsi
+  - type: Tag
+    tags:
+    - ClownMask
+    - HamsterWearable
+    - WhitelistChameleon
+  - type: HideLayerClothing
+  - type: BreathMask
+    slots:
+    - Snout
+
+- type: entity
+  parent: ClothingMaskBase
+  id: TP14ClothingMaskPierrot
+  name: pierrot mask
+  description: The traditional commedia dell'spazio Pierrot mask. it looks melancholic
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Mask/pierrot.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Mask/pierrot.rsi
+  - type: BreathMask
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Snout

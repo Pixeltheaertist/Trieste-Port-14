@@ -15,6 +15,11 @@
     head: ClothingHeadHatBeretRND
 
 - type: loadout
+  id: ScientificBucket
+  equipment:
+    head: TP14ClothingHeadScienceBucket
+
+- type: loadout
   id: ScientificBeret
   startingGear: ScientificBeret
   effects:
@@ -48,6 +53,16 @@
   id: ScientistJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtScientist
+
+- type: loadout
+  id: MadScientistJumpsuit
+  equipment:
+    jumpsuit: TP14ClothingUniformJumpsuitScience
+
+- type: loadout
+  id: MadScientistJumpskirt
+  equipment:
+    jumpsuit: TP14ClothingUniformJumpskirtScience
 
 - type: loadout
   id: RoboticistJumpsuit

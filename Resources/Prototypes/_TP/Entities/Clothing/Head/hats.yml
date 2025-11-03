@@ -1,0 +1,63 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadHatWearyClownHat
+  name: old tophat
+  description: A ratty, old, faded tophat.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/weary_hat.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/weary_hat.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.06"
+  - type: Item
+    size: Normal
+  - type: Storage
+    grid:
+    - 0,0,1,1
+    quickEquip: false
+    maxItemSize: small
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+
+- type: entity
+  parent: [ClothingHeadBase]
+  id: TP14ClothingHeadHatPierrot
+  name: pierrot hat
+  description: An old mime hat, it's fallen out of style
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/pierrot.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/pierrot.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.06"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+

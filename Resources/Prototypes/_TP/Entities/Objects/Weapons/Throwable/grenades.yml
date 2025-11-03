@@ -1,13 +1,10 @@
 - type: entity
-  name: beachball
-  description: A NT-brand beachball. This one is strangely firm.
-  parent: BaseGrenade
+  description: A standard NT-brand beach ball. This one is strangely firm.
+  parent: [ BeachBall ]
   id: TP14BeachballGrenade
-  suffix: Trieste, NanoTraitor, Weapon
+  suffix: Trieste, NanoTraitor
   components:
-  - type: Item
-    size: Normal
-    sprite: Objects/Fun/Balls/beach_ball.rsi
+  - type: TriggerOnUse
   - type: Destructible
     thresholds:
     - trigger:
@@ -19,23 +16,28 @@
     damage:
       types:
         Blunt: 10
-  - type: Sprite
-    sprite: Objects/Fun/Balls/beach_ball.rsi
-    state: icon
   - type: TwoStageTrigger
-    triggerDelay: 2.14
+    triggerDelay: 0.5
     components:
-    - type: GravityWell
-      maxRange: 10
-      baseRadialAcceleration: -200
-      baseTangentialAcceleration: -7
-      gravPulsePeriod: 0.01
-    - type: EmitSoundOnTrigger
-      sound:
-        path: /Audio/Effects/pop_high.ogg
-        params:
-          volume: 15
-    - type: DeleteOnTrigger
+      - type: GravityWell
+        maxRange: 10
+        baseRadialAcceleration: -200
+        baseTangentialAcceleration: -7
+        gravPulsePeriod: 0.01
+      - type: EmitSoundOnTrigger
+        keysIn:
+        - stageTwo
+        sound:
+          path: /Audio/Effects/pop_high.ogg
+          params:
+            volume: 15
+        positional: true
+      - type: DeleteOnTrigger
+        keysIn:
+        - stageTwo
+  - type: Tag
+    tags:
+    - Grenade
 
 - type: entity
   name: nanotrasen minibomb

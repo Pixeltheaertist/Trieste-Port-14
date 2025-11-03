@@ -92,4 +92,8 @@ Dorragon - Programming
 
 Felix - Mapping
 
+zangothedino - Spriting
+
+worstdragonhere - Spriting
+
 

@@ -1,0 +1,74 @@
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: TP14ClothingBeltStorageMedicalPouch
+  name: medical pouch
+  description: A small waist bag meant for carrying medical supplies.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Belt/medpouch.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Belt/medpouch.rsi
+  - type: Storage
+    grid:
+    - 0,0,4,1
+  whitelist:
+    tags:
+    - Wrench
+    - Bottle
+    - Spray
+    - Brutepack
+    - Bloodpack
+    - Gauze
+    - Ointment
+    - CigPack
+    - PillCanister
+    - Radio
+    - DiscreteHealthAnalyzer
+    - SurgeryTool
+    - Dropper
+    components:
+    - Hypospray
+    - Injector
+    - Pill
+    - HandLabeler
+    - type: ItemMapper
+      mapLayers:
+        bottle:
+          whitelist:
+            tags:
+            - Bottle
+        hypo:
+          whitelist:
+            components:
+            - Hypospray
+        pill:
+          whitelist:
+            components:
+            - Pill
+            tags:
+            - PillCanister
+        bottle_spray:
+          whitelist:
+            tags:
+            - Spray
+        wrench:
+          whitelist:
+            tags:
+            - Wrench
+
+
+- type: entity
+  id: TP14ClothingBeltStorageMedicalPouchFilled
+  parent: TP14ClothingBeltStorageMedicalPouch
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: Brutepack
+      amount: 2
+    - id: Ointment
+      amount: 1
+    - id: Bloodpack
+      amount: 1
+    - id: Gauze
+

@@ -1,69 +1,39 @@
 # Head
 - type: loadout
-  id: JesterHat
+  id: WearyClownHat
   equipment:
-    head: ClothingHeadHatJester
+    head: TP14ClothingHeadHatWearyClownHat
 
-- type: loadout
-  id: JesterAltHat
-  equipment:
-    head: ClothingHeadHatJesterAlt
 
 # Jumpsuit
 - type: loadout
-  id: ClownSuit
+  id: WearyOveralls
   equipment:
-    jumpsuit: ClothingUniformJumpsuitClown
+    jumpsuit: TP14ClothingUniformJumpsuitWearyClownOveralls
 
-- type: loadout
-  id: ClownSkirt
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtClown
-
-- type: loadout
-  id: JesterSuit
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitJester
-
-- type: loadout
-  id: JesterAltSuit
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitJesterAlt
 
 # Back
 - type: loadout
-  id: ClownBackpack
+  id: ClownBindle
   equipment:
-    back: ClothingBackpackClown
+    back: TP14ClothingBackpackClownBindle
 
+# Neck
 - type: loadout
-  id: ClownSatchel
+  id: RedBowtie
   equipment:
-    back: ClothingBackpackSatchelClown
-
-- type: loadout
-  id: ClownDuffel
-  equipment:
-    back: ClothingBackpackDuffelClown
+    neck: TP14ClothingNeckRedBowtie
 
 # Shoes
 - type: loadout
-  id: ClownShoes
+  id: WearyClownShoes
   equipment:
-    shoes: ClothingShoesClown
+    shoes: TP14ClothingShoesWearyClown
 
-- type: loadout
-  id: JesterShoes
-  equipment:
-    shoes: ClothingShoesJester
 
 # Outer clothing
 - type: loadout
-  id: ClownRobes
+  id: WearyClownCoat
   equipment:
-    outerClothing: ClothingOuterClownPriest
+    outerClothing: TP14ClothingOuterWearyClownCoat
 
-- type: loadout
-  id: ClownWintercoat
-  equipment:
-    outerClothing: ClothingOuterWinterClown

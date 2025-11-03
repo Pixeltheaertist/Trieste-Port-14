@@ -152,8 +152,8 @@
 - type: entity
   parent: ClothingBackpack
   id: ClothingBackpackVirology
-  name: virology backpack
-  description: A backpack made of hypo-allergenic fibers. It's designed to help prevent the spread of disease. Smells like monkey.
+  name: medical backpack
+  description: A backpack made of hypo-allergenic fibers. It's designed to help prevent the spread of disease.
   components:
   - type: Sprite
     sprite: Clothing/Back/Backpacks/virology.rsi
