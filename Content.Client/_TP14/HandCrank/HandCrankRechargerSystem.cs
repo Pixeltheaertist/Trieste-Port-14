@@ -1,7 +1,7 @@
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Systems;
 
-namespace Content.Client.Weapons.Ranged.Systems;
+namespace Content.Client._TP14.HandCrank;
 
 public partial class HandCrankRechargerSystem : SharedHandCrankRechargerSystem
 {

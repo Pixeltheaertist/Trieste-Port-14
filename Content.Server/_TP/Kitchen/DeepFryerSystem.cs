@@ -54,17 +54,25 @@ public sealed class DeepFryerSystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (TryComp<SolutionTransferComponent>(args.Used, out _))
+        if (!TryComp<SolutionTransferComponent>(args.Used, out _))
+            return;
+
+        if (!_solutionContainer.TryGetSolution(ent.Owner, ent.Comp.SolutionContainerId, out _, out var solName))
             return;
 
         var usedMeta = MetaData(args.Used);
-        if (usedMeta.EntityName.StartsWith("Burnt"))
+        if (usedMeta.EntityName.StartsWith("burnt"))
         {
             _popup.PopupEntity("TEMP - You cannot cook a burnt item", ent, args.User);
+            args.Handled = true;
             return;
         }
 
-        args.Handled = true;
+        if (solName.Volume <= 25)
+        {
+            _popup.PopupEntity("TEMP - Deep Fryer has low or no oil", ent, args.User);
+            args.Handled = true;
+        }
     }
 
     private DeepFryingRecipePrototype? FindMatchingRecipe(EntityUid item)
@@ -163,12 +171,20 @@ public sealed class DeepFryerSystem : EntitySystem
             deepFryerEnt,
             args.User);
 
-        _popup.PopupEntity(deepFryerComp.IsEnabled
+            _popup.PopupEntity(deepFryerComp.IsEnabled
                 ? "TEMP - PLAYER turns the deep fryer off"
                 : "TEMP - PLAYER turns the deep fryer on",
             deepFryerEnt,
             Filter.PvsExcept(args.User),
             true);
+
+            if (deepFryerComp.IsEnabled)
+            {
+                if (_fryerSounds.TryGetValue(deepFryerEnt, out var soundEntity) && soundEntity != null)
+                    _audio.Stop(soundEntity.Value);
+
+                _fryerSounds.Remove(deepFryerEnt);
+            }
 
             deepFryerComp.IsEnabled = !deepFryerComp.IsEnabled;
         }
