@@ -1,0 +1,20 @@
+- type: entity
+  id: TP14FoodCheeseSticks
+  parent: FoodSnackBase
+  suffix: Trieste, Food
+  name: cheese sticks
+  description: Also known as 'Mozzerella Sticks'. Goes good with salsa.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - oily
+      - cheesy
+  - type: Sprite
+    sprite: Objects/Consumable/Food/meals.rsi # TEMPORARY
+    state: fries-carrot
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5

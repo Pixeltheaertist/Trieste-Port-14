@@ -13,8 +13,50 @@
     FoodBowlBig: 1
 
 - type: deepFryingRecipe
+  id: TP14RecipeFriedChicken
+  name: fried chicken recipe
+  result: FoodMeatChickenFried
+  time: 30
+  ingredient: FoodMeatChicken
+
+- type: deepFryingRecipe
   id: TP14RecipeFries
   name: fish sticks recipe
   result: FoodMealFries
   time: 15
   ingredient: FoodPotato
+
+- type: deepFryingRecipe
+  id: TP14RecipeCarrotFries
+  name: carrot fries recipe
+  result: FoodMealFriesCarrot
+  time: 15
+  ingredient: FoodCarrot
+
+- type: deepFryingRecipe
+  id: TP14RecipeFishFingers
+  name: fish fingers recipe
+  result: TP14FoodMeatFishFingers
+  time: 15
+  ingredient: TP14FoodMeatFish
+
+- type: deepFryingRecipe
+  id: TP14RecipeCheeseSticks
+  name: cheese sticks recipe
+  result: TP14FoodCheeseSticks
+  time: 15
+  ingredient: FoodCheeseSlice
+
+- type: deepFryingRecipe
+  id: TP14RecipeOnionRings
+  name: onion rings recipe
+  result: FoodOnionRings
+  time: 15
+  ingredient: FoodOnionSlice
+
+- type: deepFryingRecipe
+  id: TP14RecipeChickenNugget
+  name: chicken nugget recipe
+  result: FoodBakedNugget
+  time: 20
+  ingredient: FoodMeatChickenCutlet

@@ -2,9 +2,9 @@ using Content.Server.Hands.Systems;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared._TP.Kitchen;
-using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Interaction;
+using Content.Shared.Item;
 using Content.Shared.Popups;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -34,7 +34,7 @@ public sealed class DeepFryerSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<SharedDeepFryerComponent, InteractHandEvent>(OnInteractHand);
-        SubscribeLocalEvent<SharedDeepFryerComponent, AfterInteractUsingEvent>(AfterInteractUsing);
+        SubscribeLocalEvent<SharedDeepFryerComponent, InteractUsingEvent>(AfterInteractUsing);
         SubscribeLocalEvent<SharedDeepFryerComponent, ComponentShutdown>(OnShutdown);
     }
 
@@ -49,15 +49,15 @@ public sealed class DeepFryerSystem : EntitySystem
         _fryerSounds.Remove(ent);
     }
 
-    private void AfterInteractUsing(Entity<SharedDeepFryerComponent> ent, ref AfterInteractUsingEvent args)
+    /// <summary>
+    ///     AfterInteractUsing event for the deep fryer.
+    ///     We use this here to block interactions, such as the container.
+    /// </summary>
+    /// <param name="ent">SharedDeepFryerComponent entity</param>
+    /// <param name="args">InteractUsingEvent arguments</param>
+    private void AfterInteractUsing(Entity<SharedDeepFryerComponent> ent, ref InteractUsingEvent args)
     {
         if (args.Handled)
-            return;
-
-        if (!TryComp<SolutionTransferComponent>(args.Used, out _))
-            return;
-
-        if (!_solutionContainer.TryGetSolution(ent.Owner, ent.Comp.SolutionContainerId, out _, out var solName))
             return;
 
         var usedMeta = MetaData(args.Used);
@@ -68,10 +68,26 @@ public sealed class DeepFryerSystem : EntitySystem
             return;
         }
 
+
+        if (!_solutionContainer.TryGetSolution(ent.Owner, ent.Comp.SolutionContainerId, out _, out var solName))
+            return;
+
         if (solName.Volume <= 25)
         {
             _popup.PopupEntity("TEMP - Deep Fryer has low or no oil", ent, args.User);
             args.Handled = true;
+            return;
+        }
+
+
+        if (TryComp<ItemComponent>(args.Used, out var itemComp))
+        {
+            if (itemComp.Size == "Small" || itemComp.Size == "Tiny" || itemComp.Size != "Large")
+                return;
+
+            _popup.PopupEntity("TEMP - You cannot cook a large item", ent, args.User);
+            args.Handled = true;
+            return;
         }
     }
 
@@ -205,8 +221,8 @@ public sealed class DeepFryerSystem : EntitySystem
         while (query.MoveNext(out var uid, out var deepFryerComp))
         {
             // If the comp isn't enabled, or it isn't powered, don't do anything.
-            // If both are enabled, we play a looping, idle frying sound. It's not really
-            // a deep-fryer sound, but shhh!
+            // If both are enabled, we play a looping, idle frying sound.
+            // It's not really a deep-fryer sound, but shhh!
             if (!deepFryerComp.IsEnabled)
                 continue;
 
@@ -223,7 +239,6 @@ public sealed class DeepFryerSystem : EntitySystem
             }
             else
             {
-                // Stop the sound if fryer is off
                 if (_fryerSounds.TryGetValue(uid, out var soundEntity) && soundEntity != null)
                 {
                     _audio.Stop(soundEntity.Value);
@@ -248,6 +263,9 @@ public sealed class DeepFryerSystem : EntitySystem
             // Now we check for if it's a container. If not, skip the loop.
             // But for each item in an active fryer we set a timer, and we check if it's a recipe.
             if (!_container.TryGetContainer(uid, deepFryerComp.ContainerId, out var container))
+                continue;
+
+            if (container.ContainedEntities.Count == 0)
                 continue;
 
             foreach (var entity in container.ContainedEntities)
@@ -275,20 +293,23 @@ public sealed class DeepFryerSystem : EntitySystem
 
                             _cookingStartTimes.Remove(entity);
 
-                            _audio.PlayPvs(deepFryerComp.Buzzer, uid, AudioParams.Default.WithVolume(-10));
+                            _audio.PlayPvs(deepFryerComp.Buzzer, uid, AudioParams.Default.WithVolume(-5));
                         }
                     }
                 }
                 else
                 {
-                    var cookTime = deepFryerComp.CookTimePerLevel;
-
                     var itemMeta = MetaData(entity);
+
+                    if (!_cookingStartTimes.ContainsKey(entity))
+                    {
+                        _cookingStartTimes[entity] = _timing.CurTime;
+                    }
 
                     if (_cookingStartTimes.TryGetValue(entity, out var startTime))
                     {
                         var elapsed = _timing.CurTime - startTime;
-                        if (elapsed.TotalSeconds >= cookTime)
+                        if (elapsed.TotalSeconds >= deepFryerComp.CookTimePerLevel)
                         {
                             EnsureComp<SharedDeepFriedComponent>(entity, out var deepFriedComp);
 
@@ -303,6 +324,7 @@ public sealed class DeepFryerSystem : EntitySystem
                             {
                                 _metaData.SetEntityName(entity, itemMeta.EntityName.Replace("fried", "burnt"));
                                 deepFriedComp.CurrentFriedLevel = SharedDeepFriedComponent.FriedLevel.Burnt;
+                                _container.InsertOrDrop(entity, container);
                             }
                             else
                             {
@@ -310,7 +332,8 @@ public sealed class DeepFryerSystem : EntitySystem
                                 deepFriedComp.CurrentFriedLevel = SharedDeepFriedComponent.FriedLevel.LightlyFried;
                             }
 
-                            _audio.PlayPvs(deepFryerComp.Buzzer, uid, AudioParams.Default.WithVolume(-10));
+                            Dirty(entity, deepFriedComp);
+                            _audio.PlayPvs(deepFryerComp.Buzzer, uid, AudioParams.Default.WithVolume(-5));
                         }
                     }
                 }

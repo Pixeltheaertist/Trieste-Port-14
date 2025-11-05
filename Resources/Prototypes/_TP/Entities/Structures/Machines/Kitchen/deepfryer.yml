@@ -20,17 +20,19 @@
         ejectOnInteract: true
   - type: RefillableSolution
     solution: fryer
+  - type: SolutionContainerManager
+    solutions:
+      fryer:
+        maxVol: 100
   - type: SolutionItemStatus
     solution: fryer
+  - type: SolutionTransfer
+    maxTransferAmount: 50
   - type: Sprite
     sprite: Structures/Machines/electric_grill.rsi
     state: icon
     drawdepth: SmallObjects
     snapCardinals: true
-  - type: SolutionContainerManager
-    solutions:
-      fryer:
-        maxVol: 100
 
 - type: entity
   parent: TP14KitchenDeepFryer

@@ -5,29 +5,26 @@ namespace Content.Client._TP14.Kitchen;
 
 public sealed class DeepFriedVisualizerSystem : EntitySystem
 {
-
     [Dependency] private readonly SpriteSystem _sprite = default!;
 
-    public override void Initialize()
+    public override void Update(float frameTime)
     {
-        base.Initialize();
+        base.Update(frameTime);
 
-        SubscribeLocalEvent<SharedDeepFriedComponent, ComponentStartup>(OnComponentStartup);
-    }
-
-    private void OnComponentStartup(Entity<SharedDeepFriedComponent> ent, ref ComponentStartup args)
-    {
-        if (!TryComp<SpriteComponent>(ent.Owner, out _))
-            return;
-
-        var fryColor = ent.Comp.CurrentFriedLevel switch
+        var query = EntityQueryEnumerator<SharedDeepFriedComponent, SpriteComponent>();
+        while (query.MoveNext(out var uid, out var comp, out var sprite))
         {
-            SharedDeepFriedComponent.FriedLevel.LightlyFried => Color.FromHex("#C4A484FF"),
-            SharedDeepFriedComponent.FriedLevel.Fried => Color.FromHex("#964B00FF"),
-            SharedDeepFriedComponent.FriedLevel.Burnt => Color.Black,
-            _ => Color.White,
-        };
+            var color = comp.CurrentFriedLevel switch
+            {
+                SharedDeepFriedComponent.FriedLevel.LightlyFried => Color.FromHex("#FFD580"),
+                SharedDeepFriedComponent.FriedLevel.Fried => Color.FromHex("#954535"),
+                SharedDeepFriedComponent.FriedLevel.Burnt => Color.FromHex("#0E0504"),
+                _ => Color.White
+            };
 
-        _sprite.SetColor(ent.Owner, fryColor);
+            // This is terrible. DON'T do this!
+            if (sprite.Color != color)
+                _sprite.SetColor((uid, sprite), color);
+        }
     }
 }
