@@ -28,3 +28,43 @@
       state: rock_asteroid_north
     - map: [ "enum.EdgeLayer.West" ]
       state: rock_asteroid_west
+
+- type: entity
+  id: TP14WallRockBasalt
+  parent: WallRockBasalt
+  suffix: Trieste, Ore, Random
+  components:
+  - type: OreVein
+    oreChance: 0.33
+    oreRarityPrototypeId: RandomOreDistributionStandard
+
+- type: entity
+  id: TP14WallRockCompactBasalt
+  parent: WallRock
+  suffix: Trieste, Sea
+  name: compact basalt
+  description: A rocky wall that's tougher than the average stone. It's been reinforced by Sweetwater staff.
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400 # Was 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Icon
+    sprite: Structures/Walls/rock.rsi
+    state: rock_wall
+  - type: Sprite
+    sprite: Structures/Walls/rock.rsi
+    layers:
+    - state: rock_wall
+    - map: [ "enum.EdgeLayer.South" ]
+      state: rock_wall_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: rock_wall_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: rock_wall_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: rock_wall_west

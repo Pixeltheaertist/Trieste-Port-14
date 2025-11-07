@@ -1,8 +1,12 @@
+using Content.Server.Administration.Logs;
 using Content.Server.Hands.Systems;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared._TP.Kitchen;
+using Content.Shared._TP.Kitchen.Events;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Damage;
+using Content.Shared.Database;
 using Content.Shared.Interaction;
 using Content.Shared.Item;
 using Content.Shared.Popups;
@@ -18,8 +22,10 @@ namespace Content.Server._TP.Kitchen;
 
 public sealed class DeepFryerSystem : EntitySystem
 {
+    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
@@ -27,7 +33,6 @@ public sealed class DeepFryerSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-
 
     public override void Initialize()
     {
@@ -41,12 +46,25 @@ public sealed class DeepFryerSystem : EntitySystem
     private readonly Dictionary<EntityUid, TimeSpan> _cookingStartTimes = new();
     private readonly Dictionary<EntityUid, EntityUid?> _fryerSounds = new();
 
+    /// <summary>
+    ///     Prevents memory leaks.
+    /// </summary>
+    /// <param name="ent"></param>
+    /// <param name="args"></param>
     private void OnShutdown(Entity<SharedDeepFryerComponent> ent, ref ComponentShutdown args)
     {
         if (_fryerSounds.TryGetValue(ent, out var soundEntity) && soundEntity != null)
             _audio.Stop(soundEntity.Value);
 
         _fryerSounds.Remove(ent);
+
+        if (_container.TryGetContainer(ent, ent.Comp.ContainerId, out var container))
+        {
+            foreach (var entity in container.ContainedEntities)
+            {
+                _cookingStartTimes.Remove(entity);
+            }
+        }
     }
 
     /// <summary>
@@ -60,10 +78,15 @@ public sealed class DeepFryerSystem : EntitySystem
         if (args.Handled)
             return;
 
+        if (TryComp<DamageableComponent>(args.Used, out _))
+        {
+            _adminLogger.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(args.User):Player} put {ToPrettyString(args.Used)} into {ToPrettyString(ent):DeepFryer}");
+        }
+
         var usedMeta = MetaData(args.Used);
         if (usedMeta.EntityName.StartsWith("burnt"))
         {
-            _popup.PopupEntity("TEMP - You cannot cook a burnt item", ent, args.User);
+            _popup.PopupEntity(Loc.GetString("Deep-Fryer-Message-Burnt-Item", ("item", args.Used)), ent, args.User);
             args.Handled = true;
             return;
         }
@@ -74,18 +97,24 @@ public sealed class DeepFryerSystem : EntitySystem
 
         if (solName.Volume <= 25)
         {
-            _popup.PopupEntity("TEMP - Deep Fryer has low or no oil", ent, args.User);
+            _popup.PopupEntity(Loc.GetString("Deep-Fryer-Message-Low-Oil", ("fryer", ent.Owner)), ent, args.User);
             args.Handled = true;
             return;
         }
 
+        if (!ent.Comp.IsEnabled)
+        {
+            _popup.PopupEntity(Loc.GetString("Deep-Fryer-Message-Disabled", ("fryer", ent.Owner)), ent, args.User);
+            args.Handled = true;
+            return;
+        }
 
         if (TryComp<ItemComponent>(args.Used, out var itemComp))
         {
             if (itemComp.Size == "Small" || itemComp.Size == "Tiny" || itemComp.Size != "Large")
                 return;
 
-            _popup.PopupEntity("TEMP - You cannot cook a large item", ent, args.User);
+            _popup.PopupEntity(Loc.GetString("Deep-Fryer-Message-Large-Item", ("item", args.Used)), ent, args.User);
             args.Handled = true;
             return;
         }
@@ -126,14 +155,14 @@ public sealed class DeepFryerSystem : EntitySystem
         // If not, popup a message and return.
         if (!(TryComp<ApcPowerReceiverComponent>(deepFryerEnt, out var apc) && apc.Powered) || !_power.IsPowered(deepFryerEnt))
         {
-            _popup.PopupEntity("TEMP - Deep Fryer is not powered", deepFryerEnt, args.User);
+            _popup.PopupEntity(Loc.GetString("Deep-Fryer-No-Power", ("fryer", deepFryerEnt.Owner)), deepFryerEnt, args.User);
             return;
         }
 
         // Now we check if the deep fryer is broken. If so, popup a message and return.
         if (deepFryerComp.IsBroken)
         {
-            _popup.PopupEntity("TEMP - Deep Fryer is broken", deepFryerEnt, args.User);
+            _popup.PopupEntity(Loc.GetString("Deep-Fryer-Message-Broken", ("fryer", deepFryerEnt.Owner)), deepFryerEnt, args.User);
             return;
         }
 
@@ -145,14 +174,14 @@ public sealed class DeepFryerSystem : EntitySystem
 
         if (solName.Volume <= 25)
         {
-            _popup.PopupEntity("TEMP - Deep Fryer has low or no oil", deepFryerEnt, args.User);
+            _popup.PopupEntity(Loc.GetString("Deep-Fryer-Message-Low-Oil", ("fryer", deepFryerEnt.Owner)), deepFryerEnt, args.User);
             return;
         }
 
         var cookingOilAmnt = solName.GetTotalPrototypeQuantity("OilOlive");
         if (cookingOilAmnt <= 25)
         {
-            _popup.PopupEntity("TEMP - Deep Fryer has low or no oil", deepFryerEnt, args.User);
+            _popup.PopupEntity(Loc.GetString("Deep-Fryer-Message-Low-Oil", ("fryer", deepFryerEnt.Owner)), deepFryerEnt, args.User);
             return;
         }
 
@@ -167,29 +196,41 @@ public sealed class DeepFryerSystem : EntitySystem
             var recipe = FindMatchingRecipe(entity);
             if (recipe != null)
             {
-                _popup.PopupEntity("TEMP - You cannot grab an item while it's cooking", deepFryerEnt, args.User);
-                return;
+                _popup.PopupEntity(Loc.GetString("Deep-Fryer-Message-Cooking-Item", ("item", entity)), deepFryerEnt, args.User);
+                continue;
             }
 
-            _popup.PopupEntity("TEMP - You grabbed an item", deepFryerEnt, args.User);
-            _popup.PopupEntity("TEMP - PLAYER grabs ITEM from the fryer", deepFryerEnt, Filter.PvsExcept(args.User), true);
+            _popup.PopupEntity(Loc.GetString("Deep-Fryer-Message-Grabbed-Item",
+                    ("item", entity),
+                    ("fryer", deepFryerEnt.Owner)),
+                deepFryerEnt,
+                args.User);
+
+            _popup.PopupEntity(Loc.GetString("Deep-Fryer-Message-Grabbed-Item-Others",
+                    ("player", args.User),
+                    ("item", entity),
+                    ("fryer", deepFryerEnt.Owner)),
+                deepFryerEnt,
+                Filter.PvsExcept(args.User),
+                true);
 
             _container.Remove(entity, container);
             _hands.PickupOrDrop(args.User, entity);
+            _cookingStartTimes.Remove(entity);
         }
 
         // Otherwise, if the container has NO items, we toggle the deep fryer with two popups.
         if (container.ContainedEntities.Count == 0)
         {
             _popup.PopupEntity(deepFryerComp.IsEnabled
-                ? "TEMP - You turn the deep fryer off"
-                : "TEMP - You turn the deep fryer on",
+                ? Loc.GetString("Deep-Fryer-Message-Toggle-On", ("fryer", deepFryerEnt.Owner))
+                : Loc.GetString("Deep-Fryer-Message-Toggle-Off", ("fryer", deepFryerEnt.Owner)),
             deepFryerEnt,
             args.User);
 
             _popup.PopupEntity(deepFryerComp.IsEnabled
-                ? "TEMP - PLAYER turns the deep fryer off"
-                : "TEMP - PLAYER turns the deep fryer on",
+                ? Loc.GetString("Deep-Fryer-Message-Toggle-On-Others", ("player", args.User), ("fryer", deepFryerEnt.Owner))
+                : Loc.GetString("Deep-Fryer-Message-Toggle-Off-Others", ("player", args.User), ("fryer", deepFryerEnt.Owner)),
             deepFryerEnt,
             Filter.PvsExcept(args.User),
             true);
@@ -280,64 +321,130 @@ public sealed class DeepFryerSystem : EntitySystem
                 var recipe = FindMatchingRecipe(entity);
                 if (recipe != null)
                 {
-                    if (_cookingStartTimes.TryGetValue(entity, out var startTime))
-                    {
-                        var elapsed = _timing.CurTime - startTime;
-                        if (elapsed.TotalSeconds >= recipe.CookTime)
-                        {
-                            _container.Remove(entity, container);
-                            QueueDel(entity);
-
-                            var recipeResult = Spawn(recipe.Result, Transform(uid).Coordinates);
-                            _container.Insert(recipeResult, container);
-
-                            _cookingStartTimes.Remove(entity);
-
-                            _audio.PlayPvs(deepFryerComp.Buzzer, uid, AudioParams.Default.WithVolume(-5));
-                        }
-                    }
+                    FryFoodEntity(entity, uid, deepFryerComp, recipe);
                 }
                 else
                 {
-                    var itemMeta = MetaData(entity);
-
-                    if (!_cookingStartTimes.ContainsKey(entity))
-                    {
-                        _cookingStartTimes[entity] = _timing.CurTime;
-                    }
-
-                    if (_cookingStartTimes.TryGetValue(entity, out var startTime))
-                    {
-                        var elapsed = _timing.CurTime - startTime;
-                        if (elapsed.TotalSeconds >= deepFryerComp.CookTimePerLevel)
-                        {
-                            EnsureComp<SharedDeepFriedComponent>(entity, out var deepFriedComp);
-
-                            _cookingStartTimes.Remove(entity);
-
-                            if (itemMeta.EntityName.StartsWith("lightly-fried"))
-                            {
-                                _metaData.SetEntityName(entity, itemMeta.EntityName.Replace("lightly-fried", "fried"));
-                                deepFriedComp.CurrentFriedLevel = SharedDeepFriedComponent.FriedLevel.Fried;
-                            }
-                            else if (itemMeta.EntityName.StartsWith("fried"))
-                            {
-                                _metaData.SetEntityName(entity, itemMeta.EntityName.Replace("fried", "burnt"));
-                                deepFriedComp.CurrentFriedLevel = SharedDeepFriedComponent.FriedLevel.Burnt;
-                                _container.InsertOrDrop(entity, container);
-                            }
-                            else
-                            {
-                                _metaData.SetEntityName(entity, itemMeta.EntityName.Insert(0, "lightly-fried "));
-                                deepFriedComp.CurrentFriedLevel = SharedDeepFriedComponent.FriedLevel.LightlyFried;
-                            }
-
-                            Dirty(entity, deepFriedComp);
-                            _audio.PlayPvs(deepFryerComp.Buzzer, uid, AudioParams.Default.WithVolume(-5));
-                        }
-                    }
+                    FryNonFoodEntity(entity, uid, deepFryerComp);
                 }
             }
         }
+    }
+
+    /// <summary>
+    ///     Cooks the supplied entity as long as it has a recipe prototype.
+    /// </summary>
+    /// <param name="friedEntUid">The inserted entity uid</param>
+    /// <param name="fryerEntUid">The fryer entity uid</param>
+    /// <param name="deepFryerComp">The deep-fryer component</param>
+    /// <param name="recipe">The recipe prototype</param>
+    private void FryFoodEntity(EntityUid friedEntUid,
+        EntityUid fryerEntUid,
+        SharedDeepFryerComponent deepFryerComp,
+        DeepFryingRecipePrototype recipe)
+    {
+        // First, we start by getting the container and the cooking time.
+        // If the container doesn't exist, we return early.
+        // If the cooking time doesn't exist, we set it to the current time.'
+        if (!_container.TryGetContainer(fryerEntUid, deepFryerComp.ContainerId, out var container))
+            return;
+
+        if (!_cookingStartTimes.TryGetValue(friedEntUid, out var startTime))
+        {
+            _cookingStartTimes[friedEntUid] = _timing.CurTime;
+        }
+
+        // Now we check if the elapsed time is greater than the cook time.
+        // If it is, we obviously cook it. Otherwise, return early.
+        var elapsed = _timing.CurTime - startTime;
+        if (elapsed.TotalSeconds < recipe.CookTime)
+            return;
+
+        // Now we set the container to "remove" the fried entity.
+        // Once removed, we spawn the recipe result and insert it into the container. Seamless!
+        _container.Remove(friedEntUid, container);
+        QueueDel(friedEntUid);
+
+        var recipeResult = Spawn(recipe.Result, Transform(fryerEntUid).Coordinates);
+        _container.Insert(recipeResult, container);
+
+        // Now we remove the cooking time and play the buzzer sound.
+        _cookingStartTimes.Remove(friedEntUid);
+        _audio.PlayPvs(deepFryerComp.Buzzer, fryerEntUid, AudioParams.Default.WithVolume(-5));
+    }
+
+    /// <summary>
+    ///     Cooks non-recipe item entities, applying a sprite overlay and damage to damageables.
+    /// </summary>
+    /// <param name="friedEntUid">The inserted entity uid</param>
+    /// <param name="fryerEntUid">The deep-fryer entity uid</param>
+    /// <param name="deepFryerComp">The deep-fryer component</param>
+    private void FryNonFoodEntity(EntityUid friedEntUid, EntityUid fryerEntUid, SharedDeepFryerComponent deepFryerComp)
+    {
+        // We start by getting the container. If it doesn't have one (which it shouldn't), return.
+        if (!_container.TryGetContainer(fryerEntUid, deepFryerComp.ContainerId, out var container))
+            return;
+
+        // Now we get the item's metadata. This is for later.
+        var itemMeta = MetaData(friedEntUid);
+
+        // We set the cooking start time if the entity doesn't have one yet.
+        if (!_cookingStartTimes.ContainsKey(friedEntUid))
+            _cookingStartTimes[friedEntUid] = _timing.CurTime;
+
+        //  Now we check for a damageable component. If it has one, we apply 1.5 heat damage.
+        //  This is just so living/hurtable entities can't survive the deep fryer.
+        if (TryComp<DamageableComponent>(friedEntUid, out _))
+        {
+            var damage = new DamageSpecifier
+            {
+                DamageDict = { ["Heat"] = 0.33f },
+            };
+            _damageable.TryChangeDamage(friedEntUid, damage, origin: fryerEntUid);
+        }
+
+        // Now check for the start and elapsed times.
+        // If the elapsed time is greater than the cook time, we obviously cook it. Otherwise, return.
+        if (!_cookingStartTimes.TryGetValue(friedEntUid, out var startTime))
+        {
+            _cookingStartTimes[friedEntUid] = _timing.CurTime;
+        }
+
+        var elapsed = _timing.CurTime - startTime;
+        if (elapsed.TotalSeconds < deepFryerComp.CookTimePerLevel)
+            return;
+
+        // Now we ensure the entity inside has a "fried" component.
+        // Then we remove the cooking time and set fry level and name based on the PREVIOUS fry level.
+        // This defaults as "None", so "Lightly-Fried" is the first one.
+        EnsureComp<SharedDeepFriedComponent>(friedEntUid, out var deepFriedComp);
+
+        _cookingStartTimes.Remove(friedEntUid);
+
+        if (itemMeta.EntityName.StartsWith("lightly-fried"))
+        {
+            _metaData.SetEntityName(friedEntUid, itemMeta.EntityName.Replace("lightly-fried", "fried"));
+            deepFriedComp.CurrentFriedLevel = SharedDeepFriedComponent.FriedLevel.Fried;
+        }
+        else if (itemMeta.EntityName.StartsWith("fried"))
+        {
+            _metaData.SetEntityName(friedEntUid, itemMeta.EntityName.Replace("fried", "burnt"));
+            deepFriedComp.CurrentFriedLevel = SharedDeepFriedComponent.FriedLevel.Burnt;
+
+            // "Burnt" gets a special function, in that it drops out and can't be re-inserted.
+            _container.InsertOrDrop(friedEntUid, container);
+        }
+        else
+        {
+            _metaData.SetEntityName(friedEntUid, itemMeta.EntityName.Insert(0, "lightly-fried "));
+            deepFriedComp.CurrentFriedLevel = SharedDeepFriedComponent.FriedLevel.LightlyFried;
+        }
+
+        // Once the entity is fried, we dirty the entity and raise an event for sprite change.
+        // We also play a buzzer sound.
+        Dirty(friedEntUid, deepFriedComp);
+        RaiseLocalEvent(friedEntUid, new DeepFriedLevelChangedEvent());
+        _cookingStartTimes.Remove(friedEntUid);
+        _audio.PlayPvs(deepFryerComp.Buzzer, fryerEntUid, AudioParams.Default.WithVolume(-5));
     }
 }
