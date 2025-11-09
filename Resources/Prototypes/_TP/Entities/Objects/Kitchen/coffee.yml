@@ -1,0 +1,129 @@
+# Coffee Filters
+- type: entity
+  id: TP14CoffeeFilter
+  parent: BaseItem
+  suffix: Trieste
+  name: coffee filter
+  description: A single-use filter for a boiler.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite # TODO - add custom sprite
+    sprite: Objects/Consumable/Drinks/water_cup.rsi
+    state: icon-0
+  - type: Tag
+    tags:
+    - TP14CoffeeFilter
+
+- type: entity
+  id: TP14CoffeeFilterDirty
+  parent: TP14CoffeeFilter
+  suffix: Trieste
+  name: dirty coffee filter
+  description: Smells of old, burnt coffee.
+
+- type: entity
+  id: TP14CoffeeFilterInfinite
+  parent: BaseItem
+  suffix: Trieste, Play-Time Award
+  name: forever-use coffee filter
+  description: A filter for a boiler. This one seems spotless!
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite # TODO - add custom sprite
+    sprite: Objects/Consumable/Drinks/water_cup.rsi
+    state: icon-0
+
+# Coffee
+- type: entity
+  id: TP14CoffeeBeans
+  parent: BaseItem
+  suffix: Trieste
+  name: coffee beans
+  description: A bag of coffee beans.
+  components:
+  - type: Extractable
+    grindableSolutionName: GroundCoffee
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      GroundCoffee:
+        reagents:
+        - ReagentId: TP14ReagentGroundCoffee
+          Quantity: 15
+  - type: Sprite # TODO - add custom sprite
+    sprite: Objects/Specific/Hydroponics/cocoa.rsi
+    state: seed
+  - type: Tag
+    tags:
+    - TP14TagCoffeeBeans
+
+- type: entity
+  id: TP14InstantInstantCoffee
+  parent: BaseItem
+  suffix: Trieste
+  name: instant coffee
+  description: A bag of instant coffee.
+  components:
+  - type: DrainableSolution
+    solution: InstantCoffee
+  - type: ExaminableSolution
+    solution: InstantCoffee
+    exactVolume: true
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      InstantCoffee:
+        reagents:
+        - ReagentId: TP14ReagentInstantCoffee
+          Quantity: 15
+  - type: Sprite # TODO - add custom sprite
+    sprite: Objects/Specific/Hydroponics/cocoa.rsi
+    state: seed
+  - type: SolutionTransfer
+    maxTransferAmount: 5
+
+# Tools
+- type: entity
+  parent: UtensilBase
+  id: TP14CoffeeMixer
+  name: coffee mixer
+  suffix: Trieste
+  description: A tool for mixing coffee grounds.
+  components:
+  - type: Item
+    size: Medium
+  - type: Utensil
+    types:
+    - Spoon
+  - type: ReactionMixer
+    mixMessage: "coffee-mixer-success"
+    timeToMix: 1.0
+    reactionTypes:
+    - Stir
+  - type: Sprite
+    state: bar_spoon
+
+- type: entity
+  parent: UtensilBase
+  id: TP14CoffeePress
+  name: coffee presser
+  suffix: Trieste
+  description: A tool for pressing coffee grounds.
+  components:
+  - type: Item
+    size: Medium
+  - type: Utensil
+    types:
+    - Spoon
+  - type: ReactionMixer
+    mixMessage: "coffee-press-success"
+    timeToMix: 1.0
+    reactionTypes:
+    - TP14Pressing
+  - type: Sprite
+    state: bar_spoonyes
+

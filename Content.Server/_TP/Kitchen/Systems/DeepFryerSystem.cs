@@ -17,7 +17,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Server._TP.Kitchen;
+namespace Content.Server._TP.Kitchen.Systems;
 
 
 public sealed class DeepFryerSystem : EntitySystem

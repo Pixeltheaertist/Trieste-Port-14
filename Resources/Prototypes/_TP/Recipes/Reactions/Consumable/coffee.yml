@@ -1,0 +1,96 @@
+# Coffee Grounds
+- type: reaction
+  id: TP14GroundCoffeeToTamperedCoffee
+  requiredMixerCategories:
+  - TP14Pressing
+  reactants:
+    TP14ReagentGroundCoffee:
+      amount: 1
+  products:
+    TP14ReagentTamperedCoffee: 1
+
+- type: reaction
+  id: TP14GroundCoffeeToMixedCoffee
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    TP14ReagentGroundCoffee:
+      amount: 1
+  products:
+    TP14ReagentTamperedCoffee: 1
+
+- type: reaction
+  id: TP14TamperedCoffeeToMixedCoffee # Wrong path, chucklenuts!
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    TP14ReagentTamperedCoffee:
+      amount: 1
+  products:
+    TP14ReagentMixedCoffee: 1
+
+- type: reaction
+  id: TP14MixedCoffeeToMixedTamperedCoffee # You did it! :D
+  requiredMixerCategories:
+  - TP14Pressing
+  reactants:
+    TP14ReagentMixedCoffee:
+      amount: 1
+  products:
+    TP14ReagentMixedTamperedCoffee: 1
+
+# Coffee (the drink)
+- type: reaction
+  id: TP14InstantCoffeeToCoffee
+  minTemp: 350
+  reactants:
+    TP14ReagentInstantCoffee:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    Coffee: 2
+
+- type: reaction
+  id: TP14GroundCoffeeToBadCoffee
+  minTemp: 350
+  reactants:
+    TP14ReagentGroundCoffee:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    TP14ReagentBadCoffee: 2
+
+- type: reaction
+  id: TP14MixedCoffeeToBadCoffee
+  minTemp: 350
+  reactants:
+    TP14ReagentMixedCoffee:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    TP14ReagentBadCoffee: 2
+
+- type: reaction
+  id: TP14TamperedCoffeeToCoffee
+  minTemp: 350
+  reactants:
+    TP14ReagentTamperedCoffee:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    Coffee: 2
+
+- type: reaction
+  id: TP14QualityCoffee
+  minTemp: 350
+  reactants:
+    TP14ReagentMixedTamperedCoffee:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    TP14ReagentQualityCoffee: 2

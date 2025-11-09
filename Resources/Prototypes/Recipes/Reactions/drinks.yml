@@ -1155,6 +1155,7 @@
 
 - type: reaction
   id: Tea
+  minTemp: 323.15
   reactants:
     TeaPowder:
       amount: 1

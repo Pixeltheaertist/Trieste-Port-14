@@ -1,4 +1,10 @@
-# PUT YOUR TAGS IN ALPHABETICAL ORDER. 'TP14' is exempt. (So just ignore it!)
+# PUT YOUR TAGS IN ALPHABETICAL ORDER. 'TP14' and 'TP14Tag' is exempt. (So just ignore it!)
+
+- type: Tag
+  id: TP14TagCoffeeBeans
+
+- type: Tag
+  id: TP14CoffeeFilter
 
 - type: Tag
   id: Drifter
@@ -14,3 +20,6 @@
 
 - type: Tag
   id: PreventsFire
+
+- type: Tag
+  id: TP14TagTeaBag

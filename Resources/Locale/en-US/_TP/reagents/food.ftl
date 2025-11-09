@@ -1,2 +1,2 @@
 reagent-name-custard = Custard
-reagent-desc-custard = A delicacy from Earth.
+reagent-desc-custard = A delicacy from Earth. A favorite of doctors.

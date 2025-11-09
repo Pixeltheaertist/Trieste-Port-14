@@ -1,0 +1,65 @@
+# Bases
+- type: reagent
+  id: TP14ReagentGroundCoffee
+  name: reagent-name-ground-coffee
+  desc: reagent-desc-ground-coffee
+  physicalDesc: reagent-physical-desc-clumpy
+  flavor: TP14FlavorGroundCoffee
+  color: "#4E3629"
+  recognizable: true
+
+- type: reagent
+  id: TP14ReagentInstantCoffee
+  name: reagent-name-instant-coffee
+  desc: reagent-desc-instant-coffee
+  physicalDesc: reagent-physical-desc-powdery
+  flavor: TP14FlavorInstantCoffee
+  color: "#4E3629"
+  recognizable: true
+
+# Mixes
+- type: reagent
+  id: TP14ReagentTamperedCoffee
+  name: reagent-name-tampered-coffee
+  desc: reagent-desc-tampered-coffee
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: coffee
+  color: "#4E3629"
+  recognizable: true
+
+- type: reagent
+  id: TP14ReagentMixedCoffee
+  name: reagent-name-mixed-coffee
+  desc: reagent-desc-mixed-coffee
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: coffee
+  color: "#4E3629"
+  recognizable: true
+
+- type: reagent
+  id: TP14ReagentMixedTamperedCoffee
+  name: reagent-name-mixed-tampered-coffee
+  desc: reagent-desc-mixed-tampered-coffee
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: coffee
+  color: "#4E3629"
+  recognizable: true
+
+# Coffee
+- type: reagent
+  id: TP14ReagentBadCoffee
+  name: reagent-name-bad-coffee
+  desc: reagent-desc-bad-coffee
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: TP14FlavorBadCoffee
+  color: "#664300"
+  recognizable: true
+
+- type: reagent
+  id: TP14ReagentQualityCoffee
+  name: reagent-name-quality-coffee
+  desc: reagent-desc-quality-coffee
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: TP14FlavorQualityCoffee
+  color: "#664300"
+  recognizable: true

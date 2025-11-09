@@ -43,8 +43,8 @@
             CargoTechnician: [ 2, 3 ]
             #expeditionary
             SalvageSpecialist: [ 3, 3 ]
-            BasinEngi: [ 3, 3 ]
-            Pilot: [ 1, 1 ]
+            TP14BasinTech: [ 3, 3 ]
+            TP14Pilot: [ 1, 1 ]
             #civilian
             Passenger: [ -1, -1 ]
             Chaplain: [ 1, 1 ]

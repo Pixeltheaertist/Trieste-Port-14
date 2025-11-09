@@ -56,3 +56,19 @@
         amount: 2
       - id: CandlePurpleInfinite
         amount: 2
+
+- type: entity
+  id: TP14BoxCoffeeFilter
+  parent: BoxCardboard
+  suffix: Trieste
+  name: coffee filter box
+  description: A box filled with new coffee filters.
+  components:
+  - type: Storage
+    whitelist:
+      tags:
+      - TP14CoffeeFilter
+  - type: StorageFill
+    contents:
+    - id: CoffeeFilter
+      amount: 9

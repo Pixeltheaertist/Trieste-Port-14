@@ -4,3 +4,10 @@
   icon:
     sprite: _TP/Structures/Machines/Medical/incubator.rsi
     state: base
+
+- type: mixingCategory
+  id: TP14Pressing
+  verbText: mixing-verb-pressing
+  icon:
+    sprite: Structures/Machines/Medical/centrifuge.rsi
+    state: base
