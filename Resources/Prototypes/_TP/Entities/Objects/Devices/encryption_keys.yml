@@ -3,7 +3,6 @@
   id: TP14EncryptionKeyNanotrasen
   suffix: Trieste, NanoTraitor
   name: nanotrasen encryption key
-  suffix: Trieste, Encryption-Key, NanoTraitor
   description: An encryption key used by... corporate... people?
   components:
   - type: EncryptionKey

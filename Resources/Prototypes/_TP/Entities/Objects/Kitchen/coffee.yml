@@ -125,5 +125,5 @@
     reactionTypes:
     - TP14Pressing
   - type: Sprite
-    state: bar_spoonyes
+    state: bar_spoon
 

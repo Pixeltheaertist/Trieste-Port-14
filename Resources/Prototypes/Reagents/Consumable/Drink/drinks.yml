@@ -562,7 +562,7 @@
   id: KiraSpecial
   name: reagent-name-kira-special
   parent: BaseDrink
-  desc: reagent-desc-kira-special
+  desc: reagent-desc-kira-special # Big fucking yikes. Changed this! - Cookie
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: sweet
   color: "#CCCC99"

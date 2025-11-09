@@ -158,7 +158,7 @@
 - type: entity
   id: Table
   parent: TableBase
-  name: table
+  name: metal table
   description: A square piece of metal standing on four metal legs.
   components:
   - type: Sprite

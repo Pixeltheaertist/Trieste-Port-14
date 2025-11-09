@@ -223,14 +223,14 @@ public sealed class DeepFryerSystem : EntitySystem
         if (container.ContainedEntities.Count == 0)
         {
             _popup.PopupEntity(deepFryerComp.IsEnabled
-                ? Loc.GetString("Deep-Fryer-Message-Toggle-On", ("fryer", deepFryerEnt.Owner))
-                : Loc.GetString("Deep-Fryer-Message-Toggle-Off", ("fryer", deepFryerEnt.Owner)),
+                ? Loc.GetString("Deep-Fryer-Message-Toggle-Off", ("fryer", deepFryerEnt.Owner))
+                : Loc.GetString("Deep-Fryer-Message-Toggle-On", ("fryer", deepFryerEnt.Owner)),
             deepFryerEnt,
             args.User);
 
             _popup.PopupEntity(deepFryerComp.IsEnabled
-                ? Loc.GetString("Deep-Fryer-Message-Toggle-On-Others", ("player", args.User), ("fryer", deepFryerEnt.Owner))
-                : Loc.GetString("Deep-Fryer-Message-Toggle-Off-Others", ("player", args.User), ("fryer", deepFryerEnt.Owner)),
+                ? Loc.GetString("Deep-Fryer-Message-Toggle-Off-Others", ("player", args.User), ("fryer", deepFryerEnt.Owner))
+                : Loc.GetString("Deep-Fryer-Message-Toggle-On-Others", ("player", args.User), ("fryer", deepFryerEnt.Owner)),
             deepFryerEnt,
             Filter.PvsExcept(args.User),
             true);

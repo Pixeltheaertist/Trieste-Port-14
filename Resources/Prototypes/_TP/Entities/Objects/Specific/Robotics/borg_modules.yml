@@ -1,5 +1,5 @@
 - type: entity
-  id: BorgModuleNanotrasenWeapon
+  id: TP14BorgModuleNanotrasenWeapon
   parent: [ BaseBorgModule, BaseProviderBorgModule, BaseNanotrasenContraband ]
   name: offensive cyborg module
   suffix: Trieste, NanoTraitor

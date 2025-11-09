@@ -380,7 +380,7 @@
           Quantity: 10
 
 - type: entity
-  parent: BaseForagePlantRegrowing
+  parent: TP14BaseForagePlantRegrowing
   id: TrenchlightWeed
   suffix: Trieste, Sea, Forage
   name: trenchlight weed

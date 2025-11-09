@@ -1,9 +1,8 @@
 - type: entity
   name: drifter
   id: TP14MobDrifter
-  suffix: Trieste, Sea
-  parent: MobSpaceBasic
   suffix: Trieste, Sea, Drifter
+  parent: MobSpaceBasic
   description: A spindly, opportunistic predator which injects prey with a paralyzing agent before siphoning their blood.
   components:
   - type: Sprite

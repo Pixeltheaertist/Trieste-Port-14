@@ -44,7 +44,7 @@
 
 - type: entity
   id: TP14AtmosphericThrusterUnanchored
-  parent: AtmosphericThruster
+  parent: TP14AtmosphericThruster
   suffix: Trieste, Unanchored
   components:
   - type: Transform

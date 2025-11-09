@@ -4,7 +4,6 @@
   name: cascade bomb
   suffix: Trieste, Bomb, NanoTraitor
   description: An advanced bomb that can produce a hyper-microscopic resonance cascade.
-  suffix: Trieste, Weapon
   components:
   - type: Wires
     layoutId: Defusable

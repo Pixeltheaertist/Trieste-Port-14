@@ -1,7 +1,7 @@
 - type: entity
   id: TableBase
   parent: BaseStructure
-  name: table
+  name: metal table
   description: A square piece of metal standing on four metal legs.
   abstract: true
   components:

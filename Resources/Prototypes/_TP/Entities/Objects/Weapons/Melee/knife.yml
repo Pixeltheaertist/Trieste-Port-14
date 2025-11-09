@@ -1,9 +1,8 @@
 - type: entity
   name: bony spine
   parent: Shiv
-  suffix: Trieste
   id: TP14ThingySpine
-  suffix: Trieste, Weapon
+  suffix: Trieste
   description: A vile spine of bone created by a Thingy. It's extremely sharp, and hollow.
   components:
   - type: MeleeWeapon

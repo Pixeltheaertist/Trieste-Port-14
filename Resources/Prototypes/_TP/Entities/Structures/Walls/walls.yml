@@ -6,7 +6,6 @@
   suffix: Trieste, Indestructible
   name: indestructible rock wall
   description: Born from extreme pressure and never-ending pyroclastic layers, this wall might as well be indestructible.
-  suffix: Trieste, Sea, Indestructible
   components:
   - type: Transform
     noRot: true
