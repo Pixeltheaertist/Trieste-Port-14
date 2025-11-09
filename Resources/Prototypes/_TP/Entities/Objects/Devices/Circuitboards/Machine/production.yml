@@ -1,7 +1,7 @@
 - type: entity
   id: TP14ColdplateMachineCircuitboard
   parent: BaseMachineCircuitboard
-  suffix: Trieste
+  suffix: Trieste, Circuit-Board
   name: coldplate machine board
   description: A machine printed circuit board for a coldplate.
   components:
@@ -14,7 +14,7 @@
 - type: entity
   id: JellidPortableScrubberMachineCircuitBoard
   parent: BaseMachineCircuitboard
-  suffix: Trieste, Jellid
+  suffix: Trieste, Circuit-Board
   name: jellid portable scrubber machine board
   description: A machine printed circuit board for a jellid portable scrubber.
   components:
@@ -30,7 +30,7 @@
 - type: entity
   id: IncubatorMachineCircuitboard
   parent: BaseMachineCircuitboard
-  suffix: Trieste, Medical
+  suffix: Trieste, Circuit-Board
   name: incubator machine board
   description: A machine printed circuit board for an incubator.
   components:
@@ -46,7 +46,7 @@
 - type: entity
   id: TP14SMESAdvancedMachineCircuitboard
   parent: BaseMachineCircuitboard
-  suffix: Trieste
+  suffix: Trieste, Circuit-Board
   name: trieste's advanced SMES machine board
   description: A machine printed circuit board for a trieste-speciifc Advanced SMES.
   components:
@@ -66,7 +66,7 @@
 - type: entity
   id: TP14AtmosphericThrusterMachineCircuitboard
   parent: BaseMachineCircuitboard
-  suffix: Trieste, Planetary
+  suffix: Trieste, Circuit-Board
   name: atmospheric thruster machine board
   components:
   - type: Sprite
@@ -80,7 +80,7 @@
 - type: entity
   id: TP14LargePropellerMachineCircuitboard
   parent: BaseMachineCircuitboard
-  suffix: Trieste, Planetary
+  suffix: Trieste, Circuit-Board
   name: large propeller machine board
   components:
   - type: Sprite
@@ -94,7 +94,7 @@
 - type: entity
   id: TP14OvenMachineCircuitboard
   parent: BaseMachineCircuitboard
-  suffix: Trieste, Service
+  suffix: Trieste, Circuit-Board
   name: oven machine board
   components:
     - type: Sprite

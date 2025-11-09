@@ -3,6 +3,7 @@
   id: TP14MobDrifter
   suffix: Trieste, Sea
   parent: MobSpaceBasic
+  suffix: Trieste, Sea, Drifter
   description: A spindly, opportunistic predator which injects prey with a paralyzing agent before siphoning their blood.
   components:
   - type: Sprite
@@ -230,6 +231,7 @@
   name: Mimic
   parent: MobSpaceBasic
   id: TP14MobMimic
+  suffix: Trieste, Sea
   description: A horrific ambush predator. It infests fish until disturbed by larger prey and uses elecricity to immobilize their targets.
   components:
   - type: MobThresholds
@@ -283,6 +285,7 @@
   name: deathwhale
   id: MobDeathWhale
   parent: SimpleSpaceMobBase
+  suffix: Trieste, Sea, DeathWhale
   description: Don't go into the light.
   components:
   - type: Sprite
@@ -305,6 +308,7 @@
   name: Spitter
   parent: MobXeno
   id: TP14MobSeaBarnacle
+  Suffix: Trieste, Sea, Barnacle
   description: A heaving mass of coral and flesh, capable of spitting corrosive acid at it's prey.
   components:
   - type: Sprite

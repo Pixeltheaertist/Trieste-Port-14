@@ -1,8 +1,8 @@
 - type: entity
-  name: Fish Spawner
   id: TP14SpawnMobFish
-  suffix: Trieste, Random, Sea, Spawner
   parent: MarkerBase
+  name: fish spawner
+  suffix: Trieste, Spawner, Sea
   components:
   - type: Sprite
     layers:
@@ -14,10 +14,10 @@
     - TP14MobFish
 
 - type: entity
-  name: Drifter Spawner
   id: TP14SpawnMobDrifter
+  name: drifter spawner
   parent: MarkerBase
-  suffix: Trieste,  Drifter, Random, Sea,
+  suffix: Trieste, Spawner, Drifter, Sea
   components:
   - type: Sprite
     layers:

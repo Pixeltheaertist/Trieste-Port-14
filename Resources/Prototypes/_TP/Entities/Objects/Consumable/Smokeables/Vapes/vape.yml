@@ -1,6 +1,7 @@
 - type: entity
   id: TP14NTVape
   parent: [ BaseVape, BaseNanotrasenContraband ]
+  suffix: Trieste, Smokeable, NanoTraitor
   name: NanoTrasen branded vape
   description: "Now even you can rep your favorite mega-corp while hotboxing sweetwater. (WARNING:Pour only water into the vape)"
   components:

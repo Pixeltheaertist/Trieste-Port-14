@@ -1,6 +1,6 @@
 using Robust.Shared.Configuration;
 
-namespace Content.Shared.NullLink.CCVar;
+namespace Content.Shared._NullLink.CCVar;
 public sealed partial class NullLinkCCVars
 {
     // U’ve got some confusion because both the Discord role and the in-game role (like Captain, for example) are called “role.”

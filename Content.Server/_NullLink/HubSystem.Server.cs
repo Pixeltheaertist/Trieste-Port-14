@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Content.Server._NullLink.Helpers;
 using Content.Shared.CCVar;
-using Content.Shared.NullLink.CCVar;
 using ServerType = Starlight.NullLink.ServerType;
 
 namespace Content.Server._NullLink;
@@ -18,10 +17,10 @@ public sealed partial class HubSystem : EntitySystem
     {
         _sawmill = _logManager.GetSawmill("Hub");
 
-        _cfg.OnValueChanged(NullLinkCCVars.Description, OnGameDescChanged, true);
-        _cfg.OnValueChanged(NullLinkCCVars.Type, OnServerTypeChanged, true);
-        _cfg.OnValueChanged(NullLinkCCVars.Title, OnGameHostNameChanged, true);
-        _cfg.OnValueChanged(NullLinkCCVars.IsAdultOnly, OnIsAdultOnlyChanged, true);
+        _cfg.OnValueChanged(Shared._NullLink.CCVar.NullLinkCCVars.Description, OnGameDescChanged, true);
+        _cfg.OnValueChanged(Shared._NullLink.CCVar.NullLinkCCVars.Type, OnServerTypeChanged, true);
+        _cfg.OnValueChanged(Shared._NullLink.CCVar.NullLinkCCVars.Title, OnGameHostNameChanged, true);
+        _cfg.OnValueChanged(Shared._NullLink.CCVar.NullLinkCCVars.IsAdultOnly, OnIsAdultOnlyChanged, true);
         _cfg.OnValueChanged(CCVars.HubServerUrl, OnConnectionStringChanged, true);
     }
 
@@ -31,7 +30,7 @@ public sealed partial class HubSystem : EntitySystem
         TryUpdateServer();
     }
 
-    private void OnServerTypeChanged(Shared.NullLink.CCVar.ServerType type)
+    private void OnServerTypeChanged(Shared._NullLink.CCVar.ServerType type)
     {
         _serverType = (ServerType)type;
         TryUpdateServer();

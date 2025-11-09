@@ -1,8 +1,8 @@
 - type: entity
-  parent: [ClothingHandsBase, BaseNanotrasenContraband]
+  parent: [ ClothingHandsBase, BaseNanotrasenContraband ]
   id: TP14ClothingHandsKnuckleDustersNT
+  suffix: Trieste, Gloves, NanoTraitor
   name: Nanotrasen knuckle dusters
-  suffix: Trieste, NanoTraitor
   description: "24karat gold infused with plasteel and branded with the Nanotrasen logo. Used by Quartermasters and NT agents alike"
   components:
   - type: Sprite
@@ -29,7 +29,7 @@
 - type: entity
   parent: ClothingHandsBase
   id: TP14ClothingHandsGlovesFireproof
-  suffix: Trieste, Jellid
+  suffix: Trieste, Gloves, Jellid
   name: fire-proof gloves
   description: High-Quality fire-proof gloves, made specifically for the local Jellids.
   components:

@@ -2,6 +2,7 @@
   id: TP14JellidPortableScrubber
   parent: [ BaseMachinePowered, SmallConstructibleMachine, StructureWheeled ]
   name: jellid portable scrubber
+  suffix: Trieste, Engineering, Jellid
   description: It scrubs, portably! This one scrubs water instead of air.
   suffix: Trieste, Engi, Jellid
   components:

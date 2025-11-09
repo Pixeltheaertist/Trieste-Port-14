@@ -1,7 +1,7 @@
 - type: entity
   parent: ChemistryHotplate
   id: TP14ChemistryColdplate
-  suffix: Trieste, Medical
+  suffix: Trieste
   name: coldplate
   description: "!etalptoh eht :ygolonhcet gnitaeh rekaeb ni noitnevni tsewen ruo ,sevaworcim eht fo tnednecsed ehT"
   components:

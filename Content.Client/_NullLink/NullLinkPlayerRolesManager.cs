@@ -1,4 +1,6 @@
 using System.Linq;
+using Content.Client._NullLink;
+using Content.Shared._NullLink;
 using Content.Shared.NullLink;
 using Robust.Shared.Network;
 

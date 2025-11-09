@@ -1,7 +1,7 @@
 - type: entity
   parent: BasePlushie
   id: TP14carbatteryplushie
-  suffix: Trieste
+  suffix: Trieste, Plushie
   name: car battery plushie
   description: An old 21st century novelty plushie playing off nostalgia for cars, Jellids like these for some reason.
   components:

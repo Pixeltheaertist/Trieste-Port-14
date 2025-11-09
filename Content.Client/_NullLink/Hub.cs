@@ -1,9 +1,10 @@
+using Content.Client.NullLink;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.NullLink;
 using Robust.Client;
 using Robust.Client.UserInterface.Controls;
 
-namespace Content.Client.NullLink;
+namespace Content.Client._NullLink;
 
 // It’s not finished, still needs a lot of info displayed, scroll support once more servers show up, max hub width, a hide button, etc.
 // But I’m rushing it for the upstream, will finish it properly someday.

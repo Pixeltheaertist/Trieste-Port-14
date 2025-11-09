@@ -1,4 +1,3 @@
-using Content.Shared.NullLink.CCVar;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -13,9 +12,9 @@ public abstract class SharedPlayerRolesReqManager : ISharedNullLinkPlayerRolesRe
 
     public void Initialize()
     {
-        _cfg.OnValueChanged(NullLinkCCVars.RoleReqWithAccessToAllRoles, UpdateAllRoles, true);
-        _cfg.OnValueChanged(NullLinkCCVars.RoleReqMentors, UpdateMentors, true);
-        _cfg.OnValueChanged(NullLinkCCVars.RoleReqPeacefulBypass, UpdateRoleReqPeacefulBypass, true);
+        _cfg.OnValueChanged(_NullLink.CCVar.NullLinkCCVars.RoleReqWithAccessToAllRoles, UpdateAllRoles, true);
+        _cfg.OnValueChanged(_NullLink.CCVar.NullLinkCCVars.RoleReqMentors, UpdateMentors, true);
+        _cfg.OnValueChanged(_NullLink.CCVar.NullLinkCCVars.RoleReqPeacefulBypass, UpdateRoleReqPeacefulBypass, true);
     }
 
     private void UpdateAllRoles(string obj)

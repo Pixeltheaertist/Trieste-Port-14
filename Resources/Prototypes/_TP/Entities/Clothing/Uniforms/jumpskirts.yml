@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: TP14ClothingUniformJumpskirtDarkPerformer
-  suffix: Trieste
+  suffix: Trieste, Uniform, Easter-Egg
   name: dark performer's jumpskirt
   description: The true AI, once hired by SolGov to fight off Hatsune Miku. Real story.
   components:
@@ -13,6 +13,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: TP14ClothingUniformJumpskirtMedicalNurseDress
+  suffix: Trieste, Uniform, Medical
   name: Nurse Dress
   description: An old school nurse dress, It's a wonder Trieste still stocks these.
   components:
@@ -25,6 +26,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: TP14ClothingUniformJumpskirtScience
+  suffix: Trieste, Uniform, Science
   name: mad science jumpskirt
   description: NOT SCIENTIFICALLY POSSIBLE!!
   components:

@@ -3,7 +3,6 @@ using System.Runtime.InteropServices.JavaScript;
 using System.Threading.Tasks;
 using Content.Server._NullLink.Helpers;
 using Content.Shared.CCVar;
-using Content.Shared.NullLink.CCVar;
 using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Configuration;
 using Orleans;
@@ -50,12 +49,12 @@ public sealed partial class ActorRouter : IActorRouter, IDisposable
         };
         OrleansClientHolder.OnConnected += _onConnectedProxy;
 
-        _cfg.OnValueChanged(NullLinkCCVars.ClusterConnectionString, OnConnStringChanged, true);
-        _cfg.OnValueChanged(NullLinkCCVars.Token, OnTokenChanged, true);
-        _cfg.OnValueChanged(NullLinkCCVars.Enabled, OnEnabledChanged, true);
+        _cfg.OnValueChanged(Shared._NullLink.CCVar.NullLinkCCVars.ClusterConnectionString, OnConnStringChanged, true);
+        _cfg.OnValueChanged(Shared._NullLink.CCVar.NullLinkCCVars.Token, OnTokenChanged, true);
+        _cfg.OnValueChanged(Shared._NullLink.CCVar.NullLinkCCVars.Enabled, OnEnabledChanged, true);
 
-        _cfg.OnValueChanged(NullLinkCCVars.Project, x => _project = x, true);
-        _cfg.OnValueChanged(NullLinkCCVars.Server, x => _server = x, true);
+        _cfg.OnValueChanged(Shared._NullLink.CCVar.NullLinkCCVars.Project, x => _project = x, true);
+        _cfg.OnValueChanged(Shared._NullLink.CCVar.NullLinkCCVars.Server, x => _server = x, true);
     }
     public ValueTask Shutdown()
     {

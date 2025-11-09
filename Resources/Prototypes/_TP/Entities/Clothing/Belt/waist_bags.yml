@@ -1,6 +1,7 @@
 - type: entity
   parent: ClothingBeltStorageBase
   id: TP14ClothingBeltStorageMedicalPouch
+  suffix: Trieste, Clothing, Medical
   name: medical pouch
   description: A small waist bag meant for carrying medical supplies.
   components:
@@ -60,7 +61,7 @@
 - type: entity
   id: TP14ClothingBeltStorageMedicalPouchFilled
   parent: TP14ClothingBeltStorageMedicalPouch
-  suffix: Filled
+  suffix: Trieste, Clothing, Medical, Filled
   components:
   - type: StorageFill
     contents:

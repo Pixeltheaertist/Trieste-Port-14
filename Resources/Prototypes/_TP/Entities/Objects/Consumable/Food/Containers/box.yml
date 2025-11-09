@@ -2,7 +2,7 @@
 - type: entity
   parent: FoodBoxDonkpocket
   id: TP14FoodBoxJonkpocketJonk
-  suffix: Trieste, Food
+  suffix: Trieste, Food, Box
   name: box of jonk-pockets
   description: A box of jonk pockets, the smell of rotten Donk fills the air?
   components:

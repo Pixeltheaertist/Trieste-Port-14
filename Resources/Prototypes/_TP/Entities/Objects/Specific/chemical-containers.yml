@@ -1,6 +1,6 @@
 - type: entity
   parent: Jug
-  suffix: Trieste, Medical, Calcium
+  suffix: Trieste, Calcium
   id: TP14JugCalcium
   categories: [ HideSpawnMenu ]
   components:

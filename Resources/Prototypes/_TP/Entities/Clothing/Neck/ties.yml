@@ -1,6 +1,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: TP14ClothingNeckRedBowtie
+  suffix: Trieste, Neck, Clown
   name: red bowtie
   description: A worn clip-on red bowtie.
   components:

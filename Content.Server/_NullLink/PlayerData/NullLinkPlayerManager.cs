@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Content.Server._NullLink.Core;
 using Content.Server._NullLink.Helpers;
+using Content.Shared._NullLink;
 using Content.Shared.NullLink;
-using Content.Shared.NullLink.CCVar;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
@@ -38,8 +38,8 @@ public sealed partial class NullLinkPlayerManager : INullLinkPlayerManager
         _netMgr.RegisterNetMessage<MsgUpdatePlayerRoles>();
         _playerManager.PlayerStatusChanged += PlayerStatusChanged;
         InitializeLinking();
-        _cfg.OnValueChanged(NullLinkCCVars.RoleReqMentors, UpdateMentors, true);
-        _cfg.OnValueChanged(NullLinkCCVars.TitleBuild, UpdateTitleBuilder, true);
+        _cfg.OnValueChanged(Shared._NullLink.CCVar.NullLinkCCVars.RoleReqMentors, UpdateMentors, true);
+        _cfg.OnValueChanged(Shared._NullLink.CCVar.NullLinkCCVars.TitleBuild, UpdateTitleBuilder, true);
         _actors.OnConnected += OnNullLinkConnected;
     }
 
@@ -126,17 +126,21 @@ public sealed partial class NullLinkPlayerManager : INullLinkPlayerManager
                 break;
         }
     }
+
     private void SendPlayerRoles(ICommonSession session, HashSet<ulong> roles)
-        => _netMgr.ServerSendMessage(new MsgUpdatePlayerRoles
-        {
-            Roles = roles,
-            DiscordLink = GetDiscordAuthUrl(session.UserId.ToString())
-        }, session.Channel);
+    {
+        _netMgr.ServerSendMessage(new MsgUpdatePlayerRoles
+            {
+                Roles = roles,
+                DiscordLink = GetDiscordAuthUrl(session.UserId.ToString()),
+            },
+            session.Channel);
+    }
 
     private void UpdateMentors(string obj)
     {
         if(_mentorReq?.ID == obj)
-            return; 
+            return;
 
         _mentors.Clear();
         if (!_proto.TryIndex<RoleRequirementPrototype>(obj, out var mentorReq))

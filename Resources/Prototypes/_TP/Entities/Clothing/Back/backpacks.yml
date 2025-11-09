@@ -1,6 +1,7 @@
 - type: entity
-  parent: [Clothing, ContentsExplosionResistanceBase]
+  parent: [ Clothing, ContentsExplosionResistanceBase ]
   id: TP14ClothingBackpackClownBindle
+  suffix: Trieste, Clothing, Clown
   name: giggles von bindle
   description: It's whats left of a backpack made by Honk! Co.
   components:

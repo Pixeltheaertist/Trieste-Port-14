@@ -1,6 +1,7 @@
 - type: entity
   name: Rotund Stepfather Spawner
   id: TP14SpawnMechStepfather
+  suffix: Trieste, Spawner, Expeditionary, Mech
   parent: MarkerBase
   suffix: Trieste, Expeditionary, Job Spawn
   components:

@@ -35,7 +35,7 @@
 - type: entity
   parent: TP14BluespaceCrystal
   id: TP14BluespaceCrystal5
-  suffix: 5 BC
+  suffix: Trieste, NanoTraitor, 5 BC
   components:
   - type: Stack
     count: 5
@@ -43,18 +43,18 @@
 - type: entity
   parent: TP14BluespaceCrystal
   id: TP14BluespaceCrystal10
-  suffix: 10 BC
+  suffix: Trieste, NanoTraitor, 10 BC
   components:
   - type: Stack
     count: 10
 
 # Uplinks
 - type: entity
-  parent: [ BaseItem, StorePresetUplinkNT ]
+  parent: [ BaseItem, StorePresetUplinkNT, BaseNanotrasenContraband ]
   id: TP14BaseUplinkRadioNT
   name: nanotrasen uplink
   description: Suspiciously looking old radio...
-  suffix: 40
+  suffix: Trieste, NanoTraitor, 40 BC
   components:
   - type: Sprite
     sprite: Objects/Devices/communication.rsi
@@ -76,7 +76,7 @@
 - type: entity
   parent: BaseUplinkRadio
   id: NanotrasenUplinkRadioCascade40TC
-  suffix: 40 BC, CascOps
+  suffix: Trieste, NanoTrasen-Operatives, 40 BC
   components:
   - type: Store
     balance:

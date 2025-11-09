@@ -1,9 +1,9 @@
 - type: entity
   parent: GeneratorRTG
   id: TP14TheArtifact
+  suffix: Trieste, Engineering, The Artifact
   name: The Artifact
   description: An ancient power generation device, the lifeblood of Sweetwater and Trieste.
-  suffix: Trieste, Engi, The Artifact
   components:
   - type: PowerSupplier
     supplyRate: 0
@@ -94,7 +94,7 @@
   id: TP14NuclearReactor
   name: nuclear reactor
   description: A reactor that violently enriches and detonates uranium to generate energy. Shockingly safe.
-  suffix: Trieste, Settler, SETTLERS ONLY
+  suffix: Trieste, Settlers (ONLY)
   placement:
     mode: AlignTileAny
   components:
@@ -161,8 +161,8 @@
   parent: BaseGenerator
   id: GeneratoradvRTG
   name: Advanced RTG
-  description: An advanced radioisotope generator specially made by Trieste's engineers for long-term power supply.
-  suffix: Trieste, Engi, 15kW
+  description: An advanced radioisotope generator specially made by Triese's engineers for long-term power supply.
+  suffix: Trieste, Engineering, 15kW
   components:
   - type: PowerSupplier
     supplyRate: 15000
@@ -208,8 +208,8 @@
   parent: GeneratoradvRTG
   id: GeneratoradvRTGDamaged
   name: damaged Advanced RTG
-  description: An advanced radioisotope generator specially made by Triese's engineers for long-term power supply. This one has damaged shielding.
-  suffix: Trieste, Engi, 15kW
+  description: An advanced radioisotope generator specially made by Trieste's engineers for long-term power supply. This one has damaged shielding.
+  suffix: Trieste, Engineering, 15kW
   components:
   - type: PowerSupplier
     supplyRate: 15000

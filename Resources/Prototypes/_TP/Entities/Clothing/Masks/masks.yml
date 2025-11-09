@@ -1,6 +1,7 @@
 - type: entity
   parent: ClothingMaskClownBase
   id: TP14ClothingMaskWearyClown
+  suffix: Trieste, Mask, Clown
   name: weary clown mask
   description: A sad clown is a tragic clown, at least they have a mask.
   components:
@@ -22,8 +23,9 @@
 - type: entity
   parent: ClothingMaskBase
   id: TP14ClothingMaskPierrot
+  suffix: Trieste, Mask, Mime
   name: pierrot mask
-  description: The traditional commedia dell'spazio Pierrot mask. it looks melancholic
+  description: The traditional commedia dell'spazio Pierrot mask. It looks melancholic.
   components:
   - type: Sprite
     sprite: _TP/Clothing/Mask/pierrot.rsi

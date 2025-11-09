@@ -2,7 +2,7 @@
   name: NT standard magcell
   description: A rechargeable energy magazine. For use with compatible NT energy weaponry.
   id: TP14BaseMagCell
-  suffix: Trieste, NanoTraitor, Full
+  suffix: Trieste, Full, NanoTraitor
   parent: [ BasePowerCell, BaseNanotrasenContraband ]
   components:
   - type: Sprite
@@ -23,7 +23,7 @@
   name: NT exhaustion magcell
   description: A rechargeable energy magazine. This one fires energy draining bolts.
   id: TP14MagCellDisabler
-  suffix: Trieste, NanoTraitor, Full
+  suffix: Trieste, Full, NanoTraitor
   parent: TP14BaseMagCell
   components:
   - type: Sprite
@@ -44,7 +44,7 @@
   name: NT advanced magcell
   description: A rechargeable energy magazine for use with compatible NT energy weaponry. This one has an expanded capacity.
   id: TP14MagCellAdvanced
-  suffix: Trieste, NanoTraitor, Full
+  suffix: Trieste, Full, NanoTraitor
   parent: TP14BaseMagCell
   components:
   - type: Battery
@@ -58,7 +58,7 @@
   name: NT experimental magcell
   description: A rechargeable energy magazine for use with compatible NT energy weaponry. This one has an experimental micro-reactor to self recharge.
   id: TP14MagCellExperimental
-  suffix: Trieste, NanoTraitor, Full
+  suffix: Trieste, Full, NanoTraitor
   parent: TP14BaseMagCell
   components:
   - type: Battery

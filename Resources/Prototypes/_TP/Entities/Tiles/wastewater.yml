@@ -1,6 +1,6 @@
 - type: entity
   id: TP14WasteWaterOcean
-  suffix: Trieste, Ocean
+  suffix: Trieste, Sea
   name: ocean water
   description: Salty.
   placement:

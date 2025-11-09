@@ -1,9 +1,9 @@
 - type: entity
   name: Atmos Fix Water Marker
   id: TP14AtmosFixWaterMarker
+  suffix: Trieste, Atmos-Marker, Sea, Water
   description: "Water @ gas miner pressure, T20C"
   parent: MarkerBase
-  suffix: Trieste, Sea
   components:
   - type: Sprite
     layers:
@@ -18,7 +18,7 @@
 
 - type: entity
   name: Atmos Fix Abyss Marker
-  suffix: Trieste, Sea, Trench, Extremely High Pressure
+  suffix: Trieste, VERY-HIGH-PRESSURE, Atmos-Marker, Trench, Water
   id: TP14AtmosFixWaterTrenchMarker
   description: "Water @ trench pressure, T20C"
   parent: MarkerBase

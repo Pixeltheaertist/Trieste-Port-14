@@ -2,6 +2,7 @@
   parent: GasCanister
   id: TP14WaterCanister
   name: water canister
+  suffix: Trieste, Engineering
   description: It's GAS canister! Who the hell put water in it?
   suffix: Trieste
   components:
@@ -50,6 +51,7 @@
 - type: entity
   parent: GasCanisterBrokenBase
   id: WaterCanisterBroken
+  suffix: Trieste, Engineering, Destroyed
   name: broken water canister
   noSpawn: true
   components:

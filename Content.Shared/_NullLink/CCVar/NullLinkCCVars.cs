@@ -1,6 +1,6 @@
 using Robust.Shared.Configuration;
 
-namespace Content.Shared.NullLink.CCVar;
+namespace Content.Shared._NullLink.CCVar;
 [CVarDefs]
 public sealed partial class NullLinkCCVars
 {

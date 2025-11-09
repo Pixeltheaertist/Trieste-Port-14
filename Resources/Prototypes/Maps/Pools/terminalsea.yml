@@ -15,7 +15,7 @@
             Captain: [ 1, 1 ]
             Botanist: [ 2, 2 ]
             Chef: [ 1, 1 ]
-            ServiceWorker: [ 2, 3 ]
+            ServiceWorker: [ 2, 2 ]
             #engineering
             StationEngineer: [ 5, 5 ]
             #medical

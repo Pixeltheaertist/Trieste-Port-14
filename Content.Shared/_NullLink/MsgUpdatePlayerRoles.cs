@@ -2,7 +2,7 @@ using Lidgren.Network;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.NullLink;
+namespace Content.Shared._NullLink;
 public sealed class MsgUpdatePlayerRoles : NetMessage
 {
     public override MsgGroups MsgGroup => MsgGroups.Command;

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using Content.Shared.NullLink.CCVar;
 
 namespace Content.Server._NullLink.PlayerData;
 public sealed partial class NullLinkPlayerManager
@@ -16,13 +15,13 @@ public sealed partial class NullLinkPlayerManager
 
     public void InitializeLinking()
     {
-        _discordKey = _cfg.GetCVar(NullLinkCCVars.DiscordKey);;
-        _discordCallback = _cfg.GetCVar(NullLinkCCVars.DiscordCallback);
-        _secret = _cfg.GetCVar(NullLinkCCVars.Secret);
+        _discordKey = _cfg.GetCVar(Shared._NullLink.CCVar.NullLinkCCVars.DiscordKey);
+        _discordCallback = _cfg.GetCVar(Shared._NullLink.CCVar.NullLinkCCVars.DiscordCallback);
+        _secret = _cfg.GetCVar(Shared._NullLink.CCVar.NullLinkCCVars.Secret);
     }
     public string GetDiscordAuthUrl(string customState)
     {
-        if (string.IsNullOrEmpty(_discordCallback) || string.IsNullOrEmpty(_discordKey) || string.IsNullOrEmpty(_secret)) 
+        if (string.IsNullOrEmpty(_discordCallback) || string.IsNullOrEmpty(_discordKey) || string.IsNullOrEmpty(_secret))
             return "";
 
         var secretKeyBytes = Encoding.UTF8.GetBytes(_secret);

@@ -1,7 +1,7 @@
 ﻿- type: entity
   parent: BaseItem
   id: TP14PearlScanner
-  suffix: Trieste
+  suffix: Trieste, Pearl
   name: pearl reader
   description: A device capable to acessing and outputting the information inside a data pearl.
   components:
@@ -20,7 +20,7 @@
 - type: entity
   parent: BaseItem
   id: TP14PearlInscriber
-  suffix: Trieste
+  suffix: Trieste, Pearl
   name: pearl inscriber
   description: A machine capable to inputting information into a data pearl.
   components:

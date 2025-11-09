@@ -1,5 +1,4 @@
-﻿
-namespace Content.Client.Administration.Managers;
+﻿namespace Content.Client._NullLink;
 
 public interface INullLinkPlayerRolesManager
 {

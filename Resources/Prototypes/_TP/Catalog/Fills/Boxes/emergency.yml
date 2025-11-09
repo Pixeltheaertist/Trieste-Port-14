@@ -3,7 +3,7 @@
   id: BoxSurvivalJellid
   name: survival box
   description: It's a box with basic internals inside.
-  suffix: Trieste, Standard Jellid
+  suffix: Trieste, Filled, Survival, Jellid
   components:
   - type: StorageFill
     contents:

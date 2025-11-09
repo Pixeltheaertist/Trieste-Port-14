@@ -3,7 +3,6 @@ using System.Runtime.InteropServices.JavaScript;
 using System.Threading.Tasks;
 using Content.Server._NullLink.Helpers;
 using Content.Shared.CCVar;
-using Content.Shared.NullLink.CCVar;
 using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Configuration;
 using Orleans;

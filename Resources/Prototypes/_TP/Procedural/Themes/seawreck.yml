@@ -2,7 +2,7 @@
   id: TP14SeaWreckRoomMarker
   name: small wreck marker
   parent: MarkerBase
-  suffix: Trieste, Random, Sea, Small (5x5), Spawner
+  suffix: Trieste, Sea, 5x5
   components:
   - type: RoomFill
     size: 5,5

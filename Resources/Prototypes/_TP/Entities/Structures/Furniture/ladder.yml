@@ -12,8 +12,7 @@
   parent: TP14LadderBase
   id: TP14LadderDown
   name: ladder
-  description: Going up?
-  suffix: Trieste, Goes Up
+  suffix: Trieste, Ladder, Goes Up
   components:
     - type: Ladder
       thisSide: down
@@ -26,7 +25,6 @@
   parent: TP14LadderBase
   id: TP14LadderUp
   name: ladder
-  description: Going down?
   suffix: Trieste, Goes Down
   components:
     - type: Ladder

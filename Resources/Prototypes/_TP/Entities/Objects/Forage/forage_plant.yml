@@ -42,9 +42,9 @@
 - type: entity
   parent: TP14BaseForagePlantRegrowing
   id: TP14SerpentsMane
-  suffix: Trieste, Forage
+  suffix: Trieste, Sea, Forage
   name: serpent's mane
-  description: This plant tries to ward off potential predators by imitating an animal. The currents will make its light stem move around, scaring off other creatures and the unexperienced.
+  description: This plant tries to ward off potential predators by imitating an animal. The currents will make it's light stem move around, scaring off other creatures and the unexperienced.
   components:
   - type: Sprite
     sprite: _TP/Objects/Flora/Forage/serpents_mane.rsi
@@ -61,7 +61,7 @@
 - type: entity
   parent: TP14BaseForagePlantRegrowing
   id: TP14TrenchlightWeed
-  suffix: Trieste, Forage
+  suffix: Trieste, Sea, Forage
   name: trenchlight weed
   description: An invasive species, brought to the planet from Limoris-2b by inter-sector cargo ships. It's known for its moderate healing properties even before proper processing.
   components:
@@ -95,7 +95,7 @@
 - type: entity
   parent: TP14CottonBulbBase
   id: TP14CottonBulbLarge
-  suffix: Trieste, Forage, Large
+  suffix: Trieste, Sea, Forage, Large
   components:
   - type: Sprite
     state: large
@@ -107,7 +107,7 @@
 - type: entity
   parent: TP14CottonBulbBase
   id: TP14CottonBulbMedium
-  suffix: Trieste, Forage, Medium
+  suffix: Trieste, Sea, Forage, Medium
   components:
   - type: Sprite
     state: medium
@@ -119,7 +119,7 @@
 - type: entity
   parent: TP14CottonBulbBase
   id: TP14CottonBulbSmall
-  suffix: Trieste, Forage, Small
+  suffix: Trieste, Sea, Forage, Small
   components:
   - type: Sprite
     state: small
@@ -132,7 +132,7 @@
   parent: MarkerBase
   categories: [ Spawner ]
   id: TP14CottonBulbRandom
-  suffix: Trieste, Forage, Random
+  suffix: Trieste, Sea, Forage, Random
   name: random cotton-bulb spawner
   components:
   - type: Sprite
@@ -161,7 +161,7 @@
 - type: entity
   parent: TP14SaltshroomBase
   id: TP14SaltshroomLarge
-  suffix: Trieste, Forage, Large
+  suffix: Trieste, Sea, Forage, Large
   components:
   - type: Sprite
     state: large
@@ -169,7 +169,7 @@
 - type: entity
   parent: TP14SaltshroomBase
   id: TP14SaltshroomMedium
-  suffix: Trieste, Forage, Medium
+  suffix: Trieste, Sea, Forage, Medium
   components:
   - type: Sprite
     state: medium
@@ -177,7 +177,7 @@
 - type: entity
   parent: TP14SaltshroomBase
   id: TP14SaltshroomSmall
-  suffix: Trieste, Forage, Small
+  suffix: Trieste, Sea, Forage, Small
   components:
   - type: Sprite
     state: small
@@ -186,7 +186,7 @@
   parent: MarkerBase
   categories: [ Spawner ]
   id: TP14SaltshroomRandom
-  suffix: Trieste, Forage, Random
+  suffix: Trieste, Sea, Forage, Random
   name: random saltshroom spawner
   components:
   - type: Sprite
@@ -217,7 +217,7 @@
 - type: entity
   parent: TP14ShweatBase
   id: TP14ShweatLarge
-  suffix: Trieste, Forage, Large
+  suffix: Trieste, Sea, Forage, Large
   components:
   - type: Sprite
     state: large
@@ -225,7 +225,7 @@
 - type: entity
   parent: TP14ShweatBase
   id: TP14ShweatMedium
-  suffix: Trieste, Forage, Medium
+  suffix: Trieste, Sea, Forage, Medium
   components:
   - type: Sprite
     state: medium
@@ -233,7 +233,7 @@
 - type: entity
   parent: TP14ShweatBase
   id: TP14ShweatSmall
-  suffix: Trieste, Forage, Small
+  suffix: Trieste, Sea, Forage, Small
   components:
   - type: Sprite
     state: small
@@ -242,7 +242,7 @@
   parent: MarkerBase
   categories: [ Spawner ]
   id: TP14ShweatRandom
-  suffix: Trieste, Forage, Random
+  suffix: Trieste, Sea, Forage, Random
   name: random shweat spawner
   components:
   - type: Sprite
@@ -263,7 +263,7 @@
   id: TP14XicholomaBase
   abstract: true
   name: xicholoma
-  description: An invasive species crashed down from space long ago. It's seemingly more organic and life-like than other plants, and rumbles lightly.
+  description: An invasive species that crashed down from space long ago. It's seemingly more organic and life-like than other plants, and rumbles lightly.
   components:
   - type: Sprite
     sprite: _TP/Objects/Flora/Forage/xicholoma.rsi
@@ -271,7 +271,7 @@
 - type: entity
   parent: TP14XicholomaBase
   id: TP14XicholomaLarge
-  suffix: Trieste, Forage, Large
+  suffix: Trieste, Sea, Forage, Large
   components:
   - type: Sprite
     state: large
@@ -279,7 +279,7 @@
 - type: entity
   parent: TP14XicholomaBase
   id: TP14XicholomaMedium
-  suffix: Trieste, Forage, Medium
+  suffix: Trieste, Sea, Forage, Medium
   components:
   - type: Sprite
     state: medium
@@ -287,7 +287,7 @@
 - type: entity
   parent: TP14XicholomaBase
   id: TP14XicholomaSmall
-  suffix: Trieste, Forage, Small
+  suffix: Trieste, Sea, Forage, Small
   components:
   - type: Sprite
     state: small
@@ -296,7 +296,7 @@
   parent: MarkerBase
   categories: [ Spawner ]
   id: TP14XicholomaRandom
-  suffix: Trieste, Forage, Random
+  suffix: Trieste, Sea, Forage, Random
   name: random xicholoma spawner
   components:
   - type: Sprite
@@ -315,7 +315,7 @@
   parent: MarkerBase
   categories: [ Spawner ]
   id: TP14ReefSpawnerTenByTen
-  suffix: Trieste, Forage, 10x10
+  suffix: Trieste, Sea, Forage, 10x10
   name: sweetwater reef spawner
   components:
   - type: Sprite
@@ -380,8 +380,27 @@
           Quantity: 10
 
 - type: entity
+  parent: BaseForagePlantRegrowing
+  id: TrenchlightWeed
+  suffix: Trieste, Sea, Forage
+  name: trenchlight weed
+  description: An invasive species, brought to the planet from Limoris-2b by inter-sector cargo ships. It's known for it's moderate healing properties even before proper processing.
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Flora/Forage/trenchlight_weed.rsi
+  - type: Icon
+    sprite: _TP/Objects/Flora/Forage/trenchlight_weed.rsi
+    state: plant
+  - type: Forage
+    regrowTime: 300
+    loot:
+      All: !type:NestedSelector
+        tableId: TrenchlightWeed
+
+- type: entity
   parent: FoodInjectableBase
   id: TrenchlightLeaf
+  suffix: Trieste, Sea, Forage
   name: trenchlight leaf
   description: The leaves of Trenchlight weed. It's known as a snack to expedition teams due to it's medicinal properties.
   components:
@@ -407,7 +426,6 @@
 
 
 # Gathering
-
 - type: entityTable
   id: SerpentsManeGather
   table: !type:AllSelector

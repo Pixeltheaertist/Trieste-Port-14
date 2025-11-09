@@ -42,5 +42,6 @@
 - type: entity
   name: nanotrasen minibomb
   description: A syndicate-manufactured explosive used to stow destruction and cause chaos. A NanoTrasen sticker has been put over the Syndicate logo.
-  parent: SyndieMiniBomb
+  parent: [ SyndieMiniBomb, BaseNanotrasenContraband ]
   id: NanoMiniBomb
+  suffix: Trieste, NanoTraitor

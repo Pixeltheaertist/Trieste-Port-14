@@ -1,12 +1,10 @@
 using Content.Client.Lobby;
-using Content.Shared.CCVar;
 using Content.Shared.NullLink;
-using Content.Shared.NullLink.CCVar;
 using Robust.Client.State;
 using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
 using static Content.Shared.NullLink.NL;
-namespace Content.Client.NullLink;
+namespace Content.Client._NullLink;
 
 public sealed class HubSystem : EntitySystem
 {
@@ -22,7 +20,7 @@ public sealed class HubSystem : EntitySystem
     public Dictionary<string, NL.Server>? Servers { get; private set; }
     public Dictionary<string, NL.ServerInfo>? ServerInfo { get; private set; }
     public bool HubInitialized { get; private set; } = false;
-    public string CurrentGameHostName => _cfg.GetCVar(NullLinkCCVars.Title);
+    public string CurrentGameHostName => _cfg.GetCVar(Shared._NullLink.CCVar.NullLinkCCVars.Title);
 
     public event Action OnInitialized = delegate { };
     public event Action<string, NL.Server> OnServerUpdated = delegate { };
@@ -33,16 +31,16 @@ public sealed class HubSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeNetworkEvent<NL.ServerData>(OnSubscribed);
-        SubscribeNetworkEvent<NL.AddOrUpdateServer>(OnAddOrUpdateServer);
-        SubscribeNetworkEvent<NL.AddOrUpdateServerInfo>(OnAddOrUpdateServerInfo);
-        SubscribeNetworkEvent<NL.RemoveServer>(OnRemoveServer);
+        SubscribeNetworkEvent<ServerData>(OnSubscribed);
+        SubscribeNetworkEvent<AddOrUpdateServer>(OnAddOrUpdateServer);
+        SubscribeNetworkEvent<AddOrUpdateServerInfo>(OnAddOrUpdateServerInfo);
+        SubscribeNetworkEvent<RemoveServer>(OnRemoveServer);
 
         _state.OnStateChanged += OnStateChanged;
         _inLobby = _state.CurrentState is LobbyState;
         if (_inLobby)
         {
-            RaiseNetworkEvent(new NL.Subscribe());
+            RaiseNetworkEvent(new Subscribe());
             _lastSent = _timing.RealTime;
         }
     }
@@ -69,15 +67,15 @@ public sealed class HubSystem : EntitySystem
         if (_inLobby)
         {
             _lastSent = _timing.RealTime;
-            RaiseNetworkEvent(new NL.Subscribe());
+            RaiseNetworkEvent(new Subscribe());
         }
         else if (args.OldState is LobbyState)
         {
-            RaiseNetworkEvent(new NL.Unsubscribe());
+            RaiseNetworkEvent(new Unsubscribe());
             HubInitialized = false;
         }
     }
-    private void OnSubscribed(NL.ServerData ev)
+    private void OnSubscribed(ServerData ev)
     {
         Servers = ev.Servers;
         ServerInfo = ev.ServerInfo;

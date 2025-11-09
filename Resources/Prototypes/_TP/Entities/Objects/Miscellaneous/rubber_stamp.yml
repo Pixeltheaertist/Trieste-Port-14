@@ -7,7 +7,7 @@
   components:
   - type: Stamp
     stampedName: stamp-component-stamped-name-solgov
-    stampedColor: "#c69b17"
+    stampedColor: "#000000" # Black
     stampState: "paper_stamp-ce"
   - type: Sprite
     state: stamp-ce

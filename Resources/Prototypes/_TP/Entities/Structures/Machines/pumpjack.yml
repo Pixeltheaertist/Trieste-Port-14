@@ -3,7 +3,7 @@
   parent: BaseMachinePowered
   suffix: Trieste, Petrochem
   name: pumpjack
-  description: A machine used to liberate oil from deep underground.
+  description: A machine used to liberate oil from deep underground
   placement:
     mode: SnapgridCenter
   components:

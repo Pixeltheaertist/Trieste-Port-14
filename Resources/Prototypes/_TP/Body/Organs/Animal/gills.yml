@@ -1,7 +1,7 @@
 - type: entity
   id: OrganWaterLungs
   parent: BaseHumanOrgan
-  suffix: Trieste
+  suffix: Trieste, Organ
   name: gills
   description: "Filters air out of water to breathe."
   components:

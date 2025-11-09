@@ -1,6 +1,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: TP14ClothingHeadHatWearyClownHat
+  suffix: Trieste, Headwear, Clown
   name: old tophat
   description: A ratty, old, faded tophat.
   components:
@@ -40,6 +41,7 @@
 - type: entity
   parent: [ClothingHeadBase]
   id: TP14ClothingHeadHatPierrot
+  suffix: Trieste, Headwear, Mime
   name: pierrot hat
   description: An old mime hat, it's fallen out of style
   components:
