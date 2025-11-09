@@ -3,6 +3,7 @@
   name:  plankton sample
   description: A vial designed to hold plankton cultures.
   parent: BaseChemistryEmptyVial
+  suffix: Trieste, Science. Full
   components:
     - type: SolutionContainerManager
       solutions:

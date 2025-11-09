@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseSign
   id: TPSignDivingBell
+  suffix: Trieste, Wall-Sign, Diving-Bell
   name: diving bell sign
   description: The core of Trieste, try not to drown.
   components:
@@ -11,6 +12,7 @@
 - type: entity
   parent: BaseSign
   id: TPSignJellid
+  suffix: Trieste, Wall-Sign, Jellid
   name: jellid area sign
   description: A sign indicating that the area ahead is intended for Jellid crew members and does not have an oxygen atmosphere.
   components:

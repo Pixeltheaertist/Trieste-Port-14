@@ -1,0 +1,71 @@
+# Brig
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalBrig
+  suffix: Trieste, Security, Wall-Sign
+  name: brig wall sign
+  description: A direction sign, pointing out which way the Security Brig is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#FF8104" # Red-ish orange
+    - state: text_brig
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalBrig
+      Secondary: TP14SignDirectionalBrigAlt1
+      Tertiary: TP14SignDirectionalBrigAlt2
+
+- type: entity
+  parent: TP14SignDirectionalBrig
+  id: TP14SignDirectionalBrigAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalBrig
+  id: TP14SignDirectionalBrigAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+# Security
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalSec
+  suffix: Trieste, Security, Wall-Sign
+  name: security wall sign
+  description: A direction sign, pointing out which way the Security department is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#FF8104" # Red-ish orange
+    - state: text_sec
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalSec
+      Secondary: TP14SignDirectionalSecAlt1
+      Tertiary: TP14SignDirectionalSecAlt2
+
+- type: entity
+  parent: TP14SignDirectionalSec
+  id: TP14SignDirectionalSecAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalSec
+  id: TP14SignDirectionalSecAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25

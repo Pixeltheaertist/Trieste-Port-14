@@ -1,7 +1,8 @@
 - type: entity
-  name: Fish Timed Spawner
+  name: timed fish spawner
   id: FishTimedSpawner
   parent: MarkerBase
+  suffix: Trieste, Spawner, Mimic, Random, Sea
   components:
   - type: Sprite
     layers:

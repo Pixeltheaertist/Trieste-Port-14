@@ -4,6 +4,7 @@
   name: jonk pocket
   parent: FoodDonkpocketBase
   id: TP14FoodJonkpocketBanana
+  suffix: Trieste, Food
   description: A cursed jonk pocket, made with not-so fresh clowns. This is what Jonk! Co. does to its competitors..
   components:
   - type: FlavorProfile
@@ -30,6 +31,7 @@
   name: purified jonk pocket
   parent: FoodDonkpocket
   id: TP14FoodJonkpocketBananaPurified
+  suffix: Trieste, Food
   description: A purified jonk pocket, the souls trapped in this food have been freed, and the meat is now fresh.
   components:
   - type: FlavorProfile
@@ -46,7 +48,7 @@
         - ReagentId: Nutriment
           Quantity: 8
         - ReagentId: Laughter
-          Quantity: 10 
+          Quantity: 10
   - type: Sprite
     sprite: _TP/Objects/Consumable/jonkpockets.rsi
     state: Purified-Jonk

@@ -48,6 +48,13 @@ public static class ServerPackaging
         "Npgsql",
         "Microsoft",
         "NetCord",
+        "Microsoft.Orleans", // NullLink
+        "Orleans", // NullLink
+        "Starlight", // NullLink
+        "StackExchange.Redis", // NullLink
+        "System", // NullLink
+        "Newtonsoft", // NullLink
+        "Pipelines", // NullLink
     };
 
     private static readonly List<string> ServerNotExtraAssemblies = new()

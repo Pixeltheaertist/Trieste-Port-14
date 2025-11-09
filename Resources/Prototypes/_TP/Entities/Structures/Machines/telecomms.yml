@@ -1,6 +1,7 @@
 - type: entity
   parent: TelecomServer
   id: TP14TelecomRelay
+  suffix: Trieste, Engineering
   name: communications array
   description: Boosts recieved radio signals across a wide range, allowing communication across vast distances
   components:
@@ -42,7 +43,7 @@
   id: TP14TelecomRelayDestroyed
   name: communications array
   description: It once broadcasted signals into the far distance. It's broken now, though.
-  suffix: destroyed
+  suffix: Trieste, Engineering, Destroyed
   components:
   - type: Sprite
     sprite: _TP/Structures/Machines/array.rsi

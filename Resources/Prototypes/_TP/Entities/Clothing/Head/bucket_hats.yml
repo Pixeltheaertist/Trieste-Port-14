@@ -1,0 +1,630 @@
+## Colored Bucket Hats
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucket
+  suffix: Trieste, Headwear
+  name: white bucket hat
+  description: A generic white bucket hat, keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucketBlack
+  suffix: Trieste, Headwear
+  name: black bucket hat
+  description: A generic black bucket hat, keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    color: "#3f3f3f"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3f3f3f"
+      right:
+      - state: inhand-right
+        color: "#3f3f3f"
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#3f3f3f"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucketBlue
+  suffix: Trieste, Headwear
+  name: blue bucket hat
+  description: A generic blue bucket hat, keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    color: "#52aecc"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#52aecc"
+      right:
+      - state: inhand-right
+        color: "#52aecc"
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#52aecc"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucketDarkBlue
+  suffix: Trieste, Headwear
+  name: dark blue bucket hat
+  description: A generic dark blue bucket hat, keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    color: "#3285ba"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3285ba"
+      right:
+      - state: inhand-right
+        color: "#3285ba"
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#3285ba"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucketTeal
+  suffix: Trieste, Headwear
+  name: teal bucket hat
+  description: A generic teal bucket hat, keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    color: "#77f3b7"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#77f3b7"
+      right:
+      - state: inhand-right
+        color: "#77f3b7"
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#77f3b7"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucketGreen
+  suffix: Trieste, Headwear
+  name: green bucket hat
+  description: A generic green bucket hat, keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    color: "#9ed63a"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#9ed63a"
+      right:
+      - state: inhand-right
+        color: "#9ed63a"
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#9ed63a"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucketDarkGreen
+  suffix: Trieste, Headwear
+  name: dark green bucket hat
+  description: A generic dark green bucket hat, keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    color: "#007923"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#007923"
+      right:
+      - state: inhand-right
+        color: "#007923"
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#007923"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucketOrange
+  suffix: Trieste, Headwear
+  name: orange bucket hat
+  description: A generic orange bucket hat, keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    color: "#ff8c19"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ff8c19"
+      right:
+      - state: inhand-right
+        color: "#ff8c19"
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#ff8c19"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucketPink
+  suffix: Trieste, Headwear
+  name: pink bucket hat
+  description: A generic pink bucket hat, keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    color: "#ffa69b"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffa69b"
+      right:
+      - state: inhand-right
+        color: "#ffa69b"
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#ffa69b"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucketRed
+  suffix: Trieste, Headwear
+  name: red bucket hat
+  description: A generic red bucket hat, keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    color: "#eb0c07"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#eb0c07"
+      right:
+      - state: inhand-right
+        color: "#eb0c07"
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#eb0c07"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucketYellow
+  suffix: Trieste, Headwear
+  name: yellow bucket hat
+  description: A generic yellow bucket hat, keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    color: "#ffe14d"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffe14d"
+      right:
+      - state: inhand-right
+        color: "#ffe14d"
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#ffe14d"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucketPurple
+  suffix: Trieste, Headwear
+  name: purple bucket hat
+  description: A generic purple bucket hat, keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    color: "#9f70cc"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#9f70cc"
+      right:
+      - state: inhand-right
+        color: "#9f70cc"
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#9f70cc"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucketLightBrown
+  suffix: Trieste, Headwear
+  name: light brown bucket hat
+  description: A generic light brown bucket hat, keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    color: "#c59431"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#c59431"
+      right:
+      - state: inhand-right
+        color: "#c59431"
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#c59431"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucketBrown
+  suffix: Trieste, Headwear
+  name: brown bucket hat
+  description: A generic brown bucket hat, keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    color: "#a17229"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#a17229"
+      right:
+      - state: inhand-right
+        color: "#a17229"
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#a17229"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucketMaroon
+  suffix: Trieste, Headwear
+  name: maroon bucket hat
+  description: A generic maroon bucket hat, keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    color: "#cc295f"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#cc295f"
+      right:
+      - state: inhand-right
+        color: "#cc295f"
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#cc295f"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucketOlive
+  suffix: Trieste, Headwear
+  name: olive bucket hat
+  description: A generic olive bucket hat, keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    color: "#808000"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#808000"
+      right:
+      - state: inhand-right
+        color: "#808000"
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#808000"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucketKhaki
+  suffix: Trieste, Headwear
+  name: khaki bucket hat
+  description: A generic khaki bucket hat, keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    color: "#c3b091"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#c3b091"
+      right:
+      - state: inhand-right
+        color: "#c3b091"
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#c3b091"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+##Departmental bucket hats
+
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadCivilianBucket
+  suffix: Trieste, Headwear, Civilian
+  name: grey bucket hat
+  description: A civilian's bucket hat, Keeps the rain out of your eyes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_citizen.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_citizen.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBucketBotany
+  suffix: Trieste, Headwear, Service
+  name: botany bucket hat
+  description: A botanist's bucket hat, great for working out on the rig.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_botany.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_botany.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadMedicalBucket
+  suffix: Trieste, Headwear
+  name: medical bucket hat
+  description: A bucket hat meant for medical, helps maintain visibility.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_medical.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_medical.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadSolgovBucket
+  suffix: Trieste, Headwear, SolGov
+  name: solgov bucket hat
+  description:
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_solgov.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_solgov.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadScienceBucket
+  suffix: Trieste, Headwear, Science
+  name: science bucket hat
+  description:
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/bucket_science.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/bucket_science.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable

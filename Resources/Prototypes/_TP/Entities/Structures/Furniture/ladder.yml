@@ -12,7 +12,7 @@
   parent: TP14LadderBase
   id: TP14LadderDown
   name: Ladder
-  suffix: down
+  suffix: Trieste, Ladder, Goes-Up
   components:
     - type: Ladder
       thisSide: down
@@ -25,7 +25,7 @@
   parent: TP14LadderBase
   id: TP14LadderUp
   name: Ladder
-  suffix: up
+  suffix: Trieste, Ladder, Goes-Down
   components:
     - type: Ladder
       thisSide: up

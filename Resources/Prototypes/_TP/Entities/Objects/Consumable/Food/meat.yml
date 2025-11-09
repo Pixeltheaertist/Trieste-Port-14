@@ -2,6 +2,7 @@
   name: raw fish fillet
   parent: FoodMeatBase
   id: TP14FoodMeatFish
+  suffix: Trieste, Food
   description: A delicious, raw fillet.
   components:
   - type: FlavorProfile

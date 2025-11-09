@@ -1,0 +1,17 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: TP14ClothingNeckRedBowtie
+  suffix: Trieste, Neck, Clown
+  name: red bowtie
+  description: A worn clip-on red bowtie.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Neck/Ties/weary_bowtie.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Neck/Ties/weary_bowtie.rsi
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - ClothMade
+    - Recyclable

@@ -7,7 +7,7 @@
   id: TP14StormArray
   name: storm array
   description: The core of a massive array of lightning rods, siphoning searing energy from the eternal storm above. Must be kept cool.
-  suffix: 100kW
+  suffix: Trieste, 100kW
   placement:
     mode: AlignTileAny
   components:

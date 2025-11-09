@@ -1,7 +1,7 @@
 - type: entity
   id: ReagentSlimePlatelet
   parent: ReagentSlime
-  suffix: Hyper-Platelet
+  suffix: Trieste, Hyper-Platelet
   components:
   - type: Bloodstream
     bloodReagent: HyperPlatelet

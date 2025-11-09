@@ -2,13 +2,13 @@
   id: TP14SeaWreckRoomMarker
   name: small wreck marker
   parent: MarkerBase
-  suffix: 5x5
+  suffix: Trieste, Sea, 5x5
   components:
   - type: RoomFill
     size: 5,5
     roomWhitelist:
       tags:
-        - SeaWreck
+        - SeaWreckFiveByFive
   - type: Sprite
     layers:
       - state: red
@@ -248,7 +248,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 0,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveByFive
 
 - type: dungeonRoom
   id: Wreck5x5b
@@ -256,7 +256,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 6,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveByFive
 
 - type: dungeonRoom
   id: Wreck5x5c
@@ -264,7 +264,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 12,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveByFive
 
 - type: dungeonRoom
   id: Wreck5x5d
@@ -272,7 +272,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 18,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveByFive
 
 - type: dungeonRoom
   id: Wreck5x5e
@@ -280,7 +280,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 24,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveByFive
 
 - type: dungeonRoom
   id: Wreck5x5f
@@ -288,7 +288,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 30,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveByFive
 
 # 3x5
 - type: dungeonRoom

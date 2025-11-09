@@ -1,6 +1,9 @@
-# PUT YOUR TAGS IN ALPHABETICAL ORDER
+# PUT YOUR TAGS IN ALPHABETICAL ORDER - TP is exempt from this!
 - type: Tag
   id: Drifter
+
+- type: Tag
+  id: TP14MagicCandle
 
 - type: Tag
   id: Mimic

@@ -2,6 +2,7 @@
 - type: entity
   parent: ClosetSteelBase
   id: TP14ClosetEmergencyH2O
+  suffix: Trieste, Survival, Jellid
   name: emergency water closet
   description: It's full of life-saving equipment. Assuming, that is, that you breathe sea water.
   components:
@@ -29,6 +30,7 @@
 - type: entity
   parent: BaseWallCloset
   id: TP14ClosetWallEmergencyH2O
+  suffix: Trieste, Survival, Jellid
   name: emergency water wall closet
   description: It's full of life-saving equipment. Assuming, that is, that you breathe sea water.
   components:

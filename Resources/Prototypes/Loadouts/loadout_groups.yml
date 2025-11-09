@@ -433,6 +433,7 @@
   minLimit: 0
   loadouts:
   - BotanistHead
+  - BotanistBucket
   - BotanistBandana
 
 - type: loadoutGroup
@@ -441,6 +442,7 @@
   loadouts:
   - BotanistJumpsuit
   - BotanistJumpskirt
+  - BotanistWarmOveralls
   - BotanistOveralls
 
 - type: loadoutGroup
@@ -464,40 +466,40 @@
   name: loadout-group-clown-head
   minLimit: 0
   loadouts:
-  - JesterHat
-  - JesterAltHat
+  - WearyClownHat
 
 - type: loadoutGroup
   id: ClownJumpsuit
   name: loadout-group-clown-jumpsuit
   loadouts:
-  - ClownSuit
-  - ClownSkirt
-  - JesterSuit
-  - JesterAltSuit
+  - WearyOveralls
 
 - type: loadoutGroup
   id: ClownBackpack
   name: loadout-group-clown-backpack
   loadouts:
-  - ClownBackpack
-  - ClownSatchel
-  - ClownDuffel
+  - ClownBindle
 
 - type: loadoutGroup
   id: ClownOuterClothing
   name: loadout-group-clown-outerclothing
   minLimit: 0
   loadouts:
-  - ClownRobes
-  - ClownWintercoat
+  - WearyClownCoat
+
+- type: loadoutGroup
+  id: ClownNeck
+  name: loadout-group-clown-neck
+  minLimit: 0
+  loadouts:
+  - RedBowtie
+
 
 - type: loadoutGroup
   id: ClownShoes
   name: loadout-group-clown-shoes
   loadouts:
-  - ClownShoes
-  - JesterShoes
+  - WearyClownShoes
 
 - type: loadoutGroup
   id: SurvivalClown
@@ -516,24 +518,22 @@
   name: loadout-group-mime-head
   minLimit: 0
   loadouts:
-  - MimeHead
+  - PierrotHat
   - MimeFrenchBeret
   - MimeCap
 
 - type: loadoutGroup
   id: MimeMask
   name: loadout-group-mime-mask
+  minLimit: 1
   loadouts:
-  - MimeMask
-  - MimeMaskSad
-  - MimeMaskScared
+  - PierrotMask
 
 - type: loadoutGroup
   id: MimeJumpsuit
   name: loadout-group-mime-jumpsuit
   loadouts:
-  - MimeJumpsuit
-  - MimeJumpskirt
+  - PierrotJumpsuit
 
 - type: loadoutGroup
   id: MimeBackpack
@@ -544,15 +544,9 @@
   - MimeDuffel
 
 - type: loadoutGroup
-  id: MimeOuterClothing
-  name: loadout-group-mime-outerclothing
-  minLimit: 0
-  loadouts:
-  - MimeWintercoat
-
-- type: loadoutGroup
   id: MimeBelt
   name: loadout-group-mime-belt
+  minLimit: 0
   loadouts:
   - MimeSuspendersRed
   - MimeSuspendersBlack
@@ -672,6 +666,7 @@
   name: loadout-group-cargo-technician-jumpsuit
   loadouts:
   - CargoTechnicianJumpsuit
+  - TankTop
   - CargoTechnicianJumpskirt
 
 - type: loadoutGroup
@@ -901,6 +896,7 @@
   minLimit: 0
   loadouts:
   - RoboticistCap
+  - ScientificBucket
   - SkullBandana
   - ScientificBeret
 
@@ -917,6 +913,8 @@
   loadouts:
   - ScientistJumpsuit
   - ScientistJumpskirt
+  - MadScientistJumpsuit
+  - MadScientistJumpskirt
   - RoboticistJumpsuit
   - RoboticistJumpskirt
   - SeniorResearcherJumpsuit
@@ -1036,21 +1034,20 @@
   minLimit: 0
   loadouts:
   - SecurityHelmet
-  - SecurityBeret
+  - SecurityBandana
   - SecurityHat
-  - TrooperHat
+  - SecurityBeret
+  - SecurityBucketHat
 
 - type: loadoutGroup
   id: SecurityJumpsuit
   name: loadout-group-security-jumpsuit
   loadouts:
   - SecurityJumpsuit
-  - SecurityJumpskirt
-  - SecurityJumpsuitGrey
-  - SecurityJumpskirtGrey
+  - SecurityTanktop
+  - SecurityJumpsuitBlue
   - SeniorOfficerJumpsuit
   - SeniorOfficerJumpskirt
-  - TrooperUniform
 
 - type: loadoutGroup
   id: SecurityBackpack
@@ -1079,6 +1076,7 @@
   id: SecurityShoes
   name: loadout-group-security-shoes
   loadouts:
+  - CombatBoots
   - JackBoots
   - SecurityWinterBoots
 
@@ -1125,8 +1123,8 @@
   id: SecurityCadetJumpsuit
   name: loadout-group-security-cadet-jumpsuit
   loadouts:
-  - RedJumpsuit
-  - RedJumpskirt
+  - BlueJumpsuit
+  - BlueJumpskirt
 
 - type: loadoutGroup
   id: SurvivalSecurity
@@ -1194,6 +1192,7 @@
   minLimit: 0
   loadouts:
   - MedicalBeret
+  - MedicalBucket
   - SeniorPhysicianBeret
   - MedicalHeadMirror
   - BlueSurgeryCap
@@ -1206,6 +1205,8 @@
   name: loadout-group-medical-doctor-jumpsuit
   loadouts:
   - MedicalDoctorJumpsuit
+  - MedicalDoctorJumpsuitBloody
+  - MedicalDoctorNurseDress
   - MedicalDoctorJumpskirt
   - SeniorPhysicianJumpsuit
   - SeniorPhysicianJumpskirt
@@ -1218,7 +1219,9 @@
   name: loadout-group-medical-doctor-outerclothing
   minLimit: 0
   loadouts:
-  - RegularLabCoat
+  - MedicalLabcoat
+  - MedicalCoat
+  - MedicalCoatGreen
   - MedicalDoctorWintercoat
   - SeniorPhysicianLabCoat
 

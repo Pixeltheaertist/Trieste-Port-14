@@ -11,6 +11,11 @@
     jumpsuit: ClothingUniformJumpsuitCargo
 
 - type: loadout
+  id: TankTop
+  equipment:
+    jumpsuit: TP14ClothingUniformLieutenantTanktop
+
+- type: loadout
   id: CargoTechnicianJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtCargo

@@ -14,12 +14,12 @@
   id: TP14_UplinkGlovesKnuckleDusters
   name: uplink-NTknuckleduster-name
   description: uplink-NTknuckleduster-desc
-  productEntity: ClothingHandsKnuckleDustersNT
+  productEntity: TP14ClothingHandsKnuckleDustersNT
   cost:
     BluespaceCrystal: 6
   categories:
   - UplinkNtWeaponry
-  
+
 - type: listing
   id: UplinkRPG7 # SAY HELLO TO MY LITTLE FRIEND # it's a rocket launcher
   name: uplink-rpg-name

@@ -1,0 +1,19 @@
+- type: vendingMachineInventory
+  id: HydroVendInventory
+  startingInventory:
+    ClothingBackpackHydroponics: 2
+    ClothingBackpackSatchelHydroponics: 2
+    ClothingBackpackDuffelHydroponics: 2
+    ClothingOuterApronBotanist: 2
+    ClothingUniformOveralls: 3
+    ClothingUniformJumpsuitHydroponics: 3
+    TP14ClothingUniformHydroponicsOveralls: 3
+    ClothingUniformJumpskirtHydroponics: 3
+    ClothingNeckScarfStripedGreen: 3
+    ClothingHeadBandBotany: 3
+    TP14ClothingHeadBucketBotany: 3
+    ClothingHeadsetService: 2
+    ClothingOuterWinterHydro: 2
+  contrabandInventory:
+    ToyFigurineBotanist: 1
+

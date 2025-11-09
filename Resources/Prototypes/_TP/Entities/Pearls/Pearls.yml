@@ -5,6 +5,7 @@
   name: pearl
   parent: BaseItem
   id: TP14BasePearl # Hypothetically, a single pearl can hold the entire script of The Bee Movie. However in practice this only lags out the local client, so it's FINEEEE.
+  suffix: Trieste, Pearl
   description: 'A plain white data pearl, devoid of any etchings or imperfections.'
   components:
   - type: Pearl
@@ -38,6 +39,7 @@
   name: pearl
   parent: TP14BasePearl
   id: TP14PearlShark
+  suffix: Trieste, Pearl
   description: 'A plain purple data pearl, devoid of any etchings or imperfections.'
   components:
   - type: Sprite

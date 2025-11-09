@@ -1,6 +1,7 @@
 - type: entity
   id: OrganTumor # Adding this organ to any creature will cause it to spawn a Mimic upon being gibbed
   parent: OrganAnimalStomach
+  suffix: Trieste, Organ
   noSpawn: true
   name: festering tumor
   description: "what- what is this?"

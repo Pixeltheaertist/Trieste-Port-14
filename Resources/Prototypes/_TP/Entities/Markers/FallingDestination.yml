@@ -1,6 +1,7 @@
 - type: entity
   id: TP14FallingDestinationMarker
   parent: MarkerBase
+  suffix: Trieste, Gravity
   placement:
     mode: SnapgridCenter
   components:
