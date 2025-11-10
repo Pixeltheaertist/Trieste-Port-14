@@ -1,0 +1,20 @@
+<Document>
+
+  # Specialized Proteins
+
+  SolGov's greatest scientists have specialized two types of proteins, taking the environement into account! Each one heals a specific damage subtype better at certain body temperatures.
+
+  <GuideReagentEmbed Reagent="HyperPlatelet"/>
+  <GuideReagentEmbed Reagent="HyperMarrow"/>
+
+  [textlink="Please click here to see the full list of proteins available." link="Protein"]
+
+  [color=red]USE CAUTION[/color] when using the aforementioned proteins. Should they mix together, the result will cause cellular damage to the patient, resulting in the need for Stabilization Proteins.
+  <GuideReagentEmbed Reagent="StabilizationProtein"/>
+  To avoid this, make sure the patient is done metabolizing one brute medication before giving them another. Keep an eye on the rate their health is changing.
+
+  # Temperature
+  SolGov's scientists have also specialized two types of chemicals that will be used to modify the body temperature of a patient! Keep a note on what temperatures each protein requires for the damage subtype your patient has.
+  <GuideReagentEmbed Reagent="Calordine"/>
+  <GuideReagentEmbed Reagent="Cryodine"/>
+</Document>

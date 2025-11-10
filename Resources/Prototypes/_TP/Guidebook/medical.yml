@@ -2,3 +2,8 @@
   id: Proteins
   name: guide-entry-proteins
   text: "/ServerInfo/_TP/Guidebook/Medical/Proteins.xml"
+
+- type: guideEntry
+  id: AdvancedMedication
+  name: guide-entry-adv-medication
+  text: "/ServerInfo/_TP/Guidebook/Medical/AdvancedMedication.xml"
