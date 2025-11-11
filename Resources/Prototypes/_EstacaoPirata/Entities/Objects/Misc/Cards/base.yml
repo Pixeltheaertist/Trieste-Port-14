@@ -9,7 +9,7 @@
     sound:
       collection: cardShove
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/black_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: singlecard_down_black
   - type: Rotatable
   - type: Item
@@ -18,7 +18,7 @@
     delay: 0.5
   - type: Card
     backSpriteLayers:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/black_cards.rsi
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: singlecard_down_black
     flipped: true
 
@@ -34,7 +34,7 @@
   - type: CardHand
   - type: CardStack
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/black_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: singlecard_down_black
   - type: UserInterface
     interfaces:
@@ -53,7 +53,7 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: box
     layers:
     - state: black_box
@@ -81,7 +81,7 @@
   name: deck of cards
   components:
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: deck_black_full
   - type: Item
     size: Normal

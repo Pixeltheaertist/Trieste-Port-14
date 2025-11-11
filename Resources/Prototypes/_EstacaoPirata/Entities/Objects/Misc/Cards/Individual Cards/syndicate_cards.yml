@@ -6,7 +6,7 @@
   - type: Card
     name: card-sc-2-clubs-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_2_of_Clubs_syndicate
 
 - type: entity
@@ -17,7 +17,7 @@
   - type: Card
     name: card-sc-3-clubs-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_3_of_Clubs_syndicate
 
 - type: entity
@@ -28,7 +28,7 @@
   - type: Card
     name: card-sc-4-clubs-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_4_of_Clubs_syndicate
 
 - type: entity
@@ -39,7 +39,7 @@
   - type: Card
     name: card-sc-5-clubs-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_5_of_Clubs_syndicate
 
 - type: entity
@@ -50,7 +50,7 @@
   - type: Card
     name: card-sc-6-clubs-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_6_of_Clubs_syndicate
 
 - type: entity
@@ -61,7 +61,7 @@
   - type: Card
     name: card-sc-7-clubs-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_7_of_Clubs_syndicate
 
 - type: entity
@@ -72,7 +72,7 @@
   - type: Card
     name: card-sc-8-clubs-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_8_of_Clubs_syndicate
 
 - type: entity
@@ -83,7 +83,7 @@
   - type: Card
     name: card-sc-9-clubs-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_9_of_Clubs_syndicate
 
 - type: entity
@@ -94,7 +94,7 @@
   - type: Card
     name: card-sc-10-clubs-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_10_of_Clubs_syndicate
 
 - type: entity
@@ -105,7 +105,7 @@
   - type: Card
     name: card-sc-ace-clubs-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_Ace_of_Clubs_syndicate
 
 
@@ -117,7 +117,7 @@
   - type: Card
     name: card-sc-jack-clubs-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_Jack_of_Clubs_syndicate
 
 - type: entity
@@ -128,7 +128,7 @@
   - type: Card
     name: card-sc-king-clubs-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_King_of_Clubs_syndicate
 
 - type: entity
@@ -139,7 +139,7 @@
   - type: Card
     name: card-sc-queen-clubs-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_Queen_of_Clubs_syndicate
 
 
@@ -151,7 +151,7 @@
   - type: Card
     name: card-sc-jack-diamonds-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_Jack_of_Diamonds_syndicate
 
 - type: entity
@@ -162,7 +162,7 @@
   - type: Card
     name: card-sc-queen-diamonds-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_Queen_of_Diamonds_syndicate
 
 - type: entity
@@ -173,7 +173,7 @@
   - type: Card
     name: card-sc-king-diamonds-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_King_of_Diamonds_syndicate
 
 - type: entity
@@ -184,7 +184,7 @@
   - type: Card
     name: card-sc-ace-diamonds-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_Ace_of_Diamonds_syndicate
 
 - type: entity
@@ -195,7 +195,7 @@
   - type: Card
     name: card-sc-2-diamonds-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_2_of_Diamonds_syndicate
 
 - type: entity
@@ -206,7 +206,7 @@
   - type: Card
     name: card-sc-3-diamonds-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_3_of_Diamonds_syndicate
 
 - type: entity
@@ -217,7 +217,7 @@
   - type: Card
     name: card-sc-4-diamonds-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_4_of_Diamonds_syndicate
 
 - type: entity
@@ -228,7 +228,7 @@
   - type: Card
     name: card-sc-5-diamonds-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_5_of_Diamonds_syndicate
 
 - type: entity
@@ -239,7 +239,7 @@
   - type: Card
     name: card-sc-6-diamonds-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_6_of_Diamonds_syndicate
 
 - type: entity
@@ -250,7 +250,7 @@
   - type: Card
     name: card-sc-7-diamonds-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_7_of_Diamonds_syndicate
 
 - type: entity
@@ -261,7 +261,7 @@
   - type: Card
     name: card-sc-8-diamonds-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_8_of_Diamonds_syndicate
 
 - type: entity
@@ -272,7 +272,7 @@
   - type: Card
     name: card-sc-9-diamonds-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_9_of_Diamonds_syndicate
 
 - type: entity
@@ -283,7 +283,7 @@
   - type: Card
     name: card-sc-10-diamonds-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_10_of_Diamonds_syndicate
 
 
@@ -295,7 +295,7 @@
   - type: Card
     name: card-sc-2-hearts-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_2_of_Hearts_syndicate
 
 - type: entity
@@ -306,7 +306,7 @@
   - type: Card
     name: card-sc-3-hearts-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_3_of_Hearts_syndicate
 
 - type: entity
@@ -317,7 +317,7 @@
   - type: Card
     name: card-sc-4-hearts-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_4_of_Hearts_syndicate
 
 - type: entity
@@ -328,7 +328,7 @@
   - type: Card
     name: card-sc-5-hearts-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_5_of_Hearts_syndicate
 
 - type: entity
@@ -339,7 +339,7 @@
   - type: Card
     name: card-sc-6-hearts-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_6_of_Hearts_syndicate
 
 - type: entity
@@ -350,7 +350,7 @@
   - type: Card
     name: card-sc-7-hearts-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_7_of_Hearts_syndicate
 
 - type: entity
@@ -361,7 +361,7 @@
   - type: Card
     name: card-sc-8-hearts-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_8_of_Hearts_syndicate
 
 - type: entity
@@ -372,7 +372,7 @@
   - type: Card
     name: card-sc-9-hearts-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_9_of_Hearts_syndicate
 
 - type: entity
@@ -383,7 +383,7 @@
   - type: Card
     name: card-sc-10-hearts-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_10_of_Hearts_syndicate
 
 - type: entity
@@ -394,7 +394,7 @@
   - type: Card
     name: card-sc-king-hearts-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_King_of_Hearts_syndicate
 
 - type: entity
@@ -405,7 +405,7 @@
   - type: Card
     name: card-sc-queen-hearts-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_Queen_of_Hearts_syndicate
 
 - type: entity
@@ -416,7 +416,7 @@
   - type: Card
     name: card-sc-jack-hearts-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_Jack_of_Hearts_syndicate
 
 - type: entity
@@ -427,7 +427,7 @@
   - type: Card
     name: card-sc-ace-hearts-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_Ace_of_Hearts_syndicate
 
 
@@ -439,7 +439,7 @@
   - type: Card
     name: card-sc-2-spades-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_2_of_Spades_syndicate
 
 - type: entity
@@ -450,7 +450,7 @@
   - type: Card
     name: card-sc-3-spades-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_3_of_Spades_syndicate
 
 - type: entity
@@ -461,7 +461,7 @@
   - type: Card
     name: card-sc-4-spades-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_4_of_Spades_syndicate
 
 - type: entity
@@ -472,7 +472,7 @@
   - type: Card
     name: card-sc-5-spades-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_5_of_Spades_syndicate
 
 - type: entity
@@ -483,7 +483,7 @@
   - type: Card
     name: card-sc-6-spades-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_6_of_Spades_syndicate
 
 - type: entity
@@ -494,7 +494,7 @@
   - type: Card
     name: card-sc-7-spades-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_7_of_Spades_syndicate
 
 - type: entity
@@ -505,7 +505,7 @@
   - type: Card
     name: card-sc-8-spades-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_8_of_Spades_syndicate
 
 - type: entity
@@ -516,7 +516,7 @@
   - type: Card
     name: card-sc-9-spades-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_9_of_Spades_syndicate
 
 
@@ -528,7 +528,7 @@
   - type: Card
     name: card-sc-10-spades-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_10_of_Spades_syndicate
 
 - type: entity
@@ -539,7 +539,7 @@
   - type: Card
     name: card-sc-jack-spades-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_Jack_of_Spades_syndicate
 
 - type: entity
@@ -550,7 +550,7 @@
   - type: Card
     name: card-sc-queen-spades-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_Queen_of_Spades_syndicate
 
 - type: entity
@@ -561,7 +561,7 @@
   - type: Card
     name: card-sc-king-spades-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_King_of_Spades_syndicate
 
 - type: entity
@@ -572,7 +572,7 @@
   - type: Card
     name: card-sc-ace-spades-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: sc_Ace_of_Spades_syndicate
 
 - type: entity
@@ -583,5 +583,5 @@
   - type: Card
     name: card-sc-joker-syndicate
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/syndicate_cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: syndicate_joker

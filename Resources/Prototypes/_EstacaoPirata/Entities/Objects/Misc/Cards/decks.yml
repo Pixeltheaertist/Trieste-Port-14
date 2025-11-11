@@ -6,7 +6,7 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: box
     layers:
     - state: black_box
@@ -26,7 +26,7 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: box
     layers:
     - state: nanotrasen_box
@@ -46,7 +46,7 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: box
     layers:
     - state: syndicate_box
@@ -65,7 +65,7 @@
   suffix: black
   components:
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: deck_black_full
   - type: CardStack
     content:
@@ -135,7 +135,7 @@
   suffix: nanotrasen
   components:
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: deck_nanotrasen_full
   - type: CardStack
     content:
@@ -205,7 +205,7 @@
   suffix: syndicate
   components:
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
     state: deck_syndicate_full
   - type: CardStack
     content:
