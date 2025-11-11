@@ -3,6 +3,7 @@
   id: CardBase
   name: Card
   noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: EmitSoundOnLand
     sound:
@@ -25,6 +26,7 @@
   parent: BaseItem
   id: CardHandBase
   noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: Card hand
   components:
   - type: Item
@@ -45,7 +47,7 @@
   parent: [ BoxCardboard, BaseBagOpenClose ]
   id: CardBoxBase
   name: Card Box
-  abstract: true
+  categories: [ HideSpawnMenu ]
   noSpawn: true
   components:
   - type: Item
@@ -74,7 +76,7 @@
 - type: entity
   parent: BaseItem
   id: CardDeckBase
-  abstract: true
+  categories: [ HideSpawnMenu ]
   noSpawn: true
   name: deck of cards
   components:
