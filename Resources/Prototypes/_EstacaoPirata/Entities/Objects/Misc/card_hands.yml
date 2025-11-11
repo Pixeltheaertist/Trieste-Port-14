@@ -1,0 +1,20 @@
+- type: entity
+  parent: BaseItem
+  id: CardHandBase
+  noSpawn: true
+  name: Card hand
+  components:
+  - type: Item
+    size: Small
+  - type: CardHand
+  - type: CardStack
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: singlecard_down_black
+  - type: UserInterface
+    interfaces:
+      enum.CardUiKey.Key:
+        type: CardHandMenuBoundUserInterface
+  - type: ActivatableUI
+    key: enum.CardUiKey.Key
+

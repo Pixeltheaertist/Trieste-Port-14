@@ -2,12 +2,13 @@
   parent: [ BoxCardboard, BaseBagOpenClose ]
   id: CardBoxBase
   name: Card Box
+  abstract: true
   noSpawn: true
   components:
   - type: Item
     size: Small
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: box
     layers:
     - state: black_box
@@ -30,11 +31,13 @@
 - type: entity
   parent: BaseItem
   id: CardDeckBase
+  abstract: true
   noSpawn: true
-  name: Deck_of_cards
+  name: deck of cards
+  suffix: black
   components:
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: deck_black_full
   - type: Item
     size: Normal
@@ -49,7 +52,7 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: box
     layers:
     - state: black_box
@@ -64,10 +67,10 @@
 - type: entity
   parent: CardDeckBase
   id: CardDeckBlack
-  name: Deck_of_cards
+  name: deck of cards
   components:
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: deck_black_full
   - type: CardStack
     content:
