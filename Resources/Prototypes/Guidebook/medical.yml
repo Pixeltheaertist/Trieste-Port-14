@@ -47,7 +47,7 @@
   text: "/ServerInfo/Guidebook/Medical/Botanicals.xml"
   filterEnabled: True
 
-- type: guideEntry
-  id: AdvancedBrute
-  name: guide-entry-brute
-  text: "/ServerInfo/Guidebook/Medical/AdvancedBrute.xml"
+#- type: guideEntry # Trieste
+#  id: AdvancedBrute # Trieste
+#  name: guide-entry-brute # Trieste
+#  text: "/ServerInfo/Guidebook/Medical/AdvancedBrute.xml" # Trieste
