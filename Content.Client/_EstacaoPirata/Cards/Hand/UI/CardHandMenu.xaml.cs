@@ -48,8 +48,6 @@ public sealed partial class CardHandMenu : RadialMenu
                 return;
             var button = new CardMenuButton()
             {
-                StyleClasses = { "RadialMenuButton" },
-                SetSize = new Vector2(64f, 64f),
                 ToolTip = Loc.GetString(cardComp.Name),
             };
 
@@ -82,10 +80,11 @@ public sealed partial class CardHandMenu : RadialMenu
     }
 }
 
-public sealed class CardMenuButton : RadialMenuTextureButton
+public sealed class CardMenuButton : TextureButton
 {
     public CardMenuButton()
     {
-
+        AddStyleClass("RadialMenuButton");
+        MinSize = new Vector2(64f, 64f);
     }
 }
