@@ -1,0 +1,131 @@
+- type: entity
+  parent: [ BoxCardboard, BaseBagOpenClose ]
+  id: CardBoxBase
+  name: Card Box
+  noSpawn: true
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    state: box
+    layers:
+    - state: black_box
+    - state: black_box_open
+      map: [ "openLayer" ]
+      visible: false
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,1,1
+    whitelist:
+      components:
+      - CardDeck
+  - type: OpenTriggeredStorageFill
+    contents:
+    - id: CardDeckBase
+      amount: 1
+  - type: Appearance
+
+- type: entity
+  parent: BaseItem
+  id: CardDeckBase
+  noSpawn: true
+  name: Deck_of_cards
+  components:
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    state: deck_black_full
+  - type: Item
+    size: Normal
+  - type: CardDeck
+  - type: CardStack
+
+- type: entity
+  parent: CardBoxBase
+  id: CardBoxBlack
+  name: black deck case
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    state: box
+    layers:
+    - state: black_box
+    - state: black_box_open
+      map: [ "openLayer" ]
+      visible: false
+  - type: OpenTriggeredStorageFill
+    contents:
+    - id: CardDeckBlack
+      amount: 1
+
+- type: entity
+  parent: CardDeckBase
+  id: CardDeckBlack
+  name: Deck_of_cards
+  components:
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    state: deck_black_full
+  - type: CardStack
+    content:
+    # Clubs
+    - CardScAceOfClubsBlack
+    - CardSc2OfClubsBlack
+    - CardSc3OfClubsBlack
+    - CardSc4OfClubsBlack
+    - CardSc5OfClubsBlack
+    - CardSc6OfClubsBlack
+    - CardSc7OfClubsBlack
+    - CardSc8OfClubsBlack
+    - CardSc9OfClubsBlack
+    - CardSc10OfClubsBlack
+    - CardScJackOfClubsBlack
+    - CardScQueenOfClubsBlack
+    - CardScKingOfClubsBlack
+    # Diamonds
+    - CardScAceOfDiamondsBlack
+    - CardSc2OfDiamondsBlack
+    - CardSc3OfDiamondsBlack
+    - CardSc4OfDiamondsBlack
+    - CardSc5OfDiamondsBlack
+    - CardSc6OfDiamondsBlack
+    - CardSc7OfDiamondsBlack
+    - CardSc8OfDiamondsBlack
+    - CardSc9OfDiamondsBlack
+    - CardSc10OfDiamondsBlack
+    - CardScJackOfDiamondsBlack
+    - CardScQueenOfDiamondsBlack
+    - CardScKingOfDiamondsBlack
+    # Hearts
+    - CardScAceOfHeartsBlack
+    - CardSc2OfHeartsBlack
+    - CardSc3OfHeartsBlack
+    - CardSc4OfHeartsBlack
+    - CardSc5OfHeartsBlack
+    - CardSc6OfHeartsBlack
+    - CardSc7OfHeartsBlack
+    - CardSc8OfHeartsBlack
+    - CardSc9OfHeartsBlack
+    - CardSc10OfHeartsBlack
+    - CardScJackOfHeartsBlack
+    - CardScQueenOfHeartsBlack
+    - CardScKingOfHeartsBlack
+    # Spades
+    - CardScAceOfSpadesBlack
+    - CardSc2OfSpadesBlack
+    - CardSc3OfSpadesBlack
+    - CardSc4OfSpadesBlack
+    - CardSc5OfSpadesBlack
+    - CardSc6OfSpadesBlack
+    - CardSc7OfSpadesBlack
+    - CardSc8OfSpadesBlack
+    - CardSc9OfSpadesBlack
+    - CardSc10OfSpadesBlack
+    - CardScKingOfSpadesBlack
+    - CardScQueenOfSpadesBlack
+    - CardScJackOfSpadesBlack
+    # Joker
+    - CardScJokerBlack
