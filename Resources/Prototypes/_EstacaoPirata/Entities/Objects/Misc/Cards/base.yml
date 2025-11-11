@@ -1,0 +1,87 @@
+- type: entity
+  parent: BaseItem
+  id: CardBase
+  name: Card
+  noSpawn: true
+  components:
+  - type: EmitSoundOnLand
+    sound:
+      collection: cardShove
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/black_cards.rsi
+    state: singlecard_down_black
+  - type: Rotatable
+  - type: Item
+    size: Small
+  - type: UseDelay
+    delay: 0.5
+  - type: Card
+    backSpriteLayers:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/black_cards.rsi
+      state: singlecard_down_black
+    flipped: true
+
+- type: entity
+  parent: BaseItem
+  id: CardHandBase
+  noSpawn: true
+  name: Card hand
+  components:
+  - type: Item
+    size: Small
+  - type: CardHand
+  - type: CardStack
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/black_cards.rsi
+    state: singlecard_down_black
+  - type: UserInterface
+    interfaces:
+      enum.CardUiKey.Key:
+        type: CardHandMenuBoundUserInterface
+  - type: ActivatableUI
+    key: enum.CardUiKey.Key
+
+- type: entity
+  parent: [ BoxCardboard, BaseBagOpenClose ]
+  id: CardBoxBase
+  name: Card Box
+  abstract: true
+  noSpawn: true
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    state: box
+    layers:
+    - state: black_box
+    - state: black_box_open
+      map: [ "openLayer" ]
+      visible: false
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,1,1
+    whitelist:
+      components:
+      - CardDeck
+  - type: OpenTriggeredStorageFill
+    contents:
+    - id: CardDeckBase
+      amount: 1
+  - type: Appearance
+
+- type: entity
+  parent: BaseItem
+  id: CardDeckBase
+  abstract: true
+  noSpawn: true
+  name: deck of cards
+  components:
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    state: deck_black_full
+  - type: Item
+    size: Normal
+  - type: CardDeck
+  - type: CardStack

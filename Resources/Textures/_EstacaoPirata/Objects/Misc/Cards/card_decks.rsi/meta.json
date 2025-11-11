@@ -26,6 +26,9 @@
             "name": "black_box_open"
         },
         {
+            "name": "singlecard_down_black"
+        },
+        {
             "name": "deck_syndicate_full"
         },
         {
@@ -44,6 +47,9 @@
             "name": "syndicate_box_open"
         },
         {
+            "name": "singlecard_down_syndicate"
+        },
+        {
             "name": "deck_nanotrasen_full"
         },
         {
@@ -60,6 +66,9 @@
         },
         {
             "name": "nanotrasen_box_open"
+        },
+        {
+            "name": "singlecard_down_nanotrasen"
         }
     ]
 }

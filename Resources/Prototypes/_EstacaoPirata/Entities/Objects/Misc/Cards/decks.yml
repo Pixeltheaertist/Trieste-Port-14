@@ -1,0 +1,269 @@
+- type: entity
+  parent: CardBoxBase
+  id: CardBoxBlack
+  name: black deck case
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    state: box
+    layers:
+    - state: black_box
+    - state: black_box_open
+      map: [ "openLayer" ]
+      visible: false
+  - type: OpenTriggeredStorageFill
+    contents:
+    - id: CardDeckBlack
+      amount: 1
+
+- type: entity
+  parent: CardBoxBase
+  id: CardBoxNanotrasen
+  name: nanotrasen deck case
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    state: box
+    layers:
+    - state: nanotrasen_box
+    - state: nanotrasen_box_open
+      map: [ "openLayer" ]
+      visible: false
+  - type: OpenTriggeredStorageFill
+    contents:
+    - id: CardDeckNanotrasen
+      amount: 1
+
+- type: entity
+  parent: [CardBoxBase, BaseSyndicateContraband]
+  id: CardBoxSyndicate
+  name: syndicate deck case
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    state: box
+    layers:
+    - state: syndicate_box
+    - state: syndicate_box_open
+      map: [ "openLayer" ]
+      visible: false
+  - type: OpenTriggeredStorageFill
+    contents:
+    - id: CardDeckSyndicate
+      amount: 1
+
+- type: entity
+  parent: CardDeckBase
+  id: CardDeckBlack
+  name: deck of cards
+  suffix: black
+  components:
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    state: deck_black_full
+  - type: CardStack
+    content:
+    # Clubs
+    - CardScAceOfClubsBlack
+    - CardSc2OfClubsBlack
+    - CardSc3OfClubsBlack
+    - CardSc4OfClubsBlack
+    - CardSc5OfClubsBlack
+    - CardSc6OfClubsBlack
+    - CardSc7OfClubsBlack
+    - CardSc8OfClubsBlack
+    - CardSc9OfClubsBlack
+    - CardSc10OfClubsBlack
+    - CardScJackOfClubsBlack
+    - CardScQueenOfClubsBlack
+    - CardScKingOfClubsBlack
+    # Diamonds
+    - CardScAceOfDiamondsBlack
+    - CardSc2OfDiamondsBlack
+    - CardSc3OfDiamondsBlack
+    - CardSc4OfDiamondsBlack
+    - CardSc5OfDiamondsBlack
+    - CardSc6OfDiamondsBlack
+    - CardSc7OfDiamondsBlack
+    - CardSc8OfDiamondsBlack
+    - CardSc9OfDiamondsBlack
+    - CardSc10OfDiamondsBlack
+    - CardScJackOfDiamondsBlack
+    - CardScQueenOfDiamondsBlack
+    - CardScKingOfDiamondsBlack
+    # Hearts
+    - CardScAceOfHeartsBlack
+    - CardSc2OfHeartsBlack
+    - CardSc3OfHeartsBlack
+    - CardSc4OfHeartsBlack
+    - CardSc5OfHeartsBlack
+    - CardSc6OfHeartsBlack
+    - CardSc7OfHeartsBlack
+    - CardSc8OfHeartsBlack
+    - CardSc9OfHeartsBlack
+    - CardSc10OfHeartsBlack
+    - CardScJackOfHeartsBlack
+    - CardScQueenOfHeartsBlack
+    - CardScKingOfHeartsBlack
+    # Spades
+    - CardScAceOfSpadesBlack
+    - CardSc2OfSpadesBlack
+    - CardSc3OfSpadesBlack
+    - CardSc4OfSpadesBlack
+    - CardSc5OfSpadesBlack
+    - CardSc6OfSpadesBlack
+    - CardSc7OfSpadesBlack
+    - CardSc8OfSpadesBlack
+    - CardSc9OfSpadesBlack
+    - CardSc10OfSpadesBlack
+    - CardScKingOfSpadesBlack
+    - CardScQueenOfSpadesBlack
+    - CardScJackOfSpadesBlack
+    # Joker
+    - CardScJokerBlack
+
+- type: entity
+  parent: CardDeckBase
+  id: CardDeckNanotrasen
+  name: deck of cards
+  suffix: nanotrasen
+  components:
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    state: deck_nanotrasen_full
+  - type: CardStack
+    content:
+    # Clubs
+    - CardScAceOfClubsNanotrasen
+    - CardSc2OfClubsNanotrasen
+    - CardSc3OfClubsNanotrasen
+    - CardSc4OfClubsNanotrasen
+    - CardSc5OfClubsNanotrasen
+    - CardSc6OfClubsNanotrasen
+    - CardSc7OfClubsNanotrasen
+    - CardSc8OfClubsNanotrasen
+    - CardSc9OfClubsNanotrasen
+    - CardSc10OfClubsNanotrasen
+    - CardScJackOfClubsNanotrasen
+    - CardScQueenOfClubsNanotrasen
+    - CardScKingOfClubsNanotrasen
+    # Diamonds
+    - CardScAceOfDiamondsNanotrasen
+    - CardSc2OfDiamondsNanotrasen
+    - CardSc3OfDiamondsNanotrasen
+    - CardSc4OfDiamondsNanotrasen
+    - CardSc5OfDiamondsNanotrasen
+    - CardSc6OfDiamondsNanotrasen
+    - CardSc7OfDiamondsNanotrasen
+    - CardSc8OfDiamondsNanotrasen
+    - CardSc9OfDiamondsNanotrasen
+    - CardSc10OfDiamondsNanotrasen
+    - CardScJackOfDiamondsNanotrasen
+    - CardScQueenOfDiamondsNanotrasen
+    - CardScKingOfDiamondsNanotrasen
+    # Hearts
+    - CardScAceOfHeartsNanotrasen
+    - CardSc2OfHeartsNanotrasen
+    - CardSc3OfHeartsNanotrasen
+    - CardSc4OfHeartsNanotrasen
+    - CardSc5OfHeartsNanotrasen
+    - CardSc6OfHeartsNanotrasen
+    - CardSc7OfHeartsNanotrasen
+    - CardSc8OfHeartsNanotrasen
+    - CardSc9OfHeartsNanotrasen
+    - CardSc10OfHeartsNanotrasen
+    - CardScJackOfHeartsNanotrasen
+    - CardScQueenOfHeartsNanotrasen
+    - CardScKingOfHeartsNanotrasen
+    # Spades
+    - CardScAceOfSpadesNanotrasen
+    - CardSc2OfSpadesNanotrasen
+    - CardSc3OfSpadesNanotrasen
+    - CardSc4OfSpadesNanotrasen
+    - CardSc5OfSpadesNanotrasen
+    - CardSc6OfSpadesNanotrasen
+    - CardSc7OfSpadesNanotrasen
+    - CardSc8OfSpadesNanotrasen
+    - CardSc9OfSpadesNanotrasen
+    - CardSc10OfSpadesNanotrasen
+    - CardScKingOfSpadesNanotrasen
+    - CardScQueenOfSpadesNanotrasen
+    - CardScJackOfSpadesNanotrasen
+    # Joker
+    - CardScJokerNanotrasen
+
+- type: entity
+  parent: CardDeckBase
+  id: CardDeckSyndicate
+  name: deck of cards
+  suffix: syndicate
+  components:
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_decks.rsi
+    state: deck_syndicate_full
+  - type: CardStack
+    content:
+    # Clubs
+    - CardScAceOfClubsSyndicate
+    - CardSc2OfClubsSyndicate
+    - CardSc3OfClubsSyndicate
+    - CardSc4OfClubsSyndicate
+    - CardSc5OfClubsSyndicate
+    - CardSc6OfClubsSyndicate
+    - CardSc7OfClubsSyndicate
+    - CardSc8OfClubsSyndicate
+    - CardSc9OfClubsSyndicate
+    - CardSc10OfClubsSyndicate
+    - CardScJackOfClubsSyndicate
+    - CardScQueenOfClubsSyndicate
+    - CardScKingOfClubsSyndicate
+    # Diamonds
+    - CardScAceOfDiamondsSyndicate
+    - CardSc2OfDiamondsSyndicate
+    - CardSc3OfDiamondsSyndicate
+    - CardSc4OfDiamondsSyndicate
+    - CardSc5OfDiamondsSyndicate
+    - CardSc6OfDiamondsSyndicate
+    - CardSc7OfDiamondsSyndicate
+    - CardSc8OfDiamondsSyndicate
+    - CardSc9OfDiamondsSyndicate
+    - CardSc10OfDiamondsSyndicate
+    - CardScJackOfDiamondsSyndicate
+    - CardScQueenOfDiamondsSyndicate
+    - CardScKingOfDiamondsSyndicate
+    # Hearts
+    - CardScAceOfHeartsSyndicate
+    - CardSc2OfHeartsSyndicate
+    - CardSc3OfHeartsSyndicate
+    - CardSc4OfHeartsSyndicate
+    - CardSc5OfHeartsSyndicate
+    - CardSc6OfHeartsSyndicate
+    - CardSc7OfHeartsSyndicate
+    - CardSc8OfHeartsSyndicate
+    - CardSc9OfHeartsSyndicate
+    - CardSc10OfHeartsSyndicate
+    - CardScJackOfHeartsSyndicate
+    - CardScQueenOfHeartsSyndicate
+    - CardScKingOfHeartsSyndicate
+    # Spades
+    - CardScAceOfSpadesSyndicate
+    - CardSc2OfSpadesSyndicate
+    - CardSc3OfSpadesSyndicate
+    - CardSc4OfSpadesSyndicate
+    - CardSc5OfSpadesSyndicate
+    - CardSc6OfSpadesSyndicate
+    - CardSc7OfSpadesSyndicate
+    - CardSc8OfSpadesSyndicate
+    - CardSc9OfSpadesSyndicate
+    - CardSc10OfSpadesSyndicate
+    - CardScKingOfSpadesSyndicate
+    - CardScQueenOfSpadesSyndicate
+    - CardScJackOfSpadesSyndicate
+    # Joker
+    - CardScJokerSyndicate

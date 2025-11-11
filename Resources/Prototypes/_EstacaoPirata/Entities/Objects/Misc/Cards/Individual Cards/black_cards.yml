@@ -1,27 +1,4 @@
 - type: entity
-  parent: BaseItem
-  id: CardBase
-  name: Card
-  noSpawn: true
-  components:
-  - type: EmitSoundOnLand
-    sound:
-      collection: cardShove
-  - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/black_cards.rsi
-    state: singlecard_down_black
-  - type: Rotatable
-  - type: Item
-    size: Small
-  - type: UseDelay
-    delay: 0.5
-  - type: Card
-    backSpriteLayers:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/IndividualCards/black_cards.rsi
-      state: singlecard_down_black
-    flipped: true
-
-- type: entity
   parent: CardBase
   noSpawn: true
   id: CardSc2OfClubsBlack
