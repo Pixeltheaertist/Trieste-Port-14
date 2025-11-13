@@ -84,7 +84,6 @@ public sealed class CardStackSystem : EntitySystem
             return false;
 
         _random.Shuffle(comp.Cards);
-
         Dirty(uid, comp);
         RaiseLocalEvent(uid, new CardStackReorderedEvent(GetNetEntity(uid)));
         RaiseNetworkEvent(new CardStackReorderedEvent(GetNetEntity(uid)));
@@ -107,9 +106,7 @@ public sealed class CardStackSystem : EntitySystem
             if (!TryComp(card, out CardComponent? cardComponent))
                 continue;
 
-
             cardComponent.Flipped = isFlipped?? !cardComponent.Flipped;
-
             Dirty(card, cardComponent);
             RaiseNetworkEvent(new CardFlipUpdatedEvent(GetNetEntity(card)));
         }
@@ -224,7 +221,6 @@ public sealed class CardStackSystem : EntitySystem
         if (firstComp.Cards.Count <= 0)
             return;
 
-
         var cards = firstComp.Cards.TakeLast(n);
 
         foreach (var card in cards)
@@ -253,7 +249,6 @@ public sealed class CardStackSystem : EntitySystem
     {
         if (args.Handled)
             return;
-
 
         // This checks if the user is using an item with Stack component
         if (TryComp(args.Used, out CardStackComponent? usedStack))

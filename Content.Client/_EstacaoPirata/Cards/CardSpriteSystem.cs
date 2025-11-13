@@ -9,7 +9,6 @@ namespace Content.Client._EstacaoPirata.Cards;
 /// </summary>
 public sealed class CardSpriteSystem : EntitySystem
 {
-    /// <inheritdoc/>
     public override void Initialize()
     {
 
@@ -46,7 +45,6 @@ public sealed class CardSpriteSystem : EntitySystem
                 sprite.RemoveLayer(i);
             }
         }
-
 
         return true;
     }

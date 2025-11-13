@@ -4,30 +4,23 @@ using Content.Shared._EstacaoPirata.Cards.Stack;
 using Robust.Client.GameObjects;
 
 namespace Content.Client._EstacaoPirata.Cards.Hand;
-
 /// <summary>
-/// This handles...
+/// This handles how the sprites for card hands are displayed.
 /// </summary>
 public sealed class CardHandSystem : EntitySystem
 {
     [Dependency] private readonly CardSpriteSystem _cardSpriteSystem = default!;
-
-
-    /// <inheritdoc/>
+    
     public override void Initialize()
     {
         SubscribeLocalEvent<CardHandComponent, ComponentStartup>(OnComponentStartupEvent);
         SubscribeNetworkEvent<CardStackInitiatedEvent>(OnStackStart);
         SubscribeNetworkEvent<CardStackQuantityChangeEvent>(OnStackUpdate);
-
     }
 
     private void UpdateSprite(EntityUid uid, CardHandComponent comp)
     {
-        if (!TryComp(uid, out SpriteComponent? sprite))
-            return;
-
-        if (!TryComp(uid, out CardStackComponent? cardStack))
+        if (!TryComp(uid, out SpriteComponent? sprite) || !TryComp(uid, out CardStackComponent? cardStack))
             return;
 
         _cardSpriteSystem.TryAdjustLayerQuantity((uid, sprite, cardStack), comp.CardLimit);
@@ -55,7 +48,6 @@ public sealed class CardHandSystem : EntitySystem
 
     }
 
-
     private void OnStackUpdate(CardStackQuantityChangeEvent args)
     {
         if (!TryComp(GetEntity(args.Stack), out CardHandComponent? comp))
@@ -76,6 +68,4 @@ public sealed class CardHandSystem : EntitySystem
 
         UpdateSprite(uid, comp);
     }
-
-
 }

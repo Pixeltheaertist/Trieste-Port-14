@@ -52,10 +52,7 @@ public sealed class CardSystem : EntitySystem
     private void UpdateSprite(EntityUid uid, CardComponent comp)
     {
         var newSprite = comp.Flipped ? comp.BackSprite : comp.FrontSprite;
-        if (newSprite == null)
-            return;
-
-        if (!TryComp(uid, out SpriteComponent? spriteComponent))
+        if (newSprite == null || !TryComp(uid, out SpriteComponent? spriteComponent))
             return;
 
         var layerCount = newSprite.Count();

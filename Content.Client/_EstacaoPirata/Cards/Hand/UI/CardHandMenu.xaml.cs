@@ -42,10 +42,9 @@ public sealed partial class CardHandMenu : RadialMenu
 
         foreach (var card in stack.Cards)
         {
-            if (_playerManager.LocalSession == null)
+            if (_playerManager.LocalSession == null || !_entManager.TryGetComponent<CardComponent>(card, out var cardComp))
                 return;
-            if (!_entManager.TryGetComponent<CardComponent>(card, out var cardComp))
-                return;
+
             var button = new CardMenuButton()
             {
                 ToolTip = Loc.GetString(cardComp.Name),
