@@ -84,3 +84,9 @@
     size: Normal
   - type: CardDeck
   - type: CardStack
+  - type: ContainerContainer  # This is needed to stop it giving itself the container on initialization.
+    containers:               # The code probably shouldn't be assigning the container on init in the first place though.
+        cardstack-container:
+          !type:Container
+          showEnts: false
+          occludes: true
