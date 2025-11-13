@@ -9,61 +9,37 @@
   boilingPoint: 100.0
   meltingPoint: 0.0
   metabolisms:
+    TP14WaterBreather:
+      effects:
+      # Oxygenate for Jellids
+      - !type:Oxygenate
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Jellid ]
+      - !type:ModifyLungGas
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Jellid ]
+        ratios:
+          Water: -1.0
+    # Separate metabolism for drowning
     Gas:
       effects:
       - !type:HealthChange
-        conditions:
-        - !type:OrganType
-          type: Jellid
-          shouldHave: false
-        - !type:ReagentThreshold
-          min: 0.5
         scaleByQuantity: false
         ignoreResistances: true
         damage:
           types:
-            Cold:
-              10
+            Cold: 0.33
       - !type:AdjustTemperature
-        conditions:
-        - !type:OrganType
-          type: Jellid
-          shouldHave: false
-        - !type:ReagentThreshold
-          min: 0.5
-        - !type:Temperature
-          min: 10.00
-        amount: -50000
+        min: 10.00
+        amount: -20 # Note: -50000 was apparently too much.
       - !type:PopupMessage
         type: Local
         messages: [ "water-in-lungs" ]
         probability: 0.7
-        conditions:
-        - !type:OrganType
-          type: Jellid
-          shouldHave: false
-        - !type:ReagentThreshold
-          reagent: SeaWater
-          min: 0.5
       - !type:AdjustAlert
         alertType: Drowning
-        conditions:
-        - !type:OrganType
-          type: Jellid
-          shouldHave: false
-        - !type:ReagentThreshold
-          reagent: SeaWater
-          min: 0.5
+        minScale: 1
         clear: True
         time: 5
-      - !type:Oxygenate
-        conditions:
-        - !type:OrganType
-          type: Jellid
-      - !type:ModifyLungGas
-        conditions:
-        - !type:OrganType
-          type: Jellid
-        ratios:
-          WaterVapor: 1.0
-          Water: -1.0

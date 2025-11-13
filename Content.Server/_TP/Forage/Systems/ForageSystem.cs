@@ -49,7 +49,7 @@ public sealed class ForageSystem : EntitySystem
             return;
 
         if (ent.Comp.DestroyOnForage)
-            _destructible.DestroyEntity(ent);
+            _destructible.DestroyEntity(ent.Owner);
 
         if (ent.Comp.Loot == null)
             return;

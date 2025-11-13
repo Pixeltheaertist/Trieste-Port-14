@@ -106,7 +106,7 @@
     Fresium:
       amount: 20
   effects:
-    - !type:CreateEntityReactionEffect
+    - !type:SpawnEntity
       entity: WeaponAdvancedLaser
 
 
@@ -132,7 +132,7 @@
     Oxygen:
       amount: 0.025
   effects:
-    - !type:CreateEntityReactionEffect
+    - !type:SpawnEntity
       entity: SheetPlastic1
 
 - type: reaction
@@ -144,3 +144,20 @@
       amount: 1
   products:
     Acetone: 2
+
+- type: reaction
+  id: PotassiumSeaWaterExplosion
+  impact: High
+  priority: 20
+  reactants:
+    SeaWater:
+      amount: 1
+    Potassium:
+      amount: 1
+  effects:
+    - !type:Explosion
+      explosionType: Default
+      maxIntensity: 100
+      intensityPerUnit: 0.5 # 50+50 reagent for maximum explosion
+      intensitySlope: 4
+      maxTotalIntensity: 100

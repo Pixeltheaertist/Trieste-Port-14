@@ -1,0 +1,24 @@
+- type: loadout
+  id: TP14LoadoutFootwearBlack
+  equipment:
+    shoes: ClothingShoesColorBlack
+
+- type: loadout
+  id: TP14LoadoutFootwearBrown
+  equipment:
+    shoes: ClothingShoesColorBrown
+
+- type: loadout
+  id: TP14LoadoutFootwearOrange
+  equipment:
+    shoes: ClothingShoesColorOrange
+
+- type: loadout
+  id: TP14LoadoutFootwearPurple
+  equipment:
+    shoes: ClothingShoesColorPurple
+
+- type: loadout
+  id: TP14LoadoutFootwearWorkboots
+  equipment:
+    shoes: TP14ClothingShoesWorkboots

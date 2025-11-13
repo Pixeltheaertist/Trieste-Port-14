@@ -7,6 +7,7 @@ using Content.Shared.Popups;
 using Content.Server.Power.Components;
 using Content.Shared.Actions;
 using Content.Shared.Ninja.Components;
+using Content.Shared.Power.Components;
 
 namespace Content.Server.Ninja.Systems;
 

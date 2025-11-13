@@ -1,8 +1,8 @@
 - type: entity
   parent: GasCanister
   id: TP14WaterCanister
-  suffix: Trieste, Engineering
   name: water canister
+  suffix: Trieste, Engineering, Survival, Jellid
   description: It's GAS canister! Who the hell put water in it?
   components:
   - type: Sprite
@@ -10,18 +10,9 @@
     - state: yellow # You can replace it with water canister sprite if you'll make one
   - type: GasCanister
     gasMixture:
-      volume: 1000
+      volume: 1500
       moles:
-      - 0 # oxygen
-      - 0 # nitrogen
-      - 0 # CO2
-      - 0 # Plasma
-      - 0 # Tritium
-      - 0 # Water vapor
-      - 0 # Ammonia
-      - 0 # N2O
-      - 0 # Frezon
-      - 2769.36 # water
+        Water: 2769.36
       temperature: 293.15
   - type: Destructible
     thresholds:

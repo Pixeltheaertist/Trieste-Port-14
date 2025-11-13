@@ -6,6 +6,6 @@ department-Engineering-description = Keep the power on and the station operation
 department-Medical-description = Keep the crew healthy.
 department-Security-description = Keep the peace around the station.
 department-Science-description = Research artifacts and anomalies to invent new equipment for the station
-department-Expeditioneering-description = Go out into the depths to salvage wrecks, mine resources and hunt lifeforms.
+department-Expeditioneering-description = Go out into the depths to salvage wrecks, mine resources, and hunt the horrors of the depe.
 department-Silicon-description = Obey your laws and serve the crew.
 department-Specific-description = Jobs that not all stations have.

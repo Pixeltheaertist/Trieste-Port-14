@@ -45,4 +45,4 @@ traitor-role-codewords-short =
     The codewords are:
     {$codewords}.
 traitor-role-uplink-code-short = Your uplink code is {$code}. Set it as your PDA ringtone to access uplink.
-
+traitor-role-uplink-implant-short = Your uplink was implanted. Access it from the action menu.

@@ -92,10 +92,12 @@
 
 ##EXPLOSIVES
 
+# BEACHBALL DOES NOT WORK RIGHT NOW. IDK WHY. DO NOT USE.
+# FIXED. YOU SHOULD 100% USE IT :godo: - Cookie
 #- type: listing
  # id: UplinkBeachballGrenade
  # name: uplink-beachball-name
-  #description: uplink-beachball-desc # BEACHBALL DOES NOT WORK RIGHT NOW. IDK WHY. DO NOT USE.
+  #description: uplink-beachball-desc
   #productEntity: BeachballGrenade
   #cost:
   #  BluespaceCrystal: 4

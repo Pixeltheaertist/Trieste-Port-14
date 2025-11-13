@@ -1,3 +1,4 @@
+blank_issues_enabled: true
 contact_links:
   - name: Report a Security Vulnerability
     url: https://github.com/space-wizards/space-station-14/blob/master/SECURITY.md

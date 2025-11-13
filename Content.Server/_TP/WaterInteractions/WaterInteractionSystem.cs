@@ -2,8 +2,10 @@
 using Content.Server.Atmos.Components;
 using Content.Server.Chemistry.EntitySystems;
 using Content.Shared._TP.Jellids;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Overlays;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.TP.Abyss.Components;

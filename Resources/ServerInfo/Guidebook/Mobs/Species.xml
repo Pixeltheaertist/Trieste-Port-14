@@ -16,5 +16,8 @@
   <GuideEntityEmbed Entity="MobVox" Caption="Vox"/>
   <GuideEntityEmbed Entity="TP14MobJellidPerson" Caption="Jellid"/>
   </Box>
+  <Box>
+    <GuideEntityEmbed Entity="MobVulpkanin" Caption="Vulpkanin"/>
+  </Box>
 
 </Document>

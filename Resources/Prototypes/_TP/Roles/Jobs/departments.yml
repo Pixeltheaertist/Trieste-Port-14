@@ -4,6 +4,6 @@
   description: department-Expeditioneering-description
   color: "#846DCF"
   roles:
-  - SalvageSpecialist
+  - TP14Expeditioneer
   - TP14BasinTech
   - TP14Pilot

@@ -5,19 +5,19 @@
   playTimeTracker: JobCaptain
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 36000 #10 hrs. They're the fucking overseer
+      time: 10h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 7200 # 2 hour
+      time: 2h
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 7200 # 2 hour
+      time: 2h
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 7200 # 2 hour
+      time: 2h
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 7200 # 2 hour
+      time: 2h
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"

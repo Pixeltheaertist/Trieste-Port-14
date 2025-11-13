@@ -3,6 +3,7 @@ using Content.Server.Popups;
 using Content.Shared.Climbing.Components;
 using Content.Shared.Climbing.Systems;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Ghost;
 using Content.Shared.Gravity;
 using Content.Shared.Movement.Components;

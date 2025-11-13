@@ -7,6 +7,7 @@ using Content.Server.Temperature.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Explosion.Components;
 using Content.Shared.NodeContainer;
+using Content.Shared.Temperature.Components;
 using Robust.Shared.Audio;
 
 namespace Content.Server._TP.Temperature.Systems;

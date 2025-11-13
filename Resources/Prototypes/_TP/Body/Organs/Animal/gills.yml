@@ -18,7 +18,7 @@
       solution: "Lung"
       metabolizerTypes: [ Jellid ]
       groups:
-      - id: Gas
+      - id: TP14WaterBreather
         rateModifier: 100.0
     - type: SolutionContainerManager
       solutions:

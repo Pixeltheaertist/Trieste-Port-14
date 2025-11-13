@@ -1,0 +1,14 @@
+- type: loadout
+  id: TP14LoadoutJumpskirtBrown
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorBrown
+
+- type: loadout
+  id: TP14LoadoutJumpskirtYellow
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorYellow
+
+- type: loadout
+  id: TP14LoadoutJumpskirtPurple
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorPurple

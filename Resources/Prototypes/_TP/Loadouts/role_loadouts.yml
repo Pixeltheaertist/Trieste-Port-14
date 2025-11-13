@@ -4,28 +4,61 @@
 # Expeditionary
 
 - type: roleLoadout
-  id: JobTP14Pilot
-  groups:
-  - GroupTankHarness
-  - SalvageSpecialistBackpack
-  - SalvageSpecialistOuterClothing
-  - SalvageSpecialistShoes
-  - Glasses
-  - Survival
-  - Trinkets
-  - GroupSpeciesBreathTool
-
-- type: roleLoadout
   id: JobTP14BasinTech
   groups:
+  # Required
+  - GroupSpeciesBreathTool
   - GroupTankHarness
-  - SalvageSpecialistBackpack
-  - SalvageSpecialistOuterClothing
-  - SalvageSpecialistShoes
+  - TP14GroupBasinTechJumper
+  - TP14GroupBasinTechOuter
+  - TP14GroupBasinTechBackpack
+  # Optional
+  - TP14GroupBasinTechHeadwear
+  - TP14GroupBasinTechMask
+  - TP14GroupBasinTechNeck
+  - TP14GroupBasinTechFootwear
   - Glasses
   - Survival
   - Trinkets
+  - SalvageSpecialistJobTrinkets
+
+- type: roleLoadout
+  id: JobTP14Expeditioneer
+  groups:
+  # Required
   - GroupSpeciesBreathTool
+  - GroupTankHarness
+  - TP14GroupExpeditioneerJumper
+  - TP14GroupExpeditioneerOuter
+  - TP14GroupExpeditioneerBackpack
+  # Optional
+  - TP14GroupExpeditioneerMask
+  - TP14GroupExpeditioneerNeck
+  - TP14GroupExpeditioneerFootwear
+  - Glasses
+  - Survival
+  - Trinkets
+  - SalvageSpecialistJobTrinkets
+
+- type: roleLoadout
+  id: JobTP14Pilot
+  groups:
+  # Required
+  - GroupSpeciesBreathTool
+  - GroupTankHarness
+  - TP14GroupPilotJumper
+  - TP14GroupPilotOuter
+  - TP14GroupPilotBackpack
+  - TP14GroupPilotHeadwear
+  # Optional
+  - TP14GroupPilotMask
+  - TP14GroupPilotNeck
+  - TP14GroupPilotGloves
+  - TP14GroupPilotFootwear
+  - Glasses
+  - Survival
+  - Trinkets
+  - SalvageSpecialistJobTrinkets
 
 # Civilian
 

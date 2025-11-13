@@ -22,11 +22,8 @@
 - type: startingGear
   id: TP14PilotGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitMercenary
     id: TP14PilotPDA
     ears: ClothingHeadsetMining
-    gloves: ClothingHandsGlovesFingerless
-    head: ClothingHeadHatHardhatArmored # protect the pilot
 
 - type: chameleonOutfit
   id: PilotGearChameleonOutfit

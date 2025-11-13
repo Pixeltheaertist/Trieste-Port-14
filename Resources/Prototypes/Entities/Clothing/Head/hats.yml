@@ -419,8 +419,8 @@
 - type: entity
   parent: [ClothingHeadBase, BaseCommandContraband]
   id: ClothingHeadHatHoshat
-  name: head of security cap
-  description: A stylish cap worn by the Head of Security. Shows the officers who's in charge.
+  name: marshal cap # TP14 - was "Head of Security", same as the line below
+  description: A stylish cap worn by the Marshal. Shows the officers who's in charge.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/hoshat.rsi

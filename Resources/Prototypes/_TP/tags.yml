@@ -1,4 +1,6 @@
-# PUT YOUR TAGS IN ALPHABETICAL ORDER. 'TP14' and 'TP14Tag' is exempt. (So just ignore it!)
+# PUT YOUR TAGS IN ALPHABETICAL ORDER - TP is exempt from this!
+- type: Tag
+  id: CascadeOpsUplink
 
 - type: Tag
   id: TP14TagCoffeeBeans
@@ -7,7 +9,22 @@
   id: TP14CoffeeFilter
 
 - type: Tag
+  id: DockBell
+
+- type: Tag
+  id: DockTrench
+
+- type: Tag
   id: Drifter
+
+- type: Tag
+  id: Fish
+
+- type: Tag
+  id: Harpoon
+
+- type: Tag
+  id: MagCell
 
 - type: Tag
   id: TP14MagicCandle
@@ -19,7 +36,16 @@
   id: TP14OvenMachineBoard
 
 - type: Tag
+  id: PearlEditor
+
+- type: Tag
+  id: PearlReader
+
+- type: Tag
   id: PreventsFire
+
+- type: Tag
+  id: SeaWreck
 
 - type: Tag
   id: TP14TagTeaBag

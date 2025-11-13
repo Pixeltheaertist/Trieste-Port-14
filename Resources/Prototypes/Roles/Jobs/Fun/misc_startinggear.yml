@@ -156,6 +156,7 @@
     - trayScanner
     - AccessConfiguratorUniversal
     - Multitool
+    - ToolDebug # TP14
 
 #Gladiator with spear
 - type: startingGear
