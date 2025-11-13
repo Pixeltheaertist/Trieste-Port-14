@@ -1,6 +1,6 @@
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc2OfClubsNanotrasen
   components:
   - type: Card
@@ -11,7 +11,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc3OfClubsNanotrasen
   components:
   - type: Card
@@ -22,7 +22,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc4OfClubsNanotrasen
   components:
   - type: Card
@@ -33,7 +33,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc5OfClubsNanotrasen
   components:
   - type: Card
@@ -44,7 +44,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc6OfClubsNanotrasen
   components:
   - type: Card
@@ -55,7 +55,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc7OfClubsNanotrasen
   components:
   - type: Card
@@ -66,7 +66,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc8OfClubsNanotrasen
   components:
   - type: Card
@@ -77,7 +77,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc9OfClubsNanotrasen
   components:
   - type: Card
@@ -88,7 +88,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc10OfClubsNanotrasen
   components:
   - type: Card
@@ -99,7 +99,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardScAceOfClubsNanotrasen
   components:
   - type: Card
@@ -111,7 +111,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardScJackOfClubsNanotrasen
   components:
   - type: Card
@@ -122,7 +122,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardScKingOfClubsNanotrasen
   components:
   - type: Card
@@ -133,7 +133,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardScQueenOfClubsNanotrasen
   components:
   - type: Card
@@ -145,7 +145,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardScJackOfDiamondsNanotrasen
   components:
   - type: Card
@@ -156,7 +156,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardScQueenOfDiamondsNanotrasen
   components:
   - type: Card
@@ -167,7 +167,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardScKingOfDiamondsNanotrasen
   components:
   - type: Card
@@ -178,7 +178,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardScAceOfDiamondsNanotrasen
   components:
   - type: Card
@@ -189,7 +189,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc2OfDiamondsNanotrasen
   components:
   - type: Card
@@ -200,7 +200,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc3OfDiamondsNanotrasen
   components:
   - type: Card
@@ -211,7 +211,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc4OfDiamondsNanotrasen
   components:
   - type: Card
@@ -222,7 +222,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc5OfDiamondsNanotrasen
   components:
   - type: Card
@@ -233,7 +233,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc6OfDiamondsNanotrasen
   components:
   - type: Card
@@ -244,7 +244,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc7OfDiamondsNanotrasen
   components:
   - type: Card
@@ -255,7 +255,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc8OfDiamondsNanotrasen
   components:
   - type: Card
@@ -266,7 +266,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc9OfDiamondsNanotrasen
   components:
   - type: Card
@@ -277,7 +277,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc10OfDiamondsNanotrasen
   components:
   - type: Card
@@ -289,7 +289,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc2OfHeartsNanotrasen
   components:
   - type: Card
@@ -300,7 +300,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc3OfHeartsNanotrasen
   components:
   - type: Card
@@ -311,7 +311,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc4OfHeartsNanotrasen
   components:
   - type: Card
@@ -322,7 +322,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc5OfHeartsNanotrasen
   components:
   - type: Card
@@ -333,7 +333,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc6OfHeartsNanotrasen
   components:
   - type: Card
@@ -344,7 +344,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc7OfHeartsNanotrasen
   components:
   - type: Card
@@ -355,7 +355,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc8OfHeartsNanotrasen
   components:
   - type: Card
@@ -366,7 +366,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc9OfHeartsNanotrasen
   components:
   - type: Card
@@ -377,7 +377,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc10OfHeartsNanotrasen
   components:
   - type: Card
@@ -388,7 +388,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardScKingOfHeartsNanotrasen
   components:
   - type: Card
@@ -399,7 +399,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardScQueenOfHeartsNanotrasen
   components:
   - type: Card
@@ -410,7 +410,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardScJackOfHeartsNanotrasen
   components:
   - type: Card
@@ -421,7 +421,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardScAceOfHeartsNanotrasen
   components:
   - type: Card
@@ -433,7 +433,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc2OfSpadesNanotrasen
   components:
   - type: Card
@@ -444,7 +444,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc3OfSpadesNanotrasen
   components:
   - type: Card
@@ -455,7 +455,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc4OfSpadesNanotrasen
   components:
   - type: Card
@@ -466,7 +466,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc5OfSpadesNanotrasen
   components:
   - type: Card
@@ -477,7 +477,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc6OfSpadesNanotrasen
   components:
   - type: Card
@@ -488,7 +488,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc7OfSpadesNanotrasen
   components:
   - type: Card
@@ -499,7 +499,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc8OfSpadesNanotrasen
   components:
   - type: Card
@@ -510,7 +510,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc9OfSpadesNanotrasen
   components:
   - type: Card
@@ -522,7 +522,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardSc10OfSpadesNanotrasen
   components:
   - type: Card
@@ -533,7 +533,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardScJackOfSpadesNanotrasen
   components:
   - type: Card
@@ -544,7 +544,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardScQueenOfSpadesNanotrasen
   components:
   - type: Card
@@ -555,7 +555,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardScKingOfSpadesNanotrasen
   components:
   - type: Card
@@ -566,7 +566,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardScAceOfSpadesNanotrasen
   components:
   - type: Card
@@ -577,7 +577,7 @@
 
 - type: entity
   parent: CardBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: CardScJokerNanotrasen
   components:
   - type: Card
