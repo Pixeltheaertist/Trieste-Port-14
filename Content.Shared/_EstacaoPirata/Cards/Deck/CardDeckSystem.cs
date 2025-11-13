@@ -37,10 +37,7 @@ public sealed class CardDeckSystem : EntitySystem
 
     private void AddTurnOnVerb(EntityUid uid, CardDeckComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
-        if (!args.CanAccess || !args.CanInteract || args.Hands == null)
-            return;
-
-        if (!TryComp(uid, out CardStackComponent? comp))
+        if (!args.CanAccess || !args.CanInteract || args.Hands == null || !TryComp(uid, out CardStackComponent? comp))
             return;
 
         args.Verbs.Add(new AlternativeVerb()
@@ -114,24 +111,12 @@ public sealed class CardDeckSystem : EntitySystem
 
     private void OnInteractHand(EntityUid uid, CardDeckComponent component, InteractHandEvent args)
     {
-        if (args.Handled)
-            return;
-
-        if (!TryComp(uid, out CardStackComponent? comp))
-            return;
-
-        if (comp.Cards.Count <= 0)
-            return;
-
-        if (!comp.Cards.TryGetValue(comp.Cards.Count-1, out var card))
-            return;
-
-        if (!_cardStackSystem.TryRemoveCard(uid, card, comp))
+        if (args.Handled || !TryComp(uid, out CardStackComponent? comp) || comp.Cards.Count <= 0 || !comp.Cards.TryGetValue(comp.Cards.Count-1, out var card) || !_cardStackSystem.TryRemoveCard(uid, card, comp))
             return;
 
         _hands.TryPickupAnyHand(args.User, card);
 
-        _audio.PlayPredicted(component.PickUpSound, Transform(uid).Coordinates, args.User);
+        _audio.PlayPredicted(component.PickUpSound, Transform(args.User).Coordinates, args.User);
 
         args.Handled = true;
     }

@@ -45,10 +45,7 @@ public sealed class CardStackSystem : EntitySystem
 
     public bool TryRemoveCard(EntityUid uid, EntityUid card, CardStackComponent? comp = null)
     {
-        if (!Resolve(uid, ref comp))
-            return false;
-
-        if (!TryComp(card, out CardComponent? _))
+        if (!Resolve(uid, ref comp) || !TryComp(card, out CardComponent? _))
             return false;
 
         _container.Remove(card, comp.ItemContainer);
@@ -68,10 +65,7 @@ public sealed class CardStackSystem : EntitySystem
 
     public bool TryInsertCard(EntityUid uid, EntityUid card, CardStackComponent? comp = null)
     {
-        if (!Resolve(uid, ref comp))
-            return false;
-
-        if (!TryComp(card, out CardComponent? _))
+        if (!Resolve(uid, ref comp) || !TryComp(card, out CardComponent? _))
             return false;
 
         _container.Insert(card, comp.ItemContainer);
@@ -106,9 +100,7 @@ public sealed class CardStackSystem : EntitySystem
     /// <returns></returns>
     public bool FlipAllCards(EntityUid uid, CardStackComponent? comp = null, bool? isFlipped = null)
     {
-        if (_net.IsClient)
-            return false;
-        if (!Resolve(uid, ref comp))
+        if (_net.IsClient || !Resolve(uid, ref comp))
             return false;
         foreach (var card in comp.Cards)
         {
@@ -129,9 +121,7 @@ public sealed class CardStackSystem : EntitySystem
 
     public bool TryJoinStacks(EntityUid firstStack, EntityUid secondStack, CardStackComponent? firstComp = null, CardStackComponent? secondComp = null)
     {
-        if (firstStack == secondStack)
-            return false;
-        if (!Resolve(firstStack, ref firstComp) || !Resolve(secondStack, ref secondComp))
+        if (firstStack == secondStack || !Resolve(firstStack, ref firstComp) || !Resolve(secondStack, ref secondComp))
             return false;
 
         foreach (var card in secondComp.Cards.ToList())
@@ -190,10 +180,7 @@ public sealed class CardStackSystem : EntitySystem
     private void OnAlternativeVerb(EntityUid uid, CardStackComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
         if (!TryComp(args.Using, out CardStackComponent? usingStack) ||
-            !TryComp(args.Target, out CardStackComponent? targetStack))
-            return;
-
-        if (args.Using == args.Target)
+            !TryComp(args.Target, out CardStackComponent? targetStack) || args.Using == args.Target)
             return;
 
         args.Verbs.Add(new AlternativeVerb()
@@ -242,13 +229,9 @@ public sealed class CardStackSystem : EntitySystem
 
         foreach (var card in cards)
         {
-            if (!TryRemoveCard(first, card))
-                return;
-
-            if (!TryInsertCard(second, card))
+            if (!TryRemoveCard(first, card) || !TryInsertCard(second, card))
                 return;
         }
-
 
         _audio.PlayPredicted(firstComp.PlaceDownSound, Transform(second).Coordinates, user);
         if (_net.IsClient)
