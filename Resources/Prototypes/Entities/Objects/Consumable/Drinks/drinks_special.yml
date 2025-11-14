@@ -192,6 +192,7 @@
     inHandsMaxFillLevels: 2
   - type: FitsInDispenser
     solution: drink
+  - type: FitsAsPitcher # TP14
 
 # Weird empty shakes
 

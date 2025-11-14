@@ -1,0 +1,44 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Created by MysteriousPeeko for Trieste Port 14",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "basket"
+        },
+        {
+            "name": "Basket-Left",
+            "directions": 4
+        },
+        {
+            "name": "Basket-Right",
+            "directions": 4
+        },
+        {
+            "name": "stirrer"
+        },
+        {
+            "name": "Stirrer-Left",
+            "directions": 4
+        },
+        {
+            "name": "Stirrer-Right",
+            "directions": 4
+        },
+        {
+            "name": "tamper"
+        },
+        {
+            "name": "Tamper-Left",
+            "directions": 4
+        },
+        {
+            "name": "Tamper-Right",
+            "directions": 4
+        }
+    ]
+}

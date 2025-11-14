@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: TP14CoffeeSupplyCrate
+  icon:
+    sprite: Objects/Consumable/Drinks/pitcher.rsi
+    state: icon
+  product: TP14CoffeeSupplyCrate
+  cost: 1000
+  category: cargoproduct-category-name-service
+  group: market

@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._TP.Kitchen;
+namespace Content.Shared._TP.Kitchen.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class SharedDeepFriedComponent : Component

@@ -1,0 +1,21 @@
+- type: entity
+  id: TP14CoffeeSupplyCrate
+  parent: CratePlastic
+  suffix: Trieste, Service
+  name: coffee supplies crate
+  description: A whole crate full of coffee and coffee-making supplies. An addiction awaits!
+  components:
+  - type: StorageFill
+    contents:
+    - id: TP14BoxCoffeeBeans
+      amount: 2
+    - id: TP14BoxInstantCoffee
+      amount: 2
+    - id: Pitcher
+      amount: 1
+    - id: DrinkMugMetal
+      amount: 3
+    - id: TP14CoffeeMixer
+      amount: 1
+    - id: TP14CoffeePress
+      amount: 1

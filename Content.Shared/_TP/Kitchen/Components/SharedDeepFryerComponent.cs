@@ -1,8 +1,9 @@
 using Content.Shared.Item;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 
-namespace Content.Shared._TP.Kitchen;
+namespace Content.Shared._TP.Kitchen.Components;
 
 /// <summary>
 ///     Lets the owner entity 'deepfry' items.
@@ -13,7 +14,7 @@ namespace Content.Shared._TP.Kitchen;
 public sealed partial class SharedDeepFryerComponent : Component
 {
     [DataField]
-    public bool IsEnabled = false;
+    public bool IsEnabled;
 
     [ViewVariables]
     public bool IsBroken;
@@ -33,4 +34,11 @@ public sealed partial class SharedDeepFryerComponent : Component
     public string ContainerId = "fryer_slots";
 
     public string SolutionContainerId = "fryer";
+}
+
+[Serializable, NetSerializable]
+public enum DeepFryerVisuals : byte
+{
+    Base,
+    Active,
 }

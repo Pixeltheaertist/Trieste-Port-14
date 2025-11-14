@@ -3,9 +3,12 @@ using Content.Server.Hands.Systems;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared._TP.Kitchen;
+using Content.Shared._TP.Kitchen.Components;
 using Content.Shared._TP.Kitchen.Events;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Interaction;
 using Content.Shared.Item;
@@ -24,6 +27,7 @@ public sealed class DeepFryerSystem : EntitySystem
 {
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
@@ -84,7 +88,7 @@ public sealed class DeepFryerSystem : EntitySystem
         }
 
         var usedMeta = MetaData(args.Used);
-        if (usedMeta.EntityName.StartsWith("burnt"))
+        if (usedMeta.EntityName.StartsWith("burnt") || usedMeta.EntityName.StartsWith("burned"))
         {
             _popup.PopupEntity(Loc.GetString("Deep-Fryer-Message-Burnt-Item", ("item", args.Used)), ent, args.User);
             args.Handled = true;
@@ -116,7 +120,6 @@ public sealed class DeepFryerSystem : EntitySystem
 
             _popup.PopupEntity(Loc.GetString("Deep-Fryer-Message-Large-Item", ("item", args.Used)), ent, args.User);
             args.Handled = true;
-            return;
         }
     }
 
@@ -240,7 +243,13 @@ public sealed class DeepFryerSystem : EntitySystem
                 if (_fryerSounds.TryGetValue(deepFryerEnt, out var soundEntity) && soundEntity != null)
                     _audio.Stop(soundEntity.Value);
 
+                _appearance.SetData(deepFryerEnt.Owner, DeepFryerVisuals.Active, false);
+
                 _fryerSounds.Remove(deepFryerEnt);
+            }
+            else
+            {
+                _appearance.SetData(deepFryerEnt.Owner, DeepFryerVisuals.Active, true);
             }
 
             deepFryerComp.IsEnabled = !deepFryerComp.IsEnabled;
@@ -394,13 +403,18 @@ public sealed class DeepFryerSystem : EntitySystem
 
         //  Now we check for a damageable component. If it has one, we apply 1.5 heat damage.
         //  This is just so living/hurtable entities can't survive the deep fryer.
-        if (TryComp<DamageableComponent>(friedEntUid, out _))
+        if (TryComp<DamageableComponent>(friedEntUid, out var damageableComponent))
         {
             var damage = new DamageSpecifier
             {
                 DamageDict = { ["Heat"] = 0.33f },
             };
             _damageable.TryChangeDamage(friedEntUid, damage, origin: fryerEntUid);
+
+            if (damageableComponent.TotalDamage <= 0.0f)
+            {
+                _cookingStartTimes.Remove(friedEntUid);
+            }
         }
 
         // Now check for the start and elapsed times.
@@ -433,6 +447,9 @@ public sealed class DeepFryerSystem : EntitySystem
 
             // "Burnt" gets a special function, in that it drops out and can't be re-inserted.
             _container.InsertOrDrop(friedEntUid, container);
+            _cookingStartTimes.Remove(friedEntUid);
+            QueueDel(friedEntUid);
+            Spawn("FoodBadRecipe", Transform(fryerEntUid).Coordinates);
         }
         else
         {

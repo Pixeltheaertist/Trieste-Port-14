@@ -1,0 +1,44 @@
+- type: entity
+  id: TP14BoxCoffeeFilter
+  parent: BoxCardboard
+  suffix: Trieste
+  name: coffee filter box
+  description: A box filled with new coffee filters.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,2,3
+  - type: StorageFill
+    contents:
+    - id: TP14CoffeeFilter
+      amount: 6
+
+- type: entity
+  id: TP14BoxCoffeeBeans
+  parent: BoxCardboard
+  suffix: Trieste
+  name: box of coffee beans
+  description: A box filled with bags of coffee beans.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,2,3
+  - type: StorageFill
+    contents:
+    - id: TP14CoffeeBeans
+      amount: 6
+
+- type: entity
+  id: TP14BoxInstantCoffee
+  parent: BoxCardboard
+  suffix: Trieste
+  name: box of instant coffee
+  description: A box filled with new instant coffee bags.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,2,3
+  - type: StorageFill
+    contents:
+    - id: TP14InstantInstantCoffee
+      amount: 6

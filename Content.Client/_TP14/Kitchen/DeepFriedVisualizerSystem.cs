@@ -16,9 +16,9 @@ public sealed class DeepFriedVisualizerSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<SharedDeepFriedComponent, ComponentStartup>(OnComponentStartup);
-        SubscribeLocalEvent<SharedDeepFriedComponent, DeepFriedLevelChangedEvent>(OnFriedLevelChanged);
-        SubscribeLocalEvent<SharedDeepFriedComponent, EntGotRemovedFromContainerMessage>(OnRemovedFromContainer);
+        SubscribeLocalEvent<Shared._TP.Kitchen.Components.SharedDeepFriedComponent, ComponentStartup>(OnComponentStartup);
+        SubscribeLocalEvent<Shared._TP.Kitchen.Components.SharedDeepFriedComponent, DeepFriedLevelChangedEvent>(OnFriedLevelChanged);
+        SubscribeLocalEvent<Shared._TP.Kitchen.Components.SharedDeepFriedComponent, EntGotRemovedFromContainerMessage>(OnRemovedFromContainer);
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ public sealed class DeepFriedVisualizerSystem : EntitySystem
     /// </summary>
     /// <param name="friedEnt"></param>
     /// <param name="args"></param>
-    private void OnRemovedFromContainer(Entity<SharedDeepFriedComponent> friedEnt, ref EntGotRemovedFromContainerMessage args)
+    private void OnRemovedFromContainer(Entity<Shared._TP.Kitchen.Components.SharedDeepFriedComponent> friedEnt, ref EntGotRemovedFromContainerMessage args)
     {
         UpdateSprite(friedEnt.Owner, friedEnt.Comp);
     }
@@ -36,7 +36,7 @@ public sealed class DeepFriedVisualizerSystem : EntitySystem
     /// </summary>
     /// <param name="friedEnt">SharedDeepFriedComponent entity</param>
     /// <param name="args">DeepFriedLevelChangedEvent arguments</param>
-    private void OnFriedLevelChanged(Entity<SharedDeepFriedComponent> friedEnt, ref DeepFriedLevelChangedEvent args)
+    private void OnFriedLevelChanged(Entity<Shared._TP.Kitchen.Components.SharedDeepFriedComponent> friedEnt, ref DeepFriedLevelChangedEvent args)
     {
         UpdateSprite(friedEnt.Owner, friedEnt.Comp);
     }
@@ -47,7 +47,7 @@ public sealed class DeepFriedVisualizerSystem : EntitySystem
     /// <param name="friedEnt">SharedDeepFriedComponent entity</param>
     /// <param name="args">ComponentStartup arguments</param>
     /// <exception cref="NotImplementedException"></exception>
-    private void OnComponentStartup(Entity<SharedDeepFriedComponent> friedEnt, ref ComponentStartup args)
+    private void OnComponentStartup(Entity<Shared._TP.Kitchen.Components.SharedDeepFriedComponent> friedEnt, ref ComponentStartup args)
     {
         UpdateSprite(friedEnt.Owner, friedEnt.Comp);
     }
@@ -57,7 +57,7 @@ public sealed class DeepFriedVisualizerSystem : EntitySystem
     /// </summary>
     /// <param name="friedUid">SharedDeepFriedComponent entity uid</param>
     /// <param name="friedComp">SharedDeepFriedComponent entity</param>
-    private void UpdateSprite(EntityUid friedUid, SharedDeepFriedComponent friedComp)
+    private void UpdateSprite(EntityUid friedUid, Shared._TP.Kitchen.Components.SharedDeepFriedComponent friedComp)
     {
         // Simple enough - we check if we have a sprite (we always should),
         // and then we set the color based on the fried level from the component.
@@ -66,9 +66,9 @@ public sealed class DeepFriedVisualizerSystem : EntitySystem
 
         var color = friedComp.CurrentFriedLevel switch
         {
-            SharedDeepFriedComponent.FriedLevel.LightlyFried => Color.FromHex("#FFD580"),
-            SharedDeepFriedComponent.FriedLevel.Fried => Color.FromHex("#954535"),
-            SharedDeepFriedComponent.FriedLevel.Burnt => Color.FromHex("#0E0504"),
+            Shared._TP.Kitchen.Components.SharedDeepFriedComponent.FriedLevel.LightlyFried => Color.FromHex("#FFD580"),
+            Shared._TP.Kitchen.Components.SharedDeepFriedComponent.FriedLevel.Fried => Color.FromHex("#954535"),
+            Shared._TP.Kitchen.Components.SharedDeepFriedComponent.FriedLevel.Burnt => Color.FromHex("#0E0504"),
             _ => Color.White
         };
 

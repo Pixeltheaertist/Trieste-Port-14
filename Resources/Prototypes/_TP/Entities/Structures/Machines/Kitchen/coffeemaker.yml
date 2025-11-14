@@ -1,0 +1,46 @@
+- type: entity
+  parent: [ BaseMachinePowered, SmallConstructibleMachine ]
+  id: TP14CoffeeMaker
+  suffix: Trieste, Service
+  name: coffee maker
+  description: A table-top expresso machine, for all your coffee needs.
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 0
+  - type: Appearance
+  - type: CoffeeMaker
+  - type: ContainerContainer
+    containers:
+      Beaker: !type:ContainerSlot
+      Basket: !type:ContainerSlot
+      Filter: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      Beaker:
+        whitelist:
+          components:
+          - FitsAsPitcher
+      Basket:
+        whitelist:
+          components:
+          - FitsAsBasket
+      Filter:
+        whitelist:
+          components:
+          - CoffeeFilter
+  - type: Sprite
+    sprite: _TP/Structures/Machines/coffeemaker.rsi
+    offset: 0.0,0.4
+    layers:
+    - state: icon
+    - state: basket
+      map: [ "enum.CoffeeMakerVisuals.Basket" ]
+      visible: false
+    - state: beaker
+      map: [ "enum.CoffeeMakerVisuals.Beaker" ]
+      visible: false
+    - state: pitcher
+      map: [ "enum.CoffeeMakerVisuals.Pitcher" ]
+      visible: false
+    drawdepth: LargeObjects
+    snapCardinals: true

@@ -6,11 +6,12 @@
   name: coffee filter
   description: A single-use filter for a boiler.
   components:
+  - type: CoffeeFilter
   - type: Item
     size: Small
   - type: Sprite # TODO - add custom sprite
     sprite: Objects/Consumable/Drinks/water_cup.rsi
-    state: icon-0
+    state: icon
   - type: Tag
     tags:
     - TP14CoffeeFilter
@@ -29,11 +30,13 @@
   name: forever-use coffee filter
   description: A filter for a boiler. This one seems spotless!
   components:
+  - type: CoffeeFilter
+    infiniteUses: true
   - type: Item
     size: Small
   - type: Sprite # TODO - add custom sprite
     sprite: Objects/Consumable/Drinks/water_cup.rsi
-    state: icon-0
+    state: icon
 
 # Coffee
 - type: entity
@@ -88,14 +91,21 @@
 
 # Tools
 - type: entity
-  parent: UtensilBase
+  parent: BaseItem
   id: TP14CoffeeMixer
-  name: coffee mixer
+  name: coffee stirrer
   suffix: Trieste
   description: A tool for mixing coffee grounds.
   components:
   - type: Item
-    size: Medium
+    size: Small
+    shape:
+    - 0,0,1,0
+    inhandVisuals:
+      left:
+      - state: Stirrer-Left
+      right:
+      - state: Stirrer-Right
   - type: Utensil
     types:
     - Spoon
@@ -105,17 +115,23 @@
     reactionTypes:
     - Stir
   - type: Sprite
-    state: bar_spoon
+    sprite: _TP/Objects/Tools/kitchen.rsi
+    state: stirrer
 
 - type: entity
-  parent: UtensilBase
+  parent: BaseItem
   id: TP14CoffeePress
-  name: coffee presser
+  name: coffee tamper
   suffix: Trieste
   description: A tool for pressing coffee grounds.
   components:
   - type: Item
-    size: Medium
+    size: Normal
+    inhandVisuals:
+      left:
+      - state: Tamper-Left
+      right:
+      - state: Tamper-Right
   - type: Utensil
     types:
     - Spoon
@@ -125,5 +141,34 @@
     reactionTypes:
     - TP14Pressing
   - type: Sprite
-    state: bar_spoon
+    sprite: _TP/Objects/Tools/kitchen.rsi
+    state: tamper
 
+- type: entity
+  parent: BaseItem
+  id: TP14CoffeeBasket
+  suffix: Trieste
+  name: coffee basket
+  description: A basket for coffee grounds. Connects to the coffee machine.
+  components:
+  - type: ExaminableSolution
+    solution: food
+  - type: FitsAsBasket
+  - type: Item
+    size: Normal
+    inhandVisuals:
+      left:
+      - state: Basket-Left
+      right:
+      - state: Basket-Right
+  - type: RefillableSolution
+    solution: food
+  - type: Sprite
+    sprite: _TP/Objects/Tools/kitchen.rsi
+    state: basket
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+  - type: Spillable
+    solution: food

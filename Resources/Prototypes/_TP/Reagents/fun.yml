@@ -24,14 +24,14 @@
         prototype: ArtifactCluwne
         conditions:
         - !type:ReagentCondition
-          reagent: HorrificLaughter
+          reagent: TP14HorrificLaughter
           min: 50
       - !type:AdjustReagent
         reagent: TP14HorrificLaughter
         amount: -20
         conditions:
         - !type:ReagentCondition
-          reagent: HorrificLaughter
+          reagent: TP14HorrificLaughter
           min: 50
 
 # Later please remove ability to pick up items from Cluwne while polymorphed
