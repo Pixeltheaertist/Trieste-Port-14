@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-4.0",
-    "copyright": "Created by MysteriousPeeko for Trieste Port 14",
+    "copyright": "Created by MysteriousPeeko for Trieste Port 14, filters by Cookie (FatherCheese) for Trieste Port 14.",
     "size": {
         "x": 32,
         "y": 32
@@ -17,6 +17,15 @@
         {
             "name": "Basket-Right",
             "directions": 4
+        },
+        {
+            "name": "filter"
+        },
+        {
+            "name": "filter-dirty"
+        },
+        {
+            "name": "filter-forever"
         },
         {
             "name": "stirrer"

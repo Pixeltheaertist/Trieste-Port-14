@@ -1,3 +1,4 @@
+using Robust.Shared.Audio;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._TP.Kitchen.Components;
@@ -11,6 +12,9 @@ public sealed partial class SharedCoffeeMakerComponent : Component
 
     [DataField]
     public float HeatingAmount = 6.5f;
+
+    [DataField]
+    public SoundPathSpecifier? FinishSound = new("/Audio/_TP/Machines/Kitchen/coffee-pour.ogg");
 
     public TimeSpan? StartTime;
 

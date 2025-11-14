@@ -7,3 +7,8 @@
   license: "CC0 1.0"
   copyright: '"Buzzer alert - Lux Kitchen Timer.wav" by knufds on Freesound.org. Converted to OGG by Cookie (FatherCheese)'
   source: "https://freesound.org/people/knufds/sounds/670891/"
+
+- files: ["coffee-pour"]
+  license: "CC BY 4.0"
+  copyright: '"Pouring the water/coffee" by CaKon on Freesound.org. Converted to OGG by Cookie (FatherCheese)'
+  source: "https://freesound.org/people/CaKon/sounds/522143/"

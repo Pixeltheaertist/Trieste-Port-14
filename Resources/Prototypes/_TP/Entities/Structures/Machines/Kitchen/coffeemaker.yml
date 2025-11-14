@@ -1,9 +1,9 @@
 - type: entity
   parent: [ BaseMachinePowered, SmallConstructibleMachine ]
   id: TP14CoffeeMaker
-  suffix: Trieste, Service
+  suffix: Trieste, Service, Empty
   name: coffee maker
-  description: A table-top expresso machine, for all your coffee needs.
+  description: A table-top espresso machine, for all your coffee needs.
   components:
   - type: ApcPowerReceiver
     powerLoad: 0
@@ -44,3 +44,26 @@
       visible: false
     drawdepth: LargeObjects
     snapCardinals: true
+
+- type: entity
+  parent: TP14CoffeeMaker
+  id: TP14CoffeeMakerFilled
+  suffix: Trieste, Service, Filled
+  components:
+  - type: ItemSlots
+    slots:
+      Beaker:
+        whitelist:
+          components:
+          - FitsAsPitcher
+        startingItem: Pitcher
+      Basket:
+        whitelist:
+          components:
+          - FitsAsBasket
+        startingItem: TP14CoffeeBasket
+      Filter:
+        whitelist:
+          components:
+          - CoffeeFilter
+        startingItem: TP14CoffeeFilter

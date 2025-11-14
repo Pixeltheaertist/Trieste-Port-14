@@ -1,0 +1,8 @@
+- type: loadoutEffectGroup
+  id: TP14LoadoutEffectSeniorHoP
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobHeadOfPersonnel
+      time: 52h # 1 hour per week for 1 year

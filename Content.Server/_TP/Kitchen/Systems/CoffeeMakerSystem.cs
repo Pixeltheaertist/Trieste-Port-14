@@ -2,11 +2,12 @@ using Content.Server.Power.EntitySystems;
 using Content.Shared._TP.Kitchen.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
-using Content.Shared.Containers.ItemSlots;
-using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
 namespace Content.Server._TP.Kitchen.Systems;
@@ -17,6 +18,7 @@ namespace Content.Server._TP.Kitchen.Systems;
 public sealed class CoffeeMakerSystem : EntitySystem
 {
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly PowerReceiverSystem _power = default!;
@@ -35,10 +37,18 @@ public sealed class CoffeeMakerSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<SharedCoffeeMakerComponent, InteractHandEvent>(OnInteractHands);
         SubscribeLocalEvent<SharedCoffeeMakerComponent, GetVerbsEvent<AlternativeVerb>>(OnAlternativeVerb);
         SubscribeLocalEvent<SharedCoffeeMakerComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
         SubscribeLocalEvent<SharedCoffeeMakerComponent, EntInsertedIntoContainerMessage>(OnEntInserted);
+        SubscribeLocalEvent<SharedCoffeeMakerComponent, ContainerIsRemovingAttemptEvent>(OnAttemptRemove);
+    }
+
+    private void OnAttemptRemove(Entity<SharedCoffeeMakerComponent> ent, ref ContainerIsRemovingAttemptEvent args)
+    {
+        if (ent.Comp.IsEnabled)
+        {
+            args.Cancel();
+        }
     }
 
     private void OnEntInserted(Entity<SharedCoffeeMakerComponent> ent, ref EntInsertedIntoContainerMessage args)
@@ -60,13 +70,19 @@ public sealed class CoffeeMakerSystem : EntitySystem
         {
             case "Beaker":
                 if (ent.Comp.IsEnabled)
+                {
+                    _popup.PopupEntity(Loc.GetString("coffee-maker-message-brewing"), ent.Owner);
                     return;
+                }
 
                 _appearance.SetData(ent.Owner, CoffeeMakerVisuals.Pitcher, false);
                 break;
             case "Basket":
                 if (ent.Comp.IsEnabled)
+                {
+                    _popup.PopupEntity(Loc.GetString("coffee-maker-message-brewing"), ent.Owner);
                     return;
+                }
 
                 _appearance.SetData(ent.Owner, CoffeeMakerVisuals.Basket, false);
                 break;
@@ -107,19 +123,19 @@ public sealed class CoffeeMakerSystem : EntitySystem
         // If any of them return null or empty, we return and display a popup message.
         if (!_container.TryGetContainer(ent.Owner, "Beaker", out var beakerContainer) || beakerContainer.ContainedEntities.Count == 0)
         {
-            _popup.PopupEntity(Loc.GetString("coffee-maker-message-no-beaker"), ent.Owner, user);
+            _popup.PopupEntity(Loc.GetString("coffee-maker-message-no-beaker"), user, user);
             return;
         }
 
         if (!_container.TryGetContainer(ent.Owner, "Basket", out var basketContainer) || basketContainer.ContainedEntities.Count == 0)
         {
-            _popup.PopupEntity(Loc.GetString("coffee-maker-message-no-basket"), ent.Owner, user);
+            _popup.PopupEntity(Loc.GetString("coffee-maker-message-no-basket"), user, user);
             return;
         }
 
         if (!_container.TryGetContainer(ent.Owner, "Filter", out var filterContainer) || filterContainer.ContainedEntities.Count == 0)
         {
-            _popup.PopupEntity(Loc.GetString("coffee-maker-message-no-filter"), ent.Owner, user);
+            _popup.PopupEntity(Loc.GetString("coffee-maker-message-no-filter"), user, user);
             return;
         }
 
@@ -127,19 +143,22 @@ public sealed class CoffeeMakerSystem : EntitySystem
         var filterEnt = filterContainer.ContainedEntities[0];
         if (MetaData(filterEnt).EntityPrototype?.ID == "TP14CoffeeFilterDirty")
         {
-            _popup.PopupEntity(Loc.GetString("coffee-maker-message-dirty-filter"), ent.Owner, user);
+            _popup.PopupEntity(Loc.GetString("coffee-maker-message-dirty-filter"), user, user);
+            return;
         }
 
         // Then we check if the basket has any grounds in it.
         // If not, we return early.
         var basketEnt = basketContainer.ContainedEntities[0];
-        if (!_solution.TryGetSolution(basketEnt, "food", out var basketSolution, out var basketSolutionComp))
+        if (!_solution.TryGetSolution(basketEnt, "food", out _, out var basketSolutionComp))
         {
-            _popup.PopupEntity(Loc.GetString("coffee-maker-message-no-grounds"), ent.Owner, user);
+            _popup.PopupEntity(Loc.GetString("coffee-maker-message-no-grounds"), user, user);
             return;
         }
 
-        // Now we check the grounds in the basket, and if it's empty, we return early.
+        // Now we check the grounds in the basket.
+        // If grounds are present from the list, we set a var to true.
+        // Otherwise, we return early.
         var hasGrounds = false;
         foreach (var groundId in _coffeeGroundIDs)
         {
@@ -153,40 +172,26 @@ public sealed class CoffeeMakerSystem : EntitySystem
 
         if (!hasGrounds)
         {
-            _popup.PopupEntity(Loc.GetString("coffee-maker-message-no-grounds"), ent.Owner, user);
+            _popup.PopupEntity(Loc.GetString("coffee-maker-message-no-grounds"), user, user);
             return;
         }
 
         // And finally, before finishing up properly, we check if it's powered.
         if (!_power.IsPowered(ent))
         {
-            _popup.PopupEntity(Loc.GetString("coffee-maker-message-unpowered"), ent.Owner, user);
+            _popup.PopupEntity(Loc.GetString("coffee-maker-message-unpowered", ("entity", ent.Owner)), user, user);
             return;
         }
 
         ent.Comp.IsEnabled = true;
         ent.Comp.StartTime = _timing.CurTime;
-        _popup.PopupEntity(Loc.GetString("coffee-maker-message-enabled"), ent.Owner, user);
-    }
-
-    /// <summary>
-    ///     Called when the user interacts with the coffee maker with their hands.
-    /// </summary>
-    /// <param name="ent">CoffeeMaker entity</param>
-    /// <param name="args">InteractHand arguments</param>
-    private void OnInteractHands(Entity<SharedCoffeeMakerComponent> ent, ref InteractHandEvent args)
-    {
-        if (args.Handled)
-            return;
-
-        // This was originally for ejecting items, but turns out we don't need this.
-        // This just tells you when it's brewing now, lol.
-        if (!ent.Comp.IsEnabled)
-            return;
-
-        _popup.PopupEntity(Loc.GetString("coffee-maker-message-brewing"), ent.Owner, args.User);
-        args.Handled = true;
-        return;
+        _popup.PopupEntity(Loc.GetString("coffee-maker-message-enabled", ("entity", ent.Owner)), ent.Owner, user);
+        _popup.PopupEntity(Loc.GetString("coffee-maker-message-enabled-other",
+                ("user", user),
+                ("entity", ent.Owner)),
+            ent.Owner,
+            Filter.PvsExcept(user),
+            true);
     }
 
     /// <summary>
@@ -295,10 +300,11 @@ public sealed class CoffeeMakerSystem : EntitySystem
                     comp.CurrentHeat = 0f;
                 }
 
-                // Finally, we reset the maker and display a popup message.
+                // Finally, we reset the maker, play a sound, and display a popup message.
                 comp.IsEnabled = false;
                 comp.CurrentHeat = 0f;
-                _popup.PopupEntity(Loc.GetString("coffee-maker-message-complete"), uid);
+                _audio.PlayPvs(comp.FinishSound, uid, AudioParams.Default.WithVolume(-3));
+                _popup.PopupEntity(Loc.GetString("coffee-maker-message-complete"), uid, PopupType.Medium);
             }
         }
     }

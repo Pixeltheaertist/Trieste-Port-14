@@ -1,0 +1,17 @@
+- type: loadout
+  id: TP14LoadoutInfiniteCoffeeFilterBar
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorBar
+  storage:
+    back:
+    - TP14CoffeeFilterInfinite
+
+- type: loadout
+  id: TP14LoadoutInfiniteCoffeeFilterHoP
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: TP14LoadoutEffectSeniorHoP
+  storage:
+    back:
+    - TP14CoffeeFilterInfinite

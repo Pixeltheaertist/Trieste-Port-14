@@ -51,7 +51,7 @@ public sealed class DeepFryerSystem : EntitySystem
     private readonly Dictionary<EntityUid, EntityUid?> _fryerSounds = new();
 
     /// <summary>
-    ///     Prevents memory leaks.
+    ///     Called when the entity shuts down and prevents memory leaks.
     /// </summary>
     /// <param name="ent"></param>
     /// <param name="args"></param>

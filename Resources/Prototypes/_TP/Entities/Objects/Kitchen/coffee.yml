@@ -9,9 +9,9 @@
   - type: CoffeeFilter
   - type: Item
     size: Small
-  - type: Sprite # TODO - add custom sprite
-    sprite: Objects/Consumable/Drinks/water_cup.rsi
-    state: icon
+  - type: Sprite
+    sprite: _TP/Objects/Tools/kitchen.rsi
+    state: filter
   - type: Tag
     tags:
     - TP14CoffeeFilter
@@ -22,21 +22,25 @@
   suffix: Trieste
   name: dirty coffee filter
   description: Smells of old, burnt coffee.
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Tools/kitchen.rsi
+    state: filter-dirty
 
 - type: entity
   id: TP14CoffeeFilterInfinite
   parent: BaseItem
   suffix: Trieste, Play-Time Award
   name: forever-use coffee filter
-  description: A filter for a boiler. This one seems spotless!
+  description: A filter for a boiler. This one seems spotless, despite its age! A token for the heartiest of coffee lovers.
   components:
   - type: CoffeeFilter
     infiniteUses: true
   - type: Item
     size: Small
-  - type: Sprite # TODO - add custom sprite
-    sprite: Objects/Consumable/Drinks/water_cup.rsi
-    state: icon
+  - type: Sprite
+    sprite: _TP/Objects/Tools/kitchen.rsi
+    state: filter-forever
 
 # Coffee
 - type: entity
