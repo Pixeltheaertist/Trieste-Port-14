@@ -33,7 +33,7 @@
 - type: humanoidBaseSprite
   id: MobJellidEyes
   baseSprite:
-    sprite: Mobs/Customization/eyes.rsi
+    sprite: _TP/Mobs/Customization/eyes.rsi
     state: jellid
 
 - type: markingPoints

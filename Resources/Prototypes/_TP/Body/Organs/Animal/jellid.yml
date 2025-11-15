@@ -1,12 +1,15 @@
+
 - type: entity
   id: TP14JellidCore
   parent: [BaseItem, OrganHumanBrain]
+  suffix: Trieste, Organ
   name: Jellid core
   description: "The source of incredible, unending electricity, It looks like it might sting a little if you pick it up."
   components:
   - type: Sprite
     sprite: _TP/Mobs/Species/Jellids/organs.rsi
     state: brain-jellid
+    color: "#303030" #Once the Slime organ PR comes out, make sure these also inherit colors from the entities using them
   - type: Stomach
   - type: Metabolizer
     maxReagents: 6
@@ -36,11 +39,19 @@
   - type: Item
     size: Small
     heldPrefix: brain
+    inhandVisuals:
+      left:
+      - state: brain-inhand-left
+        color: "#303030"
+      right:
+      - state: brain-inhand-right
+        color: "#303030"
 
-
+#Used for both Jellids and Fish
 - type: entity
   id: TP14OrganWaterLungs
   parent: BaseHumanOrgan
+  suffix: Trieste, Organ
   name: gills
   description: "Filters air out of water to breathe."
   components:
@@ -48,7 +59,9 @@
     sprite: _TP/Mobs/Species/Jellids/organs.rsi
     layers:
     - state: lung-l-jellid
+      color: "#4fb5d1" #Once the Slime organ PR comes out, make sure these also inherit colors from the entities using them
     - state: lung-r-jellid
+      color: "#4fb5d1"
   - type: Lung
     alert: Lysis
   - type: Metabolizer
@@ -73,8 +86,10 @@
     inhandVisuals:
       left:
       - state: lungs-inhand-left
+        color: "#4fb5d1"
       right:
       - state: lungs-inhand-right
+        color: "#4fb5d1"
     heldPrefix: Lungs
 
 

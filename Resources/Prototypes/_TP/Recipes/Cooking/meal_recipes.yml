@@ -3,11 +3,11 @@
   name: burrito bowl recipe
   result: TP14FoodBurritoBowl
   time: 30
-  reagents:
-    Water: 10
   solids:
-    FoodDough: 1
-    FoodCabbage: 2
-    FoodCheeseSlice: 2
-    FoodOnionSlice: 2
-    FoodBowlBig: 1
+    FoodRiceBoiled: 1
+    FoodSoybeans: 2
+    FoodCheeseSlice: 1
+    FoodOnionSlice: 1
+    FoodMeatCutlet: 1
+    FoodTomato: 1
+    FoodAmbrosiaVulgaris: 1
