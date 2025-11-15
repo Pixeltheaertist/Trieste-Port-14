@@ -4,10 +4,10 @@ using Content.Server.Chat.Systems;
 using Content.Server.Destructible;
 using Content.Server.NodeContainer.Nodes;
 using Content.Server.Temperature.Components;
-using Content.Shared.Atmos;
 using Content.Shared.Explosion.Components;
 using Content.Shared.NodeContainer;
 using Content.Shared.Temperature.Components;
+using Content.Shared.Examine;
 using Robust.Shared.Audio;
 
 namespace Content.Server._TP.Temperature.Systems;
@@ -34,8 +34,37 @@ public sealed class StormArraySystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<Components.StormArrayComponent, AtmosDeviceUpdateEvent>(OnAtmosUpdate);
+        SubscribeLocalEvent<Components.StormArrayComponent, ExaminedEvent>(OnExamine);
 
         _nodeContainerQuery = GetEntityQuery<NodeContainerComponent>();
+    }
+
+    private void OnExamine(Entity<Components.StormArrayComponent> ent, ref ExaminedEvent args)
+    {
+        if (!TryComp<TemperatureComponent>(ent, out var temp))
+            return;
+
+        var comp = ent.Comp;
+
+        // Show the internal temperature in both Kelvin and Celsius
+        var tempC = temp.CurrentTemperature - 273.15f;
+        args.PushMarkup(Loc.GetString("storm-array-examine-temperature",
+            ("tempK", temp.CurrentTemperature.ToString("F1")),
+            ("tempC", tempC.ToString("F1"))));
+
+        // Show a status message if available
+        if (!string.IsNullOrEmpty(comp.StatusMessage))
+        {
+            args.PushMarkup(Loc.GetString("storm-array-examine-status",
+                ("status", comp.StatusMessage)));
+        }
+
+        // Display the cooling stats
+        if (comp.LastCoolingRate > 0)
+        {
+            args.PushMarkup(Loc.GetString("storm-array-examine-cooling",
+                ("rate", (comp.LastCoolingRate / 1000).ToString("F1"))));
+        }
     }
 
     private void OnAtmosUpdate(Entity<Components.StormArrayComponent> ent, ref AtmosDeviceUpdateEvent args)
@@ -64,15 +93,15 @@ public sealed class StormArraySystem : EntitySystem
         if (tempComp.CurrentTemperature >= 100)
         {
             Announcement(Loc.GetString("storm-array-alert-1"),
-                tempComp.CurrentTemperature >= 125,
+                tempComp.CurrentTemperature >= 150,
                 ref arrayComp.FirstAnnouncement);
 
             Announcement(Loc.GetString("storm-array-alert-2"),
-                tempComp.CurrentTemperature >= 250,
+                tempComp.CurrentTemperature >= 300,
                 ref arrayComp.SecondAnnouncement);
 
             Announcement(Loc.GetString("storm-array-alert-3"),
-                tempComp.CurrentTemperature >= 475,
+                tempComp.CurrentTemperature >= 450,
                 ref arrayComp.ThirdAnnouncement);
 
             // This part handles the explosion at 500 degrees.
@@ -120,46 +149,57 @@ public sealed class StormArraySystem : EntitySystem
         var inlet = (PipeNode)inletNode;
         var outlet = (PipeNode)outletNode;
 
-        // Calculate gas transfer based on pressure difference, then
-        // calculate heat difference from the Array and coolant.
-        // We return if there's no coolant or no heat capacity.
-        var (coolantGas, pressureDelta) = GetCoolantTransfer(inlet.Air, outlet.Air);
+        // SIMPLIFIED FLOW SYSTEM: Just transfer a fixed percentage of inlet gas per second
+        // This acts like a built-in pump - no pressure differential needed!
+        var transferRate = 0.5f; // Transfer 50% of inlet gas per second
+        var transferMoles = inlet.Air.TotalMoles * transferRate * args.dt;
 
-        if (coolantGas.TotalMoles <= 0)
+        // Check if we have any gas to work with
+        if (inlet.Air.TotalMoles <= 0 || transferMoles <= 0)
+        {
+            comp.LastCoolingRate = 0;
+            comp.LastCoolantFlow = 0;
+            comp.StatusMessage = "NO COOLANT: Inlet has no gas";
             return;
+        }
+
+        // Remove gas from inlet
+        var coolantGas = inlet.Air.Remove(transferMoles);
 
         var coolantHeatCapacity = _atmosphere.GetHeatCapacity(coolantGas, true);
 
         if (coolantHeatCapacity <= 0)
         {
+            comp.StatusMessage = "COOLANT ERROR: Zero heat capacity";
             _atmosphere.Merge(outlet.Air, coolantGas);
             return;
         }
 
-        // Calculate maximum heat that can be transferred
-        // Limited by either the temperature difference or the entity's cooling rate
+        // Calculate temperature difference
         var tempDifference = temp.CurrentTemperature - coolantGas.Temperature;
 
         if (tempDifference <= 0)
         {
+            comp.StatusMessage =
+                $"COOLANT WARMER: Coolant ({coolantGas.Temperature:F1}K) is warmer than array ({temp.CurrentTemperature:F1}K)";
             _atmosphere.Merge(outlet.Air, coolantGas);
             return;
         }
 
+        // Use a proper heat capacity instead of HeatDamageThreshold
+        // This represents the thermal mass of the Storm Array structure
+        const float entityHeatCapacity = 50000f; // ~100kg of steel equivalent (Math by AI)
+
         // Maximum heat transfer based on coolant capacity
         var maxHeatFromTempDiff = tempDifference * coolantHeatCapacity;
 
-        // Maximum heat transfer based on cooling rate (joules per second)
-        var maxHeatFromRate = comp.MaxCoolingRate * args.dt;
-
-        // Take the minimum of the two limits
-        var heatTransferred = MathF.Min(maxHeatFromTempDiff, maxHeatFromRate);
+        // Heat transfer is limited only by the coolant's capacity
+        var heatTransferred = maxHeatFromTempDiff;
 
         // Apply the efficiency factor
         heatTransferred *= comp.CoolingEfficiency;
 
         // Cool the entity
-        var entityHeatCapacity = temp.HeatDamageThreshold;
         var entityTempChange = heatTransferred / entityHeatCapacity;
         temp.CurrentTemperature -= entityTempChange;
 
@@ -169,34 +209,10 @@ public sealed class StormArraySystem : EntitySystem
 
         // Store stats for monitoring/visuals
         comp.LastCoolingRate = heatTransferred / args.dt;
-        comp.LastCoolantFlow = coolantGas.TotalMoles;
-        comp.LastPressureDelta = pressureDelta;
+        comp.LastCoolantFlow = transferMoles;
+        comp.StatusMessage = $"COOLING: {comp.LastCoolingRate / 1000:F1} kW | Flow: {comp.LastCoolantFlow:F2} mol/s";
 
         // Merge heated coolant back into the outlet
         _atmosphere.Merge(outlet.Air, coolantGas);
-    }
-
-    private static (GasMixture gas, float pressureDelta) GetCoolantTransfer(GasMixture airInlet, GasMixture airOutlet)
-    {
-        var mole1 = airInlet.TotalMoles;
-        var mole2 = airOutlet.TotalMoles;
-        var pr1 = airInlet.Pressure;
-        var pr2 = airOutlet.Pressure;
-        var vol1 = airInlet.Volume;
-        var vol2 = airOutlet.Volume;
-        var temp1 = airInlet.Temperature;
-        var temp2 = airOutlet.Temperature;
-
-        var presDiff = pr1 - pr2;
-
-        var deNom = temp1 * vol2 + temp2 * vol1;
-
-        // Only transfer if there's a positive pressure difference
-        if (!(presDiff > 0) || !(pr1 > 0) || !(deNom > 0))
-            return (new GasMixture(), presDiff);
-
-        var transferMoles = mole1 - (mole1 + mole2) * temp2 * vol1 / deNom;
-        return (airInlet.Remove(transferMoles), presDiff);
-
     }
 }
