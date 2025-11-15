@@ -1,5 +1,5 @@
 - type: cargoProduct
-  id: TP14CoffeeSupplyCrate
+  id: TP14CargoCoffeeSupplyCrate
   icon:
     sprite: Objects/Consumable/Drinks/pitcher.rsi
     state: icon

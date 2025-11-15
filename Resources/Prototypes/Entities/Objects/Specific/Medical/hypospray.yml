@@ -352,47 +352,47 @@
         - ReagentId: HyperPlatelet
           Quantity: 5
 
-- type: entity
-  name: puncturase auto-injector
-  parent: ChemicalMedipen
-  id: PunctAutoInjector
-  description: A rapid dose of hyper-platelets and tranexamic acid, intended for combat applications.
-  components:
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: base-needle-inhand-left
-      - state: base-colorA-inhand-left
-        color: "#c7be5d"
-      - state: base-colorB-inhand-left
-      right:
-      - state: base-needle-inhand-right
-      - state: base-colorA-inhand-right
-        color: "#c7be5d"
-      - state: base-colorB-inhand-right
-  - type: Sprite
-    sprite: Objects/Specific/Medical/medipen.rsi
-    layers:
-    - state: punctpen
-      map: ["enum.SolutionContainerLayers.Fill"]
-  - type: SolutionContainerVisuals
-    maxFillLevels: 1
-    changeColor: false
-    emptySpriteName: punctpen_empty
-  - type: Hypospray
-    solutionName: pen
-    transferAmount: 15
-    onlyAffectsMobs: false
-    injectOnly: true
-  - type: SolutionContainerManager
-    solutions:
-      pen:
-        maxVol: 15
-        reagents:
-        - ReagentId: HyperPlatelet
-          Quantity: 10
-        - ReagentId: TranexamicAcid
-          Quantity: 5
+#- type: entity
+#  name: puncturase auto-injector
+#  parent: ChemicalMedipen
+#  id: PunctAutoInjector
+#  description: A rapid dose of hyper-platelets and tranexamic acid, intended for combat applications.
+#  components:
+#  - type: Item
+#    inhandVisuals:
+#      left:
+#      - state: base-needle-inhand-left
+#      - state: base-colorA-inhand-left
+#        color: "#c7be5d"
+#      - state: base-colorB-inhand-left
+#      right:
+#      - state: base-needle-inhand-right
+#      - state: base-colorA-inhand-right
+#        color: "#c7be5d"
+#      - state: base-colorB-inhand-right
+#  - type: Sprite
+#    sprite: Objects/Specific/Medical/medipen.rsi
+#    layers:
+#    - state: punctpen
+#      map: ["enum.SolutionContainerLayers.Fill"]
+#  - type: SolutionContainerVisuals
+#    maxFillLevels: 1
+#    changeColor: false
+#    emptySpriteName: punctpen_empty
+#  - type: Hypospray
+#    solutionName: pen
+#    transferAmount: 15
+#    onlyAffectsMobs: false
+#    injectOnly: true
+#  - type: SolutionContainerManager
+#    solutions:
+#      pen:
+#        maxVol: 15
+#        reagents:
+#        - ReagentId: HyperPlatelet
+#          Quantity: 10
+#        - ReagentId: TranexamicAcid
+#          Quantity: 5
 
 - type: entity
   name: lexodine auto-injector

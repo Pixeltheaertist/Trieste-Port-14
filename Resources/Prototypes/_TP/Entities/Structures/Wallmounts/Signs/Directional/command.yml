@@ -10,7 +10,7 @@
     layers:
     - state: overlay
     - state: background
-      color: "#93E9BE" # Seafoam green
+      color: "#6AB094" # Seafoam green
     - state: text_bridge
   - type: AtmosPipeLayers
     alternativePrototypes:
@@ -47,7 +47,7 @@
     layers:
     - state: overlay
     - state: background
-      color: "#93E9BE" # Seafoam green
+      color: "#6AB094" # Seafoam green
     - state: text_hop
   - type: AtmosPipeLayers
     alternativePrototypes:

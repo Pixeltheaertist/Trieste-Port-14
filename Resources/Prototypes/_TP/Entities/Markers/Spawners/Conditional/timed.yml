@@ -7,7 +7,7 @@
   - type: Sprite
     layers:
     - state: blue
-    - sprite: Mobs/Animals/fish.rsi
+    - sprite: _TP/Mobs/Animals/fish.rsi
       state: icon-0
     - state: timed
   - type: Timer

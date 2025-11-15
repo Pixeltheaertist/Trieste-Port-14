@@ -5,9 +5,9 @@
   name: diving bell sign
   description: The core of Trieste, try not to drown.
   components:
-    - type: Sprite
-      sprite: _TP/Structures/Wallmounts/Signs.rsi
-      state: DivingBell
+  - type: Sprite
+    sprite: _TP/Structures/Wallmounts/Signs/misc.rsi
+    state: DivingBell
 
 - type: entity
   parent: BaseSign
@@ -16,6 +16,107 @@
   name: jellid area sign
   description: A sign indicating that the area ahead is intended for Jellid crew members and does not have an oxygen atmosphere.
   components:
-    - type: Sprite
-      sprite: _TP/Structures/Wallmounts/Signs.rsi
-      state: Jellid
+  - type: Sprite
+    sprite: _TP/Structures/Wallmounts/Signs/misc.rsi
+    state: Jellid
+
+# Cargo
+- type: entity
+  parent: BaseSign
+  id: TPSignExped
+  suffix: Trieste, Wall-Sign, Expeditionary
+  name: expeditionary sign
+  description: A sign indicating where the expeditionary crew work.
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Wallmounts/Signs/exped.rsi
+    state: exped
+
+# Medical
+- type: entity
+  parent: BaseSign
+  id: TP14BaseSignMed
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Wallmounts/Signs/medical.rsi
+
+- type: entity
+  parent: TP14BaseSignMed
+  id: TP14SignMedChem
+  suffix: Trieste, Wall-Sign, Medical
+  name: chemistry lab sign
+  description: A sign indicating the chemistry lab.
+  components:
+  - type: Sprite
+    state: chem
+
+- type: entity
+  parent: TP14BaseSignMed
+  id: TP14SignMedCloning
+  suffix: Trieste, Wall-Sign, Medical
+  name: cloning lab sign
+  description: A sign indicating the cloning lab.
+  components:
+  - type: Sprite
+    state: cloning
+
+- type: entity
+  parent: TP14BaseSignMed
+  id: TP14SignMedExam
+  suffix: Trieste, Wall-Sign, Medical
+  name: examination room sign
+  description: A sign indicating the exam room.
+  components:
+  - type: Sprite
+    state: exam
+
+- type: entity
+  parent: TP14BaseSignMed
+  id: TP14SignMedBay
+  suffix: Trieste, Wall-Sign, Medical
+  name: medical bay sign
+  description: A sign indicating the medical bay.
+  components:
+  - type: Sprite
+    state: medbay
+
+- type: entity
+  parent: TP14BaseSignMed
+  id: TP14SignMedMorgue
+  suffix: Trieste, Wall-Sign, Medical
+  name: morgue sign
+  description: A sign indicating the morgue.
+  components:
+  - type: Sprite
+    state: morgue
+
+- type: entity
+  parent: TP14BaseSignMed
+  id: TP14SignMedPsychology
+  suffix: Trieste, Wall-Sign, Medical
+  name: psychology sign
+  description: A sign indicating the psychologist's office.
+  components:
+  - type: Sprite
+    state: psychology
+
+- type: entity
+  parent: TP14BaseSignMed
+  id: TP14SignMedSurgery
+  suffix: Trieste, Wall-Sign, Medical
+  name: surgery sign
+  description: A sign indicating a surgery room.
+  components:
+  - type: Sprite
+    state: surgery
+
+- type: entity
+  parent: TP14BaseSignMed
+  id: TP14SignMedVirology
+  suffix: Trieste, Wall-Sign, Medical
+  name: virology lab sign
+  description: A sign indicating the virology lab.
+  components:
+  - type: Sprite
+    state: virology

@@ -17,8 +17,8 @@
     - TP14CoffeeFilter
 
 - type: entity
-  id: TP14CoffeeFilterDirty
   parent: TP14CoffeeFilter
+  id: TP14CoffeeFilterDirty
   suffix: Trieste
   name: dirty coffee filter
   description: Smells of old, burnt coffee.

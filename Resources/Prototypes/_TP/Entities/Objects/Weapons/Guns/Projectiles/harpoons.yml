@@ -6,7 +6,7 @@
   - type: Item
     size: Normal
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/harpoons.rsi
+    sprite: _TP/Objects/Weapons/Guns/Projectiles/harpoons.rsi
   - type: Fixtures
     fixtures:
       fix1:
@@ -62,10 +62,13 @@
 - type: entity
   parent: TP14BaseHarpoon
   id: TP14Harpoon
-  suffix: Trieste
+  suffix: Trieste, Weapon, Projectile, Melee
   name: harpoon
   description: Pointy end into target!
   components:
+  - type: Construction
+    graph: TP14ConstructionGraphHarpoon
+    node: harpoon
   - type: Sprite
     layers:
     - state: tail
@@ -91,12 +94,15 @@
 - type: entity
   parent: TP14BaseHarpoon
   id: TP14HarpoonBomb
-  suffix: Trieste, Explosive
+  suffix: Trieste, Weapon, Explosive, Projectile, Melee
   name: explosive harpoon
   description: This'll really blow their minds...
   components:
+  - type: Construction
+    graph: TP14ConstructionGraphHarpoon
+    node: bombHarpoon
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/explosive_harpoons.rsi
+    sprite: _TP/Objects/Weapons/Guns/Projectiles/explosive_harpoons.rsi
     state: explosive
   - type: CartridgeAmmo
     proto: HarpoonBombBullet
@@ -107,10 +113,13 @@
 - type: entity
   parent: TP14BaseHarpoon
   id: TP14PiezoHarpoon
-  suffix: Trieste
+  suffix: Trieste, Weapon, Projectile, Melee
   name: static harpoon
   description: A harpoon with a piezo crystal fastened to the front. Shocking!
   components:
+  - type: Construction
+    graph: TP14ConstructionGraphHarpoon
+    node: piezoHarpoon
   - type: Sprite
     layers:
     - state: tail

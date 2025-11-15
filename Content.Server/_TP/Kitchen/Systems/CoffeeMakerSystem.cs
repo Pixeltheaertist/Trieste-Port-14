@@ -279,20 +279,6 @@ public sealed class CoffeeMakerSystem : EntitySystem
                     }
                 }
 
-                // Filter handling
-                // If the filter is normal, we dirty it. Otherwise, we continue.
-                if (TryComp<CoffeeFilterComponent>(filterEnt, out var filterComp))
-                {
-                    if (!filterComp.InfiniteUses)
-                    {
-                        _container.Remove(filterEnt, filterContainer);
-                        QueueDel(filterEnt);
-
-                        var dirtyEnt = Spawn("TP14CoffeeFilterDirty", Transform(uid).Coordinates);
-                        _container.Insert(dirtyEnt, filterContainer);
-                    }
-                }
-
                 // Power-outage handling - We just turn it off and set the heat to 0.
                 if (!_power.IsPowered(uid))
                 {
@@ -305,6 +291,20 @@ public sealed class CoffeeMakerSystem : EntitySystem
                 comp.CurrentHeat = 0f;
                 _audio.PlayPvs(comp.FinishSound, uid, AudioParams.Default.WithVolume(-3));
                 _popup.PopupEntity(Loc.GetString("coffee-maker-message-complete"), uid, PopupType.Medium);
+
+                // Filter handling
+                // I lied, FINALLY if the filter is normal, we dirty it. Otherwise, we continue.
+                if (TryComp<CoffeeFilterComponent>(filterEnt, out var filterComp))
+                {
+                    if (!filterComp.InfiniteUses)
+                    {
+                        _container.Remove(filterEnt, filterContainer);
+                        QueueDel(filterEnt);
+
+                        var dirtyEnt = Spawn("TP14CoffeeFilterDirty", Transform(uid).Coordinates);
+                        _container.Insert(dirtyEnt, filterContainer);
+                    }
+                }
             }
         }
     }

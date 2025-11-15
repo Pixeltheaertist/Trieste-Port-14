@@ -72,7 +72,7 @@
   - type: Body
     prototype: SeaCreature # Gives em a stomach and gills for breathing water. They die without it.
   - type: Sprite
-    sprite: Mobs/Animals/fish.rsi
+    sprite: _TP/Mobs/Animals/fish.rsi
     drawdepth: Mobs
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
@@ -150,7 +150,7 @@
   components:
   - type: Sprite
     drawdepth: SmallMobs
-    sprite: Mobs/Animals/fish.rsi
+    sprite: _TP/Mobs/Animals/fish.rsi
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: fish-1
@@ -170,7 +170,7 @@
   components:
   - type: Sprite
     drawdepth: SmallMobs
-    sprite: Mobs/Animals/fish.rsi
+    sprite: _TP/Mobs/Animals/fish.rsi
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: fish-2
@@ -353,6 +353,138 @@
         - MobLayer
   - type: MovementSpeedModifier
     baseWalkSpeed : 0
+
+- type: entity
+  parent: [ SimpleSpaceMobBase, MobMothroach ]
+  id: TP14MobSeaBunny
+  suffix: Trieste, Sea
+  name: sea bunny
+  description: An adorable bunny-like creature that lives in the sea.
+  components:
+  - type: Body
+    prototype: SeaCreature
+  - type: Sprite
+    sprite: _TP/Mobs/Animals/sea-bunny.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+      state: sea-rabbit-moving
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: sea-rabbit-moving
+    noMovementLayers:
+      movement:
+        state: sea-rabbit-idle
+  - type: Clothing
+    quickEquip: false
+    sprite: _TP/Mobs/Animals/sea-bunny.rsi
+    equippedPrefix: 0
+    slots:
+    - HEAD
+  - type: Appearance
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: sea-rabbit-idle
+      Critical:
+        Base: sea-rabbit-dead
+      Dead:
+        Base: sea-rabbit-dead
+  - type: Inventory
+    speciesId: hamster
+    templateId: hamster
+    displacements:
+      head:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/sea-bunny-displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/sea-bunny-displacement.rsi
+            state: mask
+      suitstorage:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/sea-bunny-displacement.rsi
+            state: suitstorage
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/sea-bunny-displacement.rsi
+            state: eyes
+      neck:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/sea-bunny-displacement.rsi
+            state: neck
+
+- type: entity
+  parent: [ SimpleSpaceMobBase, MobMothroach ]
+  id: TP14MobLeafSheep
+  suffix: Trieste, Sea
+  name: leaf sheep
+  description: Similar to sea bunnies, but have beautiful leaf-like growths on their backs.
+  components:
+  - type: Body
+    prototype: SeaCreature
+  - type: Sprite
+    sprite: _TP/Mobs/Animals/LeafSheep/normal.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+      state: leaf-sheep-moving
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: leaf-sheep-moving
+    noMovementLayers:
+      movement:
+        state: leaf-sheep-idle
+  - type: Clothing
+    quickEquip: false
+    sprite: _TP/Mobs/Animals/LeafSHeep/normal.rsi
+    equippedPrefix: 0
+    slots:
+    - HEAD
+  - type: Appearance
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: leaf-sheep-idle
+      Critical:
+        Base: leaf-sheep-dead
+      Dead:
+        Base: leaf-sheep-dead
+  - type: Inventory
+    speciesId: hamster
+    templateId: hamster
+    displacements:
+      head:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/LeafSheep/displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/LeafSheep/displacement.rsi
+            state: mask
+      suitstorage:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/LeafSheep/displacement.rsi
+            state: suitstorage
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/LeafSheep/displacement.rsi
+            state: eyes
+      neck:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/LeafSheep/displacement.rsi
+            state: neck
 
 - type: entity
   parent: MobCrab

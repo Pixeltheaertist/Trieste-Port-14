@@ -433,6 +433,17 @@ public sealed class DeepFryerSystem : EntitySystem
         // This defaults as "None", so "Lightly-Fried" is the first one.
         EnsureComp<SharedDeepFriedComponent>(friedEntUid, out var deepFriedComp);
 
+        //  Now we check for a damageable component. If it has one, we apply 1.5 heat damage.
+        //  This is just so living/hurtable entities can't survive the deep fryer.
+        if (TryComp<DamageableComponent>(friedEntUid, out _))
+        {
+            var damage = new DamageSpecifier
+            {
+                DamageDict = { ["Heat"] = 100f },
+            };
+            _damageable.TryChangeDamage(friedEntUid, damage, origin: fryerEntUid);
+        }
+
         _cookingStartTimes.Remove(friedEntUid);
 
         if (itemMeta.EntityName.StartsWith("lightly-fried"))
@@ -448,6 +459,7 @@ public sealed class DeepFryerSystem : EntitySystem
             // "Burnt" gets a special function, in that it drops out and can't be re-inserted.
             _container.InsertOrDrop(friedEntUid, container);
             _cookingStartTimes.Remove(friedEntUid);
+
             QueueDel(friedEntUid);
             Spawn("FoodBadRecipe", Transform(fryerEntUid).Coordinates);
         }

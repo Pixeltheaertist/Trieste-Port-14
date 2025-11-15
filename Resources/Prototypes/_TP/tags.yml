@@ -9,6 +9,12 @@
   id: TP14CoffeeFilter
 
 - type: Tag
+  id: TP14TagCoffeeMakerBoard
+
+- type: Tag
+  id: TP14TagDeepFryerBoard
+
+- type: Tag
   id: DockBell
 
 - type: Tag
@@ -40,6 +46,9 @@
 
 - type: Tag
   id: PearlReader
+
+- type: Tag
+  id: TP14TagPiezoShard
 
 - type: Tag
   id: PreventsFire

@@ -52,7 +52,7 @@
     color: "#4080FF"
   - type: SingularityDistortion
     falloffPower: 2
-    intensity: -1000
+    intensity: -250
   - type: ItemSlots
   - type: ContainerContainer
     containers:

@@ -18,6 +18,8 @@
     slots:
       fryer_slots:
         ejectOnInteract: true
+  - type: Machine
+    board: TP14DeepFryerCircuitboard
   - type: RefillableSolution
     solution: fryer
   - type: SolutionContainerManager

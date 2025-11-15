@@ -5,7 +5,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    color: "#fffd"
+    color: "#fffe"
+    shader: unshaded
     layers:
       - sprite: Mobs/Ghosts/ghost_human.rsi
         state: animated

@@ -32,7 +32,7 @@
   id: TP14ClosetWallEmergencyH2O
   suffix: Trieste, Survival, Jellid
   name: emergency water wall closet
-  description: It's full of life-saving equipment. Assuming, that is, that you breathe sea water.
+  description: It's full of life-saving equipment. Assuming, that is, you breathe sea water.
   components:
   - type: Appearance
   - type: Sprite

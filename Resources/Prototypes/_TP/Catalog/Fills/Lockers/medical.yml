@@ -1,0 +1,30 @@
+- type: entity
+  parent: LockerMedicineFilled
+  id: TP14LockerMedicineFilled
+  suffix: Trieste, Medical, Filled
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Storage/closet.rsi
+
+- type: entity
+  parent: LockerMedicalFilled
+  id: TP14LockerMedicalFilled
+  suffix: Trieste, Medical, Filled
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Storage/closet.rsi
+
+- type: entity
+  parent: TP14LockerMedicalUnlocked
+  id: TP14LockerMedicineUnlockedFilled
+  suffix: Trieste, Medical, Unlocked, Filled
+  name: medicine locker
+  description: Filled to the brim with medical junk. This one's been broken, and is permanently locked open.
+  components:
+  - type: Appearance
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillMedicine
+  - type: Sprite
+    sprite: _TP/Structures/Storage/closet.rsi

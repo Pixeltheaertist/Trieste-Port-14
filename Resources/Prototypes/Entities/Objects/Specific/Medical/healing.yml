@@ -631,7 +631,7 @@
   name: pill canister
   parent: PillCanister
   id: PillCanisterDermaline
-  suffix: Hyper-Marrow 10u, 5
+  suffix: Hyper-Marrow 10u, 5 # TP14, was Dermaline
   components:
   - type: Label
     currentLabel: hyper-marrow 10u

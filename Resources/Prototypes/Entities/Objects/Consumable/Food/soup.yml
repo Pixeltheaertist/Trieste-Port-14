@@ -144,10 +144,11 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 20
-        - ReagentId: Kelotane
-          Quantity: 12
-        - ReagentId: Bicaridine
-          Quantity: 12
+          # TP14 - Removed chems
+#        - ReagentId: Kelotane
+#          Quantity: 12
+#        - ReagentId: Bicaridine
+#          Quantity: 12
         - ReagentId: Vitamin
           Quantity: 20
   - type: Tag
@@ -446,7 +447,7 @@
           Quantity: 18
         - ReagentId: Vitamin
           Quantity: 7
-        - ReagentId: OxygenatedSaline 
+        - ReagentId: OxygenatedSaline
           Quantity: 6.5
         - ReagentId: Epinephrine
           Quantity: 2

@@ -67,19 +67,28 @@ public abstract class SharedWeatherSystem : EntitySystem
 
     public float GetPercent(WeatherData component, EntityUid mapUid)
     {
+        // Safety check for an invalid start time
+        if (component.StartTime == TimeSpan.Zero || component.StartTime == default)
+            return 0f;
+
         var pauseTime = _metadata.GetPauseTime(mapUid);
         var elapsed = Timing.CurTime - (component.StartTime + pauseTime);
+
+        // Additional safety for a negative elapsed time
+        if (elapsed < TimeSpan.Zero)
+            return 0f;
+
         var duration = component.Duration;
         var remaining = duration - elapsed;
         float alpha;
 
         if (remaining < WeatherComponent.ShutdownTime)
         {
-            alpha = (float) (remaining / WeatherComponent.ShutdownTime);
+            alpha = (float)(remaining / WeatherComponent.ShutdownTime);
         }
         else if (elapsed < WeatherComponent.StartupTime)
         {
-            alpha = (float) (elapsed / WeatherComponent.StartupTime);
+            alpha = (float)(elapsed / WeatherComponent.StartupTime);
         }
         else
         {
