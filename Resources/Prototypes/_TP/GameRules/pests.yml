@@ -41,7 +41,8 @@
     earliestStart: 20
     minimumPlayers: 0
     weight: 6
-    duration: 300
+    duration: 20
+  - type: WhaleMigrationRule
   - type: MassHallucinationsRule
     minTimeBetweenIncidents: 10
     maxTimeBetweenIncidents: 40
