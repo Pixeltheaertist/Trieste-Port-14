@@ -507,6 +507,20 @@
     coolingCoefficient: 0.1
 
 - type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatHermit
+  name: hermit's garb
+  description: a ratty jacket, but it'll protect you from the cold.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/space_asshole.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/space_asshole.rsi
+  - type: TemperatureProtection # TP
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
+
+- type: entity
   parent: ClothingOuterStorageFoldableBase
   id: ClothingOuterCoatExpensive
   name: expensive coat

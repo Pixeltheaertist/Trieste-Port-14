@@ -149,3 +149,15 @@
   - type: Loadout
     prototypes: [ TP14SettlerGear ]
     roleLoadout: [ RoleSurvivalStandard ]
+
+- type: randomHumanoidSettings
+  id: StrandedHermit
+  parent: EventHumanoid
+  components:
+  - type: GhostRole
+    name: ghost-role-information-hermit-name
+    description: ghost-role-information-hermit-description
+    rules: ghost-role-information-freeagent-rules
+  - type: Loadout
+    prototypes: [ TP14HermitGear ]
+    roleLoadout: [ RoleSurvivalStandard ]
