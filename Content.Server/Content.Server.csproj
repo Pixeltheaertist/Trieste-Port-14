@@ -28,7 +28,10 @@
     <PackageReference Include="Microsoft.Orleans.Client" />
     <PackageReference Include="Microsoft.Orleans.Clustering.Redis" />
     <PackageReference Include="Microsoft.Orleans.Sdk" OutputItemType="Analyzer" PrivateAssets="all" />
+    <PackageReference Include="Serilog.Sinks.Loki" />
     <PackageReference Include="SS14.Starlight.NullLink" />
+    <PackageReference Include="System.Runtime.Handles" />
+    <PackageReference Include="System.Text.Encoding.Extensions" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Content.Packaging\Content.Packaging.csproj" />
