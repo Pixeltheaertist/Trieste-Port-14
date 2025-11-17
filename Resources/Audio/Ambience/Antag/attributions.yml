@@ -25,6 +25,7 @@
 - files: ["NT_start.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Made by McJack on Discord"
+  source: "https://github.com/Pixeltheaertist/Trieste-Port-14"
 - files: ["silicon_lawboard_antimov.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Made by @ps3moira on Discord for SS14"
