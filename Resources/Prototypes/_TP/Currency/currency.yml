@@ -1,0 +1,5 @@
+- type: stack
+  id: BluespaceCrystal
+  name: stack-bluespace-crystal
+  icon: { sprite: /Textures/Objects/Specific/Nanotrasen/bluespace_crystal.rsi, state: telecrystal }
+  spawn: BluespaceCrystal1
