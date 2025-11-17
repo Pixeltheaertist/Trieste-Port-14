@@ -307,7 +307,7 @@
   name: Spitter
   parent: MobXeno
   id: TP14MobSeaBarnacle
-  Suffix: Trieste, Sea, Barnacle
+  suffix: Trieste, Sea, Barnacle
   description: A heaving mass of coral and flesh, capable of spitting corrosive acid at it's prey.
   components:
   - type: Sprite

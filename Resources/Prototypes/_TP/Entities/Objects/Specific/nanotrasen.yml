@@ -13,7 +13,6 @@
     size: Tiny
   - type: Stack
     count: 20
-    stackType: BluespaceCrystal
   - type: StaticPrice
     price: 0
   - type: StackPrice

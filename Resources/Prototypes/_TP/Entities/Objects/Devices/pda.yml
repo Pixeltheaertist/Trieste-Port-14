@@ -7,7 +7,6 @@
   components:
   - type: Pda
     id: TP14PilotIDCard
-    state: pda-miner
   - type: PdaBorderColor
     borderColor: "#af9366"
     accentVColor: "#8900c9"
@@ -31,7 +30,6 @@
   components:
   - type: Pda
     id: TP14BasinTechIDCard
-    state: pda-miner
   - type: PdaBorderColor
     borderColor: "#af9366"
     accentVColor: "#8900c9"

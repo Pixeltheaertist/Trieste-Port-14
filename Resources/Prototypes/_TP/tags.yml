@@ -57,4 +57,10 @@
   id: SeaWreck
 
 - type: Tag
+  id: SeaWreckFiveByFive
+
+- type: Tag
   id: TP14TagTeaBag
+
+- type: Tag
+  id: Wreck

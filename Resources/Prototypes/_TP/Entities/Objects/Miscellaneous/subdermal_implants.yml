@@ -4,7 +4,6 @@
   id: UplinkImplantNT
   name: NT uplink implant
   description: This implant lets the user access a hidden NT uplink at will.
-  noSpawn: true
   suffix: Trieste, Implant, NanoTraitor
   components:
   - type: SubdermalImplant

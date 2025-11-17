@@ -12,50 +12,50 @@
   - type: Storage
     grid:
     - 0,0,4,1
-  whitelist:
-    tags:
-    - Wrench
-    - Bottle
-    - Spray
-    - Brutepack
-    - Bloodpack
-    - Gauze
-    - Ointment
-    - CigPack
-    - PillCanister
-    - Radio
-    - DiscreteHealthAnalyzer
-    - SurgeryTool
-    - Dropper
-    components:
-    - Hypospray
-    - Injector
-    - Pill
-    - HandLabeler
-    - type: ItemMapper
-      mapLayers:
-        bottle:
-          whitelist:
-            tags:
-            - Bottle
-        hypo:
-          whitelist:
-            components:
-            - Hypospray
-        pill:
-          whitelist:
-            components:
-            - Pill
-            tags:
-            - PillCanister
-        bottle_spray:
-          whitelist:
-            tags:
-            - Spray
-        wrench:
-          whitelist:
-            tags:
-            - Wrench
+    whitelist:
+      tags:
+      - Wrench
+      - Bottle
+      - Spray
+      - Brutepack
+      - Bloodpack
+      - Gauze
+      - Ointment
+      - CigPack
+      - PillCanister
+      - Radio
+      - DiscreteHealthAnalyzer
+      - SurgeryTool
+      - Dropper
+      components:
+      - Hypospray
+      - Injector
+      - Pill
+      - HandLabeler
+      - type: ItemMapper
+        mapLayers:
+          bottle:
+            whitelist:
+              tags:
+              - Bottle
+          hypo:
+            whitelist:
+              components:
+              - Hypospray
+          pill:
+            whitelist:
+              components:
+              - Pill
+              tags:
+              - PillCanister
+          bottle_spray:
+            whitelist:
+              tags:
+              - Spray
+          wrench:
+            whitelist:
+              tags:
+              - Wrench
 
 
 - type: entity

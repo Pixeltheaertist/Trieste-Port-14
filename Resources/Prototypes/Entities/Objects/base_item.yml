@@ -46,7 +46,7 @@
   - type: DamageExaminable
   - type: FallSystem
   - type: InGas
-    gasId: 9 # short-circuits in water
+    gasID: 9 # short-circuits in water
     damagedByGas: false
     crushDepth: 9999 # Extreme crush depth to prevent unintended destruction
     gasThreshold: 9999

@@ -120,7 +120,6 @@
   - type: InstantAction
     useDelay: 60
     itemIconStyle: NoItem
-    priority: -10
     event: !type:CreateItemEvent {}
 
 - type: startingGear

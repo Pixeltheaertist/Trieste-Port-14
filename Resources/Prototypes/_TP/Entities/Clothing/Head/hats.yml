@@ -18,8 +18,8 @@
   - type: Storage
     grid:
     - 0,0,1,1
-    quickEquip: false
-    maxItemSize: small
+    QuickInsert: false
+    maxItemSize: Small
   - type: ContainerContainer
     containers:
       storagebase: !type:Container

@@ -250,7 +250,7 @@
       flatReductions:
         Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
   - type: InGas # TP
-    gasId: 9 # short-circuits in water
+    gasID: 9 # short-circuits in water
     damagedByGas: true
     gasThreshold: 50
     damage:

@@ -49,9 +49,8 @@
     - !type:PulseBehaviour
       id: blinking
       interpolate: Nearest
-      maxDuration: 1.0
-      minValue: 0.1
-      maxValue: 2.0
+      maxDuration: 2.0
+      minDuration: 0.1
       isLooped: true
   - type: PowerCellSlot
     cellSlotId: cell_slot
@@ -86,8 +85,6 @@
   - type: Strippable
   - type: Input
     context: "aghost"
-  - type: InputMover
-    canMove: true
   - type: CombatMode
   - type: Inventory
     templateId: Mech

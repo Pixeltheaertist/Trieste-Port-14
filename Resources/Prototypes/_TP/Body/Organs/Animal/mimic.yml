@@ -2,7 +2,6 @@
   id: OrganTumor # Adding this organ to any creature will cause it to spawn a Mimic upon being gibbed
   parent: OrganAnimalStomach
   suffix: Trieste, Organ
-  noSpawn: true
   name: festering tumor
   description: "what- what is this?"
   components:
@@ -30,7 +29,6 @@
 - type: entity
   id: OrganTumorMimic
   parent: TP14MobMimic # might just be able to switch the prototype to MobMimic and save some clutter, haven't tested it yet.
-  noSpawn: true
   name: mimic
   components:
   - type: IsDeadIC
