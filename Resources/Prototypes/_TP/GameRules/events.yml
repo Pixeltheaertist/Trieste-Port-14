@@ -66,7 +66,7 @@
   - type: StationEvent
     startAnnouncement: station-event-rain-clear-start-announcement
     startAudio:
-      path: /Audio/Effects/alert.ogg
+      path: /Audio/Announcements/attention.ogg
     endAnnouncement: station-event-rain-clear-end-announcement
     weight: 3
     duration: 200
@@ -89,7 +89,7 @@
   - type: StationEvent
     startAnnouncement: station-event-mass-migration-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/Effects/alert.ogg
     endAnnouncement: station-event-mass-migration-end-announcement
     weight: 3
     duration: 100
