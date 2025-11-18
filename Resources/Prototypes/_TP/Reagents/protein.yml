@@ -162,7 +162,6 @@
   color: "#dfe1df"
   recognizable: true
   physicalDesc: reagent-physical-desc-nondescript
-  slippery: false
 
 - type: reagent
   id: DormantProtein
@@ -172,7 +171,6 @@
   flavor: sour
   color: "#dfe1df"
   physicalDesc: reagent-physical-desc-nondescript
-  slippery: false
 
 - type: reagent
   id: DecayedProtein
@@ -182,7 +180,6 @@
   flavor: sour
   color: "#dfe1df"
   physicalDesc: reagent-physical-desc-nondescript
-  slippery: false
 
 - type: reagent
   id: OxygenatedSaline

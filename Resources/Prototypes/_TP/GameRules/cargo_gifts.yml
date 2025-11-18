@@ -11,4 +11,4 @@
     description: cargo-gift-exped-harpoons
     dest: cargo-gift-dest-exped
     gifts:
-      TP14CargoProductHarpoonGuns
+      TP14CargoProductHarpoonGuns: 1

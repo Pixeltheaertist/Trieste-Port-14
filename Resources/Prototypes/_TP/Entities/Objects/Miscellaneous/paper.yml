@@ -14,7 +14,7 @@
   parent: [Paper, BaseNanotrasenContraband]
   id: TP14AllTraitorCodesPaper
   name: nanotrasen codewords registry
-  description: A registry of all active Syndicate codewords.
+  description: A registry of all active Nanotrasen codewords.
   suffix: Trieste, Admeme, NanoTraitor
   components:
   - type: TraitorCodePaper

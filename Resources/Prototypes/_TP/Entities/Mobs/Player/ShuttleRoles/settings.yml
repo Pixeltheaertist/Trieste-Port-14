@@ -31,11 +31,11 @@
     roleLoadout: [ RoleSurvivalEVA ]
   - type: Devourer
     foodPreferenceWhitelist:
-    components:
-    - HumanoidAppearance
+      components:
+      - HumanoidAppearance
     chemical: Ichor
     healRate: 10.0
-    whitelist:
+    stomachStorageWhitelist:
       components:
       - MobState
   - type: ActionGun
@@ -106,11 +106,12 @@
   name: "[color=green]Acid Spit[/color]"
   description: Spit a blinding glob of burning acid at your prey!
   components:
-  - type: TargetAction
+  - type: Action
     priority: 2
+    itemIconStyle: BigAction
+  - type: TargetAction
     checkCanAccess: false
     range: 0
-    itemIconStyle: BigAction
   - type: WorldTargetAction
     event: !type:ActionGunShootEvent
 
@@ -119,9 +120,10 @@
   name: Release a spine
   description: Releases a paralyzing, bony spine from your wrist.
   components:
-  - type: InstantAction
+  - type: Action
     useDelay: 60
     itemIconStyle: NoItem
+  - type: InstantAction
     event: !type:CreateItemEvent {}
 
 - type: startingGear

@@ -9,8 +9,7 @@
     radius: 100
     softness: 1000
   - type: EmitSoundOnTrigger
-    sound:
-    path: /Audio/Effects/tesla_collapse.ogg
+    sound: /Audio/Effects/tesla_collapse.ogg
   - type: TriggerOnSpawn
   - type: TimedDespawn
     lifetime: 0.2

@@ -524,7 +524,7 @@
       weight: 10
     - id: SyringeAmbuzol
     - id: SyringeHyronalin
-    - id: SyringeHyperMarrow
+    #- id: SyringeHyperMarrow # Oh my god.
     - id: SyringeHyperPlatelet
     - id: SyringeTranexamicAcid
     - id: SyringeInaprovaline
