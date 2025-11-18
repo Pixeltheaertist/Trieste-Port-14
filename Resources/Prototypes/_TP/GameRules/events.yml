@@ -65,7 +65,7 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-mass-migration-start-announcement
+    startAnnouncement:
     startAudio:
       path: /Audio/Effects/alert.ogg
     endAnnouncement: station-event-mass-migration-end-announcement

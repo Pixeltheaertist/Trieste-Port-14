@@ -2726,7 +2726,6 @@ entities:
       enabled: True
     - type: NavMap
     - type: BellPlatform
-    - type: ImplicitRoof
 - proto: ActionToggleInternals
   entities:
   - uid: 1030
