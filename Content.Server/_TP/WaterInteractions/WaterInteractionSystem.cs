@@ -11,6 +11,7 @@ using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.TP.Abyss.Components;
 using Robust.Server.Audio;
 using Robust.Shared.Prototypes;
+using Content.Shared.Fluids.Components;
 
 namespace Content.Server._TP.WaterInteractions;
 
@@ -58,6 +59,13 @@ public sealed class WaterInteractionSystem : EntitySystem
 
                 if (inGas.InWater)
                 {
+                    if (TryComp<PuddleComponent>(uid, out var puddle) && inGas.WaterAmount >= 30) // If there is more than 30 water around a puddle, it is "washed away" into the seawater. Prevents meta spills. ---> Might be used to antagonize, may need tweaking <--- Pix
+                    {
+                        QueueDel(uid);
+                        Log.Error("Fucking GOT his ass, puddle murderized");
+                        continue;
+                    }
+                    
                     //if (TryComp<SolutionComponent>(uid, out var solution))
                     //  {
 
