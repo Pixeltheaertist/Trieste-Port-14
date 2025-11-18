@@ -57,7 +57,7 @@
   reactants:
     ExoticOil:
       amount: 1
-    HyperPlatelet:
+    ReinforcementAlgae:
       amount: 1
   products:
     Omnizine: 1

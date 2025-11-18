@@ -34,3 +34,9 @@
           False: { visible: False }
   - type: Machine
     board: IncubatorMachineCircuitboard
+  - type: ItemSlots
+    slots:
+      mixer:
+        whitelist:
+          tags:
+            - CentrifugeCompatible

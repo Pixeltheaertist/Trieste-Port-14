@@ -609,35 +609,35 @@
 
 - type: entity
   name: pill
-  suffix: Hyper-Marrow 10u
+  suffix: Regeneration 10u
   parent: Pill
-  id: PillDermaline
+  id: PillRegeneration
   components:
   - type: Pill
     pillType: 7
   - type: Sprite
     state: pill8
   - type: Label
-    currentLabel: hyper-marrow 10u
+    currentLabel: Regeneration 10u
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 20
         reagents:
-        - ReagentId: HyperMarrow
+        - ReagentId: RegenerationAlgae
           Quantity: 10
 
 - type: entity
   name: pill canister
   parent: PillCanister
-  id: PillCanisterDermaline
-  suffix: Hyper-Marrow 10u, 5 # TP14, was Dermaline
+  id: PillRegeneration
+  suffix: Regeneration 10u, 5 # TP14, was Dermaline
   components:
   - type: Label
-    currentLabel: hyper-marrow 10u
+    currentLabel: Regeneration 10u
   - type: StorageFill
     contents:
-    - id: PillDermaline
+    - id: PillRegeneration
       amount: 5
 
 - type: entity
@@ -688,35 +688,35 @@
 
 - type: entity
   name: pill
-  suffix: Hyper-Platelet 10u
+  suffix: Reinforcement 10u
   parent: Pill
-  id: PillHyperPlatelet
+  id: PillReinforcement
   components:
   - type: Pill
     pillType: 4
   - type: Sprite
     state: pill5
   - type: Label
-    currentLabel: hyper-platelet 10u
+    currentLabel: Reinforcement 10u
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 20
         reagents:
-        - ReagentId: HyperPlatelet
+        - ReagentId: ReinforcementAlgae
           Quantity: 10
 
 - type: entity
   name: pill canister
   parent: PillCanister
-  id: PillCanisterHyperPlatelet
-  suffix: HyperPlatelet 10u, 5
+  id: PillCanisterReinforcement
+  suffix: Reinforcement 10u, 5
   components:
   - type: Label
-    currentLabel: hyper-platelet 10u
+    currentLabel: reinforcement 10u
   - type: StorageFill
     contents:
-    - id: PillHyperPlatelet
+    - id: PillReinforcement
       amount: 5
 
 - type: entity
@@ -830,7 +830,7 @@
       prob: 0.10
       maxAmount: 7
       orGroup: RandomPill
-    - id: PillDermaline
+    - id: PillRegeneration
       prob: 0.10
       maxAmount: 7
       orGroup: RandomPill
@@ -838,7 +838,7 @@
       prob: 0.10
       maxAmount: 7
       orGroup: RandomPill
-    - id: PillHyperPlatelet
+    - id: PillReinforcement
       prob: 0.10
       maxAmount: 7
       orGroup: RandomPill
@@ -910,33 +910,33 @@
           Quantity: 15
 
 - type: entity
-  suffix: hyper-platelet
+  suffix: reinforcement
   parent: PrefilledSyringe
   id: SyringeHyperPlatelet
   components:
   - type: Label
-    currentLabel: reagent-name-hyper-platelet
+    currentLabel: reagent-name-reinforcement-algae
   - type: SolutionContainerManager
     solutions:
       injector:
         maxVol: 15
         reagents:
-        - ReagentId: HyperPlatelet
+        - ReagentId: ReinforcementAlgae
           Quantity: 15
 
 - type: entity
-  suffix: hyper-marrow
+  suffix: regeneration
   parent: PrefilledSyringe
-  id: SyringeDermaline
+  id: SyringeRegeneration
   components:
   - type: Label
-    currentLabel: reagent-name-hyper-marrow
+    currentLabel: reagent-name-regeneration-algae
   - type: SolutionContainerManager
     solutions:
       injector:
         maxVol: 15
         reagents:
-        - ReagentId: HyperMarrow
+        - ReagentId: RegenerationAlgae
           Quantity: 15
 
 - type: entity
@@ -1080,7 +1080,7 @@
   id: RandomSafePillTable
   table: !type:GroupSelector
     children:
-    - id: PillHyperPlatelet
+    - id: PillReinforcement
     - id: PillCharcoal
     - id: PillCopper
     - id: PillDermaline

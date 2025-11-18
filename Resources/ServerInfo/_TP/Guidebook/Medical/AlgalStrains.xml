@@ -1,0 +1,42 @@
+<Document>
+
+  So sombody is really hurt? Lets do something about that!
+
+  # What is algae?
+
+  Algae is a specalised type of medicine, making use of the anomalous properties of algae on Trieste
+
+  While a bit slower than its advanced predecessors, algae is far longer lasting and more efficient, and using temperature modulation chemicals, you can accelerate specific types of healing.
+
+  ## How to Get
+
+  First, you need to make yourself some Algal Feedstock.
+
+  This can either be done easily with some nutriment and other elements, or a bit harder without the nutriment
+
+  Next, you need some dormant organics. Run some medicine (I recommend inaprov) through a hotplate untill it denatures, then seperate it using the centrifuge.
+
+  Once you have both, you can make your first algae culture. You mix 1u of dormant organics, 1u of carbon, 1u of oxygen, and 3u of feedstock. Put that into an incubator (in a vial), and after its done you will have your first batch of activated algae!
+
+  <GuideReagentEmbed Reagent="ActivatedAlgae"/>
+
+  ## Specializing
+
+  You now have a few options, but the main 2 are
+
+  <GuideReagentEmbed Reagent="ReinforcementAlgae"/>
+  <GuideReagentEmbed Reagent="RegenerationAlgae"/>
+
+  For brute and burn damage respectivly
+
+  You should also be aware of how its metabolised at different temperatures, and use calordine or cryodine respectivly
+
+  <GuideReagentEmbed Reagent="Calordine"/>
+  <GuideReagentEmbed Reagent="Cryodine"/>
+
+  ## Mixing
+
+  Whatever you do, avoid metabolising both main algae at once, as that causes issues...
+
+  <GuideReagentEmbed Reagent="DestabilizedAlgae"/>
+</Document>
