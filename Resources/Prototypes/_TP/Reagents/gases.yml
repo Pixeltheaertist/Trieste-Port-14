@@ -31,7 +31,7 @@
           types:
             Cold: 0.33
       - !type:TemperatureCondition
-        mine: 10.00
+        min: 10.00
       - !type:AdjustTemperature
         amount: -20 # Note: -50000 was apparently too much.
       - !type:PopupMessage
