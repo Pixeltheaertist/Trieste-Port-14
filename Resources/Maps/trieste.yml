@@ -34320,7 +34320,7 @@ entities:
     - type: Transform
       anchored: False
       pos: 39.5,24.5
-      parent: 1
+      parent: 2
   - uid: 531
     components:
     - type: Transform
