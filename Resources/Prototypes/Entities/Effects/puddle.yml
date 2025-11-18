@@ -158,6 +158,7 @@
     mode: SnapgridCenter
   components:
   - type: Clickable
+  - type: InGas # For instant evaporation when exposed to WATAH!!!
   - type: Slippery
     staminaDamage: 0
     frictionStatusTime: 0 # Don't apply friction twice
