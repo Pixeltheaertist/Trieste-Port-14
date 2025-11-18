@@ -136,7 +136,7 @@ public sealed class WaterInteractionSystem : EntitySystem
                         // DIE.
                         var damage = new DamageSpecifier
                         {
-                            DamageDict = { ["Blunt"] = 35f }
+                            DamageDict = { ["Blunt"] = 5f }
                         };
                         _damageable.TryChangeDamage(uid, damage, origin: uid);
                     }
