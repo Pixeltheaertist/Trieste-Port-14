@@ -9,4 +9,4 @@
     - state: service
   - type: ItemBorgModule
     hands:
-    - item: WeaponNtBlaster
+    - item: TP14WeaponNtBlaster

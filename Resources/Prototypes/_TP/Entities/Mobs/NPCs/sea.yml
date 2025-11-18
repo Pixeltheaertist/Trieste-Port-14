@@ -385,7 +385,7 @@
   - type: Speech
     speechVerb: SmallMob
     speechSounds: Squeak
-    allowedEmotes: ['Squeak']
+    allowedEmotes: ['Chitter', 'Squeak']
   - type: Body
     prototype: SeaCreature
   - type: Sprite
@@ -448,9 +448,9 @@
     grindableSolutionName: food
   - type: Vocal
     sounds:
-      Male: Squeak
-      Female: Squeak
-      Unsexed: Squeak
+      Male: UnisexMoth
+      Female: UnisexMoth
+      Unsexed: UnisexMoth
     wilhelmProbability: 0.001
   - type: MobPrice
     price: 200
@@ -544,7 +544,7 @@
   - type: Speech
     speechVerb: SmallMob
     speechSounds: Squeak
-    allowedEmotes: ['Squeak']
+    allowedEmotes: ['Chitter', 'Squeak']
   - type: Body
     prototype: SeaCreature
   - type: Sprite
@@ -607,9 +607,9 @@
     grindableSolutionName: food
   - type: Vocal
     sounds:
-      Male: Squeak
-      Female: Squeak
-      Unsexed: Squeak
+      Male: UnisexMoth
+      Female: UnisexMoth
+      Unsexed: UnisexMoth
     wilhelmProbability: 0.001
   - type: MobPrice
     price: 200

@@ -4,5 +4,4 @@
   description: Toggles your weapon's built in-power siphon!
   components:
   - type: InstantAction
-    priority: -13
     event: !type:ToggleActionEvent {}

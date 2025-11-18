@@ -137,8 +137,9 @@
     Medicine:
       metabolismRate: .1
       effects:
-        - !type:AdjustTemperature
+        - !type:TemperatureCondition
           min: 20
+        - !type:AdjustTemperature
           amount: -20000
         - !type:GenericStatusEffect
           key: ForcedSleep
@@ -187,8 +188,9 @@
           damage:
             types:
               Heat: -4
+        - !type:TemperatureCondition
+          mine: 293.15
         - !type:AdjustTemperature
-          min: 293.15
           amount: -100000
 
 - type: reagent
@@ -230,10 +232,10 @@
               Cold: -10
               Heat: -1
               Shock: -2
-        - !type:AdjustTemperature
+        - !type:TemperatureCondition
           min: 310
           amount: -200000
-        - !type:AdjustTemperature
+        - !type:TemperatureCondition
           max: 280
           amount: 200000
 

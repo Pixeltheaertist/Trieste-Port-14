@@ -19,7 +19,7 @@
     - 0,0,1,3
     - 3,0,4,3
     maxItemSize: Huge
-    quickEquip: false
+    quickInsert: false
 
 
 - type: entity

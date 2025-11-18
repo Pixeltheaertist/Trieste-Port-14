@@ -28,7 +28,6 @@
           min: 7 #More efficient than Chloral Hydrate, and it doesn't OD you. Could be useful.
         key: ForcedSleep
         component: ForcedSleeping
-        refresh: false
         type: Add
 
 - type: reagent

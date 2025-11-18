@@ -17,8 +17,8 @@
     - WhitelistChameleon
   - type: HideLayerClothing
   - type: BreathMask
-    AllowedSlots:
-    - Snout
+    allowedSlots:
+    - mask
 
 - type: entity
   parent: ClothingMaskBase

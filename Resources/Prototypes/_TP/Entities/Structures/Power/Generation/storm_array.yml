@@ -77,8 +77,6 @@
     totalIntensity: 200
     intensitySlope: 30
     maxIntensity: 120
-  - type: SpeakOnTrigger
-    pack: StormArrayWarnings
   - type: Anchorable
     flags: None
   - type: Destructible # Gives warnings every 100 damage, eventually exploding

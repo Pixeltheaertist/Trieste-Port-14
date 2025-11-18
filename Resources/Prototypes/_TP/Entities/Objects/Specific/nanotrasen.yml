@@ -12,6 +12,7 @@
     sprite: Objects/Specific/Nanotrasen/bluespace_crystal.rsi
     size: Tiny
   - type: Stack
+    stackType: BluespaceCrystalStack
     count: 20
   - type: StaticPrice
     price: 0

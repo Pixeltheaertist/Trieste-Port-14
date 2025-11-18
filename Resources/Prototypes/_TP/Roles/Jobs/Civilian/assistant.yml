@@ -2,7 +2,7 @@
   id: TP14Settler
   name: job-name-settler
   description: job-description-settler
-  playTimeTracker: JobSettler
+  playTimeTracker: JobTP14Settler
   startingGear: TP14SettlerGear
   icon: "JobIconPassenger"
   supervisors: job-supervisors-everyone
