@@ -12,8 +12,8 @@
     maxOccurrences: 1 # This event is so insanely cataclysmic, genuinely it's kind of insane. ONLY ONCE PER ROUND, OR IT'S LITERAL DOOMSDAY.
   - type: GameRule
     delay:
-      min: 5
-      max: 10
+      min: 10
+      max: 15
   - type: FlashStormRule
     stormWeather: "Storm"
     normalWeather: "Rain"
@@ -58,3 +58,54 @@
     targetWeather: "CloudStorm"
     returnWeather: "Rain"
     lightning: true
+
+- type: entity
+  id: TP14RainClear
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-rain-clear-start-announcement
+    startAudio:
+      path: /Audio/Effects/alert.ogg
+    endAnnouncement: station-event-rain-clear-end-announcement
+    weight: 3
+    duration: 200
+  - type: GameRule
+    delay:
+      min: 5
+      max: 10
+  - type: WeatherChangeRule
+    targetWeather: "Clear"
+    returnWeather: "Rain"
+    lightning: false
+    sunlight: true # This right here breaks the fabric reality in a couple of interesting ways, so that's fun.
+
+
+# Mass Migration triggers a scaled-up version of DrifterMigration, spawning 3-4x as many drifters. It is a major once-per-round event similar to FlashStorm. The platform fires illumination flares to assist in seeing the hostiles.
+- type: entity
+  id: TP14MassMigration
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-mass-migration-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    endAnnouncement: station-event-mass-migration-end-announcement
+    weight: 3
+    duration: 100
+    startAnnouncementColor: "#EE4B2B"
+    maxOccurrences: 1
+  - type: GameRule
+    delay:
+      min: 5
+      max: 10
+  - type: VentCrittersRule
+    entries:
+    - id: TP14DrifterTimedSpawner
+      prob: 0.8
+  - type: WeatherChangeRule
+    targetWeather: "Rain"
+    returnWeather: "Rain"
+    lightning: true
+    sunlight: true
+    sunlightColor: "#EE4B2B"
