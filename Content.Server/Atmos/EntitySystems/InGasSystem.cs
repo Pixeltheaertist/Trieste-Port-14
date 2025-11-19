@@ -134,7 +134,7 @@ public sealed class InGasSystem : EntitySystem
             inGas.InWater = currentlyInWater;
 
             // Puddle deletion system
-            if (TryComp<PuddleComponent>(uid, out _))
+            if (TryComp<PuddleComponent>(uid, out _) && currentlyInWater)
             {
                 puddlesToDelete.Add(uid);
                 continue;

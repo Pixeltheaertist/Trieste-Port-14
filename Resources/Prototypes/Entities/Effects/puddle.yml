@@ -160,8 +160,6 @@
   - type: Clickable
   - type: InGas # For instant evaporation when exposed to WATAH!!!
     damagedByGas: false
-    damage:
-      types: {}
   - type: Slippery
     staminaDamage: 0
     frictionStatusTime: 0 # Don't apply friction twice

@@ -55,7 +55,7 @@ public sealed partial class InGasComponent : Component
     /// Damage caused by gas contact
     /// </summary>
     [DataField("damage"), ViewVariables(VVAccess.ReadWrite)]
-    public DamageSpecifier Damage = default!;
+    public DamageSpecifier Damage = new();
 
     ///<summary>
     /// Prevents gibbing from gas damage, same purpose as the barotrauma one
