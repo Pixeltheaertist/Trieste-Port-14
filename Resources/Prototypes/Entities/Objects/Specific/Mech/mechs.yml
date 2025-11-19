@@ -29,9 +29,9 @@
     - NitrousOxide
     - Frezon
     - Water
-    TransferRate: 0.9
+    transferRate: 0.9
   - type: AirIntake
-    PumpPower: 2
+    pumpPower: 2
   # for intake and filter to work
   - type: AtmosDevice
     requireAnchored: false

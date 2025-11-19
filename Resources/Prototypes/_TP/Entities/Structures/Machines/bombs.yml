@@ -41,6 +41,5 @@
   - type: Defusable
     disposable: false
   - type: TimerTrigger
-    delay: 110
-    amount: !type:RangeNumberSelector
-      range: 100, 900
+    delay: 100
+    delayOptions: [100, 200, 300, 400, 500, 600, 700, 800, 900]

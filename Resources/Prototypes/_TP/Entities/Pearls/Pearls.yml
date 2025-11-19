@@ -17,6 +17,7 @@
   - type: Item
     size: Tiny
   - type: Paper
+    content: pearl-ui-blank-page-message
     sound: /Audio/Machines/scan_finish.ogg
     contentSize: 99999999 # Pearls can store much more data than paper
   - type: ActivatableUI
@@ -32,7 +33,6 @@
     backgroundModulate: "#3a434a"
     backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
     contentMargin: 32.0, 16.0, 32.0, 0.0
-    blankText: pearl-ui-blank-page-message
     fontAccentColor: "#03A062"
 
 - type: entity

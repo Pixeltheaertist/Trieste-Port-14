@@ -138,27 +138,25 @@
       metabolismRate: .1
       effects:
         - !type:AdjustTemperature
-          min: 20
+          conditions:
+          - !type:TemperatureCondition
+            min: 20
           amount: -20000
         - !type:GenericStatusEffect
           key: ForcedSleep
           component: ForcedSleeping
-          refresh: false
           type: add
-          conditions:
-          - !type:TemperatureCondition
-            max: 250
         - !type:HealthChange
-          conditions:
-          - !type:TemperatureCondition
-            max: 250
-          damage:
-            types:
-              Cold: -15
-              Asphyxiation: -5
+            conditions:
+            - !type:TemperatureCondition
+              max: 250
+            damage:
+              types:
+                Cold: -15
+                Asphyxiation: -5
 
 - type: reagent
-  id: AntiCausic
+  id: AntiCaustic
   name: reagent-name-anti-caustic
   group: Medicine
   desc: reagent-desc-anti-caustic
@@ -188,7 +186,9 @@
             types:
               Heat: -4
         - !type:AdjustTemperature
-          min: 293.15
+          conditions:
+          - !type:TemperatureCondition
+            min: 293.15
           amount: -100000
 
 - type: reagent
@@ -231,10 +231,14 @@
               Heat: -1
               Shock: -2
         - !type:AdjustTemperature
-          min: 310
+          conditions:
+          - !type:TemperatureCondition
+            min: 310
           amount: -200000
         - !type:AdjustTemperature
-          max: 280
+          conditions:
+          - !type:TemperatureCondition
+            max: 280
           amount: 200000
 
 - type: reagent

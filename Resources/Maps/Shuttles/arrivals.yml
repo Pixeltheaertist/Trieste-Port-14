@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.4.0
   forkId: ""
   forkVersion: ""
-  time: 11/17/2025 09:08:07
-  entityCount: 139
+  time: 11/17/2025 20:38:31
+  entityCount: 140
 maps: []
 grids:
 - 1
@@ -142,6 +142,13 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
+- proto: AtmosDeviceFanDirectional
+  entities:
+  - uid: 140
+    components:
+    - type: Transform
+      pos: 0.5,-3.5
+      parent: 1
 - proto: CableApcExtension
   entities:
   - uid: 59
@@ -422,7 +429,7 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: PoweredSmallLight
+- proto: PoweredSmallLightWaterProof
   entities:
   - uid: 77
     components:

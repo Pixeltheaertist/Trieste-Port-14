@@ -41,9 +41,9 @@
   components:
   - type: Sprite
     sprite: Mobs/Ghosts/ghost_human.rsi
-    shader: unshaded
     color: "#fff8"
     layers:
+    - shader: unshaded
     - state: animated
       shader: unshaded
   - type: ContentEye

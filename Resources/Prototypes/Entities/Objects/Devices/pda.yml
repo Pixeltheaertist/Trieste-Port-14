@@ -950,25 +950,13 @@
       - AstroNavCartridge
 
 - type: entity
-  parent: BasePDA
+  parent: [ CentcomPDA, BaseNanotrasenContraband ]
   id: NanotrasenPDA
   name: Nanotrasen PDA
   description: Light green sign of walking bureaucracy, now including free bulletholes and fire!
   components:
   - type: Pda
     id: CentcomIDCardDeathsquad
-    state: pda-centcom
-    penSlot:
-      startingItem: PenCentcom
-      whitelist:
-        tags:
-        - Write
-  - type: PdaBorderColor
-    borderColor: "#00842e"
-  - type: Icon
-    state: pda-centcom
-  - type: Contraband # TP
-    severity: Nanotrasen
 
 - type: entity
   parent: CentcomPDA

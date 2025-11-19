@@ -2,7 +2,6 @@
   id: HarpoonBombBullet
   name: rocket
   parent: BaseBulletTrigger
-  noSpawn: true
   components:
   - type: Sprite
     sprite: _TP/Objects/Weapons/Guns/Projectiles/explosive_harpoons.rsi

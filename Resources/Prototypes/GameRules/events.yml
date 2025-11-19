@@ -49,7 +49,7 @@
     - id: SleeperAgents
     - id: ZombieOutbreak
     #- id: LoneOpsSpawn # fuck you loneops
-    - id: DerelictCyborgSpawn
+    - id: DerelictGenericCyborgSpawn
     - id: WizardSpawn
     - !type:NestedSelector
       tableId: DerelictBorgEventTable

@@ -209,14 +209,6 @@
         whitelist:
           tags:
           - Spray
-      # spray_med:
-      #   whitelist:
-      #     tags:
-      #     - SprayMedical
-      # wrench_medical:
-      #   whitelist:
-      #     tags:
-      #     - WrenchMedical
       wrench:
         whitelist:
           tags:

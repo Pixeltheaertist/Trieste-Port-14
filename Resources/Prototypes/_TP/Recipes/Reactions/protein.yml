@@ -40,7 +40,7 @@
       ActivatedProtein: 5
 
 - type: reaction
-  id: StabilisationProtein
+  id: StabilizationProtein
   requiredMixerCategories:
   - Incubation
   reactants:
@@ -51,7 +51,7 @@
       Nutriment:
         amount: 1
   products:
-      StabilisationProtein: 2
+      StabilizationProtein: 2
 
 - type: reaction
   id: HyperPlatelet

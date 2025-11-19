@@ -114,7 +114,7 @@
     - id: WaterVaporCanister
       prob: 0.001
       orGroup: Canister
-    - id: WaterCanister
+    - id: TP14WaterCanister
       prob: 0.001
       orGroup: Canister
     #weapons

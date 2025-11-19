@@ -55,7 +55,7 @@
           BaseUnshaded: dead_mouth
     - type: Butcherable
       spawned:
-        - id: FoodMeatFishCarp
+        - id: FoodMeatFish
           amount: 2
         - id: MaterialToothSpaceCarp1
           amount: 1
@@ -247,7 +247,7 @@
       requiredLegs: 1
     - type: Butcherable
       spawned:
-        - id: FoodMeatFishCarp
+        - id: FoodMeatFish
           amount: 4
         - id: MaterialToothSharkminnow1
           amount: 3

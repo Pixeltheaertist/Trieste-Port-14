@@ -58,7 +58,6 @@
 - type: entity
   id: PelletClusterIncendiaryNT
   name: pellet (ball, incendiary)
-  noSpawn: true
   parent: BaseBulletIncendiary
   components:
   - type: Sprite

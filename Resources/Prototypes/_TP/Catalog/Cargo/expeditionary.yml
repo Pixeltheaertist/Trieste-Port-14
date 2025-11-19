@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: TP14CargoProductHarpoonGuns
+  icon:
+    sprite: Objects/Weapons/Guns/HarpoonGun/harpoongun.rsi
+    state: unwielded
+  product: TP14HarpoonCrate
+  cost: 1250
+  category: cargoproduct-category-name-cargo
+  group: market

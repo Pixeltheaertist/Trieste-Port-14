@@ -80,7 +80,7 @@ public sealed class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeSystem
 
         base.SelectBorgModule(ent, borgType);
 
-        if (borgType == "mining")
+        if (borgType == "mining" || borgType == "engineering")
         {
             var inGas = EnsureComp<InGasComponent>(ent);
             inGas.GasId = 9; // Water
