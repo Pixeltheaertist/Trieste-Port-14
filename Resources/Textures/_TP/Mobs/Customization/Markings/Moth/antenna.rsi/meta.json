@@ -1,0 +1,31 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Created by MysteriousPeeko (sharkpeekotwoelecticboogaloo) for Trieste Port 14",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "antenna_1",
+            "directions": 4
+        },
+        {
+            "name": "antenna_2",
+            "directions": 4
+        },
+        {
+            "name": "antenna_3",
+            "directions": 4
+        },
+        {
+            "name": "antenna_4",
+            "directions": 4
+        },
+            {
+            "name": "antenna_5",
+            "directions": 4
+        }
+    ]
+}

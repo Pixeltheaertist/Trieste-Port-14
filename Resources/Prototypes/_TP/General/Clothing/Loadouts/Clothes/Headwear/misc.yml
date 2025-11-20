@@ -1,0 +1,19 @@
+- type: loadout
+  id: TP14LoadoutHeadwearCentcomm
+  equipment:
+    head: ClothingHeadHatCentcom
+
+- type: loadout
+  id: TP14LoadoutHeadwearCentcommCap
+  equipment:
+    head: ClothingHeadHatCentcomcap
+
+- type: loadout
+  id: TP14LoadoutHeadwearBeanie
+  equipment:
+    head: ClothingHeadHatCanadaBeanie
+
+- type: loadout
+  id: TP14LoadoutHeadwearBeret
+  equipment:
+    head: ClothingHeadHatBeret

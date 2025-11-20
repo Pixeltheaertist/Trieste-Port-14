@@ -1,0 +1,97 @@
+- type: marking
+  id: TP14MarkingsHumanEarsAnimalFluffy
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Human ]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/ears.rsi
+    state: animalears_fluffy_primary
+  - sprite: _TP/Mobs/Customization/Markings/Humans/ears.rsi
+    state: animalears_fluffy_secondary
+
+- type: marking
+  id: TP14MarkingsHumanEarsAnimalFolded
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Human ]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/ears.rsi
+    state: animalears_folded
+
+- type: marking
+  id: TP14MarkingsHumanEarsAnimalPointed
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Human ]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/ears.rsi
+    state: animalears_pointed_primary
+  - sprite: _TP/Mobs/Customization/Markings/Humans/ears.rsi
+    state: animalears_pointed_secondary
+
+- type: marking
+  id: TP14MarkingsHumanEarsAnimalRounded
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Human ]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/ears.rsi
+    state: animalears_rounded_primary
+  - sprite: _TP/Mobs/Customization/Markings/Humans/ears.rsi
+    state: animalears_rounded_secondary
+
+- type: marking
+  id: TP14MarkingsHumanEarsAnimalSemiFolded
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Human ]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/ears.rsi
+    state: animalears_semifolded_primary
+  - sprite: _TP/Mobs/Customization/Markings/Humans/ears.rsi
+    state: animalears_semifolded_secondary

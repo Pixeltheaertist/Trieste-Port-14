@@ -1,0 +1,45 @@
+- type: loadout
+  id: TP14LoadoutHeadwearBucketBlack
+  equipment:
+    head: TP14ClothingHeadBucketBlack
+
+- type: loadout
+  id: TP14LoadoutHeadwearBucketBlue
+  equipment:
+    head: TP14ClothingHeadBucketBlue
+
+- type: loadout
+  id: TP14LoadoutHeadwearBucketBotany
+  equipment:
+    head: TP14ClothingHeadBucketBotany
+
+- type: loadout
+  id: TP14LoadoutHeadwearBucketBrown
+  equipment:
+    head: TP14ClothingHeadBucketBrown
+
+- type: loadout
+  id: TP14LoadoutHeadwearBucketDarkBlue
+  equipment:
+    head: TP14ClothingHeadBucketDarkBlue
+
+- type: loadout
+  id: TP14LoadoutHeadwearBucketDarkGreen
+  equipment:
+    head: TP14ClothingHeadBucketDarkGreen
+
+- type: loadout
+  id: TP14LoadoutHeadwearBucketGreen
+  equipment:
+    head: TP14ClothingHeadBucketGreen
+
+- type: loadout
+  id: TP14LoadoutHeadwearBucketPurple
+  equipment:
+    head: TP14ClothingHeadBucketPurple
+
+- type: loadout
+  id: TP14LoadoutHeadwearBucketYellow
+  equipment:
+    head: TP14ClothingHeadBucketYellow
+

@@ -1,0 +1,9 @@
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatBlack
+  equipment:
+    head: ClothingHeadHatBlacksoft
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatBlackFlipped
+  equipment:
+    head: ClothingHeadHatBlacksoftFlipped

@@ -1,0 +1,31 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Created by MysteriousPeeko (sharkpeekotwoelecticboogaloo) for Trieste Port 14",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "mothwings_1",
+            "directions": 4
+        },
+        {
+            "name": "mothwings_1_secondary",
+            "directions": 4
+        },
+        {
+            "name": "mothwings_2_primary",
+            "directions": 4
+        },
+        {
+            "name": "mothwings_2_secondary",
+            "directions": 4
+        },
+            {
+            "name": "mothwings_2_tertiary",
+            "directions": 4
+        }
+    ]
+}

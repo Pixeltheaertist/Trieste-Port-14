@@ -1,0 +1,14 @@
+- type: loadout
+  id: TP14LoadoutHeadwearCatBlack
+  equipment:
+    head: ClothingHeadHatAnimalCatBlack
+
+- type: loadout
+  id: TP14LoadoutHeadwearCatBrown
+  equipment:
+    head: ClothingHeadHatAnimalCatBrown
+
+- type: loadout
+  id: TP14LoadoutHeadwearCatGrey
+  equipment:
+    head: ClothingHeadHatAnimalCat
