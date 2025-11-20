@@ -2,3 +2,8 @@
   id: TP14LoadoutGlovesFingerless
   equipment:
     gloves: ClothingHandsGlovesFingerless
+
+- type: loadout
+  id: TP14LoadoutGlovesWhite
+  equipment:
+    gloves: ClothingHandsGlovesColorWhite

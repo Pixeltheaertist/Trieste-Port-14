@@ -1,0 +1,109 @@
+- type: loadout
+  id: TP14LoadoutCoatBomberJacket
+  equipment:
+    outerClothing: ClothingOuterCoatBomber
+
+- type: loadout
+  id: TP14LoadoutCoatDetectiveEngraved
+  equipment:
+    outerClothing: ClothingOuterCoatDetective
+
+- type: loadout
+  id: TP14LoadoutCoatDetectiveFull
+  equipment:
+    outerClothing: ClothingOuterCoatDetectiveLoadout
+
+- type: loadout
+  id: TP14LoadoutCoatDetectiveNoirEngraved
+  equipment:
+    outerClothing: TP14ClothingOuterCoatDetectiveGrey
+
+- type: loadout
+  id: TP14LoadoutCoatDetectiveNoirFull
+  equipment:
+    outerClothing: ClothingOuterCoatDetectiveLoadoutGrey
+
+- type: loadout
+  id: TP14LoadoutCoatExpensiveFull
+  equipment:
+    outerClothing: ClothingOuterCoatExpensive
+
+- type: loadout
+  id: TP14LoadoutCoatGenetics
+  equipment:
+    outerClothing: ClothingOuterCoatLabGene
+
+- type: loadout
+  id: TP14LoadoutCoatGentlePerson
+  equipment:
+    outerClothing: ClothingOuterCoatGentle
+
+- type: loadout
+  id: TP14LoadoutCoatGreenMedical
+  equipment:
+    outerClothing: TP14ClothingOuterCoatMedicalGreen
+
+- type: loadout
+  id: TP14LoadoutCoatJensen
+  equipment:
+    outerClothing: ClothingOuterCoatJensen
+
+- type: loadout
+  id: TP14LoadoutCoatLab
+  equipment:
+    outerClothing: ClothingOuterCoatLab
+
+- type: loadout
+  id: TP14LoadoutCoatLieutenant
+  equipment:
+    outerClothing: TP14ClothingOuterCoatLieutenant
+
+- type: loadout
+  id: TP14LoadoutCoatVirology
+  equipment:
+    outerClothing: ClotheringOuterCoatLabViro
+
+- type: loadout
+  id: TP14LoadoutCoatParamedWindBreaker
+  equipment:
+    outerClothing: ClotheringOuterCoatParamedicWB
+
+- type: loadout
+  id: TP14LoadoutCoatPirateGarb
+  equipment:
+    outerClothing: ClotheringOuterCoatPirate
+
+- type: loadout
+  id: TP14LoadoutCoatRDLab
+  equipment:
+    outerClothing: ClotheringOuterCoatRD
+
+- type: loadout
+  id: TP14LoadoutCoatRoboticist
+  equipment:
+    outerClothing: ClotheringOuterCoatRobo
+
+- type: loadout
+  id: TP14LoadoutCoatSeniorPhysician
+  equipment:
+    outerClothing: ClotheringOuterCoatLabSeniorPhysician
+
+- type: loadout
+  id: TP14LoadoutCoatSeniorResearcher
+  equipment:
+    outerClothing: ClotheringOuterCoatLabSeniorResearcher
+
+- type: loadout
+  id: TP14LoadoutCoatSpaceAsshole # SPACE ASSHOOOOOOOOOOLE
+  equipment:
+    outerClothing: ClotheringOuterCoatSpaceAsshole
+
+- type: loadout
+  id: TP14LoadoutCoatTrenchcoat
+  equipment:
+    outerClothing: ClotheringOuterCoatTrench
+
+- type: loadout
+  id: TP14LoadoutCoatWhiteMedical
+  equipment:
+    outerClothing: TP14ClothingOuterCoatMedical

@@ -1,0 +1,184 @@
+- type: loadout
+  id: TP14LoadoutOuterWinterAtmospherics
+  equipment:
+    outerClothing: ClothingOuterWinterAtmos
+
+- type: loadout
+  id: TP14LoadoutOuterWinterBartender
+  equipment:
+    outerClothing: ClothingOuterWinterBar
+
+- type: loadout
+  id: TP14LoadoutOuterWinterBlack
+  equipment:
+    outerClothing: ClothingOuterWinterColorBlack
+
+- type: loadout
+  id: TP14LoadoutOuterWinterBlue
+  equipment:
+    outerClothing: ClothingOuterWinterColorBlue
+
+- type: loadout
+  id: TP14LoadoutOuterWinterBrown
+  equipment:
+    outerClothing: ClothingOuterWinterColorBrown
+
+- type: loadout
+  id: TP14LoadoutOuterWinterCargo
+  equipment:
+    outerClothing: ClothingOuterWinterCargo
+
+- type: loadout
+  id: TP14LoadoutOuterWinterChemistry
+  equipment:
+    outerClothing: ClothingOuterWinterChem
+
+- type: loadout
+  id: TP14LoadoutOuterWinterCE
+  equipment:
+    outerClothing: ClothingOuterWinterCE
+
+- type: loadout
+  id: TP14LoadoutOuterWinterCentcomm
+  equipment:
+    outerClothing: ClothingOuterWinterCentcom
+
+- type: loadout
+  id: TP14LoadoutOuterWinterCMO
+  equipment:
+    outerClothing: ClothingOuterWinterCMO
+
+- type: loadout
+  id: TP14LoadoutOuterWinterCoat
+  equipment:
+    outerClothing: ClothingOuterWinterCoat
+
+- type: loadout
+  id: TP14LoadoutOuterWinterClown
+  equipment:
+    outerClothing: ClothingOuterWinterClown
+
+- type: loadout
+  id: TP14LoadoutOuterWinterEngineering
+  equipment:
+    outerClothing: ClothingOuterWinterEngi
+
+- type: loadout
+  id: TP14LoadoutOuterWinterExped
+  equipment:
+    outerClothing: ClothingOuterWinterMiner
+
+- type: loadout
+  id: TP14LoadoutOuterWinterGenetics
+  equipment:
+    outerClothing: ClothingOuterWinterGen
+
+- type: loadout
+  id: TP14LoadoutOuterWinterGrey
+  equipment:
+    outerClothing: ClothingOuterWinterColorGray
+
+- type: loadout
+  id: TP14LoadoutOuterWinterGreen
+  equipment:
+    outerClothing: ClothingOuterWinterColorGreen
+
+- type: loadout
+  id: TP14LoadoutOuterWinterHM
+  equipment:
+    outerClothing: ClothingOuterWinterQM
+
+- type: loadout
+  id: TP14LoadoutOuterWinterHoP
+  equipment:
+    outerClothing: ClothingOuterWinterHoP
+
+- type: loadout
+  id: TP14LoadoutOuterWinterMarshal
+  equipment:
+    outerClothing: ClothingOuterWinterHoSUnarmored
+
+- type: loadout
+  id: TP14LoadoutOuterWinterHydroponics
+  equipment:
+    outerClothing: ClothingOuterWinterHydroponics
+
+- type: loadout
+  id: TP14LoadoutOuterWinterJanitorial
+  equipment:
+    outerClothing: ClothingOuterWinterJani
+
+- type: loadout
+  id: TP14LoadoutOuterWinterLightBrown
+  equipment:
+    outerClothing: ClothingOuterWinterColorLightBrown
+
+- type: loadout
+  id: TP14LoadoutOuterWinterMedical
+  equipment:
+    outerClothing: ClothingOuterWinterMed
+
+- type: loadout
+  id: TP14LoadoutOuterWinterVirology
+  equipment:
+    outerClothing: ClothingOuterWinterViro
+
+- type: loadout
+  id: TP14LoadoutOuterWinterMime
+  equipment:
+    outerClothing: ClothingOuterWinterMime
+
+- type: loadout
+  id: TP14LoadoutOuterWinterMusician
+  equipment:
+    outerClothing: ClothingOuterWinterMusician
+
+- type: loadout
+  id: TP14LoadoutOuterWinterOrange
+  equipment:
+    outerClothing: ClothingOuterWinterColorOrange
+
+- type: loadout
+  id: TP14LoadoutOuterWinterOverseer
+  equipment:
+    outerClothing: ClothingOuterWinterCap
+
+- type: loadout
+  id: TP14LoadoutOuterWinterParamedic
+  equipment:
+    outerClothing: ClothingOuterWinterPara
+
+- type: loadout
+  id: TP14LoadoutOuterWinterPurple
+  equipment:
+    outerClothing: ClothingOuterWinterColorPurple
+
+- type: loadout
+  id: TP14LoadoutOuterWinterRed
+  equipment:
+    outerClothing: ClothingOuterWinterColorRed
+
+- type: loadout
+  id: TP14LoadoutOuterWinterRD
+  equipment:
+    outerClothing: ClothingOuterWinterRD
+
+- type: loadout
+  id: TP14LoadoutOuterWinterSecurity
+  equipment:
+    outerClothing: ClothingOuterWinterSec
+
+- type: loadout
+  id: TP14LoadoutOuterWinterWarden
+  equipment:
+    outerClothing: ClothingOuterWinterWardenUnarmored
+
+- type: loadout
+  id: TP14LoadoutOuterWinterWhite
+  equipment:
+    outerClothing: ClothingOuterWinterColorWhite
+
+- type: loadout
+  id: TP14LoadoutOuterWinterYellow
+  equipment:
+    outerClothing: ClothingOuterWinterColorYellow

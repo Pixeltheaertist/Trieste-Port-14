@@ -1,0 +1,64 @@
+- type: loadout
+  id: TP14LoadoutHeadwearBeret
+  equipment:
+    head: ClothingHeadHatBeret
+
+- type: loadout
+  id: TP14LoadoutHeadwearBeretBrigmedic
+  equipment:
+    head: ClothingHeadHatBeretBridmedic
+
+- type: loadout
+  id: TP14LoadoutHeadwearBeretCMO
+  equipment:
+    head: ClothingHeadHatBeretCmo
+
+- type: loadout
+  id: TP14LoadoutHeadwearBeretNTCommand
+  equipment:
+    head: ClothingHeadHatBeretCommand
+
+- type: loadout
+  id: TP14LoadoutHeadwearBeretCommand
+  equipment:
+    head: TP14ClothingHeadHatBeretCommand
+
+- type: loadout
+  id: TP14LoadoutHeadwearBeretEngineering
+  equipment:
+    head: ClothingHeadHatBeretEngineering
+
+- type: loadout
+  id: TP14LoadoutHeadwearBeretFrench
+  equipment:
+    head: ClothingHeadHatBeretFrench
+
+- type: loadout
+  id: TP14LoadoutHeadwearBeretMercenary
+  equipment:
+    head: ClothingHeadHatBeretMerc
+
+- type: loadout
+  id: TP14LoadoutHeadwearBeretPhysician
+  equipment:
+    head: ClothingHeadHatBeretSeniorPhysician
+
+- type: loadout
+  id: TP14LoadoutHeadwearBeretHM
+  equipment:
+    head: ClothingHeadHatBeretQM
+
+- type: loadout
+  id: TP14LoadoutHeadwearBeretScientific
+  equipment:
+    head: ClothingHeadHatBeretRND
+
+- type: loadout
+  id: TP14LoadoutHeadwearBeretSecurity
+  equipment:
+    head: ClothingHeadHatSecurity
+
+- type: loadout
+  id: TP14LoadoutHeadwearBeretWarden
+  equipment:
+    head: ClothingHeadHatWarden

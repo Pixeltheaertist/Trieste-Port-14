@@ -1,3 +1,5 @@
+# Soft hats
+
 - type: loadout
   id: TP14LoadoutHeadwearSoftHatBlack
   equipment:
@@ -7,3 +9,185 @@
   id: TP14LoadoutHeadwearSoftHatBlackFlipped
   equipment:
     head: ClothingHeadHatBlacksoftFlipped
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatBlue
+  equipment:
+    head: ClothingHeadHatBluesoft
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatBlueFlipped
+  equipment:
+    head: ClothingHeadHatBluesoftFlipped
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatCargo
+  equipment:
+    head: ClothingHeadHatCargosoft
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatCargoFlipped
+  equipment:
+    head: ClothingHeadHatCargosoftFlipped
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatCommand
+  equipment:
+    head: ClothingHeadHatCommandsoft
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatCommandFlipped
+  equipment:
+    head: ClothingHeadHatCommandsoftFlipped
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatCorporate
+  equipment:
+    head: ClothingHeadHatCommandsoft
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatCorporateFlipped
+  equipment:
+    head: ClothingHeadHatCorporatesoftFlipped
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatGreen
+  equipment:
+    head: ClothingHeadHatGreensoft
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatGreenFlipped
+  equipment:
+    head: ClothingHeadHatGreensoftFlipped
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatGrey
+  equipment:
+    head: ClothingHeadHatGreysoft
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatGreyFlipped
+  equipment:
+    head: ClothingHeadHatGreysoftFlipped
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatHM
+  equipment:
+    head: ClothingHeadHatQMsoft
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatHMFlipped
+  equipment:
+    head: ClothingHeadHatQMsoftFlipped
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatOrange
+  equipment:
+    head: ClothingHeadHatOrangesoft
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatOrangeFlipped
+  equipment:
+    head: ClothingHeadHatOrangesoftFlipped
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatParamedic
+  equipment:
+    head: ClothingHeadHatParamedicsoft
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatParamedicFlipped
+  equipment:
+    head: ClothingHeadHatParamedicsoftFlipped
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatPurple
+  equipment:
+    head: ClothingHeadHatPurplesoft
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatPurpleFlipped
+  equipment:
+    head: ClothingHeadHatPurplesoftFlipped
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatRed
+  equipment:
+    head: ClothingHeadHatRedsoft
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatRedFlipped
+  equipment:
+    head: ClothingHeadHatRedsoftFlipped
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatSec
+  equipment:
+    head: ClothingHeadHatSecsoft
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatSecFlipped
+  equipment:
+    head: ClothingHeadHatSecsoftFlipped
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatBizarre
+  equipment:
+    head: ClothingHeadHatBizarreSoft
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatBizarreFlipped
+  equipment:
+    head: ClothingHeadHatBizarreSoftFlipped
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatWhite
+  equipment:
+    head: ClothingHeadHatMimesoft
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatWhiteFlipped
+  equipment:
+    head: ClothingHeadHatMimesoftFlipped
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatYellow
+  equipment:
+    head: ClothingHeadHatYellowsoft
+
+- type: loadout
+  id: TP14LoadoutHeadwearSoftHatYellowFlipped
+  equipment:
+    head: ClothingHeadHatYellowsoftFlipped
+
+# Caps
+
+- type: loadout
+  id: TP14LoadoutHeadwearCapCap
+  equipment:
+    head: ClothingHeadHatCapcap
+
+- type: loadout
+  id: TP14LoadoutHeadwearCapCentcomm # EWWW
+  equipment:
+    head: ClothingHeadHatCentcomcap
+
+- type: loadout
+  id: TP14LoadoutHeadwearCapHoP
+  equipment:
+    head: ClothingHeadHatHopcap
+
+- type: loadout
+  id: TP14LoadoutHeadwearCapMarshal
+  equipment:
+    head: ClothingHeadHatHoscap
+
+- type: loadout
+  id: TP14LoadoutHeadwearCapWarden
+  equipment:
+    head: ClothingHeadHatWarden
+
+- type: loadout
+  id: TP14LoadoutHeadwearSyndicate
+  equipment:
+    head: ClothingHeadHatSyndie

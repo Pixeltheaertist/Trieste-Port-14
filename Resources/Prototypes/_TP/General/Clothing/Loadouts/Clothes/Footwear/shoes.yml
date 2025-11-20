@@ -1,0 +1,74 @@
+- type: loadout
+  id: TP14LoadoutFootwearBlack
+  equipment:
+    shoes: ClothingShoesColorBlack
+
+- type: loadout
+  id: TP14LoadoutFootwearBlue
+  equipment:
+    shoes: ClothingShoesColorBlue
+
+- type: loadout
+  id: TP14LoadoutFootwearBrown
+  equipment:
+    shoes: ClothingShoesColorBrown
+
+- type: loadout
+  id: TP14LoadoutFootwearChef
+  equipment:
+    shoes: ClothingShoesChef
+
+- type: loadout
+  id: TP14LoadoutFootwearGreen
+  equipment:
+    shoes: ClothingShoesColorGreen
+
+- type: loadout
+  id: TP14LoadoutFootwearLaceup
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+
+- type: loadout
+  id: TP14LoadoutFootwearLeather
+  equipment:
+    shoes: ClothingShoesLeather
+
+- type: loadout
+  id: TP14LoadoutFootwearOrange
+  equipment:
+    shoes: ClothingShoesColorOrange
+
+- type: loadout
+  id: TP14LoadoutFootwearPierott
+  equipment:
+    shoes: TP14ClothingShoesPierott
+
+- type: loadout
+  id: TP14LoadoutFootwearPurple
+  equipment:
+    shoes: ClothingShoesColorPurple
+
+- type: loadout
+  id: TP14LoadoutFootwearRed
+  equipment:
+    shoes: ClothingShoesColorPierott
+
+- type: loadout
+  id: TP14LoadoutFootwearTourist
+  equipment:
+    shoes: ClothingShoesTourist
+
+- type: loadout
+  id: TP14LoadoutFootwearWhite
+  equipment:
+    shoes: ClothingShoesColorWhite
+
+- type: loadout
+  id: TP14LoadoutFootwearYakuza
+  equipment:
+    shoes: ClothingShoesDameDane
+
+- type: loadout
+  id: TP14LoadoutFootwearYellow
+  equipment:
+    shoes: ClothingShoesColorYellow

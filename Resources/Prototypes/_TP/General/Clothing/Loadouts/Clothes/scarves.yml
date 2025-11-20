@@ -1,9 +1,0 @@
-- type: loadout
-  id: TP14LoadoutScarfBrown
-  equipment:
-    neck: ClothingNeckScarfStripedBrown
-
-- type: loadout
-  id: TP14LoadoutScarfPurple
-  equipment:
-    neck: ClothingNeckScarfStripedPurple

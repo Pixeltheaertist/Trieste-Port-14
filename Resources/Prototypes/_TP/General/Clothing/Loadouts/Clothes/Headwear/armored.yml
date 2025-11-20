@@ -2,3 +2,33 @@
   id: TP14LoadoutHeadwearArmoredHardHat
   equipment:
     head: ClothingHeadHatHardhatArmored
+
+- type: loadout
+  id: TP14LoadoutHeadwearHardhatBlue
+  equipment:
+    head: ClothingHeadHatHardhatBlue
+
+- type: loadout
+  id: TP14LoadoutHeadwearHardhatDarkYellow
+  equipment:
+    head: ClothingHeadHatHardhatYellowDark
+
+- type: loadout
+  id: TP14LoadoutHeadwearHardhatOrange
+  equipment:
+    head: ClothingHeadHatHardhatOrange
+
+- type: loadout
+  id: TP14LoadoutHeadwearHardhatRed
+  equipment:
+    head: ClothingHeadHatHardhatRed
+
+- type: loadout
+  id: TP14LoadoutHeadwearHardhatWhite
+  equipment:
+    head: ClothingHeadHatHardhatWhite
+
+- type: loadout
+  id: TP14LoadoutHeadwearHardhatYellow
+  equipment:
+    head: ClothingHeadHatHardhatYellow
