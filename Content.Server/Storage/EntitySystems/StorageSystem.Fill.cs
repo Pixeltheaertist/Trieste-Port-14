@@ -31,7 +31,7 @@ public sealed partial class StorageSystem
         }
     }
 
-    public void FillStorage(Entity<StorageFillComponent?, StorageComponent?> entity) // Moffstation - Change Private to Public for Playing Cards Port
+    private void FillStorage(Entity<StorageFillComponent?, StorageComponent?> entity)
     {
         var (uid, component, storage) = entity;
 

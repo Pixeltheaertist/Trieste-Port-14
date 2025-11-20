@@ -9,12 +9,10 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._EstacaoPirata.OpenTriggeredStorageFill;
 
-/// <summary>
-/// This handles...
-/// </summary>
+// TODO CENT This should be predicted so that it doesn't take a net-trip for the opened inventory to have its
+//  contents pop in.
 public sealed class OpenTriggeredStorageFillSystem : EntitySystem
 {
-
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
@@ -25,29 +23,27 @@ public sealed class OpenTriggeredStorageFillSystem : EntitySystem
     }
 
     //Yes, that's a copy of StorageSystem StorageFill method
-    private void OnOpenEvent(EntityUid uid, OpenTriggeredStorageFillComponent comp, ActivateInWorldEvent args)
+    private void OnOpenEvent(Entity<OpenTriggeredStorageFillComponent> entity, ref ActivateInWorldEvent args)
     {
-        Log.Debug("aaa");
-        var coordinates = Transform(uid).Coordinates;
+        var coordinates = Transform(entity).Coordinates;
 
-        var spawnItems = EntitySpawnCollection.GetSpawns(comp.Contents);
+        var spawnItems = EntitySpawnCollection.GetSpawns(entity.Comp.Contents);
         foreach (var item in spawnItems)
         {
-            DebugTools.Assert(!_prototype.Index<EntityPrototype>(item)
-                .HasComponent(typeof(RandomSpawnerComponent)));
+            DebugTools.Assert(!EntityPrototypeHelpers.HasComponent<RandomSpawnerComponent>(item, _prototype));
             var ent = Spawn(item, coordinates);
 
             if (!TryComp<ItemComponent>(ent, out var itemComp))
             {
-                Log.Error($"Tried to fill {ToPrettyString(uid)} with non-item {item}.");
+                Log.Error($"Tried to fill {ToPrettyString(entity)} with non-item {item}.");
                 Del(ent);
                 continue;
             }
-            if (!_storage.Insert(uid, ent, out _, out var _, playSound: false))
-                Log.Error($"Failed attemp while trying to fill {ToPrettyString(uid)}");
+
+            if (!_storage.Insert(entity, ent, out _, out var _, playSound: false))
+                Log.Error($"Failed attempt while trying to fill {ToPrettyString(entity)}");
         }
 
-        RemComp(uid, comp);
+        RemComp(entity, entity.Comp);
     }
-
 }
