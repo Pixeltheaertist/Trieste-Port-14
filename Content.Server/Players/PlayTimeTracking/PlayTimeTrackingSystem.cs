@@ -278,7 +278,6 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
     public bool IsAllowed(ICommonSession player, ProtoId<AntagPrototype> antag)
     {
         var playTimes = GetPlayTimesIfEnabled(player);
-        playTimes ??= new Dictionary<string, TimeSpan>();
 
         var requirements = _roles.GetRoleRequirements(antag);
         var allProfilesForAntag = _preferencesManager.GetPreferences(player.UserId).GetAllEnabledProfilesForAntag(antag);
