@@ -1,9 +1,37 @@
 - type: entity
+  id: TP14FoodMothSticks
+  parent: FoodSnackBase
+  suffix: Trieste, Food
+  name: motharella sticks
+  description: A fried snack for moths everywhere! They prefer it with honey.
+  components:
+  - type: Edible
+    requiresSpecialDigestion: true
+  - type: FlavorProfile
+    flavors:
+      - oily
+      - cotton
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/fried-food.rsi
+    state: Motharella_Sticks
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Fiber
+          Quantity: 2.5
+  - type: Tag
+    tags:
+    - ClothMade
+
+- type: entity
   id: TP14FoodCheeseSticks
   parent: FoodSnackBase
   suffix: Trieste, Food
-  name: cheese sticks
-  description: Also known as 'Mozzerella Sticks'. Goes good with salsa.
+  name: mozzarella sticks
+  description: Also known as 'Cheese Sticks'. Goes good with salsa.
   components:
   - type: FlavorProfile
     flavors:

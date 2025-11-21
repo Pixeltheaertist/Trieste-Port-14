@@ -1,3 +1,12 @@
+## Bartender
+tp14-loadout-group-backpacks-bartender = Bartender backpacks
+tp14-loadout-group-footwear-bartender = Bartender footwear
+tp14-loadout-group-headwear-bartender = Bartender headwear
+tp14-loadout-group-jumpers-bartender = Bartender jumpers
+tp14-loadout-group-neckwear-bartender = Bartender neckwear
+tp14-loadout-group-outer-bartender = Bartender outer clothing
+tp14-loadout-group-gloves-bartender = Bartender gloves
+
 ## Basin Technician
 loadout-group-backpack-basin-tech = Basin Technician backpacks
 loadout-group-footwear-basin-tech = Basin Technician footwear

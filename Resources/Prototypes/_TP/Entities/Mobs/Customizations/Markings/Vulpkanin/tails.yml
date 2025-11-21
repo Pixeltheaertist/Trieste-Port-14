@@ -1,0 +1,12 @@
+- type: marking
+  id: TP14MarkingVulpkaninTailFluffy
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Vulpkanin ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Vulpkanin/tails.rsi
+    state: tail_fluffy_primary
+  - sprite: _TP/Mobs/Customization/Markings/Vulpkanin/tails.rsi
+    state: tail_fluffy_secondary
+  - sprite: _TP/Mobs/Customization/Markings/Vulpkanin/tails.rsi
+    state: tail_fluffy_tertiary

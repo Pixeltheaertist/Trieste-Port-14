@@ -7,7 +7,6 @@
   - type: Sprite
     color: "#fffe"
     layers:
-      - shader: unshaded
       - sprite: Mobs/Ghosts/ghost_human.rsi
         state: animated
         shader: unshaded

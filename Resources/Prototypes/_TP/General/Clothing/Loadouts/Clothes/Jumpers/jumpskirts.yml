@@ -1,0 +1,104 @@
+- type: loadout
+  id: TP14LoadoutJumpskirtBartender
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtBartender
+
+- type: loadout
+  id: TP14LoadoutJumpskirtBartenderPurple
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBartenderPurple
+
+- type: loadout
+  id: TP14LoadoutJumpskirtBlack
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorBlack
+
+- type: loadout
+  id: TP14LoadoutJumpskirtBlue
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorBlue
+
+- type: loadout
+  id: TP14LoadoutJumpskirtBrown
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorBrown
+
+- type: loadout
+  id: TP14LoadoutJumpskirtDarkBlue
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorDarkBlue
+
+- type: loadout
+  id: TP14LoadoutJumpskirtDarkGreen
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorDarkGreen
+
+- type: loadout
+  id: TP14LoadoutJumpskirtLightBrown
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorLightBrown
+
+- type: loadout
+  id: TP14LoadoutJumpskirtMaroon
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorMaroon
+
+- type: loadout
+  id: TP14LoadoutJumpskirtOrange
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorOrange
+
+- type: loadout
+  id: TP14LoadoutJumpskirtPurple
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorPurple
+
+- type: loadout
+  id: TP14LoadoutJumpskirtRed
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorRed
+
+- type: loadout
+  id: TP14LoadoutJumpskirtRainbow
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorRainbow
+
+- type: loadout
+  id: TP14LoadoutJumpskirtTeal
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorTeal
+
+- type: loadout
+  id: TP14LoadoutJumpskirtWhite
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorWhite
+
+- type: loadout
+  id: TP14LoadoutJumpskirtYellow
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorYellow
+
+- type: loadout
+  id: TP14LoadoutDressElegantBlack
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtBlackElegantDress
+
+- type: loadout
+  id: TP14LoadoutDressElegantRed
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtRedElegantDress
+
+- type: loadout
+  id: TP14LoadoutDressElegantGreen
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtGreenElegantDress
+
+- type: loadout
+  id: TP14LoadoutDressElegantBlue
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtBlueElegantDress
+
+- type: loadout
+  id: TP14LoadoutDressElegantPurple
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtPurpleElegantDress

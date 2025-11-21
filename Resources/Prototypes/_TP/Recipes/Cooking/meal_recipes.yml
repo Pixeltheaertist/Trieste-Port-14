@@ -130,3 +130,10 @@
   result: ClothingEyesHudFriedOnion
   time: 15
   ingredient: ClothingEyesHudBeer
+
+- type: deepFryingRecipe
+  id: TP14RecipeMotharellaSticks
+  name: motharella sticks recipe
+  result: TP14FoodMothSticks
+  time: 10
+  ingredient: FoodDoughCottonRope

@@ -1,0 +1,6 @@
+- type: loadoutGroup
+  id: TP14OuterClothingBomber
+  name: loadout-group-outer-bomber
+  minLimit: 1
+  loadouts:
+  - TP14LoadoutCoatBomberJacket

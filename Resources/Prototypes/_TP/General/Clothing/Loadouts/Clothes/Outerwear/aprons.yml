@@ -1,0 +1,19 @@
+- type: loadout
+  id: TP14LoadoutOuterApron
+  equipment:
+    outerClothing: ClothingOuterApron
+
+- type: loadout
+  id: TP14LoadoutOuterApronBar
+  equipment:
+    outerClothing: ClothingOuterApronBar
+
+- type: loadout
+  id: TP14LoadoutOuterApronBotanist
+  equipment:
+    outerClothing: ClothingOuterApronBotanist
+
+- type: loadout
+  id: TP14LoadoutOuterApronChef
+  equipment:
+    outerClothing: ClothingOuterApronChef
