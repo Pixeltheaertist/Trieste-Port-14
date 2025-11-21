@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared._Moffstation.Cards.Components;
 using Content.Shared.Examine;
 using Content.Shared.Hands.EntitySystems;
@@ -78,17 +79,30 @@ public sealed class CardSystem : EntitySystem
         }
     }
 
-    public void Flip(Entity<CardComponent> entity, bool? faceDown)
+    public void Flip(Entity<CardComponent> card, bool? faceDown)
     {
-        var newState = faceDown ?? !entity.Comp.IsFaceDown;
-        if (newState != entity.Comp.IsFaceDown)
+        Flip([card], faceDown);
+    }
+
+    public void Flip(IEnumerable<Entity<CardComponent>> cards, bool? faceDown)
+    {
+        var parents = cards.Select(card =>
+            {
+                var newState = faceDown ?? !card.Comp.IsFaceDown;
+                var didFlip = newState != card.Comp.IsFaceDown;
+
+                card.Comp.IsFaceDown = newState;
+                _appearance.SetData(card, CardVisuals.IsFaceDown, newState);
+                Dirty(card);
+
+                return didFlip ? Transform(card).ParentUid : EntityUid.Invalid;
+            })
+            .ToHashSet();
+
+        foreach (var parent in parents)
         {
             var ev = new ContainedCardFlippedEvent();
-            RaiseLocalEvent(Transform(entity).ParentUid, ref ev);
+            RaiseLocalEvent(parent, ref ev);
         }
-
-        entity.Comp.IsFaceDown = newState;
-        _appearance.SetData(entity, CardVisuals.IsFaceDown, newState);
-        Dirty(entity);
     }
 }

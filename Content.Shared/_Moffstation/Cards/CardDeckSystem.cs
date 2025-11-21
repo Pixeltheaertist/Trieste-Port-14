@@ -14,6 +14,7 @@ namespace Content.Shared._Moffstation.Cards;
 
 public sealed class CardDeckSystem : CardStackSystem<CardDeckComponent>
 {
+    [Dependency] private readonly CardSystem _card = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
@@ -111,14 +112,9 @@ public sealed class CardDeckSystem : CardStackSystem<CardDeckComponent>
 
     private void FlipAll(Entity<CardDeckComponent> entity, bool isFlipped, EntityUid user)
     {
-        CardStack.SetFacingOnAll(entity, isFlipped);
+        Card.Flip(GetCards(entity), isFlipped);
 
         Audio.PlayPredicted(entity.Comp.ShuffleSound, entity, user, AudioVariation);
-        _popup.PopupPredicted(
-            Loc.GetString("card-verb-organize-success", ("target", MetaData(entity).EntityName)),
-            entity,
-            user
-        );
     }
 
 
@@ -130,6 +126,9 @@ public sealed class CardDeckSystem : CardStackSystem<CardDeckComponent>
         var card = GetCards(entity).Last();
         CardStack.RemoveCard(entity, card, args.User);
         _hands.TryPickupAnyHand(args.User, card, animate: false);
+
+        // Flip the card face up when drawn.
+        _card.Flip(card, faceDown: false);
 
         args.Handled = true;
     }

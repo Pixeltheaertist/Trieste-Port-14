@@ -15,7 +15,7 @@ namespace Content.Shared._Moffstation.Cards;
 public partial class CardStackSystem : EntitySystem
 {
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
-    [Dependency] private readonly CardSystem _card = default!;
+    [Dependency] protected readonly CardSystem Card = default!;
     [Dependency] protected readonly CardStackSystem CardStack = default!;
     [Dependency] protected readonly SharedContainerSystem Container = default!;
     [Dependency] protected readonly SharedStorageSystem Storage = default!;
@@ -130,14 +130,6 @@ public partial class CardStackSystem : EntitySystem
         if (from.Comp.NetCards.Count <= 0)
         {
             PredictedQueueDel(from);
-        }
-    }
-
-    public void SetFacingOnAll<T>(Entity<T> entity, bool faceDown) where T : CardStackComponent
-    {
-        foreach (var card in GetCards(entity))
-        {
-            _card.Flip(card, faceDown);
         }
     }
 
@@ -295,12 +287,14 @@ public abstract class CardStackSystem<TComp> : CardStackSystem where TComp : Car
 
         if (CardStack.TryComp(args.Used, out var usedStack))
         {
+            var cardToDraw = GetCards(entity).TakeLast(1).ToList();
             CardStack.TransferCards<TComp, CardStackComponent>(
                 entity,
                 (args.Used, usedStack),
-                GetCards(entity).TakeLast(1),
+                cardToDraw,
                 args.User
             );
+            Card.Flip(cardToDraw, faceDown: false); // Flip drawn card
             args.Handled = true;
             return;
         }

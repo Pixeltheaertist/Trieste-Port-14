@@ -5,7 +5,7 @@ namespace Content.Client._Moffstation.GameObjects;
 
 public abstract class ManagedLayerVisualizerSystem<TComp> : VisualizerSystem<TComp> where TComp : Component
 {
-    private const string LayerPrefix = $"{nameof(TComp)}-ManagedLayer-";
+    private static readonly string LayerPrefix = $"{typeof(TComp).Name}-ManagedLayer-";
 
     protected override void OnAppearanceChange(EntityUid uid, TComp component, ref AppearanceChangeEvent args)
     {
@@ -20,8 +20,14 @@ public abstract class ManagedLayerVisualizerSystem<TComp> : VisualizerSystem<TCo
         {
             if (!SpriteSystem.LayerExists(sprite, layerAdded))
             {
-                DebugTools.Assert($"Failed to retrieve added layer: {layerAdded}");
-                continue;
+                // TODO Workaround for https://github.com/space-wizards/RobustToolbox/pull/6305
+                if (SpriteSystem.LayerMapGet(sprite, layerAdded) != 0)
+                {
+                    DebugTools.Assert($"Failed to retrieve added layer: {layerAdded}");
+                    continue;
+                }
+
+                Log.Debug($"Suppressing possibly incorrect layer lookup failure: \"{layerAdded}\"!");
             }
 
             SpriteSystem.RemoveLayer(sprite, layerAdded);

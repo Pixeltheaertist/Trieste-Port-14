@@ -125,7 +125,7 @@ public sealed class CardHandSystem : CardStackSystem<CardHandComponent>
             // Can't insert cards into a predicted hand.
             var hand = new Entity<CardHandComponent>(spawned, Comp<CardHandComponent>(spawned));
             CardStack.InsertCards(hand, cardsList);
-            CardStack.SetFacingOnAll(hand, false);
+            Card.Flip(base.GetCards(hand), false);
         }
 
         return spawned;

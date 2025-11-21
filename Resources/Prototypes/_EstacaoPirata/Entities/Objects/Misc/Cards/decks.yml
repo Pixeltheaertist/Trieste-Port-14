@@ -130,7 +130,6 @@
       - CardScJokerBlack
 
 - type: entity
-  categories: [ HideSpawnMenu ] # TODO CENT
   parent: CardDeckBase
   id: CardDeckNanotrasen
   name: deck of cards
@@ -202,7 +201,6 @@
       - CardScJokerNanotrasen
 
 - type: entity
-  categories: [ HideSpawnMenu ] # TODO CENT
   parent: CardDeckBase
   id: CardDeckSyndicate
   name: deck of cards

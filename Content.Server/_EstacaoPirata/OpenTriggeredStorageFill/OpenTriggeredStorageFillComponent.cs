@@ -3,7 +3,6 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._EstacaoPirata.OpenTriggeredStorageFill;
 
-// TODO CENT But why
 /// <summary>
 /// This is used for storing an item prototype to be inserted into a container when the trigger is activated. This is deleted from the entity after the item is inserted.
 /// </summary>
