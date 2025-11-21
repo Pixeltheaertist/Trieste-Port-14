@@ -6,7 +6,7 @@
 - type: loadout
   id: TP14LoadoutHeadwearBeretBrigmedic
   equipment:
-    head: ClothingHeadHatBeretBridmedic
+    head: ClothingHeadHatBeretBrigmedic
 
 - type: loadout
   id: TP14LoadoutHeadwearBeretCMO
@@ -56,7 +56,7 @@
 - type: loadout
   id: TP14LoadoutHeadwearBeretSecurity
   equipment:
-    head: ClothingHeadHatSecurity
+    head: ClothingHeadHatBeretSecurity
 
 - type: loadout
   id: TP14LoadoutHeadwearBeretWarden

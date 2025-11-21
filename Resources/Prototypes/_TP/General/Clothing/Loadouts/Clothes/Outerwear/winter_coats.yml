@@ -101,7 +101,7 @@
 - type: loadout
   id: TP14LoadoutOuterWinterHydroponics
   equipment:
-    outerClothing: ClothingOuterWinterHydroponics
+    outerClothing: ClothingOuterWinterHydro
 
 - type: loadout
   id: TP14LoadoutOuterWinterJanitorial

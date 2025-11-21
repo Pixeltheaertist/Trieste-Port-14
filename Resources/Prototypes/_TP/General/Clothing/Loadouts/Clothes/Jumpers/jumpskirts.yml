@@ -34,11 +34,6 @@
     jumpsuit: ClothingUniformJumpskirtColorDarkGreen
 
 - type: loadout
-  id: TP14LoadoutJumpskirtDarkGrey
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtColorDarkGrey
-
-- type: loadout
   id: TP14LoadoutJumpskirtLightBrown
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorLightBrown

@@ -39,9 +39,9 @@
     shoes: ClothingShoesColorOrange
 
 - type: loadout
-  id: TP14LoadoutFootwearPierott
+  id: TP14LoadoutFootwearPierrot
   equipment:
-    shoes: TP14ClothingShoesPierott
+    shoes: TP14ClothingShoesPierrot
 
 - type: loadout
   id: TP14LoadoutFootwearPurple
@@ -51,7 +51,7 @@
 - type: loadout
   id: TP14LoadoutFootwearRed
   equipment:
-    shoes: ClothingShoesColorPierott
+    shoes: ClothingShoesColorRed
 
 - type: loadout
   id: TP14LoadoutFootwearTourist

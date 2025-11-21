@@ -106,7 +106,7 @@
 - type: loadout
   id: TP14LoadoutHeadwearPlagueDoctor
   equipment:
-    head: ClothingHeadHatPlagueDoctor
+    head: ClothingHeadHatPlaguedoctor
 
 - type: loadout
   id: TP14LoadoutHeadwearPwig

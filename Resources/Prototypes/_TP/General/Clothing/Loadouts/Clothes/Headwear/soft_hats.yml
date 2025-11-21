@@ -33,22 +33,22 @@
 - type: loadout
   id: TP14LoadoutHeadwearSoftHatCommand
   equipment:
-    head: ClothingHeadHatCommandsoft
+    head: ClothingHeadHatCommandSoft
 
 - type: loadout
   id: TP14LoadoutHeadwearSoftHatCommandFlipped
   equipment:
-    head: ClothingHeadHatCommandsoftFlipped
+    head: ClothingHeadHatCommandSoftFlipped
 
 - type: loadout
   id: TP14LoadoutHeadwearSoftHatCorporate
   equipment:
-    head: ClothingHeadHatCommandsoft
+    head: ClothingHeadHatCorpsoft
 
 - type: loadout
   id: TP14LoadoutHeadwearSoftHatCorporateFlipped
   equipment:
-    head: ClothingHeadHatCorporatesoftFlipped
+    head: ClothingHeadHatCorpsoftFlipped
 
 - type: loadout
   id: TP14LoadoutHeadwearSoftHatGreen
@@ -180,7 +180,7 @@
 - type: loadout
   id: TP14LoadoutHeadwearCapMarshal
   equipment:
-    head: ClothingHeadHatHoscap
+    head: ClothingHeadHatHoshat
 
 - type: loadout
   id: TP14LoadoutHeadwearCapWarden
