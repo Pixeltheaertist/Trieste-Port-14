@@ -1,0 +1,62 @@
+- type: entity
+  id: TP14KitchenOven
+  parent: [ KitchenElectricGrill ]
+  name: oven
+  description: A stovetop oven. It's seen better days.
+  suffix: Trieste, Service
+  components:
+  - type: Microwave
+    capacity: 10
+    canMicrowaveIdsSafely: true
+    explosionChance: 0.3
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.VisualState:
+        enum.MicrowaveVisualizerLayers.Base:
+          Idle: { state: icon }
+          Broken: { state: icon }
+          Cooking: { state: icon }
+        enum.MicrowaveVisualizerLayers.BaseUnlit:
+          Idle: { state: blank }
+          Broken: { state: blank }
+          Cooking: { state: bottom-running }
+      enum.PowerDeviceVisuals.Powered:
+        enum.MicrowaveVisualizerLayers.BaseUnlit:
+          True: { visible: true }
+          False: { visible: false }
+      enum.EntityHeaterVisuals.Setting:
+        enum.EntityHeaterVisuals.Setting:
+          Off: { visible: false }
+          Low: { visible: true, state: top-low }
+          Medium: { visible: true, state: top-medium }
+          High: { visible: true, state: top-high }
+  - type: Sprite
+    sprite: _TP/Structures/Machines/oven.rsi
+    drawdepth: SmallObjects
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: [ "enum.MicrowaveVisualizerLayers.Base" ]
+    - state: icon
+      map: [ "enum.EntityHeaterVisuals.Setting" ]
+    - state: blank
+      shader: unshaded
+      map: ["enum.MicrowaveVisualizerLayers.BaseUnlit"]
+  - type: ActivatableUI
+    key: enum.MicrowaveUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.MicrowaveUiKey.Key:
+        type: MicrowaveBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      microwave_entity_container: !type:Container
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: EmptyOnMachineDeconstruct
+    containers:
+    - microwave_entity_container
+  - type: ApcPowerReceiver
+    powerLoad: 300 # Less than a microwave
+  - type: Machine
+    board: TP14OvenMachineCircuitboard

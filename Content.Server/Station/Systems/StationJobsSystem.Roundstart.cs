@@ -342,7 +342,7 @@ public sealed partial class StationJobsSystem
                 if (!(priority == selectedPriority || selectedPriority is null))
                     continue;
 
-                if (!_prototypeManager.TryIndex(jobId, out var job))
+                if (!_prototypeManager.Resolve(jobId, out var job))
                     continue;
 
                 // If we're an antag but the job can't be an antag, don't allow this job
@@ -358,7 +358,7 @@ public sealed partial class StationJobsSystem
                 if (weight is not null && job.Weight != weight.Value)
                     continue;
 
-                if (!(roleBans == null || !roleBans.Contains(jobId)))
+                if (!(roleBans == null || !roleBans.Contains(jobId))) //TODO: Replace with IsRoleBanned
                     continue;
 
                 availableJobs ??= new List<string>(playerJobs.Count);

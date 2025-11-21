@@ -25,7 +25,8 @@
     ignited: true
   - type: AlwaysHot
   - type: TemperatureProtection
-    coefficient: 0.6
+    heatingCoefficient: 0.6
+    coolingCoefficient: 0.6
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
@@ -48,6 +49,8 @@
     proto: slime
   - type: Vocal
     sounds:
+      Male: MaleSlime
+      Female: MaleSlime
       Unsexed: MaleSlime
   - type: Temperature
     heatDamageThreshold: 400
@@ -90,7 +93,7 @@
     - reagents: [ Water, SpaceCleaner ]
       methods: [ Touch ]
       effects:
-      - !type:WashCreamPieReaction
+      - !type:WashCreamPie
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -114,7 +117,6 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: -2
-    ignoreFull: true # prevents the charge from stopping
   - type: PointLight
     radius: 1.5
     energy: 0.2
@@ -123,7 +125,7 @@
 - type: entity
   parent: MobHumanDummy
   id: MobJellidPersonDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: HumanoidAppearance
       species: JellidPerson

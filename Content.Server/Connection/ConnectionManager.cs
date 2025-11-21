@@ -18,6 +18,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Content.Server._NullLink.PlayerData;
 
 /*
  * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.
@@ -50,6 +51,7 @@ namespace Content.Server.Connection
     /// </summary>
     public sealed partial class ConnectionManager : IConnectionManager
     {
+        [Dependency] private readonly INullLinkPlayerManager _nullLinkPlayerManager = default!; // NullLink
         [Dependency] private readonly IPlayerManager _plyMgr = default!;
         [Dependency] private readonly IServerNetManager _netMgr = default!;
         [Dependency] private readonly IServerDbManager _db = default!;
@@ -153,6 +155,9 @@ namespace Content.Server.Connection
                 var properties = new Dictionary<string, object>();
                 if (reason == ConnectionDenyReason.Full)
                     properties["delay"] = _cfg.GetCVar(CCVars.GameServerFullReconnectDelay);
+
+                //NullLink discord link
+                properties["discord"] = _nullLinkPlayerManager.GetDiscordAuthUrl(e.UserId.ToString());
 
                 e.Deny(new NetDenyReason(msg, properties));
             }

@@ -174,18 +174,27 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
             Log.Debug($"MakeTraitor {ToPrettyString(traitor)} - Uplink is PDA");
             // Codes are only generated if the uplink is a PDA
             var ev = new GenerateUplinkCodeEvent();
+            Log.Debug($"Raising GenerateUplinkCodeEvent on {ToPrettyString(pda.Value)}");
             RaiseLocalEvent(pda.Value, ref ev);
+            Log.Debug($"Event raised, ev.Code is: {(ev.Code == null ? "NULL" : "not null")}");
 
             if (ev.Code is { } generatedCode)
             {
                 code = generatedCode;
-
-                // If giveUplink is false the uplink code part is omitted
                 briefing = string.Format("{0}\n{1}",
                     briefing,
                     Loc.GetString("traitor-role-uplink-code-short", ("code", string.Join("-", code).Replace("sharp", "#"))));
 
                 return (code, briefing);
+            }
+            else
+            {
+                // Code generation failed, but PDA uplink was still added
+                // Add a message indicating they have an uplink but no code
+                Log.Warning($"PDA uplink added but code generation failed for {ToPrettyString(traitor)}");
+                briefing += "\n" + Loc.GetString("traitor-role-uplink-code-short", ("code", "GENERATION FAILED"));
+
+                return (null, briefing);
             }
         }
         else if (pda == null && !uplinked)
@@ -198,8 +207,8 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
             while (query.MoveNext(out var implantUid, out var implantComp, out var storeComp))
             {
                 // Check if this implant belongs to our traitor and is an uplink
-                if (implantComp.ImplantedEntity == traitor &&
-                    MetaData(implantUid).EntityPrototype!.ID == implantProto)
+                if (implantComp.ImplantedEntity == traitor
+                    && MetaData(implantUid).EntityPrototype!.ID == implantProto)
                 {
                     Log.Debug(
                         $"MakeTraitor {ToPrettyString(traitor)} - Found uplink implant, setting TC to {startingBalance}");

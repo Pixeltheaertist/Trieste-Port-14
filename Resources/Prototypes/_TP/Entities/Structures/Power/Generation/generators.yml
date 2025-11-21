@@ -1,6 +1,7 @@
 - type: entity
   parent: GeneratorRTG
   id: TP14TheArtifact
+  suffix: Trieste, Engineering, The Artifact
   name: The Artifact
   description: An ancient power generation device, the lifeblood of Sweetwater and Trieste.
   components:
@@ -51,7 +52,7 @@
     color: "#4080FF"
   - type: SingularityDistortion
     falloffPower: 2
-    intensity: -1000
+    intensity: -250
   - type: ItemSlots
   - type: ContainerContainer
     containers:
@@ -93,7 +94,7 @@
   id: TP14NuclearReactor
   name: nuclear reactor
   description: A reactor that violently enriches and detonates uranium to generate energy. Shockingly safe.
-  suffix: Settlers ONLY
+  suffix: Trieste, Settlers
   placement:
     mode: AlignTileAny
   components:
@@ -109,19 +110,23 @@
       path: /Audio/Effects/shuttle_thruster.ogg
   - type: InteractionOutline
   - type: Sprite
-    sprite: Structures/Machines/station_anchor.rsi
+    sprite: _TP/Structures/Power/nuclear_reactor.rsi
     layers:
-    - state: station_anchor
-      map: ["base"]
-    - state: station_anchor_unlit
-      shader: unshaded
-      map: ["unlit"]
+    - state: active
+      map: [ "enum.GeneratorVisualLayers.Body" ]
+      visible: false
+    - state: idle
+      map: [ "enum.GeneratorVisualLayers.Unlit" ]
+      visible: true
   - type: GenericVisualizer
     visuals:
-      enum.PowerChargeVisuals.Active:
-        unlit:
+      enum.GeneratorVisuals.Running:
+        enum.GeneratorVisualLayers.Body:
           True: { visible: True }
           False: { visible: False }
+        enum.GeneratorVisualLayers.Unlit:
+          True: { visible: False }
+          False: { visible: True }
   - type: Appearance
   - type: FuelGenerator
     minTargetPower: 10000
@@ -161,7 +166,7 @@
   id: GeneratoradvRTG
   name: Advanced RTG
   description: An advanced radioisotope generator specially made by Triese's engineers for long-term power supply.
-  suffix: 15kW
+  suffix: Trieste, 15kW
   components:
   - type: PowerSupplier
     supplyRate: 15000
@@ -207,8 +212,8 @@
   parent: GeneratoradvRTG
   id: GeneratoradvRTGDamaged
   name: damaged Advanced RTG
-  description: An advanced radioisotope generator specially made by Triese's engineers for long-term power supply. This one has damaged shielding.
-  suffix: 15kW
+  description: An advanced radioisotope generator specially made by Trieste's engineers for long-term power supply. This one has damaged shielding.
+  suffix: Trieste, 15kW
   components:
   - type: PowerSupplier
     supplyRate: 15000

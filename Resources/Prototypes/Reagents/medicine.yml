@@ -4,17 +4,19 @@
   group: Medicine
   desc: reagent-desc-cryptobiolin
   physicalDesc: reagent-physical-desc-fizzy
+  allowedDepartments:
+  - Medical
   flavor: medicine
   color: "#081a80"
   metabolisms:
     Medicine:
       effects:
-      - !type:GenericStatusEffect
-        key: Stutter
-        component: ScrambledAccent
-      - !type:Drunk
-        slurSpeech: false
-        boozePower: 20
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectScrambled
+        type: Update
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectWoozy
+        time: 20.0
 
 - type: reagent
   id: Dylovene
@@ -33,31 +35,36 @@
             Poison: -1
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Dylovene
           min: 20
         damage:
           groups:
             Brute: 2
       - !type:Jitter
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Dylovene
           min: 20
       - !type:PopupMessage
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Dylovene
           min: 20
         type: Local
         visualType: Medium
         messages: [ "generic-reagent-effect-nauseous" ]
         probability: 0.2
-      - !type:ChemVomit
+      - !type:Vomit
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Dylovene
           min: 20
         probability: 0.02
       - !type:Drunk
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Dylovene
           min: 15
   plantMetabolism:
   - !type:PlantAdjustToxins
@@ -86,8 +93,6 @@
       - !type:ModifyStatusEffect
         effectProto: StatusEffectDrowsiness
         time: 1.5
-        type: Add
-        refresh: false
       - !type:HealthChange
         damage:
           types:
@@ -104,8 +109,8 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:GenericStatusEffect
-        key: Drunk
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrunk
         time: 6.0
         type: Remove
       - !type:HealthChange
@@ -142,26 +147,28 @@
 #  metabolisms:
 #    Medicine:
 #      effects:
-#      - !type:HealthChange
+#      - !type:EvenHealthChange
 #        damage:
-#          groups:
-#            Brute: -2
+#          Brute: -1.5
 #      - !type:HealthChange
 #        conditions:
-#        - !type:ReagentThreshold
+#        - !type:ReagentCondition
+#          reagent: Bicaridine
 #          min: 15
 #        damage:
 #          types:
 #            Asphyxiation: 0.5
 #            Poison: 1.5
-#      - !type:ChemVomit
+#      - !type:Vomit
 #        conditions:
-#        - !type:ReagentThreshold
+#        - !type:ReagentCondition
+#          reagent: Bicaridine
 #          min: 30
 #        probability: 0.02
 #      - !type:Jitter
 #        conditions:
-#        - !type:ReagentThreshold
+#        - !type:ReagentCondition
+#          reagent: Bicaridine
 #          min: 15
 #      - !type:Drunk
 
@@ -184,8 +191,8 @@
       effects:
         - !type:HealthChange
           conditions:
-          - !type:Temperature
-            # this is a little arbitrary, but they have to be pretty cold
+          - !type:TemperatureCondition
+            # this is a little arbitrary but they gotta be pretty cold
             max: 213.0
           damage:
           # todo scale with temp like SS13
@@ -208,7 +215,7 @@
       effects:
         - !type:HealthChange
           conditions:
-          - !type:Temperature
+          - !type:TemperatureCondition
             max: 213.0
           damage:
             types:
@@ -233,7 +240,8 @@
 #            Cold: -1.5
 #      - !type:HealthChange
 #        conditions:
-#        - !type:ReagentThreshold
+#        - !type:ReagentCondition
+#          reagent: Dermaline
 #          min: 10
 #        damage:
 #          types:
@@ -243,7 +251,8 @@
 #            Brute: 0.5
 #      - !type:Jitter
 #        conditions:
-#        - !type:ReagentThreshold
+#        - !type:ReagentCondition
+#          reagent: Dermaline
 #          min: 10
 
 #- type: reagent
@@ -264,7 +273,8 @@
 #            Bloodloss: -0.5
 #      - !type:HealthChange
 #        conditions:
-#          - !type:ReagentThreshold
+#          - !type:ReagentCondition
+#            reagent: Dexalin
 #            min: 20
 #        damage:
 #          types:
@@ -289,14 +299,15 @@
 #            Bloodloss: -3
 #      - !type:AdjustReagent
 #        conditions:
-#        - !type:ReagentThreshold
+#        - !type:ReagentCondition
 #          reagent: HeartbreakerToxin
 #          min: 1
 #        reagent: HeartbreakerToxin
 #        amount: -3
 #      - !type:HealthChange
 #        conditions:
-#          - !type:ReagentThreshold
+#          - !type:ReagentCondition
+#            reagent: DexalinPlus
 #            min: 25
 #        damage:
 #          types:
@@ -315,13 +326,20 @@
   metabolisms:
     Medicine:
       effects:
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Histamine
+          min: 45
+        reagent: Histamine
+        amount: -5
       - !type:HealthChange
         conditions:
-        # they gotta be in crit first
+          # they gotta be in crit first
         - !type:MobStateCondition
           mobstate: Critical
-        - !type:ReagentThreshold
-          min: 0
+        - !type:ReagentCondition
+          reagent: Epinephrine
           max: 20
         damage:
           types:
@@ -332,7 +350,8 @@
             Burn: -0.5
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Epinephrine
           min: 20
         damage:
           types:
@@ -343,7 +362,7 @@
         amount: -2
       - !type:AdjustReagent
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: HeartbreakerToxin
           min: 1
         reagent: Epinephrine
@@ -351,17 +370,16 @@
       - !type:AdjustReagent
         probability: 0.1
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: HeartbreakerToxin
           min: 1
         reagent: Histamine
         amount: 4
-      - !type:GenericStatusEffect
-        key: Stun
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectStunned
         time: 0.75
         type: Remove
-      - !type:GenericStatusEffect
-        key: KnockedDown
+      - !type:ModifyKnockdown
         time: 0.75
         type: Remove
       - !type:GenericStatusEffect
@@ -384,18 +402,20 @@
         damage:
           types:
             Radiation: -1
-      - !type:ChemVomit
+      - !type:Vomit
         probability: 0.02
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Hyronalin
           min: 30
         damage:
           types:
-            Heat: 2
+           Heat: 2
       - !type:Jitter
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Hyronalin
           min: 30
 
 - type: reagent
@@ -404,14 +424,17 @@
   group: Medicine
   desc: reagent-desc-ipecac
   physicalDesc: reagent-physical-desc-inky
+  allowedDepartments:
+  - Medical
   flavor: medicine
   color: "#422912"
   metabolisms:
     Medicine:
       effects:
-      - !type:ChemVomit
+      - !type:Vomit
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Ipecac
           min: 4
         probability: 0.3
 
@@ -429,13 +452,13 @@
       effects:
       - !type:HealthChange
         conditions:
-        # they gotta be in crit first
+          # they gotta be in crit first
         - !type:MobStateCondition
           mobstate: Critical
         damage:
           types:
             Asphyxiation: -2
-      - !type:ModifyBleedAmount
+      - !type:ModifyBleed
         amount: -0.25
 
 #- type: reagent
@@ -458,7 +481,8 @@
 #      - !type:SatiateThirst
 #        factor: -10
 #        conditions:
-#        - !type:ReagentThreshold
+#        - !type:ReagentCondition
+#          reagent: Kelotane
 #          min: 30
 #      - !type:PopupMessage
 #        type: Local
@@ -468,7 +492,8 @@
 #        - generic-reagent-effect-parched
 #        probability: 0.1
 #        conditions:
-#        - !type:ReagentThreshold
+#        - !type:ReagentCondition
+#          reagent: Kelotane
 #          min: 25
 
 - type: reagent
@@ -488,9 +513,14 @@
             Cold: -4
       - !type:AdjustTemperature
         conditions:
-        - !type:Temperature
+        - !type:TemperatureCondition
           max: 293.15
         amount: 100000 # thermal energy, not temperature!
+      - !type:AdjustTemperature
+        conditions:
+        - !type:TemperatureCondition
+          min: 293.15
+        amount: -10000
       - !type:PopupMessage
         type: Local
         visualType: Medium
@@ -518,16 +548,18 @@
             Heat: 0.5
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
-          min: 30
+          - !type:ReagentCondition
+            reagent: Barozine
+            min: 30
         damage:
           types:
             Poison: 3
-      - !type:ChemVomit
+      - !type:Vomit
         probability: 0.15
         conditions:
-        - !type:ReagentThreshold
-          min: 30
+          - !type:ReagentCondition
+            reagent: Barozine
+            min: 30
       - !type:GenericStatusEffect
         key: PressureImmunity
         component: PressureImmunity
@@ -553,12 +585,10 @@
   flavor: medicine
   color: "#c8ff75"
   plantMetabolism:
-  - !type:PlantAdjustToxins
-    amount: 6
-  - !type:PlantPhalanximine
-    conditions:
-    - !type:ReagentThreshold
-      min: 4
+    - !type:PlantAdjustToxins
+      amount: 6
+    - !type:PlantPhalanximine
+      minScale: 4
   metabolisms:
     Medicine:
       metabolismRate: 0.1
@@ -571,14 +601,15 @@
             Caustic: 0.15
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Phalanximine
           min: 11
         damage:
           types:
             Radiation: 0.2
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: Arithrazine
           min: 1
         damage:
@@ -604,12 +635,13 @@
             Asphyxiation: -2.5
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: PolypyryliumOligomers
           min: 30
         damage:
           types:
             Asphyxiation: 3.5
-      - !type:ModifyBleedAmount
+      - !type:ModifyBleed
         amount: -0.25
 
 - type: reagent
@@ -623,10 +655,11 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:CureZombieInfection
-        conditions:
-        - !type:ReagentThreshold
-          min: 10
+        - !type:CureZombieInfection
+          conditions:
+            - !type:ReagentCondition
+              reagent: Ambuzol
+              min: 10
 
 - type: reagent
   id: AmbuzolPlus
@@ -639,11 +672,12 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:CureZombieInfection
-        innoculate: true
-        conditions:
-        - !type:ReagentThreshold
-          min: 5
+        - !type:CureZombieInfection
+          innoculate: true
+          conditions:
+            - !type:ReagentCondition
+              reagent: AmbuzolPlus
+              min: 5
 
 - type: reagent
   id: PulpedBananaPeel
@@ -656,7 +690,7 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:ModifyBleedAmount
+      - !type:ModifyBleed
         amount: -0.5
 
 - type: reagent
@@ -708,7 +742,7 @@
             Poison: -4
       - !type:AdjustReagent
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: Amatoxin
           min: 1
         reagent: Amatoxin
@@ -729,12 +763,11 @@
         damage:
           types:
             Poison: 2
-      - !type:GenericStatusEffect
-        key: Stun
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectStunned
         time: 3.0
         type: Remove
-      - !type:GenericStatusEffect
-        key: KnockedDown
+      - !type:ModifyKnockdown
         time: 3.0
         type: Remove
       - !type:ModifyStatusEffect
@@ -755,11 +788,12 @@
       effects:
       # Medium-large quantities can hurt you instead,
       # but still technically stop your bleeding.
-      - !type:ModifyBleedAmount
+      - !type:ModifyBleed
         amount: -1.5
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: TranexamicAcid
           min: 15
         damage:
           types:
@@ -778,7 +812,7 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:TotalDamage
+        - !type:TotalDamageCondition
           max: 50
         damage:
           groups:
@@ -794,6 +828,8 @@
   name: reagent-name-lipozine
   group: Medicine
   desc: reagent-desc-lipozine
+  allowedDepartments:
+  - Medical
   physicalDesc: reagent-physical-desc-oily
   flavor: medicine
   color: "#2690b5"
@@ -834,18 +870,35 @@
   metabolisms:
     Medicine:
       effects:
+      - !type:EvenHealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Ultravasculine
+          min: 0
+          max: 20
+        damage:
+          Toxin: -6
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Ultravasculine
           min: 0
           max: 30
         damage:
           groups:
             Toxin: -3
             Brute: 0.5
+      - !type:EvenHealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Ultravasculine
+          min: 20
+        damage:
+          Toxin: -2
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Ultravasculine
           min: 30
         damage:
           groups:
@@ -853,14 +906,14 @@
             Brute: 3
       - !type:AdjustReagent
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: Histamine
           min: 1
         reagent: Histamine
         amount: -1
       - !type:AdjustReagent
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: Histamine
           min: 1
         reagent: Ultravasculine
@@ -877,7 +930,7 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:ChemHealEyeDamage
+      - !type:EyeDamage
 
 - type: reagent
   id: Cognizine
@@ -892,7 +945,8 @@
       effects:
       - !type:MakeSentient
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Cognizine
           min: 5
 
 - type: reagent
@@ -916,7 +970,8 @@
         type: Remove
       - !type:ResetNarcolepsy
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Ethyloxyephedrine
           min: 10
       - !type:PopupMessage
         visualType: Medium
@@ -941,7 +996,8 @@
         type: Remove
       - !type:ResetNarcolepsy
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Diphenylmethylamine
           min: 5
       - !type:PopupMessage
         visualType: Medium
@@ -966,37 +1022,41 @@
             Caustic: -3
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Sigynate
           min: 16
         damage:
           types:
             Heat: 2
       - !type:Jitter
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Sigynate
           min: 20
       - !type:PopupMessage
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Sigynate
           min: 20
         type: Local
         visualType: Medium
         messages: [ "generic-reagent-effect-nauseous" ]
         probability: 0.2
-      - !type:ChemVomit
+      - !type:Vomit
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Sigynate
           min: 30
         probability: 0.02
-      - !type:ChemVomit
+      - !type:Vomit
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: Arithrazine
           min: 1
         probability: 0.1
       - !type:PopupMessage
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: Arithrazine
           min: 1
         type: Local
@@ -1089,7 +1149,7 @@
         factor: 3
       - !type:HealthChange
         conditions:
-        - !type:TotalDamage
+        - !type:TotalDamageCondition
           max: 50
         damage:
           types:
@@ -1102,12 +1162,11 @@
     Extinguish:
       methods: [ Touch ]
       effects:
-      - !type:ExtinguishReaction
+      - !type:Extinguish
     Acidic:
       methods: [ Touch ]
       effects:
       - !type:HealthChange
-        scaleByQuantity: true
         ignoreResistances: false
         damage:
           types:
@@ -1183,19 +1242,22 @@
       # od makes you freeze to death
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Insuzine
           min: 12
         damage:
           types:
             Cold: 2
       - !type:AdjustTemperature
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Insuzine
           min: 12
         amount: -30000
       - !type:Jitter
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Insuzine
           min: 12
 
 - type: reagent
@@ -1210,14 +1272,14 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:ReduceRotting
-        seconds: 20
-        conditions:
-        #Patient must be dead and in a cryo tube (or something cold)
-        - !type:Temperature
-          max: 150.0
-        - !type:MobStateCondition
-          mobstate: Dead
+        - !type:ReduceRotting
+          seconds: 20
+          conditions:
+          #Patient must be dead and in a cryo tube (or something cold)
+          - !type:TemperatureCondition
+            max: 150.0
+          - !type:MobStateCondition
+            mobstate: Dead
 
 - type: reagent
   id: Necrosol
@@ -1239,7 +1301,7 @@
       effects:
         - !type:HealthChange
           conditions:
-          - !type:Temperature
+          - !type:TemperatureCondition
             max: 213.0
           damage:
             groups:
@@ -1262,7 +1324,7 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:Temperature
+        - !type:TemperatureCondition
           max: 213.0
         damage:
           types:
@@ -1283,7 +1345,8 @@
       effects:
       - !type:PopupMessage
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Mannitol
           min: 15
         type: Local
         visualType: Medium
@@ -1303,22 +1366,26 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Psicodine
           min: 30
         damage:
           types:
             Poison: 2
       - !type:ModifyStatusEffect
         effectProto: StatusEffectSeeingRainbow
+        conditions:
+        - !type:ReagentCondition
+          reagent: Psicodine
+          min: 30
         type: Add
         time: 8
-        refresh: false
       - !type:GenericStatusEffect
         key: Jitter
         time: 2.0
         type: Remove
-      - !type:GenericStatusEffect
-        key: Drunk
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrunk
         time: 6.0
         type: Remove
       - !type:PopupMessage # we dont have sanity/mood so this will have to do
@@ -1346,11 +1413,11 @@
         component: RadiationProtection
         time: 2
         type: Add
-        refresh: false
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
-          min: 20
+          - !type:ReagentCondition
+            reagent: PotassiumIodide
+            min: 20
         damage:
           types:
             Poison: 1
@@ -1374,7 +1441,6 @@
         effectProto: StatusEffectDrowsiness
         time: 4
         type: Add
-        refresh: false
       - !type:GenericStatusEffect
         key: Jitter
         time: 4.0

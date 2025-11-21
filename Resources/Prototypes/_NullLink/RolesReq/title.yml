@@ -1,0 +1,23 @@
+- type: titleBuilder
+  id: TriestePort 
+  segments:
+  - # role
+    titles: 
+    - text: "Lead"
+      color: "#1ABC9C"
+      roles:
+      - 1272376231182078045 # Lead dev
+    - text: "Admin"
+      color: "#10E644"
+      roles:
+      - 1327834263873392761 # game admin
+    - text: "Contributor"
+      color: "#206694"
+      roles:
+      - 1272376299943493716 # contributor
+  - # badge
+    titles: 
+    - text: "[font=\"Icon\"][/font]"
+      color: "#b411ea"
+      roles:
+      - 1336201131851780157 # Booster

@@ -1,6 +1,7 @@
 - type: entity
   id: TP14MechStepfather
-  parent: [BaseMech, BaseMob, StripableInventoryBase]
+  parent: [ BaseMech, BaseMob, StripableInventoryBase ]
+  suffix: Trieste, Expeditionary
   name: Rotund Stepfather
   description: A rugged deep-sea mining unit, designed to work in tandem with a Pilot. The onboard AI operates the primary clamp while the pilot operates the modules.
   components:
@@ -48,9 +49,8 @@
     - !type:PulseBehaviour
       id: blinking
       interpolate: Nearest
-      maxDuration: 1.0
-      minValue: 0.1
-      maxValue: 2.0
+      maxDuration: 2.0
+      minDuration: 0.1
       isLooped: true
   - type: PowerCellSlot
     cellSlotId: cell_slot
@@ -85,8 +85,6 @@
   - type: Strippable
   - type: Input
     context: "aghost"
-  - type: InputMover
-    canMove: true
   - type: CombatMode
   - type: Inventory
     templateId: Mech
@@ -170,5 +168,5 @@
       flatReductions:
         Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
   - type: Loadout
-    prototypes: [Stepfather]
+    prototypes: [TP14StepfatherGear]
   - type: Alerts

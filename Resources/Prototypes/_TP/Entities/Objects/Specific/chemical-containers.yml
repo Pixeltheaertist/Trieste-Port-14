@@ -1,6 +1,6 @@
 - type: entity
   parent: Jug
-  suffix: calcium
+  suffix: Trieste, Calcium
   id: JugCalcium
   categories: [ HideSpawnMenu ]
   components:

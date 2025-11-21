@@ -7,7 +7,7 @@
   id: TP14StormArray
   name: storm array
   description: The core of a massive array of lightning rods, siphoning searing energy from the eternal storm above. Must be kept cool.
-  suffix: 100kW
+  suffix: Trieste, 100kW
   placement:
     mode: AlignTileAny
   components:
@@ -24,7 +24,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-1.0,-1.0,1.0,0.10"
+          bounds: "-1.0,0.0,1.0,1.10"
         density: 50
         mask:
         - LargeMobMask
@@ -32,26 +32,23 @@
         - WallLayer
   - type: PowerSupplier
     supplyRate: 100000
-  - type: RadiantTemperature # Constantly heats the air around it
   - type: GuideHelp
     guides:
     - StormArray
     - Power
   - type: Damageable
     damageContainer: StructuralInorganic
-  - type: Anchorable
-    delay: 999999
   - type: Temperature
     heatDamageThreshold: 500
     coldDamageThreshold: -9999 # Doesn't take damage from cold
-    currentTemperature: 100.15
+    currentTemperature: 243.15
     specificHeat: 42
     coldDamage:
       types:
-        Cold: 0
+        Cold: 0.0
     heatDamage:
       types:
-        Heat: 5 # Recieves 5 heat damage every second it's overheating
+        Heat: 10.0
   - type: Electrified
     onHandInteract: true
     onInteractUsing: true
@@ -60,7 +57,8 @@
     highVoltageNode: input
   - type: Sprite
     sprite: _TP/Structures/Machines/StormArray.rsi # Might need to make the folder name lowercase, server compresses files weird sometimes.
-    state: storm_array
+    offset: 0, 1
+    state: storm_array_new
     drawdepth: Mobs
   - type: DamageVisuals
     thresholds: [100, 200, 400]
@@ -69,6 +67,8 @@
     damageOverlay:
       sprite: Structures/Windows/cracks.rsi
   - type: AmbientSound
+    enabled: true
+    volume: 10
     range: 5
     sound:
       path: /Audio/Ambience/Objects/buzzing.ogg
@@ -77,8 +77,8 @@
     totalIntensity: 200
     intensitySlope: 30
     maxIntensity: 120
-  - type: SpeakOnTrigger
-    pack: StormArrayWarnings
+  - type: Anchorable
+    flags: None
   - type: Destructible # Gives warnings every 100 damage, eventually exploding
     thresholds:
       - trigger:
@@ -137,3 +137,44 @@
           - !type:PlaySoundBehavior
             sound:
               collection: MetalBreak
+  - type: AtmosDevice # Needed for the RadiantTemperature component
+    requireAnchored: true
+  - type: RadiantTemperature # Constantly heats the air around it
+    goalTemperature: 500
+    energyChangedPerSecond: 5 # Around Hopefully around 3-minutes to reach 100. - Cookie (Father Cheese)
+  - type: StormArray # Announcements and Temperature
+  - type: NodeContainer # For the cold loop
+    examinable: true
+    nodes:
+      inlet:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+        volume: 100
+      outlet:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: North
+        volume: 100
+      output_hv:
+        !type:CableDeviceNode
+        nodeGroupID: HVPower
+
+- type: entity
+  id: TP14StormArrayCirculatorArrow
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Markers/teg_arrow.rsi
+    color: "#FFFFFFBB"
+    layers:
+      - state: arrow
+        offset: 0, -2.75
+      - state: arrow
+        offset: 0, 0.90
+    rotation: 180
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Tag
+    tags:
+      - HideContextMenu

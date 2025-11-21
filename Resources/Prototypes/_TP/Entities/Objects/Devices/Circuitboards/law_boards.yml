@@ -1,7 +1,8 @@
 - type: entity
   id: TP14NanoTraitorCircuitBoard
-  parent: [BaseElectronics, BaseNanotrasenContraband]
+  parent: [ BaseElectronics, BaseNanotrasenContraband ]
   name: law board (NanoTrasen)
+  suffix: Trieste, Circuit-Board, NanoTraitor
   description: An electronics board containing specialized NT laws.
   components:
   - type: Sprite

@@ -6,22 +6,12 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobWarden
-      time: 21600 #6 hrs
+      time: 6h
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
       department: Security
-      time: 216000 # 60 hrs
-
-#Security Star
-- type: loadoutEffectGroup
-  id: SecurityStarWorthy
-  effects:
-    - !type:JobRequirementLoadoutEffect
-      requirement:
-        !type:DepartmentTimeRequirement
-        department: Security
-        time: 360000 #100 hrs
+      time: 60h
 
 # Head
 - type: loadout
@@ -32,7 +22,7 @@
 - type: loadout
   id: SecurityHat
   equipment:
-    head: ClothingHeadHatSecsoft
+    head: ClothingHeadHatOrangesoft
 
 - type: loadout
   id: SecurityBeret
@@ -40,25 +30,30 @@
     head: ClothingHeadHatBeretSecurity
 
 - type: loadout
-  id: TrooperHat
+  id: SecurityBandana
   equipment:
-    head: ClothingHeadHatSecurityTrooper
+    head: ClothingHeadBandBlue
+
+- type: loadout
+  id: SecurityBucketHat
+  equipment:
+    head: TP14ClothingHeadBucketKhaki
 
 # Jumpsuit
 - type: loadout
   id: SecurityJumpsuit
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSec
+    jumpsuit: TP14ClothingUniformHardyOveralls
 
 - type: loadout
-  id: SecurityJumpskirt
+  id: SecurityTanktop
   equipment:
-    jumpsuit: ClothingUniformJumpskirtSec
+    jumpsuit: TP14ClothingUniformLieutenantTanktop
 
 - type: loadout
-  id: SecurityJumpsuitGrey
+  id: SecurityJumpsuitBlue
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSecGrey
+    jumpsuit: ClothingUniformJumpsuitSecBlue
 
 - type: loadout
   id: SecurityJumpskirtGrey
@@ -67,7 +62,7 @@
 
 - type: loadout
   id: TrooperUniform
-  equipment: 
+  equipment:
     jumpsuit: ClothingUniformSecurityTrooper
 
 - type: loadout
@@ -127,7 +122,7 @@
 - type: loadout
   id: SecurityOfficerWintercoat
   equipment:
-    outerClothing: ClothingOuterWinterSec
+    outerClothing: TP14ClothingOuterCoatLieutenant
 
 # Shoes
 - type: loadout
@@ -143,7 +138,7 @@
 - type: loadout
   id: SecurityWinterBoots
   equipment:
-    shoes: ClothingShoesBootsWinterSecFilled
+    shoes: TP14ClothingShoesBootsHardy
 
 # PDA
 - type: loadout
@@ -158,13 +153,3 @@
     proto: SeniorOfficer
   equipment:
     id: SeniorOfficerPDA
-
-# Misc
-- type: loadout
-  id: SecStar
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SecurityStarWorthy
-  storage:
-    back:
-    - Dinkystar

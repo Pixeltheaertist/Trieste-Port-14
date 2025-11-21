@@ -738,7 +738,7 @@
 - type: startingGear
   id: VisitorParamedic
   equipment:
-    jumpsuit: ClothingUniformJumpsuitParamedicNT
+    jumpsuit: ClothingUniformJumpsuitParamedic
     shoes: ClothingShoesSwat
     gloves: ClothingHandsGlovesLatex
     head: ClothingHeadHatParamedicsoft
@@ -783,7 +783,7 @@
     head: ClothingHeadBandGreen
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackDuffelMedical
+    back: ClothingBackpackDuffelVirology
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     pocket1: Ointment
@@ -800,7 +800,7 @@
     head: ClothingHeadBandBlue
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackDuffelMedical
+    back: ClothingBackpackDuffelVirology
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     pocket1: Ointment
@@ -1239,7 +1239,7 @@
     pocket1: BookSun
     pocket2: BookRandomStory
   inhand:
-  - BoxFolderClipboard
+  - BoxFolderClipboardThreePapers
 
 - type: startingGear
   id: VisitorMusicianFancyAltA
@@ -1509,7 +1509,7 @@
     back: ClothingBackpackSatchel
     ears: ClothingHeadsetService
     pocket1: MicrophoneInstrument
-    pocket2: BoxFolderClipboard
+    pocket2: BoxFolderClipboardThreePapers
 
 - type: startingGear
   id: VisitorReporterAlt
@@ -1520,7 +1520,7 @@
     back: ClothingBackpackSatchel
     ears: ClothingHeadsetService
     pocket1: MicrophoneInstrument
-    pocket2: BoxFolderClipboard
+    pocket2: BoxFolderClipboardThreePapers
 
 - type: startingGear
   id: VisitorServiceWorker

@@ -1,5 +1,5 @@
 uplink-pistol-N1984-name = N1984
-uplink-pistol-N1984-desc = A Nanotrasen-Brand pistol commonly seen on CentCom officers. Uses .45 magnum.
+uplink-pistol-N1984-desc = A Nanotrasen-Brand pistol commonly seen on CentComm officers. Uses .45 magnum.
 
 uplink-pistol-Mk58-name = MK58
 uplink-pistol-Mk58-desc = A standard NT pistol issued to security officers. Warranty expires in 3211. Uses .35 auto.

@@ -47,6 +47,7 @@
   name: Harpoon Gun
   id: TP14HarpoonGun
   parent: BaseHarpoonGun
+  suffix: Trieste
   components:
   - type: Sprite
     layers:

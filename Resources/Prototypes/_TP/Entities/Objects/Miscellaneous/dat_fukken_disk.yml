@@ -2,6 +2,7 @@
   name: resonance delaminator
   parent: [BaseItem, BaseNanotrasenContraband]
   id: TP14ResonanceDelaminator
+  suffix: Trieste, NanoTraitor
   description: A highly experimental device, with the NT logo forebodingly stamped on the front. It's designed to use The Artifact to destroy the planet.
   components:
   - type: Sprite

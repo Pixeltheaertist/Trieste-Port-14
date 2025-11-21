@@ -1,0 +1,13 @@
+# Base
+- type: entity
+  parent: BaseSign
+  id: TP14BaseSignDirectional
+  abstract: true
+  placement:
+    mode: AlignAtmosPipeLayers
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Wallmounts/WallSigns/centered.rsi
+    noRot: true
+    snapCardinals: false
+    drawdepth: WallMountedItems

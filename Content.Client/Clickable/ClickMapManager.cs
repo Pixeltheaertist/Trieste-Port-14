@@ -18,6 +18,7 @@ namespace Content.Client.Clickable
             "/Textures/LobbyScreens",
             "/Textures/Parallaxes",
             "/Textures/Logo",
+            "/Textures/_TP/LobbyScreens" // TP14 Specific
         };
 
         private const float Threshold = 0.1f;

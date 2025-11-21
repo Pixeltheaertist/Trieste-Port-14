@@ -1,12 +1,12 @@
 - type: entity
   parent: BasePDA
-  id: PilotPDA
+  id: TP14PilotPDA
+  suffix: Trieste, PDA, Expeditionary
   name: pilot PDA
   description: Protocol III, protect the PDA.
   components:
   - type: Pda
-    id: PilotIDCard
-    state: pda-miner
+    id: TP14PilotIDCard
   - type: PdaBorderColor
     borderColor: "#af9366"
     accentVColor: "#8900c9"
@@ -23,13 +23,13 @@
 
 - type: entity
   parent: BasePDA
-  id: BasinTechPDA
+  id: TP14BasinTechPDA
+  suffix: Trieste, PDA, Expeditionary
   name: basin technician PDA
   description: It's completely waterlogged.
   components:
   - type: Pda
-    id: BasinTechIDCard
-    state: pda-miner
+    id: TP14BasinTechIDCard
   - type: PdaBorderColor
     borderColor: "#af9366"
     accentVColor: "#8900c9"

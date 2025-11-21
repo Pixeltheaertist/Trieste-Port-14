@@ -1,0 +1,63 @@
+- type: loadoutGroup
+  id: TP14GroupExpeditioneerBackpack
+  name: loadout-group-backpack-exped
+  loadouts:
+  - SalvageSpecialistBackpack
+  - SalvageSpecialistSatchel
+  - SalvageSpecialistDuffel
+
+- type: loadoutGroup
+  id: TP14GroupExpeditioneerFootwear
+  name: loadout-group-footwear-exped
+  minLimit: 0
+  defaultSelected: 1
+  loadouts:
+  - TP14LoadoutFootwearWorkboots
+  - SalvageBoots
+  - CargoWinterBoots
+  - TP14LoadoutFootwearBlack
+  - TP14LoadoutFootwearBrown
+  - TP14LoadoutFootwearPurple
+
+- type: loadoutGroup
+  id: TP14GroupExpeditioneerHeadwear
+  name: loadout-group-headwear-exped
+  minLimit: 0
+  loadouts:
+  - TP14LoadoutHeadwearBucketBrown
+  - TP14LoadoutHeadwearBucketPurple
+  - TP14LoadoutHeadwearBucketYellow
+
+- type: loadoutGroup
+  id: TP14GroupExpeditioneerJumper
+  name: loadout-group-jumper-exped
+  loadouts:
+  - TP14LoadoutJumpsuitBrown
+  - TP14LoadoutJumpskirtBrown
+  - TP14LoadoutJumpsuitPurple
+  - TP14LoadoutJumpskirtPurple
+  - TP14LoadoutJumpsuitYellow
+  - TP14LoadoutJumpskirtYellow
+  - TP14LoadoutJumpsuitLieutenantTanktop
+
+- type: loadoutGroup
+  id: TP14GroupExpeditioneerOuter
+  name: loadout-group-outer-exped
+  loadouts:
+  - SalvageSpecialistWintercoat
+
+- type: loadoutGroup
+  id: TP14GroupExpeditioneerMask
+  name: loadout-group-mask-exped
+  minLimit: 0
+  loadouts:
+  - TP14LoadoutMaskGasExplorer
+
+- type: loadoutGroup
+  id: TP14GroupExpeditioneerNeck
+  name: loadout-group-neck-exped
+  minLimit: 0
+  loadouts:
+  - TP14LoadoutScarfBrown
+  - TP14LoadoutScarfPurple
+

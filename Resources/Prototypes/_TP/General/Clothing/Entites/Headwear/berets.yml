@@ -1,0 +1,17 @@
+- type: entity
+  parent: [ ClothingHeadBase, BaseCommandContraband ]
+  id: TP14ClothingHeadHatBeretCommand
+  name: command beret
+  description: A beret with a Trieste Port emblem on it. It has an aura of authority.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_command.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_command.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+    - PetWearable
+    - CorgiWearable

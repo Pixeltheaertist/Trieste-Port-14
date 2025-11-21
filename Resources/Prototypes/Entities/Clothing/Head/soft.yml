@@ -86,7 +86,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadHeadHatBaseFlippable
+  parent: [ ClothingHeadHeadHatBaseFlippable, BaseCommandContraband ] # TP14 - Added Command Contra
   id: ClothingHeadHatQMsoft
   name: harbormaster's cap
   description: A baseball hat painted in the Harbormaster's colors.
@@ -102,7 +102,7 @@
   name: harbormaster's cap
 
 - type: entity
-  parent: ClothingHeadHeadHatBaseFlippable
+  parent: [ ClothingHeadHeadHatBaseFlippable, BaseCommandContraband ]
   id: ClothingHeadHatCommandSoft
   name: command cap
   description: A baseball cap in command's distinctive shade of blue.

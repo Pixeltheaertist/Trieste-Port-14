@@ -14,12 +14,12 @@
   id: TP14_UplinkGlovesKnuckleDusters
   name: uplink-NTknuckleduster-name
   description: uplink-NTknuckleduster-desc
-  productEntity: ClothingHandsKnuckleDustersNT
+  productEntity: TP14ClothingHandsKnuckleDustersNT
   cost:
     BluespaceCrystal: 6
   categories:
   - UplinkNtWeaponry
-  
+
 - type: listing
   id: UplinkRPG7 # SAY HELLO TO MY LITTLE FRIEND # it's a rocket launcher
   name: uplink-rpg-name
@@ -92,10 +92,12 @@
 
 ##EXPLOSIVES
 
+# BEACHBALL DOES NOT WORK RIGHT NOW. IDK WHY. DO NOT USE.
+# FIXED. YOU SHOULD 100% USE IT :godo: - Cookie
 #- type: listing
  # id: UplinkBeachballGrenade
  # name: uplink-beachball-name
-  #description: uplink-beachball-desc # BEACHBALL DOES NOT WORK RIGHT NOW. IDK WHY. DO NOT USE.
+  #description: uplink-beachball-desc
   #productEntity: BeachballGrenade
   #cost:
   #  BluespaceCrystal: 4

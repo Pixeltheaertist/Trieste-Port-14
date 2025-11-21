@@ -3,6 +3,7 @@ loadout-group-species-restriction = This item is not available for your current 
 
 # Miscellaneous
 loadout-group-trinkets = Trinkets
+loadout-group-jobtrinkets = Job trinkets
 loadout-group-glasses = Glasses
 loadout-group-backpack = Backpack
 loadout-group-instruments = Instruments
@@ -20,11 +21,11 @@ loadout-group-pocket-tank-double = Species-specific double emergency tank in poc
 loadout-group-survival-mime = Mime Survival Box
 
 # Command
-loadout-group-captain-head = Captain head
-loadout-group-captain-jumpsuit = Captain jumpsuit
-loadout-group-captain-neck = Captain neck
-loadout-group-captain-backpack = Captain backpack
-loadout-group-captain-outerclothing = Captain outer clothing
+loadout-group-captain-head = Overseer head
+loadout-group-captain-jumpsuit = Overseer jumpsuit
+loadout-group-captain-neck = Overseer neck
+loadout-group-captain-backpack = Overseer backpack
+loadout-group-captain-outerclothing = Overseer outer clothing
 
 loadout-group-hop-head = Head of Personnel head
 loadout-group-hop-jumpsuit = Head of Personnel jumpsuit
@@ -43,6 +44,7 @@ loadout-group-passenger-neck = Passenger neck
 loadout-group-bartender-head = Bartender head
 loadout-group-bartender-jumpsuit = Bartender jumpsuit
 loadout-group-bartender-outerclothing = Bartender outer clothing
+loadout-group-bartender-shaker = Bartender shaker
 
 loadout-group-chef-head = Chef head
 loadout-group-chef-mask = Chef mask
@@ -76,6 +78,7 @@ loadout-group-clown-head = Clown head
 loadout-group-clown-jumpsuit = Clown jumpsuit
 loadout-group-clown-backpack = Clown backpack
 loadout-group-clown-outerclothing = Clown outer clothing
+loadout-group-clown-neck = Clown neck
 loadout-group-clown-shoes = Clown shoes
 
 loadout-group-mime-head = Mime head
@@ -89,17 +92,18 @@ loadout-group-musician-jumpsuit = Musician jumpsuit
 loadout-group-musician-outerclothing = Musician outer clothing
 
 # Cargo
-loadout-group-quartermaster-head = Quartermaster head
-loadout-group-quartermaster-jumpsuit = Quartermaster jumpsuit
-loadout-group-quartermaster-neck = Quartermaster neck
-loadout-group-quartermaster-outerclothing = Quartermaster outer clothing
-loadout-group-quartermaster-shoes = Quartermaster shoes
+loadout-group-quartermaster-head = Harbormaster head
+loadout-group-quartermaster-jumpsuit = Harbormaster jumpsuit
+loadout-group-quartermaster-neck = Harbormaster neck
+loadout-group-quartermaster-outerclothing = Harbormaster outer clothing
+loadout-group-quartermaster-shoes = Harbormaster shoes
 
 loadout-group-cargo-technician-head = Cargo Technician head
 loadout-group-cargo-technician-jumpsuit = Cargo Technician jumpsuit
 loadout-group-cargo-technician-backpack = Cargo Technician backpack
 loadout-group-cargo-technician-outerclothing = Cargo Technician outer clothing
 loadout-group-cargo-technician-shoes = Cargo Technician shoes
+loadout-group-cargo-technician-id = Cargo Technician ID
 
 loadout-group-salvage-specialist-backpack = Salvage Specialist backpack
 loadout-group-salvage-specialist-outerclothing = Salvage Specialist outer clothing
@@ -145,10 +149,10 @@ loadout-group-scientist-id = Scientist ID
 loadout-group-research-assistant-jumpsuit = Research Assistant jumpsuit
 
 # Security
-loadout-group-head-of-security-head = Head of Security head
-loadout-group-head-of-security-jumpsuit = Head of Security jumpsuit
-loadout-group-head-of-security-neck = Head of Security neck
-loadout-group-head-of-security-outerclothing = Head of Security outer clothing
+loadout-group-head-of-security-head = Marshal head
+loadout-group-head-of-security-jumpsuit = Marshal jumpsuit
+loadout-group-head-of-security-neck = Marshal neck
+loadout-group-head-of-security-outerclothing = Marshal outer clothing
 
 loadout-group-warden-head = Warden head
 loadout-group-warden-jumpsuit = Warden jumpsuit
@@ -192,6 +196,7 @@ loadout-group-medical-intern-jumpsuit = Medical intern jumpsuit
 loadout-group-chemist-jumpsuit = Chemist jumpsuit
 loadout-group-chemist-outerclothing = Chemist outer clothing
 loadout-group-chemist-backpack = Chemist backpack
+
 
 loadout-group-paramedic-head = Paramedic head
 loadout-group-paramedic-jumpsuit = Paramedic jumpsuit

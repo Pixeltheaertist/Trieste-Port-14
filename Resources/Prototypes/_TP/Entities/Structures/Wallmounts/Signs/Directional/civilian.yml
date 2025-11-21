@@ -1,0 +1,220 @@
+# Cryo
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalCryo
+  suffix: Trieste, Civilian, Wall-Sign
+  name: cryo wall sign
+  description: A direction sign, pointing out which way cryogenic stasis is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#C4A484" # Light-brown
+    - state: text_cryo
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalCryo
+      Secondary: TP14SignDirectionalCryoAlt1
+      Tertiary: TP14SignDirectionalCryoAlt2
+
+- type: entity
+  parent: TP14SignDirectionalCryo
+  id: TP14SignDirectionalCryoAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalCryo
+  id: TP14SignDirectionalCryoAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# Dorms
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalDorms
+  suffix: Trieste, Civilian, Wall-Sign
+  name: dorms wall sign
+  description: A direction sign, pointing out which way dorms are.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#C4A484" # Light-brown
+    - state: text_dorms
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalDorms
+      Secondary: TP14SignDirectionalDormsAlt1
+      Tertiary: TP14SignDirectionalDormsAlt2
+
+- type: entity
+  parent: TP14SignDirectionalDorms
+  id: TP14SignDirectionalDormsAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalDorms
+  id: TP14SignDirectionalDormsAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# Airlock
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalAirlock
+  suffix: Trieste, Civilian, Wall-Sign
+  name: airlock wall sign
+  description: A direction sign, pointing out which way the exterior airlock is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#C4A484" # Light-brown
+    - state: text_airlock
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalAirlock
+      Secondary: TP14SignDirectionalAirlockAlt1
+      Tertiary: TP14SignDirectionalAirlockAlt2
+
+- type: entity
+  parent: TP14SignDirectionalAirlock
+  id: TP14SignDirectionalAirlockAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalAirlock
+  id: TP14SignDirectionalAirlockAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# Evac
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalEvac
+  suffix: Trieste, Civilian, Wall-Sign
+  name: evac wall sign
+  description: A direction sign, pointing out which way evacuation is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#C4A484" # Light-brown
+    - state: text_evac
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalEvac
+      Secondary: TP14SignDirectionalEvacAlt1
+      Tertiary: TP14SignDirectionalEvacAlt2
+
+- type: entity
+  parent: TP14SignDirectionalEvac
+  id: TP14SignDirectionalEvacAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalEvac
+  id: TP14SignDirectionalEvacAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# Pods
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalPods
+  suffix: Trieste, Civilian, Wall-Sign
+  name: pods wall sign
+  description: A direction sign, pointing out which way the Evacuation Pods are.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#C4A484" # Light-brown
+    - state: text_pods
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalPods
+      Secondary: TP14SignDirectionalPodsAlt1
+      Tertiary: TP14SignDirectionalPodsAlt2
+
+- type: entity
+  parent: TP14SignDirectionalPods
+  id: TP14SignDirectionalPodsAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalPods
+  id: TP14SignDirectionalPodsAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# Wash
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalWall
+  suffix: Trieste, Civilian, Wall-Sign
+  name: washroom wall sign
+  description: A direction sign, pointing out which way the Washrooms are.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#C4A484" # Light-brown
+    - state: text_wash
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalWall
+      Secondary: TP14SignDirectionalWallAlt1
+      Tertiary: TP14SignDirectionalWallAlt2
+
+- type: entity
+  parent: TP14SignDirectionalWall
+  id: TP14SignDirectionalWallAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalWall
+  id: TP14SignDirectionalWallAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25

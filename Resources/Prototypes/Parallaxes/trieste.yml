@@ -3,7 +3,7 @@
   layers:
     - texture:
         !type:ImageParallaxTextureSource
-        path: "/Textures/Parallaxes/triesteouterspace.png"
+        path: "/Textures/_TP/Parallaxes/triesteouterspace.png"
       slowness: 0.998046875
       scale: "1, 1"
     - texture:
@@ -28,7 +28,7 @@
       slowness: 0.984352
     - texture:
         !type:ImageParallaxTextureSource
-        path: "/Textures/Parallaxes/Trieste.png"
+        path: "/Textures/_TP/Parallaxes/Trieste.png"
       slowness: 0.998046875
       scale: "2, 2"
       tiled: false
@@ -37,5 +37,5 @@
         !type:GeneratedParallaxTextureSource
         id: ""
         configPath: "/Prototypes/Parallaxes/parallax_config.toml"
-        slowness: 0.875
+      slowness: 0.875
   layersLQUseHQ: false

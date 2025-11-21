@@ -1,0 +1,11 @@
+- type: entity
+  parent: [ TP14MobSeaBunny ]
+  id: TP14MobSeaBunnyDaisy
+  suffix: Trieste, Sea
+  name: Daisy
+  description: A typical sea bunny, but this one seemingly breaths air. Do it for your Daisy!
+  components:
+  - type: Body
+    prototype: Mothroach
+  - type: Loadout
+    prototypes: [ TP14MobDaisyGear ]

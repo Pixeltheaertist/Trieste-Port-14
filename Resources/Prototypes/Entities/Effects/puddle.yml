@@ -158,6 +158,8 @@
     mode: SnapgridCenter
   components:
   - type: Clickable
+  - type: InGas # For instant evaporation when exposed to WATAH!!!
+    damagedByGas: false
   - type: Slippery
     staminaDamage: 0
     frictionStatusTime: 0 # Don't apply friction twice
@@ -206,6 +208,7 @@
     delay: 3
     transferAmount: 1
     solution: puddle
+    utensil: Spoon
   - type: ExaminableSolution
     solution: puddle
     locVolume: "examinable-solution-on-examine-volume-puddle"

@@ -1,0 +1,72 @@
+# NOTE - ALL loadouts must start with 'Job', followed by the Role's ID.
+# Example: JobID: "TP14ButtSlapper", LoadoutID: "JobTP14ButtSlapper". P.S. Pix pls add butt slapper role
+
+# Expeditionary
+
+- type: roleLoadout
+  id: JobTP14BasinTech
+  groups:
+  # Required
+  - GroupSpeciesBreathTool
+  - GroupTankHarness
+  - TP14GroupBasinTechJumper
+  - TP14GroupBasinTechOuter
+  - TP14GroupBasinTechBackpack
+  # Optional
+  - TP14GroupBasinTechHeadwear
+  - TP14GroupBasinTechMask
+  - TP14GroupBasinTechNeck
+  - TP14GroupBasinTechFootwear
+  - Glasses
+  - Survival
+  - Trinkets
+  - SalvageSpecialistJobTrinkets
+
+- type: roleLoadout
+  id: JobTP14Expeditioneer
+  groups:
+  # Required
+  - GroupSpeciesBreathTool
+  - GroupTankHarness
+  - TP14GroupExpeditioneerJumper
+  - TP14GroupExpeditioneerOuter
+  - TP14GroupExpeditioneerBackpack
+  # Optional
+  - TP14GroupExpeditioneerMask
+  - TP14GroupExpeditioneerNeck
+  - TP14GroupExpeditioneerFootwear
+  - Glasses
+  - Survival
+  - Trinkets
+  - SalvageSpecialistJobTrinkets
+
+- type: roleLoadout
+  id: JobTP14Pilot
+  groups:
+  # Required
+  - GroupSpeciesBreathTool
+  - GroupTankHarness
+  - TP14GroupPilotJumper
+  - TP14GroupPilotOuter
+  - TP14GroupPilotBackpack
+  - TP14GroupPilotHeadwear
+  # Optional
+  - TP14GroupPilotMask
+  - TP14GroupPilotNeck
+  - TP14GroupPilotGloves
+  - TP14GroupPilotFootwear
+  - Glasses
+  - Survival
+  - Trinkets
+  - SalvageSpecialistJobTrinkets
+
+# Civilian
+
+- type: roleLoadout
+  id: JobTP14Settler
+  groups:
+  - GroupTankHarness
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool

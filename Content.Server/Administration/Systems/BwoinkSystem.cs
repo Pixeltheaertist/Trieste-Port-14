@@ -341,7 +341,7 @@ namespace Content.Server.Administration.Systems
 
             RaiseNetworkEvent(new BwoinkDiscordRelayUpdated(!string.IsNullOrWhiteSpace(url)));
 
-            if (url == string.Empty)
+            if (string.IsNullOrEmpty(url))
                 return;
 
             // Basic sanity check and capturing webhook ID and token
@@ -360,11 +360,14 @@ namespace Content.Server.Administration.Systems
                 return;
             }
 
-            var webhookId = match.Groups[1].Value;
-            var webhookToken = match.Groups[2].Value;
-
             // Fire and forget
-            _webhookData = await GetWebhookData(webhookId, webhookToken);
+            // This if is a debug check added by Trieste Port 14
+            #if !DEBUG && !DEVELOPMENT
+                var webhookId = match.Groups[1].Value;
+                var webhookToken = match.Groups[2].Value;
+
+                _webhookData = await GetWebhookData(webhookId, webhookToken);
+            #endif
         }
 
         private async Task<WebhookData?> GetWebhookData(string id, string token)
@@ -582,7 +585,7 @@ namespace Content.Server.Administration.Systems
             {
                 GameRunLevel.PreRoundLobby => _gameTicker.RoundId == 0
                     ? "pre-round lobby after server restart" // first round after server restart has ID == 0
-                    : $"pre-round lobby for round {_gameTicker.RoundId + 1}",
+                    : $"pre-round lobby for round {_gameTicker.RoundId}",
                 GameRunLevel.InRound => $"round {_gameTicker.RoundId}",
                 GameRunLevel.PostRound => $"post-round {_gameTicker.RoundId}",
                 _ => throw new ArgumentOutOfRangeException(nameof(_gameTicker.RunLevel),

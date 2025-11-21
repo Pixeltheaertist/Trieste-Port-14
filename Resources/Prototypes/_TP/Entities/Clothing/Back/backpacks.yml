@@ -1,0 +1,41 @@
+- type: entity
+  parent: [ Clothing, ContentsExplosionResistanceBase ]
+  id: TP14ClothingBackpackClownBindle
+  suffix: Trieste, Clothing, Clown
+  name: giggles von bindle
+  description: It's whats left of a backpack made by Honk! Co.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Back/Backpacks/clownbindle.rsi
+    state: icon
+  - type: Item
+    size: Huge
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+  - type: Storage
+    grid:
+    - 0,0,3,3
+    storageOpenSound:
+      collection: SadTrombone
+    maxItemSize: Huge
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  # to prevent bag open/honk spam
+  - type: UseDelay
+    delay: 1
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - Backpack
+
+

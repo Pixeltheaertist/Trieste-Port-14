@@ -5,28 +5,24 @@ using Content.Server.Electrocution;
 using Content.Server.EUI;
 using Content.Server.Ghost;
 using Content.Server.Popups;
+using Content.Server.Power.EntitySystems;
 using Content.Server.PowerCell;
 using Content.Shared.Traits.Assorted;
-using Content.Shared.Damage;
+using Content.Shared.Chat;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
-using Content.Shared.Interaction.Components;
-using Content.Shared.Interaction.Events;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Medical;
 using Content.Shared.Mind;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.PowerCell;
+using Content.Shared.Power.Components;
 using Content.Shared.Timing;
-using Content.Shared.Toggleable;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
-using Content.Server.Jellid.Systems;
-using Content.Server.Power.Components;
-using Content.Server.Power.EntitySystems;
-using Content.Server.Power.Events;
 
 namespace Content.Server.Medical;
 
@@ -35,6 +31,7 @@ namespace Content.Server.Medical;
 /// </summary>
 public sealed class DefibrillatorSystem : EntitySystem
 {
+    [Dependency] private readonly BatterySystem _battery = default!; // !! TP14 SPECIFIC !!
     [Dependency] private readonly ChatSystem _chatManager = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
@@ -50,7 +47,6 @@ public sealed class DefibrillatorSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
-    [Dependency] private readonly BatterySystem _battery = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -186,18 +182,14 @@ public sealed class DefibrillatorSystem : EntitySystem
 
         _audio.PlayPvs(component.ZapSound, uid);
 
-        if (TryComp<BatteryComponent>(target, out var battery))
-        {
-            var batteryAdd = 150f; // If target has a battery (jellid), restores some of their internal energy. This will heal Jellids and prevent instantly dying again.
-            Log.Info("Added charge to jellid.");
-            _battery.SetCharge(target, battery.CurrentCharge + batteryAdd, battery);
-        }
-
         _electrocution.TryDoElectrocution(target, null, component.ZapDamage, component.WritheDuration, true, ignoreInsulation: true);
         if (!TryComp<UseDelayComponent>(uid, out var useDelay))
             return;
+
         _useDelay.SetLength((uid, useDelay), component.ZapDelay, component.DelayId);
         _useDelay.TryResetDelay((uid, useDelay), id: component.DelayId);
+
+        defibJellid(target);
 
         ICommonSession? session = null;
 
@@ -254,5 +246,21 @@ public sealed class DefibrillatorSystem : EntitySystem
         // TODO clean up this clown show above
         var ev = new TargetDefibrillatedEvent(user, (uid, component));
         RaiseLocalEvent(target, ref ev);
+    }
+
+    private void defibJellid(EntityUid target)
+    {
+                // !! TP14 SPECIFIC !!
+        if (!TryComp<BatteryComponent>(target, out var battery))
+            return;
+
+        // If the target has a battery (Jellids), restores some of their internal energy.
+        // This will heal Jellids and prevent instantly dying again.
+        const float batteryAdd = 150f;
+        var newCharge = battery.CurrentCharge + batteryAdd;
+
+        _battery.SetCharge(target, newCharge);
+        Log.Info($"Added {batteryAdd} charge to {target} battery. New charge: {newCharge}");
+        // !! END OF TP14 SPECIFIC !!
     }
 }

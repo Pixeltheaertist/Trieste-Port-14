@@ -6,17 +6,17 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChemist
-      time: 21600 #6 hrs
+      time: 6h
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 21600 #6 hrs
+      time: 6h
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
       department: Medical
-      time: 216000 # 60 hrs
+      time: 60h
 
 # Other Timers
 
@@ -27,7 +27,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 108000 #30 hrs
+      time: 30h
 
 # Head
 
@@ -46,6 +46,11 @@
     proto: MedicalHeadMirrorTimer
   equipment:
     head: ClothingHeadMirror
+
+- type: loadout
+  id: MedicalBucket
+  equipment:
+    head: TP14ClothingHeadMedicalBucket
 
 - type: loadout
   id: MedicalBeret
@@ -76,12 +81,23 @@
 - type: loadout
   id: MedicalDoctorJumpsuit
   equipment:
-    jumpsuit: ClothingUniformJumpsuitMedicalDoctor
+    jumpsuit: TP14ClothingUniformMedical
+
+- type: loadout
+  id: MedicalDoctorJumpsuitBloody
+  equipment:
+    jumpsuit: TP14ClothingUniformMedicalbloody
+
+- type: loadout
+  id: MedicalDoctorNurseDress
+  equipment:
+    jumpsuit: TP14ClothingUniformJumpskirtMedicalNurseDress
+
 
 - type: loadout
   id: MedicalDoctorJumpskirt
   equipment:
-    jumpsuit: ClothingUniformJumpskirtMedicalDoctor
+    jumpsuit: ClothingUniformJumpskirtVirology
 
 - type: loadout
   id: SeniorPhysicianJumpsuit
@@ -118,23 +134,38 @@
 - type: loadout
   id: MedicalDoctorBackpack
   equipment:
-    back: ClothingBackpackMedical
+    back: ClothingBackpackVirology
 
 - type: loadout
   id: MedicalDoctorSatchel
   equipment:
-    back: ClothingBackpackSatchelMedical
+    back: ClothingBackpackSatchelVirology
 
 - type: loadout
   id: MedicalDoctorDuffel
   equipment:
-    back: ClothingBackpackDuffelMedical
+    back: ClothingBackpackDuffelVirology
 
 # OuterClothing
 - type: loadout
   id: MedicalDoctorWintercoat
   equipment:
-    outerClothing: ClothingOuterWinterMed
+    outerClothing: ClothingOuterWinterViro
+
+- type: loadout
+  id: MedicalLabcoat
+  equipment:
+    outerClothing: ClothingOuterCoatLabViro
+
+- type: loadout
+  id: MedicalCoat
+  equipment:
+    outerClothing: TP14ClothingOuterCoatMedical
+
+- type: loadout
+  id: MedicalCoatGreen
+  equipment:
+    outerClothing: TP14ClothingOuterCoatMedicalGreen
 
 - type: loadout
   id: SeniorPhysicianLabCoat

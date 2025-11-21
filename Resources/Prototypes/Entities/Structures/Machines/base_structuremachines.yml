@@ -12,7 +12,7 @@
   - type: Transform
     noRot: true
   - type: InGas
-    gasId: 9
+    gasID: 9
     damagedByGas: false
     crushDepth: 9999 # Extreme crush depth to prevent unintended destruction
     gasThreshold: 9999
@@ -82,7 +82,7 @@
     priority: 1
   - type: FallSystem
   - type: InGas
-    gasId: 9
+    gasID: 9
     damagedByGas: false
     crushDepth: 9999 # Extreme crush depth to prevent unintended destruction
     gasThreshold: 9999

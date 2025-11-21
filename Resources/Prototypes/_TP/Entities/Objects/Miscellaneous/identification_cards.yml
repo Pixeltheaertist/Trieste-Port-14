@@ -1,23 +1,35 @@
-- type: entity
-  parent: IDCardStandard
-  id: PilotIDCard
-  name: pilot ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: idshaftminer
-  - type: PresetIdCard
-    job: Pilot
+# Civilian
 
 - type: entity
   parent: IDCardStandard
-  id: BasinTechIDCard
-  name: basin technician ID card
+  id: TP14SettlerIDCard
+  suffix: Trieste, Settler
+  name: Settler ID card
   components:
   - type: Sprite
     layers:
     - state: default
-    - state: idshaftminer
+    - sprite: &icon-rsi Interface/Misc/job_icons.rsi
+      offset: &icon-offset -0.09375, 0.0625 #3 pixels left, 2 pixels up
+      state: Passenger
   - type: PresetIdCard
-    job: BasinEngi
+    job: TP14Settler
+
+# Expeditionary
+- type: entity
+  parent: SalvageIDCard
+  id: TP14PilotIDCard
+  suffix: Trieste, Expeditionary
+  name: pilot ID card
+  components:
+  - type: PresetIdCard
+    job: TP14Pilot
+
+- type: entity
+  parent: SalvageIDCard
+  id: TP14BasinTechIDCard
+  suffix: Trieste, Expeditionary
+  name: basin technician ID card
+  components:
+  - type: PresetIdCard
+    job: TP14BasinTech

@@ -1,0 +1,36 @@
+- type: vendingMachineInventory
+  id: SecVendInventory
+  startingInventory:
+    ClothingBackpackSecurity: 3
+    ClothingBackpackSatchelSecurity: 3
+    ClothingBackpackDuffelSecurity: 3
+    ClothingUniformJumpsuitSecBlue: 3
+    TP14ClothingUniformHardyOveralls: 3
+    TP14ClothingUniformLieutenantTanktop: 3
+    TP14ClothingShoesBootsHardy: 3
+    ClothingShoesBootsJack: 3
+    ClothingHeadHatOrangesoft: 3
+    TP14ClothingHeadBucketKhaki: 3
+    ClothingHeadBandBlue: 3
+    ClothingHeadHatBeretSecurity: 3
+    ClothingMaskNeckGaiter: 3
+    ClothingHandsGlovesColorBlack: 3
+    ClothingHandsGlovesFingerless: 3
+    ClothingHeadsetSecurity: 3
+    TP14ClothingOuterCoatLieutenant: 3
+    ClothingOuterArmorBasic: 2
+    ClothingNeckScarfStripedBlue: 3
+    ClothingOuterArmorBasicSlim: 2
+    ClothingEyesBlindfold: 1
+    ClothingShoesBootsCombat: 1
+    ClothingHeadHelmetJustice: 1
+  contrabandInventory:
+    ClothingMaskClownSecurity: 1
+    ClothingMaskMimeSecurity: 1
+    ToyFigurineSecurity: 1
+    ToyFigurineWarden: 1
+    ToyFigurineHeadOfSecurity: 1
+    PlushieLizardJobSecuritycadet: 1
+    PlushieLizardJobSecurityofficer: 1
+    PlushieLizardJobWarden: 1
+    PlushieLizardJobHeadofsecurity: 1

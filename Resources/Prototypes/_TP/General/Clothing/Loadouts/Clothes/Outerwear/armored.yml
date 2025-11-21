@@ -1,0 +1,29 @@
+- type: loadout
+  id: TP14LoadoutArmorVest
+  equipment:
+    outerClothing: ClothingOuterArmorBasic
+
+- type: loadout
+  id: TP14LoadoutArmorVestSlim
+  equipment:
+    outerClothing: ClothingOuterArmorBasicSlim
+
+- type: loadout
+  id: TP14LoadoutArmorOverseerCarapace
+  equipment:
+    outerClothing: ClothingOuterArmorCaptainCarapace
+
+- type: loadout
+  id: TP14LoadoutArmorCentCommCarapace
+  equipment:
+    outerClothing: ClothingOuterArmorCentcommCarapace
+
+- type: loadout
+  id: TP14LoadoutCoatArmoredMarshal
+  equipment:
+    outerClothing: ClothingOuterCoatHoSTrench
+
+- type: loadout
+  id: TP14LoadoutCoatArmoredWarden
+  equipment:
+    outerClothing: ClothingOuterCoatWarden

@@ -17,14 +17,15 @@
 - files: ["headrev_start.ogg"]
   license: "CC0-1.0"
   copyright: "Made by https://www.youtube.com/@a-guy173"
-  source: https://github.com/A-Guy173/Music/blob/main/revolution.mp3
+  source: "https://github.com/A-Guy173/Music/blob/main/revolution.mp3"
 - files: ["emagged_borg.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Made by @ps3moira on github"
-  source: https://www.youtube.com/watch?v=4-R-_DiqiLo
+  source: "https://www.youtube.com/watch?v=4-R-_DiqiLo"
 - files: ["NT_start.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Made by McJack on Discord"
+  source: "https://github.com/Pixeltheaertist/Trieste-Port-14"
 - files: ["silicon_lawboard_antimov.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Made by @ps3moira on Discord for SS14"

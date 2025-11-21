@@ -1,0 +1,9 @@
+- type: reaction
+  id: TP14CustardReaction
+  reactants:
+    Cream:
+      amount: 6
+    Egg:
+      amount: 6
+  products:
+    TP14CondimentCustard: 12

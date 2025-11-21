@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: TP14CargoProductDressesCrate
+  icon:
+    sprite: _TP/Clothing/Uniforms/Jumpskirt/elegant.rsi
+    state: icon
+  product: TP14CrateFilledDresses
+  cost: 300 # The inventory + crate is worth 220
+  category: cargoproduct-category-name-fun
+  group: market

@@ -4,7 +4,7 @@
   name: pilot pinpointer
   description: A built-in tracking device designed to keep track of your pilot.
   id: TP14PinpointerPilot
-  suffix: Station
+  suffix: Trieste, Expeditionary
   components:
   - type: Sprite
     layers:

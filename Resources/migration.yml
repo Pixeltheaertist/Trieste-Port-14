@@ -409,7 +409,7 @@ WaterTankFilled: TP14WaterTankFilled
 AtmosFixWaterMarker: TP14AtmosFixWaterMarker
 MarkerInside: TP14MarkerInside
 MobJellidPerson: TP14MobJellidPerson
-PaperJellid: TP14PaperJellid
+PaperJellid: Paper
 FallingDestinationMarker: TP14FallingDestinationMarker
 SpawnPointPilot: TP14SpawnPointPilot
 SpawnPointBasinTech: TP14SpawnPointBasinTech
@@ -723,6 +723,11 @@ SpawnHonkBot: SpawnMobHonkBot
 CrateFoodPizzaLarge: CrateFoodPizza
 CrateFoodSoftdrinksLarge: CrateFoodSoftdrinks
 
+# 2025-06-03
+FloorTileItemGCircuit4: FloorTileItemGCircuit
+FloorTileItemBCircuit4: FloorTileItemBCircuit
+FloorTileItemRCircuit4: FloorTileItemRCircuit
+
 # 2025-06-06
 MagazineLightRifleMaxim: null
 MagazineLightRiflePkBox: null
@@ -770,5 +775,46 @@ BarSignWhiskeyEchoesAlignTile: BarSignWhiskeyEchoes
 # 2025-06-21
 ClothingNeckHeadphones: ClothingMultipleHeadphones
 
+# 2025-07-17
+RipleyChassis: null
+HonkerChassis: null
+HamtrChassis: null
+VimChassis: null
+
 # 2025-08-01
 FoodDonutJellySlugcat: FoodDonutJellyScurret
+
+# 2025-08-11
+ClothingUniformJumpsuitChiefEngineerNT: ClothingUniformJumpsuitChiefEngineer
+ClothingUniformJumpsuitParamedicNT: ClothingUniformJumpsuitParamedic
+
+# 2025-08-29
+PrefilledSyringe: Syringe
+
+# 2025-10-6
+BibleTanakh: null
+BibleSatanic: null
+
+
+# 2025-10-08
+ClothingBeltAssault: ClothingBeltMilitaryWebbing
+WarpPointBombing: null
+
+# 2025-10-13
+ToyGriffin: ToyFigurineGriffin
+ToyOwlman: ToyFigurineOwlman
+ToySkeleton: ToyFigurineSkeleton
+BasinTechPDA: TP14BasinTechPDA
+BasinTechIDCard: TP14BasinTechIDCard
+PilotPDA: TP14PilotPDA
+PilotIDCard: TP14PilotIDCard
+SettlerIDCard: TP14SettlerIDCard
+
+# 2025-10-28
+DrinkKiraSpecial: DrinkOrangeLimeSodaGlass
+
+# 2025-11-04
+TP14PaperJellid: Paper
+TP14JellidProofPaperBin5: PaperBin5
+TP14JellidProofPaperBin10: PaperBin10
+TP14JellidProofPaperBin20: PaperBin20

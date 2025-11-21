@@ -1,7 +1,5 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
-using Content.Server.Antag;
-using Content.Server.BugReports;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.Database;
@@ -17,7 +15,6 @@ using Content.Shared.GameTicking;
 using Content.Shared.Mind;
 using Content.Shared.Roles;
 using Robust.Server;
-using Robust.Server.GameObjects;
 using Robust.Server.GameStates;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Console;
@@ -67,8 +64,6 @@ namespace Content.Server.GameTicking
         [Dependency] private readonly MetaDataSystem _metaData = default!;
         [Dependency] private readonly SharedRoleSystem _roles = default!;
         [Dependency] private readonly ServerDbEntryManager _dbEntryManager = default!;
-        [Dependency] private readonly AntagSelectionSystem _antagSelection = default!;
-        [Dependency] private readonly IBugReportManager _bugManager = default!;
 
         [ViewVariables] private bool _initialized;
         [ViewVariables] private bool _postInitialized;

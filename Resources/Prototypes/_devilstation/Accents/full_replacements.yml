@@ -1,0 +1,4 @@
+- type: accent
+  id: machoman
+  fullReplacements:
+  - machoman-accent-1

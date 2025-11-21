@@ -1,0 +1,15 @@
+- type: entity
+  id: TP14HarpoonCrate
+  parent: CrateSalvageEquipment
+  suffix: Trieste, Service
+  name: harpoons crate
+  description: Some hunting supplies for those adventurous enough for the deep.
+  components:
+  - type: StorageFill
+    contents:
+    - id: TP14HarpoonGun
+      amount: 3
+    - id: TP14Harpoon
+      amount: 6
+    - id: TP14HarpoonBomb
+      amount: 3

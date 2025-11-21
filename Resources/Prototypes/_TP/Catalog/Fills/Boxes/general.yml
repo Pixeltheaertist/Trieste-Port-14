@@ -2,6 +2,7 @@
   name: kasane teto night bag
   parent: ClothingBackpackDuffel
   id: TP14BoxDarkPerformer
+  suffix: Trieste, Filled, Easter-Egg
   description: Darkness is this one's friend on the stage.
   components:
   - type: StorageFill
@@ -13,8 +14,9 @@
 
 - type: entity
   name: nanotrasen encryption key box
-  parent: BoxEncryptionKeyPassenger
+  parent: [ BoxEncryptionKeyPassenger, BaseNanotrasenContraband ]
   id: BoxEncryptionKeyNanotrasen
+  suffix: Trieste, Filled, NanoTraitor
   description: Two Nanotrasen encryption keys for the price of one. What a deal!!
   components:
   - type: Item
@@ -24,3 +26,33 @@
       - id: TP14EncryptionKeyNanotrasen
         amount: 2
   - type: Storage
+
+- type: entity
+  parent: BoxCardboard
+  id: TP14BoxCandleInfinite
+  suffix: Trieste
+  name: magic candle box
+  description: This box is specifically moulded to only carry magic candles.
+  components:
+  - type: Sprite
+    layers:
+    - state: box
+    - state: candle
+  - type: Storage
+    grid:
+    - 0,0,5,3
+    whitelist:
+      tags:
+      - TP14MagicCandle
+  - type: StorageFill
+    contents:
+    - id: CandleInfinite
+      amount: 4
+    - id: CandleBlueInfinite
+      amount: 2
+    - id: CandleRedInfinite
+      amount: 2
+    - id: CandleGreenInfinite
+      amount: 2
+    - id: CandlePurpleInfinite
+      amount: 2

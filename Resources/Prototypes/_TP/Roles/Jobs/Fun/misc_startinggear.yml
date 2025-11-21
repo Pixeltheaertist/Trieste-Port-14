@@ -1,6 +1,19 @@
-#stepfather
+# Civilian
 - type: startingGear
-  id: Stepfather
+  id: TP14SettlerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLoungewear
+    shoes: ClothingShoesLeather
+    id: TP14SettlerIDCard
+    back: ClothingBackpackSatchelLeather
+    outerClothing: ClothingOuterCoatBomber
+    gloves: ClothingHandsGlovesFingerless
+    pocket1: FlashlightLantern
+    pocket2: CrowbarRed
+
+# Expeditionary
+- type: startingGear
+  id: TP14StepfatherGear
   equipment:
     id: SalvagePDA
     pocket1: TP14PinpointerPilot # This was commented out, not sure why. - Cookie (FatherCheese)

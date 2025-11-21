@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Created by MysteriousPeeko (sharkpeekotwoelecticboogaloo) for Trieste Port 14",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "horns_carnotaurus",
+            "directions": 4
+        },
+        {
+            "name": "horns_saichania",
+            "directions": 4
+        },
+        {
+            "name": "horns_triceratops",
+            "directions": 4
+        }
+    ]
+}

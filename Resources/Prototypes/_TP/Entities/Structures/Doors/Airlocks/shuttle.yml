@@ -1,0 +1,45 @@
+- type: entity
+  parent: AirlockShuttle
+  id: AirlockExternalGlassBell
+  suffix: Diving Bell, Docking
+  components:
+  - type: PriorityDock
+    tag: DockBell
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronics ]
+
+- type: entity
+  parent: AirlockExternalGlassBell
+  id: AirlockExternalGlassBellFilled
+  suffix: Diving Bell, Filled
+  components:
+  - type: GridFill
+    path: /Maps/Shuttles/arrivals.yml
+    addComponents:
+    - type: IFF
+      flags:
+      - HideLabel
+
+- type: entity
+  parent: AirlockShuttle
+  id: AirlockExternalTrench
+  suffix: Trench Bell, Docking
+  components:
+  - type: PriorityDock
+    tag: DockTrench
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronics ]
+
+- type: entity
+  parent: AirlockExternalTrench
+  id: AirlockExternalTrenchFilled
+  suffix: Trench bell, Filled
+  components:
+  - type: GridFill
+    path: /Maps/Shuttles/trenchBell.yml
+    addComponents:
+    - type: IFF
+      flags:
+      - HideLabel

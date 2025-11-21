@@ -1,0 +1,25 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "johnny012602 on the Trieste Discord, created for Trieste Port 14",
+    "size": {
+        "x": 64,
+        "y": 64
+    },
+    "states": [
+        {
+            "name": "active",
+            "delays": [
+                [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3
+                ]
+            ]
+        },
+        {
+            "name": "idle"
+        }
+    ]
+}

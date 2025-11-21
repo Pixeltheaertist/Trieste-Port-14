@@ -1,0 +1,75 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Created by MysteriousPeeko (sharkpeekotwoelecticboogaloo) for Trieste Port 14",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "charred",
+            "directions": 4
+        },
+        {
+            "name": "default",
+            "directions": 4
+        },
+        {
+            "name": "jungle",
+            "directions": 4
+        },
+        {
+            "name": "maple",
+            "directions": 4
+        },
+            {
+            "name": "ladybug",
+            "directions": 4
+        },
+        {
+            "name": "moffra",
+            "directions": 4
+        },
+        {
+            "name": "mothcollar_2",
+            "directions": 4
+        },
+        {
+            "name": "mothcollar_3",
+            "directions": 4
+        },
+        {
+            "name": "mothcollar_4",
+            "directions": 4
+        },
+        {
+            "name": "mothcollar_5",
+            "directions": 4
+        },
+        {
+            "name": "oakworm",
+            "directions": 4
+        },
+        {
+            "name": "plasmafire",
+            "directions": 4
+        },
+        {
+            "name": "striped",
+            "directions": 4
+        },
+        {
+            "name": "underwing",
+            "directions": 4
+        },
+        {
+            "name": "whitefly",
+            "directions": 4
+        },
+        {
+            "name": "witchwing",
+            "directions": 4
+        }
+    ]
+}

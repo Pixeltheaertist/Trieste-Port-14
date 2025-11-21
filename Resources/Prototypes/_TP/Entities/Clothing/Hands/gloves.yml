@@ -1,6 +1,7 @@
 - type: entity
-  parent: [ClothingHandsBase, BaseNanotrasenContraband]
-  id: ClothingHandsKnuckleDustersNT
+  parent: [ ClothingHandsBase, BaseNanotrasenContraband ]
+  id: TP14ClothingHandsKnuckleDustersNT
+  suffix: Trieste, Gloves, NanoTraitor
   name: Nanotrasen knuckle dusters
   description: "24karat gold infused with plasteel and branded with the Nanotrasen logo. Used by Quartermasters and NT agents alike"
   components:
@@ -24,3 +25,22 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHandsBase
+  id: TP14ClothingHandsGlovesFireproof
+  suffix: Trieste, Gloves, Jellid
+  name: fire-proof gloves
+  description: High-Quality fire-proof gloves, made specifically for the local Jellids.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Hands/Gloves/fireproof.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Hands/Gloves/fireproof.rsi
+  - type: Fiber
+    fiberMaterial: fibers-rubber
+    fiberColor: fibers-white
+  - type: FingerprintMask
+  - type: Tag
+    tags:
+    - PreventsFire

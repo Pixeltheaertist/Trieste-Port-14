@@ -876,15 +876,3 @@
     - type: Loadout
       prototypes: [ CossackGear ]
       roleLoadout: [ RoleSurvivalEVA ]
-
-- type: randomHumanoidSettings
-  id: PlanetarySettler
-  parent: EventHumanoid
-  components:
-    - type: GhostRole
-      name: ghost-role-information-settler-name
-      description: ghost-role-information-settler-description
-      rules: ghost-role-information-freeagent-rules
-    - type: Loadout
-      prototypes: [ Settler ]
-      roleLoadout: [ RoleSurvivalStandard ]

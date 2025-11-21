@@ -114,7 +114,7 @@
     - id: WaterVaporCanister
       prob: 0.001
       orGroup: Canister
-    - id: WaterCanister
+    - id: TP14WaterCanister
       prob: 0.001
       orGroup: Canister
     #weapons
@@ -319,7 +319,13 @@
     - id: PlushieMoth
       prob: 0.01
       orGroup: Plushies
+    - id: PlushieVulp
+      prob: 0.01
+      orGroup: Plushies
     - id: PlushieArachind
+      prob: 0.01
+      orGroup: Plushies
+    - id: PlushieLizardJobMultiweh # the exceedingly rare multiweh!
       prob: 0.01
       orGroup: Plushies
     - id: PlushieThrongler #hehe

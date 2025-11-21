@@ -11,6 +11,10 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Power;
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Hands.Systems;
+using Content.Shared._TP.Jellids;
+using Content.Shared.Inventory;
+using Content.Shared.Tag;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Chemistry.EntitySystems
 {
@@ -18,8 +22,10 @@ namespace Content.Server.Chemistry.EntitySystems
     {
         [Dependency] private readonly PowerReceiverSystem _powerReceiver = default!;
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-        [Dependency] private readonly SolutionContainerSystem _solutionContainer = default!;
+        [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
         [Dependency] private readonly HandsSystem _hands = default!;
+        [Dependency] private readonly InventorySystem _inventory = default!;
+        [Dependency] private readonly TagSystem _tag = default!;
 
         /// <inheritdoc/>
         public override void Initialize()
@@ -80,16 +86,16 @@ namespace Content.Server.Chemistry.EntitySystems
                 TurnOff(entity);
         }
 
+        private static readonly ProtoId<TagPrototype> FireproofTag = "PreventsFire";
+
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
 
             // Define energy variable that will be reused
-            float energy;
 
             // First, check for placed entities and heat their solutions.
-            var query =
-                EntityQueryEnumerator<ActiveSolutionHeaterComponent, SolutionHeaterComponent, ItemPlacerComponent>();
+            var query = EntityQueryEnumerator<ActiveSolutionHeaterComponent, SolutionHeaterComponent, ItemPlacerComponent>();
             while (query.MoveNext(out _, out _, out var heater, out var placer))
             {
                 foreach (var heatingEntity in placer.PlacedEntities)
@@ -99,7 +105,7 @@ namespace Content.Server.Chemistry.EntitySystems
                         continue;
 
                     // Calculate energy based on the heater's heat rate
-                    energy = heater.HeatPerSecond * frameTime;
+                    var energy = heater.HeatPerSecond * frameTime;
 
                     // Apply thermal energy to the solutions in the container
                     foreach (var (_, soln) in _solutionContainer.EnumerateSolutions((heatingEntity, container)))
@@ -117,6 +123,19 @@ namespace Content.Server.Chemistry.EntitySystems
                 if (!HasComp<JellidComponent>(playerUid))
                 {
                     continue;
+                }
+
+                if (_inventory.TryGetSlotEntity(playerUid, "gloves", out var glovesUid))
+                {
+                    if (!HasComp<TagComponent>(glovesUid))
+                    {
+                        continue;
+                    }
+
+                    if (_tag.HasTag(glovesUid.Value, FireproofTag))
+                    {
+                        continue;
+                    }
                 }
 
                 if (_hands.GetActiveItem(playerUid) is not { } heldItem)

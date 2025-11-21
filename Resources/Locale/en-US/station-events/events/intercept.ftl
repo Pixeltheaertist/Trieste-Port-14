@@ -1,1 +1,1 @@
-﻿station-event-communication-interception = Attention. Hostile communications detected. Alert level has been increased.
+﻿station-event-communication-interception = Attention. Corporate communications detected. Alert level has been increased.

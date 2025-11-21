@@ -1,0 +1,72 @@
+# Bridge
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalBridge
+  suffix: Trieste, Command, Wall-Sign
+  name: bridge wall sign
+  description: A direction sign, pointing out which way the command bridge is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#6AB094" # Seafoam green
+    - state: text_bridge
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalBridge
+      Secondary: TP14SignDirectionalBridgeAlt1
+      Tertiary: TP14SignDirectionalBridgeAlt2
+
+- type: entity
+  parent: TP14SignDirectionalBridge
+  id: TP14SignDirectionalBridgeAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalBridge
+  id: TP14SignDirectionalBridgeAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# Head of Personnel
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalHOP
+  suffix: Trieste, Command, Wall-Sign
+  name: hop wall sign
+  description: A direction sign, pointing out which way the Head of Personnel is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#6AB094" # Seafoam green
+    - state: text_hop
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalHOP
+      Secondary: TP14SignDirectionalHOPAlt1
+      Tertiary: TP14SignDirectionalHOPAlt2
+
+- type: entity
+  parent: TP14SignDirectionalHOP
+  id: TP14SignDirectionalHOPAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalHOP
+  id: TP14SignDirectionalHOPAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25

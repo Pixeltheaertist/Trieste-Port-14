@@ -3,7 +3,7 @@
   parent: [StorageTank, StructureWheeled]
   name: plankton separator
   description: A liquid tank with an advanced filter, capable to divvying up plankton species.
-  suffix: Empty
+  suffix: Trieste, Science, Full
   components:
   - type: PlanktonSeparator
   - type: StaticPrice

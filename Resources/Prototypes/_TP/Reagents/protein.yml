@@ -18,7 +18,7 @@
           types:
             Caustic: -.1
             Radiation: -.1
-            
+
 - type: reagent
   id: StabilizationProtein
   name: reagent-name-stabilisation-protein
@@ -48,14 +48,14 @@
       effects:
       - !type:AdjustReagent
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: HyperMarrow
           min: .25
         reagent: DestabilizedProtein
         amount: 0.2
       - !type:HealthChange
         conditions:
-        - !type:Temperature
+        - !type:TemperatureCondition
           max: 305
           min: 285
         damage:
@@ -65,7 +65,7 @@
             Slash: -3
       - !type:HealthChange
         conditions:
-        - !type:Temperature
+        - !type:TemperatureCondition
           min: 305
         damage:
           types:
@@ -74,7 +74,7 @@
             Slash: -1
       - !type:HealthChange
         conditions:
-        - !type:Temperature
+        - !type:TemperatureCondition
           max: 285
         damage:
           types:
@@ -95,14 +95,14 @@
       effects:
       - !type:AdjustReagent
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: HyperPlatelet
           min: .25
         reagent: DestabilizedProtein
         amount: 0.2
       - !type:HealthChange
         conditions:
-        - !type:Temperature
+        - !type:TemperatureCondition
           max: 305
           min: 285
         damage:
@@ -114,7 +114,7 @@
             Blunt: -.5
       - !type:HealthChange
         conditions:
-        - !type:Temperature
+        - !type:TemperatureCondition
           min: 305
         damage:
           types:
@@ -125,7 +125,7 @@
             Blunt: -1
       - !type:HealthChange
         conditions:
-        - !type:Temperature
+        - !type:TemperatureCondition
           max: 285
         damage:
           types:
@@ -162,7 +162,6 @@
   color: "#dfe1df"
   recognizable: true
   physicalDesc: reagent-physical-desc-nondescript
-  slippery: false
 
 - type: reagent
   id: DormantProtein
@@ -172,7 +171,6 @@
   flavor: sour
   color: "#dfe1df"
   physicalDesc: reagent-physical-desc-nondescript
-  slippery: false
 
 - type: reagent
   id: DecayedProtein
@@ -182,7 +180,6 @@
   flavor: sour
   color: "#dfe1df"
   physicalDesc: reagent-physical-desc-nondescript
-  slippery: false
 
 - type: reagent
   id: OxygenatedSaline
