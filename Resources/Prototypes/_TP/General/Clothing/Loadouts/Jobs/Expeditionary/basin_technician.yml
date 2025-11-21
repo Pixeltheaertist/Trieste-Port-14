@@ -10,6 +10,7 @@
   id: TP14GroupBasinTechFootwear
   name: loadout-group-footwear-basin-tech
   minLimit: 0
+  defaultSelected: 1
   loadouts:
   - TP14LoadoutFootwearWorkboots
   - SalvageBoots

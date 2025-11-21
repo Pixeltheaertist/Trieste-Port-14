@@ -10,6 +10,7 @@
   id: TP14GroupPilotFootwear
   name: loadout-group-footwear-pilot
   minLimit: 0
+  defaultSelected: 1
   loadouts:
   - TP14LoadoutFootwearWorkboots
   - SalvageBoots
@@ -66,5 +67,5 @@
   id: TP14GroupPilotOuter
   name: loadout-group-outer-pilot
   loadouts:
-  - TP14LoadoutBomberJacket
+  - TP14LoadoutCoatBomberJacket
   - SalvageSpecialistWintercoat

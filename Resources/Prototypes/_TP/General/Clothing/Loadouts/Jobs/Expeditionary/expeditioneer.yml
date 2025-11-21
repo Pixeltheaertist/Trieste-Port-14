@@ -10,6 +10,7 @@
   id: TP14GroupExpeditioneerFootwear
   name: loadout-group-footwear-exped
   minLimit: 0
+  defaultSelected: 1
   loadouts:
   - TP14LoadoutFootwearWorkboots
   - SalvageBoots

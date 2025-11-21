@@ -3,4 +3,4 @@
   name: loadout-group-outer-bomber
   minLimit: 1
   loadouts:
-  - TP14LoadoutBomberJacket
+  - TP14LoadoutCoatBomberJacket

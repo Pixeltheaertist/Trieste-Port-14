@@ -61,47 +61,47 @@
 - type: loadout
   id: TP14LoadoutCoatVirology
   equipment:
-    outerClothing: ClotheringOuterCoatLabViro
+    outerClothing: ClothingOuterCoatLabViro
 
 - type: loadout
   id: TP14LoadoutCoatParamedWindBreaker
   equipment:
-    outerClothing: ClotheringOuterCoatParamedicWB
+    outerClothing: ClothingOuterCoatParamedicWB
 
 - type: loadout
   id: TP14LoadoutCoatPirateGarb
   equipment:
-    outerClothing: ClotheringOuterCoatPirate
+    outerClothing: ClothingOuterCoatPirate
 
 - type: loadout
   id: TP14LoadoutCoatRDLab
   equipment:
-    outerClothing: ClotheringOuterCoatRD
+    outerClothing: ClothingOuterCoatRD
 
 - type: loadout
   id: TP14LoadoutCoatRoboticist
   equipment:
-    outerClothing: ClotheringOuterCoatRobo
+    outerClothing: ClothingOuterCoatRobo
 
 - type: loadout
   id: TP14LoadoutCoatSeniorPhysician
   equipment:
-    outerClothing: ClotheringOuterCoatLabSeniorPhysician
+    outerClothing: ClothingOuterCoatLabSeniorPhysician
 
 - type: loadout
   id: TP14LoadoutCoatSeniorResearcher
   equipment:
-    outerClothing: ClotheringOuterCoatLabSeniorResearcher
+    outerClothing: ClothingOuterCoatLabSeniorResearcher
 
 - type: loadout
   id: TP14LoadoutCoatSpaceAsshole # SPACE ASSHOOOOOOOOOOLE
   equipment:
-    outerClothing: ClotheringOuterCoatSpaceAsshole
+    outerClothing: ClothingOuterCoatSpaceAsshole
 
 - type: loadout
   id: TP14LoadoutCoatTrenchcoat
   equipment:
-    outerClothing: ClotheringOuterCoatTrench
+    outerClothing: ClothingOuterCoatTrench
 
 - type: loadout
   id: TP14LoadoutCoatWhiteMedical
