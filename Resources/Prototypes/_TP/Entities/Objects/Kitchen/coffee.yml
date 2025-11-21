@@ -165,6 +165,8 @@
       - state: Basket-Left
       right:
       - state: Basket-Right
+  - type: MixableSolution
+    solution: food
   - type: RefillableSolution
     solution: food
   - type: Sprite
@@ -174,5 +176,8 @@
     solutions:
       food:
         maxVol: 30
+  - type: SolutionTransfer
+    maxTransferAmount: 30
+    transferAmount: 5
   - type: Spillable
     solution: food

@@ -7,6 +7,12 @@
   flavor: TP14FlavorGroundCoffee
   color: "#4E3629"
   recognizable: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:AdjustReagent
+        reagent: Theobromine
+        amount: 0.05
 
 - type: reagent
   id: TP14ReagentInstantCoffee
@@ -16,6 +22,12 @@
   flavor: TP14FlavorInstantCoffee
   color: "#4E3629"
   recognizable: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:AdjustReagent
+        reagent: Theobromine
+        amount: 0.05
 
 # Mixes
 - type: reagent
@@ -26,6 +38,12 @@
   flavor: coffee
   color: "#4E3629"
   recognizable: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:AdjustReagent
+        reagent: Theobromine
+        amount: 0.05
 
 - type: reagent
   id: TP14ReagentMixedCoffee
@@ -35,6 +53,12 @@
   flavor: coffee
   color: "#4E3629"
   recognizable: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:AdjustReagent
+        reagent: Theobromine
+        amount: 0.05
 
 - type: reagent
   id: TP14ReagentMixedTamperedCoffee
@@ -44,6 +68,12 @@
   flavor: coffee
   color: "#4E3629"
   recognizable: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:AdjustReagent
+        reagent: Theobromine
+        amount: 0.05
 
 # Coffee
 - type: reagent
@@ -54,6 +84,18 @@
   flavor: TP14FlavorBadCoffee
   color: "#664300"
   recognizable: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
+        time: 2
+        type: Remove
+      - !type:AdjustReagent
+        reagent: Theobromine
+        amount: 0.05
 
 - type: reagent
   id: TP14ReagentQualityCoffee
@@ -63,3 +105,15 @@
   flavor: TP14FlavorQualityCoffee
   color: "#664300"
   recognizable: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
+        time: 2
+        type: Remove
+      - !type:AdjustReagent
+        reagent: Theobromine
+        amount: 0.05
