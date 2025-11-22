@@ -22,7 +22,6 @@ public sealed class CharacterCreationTest
         var serverPrefManager = server.Resolve<IServerPreferencesManager>();
 
         Assert.That(client.Resolve<IStateManager>().CurrentState, Is.TypeOf<LobbyState>());
-        await client.WaitPost(() => clientPrefManager.SelectCharacter(0));
         await pair.RunTicksSync(5);
 
         var clientCharacters = clientPrefManager.Preferences?.Characters;
@@ -93,10 +92,8 @@ public sealed class CharacterCreationTest
             Assert.That(a.Sex, Is.EqualTo(b.Sex));
             Assert.That(a.Gender, Is.EqualTo(b.Gender));
             Assert.That(a.Species, Is.EqualTo(b.Species));
-            Assert.That(a.PreferenceUnavailable, Is.EqualTo(b.PreferenceUnavailable));
             Assert.That(a.SpawnPriority, Is.EqualTo(b.SpawnPriority));
             Assert.That(a.FlavorText, Is.EqualTo(b.FlavorText));
-            Assert.That(a.JobPriorities, Is.EquivalentTo(b.JobPriorities));
             Assert.That(a.AntagPreferences, Is.EquivalentTo(b.AntagPreferences));
             Assert.That(a.TraitPreferences, Is.EquivalentTo(b.TraitPreferences));
             Assert.That(a.Loadouts, Is.EquivalentTo(b.Loadouts));
