@@ -182,7 +182,6 @@
   id: UplinkImplantFull
   name: uplink implant
   description: This implant lets the user access a hidden Syndicate uplink at will.
-  noSpawn: true
   components:
   - type: SubdermalImplant
     implantAction: ActionOpenUplinkImplant

@@ -250,7 +250,9 @@
           types:
             Cold: 0.05
       - !type:AdjustTemperature
-        min: 160.15
+        conditions:
+        - !type:TemperatureCondition
+          min: 160.15
         amount: -30000
     Extinguish:
       methods: [ Touch ]
@@ -284,7 +286,9 @@
         messages: [ "fresium-effect-slow"]
         probability: 0.2
       - !type:AdjustTemperature
-        min: 160.15 # not quite enough for cryo, but can speed it up if you wanna take the risk
+        conditions:
+        - !type:TemperatureCondition
+            min: 160.15 # not quite enough for cryo, but can speed it up if you wanna take the risk
         amount: -10000
       - !type:MovementSpeedModifier
         conditions:

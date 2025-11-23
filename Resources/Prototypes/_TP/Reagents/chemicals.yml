@@ -5,7 +5,8 @@
   physicalDesc: reagent-physical-desc-sticky
   color: "#1a1a1a"
   flavor: bitter
-  slippery: true
+  slipData:
+    requiredSlipSpeed: 2 # Not as much as lube
   boilingPoint: 600
   meltingPoint: 100
   pricePerUnit: 3
@@ -30,7 +31,8 @@
   physicalDesc: reagent-physical-desc-sticky
   color: "#333333"
   flavor: bitter
-  slippery: true
+  slipData:
+    requiredSlipSpeed: 2
   pricePerUnit: 6
   metabolisms:
     Poison:
@@ -52,7 +54,8 @@
   physicalDesc: reagent-physical-desc-sticky
   color: "#333333"
   flavor: bitter
-  slippery: true
+  slipData:
+    requiredSlipSpeed: 2
   pricePerUnit: 10
   metabolisms:
     Poison:
@@ -74,7 +77,8 @@
   physicalDesc: reagent-physical-desc-sticky
   color: "#666666"
   flavor: bitter
-  slippery: true
+  slipData:
+    requiredSlipSpeed: 2
   pricePerUnit: 80
   metabolisms:
     Poison:
@@ -96,7 +100,8 @@
   physicalDesc: reagent-physical-desc-sticky
   color: "#666680"
   flavor: bitter
-  slippery: true
+  slipData:
+    requiredSlipSpeed: 2
   pricePerUnit: 300
   metabolisms:
     Poison:
@@ -118,7 +123,8 @@
   physicalDesc: reagent-physical-desc-sticky
   color: "#6666bd"
   flavor: bitter
-  slippery: true
+  slipData:
+    requiredSlipSpeed: 2
   metabolisms:
     Poison:
       effects:
@@ -135,7 +141,8 @@
   physicalDesc: reagent-physical-desc-sticky
   color: "#6600ff"
   flavor: bitter
-  slippery: true
+  slipData:
+    requiredSlipSpeed: 2
   metabolisms:
     Poison:
       effects:
@@ -155,7 +162,8 @@
   physicalDesc: reagent-physical-desc-sticky
   color: "#66ffff"
   flavor: bitter
-  slippery: true
+  slipData:
+    requiredSlipSpeed: 3.5
   metabolisms:
     Poison:
       effects:
@@ -163,7 +171,7 @@
         damage:
           types:
             Blunt: 2000
-      - !type:Explode
+      - !type:Explosion
         explosionType: Default
         intensityPerUnit: 150
         intensitySlope: 3
@@ -232,7 +240,8 @@
   physicalDesc: reagent-physical-desc-oily
   color: "#25221a"
   flavor: bitter
-  slippery: true
+  slipData:
+    requiredSlipSpeed: 3.5
   metabolisms:
     Poison:
       effects:
@@ -248,7 +257,8 @@
   physicalDesc: reagent-physical-desc-oily
   color: "#EDA41B"
   flavor: bitter
-  slippery: true
+  slipData:
+    requiredSlipSpeed: 3.5
   metabolisms:
     Poison:
       effects:

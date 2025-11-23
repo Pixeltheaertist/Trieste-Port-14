@@ -21,10 +21,11 @@ namespace Content.Server.StationEvents.Events
 
                 if (target != null)
                 {
+                    Log.Error("Trieste found");
                     if (TryComp<ParallaxComponent>(target, out var parallax))
                     {
+                        Log.Error("Parallax found");
                         parallax.Parallax = "SkyWhales";
-                        return;
                     }
                 }
             }

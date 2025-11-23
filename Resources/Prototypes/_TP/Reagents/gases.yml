@@ -3,43 +3,57 @@
   name: reagent-name-seawater
   desc: reagent-desc-seawater
   physicalDesc: reagent-physical-desc-odorless
-  flavor: water and salt
+  flavor: salty
   color: "#135c4f"
   recognizable: true
   boilingPoint: 100.0
   meltingPoint: 0.0
   metabolisms:
-    TP14WaterBreather:
-      effects:
-      # Oxygenate for Jellids
-      - !type:Oxygenate
-        conditions:
-        - !type:MetabolizerTypeCondition
-          type: [ Jellid ]
-      - !type:ModifyLungGas
-        conditions:
-        - !type:MetabolizerTypeCondition
-          type: [ Jellid ]
-        ratios:
-          Water: -1.0
-    # Separate metabolism for drowning
     Gas:
       effects:
-      - !type:HealthChange
-        scaleByQuantity: false
-        ignoreResistances: true
-        damage:
-          types:
-            Cold: 0.33
-      - !type:AdjustTemperature
-        min: 10.00
-        amount: -20 # Note: -50000 was apparently too much.
-      - !type:PopupMessage
-        type: Local
-        messages: [ "water-in-lungs" ]
-        probability: 0.7
-      - !type:AdjustAlert
-        alertType: Drowning
-        minScale: 1
-        clear: True
-        time: 5
+        # Oxygenate for Jellids
+        - !type:Oxygenate
+          conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Jellid ]
+        - !type:ModifyLungGas
+          conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Jellid ]
+          ratios:
+            Water: -1.0
+        # Drowning effects for non-Jellids
+        - !type:HealthChange
+          conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Jellid ]
+            inverted: true
+          ignoreResistances: true
+          damage:
+            types:
+              Cold: 0.33
+        - !type:AdjustTemperature
+          conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Jellid ]
+            inverted: true
+          - !type:TemperatureCondition
+            min: 10.00
+          amount: -20
+        - !type:PopupMessage
+          conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Jellid ]
+            inverted: true
+          type: Local
+          messages: [ "water-in-lungs" ]
+          probability: 0.7
+        - !type:AdjustAlert
+          conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Jellid ]
+            inverted: true
+          alertType: Drowning
+          minScale: 1
+          clear: True
+          time: 5

@@ -1,0 +1,4 @@
+marking-TP14MarkingVulpkaninTailFluffy-tail_fluffy_primary = Primary
+marking-TP14MarkingVulpkaninTailFluffy-tail_fluffy_secondary = Secondary
+marking-TP14MarkingVulpkaninTailFluffy-tail_fluffy_tertiary = Tertiary
+marking-TP14MarkingVulpkaninTailFluffy = Vulpkanin (Wild)

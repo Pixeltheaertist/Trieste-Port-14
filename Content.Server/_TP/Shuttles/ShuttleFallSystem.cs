@@ -21,13 +21,14 @@ namespace Content.Server._TP.Shuttles;
 
 
 // TODOS:
-// Make the crew onboard the ship get knocked over when the ship falls.
-// Make it so docking to Trieste prevents falling.
+// Parent the shuttle to the Waste Zone, similar to shuttles landing on planetmaps. Otherwise shit gets JANK. - ESSENTIAL!
+// Make the crew onboard the ship get knocked over when the ship falls. - ESSENTIAL!
+// Make it so docking to Trieste prevents falling - ESSENTIAL!
 // Small explosions across the shuttle when it crashes.
 // Make atmospheric thrusters turn off in space.
 // Special sound effect for moving from air to space. (much louder helicopter buzzing)
-// Add some docks to Trieste to allow these vessels to properly dock.
-// Make a unique sound for the FTL when falling.
+// Add some docks to Trieste to allow these vessels to properly dock. - ESSENTIAL!
+// Add a limiter system, with a grid-propeller ratio. The larger a grid is, the more operational thrusters it needs to have to fly.
 
 public sealed class ShuttleFallSystem : EntitySystem
 {

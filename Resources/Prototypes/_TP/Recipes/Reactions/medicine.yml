@@ -10,7 +10,7 @@
 
 - type: reaction
   id: Calordine
-  maxtemp: 70
+  maxTemp: 70
   reactants:
       Carbon:
         amount: 1
@@ -25,7 +25,7 @@
 
 - type: reaction
   id: Cryodine
-  mintemp: 310
+  minTemp: 310
   reactants:
       OxygenatedSaline:
         amount: 1
@@ -38,7 +38,7 @@
 
 - type: reaction
   id: Somnuzine
-  maxtemp: 20
+  maxTemp: 20
   reactants:
       Cryodine:
         amount: 1
@@ -121,4 +121,4 @@
     Ethanol:
       amount: 1
   products:
-    SeaWaterSolutionBurn: 3  
+    SeaWaterSolutionBurn: 3

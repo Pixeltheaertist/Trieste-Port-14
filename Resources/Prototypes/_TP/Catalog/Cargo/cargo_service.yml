@@ -4,6 +4,6 @@
     sprite: Objects/Consumable/Drinks/pitcher.rsi
     state: icon
   product: TP14CoffeeSupplyCrate
-  cost: 1000
+  cost: 250 # Base crate is 170
   category: cargoproduct-category-name-service
   group: market

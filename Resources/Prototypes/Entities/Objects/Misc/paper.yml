@@ -418,7 +418,7 @@
   suffix: Syndicate
   components:
   - type: TraitorCodePaper
-    codewordFaction: Syndicate
+    codewordFaction: Traitor
 
 - type: entity
   parent: [Paper, BaseSyndicateContraband]
@@ -428,7 +428,7 @@
   suffix: Admeme, Syndicate
   components:
   - type: TraitorCodePaper
-    codewordFaction: Syndicate
+    codewordFaction: Traitor
     fakeCodewords: false
     codewordShowAll: true
 

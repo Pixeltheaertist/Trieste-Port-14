@@ -12,8 +12,8 @@
     sprite: Objects/Specific/Nanotrasen/bluespace_crystal.rsi
     size: Tiny
   - type: Stack
+    stackType: BluespaceCrystalStack
     count: 20
-    stackType: BluespaceCrystal
   - type: StaticPrice
     price: 0
   - type: StackPrice
@@ -21,8 +21,6 @@
   - type: Currency
     price:
       BluespaceCrystal: 1
-  - type: Contraband
-    severity: Nanotrasen
 
 - type: entity
   parent: TP14BluespaceCrystal

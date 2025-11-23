@@ -6,7 +6,6 @@
   components:
   - type: Sprite
     color: "#fffe"
-    shader: unshaded
     layers:
       - sprite: Mobs/Ghosts/ghost_human.rsi
         state: animated

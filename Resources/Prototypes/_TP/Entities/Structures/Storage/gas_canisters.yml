@@ -43,7 +43,6 @@
   id: WaterCanisterBroken
   suffix: Trieste, Engineering, Destroyed
   name: broken water canister
-  noSpawn: true
   components:
   - type: Sprite
     state: yellow-1

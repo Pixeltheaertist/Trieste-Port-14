@@ -192,7 +192,7 @@
     speechSounds: Alto
   - type: DamageForceSay
   - type: InGas
-    gasId: 9 # short-circuits in water
+    gasID: 9 # short-circuits in water
     damagedByGas: false
     gasThreshold: 9999
     damage:

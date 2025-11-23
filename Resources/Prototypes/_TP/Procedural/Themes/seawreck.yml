@@ -5,11 +5,11 @@
   suffix: Trieste, Sea, 5x5
   components:
   - type: RoomFill
-    size: 5,5
     roomWhitelist:
       tags:
         - SeaWreckFiveByFive
   - type: Sprite
+    scale: 2.5,2.5
     layers:
       - state: red
       - sprite: Mobs/Aliens/elemental.rsi

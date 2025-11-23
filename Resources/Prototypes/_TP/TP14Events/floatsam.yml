@@ -42,8 +42,8 @@
     mask: /Textures/Effects/LightMasks/double_cone.png
   - type: RotatingLight
     speed: 120
-  - type: ActiveTimerTrigger
-    timeRemaining: 5400 # 1 hr 30 mins to meltdown
+  - type: TimerTrigger # LOOK INTO THIS LATER!!
+    delay: 5400 # 1 hr 30 mins to meltdown
   - type: ExplodeOnTrigger
   - type: Explosive
     maxTileBreak: 0

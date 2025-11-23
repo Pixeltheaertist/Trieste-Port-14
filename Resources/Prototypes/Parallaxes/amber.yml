@@ -18,14 +18,14 @@
       slowness: 0.993
     - texture:
         !type:ImageParallaxTextureSource
-        path: "/Textures/Parallaxes/Asteroids.png"
+        path: "/Textures/_TP/Parallaxes/Asteroids.png"
       slowness: 0.990
       scale: "0.4, 0.4"
       worldHomePosition: "20.0, 100.0"
       scrolling: "0.01, 0.0"
     - texture:
         !type:ImageParallaxTextureSource
-        path: "/Textures/Parallaxes/Asteroids.png"
+        path: "/Textures/_TP/Parallaxes/Asteroids.png"
       slowness: 0.987
       scale: "0.6, 0.6"
       scrolling: "-0.01, 0.0"

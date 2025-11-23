@@ -1,0 +1,5 @@
+- type: humanoidBaseSprite
+  id: TP14MobMothNeck
+  baseSprite:
+    sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
+    state: default

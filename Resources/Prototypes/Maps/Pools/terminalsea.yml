@@ -1,7 +1,7 @@
 - type: gameMap
   id: Terminal
   mapName: Terminal
-  mapPath: /Maps/misc/terminal.yml
+  mapPath: /Maps/Misc/terminal.yml
   minPlayers: 0
   stations:
     Terminal:

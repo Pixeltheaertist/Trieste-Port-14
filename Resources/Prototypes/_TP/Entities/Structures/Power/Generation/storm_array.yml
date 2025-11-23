@@ -41,7 +41,7 @@
   - type: Temperature
     heatDamageThreshold: 500
     coldDamageThreshold: -9999 # Doesn't take damage from cold
-    currentTemperature: 72.680 # Based on testing, seems to be around 72.68 when cooled.
+    currentTemperature: 243.15
     specificHeat: 42
     coldDamage:
       types:
@@ -77,8 +77,6 @@
     totalIntensity: 200
     intensitySlope: 30
     maxIntensity: 120
-  - type: SpeakOnTrigger
-    pack: StormArrayWarnings
   - type: Anchorable
     flags: None
   - type: Destructible # Gives warnings every 100 damage, eventually exploding

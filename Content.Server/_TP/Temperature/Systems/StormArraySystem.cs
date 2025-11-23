@@ -1,14 +1,15 @@
+using Content.Server._TP.Temperature.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Components;
-using Content.Server.Chat.Systems;
 using Content.Server.Destructible;
 using Content.Server.NodeContainer.Nodes;
+using Content.Server.Radio.EntitySystems;
 using Content.Server.Temperature.Components;
 using Content.Shared.Atmos;
+using Content.Shared.Examine;
 using Content.Shared.Explosion.Components;
 using Content.Shared.NodeContainer;
 using Content.Shared.Temperature.Components;
-using Robust.Shared.Audio;
 
 namespace Content.Server._TP.Temperature.Systems;
 
@@ -24,8 +25,8 @@ public sealed class StormArraySystem : EntitySystem
     private const string NodeNameOutlet = "outlet";
 
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly DestructibleSystem _destructible = default!;
+    [Dependency] private readonly RadioSystem _radio = default!;
 
     private EntityQuery<NodeContainerComponent> _nodeContainerQuery;
 
@@ -34,8 +35,37 @@ public sealed class StormArraySystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<Components.StormArrayComponent, AtmosDeviceUpdateEvent>(OnAtmosUpdate);
+        SubscribeLocalEvent<StormArrayComponent, ExaminedEvent>(OnExamined);
 
         _nodeContainerQuery = GetEntityQuery<NodeContainerComponent>();
+    }
+
+    private void OnExamined(Entity<StormArrayComponent> ent, ref ExaminedEvent args)
+    {
+        if (!TryComp<TemperatureComponent>(ent, out var temp))
+            return;
+
+        var comp = ent.Comp;
+
+        // Show the internal temperature in both Kelvin and Celsius
+        var tempC = temp.CurrentTemperature - 273.15f;
+        args.PushMarkup(Loc.GetString("storm-array-examine-temperature",
+            ("tempK", temp.CurrentTemperature.ToString("F1")),
+            ("tempC", tempC.ToString("F1"))));
+
+        // Show a status message if available
+        if (!string.IsNullOrEmpty(comp.StatusMessage))
+        {
+            args.PushMarkup(Loc.GetString("storm-array-examine-status",
+                ("status", comp.StatusMessage)));
+        }
+
+        // Display the cooling stats
+        if (comp.LastCoolingRate > 0)
+        {
+            args.PushMarkup(Loc.GetString("storm-array-examine-cooling",
+                ("rate", (comp.LastCoolingRate / 1000).ToString("F1"))));
+        }
     }
 
     private void OnAtmosUpdate(Entity<Components.StormArrayComponent> ent, ref AtmosDeviceUpdateEvent args)
@@ -52,7 +82,7 @@ public sealed class StormArraySystem : EntitySystem
 
         // Now we heat the entity based on how much entity it's making.
         // This is always set to 100KW. (for now)
-        var selfHeating = Math.Abs(radiantTempComp.EnergyChangedPerSecond) * 0.035f * args.dt;
+        var selfHeating = Math.Abs(radiantTempComp.EnergyChangedPerSecond) * 0.33f * args.dt;
         tempComp.CurrentTemperature += selfHeating;
 
         // Now update the coolant AFTER the heating, in a separate function.
@@ -61,42 +91,36 @@ public sealed class StormArraySystem : EntitySystem
         // Then we announce if the temperature is too high, based on the thresholds.
         // This is also a separate function UNLESS the temperature is 500,
         // in which case it will explode.
-        if (tempComp.CurrentTemperature >= 100)
-        {
-            Announcement(Loc.GetString("storm-array-alert-1"),
-                tempComp.CurrentTemperature >= 125,
-                ref arrayComp.FirstAnnouncement);
+        Announcement(ent,
+            Loc.GetString("storm-array-alert-1"),
+            tempComp.CurrentTemperature >= 411,
+            ref arrayComp.FirstAnnouncement);
 
-            Announcement(Loc.GetString("storm-array-alert-2"),
-                tempComp.CurrentTemperature >= 250,
-                ref arrayComp.SecondAnnouncement);
+        Announcement(ent,
+            Loc.GetString("storm-array-alert-2"),
+            tempComp.CurrentTemperature >= 822,
+            ref arrayComp.SecondAnnouncement);
 
-            Announcement(Loc.GetString("storm-array-alert-3"),
-                tempComp.CurrentTemperature >= 475,
-                ref arrayComp.ThirdAnnouncement);
+        Announcement(ent,
+            Loc.GetString("storm-array-alert-3"),
+            tempComp.CurrentTemperature >= 1233,
+            ref arrayComp.ThirdAnnouncement);
 
-            // This part handles the explosion at 500 degrees.
-            // If the explosion component doesn't exist, however, we return. (This shouldn't happen!)
-            if (!TryComp<ExplosiveComponent>(ent, out var explComp))
-                return;
+        // This part handles the explosion at 500 degrees.
+        // If the explosion component doesn't exist, however, we return. (This shouldn't happen!)
+        if (!TryComp<ExplosiveComponent>(ent, out var explComp))
+            return;
 
-            if (tempComp.CurrentTemperature >= 500)
-                _destructible.ExplosionSystem.TriggerExplosive(ent.Owner, explComp, true, explComp.TotalIntensity);
-        }
+        if (tempComp.CurrentTemperature >= 1644)
+            _destructible.ExplosionSystem.TriggerExplosive(ent.Owner, explComp, true, explComp.TotalIntensity);
     }
 
-    private void Announcement(string msg, bool when, ref bool announcementFlag)
+    private void Announcement(Entity<StormArrayComponent> ent, string msg, bool when, ref bool announcementFlag)
     {
         if (!when || announcementFlag)
             return;
 
-        var sound = new SoundPathSpecifier("/Audio/Announcements/bloblarm.ogg");
-
-        _chat.DispatchGlobalAnnouncement(msg,
-            Loc.GetString("admin-announce-announcer-default"),
-            true,
-            sound,
-            Color.Red);
+        _radio.SendRadioMessage(ent.Owner, msg, "Engineering", ent.Owner);
 
         announcementFlag = true;
     }
@@ -120,6 +144,14 @@ public sealed class StormArraySystem : EntitySystem
         var inlet = (PipeNode)inletNode;
         var outlet = (PipeNode)outletNode;
 
+        if (inlet.Air.TotalMoles <= 0)
+        {
+            comp.LastCoolingRate = 0;
+            comp.LastCoolantFlow = 0;
+            comp.StatusMessage = "NO COOLANT: Inlet has no gas";
+            return;
+        }
+
         // Calculate gas transfer based on pressure difference, then
         // calculate heat difference from the Array and coolant.
         // We return if there's no coolant or no heat capacity.
@@ -132,6 +164,7 @@ public sealed class StormArraySystem : EntitySystem
 
         if (coolantHeatCapacity <= 0)
         {
+            comp.StatusMessage = "COOLANT ERROR: Zero heat capacity";
             _atmosphere.Merge(outlet.Air, coolantGas);
             return;
         }
@@ -142,6 +175,8 @@ public sealed class StormArraySystem : EntitySystem
 
         if (tempDifference <= 0)
         {
+            comp.StatusMessage =
+                $"COOLANT WARMER: Coolant ({coolantGas.Temperature:F1}K) is warmer than array ({temp.CurrentTemperature:F1}K)";
             _atmosphere.Merge(outlet.Air, coolantGas);
             return;
         }
@@ -150,7 +185,7 @@ public sealed class StormArraySystem : EntitySystem
         var maxHeatFromTempDiff = tempDifference * coolantHeatCapacity;
 
         // Maximum heat transfer based on cooling rate (joules per second)
-        var maxHeatFromRate = comp.MaxCoolingRate * args.dt;
+        var maxHeatFromRate = 50000 * args.dt;
 
         // Take the minimum of the two limits
         var heatTransferred = MathF.Min(maxHeatFromTempDiff, maxHeatFromRate);
@@ -170,6 +205,9 @@ public sealed class StormArraySystem : EntitySystem
         // Store stats for monitoring/visuals
         comp.LastCoolingRate = heatTransferred / args.dt;
         comp.LastCoolantFlow = coolantGas.TotalMoles;
+
+        comp.StatusMessage = $"COOLING: {comp.LastCoolingRate / 1000:F1} kW | Flow: {comp.LastCoolantFlow:F2} mol/s";
+
         comp.LastPressureDelta = pressureDelta;
 
         // Merge heated coolant back into the outlet
@@ -190,10 +228,6 @@ public sealed class StormArraySystem : EntitySystem
         var presDiff = pr1 - pr2;
 
         var deNom = temp1 * vol2 + temp2 * vol1;
-
-        // Only transfer if there's a positive pressure difference
-        if (!(presDiff > 0) || !(pr1 > 0) || !(deNom > 0))
-            return (new GasMixture(), presDiff);
 
         var transferMoles = mole1 - (mole1 + mole2) * temp2 * vol1 / deNom;
         return (airInlet.Remove(transferMoles), presDiff);

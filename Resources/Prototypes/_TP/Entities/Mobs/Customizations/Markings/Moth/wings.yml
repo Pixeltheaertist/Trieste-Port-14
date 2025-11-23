@@ -1,0 +1,23 @@
+- type: marking
+  id: TP14MarkingMothWings1
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Moth ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
+    state: mothwings_1
+  - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
+    state: mothwings_1_secondary
+
+- type: marking
+  id: TP14MarkingMothWings2
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Moth ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
+    state: mothwings_2_primary
+  - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
+    state: mothwings_2_secondary
+  - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
+    state: mothwings_2_tertiary
