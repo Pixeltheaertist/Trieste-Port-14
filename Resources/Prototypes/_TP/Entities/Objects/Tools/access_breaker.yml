@@ -12,8 +12,6 @@
     state: icon
   - type: Item
     sprite: _TP/Objects/Tools/access_breaker.rsi
-  - type: Contraband
-    severity: Nanotrasen
 
 - type: entity
   parent: NTAccessBreakerUnlimited
