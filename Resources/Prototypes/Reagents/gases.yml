@@ -27,7 +27,6 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Jellid ]
-          inverted: true
         ratios:
           Water: -1.0
       - !type:HealthChange
