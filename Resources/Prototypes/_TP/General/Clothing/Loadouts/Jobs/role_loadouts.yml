@@ -8,6 +8,7 @@
   groups:
   # Required
   - GroupSpeciesBreathTool
+  - TP14GroupSpeciesBreathTool
   - GroupTankHarness
   - TP14GroupBasinTechJumper
   - TP14GroupBasinTechOuter
@@ -27,6 +28,7 @@
   groups:
   # Required
   - GroupSpeciesBreathTool
+  - TP14GroupSpeciesBreathTool
   - GroupTankHarness
   - TP14GroupExpeditioneerJumper
   - TP14GroupExpeditioneerOuter
@@ -45,6 +47,7 @@
   groups:
   # Required
   - GroupSpeciesBreathTool
+  - TP14GroupSpeciesBreathTool
   - GroupTankHarness
   - TP14GroupPilotJumper
   - TP14GroupPilotOuter
@@ -70,3 +73,4 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - TP14GroupSpeciesBreathTool

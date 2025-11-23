@@ -34,7 +34,7 @@
   equipment:
     head: ClothingHeadHatBowlerHat
     eyes: ClothingEyesGlassesCheapSunglasses
-    mask: ClothingMaskBreath
+    mask: TP14ClothingMaskAir #TP14
     neck: ClothingNeckLawyerbadge
     outerClothing: ClothingOuterWinterColorBlack
     gloves: ClothingHandsGlovesColorBlack

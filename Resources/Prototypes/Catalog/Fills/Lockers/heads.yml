@@ -274,6 +274,7 @@
   table: !type:AllSelector
     children:
     - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # TP14
     - id: ClothingOuterHardsuitRd
     - id: OxygenTankFilled
 
