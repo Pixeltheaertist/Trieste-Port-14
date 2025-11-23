@@ -8,6 +8,7 @@
     sprite: Markers/inside.rsi
     state: default
   - type: UnderRoof
+  - type: IsRoof
   - type: BlockWeather
   placement:
     mode: SnapgridCenter
