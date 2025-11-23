@@ -12,3 +12,18 @@
   - type: ConditionalSpawner
     prototypes:
     - TP14MobSeaBunnyDaisy
+
+- type: entity
+  parent: MarkerBase
+  id: TP14SpawnerMobMorty
+  name: Morty spawner
+  suffix: Trieste, Spawner, Medical
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: opossum
+      sprite: _TP/Mobs/Animals/opossum.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - TP14MobOpossumMorty

@@ -19,7 +19,7 @@
   id: FillLockerEmergencyStandard
   table: !type:AllSelector
     children:
-    - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # TP14
     - id: ClothingOuterSuitEmergency
     - !type:GroupSelector
       children:

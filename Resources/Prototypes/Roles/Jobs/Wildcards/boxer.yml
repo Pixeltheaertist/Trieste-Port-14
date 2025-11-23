@@ -31,7 +31,7 @@
   equipment:
     head: ClothingHeadHatBlacksoft
     eyes: ClothingEyesGlassesCheapSunglasses
-    mask: ClothingMaskBreath
+    mask: TP14ClothingMaskAir # TP14
     outerClothing: ClothingOuterWinterColorGray
     jumpsuit: UniformShortsRedWithTop
     neck: ClothingNeckScarfStripedRed
