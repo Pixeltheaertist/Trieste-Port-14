@@ -10,6 +10,9 @@ namespace Content.Shared.Gravity
         [DataField("lightningPrototype", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
         public string LightningPrototype = "AdminInstantEffectThunder";
 
+        [DataField("lightningSoundPrototype", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+        public string LightningSoundPrototype = "AdminInstantEffectThunderSound";
+
         [DataField("stormLightningPrototype", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
         public string StormLightningPrototype = "Eldritch";
 
