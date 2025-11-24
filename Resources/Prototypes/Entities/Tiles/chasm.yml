@@ -1,13 +1,18 @@
 ﻿- type: entity
   id: FloorChasmEntity
   name: chasm
-  description: You can't even see the bottom.
+  description: You can't help but feel watched...
   placement:
     mode: SnapgridCenter
     snap:
     - Wall
   components:
   - type: Chasm
+  - type: AmbientSound # It's eldritch time! *Eldritches all over the place*
+    range: 10
+    volume: -3
+    sound:
+      path: /Audio/Ambience/anomaly_scary.ogg # Should I be making ALLLLL of these whisper? No. But that's what i'm doing.
   - type: StepTrigger
     requiredTriggeredSpeed: 0
     intersectRatio: 0.4
