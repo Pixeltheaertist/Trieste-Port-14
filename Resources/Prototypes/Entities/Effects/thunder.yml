@@ -10,7 +10,7 @@
     softness: 1000
   - type: TriggerOnSpawn
   - type: SpawnOnTrigger
-      proto: AdminInstantEffectThunderSound
+      proto: AdminInstantEffectThunderSound # This is actually much simpler, we should just make lightning protos spawn their own sound entities instead of coding it <- Pix
   - type: TimedDespawn
     lifetime: 0.2
 
@@ -28,7 +28,7 @@
 - type: entity
   id: Storm
   suffix: Eldritch Thunder
-  parent: AdminInstantEffectBase
+  parent: AdminInstantEffectBase # In the future, i'd like Eldritch Thunder to have a deeper, creepier thunder crack than the current tesla collapse <-- Pix
   components:
   - type: PointLight
     energy: 14
@@ -36,9 +36,9 @@
     radius: 300
     softness: -100
     color: "#CBC3E3"
-  - type: EmitSoundOnTrigger
-    sound: /Audio/Effects/tesla_collapse.ogg
   - type: TriggerOnSpawn
+  - type: SpawnOnTrigger
+      proto: AdminInstantEffectThunderSound
   - type: TimedDespawn
     lifetime: 0.2
 
