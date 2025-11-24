@@ -21,3 +21,20 @@
   storage:
     back:
     - BoxSurvivalJellid
+
+- type: loadout
+  id: TP14LoadoutSpeciesBreathToolNeck
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: TP14EffectSpeciesMask
+  equipment:
+    mask: ClothingMaskBreathNeck
+
+# Breath Tool On Face
+- type: loadout
+  id: TP14LoadoutSpeciesBreathTool
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesMask
+  equipment:
+    mask: TP14ClothingMaskAir

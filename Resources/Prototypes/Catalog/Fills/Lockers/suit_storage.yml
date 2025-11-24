@@ -18,6 +18,7 @@
     - id: ClothingOuterHardsuitEVA
     - id: ClothingHeadHelmetEVA
     - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # TP14
 
 #Basic EVA (Big Ass Helmet)
 - type: entity
@@ -38,6 +39,7 @@
     - id: ClothingOuterHardsuitEVA
     - id: ClothingHeadHelmetEVALarge
     - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # TP14
 
 #Emergency EVA
 - type: entity
@@ -57,6 +59,7 @@
     - id: OxygenTankFilled
     - id: ClothingOuterSuitEmergency
     - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # TP14
 
 #Prisoner EVA
 - type: entity
@@ -77,6 +80,7 @@
     - id: ClothingOuterHardsuitEVAPrisoner
     - id: ClothingHeadHelmetEVALarge
     - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # TP14
 
 #Syndicate EVA
 - type: entity
@@ -135,7 +139,7 @@
     - id: JetpackVoidFilled
     - id: ClothingOuterHardsuitAncientEVA
     - id: ClothingHeadHelmetAncient
-    - id: ClothingMaskBreath
+    - id: ClothingMaskBreath # TP14
 
 #HARDSUITS
 #Engineering hardsuit
@@ -184,6 +188,7 @@
     - id: OxygenTankFilled
     - id: ClothingOuterHardsuitSecurity
     - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # TP14
 
 #CE's hardsuit
 - type: entity

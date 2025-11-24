@@ -34,7 +34,7 @@
   equipment:
     head: ClothingHeadHatTophat
     eyes: ClothingEyesGlassesSunglasses
-    mask: ClothingMaskBreath
+    mask: TP14ClothingMaskAir #TP14
     neck: ClothingNeckScarfStripedBlack
     outerClothing: ClothingOuterArmorBasicSlim
     gloves: ClothingHandsGlovesColorBlack

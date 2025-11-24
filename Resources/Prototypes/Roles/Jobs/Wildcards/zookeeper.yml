@@ -31,7 +31,7 @@
   job: Zookeeper
   equipment:
     eyes: ClothingEyesGlassesCheapSunglasses
-    mask: ClothingMaskBreath
+    mask: TP14ClothingMaskAir # TP14
     outerClothing: ClothingOuterWinterColorLightBrown
     neck: ClothingNeckScarfStripedBrown
     belt: ClothingBeltStorageWaistbag

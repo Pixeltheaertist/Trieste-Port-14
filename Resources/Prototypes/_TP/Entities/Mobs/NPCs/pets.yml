@@ -1,7 +1,7 @@
 - type: entity
   parent: [ TP14MobSeaBunny ]
   id: TP14MobSeaBunnyDaisy
-  suffix: Trieste, Sea
+  suffix: Trieste, Hydroponics, Sea
   name: Daisy
   description: A typical sea bunny, but this one seemingly breaths air. Do it for your Daisy!
   components:
@@ -9,3 +9,24 @@
     prototype: Mothroach
   - type: Loadout
     prototypes: [ TP14MobDaisyGear ]
+
+- type: entity
+  id: TP14MobOpossumMorty
+  parent: MobPossumMorty
+  suffix: Trieste, Medical
+  description: The station's resident Didelphis virginiana. A sensitive but resilient kind of guy. He has a scratched out engineering nametag that reads "Poppy".
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _TP/Mobs/Animals/opossum.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: opossum
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: opossum
+      Critical:
+        Base: opossum_dead
+      Dead:
+        Base: opossum_dead
