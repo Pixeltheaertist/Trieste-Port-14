@@ -95,12 +95,12 @@ public sealed class ShuttleFallSystem : EntitySystem
                 if (flight.FirstTimeLoad)
                 {
                     flight.FirstTimeLoad = false; // That's all I had to do LOL, I don't need to remove the component
-                    return;
+                    continue;
                 }
 
                 Log.Info("Has flying component");
                 // Make sure the ship is actively flying and is not docked to another flying vessel
-                if (flight is not { IsFlying: false, DockedToFlier: false })
+                if (flight.DockedToFlier)
                     continue;
 
                 // Find where the shuttle will be falling to
@@ -209,7 +209,7 @@ public sealed class ShuttleFallSystem : EntitySystem
             if (!TryComp<AirFlyingComponent>(shuttle, out var flyingComp))
             {
                 Log.Error("Parent shuttle does not have AirFlyingComponent.");
-                return; // FROM WHENCE YOU CAME
+                return; // TO WHENCE YOU CAME
             }
 
             // Temporarily set IsFlying to false
@@ -257,6 +257,15 @@ public sealed class ShuttleFallSystem : EntitySystem
 
         private void OnDock(DockEvent args)
         {
+            if (TryComp<TriesteComponent>(args.GridAUid, out var dockedTrieste))
+            {
+                if (TryComp<AirFlyingComponent>(args.GridBUid, out var childShip))
+                {
+                     Log.Info("Docked to Trieste"); // Trieste's docking clamps should keep an airship in place, even if its VTOL engines shut off.
+                     // Hypothetically, this means that Trieste can be used to modify or construct new airships by docking them and making changes while docked.
+                    childShip.DockedToFlier = true;
+                }
+            }
             if (TryComp<AirFlyingComponent>(args.GridAUid, out var dockedShip))
             {
                 // If the ship you are docking to is flying, allow safe disablement of atmospheric thrusters.
