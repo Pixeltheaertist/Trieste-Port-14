@@ -27,9 +27,9 @@ public sealed partial class CardHandVisualizerSystem : ManagedLayerVisualizerSys
             return;
 
         var startingAngle = -(component.Angle / 2);
-        var intervalAngle = component.Angle / (visibleCards.Length - 1);
+        var intervalAngle = visibleCards.Length != 1 ? component.Angle / (visibleCards.Length - 1) : 0;
         var startingXOffset = -(component.XOffset / 2);
-        var intervalOffset = component.XOffset / (visibleCards.Length - 1);
+        var intervalOffset = visibleCards.Length != 1 ? component.XOffset / (visibleCards.Length - 1) : 0;
         var layerScale = new Vector2(component.Scale, component.Scale);
         foreach (var (cardIndex, cardEnt) in GetEntityArray(visibleCards).Index())
         {

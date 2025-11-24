@@ -127,10 +127,7 @@ public partial class CardStackSystem : EntitySystem
         Dirty(to);
         Dirty(from);
 
-        if (from.Comp.NetCards.Count <= 0)
-        {
-            PredictedQueueDel(from);
-        }
+        CheckDegenerate(from);
     }
 
     /// Tries to get a <see cref="CardStackComponent"/> on the given <paramref name="uid"/>. This is needed because

@@ -18,18 +18,6 @@ public abstract class ManagedLayerVisualizerSystem<TComp> : VisualizerSystem<TCo
         var sprite = new Entity<SpriteComponent?>(uid, args.Sprite);
         foreach (var layerAdded in layersAdded)
         {
-            if (!SpriteSystem.LayerExists(sprite, layerAdded))
-            {
-                // TODO Workaround for https://github.com/space-wizards/RobustToolbox/pull/6305
-                if (SpriteSystem.LayerMapGet(sprite, layerAdded) != 0)
-                {
-                    DebugTools.Assert($"Failed to retrieve added layer: {layerAdded}");
-                    continue;
-                }
-
-                Log.Debug($"Suppressing possibly incorrect layer lookup failure: \"{layerAdded}\"!");
-            }
-
             SpriteSystem.RemoveLayer(sprite, layerAdded);
         }
 
