@@ -43,7 +43,7 @@
     lifetime: 0.2
 
 - type: entity
-  id: Eldritch
+  id: Eldritch # These having a sprite that looks like a vertical lightning bolt could be cool at some point.
   suffix: Eldritch Strike
   parent: AdminInstantEffectThunder
   components:
