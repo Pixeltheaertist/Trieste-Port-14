@@ -1,3 +1,5 @@
+# It could also be interesting to consider having a sparks effect happen a few seconds before a LightningStrike prototype spawns, to give players time to get out of the way.
+
 - type: entity
   id: AdminInstantEffectThunder
   suffix: Thunder
