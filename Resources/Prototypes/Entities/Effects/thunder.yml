@@ -8,11 +8,20 @@
     enabled: true
     radius: 100
     softness: 1000
+  - type: TriggerOnSpawn
+  - type: TimedDespawn
+    lifetime: 0.2
+
+- type: entity
+  id: AdminInstantEffectThunderSound
+  suffix: ThunderSound
+  parent: AdminInstantEffectBase
+  components:
   - type: EmitSoundOnTrigger
     sound: /Audio/Effects/tesla_collapse.ogg
   - type: TriggerOnSpawn
   - type: TimedDespawn
-    lifetime: 0.2
+    lifetime: 1.2
 
 - type: entity
   id: Storm
