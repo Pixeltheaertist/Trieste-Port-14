@@ -85,19 +85,23 @@ public sealed class ThunderSystem : EntitySystem
                 {
                     return;
                 }
+                LightningSound = entity.LightningSoundPrototype;
 
                 if (entity.StormMode) // If marker is currently in a "Flash Storm"
                 {
                     LightningType = entity.StormStrikePrototype;
+                    LightningSound = entity.LightningSoundPrototype;
                     var strikeChance = _random.Prob(0.3f); // Roll a =30% chance for lightning to strike
                     if (strikeChance)
                     {
                         LightningType = entity.StormLightningPrototype;
+                        LightningSound = entity.LightningSoundPrototype;
                         //Log.Error("striking lightning fr fr");// Change lightning prototype to a strike prototype
                     }
                 }
 
-                Spawn(LightningType, newCoords); // Spawn lightning prototype
+                Spawn(LightningType, newCoords);
+                Spawn(LightningSound, newCoords); // Spawn lightning prototype
             }
 
             _updateTimer = 0; // Reset lightning timer
