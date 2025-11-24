@@ -9,11 +9,13 @@
     radius: 100
     softness: 1000
   - type: TriggerOnSpawn
+  - type: SpawnOnTrigger
+      proto: AdminInstantEffectThunderSound
   - type: TimedDespawn
     lifetime: 0.2
 
 - type: entity
-  id: AdminInstantEffectThunderSound
+  id: AdminInstantEffectThunderSound # Used to create the sound effect for thunder. Persists a bit longer after the thunder despawns.
   suffix: ThunderSound
   parent: AdminInstantEffectBase
   components:
