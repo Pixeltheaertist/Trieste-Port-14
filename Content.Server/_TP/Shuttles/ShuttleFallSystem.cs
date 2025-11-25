@@ -92,6 +92,9 @@ public sealed class ShuttleFallSystem : EntitySystem
                 if (!TryComp<AirFlyingComponent>(entity.Owner, out var flight))
                     continue;
 
+                if(flight.IsFlying)
+                    continue;
+
                 if (flight.FirstTimeLoad)
                 {
                     flight.FirstTimeLoad = false; // That's all I had to do LOL, I don't need to remove the component
@@ -279,6 +282,15 @@ public sealed class ShuttleFallSystem : EntitySystem
 
         private void OnUndock(UndockEvent args)
         {
+            if (TryComp<TriesteComponent>(args.GridAUid, out var dockedTrieste))
+            {
+                if (TryComp<AirFlyingComponent>(args.GridBUid, out var airship))
+                {
+                    Log.Info("Undocked from a flying ship");
+                    airship.DockedToFlier = false;
+                }
+            }
+
             if (!TryComp<AirFlyingComponent>(args.GridAUid, out var dockedShip))
                 return;
 
