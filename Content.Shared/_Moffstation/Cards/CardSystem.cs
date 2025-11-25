@@ -23,6 +23,7 @@ public sealed class CardSystem : EntitySystem
         SubscribeLocalEvent<CardComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<CardComponent, UseInHandEvent>(OnUse);
         SubscribeLocalEvent<CardComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<CardComponent, ActivateInWorldEvent>(OnActiveInWorld);
     }
 
     private void OnStartup(Entity<CardComponent> entity, ref ComponentStartup args)
@@ -77,6 +78,16 @@ public sealed class CardSystem : EntitySystem
             args.Handled = true;
             return;
         }
+    }
+
+    private void OnActiveInWorld(Entity<CardComponent> entity, ref ActivateInWorldEvent args)
+    {
+        if (args.Handled || !args.Complex)
+            return;
+
+        Flip(entity, faceDown: null);
+
+        args.Handled = true;
     }
 
     public void Flip(Entity<CardComponent> card, bool? faceDown)

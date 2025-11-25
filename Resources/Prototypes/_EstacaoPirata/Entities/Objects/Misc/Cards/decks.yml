@@ -65,8 +65,6 @@
   suffix: black
   components:
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
-    state: deck_black_full
   - type: ContainerFill
     containers:
       cardstack-container:
@@ -136,8 +134,6 @@
   suffix: nanotrasen
   components:
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
-    state: deck_nanotrasen_full
   - type: ContainerFill
     containers:
       cardstack-container:
@@ -207,8 +203,6 @@
   suffix: syndicate
   components:
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
-    state: deck_syndicate_full
   - type: ContainerFill
     containers:
       cardstack-container:

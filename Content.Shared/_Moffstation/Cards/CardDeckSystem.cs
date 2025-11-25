@@ -127,9 +127,6 @@ public sealed class CardDeckSystem : CardStackSystem<CardDeckComponent>
         CardStack.RemoveCard(entity, card, args.User);
         _hands.TryPickupAnyHand(args.User, card, animate: false);
 
-        // Flip the card face up when drawn.
-        _card.Flip(card, faceDown: false);
-
         args.Handled = true;
     }
 }

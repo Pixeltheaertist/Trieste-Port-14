@@ -28,7 +28,8 @@ public sealed class CardHandMenuBoundUserInterface(EntityUid owner, Enum uiKey) 
                 .GetCards(Owner)
                 .Select(card => new RadialMenuActionOption<Entity<CardComponent>>(OnPressed, card)
                     {
-                        IconSpecifier = RadialMenuIconSpecifier.With(card), ToolTip = Loc.GetString(card.Comp.Name),
+                        IconSpecifier = RadialMenuIconSpecifier.With(card),
+                        ToolTip = Loc.GetString(card.Comp.Name),
                     }
                 )
         );

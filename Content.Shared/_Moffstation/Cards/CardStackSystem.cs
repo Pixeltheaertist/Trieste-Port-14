@@ -179,7 +179,7 @@ public partial class CardStackSystem : EntitySystem
 
             // If the hand was in a container, leave the last card in its place in the container.
             var cardParent = Transform(entity).ParentUid;
-            if (Container.TryGetContainingContainer(cardParent, lastCard, out var container))
+            if (Container.TryGetContainingContainer(cardParent, entity, out var container))
             {
                 Container.Remove(entity.Owner, container, force: true);
                 Container.Insert(lastCard.Owner, container);
