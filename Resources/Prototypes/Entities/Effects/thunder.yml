@@ -12,7 +12,7 @@
     softness: 1000
   - type: TriggerOnSpawn
   - type: SpawnOnTrigger
-      proto: AdminInstantEffectThunderSound # This is actually much simpler, we should just make lightning protos spawn their own sound entities instead of coding it <- Pix
+    proto: AdminInstantEffectThunderSound # This is actually much simpler, we should just make lightning protos spawn their own sound entities instead of coding it <- Pix
   - type: TimedDespawn
     lifetime: 0.2
 
@@ -25,7 +25,7 @@
     sound: /Audio/Effects/tesla_collapse.ogg
   - type: TriggerOnSpawn
   - type: TimedDespawn
-    lifetime: 1.2
+    lifetime: 4
 
 - type: entity
   id: Storm
@@ -40,7 +40,7 @@
     color: "#CBC3E3"
   - type: TriggerOnSpawn
   - type: SpawnOnTrigger
-      proto: AdminInstantEffectThunderSound
+    proto: AdminInstantEffectThunderSound
   - type: TimedDespawn
     lifetime: 0.2
 
