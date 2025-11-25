@@ -296,7 +296,43 @@
       - ShadowKudzuLootSpawner
     - type: Tag
       tags:
-        - HideContextMenu
+        - SpookyFog
+    - type: OptionsVisualizer
+      visuals:
+        base:
+        - options: Default
+          data: { state: spookysmoke }
+        - options: ReducedMotion
+          data: { state: spookysmoke_static }
+
+- type: entity
+  name: eldritch haze
+  description: No one can hear you scream over the whispers.
+  id: EldritchKudzu
+  parent: [ BaseKudzu, BaseShadow ]
+  components:
+    - type: Physics
+      canCollide: false
+    - type: Occluder
+    - type: Sprite
+      drawdepth: Effects
+      sprite: Effects/spookysmoke.rsi
+      layers:
+      - state: spookysmoke
+        color: "#793a80dd"
+        map: [base]
+    - type: Kudzu
+      growthTickChance: 0.9
+      spreadChance: 0.99
+    - type: RandomSpawner
+      deleteSpawnerAfterSpawn: false
+      rareChance: 0.05
+      offset: 0.2
+      chance: 0.45
+      prototypes:
+      - ShadowBasaltRandom
+    - type: Tag
+      tags:
         - SpookyFog
     - type: OptionsVisualizer
       visuals:
