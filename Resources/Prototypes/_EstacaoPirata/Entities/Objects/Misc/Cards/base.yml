@@ -9,8 +9,6 @@
   - type: Item
     size: Small
   - type: Appearance
-  - type: HideInStripMenu
-    strategy: !type:HideInStripMenuWithDynamicStrategy
   - type: EmitSoundOnLand
     sound:
       collection: cardShove
@@ -36,8 +34,6 @@
   - type: Item
     size: Small
   - type: Appearance
-  - type: HideInStripMenu
-    strategy: !type:HideInStripMenuWithDynamicStrategy
   - type: CardHand
     limit: 5
   - type: ContainerContainer
