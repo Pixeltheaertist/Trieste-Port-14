@@ -23,13 +23,13 @@
     heatingCoefficient: 0.001
     coolingCoefficient: 0.001
   - type: ExplosionResistance
-    damageCoefficient: 0.6 # no idea how prevalent explosions will be in the trench so this may need to be tweaked
+    damageCoefficient: 0.4 # no idea how prevalent explosions will be in the trench so this may need to be tweaked
   - type: Armor
     modifiers:
       coefficients:
         Blunt: 0.5
         Slash: 0.5
-        Piercing: 0.6 # no underwater mobs deal piercing damage so this was far too overtuned
+        Piercing: 0.4
         Heat: 0.4
         Cold: 0.1
         Shock: 0.3
