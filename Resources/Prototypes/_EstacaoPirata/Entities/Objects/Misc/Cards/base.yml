@@ -85,6 +85,8 @@
     - id: CardDeckBase
       amount: 1
   - type: Appearance
+  - type: StaticPrice
+    price: 25
 
 - type: entity
   parent: BaseItem

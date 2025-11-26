@@ -1,3 +1,4 @@
+# Standard Playing Card Deck (Black)
 - type: entity
   parent: CardBoxBase
   id: CardBoxBlack
@@ -16,46 +17,6 @@
   - type: OpenTriggeredStorageFill
     contents:
     - id: CardDeckBlack
-      amount: 1
-
-- type: entity
-  parent: CardBoxBase
-  id: CardBoxNanotrasen
-  name: nanotrasen deck case
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-    state: nanotrasen_box
-    layers:
-    - state: nanotrasen_box
-    - state: nanotrasen_box_open
-      map: [ "openLayer" ]
-      visible: false
-  - type: OpenTriggeredStorageFill
-    contents:
-    - id: CardDeckNanotrasen
-      amount: 1
-
-- type: entity
-  parent: [CardBoxBase, BaseSyndicateContraband]
-  id: CardBoxSyndicate
-  name: syndicate deck case
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-    state: syndicate_box
-    layers:
-    - state: syndicate_box
-    - state: syndicate_box_open
-      map: [ "openLayer" ]
-      visible: false
-  - type: OpenTriggeredStorageFill
-    contents:
-    - id: CardDeckSyndicate
       amount: 1
 
 - type: entity
@@ -127,6 +88,27 @@
       # Joker
       - CardScJokerBlack
 
+ # Standard Playing Card Deck (Nanotrasen)
+- type: entity
+  parent: CardBoxBase
+  id: CardBoxNanotrasen
+  name: nanotrasen deck case
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+    state: nanotrasen_box
+    layers:
+    - state: nanotrasen_box
+    - state: nanotrasen_box_open
+      map: [ "openLayer" ]
+      visible: false
+  - type: OpenTriggeredStorageFill
+    contents:
+    - id: CardDeckNanotrasen
+      amount: 1
+
 - type: entity
   parent: CardDeckBase
   id: CardDeckNanotrasen
@@ -196,6 +178,27 @@
       # Joker
       - CardScJokerNanotrasen
 
+# Standard Playing Card Deck (Syndicate)
+- type: entity
+  parent: [CardBoxBase, BaseSyndicateContraband]
+  id: CardBoxSyndicate
+  name: syndicate deck case
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+    state: syndicate_box
+    layers:
+    - state: syndicate_box
+    - state: syndicate_box_open
+      map: [ "openLayer" ]
+      visible: false
+  - type: OpenTriggeredStorageFill
+    contents:
+    - id: CardDeckSyndicate
+      amount: 1
+
 - type: entity
   parent: CardDeckBase
   id: CardDeckSyndicate
@@ -264,3 +267,143 @@
       - CardScJackOfSpadesSyndicate
       # Joker
       - CardScJokerSyndicate
+
+# Nuno™ Card Deck
+- type: entity
+  parent: CardBoxBase
+  id: CardBoxNuno
+  name: Nuno™
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+    layers:
+    - state: box
+    - state: box_open
+      map: [ "openLayer" ]
+      visible: false
+  - type: OpenTriggeredStorageFill
+    contents:
+    - id: CardDeckNuno
+      amount: 1
+
+- type: entity
+  parent: CardDeckBase
+  id: CardDeckNuno
+  name: deck of Nuno™ cards
+  components:
+  - type: Sprite
+  - type: ContainerFill
+    containers:
+      cardstack-container:
+      - CardNunoRedZero
+      - CardNunoRedOne
+      - CardNunoRedTwo
+      - CardNunoRedThree
+      - CardNunoRedFour
+      - CardNunoRedFive
+      - CardNunoRedSix
+      - CardNunoRedSeven
+      - CardNunoRedEight
+      - CardNunoRedNine
+      - CardNunoRedDrawTwo
+      - CardNunoRedReverse
+      - CardNunoRedSkip
+      - CardNunoYellowZero
+      - CardNunoYellowOne
+      - CardNunoYellowTwo
+      - CardNunoYellowThree
+      - CardNunoYellowFour
+      - CardNunoYellowFive
+      - CardNunoYellowSix
+      - CardNunoYellowSeven
+      - CardNunoYellowEight
+      - CardNunoYellowNine
+      - CardNunoYellowDrawTwo
+      - CardNunoYellowReverse
+      - CardNunoYellowSkip
+      - CardNunoBlueZero
+      - CardNunoBlueOne
+      - CardNunoBlueTwo
+      - CardNunoBlueThree
+      - CardNunoBlueFour
+      - CardNunoBlueFive
+      - CardNunoBlueSix
+      - CardNunoBlueSeven
+      - CardNunoBlueEight
+      - CardNunoBlueNine
+      - CardNunoBlueDrawTwo
+      - CardNunoBlueReverse
+      - CardNunoBlueSkip
+      - CardNunoGreenZero
+      - CardNunoGreenOne
+      - CardNunoGreenTwo
+      - CardNunoGreenThree
+      - CardNunoGreenFour
+      - CardNunoGreenFive
+      - CardNunoGreenSix
+      - CardNunoGreenSeven
+      - CardNunoGreenEight
+      - CardNunoGreenNine
+      - CardNunoGreenDrawTwo
+      - CardNunoGreenReverse
+      - CardNunoGreenSkip
+      # There are two sets of regular cards in a Nuno deck.
+      - CardNunoRedOne
+      - CardNunoRedTwo
+      - CardNunoRedThree
+      - CardNunoRedFour
+      - CardNunoRedFive
+      - CardNunoRedSix
+      - CardNunoRedSeven
+      - CardNunoRedEight
+      - CardNunoRedNine
+      - CardNunoRedDrawTwo
+      - CardNunoRedReverse
+      - CardNunoRedSkip
+      - CardNunoYellowOne
+      - CardNunoYellowTwo
+      - CardNunoYellowThree
+      - CardNunoYellowFour
+      - CardNunoYellowFive
+      - CardNunoYellowSix
+      - CardNunoYellowSeven
+      - CardNunoYellowEight
+      - CardNunoYellowNine
+      - CardNunoYellowDrawTwo
+      - CardNunoYellowReverse
+      - CardNunoYellowSkip
+      - CardNunoBlueOne
+      - CardNunoBlueTwo
+      - CardNunoBlueThree
+      - CardNunoBlueFour
+      - CardNunoBlueFive
+      - CardNunoBlueSix
+      - CardNunoBlueSeven
+      - CardNunoBlueEight
+      - CardNunoBlueNine
+      - CardNunoBlueDrawTwo
+      - CardNunoBlueReverse
+      - CardNunoBlueSkip
+      - CardNunoGreenOne
+      - CardNunoGreenTwo
+      - CardNunoGreenThree
+      - CardNunoGreenFour
+      - CardNunoGreenFive
+      - CardNunoGreenSix
+      - CardNunoGreenSeven
+      - CardNunoGreenEight
+      - CardNunoGreenNine
+      - CardNunoGreenDrawTwo
+      - CardNunoGreenReverse
+      - CardNunoGreenSkip
+      # Wildcards
+      - CardNunoWild
+      - CardNunoWild
+      - CardNunoWild
+      - CardNunoWild
+      - CardNunoWildDrawCards
+      - CardNunoWildDrawCards
+      - CardNunoWildDrawCards
+      - CardNunoWildDrawCards
