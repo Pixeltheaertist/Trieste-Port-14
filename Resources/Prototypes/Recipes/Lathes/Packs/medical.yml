@@ -25,6 +25,7 @@
   - Jug
   - ChemistryEmptyBottle01
   - ClothingEyesGlassesChemical
+  - TP14ChemistryHudEyepatchRecipe # TP14
 
 - type: latheRecipePack
   id: SurgeryStatic
@@ -47,6 +48,8 @@
   - WhiteCane
   - OffsetCane
   - OffsetCaneWood
+  - TP14MedicalHudRecipe # TP14
+  - TP14MedicalHudEyepatchRecipe #TP14
 
 - type: latheRecipePack
   id: RollerBedsStatic

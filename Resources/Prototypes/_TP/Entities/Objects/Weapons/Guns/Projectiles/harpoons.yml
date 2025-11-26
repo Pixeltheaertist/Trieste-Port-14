@@ -145,6 +145,7 @@
  # - type: Construction
   #    graph: PiezoHarpoon
   - type: Electrified
+    requirePower: false
   - type: StunOnCollide
     stunAmount: 3
     knockdownAmount: 3

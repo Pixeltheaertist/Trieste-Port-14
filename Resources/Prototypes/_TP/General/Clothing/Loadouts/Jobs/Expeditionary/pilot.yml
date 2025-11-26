@@ -69,3 +69,10 @@
   loadouts:
   - TP14LoadoutCoatBomberJacket
   - SalvageSpecialistWintercoat
+
+- type: loadoutGroup
+  id: TP14GroupPilotTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - TP14LoadoutLizardPlushiePilot

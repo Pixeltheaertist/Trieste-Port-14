@@ -36,5 +36,8 @@ loadout-group-mask-pilot = Pilot masks
 loadout-group-neck-pilot = Pilot neckwear
 loadout-group-outer-pilot = Pilot outer clothing
 
+# Medical
+loadout-group-eyewear-chemist = Chemical glasses
+
 # Misc
 loadout-group-outer-bomber = Bomber Jacket

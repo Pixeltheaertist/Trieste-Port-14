@@ -9,6 +9,7 @@
 - type: loadoutGroup
   id: TP14GroupBartenderFootwear
   name: tp14-loadout-group-footwear-bartender
+  minLimit: 0
   defaultSelected: 1
   loadouts:
   - TP14LoadoutFootwearLaceup

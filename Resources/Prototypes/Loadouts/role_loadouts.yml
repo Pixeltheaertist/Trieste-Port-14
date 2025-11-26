@@ -558,23 +558,26 @@
   - TP14GroupSpeciesBreathTool # TP14
   - TP14GroupSpeciesBreathToolNeck # TP14
 
-- type: roleLoadout
+- type: roleLoadout # TP14 - This has been semi-overhauled
   id: JobChemist
   groups:
+  # Required
+  - GroupSpeciesBreathToolMedical
+  - TP14GroupSpeciesBreathTool
+  - TP14GroupSpeciesBreathToolNeck
   - GroupTankHarness
-  - MedicalMask
-  - ChemistJumpsuit
-  - MedicalGloves
-  - ChemistBackpack
-  - ChemistOuterClothing
-  - MedicalShoes
   - SurvivalMedical
+  - TP14GroupChemistEyewearHuds
+  - ChemistJumpsuit
+  - ChemistOuterClothing
+  - ChemistBackpack
+  # Optional
+  - MedicalDoctorHead
+  - MedicalMask
+  - MedicalGloves
+  - MedicalShoes
   - Trinkets
   - ChemistJobTrinkets
-  - GroupSpeciesBreathToolMedical
-#  - GroupSpeciesBreathTool # TP14
-  - TP14GroupSpeciesBreathTool # TP14
-  - TP14GroupSpeciesBreathToolNeck # TP14
 
 - type: roleLoadout
   id: JobParamedic
