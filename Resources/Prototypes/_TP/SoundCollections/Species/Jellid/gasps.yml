@@ -1,0 +1,13 @@
+- type: soundCollection
+  id: JellidGasp
+  files:
+  - /Audio/_TP/Effects/Gasp/Jellid/jellid_gasp1.ogg
+  - /Audio/_TP/Effects/Gasp/Jellid/jellid_gasp2.ogg
+  - /Audio/_TP/Effects/Gasp/Jellid/jellid_gasp3.ogg
+
+- type: soundCollection
+  id: JellidDeathGasp
+  files:
+  - /Audio/_TP/Effects/Gasp/Jellid/jellid_deathgasp1.ogg
+  - /Audio/_TP/Effects/Gasp/Jellid/jellid_deathgasp2.ogg
+  - /Audio/_TP/Effects/Gasp/Jellid/jellid_deathgasp3.ogg

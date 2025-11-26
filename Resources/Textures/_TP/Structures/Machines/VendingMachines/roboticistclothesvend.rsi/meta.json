@@ -18,7 +18,9 @@
         },
         {
             "name": "normal-unshaded"
-
+        },
+        {
+            "name": "deny-unshaded"
         }
     ]
 }

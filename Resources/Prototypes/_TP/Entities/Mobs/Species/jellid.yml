@@ -12,7 +12,7 @@
   abstract: true
   components:
   - type: Icon
-    sprite: Mobs/Species/Slime/parts.rsi
+    sprite: Mobs/Species/Jellid/parts.rsi
     state: full
   - type: Body
     prototype: Jellid
@@ -43,15 +43,13 @@
     species: JellidPerson
   - type: Speech
     speechVerb: Slime
-    speechSounds: Slime
-    allowedEmotes: ['Squish']
+    speechSounds: Jellid
+    allowedEmotes: ['Squish', 'Buzz']
   - type: TypingIndicator
-    proto: slime
+    proto: jellid
   - type: Vocal
     sounds:
-      Male: MaleSlime
-      Female: MaleSlime
-      Unsexed: MaleSlime
+      Unsexed: Jellid
   - type: Temperature
     heatDamageThreshold: 400
     coldDamageThreshold: -9999
@@ -93,7 +91,7 @@
     - reagents: [ Water, SpaceCleaner ]
       methods: [ Touch ]
       effects:
-      - !type:WashCreamPie
+        - !type:WashCreamPie
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -107,9 +105,9 @@
       types:
         Asphyxiation: -0.5
     maxSaturation: 15
-    gaspEmote: Scream
   - type: Inventory
     templateId: jellid
+    speciesId: jellid #this is for the changing glasses sprites
   - type: Jellid # This is what dictates heating objects in one's hands, igniting objects, and draining power from objects and batteries.
   - type: Battery
     maxCharge: 1800
@@ -123,7 +121,6 @@
     color: "#Ffffff"
   - type: Internals
 
-
 - type: entity
   parent: MobHumanDummy
   id: MobJellidPersonDummy
@@ -131,3 +128,5 @@
   components:
     - type: HumanoidAppearance
       species: JellidPerson
+    - type: Inventory
+      speciesId: jellid #this is for the changing glasses sprites
