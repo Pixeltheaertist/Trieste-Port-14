@@ -25,7 +25,8 @@
     ignited: true
   - type: AlwaysHot
   - type: TemperatureProtection
-    coefficient: 0.6
+    heatingCoefficient: 0.6
+    coolingCoefficient: 0.6
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
@@ -90,7 +91,7 @@
     - reagents: [ Water, SpaceCleaner ]
       methods: [ Touch ]
       effects:
-      - !type:WashCreamPieReaction
+        - !type:WashCreamPie
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -114,7 +115,6 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: -2
-    ignoreFull: true # prevents the charge from stopping
   - type: PointLight
     radius: 1.5
     energy: 0.2
@@ -125,7 +125,6 @@
   parent: MobHumanDummy
   id: MobJellidPersonDummy
   categories: [ HideSpawnMenu ]
-  noSpawn: true
   components:
     - type: HumanoidAppearance
       species: JellidPerson
