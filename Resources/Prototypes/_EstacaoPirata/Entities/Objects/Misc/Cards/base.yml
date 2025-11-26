@@ -6,6 +6,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+    state: empty
   - type: Item
     size: Small
   - type: Appearance
@@ -33,6 +35,8 @@
   name: Hand of Cards
   components:
   - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+    state: empty
   - type: Item
     size: Small
   - type: Appearance
@@ -41,6 +45,11 @@
   - type: CardHand
     limit: 5
   - type: ContainerContainer
+    containers:
+      cardstack-container: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
   - type: UserInterface
     interfaces:
       enum.CardUiKey.Key:
@@ -84,9 +93,18 @@
   name: deck of cards
   components:
   - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+    state: empty
   - type: Item
     size: Normal
   - type: Appearance
   - type: CardDeck
     limit: 10
   - type: ContainerContainer
+    containers:
+      cardstack-container: !type:Container
+        showEnts: false
+        occludes: true
+      card-deck: !type:Container
+        showEnts: false
+        occludes: true

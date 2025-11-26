@@ -9,6 +9,7 @@ cards-verb-pickcard = Pick a card
 card-stack-examine = There are {$count} cards in this stack.
 cards-stackquantitychange-added = Card was added (Total of cards: {$quantity})
 cards-stackquantitychange-removed = Card was removed (Total of cards: {$quantity})
+cards-stackquantitychange-unknown = Unknown
 cards-verb-convert-to-deck = Convert to Card Deck
 cards-verb-split = Split in half
 
