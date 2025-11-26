@@ -18,22 +18,22 @@ marking-JellidCrystal-crystal_mantle = Primary
 
 marking-JellidManOWar = Jellid O' War
 marking-JellidManOWar-manowar_primary = Primary
-marking-JellidManOWar-manowar_Secondary = Secondary
+marking-JellidManOWar-manowar_secondary = Secondary
 
 marking-JellidMoon = Moon Jellid
 marking-JellidMoon-moon_mantle = Primary
 
 marking-JellidPhantom = Phantom Jellid
 marking-JellidPhantom-phantom_primary = Primary
-marking-JellidPhantom-phantom_Secondary = Secondary
+marking-JellidPhantom-phantom_secondary = Secondary
 
 marking-JellidSpotted = Spotted Jellid
 marking-JellidSpotted-spotted_primary = Primary
-marking-JellidSpotted-spotted_Secondary = Secondary
+marking-JellidSpotted-spotted_secondary = Secondary
 
 marking-JellidStellarid = Stellarid Jellid
 marking-JellidStellarid-stellarid_primary = Primary
-marking-JellidStellarid-stellarid_Secondary = Secondary
+marking-JellidStellarid-stellarid_secondary = Secondary
 
 
 
