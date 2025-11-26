@@ -1,0 +1,9 @@
+- type: loadoutGroup
+  id: TP14GroupChemistEyewearHuds
+  name: loadout-group-eyewear-chemist
+  minLimit: 0
+  loadouts:
+  - TP14LoadoutEyewearChemistryGoggles
+  - TP14LoadoutEyewearChemistryEyepatch
+  - MedicalHud
+  - MedicalEyePatchHud

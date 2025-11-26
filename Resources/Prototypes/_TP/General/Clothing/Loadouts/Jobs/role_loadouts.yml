@@ -21,7 +21,7 @@
   - Glasses
   - Survival
   - Trinkets
-  - SalvageSpecialistJobTrinkets
+  - TP14GroupBasinTechTrinkets
 
 - type: roleLoadout
   id: JobTP14Expeditioneer
@@ -40,7 +40,7 @@
   - Glasses
   - Survival
   - Trinkets
-  - SalvageSpecialistJobTrinkets
+  - TP14GroupExpeditioneerTrinkets
 
 - type: roleLoadout
   id: JobTP14Pilot
@@ -61,7 +61,7 @@
   - Glasses
   - Survival
   - Trinkets
-  - SalvageSpecialistJobTrinkets
+  - TP14GroupPilotTrinkets
 
 # Civilian
 

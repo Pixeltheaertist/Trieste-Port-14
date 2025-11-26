@@ -1451,6 +1451,8 @@
 
 - type: loadoutGroup
   id: MedicalShoes
+  minLimit: 0 # TP14
+  defaultSelected: 1 # TP14
   name: loadout-group-medical-doctor-shoes
   loadouts:
   - WhiteShoes

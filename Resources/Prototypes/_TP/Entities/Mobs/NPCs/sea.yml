@@ -512,6 +512,10 @@
           32:
             sprite: _TP/Mobs/Animals/sea-bunny-displacement.rsi
             state: neck
+  - type: PointLight
+    radius: 1.75
+    energy: 1
+    falloff: 10
 
 - type: entity
   parent: [ SimpleSpaceMobBase ]
@@ -671,3 +675,7 @@
           32:
             sprite: _TP/Mobs/Animals/LeafSheep/displacement.rsi
             state: neck
+  - type: PointLight
+    radius: 1.75
+    energy: 1
+    falloff: 10

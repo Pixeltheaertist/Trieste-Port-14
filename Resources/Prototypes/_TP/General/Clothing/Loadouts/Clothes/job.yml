@@ -18,3 +18,39 @@
   storage:
     back:
     - TP14CoffeeFilterInfinite
+
+- type: loadout
+  id: TP14LoadoutLizardPlushieBasinTechnician
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobTP14BasinTech
+      time: 72000 # 20hr
+  storage:
+    back:
+    - PlushieLizardJobSalvagespecialist
+
+- type: loadout
+  id: TP14LoadoutLizardPlushieExpeditioneer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobTP14Expeditioneer
+      time: 72000 # 20hr
+  storage:
+    back:
+    - PlushieLizardJobSalvagespecialist
+
+- type: loadout
+  id: TP14LoadoutLizardPlushiePilot
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobTP14Pilot
+      time: 72000 # 20hr
+  storage:
+    back:
+    - PlushieLizardJobSalvagespecialist

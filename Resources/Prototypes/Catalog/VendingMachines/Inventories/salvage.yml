@@ -9,6 +9,10 @@
     HandheldGPSBasic: 2
     RadioHandheld: 2
     WeaponGrapplingGun: 4
-    WeaponProtoKineticAccelerator: 4
+    #WeaponProtoKineticAccelerator: 4 #TP14 - We have HARPOONS!
+    TP14HarpoonGun: 4 #TP14
+    TP14Harpoon: 8 #TP14
   contrabandInventory:
     PlushieCarp: 1
+    TP14HarpoonBomb: 4 #TP14
+    TP14PiezoHarpoon: 4 #TP14
