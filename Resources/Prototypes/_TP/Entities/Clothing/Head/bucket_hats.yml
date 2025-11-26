@@ -8,9 +8,9 @@
   description: A generic white bucket hat, keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
   - type: Tag
     tags:
     - PetWearable
@@ -27,7 +27,7 @@
   description: A generic black bucket hat, keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     color: "#3f3f3f"
   - type: Item
     inhandVisuals:
@@ -38,7 +38,7 @@
       - state: inhand-right
         color: "#3f3f3f"
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -59,7 +59,7 @@
   description: A generic blue bucket hat, keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     color: "#52aecc"
   - type: Item
     inhandVisuals:
@@ -70,7 +70,7 @@
       - state: inhand-right
         color: "#52aecc"
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -91,7 +91,7 @@
   description: A generic dark blue bucket hat, keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     color: "#3285ba"
   - type: Item
     inhandVisuals:
@@ -102,7 +102,7 @@
       - state: inhand-right
         color: "#3285ba"
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -123,7 +123,7 @@
   description: A generic teal bucket hat, keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/BUcket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     color: "#77f3b7"
   - type: Item
     inhandVisuals:
@@ -134,7 +134,7 @@
       - state: inhand-right
         color: "#77f3b7"
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -155,7 +155,7 @@
   description: A generic green bucket hat, keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     color: "#9ed63a"
   - type: Item
     inhandVisuals:
@@ -166,7 +166,7 @@
       - state: inhand-right
         color: "#9ed63a"
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -187,7 +187,7 @@
   description: A generic dark green bucket hat, keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     color: "#007923"
   - type: Item
     inhandVisuals:
@@ -198,7 +198,7 @@
       - state: inhand-right
         color: "#007923"
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -219,7 +219,7 @@
   description: A generic orange bucket hat, keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     color: "#ff8c19"
   - type: Item
     inhandVisuals:
@@ -230,7 +230,7 @@
       - state: inhand-right
         color: "#ff8c19"
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -251,7 +251,7 @@
   description: A generic pink bucket hat, keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     color: "#ffa69b"
   - type: Item
     inhandVisuals:
@@ -262,7 +262,7 @@
       - state: inhand-right
         color: "#ffa69b"
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -283,7 +283,7 @@
   description: A generic red bucket hat, keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     color: "#eb0c07"
   - type: Item
     inhandVisuals:
@@ -294,7 +294,7 @@
       - state: inhand-right
         color: "#eb0c07"
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -315,7 +315,7 @@
   description: A generic yellow bucket hat, keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     color: "#ffe14d"
   - type: Item
     inhandVisuals:
@@ -326,7 +326,7 @@
       - state: inhand-right
         color: "#ffe14d"
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -347,7 +347,7 @@
   description: A generic purple bucket hat, keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     color: "#9f70cc"
   - type: Item
     inhandVisuals:
@@ -358,7 +358,7 @@
       - state: inhand-right
         color: "#9f70cc"
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -379,7 +379,7 @@
   description: A generic light brown bucket hat, keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     color: "#c59431"
   - type: Item
     inhandVisuals:
@@ -390,7 +390,7 @@
       - state: inhand-right
         color: "#c59431"
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -411,7 +411,7 @@
   description: A generic brown bucket hat, keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     color: "#a17229"
   - type: Item
     inhandVisuals:
@@ -422,7 +422,7 @@
       - state: inhand-right
         color: "#a17229"
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -443,7 +443,7 @@
   description: A generic maroon bucket hat, keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     color: "#cc295f"
   - type: Item
     inhandVisuals:
@@ -454,7 +454,7 @@
       - state: inhand-right
         color: "#cc295f"
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -475,7 +475,7 @@
   description: A generic olive bucket hat, keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     color: "#808000"
   - type: Item
     inhandVisuals:
@@ -486,7 +486,7 @@
       - state: inhand-right
         color: "#808000"
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -507,7 +507,7 @@
   description: A generic khaki bucket hat, keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     color: "#c3b091"
   - type: Item
     inhandVisuals:
@@ -518,7 +518,7 @@
       - state: inhand-right
         color: "#c3b091"
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_color.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -542,9 +542,9 @@
   description: A civilian's bucket hat, Keeps the rain out of your eyes.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_citizen.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_citizen.rsi
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_citizen.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_citizen.rsi
   - type: Tag
     tags:
     - PetWearable
@@ -561,9 +561,9 @@
   description: A botanist's bucket hat, great for working out on the rig.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_botany.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_botany.rsi
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_botany.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_botany.rsi
   - type: Tag
     tags:
     - PetWearable
@@ -580,9 +580,9 @@
   description: A bucket hat meant for medical, helps maintain visibility.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_medical.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_medical.rsi
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_medical.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_medical.rsi
   - type: Tag
     tags:
     - PetWearable
@@ -599,9 +599,9 @@
   description:
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_solgov.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_solgov.rsi
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_solgov.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_solgov.rsi
   - type: Tag
     tags:
     - PetWearable
@@ -618,9 +618,9 @@
   description:
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_science.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_science.rsi
   - type: Clothing
-    sprite: _TP/Clothing/Head/Hats/Bucket/bucket_science.rsi
+    sprite: _TP/Clothing/Head/Hats/bucket_science.rsi
   - type: Tag
     tags:
     - PetWearable
