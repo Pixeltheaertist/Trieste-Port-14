@@ -6,8 +6,8 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
-    state: box
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_black.rsi
+    state: black_box
     layers:
     - state: black_box
     - state: black_box_open
@@ -26,8 +26,8 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
-    state: box
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+    state: nanotrasen_box
     layers:
     - state: nanotrasen_box
     - state: nanotrasen_box_open
@@ -46,8 +46,8 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
-    state: box
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+    state: syndicate_box
     layers:
     - state: syndicate_box
     - state: syndicate_box_open

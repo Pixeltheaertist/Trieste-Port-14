@@ -6,7 +6,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_black.rsi
     state: empty
   - type: Item
     size: Small
@@ -21,10 +21,10 @@
     delay: 0.5
   - type: Card
     obverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_black.rsi
       state: singlecard_down_black
     reverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_black.rsi
       state: singlecard_down_black
     flipped: true
 
@@ -35,7 +35,7 @@
   name: Hand of Cards
   components:
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_black.rsi
     state: empty
   - type: Item
     size: Small
@@ -66,8 +66,8 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
-    state: box
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_black.rsi
+    state: black_box
     layers:
     - state: black_box
     - state: black_box_open
@@ -93,7 +93,7 @@
   name: deck of cards
   components:
   - type: Sprite
-    sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/Cards/card_black.rsi
     state: empty
   - type: Item
     size: Normal
