@@ -42,8 +42,8 @@
     species: JellidPerson
   - type: Speech
     speechVerb: Slime
-    speechSounds: Slime
-    allowedEmotes: ['Squish']
+    speechSounds: Jellid
+    allowedEmotes: ['Squish', 'Buzz']
   - type: TypingIndicator
     proto: jellid
   - type: Vocal
@@ -104,7 +104,6 @@
       types:
         Asphyxiation: -0.5
     maxSaturation: 15
-    gaspEmote: Scream
   - type: Inventory
     templateId: jellid
     speciesId: jellid #this is for the changing glasses sprites
@@ -120,6 +119,7 @@
     radius: 1.5
     energy: 0.2
     color: "#Ffffff"
+  - type: Internals
 
 - type: entity
   parent: MobHumanDummy
