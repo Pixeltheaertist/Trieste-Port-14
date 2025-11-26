@@ -741,3 +741,6 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
       state: nanotrasen_joker
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: singlecard_down_nanotrasen

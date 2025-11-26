@@ -741,3 +741,6 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
       state: syndicate_joker
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: singlecard_down_syndicate

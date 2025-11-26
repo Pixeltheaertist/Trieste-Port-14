@@ -741,3 +741,6 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_black.rsi
       state: black_joker
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_black.rsi
+      state: singlecard_down_black
