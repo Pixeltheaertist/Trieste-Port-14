@@ -8,6 +8,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_2_of_Clubs_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -19,6 +22,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_3_of_Clubs_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -30,6 +36,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_4_of_Clubs_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -41,6 +50,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_5_of_Clubs_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -52,6 +64,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_6_of_Clubs_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -63,6 +78,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_7_of_Clubs_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -74,6 +92,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_8_of_Clubs_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -85,6 +106,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_9_of_Clubs_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -96,6 +120,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_10_of_Clubs_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -107,6 +134,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_Ace_of_Clubs_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 
 - type: entity
@@ -119,6 +149,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_Jack_of_Clubs_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -130,6 +163,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_King_of_Clubs_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -141,6 +177,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_Queen_of_Clubs_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 
 - type: entity
@@ -153,6 +192,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_Jack_of_Diamonds_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -164,6 +206,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_Queen_of_Diamonds_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -175,6 +220,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_King_of_Diamonds_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -186,6 +234,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_Ace_of_Diamonds_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -197,6 +248,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_2_of_Diamonds_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -208,6 +262,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_3_of_Diamonds_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -219,6 +276,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_4_of_Diamonds_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -230,6 +290,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_5_of_Diamonds_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -241,6 +304,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_6_of_Diamonds_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -252,6 +318,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_7_of_Diamonds_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -263,6 +332,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_8_of_Diamonds_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -274,6 +346,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_9_of_Diamonds_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -285,6 +360,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_10_of_Diamonds_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 
 - type: entity
@@ -297,6 +375,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_2_of_Hearts_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -308,6 +389,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_3_of_Hearts_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -319,6 +403,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_4_of_Hearts_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -330,6 +417,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_5_of_Hearts_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -341,6 +431,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_6_of_Hearts_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -352,6 +445,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_7_of_Hearts_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -363,6 +459,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_8_of_Hearts_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -374,6 +473,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_9_of_Hearts_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -385,6 +487,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_10_of_Hearts_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -396,6 +501,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_King_of_Hearts_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -407,6 +515,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_Queen_of_Hearts_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -418,6 +529,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_Jack_of_Hearts_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -429,6 +543,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_Ace_of_Hearts_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 
 - type: entity
@@ -441,6 +558,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_2_of_Spades_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -452,6 +572,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_3_of_Spades_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -463,6 +586,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_4_of_Spades_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -474,6 +600,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_5_of_Spades_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -485,6 +614,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_6_of_Spades_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -496,6 +628,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_7_of_Spades_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -507,6 +642,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_8_of_Spades_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -518,6 +656,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_9_of_Spades_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 
 - type: entity
@@ -530,6 +671,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_10_of_Spades_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -541,6 +685,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_Jack_of_Spades_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -552,6 +699,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_Queen_of_Spades_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -563,6 +713,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_King_of_Spades_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
@@ -574,6 +727,9 @@
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
       state: sc_Ace_of_Spades_black
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/cards.rsi
+      state: singlecard_down_black
 
 - type: entity
   parent: CardBase
