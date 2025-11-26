@@ -326,7 +326,7 @@
     - id: RubberStampHos
     - id: BoxHoSCircuitboards
     - id: WeaponDisabler
-    - id: WeaponTaser
+#    - id: WeaponTaser # Trieste 
     - id: WantedListCartridge
     - id: DrinkHosFlask
 
