@@ -1,0 +1,179 @@
+- type: loadout
+  id: TP14LoadoutHeadwearBeaverHat
+  equipment:
+    head: ClothingHeadHatBeaverHat # Who is making beaver hats in 2500?!
+
+- type: loadout
+  id: TP14LoadoutHeadwearBowler
+  equipment:
+    head: ClothingHeadHatBowlerHat
+
+- type: loadout
+  id: TP14LoadoutHeadwearCatBlack
+  equipment:
+    head: ClothingHeadHatAnimalCatBlack
+
+- type: loadout
+  id: TP14LoadoutHeadwearCatBrown
+  equipment:
+    head: ClothingHeadHatAnimalCatBrown
+
+- type: loadout
+  id: TP14LoadoutHeadwearCatGrey
+  equipment:
+    head: ClothingHeadHatAnimalCat
+
+- type: loadout
+  id: TP14LoadoutHeadwearCentcomm
+  equipment:
+    head: ClothingHeadHatCentcom
+
+- type: loadout
+  id: TP14LoadoutHeadwearCone
+  equipment:
+    head: ClothingHeadHatCone
+
+- type: loadout
+  id: TP14LoadoutHeadwearBeanie
+  equipment:
+    head: ClothingHeadHatCanadaBeanie
+
+- type: loadout
+  id: TP14LoadoutHeadwearFedoraBrown
+  equipment:
+    head: ClothingHeadHatFedoraBrown
+
+- type: loadout
+  id: TP14LoadoutHeadwearFedoraGadget
+  equipment:
+    head: ClothingHeadHatDetGadget
+
+- type: loadout
+  id: TP14LoadoutHeadwearFedoraGrey
+  equipment:
+    head: ClothingHeadHatFedoraGrey
+
+- type: loadout
+  id: TP14LoadoutHeadwearFez
+  equipment:
+    head: ClothingHeadHatFez
+
+- type: loadout
+  id: TP14LoadoutHeadwearJester
+  equipment:
+    head: ClothingHeadHatJester
+
+- type: loadout
+  id: TP14LoadoutHeadwearJesterAlt
+  equipment:
+    head: ClothingHeadHatJesterAlt
+
+- type: loadout
+  id: TP14LoadoutHeadwearMagician
+  equipment:
+    head: ClothingHeadHatMagician
+
+- type: loadout
+  id: TP14LoadoutHeadwearMonkey
+  equipment:
+    head: ClothingHeadHatAnimalMonkey
+
+- type: loadout
+  id: TP14LoadoutHeadwearNurse
+  equipment:
+    head: ClothingHeadNurseHat
+
+- type: loadout
+  id: TP14LoadoutHeadwearOldTophat
+  equipment:
+    head: TP14ClothingHeadHatWearyClownHat
+
+- type: loadout
+  id: TP14LoadoutHeadwearOverseerHardhat
+  equipment:
+    head: ClothingHeadHatCaptain
+
+- type: loadout
+  id: TP14LoadoutHeadwearPierrot
+  equipment:
+    head: TP14ClothingHeadHatPierrot
+
+- type: loadout
+  id: TP14LoadoutHeadwearPirate
+  equipment:
+    head: ClothingHeadHatPirate
+
+- type: loadout
+  id: TP14LoadoutHeadwearPlagueDoctor
+  equipment:
+    head: ClothingHeadHatPlaguedoctor
+
+- type: loadout
+  id: TP14LoadoutHeadwearPwig
+  equipment:
+    head: ClothingHeadHatPwig
+
+- type: loadout
+  id: TP14LoadoutHeadwearPartyHatBlue
+  equipment:
+    head: ClothingHeadHatPartyBlue
+
+- type: loadout
+  id: TP14LoadoutHeadwearPartyHatGreen
+  equipment:
+    head: ClothingHeadHatPartyGreen
+
+- type: loadout
+  id: TP14LoadoutHeadwearPartyHatRed
+  equipment:
+    head: ClothingHeadHatPartyRed
+
+- type: loadout
+  id: TP14LoadoutHeadwearPartyHatWaterCup
+  equipment:
+    head: ClothingHeadHatPartyWaterCup
+
+- type: loadout
+  id: TP14LoadoutHeadwearPartyHatYellow
+  equipment:
+    head: ClothingHeadHatPartyYellow
+
+- type: loadout
+  id: TP14LoadoutHeadwearSecurityTrooper
+  equipment:
+    head: ClothingHeadHatSecurityTrooper
+
+- type: loadout
+  id: TP14LoadoutHeadwearStrawHat
+  equipment:
+    head: ClothingHeadHatStrawHat
+
+- type: loadout
+  id: TP14LoadoutHeadwearSurgicalCapPurple
+  equipment:
+    head: ClothingHeadHatSurgcapPurple
+
+- type: loadout
+  id: TP14LoadoutHeadwearSurgicalCapBlue
+  equipment:
+    head: ClothingHeadHatSurgcapBlue
+
+- type: loadout
+  id: TP14LoadoutHeadwearSurgicalCapGreen
+  equipment:
+    head: ClothingHeadHatSurgcapGreen
+
+- type: loadout
+  id: TP14LoadoutHeadwearTophat
+  equipment:
+    head: ClothingHeadHatTophat
+
+- type: loadout
+  id: TP14LoadoutHeadwearWitch
+  equipment:
+    head: ClothingHeadHatWitch
+
+- type: loadout
+  id: TP14LoadoutHeadwearWitchAlt
+  equipment:
+    head: ClothingHeadHatWitch1

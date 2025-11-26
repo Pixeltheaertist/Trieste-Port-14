@@ -1,0 +1,18 @@
+marking-TP14MarkingsHumanEarsAnimalFluffy-animalears_fluffy_primary = Primary
+marking-TP14MarkingsHumanEarsAnimalFluffy-animalears_fluffy_secondary = secondary
+marking-TP14MarkingsHumanEarsAnimalFluffy = Animal Ears (Fluffy)
+
+marking-TP14MarkingsHumanEarsAnimalFolded-animalears_folded = Animal Ears
+marking-TP14MarkingsHumanEarsAnimalFolded = Animal Ears (Folded)
+
+marking-TP14MarkingsHumanEarsAnimalPointed-animalears_pointed_primary = Primary
+marking-TP14MarkingsHumanEarsAnimalPointed-animalears_pointed_secondary = secondary
+marking-TP14MarkingsHumanEarsAnimalPointed = Animal Ears (Pointed)
+
+marking-TP14MarkingsHumanEarsAnimalRounded-animalears_rounded_primary = Primary
+marking-TP14MarkingsHumanEarsAnimalRounded-animalears_rounded_secondary = secondary
+marking-TP14MarkingsHumanEarsAnimalRounded = Animal Ears (Rounded)
+
+marking-TP14MarkingsHumanEarsAnimalSemiFolded-animalears_semifolded_primary = Primary
+marking-TP14MarkingsHumanEarsAnimalSemiFolded-animalears_semifolded_secondary = secondary
+marking-TP14MarkingsHumanEarsAnimalSemiFolded = Animal Ears (Semi-Folded)

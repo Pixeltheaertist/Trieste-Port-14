@@ -40,7 +40,11 @@ public abstract class SharedWeatherSystem : EntitySystem
         }
     }
 
-    public bool CanWeatherAffect(EntityUid uid, MapGridComponent grid, TileRef tileRef, RoofComponent? roofComp = null)
+    public bool CanWeatherAffect(EntityUid uid,
+        MapGridComponent grid,
+        TileRef tileRef,
+        RoofComponent? roofComp = null,
+        bool ignoreBlockers = false)
     {
         if (tileRef.Tile.IsEmpty)
             return true;
@@ -48,38 +52,43 @@ public abstract class SharedWeatherSystem : EntitySystem
         if (Resolve(uid, ref roofComp, false) && _roof.IsRooved((uid, grid, roofComp), tileRef.GridIndices))
             return false;
 
-        var tileDef = (ContentTileDefinition) _tileDefManager[tileRef.Tile.TypeId];
+        var tileDef = (ContentTileDefinition)_tileDefManager[tileRef.Tile.TypeId];
 
         if (!tileDef.Weather)
             return false;
 
-        var anchoredEntities = _mapSystem.GetAnchoredEntitiesEnumerator(uid, grid, tileRef.GridIndices);
-
-        while (anchoredEntities.MoveNext(out var ent))
+        // This check is Trieste specific.
+        if (!ignoreBlockers)
         {
-            if (_blockQuery.HasComponent(ent.Value))
-                return false;
+            var anchoredEntities = _mapSystem.GetAnchoredEntitiesEnumerator(uid, grid, tileRef.GridIndices);
+
+            while (anchoredEntities.MoveNext(out var ent))
+            {
+                if (_blockQuery.HasComponent(ent.Value))
+                    return false;
+            }
         }
 
         return true;
-
     }
 
     public float GetPercent(WeatherData component, EntityUid mapUid)
     {
+
         var pauseTime = _metadata.GetPauseTime(mapUid);
         var elapsed = Timing.CurTime - (component.StartTime + pauseTime);
+
         var duration = component.Duration;
         var remaining = duration - elapsed;
         float alpha;
 
         if (remaining < WeatherComponent.ShutdownTime)
         {
-            alpha = (float) (remaining / WeatherComponent.ShutdownTime);
+            alpha = (float)(remaining / WeatherComponent.ShutdownTime);
         }
         else if (elapsed < WeatherComponent.StartupTime)
         {
-            alpha = (float) (elapsed / WeatherComponent.StartupTime);
+            alpha = (float)(elapsed / WeatherComponent.StartupTime);
         }
         else
         {

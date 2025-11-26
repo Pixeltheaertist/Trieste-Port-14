@@ -6,7 +6,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 9000 #2.5 hrs
+      time: 2.5h
   startingGear: StationEngineerGear
   icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce
@@ -32,7 +32,7 @@
   job: StationEngineer
   equipment:
     head: ClothingHeadHatHardhatYellow
-    mask: ClothingMaskBreath
+    mask: TP14ClothingMaskAir #TP14
     neck: ClothingNeckScarfStripedOrange
     outerClothing: ClothingOuterWinterEngi
     gloves: ClothingHandsGlovesColorYellow

@@ -4,10 +4,9 @@ using Content.Shared.Electrocution;
 
 namespace Content.Shared.Silicons.StationAi;
 
+// Handles airlock radial
 public abstract partial class SharedStationAiSystem
 {
-    // Handles airlock radial
-
     private void InitializeAirlock()
     {
         SubscribeLocalEvent<DoorBoltComponent, StationAiBoltEvent>(OnAirlockBolt);
@@ -20,9 +19,15 @@ public abstract partial class SharedStationAiSystem
     /// </summary>
     private void OnAirlockBolt(EntityUid ent, DoorBoltComponent component, StationAiBoltEvent args)
     {
-        if (component.BoltWireCut)
+        if (component.BoltWireCut || !_powerReceiver.IsPowered(ent))
         {
             ShowDeviceNotRespondingPopup(args.User);
+            return;
+        }
+
+        if (!_access.IsAllowed(args.User, ent))
+        {
+            ShowDeviceNoAccessPopup(args.User);
             return;
         }
 
@@ -38,9 +43,15 @@ public abstract partial class SharedStationAiSystem
     /// </summary>
     private void OnAirlockEmergencyAccess(EntityUid ent, AirlockComponent component, StationAiEmergencyAccessEvent args)
     {
-        if (!PowerReceiver.IsPowered(ent))
+        if (!_powerReceiver.IsPowered(ent))
         {
             ShowDeviceNotRespondingPopup(args.User);
+            return;
+        }
+
+        if (!_access.IsAllowed(args.User, ent))
+        {
+            ShowDeviceNoAccessPopup(args.User);
             return;
         }
 
@@ -52,12 +63,15 @@ public abstract partial class SharedStationAiSystem
     /// </summary>
     private void OnElectrified(EntityUid ent, ElectrifiedComponent component, StationAiElectrifiedEvent args)
     {
-        if (
-            component.IsWireCut
-            || !PowerReceiver.IsPowered(ent)
-        )
+        if (component.IsWireCut || !_powerReceiver.IsPowered(ent))
         {
             ShowDeviceNotRespondingPopup(args.User);
+            return;
+        }
+
+        if (!_access.IsAllowed(args.User, ent))
+        {
+            ShowDeviceNoAccessPopup(args.User);
             return;
         }
 

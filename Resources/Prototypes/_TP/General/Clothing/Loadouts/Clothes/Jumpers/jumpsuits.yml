@@ -1,0 +1,99 @@
+- type: loadout
+  id: TP14LoadoutJumpsuitBartender
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBartender
+
+- type: loadout
+  id: TP14LoadoutJumpsuitBlack
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorBlack
+
+- type: loadout
+  id: TP14LoadoutJumpsuitBlue
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorBlue
+
+- type: loadout
+  id: TP14LoadoutJumpsuitBrown
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorBrown
+
+- type: loadout
+  id: TP14LoadoutJumpsuitDarkBlue
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorDarkBlue
+
+- type: loadout
+  id: TP14LoadoutJumpsuitDarkGreen
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorDarkGreen
+
+- type: loadout
+  id: TP14LoadoutJumpsuitGreen
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGreen
+
+- type: loadout
+  id: TP14LoadoutJumpsuitGrey
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+
+- type: loadout
+  id: TP14LoadoutJumpsuitLightBrown
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorLightBrown
+
+- type: loadout
+  id: TP14LoadoutJumpsuitLightMaroon
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorMaroon
+
+- type: loadout
+  id: TP14LoadoutJumpsuitOrange
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorOrange
+
+- type: loadout
+  id: TP14LoadoutJumpsuitPink
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorPink
+
+- type: loadout
+  id: TP14LoadoutJumpsuitPurple
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorPurple
+
+- type: loadout
+  id: TP14LoadoutJumpsuitRainbow
+  equipment:
+    jumpsuit: ClothingUniformColorRainbow
+
+- type: loadout
+  id: TP14LoadoutJumpsuitRed
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorRed
+
+- type: loadout
+  id: TP14LoadoutJumpsuitTeal
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorTeal
+
+- type: loadout
+  id: TP14LoadoutJumpsuitWhite
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorWhite
+
+- type: loadout
+  id: TP14LoadoutJumpsuitYellow
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorYellow
+
+- type: loadout
+  id: TP14LoadoutJumpsuitMercenary
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMercenary
+
+- type: loadout
+  id: TP14LoadoutJumpsuitLieutenantTanktop
+  equipment:
+    jumpsuit: TP14ClothingUniformLieutenantTanktop

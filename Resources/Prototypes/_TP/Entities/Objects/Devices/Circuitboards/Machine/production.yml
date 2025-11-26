@@ -90,3 +90,57 @@
     stackRequirements:
       Manipulator: 4
       Steel: 10
+
+- type: entity
+  id: TP14OvenMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  suffix: Trieste, Circuit-Board
+  name: oven machine board
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: TP14KitchenOven
+      stackRequirements:
+        Manipulator: 2
+        Glass: 4
+        Cable: 4
+    - type: Tag
+      tags:
+      - TP14OvenMachineBoard
+
+- type: entity
+  id: TP14CoffeeMakerCircuitboard
+  parent: BaseMachineCircuitboard
+  suffix: Trieste, Circuit-Board
+  name: coffee maker machine board
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: TP14CoffeeMaker
+      stackRequirements:
+        Manipulator: 3
+        Steel: 20
+        Cable: 6
+    - type: Tag
+      tags:
+      - TP14TagCoffeeMakerBoard
+
+- type: entity
+  id: TP14DeepFryerCircuitboard
+  parent: BaseMachineCircuitboard
+  suffix: Trieste, Circuit-Board
+  name: deep-fryer machine board
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: TP14KitchenDeepFryer
+    stackRequirements:
+      Manipulator: 1
+      Steel: 40
+      Cable: 4
+  - type: Tag
+    tags:
+    - TP14TagDeepFryerBoard

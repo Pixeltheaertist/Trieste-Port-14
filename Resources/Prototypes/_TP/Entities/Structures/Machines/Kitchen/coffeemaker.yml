@@ -1,0 +1,81 @@
+- type: entity
+  parent: [ BaseMachinePowered, SmallConstructibleMachine ]
+  id: TP14CoffeeMaker
+  suffix: Trieste, Service, Empty
+  name: coffee maker
+  description: A table-top espresso machine, for all your coffee needs.
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 0
+  - type: Appearance
+  - type: CoffeeMaker
+  - type: ContainerContainer
+    containers:
+      Beaker: !type:ContainerSlot
+      Basket: !type:ContainerSlot
+      Filter: !type:ContainerSlot
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.17,0,0.20,0.4"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+  - type: ItemSlots
+    slots:
+      Beaker:
+        whitelist:
+          components:
+          - FitsAsPitcher
+      Basket:
+        whitelist:
+          components:
+          - FitsAsBasket
+      Filter:
+        whitelist:
+          components:
+          - CoffeeFilter
+  - type: Machine
+    board: TP14CoffeeMakerCircuitboard
+  - type: Sprite
+    sprite: _TP/Structures/Machines/coffeemaker.rsi
+    offset: 0.0,0.4
+    layers:
+    - state: icon
+    - state: basket
+      map: [ "enum.CoffeeMakerVisuals.Basket" ]
+      visible: false
+    - state: beaker
+      map: [ "enum.CoffeeMakerVisuals.Beaker" ]
+      visible: false
+    - state: pitcher
+      map: [ "enum.CoffeeMakerVisuals.Pitcher" ]
+      visible: false
+    drawdepth: LargeObjects
+    snapCardinals: true
+
+- type: entity
+  parent: TP14CoffeeMaker
+  id: TP14CoffeeMakerFilled
+  suffix: Trieste, Service, Filled
+  components:
+  - type: ItemSlots
+    slots:
+      Beaker:
+        whitelist:
+          components:
+          - FitsAsPitcher
+        startingItem: Pitcher
+      Basket:
+        whitelist:
+          components:
+          - FitsAsBasket
+        startingItem: TP14CoffeeBasket
+      Filter:
+        whitelist:
+          components:
+          - CoffeeFilter
+        startingItem: TP14CoffeeFilter

@@ -23,5 +23,14 @@ Don't forget containers to serve them in!
 <GuideEntityEmbed Entity="DrinkJigger"/>
 </Box>
 
+<Box>
+Planet-side the people will demand a little coffee. You can find the necessary items on your bar counter!
+</Box>
+<Box>
+<GuideEntityEmbed Entity="TP14CoffeeMaker"/>
+<GuideEntityEmbed Entity="TP14CoffeeFilter"/>
+<GuideEntityEmbed Entity="Pitcher"/>
+</Box>
+
 You can find a list of every drink that can be requested under the Reference Tables entry.
 </Document>

@@ -1,0 +1,21 @@
+- files:
+  - hyperspace_begin.ogg
+
+  copyright: 'Water Splash by Universfield. Chains unknown. Edited together by PixeltheAertist'
+  license: "CC-BY-SA-3.0"
+  source: "https://pixabay.com/sound-effects/water-splash-199583/"
+
+- files: [hyperspace_end.ogg]
+  copyright: 'Sound effect from Freesound.org by MichelleGrobler. Edited by PixeltheAertist'
+  license: "CC0-1.0"
+  source: "https://freesound.org/people/MichelleGrobler/sounds/410560/"
+
+- files: [hyperspace_progress.ogg]
+  copyright: 'Sound effect from Freesound.org by TimVerberne. Edited by PixeltheAertist'
+  license: "CC0-1.0"
+  source: "https://freesound.org/people/Tim_Verberne/sounds/482167/"
+
+- files: ["atmospheric_thruster"]
+  copyright: 'Sound effect from Freesound.org by Jofae. Cconverted to mono by Cookie (FatherCheese)'
+  license: "CC0-1.0"
+  source: "https://freesound.org/people/Jofae/sounds/361212/"

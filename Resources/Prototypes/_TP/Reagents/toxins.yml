@@ -1,0 +1,53 @@
+- type: reagent
+  id: DrifterToxin
+  name: reagent-name-drifter-toxin
+  group: Toxins
+  desc: reagent-desc-drifter-toxin
+  flavor: sour
+  color: "#000067"
+  physicalDesc: reagent-physical-desc-nondescript
+  metabolisms:
+    Poison:
+      effects:
+      - !type:PopupMessage
+        conditions:
+        - !type:ReagentCondition
+          reagent: DrifterToxin
+          min: 0.5
+        type: Local
+        visualType: Medium
+        messages: [ "effect-drifter" ]
+        probability: 0.1
+      - !type:MovementSpeedModifier
+        walkSpeedModifier: 0.65
+        sprintSpeedModifier: 0.65
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentCondition
+          reagent: DrifterToxin
+          min: 7 #More efficient than Chloral Hydrate, and it doesn't OD you. Could be useful.
+        key: ForcedSleep
+        component: ForcedSleeping
+        type: Add
+
+- type: reagent
+  id: SeagullToxin
+  name: reagent-name-seagulltoxin
+  group: Toxins
+  desc: reagent-desc-seagulltoxin
+  flavor: bitter
+  color: "#F0ead6"
+  physicalDesc: reagent-physical-desc-putrid
+  metabolisms:
+    Poison:
+      effects:
+        - !type:HealthChange
+          damage:
+            types:
+              Poison: 4
+        - !type:Vomit
+          conditions:
+          - !type:ReagentCondition
+            reagent: SeagullToxin
+            min: 2
+          probability: 0.4

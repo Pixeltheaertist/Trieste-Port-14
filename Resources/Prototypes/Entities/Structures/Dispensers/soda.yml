@@ -32,7 +32,6 @@
   - type: StorageFill
     contents:
     - id: DrinkCoconutWaterJug
-    - id: DrinkCoffeeJug
     - id: DrinkColaBottleFull
     - id: DrinkCreamCartonXL
     - id: DrinkDrGibbJug

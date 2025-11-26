@@ -1,0 +1,49 @@
+- type: loadout
+  id: TP14LoadoutScarfBlack
+  equipment:
+    neck: ClothingNeckScarfStripedBlack
+
+- type: loadout
+  id: TP14LoadoutScarfBlue
+  equipment:
+    neck: ClothingNeckScarfStripedBlue
+
+- type: loadout
+  id: TP14LoadoutScarfBrown
+  equipment:
+    neck: ClothingNeckScarfStripedBrown
+
+- type: loadout
+  id: TP14LoadoutScarfGreen
+  equipment:
+    neck: ClothingNeckScarfStripedGreen
+
+- type: loadout
+  id: TP14LoadoutScarfLightBlue
+  equipment:
+    neck: ClothingNeckScarfStripedLightBlue
+
+- type: loadout
+  id: TP14LoadoutScarfOrange
+  equipment:
+    neck: ClothingNeckScarfStripedOrange
+
+- type: loadout
+  id: TP14LoadoutScarfPurple
+  equipment:
+    neck: ClothingNeckScarfStripedPurple
+
+- type: loadout
+  id: TP14LoadoutScarfRed
+  equipment:
+    neck: ClothingNeckScarfStripedRed
+
+- type: loadout
+  id: TP14LoadoutScarfRainbow
+  equipment:
+    neck: ClothingNeckScarfStripedRainbow
+
+- type: loadout
+  id: TP14LoadoutScarfZebra
+  equipment:
+    neck: ClothingNeckScarfStripedZebra

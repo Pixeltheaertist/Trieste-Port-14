@@ -18,6 +18,7 @@
     - Human
     - Moth
     - Reptilian
+    - Vulpkanin
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox
@@ -26,14 +27,12 @@
     species:
     - Vox
 
-
 - type: loadoutEffectGroup
   id: EffectSpeciesMask
   effects:
   - !type:SpeciesLoadoutEffect
     species:
     - Vox
-    - JellidPerson # TP
 
 # Basic
 - type: loadout
@@ -84,6 +83,7 @@
     - Dwarf
     - Human
     - Reptilian
+    - Vulpkanin
 
 - type: loadoutEffectGroup
   id: OxygenBreatherMimeMoth
@@ -246,6 +246,8 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: EffectSpeciesMask
+  - !type:GroupLoadoutEffect # TP14
+    proto: TP14EffectSpeciesMask
   equipment:
     outerClothing: ClothingOuterVestTank
 
@@ -256,7 +258,7 @@
   - !type:GroupLoadoutEffect
     proto: EffectSpeciesMask
   equipment:
-    mask: ClothingMaskBreathNeck
+    mask: ClothingMaskBreath
 
 - type: loadout
   id: LoadoutSpeciesGasMask

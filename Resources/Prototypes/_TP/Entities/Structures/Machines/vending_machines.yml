@@ -162,6 +162,39 @@
   - type: AccessReader
     access: [ [ "Cargo" ] ]
 
+# exped
+- type: entity
+  parent: VendingMachine
+  id: TP14VendingMachineExped
+  suffix: Trieste, Expeditionary
+  name: expeditionary clothes-vend
+  description: A heavy duty vending machine specializing in expeditionary uniforms
+  components:
+  - type: VendingMachine
+    pack: TP14ExpedVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: _TP/Structures/Machines/VendingMachines/cargoclothesvend.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.8
+    energy: 1.6
+    color: "#ff7d00"
+  - type: AccessReader
+    access: [ [ "Salvage" ] ]
+
 #Chaplain
 - type: entity
   parent: VendingMachine
@@ -727,3 +760,45 @@
     damage:
       types:
         Structural: 150
+
+# Maintenance access versions
+
+- type: entity
+  parent: VendingMachineChemicals
+  id: VendingMachineChemicalsMaint
+  name: ChemVend
+  suffix: Unlocked
+  description: Probably not the coffee machine.
+  components:
+  - type: AccessReader
+    access: [["Maintenance"]]
+
+- type: entity
+  parent: VendingMachineWallMedical
+  id: VendingMachineWallMedicalMaint
+  name: NanoMed
+  suffix: Unlocked
+  description: "It's a wall-mounted medical equipment dispenser. Natural chemicals only!"
+  components:
+  - type: AccessReader
+    access: [["Maintenance"]]
+
+- type: entity
+  parent: VendingMachineDinnerware
+  id: VendingMachineDinnerwareMaint
+  name: Plasteel Chef's Dinnerware Vendor
+  suffix: Unlocked
+  description: A kitchen and restaurant equipment vendor.
+  components:
+  - type: AccessReader
+    access: [["Maintenance"]]
+
+- type: entity
+  parent: VendingMachineChefvend
+  id: VendingMachineChefvendMaint
+  name: ChefVend
+  suffix: Unlocked
+  description: An ingredient vendor for all your cheffin needs.
+  components:
+  - type: AccessReader
+    access: [["Maintenance"]]

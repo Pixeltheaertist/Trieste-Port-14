@@ -1,0 +1,26 @@
+- type: marking
+  id: TP14MarkingReptileHornsCarnotaurus
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Reptilian ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Reptilian/horns.rsi
+    state: horns_carnotaurus
+
+- type: marking
+  id: TP14MarkingReptileHornsSaichania
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Reptilian ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Reptilian/horns.rsi
+    state: horns_saichania
+
+- type: marking
+  id: TP14MarkingReptileHornsTriceratops
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Reptilian ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Reptilian/horns.rsi
+    state: horns_triceratops

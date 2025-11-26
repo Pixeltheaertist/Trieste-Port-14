@@ -1,0 +1,63 @@
+- type: loadoutGroup
+  id: TP14GroupBasinTechBackpack
+  name: loadout-group-backpack-basin-tech
+  loadouts:
+  - SalvageSpecialistBackpack
+  - SalvageSpecialistSatchel
+  - SalvageSpecialistDuffel
+
+- type: loadoutGroup
+  id: TP14GroupBasinTechFootwear
+  name: loadout-group-footwear-basin-tech
+  minLimit: 0
+  defaultSelected: 1
+  loadouts:
+  - TP14LoadoutFootwearWorkboots
+  - SalvageBoots
+  - CargoWinterBoots
+  - TP14LoadoutFootwearBlack
+  - TP14LoadoutFootwearBrown
+  - TP14LoadoutFootwearPurple
+
+- type: loadoutGroup
+  id: TP14GroupBasinTechHeadwear
+  name: loadout-group-headwear-basin-tech
+  minLimit: 0
+  loadouts:
+  - TP14LoadoutHeadwearBucketBrown
+  - TP14LoadoutHeadwearBucketPurple
+  - TP14LoadoutHeadwearBucketYellow
+
+- type: loadoutGroup
+  id: TP14GroupBasinTechJumper
+  name: loadout-group-jumper-basin-tech
+  loadouts:
+  - TP14LoadoutJumpsuitBrown
+  - TP14LoadoutJumpskirtBrown
+  - TP14LoadoutJumpsuitPurple
+  - TP14LoadoutJumpskirtPurple
+  - TP14LoadoutJumpsuitYellow
+  - TP14LoadoutJumpskirtYellow
+  - TP14LoadoutJumpsuitLieutenantTanktop
+
+- type: loadoutGroup
+  id: TP14GroupBasinTechOuter
+  name: loadout-group-outer-basin-tech
+  loadouts:
+  - SalvageSpecialistWintercoat
+
+- type: loadoutGroup
+  id: TP14GroupBasinTechMask
+  name: loadout-group-mask-basin-tech
+  minLimit: 0
+  loadouts:
+  - TP14LoadoutMaskGasExplorer
+
+- type: loadoutGroup
+  id: TP14GroupBasinTechNeck
+  name: loadout-group-neck-basin-tech
+  minLimit: 0
+  loadouts:
+  - TP14LoadoutScarfBrown
+  - TP14LoadoutScarfPurple
+

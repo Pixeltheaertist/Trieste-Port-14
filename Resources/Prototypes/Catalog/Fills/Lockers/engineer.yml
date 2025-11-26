@@ -166,7 +166,7 @@
     children:
     - id: ClothingOuterHardsuitAtmos
     - id: OxygenTankFilled
-    - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # TP14
 
 - type: entity
   id: LockerEngineerFilledHardsuit
@@ -210,7 +210,7 @@
     - id: ClothingOuterHardsuitEngineering
     - id: OxygenTankFilled
     - id: ClothingShoesBootsMag
-    - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # TP14
 
 - type: entity
   id: ClosetRadiationSuitFilled

@@ -14,7 +14,6 @@
 - type: startingGear
   id: TP14BasinTechGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
     id: TP14BasinTechPDA
     ears: ClothingHeadsetMining
 

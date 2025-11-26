@@ -8,10 +8,8 @@
   - type: Sprite
     sprite: _TP/Objects/Misc/carbatteryplush.rsi
     state: icon
-    size: Medium
-    tags:
-      - Payload
   - type: Item
+    size: Normal
     sprite: _TP/Objects/Misc/carbatteryplush.rsi
   - type: EmitSoundOnUse
     sound:
@@ -25,7 +23,7 @@
   - type: EmitSoundOnCollide
     sound:
       path: /Audio/Effects/PowerSink/electric.ogg
-  - type: Food
+  - type: Edible
     requiresSpecialDigestion: true
     useSound:
       path: /Audio/Effects/PowerSink/electric.ogg
@@ -38,3 +36,6 @@
       CottonBurger: TP14carbatteryplushie
   - type: UseDelay
     delay: 3.0
+  - type: Tag
+    tags:
+    - Payload

@@ -12,15 +12,15 @@
   components: # OH YEAH!!!
   - type: RandomHumanoidAppearance # OH YEAH!!!
     randomizeName: false # OH YEAH!!!
-    skinColor: '#F2CEB5FF' # OH YEAH!!!
-    eyeColor: '#FFFF00' # OH YEAH!!!
-    facialHairColor: '#00000000' # OH YEAH!!!
-    facialHair: HumanFacialHairNeckbeard # OH YEAH!!!
-    hairColor: '#00000000' # OH YEAH!!!
+    #skinColor: '#F2CEB5FF' # OH YEAH!!!
+    #eyeColor: '#FFFF00' # OH YEAH!!!
+    #facialHairColor: '#00000000' # OH YEAH!!!
+    #facialHair: HumanFacialHairNeckbeard # OH YEAH!!!
+    #hairColor: '#00000000' # OH YEAH!!!
     hair: HairBald # OH YEAH!!!
-    gender: Male # OH YEAH!!!
-    sex: Male # OH YEAH!!!
-    age: 114 # OH YEAH!!!
+    #gender: Male # OH YEAH!!!
+    #sex: Male # OH YEAH!!!
+    #age: 114 # OH YEAH!!!
   - type: Stamina # OH YEAH!!!
     critThreshold: 500 # OH YEAH!!!
   - type: Insulated # OH YEAH!!!

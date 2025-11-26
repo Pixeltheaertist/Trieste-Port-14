@@ -1,0 +1,9 @@
+- type: entity
+  id: TP14BannerMedical
+  parent: BannerMedical
+  suffix: Trieste, Medical
+  description: A banner displaying the iconic green color of the Trieste medical department.
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Decoration/banner.rsi
+    state: banner_medical

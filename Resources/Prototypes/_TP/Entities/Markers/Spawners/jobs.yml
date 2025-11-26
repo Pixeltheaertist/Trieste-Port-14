@@ -1,17 +1,4 @@
 - type: entity
-  id: TP14SpawnPointPilot
-  parent: SpawnPointJobBase
-  suffix: Trieste, Spawner, Expeditionary, Pilot
-  name: pilot
-  components:
-  - type: SpawnPoint
-    job_id: TP14Pilot
-  - type: Sprite
-    layers:
-    - state: green
-    - state: salvagespecialist
-
-- type: entity
   id: TP14SpawnPointBasinTech
   parent: SpawnPointJobBase
   suffix: Trieste, Spawner, Expeditionary, Basin Technician
@@ -19,6 +6,32 @@
   components:
   - type: SpawnPoint
     job_id: TP14BasinTech
+  - type: Sprite
+    layers:
+    - state: green
+    - state: salvagespecialist
+
+- type: entity
+  id: TP14SpawnPointExpeditioneer
+  parent: SpawnPointJobBase
+  suffix: Trieste, Spawner, Expeditionary, Expeditioneer
+  name: expeditioneer
+  components:
+  - type: SpawnPoint
+    job_id: TP14Expeditioneer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: salvagespecialist
+
+- type: entity
+  id: TP14SpawnPointPilot
+  parent: SpawnPointJobBase
+  suffix: Trieste, Spawner, Expeditionary, Pilot
+  name: pilot
+  components:
+  - type: SpawnPoint
+    job_id: TP14Pilot
   - type: Sprite
     layers:
     - state: green

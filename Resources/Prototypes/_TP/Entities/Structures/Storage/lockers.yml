@@ -1,0 +1,31 @@
+# Medical
+- type: entity
+  parent: LockerMedicine
+  id: TP14LockerMedicine
+  suffix: Trieste, Medical
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Storage/closet.rsi
+
+- type: entity
+  parent: LockerMedical
+  id: TP14LockerMedical
+  suffix: Trieste, Medical
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Storage/closet.rsi
+
+- type: entity
+  parent: ClosetSteelBase
+  id: TP14LockerMedicalUnlocked
+  suffix: Trieste, Medical, Unlocked
+  name: medicine locker
+  description: Filled to the brim with medical junk. This one's been broken, and is permanently locked open.
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: med
+    stateDoorOpen: med_open
+    stateDoorClosed: med_unlocked
+  - type: Sprite
+    sprite: _TP/Structures/Storage/closet.rsi

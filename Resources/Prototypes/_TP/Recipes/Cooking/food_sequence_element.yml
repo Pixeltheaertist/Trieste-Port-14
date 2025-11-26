@@ -1,9 +1,6 @@
 - type: foodSequenceElement
-  id: MeatCutletBurger
+  id: TP14carbatteryplushie
+  name: food-sequence-cotton-burger-content-carbatteryplushie
   sprites:
-  - sprite: Objects/Consumable/Food/meat.rsi
-    state: cutlet-cooked
-  tags:
-  - Cooked
-  - Cutlet
-  - Meat
+  - sprite: _TP/Objects/Misc/carbatteryplush.rsi
+    state: icon

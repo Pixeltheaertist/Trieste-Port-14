@@ -21,13 +21,14 @@ namespace Content.Server._TP.Shuttles;
 
 
 // TODOS:
-// Make the crew onboard the ship get knocked over when the ship falls.
-// Make it so docking to Trieste prevents falling.
+// Parent the shuttle to the Waste Zone, similar to shuttles landing on planetmaps. Otherwise shit gets JANK. - ESSENTIAL!
+// Make the crew onboard the ship get knocked over when the ship falls. - ESSENTIAL!
+// Make it so docking to Trieste prevents falling - ESSENTIAL!
 // Small explosions across the shuttle when it crashes.
 // Make atmospheric thrusters turn off in space.
 // Special sound effect for moving from air to space. (much louder helicopter buzzing)
-// Add some docks to Trieste to allow these vessels to properly dock.
-// Make a unique sound for the FTL when falling.
+// Add some docks to Trieste to allow these vessels to properly dock. - ESSENTIAL!
+// Add a limiter system, with a grid-propeller ratio. The larger a grid is, the more operational thrusters it needs to have to fly.
 
 public sealed class ShuttleFallSystem : EntitySystem
 {
@@ -91,15 +92,18 @@ public sealed class ShuttleFallSystem : EntitySystem
                 if (!TryComp<AirFlyingComponent>(entity.Owner, out var flight))
                     continue;
 
+                if(flight.IsFlying)
+                    continue;
+
                 if (flight.FirstTimeLoad)
                 {
                     flight.FirstTimeLoad = false; // That's all I had to do LOL, I don't need to remove the component
-                    return;
+                    continue;
                 }
 
                 Log.Info("Has flying component");
                 // Make sure the ship is actively flying and is not docked to another flying vessel
-                if (flight is not { IsFlying: false, DockedToFlier: false })
+                if (flight.DockedToFlier)
                     continue;
 
                 // Find where the shuttle will be falling to
@@ -208,7 +212,7 @@ public sealed class ShuttleFallSystem : EntitySystem
             if (!TryComp<AirFlyingComponent>(shuttle, out var flyingComp))
             {
                 Log.Error("Parent shuttle does not have AirFlyingComponent.");
-                return; // FROM WHENCE YOU CAME
+                return; // TO WHENCE YOU CAME
             }
 
             // Temporarily set IsFlying to false
@@ -256,6 +260,15 @@ public sealed class ShuttleFallSystem : EntitySystem
 
         private void OnDock(DockEvent args)
         {
+            if (TryComp<TriesteComponent>(args.GridAUid, out var dockedTrieste))
+            {
+                if (TryComp<AirFlyingComponent>(args.GridBUid, out var childShip))
+                {
+                     Log.Info("Docked to Trieste"); // Trieste's docking clamps should keep an airship in place, even if its VTOL engines shut off.
+                     // Hypothetically, this means that Trieste can be used to modify or construct new airships by docking them and making changes while docked.
+                    childShip.DockedToFlier = true;
+                }
+            }
             if (TryComp<AirFlyingComponent>(args.GridAUid, out var dockedShip))
             {
                 // If the ship you are docking to is flying, allow safe disablement of atmospheric thrusters.
@@ -269,6 +282,15 @@ public sealed class ShuttleFallSystem : EntitySystem
 
         private void OnUndock(UndockEvent args)
         {
+            if (TryComp<TriesteComponent>(args.GridAUid, out var dockedTrieste))
+            {
+                if (TryComp<AirFlyingComponent>(args.GridBUid, out var airship))
+                {
+                    Log.Info("Undocked from a flying ship");
+                    airship.DockedToFlier = false;
+                }
+            }
+
             if (!TryComp<AirFlyingComponent>(args.GridAUid, out var dockedShip))
                 return;
 

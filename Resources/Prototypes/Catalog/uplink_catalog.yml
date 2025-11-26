@@ -774,6 +774,15 @@
           - SurplusBundle
 
 # Deception
+- type: listing
+  id: UplinkSyndicateIDCard
+  name: uplink-syndicate-id-card-name
+  description: uplink-syndicate-id-card-desc
+  productEntity: SyndicateIDCard
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkDeception
 
 - type: listing
   id: UplinkAgentIDCard
@@ -914,18 +923,18 @@
 
 # Disruption
 
-- type: listing
-  id: UplinkAccessBreaker
-  name: uplink-access-breaker-name
-  description: uplink-access-breaker-desc
-  productEntity: AccessBreaker
-  discountCategory: rareDiscounts
-  discountDownTo:
-    Telecrystal: 2
-  cost:
-    Telecrystal: 4
-  categories:
-  - UplinkDisruption
+#- type: listing
+#  id: UplinkAccessBreaker
+#  name: uplink-access-breaker-name
+#  description: uplink-access-breaker-desc
+#  productEntity: AccessBreaker
+#  discountCategory: rareDiscounts
+#  discountDownTo:
+#    Telecrystal: 2
+#  cost:
+#    Telecrystal: 4
+#  categories:
+#  - UplinkDisruption
 
 - type: listing
   id: UplinkEmag
@@ -2192,7 +2201,7 @@
   discountDownTo:
     Telecrystal: 2
   cost:
-    Telecrystal: 5
+    Telecrystal: 3
   categories:
   - UplinkJob
   conditions:

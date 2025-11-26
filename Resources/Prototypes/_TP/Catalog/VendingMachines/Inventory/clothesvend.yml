@@ -81,7 +81,7 @@
     TP14ClothingHeadCivilianBucket: 2
     TP14ClothingHeadBucketBlack: 2
     TP14ClothingHeadBucketBrown: 2
-    TP14ClothingHeadBucketlightBrown: 2
+    TP14ClothingHeadBucketLightBrown: 2
     TP14ClothingHeadBucketTeal: 2
     TP14ClothingHeadBucketBlue: 2
     TP14ClothingHeadBucketDarkBlue: 2
@@ -139,4 +139,5 @@
     ClothingHeadHatSolidHeadband: 2
     ClothingNeckScarfStripedSyndieGreen: 3
     ClothingNeckScarfStripedSyndieRed: 3
+    PlushieLizardJobPassenger: 1
   # DO NOT ADD MORE, USE UNIFORM DYING

@@ -1,0 +1,63 @@
+- type: entity
+  parent: [ BaseMachinePowered, SmallConstructibleMachine ]
+  id: TP14KitchenDeepFryer
+  suffix: Trieste, Service
+  name: deep fryer
+  description: Can be used to fry delicious food, or all of sci's gold.
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 0 # Off by default
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      fryer_slots: !type:ContainerSlot
+  - type: DeepFryer
+  - type: ExaminableSolution
+    solution: fryer
+  - type: ItemSlots
+    slots:
+      fryer_slots:
+        ejectOnInteract: true
+  - type: Machine
+    board: TP14DeepFryerCircuitboard
+  - type: RefillableSolution
+    solution: fryer
+  - type: SolutionContainerManager
+    solutions:
+      fryer:
+        reagents:
+        - ReagentId: OilOlive
+          Quantity: 100
+  - type: SolutionItemStatus
+    solution: fryer
+  - type: SolutionTransfer
+    maxTransferAmount: 50
+  - type: Sprite
+    sprite: _TP/Structures/Machines/deepfryer.rsi
+    layers:
+    - state: icon
+    - state: active
+      map: [ "enum.DeepFryerVisuals.Active" ]
+      visible: false
+    drawdepth: SmallObjects
+    snapCardinals: true
+
+- type: entity
+  parent: TP14KitchenDeepFryer
+  id: TP14KitchenDeepFryerTabletop
+  suffix: Trieste, Service
+  name: table-top deep fryer
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      fryer:
+        reagents:
+        - ReagentId: OilOlive
+          Quantity: 100
+  - type: Sprite
+    sprite: _TP/Structures/Machines/deepfryer.rsi
+    layers:
+    - state: table-icon
+    - state: table-active
+      map: [ "enum.DeepFryerVisuals.Active" ]
+      visible: false

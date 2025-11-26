@@ -25,8 +25,10 @@
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
     Chest: MobHumanTorso
+    Tail: MobHumanoidAnyMarking
     Eyes: MobHumanoidEyes
     HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
     LArm: MobHumanLArm
     RArm: MobHumanRArm
     LHand: MobHumanLHand
@@ -52,9 +54,12 @@
       points: 1
       required: false
     Tail: # the cat tail joke
-      points: 0
+      points: 1 # TP14 - Was set to 0
       required: false
     HeadTop:
+      points: 1
+      required: false
+    HeadSide:
       points: 1
       required: false
     UndergarmentTop:

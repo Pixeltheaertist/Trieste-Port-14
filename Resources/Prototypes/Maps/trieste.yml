@@ -42,9 +42,9 @@
             Quartermaster: [ 1, 1 ]
             CargoTechnician: [ 2, 3 ]
             #expeditionary
-            SalvageSpecialist: [ 2, 2 ]
-            BasinEngi: [ 2, 2 ]
-            Pilot: [ 1, 1 ]
+            TP14BasinTech: [ 2, 2 ]
+            TP14Expeditioneer: [ 2, 2 ]
+            TP14Pilot: [ 1, 1 ]
             #civilian
             Passenger: [ -1, -1 ]
             Chaplain: [ 1, 1 ]

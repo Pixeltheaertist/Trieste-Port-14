@@ -1,0 +1,80 @@
+- type: marking
+  id: TP14MarkingsHumanScarsArmBashedLeft
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Human ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/scars.rsi
+    state: scar_bashed_left
+
+- type: marking
+  id: TP14MarkingsHumanScarsArmBashedRight
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Human ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/scars.rsi
+    state: scar_bashed_right
+
+- type: marking
+  id: TP14MarkingsHumanScarsBurnFaceLeft
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Human ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/scars.rsi
+    state: scar_burn_face_left
+
+- type: marking
+  id: TP14MarkingsHumanScarsBurnFaceRight
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Human ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/scars.rsi
+    state: scar_burn_face_right
+
+- type: marking
+  id: TP14MarkingsHumanScarsGashShoulderLeft
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Human ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/scars.rsi
+    state: scar_shouldergash_left
+
+- type: marking
+  id: TP14MarkingsHumanScarsGashShoulderRight
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Human ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/scars.rsi
+    state: scar_shouldergash_right
+
+- type: marking
+  id: TP14MarkingsHumanScarsGashSide
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Human ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/scars.rsi
+    state: scar_sidegash
+
+- type: marking
+  id: TP14MarkingsHumanScarsStormLeft
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Human ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/scars.rsi
+    state: scar_storm_left
+
+- type: marking
+  id: TP14MarkingsHumanScarsStormRight
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Human ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/scars.rsi
+    state: scar_storm_right

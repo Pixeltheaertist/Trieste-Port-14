@@ -3,7 +3,7 @@
   name: reagent-name-seawater
   desc: reagent-desc-seawater
   physicalDesc: reagent-physical-desc-odorless
-  flavor: water and salt
+  flavor: salty
   color: "#135c4f"
   recognizable: true
   boilingPoint: 100.0
@@ -11,59 +11,49 @@
   metabolisms:
     Gas:
       effects:
-      - !type:HealthChange
-        conditions:
-        - !type:OrganType
-          type: Jellid
-          shouldHave: false
-        - !type:ReagentThreshold
-          min: 0.5
-        scaleByQuantity: false
-        ignoreResistances: true
-        damage:
-          types:
-            Cold:
-              10
-      - !type:AdjustTemperature
-        conditions:
-        - !type:OrganType
-          type: Jellid
-          shouldHave: false
-        - !type:ReagentThreshold
-          min: 0.5
-        - !type:Temperature
-          min: 10.00
-        amount: -50000
-      - !type:PopupMessage
-        type: Local
-        messages: [ "water-in-lungs" ]
-        probability: 0.7
-        conditions:
-        - !type:OrganType
-          type: Jellid
-          shouldHave: false
-        - !type:ReagentThreshold
-          reagent: SeaWater
-          min: 0.5
-      - !type:AdjustAlert
-        alertType: Drowning
-        conditions:
-        - !type:OrganType
-          type: Jellid
-          shouldHave: false
-        - !type:ReagentThreshold
-          reagent: SeaWater
-          min: 0.5
-        clear: True
-        time: 5
-      - !type:Oxygenate
-        conditions:
-        - !type:OrganType
-          type: Jellid
-      - !type:ModifyLungGas
-        conditions:
-        - !type:OrganType
-          type: Jellid
-        ratios:
-          WaterVapor: 1.0
-          Water: -1.0
+        # Oxygenate for Jellids
+        - !type:Oxygenate
+          conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Jellid ]
+        - !type:ModifyLungGas
+          conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Jellid ]
+          ratios:
+            Water: -1.0
+        # Drowning effects for non-Jellids
+        - !type:HealthChange
+          conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Jellid ]
+            inverted: true
+          ignoreResistances: true
+          damage:
+            types:
+              Cold: 0.33
+        - !type:AdjustTemperature
+          conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Jellid ]
+            inverted: true
+          - !type:TemperatureCondition
+            min: 10.00
+          amount: -20
+        - !type:PopupMessage
+          conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Jellid ]
+            inverted: true
+          type: Local
+          messages: [ "water-in-lungs" ]
+          probability: 0.7
+        - !type:AdjustAlert
+          conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Jellid ]
+            inverted: true
+          alertType: Drowning
+          minScale: 1
+          clear: True
+          time: 5

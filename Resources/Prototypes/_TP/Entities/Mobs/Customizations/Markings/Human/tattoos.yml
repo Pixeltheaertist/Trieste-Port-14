@@ -1,0 +1,10 @@
+- type: marking
+  id: TP14MarkingsHumanTattooDragon
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Human ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/tattoos.rsi
+    state: tattoo_back_dragon_primary
+  - sprite: _TP/Mobs/Customization/Markings/Humans/tattoos.rsi
+    state: tattoo_back_dragon_secondary

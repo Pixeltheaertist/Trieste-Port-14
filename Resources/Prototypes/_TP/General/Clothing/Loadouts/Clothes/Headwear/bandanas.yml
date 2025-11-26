@@ -1,0 +1,49 @@
+- type: loadout
+  id: TP14LoadoutHeadwearBandanaBlack
+  equipment:
+    head: ClothingHeadBandBlack
+
+- type: loadout
+  id: TP14LoadoutHeadwearBandanaBlue
+  equipment:
+    head: ClothingHeadBandBlue
+
+- type: loadout
+  id: TP14LoadoutHeadwearBandanaBotany
+  equipment:
+    head: ClothingHeadBandBotany
+
+- type: loadout
+  id: TP14LoadoutHeadwearBandanaBrown
+  equipment:
+    head: ClothingHeadBandBrown
+
+- type: loadout
+  id: TP14LoadoutHeadwearBandanaGold
+  equipment:
+    head: ClothingHeadBandGold
+
+- type: loadout
+  id: TP14LoadoutHeadwearBandanaGreen
+  equipment:
+    head: ClothingHeadBandGreen
+
+- type: loadout
+  id: TP14LoadoutHeadwearBandanaGrey
+  equipment:
+    head: ClothingHeadBandGrey
+
+- type: loadout
+  id: TP14LoadoutHeadwearBandanaMercenary
+  equipment:
+    head: ClothingHeadBandMerc
+
+- type: loadout
+  id: TP14LoadoutHeadwearBandanaRed
+  equipment:
+    head: ClothingHeadBandRed
+
+- type: loadout
+  id: TP14LoadoutHeadwearBandanaSlull
+  equipment:
+    head: ClothingHeadBandSkull

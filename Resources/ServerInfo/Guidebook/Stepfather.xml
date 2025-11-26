@@ -6,7 +6,7 @@
     > The core battery allows the Rotund to move and control it's machinery. To access it, use a screwdriver, and then insert the core power cell.
 
   The Rotund Stepfather is a co-dependent role with a Pilot. They are not supposed to go about on their own unless told to do so by their Pilot.
-  The Ptepfather controls it's singular hand, as well as movement and communication. The pilot can control any installed modules inside the Stepfather when embarked.
+  The Stepfather controls it's singular hand, as well as movement and communication. The pilot can control any installed modules inside the Stepfather when embarked.
   The Stepfather is also unable to repair itself, requiring the Pilot to do so for them.
 
   The Rotund Stepfather's laws are:
@@ -27,13 +27,12 @@
   If you do not have a pilot, either through permanent death or one not spawning, you may assign yourself one. The other Pilot must consent to this assignment.
   To assign a new pilot, right-click them and select the option to change their pilot status. This will show that they are AUTHORIZED to board and order you. After assignment, you MAY NOT unassign a pilot unless it is within your protocols.
   (Ex. You can't unassign your pilot because you don't like them.)
-  HOWEVER: A Pilot may request you to unassign another pilot. Assuming doing so won't directly harm the previous Pilot, you may do this, as it is upholding your pilot's orders.
   
   New pilots must be assigned in this priority:
 
   1.) Expeditionary Department Employees
-  2.) Security Officers
-  3.) Command members
+  2.) Command members
+  3.) Security officers
   4.) Other crew
   5.) Citizens
 

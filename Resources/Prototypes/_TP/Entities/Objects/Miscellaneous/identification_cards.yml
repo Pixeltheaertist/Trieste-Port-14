@@ -9,34 +9,27 @@
   - type: Sprite
     layers:
     - state: default
-    - state: idpassenger
+    - sprite: &icon-rsi Interface/Misc/job_icons.rsi
+      offset: &icon-offset -0.09375, 0.0625 #3 pixels left, 2 pixels up
+      state: Passenger
   - type: PresetIdCard
     job: TP14Settler
 
 # Expeditionary
-
 - type: entity
-  parent: IDCardStandard
+  parent: SalvageIDCard
   id: TP14PilotIDCard
   suffix: Trieste, Expeditionary
   name: pilot ID card
   components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: idshaftminer
   - type: PresetIdCard
     job: TP14Pilot
 
 - type: entity
-  parent: IDCardStandard
+  parent: SalvageIDCard
   id: TP14BasinTechIDCard
   suffix: Trieste, Expeditionary
   name: basin technician ID card
   components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: idshaftminer
   - type: PresetIdCard
     job: TP14BasinTech

@@ -162,31 +162,13 @@
       Plastic: 50
 
 - type: entity
-  parent: ClothingMaskBase
-  id: ClothingMaskBreathNeck
-  name: lung-adaption apparatus
-  description: A series of tubes that connects from a tank to the wearer's lungs. Allows more comfortable use. After putting on, of course.
-  components:
-  - type: Item
-    size: Tiny
-  - type: Sprite
-    sprite: Clothing/Mask/neckapparatus.rsi
-  - type: Clothing
-    sprite: Clothing/Mask/neckapparatus.rsi
-    slots:
-    - MASK
-    - NECK
-  - type: BreathMask
-
-- type: entity
   parent: ClothingMaskPullableBase
   id: ClothingMaskBreath
-  name: air mask
-  description: It'll at least keep your lungs dry...
+  name: breath mask
+  description: Might as well keep this on 24/7.
   components:
   - type: Item
     size: Tiny
-  - type: WaterBlocker
   - type: Sprite
     sprite: Clothing/Mask/breath.rsi
   - type: Clothing
@@ -202,7 +184,7 @@
       Steel: 50
       Plastic: 100
   - type: StaticPrice
-    price: 12.5
+    price: 30 # increases in price after decomposed into raw materials
 
 - type: entity
   parent: ClothingMaskBase

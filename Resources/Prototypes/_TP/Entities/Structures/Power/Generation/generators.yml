@@ -52,7 +52,7 @@
     color: "#4080FF"
   - type: SingularityDistortion
     falloffPower: 2
-    intensity: -1000
+    intensity: -250
   - type: ItemSlots
   - type: ContainerContainer
     containers:
@@ -110,19 +110,23 @@
       path: /Audio/Effects/shuttle_thruster.ogg
   - type: InteractionOutline
   - type: Sprite
-    sprite: Structures/Machines/station_anchor.rsi
+    sprite: _TP/Structures/Power/nuclear_reactor.rsi
     layers:
-    - state: station_anchor
-      map: ["base"]
-    - state: station_anchor_unlit
-      shader: unshaded
-      map: ["unlit"]
+    - state: active
+      map: [ "enum.GeneratorVisualLayers.Body" ]
+      visible: false
+    - state: idle
+      map: [ "enum.GeneratorVisualLayers.Unlit" ]
+      visible: true
   - type: GenericVisualizer
     visuals:
-      enum.PowerChargeVisuals.Active:
-        unlit:
+      enum.GeneratorVisuals.Running:
+        enum.GeneratorVisualLayers.Body:
           True: { visible: True }
           False: { visible: False }
+        enum.GeneratorVisualLayers.Unlit:
+          True: { visible: False }
+          False: { visible: True }
   - type: Appearance
   - type: FuelGenerator
     minTargetPower: 10000

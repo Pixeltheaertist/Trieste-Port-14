@@ -17,7 +17,6 @@
 - type: startingGear
   id: CargoTechGear
   equipment:
-    id: CargoPDA
     ears: ClothingHeadsetCargo
     pocket1: AppraisalTool
   #storage:
@@ -30,7 +29,7 @@
   equipment:
     head: ClothingHeadHatCargosoft
     eyes: ClothingEyesGlassesCheapSunglasses
-    mask: ClothingMaskBreath
+    mask: TP14ClothingMaskAir #TP14
     outerClothing: ClothingOuterWinterCargo
     neck: ClothingNeckScarfStripedBrown
     gloves: ClothingHandsGlovesFingerless

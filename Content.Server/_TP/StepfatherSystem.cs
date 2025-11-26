@@ -38,8 +38,8 @@ public sealed class StepfatherSystem : EntitySystem
         // Check if the battery is present. If not, then show the no battery alert.
         if (!_powerCell.TryGetBatteryFromSlot(ent, out var battery, slotComp))
         {
-            _alerts.ClearAlert(ent, ent.Comp.BatteryAlert);
-            _alerts.ShowAlert(ent, ent.Comp.NoBatteryAlert);
+            _alerts.ClearAlert(ent.Owner, ent.Comp.BatteryAlert);
+            _alerts.ShowAlert(ent.Owner, ent.Comp.NoBatteryAlert);
             return;
         }
 
@@ -50,7 +50,7 @@ public sealed class StepfatherSystem : EntitySystem
         if (chargePercent == 0 && _powerCell.HasDrawCharge(ent, cell: slotComp))
             chargePercent = 1;
 
-        _alerts.ClearAlert(ent, ent.Comp.NoBatteryAlert);
-        _alerts.ShowAlert(ent, ent.Comp.BatteryAlert, chargePercent);
+        _alerts.ClearAlert(ent.Owner, ent.Comp.NoBatteryAlert);
+        _alerts.ShowAlert(ent.Owner, ent.Comp.BatteryAlert, chargePercent);
     }
 }

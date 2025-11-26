@@ -1,15 +1,1 @@
-- type: lobbyBackground
-  id: TriestePaint
-  background: /Textures/LobbyScreens/triestepaint.webp
-
-- type: lobbyBackground
-  id: TriesteNT
-  background: /Textures/LobbyScreens/trieste-nt.webp
-
-- type: lobbyBackground
-  id: TriesteFlashStorm
-  background: /Textures/LobbyScreens/triesteflashstorm.webp
-
-- type: lobbyBackground
-  id: SweetwaterCam
-  background: /Textures/LobbyScreens/SweetwaterCam.webp
+# All have been removed for Trieste-Port 14, and new ones have been made specifically for Trieste. See '_TP/lobbyscreens.yml'

@@ -313,8 +313,8 @@
         amount: 4
       - id: CombatMedipen
         amount: 4
-      - id: PunctAutoInjector
-        amount: 4
+      #- id: PunctAutoInjector # TP14 - Removed entity
+      #  amount: 4
       - id: PyraAutoInjector
         amount: 4
       - id: AirlossAutoInjector
