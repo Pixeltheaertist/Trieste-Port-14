@@ -562,15 +562,14 @@
   id: JobChemist
   groups:
   # Required
-  - GroupSpeciesBreathToolMedical
   - TP14GroupSpeciesBreathTool
   - TP14GroupSpeciesBreathToolNeck
   - GroupTankHarness
-  - SurvivalMedical
   - TP14GroupChemistEyewearHuds
   - ChemistJumpsuit
   - ChemistOuterClothing
   - ChemistBackpack
+  - SurvivalMedical
   # Optional
   - MedicalDoctorHead
   - MedicalMask

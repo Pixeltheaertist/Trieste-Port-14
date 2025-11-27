@@ -1590,7 +1590,7 @@
   - EmergencyOxygenMedical
   - EmergencyWater
   - LoadoutSpeciesVoxNitrogen
-  - LoadoutSpeciesJellidWater
+  - LoadoutSpeciesJellidWater # TP
 
 # Wildcards
 - type: loadoutGroup
