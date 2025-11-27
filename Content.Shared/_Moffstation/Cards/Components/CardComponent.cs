@@ -12,7 +12,7 @@ public sealed partial class CardComponent : Component
     public PrototypeLayerData[] ObverseSprite;
 
     /// The sprite layers of the back of the card.
-    [DataField(required: truee)]
+    [DataField(required: true)]
     public PrototypeLayerData[] ReverseSprite;
 
     /// <see cref="ObverseSprite"/> or <see cref="ReverseSprite"/>, depending on <see cref="IsFaceDown"/>.
