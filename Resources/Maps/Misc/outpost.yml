@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.4.0
   forkId: ""
   forkVersion: ""
-  time: 11/26/2025 13:43:56
-  entityCount: 1941
+  time: 11/27/2025 12:58:00
+  entityCount: 1943
 maps:
 - 1
 grids:
@@ -4269,6 +4269,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 6.5,12.5
       parent: 1
+- proto: CyberPen
+  entities:
+  - uid: 1942
+    components:
+    - type: Transform
+      pos: 10.189448,6.7853003
+      parent: 1
 - proto: DisposalBend
   entities:
   - uid: 442
@@ -5062,7 +5069,7 @@ entities:
   - uid: 553
     components:
     - type: Transform
-      pos: 5.552326,27.590393
+      pos: 5.60242,27.540968
       parent: 1
 - proto: FoodBurgerBig
   entities:
@@ -6982,6 +6989,14 @@ entities:
       parent: 1
     - type: AtmosPipeColor
       color: '#990000FF'
+  - uid: 933
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 6.5,24.5
+      parent: 1
+    - type: AtmosPipeColor
+      color: '#FF1212FF'
 - proto: GasPipeStraightAlt2
   entities:
   - uid: 797
@@ -8079,16 +8094,6 @@ entities:
       baseName: gas pump
 - proto: GasPressurePumpAlt1
   entities:
-  - uid: 933
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 6.5,24.5
-      parent: 1
-    - type: GasPressurePump
-      targetPressure: 101
-    - type: AtmosPipeColor
-      color: '#FF1212FF'
   - uid: 934
     components:
     - type: Transform
@@ -8482,7 +8487,7 @@ entities:
       pos: 4.5,25.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0335FCFF'
+      color: '#3AB334FF'
     - type: Label
       currentLabel: Cooling Out
     - type: NameModifier
@@ -8498,7 +8503,7 @@ entities:
       pos: 4.5,24.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0335FCFF'
+      color: '#03FCD3FF'
     - type: Label
       currentLabel: Cooling In
     - type: NameModifier
@@ -9116,6 +9121,32 @@ entities:
           ents:
           - 9
     - type: InsideEntityStorage
+- proto: PaperAccessLogs
+  entities:
+  - uid: 1943
+    components:
+    - type: MetaData
+      desc: A crumpled up note.
+      name: crumpled up note
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 5.407987,28.076279
+      parent: 1
+    - type: Paper
+      content: >
+        Plasma setup:
+
+        port A: Plasma canister
+
+        port B: Oxygen canister
+
+        port C:empty canister
+
+        Mixer: 67% primary 33% side, 50kPa pressure
+
+        Filter: Plasma
+
+        Distro Mixer: 79% nitrogen, 21% oxygen, 101kPa
 - proto: PaperOffice
   entities:
   - uid: 1031
@@ -9146,11 +9177,17 @@ entities:
 
         How to use:
 
-        1. Make sure to connect any gasses you want to distribute to either port A or Port B, as well as an empty waste canister to the port C.
+        1. Connect your gas supply canisters to either of the two available ports(A primary and  B side).
 
-        2. Configure the mixers, filters and gas pumps to your desired parameters before turning them on.
+        2. Configure the mixer to your desired output pressure.
 
-        3. Enjoy! you may now release the gasses from any connected air injector with the help of our GDCS controller built into the floor of the control room, just make sure to turn the switches off once you've pumped enough.
+        2.5. In case you've installed two canisters, you may additionally configure the intake ratio between the two.
+
+        3. Configure the filter to split your mixture from the rest of the waste into a canister attached to port C after it gets filtered out of the air by the air scrubbers.
+
+        4. Turn on the distro, waste and cooling mixers and pumps, then the mixture mixer and filter.
+
+        5. Enjoy! You may know pump the gasses out of any connected air injectors throughout your facility, with the help of our handy GDCS remote built into the floor of your control room! Just don't forget to switch them off once you've pumped enough.
   - uid: 1032
     components:
     - type: Transform
