@@ -33,9 +33,11 @@ public abstract class ManagedLayerVisualizerSystem<TComp> : VisualizerSystem<TCo
                 var newLayerKey = LayerPrefix + partialLayerName;
                 var newLayerIndex = SpriteSystem.AddLayer(sprite, layerData, null);
                 SpriteSystem.LayerMapAdd(sprite, newLayerKey, newLayerIndex);
-                DebugTools.Assert(SpriteSystem.TryGetLayer(sprite, newLayerIndex, out var layer, logMissing: true));
                 addedLayers.Add(newLayerKey);
-                return layer;
+                // ReSharper disable once RedundantAssignment // It's used by a debug assert, you piece.
+                var gotLayer = SpriteSystem.TryGetLayer(sprite, newLayerIndex, out var layer, logMissing: true);
+                DebugTools.Assert(gotLayer);
+                return layer ?? SpriteSystem.AddBlankLayer((sprite, sprite.Comp!));
             }
         );
         layersAdded.UnionWith(addedLayers);

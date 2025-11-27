@@ -68,8 +68,10 @@ public sealed partial class CardHandVisualizerSystem : ManagedLayerVisualizerSys
             (_, layerData) =>
             {
                 var idx = SpriteSystem.AddLayer(virtHandSprite, layerData, index: null);
-                DebugTools.Assert(SpriteSystem.TryGetLayer(virtHandSprite, idx, out var layer, logMissing: true));
-                return layer;
+                // ReSharper disable once RedundantAssignment // It's used by a debug assert, you piece.
+                var gotLayer = SpriteSystem.TryGetLayer(virtHandSprite, idx, out var layer, logMissing: true);
+                DebugTools.Assert(gotLayer);
+                return layer ?? SpriteSystem.AddBlankLayer((virtHandSprite, virtHandSprite.Comp!));
             }
         );
 

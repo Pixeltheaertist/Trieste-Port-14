@@ -8,11 +8,11 @@ namespace Content.Shared._Moffstation.Cards.Components;
 public sealed partial class CardComponent : Component
 {
     /// The sprite layers of the face or front of the card.
-    [DataField(required: true, readOnly: true)]
+    [DataField(required: true)]
     public PrototypeLayerData[] ObverseSprite;
 
     /// The sprite layers of the back of the card.
-    [DataField(required: true, readOnly: true)]
+    [DataField(required: truee)]
     public PrototypeLayerData[] ReverseSprite;
 
     /// <see cref="ObverseSprite"/> or <see cref="ReverseSprite"/>, depending on <see cref="IsFaceDown"/>.
@@ -27,7 +27,7 @@ public sealed partial class CardComponent : Component
     public bool IsFaceDown;
 
     /// The name of this card.
-    [DataField(required: true, readOnly: true), AutoNetworkedField]
+    [DataField(required: true), AutoNetworkedField]
     public LocId Name;
 
     /// The icon for the "flip" verb on this card.
