@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "copyright": "Cards, Decks and Hands Sprites were originally from Paradise Station (https://github.com/ParadiseSS13/Paradise) then modified by VictorJob. Boxes are from VictorJob. Nuno version made by vyas (@agentepanela twitter) and Day-OS. Modified by Huaqas (GitHub).",
+    "copyright": "Cards, Decks and Hands Sprites were originally from Paradise Station (https://github.com/ParadiseSS13/Paradise) then modified by VictorJob. Boxes are from VictorJob. Nuno version made by vyas (@agentepanela twitter) and Day-OS",
     "license": "CC-BY-SA-3.0",
     "size": {
         "x": 32,
@@ -23,7 +23,10 @@
             "name": "background_yellow"
         },
         {
-            "name": "skip"
+            "name": "block"
+        },
+        {
+            "name": "border"
         },
         {
             "name": "box"
