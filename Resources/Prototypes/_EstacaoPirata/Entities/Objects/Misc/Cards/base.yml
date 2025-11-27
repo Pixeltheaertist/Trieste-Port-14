@@ -22,10 +22,10 @@
   - type: Card
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_black.rsi
-      state: singlecard_down_black
+      state: singlecard_down
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_black.rsi
-      state: singlecard_down_black
+      state: singlecard_down
     flipped: true
 
 - type: entity
