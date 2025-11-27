@@ -60,6 +60,7 @@
 - type: entity
   parent: [ BoxCardboard, BaseBagOpenClose ]
   id: CardBoxBase
+  abstract: true
   name: Card Box
   categories: [ HideSpawnMenu ]
   components:
@@ -67,12 +68,13 @@
     size: Small
   - type: Sprite
     sprite: _EstacaoPirata/Objects/Misc/Cards/card_black.rsi
-    state: black_box
-    layers:
-    - state: black_box
-    - state: black_box_open
-      map: [ "openLayer" ]
-      visible: false
+    state: empty
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: box_open }
+          False: { state: box }
   - type: Storage
     maxItemSize: Normal
     grid:

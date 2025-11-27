@@ -2,18 +2,12 @@
 - type: entity
   parent: CardBoxBase
   id: CardBoxBlack
-  name: black deck case
+  name: box of playing cards
   components:
   - type: Item
     size: Small
   - type: Sprite
     sprite: _EstacaoPirata/Objects/Misc/Cards/card_black.rsi
-    state: black_box
-    layers:
-    - state: black_box
-    - state: black_box_open
-      map: [ "openLayer" ]
-      visible: false
   - type: OpenTriggeredStorageFill
     contents:
     - id: CardDeckBlack
@@ -92,18 +86,12 @@
 - type: entity
   parent: CardBoxBase
   id: CardBoxNanotrasen
-  name: nanotrasen deck case
+  name: box of nanotrasen playing cards
   components:
   - type: Item
     size: Small
   - type: Sprite
     sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-    state: nanotrasen_box
-    layers:
-    - state: nanotrasen_box
-    - state: nanotrasen_box_open
-      map: [ "openLayer" ]
-      visible: false
   - type: OpenTriggeredStorageFill
     contents:
     - id: CardDeckNanotrasen
@@ -182,18 +170,12 @@
 - type: entity
   parent: [CardBoxBase, BaseSyndicateContraband]
   id: CardBoxSyndicate
-  name: syndicate deck case
+  name: box of syndicate playing cards 
   components:
   - type: Item
     size: Small
   - type: Sprite
     sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-    state: syndicate_box
-    layers:
-    - state: syndicate_box
-    - state: syndicate_box_open
-      map: [ "openLayer" ]
-      visible: false
   - type: OpenTriggeredStorageFill
     contents:
     - id: CardDeckSyndicate
@@ -272,17 +254,12 @@
 - type: entity
   parent: CardBoxBase
   id: CardBoxNuno
-  name: Nuno™
+  name: box of Nuno™
   components:
   - type: Item
     size: Small
   - type: Sprite
     sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-    layers:
-    - state: box
-    - state: box_open
-      map: [ "openLayer" ]
-      visible: false
   - type: OpenTriggeredStorageFill
     contents:
     - id: CardDeckNuno

@@ -1,3 +1,20 @@
+# Clubs
+- type: entity
+  parent: CardBase
+  categories: [ HideSpawnMenu ]
+  id: CardScAceOfClubsNanotrasen
+  components:
+  - type: Card
+    name: card-sc-ace-clubs-nanotrasen
+    obverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: ace_clubs
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: singlecard_down
+      
 - type: entity
   parent: CardBase
   categories: [ HideSpawnMenu ]
@@ -7,10 +24,14 @@
     name: card-sc-2-clubs-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_2_of_Clubs_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num2_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -21,10 +42,14 @@
     name: card-sc-3-clubs-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_3_of_Clubs_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num3_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -35,10 +60,14 @@
     name: card-sc-4-clubs-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_4_of_Clubs_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num4_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -49,10 +78,14 @@
     name: card-sc-5-clubs-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_5_of_Clubs_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num5_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -63,10 +96,14 @@
     name: card-sc-6-clubs-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_6_of_Clubs_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num6_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -77,10 +114,14 @@
     name: card-sc-7-clubs-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_7_of_Clubs_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num7_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -91,10 +132,14 @@
     name: card-sc-8-clubs-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_8_of_Clubs_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num8_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -105,10 +150,14 @@
     name: card-sc-9-clubs-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_9_of_Clubs_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num9_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -119,25 +168,14 @@
     name: card-sc-10-clubs-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_10_of_Clubs_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num10_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
-
-- type: entity
-  parent: CardBase
-  categories: [ HideSpawnMenu ]
-  id: CardScAceOfClubsNanotrasen
-  components:
-  - type: Card
-    name: card-sc-ace-clubs-nanotrasen
-    obverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_Ace_of_Clubs_nanotrasen
-    reverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
-
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -148,24 +186,14 @@
     name: card-sc-jack-clubs-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_Jack_of_Clubs_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: numJ_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
-
-- type: entity
-  parent: CardBase
-  categories: [ HideSpawnMenu ]
-  id: CardScKingOfClubsNanotrasen
-  components:
-  - type: Card
-    name: card-sc-king-clubs-nanotrasen
-    obverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_King_of_Clubs_nanotrasen
-    reverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -176,54 +204,34 @@
     name: card-sc-queen-clubs-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_Queen_of_Clubs_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: numQ_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
-
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
   categories: [ HideSpawnMenu ]
-  id: CardScJackOfDiamondsNanotrasen
+  id: CardScKingOfClubsNanotrasen
   components:
   - type: Card
-    name: card-sc-jack-diamonds-nanotrasen
+    name: card-sc-king-clubs-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_Jack_of_Diamonds_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: numK_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
-- type: entity
-  parent: CardBase
-  categories: [ HideSpawnMenu ]
-  id: CardScQueenOfDiamondsNanotrasen
-  components:
-  - type: Card
-    name: card-sc-queen-diamonds-nanotrasen
-    obverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_Queen_of_Diamonds_nanotrasen
-    reverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
-
-- type: entity
-  parent: CardBase
-  categories: [ HideSpawnMenu ]
-  id: CardScKingOfDiamondsNanotrasen
-  components:
-  - type: Card
-    name: card-sc-king-diamonds-nanotrasen
-    obverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_King_of_Diamonds_nanotrasen
-    reverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
-
+# Diamonds
 - type: entity
   parent: CardBase
   categories: [ HideSpawnMenu ]
@@ -233,10 +241,12 @@
     name: card-sc-ace-diamonds-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_Ace_of_Diamonds_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: ace_diamonds
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -247,10 +257,14 @@
     name: card-sc-2-diamonds-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_2_of_Diamonds_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num2_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -261,10 +275,14 @@
     name: card-sc-3-diamonds-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_3_of_Diamonds_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num3_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -275,10 +293,14 @@
     name: card-sc-4-diamonds-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_4_of_Diamonds_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num4_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -289,10 +311,14 @@
     name: card-sc-5-diamonds-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_5_of_Diamonds_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num5_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -303,10 +329,14 @@
     name: card-sc-6-diamonds-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_6_of_Diamonds_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num6_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -317,10 +347,14 @@
     name: card-sc-7-diamonds-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_7_of_Diamonds_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num7_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -331,10 +365,14 @@
     name: card-sc-8-diamonds-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_8_of_Diamonds_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num8_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -345,10 +383,14 @@
     name: card-sc-9-diamonds-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_9_of_Diamonds_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num9_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -359,11 +401,85 @@
     name: card-sc-10-diamonds-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_10_of_Diamonds_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num10_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
+- type: entity
+  parent: CardBase
+  categories: [ HideSpawnMenu ]
+  id: CardScJackOfDiamondsNanotrasen
+  components:
+  - type: Card
+    name: card-sc-jack-diamonds-nanotrasen
+    obverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: numJ_red
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: singlecard_down
+
+- type: entity
+  parent: CardBase
+  categories: [ HideSpawnMenu ]
+  id: CardScQueenOfDiamondsNanotrasen
+  components:
+  - type: Card
+    name: card-sc-queen-diamonds-nanotrasen
+    obverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: numQ_red
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: singlecard_down
+
+- type: entity
+  parent: CardBase
+  categories: [ HideSpawnMenu ]
+  id: CardScKingOfDiamondsNanotrasen
+  components:
+  - type: Card
+    name: card-sc-king-diamonds-nanotrasen
+    obverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: numK_red
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: singlecard_down
+
+# Hearts
+- type: entity
+  parent: CardBase
+  categories: [ HideSpawnMenu ]
+  id: CardScAceOfHeartsNanotrasen
+  components:
+  - type: Card
+    name: card-sc-ace-hearts-nanotrasen
+    obverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: ace_hearts
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -374,10 +490,14 @@
     name: card-sc-2-hearts-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_2_of_Hearts_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num2_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -388,10 +508,14 @@
     name: card-sc-3-hearts-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_3_of_Hearts_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num3_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -402,10 +526,14 @@
     name: card-sc-4-hearts-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_4_of_Hearts_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num4_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -416,10 +544,14 @@
     name: card-sc-5-hearts-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_5_of_Hearts_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num5_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -430,10 +562,14 @@
     name: card-sc-6-hearts-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_6_of_Hearts_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num6_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -444,10 +580,14 @@
     name: card-sc-7-hearts-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_7_of_Hearts_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num7_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -458,10 +598,14 @@
     name: card-sc-8-hearts-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_8_of_Hearts_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num8_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -472,10 +616,14 @@
     name: card-sc-9-hearts-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_9_of_Hearts_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num9_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -486,38 +634,14 @@
     name: card-sc-10-hearts-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_10_of_Hearts_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num10_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
-
-- type: entity
-  parent: CardBase
-  categories: [ HideSpawnMenu ]
-  id: CardScKingOfHeartsNanotrasen
-  components:
-  - type: Card
-    name: card-sc-king-hearts-nanotrasen
-    obverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_King_of_Hearts_nanotrasen
-    reverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
-
-- type: entity
-  parent: CardBase
-  categories: [ HideSpawnMenu ]
-  id: CardScQueenOfHeartsNanotrasen
-  components:
-  - type: Card
-    name: card-sc-queen-hearts-nanotrasen
-    obverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_Queen_of_Hearts_nanotrasen
-    reverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -528,25 +652,67 @@
     name: card-sc-jack-hearts-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_Jack_of_Hearts_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: numJ_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
   categories: [ HideSpawnMenu ]
-  id: CardScAceOfHeartsNanotrasen
+  id: CardScQueenOfHeartsNanotrasen
   components:
   - type: Card
-    name: card-sc-ace-hearts-nanotrasen
+    name: card-sc-queen-hearts-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_Ace_of_Hearts_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: numQ_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
+- type: entity
+  parent: CardBase
+  categories: [ HideSpawnMenu ]
+  id: CardScKingOfHeartsNanotrasen
+  components:
+  - type: Card
+    name: card-sc-king-hearts-nanotrasen
+    obverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: numK_red
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: singlecard_down
+
+# Spades
+- type: entity
+  parent: CardBase
+  categories: [ HideSpawnMenu ]
+  id: CardScAceOfSpadesNanotrasen
+  components:
+  - type: Card
+    name: card-sc-ace-spades-nanotrasen
+    obverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: ace_spades
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -557,10 +723,14 @@
     name: card-sc-2-spades-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_2_of_Spades_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num2_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -571,10 +741,14 @@
     name: card-sc-3-spades-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_3_of_Spades_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num3_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -585,10 +759,14 @@
     name: card-sc-4-spades-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_4_of_Spades_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num4_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -599,10 +777,14 @@
     name: card-sc-5-spades-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_5_of_Spades_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num5_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -613,10 +795,14 @@
     name: card-sc-6-spades-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_6_of_Spades_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num6_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -627,10 +813,14 @@
     name: card-sc-7-spades-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_7_of_Spades_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num7_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -641,10 +831,14 @@
     name: card-sc-8-spades-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_8_of_Spades_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num8_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -655,10 +849,14 @@
     name: card-sc-9-spades-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_9_of_Spades_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num9_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 
 - type: entity
@@ -670,10 +868,14 @@
     name: card-sc-10-spades-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_10_of_Spades_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: num10_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -684,10 +886,14 @@
     name: card-sc-jack-spades-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_Jack_of_Spades_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: numJ_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -698,10 +904,14 @@
     name: card-sc-queen-spades-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_Queen_of_Spades_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: numQ_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -712,25 +922,16 @@
     name: card-sc-king-spades-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_King_of_Spades_nanotrasen
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
+      state: numK_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down
 
-- type: entity
-  parent: CardBase
-  categories: [ HideSpawnMenu ]
-  id: CardScAceOfSpadesNanotrasen
-  components:
-  - type: Card
-    name: card-sc-ace-spades-nanotrasen
-    obverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: sc_Ace_of_Spades_nanotrasen
-    reverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
-
+# Jokers
 - type: entity
   parent: CardBase
   categories: [ HideSpawnMenu ]
@@ -740,7 +941,7 @@
     name: card-sc-joker-nanotrasen
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: nanotrasen_joker
+      state: joker
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nanotrasen.rsi
-      state: singlecard_down_nanotrasen
+      state: singlecard_down

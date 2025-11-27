@@ -1,3 +1,20 @@
+# Clubs
+- type: entity
+  parent: CardBase
+  categories: [ HideSpawnMenu ]
+  id: CardScAceOfClubsSyndicate
+  components:
+  - type: Card
+    name: card-sc-ace-clubs-syndicate
+    obverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: ace_clubs
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: singlecard_down
+      
 - type: entity
   parent: CardBase
   categories: [ HideSpawnMenu ]
@@ -7,10 +24,14 @@
     name: card-sc-2-clubs-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_2_of_Clubs_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num2_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -21,10 +42,14 @@
     name: card-sc-3-clubs-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_3_of_Clubs_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num3_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -35,10 +60,14 @@
     name: card-sc-4-clubs-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_4_of_Clubs_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num4_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -49,10 +78,14 @@
     name: card-sc-5-clubs-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_5_of_Clubs_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num5_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -63,10 +96,14 @@
     name: card-sc-6-clubs-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_6_of_Clubs_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num6_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -77,10 +114,14 @@
     name: card-sc-7-clubs-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_7_of_Clubs_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num7_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -91,10 +132,14 @@
     name: card-sc-8-clubs-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_8_of_Clubs_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num8_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -102,13 +147,17 @@
   id: CardSc9OfClubsSyndicate
   components:
   - type: Card
-    name: card-sc-9-clubs-syndicate
+    name: card-sc-8-clubs-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_9_of_Clubs_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num9_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -119,25 +168,14 @@
     name: card-sc-10-clubs-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_10_of_Clubs_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num10_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
-
-- type: entity
-  parent: CardBase
-  categories: [ HideSpawnMenu ]
-  id: CardScAceOfClubsSyndicate
-  components:
-  - type: Card
-    name: card-sc-ace-clubs-syndicate
-    obverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_Ace_of_Clubs_syndicate
-    reverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
-
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -148,24 +186,14 @@
     name: card-sc-jack-clubs-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_Jack_of_Clubs_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: numJ_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
-
-- type: entity
-  parent: CardBase
-  categories: [ HideSpawnMenu ]
-  id: CardScKingOfClubsSyndicate
-  components:
-  - type: Card
-    name: card-sc-king-clubs-syndicate
-    obverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_King_of_Clubs_syndicate
-    reverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -176,54 +204,34 @@
     name: card-sc-queen-clubs-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_Queen_of_Clubs_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: numQ_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
-
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
   categories: [ HideSpawnMenu ]
-  id: CardScJackOfDiamondsSyndicate
+  id: CardScKingOfClubsSyndicate
   components:
   - type: Card
-    name: card-sc-jack-diamonds-syndicate
+    name: card-sc-king-clubs-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_Jack_of_Diamonds_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_clubs
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: numK_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
-- type: entity
-  parent: CardBase
-  categories: [ HideSpawnMenu ]
-  id: CardScQueenOfDiamondsSyndicate
-  components:
-  - type: Card
-    name: card-sc-queen-diamonds-syndicate
-    obverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_Queen_of_Diamonds_syndicate
-    reverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
-
-- type: entity
-  parent: CardBase
-  categories: [ HideSpawnMenu ]
-  id: CardScKingOfDiamondsSyndicate
-  components:
-  - type: Card
-    name: card-sc-king-diamonds-syndicate
-    obverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_King_of_Diamonds_syndicate
-    reverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
-
+# Diamonds
 - type: entity
   parent: CardBase
   categories: [ HideSpawnMenu ]
@@ -233,10 +241,12 @@
     name: card-sc-ace-diamonds-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_Ace_of_Diamonds_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: ace_diamonds
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -247,10 +257,14 @@
     name: card-sc-2-diamonds-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_2_of_Diamonds_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num2_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -261,10 +275,14 @@
     name: card-sc-3-diamonds-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_3_of_Diamonds_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num3_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -275,10 +293,14 @@
     name: card-sc-4-diamonds-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_4_of_Diamonds_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num4_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -289,10 +311,14 @@
     name: card-sc-5-diamonds-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_5_of_Diamonds_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num5_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -303,10 +329,14 @@
     name: card-sc-6-diamonds-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_6_of_Diamonds_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num6_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -317,10 +347,14 @@
     name: card-sc-7-diamonds-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_7_of_Diamonds_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num7_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -331,10 +365,14 @@
     name: card-sc-8-diamonds-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_8_of_Diamonds_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num8_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -345,10 +383,14 @@
     name: card-sc-9-diamonds-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_9_of_Diamonds_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num9_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -359,11 +401,85 @@
     name: card-sc-10-diamonds-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_10_of_Diamonds_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num10_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
+- type: entity
+  parent: CardBase
+  categories: [ HideSpawnMenu ]
+  id: CardScJackOfDiamondsSyndicate
+  components:
+  - type: Card
+    name: card-sc-jack-diamonds-syndicate
+    obverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: numJ_red
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: singlecard_down
+
+- type: entity
+  parent: CardBase
+  categories: [ HideSpawnMenu ]
+  id: CardScQueenOfDiamondsSyndicate
+  components:
+  - type: Card
+    name: card-sc-queen-diamonds-syndicate
+    obverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: numQ_red
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: singlecard_down
+
+- type: entity
+  parent: CardBase
+  categories: [ HideSpawnMenu ]
+  id: CardScKingOfDiamondsSyndicate
+  components:
+  - type: Card
+    name: card-sc-king-diamonds-syndicate
+    obverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_diamonds
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: numK_red
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: singlecard_down
+
+# Hearts
+- type: entity
+  parent: CardBase
+  categories: [ HideSpawnMenu ]
+  id: CardScAceOfHeartsSyndicate
+  components:
+  - type: Card
+    name: card-sc-ace-hearts-syndicate
+    obverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: ace_hearts
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -374,10 +490,14 @@
     name: card-sc-2-hearts-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_2_of_Hearts_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num2_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -388,10 +508,14 @@
     name: card-sc-3-hearts-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_3_of_Hearts_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num3_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -402,10 +526,14 @@
     name: card-sc-4-hearts-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_4_of_Hearts_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num4_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -416,10 +544,14 @@
     name: card-sc-5-hearts-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_5_of_Hearts_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num5_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -430,10 +562,14 @@
     name: card-sc-6-hearts-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_6_of_Hearts_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num6_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -444,10 +580,14 @@
     name: card-sc-7-hearts-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_7_of_Hearts_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num7_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -458,10 +598,14 @@
     name: card-sc-8-hearts-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_8_of_Hearts_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num8_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -472,10 +616,14 @@
     name: card-sc-9-hearts-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_9_of_Hearts_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num9_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -486,38 +634,14 @@
     name: card-sc-10-hearts-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_10_of_Hearts_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num10_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
-
-- type: entity
-  parent: CardBase
-  categories: [ HideSpawnMenu ]
-  id: CardScKingOfHeartsSyndicate
-  components:
-  - type: Card
-    name: card-sc-king-hearts-syndicate
-    obverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_King_of_Hearts_syndicate
-    reverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
-
-- type: entity
-  parent: CardBase
-  categories: [ HideSpawnMenu ]
-  id: CardScQueenOfHeartsSyndicate
-  components:
-  - type: Card
-    name: card-sc-queen-hearts-syndicate
-    obverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_Queen_of_Hearts_syndicate
-    reverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -528,25 +652,67 @@
     name: card-sc-jack-hearts-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_Jack_of_Hearts_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: numJ_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
   categories: [ HideSpawnMenu ]
-  id: CardScAceOfHeartsSyndicate
+  id: CardScQueenOfHeartsSyndicate
   components:
   - type: Card
-    name: card-sc-ace-hearts-syndicate
+    name: card-sc-queen-hearts-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_Ace_of_Hearts_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: numQ_red
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
+- type: entity
+  parent: CardBase
+  categories: [ HideSpawnMenu ]
+  id: CardScKingOfHeartsSyndicate
+  components:
+  - type: Card
+    name: card-sc-king-hearts-syndicate
+    obverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_hearts
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: numK_red
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: singlecard_down
+
+# Spades
+- type: entity
+  parent: CardBase
+  categories: [ HideSpawnMenu ]
+  id: CardScAceOfSpadesSyndicate
+  components:
+  - type: Card
+    name: card-sc-ace-spades-syndicate
+    obverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: ace_spades
+    reverseSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -557,10 +723,14 @@
     name: card-sc-2-spades-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_2_of_Spades_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num2_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -571,10 +741,14 @@
     name: card-sc-3-spades-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_3_of_Spades_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num3_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -585,10 +759,14 @@
     name: card-sc-4-spades-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_4_of_Spades_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num4_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -599,10 +777,14 @@
     name: card-sc-5-spades-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_5_of_Spades_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num5_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -613,10 +795,14 @@
     name: card-sc-6-spades-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_6_of_Spades_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num6_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -627,10 +813,14 @@
     name: card-sc-7-spades-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_7_of_Spades_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num7_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -641,10 +831,14 @@
     name: card-sc-8-spades-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_8_of_Spades_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num8_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -655,10 +849,14 @@
     name: card-sc-9-spades-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_9_of_Spades_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num9_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 
 - type: entity
@@ -670,10 +868,14 @@
     name: card-sc-10-spades-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_10_of_Spades_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: num10_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -684,10 +886,14 @@
     name: card-sc-jack-spades-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_Jack_of_Spades_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: numJ_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -698,10 +904,14 @@
     name: card-sc-queen-spades-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_Queen_of_Spades_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: numQ_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
 - type: entity
   parent: CardBase
@@ -712,25 +922,16 @@
     name: card-sc-king-spades-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_King_of_Spades_syndicate
+      state: background
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: suit_spades
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
+      state: numK_black
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
 
-- type: entity
-  parent: CardBase
-  categories: [ HideSpawnMenu ]
-  id: CardScAceOfSpadesSyndicate
-  components:
-  - type: Card
-    name: card-sc-ace-spades-syndicate
-    obverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: sc_Ace_of_Spades_syndicate
-    reverseSprite:
-    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
-
+# Jokers
 - type: entity
   parent: CardBase
   categories: [ HideSpawnMenu ]
@@ -740,7 +941,7 @@
     name: card-sc-joker-syndicate
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: syndicate_joker
+      state: joker
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_syndicate.rsi
-      state: singlecard_down_syndicate
+      state: singlecard_down
