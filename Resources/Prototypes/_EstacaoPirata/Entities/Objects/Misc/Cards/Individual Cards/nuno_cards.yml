@@ -8,9 +8,7 @@
     name: card-nuno-wild
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: card_fourcolors
-        index: 0
+      state: card_fourcolors
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -24,9 +22,7 @@
     name: card-nuno-wild-draw-cards
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: plus4
-        index: 0
+      state: plus4
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -34,17 +30,16 @@
 # Red Nuno Cards
 - type: entity
   parent: CardBase
-  categories: [ HideSpawnMenu ]
+  #categories: [ HideSpawnMenu ]
   id: CardNunoRedZero
   components:
   - type: Card
     name: card-nuno-zero-red
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-red
-      - state: border
-      - state: num0
+      state: background_red
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num0
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -58,10 +53,9 @@
     name: card-nuno-one-red
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-red
-      - state: border
-      - state: num1
+      state: background_red
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num1
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -75,10 +69,9 @@
     name: card-nuno-two-red
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-red
-      - state: border
-      - state: num2
+      state: background_red
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num2
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -92,10 +85,9 @@
     name: card-nuno-three-red
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-red
-      - state: border
-      - state: num3
+      state: background_red
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num3
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -109,10 +101,9 @@
     name: card-nuno-four-red
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-red
-      - state: border
-      - state: num4
+      state: background_red
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num4
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -126,10 +117,9 @@
     name: card-nuno-five-red
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-red
-      - state: border
-      - state: num5
+      state: background_red
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num5
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -143,10 +133,9 @@
     name: card-nuno-six-red
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-red
-      - state: border
-      - state: num6
+      state: background_red
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num6
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -160,10 +149,9 @@
     name: card-nuno-seven-red
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-red
-      - state: border
-      - state: num7
+      state: background_red
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num7
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -177,10 +165,9 @@
     name: card-nuno-eight-red
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-red
-      - state: border
-      - state: num8
+      state: background_red
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num8
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -194,10 +181,9 @@
     name: card-nuno-nine-red
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-red
-      - state: border
-      - state: num9
+      state: background_red
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num9
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -211,10 +197,9 @@
     name: card-nuno-draw-two-red
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-red
-      - state: border
-      - state: plus2
+      state: background_red
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: plus2
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -228,10 +213,9 @@
     name: card-nuno-reverse-red
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-red
-      - state: border
-      - state: reverse
+      state: background_red
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: reverse
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -245,10 +229,9 @@
     name: card-nuno-skip-red
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-red
-      - state: border
-      - state: block
+      state: background_red
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: skip
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -263,13 +246,9 @@
     name: card-nuno-zero-yellow
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-yellow
-        index: 0
-      - state: border
-        index: 1
-      - state: num0
-        index: 2
+      state: background_yellow
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num0
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -283,10 +262,9 @@
     name: card-nuno-one-yellow
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-yellow
-      - state: border
-      - state: num1
+      state: background_yellow
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num1
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -300,10 +278,9 @@
     name: card-nuno-two-yellow
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-yellow
-      - state: border
-      - state: num2
+      state: background_yellow
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num2
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -317,10 +294,9 @@
     name: card-nuno-three-yellow
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-yellow
-      - state: border
-      - state: num3
+      state: background_yellow
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num3
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -334,10 +310,9 @@
     name: card-nuno-four-yellow
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-yellow
-      - state: border
-      - state: num4
+      state: background_yellow
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num4
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -351,10 +326,9 @@
     name: card-nuno-five-yellow
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-yellow
-      - state: border
-      - state: num5
+      state: background_yellow
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num5
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -368,10 +342,9 @@
     name: card-nuno-six-yellow
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-yellow
-      - state: border
-      - state: num6
+      state: background_yellow
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num6
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -385,10 +358,9 @@
     name: card-nuno-seven-yellow
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-yellow
-      - state: border
-      - state: num7
+      state: background_yellow
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num7
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -402,10 +374,9 @@
     name: card-nuno-eight-yellow
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-yellow
-      - state: border
-      - state: num8
+      state: background_yellow
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num8
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -419,10 +390,9 @@
     name: card-nuno-nine-yellow
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-yellow
-      - state: border
-      - state: num9
+      state: background_yellow
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num9
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -436,10 +406,9 @@
     name: card-nuno-draw-two-yellow
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-yellow
-      - state: border
-      - state: plus2
+      state: background_yellow
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: plus2
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -453,10 +422,9 @@
     name: card-nuno-reverse-yellow
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-yellow
-      - state: border
-      - state: reverse
+      state: background_yellow
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: reverse
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -470,10 +438,9 @@
     name: card-nuno-skip-yellow
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-yellow
-      - state: border
-      - state: block
+      state: background_yellow
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: skip
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -488,13 +455,9 @@
     name: card-nuno-zero-blue
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-blue
-        index: 0
-      - state: border
-        index: 1
-      - state: num0
-        index: 2
+      state: background_blue
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num0
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -508,10 +471,9 @@
     name: card-nuno-one-blue
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-blue
-      - state: border
-      - state: num1
+      state: background_blue
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num1
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -525,10 +487,9 @@
     name: card-nuno-two-blue
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-blue
-      - state: border
-      - state: num2
+      state: background_blue
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num2
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -542,10 +503,9 @@
     name: card-nuno-three-blue
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-blue
-      - state: border
-      - state: num3
+      state: background_blue
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num3
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -559,10 +519,9 @@
     name: card-nuno-four-blue
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-blue
-      - state: border
-      - state: num4
+      state: background_blue
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num4
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -576,10 +535,9 @@
     name: card-nuno-five-blue
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-blue
-      - state: border
-      - state: num5
+      state: background_blue
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num5
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -593,10 +551,9 @@
     name: card-nuno-six-blue
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-blue
-      - state: border
-      - state: num6
+      state: background_blue
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num6
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -610,10 +567,9 @@
     name: card-nuno-seven-blue
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-blue
-      - state: border
-      - state: num7
+      state: background_blue
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num7
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -627,10 +583,9 @@
     name: card-nuno-eight-blue
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-blue
-      - state: border
-      - state: num8
+      state: background_blue
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num8
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -644,10 +599,9 @@
     name: card-nuno-nine-blue
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-blue
-      - state: border
-      - state: num9
+      state: background_blue
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num9
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -661,10 +615,9 @@
     name: card-nuno-draw-two-blue
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-blue
-      - state: border
-      - state: plus2
+      state: background_blue
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: plus2
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -678,10 +631,9 @@
     name: card-nuno-reverse-blue
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-blue
-      - state: border
-      - state: reverse
+      state: background_blue
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: reverse
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -695,10 +647,9 @@
     name: card-nuno-skip-blue
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-blue
-      - state: border
-      - state: block
+      state: background_blue
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: skip
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -713,13 +664,9 @@
     name: card-nuno-zero-green
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-green
-        index: 0
-      - state: border
-        index: 1
-      - state: num0
-        index: 2
+      state: background_green
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num0
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -733,10 +680,9 @@
     name: card-nuno-one-green
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-green
-      - state: border
-      - state: num1
+      state: background_green
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num1
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -750,10 +696,9 @@
     name: card-nuno-two-green
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-green
-      - state: border
-      - state: num2
+      state: background_green
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num2
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -767,10 +712,9 @@
     name: card-nuno-three-green
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-green
-      - state: border
-      - state: num3
+      state: background_green
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num3
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -784,10 +728,9 @@
     name: card-nuno-four-green
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-green
-      - state: border
-      - state: num4
+      state: background_green
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num4
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -801,10 +744,9 @@
     name: card-nuno-five-green
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-green
-      - state: border
-      - state: num5
+      state: background_green
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num5
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -818,10 +760,9 @@
     name: card-nuno-six-green
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-green
-      - state: border
-      - state: num6
+      state: background_green
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num6
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -835,10 +776,9 @@
     name: card-nuno-seven-green
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-green
-      - state: border
-      - state: num7
+      state: background_green
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num7
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -852,10 +792,9 @@
     name: card-nuno-eight-green
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-green
-      - state: border
-      - state: num8
+      state: background_green
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num8
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -869,10 +808,9 @@
     name: card-nuno-nine-green
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-green
-      - state: border
-      - state: num9
+      state: background_green
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: num9
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
       state: singlecard_down_nuno
@@ -886,10 +824,9 @@
     name: card-nuno-draw-two-green
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-green
-      - state: border
-      - state: plus2
+      state: background_green
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: plus2
 
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
@@ -904,10 +841,9 @@
     name: card-nuno-reverse-green
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-green
-      - state: border
-      - state: reverse
+      state: background_green
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: reverse
 
     reverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
@@ -922,7 +858,6 @@
     name: card-nuno-skip-green
     obverseSprite:
     - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
-      layers:
-      - state: background-green
-      - state: border
-      - state: block
+      state: background_green
+    - sprite: _EstacaoPirata/Objects/Misc/Cards/card_nuno.rsi
+      state: skip
