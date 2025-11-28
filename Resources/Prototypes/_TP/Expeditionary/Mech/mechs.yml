@@ -5,10 +5,14 @@
   name: Rotund Stepfather
   description: A rugged deep-sea mining unit, designed to work in tandem with a Pilot. The onboard AI operates the primary clamp while the pilot operates the modules.
   components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
   - type: Sprite
     drawdepth: Mobs
     noRot: true
-    sprite: Objects/Specific/Mech/mecha.rsi
+    sprite: _TP/Expeditionary/Mech/rotund.rsi
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: stepfather
@@ -27,12 +31,21 @@
     pilotWhitelist:
       components:
       - ExpedPilot # Only the Pilot can enter. TODO: Make the stepfather emaggable to be subverted by antags.
+      - Ghost # For the funny Admeme potential
+  - type: MechAir # Let it be known - I have NO idea how the moles are calculated. - Cookie (FatherCheese)
+    air:
+      volume: 1500
+      moles:
+        Oxygen: 101.21 # oxygen 21%
+        Nitrogen: 101.79 # nitrogen 79%
+      temperature: 293.15
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
     damage:
       types:
-        Blunt: 10
+        Blunt: 15
+        Structural: 10
   - type: HandheldLight
     addPrefix: false
     blinkingBehaviourId: blinking
@@ -54,13 +67,6 @@
       isLooped: true
   - type: PowerCellSlot
     cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-  - type: ContainerFill
-    containers:
-      cell_slot:
-      - PowerCellHigh
   - type: ItemSlots
     slots:
       cell_slot:
@@ -162,11 +168,22 @@
   - type: ZombieImmune
   - type: NoSlip
   - type: PowerCellDraw
-    drawRate: 0.6
+    drawRate: 0.6 # 0.6 was WAY too much once I fixed the battery, holy shit. - Cookie (FatherCheese)
   - type: DamageOnInteractProtection
     damageProtection:
       flatReductions:
         Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
   - type: Loadout
-    prototypes: [TP14StepfatherGear]
+    prototypes: [ TP14StepfatherGear ]
   - type: Alerts
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+    - Common
+    - Supply
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+    - Supply

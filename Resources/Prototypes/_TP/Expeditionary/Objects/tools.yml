@@ -1,0 +1,21 @@
+- type: entity
+  parent: MiningDrill
+  id: TP14MiningToolRotundDrill
+  suffix: Trieste, Expeditionary, DO NOT MAP
+  name: rotund drill
+  description: Much like an ordinary drill, but it's permanently attached to you.
+  components:
+  - type: Unremoveable
+    deleteOnDrop: false
+  - type: MeleeWeapon
+    autoAttack: true
+    angle: 0
+    wideAnimationRotation: -90
+    soundHit:
+      path: "/Audio/Items/drill_hit.ogg"
+    attackRate: 5
+    damage:
+      groups:
+        Brute: 3
+      types:
+        Structural: 15

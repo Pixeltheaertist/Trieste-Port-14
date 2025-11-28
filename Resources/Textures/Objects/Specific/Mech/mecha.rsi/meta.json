@@ -486,13 +486,6 @@
     {
       "name": "vim-broken",
       "directions": 4
-    },
-	{
-      "name": "stepfather",
-      "directions": 4
-    },
-	{
-      "name": "stepfather-open"
     }
   ]
 }

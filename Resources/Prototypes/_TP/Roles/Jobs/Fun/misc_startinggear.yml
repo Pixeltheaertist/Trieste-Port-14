@@ -19,10 +19,3 @@
     back: ClothingBackpackSatchelLeather
     outerClothing: ClothingOuterCoatHermit
     suitstorage: TP14WeaponRifleEnergyRepeater
-
-# Expeditionary
-- type: startingGear
-  id: TP14StepfatherGear
-  equipment:
-    id: SalvagePDA
-    pocket1: TP14PinpointerPilot # This was commented out, not sure why. - Cookie (FatherCheese)
