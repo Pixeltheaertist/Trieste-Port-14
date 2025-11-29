@@ -1,17 +1,17 @@
 ﻿- type: body
   id: Dwarf
-  name: "dwarf"
+  name: dwarf
   root: torso
   slots:
     head:
-      part: HeadHuman
+      part: TP14HeadDwarf
       connections:
       - torso
       organs:
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
     torso:
-      part: TorsoHuman
+      part: TP14TorsoDwarf
       connections:
       - right arm
       - left arm
@@ -24,26 +24,26 @@
         liver: OrganDwarfLiver
         kidneys: OrganHumanKidneys
     right arm:
-      part: RightArmHuman
+      part: TP14RightArmDwarf
       connections:
       - right hand
     left arm:
-      part: LeftArmHuman
+      part: TP14LeftArmDwarf
       connections:
       - left hand
     right hand:
-      part: RightHandHuman
+      part: TP14RightHandDwarf
     left hand:
-      part: LeftHandHuman
+      part: TP14LeftHandDwarf
     right leg:
-      part: RightLegHuman
+      part: TP14RightLegDwarf
       connections:
       - right foot
     left leg:
-      part: LeftLegHuman
+      part: TP14LeftLegDwarf
       connections:
       - left foot
     right foot:
-      part: RightFootHuman
+      part: TP14RightFootDwarf
     left foot:
-      part: LeftFootHuman
+      part: TP14LeftFootDwarf

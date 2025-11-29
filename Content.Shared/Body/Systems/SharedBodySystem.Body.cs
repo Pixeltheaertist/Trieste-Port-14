@@ -105,7 +105,9 @@ public partial class SharedBodySystem
         MapInitBody(ent, prototype);
     }
 
-    private void MapInitBody(EntityUid bodyEntity, BodyPrototype prototype)
+    // !! TRISTE SPECIFIC !!
+    // I changed this to public instead of copying the entire method + needed ones because holy shit. - Cookie (FatherCheese)
+    public void MapInitBody(EntityUid bodyEntity, BodyPrototype prototype)
     {
         var protoRoot = prototype.Slots[prototype.Root];
         if (protoRoot.Part is null)

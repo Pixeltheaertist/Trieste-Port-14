@@ -1,0 +1,122 @@
+- type: entity
+  id: TP14PartDwarf
+  parent: [BaseItem, BasePart]
+  abstract: true
+  components:
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Iron
+        Quantity: 3
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: TP14TorsoDwarf
+  name: dwarf torso
+  parent: [TP14PartDwarf, BaseTorso]
+  components:
+  - type: Sprite
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: torso_m
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Iron
+        Quantity: 10
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 20
+
+- type: entity
+  id: TP14HeadDwarf
+  name: dwarf head
+  parent: [TP14PartDwarf, BaseHead]
+  components:
+  - type: Sprite
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: head_m
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Iron
+        Quantity: 5
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: TP14LeftArmDwarf
+  name: left dwarf arm
+  parent: [TP14PartDwarf, BaseLeftArm]
+  components:
+  - type: Sprite
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: l_arm
+
+- type: entity
+  id: TP14RightArmDwarf
+  name: right dwarf arm
+  parent: [TP14PartDwarf, BaseRightArm]
+  components:
+  - type: Sprite
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: r_arm
+
+- type: entity
+  id: TP14LeftHandDwarf
+  name: left dwarf hand
+  parent: [TP14PartDwarf, BaseLeftHand]
+  components:
+  - type: Sprite
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: l_hand
+
+- type: entity
+  id: TP14RightHandDwarf
+  name: right dwarf hand
+  parent: [TP14PartDwarf, BaseRightHand]
+  components:
+  - type: Sprite
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: r_hand
+
+- type: entity
+  id: TP14LeftLegDwarf
+  name: left dwarf leg
+  parent: [TP14PartDwarf, BaseLeftLeg]
+  components:
+  - type: Sprite
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: l_leg
+
+- type: entity
+  id: TP14RightLegDwarf
+  name: right dwarf leg
+  parent: [TP14PartDwarf, BaseRightLeg]
+  components:
+  - type: Sprite
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: r_leg
+
+- type: entity
+  id: TP14LeftFootDwarf
+  name: left dwarf foot
+  parent: [TP14PartDwarf, BaseLeftFoot]
+  components:
+  - type: Sprite
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: l_foot
+
+- type: entity
+  id: TP14RightFootDwarf
+  name: right dwarf foot
+  parent: [TP14PartDwarf, BaseRightFoot]
+  components:
+  - type: Sprite
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: r_foot
