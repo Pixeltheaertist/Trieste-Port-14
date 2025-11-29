@@ -37,3 +37,5 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Speech
+    speechSounds: Bass

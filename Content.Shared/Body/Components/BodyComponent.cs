@@ -10,7 +10,7 @@ namespace Content.Shared.Body.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 //[Access(typeof(SharedBodySystem))]
-[Access(typeof(SharedBodySystem), typeof(SharedBodyTransformSystem))]
+[Access(typeof(SharedBodySystem))]
 public sealed partial class BodyComponent : Component
 {
     /// <summary>

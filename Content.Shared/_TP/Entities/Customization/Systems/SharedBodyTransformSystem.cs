@@ -18,13 +18,11 @@ public sealed class SharedBodyTransformSystem : EntitySystem
         if (TryComp<HumanoidAppearanceComponent>(ent.Owner, out var humAppComp))
         {
             humAppComp.Species = ent.Comp.NewSpecies;
-            Dirty(ent.Owner, humAppComp);
         }
 
         if (TryComp<InventoryComponent>(ent.Owner, out var invComp))
         {
             invComp.Displacements = ent.Comp.Displacements;
-            Dirty(ent.Owner, invComp);
         }
     }
 }

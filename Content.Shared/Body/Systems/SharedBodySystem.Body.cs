@@ -105,9 +105,7 @@ public partial class SharedBodySystem
         MapInitBody(ent, prototype);
     }
 
-    // !! TRISTE SPECIFIC !!
-    // I changed this to public instead of copying the entire method + needed ones because holy shit. - Cookie (FatherCheese)
-    public void MapInitBody(EntityUid bodyEntity, BodyPrototype prototype)
+    private void MapInitBody(EntityUid bodyEntity, BodyPrototype prototype)
     {
         var protoRoot = prototype.Slots[prototype.Root];
         if (protoRoot.Part is null)
@@ -169,7 +167,10 @@ public partial class SharedBodySystem
                 cameFromEntities[connection] = childPart;
 
                 var childPartComponent = Comp<BodyPartComponent>(childPart);
-                var partSlot = CreatePartSlot(parentEntity, connection, childPartComponent.PartType, parentPartComponent);
+                var partSlot = CreatePartSlot(parentEntity,
+                    connection,
+                    childPartComponent.PartType,
+                    parentPartComponent);
                 var cont = Containers.GetContainer(parentEntity, GetPartSlotContainerId(connection));
 
                 if (partSlot is null || !Containers.Insert(childPart, cont))
