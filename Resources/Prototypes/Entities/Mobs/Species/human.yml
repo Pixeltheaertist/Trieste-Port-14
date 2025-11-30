@@ -27,10 +27,6 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-  - type: Tag
-    tags:
-    - TP14TagHuman
-
 
 - type: entity
   parent: BaseSpeciesDummy

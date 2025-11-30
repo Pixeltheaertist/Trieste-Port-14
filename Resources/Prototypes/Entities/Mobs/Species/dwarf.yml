@@ -51,7 +51,14 @@
     hideLayersOnEquip:
     - Hair
     - Snout
+    markingsDisplacement:
+      Tail:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Species/Dwarves/displacement.rsi
+            state: tail
   - type: Inventory
+    speciesId: dwarf
     displacements:
       jumpsuit:
         sizeMaps:
@@ -75,6 +82,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Inventory
+    speciesId: dwarf
     displacements:
       jumpsuit:
         sizeMaps:

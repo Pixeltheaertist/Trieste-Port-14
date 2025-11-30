@@ -76,7 +76,8 @@ namespace Content.Shared.Preferences
         [DataField]
         public ProtoId<SpeciesPrototype> Species { get; set; } = SharedHumanoidAppearanceSystem.DefaultSpecies;
 
-        [DataField] // Starlight
+        // Starlight
+        [DataField]
         public string CustomSpeciesName { get; set; } = "";
 
         [DataField]
@@ -569,13 +570,17 @@ namespace Content.Shared.Preferences
                     ? CustomSpeciesName[..maxNameLength]
                     : CustomSpeciesName;
 
-            if (!string.IsNullOrWhiteSpace(CustomSpeciesName) && configManager.GetCVar(StarlightCCVars.RestrictedCustomSpeciesNames))
+            if (!string.IsNullOrWhiteSpace(CustomSpeciesName) &&
+                configManager.GetCVar(StarlightCCVars.RestrictedCustomSpeciesNames))
             {
                 customSpeciesName = RestrictedCustomSpeciesNameRegex.Replace(customSpeciesName, string.Empty);
 
                 var speciesPrototypes = prototypeManager.EnumeratePrototypes<SpeciesPrototype>();
                 foreach (var specieNames in speciesPrototypes)
                 {
+                    if (specieNames == speciesPrototype)
+                        continue;
+
                     if (Loc.GetString(specieNames.Name).ToLower() == customSpeciesName.ToLower())
                     {
                         customSpeciesName = "";

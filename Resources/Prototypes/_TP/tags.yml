@@ -30,9 +30,6 @@
   id: Harpoon
 
 - type: Tag
-  id: TP14TagHuman # Used by "_TP/Entities/Customization/Traits/quirks.yml" - It's used for if something is human.
-
-- type: Tag
   id: MagCell
 
 - type: Tag

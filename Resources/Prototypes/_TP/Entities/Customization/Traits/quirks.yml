@@ -3,11 +3,9 @@
   name: tp14-trait-dwarfism-name
   description: tp14-trait-dwarfism-desc
   category: Quirks
-  whitelist:
-    tags:
-    - TP14TagHuman
   components:
   - type: BodyTransform
+    targetSpecies: Human
     newSpecies: Dwarf
     displacements:
       jumpsuit:
