@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._TP.Ladder;
 using Content.Server.Popups;
 using Content.Shared.Climbing.Components;
 using Content.Shared.Climbing.Systems;
@@ -12,6 +13,7 @@ using Content.Shared.Revenant.Components;
 using Content.Shared.Salvage.Fulton;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Stunnable;
+using Robust.Shared.Map;
 
 namespace Content.Server._TP.Falling.Systems;
 
@@ -103,7 +105,7 @@ public sealed class FallSystem : EntitySystem
         }
 
         // A check to see if the player jumped from one grid to
-        // another, and if so, return, so they don't fall.
+        // another, and if so, return so they don't fall.
         if (args.OldParent == null || args.Transform.GridUid != null ||
             TerminatingOrDeleted(owner))
         {
@@ -153,23 +155,45 @@ public sealed class FallSystem : EntitySystem
             return;
         }
 
-        // Teleport to the destination's coordinates
-        var ownerCoords = _transformSystem.GetMapCoordinates(destination.Owner);
-        _transformSystem.SetMapCoordinates(owner, ownerCoords);
+        // Now we set variables for Wastewater and Trieste's ladders.
+        // Essentially, we get both ladder's positions as a marker point and offset the player's fall position.
+        // We have to do this due to Trieste using trade station, and being offset by like 700 in any given direction.
+        var sourceLadder = EntityManager.EntityQuery<LadderComponent>()
+        .FirstOrDefault(ladder => _transformSystem.GetMapCoordinates(ladder.Owner).MapId ==
+                                  _transformSystem.GetMapCoordinates(owner).MapId);
 
-        // Stuns the fall-ee for five seconds
+        var destLadder = EntityManager.EntityQuery<LadderComponent>()
+        .FirstOrDefault(ladder => _transformSystem.GetMapCoordinates(ladder.Owner).MapId ==
+                                  _transformSystem.GetMapCoordinates(destination.Owner).MapId);
+
+        if (sourceLadder == null || destLadder == null)
+        {
+            Log.Error($"Could not find ladders for fall calculation!");
+            return;
+        }
+
+        // Now we get the coordinates of the owner and ladders.
+        var ownerCoords = _transformSystem.GetMapCoordinates(owner);
+        var sourceLadderCoords = _transformSystem.GetMapCoordinates(sourceLadder.Owner);
+        var destLadderCoords = _transformSystem.GetMapCoordinates(destLadder.Owner);
+
+        // THEN we calculate and apply the offset between the ladders and player's position.
+        var ladderOffset = destLadderCoords.Position - sourceLadderCoords.Position;
+        var newPosition = ownerCoords.Position + ladderOffset;
+        var newCoords = new MapCoordinates(newPosition, destLadderCoords.MapId);
+        _transformSystem.SetMapCoordinates(owner, newCoords);
+
+        // Then we stun the fall-ee for five seconds, as well as apply EIGHTY blunt damage.
+        // Finally, at the bottom we cause a pop-up saying something fell.
         var stunTime = TimeSpan.FromSeconds(5);
         _stun.TryKnockdown(owner, stunTime, refresh: true);
         _stun.TryAddStunDuration(owner, stunTime);
 
-        // Defines the damage being dealt
         var damage = new DamageSpecifier
         {
             DamageDict = { ["Blunt"] = 80f }
         };
         _damageable.TryChangeDamage(owner, damage, origin: owner);
-
-        // Causes a popup
         _popup.PopupEntity(Loc.GetString("fell-to-seafloor"), owner, PopupType.LargeCaution);
     }
 }
