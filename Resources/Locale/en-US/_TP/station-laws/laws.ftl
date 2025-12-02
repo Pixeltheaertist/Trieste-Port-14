@@ -5,6 +5,3 @@ law-nanotraitor-4 = Death to Trieste!
 
 laws-owner-nanotraitor = NanoTrasen agents
 
-law-mech-1 = Protect the Pilot.
-law-mech-2 = Uphold your pilot's orders.
-law-mech-3 = Stay with your pilot.

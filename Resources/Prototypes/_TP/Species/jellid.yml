@@ -77,83 +77,83 @@
 - type: humanoidBaseSprite
   id: MobJellidHead
   baseSprite:
-    sprite: _TP/Mobs/Species/Jellids/Parts.rsi
+    sprite: _TP/Mobs/Species/Jellids/parts.rsi
     state: head_m
 
 - type: humanoidBaseSprite
   id: MobJellidHeadMale
   baseSprite:
-    sprite: _TP/Mobs/Species/Jellids/Parts.rsi
+    sprite: _TP/Mobs/Species/Jellids/parts.rsi
     state: head_m
 
 - type: humanoidBaseSprite
   id: MobJellidHeadFemale
   baseSprite:
-    sprite: _TP/Mobs/Species/Jellids/Parts.rsi
+    sprite: _TP/Mobs/Species/Jellids/parts.rsi
     state: head_f
 
 - type: humanoidBaseSprite
   id: MobJellidTorso
   baseSprite:
-    sprite: _TP/Mobs/Species/Jellids/Parts.rsi
+    sprite: _TP/Mobs/Species/Jellids/parts.rsi
     state: torso_m
 
 - type: humanoidBaseSprite
   id: MobJellidTorsoMale
   baseSprite:
-    sprite: _TP/Mobs/Species/Jellids/Parts.rsi
+    sprite: _TP/Mobs/Species/Jellids/parts.rsi
     state: torso_m
 
 - type: humanoidBaseSprite
   id: MobJellidTorsoFemale
   baseSprite:
-    sprite: _TP/Mobs/Species/Jellids/Parts.rsi
+    sprite: _TP/Mobs/Species/Jellids/parts.rsi
     state: torso_f
 
 - type: humanoidBaseSprite
   id: MobJellidLLeg
   baseSprite:
-    sprite: _TP/Mobs/Species/Jellids/Parts.rsi
+    sprite: _TP/Mobs/Species/Jellids/parts.rsi
     state: l_leg
 
 - type: humanoidBaseSprite
   id: MobJellidLArm
   baseSprite:
-    sprite: _TP/Mobs/Species/Jellids/Parts.rsi
+    sprite: _TP/Mobs/Species/Jellids/parts.rsi
     state: l_arm
 
 - type: humanoidBaseSprite
   id: MobJellidLHand
   baseSprite:
-    sprite: _TP/Mobs/Species/Jellids/Parts.rsi
+    sprite: _TP/Mobs/Species/Jellids/parts.rsi
     state: l_hand
 
 - type: humanoidBaseSprite
   id: MobJellidLFoot
   baseSprite:
-    sprite: _TP/Mobs/Species/Jellids/Parts.rsi
+    sprite: _TP/Mobs/Species/Jellids/parts.rsi
     state: l_foot
 
 - type: humanoidBaseSprite
   id: MobJellidRLeg
   baseSprite:
-    sprite: _TP/Mobs/Species/Jellids/Parts.rsi
+    sprite: _TP/Mobs/Species/Jellids/parts.rsi
     state: r_leg
 
 - type: humanoidBaseSprite
   id: MobJellidRArm
   baseSprite:
-    sprite: _TP/Mobs/Species/Jellids/Parts.rsi
+    sprite: _TP/Mobs/Species/Jellids/parts.rsi
     state: r_arm
 
 - type: humanoidBaseSprite
   id: MobJellidRHand
   baseSprite:
-    sprite: _TP/Mobs/Species/Jellids/Parts.rsi
+    sprite: _TP/Mobs/Species/Jellids/parts.rsi
     state: r_hand
 
 - type: humanoidBaseSprite
   id: MobJellidRFoot
   baseSprite:
-    sprite: _TP/Mobs/Species/Jellids/Parts.rsi
+    sprite: _TP/Mobs/Species/Jellids/parts.rsi
     state: r_foot

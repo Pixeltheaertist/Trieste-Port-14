@@ -109,7 +109,7 @@ public sealed class JellidDrawSystem : EntitySystem
         BatteryComponent internalBattery,
         float frameTime)
     {
-        var drainAmount = Math.Min(containerBattery.CurrentCharge, 0.5f * frameTime);
+        var drainAmount = Math.Min(containerBattery.CurrentCharge, 4f * frameTime);
 
         if (drainAmount <= 0)
             return;
