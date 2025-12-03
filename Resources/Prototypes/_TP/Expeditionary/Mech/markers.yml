@@ -1,0 +1,14 @@
+- type: entity
+  name: rotund stepfather spawner
+  id: TP14SpawnMechStepfather
+  suffix: Trieste, Expeditionary, Spawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _TP/Expeditionary/Mech/rotund.rsi
+      state: stepfather
+  - type: ConditionalSpawner
+    prototypes:
+    - TP14MechStepfather

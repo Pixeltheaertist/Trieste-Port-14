@@ -316,7 +316,7 @@
   category: Battery
   icons:
   - sprite: /Textures/Interface/Alerts/battery.rsi
-    state: battery1
+    state: battery-none # TP14 - Changed from "battery1"
   name: alerts-no-battery-name
   description: alerts-no-battery-desc
 

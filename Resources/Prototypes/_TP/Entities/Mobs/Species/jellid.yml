@@ -12,7 +12,7 @@
   abstract: true
   components:
   - type: Icon
-    sprite: Mobs/Species/Jellid/parts.rsi
+    sprite: _TP/Mobs/Species/Jellids/parts.rsi
     state: full
   - type: Body
     prototype: Jellid
