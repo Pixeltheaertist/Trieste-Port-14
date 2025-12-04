@@ -32,6 +32,10 @@ public sealed partial class HumanoidAppearanceComponent : Component
     [DataField, AutoNetworkedField]
     public int Age = 18;
 
+    // Starlight
+    [DataField, AutoNetworkedField]
+    public string CustomSpecieName = "";
+
     /// <summary>
     ///     Any custom base layers this humanoid might have. See:
     ///     limb transplants (potentially), robotic arms, etc.

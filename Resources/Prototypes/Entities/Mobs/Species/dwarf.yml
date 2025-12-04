@@ -1,6 +1,5 @@
 - type: entity
   save: false
-  name: Urist McHands The Dwarf
   parent: BaseMobSpeciesOrganic
   id: BaseMobDwarf
   abstract: true
@@ -8,7 +7,7 @@
   - type: Hunger
   - type: Thirst
   - type: Icon
-    sprite: Mobs/Species/Human/parts.rsi
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
     state: full
   - type: Respirator
     damage:
@@ -17,8 +16,6 @@
     damageRecovery:
       types:
         Asphyxiation: -1.0
-  - type: ScaleVisuals
-    scale: 1, 0.8
   - type: Body
     prototype: Dwarf
     requiredLegs: 2
@@ -28,7 +25,7 @@
     - id: FoodMeatHuman
       amount: 5
   - type: Fixtures
-    fixtures: # TODO: This needs a second fixture just for mob collisions.
+    fixtures:
       fix1:
         shape:
           !type:PhysShapeCircle
@@ -54,25 +51,51 @@
     hideLayersOnEquip:
     - Hair
     - Snout
+    markingsDisplacement:
+      Tail:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Species/Dwarves/displacement.rsi
+            state: tail
   - type: Inventory
-    femaleDisplacements:
+    speciesId: dwarf
+    displacements:
       jumpsuit:
         sizeMaps:
           32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: jumpsuit-female
+            sprite: _TP/Mobs/Species/Dwarves/displacement.rsi
+            state: jumpsuit
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Species/Dwarves/displacement.rsi
+            state: outerclothing
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Species/Dwarves/displacement.rsi
+            state: shoes
 
 - type: entity
   parent: BaseSpeciesDummy
   id: MobDwarfDummy
   categories: [ HideSpawnMenu ]
   components:
-  - type: ScaleVisuals
-    scale: 1, 0.8
   - type: Inventory
-    femaleDisplacements:
+    speciesId: dwarf
+    displacements:
       jumpsuit:
         sizeMaps:
           32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: jumpsuit-female
+            sprite: _TP/Mobs/Species/Dwarves/displacement.rsi
+            state: jumpsuit
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Species/Dwarves/displacement.rsi
+            state: outerclothing
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Species/Dwarves/displacement.rsi
+            state: shoes

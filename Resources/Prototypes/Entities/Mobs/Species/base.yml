@@ -89,7 +89,7 @@
       60: 0.7
       80: 0.5
   - type: Fixtures
-    fixtures: # TODO: This needs a second fixture just for mob collisions.
+    fixtures:
       fix1:
         shape:
           !type:PhysShapeCircle
@@ -352,5 +352,5 @@
     requiredLegs: 2
   - type: UserInterface
     interfaces:
-      enum.HumanoidMarkingModifierKey.Key: # sure, this can go here too
+      enum.HumanoidMarkingModifierKey.Key:
         type: HumanoidMarkingModifierBoundUserInterface

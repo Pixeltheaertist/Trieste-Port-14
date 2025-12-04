@@ -180,6 +180,14 @@ namespace Content.Client.Lobby.UI
 
             #endregion Name
 
+            // Starlight - Start
+            #region Custom Specie Name
+
+            CCustomSpecieNameEdit.OnTextChanged += args => { SetCustomSpecieName(args.Text); };
+
+            #endregion CustomSpecieName
+            // Starlight - End
+
             #region Appearance
 
             TabContainer.SetTabTitle(0, Loc.GetString("humanoid-profile-editor-appearance-tab"));
@@ -229,6 +237,7 @@ namespace Content.Client.Lobby.UI
                 SetSpecies(_species[args.Id].ID);
                 UpdateHairPickers();
                 OnSkinColorOnValueChanged();
+                UpdateCustomSpecieNameEdit();
             };
 
             #region Skin
@@ -759,6 +768,7 @@ namespace Content.Client.Lobby.UI
             JobOverride = null;
 
             UpdateNameEdit();
+            UpdateCustomSpecieNameEdit();
             UpdateFlavorTextEdit();
             UpdateSexControls();
             UpdateGenderControls();
@@ -1212,6 +1222,14 @@ namespace Content.Client.Lobby.UI
             _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, newName);
         }
 
+        // Starlight - Start
+        private void SetCustomSpecieName(string customName)
+        {
+            Profile = Profile?.WithCustomSpeciesName(customName);
+            SetDirty();
+        }
+        // Starlight - End
+
         private void SetSpawnPriority(SpawnPriorityPreference newSpawnPriority)
         {
             Profile = Profile?.WithSpawnPriorityPreference(newSpawnPriority);
@@ -1235,6 +1253,15 @@ namespace Content.Client.Lobby.UI
         {
             NameEdit.Text = Profile?.Name ?? "";
         }
+
+        // Starlight - Start
+        private void UpdateCustomSpecieNameEdit()
+        {
+            var species = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
+            CCustomSpecieNameEdit.Text = string.IsNullOrEmpty(Profile?.CustomSpeciesName) ? Loc.GetString(species.Name) : Profile.CustomSpeciesName;
+            CCustomSpecieName.Visible = species.CustomName;
+        }
+        // Starlight - End
 
         private void UpdateFlavorTextEdit()
         {

@@ -1,3 +1,4 @@
+using Content.Shared._TP.Entities.Customization.Systems;
 using Content.Shared.Body.Prototypes;
 using Content.Shared.Body.Systems;
 using Robust.Shared.Audio;
@@ -8,6 +9,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Body.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+//[Access(typeof(SharedBodySystem))]
 [Access(typeof(SharedBodySystem))]
 public sealed partial class BodyComponent : Component
 {

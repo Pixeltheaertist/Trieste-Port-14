@@ -77,10 +77,14 @@ namespace Content.Client.HealthAnalyzer.UI
                 : Loc.GetString("health-analyzer-window-entity-unknown-text"));
             NameLabel.SetMessage(name);
 
+            // !! STARLIGHT SPECIFIC !!
+            // Changed to include custom specie names
             SpeciesLabel.Text =
                 _entityManager.TryGetComponent<HumanoidAppearanceComponent>(target.Value,
                     out var humanoidAppearanceComponent)
-                    ? Loc.GetString(_prototypes.Index<SpeciesPrototype>(humanoidAppearanceComponent.Species).Name)
+                    ? humanoidAppearanceComponent.CustomSpecieName + " (" +
+                      Loc.GetString(_prototypes.Index(humanoidAppearanceComponent.Species).Name) + ")"
+                      ?? Loc.GetString(_prototypes.Index(humanoidAppearanceComponent.Species).Name)
                     : Loc.GetString("health-analyzer-window-entity-unknown-species-text");
 
             // Basic Diagnostic
