@@ -28,4 +28,5 @@ reagent-desc-exotic-algae = An algal strain altered by the effects of the anomal
 reagent-name-oxygenated-saline = oxygenated saline
 reagent-desc-oxygenated-saline = A saline solution mixed with an algal strain specialised in oxygen production.
 
-reagent-name-algae-feedstock = algae feedstock
+reagent-name-algal-feedstock = algal feedstock
+reagent-desc-algal-feedstock = A nutrient rich solution, purpose made for algae to consume

@@ -34,7 +34,7 @@
         amount: 1
       Oxygen:
         amount: 1
-      Nutriment:
+      AlgalFeedstock:
         amount: 3
   products:
       ActivatedAlgae: 5
@@ -48,7 +48,7 @@
         amount: 1
       Arithrazine:
         amount: 1
-      Nutriment:
+      AlgalFeedstock:
         amount: 1
   products:
       StabilisationAlgae: 2
@@ -62,7 +62,7 @@
         amount: 1
       Calordine:
         amount: 1
-      Nutriment:
+      AlgalFeedstock:
         amount: 1
       Carbon:
         amount: 1
@@ -78,7 +78,7 @@
         amount: 1
       Calcium:
         amount: 1
-      Nutriment:
+      AlgalFeedstock:
         amount: 1
       Plasma:
         amount: 1
@@ -98,7 +98,36 @@
         amount: 1
       Saline:
         amount: 1
-      Nutriment:
+      AlgalFeedstock:
         amount: 1
   products:
       OxygenatedSaline: 3
+
+- type: reaction
+  id: AlgalFeedstockNutriment
+  reactants:
+      Nutriment:
+        amount: 1
+      Carbon:
+        amount: 1
+      Hydrogen:
+        amount: 1
+  products:
+      AlgalFeedstock: 3  
+
+- type: reaction
+  id: AlgalFeedstockRaw
+  requiredMixerCategories:
+  - Incubation
+  reactants:
+      Carbon:
+        amount: 1
+      Oxygen:
+        amount: 1
+      Hydrogen:
+        amount: 2
+      DenaturedProteins:
+        amount: 1
+      SeaWater:
+        amount: 1
+  products:

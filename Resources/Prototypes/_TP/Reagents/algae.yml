@@ -201,3 +201,13 @@
             types:
               Bloodloss: -5
               Asphyxiation: -5
+
+
+- type: reagent
+  id: AlgalFeedstock
+  name: reagent-name-algal-feedstock
+  desc: reagent-desc-algal-feedstock
+  group: Protein
+  physicalDesc: reagent-physical-desc-nondescript
+  flavor: Sour
+  color: "#7ea863"
