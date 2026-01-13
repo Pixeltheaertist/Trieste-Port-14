@@ -21,8 +21,8 @@
     contents:
       - id: Ointment
         amount: 2
-      - id: PillCanisterKelotane
-      - id: PillCanisterDermaline
+      - id: PillCanisterRegenerationAlgae # TP14
+      - id: PillTricordrazine # TP14
 
 - type: entity
   id: MedkitBruteFilled
