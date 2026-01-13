@@ -202,7 +202,6 @@
               Bloodloss: -5
               Asphyxiation: -5
 
-
 - type: reagent
   id: AlgalFeedstock
   name: reagent-name-algal-feedstock
