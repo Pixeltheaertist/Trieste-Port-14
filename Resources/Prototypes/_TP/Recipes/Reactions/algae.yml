@@ -40,7 +40,7 @@
       ActivatedAlgae: 5
 
 - type: reaction
-  id: StabilisationAlgae
+  id: StabilizationAlgae
   requiredMixerCategories:
   - Incubation
   reactants:
@@ -51,7 +51,7 @@
       AlgalFeedstock:
         amount: 1
   products:
-      StabilisationAlgae: 2
+      StabilizationAlgae: 2
 
 - type: reaction
   id: ReinforcementAlgae
