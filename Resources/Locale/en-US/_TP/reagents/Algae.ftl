@@ -11,7 +11,7 @@ reagent-name-regeneration-algae = regeneration algae
 reagent-desc-regeneration-algae = An algal strain proficient in restoring lost flesh, especially burns. Function varies depending on body temperature
 
 reagent-name-destabilized-algae = destabilized algae
-reagent-desc-destabilized-algae = Caused by protien misfolding, this algal strain causes cancerous growths throughout the body
+reagent-desc-destabilized-algae = Caused by protien misfolding, this algal strain causes cancerous growths throughout the body. Formed when regeneration and reinforcement algae are metabolised at the same time.
 
 reagent-name-denatured = denatured proteins
 reagent-desc-denatured = Proteins cooked by high heat. Parts of this are potentially salvageable
