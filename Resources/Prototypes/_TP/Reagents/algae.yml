@@ -206,7 +206,7 @@
   id: AlgalFeedstock
   name: reagent-name-algal-feedstock
   desc: reagent-desc-algal-feedstock
-  group: Protein
+  group: Algae
   physicalDesc: reagent-physical-desc-nondescript
   flavor: Sour
   color: "#7ea863"

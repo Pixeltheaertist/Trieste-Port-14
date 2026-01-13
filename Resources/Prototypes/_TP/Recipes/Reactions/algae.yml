@@ -34,10 +34,12 @@
         amount: 1
       Oxygen:
         amount: 1
+      SeaWater:
+        amount: 1
       AlgalFeedstock:
         amount: 3
   products:
-      ActivatedAlgae: 5
+      ActivatedAlgae: 6
 
 - type: reaction
   id: StabilizationAlgae
@@ -131,3 +133,4 @@
       SeaWater:
         amount: 1
   products:
+      AlgalFeedstock: 3
