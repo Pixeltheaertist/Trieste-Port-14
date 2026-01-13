@@ -1,4 +1,4 @@
 - type: guideEntry
-  id: Proteins
-  name: guide-entry-proteins
-  text: "/ServerInfo/_TP/Guidebook/Medical/Proteins.xml"
+  id: AlgalStrains
+  name: guide-entry-algal-strains
+  text: "/ServerInfo/_TP/Guidebook/Medical/AlgalStrains.xml"

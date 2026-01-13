@@ -1,0 +1,58 @@
+<Document>
+
+  So sombody is really hurt? Lets do something about that!
+
+  # What is Algae?
+
+  Algae is a specialised medicine using modified strains of the algae naturally found on Trieste. Some important facts to know are:
+
+  1. They last a long time
+
+  2. In the right circumstances, they can heal extremely quickly
+
+  3. How effective they are is based upon body temp
+
+  ## How to grow algae
+
+  Benefical algal strains are primarily derived from activated algae.
+
+  To "Activate" algae, you will need some carbon, oxygen, feedstock, sea water (to get the algae in the first place), and a important ingredient called dormant organics.
+
+  To get dormant organics, heat a medicine up untill it denatures. I recommend inaprovaline
+
+  This will net you some denatured protiens, which you can run through a centrifuge for some basic elements and some dormant organics.
+
+  ## Now what?
+
+  Currently, there are 2 main ways to specialise the proteins
+
+  You can make either
+
+  <GuideReagentEmbed Reagent="ReinforcementAlgae"/>
+
+  or
+
+  <GuideReagentEmbed Reagent="RegenerationAlgae"/>
+
+  Reinforcement Algae deals with brute damage, while Regeneration deals with burn
+
+  Both of them heal all of said damage type, but with a very large booste depending on body temp
+
+  You can check the chemical guidebook to see exactly what the temps are
+
+  To get the correct temperatures, use
+
+  <GuideReagentEmbed Reagent="Calordine"/>
+  <GuideReagentEmbed Reagent="Cryodine"/>
+
+  (There is also a non-protein med that functions like this, made by combining lepo and lepa)
+
+  ## Anything else?
+
+  Algae can also be used to hyper-oxygenate saline, allowing it to deal with both bloodloss and asphyxiation
+
+  Also, dont mix the two protiens, or you will have to pull out the third protein specialization
+
+  <GuideReagentEmbed Reagent="StabilizationAlgae"/>
+
+</Document>

@@ -26,9 +26,9 @@ These medications tend to have specific use cases.
 
 # All Medications
 
-This is a list of -all- medications available, including both standard and protein based medications.
+This is a list of -all- medications available, including both standard and algae based medications.
 
 <GuideReagentGroupEmbed Group="Medicine"/>
-<GuideReagentGroupEmbed Group="Protein"/>
+<GuideReagentGroupEmbed Group="Algae"/>
 
 </Document>
