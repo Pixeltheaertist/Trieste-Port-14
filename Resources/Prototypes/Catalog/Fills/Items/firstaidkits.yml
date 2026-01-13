@@ -60,7 +60,7 @@
       - id: EmergencyOxygenTankFilled
       - id: EmergencyMedipen
       - id: SyringeInaprovaline
-      - id: PillCanisterDexalin
+      - id: PillCanisterOxygenatedSaline # TP14
 
 - type: entity
   id: MedkitRadiationFilled

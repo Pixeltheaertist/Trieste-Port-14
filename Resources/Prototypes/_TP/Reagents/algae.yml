@@ -1,7 +1,7 @@
 - type: reagent
-  id: ActivatedProtein
-  name: reagent-name-activated-protein
-  desc: reagent-desc-activated-protein
+  id: ActivatedAlgae
+  name: reagent-name-activated-algae
+  desc: reagent-desc-activated-algae
   group: Protein
   physicalDesc: reagent-physical-desc-cloudy
   color: "#8e949b"
@@ -20,9 +20,9 @@
             Radiation: -.1
 
 - type: reagent
-  id: StabilizationProtein
-  name: reagent-name-stabilisation-protein
-  desc: reagent-desc-stabilisation-protein
+  id: StabilizationAlgae
+  name: reagent-name-stabilisation-algae
+  desc: reagent-desc-stabilisation-algae
   group: Protein
   physicalDesc: reagent-physical-desc-cloudy
   color: "#8e949b"
@@ -36,9 +36,9 @@
             Cellular: -.5
 
 - type: reagent
-  id: HyperPlatelet
-  name: reagent-name-hyper-platelet
-  desc: reagent-desc-hyper-platelet
+  id: ReinforcementAlgae
+  name: reagent-name-reinforcement-algae
+  desc: reagent-desc-reinforcement-algae
   group: Protein
   physicalDesc: reagent-physical-desc-opaque
   color: "#f9e49d"
@@ -49,9 +49,9 @@
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
-          reagent: HyperMarrow
+          reagent: RegenerationAlgae
           min: .25
-        reagent: DestabilizedProtein
+        reagent: DestabilizedAlgae
         amount: 0.2
       - !type:HealthChange
         conditions:
@@ -83,9 +83,9 @@
             Slash: -1
 
 - type: reagent
-  id: HyperMarrow
-  name: reagent-name-hyper-marrow
-  desc: reagent-desc-hyper-marrow
+  id: RegenerationAlgae
+  name: reagent-name-regeneration-algae
+  desc: reagent-desc-regeneration-algae
   group: Protein
   physicalDesc: reagent-physical-desc-opaque
   color: "#ff6763"
@@ -96,9 +96,9 @@
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
-          reagent: HyperPlatelet
+          reagent: ReinforcementAlgae
           min: .25
-        reagent: DestabilizedProtein
+        reagent: DestabilizedAlgae
         amount: 0.2
       - !type:HealthChange
         conditions:
@@ -137,9 +137,9 @@
 
 
 - type: reagent
-  id: DestabilizedProtein
-  name: reagent-name-destabilized-protien
-  desc: reagent-desc-destabilized-protein
+  id: DestabilizedAlgae
+  name: reagent-name-destabilized-algae
+  desc: reagent-desc-destabilized-algae
   group: Protein
   physicalDesc: reagent-physical-desc-cloudy
   color: "#8e949b"
@@ -164,10 +164,10 @@
   physicalDesc: reagent-physical-desc-nondescript
 
 - type: reagent
-  id: DormantProtein
-  name: reagent-name-dormant-protein
+  id: DormantOrganics
+  name: reagent-name-dormant-organics
   group: Protein
-  desc: reagent-desc-dormant-protein
+  desc: reagent-desc-dormant-organics
   flavor: sour
   color: "#dfe1df"
   physicalDesc: reagent-physical-desc-nondescript

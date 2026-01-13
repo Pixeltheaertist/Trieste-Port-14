@@ -235,11 +235,11 @@
       weight: 4
     - id: CigaretteDylovene
       weight: 4
-    - id: CigaretteMarrow
+    - id: CigaretteRegeneration
       weight: 4
     - id: CigaretteArithrazine
       weight: 4
-    - id: CigarettePlatelet
+    - id: CigaretteReinforcement
       weight: 4
     - id: CigaretteOxygenated
       weight: 4
