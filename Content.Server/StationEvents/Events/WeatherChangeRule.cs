@@ -1,9 +1,36 @@
+using Content.Server.GameTicking.Rules.Components;
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
+using Robust.Shared.Map;
+using Robust.Shared.Random;
 using Content.Shared.Weather;
+using Content.Server._TP;
+using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Server.GameObjects;
+using Robust.Shared.Random;
+using Content.Server.Ghost;
+using Content.Server.Light.Components;
+using Content.Server.Chat.Systems;
+using Robust.Shared.Timing;
+using Content.Shared.TP14.Bell.Components;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
+using Content.Server.Audio;
+using Content.Server.Weather;
+using Content.Shared.Audio;
+using Content.Shared.GameTicking;
 using Content.Shared.Gravity;
+using Robust.Server.Player;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
+using Serilog;
+using Content.Server.Parallax;
+using Content.Shared.Parallax.Biomes;
+using Content.Shared.Parallax.Biomes.Layers;
+using Content.Shared.Parallax.Biomes.Markers;
+
 
 
 //Summary
@@ -15,106 +42,118 @@ using Robust.Shared.Prototypes;
 // The "SunlightColor" variable takes a hex code to indicate a specific color to bathe the platform in if "Sunlight" is enabled.
 //Summary
 
-namespace Content.Server.StationEvents.Events;
-
-public sealed class WeatherChangeRule : StationEventSystem<WeatherChangeRuleComponent>
+namespace Content.Server.StationEvents.Events
 {
-
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly SharedWeatherSystem _weather = default!;
-    [Dependency] private readonly IEntityManager _entManager = default!;
-
-
-    protected override void Started(EntityUid uid, WeatherChangeRuleComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
+    public sealed class WeatherChangeRule : StationEventSystem<WeatherChangeRuleComponent>
     {
-        base.Started(uid, comp, gameRule, args);
 
-        var query = EntityQueryEnumerator<WeatherComponent>();
-        while (query.MoveNext(out var weatherUid, out var weather))
+        [Dependency] private readonly GhostSystem _ghost = default!;
+        [Dependency] private readonly EntityLookupSystem _lookup = default!;
+        [Dependency] private readonly SharedGameTicker _gameTicker = default!;
+        [Dependency] private readonly SharedAudioSystem _audio = default!;
+        [Dependency] private readonly ServerGlobalSoundSystem _sound = default!;
+        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+        [Dependency] private readonly IRobustRandom _random = default!;
+        [Dependency] private readonly SharedWeatherSystem _weather = default!;
+        [Dependency] private readonly IEntityManager _entManager = default!;
+        [Dependency] private readonly IPlayerManager _playerManager = default!;
+
+
+        protected override void Started(EntityUid uid, WeatherChangeRuleComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
         {
-            if (!_prototypeManager.TryIndex<WeatherPrototype>(comp.TargetWeather, out var targetWeather))
+            base.Started(uid, comp, gameRule, args);
+
+            foreach (var weather in EntityManager.EntityQuery<WeatherComponent>())
             {
-                Log.Error("Weather prototype not found!");
-                return;
+                var target = weather.Owner;
+                if (!_prototypeManager.TryIndex<WeatherPrototype>(comp.TargetWeather, out var targetWeather))
+                {
+                    Log.Error("Weather prototype not found!");
+                    return;
+                }
+
+                var mapId = Transform(target).MapID;
+                var mapUid = Transform(target).MapUid;
+
+                _weather.SetWeather(mapId, targetWeather, TimeSpan.FromMinutes(99999));
+
+                if (comp.Sunlight)
+                {
+                    if (mapUid.HasValue)
+                    {
+                        var realMapUid = mapUid.Value;
+
+                        // EnsureComp<MapGridComponent>(realMapUid);
+                        EnsureComp<MetaDataComponent>(realMapUid);
+
+
+                        if (!TryComp<MetaDataComponent>(mapUid, out var metadata))
+                        {
+                            Log.Error("Metadata component not found");
+                            return;
+                        }
+
+                        var light = EnsureComp<MapLightComponent>(realMapUid);
+                        light.AmbientLightColor = comp.SunlightColor;
+
+                        Dirty(realMapUid, light, metadata);
+                    }
+                }
+
+                Log.Info("Weather set");
             }
 
-            var mapId = Transform(weatherUid).MapID;
-            var mapUid = Transform(weatherUid).MapUid;
-
-            _weather.SetWeather(mapId, targetWeather, TimeSpan.FromMinutes(99999));
-
-            if (comp.Sunlight)
+            if (!comp.Lightning)
             {
-                if (mapUid.HasValue)
+                 foreach (var thunder in EntityManager.EntityQuery<LightningMarkerComponent>())
                 {
-                    var realMapUid = mapUid.Value;
-
-                    // EnsureComp<MapGridComponent>(realMapUid);
-                    EnsureComp<MetaDataComponent>(realMapUid);
-
-
-                    if (!TryComp<MetaDataComponent>(mapUid, out var metadata))
-                    {
-                        Log.Error("Metadata component not found");
-                        return;
-                    }
-
-                    var light = EnsureComp<MapLightComponent>(realMapUid);
-                    light.AmbientLightColor = comp.SunlightColor;
-
-                    Dirty(realMapUid, light, metadata);
+                      thunder.Cleared = true;
                 }
             }
 
-            Log.Info("Weather set");
         }
 
-        if (!comp.Lightning)
+        protected override void Ended(EntityUid uid, WeatherChangeRuleComponent comp, GameRuleComponent gameRule, GameRuleEndedEvent args)
         {
-            foreach (var thunder in EntityManager.EntityQuery<LightningMarkerComponent>())
+            base.Ended(uid, comp, gameRule, args);
+
+            foreach (var weather in EntityManager.EntityQuery<WeatherComponent>())
             {
-                thunder.Cleared = true;
+                var target = weather.Owner;
+                if (!_prototypeManager.TryIndex<WeatherPrototype>(comp.ReturnWeather, out var returnWeather))
+                {
+                    Log.Error("Weather prototype not found!");
+                    return;
+                }
+                var state = new WeatherState();
+                var data = new WeatherData();
+
+                var mapId = Transform(target).MapID;
+                var mapUid = Transform(target).MapUid;
+
+                _weather.SetWeather(mapId, returnWeather, TimeSpan.FromMinutes(99999));
+                Log.Info("Weather set");
+
+                if (comp.Sunlight)
+                {
+                    if (mapUid.HasValue)
+                    {
+                        var realMapUid = mapUid.Value;
+                        _entManager.RemoveComponent<MapLightComponent>(realMapUid);
+                        // _entManager.RemoveComponent<MapGridComponent>(realMapUid); // THIS WAS A BAD IDEA OH GOD
+                        // Dirty(mapUid, light, metadata);
+                    }
+                }
             }
-        }
-    }
 
-    protected override void Ended(EntityUid uid, WeatherChangeRuleComponent comp, GameRuleComponent gameRule, GameRuleEndedEvent args)
-    {
-        base.Ended(uid, comp, gameRule, args);
-
-        var query = EntityQueryEnumerator<WeatherComponent>();
-        while (query.MoveNext(out var weatherUid, out var weather))
-        {
-            if (!_prototypeManager.TryIndex<WeatherPrototype>(comp.ReturnWeather, out var returnWeather))
+            if (!comp.Lightning)
             {
-                Log.Error("Weather prototype not found!");
-                return;
+                 foreach (var thunder in EntityManager.EntityQuery<LightningMarkerComponent>())
+                {
+                    thunder.Cleared = false;
+                }
             }
 
-            var mapId = Transform(weatherUid).MapID;
-            var mapUid = Transform(weatherUid).MapUid;
-
-            _weather.SetWeather(mapId, returnWeather, TimeSpan.FromMinutes(99999));
-            Log.Info("Weather set");
-
-            if (!comp.Sunlight)
-                continue;
-
-            if (!mapUid.HasValue)
-                continue;
-
-            var realMapUid = mapUid.Value;
-            _entManager.RemoveComponent<MapLightComponent>(realMapUid);
-            // _entManager.RemoveComponent<MapGridComponent>(realMapUid); // THIS WAS A BAD IDEA OH GOD <- lol, lmao even
-            // Dirty(mapUid, light, metadata);
-        }
-
-        if (!comp.Lightning)
-        {
-            foreach (var thunder in EntityManager.EntityQuery<LightningMarkerComponent>())
-            {
-                thunder.Cleared = false;
-            }
         }
     }
 }

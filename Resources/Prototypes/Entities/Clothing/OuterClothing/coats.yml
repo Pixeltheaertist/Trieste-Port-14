@@ -11,10 +11,6 @@
   - type: TemperatureProtection
     heatingCoefficient: 1.1
     coolingCoefficient: 0.1
-  - type: Tag
-    tags:
-    - ScurretWearable
-    - MonkeyWearable
 
 - type: entity
   parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, ClothingOuterArmorBase]

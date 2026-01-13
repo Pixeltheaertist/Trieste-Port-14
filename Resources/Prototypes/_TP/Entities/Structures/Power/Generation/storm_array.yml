@@ -41,7 +41,7 @@
   - type: Temperature
     heatDamageThreshold: 500
     coldDamageThreshold: -9999 # Doesn't take damage from cold
-    currentTemperature: 243.15
+    currentTemperature: 72.680 # Based on testing, seems to be around 72.68 when cooled.
     specificHeat: 42
     coldDamage:
       types:

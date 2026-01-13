@@ -13,7 +13,7 @@
     range: 10
     volume: -3
     sound:
-      path: /Audio/_TP/Effects/Shuttle/atmospheric_thruster.ogg
+      path: /Audio/_TP/Effects/atmospheric_thruster.ogg
   - type: Thruster
     damage:
       types:
@@ -67,7 +67,7 @@
     range: 15
     volume: -2
     sound:
-      path: /Audio/_TP/Effects/Shuttle/atmospheric_thruster.ogg
+      path: /Audio/_TP/Effects/atmospheric_thruster.ogg
   - type: Thruster
     damage:
       types:

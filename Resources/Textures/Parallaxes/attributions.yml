@@ -1,3 +1,13 @@
+- files: ["land.png"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Made by Pixeltheaertist for Trieste Port"
+  source: "PixeltheAertist"
+
+- files: ["Trieste.png"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Made by Pixeltheaertist for Trieste Port"
+  source: "PixeltheAertist"
+
 - files: ["planet.png"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "by Adipemdragon for tgstation, taken at commit 3839e860a7f3102b1488285d3319f61bbfe1fa51 from parallax.dmi"
@@ -12,6 +22,11 @@
   license: "CC-BY-NC-SA-3.0"
   copyright: "made by brainfood1183 (github) for ss14"
   source: "https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Parallaxes/gas_giant.png"
+
+- files: ["Asteroids.png"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Blanked by Pixeltheaertist for Trieste Port"
+  source: "nothin"
 
 - files: ["core_planet.png"]
   license: "CC-BY-NC-SA-3.0"

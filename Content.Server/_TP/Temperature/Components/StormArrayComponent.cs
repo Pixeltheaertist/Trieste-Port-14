@@ -10,25 +10,26 @@ public sealed partial class StormArrayComponent : Component
     #region Announcements
 
     [DataField]
-    public bool FirstAnnouncement;
+    public bool FirstAnnouncement = false;
 
     [DataField]
-    public bool SecondAnnouncement;
+    public bool SecondAnnouncement = false;
 
     [DataField]
-    public bool ThirdAnnouncement;
+    public bool ThirdAnnouncement = false;
 
     [DataField]
-    public bool FourthAnnouncement;
+    public bool FourthAnnouncement = false;
 
     [DataField]
-    public bool FifthAnnouncement;
-
-    public string StatusMessage;
+    public bool FifthAnnouncement = false;
 
     #endregion
 
     #region Cooling
+
+    [DataField]
+    public int MaxCoolingRate = 50000;
 
     [DataField]
     public float CoolingEfficiency = 0.8F;

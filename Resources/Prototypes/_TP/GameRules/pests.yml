@@ -38,13 +38,13 @@
     startAnnouncement: whale-migration
     startAudio:
       path: /Audio/Effects/whale_groan.ogg
-    earliestStart: 5
+    earliestStart: 20
     minimumPlayers: 0
     weight: 6
-    duration: 100
+    duration: 300
   - type: MassHallucinationsRule
     minTimeBetweenIncidents: 10
-    maxTimeBetweenIncidents: 60
+    maxTimeBetweenIncidents: 40
     maxSoundDistance: 7
     sweetwaterOnly: false # Makes it so that mass hallucination sounds can only be heard on Sweetwater, (ex. ocean-specific sounds)
     # SWEETWATER ONLY IS SO INSANELY FUCKED DO NOT USE IT FOR ANYTHING HOLY MOLY

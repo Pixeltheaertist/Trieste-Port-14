@@ -3,6 +3,7 @@
   id: MeatSteak
   start: start
   graph:
+
   - node: start
     edges:
     - to: meat steak
@@ -11,15 +12,9 @@
         sound: /Audio/Effects/sizzle.ogg
       steps:
       - minTemperature: 335
-    - to: patty # TP14
-      steps:
-      - tool: Rolling
-        doAfter: 5
 
   - node: meat steak
     entity: FoodMeatCooked
-  - node: patty
-    entity: FoodMeatPatty
 
 # penguin steak
 - type: constructionGraph
@@ -224,15 +219,8 @@
         sound: /Audio/Effects/sizzle.ogg
       steps:
       - minTemperature: 335
-    - to: sausage # TP14
-      steps:
-      - tool: Rolling
-        doAfter: 2
-
   - node: cutlet
     entity: FoodMeatCutletCooked
-  - node: sausage
-    entity: TP14FoodMeatSausage
 
 - type: constructionGraph
   id: BearCutlet

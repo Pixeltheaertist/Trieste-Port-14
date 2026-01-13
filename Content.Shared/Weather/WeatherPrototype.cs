@@ -20,11 +20,4 @@ public sealed partial class WeatherPrototype : IPrototype
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("sound")]
     public SoundSpecifier? Sound;
-
-    /// <summary>
-    ///     If true, this will ignore "inside" markers.
-    ///     Trieste specific.
-    /// </summary>
-    [DataField]
-    public bool IgnoreBlockers;
 }

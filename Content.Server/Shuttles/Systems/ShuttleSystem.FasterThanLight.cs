@@ -35,9 +35,9 @@ public sealed partial class ShuttleSystem
      * This is a way to move a shuttle from one location to another, via an intermediate map for fanciness.
      */
 
-    private readonly SoundSpecifier _startupSound = new SoundPathSpecifier("/Audio/_TP/Effects/Shuttle/hyperspace_begin.ogg")
+    private readonly SoundSpecifier _startupSound = new SoundPathSpecifier("/Audio/Effects/Shuttle/hyperspace_begin.ogg")
     {
-        Params = AudioParams.Default.WithVolume(-10f),
+        Params = AudioParams.Default.WithVolume(-5f),
     };
 
      private readonly SoundSpecifier _startupSoundShuttle = new SoundPathSpecifier("/Audio/Effects/Shuttle/hyperspace_begin_shuttle.ogg")
@@ -45,9 +45,9 @@ public sealed partial class ShuttleSystem
         Params = AudioParams.Default.WithVolume(-5f),
     };
 
-    private readonly SoundSpecifier _arrivalSound = new SoundPathSpecifier("/Audio/_TP/Effects/Shuttle/hyperspace_end.ogg")
+    private readonly SoundSpecifier _arrivalSound = new SoundPathSpecifier("/Audio/Effects/Shuttle/hyperspace_end.ogg")
     {
-        Params = AudioParams.Default.WithVolume(-10f),
+        Params = AudioParams.Default.WithVolume(-5f),
     };
 
      private readonly SoundSpecifier _arrivalSoundShuttle = new SoundPathSpecifier("/Audio/Effects/Shuttle/hyperspace_end_shuttle.ogg")

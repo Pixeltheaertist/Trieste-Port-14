@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.4.0
   forkId: ""
   forkVersion: ""
-  time: 11/16/2025 21:32:44
-  entityCount: 8452
+  time: 11/15/2025 02:42:00
+  entityCount: 8450
 maps:
 - 1
 grids:
@@ -2726,6 +2726,7 @@ entities:
       enabled: True
     - type: NavMap
     - type: BellPlatform
+    - type: ImplicitRoof
 - proto: ActionToggleInternals
   entities:
   - uid: 1030
@@ -3016,7 +3017,7 @@ entities:
       pos: 11.5,11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -67239.555
+      secondsUntilStateChange: -66072.87
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -3174,7 +3175,7 @@ entities:
       pos: 18.5,23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -106355.35
+      secondsUntilStateChange: -105188.664
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -3327,7 +3328,7 @@ entities:
       pos: 5.5,-20.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -88191.86
+      secondsUntilStateChange: -87025.17
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -3497,7 +3498,7 @@ entities:
       pos: 20.5,6.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -82937.09
+      secondsUntilStateChange: -81770.41
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -3918,10 +3919,10 @@ entities:
       parent: 2
 - proto: Autolathe
   entities:
-  - uid: 8380
+  - uid: 3733
     components:
     - type: Transform
-      pos: -9.5,21.5
+      pos: -10.5,21.5
       parent: 2
 - proto: BanjoInstrument
   entities:
@@ -3992,18 +3993,6 @@ entities:
     - type: Transform
       pos: -6.378418,-17.04861
       parent: 2
-  - uid: 5254
-    components:
-    - type: Transform
-      parent: 2425
-    - type: Physics
-      canCollide: False
-  - uid: 8385
-    components:
-    - type: Transform
-      parent: 8384
-    - type: Physics
-      canCollide: False
 - proto: Bed
   entities:
   - uid: 215
@@ -13511,10 +13500,10 @@ entities:
     - type: InsideEntityStorage
 - proto: CargoMailTeleporter
   entities:
-  - uid: 326
+  - uid: 2296
     components:
     - type: Transform
-      pos: -10.5,21.5
+      pos: -11.5,21.5
       parent: 2
 - proto: CargoPalletBuy
   entities:
@@ -19570,11 +19559,6 @@ entities:
     - type: Transform
       pos: -2.5,7.5
       parent: 2
-  - uid: 8387
-    components:
-    - type: Transform
-      pos: -9.5,22.5
-      parent: 2
 - proto: CrateNPCChicken
   entities:
   - uid: 1208
@@ -21583,6 +21567,13 @@ entities:
     - type: Transform
       pos: 37.356934,25.774197
       parent: 2
+- proto: DrinkCoffeeJug
+  entities:
+  - uid: 8471
+    components:
+    - type: Transform
+      pos: -12.455849,21.61298
+      parent: 2
 - proto: DrinkColaCan
   entities:
   - uid: 589
@@ -21614,27 +21605,29 @@ entities:
     - type: Transform
       pos: 16.436148,6.9524026
       parent: 2
+  - uid: 8469
+    components:
+    - type: Transform
+      pos: -10.3532715,26.638847
+      parent: 2
+  - uid: 8470
+    components:
+    - type: Transform
+      pos: -11.5876465,27.435722
+      parent: 2
+- proto: DrinkMilkCarton
+  entities:
+  - uid: 8472
+    components:
+    - type: Transform
+      pos: -12.643349,21.784855
+      parent: 2
 - proto: DrinkMugMetal
   entities:
   - uid: 327
     components:
     - type: Transform
       pos: -0.08272934,-27.348064
-      parent: 2
-  - uid: 3733
-    components:
-    - type: Transform
-      pos: -10.403881,27.477673
-      parent: 2
-  - uid: 3766
-    components:
-    - type: Transform
-      pos: -11.606232,27.579453
-      parent: 2
-  - uid: 4651
-    components:
-    - type: Transform
-      pos: -10.463505,26.538265
       parent: 2
   - uid: 6968
     components:
@@ -21897,8 +21890,6 @@ entities:
     - type: Transform
       pos: 39.5,-21.5
       parent: 2
-    - type: FaxMachine
-      name: GenPop
   - uid: 4980
     components:
     - type: Transform
@@ -22416,12 +22407,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 4656
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -17.5,18.5
-      parent: 2
   - uid: 6227
     components:
     - type: Transform
@@ -23663,6 +23648,20 @@ entities:
     - type: Transform
       pos: 2.4101753,-29.62965
       parent: 2
+- proto: HeatExchanger
+  entities:
+  - uid: 326
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -17.5,18.5
+      parent: 2
+  - uid: 5254
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -16.5,17.5
+      parent: 2
 - proto: HighSecArmoryLocked
   entities:
   - uid: 2951
@@ -24262,24 +24261,6 @@ entities:
     - type: Transform
       pos: 44.5,-0.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        beakerSlot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 5254
-        inputContainer: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
   - uid: 2807
     components:
     - type: Transform
@@ -24290,29 +24271,6 @@ entities:
     - type: Transform
       pos: -6.5,-13.5
       parent: 2
-  - uid: 8384
-    components:
-    - type: Transform
-      pos: -11.5,21.5
-      parent: 2
-    - type: ContainerContainer
-      containers:
-        beakerSlot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 8385
-        inputContainer: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: Lamp
   entities:
   - uid: 6060
@@ -27909,6 +27867,11 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -17.5,13.5
+      parent: 2
+  - uid: 3766
+    components:
+    - type: Transform
+      pos: -9.5,21.5
       parent: 2
   - uid: 5258
     components:
@@ -33666,6 +33629,11 @@ entities:
     - type: Transform
       pos: 1.4845047,-23.465715
       parent: 2
+  - uid: 4651
+    components:
+    - type: Transform
+      pos: -9.38995,21.640535
+      parent: 2
   - uid: 5901
     components:
     - type: Transform
@@ -33685,6 +33653,11 @@ entities:
     - type: Transform
       pos: 41.6403,-31.443443
       parent: 2
+  - uid: 3708
+    components:
+    - type: Transform
+      pos: -9.487991,21.6058
+      parent: 2
   - uid: 4306
     components:
     - type: Transform
@@ -33701,6 +33674,11 @@ entities:
     components:
     - type: Transform
       pos: 1.6345749,-23.490892
+      parent: 2
+  - uid: 4656
+    components:
+    - type: Transform
+      pos: -9.587963,21.484177
       parent: 2
   - uid: 7943
     components:
@@ -35879,11 +35857,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 47.5,1.5
       parent: 2
-  - uid: 2296
-    components:
-    - type: Transform
-      pos: -11.5,21.5
-      parent: 2
   - uid: 2927
     components:
     - type: Transform
@@ -36625,22 +36598,12 @@ entities:
     - type: Transform
       pos: 47.01392,0.7792969
       parent: 2
-  - uid: 8386
-    components:
-    - type: Transform
-      pos: -13.476051,22.182014
-      parent: 2
 - proto: TP14BoxCoffeeFilter
   entities:
   - uid: 2881
     components:
     - type: Transform
       pos: -0.9986,-27.203823
-      parent: 2
-  - uid: 3708
-    components:
-    - type: Transform
-      pos: -12.8088875,21.706947
       parent: 2
   - uid: 8373
     components:
@@ -36694,33 +36657,6 @@ entities:
     components:
     - type: Transform
       pos: 47.5,1.5
-      parent: 2
-    - type: ContainerContainer
-      containers:
-        Beaker: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        Basket: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        Filter: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-  - uid: 8381
-    components:
-    - type: Transform
-      pos: -12.5,21.5
       parent: 2
     - type: ContainerContainer
       containers:
@@ -50805,7 +50741,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -63456.434
+      secondsUntilStateChange: -62289.746
       state: Opening
     - type: Airlock
       autoClose: False

@@ -3,6 +3,21 @@
   copyright: "Veritius#2351 (257233913951289344) on discord / @Veritius on GitHub"
   source: "https://github.com/Veritius"
 
+- files: ["trieste-nt.webp"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Conflee / Twitter & Discord & Bluesky"
+  source: "https://bsky.app/profile/conflee.bsky.social"
+
+- files: ["triesteflashstorm.webp"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "PixeltheAertist"
+  source: "My own two hands"
+
+- files: ["SweetwaterCam.webp"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "PixeltheAertist"
+  source: "My own two hands"
+
 - files: ["warden.webp", "pharmacy.webp"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "Solbusaur#4343 (220208697429852160) on discord"

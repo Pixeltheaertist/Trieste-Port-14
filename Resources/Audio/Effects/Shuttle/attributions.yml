@@ -1,4 +1,16 @@
 - files:
+  - hyperspace_begin.ogg
+  - hyperspace_end.ogg
+  copyright: 'Sound effects from Pixabay, edited together by PixeltheAertist'
+  license: CC-BY-SA-3.0
+  source:
+
+- files: [hyperspace_progress.ogg]
+  copyright: 'Sound effects from Pixabay, edited together by PixeltheAertist'
+  license: CC-BY-SA-3.0
+  source:
+
+- files:
   - radar_ping.ogg
   copyright: User unfa from freesound.org Remixed to mono and .ogg by metalgearsloth.
   license: CC0-1.0

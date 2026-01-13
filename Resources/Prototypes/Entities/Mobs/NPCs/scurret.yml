@@ -15,14 +15,11 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       sprite: Mobs/Animals/scurret/scurret.rsi
       state: scurret
-    - map: [ "jumpsuit" ] # Trieste: Fix jumpsuits showing over outerClothing
     - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
       color: "#ffffff"
       sprite: Objects/Misc/handcuffs.rsi
       state: body-overlay-2
       visible: false
-    - map: [ "id" ] # Trieste: Fix PDA's showing over outerClothing
-    - map: [ "outerClothing" ] # Trieste: Fix jumpsuits showing over outerClothing
   # Custom visuals for dead scurrets; be aware these do not work well with equipment.
   - type: DamageStateVisuals
     states:

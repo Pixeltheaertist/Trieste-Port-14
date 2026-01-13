@@ -159,7 +159,6 @@
     params:
       loop: true
       volume: -100
-  ignoreBlockers: true
 
 - type: weather
   id: Storm

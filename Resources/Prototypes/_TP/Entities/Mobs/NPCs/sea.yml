@@ -355,37 +355,12 @@
     baseWalkSpeed : 0
 
 - type: entity
-  parent: [ SimpleSpaceMobBase ]
+  parent: [ SimpleSpaceMobBase, MobMothroach ]
   id: TP14MobSeaBunny
   suffix: Trieste, Sea
   name: sea bunny
   description: An adorable bunny-like creature that lives in the sea.
   components:
-  - type: GhostRole
-    makeSentient: true
-    allowSpeech: true
-    allowMovement: true
-    name: ghost-role-information-sea-bunny-name
-    description: ghost-role-information-sea-bunny-description
-    rules: ghost-role-information-freeagent-rules
-    mindRoles:
-    - MindRoleGhostRoleFreeAgentHarmless
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.2
-        density: 120
-        mask:
-        - SmallMobMask
-        layer:
-        - SmallMobLayer
-  - type: GhostTakeoverAvailable
-  - type: Speech
-    speechVerb: SmallMob
-    speechSounds: Squeak
-    allowedEmotes: ['Squeak']
   - type: Body
     prototype: SeaCreature
   - type: Sprite
@@ -400,8 +375,6 @@
     noMovementLayers:
       movement:
         state: sea-rabbit-idle
-  - type: Item
-    size: Normal
   - type: Clothing
     quickEquip: false
     sprite: _TP/Mobs/Animals/sea-bunny.rsi
@@ -417,72 +390,6 @@
         Base: sea-rabbit-dead
       Dead:
         Base: sea-rabbit-dead
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      40: Critical
-      60: Dead
-  - type: MovementSpeedModifier
-    baseWalkSpeed : 2.5
-    baseSprintSpeed : 4
-    weightlessAcceleration: 1.5
-    weightlessFriction: 1
-    baseWeightlessModifier: 1
-  - type: Damageable
-    damageContainer: Biological
-  - type: Bloodstream
-    bloodReagent: SeaWater
-  - type: Respirator
-    damage:
-      types:
-        Asphyxiation: 0.5
-    damageRecovery:
-      types:
-        Asphyxiation: -0.5
-  - type: CombatMode
-  - type: Butcherable
-    spawned:
-    - id: FoodMeat
-      amount: 1
-  - type: Extractable
-    grindableSolutionName: food
-  - type: Vocal
-    sounds:
-      Male: Squeak
-      Female: Squeak
-      Unsexed: Squeak
-    wilhelmProbability: 0.001
-  - type: MobPrice
-    price: 200
-  - type: Tag
-    tags:
-    - Trash
-    - CannotSuicide
-    - VimPilot
-  - type: CanEscapeInventory
-  - type: NpcFactionMember
-    factions:
-    - Mouse
-  - type: TypingIndicator
-    proto: moth
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
-        damage: 60
-      behaviors:
-      - !type:GibBehavior
-        recursive: false
-  - type: FireVisuals
-    sprite: Mobs/Effects/onfire.rsi
-    normalState: Mouse_burning
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
-  - type: InventorySlots
   - type: Inventory
     speciesId: hamster
     templateId: hamster
@@ -514,37 +421,12 @@
             state: neck
 
 - type: entity
-  parent: [ SimpleSpaceMobBase ]
+  parent: [ SimpleSpaceMobBase, MobMothroach ]
   id: TP14MobLeafSheep
   suffix: Trieste, Sea
   name: leaf sheep
   description: Similar to sea bunnies, but have beautiful leaf-like growths on their backs.
   components:
-  - type: GhostRole
-    makeSentient: true
-    allowSpeech: true
-    allowMovement: true
-    name: ghost-role-information-leaf-sheep-name
-    description: ghost-role-information-leaf-sheep-description
-    rules: ghost-role-information-freeagent-rules
-    mindRoles:
-    - MindRoleGhostRoleFreeAgentHarmless
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.2
-        density: 120
-        mask:
-        - SmallMobMask
-        layer:
-        - SmallMobLayer
-  - type: GhostTakeoverAvailable
-  - type: Speech
-    speechVerb: SmallMob
-    speechSounds: Squeak
-    allowedEmotes: ['Squeak']
   - type: Body
     prototype: SeaCreature
   - type: Sprite
@@ -559,11 +441,9 @@
     noMovementLayers:
       movement:
         state: leaf-sheep-idle
-  - type: Item
-    size: Normal
   - type: Clothing
     quickEquip: false
-    sprite: _TP/Mobs/Animals/LeafSheep/normal.rsi
+    sprite: _TP/Mobs/Animals/LeafSHeep/normal.rsi
     equippedPrefix: 0
     slots:
     - HEAD
@@ -576,72 +456,6 @@
         Base: leaf-sheep-dead
       Dead:
         Base: leaf-sheep-dead
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      40: Critical
-      60: Dead
-  - type: MovementSpeedModifier
-    baseWalkSpeed : 2.5
-    baseSprintSpeed : 4
-    weightlessAcceleration: 1.5
-    weightlessFriction: 1
-    baseWeightlessModifier: 1
-  - type: Damageable
-    damageContainer: Biological
-  - type: Bloodstream
-    bloodReagent: SeaWater
-  - type: Respirator
-    damage:
-      types:
-        Asphyxiation: 0.5
-    damageRecovery:
-      types:
-        Asphyxiation: -0.5
-  - type: CombatMode
-  - type: Butcherable
-    spawned:
-    - id: FoodMeat
-      amount: 1
-  - type: Extractable
-    grindableSolutionName: food
-  - type: Vocal
-    sounds:
-      Male: Squeak
-      Female: Squeak
-      Unsexed: Squeak
-    wilhelmProbability: 0.001
-  - type: MobPrice
-    price: 200
-  - type: Tag
-    tags:
-    - Trash
-    - CannotSuicide
-    - VimPilot
-  - type: CanEscapeInventory
-  - type: NpcFactionMember
-    factions:
-    - Mouse
-  - type: TypingIndicator
-    proto: moth
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
-        damage: 60
-      behaviors:
-      - !type:GibBehavior
-        recursive: false
-  - type: FireVisuals
-    sprite: Mobs/Effects/onfire.rsi
-    normalState: Mouse_burning
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
-  - type: InventorySlots
   - type: Inventory
     speciesId: hamster
     templateId: hamster

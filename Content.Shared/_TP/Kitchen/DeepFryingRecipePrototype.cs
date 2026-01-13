@@ -15,9 +15,6 @@ public sealed partial class DeepFryingRecipePrototype : IPrototype
     [DataField("name")]
     private string _name = string.Empty;
 
-    [DataField]
-    public string Group = "Other";
-
     [DataField("time")]
     public uint CookTime { get; private set; } = 5;
 

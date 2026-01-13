@@ -48,7 +48,6 @@
     - id: CrateFunSharkPlushieBulk
     - id: CrateCandles
     - id: CrateFunArtSupplies
-    - id: TP14CrateFilledDresses # TP14
     - id: CrateFunFoamGuns
       weight: 0.01
 

@@ -40,11 +40,7 @@ public abstract class SharedWeatherSystem : EntitySystem
         }
     }
 
-    public bool CanWeatherAffect(EntityUid uid,
-        MapGridComponent grid,
-        TileRef tileRef,
-        RoofComponent? roofComp = null,
-        bool ignoreBlockers = false)
+    public bool CanWeatherAffect(EntityUid uid, MapGridComponent grid, TileRef tileRef, RoofComponent? roofComp = null)
     {
         if (tileRef.Tile.IsEmpty)
             return true;
@@ -52,31 +48,35 @@ public abstract class SharedWeatherSystem : EntitySystem
         if (Resolve(uid, ref roofComp, false) && _roof.IsRooved((uid, grid, roofComp), tileRef.GridIndices))
             return false;
 
-        var tileDef = (ContentTileDefinition)_tileDefManager[tileRef.Tile.TypeId];
+        var tileDef = (ContentTileDefinition) _tileDefManager[tileRef.Tile.TypeId];
 
         if (!tileDef.Weather)
             return false;
 
-        // This check is Trieste specific.
-        if (!ignoreBlockers)
-        {
-            var anchoredEntities = _mapSystem.GetAnchoredEntitiesEnumerator(uid, grid, tileRef.GridIndices);
+        var anchoredEntities = _mapSystem.GetAnchoredEntitiesEnumerator(uid, grid, tileRef.GridIndices);
 
-            while (anchoredEntities.MoveNext(out var ent))
-            {
-                if (_blockQuery.HasComponent(ent.Value))
-                    return false;
-            }
+        while (anchoredEntities.MoveNext(out var ent))
+        {
+            if (_blockQuery.HasComponent(ent.Value))
+                return false;
         }
 
         return true;
+
     }
 
     public float GetPercent(WeatherData component, EntityUid mapUid)
     {
+        // Safety check for an invalid start time
+        if (component.StartTime == TimeSpan.Zero || component.StartTime == default)
+            return 0f;
 
         var pauseTime = _metadata.GetPauseTime(mapUid);
         var elapsed = Timing.CurTime - (component.StartTime + pauseTime);
+
+        // Additional safety for a negative elapsed time
+        if (elapsed < TimeSpan.Zero)
+            return 0f;
 
         var duration = component.Duration;
         var remaining = duration - elapsed;

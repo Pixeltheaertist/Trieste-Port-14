@@ -18,7 +18,6 @@
   result: FoodMeatChickenFried
   time: 30
   ingredient: FoodMeatChicken
-  group: TP14-Deep-Fry
 
 - type: deepFryingRecipe
   id: TP14RecipeFries
@@ -26,7 +25,6 @@
   result: FoodMealFries
   time: 15
   ingredient: FoodPotato
-  group: TP14-Deep-Fry
 
 - type: deepFryingRecipe
   id: TP14RecipeCarrotFries
@@ -34,7 +32,6 @@
   result: FoodMealFriesCarrot
   time: 15
   ingredient: FoodCarrot
-  group: TP14-Deep-Fry
 
 - type: deepFryingRecipe
   id: TP14RecipeFishFingers
@@ -42,7 +39,6 @@
   result: TP14FoodMeatFishFingers
   time: 15
   ingredient: TP14FoodMeatFish
-  group: TP14-Deep-Fry
 
 - type: deepFryingRecipe
   id: TP14RecipeCheeseSticks
@@ -50,7 +46,6 @@
   result: TP14FoodCheeseSticks
   time: 15
   ingredient: FoodCheeseSlice
-  group: TP14-Deep-Fry
 
 - type: deepFryingRecipe
   id: TP14RecipeOnionRings
@@ -58,7 +53,6 @@
   result: FoodOnionRings
   time: 15
   ingredient: FoodOnionSlice
-  group: TP14-Deep-Fry
 
 - type: deepFryingRecipe
   id: TP14RecipeChickenNugget
@@ -66,67 +60,3 @@
   result: FoodBakedNugget
   time: 20
   ingredient: FoodMeatChickenCutlet
-  group: TP14-Deep-Fry
-
-- type: deepFryingRecipe
-  id: TP14RecipeCorndog
-  name: corndog recipe
-  result: TP14FoodCorndog
-  time: 20
-  ingredient: TP14FoodMeatSausage
-  group: TP14-Deep-Fry
-
-- type: deepFryingRecipe
-  id: TP14RecipeFriedIceCreamFromSandwich
-  name: fried ice-cream recipe
-  result: TP14FoodFriedIceCream
-  time: 10
-  ingredient: FoodFrozenSandwich
-  group: TP14-Deep-Fry
-
-- type: deepFryingRecipe
-  id: TP14RecipeFriedIceCreamFromStrawberrySandwich
-  name: fried ice-cream recipe
-  result: TP14FoodFriedIceCream
-  time: 10
-  ingredient: FoodFrozenSandwichStrawberry
-  group: TP14-Deep-Fry
-
-- type: deepFryingRecipe
-  id: TP14RecipeFriedIceCreamFromFreezy
-  name: fried ice-cream recipe
-  result: TP14FoodFriedIceCream
-  time: 10
-  ingredient: FoodFrozenFreezy
-  group: TP14-Deep-Fry
-
-- type: deepFryingRecipe
-  id: TP14RecipeFriedIceCreamFromSundae
-  name: fried ice-cream recipe
-  result: TP14FoodFriedIceCream
-  time: 10
-  ingredient: FoodFrozenSundae
-  group: TP14-Deep-Fry
-
-- type: deepFryingRecipe
-  id: TP14RecipeFriedIceCreamFromCornuto
-  name: fried ice-cream recipe
-  result: TP14FoodFriedIceCream
-  time: 10
-  ingredient: FoodFrozenCornuto
-  group: TP14-Deep-Fry
-
-- type: deepFryingRecipe
-  id: TP14RecipeFunnelCake
-  name: funnel cake recipe
-  result: TP14FoodFunnelCake
-  time: 30
-  ingredient: FoodCakeBatter
-  group: TP14-Deep-Fry
-
-- type: deepFryingRecipe
-  id: TP14RecipeOnionGoggles
-  name: onion-goggles recipe
-  result: ClothingEyesHudFriedOnion
-  time: 15
-  ingredient: ClothingEyesHudBeer
