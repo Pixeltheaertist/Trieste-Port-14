@@ -2,9 +2,9 @@
   id: ActivatedAlgae
   name: reagent-name-activated-algae
   desc: reagent-desc-activated-algae
-  group: Protein
+  group: Algae
   physicalDesc: reagent-physical-desc-cloudy
-  color: "#8e949b"
+  color: "#9ff09c"
   metabolisms:
     Medicine:
       metabolismRate: .05
@@ -23,9 +23,9 @@
   id: StabilizationAlgae
   name: reagent-name-stabilisation-algae
   desc: reagent-desc-stabilisation-algae
-  group: Protein
+  group: Algae
   physicalDesc: reagent-physical-desc-cloudy
-  color: "#8e949b"
+  color: "#0ff2bd"
   metabolisms:
     Medicine:
       metabolismRate: .05
@@ -39,9 +39,9 @@
   id: ReinforcementAlgae
   name: reagent-name-reinforcement-algae
   desc: reagent-desc-reinforcement-algae
-  group: Protein
+  group: Algae
   physicalDesc: reagent-physical-desc-opaque
-  color: "#f9e49d"
+  color: "#06cc21"
   metabolisms:
     Medicine:
       metabolismRate: .05
@@ -86,9 +86,9 @@
   id: RegenerationAlgae
   name: reagent-name-regeneration-algae
   desc: reagent-desc-regeneration-algae
-  group: Protein
+  group: Algae
   physicalDesc: reagent-physical-desc-opaque
-  color: "#ff6763"
+  color: "#ace00d"
   metabolisms:
     Medicine:
       metabolismRate: .05
@@ -140,9 +140,9 @@
   id: DestabilizedAlgae
   name: reagent-name-destabilized-algae
   desc: reagent-desc-destabilized-algae
-  group: Protein
+  group: Algae
   physicalDesc: reagent-physical-desc-cloudy
-  color: "#8e949b"
+  color: "#455c44"
   metabolisms:
     Medicine:
       metabolismRate: .05
@@ -166,10 +166,10 @@
 - type: reagent
   id: DormantOrganics
   name: reagent-name-dormant-organics
-  group: Protein
+  group: Algae
   desc: reagent-desc-dormant-organics
   flavor: sour
-  color: "#dfe1df"
+  color: "#313830"
   physicalDesc: reagent-physical-desc-nondescript
 
 - type: reagent
