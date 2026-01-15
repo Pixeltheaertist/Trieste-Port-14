@@ -12,6 +12,7 @@ using Content.Shared.Popups;
 using Content.Shared.Revenant.Components;
 using Content.Shared.Salvage.Fulton;
 using Content.Shared.Shuttles.Components;
+using Content.Shared.Silicons.StationAi;
 using Content.Shared.Stunnable;
 using Robust.Shared.Map;
 
@@ -142,7 +143,8 @@ public sealed class FallSystem : EntitySystem
                || HasComp<NoFTLComponent>(owner)
                || HasComp<CanMoveInAirComponent>(owner)
                || HasComp<RevenantComponent>(owner)
-               || HasComp<JumpingComponent>(owner);
+               || HasComp<JumpingComponent>(owner)
+               || HasComp<StationAiHeldComponent>(owner);
     }
 
     private void HandleFall(EntityUid owner, Components.FallSystemComponent component)

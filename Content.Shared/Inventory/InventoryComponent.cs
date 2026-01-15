@@ -1,4 +1,5 @@
-﻿using Content.Shared.DisplacementMap;
+﻿using Content.Shared._TP.Entities.Customization.Systems;
+using Content.Shared.DisplacementMap;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -6,7 +7,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Inventory;
 
 [RegisterComponent, NetworkedComponent]
-[Access(typeof(InventorySystem))]
+[Access(typeof(InventorySystem), typeof(SharedBodyTransformSystem))]
 [AutoGenerateComponentState(true)]
 public sealed partial class InventoryComponent : Component
 {
