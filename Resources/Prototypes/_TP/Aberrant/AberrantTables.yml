@@ -12,3 +12,7 @@
   id: aberrantEffectsHigh
   weights:
     AberrantEffectHallucination: 1
+
+- type: ComponentTable
+  table: !type:NestedSelector
+    tableId: aberrantEffctsLowCompT
