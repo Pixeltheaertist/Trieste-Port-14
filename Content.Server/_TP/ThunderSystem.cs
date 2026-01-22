@@ -13,6 +13,8 @@ using Robust.Shared.Configuration;
 // This creates the effect of flashing lightning. This also has a "storm mode", in which the thunder frequency gets increased and becomes a brighter prototype.
 // It also rolls a 30% chance during storms to strike with a damaging prototype, which explodes and EMPs things near the strike zone.
 // LightningMarkers can be modified to include the normal, storm, and strike prototypes. More lightning markers in an area = more general lightning.
+// LightningMarkers themselves hold what prototype to use during normal lightning, as well as flash storms. They also have a field for what sound their lightning should make.
+// The sound works by spawning an invisible marker at the origin point of the lightning, which exists for an extra .8 seconds after the lightning fades, allowing it to fully play the lightning sound effect without being cut off through deletion.
 //Summary
 
 
@@ -73,28 +75,29 @@ public sealed class ThunderSystem : EntitySystem
                 // Keep calculating coordinates until valid ones are found
                 do
                 {
-                     offset = _random.NextVector2(ThunderRange);
-                     newCoords = coords.Offset(offset);
+                    offset = _random.NextVector2(ThunderRange);
+                    newCoords = coords.Offset(offset);
+                } while (_entityManager.EntityQuery<UnderRoofComponent>()
+                         .Any(marker =>
+                             Vector2.DistanceSquared(Transform(marker.Owner).Coordinates.Position, newCoords.Position) <
+                             4.5f));
+                // Set default as thunder flash (no strike)
+
+                if (entity.Cleared) // If the storm is currently cleared, no lightning
+                {
+                    return;
                 }
-              while (_entityManager.EntityQuery<UnderRoofComponent>().Any(marker =>
-              Vector2.DistanceSquared(Transform(marker.Owner).Coordinates.Position, newCoords.Position) < 4.5f));
-              // Set default as thunder flash (no strike)
 
-              if (entity.Cleared) // If the storm is currently cleared, no lightning
-              {
-                  return;
-              }
-
-              if (entity.StormMode) // If marker is currently in a "Flash Storm"
-              {
-                  LightningType = entity.StormStrikePrototype;
-                  var strikeChance = _random.Prob(0.3f); // Roll a =30% chance for lightning to strike
-                  if (strikeChance)
-                  {
-                      LightningType = entity.StormLightningPrototype;
-                      Log.Error("striking lightning fr fr");// Change lightning prototype to a strike prototype
-                  }
-              }
+                if (entity.StormMode) // If marker is currently in a "Flash Storm"
+                {
+                    LightningType = entity.StormStrikePrototype;
+                    var strikeChance = _random.Prob(0.3f); // Roll a =30% chance for lightning to strike
+                    if (strikeChance)
+                    {
+                        LightningType = entity.StormLightningPrototype;
+                        //Log.Error("striking lightning fr fr");// Change lightning prototype to a strike prototype
+                    }
+                }
 
                 Spawn(LightningType, newCoords); // Spawn lightning prototype
             }

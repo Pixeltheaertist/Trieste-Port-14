@@ -1,0 +1,40 @@
+- type: loadoutEffectGroup
+  id: WaterBreather
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - JellidPerson
+
+- type: loadout
+  id: LoadoutSpeciesJellidWater
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WaterBreather
+  equipment:
+    suitstorage: TP14WaterTankFilled
+
+- type: loadout
+  id: EmergencyWater
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WaterBreather
+  storage:
+    back:
+    - BoxSurvivalJellid
+
+- type: loadout
+  id: TP14LoadoutSpeciesBreathToolNeck
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: TP14EffectSpeciesMask
+  equipment:
+    mask: ClothingMaskBreathNeck
+
+# Breath Tool On Face
+- type: loadout
+  id: TP14LoadoutSpeciesBreathTool
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesMask
+  equipment:
+    mask: TP14ClothingMaskAir

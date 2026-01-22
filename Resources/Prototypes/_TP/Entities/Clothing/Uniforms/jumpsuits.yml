@@ -1,0 +1,125 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformJumpsuitWearyClownOveralls
+  suffix: Trieste, Uniform, Clown
+  name: weary clown overalls
+  description: Honk....
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/weary_overalls.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/weary_overalls.rsi
+  - type: Tag
+    tags:
+    - ClownSuit
+    - WhitelistChameleon
+
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformJumpsuitScience
+  suffix: Trieste, Uniform, Science
+  name: mad science jumpsuit
+  description: NOT SCIENTIFICALLY POSSIBLE!!
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/TP14_science.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/TP14_science.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ ClothingUniformBase, BaseSecurityContraband ]
+  id: TP14ClothingUniformHardyOveralls
+  suffix: Trieste, Uniform, Security
+  name: hardy overalls
+  description: A dockworker's outfit co-opted into part of a SEC uniform, made of warm rugged material it can stand up to the cold and rain.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/hardy_overalls.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/hardy_overalls.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformHydroponicsOveralls
+  suffix: Trieste, Uniform, Service
+  name: hydroponics overalls
+  description: A warm sweater and a pair of rugged overalls, what else could you need?
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/hydro_overalls.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/hydro_overalls.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformLieutenantTanktop
+  suffix: Trieste, Uniform, Security
+  name: Tanktop and Khakis
+  description: A practical clothing option, commonly used by, but not exclusive to SEC.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/lieutenant_tanktop.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/lieutenant_tanktop.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformPierrot
+  suffix: Trieste, Uniform, Mime
+  name: pierrot jumpsuit
+  description: A tragic figure's uniform, indicative of heartbreak.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/pierrot.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/pierrot.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformMedical
+  suffix: Trieste, Uniform, Medical
+  name: medical jumpsuit
+  description: An old hand me down medical jumpsuit, at least it's clean.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/TP14_medical.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/TP14_medical.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformMedicalbloody
+  suffix: Trieste, Uniform, Medical
+  name: bloody medical jumpsuit
+  description: An old hand me down medical jumpsuit, years of blood, slime, sap, and hemolymph have left their mark on this jumpsuit.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/TP14_medical_bloody.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/TP14_medical_bloody.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon

@@ -86,7 +86,8 @@ public sealed partial class ResearchSystem
 
         var names = GetServerNames();
         var state = new ResearchClientBoundInterfaceState(names.Length, names,
-            GetServerIds(), serverComponent?.Id ?? -1);
+            GetServerIds(),
+            serverComponent?.Id ?? -1);
 
         _uiSystem.SetUiState(uid, ResearchClientUiKey.Key, state);
     }

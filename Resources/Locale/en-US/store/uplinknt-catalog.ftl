@@ -1,5 +1,5 @@
 uplink-pistol-N1984-name = N1984
-uplink-pistol-N1984-desc = A Nanotrasen-Brand pistol commonly seen on CentCom officers. Uses .45 magnum.
+uplink-pistol-N1984-desc = A Nanotrasen-Brand pistol commonly seen on CentComm officers. Uses .45 magnum.
 
 uplink-pistol-Mk58-name = MK58
 uplink-pistol-Mk58-desc = A standard NT pistol issued to security officers. Warranty expires in 3211. Uses .35 auto.
@@ -102,3 +102,9 @@ uplink-energybomb-desc = A newer prototype, capable of producing a atom-sized re
 
 uplink-lawboard-name = NanoTraitor Lawboard
 uplink-lawboard-desc = A specially printed law-board, capable of overwriting an AIs laws and convert them to your side.
+
+uplink-NTknuckleduster-name = Nanotrasen knuckle dusters
+uplink-NTknuckleduster-desc = Standard issue Nanotrasen knuckle dusters, given out to NT agents and Quartermasters alike
+
+uplink-NTvape-name = Nanotrasen Branded Vape
+uplink-NTvape-desc = A Nanotrasen branded vape, perfect for hotboxing sweetwater while completing objectives.

@@ -1,0 +1,59 @@
+- type: entity
+  name: fish spawner
+  id: SpawnMobFish
+  parent: MarkerBase
+  suffix: Trieste, Spawner, Sea
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: fish-0
+      sprite: _TP/Mobs/Animals/fish.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - TP14MobFish
+
+- type: entity
+  name: drifter spawner
+  id: SpawnMobDrifter
+  parent: MarkerBase
+  suffix: Trieste, Spawner, Drifter, Sea
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: drifter
+      sprite: Mobs/Aliens/drifters.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - TP14MobDrifter
+
+- type: entity
+  parent: MarkerBase
+  id: TP14SpawnMobSeaBunny
+  suffix: Trieste, Spawner, Sea
+  name: sea bunny spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: sea-rabbit-idle
+      sprite: _TP/Mobs/Animals/sea-bunny.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - TP14MobSeaBunny
+
+- type: entity
+  parent: MarkerBase
+  id: TP14SpawnMobLeafSheep
+  suffix: Trieste, Spawner, Sea
+  name: leaf sheep spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: leaf-sheep-idle
+      sprite: _TP/Mobs/Animals/LeafSheep/normal.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - TP14MobLeafSheep

@@ -1,14 +1,13 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.Components;
 using Content.Server.Stunnable;
-using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
 using Content.Server.Damage.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.IgnitionSource;
 using Content.Shared.Interaction;
@@ -23,6 +22,8 @@ using Content.Shared.Timing;
 using Content.Shared.Toggleable;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.FixedPoint;
+using Content.Shared.Hands;
+using Content.Shared.Temperature.Components;
 using Robust.Server.Audio;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
@@ -30,6 +31,10 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
 using Content.Shared.Hands.Components;
 using Content.Server.Chemistry.EntitySystems;
+using Content.Shared._TP.Jellids;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Tag;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Atmos.EntitySystems
 {
@@ -50,6 +55,8 @@ namespace Content.Server.Atmos.EntitySystems
         [Dependency] private readonly UseDelaySystem _useDelay = default!;
         [Dependency] private readonly AudioSystem _audio = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
+        [Dependency] private readonly SharedHandsSystem _hands = default!;
+        [Dependency] private readonly TagSystem _tag = default!;
 
         private EntityQuery<InventoryComponent> _inventoryQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
@@ -120,7 +127,7 @@ namespace Content.Server.Atmos.EntitySystems
 
             var otherEnt = args.OtherEntity;
 
-            if (!EntityManager.TryGetComponent(otherEnt, out FlammableComponent? flammable))
+            if (!TryComp(otherEnt, out FlammableComponent? flammable))
                 return;
 
             //Only ignite when the colliding fixture is projectile or ignition.
@@ -283,7 +290,7 @@ namespace Content.Server.Atmos.EntitySystems
             // This is intended so that matches & candles can re-use code for un-shaded layers on in-hand sprites.
             // However, this could cause conflicts if something is ACTUALLY both a toggleable light and flammable.
             // if that ever happens, then fire visuals will need to implement their own in-hand sprite management.
-            _appearance.SetData(uid, ToggleableLightVisuals.Enabled, flammable.OnFire, appearance);
+            _appearance.SetData(uid, ToggleableVisuals.Enabled, flammable.OnFire, appearance);
         }
 
         public void AdjustFireStacks(EntityUid uid, float relativeFireStacks, FlammableComponent? flammable = null, bool ignite = false)
@@ -395,7 +402,7 @@ namespace Content.Server.Atmos.EntitySystems
             flammable.Resisting = true;
 
             _popup.PopupEntity(Loc.GetString("flammable-component-resist-message"), uid, uid);
-            _stunSystem.TryParalyze(uid, TimeSpan.FromSeconds(2f), true);
+            _stunSystem.TryUpdateParalyzeDuration(uid, TimeSpan.FromSeconds(2f));
 
             // TODO FLAMMABLE: Make this not use TimerComponent...
             uid.SpawnTimer(2000, () =>
@@ -405,6 +412,9 @@ namespace Content.Server.Atmos.EntitySystems
                 UpdateAppearance(uid, flammable);
             });
         }
+
+        // TP14 Specific
+        private static readonly ProtoId<TagPrototype> FireproofTag = "PreventsFire";
 
         public override void Update(float frameTime)
         {
@@ -472,9 +482,14 @@ namespace Content.Server.Atmos.EntitySystems
                     if (_inventoryQuery.TryComp(uid, out var inv))
                         _inventory.RelayEvent((uid, inv), ref ev);
 
-                    _damageableSystem.TryChangeDamage(uid, flammable.Damage * flammable.FireStacks * ev.Multiplier, interruptsDoAfters: false);
+                    _damageableSystem.TryChangeDamage(uid,
+                        flammable.Damage * flammable.FireStacks * ev.Multiplier,
+                        interruptsDoAfters: false);
 
-                    AdjustFireStacks(uid, flammable.FirestackFade * (flammable.Resisting ? 10f : 1f), flammable, flammable.OnFire);
+                    AdjustFireStacks(uid,
+                        flammable.FirestackFade * (flammable.Resisting ? 10f : 1f),
+                        flammable,
+                        flammable.OnFire);
                 }
                 else
                 {
@@ -483,29 +498,42 @@ namespace Content.Server.Atmos.EntitySystems
             }
 
             var playerQuery = EntityQueryEnumerator<HandsComponent>();
-        while (playerQuery.MoveNext(out var playerUid, out var handsComponent))
-       {
-           if (!HasComp<JellidComponent>(playerUid))
-              {
-                  continue;
-              }
+            while (playerQuery.MoveNext(out var playerUid, out var handsComponent))
+            {
+                if (!HasComp<JellidComponent>(playerUid))
+                {
+                    continue;
+                }
 
-           if (handsComponent.ActiveHand?.HeldEntity is not EntityUid heldItem)
-               {
-                   continue;
-               }
+                if (_inventory.TryGetSlotEntity(playerUid, "gloves", out var glovesUid))
+                {
+                    if (!HasComp<TagComponent>(glovesUid))
+                    {
+                        continue;
+                    }
 
-           if (!TryComp<FlammableComponent>(heldItem, out var flammable))
-              {
-            continue;
-              }
+                    if (_tag.HasTag(glovesUid.Value, FireproofTag))
+                    {
+                        continue;
+                    }
+                }
 
-        AdjustFireStacks(heldItem, flammable.FireStacks, flammable);
-        if (flammable.FireStacks >= 0)
-        {
-            Ignite(heldItem, heldItem, flammable, playerUid);
-        }
-      }
+                if (_hands.GetActiveItem(playerUid) is not { } heldItem)
+                {
+                    continue;
+                }
+
+                if (!TryComp<FlammableComponent>(heldItem, out var flammable))
+                {
+                    continue;
+                }
+
+                AdjustFireStacks(heldItem, flammable.FireStacks, flammable);
+                if (flammable.FireStacks >= 0)
+                {
+                    Ignite(heldItem, heldItem, flammable, playerUid);
+                }
+            }
         }
     }
 }

@@ -2,12 +2,13 @@
   name: InsideMarker
   id: TP14MarkerInside
   parent: MarkerBase
-  suffix: blocks rain
+  suffix: Trieste, Inside, Blocks-Weather
   components:
   - type: Sprite
     sprite: Markers/inside.rsi
     state: default
   - type: UnderRoof
+  - type: IsRoof
   - type: BlockWeather
   placement:
     mode: SnapgridCenter
@@ -16,9 +17,24 @@
   name: LightingMarker
   id: TP14MarkerLightning
   parent: MarkerBase
-  suffix: center of lightning
+  suffix: Trieste, Lightning
   components:
   - type: Sprite
     sprite: Markers/inside.rsi
     state: default
   - type: LightningMarker
+
+- type: entity
+  name: WhisperMarker
+  id: TP14MarkerWhispers
+  parent: MarkerBase
+  suffix: Trieste, Trench
+  components:
+  - type: Sprite
+    sprite: Markers/inside.rsi
+    state: default
+  - type: AmbientSound
+    range: 10
+    volume: -2
+    sound:
+      path: /Audio/Ambience/anomaly_scary.ogg

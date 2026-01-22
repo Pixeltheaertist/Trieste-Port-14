@@ -36,8 +36,6 @@ job-name-bartender = Bartender
 job-name-passenger = Citizen
 job-name-frontiersman = Frontiersman
 job-name-salvagespec = Expeditioneer
-job-name-basintech = Basin Technician
-job-name-pilot = Pilot
 job-name-qm = Harbormaster
 job-name-station-ai = P.A.I.L
 job-name-cargotech = Cargo Technician
@@ -52,6 +50,7 @@ job-name-ertjanitor = ERT Janitor
 job-name-boxer = Boxer
 job-name-zookeeper = Zookeeper
 job-name-visitor = Visitor
+job-name-cluwne = Cluwne
 
 # unused jobs
 # these are required for the agent ID job icon tooltips
@@ -111,7 +110,7 @@ JobQuartermaster = Harbormaster
 JobReporter = Journalist
 JobResearchAssistant = Research Assistant
 JobResearchDirector = Research Director
-JobSalvageSpecialist = Expeditioneer
+JobSalvageSpecialist = Salvage Specialist
 JobScientist = Scientist
 JobSecurityCadet = Security Cadet
 JobSecurityOfficer = Security Officer

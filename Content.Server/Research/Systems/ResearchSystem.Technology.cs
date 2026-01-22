@@ -2,6 +2,7 @@ using Content.Shared.Database;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
 using JetBrains.Annotations;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Research.Systems;
 
@@ -73,7 +74,7 @@ public sealed partial class ResearchSystem
         if (!Resolve(client, ref component, ref clientDatabase, false))
             return false;
 
-        if (!TryGetClientServer(client, out var serverEnt, out _, component))
+        if (!TryGetClientServer(client, out var serverEnt, out var serverDatabase, component))
             return false;
 
         if (!CanServerUnlockTechnology(client, prototype, clientDatabase, component))
@@ -83,6 +84,11 @@ public sealed partial class ResearchSystem
         TrySetMainDiscipline(prototype, serverEnt.Value);
         ModifyServerPoints(serverEnt.Value, -prototype.Cost);
         UpdateTechnologyCards(serverEnt.Value);
+
+        // !! TRIESTE SPECIFIC !!
+        // Hopefully, marking these as dirty will fix the client not updating properly.
+        Dirty(serverEnt.Value, serverDatabase);
+        Dirty(client, clientDatabase);
 
         _adminLog.Add(LogType.Action, LogImpact.Medium,
             $"{ToPrettyString(user):player} unlocked {prototype.ID} (discipline: {prototype.Discipline}, tier: {prototype.Tier}) at {ToPrettyString(client)}, for server {ToPrettyString(serverEnt.Value)}.");
@@ -165,9 +171,9 @@ public sealed partial class ResearchSystem
             return;
         component.MainDiscipline = null;
         component.CurrentTechnologyCards = new List<string>();
-        component.SupportedDisciplines = new List<string>();
-        component.UnlockedTechnologies = new List<string>();
-        component.UnlockedRecipes = new List<string>();
+        component.SupportedDisciplines = new List<ProtoId<TechDisciplinePrototype>>();
+        component.UnlockedTechnologies = new List<ProtoId<TechnologyPrototype>>();
+        component.UnlockedRecipes = new List<ProtoId<LatheRecipePrototype>>();
         Dirty(uid, component);
     }
 }

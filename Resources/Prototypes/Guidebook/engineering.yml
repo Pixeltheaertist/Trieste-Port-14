@@ -9,7 +9,7 @@
   - ShuttleCraft
   - Networking
   - Flooding
-  - TheArtifact
+  - TheArtifact # TP
 
 - type: guideEntry
   id: Construction
@@ -32,6 +32,7 @@
   children:
   - AirlockSecurity
 
+# TP
 - type: guideEntry
   id: TheArtifact
   name: guide-entry-the-artifact
@@ -76,6 +77,7 @@
   - GasCanisters
   - Thermomachines
   - GasCondensing
+  - GasRecycling
 
 - type: guideEntry
   id: Pipes
@@ -132,6 +134,7 @@
   - SignalValve
   - PneumaticValve
   - PassiveGate
+  - PressureRegulator
 
 - type: guideEntry
   id: ManualValve
@@ -154,6 +157,11 @@
   text: "/ServerInfo/Guidebook/Engineering/PassiveGate.xml"
 
 - type: guideEntry
+  id: PressureRegulator
+  name: guide-entry-ressureregulator
+  text: "/ServerInfo/Guidebook/Engineering/PressureRegulator.xml"
+
+- type: guideEntry
   id: MixingAndFiltering
   name: guide-entry-mixingandfiltering
   text: "/ServerInfo/Guidebook/Engineering/MixingAndFiltering.xml"
@@ -174,6 +182,11 @@
   id: GasCondensing
   name: guide-entry-gascondensing
   text: "/ServerInfo/Guidebook/Engineering/GasCondensing.xml"
+
+- type: guideEntry
+  id: GasRecycling
+  name: guide-entry-gasrecycling
+  text: "/ServerInfo/Guidebook/Engineering/GasRecycling.xml"
 
 - type: guideEntry
   id: Radiators
@@ -236,6 +249,7 @@
   children:
   - Fires
   - Spacing
+  - DeltaPressure
 
 - type: guideEntry
   id: Fires
@@ -246,6 +260,11 @@
   id: Spacing
   name: guide-entry-spacing
   text: "/ServerInfo/Guidebook/Engineering/Spacing.xml"
+
+- type: guideEntry
+  id: DeltaPressure
+  name: guide-entry-deltapressure
+  text: "/ServerInfo/Guidebook/Engineering/DeltaPressure.xml"
 
 - type: guideEntry
   id: AtmosTools
@@ -321,7 +340,7 @@
 - type: guideEntry
   id: StormArray
   name: guide-entry-storm-array
-  text: "/ServerInfo/Guidebook/Engineering/StormArray.xml"
+  text: "/ServerInfo/_TP/Guidebook/Engineering/StormArray.xml"
 
 - type: guideEntry
   id: AME

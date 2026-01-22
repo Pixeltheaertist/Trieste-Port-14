@@ -30,24 +30,25 @@
     prototypes: [ TheThingyStartingGear ]
     roleLoadout: [ RoleSurvivalEVA ]
   - type: Devourer
-    foodPreference: Humanoid
-    shouldStoreDevoured: true # Their stomach is bluespace IDK, we don't want players getting round removed
+    foodPreferenceWhitelist:
+      components:
+      - HumanoidAppearance
     chemical: Ichor
     healRate: 10.0
-    whitelist:
+    stomachStorageWhitelist:
       components:
       - MobState
   - type: ActionGun
     action: ActionThingySpit
     gunProto: ThingyAcidSpit # Blinds targets temporarily. Not enough to permanently blind them unless mixed with something else.
   - type: Hunger
-    actualDecayRate: 0.5
+    baseDecayRate: 0.5
     starvingSlowdownModifier: 2 # Getting desperate for prey, over-exerting it's host
     starvationDamage:
       types:
         Slash: 3 # Upon starving, begins panicking and damaging the host
   - type: Thirst
-    actualDecayRate: 0.5 # Uses the Bloodsucker metabolism, meaning it can only drink blood for thirst quenching.
+    baseDecayRate: 0.5 # Uses the Bloodsucker metabolism, meaning it can only drink blood for thirst quenching.
   - type: ItemCreator
     action: ActionCreateThingySpine
     charge: 0
@@ -105,22 +106,24 @@
   name: "[color=green]Acid Spit[/color]"
   description: Spit a blinding glob of burning acid at your prey!
   components:
-  - type: WorldTargetAction
-    event: !type:ActionGunShootEvent
+  - type: Action
     priority: 2
+    itemIconStyle: BigAction
+  - type: TargetAction
     checkCanAccess: false
     range: 0
-    itemIconStyle: BigAction
+  - type: WorldTargetAction
+    event: !type:ActionGunShootEvent
 
 - type: entity
   id: ActionCreateThingySpine
   name: Release a spine
   description: Releases a paralyzing, bony spine from your wrist.
   components:
-  - type: InstantAction
+  - type: Action
     useDelay: 60
     itemIconStyle: NoItem
-    priority: -10
+  - type: InstantAction
     event: !type:CreateItemEvent {}
 
 - type: startingGear
@@ -137,3 +140,27 @@
     - BoxSurvival
 
 # / END THINGY ACTIONS AND SETTINGS/
+
+- type: randomHumanoidSettings
+  id: PlanetarySettler
+  parent: EventHumanoid
+  components:
+  - type: GhostRole
+    name: ghost-role-information-settler-name
+    description: ghost-role-information-settler-description
+    rules: ghost-role-information-freeagent-rules
+  - type: Loadout
+    prototypes: [ TP14SettlerGear ]
+    roleLoadout: [ RoleSurvivalStandard ]
+
+- type: randomHumanoidSettings
+  id: StrandedHermit
+  parent: EventHumanoid
+  components:
+  - type: GhostRole
+    name: ghost-role-information-hermit-name
+    description: ghost-role-information-hermit-description
+    rules: ghost-role-information-freeagent-rules
+  - type: Loadout
+    prototypes: [ TP14HermitGear ]
+    roleLoadout: [ RoleSurvivalStandard ]

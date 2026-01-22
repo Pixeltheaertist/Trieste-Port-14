@@ -37,11 +37,11 @@
           state: firstaid
     - type: RandomSpawner
       rarePrototypes:
-        - PillCanisterHyperMarrow
+        - PillCanisterDermaline # Is mypermarrow
         - PillCanisterDylovene
         - PillCanisterHyperPlatelet
-        - PillCanisterLexodine
-        - PillCanisterOxygenated
+        - PillCanisterKelotane # Is Lexodine
+        - PillCanisterDexalin # Is OxygenatedSaline - CAN WE STOP USING NONEXISTENT ENTITIES, THANKS?
         - HandheldHealthAnalyzer
         - ClothingHandsGlovesLatex
       rareChance: 0.1

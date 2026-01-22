@@ -11,17 +11,18 @@
   maleFirstNames: NamesReptilianMale
   femaleFirstNames: NamesReptilianFemale
   naming: FirstDashFirst
+  customName: true # Starlight
 
 - type: speciesBaseSprites
   id: MobReptilianSprites
   sprites:
     Head: MobReptilianHead
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
     Chest: MobReptilianTorso
-    HeadTop: MobHumanoidAnyMarking
-    HeadSide: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
     Eyes: MobHumanoidEyes
     LArm: MobReptilianLArm
@@ -40,6 +41,12 @@
     Hair:
       points: 0
       required: false
+    HeadTop:
+      points: 2
+      required: false
+    HeadSide:
+      points: 1
+      required: false
     FacialHair:
       points: 0
       required: false
@@ -51,12 +58,6 @@
       points: 1
       required: true
       defaultMarkings: [ LizardSnoutRound ]
-    HeadTop:
-      points: 2
-      required: false
-    HeadSide:
-      points: 1
-      required: false
     UndergarmentTop:
       points: 1
       required: false

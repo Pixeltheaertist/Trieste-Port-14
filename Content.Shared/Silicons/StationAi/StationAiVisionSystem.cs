@@ -1,8 +1,8 @@
+using Content.Shared.Power.EntitySystems;
 using Content.Shared.StationAi;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Threading;
-using Robust.Shared.Utility;
 
 namespace Content.Shared.Silicons.StationAi;
 
@@ -18,6 +18,7 @@ public sealed class StationAiVisionSystem : EntitySystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedMapSystem _maps = default!;
     [Dependency] private readonly SharedTransformSystem _xforms = default!;
+    [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
 
     private SeedJob _seedJob;
     private ViewJob _job;
@@ -72,8 +73,11 @@ public sealed class StationAiVisionSystem : EntitySystem
         var localBounds = _lookup.GetLocalBounds(tile, grid.Comp2.TileSize);
         var expandedBounds = localBounds.Enlarged(expansionSize);
 
+        var worldMatrix = _xforms.GetWorldMatrix(grid.Owner);
+        var worldBounds = worldMatrix.TransformBox(expandedBounds);
+
         _seedJob.Grid = (grid.Owner, grid.Comp2);
-        _seedJob.ExpandedBounds = expandedBounds;
+        _seedJob.ExpandedBounds = worldBounds; // Now passing world bounds
         _parallel.ProcessNow(_seedJob);
         _job.Data.Clear();
         FastPath = fastPath;
@@ -81,6 +85,12 @@ public sealed class StationAiVisionSystem : EntitySystem
         foreach (var seed in _seeds)
         {
             if (!seed.Comp.Enabled)
+                continue;
+
+            if (seed.Comp.NeedsPower && !_power.IsPowered(seed.Owner))
+                continue;
+
+            if (seed.Comp.NeedsAnchoring && !Transform(seed.Owner).Anchored)
                 continue;
 
             _job.Data.Add(seed);
@@ -154,7 +164,9 @@ public sealed class StationAiVisionSystem : EntitySystem
         var invMatrix = _xforms.GetInvWorldMatrix(grid);
         var localAabb = invMatrix.TransformBox(worldBounds);
         var enlargedLocalAabb = invMatrix.TransformBox(worldBounds.Enlarged(expansionSize));
-        _seedJob.ExpandedBounds = enlargedLocalAabb;
+
+        // Don't transform to local - keep as world
+        _seedJob.ExpandedBounds = worldBounds.Enlarged(expansionSize).CalcBoundingBox();
         _parallel.ProcessNow(_seedJob);
         _job.Data.Clear();
         FastPath = false;
@@ -162,6 +174,12 @@ public sealed class StationAiVisionSystem : EntitySystem
         foreach (var seed in _seeds)
         {
             if (!seed.Comp.Enabled)
+                continue;
+
+            if (seed.Comp.NeedsPower && !_power.IsPowered(seed.Owner))
+                continue;
+
+            if (seed.Comp.NeedsAnchoring && !Transform(seed.Owner).Anchored)
                 continue;
 
             _job.Data.Add(seed);
@@ -286,7 +304,27 @@ public sealed class StationAiVisionSystem : EntitySystem
 
         public void Execute()
         {
-            System._lookup.GetLocalEntitiesIntersecting(Grid.Owner, ExpandedBounds, System._seeds, flags: LookupFlags.All | LookupFlags.Approximate);
+            var xform = System.EntityManager.GetComponent<TransformComponent>(Grid.Owner);
+            var mapId = xform.MapID;
+
+            var query = System.EntityManager.AllEntityQueryEnumerator<MapGridComponent, TransformComponent>();
+            var gridsChecked = 0;
+
+            while (query.MoveNext(out var gridUid, out var gridComp, out var gridXform))
+            {
+                gridsChecked++;
+
+                if (gridXform.MapID != mapId)
+                    continue;
+
+                var invMatrix = System._xforms.GetInvWorldMatrix(gridUid);
+                var localBounds = invMatrix.TransformBox(ExpandedBounds);
+
+                System._lookup.GetLocalEntitiesIntersecting(gridUid,
+                    localBounds,
+                    System._seeds,
+                    flags: LookupFlags.All | LookupFlags.Approximate);
+            }
         }
     }
 

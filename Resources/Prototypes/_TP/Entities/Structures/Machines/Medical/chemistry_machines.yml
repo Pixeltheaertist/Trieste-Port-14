@@ -1,6 +1,7 @@
 - type: entity
   id: MachineIncubator
   parent: BaseTabletopChemicalMachine
+  suffix: Trieste, Medical
   name: incubator
   description: Keeps things warm
   components:

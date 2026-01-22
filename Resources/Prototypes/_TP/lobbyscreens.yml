@@ -1,0 +1,19 @@
+- type: lobbyBackground
+  id: TriestePaint
+  background: /Textures/_TP/LobbyScreens/triestepaint.webp
+
+- type: lobbyBackground
+  id: TriesteNT
+  background: /Textures/_TP/LobbyScreens/trieste-nt.webp
+
+- type: lobbyBackground
+  id: TriesteFlashStorm
+  background: /Textures/_TP/LobbyScreens/triesteflashstorm.webp
+
+- type: lobbyBackground
+  id: SweetwaterCam
+  background: /Textures/_TP/LobbyScreens/SweetwaterCam.webp
+
+- type: lobbyBackground
+  id: CargoView
+  background: /Textures/_TP/LobbyScreens/cargoview.webp

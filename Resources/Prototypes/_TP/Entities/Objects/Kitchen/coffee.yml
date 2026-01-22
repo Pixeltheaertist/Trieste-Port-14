@@ -1,0 +1,183 @@
+# Coffee Filters
+- type: entity
+  id: TP14CoffeeFilter
+  parent: BaseItem
+  suffix: Trieste
+  name: coffee filter
+  description: A single-use filter for a boiler.
+  components:
+  - type: CoffeeFilter
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _TP/Objects/Tools/kitchen.rsi
+    state: filter
+  - type: Tag
+    tags:
+    - TP14CoffeeFilter
+
+- type: entity
+  parent: TP14CoffeeFilter
+  id: TP14CoffeeFilterDirty
+  suffix: Trieste
+  name: dirty coffee filter
+  description: Smells of old, burnt coffee.
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Tools/kitchen.rsi
+    state: filter-dirty
+
+- type: entity
+  id: TP14CoffeeFilterInfinite
+  parent: BaseItem
+  suffix: Trieste, Play-Time Award
+  name: forever-use coffee filter
+  description: A filter for a boiler. This one seems spotless, despite its age! A token for the heartiest of coffee lovers.
+  components:
+  - type: CoffeeFilter
+    infiniteUses: true
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _TP/Objects/Tools/kitchen.rsi
+    state: filter-forever
+
+# Coffee
+- type: entity
+  id: TP14CoffeeBeans
+  parent: BaseItem
+  suffix: Trieste
+  name: coffee beans
+  description: A bag of coffee beans.
+  components:
+  - type: Extractable
+    grindableSolutionName: GroundCoffee
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      GroundCoffee:
+        reagents:
+        - ReagentId: TP14ReagentGroundCoffee
+          Quantity: 15
+  - type: Sprite # TODO - add custom sprite
+    sprite: Objects/Specific/Hydroponics/cocoa.rsi
+    state: seed
+  - type: Tag
+    tags:
+    - TP14TagCoffeeBeans
+
+- type: entity
+  id: TP14InstantInstantCoffee
+  parent: BaseItem
+  suffix: Trieste
+  name: instant coffee
+  description: A bag of instant coffee.
+  components:
+  - type: DrainableSolution
+    solution: InstantCoffee
+  - type: ExaminableSolution
+    solution: InstantCoffee
+    exactVolume: true
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      InstantCoffee:
+        reagents:
+        - ReagentId: TP14ReagentInstantCoffee
+          Quantity: 15
+  - type: Sprite # TODO - add custom sprite
+    sprite: Objects/Specific/Hydroponics/cocoa.rsi
+    state: seed
+  - type: SolutionTransfer
+    maxTransferAmount: 5
+
+# Tools
+- type: entity
+  parent: BaseItem
+  id: TP14CoffeeMixer
+  name: coffee stirrer
+  suffix: Trieste
+  description: A tool for mixing coffee grounds.
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    inhandVisuals:
+      left:
+      - state: Stirrer-Left
+      right:
+      - state: Stirrer-Right
+  - type: Utensil
+    types:
+    - Spoon
+  - type: ReactionMixer
+    mixMessage: "coffee-mixer-success"
+    timeToMix: 1.0
+    reactionTypes:
+    - Stir
+  - type: Sprite
+    sprite: _TP/Objects/Tools/kitchen.rsi
+    state: stirrer
+
+- type: entity
+  parent: BaseItem
+  id: TP14CoffeePress
+  name: coffee tamper
+  suffix: Trieste
+  description: A tool for pressing coffee grounds.
+  components:
+  - type: Item
+    size: Normal
+    inhandVisuals:
+      left:
+      - state: Tamper-Left
+      right:
+      - state: Tamper-Right
+  - type: Utensil
+    types:
+    - Spoon
+  - type: ReactionMixer
+    mixMessage: "coffee-press-success"
+    timeToMix: 1.0
+    reactionTypes:
+    - TP14Pressing
+  - type: Sprite
+    sprite: _TP/Objects/Tools/kitchen.rsi
+    state: tamper
+
+- type: entity
+  parent: BaseItem
+  id: TP14CoffeeBasket
+  suffix: Trieste
+  name: coffee basket
+  description: A basket for coffee grounds. Connects to the coffee machine.
+  components:
+  - type: ExaminableSolution
+    solution: food
+  - type: FitsAsBasket
+  - type: Item
+    size: Normal
+    inhandVisuals:
+      left:
+      - state: Basket-Left
+      right:
+      - state: Basket-Right
+  - type: MixableSolution
+    solution: food
+  - type: RefillableSolution
+    solution: food
+  - type: Sprite
+    sprite: _TP/Objects/Tools/kitchen.rsi
+    state: basket
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+  - type: SolutionTransfer
+    maxTransferAmount: 30
+    transferAmount: 5
+  - type: Spillable
+    solution: food

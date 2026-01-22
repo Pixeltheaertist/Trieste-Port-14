@@ -6,12 +6,19 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobCargoTechnician
-      time: 3600 #1 hr
+      time: 1h
+      # TP14 - Removed salvage specialist
+#    - !type:RoleTimeRequirement
+#      role: JobSalvageSpecialist
+#      time: 2.5h
+    - !type:DepartmentTimeRequirement # TP14
+      department: Expeditionary
+      time: 1h
     - !type:DepartmentTimeRequirement
       department: Cargo
-      time: 3600 #1 hr
+      time: 1h
     - !type:OverallPlaytimeRequirement
-      time: 7200 #2 ish hours
+      time: 2h
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
@@ -38,8 +45,20 @@
   equipment:
     id: QuartermasterPDA
     ears: ClothingHeadsetQM
-    belt: BoxFolderClipboard
+    belt: BoxFolderClipboardThreePapers
     pocket1: AppraisalTool
   storage:
     back:
     - Flash
+
+- type: chameleonOutfit
+  id: QuartermasterChameleonOutfit
+  job: Quartermaster
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatQMsoft
+    eyes: ClothingEyesGlassesSunglasses
+    mask: TP14ClothingMaskAir #TP14
+    outerClothing: ClothingOuterWinterQM
+    neck: ClothingNeckCloakQm
+    gloves: ClothingHandsKnuckleDustersQM

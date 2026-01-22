@@ -1,8 +1,8 @@
 - type: soundCollection
   id: LobbyMusic
   files:
-    - /Audio/Lobby/welcometosweetwater.ogg
-    - /Audio/Lobby/echoesofthedeep.ogg
-    - /Audio/Lobby/sweetwaterdepths.ogg
-    - /Audio/Lobby/topdeck.ogg
-    - /Audio/Lobby/solgovorsomething.ogg
+    - /Audio/_TP/Lobby/welcometosweetwater.ogg
+    - /Audio/_TP/Lobby/echoesofthedeep.ogg
+    - /Audio/_TP/Lobby/sweetwaterdepths.ogg
+    - /Audio/_TP/Lobby/topdeck.ogg
+    - /Audio/_TP/Lobby/solgovorsomething.ogg

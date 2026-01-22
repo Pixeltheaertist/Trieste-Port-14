@@ -1,6 +1,7 @@
 - type: entity
   id: TP14FallingDestinationMarker
   parent: MarkerBase
+  suffix: Trieste, Gravity
   placement:
     mode: SnapgridCenter
   components:
@@ -10,6 +11,8 @@
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
-    drawdepth: Overdoors
     sprite: Markers/cross.rsi
+    layers:
+    - state: blue
+    drawdepth: Overdoors
   - type: FallingDestination

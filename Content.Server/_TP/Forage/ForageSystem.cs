@@ -1,5 +1,6 @@
 using Content.Server.Destructible;
 using Content.Shared._TP.Forage;
+using Content.Shared.EntityTable;
 using Content.Shared.GameTicking;
 using Content.Shared.Interaction;
 using Content.Shared.Tag;
@@ -18,6 +19,7 @@ public sealed class ForageSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly AppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedGameTicker _gameTicker = default!;
+    [Dependency] private readonly EntityTableSystem _entityTable = default!;
 
 
     public override void Initialize()
@@ -49,7 +51,7 @@ public sealed class ForageSystem : EntitySystem
             return;
 
         if (ent.Comp.DestroyOnForage)
-            _destructible.DestroyEntity(ent);
+            _destructible.DestroyEntity(ent.Owner);
 
         if (ent.Comp.Loot == null)
             return;
@@ -64,10 +66,12 @@ public sealed class ForageSystem : EntitySystem
                     continue;
             }
 
-            var getLoot = _proto.Index(table);
-            var spawnLoot = getLoot.GetSpawns(_random);
-            var spawnPos = pos.Offset(_random.NextVector2(ent.Comp.GatherOffset));
-            Spawn(spawnLoot[0], spawnPos);
+            var spawnLoot = _entityTable.GetSpawns(table);
+            foreach (var loot in spawnLoot)
+            {
+                var spawnPos = pos.Offset(_random.NextVector2(ent.Comp.GatherOffset));
+                Spawn(loot, spawnPos);
+            }
         }
 
         ent.Comp.LastForagedTime = _gameTicker.RoundDuration();

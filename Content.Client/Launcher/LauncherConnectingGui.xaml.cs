@@ -8,10 +8,10 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Configuration;
 using Robust.Shared.IoC;
-using Robust.Shared.Timing;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Client.Launcher
 {
@@ -43,7 +43,7 @@ namespace Content.Client.Launcher
 
             LayoutContainer.SetAnchorPreset(this, LayoutContainer.LayoutPreset.Wide);
 
-            Stylesheet = IoCManager.Resolve<IStylesheetManager>().SheetSpace;
+            Stylesheet = IoCManager.Resolve<IStylesheetManager>().SheetSystem;
 
             ChangeLoginTip();
             RetryButton.OnPressed += ReconnectButtonPressed;
@@ -122,6 +122,13 @@ namespace Content.Client.Launcher
             }
             else
             {
+                //NullLink start
+                if (reason.Message.StringOf("discord") is { } link)
+                {
+                    LinkDiscordButton.Visible = true;
+                    LinkDiscordButton.OnPressed += _ => IoCManager.Resolve<IUriOpener>().OpenUri(link);
+                }
+                //NullLink end
                 _redial = reason.RedialFlag;
 
                 if (reason.Message.Int32Of("delay") is { } delay)

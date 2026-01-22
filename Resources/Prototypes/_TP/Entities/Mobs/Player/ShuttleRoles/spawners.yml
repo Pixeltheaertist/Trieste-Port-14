@@ -13,6 +13,20 @@
     - RandomHumanoidSettler
 
 - type: entity
+  name: Stranded Hermit spawner
+  id: TP14HermitSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Structures/Decoration/banner.rsi
+      state: banner-yellow
+  - type: RandomSpawner
+    prototypes:
+    - RandomHumanoidHermit
+
+- type: entity
   name: The Thingy spawner
   id: TP14TheThingySpawner
   parent: MarkerBase

@@ -1,0 +1,12 @@
+- type: entity
+  id: TP14_NTvape
+  parent: [ BaseVape, BaseNanotrasenContraband ]
+  suffix: Trieste, Smokeable, NanoTraitor
+  name: Nanotrasen branded vape
+  description: "Now even you can rep your favorite mega-corp while hotboxing sweetwater. (WARNING:Pour only water into the vape)"
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/Smokeables/Vapes/vape-standard.rsi
+    state: icon
+
+

@@ -12,7 +12,7 @@
   abstract: true
   components:
   - type: Icon
-    sprite: Mobs/Species/Slime/parts.rsi
+    sprite: _TP/Mobs/Species/Jellids/parts.rsi
     state: full
   - type: Body
     prototype: Jellid
@@ -25,7 +25,8 @@
     ignited: true
   - type: AlwaysHot
   - type: TemperatureProtection
-    coefficient: 0.6
+    heatingCoefficient: 0.6
+    coolingCoefficient: 0.6
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
@@ -42,13 +43,13 @@
     species: JellidPerson
   - type: Speech
     speechVerb: Slime
-    speechSounds: Slime
-    allowedEmotes: ['Squish']
+    speechSounds: Jellid
+    allowedEmotes: ['Squish', 'Buzz']
   - type: TypingIndicator
-    proto: slime
+    proto: jellid
   - type: Vocal
     sounds:
-      Unsexed: MaleSlime
+      Unsexed: Jellid
   - type: Temperature
     heatDamageThreshold: 400
     coldDamageThreshold: -9999
@@ -90,7 +91,7 @@
     - reagents: [ Water, SpaceCleaner ]
       methods: [ Touch ]
       effects:
-      - !type:WashCreamPieReaction
+        - !type:WashCreamPie
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -104,9 +105,9 @@
       types:
         Asphyxiation: -0.5
     maxSaturation: 15
-    gaspEmote: Scream
   - type: Inventory
     templateId: jellid
+    speciesId: jellid #this is for the changing glasses sprites
   - type: Jellid # This is what dictates heating objects in one's hands, igniting objects, and draining power from objects and batteries.
   - type: Battery
     maxCharge: 1800
@@ -114,16 +115,18 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: -2
-    ignoreFull: true # prevents the charge from stopping
   - type: PointLight
     radius: 1.5
     energy: 0.2
     color: "#Ffffff"
+  - type: Internals
 
 - type: entity
   parent: MobHumanDummy
   id: MobJellidPersonDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: HumanoidAppearance
       species: JellidPerson
+    - type: Inventory
+      speciesId: jellid #this is for the changing glasses sprites

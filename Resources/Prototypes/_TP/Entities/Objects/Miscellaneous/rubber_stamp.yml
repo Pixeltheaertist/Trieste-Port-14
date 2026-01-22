@@ -2,11 +2,12 @@
   name: solgov rubber stamp
   parent: [RubberStampBase, BaseCommandContraband]
   id: TP14RubberStampSG
+  suffix: Trieste, SolGov
   categories: [ DoNotMap ]
   components:
   - type: Stamp
     stampedName: stamp-component-stamped-name-solgov
-    stampedColor: "#c69b17"
+    stampedColor: "#000000" # Black
     stampState: "paper_stamp-ce"
   - type: Sprite
     state: stamp-ce

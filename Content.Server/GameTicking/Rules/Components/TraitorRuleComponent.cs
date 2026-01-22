@@ -1,6 +1,7 @@
+using Content.Server.Codewords;
 using Content.Shared.Dataset;
 using Content.Shared.FixedPoint;
-﻿using Content.Shared.NPC.Prototypes;
+using Content.Shared.NPC.Prototypes;
 using Content.Shared.Roles;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
@@ -11,18 +12,19 @@ namespace Content.Server.GameTicking.Rules.Components;
 [RegisterComponent, Access(typeof(TraitorRuleSystem))]
 public sealed partial class TraitorRuleComponent : Component
 {
-    // List to track traitor minds/entities
     public readonly List<EntityUid> TraitorMinds = new();
 
-    // Data fields for ProtoIds that are serialized
     [DataField]
     public ProtoId<AntagPrototype> TraitorPrototypeId = "Traitor";
+
+    [DataField]
+    public ProtoId<CodewordFactionPrototype> CodewordFactionPrototypeId = "Traitor";
 
     [DataField]
     public ProtoId<NpcFactionPrototype> NanoTrasenFaction = "NanoTrasen";
 
     [DataField]
-    public ProtoId<DatasetPrototype> CodewordstarSystems = "starSystems";
+    public ProtoId<LocalizedDatasetPrototype> CodewordstarSystems = "starSystems";
 
     [DataField]
     public ProtoId<NpcFactionPrototype> NanoTrasenTraitorFaction = "NanoTrasenTraitor";
@@ -31,16 +33,10 @@ public sealed partial class TraitorRuleComponent : Component
     public ProtoId<NpcFactionPrototype> SyndicateFaction = "Syndicate";
 
     [DataField]
-    public ProtoId<LocalizedDatasetPrototype> CodewordAdjectives = "Adjectives";
-
-    [DataField]
-    public ProtoId<LocalizedDatasetPrototype> CodewordVerbs = "Verbs";
-
-    [DataField]
     public ProtoId<LocalizedDatasetPrototype> ObjectiveIssuers = "TraitorCorporations";
 
     /// <summary>
-    /// Give the Syndicate traitor an Uplink on spawn.
+    /// Give this traitor an Uplink on spawn.
     /// </summary>
     [DataField]
     public bool GiveUplink = true;
@@ -81,14 +77,20 @@ public sealed partial class TraitorRuleComponent : Component
         Started = 2,
     }
 
-    // Current state of the traitor rule
+    /// <summary>
+    /// Current state of the rule
+    /// </summary>
     public SelectionState SelectionStatus = SelectionState.WaitingForSpawn;
 
-    // TimeSpan when traitors should be selected and announced
+    /// <summary>
+    /// When should traitors be selected and the announcement made
+    /// </summary>
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan? AnnounceAt;
 
-    // Sound that will play when a traitor is selected
+    /// <summary>
+    ///     Path to antagonist alert sound.
+    /// </summary>
     [DataField]
     public SoundSpecifier GreetSoundNotification = new SoundPathSpecifier("/Audio/Ambience/Antag/traitor_start.ogg");
 
@@ -100,12 +102,8 @@ public sealed partial class TraitorRuleComponent : Component
     public int CodewordCount = 4;
 
     /// <summary>
-    /// The number of TC that traitors start with.
+    /// The amount of TC traitors start with.
     /// </summary>
     [DataField]
     public FixedPoint2 StartingBalance = 20;
-    // Starting TC for traitors
-
-    // Constructor or methods for functionality
-    // Add any additional methods you need to interact with these fields
 }

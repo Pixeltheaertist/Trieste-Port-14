@@ -1,14 +1,15 @@
 - type: entity
   id: RandomForagePlant
   name: random forage plant spawner
+  categories: [ Spawner ]
   parent: MarkerBase
+  suffix: Trieste, Spawner, Forage, Random
   components:
   - type: Sprite
-    state: plant
     layers:
-      - state: red
-      - sprite: _TP/Objects/Flora/Forage/trenchlight_weed.rsi
-        state: plant
+    - state: green
+    - state: plant
+      sprite: /Textures/_TP/Objects/Flora/Forage/trenchlight_weed.rsi
   - type: RandomSpawner
     prototypes:
     - SerpentsMane

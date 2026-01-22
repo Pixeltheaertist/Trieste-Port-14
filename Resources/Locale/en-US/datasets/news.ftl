@@ -70,7 +70,7 @@ news-dataset-62 = Broccoli discovered to be colonies of tiny aliens with murder 
 # Question mark worshipped as deity by ancient {{AFFECTED}} dwellers.
 # Spilled milk causes whole {{AFFECTED}} populace to cry.
 # World largest carp patty at display on {{AFFECTED}}.
-# Guy gets tattoo of Tau Ceti on chest '[pick(CentCom,star,starship,asteroid)] tickles most'.
+# Guy gets tattoo of Tau Ceti on chest '[pick(CentComm,star,starship,asteroid)] tickles most'.
 # {{AFFECTED}} Baker Wins Pickled Crumpet Toss Three Years Running
 # I Was Framed, jokes {{AFFECTED}} artist
 # Mysterious Loud Rumbling Noises In {{AFFECTED}} Found To Be Mysterious Loud Rumblings

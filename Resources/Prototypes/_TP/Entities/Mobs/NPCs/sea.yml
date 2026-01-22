@@ -2,6 +2,7 @@
   name: drifter
   id: TP14MobDrifter
   parent: MobSpaceBasic
+  suffix: Trieste, Sea, Drifter
   description: A spindly, opportunistic predator which injects prey with a paralyzing agent before siphoning their blood.
   components:
   - type: Sprite
@@ -65,12 +66,13 @@
   name: Fish
   parent: SimpleSpaceMobBase
   id: TP14MobFish
+  suffix: Trieste, Sea
   description: It's a fish.
   components:
   - type: Body
     prototype: SeaCreature # Gives em a stomach and gills for breathing water. They die without it.
   - type: Sprite
-    sprite: Mobs/Animals/fish.rsi
+    sprite: _TP/Mobs/Animals/fish.rsi
     drawdepth: Mobs
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
@@ -143,11 +145,12 @@
   name: Fish
   parent: TP14MobFish
   id: TP14MobFish2
+  suffix: Trieste, Sea
   description: It's a fish.
   components:
   - type: Sprite
     drawdepth: SmallMobs
-    sprite: Mobs/Animals/fish.rsi
+    sprite: _TP/Mobs/Animals/fish.rsi
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: fish-1
@@ -162,11 +165,12 @@
   name: Fish
   parent: TP14MobFish
   id: TP14MobFish3
+  suffix: Trieste, Sea
   description: It's a fish.
   components:
   - type: Sprite
     drawdepth: SmallMobs
-    sprite: Mobs/Animals/fish.rsi
+    sprite: _TP/Mobs/Animals/fish.rsi
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: fish-2
@@ -179,7 +183,7 @@
 
 - type: entity
   name: Fish
-  suffix: mimic
+  suffix: Trieste, Sea, Mimic
   parent: TP14MobFish
   id: TP14MobFishMimic
   components:
@@ -226,6 +230,7 @@
   name: Mimic
   parent: MobSpaceBasic
   id: TP14MobMimic
+  suffix: Trieste, Sea
   description: A horrific ambush predator. It infests fish until disturbed by larger prey and uses elecricity to immobilize their targets.
   components:
   - type: MobThresholds
@@ -279,6 +284,7 @@
   name: deathwhale
   id: MobDeathWhale
   parent: SimpleSpaceMobBase
+  suffix: Trieste, Sea, DeathWhale
   description: Don't go into the light.
   components:
   - type: Sprite
@@ -301,6 +307,7 @@
   name: Spitter
   parent: MobXeno
   id: TP14MobSeaBarnacle
+  suffix: Trieste, Sea, Barnacle
   description: A heaving mass of coral and flesh, capable of spitting corrosive acid at it's prey.
   components:
   - type: Sprite
@@ -346,3 +353,329 @@
         - MobLayer
   - type: MovementSpeedModifier
     baseWalkSpeed : 0
+
+- type: entity
+  parent: [ SimpleSpaceMobBase ]
+  id: TP14MobSeaBunny
+  suffix: Trieste, Sea
+  name: sea bunny
+  description: An adorable bunny-like creature that lives in the sea.
+  components:
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-sea-bunny-name
+    description: ghost-role-information-sea-bunny-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgentHarmless
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 120
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: GhostTakeoverAvailable
+  - type: Speech
+    speechVerb: SmallMob
+    speechSounds: Squeak
+    allowedEmotes: ['Chitter', 'Squeak']
+  - type: Body
+    prototype: SeaCreature
+  - type: Sprite
+    sprite: _TP/Mobs/Animals/sea-bunny.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+      state: sea-rabbit-moving
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: sea-rabbit-moving
+    noMovementLayers:
+      movement:
+        state: sea-rabbit-idle
+  - type: Item
+    size: Normal
+  - type: Clothing
+    quickEquip: false
+    sprite: _TP/Mobs/Animals/sea-bunny.rsi
+    equippedPrefix: 0
+    slots:
+    - HEAD
+  - type: Appearance
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: sea-rabbit-idle
+      Critical:
+        Base: sea-rabbit-dead
+      Dead:
+        Base: sea-rabbit-dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      40: Critical
+      60: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.5
+    baseSprintSpeed : 4
+    weightlessAcceleration: 1.5
+    weightlessFriction: 1
+    baseWeightlessModifier: 1
+  - type: Damageable
+    damageContainer: Biological
+  - type: Bloodstream
+    bloodReagent: SeaWater
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 0.5
+    damageRecovery:
+      types:
+        Asphyxiation: -0.5
+  - type: CombatMode
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 1
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Vocal
+    sounds:
+      Male: UnisexMoth
+      Female: UnisexMoth
+      Unsexed: UnisexMoth
+    wilhelmProbability: 0.001
+  - type: MobPrice
+    price: 200
+  - type: Tag
+    tags:
+    - Trash
+    - CannotSuicide
+    - VimPilot
+  - type: CanEscapeInventory
+  - type: NpcFactionMember
+    factions:
+    - Mouse
+  - type: TypingIndicator
+    proto: moth
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 60
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Mouse_burning
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+  - type: InventorySlots
+  - type: Inventory
+    speciesId: hamster
+    templateId: hamster
+    displacements:
+      head:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/sea-bunny-displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/sea-bunny-displacement.rsi
+            state: mask
+      suitstorage:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/sea-bunny-displacement.rsi
+            state: suitstorage
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/sea-bunny-displacement.rsi
+            state: eyes
+      neck:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/sea-bunny-displacement.rsi
+            state: neck
+  - type: PointLight
+    radius: 1.75
+    energy: 1
+    falloff: 10
+
+- type: entity
+  parent: [ SimpleSpaceMobBase ]
+  id: TP14MobLeafSheep
+  suffix: Trieste, Sea
+  name: leaf sheep
+  description: Similar to sea bunnies, but have beautiful leaf-like growths on their backs.
+  components:
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-leaf-sheep-name
+    description: ghost-role-information-leaf-sheep-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgentHarmless
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 120
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: GhostTakeoverAvailable
+  - type: Speech
+    speechVerb: SmallMob
+    speechSounds: Squeak
+    allowedEmotes: ['Chitter', 'Squeak']
+  - type: Body
+    prototype: SeaCreature
+  - type: Sprite
+    sprite: _TP/Mobs/Animals/LeafSheep/normal.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+      state: leaf-sheep-moving
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: leaf-sheep-moving
+    noMovementLayers:
+      movement:
+        state: leaf-sheep-idle
+  - type: Item
+    size: Normal
+  - type: Clothing
+    quickEquip: false
+    sprite: _TP/Mobs/Animals/LeafSheep/normal.rsi
+    equippedPrefix: 0
+    slots:
+    - HEAD
+  - type: Appearance
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: leaf-sheep-idle
+      Critical:
+        Base: leaf-sheep-dead
+      Dead:
+        Base: leaf-sheep-dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      40: Critical
+      60: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.5
+    baseSprintSpeed : 4
+    weightlessAcceleration: 1.5
+    weightlessFriction: 1
+    baseWeightlessModifier: 1
+  - type: Damageable
+    damageContainer: Biological
+  - type: Bloodstream
+    bloodReagent: SeaWater
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 0.5
+    damageRecovery:
+      types:
+        Asphyxiation: -0.5
+  - type: CombatMode
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 1
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Vocal
+    sounds:
+      Male: UnisexMoth
+      Female: UnisexMoth
+      Unsexed: UnisexMoth
+    wilhelmProbability: 0.001
+  - type: MobPrice
+    price: 200
+  - type: Tag
+    tags:
+    - Trash
+    - CannotSuicide
+    - VimPilot
+  - type: CanEscapeInventory
+  - type: NpcFactionMember
+    factions:
+    - Mouse
+  - type: TypingIndicator
+    proto: moth
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 60
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Mouse_burning
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+  - type: InventorySlots
+  - type: Inventory
+    speciesId: hamster
+    templateId: hamster
+    displacements:
+      head:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/LeafSheep/displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/LeafSheep/displacement.rsi
+            state: mask
+      suitstorage:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/LeafSheep/displacement.rsi
+            state: suitstorage
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/LeafSheep/displacement.rsi
+            state: eyes
+      neck:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/LeafSheep/displacement.rsi
+            state: neck
+  - type: PointLight
+    radius: 1.75
+    energy: 1
+    falloff: 10

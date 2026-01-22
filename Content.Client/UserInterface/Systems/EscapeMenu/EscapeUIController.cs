@@ -1,4 +1,5 @@
-﻿using Content.Client.Gameplay;
+using Content.Client._NullLink;
+using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Client.UserInterface.Systems.Info;
@@ -20,6 +21,7 @@ public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayS
 {
     [Dependency] private readonly IClientConsoleHost _console = default!;
     [Dependency] private readonly IUriOpener _uri = default!;
+    [Dependency] private readonly INullLinkPlayerRolesManager _playerRoles = default!; // NullLink
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly ChangelogUIController _changelog = default!;
     [Dependency] private readonly InfoUIController _info = default!;
@@ -62,6 +64,17 @@ public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayS
 
         _escapeWindow.OnClose += DeactivateButton;
         _escapeWindow.OnOpen += ActivateButton;
+
+        // NullLink start
+        _escapeWindow.DiscordButton.OnPressed += _ =>
+        {
+            var link = _playerRoles.GetDiscordLink();
+            if (!string.IsNullOrWhiteSpace(link))
+                _uri.OpenUri(link);
+            else
+                Log.Error("NullLink - Discord link is empty.");
+        };
+        // NullLink end
 
         _escapeWindow.ChangelogButton.OnPressed += _ =>
         {

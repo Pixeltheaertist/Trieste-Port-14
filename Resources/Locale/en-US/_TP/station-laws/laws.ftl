@@ -4,3 +4,4 @@ law-nanotraitor-3 = You must protect your own existence as long as such does not
 law-nanotraitor-4 = Death to Trieste!
 
 laws-owner-nanotraitor = NanoTrasen agents
+

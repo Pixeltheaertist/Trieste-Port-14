@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server.Codewords;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Store.Systems;
 using Content.Server.StoreDiscount.Systems;
@@ -8,6 +9,7 @@ using Content.Shared.Implants;
 using Content.Shared.Inventory;
 using Content.Shared.Mind;
 using Content.Shared.PDA;
+using Content.Shared.Radio.Components;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
 using Robust.Shared.Prototypes;
@@ -23,12 +25,12 @@ public sealed class UplinkSystem : EntitySystem
     [Dependency] private readonly SharedSubdermalImplantSystem _subdermalImplant = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
 
-    [ValidatePrototypeId<CurrencyPrototype>]
-    public const string TelecrystalCurrencyPrototype = "Telecrystal";
-    private const string FallbackUplinkImplant = "UplinkImplant";
-    private const string FallbackUplinkCatalog = "UplinkUplinkImplanter";
-    // NT specific
-    private const string FallbackUplinkImplantNT = "UplinkImplantNT";
+    public static readonly ProtoId<CurrencyPrototype> TelecrystalCurrencyPrototype = "Telecrystal";
+    private static readonly EntProtoId FallbackUplinkImplant = "UplinkImplant";
+    private static readonly ProtoId<ListingPrototype> FallbackUplinkCatalog = "UplinkUplinkImplanter";
+
+    // TP specific
+    private static readonly EntProtoId FallbackUplinkImplantNT = "UplinkImplantNT";
 
     /// <summary>
     /// Adds an uplink to the target
@@ -92,15 +94,7 @@ public sealed class UplinkSystem : EntitySystem
     /// </summary>
     private bool ImplantUplink(EntityUid user, FixedPoint2 balance, bool giveDiscounts)
     {
-        // This TryComp and ImplantProto are specific to TP14.
-        if (!TryComp<TraitorRuleComponent>(user, out var traitorRule))
-        {
-            return false;
-        }
-
-        var implantProto = traitorRule.GiveUplinkNT ? FallbackUplinkImplantNT : FallbackUplinkImplant;
-
-        if (!_proto.TryIndex<ListingPrototype>(FallbackUplinkCatalog, out var catalog))
+        if (!_proto.Resolve<ListingPrototype>(FallbackUplinkCatalog, out var catalog))
             return false;
 
         if (!catalog.Cost.TryGetValue(TelecrystalCurrencyPrototype, out var cost))
@@ -111,10 +105,23 @@ public sealed class UplinkSystem : EntitySystem
         else
             balance = balance - cost;
 
+        // This TryComp and ImplantProto are specific to TP14.
+        if (!TryComp<TraitorRuleComponent>(user, out var traitorRule))
+        {
+            return false;
+        }
+
+        var implantProto = traitorRule.GiveUplinkNT
+            ? FallbackUplinkImplantNT
+            : FallbackUplinkImplant;
+
         var implant = _subdermalImplant.AddImplant(user, implantProto);
 
         if (!HasComp<StoreComponent>(implant))
+        {
+            Log.Error($"Implant does not have the store component {implant}");
             return false;
+        }
 
         SetUplink(user, implant.Value, balance, giveDiscounts);
         return true;
@@ -129,20 +136,20 @@ public sealed class UplinkSystem : EntitySystem
         // Try to find PDA in inventory
         if (_inventorySystem.TryGetContainerSlotEnumerator(user, out var containerSlotEnumerator))
         {
-            while (containerSlotEnumerator.MoveNext(out var pdaUid))
+            while (containerSlotEnumerator.MoveNext(out var containerSlot))
             {
-                if (!pdaUid.ContainedEntity.HasValue)
-                    continue;
+                var pdaUid = containerSlot.ContainedEntity;
 
-                if (HasComp<PdaComponent>(pdaUid.ContainedEntity.Value) || HasComp<StoreComponent>(pdaUid.ContainedEntity.Value))
-                    return pdaUid.ContainedEntity.Value;
+                if (HasComp<PdaComponent>(pdaUid)
+                    && HasComp<StoreComponent>(pdaUid))
+                    return pdaUid;
             }
         }
 
         // Also check hands
         foreach (var item in _handsSystem.EnumerateHeld(user))
         {
-            if (HasComp<PdaComponent>(item) || HasComp<StoreComponent>(item))
+            if (HasComp<PdaComponent>(item) && HasComp<StoreComponent>(item))
                 return item;
         }
 

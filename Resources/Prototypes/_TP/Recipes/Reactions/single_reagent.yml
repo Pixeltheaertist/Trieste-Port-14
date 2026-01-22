@@ -1,0 +1,24 @@
+# VOLATILES EXPLODING
+
+- type: reaction
+  id: PlasmaExplode
+  impact: Low
+  minTemp: 650
+  reactants:
+    Plasma:
+      amount: 1
+  effects:
+  - !type:Explosion
+    explosionType: Default
+    maxIntensity: 150
+    intensityPerUnit: 5
+    intensitySlope: 3
+    maxTotalIntensity: 150
+  - !type:PopupMessage
+    messages: [ "plasma-explosion" ]
+    type: Pvs
+    visualType: LargeCaution
+  products:
+    Ash: 1
+
+# END OF VOLATILES EXPLODING

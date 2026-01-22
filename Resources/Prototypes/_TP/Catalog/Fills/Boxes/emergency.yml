@@ -3,7 +3,7 @@
   id: BoxSurvivalJellid
   name: survival box
   description: It's a box with basic internals inside.
-  suffix: Standard Jellid
+  suffix: Trieste, Filled, Survival, Jellid
   components:
   - type: StorageFill
     contents:
@@ -12,6 +12,7 @@
     - id: EmergencyMedipen
     - id: Flare
     - id: PowerCellSmall
+    - id: TP14ClothingHandsGlovesFireproof
   - type: Sprite
     layers:
     - state: internals

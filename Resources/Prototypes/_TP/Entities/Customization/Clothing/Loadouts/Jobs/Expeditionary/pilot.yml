@@ -1,0 +1,78 @@
+- type: loadoutGroup
+  id: TP14GroupPilotBackpack
+  name: loadout-group-backpack-pilot
+  loadouts:
+  - SalvageSpecialistBackpack
+  - SalvageSpecialistSatchel
+  - SalvageSpecialistDuffel
+
+- type: loadoutGroup
+  id: TP14GroupPilotFootwear
+  name: loadout-group-footwear-pilot
+  minLimit: 0
+  defaultSelected: 1
+  loadouts:
+  - TP14LoadoutFootwearWorkboots
+  - SalvageBoots
+  - CargoWinterBoots
+  - TP14LoadoutFootwearBlack
+  - TP14LoadoutFootwearBrown
+  - TP14LoadoutFootwearPurple
+
+- type: loadoutGroup
+  id: TP14GroupPilotGloves
+  name: loadout-group-gloves-pilot
+  minLimit: 0
+  loadouts:
+  - TP14LoadoutGlovesFingerless
+
+- type: loadoutGroup
+  id: TP14GroupPilotHeadwear
+  name: loadout-group-headwear-pilot
+  loadouts:
+  - TP14LoadoutHeadwearArmoredHardHat
+  - TP14LoadoutHeadwearBucketBrown
+  - TP14LoadoutHeadwearBucketPurple
+  - TP14LoadoutHeadwearBucketYellow
+
+- type: loadoutGroup
+  id: TP14GroupPilotJumper
+  name: loadout-group-jumper-pilot
+  loadouts:
+  - TP14LoadoutJumpsuitMercenary
+  - TP14LoadoutJumpsuitBrown
+  - TP14LoadoutJumpskirtBrown
+  - TP14LoadoutJumpsuitPurple
+  - TP14LoadoutJumpskirtPurple
+  - TP14LoadoutJumpsuitYellow
+  - TP14LoadoutJumpskirtYellow
+  - TP14LoadoutJumpsuitLieutenantTanktop
+
+- type: loadoutGroup
+  id: TP14GroupPilotMask
+  name: loadout-group-mask-pilot
+  minLimit: 0
+  loadouts:
+  - TP14LoadoutMaskGasExplorer
+
+- type: loadoutGroup
+  id: TP14GroupPilotNeck
+  name: loadout-group-neck-pilot
+  minLimit: 0
+  loadouts:
+  - TP14LoadoutScarfBrown
+  - TP14LoadoutScarfPurple
+
+- type: loadoutGroup
+  id: TP14GroupPilotOuter
+  name: loadout-group-outer-pilot
+  loadouts:
+  - TP14LoadoutCoatBomberJacket
+  - SalvageSpecialistWintercoat
+
+- type: loadoutGroup
+  id: TP14GroupPilotTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - TP14LoadoutLizardPlushiePilot

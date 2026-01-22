@@ -6,6 +6,6 @@
   molarMass: 18
   gasOverlaySprite: /Textures/_TP/Effects/atmospherics.rsi
   gasOverlayState: water
-  color: 135c4f # You can change it if you want, its here for gas analyser afaik
+  color: 135c4f # You can change it if you want, it's here for the gas analyzer afaik
   reagent: SeaWater
   pricePerMole: 0.04

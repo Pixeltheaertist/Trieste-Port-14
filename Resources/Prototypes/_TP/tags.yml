@@ -1,6 +1,66 @@
-# PUT YOUR TAGS IN ALPHABETICAL ORDER
+# PUT YOUR TAGS IN ALPHABETICAL ORDER - TP is exempt from this!
+- type: Tag
+  id: CascadeOpsUplink
+
+- type: Tag
+  id: TP14TagCoffeeBeans
+
+- type: Tag
+  id: TP14CoffeeFilter
+
+- type: Tag
+  id: TP14TagCoffeeMakerBoard
+
+- type: Tag
+  id: TP14TagDeepFryerBoard
+
+- type: Tag
+  id: DockBell
+
+- type: Tag
+  id: DockTrench
+
 - type: Tag
   id: Drifter
 
 - type: Tag
+  id: Fish
+
+- type: Tag
+  id: Harpoon
+
+- type: Tag
+  id: MagCell
+
+- type: Tag
+  id: TP14MagicCandle
+
+- type: Tag
   id: Mimic
+
+- type: Tag
+  id: TP14OvenMachineBoard
+
+- type: Tag
+  id: PearlEditor
+
+- type: Tag
+  id: PearlReader
+
+- type: Tag
+  id: TP14TagPiezoShard
+
+- type: Tag
+  id: PreventsFire
+
+- type: Tag
+  id: SeaWreck
+
+- type: Tag
+  id: SeaWreckFiveByFive
+
+- type: Tag
+  id: TP14TagTeaBag
+
+- type: Tag
+  id: Wreck

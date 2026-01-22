@@ -12,11 +12,11 @@
   parent: TP14LadderBase
   id: TP14LadderDown
   name: Ladder
-  suffix: down
+  suffix: Trieste, Ladder, Goes-Down
   components:
     - type: Ladder
-      thisSide: down
-      targetSide: up
+      thisSide: up
+      targetSide: down
     - type: Sprite
       sprite: _TP/Structures/Furniture/ladder.rsi
       state: down
@@ -25,11 +25,11 @@
   parent: TP14LadderBase
   id: TP14LadderUp
   name: Ladder
-  suffix: up
+  suffix: Trieste, Ladder, Goes-Up
   components:
     - type: Ladder
-      thisSide: up
-      targetSide: down
+      thisSide: down
+      targetSide: up
     - type: Sprite
       sprite: _TP/Structures/Furniture/ladder.rsi
       state: up

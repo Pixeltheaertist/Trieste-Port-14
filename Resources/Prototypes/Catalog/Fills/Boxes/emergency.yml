@@ -7,7 +7,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # TP14
     - id: EmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
@@ -47,7 +47,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # TP14
     - id: ExtendedEmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
@@ -65,7 +65,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # TP14
     - id: ExtendedEmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
@@ -175,7 +175,7 @@
     heldPrefix: hug
   - type: StorageFill
     contents:
-    - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # TP14
     - id: EmergencyFunnyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
@@ -183,6 +183,7 @@
     - id: DrinkWaterBottleFull
   - type: Tag
     tags:
+    - BoxCardboard
     - BoxHug
 
 - type: entity
@@ -208,11 +209,11 @@
   components:
   - type: StorageFill
     contents:
-    - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # TP14
     - id: EmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodBreadBaguette
+    - id: FoodBreadNutriBatard
     - id: DrinkWaterBottleFull
 
 - type: entity
@@ -226,7 +227,7 @@
     - id: EmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodBreadBaguette
+    - id: FoodBreadNutriBatard
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -242,11 +243,11 @@
   components:
   - type: StorageFill
     contents:
-    - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # TP14
     - id: EmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodBreadBaguetteCotton
+    - id: FoodBreadCottonNutriBatard
     - id: DrinkWaterBottleFull
 
 - type: entity

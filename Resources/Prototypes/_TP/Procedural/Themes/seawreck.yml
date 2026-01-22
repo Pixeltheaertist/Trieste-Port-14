@@ -2,22 +2,21 @@
   id: TP14SeaWreckRoomMarker
   name: small wreck marker
   parent: MarkerBase
-  suffix: 5x5
+  suffix: Trieste, Sea, 5x5
   components:
   - type: RoomFill
-    size: 5,5
     roomWhitelist:
       tags:
-        - SeaWreck
+        - SeaWreckFiveByFive
   - type: Sprite
+    scale: 2.5,2.5
     layers:
       - state: red
       - sprite: Mobs/Aliens/elemental.rsi
         state: alive
 
-# Rooms
-# Large
-# - 17x5
+# Large Rooms
+# 17x5
 - type: dungeonRoom
   id: Wreck17x5a
   size: 17,5
@@ -34,7 +33,15 @@
   tags:
     - SeaWreck
 
-# - 7x7
+- type: dungeonRoom
+  id: Wreck17x5c
+  size: 17,5
+  atlas: /Maps/Dungeon/seawreck.yml
+  offset: 36,0
+  tags:
+  - SeaWreck
+
+# 7x7
 - type: dungeonRoom
   id: Wreck7x7a
   size: 7,7
@@ -59,16 +66,8 @@
   tags:
     - SeaWreck
 
-- type: dungeonRoom
-  id: Wreck7x7d
-  size: 7,7
-  atlas: /Maps/Dungeon/seawreck.yml
-  offset: 24,42
-  tags:
-    - SeaWreck
-
-# Medium
-# - 11x5
+# Medium Rooms
+# 11x5
 - type: dungeonRoom
   id: Wreck11x5a
   size: 11,5
@@ -126,6 +125,22 @@
   tags:
     - SeaWreck
 
+- type: dungeonRoom
+  id: Wreck7x5e
+  size: 7,5
+  atlas: /Maps/Dungeon/seawreck.yml
+  offset: 32,12
+  tags:
+  - SeaWreck
+
+- type: dungeonRoom
+  id: Wreck7x5f
+  size: 7,5
+  atlas: /Maps/Dungeon/seawreck.yml
+  offset: 40,12
+  tags:
+  - SeaWreck
+
 # - 13x3
 - type: dungeonRoom
   id: Wreck13x3a
@@ -142,6 +157,14 @@
   offset: 14,30
   tags:
     - SeaWreck
+
+- type: dungeonRoom
+  id: Wreck13x3c
+  size: 13,3
+  atlas: /Maps/Dungeon/seawreck.yml
+  offset: 28,30
+  tags:
+  - SeaWreck
 
 # - 11x3
 - type: dungeonRoom
@@ -201,15 +224,31 @@
   tags:
     - SeaWreck
 
-# Small
-# - 5x5
+- type: dungeonRoom
+  id: Wreck7x3e
+  size: 7,3
+  atlas: /Maps/Dungeon/seawreck.yml
+  offset: 32,38
+  tags:
+  - SeaWreck
+
+- type: dungeonRoom
+  id: Wreck7x3f
+  size: 7,3
+  atlas: /Maps/Dungeon/seawreck.yml
+  offset: 40,38
+  tags:
+  - SeaWreck
+
+# Small Rooms
+# 5x5
 - type: dungeonRoom
   id: Wreck5x5a
   size: 5,5
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 0,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveByFive
 
 - type: dungeonRoom
   id: Wreck5x5b
@@ -217,7 +256,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 6,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveByFive
 
 - type: dungeonRoom
   id: Wreck5x5c
@@ -225,7 +264,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 12,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveByFive
 
 - type: dungeonRoom
   id: Wreck5x5d
@@ -233,7 +272,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 18,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveByFive
 
 - type: dungeonRoom
   id: Wreck5x5e
@@ -241,7 +280,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 24,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveByFive
 
 - type: dungeonRoom
   id: Wreck5x5f
@@ -249,9 +288,9 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 30,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveByFive
 
-# - 3x5
+# 3x5
 - type: dungeonRoom
   id: Wreck3x5a
   size: 3,5
@@ -297,29 +336,5 @@
   size: 3,5
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 20,24
-  tags:
-    - SeaWreck
-
-- type: dungeonRoom
-  id: Wreck3x5g
-  size: 3,5
-  atlas: /Maps/Dungeon/seawreck.yml
-  offset: 24,24
-  tags:
-    - SeaWreck
-
-- type: dungeonRoom
-  id: Wreck3x5h
-  size: 3,5
-  atlas: /Maps/Dungeon/seawreck.yml
-  offset: 28,24
-  tags:
-    - SeaWreck
-
-- type: dungeonRoom
-  id: Wreck3x5i
-  size: 3,5
-  atlas: /Maps/Dungeon/seawreck.yml
-  offset: 32,24
   tags:
     - SeaWreck

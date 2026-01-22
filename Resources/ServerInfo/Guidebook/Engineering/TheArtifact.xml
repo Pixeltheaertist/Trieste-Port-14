@@ -4,7 +4,10 @@
   The Artifact is an ancient, alien device found on the seafloor and unearthed by early settlers.
   It provides the majority of the power for Sweetwater and Trieste, through mainly radiation and electrical pulses.
 
-  
+  <Box>
+    <GuideEntityEmbed Entity="TP14TheArtifact"/>
+  </Box>
+
   ## Basic Overview
   The Artifact releases extreme radiation and lightning bolts, allowing it to be utilized as an extremely efficient reactor. Tesla Coils and Radiation Collectors are in place to gather the energy it releases.
   The Tesla Coils are connected to the main High Voltage subnet of Engineering and automatically use the energy from lightning strikes to charge the SMES units.

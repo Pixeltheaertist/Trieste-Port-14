@@ -1,12 +1,21 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from tgstation, H2O lockers by Cookie (FatherCheese) for Trieste Port 14",
+    "copyright": "Med and welded taken from tgstation and edited by Cookie (FatherCheese), H2O lockers by Cookie (FatherCheese) for Trieste Port 14",
     "size": {
         "x": 32,
         "y": 32
     },
     "states": [
+        {
+            "name": "generic"
+        },
+        {
+            "name": "generic_door"
+        },
+        {
+            "name": "generic_open"
+        },
         {
             "name": "h2o"
         },
@@ -15,6 +24,33 @@
         },
         {
             "name": "h2o_open"
+        },
+        {
+            "name": "locked"
+        },
+        {
+            "name": "med"
+        },
+        {
+            "name":"med_door"
+        },
+        {
+            "name": "med_open"
+        },
+        {
+            "name": "med_secure"
+        },
+        {
+            "name": "med_secure_door"
+        },
+        {
+            "name": "med_secure_open"
+        },
+        {
+            "name": "med_unlocked"
+        },
+        {
+            "name": "unlocked"
         },
         {
             "name": "welded"

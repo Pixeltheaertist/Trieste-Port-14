@@ -1,0 +1,14 @@
+- type: entity
+  parent: BaseItem
+  id: TP14CuttingBoard
+  name: cutting board
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: PlaceableSurface
+  - type: Sprite
+    sprite: _TP/Objects/Tools/kitchen.rsi
+    state: cutting-board
+    drawdepth: SmallObjects
+

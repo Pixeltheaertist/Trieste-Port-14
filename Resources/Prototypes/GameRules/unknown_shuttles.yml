@@ -1,6 +1,5 @@
 # Shuttle Game Rule Tables -- If you dont add your rules to these they wont be used by the games schedulers.
 
-
 - type: entity
   abstract: true
   parent: BaseGameRule
@@ -13,7 +12,7 @@
     weight: 10 # 10 default
     reoccurrenceDelay: 30
     duration: 1
-    maxOccurrences: 1 # should be the same as [copies] in shuttle_incoming_event.yml
+    maxOccurrences: 1
   - type: RuleGrids
   - type: LoadMapRule
 
@@ -24,7 +23,7 @@
  #   - id: UnknownShuttleInstigator
    # - id: UnknownShuttlePirate
 
-  
+
 #- type: entityTable
 #  id: UnknownShuttlesFriendlyTable
 #  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
@@ -60,6 +59,14 @@
 #    earliestStart: 50
 #  - type: LoadMapRule
 #    preloadedGrid: Corsair
+- type: entity
+  id: UnknownShuttleSpacebus
+  parent: BaseUnknownShuttleRule
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-unknown-shuttle-incoming #!!
+  - type: LoadMapRule
+    gridPath: /Maps/Shuttles/ShuttleEvent/spacebus.yml
 
 # TODO for pirates: Make a small pirate vessel called the Corsair, which has (at least), a cargo sell console connected to a pallate so that they can get money from their findings.
 # They should also have atmospheric thrusters. Preferably, merge jumping before this is made so that they can jump on and off of their vessel.

@@ -24,7 +24,7 @@
 - type: marking
   id: CatTail
   bodyPart: Tail
-  markingCategory: Tail
+  markingCategory: Special
   speciesRestriction: [Human]
   coloring:
     default:

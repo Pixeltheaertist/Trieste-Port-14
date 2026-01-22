@@ -1,7 +1,8 @@
 - type: entity
-  parent: BaseItem
+  parent: [ BaseItem, BaseCommandContraband ]
   id: TP14WeaponTrident
   name: overseer's trident
+  suffix: Trieste, Command
   description: A trident modified with mysterious alien technology, wielded by the platform Overseer.
   components:
   - type: Sharp

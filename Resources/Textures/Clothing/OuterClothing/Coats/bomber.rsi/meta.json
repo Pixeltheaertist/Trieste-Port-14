@@ -18,6 +18,14 @@
       "directions": 4
     },
     {
+      "name": "equipped-OUTERCLOTHING-scurret",
+      "directions": 4
+    },
+    {
+      "name": "equipped-OUTERCLOTHING-monkey",
+      "directions": 4
+    },
+    {
       "name": "open-equipped-OUTERCLOTHING",
       "directions": 4
     },

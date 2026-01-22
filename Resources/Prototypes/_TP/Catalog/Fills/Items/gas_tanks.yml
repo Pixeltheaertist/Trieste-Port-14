@@ -2,7 +2,7 @@
   id: TP14WaterTankEmergencyFilled
   name: emergency water tank
   parent: EmergencyOxygenTank
-  suffix: Filled
+  suffix: Trieste, Filled, Survival, Jellid
   description: A tank designed to hold small amounts of water. It won't last long, but it works.
   components:
   - type: Sprite
@@ -16,23 +16,14 @@
       # 15 minutes
       volume: 2.5
       moles:
-      - 0 # oxygen
-      - 0 # nitrogen
-      - 0 # CO2
-      - 0 # Plasma
-      - 0 # Tritium
-      - 0 # Water vapor
-      - 0 # Ammonia
-      - 0 # N2O
-      - 0 # Frezon
-      - 2.051379050 # Water
+        Water: 1.025689525
       temperature: 293.15
 
 - type: entity
   id: TP14WaterTankFilled
-  name: water tank
   parent: OxygenTank
-  suffix: Filled
+  suffix: Trieste, Filled, Survival, Jellid
+  name: water tank
   description: A robust tank designed to store sea water
   components:
   - type: Clothing
@@ -51,14 +42,5 @@
       # 31 minutes
       volume: 5
       moles:
-      - 0 # oxygen
-      - 0 # nitrogen
-      - 0 # CO2
-      - 0 # Plasma
-      - 0 # Tritium
-      - 0 # Water vapor
-      - 0 # Ammonia
-      - 0 # N2O
-      - 0 # Frezon
-      - 2.051379050 # Water
+        Water: 2.051379050
       temperature: 293.15

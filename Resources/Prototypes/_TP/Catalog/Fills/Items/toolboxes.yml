@@ -3,7 +3,7 @@
   name: undetermined borging kit
   description: This is where your borg's specialization lies.
   parent: [ BaseItem, BaseNanotrasenContraband ]
-  suffix: NanoTrasen, Filled
+  suffix: Trieste, Filled, NanoTraitor
   components:
   - type: Sprite
     sprite: Objects/Tools/Toolboxes/toolbox_thief.rsi

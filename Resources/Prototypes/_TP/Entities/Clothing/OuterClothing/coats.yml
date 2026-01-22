@@ -1,0 +1,66 @@
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: TP14ClothingOuterWearyClownCoat
+  suffix: Trieste, Coat, Clown
+  name: weary clown coat
+  description: Sometimes life gets you down, keep clowning around.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/OuterClothing/Coats/weary_coat.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/OuterClothing/Coats/weary_coat.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.5
+  - type: Item
+    size: Huge
+  - type: Storage
+    grid:
+    - 0,0,1,3
+    - 3,0,4,3
+    maxItemSize: Huge
+    quickInsert: false
+
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: TP14ClothingOuterCoatMedical
+  suffix: Trieste, Coat, Medical
+  name: white medical coat
+  description: An old fashioned medical coat, protects against minor spills
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/OuterClothing/Coats/medical_whitecoat.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/OuterClothing/Coats/medical_whitecoat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.75
+
+- type: entity
+  parent: TP14ClothingOuterCoatMedical
+  id: TP14ClothingOuterCoatMedicalGreen
+  suffix: Trieste, Coat, Medical
+  name: green medical coat
+  description: A green old fashioned medical coat, protects against minor spills
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/OuterClothing/Coats/medical_greencoat.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/OuterClothing/Coats/medical_greencoat.rsi
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: TP14ClothingOuterCoatLieutenant
+  suffix: Trieste, Coat, Security
+  name: lieutenant's bomber jacket
+  description: A nylon aerostatic bomber jacket, made in SEC's iconic departmental orange
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/OuterClothing/Coats/lieutenant_coat.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/OuterClothing/Coats/lieutenant_coat.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.3

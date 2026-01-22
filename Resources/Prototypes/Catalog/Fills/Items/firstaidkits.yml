@@ -56,7 +56,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingMaskBreathMedical
+      - id: TP14ClothingMaskAir # TP14
       - id: EmergencyOxygenTankFilled
       - id: EmergencyMedipen
       - id: SyringeInaprovaline

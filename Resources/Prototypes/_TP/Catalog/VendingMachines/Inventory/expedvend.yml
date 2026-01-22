@@ -1,0 +1,29 @@
+- type: vendingMachineInventory
+  id: TP14ExpedVendInventory
+  startingInventory:
+    ClothingBackpackSalvage: 3
+    ClothingBackpackSatchelSalvage: 3
+    ClothingBackpackDuffelSalvage: 3
+    ClothingUniformJumpsuitColorBrown: 3
+    ClothingUniformJumpskirtColorBrown: 3
+    ClothingUniformJumpsuitColorPurple: 3
+    ClothingUniformJumpskirtColorPurple: 3
+    ClothingUniformJumpsuitColorYellow: 3
+    ClothingUniformJumpskirtColorYellow: 3
+    ClothingUniformJumpsuitMercenary: 2
+    ClothingShoesColorBlack: 3
+    ClothingShoesColorBrown: 3
+    ClothingShoesColorOrange: 3
+    ClothingShoesColorPurple: 3
+    TP14ClothingShoesWorkboots: 2
+    ClothingHandsGlovesFingerless: 3
+    TP14ClothingHeadBucketBrown: 3
+    TP14ClothingHeadBucketPurple: 3
+    TP14ClothingHeadBucketYellow: 3
+    ClothingHeadsetMining: 3
+    ClothingOuterWinterMiner: 2
+    ClothingNeckScarfStripedBrown: 3
+    ClothingNeckScarfStripedPurple: 3
+  contrabandInventory:
+    ToyFigurineSalvage: 1
+    PlushieLizardJobSalvagespecialist: 1

@@ -1,7 +1,8 @@
 - type: entity
-  parent: BaseHardBomb
+  parent: [ BaseHardBomb, BaseNanotrasenContraband ]
   id: TP14EnergyBomb
   name: cascade bomb
+  suffix: Trieste, Bomb, NanoTraitor
   description: An advanced bomb that can produce a hyper-microscopic resonance cascade.
   components:
   - type: Wires
@@ -39,6 +40,6 @@
     canCreateVacuum: false
   - type: Defusable
     disposable: false
-  - type: OnUseTimerTrigger
-    delay: 110
-    delayOptions: [110, 240, 300, 600, 900]
+  - type: TimerTrigger
+    delay: 100
+    delayOptions: [100, 200, 300, 400, 500, 600, 700, 800, 900]

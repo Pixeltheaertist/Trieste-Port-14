@@ -1,6 +1,7 @@
 - type: entity
   id: TP14MyFriends
   parent: BaseItem
+  suffix: Trieste, Easter-Egg
   name: an old polaroid
   description: It's an extremely old polaroid of three young humans on earth. A note written on the back reads "Da Craka." #love you guys :]
   components:

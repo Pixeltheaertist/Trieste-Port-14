@@ -299,6 +299,7 @@
   components:
   - type: RCD
     availablePrototypes:
+    - TP14MarkerInside # TP14
     - WallSolid
     - FloorSteel
     - Plating
@@ -499,6 +500,7 @@
   - type: Item
     sprite: Objects/Tools/rolling_pin.rsi
     size: Small
+    storedRotation: -45
   - type: Clothing
     sprite: Objects/Tools/rolling_pin.rsi
     quickEquip: false

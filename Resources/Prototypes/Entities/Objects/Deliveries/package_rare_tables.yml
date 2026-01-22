@@ -75,9 +75,9 @@
       - id: ClothingUniformJumpsuitMedicalDoctor
     - !type:GroupSelector
       children:
-      - id: ClothingBackpackMedical
-      - id: ClothingBackpackDuffelMedical
-      - id: ClothingBackpackSatchelMedical
+      - id: ClothingBackpackVirology # TP14 - was Medical
+      - id: ClothingBackpackDuffelVirology # TP14 - was Medical
+      - id: ClothingBackpackSatchelVirology # TP14 - was Medical
     - !type:GroupSelector
       children:
       - id: ClothingHandsGlovesNitrile

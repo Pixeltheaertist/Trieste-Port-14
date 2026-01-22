@@ -18,6 +18,7 @@
     - BaseStationAlertLevels
     - BaseStationMagnet
     - BaseStationExpeditions
+    - BaseStationSalvageJobs
     - BaseStationSiliconLawCrewsimov
     - BaseStationAllEventsEligible
     - BaseStationNanotrasen
@@ -55,6 +56,5 @@
   - BaseStationRecords
   - BaseStationNanotrasen
   - BaseStationAlertLevels
-  noSpawn: true
   components:
     - type: Transform

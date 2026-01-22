@@ -2,6 +2,7 @@
 - type: entity
   parent: ClothingOuterEVASuitBase
   id: TP14ClothingOuterSuitCosplay
+  suffix: Trieste, EVA, Easter-Egg
   name: Tattered Hardsuit
   description: An oddly suspicious, red costume. This seems to have been made out of a emergency EVA suit due to boredom, as one does.
   components:
@@ -14,7 +15,8 @@
     sprintModifier: 0.7
   - type: HeldSpeedModifier
   - type: TemperatureProtection
-    coefficient: 0.5
+    heatingCoefficient: 0.5
+    coolingCoefficient: 0.5
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetCosplay
     slot: head

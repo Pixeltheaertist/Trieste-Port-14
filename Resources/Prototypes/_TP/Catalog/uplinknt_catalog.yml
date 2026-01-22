@@ -11,6 +11,16 @@
   - UplinkNtWeaponry
 
 - type: listing
+  id: TP14_UplinkGlovesKnuckleDusters
+  name: uplink-NTknuckleduster-name
+  description: uplink-NTknuckleduster-desc
+  productEntity: TP14ClothingHandsKnuckleDustersNT
+  cost:
+    BluespaceCrystal: 6
+  categories:
+  - UplinkNtWeaponry
+
+- type: listing
   id: UplinkRPG7 # SAY HELLO TO MY LITTLE FRIEND # it's a rocket launcher
   name: uplink-rpg-name
   description: uplink-rpg-desc
@@ -82,10 +92,12 @@
 
 ##EXPLOSIVES
 
+# BEACHBALL DOES NOT WORK RIGHT NOW. IDK WHY. DO NOT USE.
+# FIXED. YOU SHOULD 100% USE IT :godo: - Cookie
 #- type: listing
  # id: UplinkBeachballGrenade
  # name: uplink-beachball-name
-  #description: uplink-beachball-desc # BEACHBALL DOES NOT WORK RIGHT NOW. IDK WHY. DO NOT USE.
+  #description: uplink-beachball-desc
   #productEntity: BeachballGrenade
   #cost:
   #  BluespaceCrystal: 4
@@ -450,7 +462,7 @@
   id: UplinkAccessBreakerNT
   name: uplink-access-breaker-name
   description: uplink-access-breaker-desc
-  productEntity: AccessBreaker
+  productEntity: NTAccessBreaker
   cost:
     BluespaceCrystal: 4
   categories:
@@ -580,35 +592,36 @@
   categories:
   - UplinkNtDeception
 
-- type: listing
-  id: UplinkAgentIDCardNT
-  name: uplink-agent-id-card-name
-  description: uplink-agent-id-card-desc
-  productEntity: AgentIDCard
-  cost:
-    BluespaceCrystal: 3
-  categories:
-  - UplinkNtDeception
+# a couple of the following items are just made again for some reason? it prevents me from running the local host so ill probably just hashtag them out and hope nothing goes wrong.
+# - type: listing
+#   id: UplinkAgentIDCardNT
+#   name: uplink-agent-id-card-name
+#   description: uplink-agent-id-card-desc
+#   productEntity: AgentIDCard
+#   cost:
+#     BluespaceCrystal: 3
+#   categories:
+#   - UplinkNtDeception
 
-- type: listing
-  id: UplinkStealthBoxNT
-  name: uplink-stealth-box-name
-  description: uplink-stealth-box-desc
-  productEntity: StealthBox
-  cost:
-    BluespaceCrystal: 5
-  categories:
-  - UplinkNtDeception
+# - type: listing
+#   id: UplinkStealthBoxNT
+#   name: uplink-stealth-box-name
+#   description: uplink-stealth-box-desc
+#   productEntity: StealthBox
+#   cost:
+#     BluespaceCrystal: 5
+#   categories:
+#   - UplinkNtDeception
 
-- type: listing
-  id: UplinkChameleonProjectorNT
-  name: uplink-chameleon-projector-name
-  description: uplink-chameleon-projector-desc
-  productEntity: ChameleonProjector
-  cost:
-    BluespaceCrystal: 7
-  categories:
-  - UplinkNtDeception
+# - type: listing
+#   id: UplinkChameleonProjectorNT
+#   name: uplink-chameleon-projector-name
+#   description: uplink-chameleon-projector-desc
+#   productEntity: ChameleonProjector
+#   cost:
+#     BluespaceCrystal: 7
+#   categories:
+#   - UplinkNtDeception
 
 - type: listing
   id: UplinkEncryptionKeyNanotrasen
@@ -683,3 +696,14 @@
     BluespaceCrystal: 13
   categories:
   - UplinkNtPointless
+
+- type: listing
+  id: TP14_UplinkVape
+  name: uplink-NTvape-name
+  description: uplink-NTvape-desc
+  productEntity: TP14_NTvape
+  cost:
+    BluespaceCrystal: 1
+  categories:
+  - UplinkNtPointless
+

@@ -1,0 +1,112 @@
+- type: entity
+  id: AtmosphericThruster
+  name: atmospheric thruster
+  parent: [ BaseThruster, ConstructibleMachine ]
+  suffix: Trieste
+  description: A thruster that allows a craft to hover in atmospheric conditions. Essential for in-atmosphere flight.
+  components:
+  - type: Machine
+    board: TP14AtmosphericThrusterMachineCircuitboard
+  - type: AtmosphericThruster
+  - type: AmbientSound
+    enabled: false
+    range: 10
+    volume: -3
+    sound:
+      path: /Audio/_TP/Effects/Shuttle/atmospheric_thruster.ogg
+  - type: Thruster
+    damage:
+      types:
+        Slash: 40
+        Heat: 0
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ChangeConstructionNodeBehavior
+        node: machineFrame
+  - type: Sprite
+    sprite: _TP/Structures/Shuttles/thruster.rsi
+    state: base
+
+- type: entity
+  id: TP14AtmosphericThrusterUnanchored
+  parent: AtmosphericThruster
+  suffix: Trieste, Unanchored
+  components:
+  - type: Transform
+    anchored: false
+  - type: Physics
+    bodyType: Dynamic
+
+- type: entity
+  id: TP14LargePropeller
+  name: large propeller
+  parent: [ BaseThruster, ConstructibleMachine ]
+  suffix: Trieste
+  description: A propeller that allows a craft to hover in atmospheric conditions. Essential for in-atmosphere flight.
+  components:
+  - type: Machine
+    board: TP14AtmosphericThrusterMachineCircuitboard
+  - type: AtmosphericThruster
+  - type: AmbientSound
+    enabled: false
+    range: 15
+    volume: -2
+    sound:
+      path: /Audio/_TP/Effects/Shuttle/atmospheric_thruster.ogg
+  - type: Thruster
+    damage:
+      types:
+        Heat: 0
+    thrust: 50
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ChangeConstructionNodeBehavior
+        node: machineFrame
+  - type: Sprite
+    sprite: _TP/Structures/Shuttles/propeller.rsi
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      visible: false
+
+- type: entity
+  id: TP14LargePropellerUnanchored
+  parent: TP14LargePropeller
+  suffix: Trieste, Unanchored
+  components:
+  - type: Transform
+    anchored: false
+  - type: Physics
+    bodyType: Dynamic

@@ -1,7 +1,7 @@
-
 - type: entity
   parent: GeneratorRTG
   id: TP14TheArtifact
+  suffix: Trieste, Engineering, The Artifact
   name: The Artifact
   description: An ancient power generation device, the lifeblood of Sweetwater and Trieste.
   components:
@@ -52,7 +52,7 @@
     color: "#4080FF"
   - type: SingularityDistortion
     falloffPower: 2
-    intensity: -1000
+    intensity: -250
   - type: ItemSlots
   - type: ContainerContainer
     containers:
@@ -94,7 +94,7 @@
   id: TP14NuclearReactor
   name: nuclear reactor
   description: A reactor that violently enriches and detonates uranium to generate energy. Shockingly safe.
-  suffix: Settlers ONLY
+  suffix: Trieste, Settlers
   placement:
     mode: AlignTileAny
   components:
@@ -110,19 +110,23 @@
       path: /Audio/Effects/shuttle_thruster.ogg
   - type: InteractionOutline
   - type: Sprite
-    sprite: Structures/Machines/station_anchor.rsi
+    sprite: _TP/Structures/Power/nuclear_reactor.rsi
     layers:
-    - state: station_anchor
-      map: ["base"]
-    - state: station_anchor_unlit
-      shader: unshaded
-      map: ["unlit"]
+    - state: active
+      map: [ "enum.GeneratorVisualLayers.Body" ]
+      visible: false
+    - state: idle
+      map: [ "enum.GeneratorVisualLayers.Unlit" ]
+      visible: true
   - type: GenericVisualizer
     visuals:
-      enum.PowerChargeVisuals.Active:
-        unlit:
+      enum.GeneratorVisuals.Running:
+        enum.GeneratorVisualLayers.Body:
           True: { visible: True }
           False: { visible: False }
+        enum.GeneratorVisualLayers.Unlit:
+          True: { visible: False }
+          False: { visible: True }
   - type: Appearance
   - type: FuelGenerator
     minTargetPower: 10000
@@ -156,3 +160,98 @@
         - LargeMobMask
         layer:
         - WallLayer
+
+- type: entity
+  parent: BaseGenerator
+  id: GeneratoradvRTG
+  name: Advanced RTG
+  description: An advanced radioisotope generator specially made by Triese's engineers for long-term power supply.
+  suffix: Trieste, 15kW
+  components:
+  - type: PowerSupplier
+    supplyRate: 15000
+  - type: Sprite
+    sprite: _TP/Structures/Power/advrtg.rsi
+    state: advrtg
+  - type: PowerMonitoringDevice
+    sprite: _TP/Structures/Power/advrtg.rsi
+    state: advrtg
+    # its stronger so logically itd be louder?
+  - type: AmbientSound
+    range: 10
+    sound:
+      path: /Audio/Ambience/Objects/buzzing.ogg
+  - type: GuideHelp
+    guides:
+    - RTG
+    - Power
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 800
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          GeneratoradvRTGDamaged:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: GeneratoradvRTG
+  id: GeneratoradvRTGDamaged
+  name: damaged Advanced RTG
+  description: An advanced radioisotope generator specially made by Trieste's engineers for long-term power supply. This one has damaged shielding.
+  suffix: Trieste, 15kW
+  components:
+  - type: PowerSupplier
+    supplyRate: 15000
+  - type: Sprite
+    sprite: _TP/Structures/Power/advrtg.rsi
+    layers:
+    - state: advrtg_damaged
+    - state: rtg_glow
+  - type: PowerMonitoringDevice
+    sprite: _TP/Structures/Power/advrtg.rsi
+    state: advrtg_damaged
+  - type: RadiationSource
+    intensity: 3
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 5
+          SheetUranium1:
+            min: 1
+            max: 5
+          IngotSilver1:
+            min: 1
+            max: 5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

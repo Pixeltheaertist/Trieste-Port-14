@@ -1,0 +1,9 @@
+- type: reaction
+  id: HorrificLaughter
+  reactants:
+    Laughter:
+      amount: 50 #will need to change amounts later maybe
+    ExoticOil:
+      amount: 1
+  products:
+    HorrificLaughter: 50

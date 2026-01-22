@@ -1,6 +1,13 @@
-# Expeditioneers
+# Civilian
 - type: playTimeTracker
-  id: JobBasinEngi
+  id: TP14SettlerTracker
+
+# Expeditionary
+- type: playTimeTracker
+  id: TP14BasinTechTracker
 
 - type: playTimeTracker
-  id: JobPilot
+  id: TP14ExpeditioneerTracker
+
+- type: playTimeTracker
+  id: TP14PilotTracker

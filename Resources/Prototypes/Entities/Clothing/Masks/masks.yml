@@ -162,31 +162,13 @@
       Plastic: 50
 
 - type: entity
-  parent: ClothingMaskBase
-  id: ClothingMaskBreathNeck
-  name: lung-adaption apparatus
-  description: A series of tubes that connects from a tank to the wearer's lungs. Allows more comfortable use. After putting on, of course.
-  components:
-  - type: Item
-    size: Tiny
-  - type: Sprite
-    sprite: Clothing/Mask/neckapparatus.rsi
-  - type: Clothing
-    sprite: Clothing/Mask/neckapparatus.rsi
-    slots:
-    - MASK
-    - NECK
-  - type: BreathMask
-
-- type: entity
   parent: ClothingMaskPullableBase
   id: ClothingMaskBreath
-  name: air mask
-  description: It'll at least keep your lungs dry...
+  name: breath mask
+  description: Might as well keep this on 24/7.
   components:
   - type: Item
     size: Tiny
-  - type: WaterBlocker
   - type: Sprite
     sprite: Clothing/Mask/breath.rsi
   - type: Clothing
@@ -202,7 +184,7 @@
       Steel: 50
       Plastic: 100
   - type: StaticPrice
-    price: 12.5
+    price: 30 # increases in price after decomposed into raw materials
 
 - type: entity
   parent: ClothingMaskBase
@@ -224,10 +206,7 @@
     - WhitelistChameleon
   - type: HideLayerClothing
     slots:
-    - Hair
     - Snout
-    - HeadTop
-    - HeadSide
 
 - type: entity
   parent: ClothingMaskClownBase
@@ -241,10 +220,7 @@
     - WhitelistChameleon
   - type: HideLayerClothing
     slots:
-    - Hair
     - Snout
-    - HeadTop
-    - HeadSide
 
 - type: entity
   parent: ClothingMaskClown
@@ -333,6 +309,8 @@
   - type: PhysicalComposition
     materialComposition:
       Plastic: 25
+  - type: StaticPrice
+    price: 5
 
 - type: entity
   parent: ClothingMaskBase
@@ -351,6 +329,9 @@
   - type: IngestionBlocker
   - type: AddAccentClothing
     accent: MumbleAccent
+  - type: EmoteBlocker
+    blocksCategories:
+    - Vocal
   - type: Construction
     graph: Muzzle
     node: muzzle
@@ -674,6 +655,24 @@
     sprite: Clothing/Mask/scaredmime.rsi
   - type: Clothing
     sprite: Clothing/Mask/scaredmime.rsi
+
+- type: entity
+  parent: [ClothingMaskMime, BaseSecurityContraband]
+  id: ClothingMaskMimeSecurity
+  name: security mime mask
+  description: You have the right to remain silent.
+  components:
+  - type: Sprite
+    sprite: Clothing/Mask/mime_security.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/mime_security.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Heat: 0.95
 
 - type: entity
   parent: ClothingMaskBase

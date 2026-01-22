@@ -1,5 +1,5 @@
 - type: entity
-  name: Artifact Bypass Code
+  name: artifact bypass code
   parent: BaseItem
   id: NukeDisk
   description: This disk contains the radio signal utilized by the early settlers that re-awakened the dormant artifact. It has been passed down from overseer to overseer. keep it safe.
@@ -28,7 +28,7 @@
     stealGroup: NukeDisk
 
 - type: entity
-  name: Artifact Bypass Code
+  name: artifact bypass code
   parent: BaseItem
   id: NukeDiskFake
   suffix: Fake

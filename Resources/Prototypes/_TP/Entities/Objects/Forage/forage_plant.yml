@@ -37,6 +37,7 @@
   parent: BaseForagePlantRegrowing
   id: SerpentsMane
   name: serpent's mane
+  suffix: Trieste, Sea, Forage
   description: This plant tries to ward off potential predators by imitating an animal. The currents will make it's light stem move around, scaring off other creatures and the unexperienced.
   components:
   - type: Sprite
@@ -47,16 +48,19 @@
   - type: Forage
     regrowTime: 300
     loot:
-      All: SerpentsManeGather
+      All: !type:NestedSelector
+        tableId: SerpentsManeGather
 
-- type: entityLootTable
+- type: entityTable
   id: SerpentsManeGather
-  entries:
-  - id: SerpentsManeBulb
+  table: !type:AllSelector
+    children:
+    - id: SerpentsManeBulb
 
 - type: entity
   parent: FoodInjectableBase
   id: SerpentsManeBulb
+  suffix: Trieste, Sea, Forage
   name: serpent's mane bulb
   description: Rich in chemicals Serpents Mane is known for. Due to a high risk of overdosing, it is not advised to utilize without refining first.
   components:
@@ -88,6 +92,7 @@
 - type: entity
   parent: BaseForagePlantRegrowing
   id: TrenchlightWeed
+  suffix: Trieste, Sea, Forage
   name: trenchlight weed
   description: An invasive species, brought to the planet from Limoris-2b by inter-sector cargo ships. It's known for it's moderate healing properties even before proper processing.
   components:
@@ -99,16 +104,19 @@
   - type: Forage
     regrowTime: 300
     loot:
-      All: TrenchlightWeed
+      All: !type:NestedSelector
+        tableId: TrenchlightWeed
 
-- type: entityLootTable
+- type: entityTable
   id: TrenchlightWeed
-  entries:
-  - id: TrenchlightLeaf
+  table: !type:AllSelector
+    children:
+    - id: TrenchlightLeaf
 
 - type: entity
   parent: FoodInjectableBase
   id: TrenchlightLeaf
+  suffix: Trieste, Sea, Forage
   name: trenchlight leaf
   description: The leaves of Trenchlight weed. It's known as a snack to expedition teams due to it's medicinal properties.
   components:

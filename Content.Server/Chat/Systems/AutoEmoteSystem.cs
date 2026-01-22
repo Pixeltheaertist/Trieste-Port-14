@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared.Chat;
 using Content.Shared.Chat.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -46,7 +47,11 @@ public sealed class AutoEmoteSystem : EntitySystem
 
                 if (autoEmotePrototype.WithChat)
                 {
-                    _chatSystem.TryEmoteWithChat(uid, autoEmotePrototype.EmoteId, autoEmotePrototype.HiddenFromChatWindow ? ChatTransmitRange.HideChat : ChatTransmitRange.Normal);
+                    _chatSystem.TryEmoteWithChat(uid,
+                        autoEmotePrototype.EmoteId,
+                        autoEmotePrototype.HiddenFromChatWindow ? ChatTransmitRange.HideChat : ChatTransmitRange.Normal,
+                        ignoreActionBlocker: autoEmotePrototype.IgnoreActionBlocker,
+                        forceEmote: autoEmotePrototype.Force);
                 }
                 else
                 {
@@ -67,10 +72,29 @@ public sealed class AutoEmoteSystem : EntitySystem
 
     private void OnUnpaused(EntityUid uid, AutoEmoteComponent autoEmote, ref EntityUnpausedEvent args)
     {
+        // Safety check: if paused time is suspiciously long or negative, skip the adjustment.
+        if (args.PausedTime <= TimeSpan.Zero || args.PausedTime > TimeSpan.FromDays(365))
+        {
+            Log.Warning($"Entity {uid} had invalid pause time: {args.PausedTime}. Skipping timer adjustment.");
+            return;
+        }
+
+        // Check if adding time would overflow before doing it.
+        if (autoEmote.NextEmoteTime > TimeSpan.MaxValue - args.PausedTime)
+        {
+            Log.Warning($"Entity {uid} would overflow NextEmoteTime. Skipping adjustment.");
+            return;
+        }
+
         foreach (var key in autoEmote.EmoteTimers.Keys)
         {
-            autoEmote.EmoteTimers[key] += args.PausedTime;
+            // Run a safety check for each timer too.
+            if (autoEmote.EmoteTimers[key] <= TimeSpan.MaxValue - args.PausedTime)
+            {
+                autoEmote.EmoteTimers[key] += args.PausedTime;
+            }
         }
+
         autoEmote.NextEmoteTime += args.PausedTime;
     }
 

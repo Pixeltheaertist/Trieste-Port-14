@@ -1,0 +1,47 @@
+# OH YEAH!!!
+- type: startingGear # OH YEAH!!!
+  id: MachoManGear # OH YEAH!!!
+  equipment: # OH YEAH!!!
+    jumpsuit: ClothingUniformJumpsuitHawaiBlack # OH YEAH!!!
+    shoes: ClothingShoesColorRed # OH YEAH!!!
+
+- type: entity # OH YEAH!!!
+  name: Macho Man # OH YEAH!!!
+  parent: BaseMobHuman # OH YEAH!!!
+  id: MobMachoMan # OH YEAH!!!
+  components: # OH YEAH!!!
+  - type: RandomHumanoidAppearance # OH YEAH!!!
+    randomizeName: false # OH YEAH!!!
+    #skinColor: '#F2CEB5FF' # OH YEAH!!!
+    #eyeColor: '#FFFF00' # OH YEAH!!!
+    #facialHairColor: '#00000000' # OH YEAH!!!
+    #facialHair: HumanFacialHairNeckbeard # OH YEAH!!!
+    #hairColor: '#00000000' # OH YEAH!!!
+    hair: HairBald # OH YEAH!!!
+    #gender: Male # OH YEAH!!!
+    #sex: Male # OH YEAH!!!
+    #age: 114 # OH YEAH!!!
+  - type: Stamina # OH YEAH!!!
+    critThreshold: 500 # OH YEAH!!!
+  - type: Insulated # OH YEAH!!!
+  - type: FlashImmunity # OH YEAH!!!
+  - type: MobThresholds # OH YEAH!!!
+    thresholds: # OH YEAH!!!
+      0: Alive # OH YEAH!!!
+      200: Critical # OH NO!!!
+      300: Dead # OH NO!!!
+  - type: MeleeWeapon # OH YEAH!!!
+    soundHit: # OH YEAH!!!
+      path: /Audio/Effects/explosion1.ogg # OH YEAH!!!
+    animation: WeaponArcPunch # OH YEAH!!!
+    damage: # OH YEAH!!!
+      types: # OH YEAH!!!
+        Blunt: 100 # OH YEAH!!!
+        Slash: 10 # OH YEAH!!!
+        Structural: 200 # OH YEAH!!!!
+  - type: Loadout # OH YEAH!!!
+    prototypes: [MachoManGear] # OH YEAH!!!
+  - type: InputMover # OH YEAH!!!
+  - type: MobMover # OH YEAH!!!
+  - type: ReplacementAccent # OH YEAH!!!
+    accent: machoman # OH YEAH!!!

@@ -1,0 +1,37 @@
+- type: entity
+  parent: [ ClothingEyesGlassesChemical, ClothingHeadEyeBaseFlippable ]
+  id: TP14ClothingEyepatchHudChemist
+  name: chemical analysis eyepatch
+  description: An eyepatch that can scan the chemical composition of a solution. For true patriots.
+  components:
+  - type: Appearance
+  - type: Clothing
+    sprite: _TP/Clothing/Eyes/Hud/chempatch.rsi
+  - type: FlippableClothingVisuals
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: GenericVisualizer
+    visuals:
+      enum.FoldedVisuals.State:
+        foldedLayer:
+          True: { visible: true }
+          False: { visible: false }
+        unfoldedLayer:
+          True: { visible: false }
+          False: { visible: true }
+  - type: FoldableClothing
+  - type: Sprite
+    layers:
+    - map: [ "unfoldedLayer" ]
+      sprite : _TP/Clothing/Eyes/Hud/chempatch.rsi
+      state: icon
+    - map: ["foldedLayer"]
+      sprite: _TP/Clothing/Eyes/Hud/chempatch-flipped.rsi
+      state: icon
+      visible: false
+  - type: Tag
+    tags:
+    - PetWearable
+    - WhitelistChameleon

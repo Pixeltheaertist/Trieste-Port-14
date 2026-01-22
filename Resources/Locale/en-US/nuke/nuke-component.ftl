@@ -5,6 +5,8 @@ nuke-component-announcement-unarmed = Artifact containment fields have returned 
 nuke-component-announcement-send-codes = Attention! Self-destruction codes have been sent to designated fax machines.
 nuke-component-doafter-warning = You start fiddling with the shaking machinery... this could take a bit..
 
+nuke-disk-component-microwave = The disk sparks and fizzles a bit, but seems mostly unharmed?
+
 # Nuke UI
 nuke-user-interface-title = Nuclear Fission Explosive
 nuke-user-interface-arm-button = ARM

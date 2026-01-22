@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseItem
   id: TP14PiezoCrystalShard
+  suffix: Trieste
   name: piezo crystal shard
   description:  A small piece of of a shattered piezo crystal.
   components:
@@ -18,3 +19,6 @@
   - type: StaticPrice
     price: 800
   - type: Electrified
+  - type: Tag
+    tags:
+    - TP14TagPiezoShard

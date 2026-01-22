@@ -1,0 +1,34 @@
+- type: job
+  id: TP14Expeditioneer
+  name: job-name-expeditioneer
+  description: job-description-expeditioneer
+  playTimeTracker: TP14ExpeditioneerTracker
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Expeditionary
+      time: 1h
+  icon: "JobIconShaftMiner"
+  startingGear: TP14ExpeditioneerGear
+  supervisors: job-supervisors-qm
+  access:
+  - Salvage
+  - Maintenance
+  - External
+
+- type: startingGear
+  id: TP14ExpeditioneerGear
+  equipment:
+    id: SalvagePDA
+    ears: ClothingHeadsetMining
+
+- type: chameleonOutfit
+  id: TP14ExpeditioneerChameleonOutfit
+  job: TP14Expeditioneer
+  equipment:
+    head: ClothingHeadHatCargosoft
+    eyes: ClothingEyesGlassesCheapSunglasses
+    mask: ClothingMaskGasExplorer
+    outerClothing: ClothingOuterWinterMiner
+    neck: ClothingNeckScarfStripedBrown
+    gloves: ClothingHandsGlovesColorBlack
+
