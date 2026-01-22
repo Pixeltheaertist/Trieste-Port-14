@@ -1,18 +1,22 @@
-- type: AberrantTablePrototype
+- type: entityTable
   id: aberrantEffectsLow
-  weights:
-    AberrantEffectHallucination: 1
+  table: !type:AllSelector
+    children:
+      - id: AberrantEffectHallucination
+        prob: 1
 
-- type: AberrantTablePrototype
+- type: entityTable
   id: aberrantEffectsMedium
-  weights:
-    AberrantEffectHallucination: 1
+  table: !type:AllSelector
+    children:
+    - id: AberrantEffectHallucination
+      prob: 1
 
-- type: AberrantTablePrototype
+- type: entityTable
   id: aberrantEffectsHigh
-  weights:
-    AberrantEffectHallucination: 1
+  table: !type:AllSelector
+    children:
+    - id: AberrantEffectHallucination
+      prob: 1
 
-- type: ComponentTable
-  table: !type:NestedSelector
-    tableId: aberrantEffctsLowCompT
+

@@ -1,37 +1,42 @@
-- type: aberrantEffect
+- type: entity
   id: AberrantEffectHallucination
+  categories: [ HideSpawnMenu ]
   effects:
   - type: aberrantEffect
     components:
     - type: AberrantEffectFeeling
 
-- type: aberrantEffect
+
+- type: entity
   id: AberrantEffectForceSpeech
+  categories: [ HideSpawnMenu ]
 
 
-- type: aberrantEffect
+- type: entity
   id: AberrantEffectShudder
+  categories: [ HideSpawnMenu ]
 
 
-- type: aberrantEffect
+- type: entity
   id: aberrantEffectAnomInfect
+  categories: [ HideSpawnMenu ]
 
 
-- type: aberrantEffect
+- type: entity
   id: aberrantEffectDrifterSpawn
+  categories: [ HideSpawnMenu ]
 
 
-- type: aberrantEffect
+- type: entity
   id: AberrantEffectFishSpawn
+  categories: [ HideSpawnMenu ]
 
 
-- type: aberrantEffect
+- type: entity
   id: AberrantEffectSeaGrassSpawn
+  categories: [ HideSpawnMenu ]
 
 
-- type: aberrantEffect
+- type: entity
   id: AberrantEffectFlood
-
-
-- type: aberrantEffect
-
+  categories: [ HideSpawnMenu ]
