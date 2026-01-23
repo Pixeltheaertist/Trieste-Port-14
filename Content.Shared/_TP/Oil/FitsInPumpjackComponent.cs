@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Server._TP.Oil;
+namespace Content.Shared._TP.Oil;
 
 [RegisterComponent]
 [NetworkedComponent]
