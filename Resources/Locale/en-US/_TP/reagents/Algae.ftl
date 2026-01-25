@@ -17,7 +17,7 @@ reagent-name-denatured = denatured proteins
 reagent-desc-denatured = Proteins cooked by high heat. Parts of this are potentially salvageable
 
 reagent-name-dormant-organics = dormant organics
-reagent-desc-dormant-organics = Trace organic compounds extracted from denatured protiens
+reagent-desc-dormant-organics = Trace organic compounds extracted from denatured proteins
 
 reagent-name-decayed-protein = decayed protein
 reagent-desc-decayed-protein = Useless, centrifuge it for parts
