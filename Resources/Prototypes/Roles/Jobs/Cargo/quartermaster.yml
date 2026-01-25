@@ -7,9 +7,13 @@
     - !type:RoleTimeRequirement
       role: JobCargoTechnician
       time: 1h
-    - !type:RoleTimeRequirement
-      role: JobSalvageSpecialist
-      time: 2.5h
+      # TP14 - Removed salvage specialist
+#    - !type:RoleTimeRequirement
+#      role: JobSalvageSpecialist
+#      time: 2.5h
+    - !type:DepartmentTimeRequirement # TP14
+      department: Expeditionary
+      time: 1h
     - !type:DepartmentTimeRequirement
       department: Cargo
       time: 1h
