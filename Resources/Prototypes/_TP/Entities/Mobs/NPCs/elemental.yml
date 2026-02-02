@@ -1,10 +1,10 @@
 - type: entity
-  id: ReagentSlimePlatelet
+  id: ReagentSlimeReinforcementAlgae
   parent: ReagentSlime
-  suffix: Trieste, Hyper-Platelet
+  suffix: Trieste, Reinforcement Algae
   components:
   - type: Bloodstream
-    bloodReagent: HyperPlatelet
+    bloodReagent: ReinforcementAlgae
   - type: PointLight
     color: "#ffaa00"
   - type: Sprite

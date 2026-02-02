@@ -1,5 +1,5 @@
 - type: guideEntry
-  id: Protein
-  name: guide-entry-protein
-  text: "/ServerInfo/_TP/Guidebook/ChemicalTabs/Protein.xml"
+  id: Algae
+  name: guide-entry-algae
+  text: "/ServerInfo/_TP/Guidebook/ChemicalTabs/Algae.xml"
   filterEnabled: True

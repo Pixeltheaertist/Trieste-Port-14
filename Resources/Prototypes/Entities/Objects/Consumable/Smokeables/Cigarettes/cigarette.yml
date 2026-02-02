@@ -145,7 +145,7 @@
             Quantity: 10
 
 - type: entity
-  id: CigaretteMarrow
+  id: CigaretteRegeneration
   parent: SoakedCigarette
   name: Aloe Peanut Butter Medley
   components:
@@ -156,7 +156,7 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: HyperMarrow
+          - ReagentId: RegenerationAlgae
             Quantity: 10
 
 - type: entity
@@ -190,7 +190,7 @@
             Quantity: 10
 
 - type: entity
-  id: CigarettePlatelet
+  id: CigaretteReinforcement
   parent: SoakedCigarette
   name: Wet Dog Enhanced Cigarette
   components:
@@ -201,7 +201,7 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: HyperPlatelet
+          - ReagentId: ReinforcementAlgae
             Quantity: 10
 
 - type: entity

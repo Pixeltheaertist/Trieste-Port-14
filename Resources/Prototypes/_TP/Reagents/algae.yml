@@ -1,10 +1,10 @@
 - type: reagent
-  id: ActivatedProtein
-  name: reagent-name-activated-protein
-  desc: reagent-desc-activated-protein
-  group: Protein
+  id: ActivatedAlgae
+  name: reagent-name-activated-algae
+  desc: reagent-desc-activated-algae
+  group: Algae
   physicalDesc: reagent-physical-desc-cloudy
-  color: "#8e949b"
+  color: "#9ff09c"
   metabolisms:
     Medicine:
       metabolismRate: .05
@@ -20,12 +20,12 @@
             Radiation: -.1
 
 - type: reagent
-  id: StabilizationProtein
-  name: reagent-name-stabilisation-protein
-  desc: reagent-desc-stabilisation-protein
-  group: Protein
+  id: StabilizationAlgae
+  name: reagent-name-stabilisation-algae
+  desc: reagent-desc-stabilisation-algae
+  group: Algae
   physicalDesc: reagent-physical-desc-cloudy
-  color: "#8e949b"
+  color: "#0ff2bd"
   metabolisms:
     Medicine:
       metabolismRate: .05
@@ -36,12 +36,12 @@
             Cellular: -.5
 
 - type: reagent
-  id: HyperPlatelet
-  name: reagent-name-hyper-platelet
-  desc: reagent-desc-hyper-platelet
-  group: Protein
+  id: ReinforcementAlgae
+  name: reagent-name-reinforcement-algae
+  desc: reagent-desc-reinforcement-algae
+  group: Algae
   physicalDesc: reagent-physical-desc-opaque
-  color: "#f9e49d"
+  color: "#06cc21"
   metabolisms:
     Medicine:
       metabolismRate: .05
@@ -49,9 +49,9 @@
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
-          reagent: HyperMarrow
+          reagent: RegenerationAlgae
           min: .25
-        reagent: DestabilizedProtein
+        reagent: DestabilizedAlgae
         amount: 0.2
       - !type:HealthChange
         conditions:
@@ -83,12 +83,12 @@
             Slash: -1
 
 - type: reagent
-  id: HyperMarrow
-  name: reagent-name-hyper-marrow
-  desc: reagent-desc-hyper-marrow
-  group: Protein
+  id: RegenerationAlgae
+  name: reagent-name-regeneration-algae
+  desc: reagent-desc-regeneration-algae
+  group: Algae
   physicalDesc: reagent-physical-desc-opaque
-  color: "#ff6763"
+  color: "#ace00d"
   metabolisms:
     Medicine:
       metabolismRate: .05
@@ -96,9 +96,9 @@
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
-          reagent: HyperPlatelet
+          reagent: ReinforcementAlgae
           min: .25
-        reagent: DestabilizedProtein
+        reagent: DestabilizedAlgae
         amount: 0.2
       - !type:HealthChange
         conditions:
@@ -137,12 +137,12 @@
 
 
 - type: reagent
-  id: DestabilizedProtein
-  name: reagent-name-destabilized-protien
-  desc: reagent-desc-destabilized-protein
-  group: Protein
+  id: DestabilizedAlgae
+  name: reagent-name-destabilized-algae
+  desc: reagent-desc-destabilized-algae
+  group: Algae
   physicalDesc: reagent-physical-desc-cloudy
-  color: "#8e949b"
+  color: "#455c44"
   metabolisms:
     Medicine:
       metabolismRate: .05
@@ -164,12 +164,12 @@
   physicalDesc: reagent-physical-desc-nondescript
 
 - type: reagent
-  id: DormantProtein
-  name: reagent-name-dormant-protein
-  group: Protein
-  desc: reagent-desc-dormant-protein
+  id: DormantOrganics
+  name: reagent-name-dormant-organics
+  group: Algae
+  desc: reagent-desc-dormant-organics
   flavor: sour
-  color: "#dfe1df"
+  color: "#313830"
   physicalDesc: reagent-physical-desc-nondescript
 
 - type: reagent
@@ -201,3 +201,12 @@
             types:
               Bloodloss: -5
               Asphyxiation: -5
+
+- type: reagent
+  id: AlgalFeedstock
+  name: reagent-name-algal-feedstock
+  desc: reagent-desc-algal-feedstock
+  group: Algae
+  physicalDesc: reagent-physical-desc-nondescript
+  flavor: sour
+  color: "#7ea863"

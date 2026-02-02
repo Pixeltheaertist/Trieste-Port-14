@@ -380,7 +380,7 @@
   name: pill
   suffix: OxySaline 10u
   parent: Pill
-  id: PillDexalin
+  id: PillOxygenatedSaline
   components:
   - type: Pill
     pillType: 15
@@ -399,14 +399,14 @@
 - type: entity
   name: pill canister
   parent: PillCanister
-  id: PillCanisterDexalin
+  id: PillCanisterOxygenatedSaline
   suffix: OxySaline 10u, 7
   components:
   - type: Label
     currentLabel: oxy-saline 10u
   - type: StorageFill
     contents:
-    - id: PillDexalin
+    - id: PillOxygenatedSaline
       amount: 7
 
 - type: entity
@@ -578,7 +578,7 @@
   name: pill
   suffix: Lexodine 10u
   parent: Pill
-  id: PillKelotane
+  id: PillLexodine
   components:
   - type: Pill
     pillType: 3
@@ -597,47 +597,47 @@
 - type: entity
   name: pill canister
   parent: PillCanister
-  id: PillCanisterKelotane
+  id: PillCanisterLexodine
   suffix: Lexodine 10u, 5
   components:
   - type: Label
     currentLabel: lexodine 10u
   - type: StorageFill
     contents:
-    - id: PillKelotane
+    - id: PillLexodine
       amount: 5
 
 - type: entity
   name: pill
-  suffix: Hyper-Marrow 10u
+  suffix: Regeneration Algae 10u
   parent: Pill
-  id: PillDermaline
+  id: PillRegenerationAlgae
   components:
   - type: Pill
     pillType: 7
   - type: Sprite
     state: pill8
   - type: Label
-    currentLabel: hyper-marrow 10u
+    currentLabel: Regeneration Algae 10u
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 20
         reagents:
-        - ReagentId: HyperMarrow
+        - ReagentId: RegenerationAlgae
           Quantity: 10
 
 - type: entity
   name: pill canister
   parent: PillCanister
-  id: PillCanisterDermaline
-  suffix: Hyper-Marrow 10u, 5 # TP14, was Dermaline
+  id: PillCanisterRegenerationAlgae
+  suffix: Regeneration Algae 10u, 5 # TP14, was Dermaline
   components:
   - type: Label
-    currentLabel: hyper-marrow 10u
+    currentLabel: RegenerationAlgae 10u
   - type: StorageFill
     contents:
-    - id: PillDermaline
+    - id: PillRegenerationAlgae
       amount: 5
 
 - type: entity
@@ -688,35 +688,35 @@
 
 - type: entity
   name: pill
-  suffix: Hyper-Platelet 10u
+  suffix: Reinforcement Algae 10u
   parent: Pill
-  id: PillHyperPlatelet
+  id: PillReinforcementAlgae
   components:
   - type: Pill
     pillType: 4
   - type: Sprite
     state: pill5
   - type: Label
-    currentLabel: hyper-platelet 10u
+    currentLabel: Reinforcement Algae 10u
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 20
         reagents:
-        - ReagentId: HyperPlatelet
+        - ReagentId: ReinforcementAlgae
           Quantity: 10
 
 - type: entity
   name: pill canister
   parent: PillCanister
-  id: PillCanisterHyperPlatelet
-  suffix: HyperPlatelet 10u, 5
+  id: PillCanisterReinforcementAlgae
+  suffix: Reinforcement Algae 10u, 5
   components:
   - type: Label
-    currentLabel: hyper-platelet 10u
+    currentLabel: Reinforcement Algae 10u
   - type: StorageFill
     contents:
-    - id: PillHyperPlatelet
+    - id: PillReinforcementAlgae
       amount: 5
 
 - type: entity
@@ -802,7 +802,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: PillDexalin
+    - id: PillOxygenatedSaline
       prob: 0.10
       maxAmount: 7
       orGroup: RandomPill
@@ -826,11 +826,11 @@
       prob: 0.10
       maxAmount: 7
       orGroup: RandomPill
-    - id: PillKelotane
+    - id: PillLexodine
       prob: 0.10
       maxAmount: 7
       orGroup: RandomPill
-    - id: PillDermaline
+    - id: PillRegenerationAlgae
       prob: 0.10
       maxAmount: 7
       orGroup: RandomPill
@@ -838,7 +838,7 @@
       prob: 0.10
       maxAmount: 7
       orGroup: RandomPill
-    - id: PillHyperPlatelet
+    - id: PillReinforcementAlgae
       prob: 0.10
       maxAmount: 7
       orGroup: RandomPill
@@ -910,33 +910,33 @@
           Quantity: 15
 
 - type: entity
-  suffix: hyper-platelet
+  suffix: Reinforcement Algae
   parent: PrefilledSyringe
-  id: SyringeHyperPlatelet
+  id: SyringeReinforcementAlgae
   components:
   - type: Label
-    currentLabel: reagent-name-hyper-platelet
+    currentLabel: reagent-name-reinforcement-algae
   - type: SolutionContainerManager
     solutions:
       injector:
         maxVol: 15
         reagents:
-        - ReagentId: HyperPlatelet
+        - ReagentId: ReinforcementAlgae
           Quantity: 15
 
 - type: entity
-  suffix: hyper-marrow
+  suffix: Regeneration Algae
   parent: PrefilledSyringe
-  id: SyringeDermaline
+  id: SyringeRegenerationAlgae
   components:
   - type: Label
-    currentLabel: reagent-name-hyper-marrow
+    currentLabel: reagent-name-regeneration-algae
   - type: SolutionContainerManager
     solutions:
       injector:
         maxVol: 15
         reagents:
-        - ReagentId: HyperMarrow
+        - ReagentId: RegenerationAlgae
           Quantity: 15
 
 - type: entity
@@ -1080,15 +1080,15 @@
   id: RandomSafePillTable
   table: !type:GroupSelector
     children:
-    - id: PillHyperPlatelet
+    - id: PillReinforcementAlgae
     - id: PillCharcoal
     - id: PillCopper
-    - id: PillDermaline
-    - id: PillDexalin
+    - id: PillRegenerationAlgae
+    - id: PillOxygenatedSaline
     - id: PillDylovene
     - id: PillHyronalin
     - id: PillIron
-    - id: PillKelotane
+    - id: PillLexodine
     - id: PillPotassiumIodide
     - id: PillTricordrazine
     - id: StrangePill
@@ -1097,8 +1097,8 @@
   id: RandomSafeSyringeTable
   table: !type:GroupSelector
     children:
-    - id: SyringeHyperPlatelet
-    - id: SyringeDermaline
+    - id: SyringeReinforcementAlgae
+    - id: SyringeRegenerationAlgae
     - id: SyringeEphedrine
     - id: SyringeEthylredoxrazine
     - id: SyringeHyronalin
