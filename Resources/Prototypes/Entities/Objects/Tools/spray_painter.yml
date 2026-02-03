@@ -51,6 +51,9 @@
   id: SprayPainterRecharging
   suffix: Admeme
   components:
+  - type: SprayPainter
+    pipeChargeCost: 0
+    decalChargeCost: 0
   - type: AutoRecharge
     rechargeDuration: 1
 
