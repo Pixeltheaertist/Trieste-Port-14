@@ -12,6 +12,7 @@ using Content.Shared.Tools.Systems;
 using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared.Interaction.Components;
 
 namespace Content.Shared.Atmos.EntitySystems;
 
@@ -122,7 +123,8 @@ public abstract partial class SharedAtmosPipeLayersSystem : EntitySystem
         if (!TryComp<ToolComponent>(args.Used, out var tool) || !_tool.HasQuality(args.Used, ent.Comp.Tool, tool))
             return;
 
-        if (TryComp<SubFloorHideComponent>(ent, out var subFloorHide) && subFloorHide.IsUnderCover)
+        // TP14 - Added a bypass check for mappers
+        if (TryComp<SubFloorHideComponent>(ent, out var subFloorHide) && subFloorHide.IsUnderCover && !HasComp<BypassInteractionChecksComponent>(args.User))
         {
             _popup.PopupClient(Loc.GetString("atmos-pipe-layers-component-cannot-adjust-pipes"), ent, args.User);
             return;
