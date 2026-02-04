@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.4.0
   forkId: ""
   forkVersion: ""
-  time: 02/04/2026 08:36:50
-  entityCount: 12842
+  time: 02/04/2026 09:00:13
+  entityCount: 12845
 maps:
 - 1
 grids:
@@ -154,7 +154,7 @@ entities:
           version: 7
         1,-2:
           ind: 1,-2
-          tiles: HQAAAAAAAB8AAAAAAAAfAAAAAAAAgQAAAAAAAA0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAB8AAAAAAAAfAAAAAAAAHwAAAAAAAA0AAAAAAAANAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAADQAAAAAAACAAAAAAAAAaAAAAAAMAGgAAAAABAAYAAAAAAACBAAAAAAAADQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAAAAAAACAAAAAAAQAyAAAAAAAANwAAAAAAADYAAAAAAAA2AAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAAyAAAAAAAAGAAAAAAAADcAAAAAAwA2AAAAAAAANgAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAAIAAAAAACADIAAAAAAAA3AAAAAAEAgQAAAAAAAIEAAAAAAAANAAAAAAAADQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAACIAAAAAAwAiAAAAAAIASAAAAAAAAAQAAAAAAABIAAAAAAAASAAAAAAAAA0AAAAAAAANAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAAiAAAAAAMAMgAAAAAAAEgAAAAAAAAEAAAAAAAASAAAAAAAAEgAAAAAAABIAAAAAAAADQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAAgQAAAAAAABgAAAAAAAAEAAAAAAAABAAAAAAAAEgAAAAAAABIAAAAAAAASAAAAAAAAA0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAIEAAAAAAAAyAAAAAAAASAAAAAAAAEgAAAAAAABIAAAAAAAASAAAAAAAAA0AAAAAAAANAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAAAAAAAA0AAAAAAAAGAAAAAAAABgAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAANAAAAAAAABgAAAAAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAADQAAAAAAAAYAAAAAAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAAIwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA==
+          tiles: HQAAAAAAAB8AAAAAAAAfAAAAAAAAgQAAAAAAAA0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAB8AAAAAAAAfAAAAAAAAHwAAAAAAAA0AAAAAAAANAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAADQAAAAAAACAAAAAAAAAaAAAAAAMAGgAAAAABAAYAAAAAAACBAAAAAAAADQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAAAAAAACAAAAAAAQAyAAAAAAAANwAAAAAAADYAAAAAAAA2AAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAAyAAAAAAAAGAAAAAAAADcAAAAAAwA2AAAAAAAANgAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAAIAAAAAACADIAAAAAAAA3AAAAAAEAgQAAAAAAAIEAAAAAAAANAAAAAAAADQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAACIAAAAAAwAiAAAAAAIASAAAAAAAAAQAAAAAAABIAAAAAAAAHwAAAAAAAA0AAAAAAAANAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAAiAAAAAAMAMgAAAAAAAEgAAAAAAAAEAAAAAAAASAAAAAAAAB8AAAAAAAAfAAAAAAAADQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAAgQAAAAAAABgAAAAAAAAEAAAAAAAABAAAAAAAAEgAAAAAAABIAAAAAAAAHwAAAAAAAA0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAIEAAAAAAAAyAAAAAAAASAAAAAAAAEgAAAAAAAAfAAAAAAAASAAAAAAAAA0AAAAAAAANAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAAAAAAAA0AAAAAAAAGAAAAAAAABgAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAANAAAAAAAABgAAAAAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAADQAAAAAAAAYAAAAAAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAAIwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA==
           version: 7
         2,-2:
           ind: 2,-2
@@ -2087,6 +2087,8 @@ entities:
             id: DirtHeavy
           decals:
             1116: 14,-34
+            4206: 19,-23
+            4209: 18,-26
         - node:
             cleanable: True
             color: '#FFFFFFFF'
@@ -2785,6 +2787,8 @@ entities:
           decals:
             1106: 16,-35
             1107: 15,-33
+            4207: 19,-25
+            4208: 19,-24
         - node:
             cleanable: True
             color: '#FFFFFFFF'
@@ -3790,6 +3794,17 @@ entities:
             2570: -9,-24
             2571: -10,-24
         - node:
+            color: '#A9AAACFF'
+            id: MiniTileInnerOverlayNW
+          decals:
+            4204: 19,-24
+        - node:
+            color: '#A9AAACFF'
+            id: MiniTileLineOverlayS
+          decals:
+            4203: 19,-24
+            4205: 18,-26
+        - node:
             color: '#B1B2AEE6'
             id: MiniTileSteelCornerSw
           decals:
@@ -3842,6 +3857,11 @@ entities:
             id: MiniTileWhiteCornerNe
           decals:
             4176: 13,-40
+        - node:
+            color: '#A9AAACFF'
+            id: MiniTileWhiteCornerNe
+          decals:
+            4202: 19,-23
         - node:
             color: '#B1B2AEE6'
             id: MiniTileWhiteCornerNe
@@ -3897,6 +3917,11 @@ entities:
           decals:
             2941: 13,-34
             2942: 13,-34
+        - node:
+            color: '#A9AAACFF'
+            id: MiniTileWhiteCornerSw
+          decals:
+            4210: 16,-23
         - node:
             color: '#DE3A3A95'
             id: MiniTileWhiteCornerSw
@@ -3955,6 +3980,11 @@ entities:
             4178: 14,-42
             4181: 15,-42
             4182: 13,-40
+        - node:
+            color: '#A9AAACFF'
+            id: MiniTileWhiteInnerNe
+          decals:
+            4212: 15,-23
         - node:
             color: '#B1B2AEE6'
             id: MiniTileWhiteInnerNe
@@ -4040,6 +4070,11 @@ entities:
             id: MiniTileWhiteLineW
           decals:
             4179: 15,-42
+        - node:
+            color: '#A9AAACFF'
+            id: MiniTileWhiteLineW
+          decals:
+            4211: 15,-23
         - node:
             color: '#DE3A3A96'
             id: MiniTileWhiteLineW
@@ -4758,7 +4793,7 @@ entities:
           1,4:
             1: 61457
           2,0:
-            0: 61183
+            0: 44799
           2,1:
             0: 65535
           2,2:
@@ -5050,7 +5085,8 @@ entities:
             1: 13107
             0: 52416
           7,-9:
-            1: 60620
+            1: 27852
+            0: 32768
           8,-8:
             0: 65521
           8,-7:
@@ -5060,8 +5096,8 @@ entities:
           8,-5:
             0: 30704
           8,-9:
-            0: 30583
-            1: 34952
+            0: 63351
+            1: 2184
           9,-8:
             0: 49080
           9,-7:
@@ -5132,14 +5168,14 @@ entities:
           9,-2:
             1: 65327
           9,-1:
-            1: 4400
-            0: 60928
+            1: 304
+            0: 65024
           9,0:
             1: 3345
             0: 62190
           10,-3:
-            1: 63617
-            0: 1806
+            1: 47233
+            0: 18190
           10,-2:
             1: 65295
           10,-1:
@@ -5232,20 +5268,22 @@ entities:
           14,-2:
             1: 4371
           14,-5:
-            0: 53263
-            1: 12272
+            0: 61455
+            1: 4080
           15,-4:
             0: 65535
           15,-5:
             0: 64716
             1: 819
           15,-3:
-            1: 12
+            1: 224
+            0: 12
           16,-4:
-            0: 273
-            1: 12834
+            0: 4369
+            1: 8738
           16,-3:
-            1: 1
+            0: 1
+            1: 50
           12,4:
             1: 30724
             0: 2032
@@ -5583,11 +5621,12 @@ entities:
             1: 24588
           -4,8:
             0: 119
+            1: 61440
           -4,7:
             0: 61649
           -5,8:
             0: 204
-            1: 17
+            1: 33297
           -4,9:
             1: 61440
           -4,10:
@@ -5606,7 +5645,8 @@ entities:
           -3,9:
             1: 65263
           -3,10:
-            1: 65519
+            1: 62959
+            0: 2560
           -3,11:
             1: 255
           -3,7:
@@ -5627,10 +5667,13 @@ entities:
             0: 52416
           -5,5:
             0: 65535
+          -4,6:
+            0: 56524
+          -5,6:
+            0: 49167
+            1: 512
           -5,7:
             0: 51404
-          -4,6:
-            0: 52428
           -3,4:
             1: 61440
           -3,5:
@@ -5733,8 +5776,6 @@ entities:
             0: 34952
           -6,6:
             0: 8
-          -5,6:
-            0: 15
           13,4:
             0: 35056
             1: 1792
@@ -6270,7 +6311,7 @@ entities:
       pos: 49.5,-23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -10961.15
+      secondsUntilStateChange: -11516.876
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6408,7 +6449,7 @@ entities:
       pos: 47.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -78664.914
+      secondsUntilStateChange: -79220.64
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6455,7 +6496,7 @@ entities:
       pos: 11.5,11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -341372.16
+      secondsUntilStateChange: -341927.88
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6747,7 +6788,7 @@ entities:
       pos: 18.5,23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -380487.94
+      secondsUntilStateChange: -381043.66
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7004,7 +7045,7 @@ entities:
       pos: 30.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -9528.939
+      secondsUntilStateChange: -10084.665
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7115,7 +7156,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -357069.7
+      secondsUntilStateChange: -357625.4
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -28819,7 +28860,7 @@ entities:
       pos: -10.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -54230.973
+      secondsUntilStateChange: -54786.7
       state: Opening
   - uid: 10921
     components:
@@ -29117,6 +29158,18 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 32.5,-11.5
+      parent: 2
+  - uid: 12843
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 11.5,-6.5
+      parent: 2
+  - uid: 12844
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 17.5,-23.5
       parent: 2
 - proto: DecalSpawnerGraffiti
   entities:
@@ -39522,7 +39575,7 @@ entities:
       pos: 12.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -111240.54
+      secondsUntilStateChange: -111796.266
       state: Closing
   - uid: 3844
     components:
@@ -53219,6 +53272,14 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 49.5,-7.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 12845
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 14.5,-23.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -78975,7 +79036,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -337589.03
+      secondsUntilStateChange: -338144.75
       state: Opening
     - type: Airlock
       autoClose: False
@@ -79750,7 +79811,7 @@ entities:
       pos: 39.5,45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -34358.45
+      secondsUntilStateChange: -34914.176
       state: Opening
   - uid: 6259
     components:
