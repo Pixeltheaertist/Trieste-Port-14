@@ -312,7 +312,8 @@
 - type: entity
   id: SpawnPointCaptain
   parent: SpawnPointJobBase
-  name: captain
+  # name: captain # TP14
+  name: overseer
   components:
   - type: SpawnPoint
     job_id: Captain

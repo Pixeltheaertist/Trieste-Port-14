@@ -1,0 +1,18 @@
+- type: loadout
+  id: TP14LoadoutCigPackMixed
+  storage:
+    back:
+    - CigPackMixed
+  groupBy: "smokeables"
+
+- type: loadout
+  id: TP14LoadoutSmokingPipe
+  storage:
+    back:
+    - SmokingPipeFilledTobacco
+  groupBy: "smokeables"
+
+- type: loadout
+  id: TP14LoadoutNeckStethoscope
+  equipment:
+    neck: ClothingNeckStethoscope

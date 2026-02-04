@@ -1,0 +1,22 @@
+- type: loadoutGroup
+  id: TP14GroupCitizenHeadwear
+  name: tp14-loadout-group-passenger-headwear
+  minLimit: 0
+  loadouts:
+  - TP14LoadoutHeadwearBucketGrey
+  - TP14LoadoutHeadwearBucketBlack
+  - TP14LoadoutHeadwearBucketBlue
+  - TP14LoadoutHeadwearBucketBrown
+  - TP14LoadoutHeadwearBucketDarkBlue
+  - TP14LoadoutHeadwearBucketDarkGreen
+  - TP14LoadoutHeadwearBucketGreen
+  - TP14LoadoutHeadwearBucketLightBrown
+  - TP14LoadoutHeadwearBucketMaroon
+  - TP14LoadoutHeadwearBucketOlive
+  - TP14LoadoutHeadwearBucketOrange
+  - TP14LoadoutHeadwearBucketPink
+  - TP14LoadoutHeadwearBucketPurple
+  - TP14LoadoutHeadwearBucketRed
+  - TP14LoadoutHeadwearBucketTeal
+  - TP14LoadoutHeadwearBucketWhite
+  - TP14LoadoutHeadwearBucketYellow
