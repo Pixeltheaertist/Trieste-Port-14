@@ -44,3 +44,5 @@
     slots:
     - suitStorage
     - Belt
+  - type: AberrantDamageOnHit
+    amount: 10

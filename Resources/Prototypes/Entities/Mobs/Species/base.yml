@@ -226,7 +226,7 @@
   - MobRespirator
   - MobAtmosStandard
   - MobFlammable
-  - BaseMobSpecies
+  - TPBaseMobSpeciesAberrant #TP, nicest way I can tie aberrant in without editing literally every species proto
   id: BaseMobSpeciesOrganic
   abstract: true
   components:
@@ -287,6 +287,7 @@
   - type: FireVisuals
     alternateState: Standing
   - type: StunVisuals
+
 
 - type: entity
   save: false
