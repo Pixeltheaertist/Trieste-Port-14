@@ -22,20 +22,20 @@ namespace Content.Server.TP.Abyss.Systems
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<AbyssalSuitComponent, GotEquippedEvent>(OnEquipped);
-        SubscribeLocalEvent<AbyssalSuitComponent, GotUnequippedEvent>(OnUnequipped);
+        SubscribeLocalEvent<Shared._TP.WaterInteractions.AbyssalSuitComponent, GotEquippedEvent>(OnEquipped);
+        SubscribeLocalEvent<Shared._TP.WaterInteractions.AbyssalSuitComponent, GotUnequippedEvent>(OnUnequipped);
     }
 
-    private void OnEquipped(Entity<AbyssalSuitComponent> ent, ref GotEquippedEvent args)
+    private void OnEquipped(Entity<Shared._TP.WaterInteractions.AbyssalSuitComponent> ent, ref GotEquippedEvent args)
     {
         // On equip, protect the user from abyssal pressures.
-        EnsureComp<AbyssalProtectedComponent>(args.Equipee);
+        EnsureComp<Shared._TP.WaterInteractions.AbyssalProtectedComponent>(args.Equipee);
     }
 
-    private void OnUnequipped(Entity<AbyssalSuitComponent> ent, ref GotUnequippedEvent args)
+    private void OnUnequipped(Entity<Shared._TP.WaterInteractions.AbyssalSuitComponent> ent, ref GotUnequippedEvent args)
     {
         // On unequip, make the user able to be crushed.
-        _entityManager.RemoveComponent<AbyssalProtectedComponent>(args.Equipee);
+        _entityManager.RemoveComponent<Shared._TP.WaterInteractions.AbyssalProtectedComponent>(args.Equipee);
     }
 }
 }
