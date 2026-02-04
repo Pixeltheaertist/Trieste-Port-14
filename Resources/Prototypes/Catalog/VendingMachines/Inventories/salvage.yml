@@ -3,6 +3,7 @@
   startingInventory:
     Crowbar: 2
     Pickaxe: 4
+    MiningDrill: 2 # TP14
     OreBag: 4
     Flare: 4
     FlashlightLantern: 2

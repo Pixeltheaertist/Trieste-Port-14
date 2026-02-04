@@ -695,7 +695,7 @@ CigaretteBread: CigaretteBbqSauce
 SuitStorageBasic: SuitStorageEVA
 
 # 2025-05-28
-SyringeBicaridine: SyringeHyperPlatelet
+SyringeBicaridine: SyringeReinforcementAlgae # tp14
 
 # 2025-06-07
 BaseOilDrum: TP14BaseOilDrum
@@ -820,3 +820,7 @@ TP14JellidProofPaperBin10: PaperBin10
 TP14JellidProofPaperBin20: PaperBin20
 
 FloorPlatformEntity: null
+
+# 2026 01-12
+
+PillCanisterDexalin: PillCanisterOxygenatedSaline

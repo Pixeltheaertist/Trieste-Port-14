@@ -1,0 +1,212 @@
+- type: reagent
+  id: ActivatedAlgae
+  name: reagent-name-activated-algae
+  desc: reagent-desc-activated-algae
+  group: Algae
+  physicalDesc: reagent-physical-desc-cloudy
+  color: "#9ff09c"
+  metabolisms:
+    Medicine:
+      metabolismRate: .05
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -.3
+            Burn: -.3
+            Airloss: -.3
+          types:
+            Caustic: -.1
+            Radiation: -.1
+
+- type: reagent
+  id: StabilizationAlgae
+  name: reagent-name-stabilisation-algae
+  desc: reagent-desc-stabilisation-algae
+  group: Algae
+  physicalDesc: reagent-physical-desc-cloudy
+  color: "#0ff2bd"
+  metabolisms:
+    Medicine:
+      metabolismRate: .05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Cellular: -.5
+
+- type: reagent
+  id: ReinforcementAlgae
+  name: reagent-name-reinforcement-algae
+  desc: reagent-desc-reinforcement-algae
+  group: Algae
+  physicalDesc: reagent-physical-desc-opaque
+  color: "#06cc21"
+  metabolisms:
+    Medicine:
+      metabolismRate: .05
+      effects:
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: RegenerationAlgae
+          min: .25
+        reagent: DestabilizedAlgae
+        amount: 0.2
+      - !type:HealthChange
+        conditions:
+        - !type:TemperatureCondition
+          max: 305
+          min: 285
+        damage:
+          types:
+            Blunt: -1
+            Piercing: -1
+            Slash: -3
+      - !type:HealthChange
+        conditions:
+        - !type:TemperatureCondition
+          min: 305
+        damage:
+          types:
+            Blunt: -1
+            Piercing: -3
+            Slash: -1
+      - !type:HealthChange
+        conditions:
+        - !type:TemperatureCondition
+          max: 285
+        damage:
+          types:
+            Blunt: -3
+            Piercing: -1
+            Slash: -1
+
+- type: reagent
+  id: RegenerationAlgae
+  name: reagent-name-regeneration-algae
+  desc: reagent-desc-regeneration-algae
+  group: Algae
+  physicalDesc: reagent-physical-desc-opaque
+  color: "#ace00d"
+  metabolisms:
+    Medicine:
+      metabolismRate: .05
+      effects:
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: ReinforcementAlgae
+          min: .25
+        reagent: DestabilizedAlgae
+        amount: 0.2
+      - !type:HealthChange
+        conditions:
+        - !type:TemperatureCondition
+          max: 305
+          min: 285
+        damage:
+          types:
+            Heat: -1
+            Cold: -3
+            Shock: -1
+            Caustic: -1
+            Blunt: -.5
+      - !type:HealthChange
+        conditions:
+        - !type:TemperatureCondition
+          min: 305
+        damage:
+          types:
+            Heat: -1
+            Cold: -1
+            Shock: -1
+            Caustic: -3
+            Blunt: -1
+      - !type:HealthChange
+        conditions:
+        - !type:TemperatureCondition
+          max: 285
+        damage:
+          types:
+            Heat: -3
+            Cold: -1
+            Shock: -3
+            Caustic: -1
+            Blunt: -.5
+
+
+- type: reagent
+  id: DestabilizedAlgae
+  name: reagent-name-destabilized-algae
+  desc: reagent-desc-destabilized-algae
+  group: Algae
+  physicalDesc: reagent-physical-desc-cloudy
+  color: "#455c44"
+  metabolisms:
+    Medicine:
+      metabolismRate: .05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: .5
+            Cellular: .25
+
+- type: reagent
+  id: DenaturedProteins
+  name: reagent-name-denatured
+  group: Protein
+  desc: reagent-desc-denatured
+  flavor: sour
+  color: "#dfe1df"
+  recognizable: true
+  physicalDesc: reagent-physical-desc-nondescript
+
+- type: reagent
+  id: DormantOrganics
+  name: reagent-name-dormant-organics
+  group: Algae
+  desc: reagent-desc-dormant-organics
+  flavor: sour
+  color: "#313830"
+  physicalDesc: reagent-physical-desc-nondescript
+
+- type: reagent
+  id: DecayedProtein
+  name: reagent-name-decayed-protein
+  group: Protein
+  desc: reagent-desc-decayed-protein
+  flavor: sour
+  color: "#dfe1df"
+  physicalDesc: reagent-physical-desc-nondescript
+
+- type: reagent
+  id: OxygenatedSaline
+  name: reagent-name-oxygenated-saline
+  group: Protein
+  desc: reagent-desc-oxygenated-saline
+  physicalDesc: reagent-physical-desc-salty
+  flavor: salty
+  color: "#0055c9"
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 6
+        - !type:ModifyBloodLevel
+          amount: 6
+        - !type:HealthChange
+          damage:
+            types:
+              Bloodloss: -5
+              Asphyxiation: -5
+
+- type: reagent
+  id: AlgalFeedstock
+  name: reagent-name-algal-feedstock
+  desc: reagent-desc-algal-feedstock
+  group: Algae
+  physicalDesc: reagent-physical-desc-nondescript
+  flavor: sour
+  color: "#7ea863"

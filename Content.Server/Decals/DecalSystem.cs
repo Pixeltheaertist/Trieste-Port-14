@@ -1,6 +1,4 @@
-using System.Linq;
 using System.Numerics;
-using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Shared.Administration;
@@ -9,7 +7,6 @@ using Content.Shared.Database;
 using Content.Shared.Decals;
 using Content.Shared.Maps;
 using Microsoft.Extensions.ObjectPool;
-using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared;
 using Robust.Shared.Configuration;
@@ -40,8 +37,8 @@ namespace Content.Server.Decals
 
         private readonly Dictionary<NetEntity, HashSet<Vector2i>> _dirtyChunks = new();
         private readonly Dictionary<ICommonSession, Dictionary<NetEntity, HashSet<Vector2i>>> _previousSentChunks = new();
-        private static readonly Vector2 _boundsMinExpansion = new(0.01f, 0.01f);
-        private static readonly Vector2 _boundsMaxExpansion = new(1.01f, 1.01f);
+        private static readonly Vector2 BoundsMinExpansion = new(0.01f, 0.01f);
+        private static readonly Vector2 BoundsMaxExpansion = new(1.01f, 1.01f);
 
         private UpdatePlayerJob _updateJob;
         private List<ICommonSession> _sessions = new();
@@ -120,7 +117,7 @@ namespace Content.Server.Decals
                 if (!oldChunkCollection.TryGetValue(chunkIndices, out var oldChunk))
                     continue;
 
-                var bounds = new Box2(tilePos - _boundsMinExpansion, tilePos + _boundsMaxExpansion);
+                var bounds = new Box2(tilePos - BoundsMinExpansion, tilePos + BoundsMaxExpansion);
                 var toRemove = new RemQueue<uint>();
 
                 foreach (var (oldDecalId, decal) in oldChunk.Decals)
@@ -262,21 +259,55 @@ namespace Content.Server.Decals
             if (gridId == null)
                 return;
 
-            // remove all decals on the same tile
-            foreach (var (decalId, decal) in GetDecalsInRange(gridId.Value, ev.Coordinates.Position))
+            // !! Trieste Specific !!
+            // If a specific decal ID is provided, remove only that one
+            if (ev.DecalId.HasValue)
             {
+                if (!TryComp(gridId.Value, out DecalGridComponent? comp))
+                    return;
+
+                if (!comp.DecalIndex.TryGetValue(ev.DecalId.Value, out var chunkIndices))
+                    return; // Decal doesn't exist
+
+                var chunk = comp.ChunkCollection.ChunkCollection[chunkIndices];
+                if (!chunk.Decals.TryGetValue(ev.DecalId.Value, out var decal))
+                    return;
+
                 if (eventArgs.SenderSession.AttachedEntity != null)
                 {
-                    _adminLogger.Add(LogType.CrayonDraw, LogImpact.Low,
+                    _adminLogger.Add(LogType.CrayonDraw,
+                        LogImpact.Low,
                         $"{ToPrettyString(eventArgs.SenderSession.AttachedEntity.Value):actor} removed a {decal.Color} {decal.Id} at {ev.Coordinates}");
                 }
                 else
                 {
-                    _adminLogger.Add(LogType.CrayonDraw, LogImpact.Low,
+                    _adminLogger.Add(LogType.CrayonDraw,
+                        LogImpact.Low,
                         $"{eventArgs.SenderSession.Name} removed a {decal.Color} {decal.Id} at {ev.Coordinates}");
                 }
 
-                RemoveDecal(gridId.Value, decalId);
+                RemoveDecal(gridId.Value, ev.DecalId.Value);
+            }
+            else
+            {
+                // Remove all decals on the tile (for backwards compatibility and area deletion)
+                foreach (var (decalId, decal) in GetDecalsInRange(gridId.Value, ev.Coordinates.Position))
+                {
+                    if (eventArgs.SenderSession.AttachedEntity != null)
+                    {
+                        _adminLogger.Add(LogType.CrayonDraw,
+                            LogImpact.Low,
+                            $"{ToPrettyString(eventArgs.SenderSession.AttachedEntity.Value):actor} removed a {decal.Color} {decal.Id} at {ev.Coordinates}");
+                    }
+                    else
+                    {
+                        _adminLogger.Add(LogType.CrayonDraw,
+                            LogImpact.Low,
+                            $"{eventArgs.SenderSession.Name} removed a {decal.Color} {decal.Id} at {ev.Coordinates}");
+                    }
+
+                    RemoveDecal(gridId.Value, decalId);
+                }
             }
         }
 

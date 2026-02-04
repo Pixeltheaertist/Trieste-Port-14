@@ -1178,7 +1178,7 @@
       Min: 1
       Max: 2
       PotencyDivisor: 50
-    ActivatedProtein:
+    ActivatedAlgae:
       Min: 1
       Max: 20
       PotencyDivisor: 5
@@ -1232,7 +1232,7 @@
       Min: 1
       Max: 2
       PotencyDivisor: 50
-    HyperPlatelet:
+    ReinforcementAlgae:
       Min: 1
       Max: 20
       PotencyDivisor: 5
@@ -1286,7 +1286,7 @@
       Min: 1
       Max: 2
       PotencyDivisor: 10
-    HyperPlatelet:
+    ReinforcementAlgae:
       Min: 1
       Max: 5
       PotencyDivisor: 20
