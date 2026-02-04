@@ -16,6 +16,9 @@ loadout-group-mask-basin-tech = Basin Technician masks
 loadout-group-neck-basin-tech = Basin Technician neckwear
 loadout-group-outer-basin-tech = Basin Technician outer clothing
 
+# Citizen
+tp14-loadout-group-passenger-headwear = Citizen headwear
+
 ## Expeditioneer
 loadout-group-backpack-exped = Expeditioneer backpacks
 loadout-group-footwear-exped = Expeditioneer footwear
@@ -41,3 +44,8 @@ loadout-group-eyewear-chemist = Chemical glasses
 
 # Misc
 loadout-group-outer-bomber = Bomber Jacket
+
+# Psychologist
+tp14-loadout-group-psychologist-outerwear = Psychologist Outerwear
+tp14-loadout-group-psychologist-footwear = Psychologist Footwear
+tp14-loadout-group-psychologist-neckwear = Psychologist Neckwear
