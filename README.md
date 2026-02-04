@@ -97,3 +97,5 @@ zangothedino - Spriting
 worstdragonhere - Spriting
 
 Pharaz4 - Mapping
+
+BurntCheeto - Mapping
