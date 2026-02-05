@@ -824,3 +824,8 @@ FloorPlatformEntity: null
 # 2026 01-12
 
 PillCanisterDexalin: PillCanisterOxygenatedSaline
+
+# 2026-02-05
+RandomHumanoidSettler: TP14SettlerHuman
+PlanetarySettler: null
+TP14PlanetarySettlerSpawner: TP14PlanetarySettlerSpawnerHuman

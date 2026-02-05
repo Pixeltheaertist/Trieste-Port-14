@@ -1,17 +1,100 @@
+# SETTLERS
 - type: entity
-  name: Settler spawner
-  id: TP14PlanetarySettlerSpawner
   parent: MarkerBase
+  id: TP14PlanetarySettlerSpawnerHuman
+  name: human settler spawner
+  suffix: Trieste, Settler
+  placementMode: SnapgridCenter
   components:
+  - type: GhostRole
+    name: ghost-role-information-settler-name
+    description: ghost-role-information-settler-desc
+    rules: ghost-role-information-nonantagonist-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgentHarmless
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: TP14MobHumanSettler
   - type: Sprite
     layers:
     - state: red
     - sprite: Structures/Decoration/banner.rsi
       state: banner-yellow
-  - type: RandomSpawner
-    prototypes:
-    - RandomHumanoidSettler
 
+- type: entity
+  parent: TP14PlanetarySettlerSpawnerHuman
+  id: TP14PlanetarySettlerSpawnerArachnid
+  name: arachnid settler spawner
+  suffix: Trieste, Settler
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: TP14MobArachnidSettler
+
+- type: entity
+  parent: TP14PlanetarySettlerSpawnerHuman
+  id: TP14PlanetarySettlerSpawnerDiona
+  name: diona settler spawner
+  suffix: Trieste, Settler
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: TP14MobArachnidSettler
+
+- type: entity
+  parent: TP14PlanetarySettlerSpawnerHuman
+  id: TP14PlanetarySettlerSpawnerJellid
+  name: jellid settler spawner
+  suffix: Trieste, Settler
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: TP14MobJellidSettler
+
+- type: entity
+  parent: TP14PlanetarySettlerSpawnerHuman
+  id: TP14PlanetarySettlerSpawnerLizard
+  name: lizard settler spawner
+  suffix: Trieste, Settler
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: TP14MobLizardSettler
+
+- type: entity
+  parent: TP14PlanetarySettlerSpawnerHuman
+  id: TP14PlanetarySettlerSpawnerMoth
+  name: moth settler spawner
+  suffix: Trieste, Settler
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: TP14MobMothSettler
+
+- type: entity
+  parent: TP14PlanetarySettlerSpawnerHuman
+  id: TP14PlanetarySettlerSpawnerSlimePerson
+  name: slime person settler spawner
+  suffix: Trieste, Settler
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: TP14MobSlimePersonSettler
+
+- type: entity
+  parent: TP14PlanetarySettlerSpawnerHuman
+  id: TP14PlanetarySettlerSpawnerVulpkanin
+  name: vulpkanin settler spawner
+  suffix: Trieste, Settler
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: TP14MobVulpkaninSettler
+
+- type: entity
+  parent: TP14PlanetarySettlerSpawnerHuman
+  id: TP14PlanetarySettlerSpawnerVox
+  name: vox settler spawner
+  suffix: Trieste, Settler
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: TP14MobVoxSettler
+
+# OTHERS
 - type: entity
   name: Stranded Hermit spawner
   id: TP14HermitSpawner
