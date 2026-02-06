@@ -1,0 +1,25 @@
+- type: entity
+  id: TP14BorgChassisCargo
+  parent: BorgChassisSelectable
+  name: supply cyborg
+  components:
+  - type: Sprite
+    sprite: _TP/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: cargo
+      map: [ "enum.BorgVisualLayers.Body", "movement" ]
+    - state: cargo_e_r
+      map: [ "enum.BorgVisualLayers.Light" ]
+      shader: unshaded
+      visible: false
+    - state: cargo_l
+      shader: unshaded
+      map: [ "light","enum.BorgVisualLayers.LightStatus" ]
+      visible: false
+  - type: BorgTransponder
+    name: cargo
+    sprite:
+      sprite: _TP/Mobs/Silicon/chassis.rsi
+      state: cargo
+  - type: BorgSwitchableType
+    selectedBorgType: TP14BorgTypeSupply

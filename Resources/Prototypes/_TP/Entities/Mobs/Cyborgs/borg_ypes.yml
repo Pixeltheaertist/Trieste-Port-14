@@ -1,0 +1,32 @@
+- type: borgType
+  id: TP14BorgTypeSupply
+  dummyPrototype: TP14BorgChassisCargo
+
+  # Modules
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleCargo
+
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleAppraisal
+  - TP14BorgModuleMail
+
+  # Radio
+  radioChannels:
+  - Supply
+  - Science
+
+  # Visual
+  inventoryTemplateId: borgShort
+  sprite: _TP/Mobs/Silicon/chassis.rsi
+  spriteBodyState: cargo
+  spriteHasMindState: cargo_e
+  spriteNoMindState: cargo_e_r
+  spriteToggleLightState: cargo_l
+
+  # Petting
+  petSuccessString: tp14-petting-success-cargo-cyborg
+  petFailureString: tp14-petting-failure-cargo-cyborg
