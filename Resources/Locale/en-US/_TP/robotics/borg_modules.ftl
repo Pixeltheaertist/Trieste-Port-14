@@ -1,2 +1,2 @@
-tp14-borg-slot-mail-empty = Letters
-tp14-borg-slot-package-empty = Package
+tp14-borg-slot-package-empty = package
+tp14-borg-slot-bounty-empty = bounty manifest

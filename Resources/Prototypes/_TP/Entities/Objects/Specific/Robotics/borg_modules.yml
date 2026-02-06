@@ -13,13 +13,11 @@
 
 # Cargo
 - type: entity
-  parent: BaseItem
-  id: TP14BorgModulePlaceholderMail
+  parent: MailBag
+  id: TP14IntegratedMailBag
   categories: [ HideSpawnMenu ]
   components:
-  - type: Sprite
-    sprite: Objects/Specific/Cargo/mail.rsi
-    state: icon
+  - type: Unremoveable
 
 - type: entity
   parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
@@ -32,65 +30,40 @@
     - state: icon-mail
   - type: ItemBorgModule
     hands:
+    - item: TP14IntegratedMailBag
     - hand:
-        emptyRepresentative: TP14BorgModulePlaceholderMail
-        emptyLabel: tp14-borg-slot-mail-empty
+        emptyRepresentative: PackageDelivery
+        emptyLabel: tp14-borg-slot-package-empty
         whitelist:
           components:
-          - Paper
           - Delivery
-          tags:
-          - Document
-          - Paper
-    - hand:
-        emptyRepresentative: TP14BorgModulePlaceholderMail
-        emptyLabel: tp14-borg-slot-mail-empty
-        whitelist:
+          - MultiHandedItem
+        blacklist:
           components:
           - Paper
-          - Delivery
+          - CargoBountyLabel
           tags:
-          - Document
           - Paper
     - hand:
-        emptyRepresentative: TP14BorgModulePlaceholderMail
-        emptyLabel: tp14-borg-slot-mail-empty
+        emptyRepresentative: PackageDelivery
+        emptyLabel: tp14-borg-slot-package-empty
         whitelist:
           components:
-          - Paper
           - Delivery
+          - MultiHandedItem
+        blacklist:
+          components:
+          - Paper
           tags:
-          - Document
           - Paper
     - hand:
-        emptyRepresentative: TP14BorgModulePlaceholderMail
-        emptyLabel: tp14-borg-slot-mail-empty
+        emptyRepresentative: PaperCargoBountyManifest
+        emptyLabel: tp14-borg-slot-bounty-empty
         whitelist:
           components:
-          - Paper
-          - Delivery
-          tags:
-          - Document
-          - Paper
-    - hand:
-        emptyRepresentative: TP14BorgModulePlaceholderMail
-        emptyLabel: tp14-borg-slot-mail-empty
-        whitelist:
+          - CargoBountyLabel
+        blacklist:
           components:
-          - Paper
-          - Delivery
-          tags:
-          - Document
-          - Paper
-    - hand:
-        emptyRepresentative: TP14BorgModulePlaceholderMail
-        emptyLabel: tp14-borg-slot-mail-empty
-        whitelist:
-          components:
-          - Paper
-          - Delivery
-          tags:
-          - Document
-          - Paper
+          - MultiHandedItem
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: mail-module }
