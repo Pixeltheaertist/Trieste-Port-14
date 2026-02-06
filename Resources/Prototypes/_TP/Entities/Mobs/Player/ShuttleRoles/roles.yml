@@ -1,16 +1,65 @@
-- type: entity
-  id: RandomHumanoidSettler
-  name: planetary settler
-  components:
-  - type: Sprite
-    sprite: Structures/Decoration/banner.rsi
-    state: banner-yellow
-  - type: RandomHumanoidSpawner
-    settings: PlanetarySettler
-  - type: GhostRole
-    name: ghost-role-information-settler-name
-    description: ghost-role-information-settler-desc
-    rules: ghost-role-information-nonantagonist-rules
+- type: ghostRole
+  id: TP14SettlerArachnid
+  name: ghost-role-information-settler-name
+  description: ghost-role-information-settler-desc
+  rules: ghost-role-information-nonantagonist-rules
+  entityPrototype: TP14MobArachnidSettler
+
+- type: ghostRole
+  id: TP14SettlerDiona
+  name: ghost-role-information-settler-name
+  description: ghost-role-information-settler-desc
+  rules: ghost-role-information-nonantagonist-rules
+  entityPrototype: TP14MobDionaSettler
+
+- type: ghostRole
+  id: TP14SettlerHuman
+  name: ghost-role-information-settler-name
+  description: ghost-role-information-settler-desc
+  rules: ghost-role-information-nonantagonist-rules
+  entityPrototype: TP14MobHumanSettler
+
+- type: ghostRole
+  id: TP14SettlerJellid
+  name: ghost-role-information-settler-name
+  description: ghost-role-information-settler-desc
+  rules: ghost-role-information-nonantagonist-rules
+  entityPrototype: TP14MobDionaSettler
+
+- type: ghostRole
+  id: TP14SettlerLizard
+  name: ghost-role-information-settler-name
+  description: ghost-role-information-settler-desc
+  rules: ghost-role-information-nonantagonist-rules
+  entityPrototype: TP14MobLizardSettler
+
+- type: ghostRole
+  id: TP14SettlerMoth
+  name: ghost-role-information-settler-name
+  description: ghost-role-information-settler-desc
+  rules: ghost-role-information-nonantagonist-rules
+  entityPrototype: TP14MobMothSettler
+
+- type: ghostRole
+  id: TP14SettlerSlimePerson
+  name: ghost-role-information-settler-name
+  description: ghost-role-information-settler-desc
+  rules: ghost-role-information-nonantagonist-rules
+  entityPrototype: TP14MobSlimePersonSettler
+
+- type: ghostRole
+  id: TP14SettlerVulpkanin
+  name: ghost-role-information-settler-name
+  description: ghost-role-information-settler-desc
+  rules: ghost-role-information-nonantagonist-rules
+  entityPrototype: TP14MobVulpkaninSettler
+
+- type: ghostRole
+  id: TP14SettlerVox
+  name: ghost-role-information-settler-name
+  description: ghost-role-information-settler-desc
+  rules: ghost-role-information-nonantagonist-rules
+  entityPrototype: TP14MobVoxSettler
 
 - type: entity
   id: RandomHumanoidHermit
