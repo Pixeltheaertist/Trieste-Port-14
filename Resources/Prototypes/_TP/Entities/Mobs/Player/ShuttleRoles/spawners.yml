@@ -4,7 +4,8 @@
   id: TP14PlanetarySettlerSpawnerHuman
   name: human settler spawner
   suffix: Trieste, Settler
-  placementMode: SnapgridCenter
+  placement:
+    mode: SnapgridCenter
   components:
   - type: GhostRole
     name: ghost-role-information-settler-name
