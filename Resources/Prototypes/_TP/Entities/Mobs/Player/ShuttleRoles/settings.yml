@@ -142,18 +142,6 @@
 # / END THINGY ACTIONS AND SETTINGS/
 
 - type: randomHumanoidSettings
-  id: PlanetarySettler
-  parent: EventHumanoid
-  components:
-  - type: GhostRole
-    name: ghost-role-information-settler-name
-    description: ghost-role-information-settler-description
-    rules: ghost-role-information-freeagent-rules
-  - type: Loadout
-    prototypes: [ TP14SettlerGear ]
-    roleLoadout: [ RoleSurvivalStandard ]
-
-- type: randomHumanoidSettings
   id: StrandedHermit
   parent: EventHumanoid
   components:

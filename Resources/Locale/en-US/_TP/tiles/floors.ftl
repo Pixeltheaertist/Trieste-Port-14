@@ -1,0 +1,9 @@
+tp14-tiles-sand-borderless = Borderless Oceanic Sand
+tp14-tiles-sand = Oceanic Sand
+tp14-tiles-sand-red-borderless = Borderless Oceanic Red Sand
+tp14-tiles-sand-red = Oceanic Red Sand
+tp14-tiles-sand-iron-borderless = Borderless Oceanic Iron Sand
+tp14-tiles-sand-iron = Oceanic Iron Sand
+tp14-tiles-cave = Oceanic Cave Floor
+tp14-tiles-basalt = Oceanic Basalt
+tp14-tiles-desert = Oceanic Desert Floor

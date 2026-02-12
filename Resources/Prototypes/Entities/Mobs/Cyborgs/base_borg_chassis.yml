@@ -113,7 +113,7 @@
       - BorgChassis
       - RoboticsConsole
   - type: WiresPanel
-    openingTool: Prying
+    # openingTool: Prying # TP14 - Screw this noise
   - type: ActivatableUIRequiresPanel
   - type: NameIdentifier
     group: Silicon
