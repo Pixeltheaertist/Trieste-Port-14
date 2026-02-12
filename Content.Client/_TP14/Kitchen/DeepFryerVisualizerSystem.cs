@@ -3,7 +3,7 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client._TP14.Kitchen;
 
-public sealed class DeepFryerVisualizerSystem : VisualizerSystem<Shared._TP.Kitchen.Components.SharedDeepFryerComponent>
+public sealed class DeepFryerVisualizerSystem : VisualizerSystem<SharedDeepFryerComponent>
 {
     protected override void OnAppearanceChange(EntityUid uid,
         SharedDeepFryerComponent component,

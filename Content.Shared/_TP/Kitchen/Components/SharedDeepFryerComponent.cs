@@ -23,7 +23,7 @@ public sealed partial class SharedDeepFryerComponent : Component
     public float CookTimePerLevel = 15.0F;
 
     [DataField]
-    public ProtoId<ItemSizePrototype> MaxItemSize = "Normal";
+    public ProtoId<ItemSizePrototype> MaxItemSize = "Huge";
 
     [DataField]
     public SoundPathSpecifier FryingSound = new("/Audio/_TP/Machines/Kitchen/frying_idle.ogg");
