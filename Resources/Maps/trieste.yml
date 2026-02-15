@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.4.0
   forkId: ""
   forkVersion: ""
-  time: 02/11/2026 22:37:35
-  entityCount: 12883
+  time: 02/15/2026 02:55:18
+  entityCount: 12886
 maps:
 - 1
 grids:
@@ -5959,6 +5959,15 @@ entities:
     - type: Action
       originalIconColor: '#FFFFFFFF'
       container: 5880
+  - uid: 12884
+    mapInit: true
+    paused: true
+    components:
+    - type: Transform
+      parent: 10962
+    - type: Action
+      originalIconColor: '#FFFFFFFF'
+      container: 10962
 - proto: AirAlarm
   entities:
   - uid: 26
@@ -6317,7 +6326,7 @@ entities:
       pos: 49.5,-23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -17206.475
+      secondsUntilStateChange: -17600.393
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6454,7 +6463,7 @@ entities:
       pos: 47.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -84910.24
+      secondsUntilStateChange: -85304.164
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6501,7 +6510,7 @@ entities:
       pos: 11.5,11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -347617.5
+      secondsUntilStateChange: -348011.4
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6801,7 +6810,7 @@ entities:
       pos: 18.5,23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -386733.28
+      secondsUntilStateChange: -387127.2
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7058,7 +7067,7 @@ entities:
       pos: 30.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -15774.264
+      secondsUntilStateChange: -16168.183
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7168,7 +7177,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -363315.03
+      secondsUntilStateChange: -363708.94
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -28929,7 +28938,7 @@ entities:
       pos: -10.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -60476.31
+      secondsUntilStateChange: -60870.227
       state: Opening
   - uid: 10921
     components:
@@ -29006,11 +29015,6 @@ entities:
       parent: 2
 - proto: CurtainsRed
   entities:
-  - uid: 4163
-    components:
-    - type: Transform
-      pos: 57.5,-9.5
-      parent: 2
   - uid: 8878
     components:
     - type: Transform
@@ -29018,6 +29022,11 @@ entities:
       parent: 2
 - proto: CurtainsRedOpen
   entities:
+  - uid: 4163
+    components:
+    - type: Transform
+      pos: 57.5,-9.5
+      parent: 2
   - uid: 6523
     components:
     - type: Transform
@@ -32361,28 +32370,50 @@ entities:
     - type: Transform
       pos: 44.5,23.5
       parent: 2
+    - type: FaxMachine
+      name: Command Conference Room
   - uid: 3551
     components:
     - type: Transform
       pos: 24.5,27.5
       parent: 2
+    - type: FaxMachine
+      name: Lawyer's Office
   - uid: 3552
     components:
     - type: Transform
       pos: -15.5,33.5
       parent: 2
     - type: FaxMachine
-      name: HarborMaster
+      name: Harbormaster's Office
   - uid: 8711
     components:
     - type: Transform
       pos: 45.5,12.5
       parent: 2
+    - type: FaxMachine
+      name: Bridge
   - uid: 8802
     components:
     - type: Transform
       pos: 52.5,-5.5
       parent: 2
+    - type: FaxMachine
+      name: Marshal's Office
+  - uid: 12885
+    components:
+    - type: Transform
+      pos: -8.5,-20.5
+      parent: 2
+    - type: FaxMachine
+      name: CMO's Office
+  - uid: 12886
+    components:
+    - type: Transform
+      pos: 57.5,-25.5
+      parent: 2
+    - type: FaxMachine
+      name: Warden's Office
 - proto: FaxMachineCaptain
   entities:
   - uid: 8710
@@ -39738,7 +39769,7 @@ entities:
       pos: 12.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -117485.87
+      secondsUntilStateChange: -117879.79
       state: Closing
   - uid: 3844
     components:
@@ -40231,9 +40262,24 @@ entities:
   - uid: 10962
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -8.567837,-20.293232
+      pos: -8.75993,-20.59738
       parent: 2
+    - type: HandheldLight
+      toggleActionEntity: 12884
+    - type: ContainerContainer
+      containers:
+        cell_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        actions: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 12884
+    - type: Physics
+      canCollide: True
+    - type: ActionsContainer
   - uid: 12765
     components:
     - type: Transform
@@ -79267,7 +79313,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -343834.38
+      secondsUntilStateChange: -344228.28
       state: Opening
     - type: Airlock
       autoClose: False
@@ -80037,7 +80083,7 @@ entities:
       pos: 39.5,45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -40603.785
+      secondsUntilStateChange: -40997.703
       state: Opening
   - uid: 6259
     components:
