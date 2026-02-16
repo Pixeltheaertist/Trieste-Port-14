@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.4.0
   forkId: ""
   forkVersion: ""
-  time: 02/15/2026 02:55:18
-  entityCount: 12886
+  time: 02/16/2026 06:42:54
+  entityCount: 12888
 maps:
 - 1
 grids:
@@ -6326,7 +6326,7 @@ entities:
       pos: 49.5,-23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -17600.393
+      secondsUntilStateChange: -17921.143
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6463,7 +6463,7 @@ entities:
       pos: 47.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -85304.164
+      secondsUntilStateChange: -85624.914
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6510,7 +6510,7 @@ entities:
       pos: 11.5,11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -348011.4
+      secondsUntilStateChange: -348332.16
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6810,7 +6810,7 @@ entities:
       pos: 18.5,23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -387127.2
+      secondsUntilStateChange: -387447.94
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7067,7 +7067,7 @@ entities:
       pos: 30.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -16168.183
+      secondsUntilStateChange: -16488.932
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7177,7 +7177,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -363708.94
+      secondsUntilStateChange: -364029.7
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8575,6 +8575,13 @@ entities:
       access:
       - - Armory
       - - HeadOfSecurity
+- proto: BlockGameArcade
+  entities:
+  - uid: 12888
+    components:
+    - type: Transform
+      pos: 40.5,-22.5
+      parent: 2
 - proto: Bonfire
   entities:
   - uid: 239
@@ -27288,11 +27295,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 36.5,34.5
       parent: 2
-  - uid: 6237
-    components:
-    - type: Transform
-      pos: 40.5,35.5
-      parent: 2
   - uid: 6244
     components:
     - type: Transform
@@ -28938,7 +28940,7 @@ entities:
       pos: -10.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -60870.227
+      secondsUntilStateChange: -61190.977
       state: Opening
   - uid: 10921
     components:
@@ -39769,7 +39771,7 @@ entities:
       pos: 12.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -117879.79
+      secondsUntilStateChange: -118200.54
       state: Closing
   - uid: 3844
     components:
@@ -40434,6 +40436,8 @@ entities:
     - type: Transform
       pos: 42.5,-18.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
 - proto: LockerHeadOfSecurityFilled
   entities:
   - uid: 8780
@@ -42544,6 +42548,12 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 14.5,-39.5
+      parent: 2
+  - uid: 12887
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 34.5,51.5
       parent: 2
 - proto: PoweredLEDSmallLight
   entities:
@@ -50420,6 +50430,13 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 18.5,54.5
+      parent: 2
+- proto: RandomArcade
+  entities:
+  - uid: 6237
+    components:
+    - type: Transform
+      pos: 40.5,35.5
       parent: 2
 - proto: RandomDrinkGlass
   entities:
@@ -79313,7 +79330,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -344228.28
+      secondsUntilStateChange: -344549.03
       state: Opening
     - type: Airlock
       autoClose: False
@@ -80083,7 +80100,7 @@ entities:
       pos: 39.5,45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -40997.703
+      secondsUntilStateChange: -41318.453
       state: Opening
   - uid: 6259
     components:
