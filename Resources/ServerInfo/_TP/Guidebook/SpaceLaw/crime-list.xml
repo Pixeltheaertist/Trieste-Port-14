@@ -428,7 +428,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        This includes job specific reagents like Unstable Mutagen. These may be authorized by job necessity (botany needs mutagen) or the CMO.
+        This includes job specific reagents like Unstable Mutagen or weak hallucinogens like Space Mirage. These may be authorized by job necessity (botany needs mutagen) or the CMO.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -763,12 +763,12 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To hold or use Class 3 contraband chemicals without authorization.
+        To hold or use Class 3 contraband chemicals. 
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        This includes stimulants like Desoxyephedrine. 
+        This includes potent toxins like Mindbreaker Toxin and Nocturine. These chems can not be authorized by anyone.
       </Box>
     </ColorBox>
     <ColorBox>
