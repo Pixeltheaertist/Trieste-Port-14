@@ -1,0 +1,23 @@
+- type: marking
+  id: HumanHairAncientKing
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/human_hair.rsi
+    state: ancient_king
+
+- type: marking
+  id: HumanHairCardNerd
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/human_hair.rsi
+    state: card_nerd
+
+- type: marking
+  id: HumanHairCyberCity
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/human_hair.rsi
+    state: cyber_city

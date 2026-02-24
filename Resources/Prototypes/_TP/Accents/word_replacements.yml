@@ -1,0 +1,60 @@
+# [Accents that work off of word replacements.
+
+# this is kind of dumb but localization demands it.
+# i guess you could just specify the prefix  and count and let the system fill it ] (from the base non-trieste accent area)
+
+- type: accent
+  id: christmas
+  wordReplacements:
+    accent-christmas-replaced-1: accent-christmas-replacement-1
+    accent-christmas-replaced-2: accent-christmas-replacement-2
+    accent-christmas-replaced-3: accent-christmas-replacement-3
+    accent-christmas-replaced-3-2: accent-christmas-replacement-3
+    accent-christmas-replaced-3-3: accent-christmas-replacement-3
+    accent-christmas-replaced-3-4: accent-christmas-replacement-3
+    accent-christmas-replaced-4: accent-christmas-replacement-4
+    accent-christmas-replaced-5: accent-christmas-replacement-5
+    accent-christmas-replaced-6: accent-christmas-replacement-6
+    accent-christmas-replaced-6-2: accent-christmas-replacement-6
+    accent-christmas-replaced-6-3: accent-christmas-replacement-6
+    accent-christmas-replaced-6-4: accent-christmas-replacement-6
+    accent-christmas-replaced-6-5: accent-christmas-replacement-6
+    accent-christmas-replaced-7: accent-christmas-replacement-7
+    accent-christmas-replaced-8: accent-christmas-replacement-8
+    accent-christmas-replaced-8-1: accent-christmas-replacement-8
+    accent-christmas-replaced-8-2: accent-christmas-replacement-8
+    accent-christmas-replaced-8-3: accent-christmas-replacement-8
+    accent-christmas-replaced-9: accent-christmas-replacement-9
+    accent-christmas-replaced-10: accent-christmas-replacement-10
+    accent-christmas-replaced-11: accent-christmas-replacement-11
+    accent-christmas-replaced-12: accent-christmas-replacement-12
+    accent-christmas-replaced-13: accent-christmas-replacement-13
+    accent-christmas-replaced-13-2: accent-christmas-replacement-13
+    accent-christmas-replaced-14: accent-christmas-replacement-14
+    accent-christmas-replaced-15: accent-christmas-replacement-15
+    accent-christmas-replaced-15-2: accent-christmas-replacement-15
+    accent-christmas-replaced-16: accent-christmas-replacement-16
+    accent-christmas-replaced-16-1: accent-christmas-replacement-16
+    accent-christmas-replaced-17: accent-christmas-replacement-17
+    accent-christmas-replaced-18: accent-christmas-replacement-18
+    accent-christmas-replaced-19: accent-christmas-replacement-19
+    accent-christmas-replaced-20: accent-christmas-replacement-20
+    accent-christmas-replaced-21: accent-christmas-replacement-21
+    accent-christmas-replaced-22: accent-christmas-replacement-22
+    accent-christmas-replaced-23: accent-christmas-replacement-23
+    accent-christmas-replaced-23-2: accent-christmas-replacement-23
+    accent-christmas-replaced-24: accent-christmas-replacement-24
+    accent-christmas-replaced-25: accent-christmas-replacement-25
+    accent-christman-replaced-25-2: accent-christmas-replacement-25
+    accent-christman-replaced-25-3: accent-christmas-replacement-25
+    accent-christmas-replaced-26: accent-christmas-replacement-26
+    accent-christmas-replaced-27: accent-christmas-replacement-27
+    accent-christmas-replaced-28: accent-christmas-replacement-28
+    accent-christmas-replaced-29: accent-christmas-replacement-29
+    accent-christmas-replaced-29-2: accent-christmas-replacement-29
+    accent-christmas-replaced-29-3: accent-christmas-replacement-29
+    accent-christmas-replaced-30: accent-christmas-replacement-30
+    accent-christmas-replaced-31: accent-christmas-replacement-31
+    accent-christmas-replaced-32: accent-christmas-replacement-32
+    accent-christmas-replaced-33: accent-christmas-replacement-33
+    accent-christmas-replaced-34: accent-christmas-replacement-34

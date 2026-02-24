@@ -1,0 +1,164 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformCogSuit
+  suffix: Trieste, Suit,
+  name: cog in the machine suit
+  description: a stiff suit made of a shiny coppery fabric, whimsy seems to dissipate in its presence.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Suits/coginthemachine_suit.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Suits/coginthemachine_suit.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformEclipseThiefSuit
+  suffix: Trieste, Suit,
+  name: eclipse thief suit
+  description: for those who want to be a black shadow that paints over the light.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Suits/eclipsethief_suit.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Suits/eclipsethief_suit.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformGastroenterologistSuit
+  suffix: Trieste, Suit,
+  name: gastroenterologist suit
+  description: Bow ties are cool.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Suits/gastroenterologist_suit.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Suits/gastroenterologist_suit.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformHotstreakSuit
+  suffix: Trieste, Suit,
+  name: hotstreak suit
+  description: fever is gambling and gambling is life.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Suits/hotstreak_suit.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Suits/hotstreak_suit.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformKillerSuit
+  suffix: Trieste, Suit,
+  name: killer suit
+  description: It's all about a peaceful life.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Suits/killer_suit.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Suits/killer_suit.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformMidnightSuit
+  suffix: Trieste, Suit,
+  name: midnight heist suit
+  description: A three-minute egg must boil for three minutes.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Suits/midnightheist_suit.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Suits/midnightheist_suit.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformOldBartenderSuit
+  suffix: Trieste, Suit,
+  name: old-fashioned bartender suit
+  description: for the discerning barkeep.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Suits/oldfashionedbartender_suit.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Suits/oldfashionedbartender_suit.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformPinstripedSuit
+  suffix: Trieste, Suit,
+  name: pinstriped suit
+  description: for the ghost with the most, babe
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Suits/pinstriped_suit.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Suits/pinstriped_suit.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformRevengeSuit
+  suffix: Trieste, Suit,
+  name: revenge suit
+  description: what's it like to have broken a heart?
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Suits/revenge_suit.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Suits/revenge_suit.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformSuspiciousSuit
+  suffix: Trieste, Suit,
+  name: suspicious purple suit
+  description: Hello there, Old Sport.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Suits/suspiciouspurple_suit.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Suits/suspiciouspurple_suit.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformTVSuit
+  suffix: Trieste, Suit,
+  name: tv host suit
+  description: it's T..V.. TIME!
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Suits/tvhost_suit.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Suits/tvhost_suit.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon

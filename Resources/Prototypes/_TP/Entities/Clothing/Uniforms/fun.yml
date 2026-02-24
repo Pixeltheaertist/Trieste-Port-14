@@ -1,0 +1,32 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformJumpsuitItsTime
+  suffix: Trieste
+  name: defrosted jumpsuit
+  description: It beckons, the time is nigh, the defrosting is upon us
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Holiday/its_time.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Holiday/its_time.rsi
+  - type: AddAccentClothing
+    accent: ReplacementAccent
+    replacement: christmas
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformJumpsuitAmnesiacsSailorUniform
+  suffix: Trieste
+  name: amnesiac's sailor uniform
+  description: This sailor uniform seems cursed
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/amnesiacs_sailor_uniform.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/amnesiacs_sailor_uniform.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon

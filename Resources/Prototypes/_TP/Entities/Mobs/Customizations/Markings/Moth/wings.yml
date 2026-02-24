@@ -21,3 +21,48 @@
     state: mothwings_2_secondary
   - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
     state: mothwings_2_tertiary
+
+- type: marking
+  id: TP14MarkingMothWingsBooster
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Moth ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
+    state: booster_wings_primary
+  - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
+    state: booster_wings_secondary
+  - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
+    state: booster_wings_tertiary
+
+- type: marking
+  id: TP14MarkingMothWingsKaleido
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Moth ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
+    state: kaleido_moth_wings
+  - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
+    state: kaleido_moth_wings_markings_primary
+  - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
+    state: kaleido_moth_wings_markings_secondary
+  - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
+    state: kaleido_moth_wings_markings_tertiary
+  - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
+    state: kaleido_moth_wings_markings_quaternary
+
+- type: marking
+  id: TP14MarkingMothWingsOrnateTiger
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Moth ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
+    state: ornate_tiger_moth_wings_primary
+  - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
+    state: ornate_tiger_moth_wings_secondary
+  - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
+    state: ornate_tiger_moth_wings_markings_primary
+  - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
+    state: ornate_tiger_moth_wings_markings_secondary

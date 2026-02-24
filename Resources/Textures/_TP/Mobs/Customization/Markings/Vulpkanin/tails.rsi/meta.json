@@ -18,6 +18,18 @@
         {
             "name": "tail_fluffy_tertiary",
             "directions": 4
+        },
+        {
+            "name": "tail_stitched_primary",
+            "directions": 4
+        },
+        {
+            "name": "tail_stitched_secondary",
+            "directions": 4
+        },
+        {
+            "name": "tail_stitched_tertiary",
+            "directions": 4
         }
     ]
 }

@@ -1,0 +1,51 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Created by MysteriousPeeko (sharkpeekotwoelecticboogaloo) for Trieste Port 14",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "bird_claw_arm_left",
+            "directions": 4
+        },
+        {
+            "name": "bird_claw_arm_right",
+            "directions": 4
+        },
+        {
+            "name": "bird_claw_hand_left",
+            "directions": 4
+        },
+        {
+            "name": "bird_claw_hand_right",
+            "directions": 4
+        },
+        {
+            "name": "claws_hand_left",
+            "directions": 4
+        },
+        {
+            "name": "claws_hand_right",
+            "directions": 4
+        },
+        {
+            "name": "hatched_left_arm",
+            "directions": 4
+        },
+        {
+            "name": "hatched_left_hand",
+            "directions": 4
+        },
+        {
+            "name": "hatched_right_arm",
+            "directions": 4
+        },
+        {
+            "name": "hatched_right_hand",
+            "directions": 4
+        }
+    ]
+}

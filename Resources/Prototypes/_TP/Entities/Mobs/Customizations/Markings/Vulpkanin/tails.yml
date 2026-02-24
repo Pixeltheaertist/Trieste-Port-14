@@ -10,3 +10,16 @@
     state: tail_fluffy_secondary
   - sprite: _TP/Mobs/Customization/Markings/Vulpkanin/tails.rsi
     state: tail_fluffy_tertiary
+
+- type: marking
+  id: TP14MarkingVulpkaninTailStitched
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Vulpkanin ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Vulpkanin/tails.rsi
+    state: tail_stitched_primary
+  - sprite: _TP/Mobs/Customization/Markings/Vulpkanin/tails.rsi
+    state: tail_stitched_secondary
+  - sprite: _TP/Mobs/Customization/Markings/Vulpkanin/tails.rsi
+    state: tail_stitched_tertiary

@@ -1,0 +1,7 @@
+marking-TP14MarkingsHumanChestCyberHeartLeft = Cybernetic Heart (Left)
+marking-TP14MarkingsHumanChestCyberHeartLeft-cybernetic_heart_left = Primary
+marking-TP14MarkingsHumanChestCyberHeartLeft-cybernetic_heart_left_recolorable_light = Secondary
+
+marking-TP14MarkingsHumanChestCyberHeartRight = Cybernetic Heart (Right)
+marking-TP14MarkingsHumanChestCyberHeartRight-cybernetic_heart_right = Primary
+marking-TP14MarkingsHumanChestCyberHeartRight-cybernetic_heart_right_recolorable_light = Secondary
