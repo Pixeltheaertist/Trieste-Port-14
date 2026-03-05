@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.4.0
   forkId: ""
   forkVersion: ""
-  time: 02/22/2026 16:02:08
+  time: 03/05/2026 15:45:16
   entityCount: 12886
 maps:
 - 1
@@ -6278,12 +6278,16 @@ entities:
   entities:
   - uid: 24
     components:
+    - type: MetaData
+      name: Courtroom
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 9.5,3.5
       parent: 2
   - uid: 25
     components:
+    - type: MetaData
+      name: Courtroom
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 5.5,6.5
@@ -6292,11 +6296,17 @@ entities:
       accessListsOriginal: []
   - uid: 8446
     components:
+    - type: MetaData
+      name: Restroom
     - type: Transform
       pos: 5.5,10.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 8799
     components:
+    - type: MetaData
+      name: Restroom
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 48.5,-27.5
@@ -6305,12 +6315,16 @@ entities:
   entities:
   - uid: 5765
     components:
+    - type: MetaData
+      name: Warden's Office
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 52.5,-26.5
       parent: 2
   - uid: 5772
     components:
+    - type: MetaData
+      name: Warden's Bedroom
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 53.5,-29.5
@@ -6326,12 +6340,14 @@ entities:
   entities:
   - uid: 7843
     components:
+    - type: MetaData
+      name: Brig Monitoring Room
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 49.5,-23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -21122.416
+      secondsUntilStateChange: -24719.604
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6342,6 +6358,8 @@ entities:
   entities:
   - uid: 234
     components:
+    - type: MetaData
+      name: Overseer's Office
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 40.5,11.5
@@ -6350,17 +6368,23 @@ entities:
   entities:
   - uid: 203
     components:
+    - type: MetaData
+      name: Overseer's Bathroom
     - type: Transform
       pos: 36.5,-0.5
       parent: 2
   - uid: 227
     components:
+    - type: MetaData
+      name: Overseer's Bedroom
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 37.5,2.5
       parent: 2
   - uid: 1295
     components:
+    - type: MetaData
+      name: Overseer's Office
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 42.5,3.5
@@ -6371,34 +6395,48 @@ entities:
   entities:
   - uid: 42
     components:
+    - type: MetaData
+      name: Break Room
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -8.5,24.5
       parent: 2
   - uid: 43
     components:
+    - type: MetaData
+      name: Trading Docks
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -10.5,34.5
       parent: 2
   - uid: 44
     components:
+    - type: MetaData
+      name: Trading Docks
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -8.5,34.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 2044
     components:
+    - type: MetaData
+      name: Cargo Dock
     - type: Transform
       pos: -8.5,42.5
       parent: 2
   - uid: 2356
     components:
+    - type: MetaData
+      name: Cargo Dock
     - type: Transform
       pos: -10.5,42.5
       parent: 2
   - uid: 3023
     components:
+    - type: MetaData
+      name: Cargo
     - type: Transform
       pos: -2.5,23.5
       parent: 2
@@ -6408,6 +6446,8 @@ entities:
   entities:
   - uid: 2018
     components:
+    - type: MetaData
+      name: Chemistry Lab
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -3.5,-15.5
@@ -6418,6 +6458,8 @@ entities:
   entities:
   - uid: 3143
     components:
+    - type: MetaData
+      name: CMO's Office
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -6.5,-23.5
@@ -6426,6 +6468,8 @@ entities:
   entities:
   - uid: 6321
     components:
+    - type: MetaData
+      name: CMO's Bedroom
     - type: Transform
       pos: -10.5,-23.5
       parent: 2
@@ -6433,6 +6477,8 @@ entities:
   entities:
   - uid: 786
     components:
+    - type: MetaData
+      name: Overseer's Quarter
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 40.5,16.5
@@ -6441,6 +6487,8 @@ entities:
   entities:
   - uid: 21
     components:
+    - type: MetaData
+      name: Bridge
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 48.5,-0.5
@@ -6449,12 +6497,16 @@ entities:
       accessListsOriginal: []
   - uid: 496
     components:
+    - type: MetaData
+      name: Bridge
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 47.5,16.5
       parent: 2
   - uid: 1059
     components:
+    - type: MetaData
+      name: Command Break Room
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 37.5,19.5
@@ -6463,22 +6515,28 @@ entities:
       accessListsOriginal: []
   - uid: 1791
     components:
+    - type: MetaData
+      name: Conference Room
     - type: Transform
       pos: 45.5,19.5
       parent: 2
   - uid: 1793
     components:
+    - type: MetaData
+      name: Conference Room
     - type: Transform
       pos: 47.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -88826.195
+      secondsUntilStateChange: -92423.38
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
   - uid: 2076
     components:
+    - type: MetaData
+      name: Bridge
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 44.5,3.5
@@ -6487,6 +6545,8 @@ entities:
       accessListsOriginal: []
   - uid: 2406
     components:
+    - type: MetaData
+      name: Bridge
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 47.5,-0.5
@@ -6497,31 +6557,47 @@ entities:
   entities:
   - uid: 5427
     components:
+    - type: MetaData
+      name: Detective's Office
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 31.5,-32.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 5614
     components:
+    - type: MetaData
+      name: Detective's Bedroom
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 35.5,-32.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 6662
     components:
+    - type: MetaData
+      name: Detective's Office
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 32.5,-31.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
 - proto: AirlockEngineeringLocked
   entities:
   - uid: 55
     components:
+    - type: MetaData
+      name: Central Power
     - type: Transform
       pos: 11.5,11.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -351533.4
+      secondsUntilStateChange: -355130.6
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6529,25 +6605,29 @@ entities:
   - uid: 56
     components:
     - type: MetaData
-      name: airlock (Engineering)
+      name: Engineering
     - type: Transform
       pos: -15.5,8.5
       parent: 2
   - uid: 57
     components:
     - type: MetaData
-      name: airlock (Engineering)
+      name: Engineering
     - type: Transform
       pos: -14.5,8.5
       parent: 2
   - uid: 58
     components:
+    - type: MetaData
+      name: Vox Bar Power
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 25.5,44.5
       parent: 2
   - uid: 59
     components:
+    - type: MetaData
+      name: Central Power
     - type: Transform
       pos: 10.5,9.5
       parent: 2
@@ -6558,50 +6638,68 @@ entities:
       parent: 2
   - uid: 64
     components:
+    - type: MetaData
+      name: Law Power
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 18.5,21.5
       parent: 2
   - uid: 65
     components:
+    - type: MetaData
+      name: Jellid Power
     - type: Transform
       pos: 15.5,26.5
       parent: 2
   - uid: 336
     components:
+    - type: MetaData
+      name: Command Power
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 39.5,24.5
       parent: 2
   - uid: 796
     components:
+    - type: MetaData
+      name: 'Comms '
     - type: Transform
       pos: -13.5,10.5
       parent: 2
   - uid: 1767
     components:
+    - type: MetaData
+      name: Bridge Power
     - type: Transform
       pos: 44.5,14.5
       parent: 2
   - uid: 3075
     components:
+    - type: MetaData
+      name: Security Power
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 43.5,-9.5
       parent: 2
   - uid: 5297
     components:
+    - type: MetaData
+      name: Engineering Power
     - type: Transform
       pos: -14.5,12.5
       parent: 2
   - uid: 5335
     components:
+    - type: MetaData
+      name: Engineering Platform
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -21.5,11.5
       parent: 2
   - uid: 5955
     components:
+    - type: MetaData
+      name: Dormitories Power
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 32.5,49.5
@@ -6617,40 +6715,60 @@ entities:
   entities:
   - uid: 67
     components:
+    - type: MetaData
+      name: Vox Bar
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 23.5,43.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 68
     components:
+    - type: MetaData
+      name: Jellid Bar
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 15.5,24.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
 - proto: AirlockExternalGlassBellFilled
   entities:
   - uid: 69
     components:
+    - type: MetaData
+      name: Diving Bell Dock
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -17.5,1.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
 - proto: AirlockExternalShuttleLocked
   entities:
   - uid: 2948
     components:
+    - type: MetaData
+      name: East Dock
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 75.5,16.5
       parent: 2
   - uid: 3757
     components:
+    - type: MetaData
+      name: East Dock
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 75.5,19.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 12008
     components:
+    - type: MetaData
+      name: Western Dock
     - type: Transform
       pos: -44.5,14.5
       parent: 2
@@ -6658,6 +6776,8 @@ entities:
       accessListsOriginal: []
   - uid: 12009
     components:
+    - type: MetaData
+      name: Western Dock
     - type: Transform
       pos: -44.5,17.5
       parent: 2
@@ -6665,40 +6785,74 @@ entities:
   entities:
   - uid: 3436
     components:
+    - type: MetaData
+      name: Evac
     - type: Transform
       pos: 48.5,18.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 3437
     components:
+    - type: MetaData
+      name: Evac
     - type: Transform
       pos: 48.5,17.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 3438
     components:
+    - type: MetaData
+      name: Command Hallway
     - type: Transform
       pos: 36.5,17.5
       parent: 2
+    - type: Door
+      secondsUntilStateChange: -2769.538
+      state: Opening
+    - type: AccessReader
+      accessListsOriginal: []
+    - type: DeviceLinkSource
+      lastSignals:
+        DoorStatus: True
   - uid: 3439
     components:
+    - type: MetaData
+      name: Command Hallway
     - type: Transform
       pos: 36.5,18.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 7343
     components:
+    - type: MetaData
+      name: 'GenPop Cell 2 '
     - type: Transform
       pos: 43.5,-30.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 7346
     components:
+    - type: MetaData
+      name: GenPop Cell 1
     - type: Transform
       pos: 46.5,-30.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 12253
     components:
+    - type: MetaData
+      name: Cryosleep
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 14.5,-24.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
 - proto: AirlockGlassShuttleSyndicate
   entities:
   - uid: 12135
@@ -6796,12 +6950,16 @@ entities:
   entities:
   - uid: 8747
     components:
+    - type: MetaData
+      name: Marshal's Office
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 49.5,-8.5
       parent: 2
   - uid: 8748
     components:
+    - type: MetaData
+      name: Marshal's Bedroom
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 53.5,-8.5
@@ -6810,6 +6968,8 @@ entities:
   entities:
   - uid: 78
     components:
+    - type: MetaData
+      name: Botany
     - type: Transform
       pos: 12.5,33.5
       parent: 2
@@ -6821,7 +6981,7 @@ entities:
       pos: 18.5,23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -390649.2
+      secondsUntilStateChange: -394246.38
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6830,6 +6990,8 @@ entities:
   entities:
   - uid: 81
     components:
+    - type: MetaData
+      name: Storm Array
     - type: Transform
       pos: -16.5,14.5
       parent: 2
@@ -6844,6 +7006,8 @@ entities:
   entities:
   - uid: 83
     components:
+    - type: MetaData
+      name: Disposals
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 29.5,15.5
@@ -6852,6 +7016,8 @@ entities:
   entities:
   - uid: 86
     components:
+    - type: MetaData
+      name: Science
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 20.5,23.5
@@ -6862,18 +7028,28 @@ entities:
   entities:
   - uid: 10414
     components:
+    - type: MetaData
+      name: Exam Room 3
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -6.5,-14.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 10415
     components:
+    - type: MetaData
+      name: Exam Room 2
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -6.5,-10.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 10416
     components:
+    - type: MetaData
+      name: Exam Room 1
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -2.5,-9.5
@@ -6884,11 +7060,15 @@ entities:
   entities:
   - uid: 10
     components:
+    - type: MetaData
+      name: Brig Medical
     - type: Transform
       pos: 40.5,-12.5
       parent: 2
   - uid: 45
     components:
+    - type: MetaData
+      name: Medical Lobby
     - type: Transform
       pos: 4.5,-5.5
       parent: 2
@@ -6896,6 +7076,8 @@ entities:
       accessListsOriginal: []
   - uid: 2194
     components:
+    - type: MetaData
+      name: ICU
     - type: Transform
       pos: 3.5,-9.5
       parent: 2
@@ -6903,6 +7085,8 @@ entities:
       accessListsOriginal: []
   - uid: 2197
     components:
+    - type: MetaData
+      name: ICU
     - type: Transform
       pos: 4.5,-9.5
       parent: 2
@@ -6910,6 +7094,8 @@ entities:
       accessListsOriginal: []
   - uid: 2842
     components:
+    - type: MetaData
+      name: Medical Lobby
     - type: Transform
       pos: 3.5,-5.5
       parent: 2
@@ -6917,11 +7103,17 @@ entities:
       accessListsOriginal: []
   - uid: 9491
     components:
+    - type: MetaData
+      name: Psychologist's Office
     - type: Transform
       pos: -2.5,7.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 10417
     components:
+    - type: MetaData
+      name: Exam Hallway
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 0.5,-9.5
@@ -6932,6 +7124,8 @@ entities:
   entities:
   - uid: 1796
     components:
+    - type: MetaData
+      name: Medical Reception
     - type: Transform
       pos: 8.5,-9.5
       parent: 2
@@ -6939,6 +7133,8 @@ entities:
       accessListsOriginal: []
   - uid: 10346
     components:
+    - type: MetaData
+      name: Viewing Theater
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -6.5,-28.5
@@ -6947,6 +7143,8 @@ entities:
       accessListsOriginal: []
   - uid: 10411
     components:
+    - type: MetaData
+      name: Break Room
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -3.5,-25.5
@@ -6955,12 +7153,18 @@ entities:
   entities:
   - uid: 4849
     components:
+    - type: MetaData
+      name: Paramedic Storage
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 11.5,-10.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 10161
     components:
+    - type: MetaData
+      name: Paramedic Storage
     - type: Transform
       pos: 9.5,-11.5
       parent: 2
@@ -6968,6 +7172,8 @@ entities:
       accessListsOriginal: []
   - uid: 10348
     components:
+    - type: MetaData
+      name: Operating Room
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -6.5,-26.5
@@ -6976,18 +7182,26 @@ entities:
       accessListsOriginal: []
   - uid: 10409
     components:
+    - type: MetaData
+      name: Locker Room
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 3.5,-29.5
       parent: 2
   - uid: 10410
     components:
+    - type: MetaData
+      name: Locker Room
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 3.5,-25.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 10412
     components:
+    - type: MetaData
+      name: Medical - Staff Hallway
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -5.5,-20.5
@@ -6996,6 +7210,8 @@ entities:
       accessListsOriginal: []
   - uid: 10413
     components:
+    - type: MetaData
+      name: Medical - Staff Hallway
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -4.5,-20.5
@@ -7004,12 +7220,16 @@ entities:
       accessListsOriginal: []
   - uid: 10418
     components:
+    - type: MetaData
+      name: Cryogenics
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 5.5,-17.5
       parent: 2
   - uid: 10419
     components:
+    - type: MetaData
+      name: Cryogenics
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 5.5,-20.5
@@ -7018,6 +7238,8 @@ entities:
   entities:
   - uid: 10408
     components:
+    - type: MetaData
+      name: Morgue
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -1.5,-30.5
@@ -7027,7 +7249,7 @@ entities:
   - uid: 106
     components:
     - type: MetaData
-      name: glass airlock (HarborMaster)
+      name: Harbormaster's Office
     - type: Transform
       pos: -12.5,31.5
       parent: 2
@@ -7038,7 +7260,7 @@ entities:
   - uid: 107
     components:
     - type: MetaData
-      name: airlock (HM Bedroom)
+      name: Harbormaster's Bedroom
     - type: Transform
       pos: -16.5,30.5
       parent: 2
@@ -7046,6 +7268,8 @@ entities:
   entities:
   - uid: 110
     components:
+    - type: MetaData
+      name: Science Outpost
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 21.5,20.5
@@ -7056,6 +7280,8 @@ entities:
   entities:
   - uid: 111
     components:
+    - type: MetaData
+      name: Law Office
     - type: Transform
       pos: 18.5,27.5
       parent: 2
@@ -7063,6 +7289,8 @@ entities:
   entities:
   - uid: 3544
     components:
+    - type: MetaData
+      name: Security - Main Entrance
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 30.5,-11.5
@@ -7071,12 +7299,22 @@ entities:
       accessListsOriginal: []
   - uid: 6626
     components:
+    - type: MetaData
+      name: GenPop Processing
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 33.5,-26.5
       parent: 2
+    - type: Door
+      secondsUntilStateChange: -313.77377
+      state: Opening
+    - type: DeviceLinkSource
+      lastSignals:
+        DoorStatus: True
   - uid: 6636
     components:
+    - type: MetaData
+      name: Security - Main Entrance
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 30.5,-12.5
@@ -7084,7 +7322,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -19690.205
+      secondsUntilStateChange: -23287.393
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7093,18 +7331,28 @@ entities:
   entities:
   - uid: 5189
     components:
+    - type: MetaData
+      name: Security - North Entrance
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 47.5,-10.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 5237
     components:
+    - type: MetaData
+      name: Security - North Entrance
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 48.5,-10.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 8819
     components:
+    - type: MetaData
+      name: Solitary Confinement
     - type: Transform
       pos: 39.5,-30.5
       parent: 2
@@ -7112,6 +7360,8 @@ entities:
   entities:
   - uid: 6627
     components:
+    - type: MetaData
+      name: Holding Cell
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 33.5,-23.5
@@ -7120,17 +7370,23 @@ entities:
   entities:
   - uid: 114
     components:
+    - type: MetaData
+      name: Courtroom - Lawyers
     - type: Transform
       pos: 11.5,3.5
       parent: 2
   - uid: 3196
     components:
+    - type: MetaData
+      name: Security Hallway
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 37.5,-14.5
       parent: 2
   - uid: 8894
     components:
+    - type: MetaData
+      name: Security Hallway
     - type: Transform
       pos: 36.5,-12.5
       parent: 2
@@ -7138,6 +7394,8 @@ entities:
       accessListsOriginal: []
   - uid: 9542
     components:
+    - type: MetaData
+      name: Security Hallway
     - type: Transform
       pos: 36.5,-11.5
       parent: 2
@@ -7147,22 +7405,30 @@ entities:
   entities:
   - uid: 1787
     components:
+    - type: MetaData
+      name: Security Reception
     - type: Transform
       pos: 35.5,-18.5
       parent: 2
   - uid: 3172
     components:
+    - type: MetaData
+      name: Dock Checkpoint
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 56.5,16.5
       parent: 2
   - uid: 8721
     components:
+    - type: MetaData
+      name: Secuirty Prep Room
     - type: Transform
       pos: 52.5,-16.5
       parent: 2
   - uid: 8770
     components:
+    - type: MetaData
+      name: Break Room and Shooting Range
     - type: Transform
       pos: 57.5,-16.5
       parent: 2
@@ -7179,18 +7445,28 @@ entities:
   entities:
   - uid: 123
     components:
+    - type: MetaData
+      name: Botany
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 20.5,35.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 124
     components:
+    - type: MetaData
+      name: Botany
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 20.5,34.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 125
     components:
+    - type: MetaData
+      name: Reporter's Bedroom
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 20.5,6.5
@@ -7198,13 +7474,15 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -367230.94
+      secondsUntilStateChange: -370828.12
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
   - uid: 126
     components:
+    - type: MetaData
+      name: News Office
     - type: Transform
       pos: 24.5,8.5
       parent: 2
@@ -7212,6 +7490,8 @@ entities:
   entities:
   - uid: 2353
     components:
+    - type: MetaData
+      name: Cargo Dock
     - type: Transform
       pos: -10.5,45.5
       parent: 2
@@ -7219,6 +7499,8 @@ entities:
       accessListsOriginal: []
   - uid: 2378
     components:
+    - type: MetaData
+      name: Cargo Dock
     - type: Transform
       pos: -8.5,45.5
       parent: 2
@@ -8588,6 +8870,8 @@ entities:
       parent: 2
   - uid: 8787
     components:
+    - type: MetaData
+      name: Armory
     - type: Transform
       pos: 52.5,-21.5
       parent: 2
@@ -28332,6 +28616,9 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 58.5,-13.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal:
+      - - Security
 - proto: ComputerCargoOrdersService
   entities:
   - uid: 3108
@@ -28962,7 +29249,7 @@ entities:
       pos: -10.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -64392.25
+      secondsUntilStateChange: -67989.44
       state: Opening
   - uid: 10921
     components:
@@ -39625,6 +39912,8 @@ entities:
   entities:
   - uid: 12491
     components:
+    - type: MetaData
+      name: Armory
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 53.5,-21.5
@@ -39787,7 +40076,7 @@ entities:
       pos: 12.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -121401.82
+      secondsUntilStateChange: -124999.01
       state: Closing
   - uid: 3844
     components:
@@ -71737,6 +72026,8 @@ entities:
   entities:
   - uid: 6653
     components:
+    - type: MetaData
+      name: GenPop Exit
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 30.5,-28.5
@@ -71747,6 +72038,8 @@ entities:
   entities:
   - uid: 6651
     components:
+    - type: MetaData
+      name: GenPop Entrance
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 38.5,-27.5
@@ -71757,6 +72050,8 @@ entities:
       - - Security
   - uid: 9190
     components:
+    - type: MetaData
+      name: GenPop Emergency Entrance
     - type: Transform
       pos: 48.5,-25.5
       parent: 2
@@ -71768,6 +72063,8 @@ entities:
   entities:
   - uid: 6652
     components:
+    - type: MetaData
+      name: GenPop Exit
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 38.5,-29.5
@@ -79317,6 +79614,8 @@ entities:
   entities:
   - uid: 5218
     components:
+    - type: MetaData
+      name: Engineering Platform
     - type: Transform
       pos: -23.5,9.5
       parent: 2
@@ -79367,7 +79666,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -347750.28
+      secondsUntilStateChange: -351347.47
       state: Opening
     - type: Airlock
       autoClose: False
@@ -79411,6 +79710,8 @@ entities:
       - - Hydroponics
   - uid: 8309
     components:
+    - type: MetaData
+      name: Storm Array
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -14.5,15.5
@@ -80061,103 +80362,137 @@ entities:
   entities:
   - uid: 1738
     components:
+    - type: MetaData
+      name: Dorm 101
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 37.5,40.5
       parent: 2
   - uid: 2327
     components:
+    - type: MetaData
+      name: Dorm 102
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 39.5,40.5
       parent: 2
   - uid: 2387
     components:
+    - type: MetaData
+      name: Women's Restroom
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 46.5,36.5
       parent: 2
   - uid: 4278
     components:
+    - type: MetaData
+      name: Men's Restroom
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 50.5,36.5
       parent: 2
   - uid: 4279
     components:
+    - type: MetaData
+      name: Dorm 104
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 39.5,43.5
       parent: 2
   - uid: 4746
     components:
+    - type: MetaData
+      name: Dorm 103
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 37.5,43.5
       parent: 2
   - uid: 5846
     components:
+    - type: MetaData
+      name: Dormitories
     - type: Transform
       pos: 31.5,37.5
       parent: 2
   - uid: 5852
     components:
+    - type: MetaData
+      name: Dorm 105
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 37.5,45.5
       parent: 2
   - uid: 6107
     components:
+    - type: MetaData
+      name: Dorm 109
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 47.5,43.5
       parent: 2
   - uid: 6112
     components:
+    - type: MetaData
+      name: Dorm 107
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 47.5,40.5
       parent: 2
   - uid: 6128
     components:
+    - type: MetaData
+      name: Dorm 108
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 49.5,43.5
       parent: 2
   - uid: 6129
     components:
+    - type: MetaData
+      name: Common Room
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 38.5,36.5
       parent: 2
   - uid: 6228
     components:
+    - type: MetaData
+      name: Dorm 106
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 39.5,45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -44519.727
+      secondsUntilStateChange: -48116.914
       state: Opening
   - uid: 6259
     components:
+    - type: MetaData
+      name: Dorm 111
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 47.5,45.5
       parent: 2
   - uid: 7190
     components:
+    - type: MetaData
+      name: Dorm 110
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 49.5,45.5
       parent: 2
   - uid: 8415
     components:
+    - type: MetaData
+      name: New's Room
     - type: Transform
       pos: 23.5,4.5
       parent: 2
   - uid: 8416
     components:
+    - type: MetaData
+      name: News Room
     - type: Transform
       pos: 22.5,4.5
       parent: 2
