@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.4.0
   forkId: ""
   forkVersion: ""
-  time: 03/05/2026 15:54:32
-  entityCount: 12888
+  time: 03/09/2026 20:57:59
+  entityCount: 12893
 maps:
 - 1
 grids:
@@ -194,7 +194,7 @@ entities:
           version: 7
         -2,0:
           ind: -2,0
-          tiles: AAAAAAAAAAAAAAAAAAA2AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAANgAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANwAAAAABAAYAAAAAAgAAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEAAAAAAACBAAAAAAAAAAAAAAAAAAAAAAAAAAA2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2AAAAAAIANgAAAAADAAAAAAAAAAAAAAAAAAAANgAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANgAAAAABADYAAAAAAQANAAAAAAAANwAAAAADADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADYAAAAAAgA2AAAAAAIAAAAAAAAAAAAAAAAAAAA2AAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAIANgAAAAACAAAAAAAAAAAAAAAAAAAANgAAAAADADYAAAAAAgA2AAAAAAEANgAAAAAAADYAAAAAAgA2AAAAAAEANgAAAAADADYAAAAAAgA2AAAAAAIANgAAAAAAADYAAAAAAwA2AAAAAAAANgAAAAACAEsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAAAAAAADcAAAAAAQANAAAAAAAAgQAAAAAAAEQAAAAAAABEAAAAAAAAgQAAAAAAAIEAAAAAAACBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAIEAAAAAAAAGAAAAAAMABgAAAAAAAAYAAAAAAgAGAAAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAACBAAAAAAAABgAAAAADAAYAAAAAAwAGAAAAAAEABgAAAAADAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAAcQAAAAAAAAYAAAAAAgAGAAAAAAMABgAAAAADAAYAAAAAAgAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAIEAAAAAAAAEAAAAAAAARAAAAAAAAEQAAAAAAAAEAAAAAAAABgAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAACBAAAAAAAABAAAAAAAAEQAAAAAAABEAAAAAAAABAAAAAAAAAYAAAAAAgANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAAgQAAAAAAAIEAAAAAAACBAAAAAAAAgQAAAAAAAIEAAAAAAACBAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA==
+          tiles: AAAAAAAAAAAAAAAAAAA2AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAANgAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANwAAAAABAAYAAAAAAgAAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEAAAAAAACBAAAAAAAAAAAAAAAAAAAAAAAAAAA2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2AAAAAAIANgAAAAADAAAAAAAAAAAAAAAAAAAANgAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANgAAAAABADYAAAAAAQANAAAAAAAANwAAAAADADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADYAAAAAAgA2AAAAAAIAAAAAAAAAAAAAAAAAAAA2AAAAAAMADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAIEAAAAAAAANAAAAAAAAgQAAAAAAAIEAAAAAAABLAAAAAAIANgAAAAACAAAAAAAAAAAAAAAAAAAANgAAAAADADYAAAAAAgA2AAAAAAEANgAAAAAAADYAAAAAAgA2AAAAAAEANgAAAAADADYAAAAAAgA2AAAAAAIANgAAAAAAADYAAAAAAwA2AAAAAAAANgAAAAACAEsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAAAAAAADcAAAAAAQANAAAAAAAAgQAAAAAAAEQAAAAAAABEAAAAAAAAgQAAAAAAAIEAAAAAAACBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAIEAAAAAAAAGAAAAAAMABgAAAAAAAAYAAAAAAgAGAAAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAACBAAAAAAAABgAAAAADAAYAAAAAAwAGAAAAAAEABgAAAAADAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAAcQAAAAAAAAYAAAAAAgAGAAAAAAMABgAAAAADAAYAAAAAAgAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAIEAAAAAAAAEAAAAAAAARAAAAAAAAEQAAAAAAAAEAAAAAAAABgAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAACBAAAAAAAABAAAAAAAAEQAAAAAAABEAAAAAAAABAAAAAAAAAYAAAAAAgANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAAgQAAAAAAAIEAAAAAAACBAAAAAAAAgQAAAAAAAIEAAAAAAACBAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA0AAAAAAAANAAAAAAAADQAAAAAAAA==
           version: 7
         1,2:
           ind: 1,2
@@ -6347,7 +6347,7 @@ entities:
       pos: 49.5,-23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -24827.158
+      secondsUntilStateChange: -25377.818
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6528,7 +6528,7 @@ entities:
       pos: 47.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -92530.94
+      secondsUntilStateChange: -93081.61
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6597,7 +6597,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -355238.16
+      secondsUntilStateChange: -355788.78
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6733,6 +6733,18 @@ entities:
       parent: 2
     - type: AccessReader
       accessListsOriginal: []
+- proto: AirlockExternalGlassBell
+  entities:
+  - uid: 4304
+    components:
+    - type: Transform
+      pos: -24.5,6.5
+      parent: 2
+  - uid: 12889
+    components:
+    - type: Transform
+      pos: -23.5,6.5
+      parent: 2
 - proto: AirlockExternalGlassBellFilled
   entities:
   - uid: 69
@@ -6809,7 +6821,7 @@ entities:
       pos: 36.5,17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2877.092
+      secondsUntilStateChange: -3427.7527
       state: Opening
     - type: AccessReader
       accessListsOriginal: []
@@ -6981,7 +6993,7 @@ entities:
       pos: 18.5,23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -394353.94
+      secondsUntilStateChange: -394904.56
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7306,7 +7318,7 @@ entities:
       pos: 33.5,-26.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -421.32767
+      secondsUntilStateChange: -971.98846
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7322,7 +7334,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -23394.947
+      secondsUntilStateChange: -23945.607
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7474,7 +7486,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -370935.7
+      secondsUntilStateChange: -371486.3
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -24941,6 +24953,21 @@ entities:
       rot: 3.141592653589793 rad
       pos: 20.5,-28.5
       parent: 2
+  - uid: 4302
+    components:
+    - type: Transform
+      pos: -18.5,6.5
+      parent: 2
+  - uid: 4305
+    components:
+    - type: Transform
+      pos: -24.5,6.5
+      parent: 2
+  - uid: 4311
+    components:
+    - type: Transform
+      pos: -23.5,6.5
+      parent: 2
   - uid: 4341
     components:
     - type: Transform
@@ -27265,6 +27292,21 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -12.5,35.5
       parent: 2
+  - uid: 12892
+    components:
+    - type: Transform
+      pos: -19.5,6.5
+      parent: 2
+  - uid: 12893
+    components:
+    - type: Transform
+      pos: -20.5,6.5
+      parent: 2
+  - uid: 12894
+    components:
+    - type: Transform
+      pos: -21.5,6.5
+      parent: 2
 - proto: Chair
   entities:
   - uid: 1955
@@ -29249,7 +29291,7 @@ entities:
       pos: -10.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -68096.99
+      secondsUntilStateChange: -68647.664
       state: Opening
   - uid: 10921
     components:
@@ -38655,10 +38697,20 @@ entities:
     - type: Transform
       pos: 28.5,39.5
       parent: 2
+  - uid: 4310
+    components:
+    - type: Transform
+      pos: -25.5,6.5
+      parent: 2
   - uid: 4754
     components:
     - type: Transform
       pos: -5.5,22.5
+      parent: 2
+  - uid: 4928
+    components:
+    - type: Transform
+      pos: -22.5,6.5
       parent: 2
   - uid: 5047
     components:
@@ -40076,7 +40128,7 @@ entities:
       pos: 12.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -125106.56
+      secondsUntilStateChange: -125657.234
       state: Closing
   - uid: 3844
     components:
@@ -40685,7 +40737,7 @@ entities:
     - type: Transform
       pos: 11.5,35.5
       parent: 2
-- proto: LockerCaptainFilledNoLaser
+- proto: LockerCaptainFilledTrident
   entities:
   - uid: 371
     components:
@@ -45342,28 +45394,12 @@ entities:
   - uid: 4301
     components:
     - type: Transform
-      pos: -19.5,7.5
-      parent: 2
-  - uid: 4302
-    components:
-    - type: Transform
-      pos: -21.5,7.5
+      pos: -20.5,6.5
       parent: 2
   - uid: 4303
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -17.5,6.5
-      parent: 2
-  - uid: 4304
-    components:
-    - type: Transform
-      pos: -23.5,7.5
-      parent: 2
-  - uid: 4305
-    components:
-    - type: Transform
-      pos: -25.5,7.5
+      pos: -18.5,6.5
       parent: 2
   - uid: 4306
     components:
@@ -45374,7 +45410,7 @@ entities:
   - uid: 4307
     components:
     - type: Transform
-      pos: -20.5,7.5
+      pos: -21.5,6.5
       parent: 2
   - uid: 4308
     components:
@@ -45385,17 +45421,7 @@ entities:
   - uid: 4309
     components:
     - type: Transform
-      pos: -18.5,7.5
-      parent: 2
-  - uid: 4310
-    components:
-    - type: Transform
-      pos: -22.5,7.5
-      parent: 2
-  - uid: 4311
-    components:
-    - type: Transform
-      pos: -24.5,7.5
+      pos: -19.5,6.5
       parent: 2
   - uid: 4312
     components:
@@ -49717,12 +49743,6 @@ entities:
     - type: Transform
       pos: 10.5,42.5
       parent: 2
-  - uid: 4928
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -17.5,7.5
-      parent: 2
   - uid: 4929
     components:
     - type: Transform
@@ -50712,6 +50732,18 @@ entities:
     components:
     - type: Transform
       pos: -11.5,35.5
+      parent: 2
+  - uid: 12890
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -17.5,6.5
+      parent: 2
+  - uid: 12891
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -25.5,7.5
       parent: 2
 - proto: RailingRound
   entities:
@@ -72025,13 +72057,6 @@ entities:
       - - Atmospherics
       - - Engineering
       - - Research
-- proto: TP14WeaponTrident
-  entities:
-  - uid: 9299
-    components:
-    - type: Transform
-      pos: 39.473564,1.473175
-      parent: 2
 - proto: TPSignDivingBell
   entities:
   - uid: 7430
@@ -79703,7 +79728,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -351455.03
+      secondsUntilStateChange: -352005.66
       state: Opening
     - type: Airlock
       autoClose: False
@@ -80501,7 +80526,7 @@ entities:
       pos: 39.5,45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -48224.47
+      secondsUntilStateChange: -48775.13
       state: Opening
   - uid: 6259
     components:

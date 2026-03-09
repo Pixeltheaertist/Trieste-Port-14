@@ -27,7 +27,7 @@
 
 - type: entity
   id: LockerCaptainFilledTrident
-  suffix: Filled
+  suffix: Trieste, Filled, Trident
   parent: LockerCaptain
   components:
   - type: EntityTableContainerFill
