@@ -34,3 +34,8 @@
   id: ImplantDevices
   name: Implant Devices
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/implant-devices.xml"
+
+- type: guideEntry
+  id: MedicalReg
+  name: Medical Regulations
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/medical-regulation.xml"
