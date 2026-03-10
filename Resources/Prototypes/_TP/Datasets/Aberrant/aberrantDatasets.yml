@@ -1,0 +1,6 @@
+﻿- type: localizedDataset
+  id: AberrantSpeechVocalised
+  values:
+      prefix: aberrant-speech-vocalised-dataset
+      count: 1
+
