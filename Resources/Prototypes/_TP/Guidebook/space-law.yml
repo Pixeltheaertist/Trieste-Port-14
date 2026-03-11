@@ -9,6 +9,7 @@
   - Sentencing
   - Searches
   - ImplantDevices
+  - MedicalRegulations
 
 - type: guideEntry
   id: CrimeList
@@ -36,6 +37,6 @@
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/implant-devices.xml"
 
 - type: guideEntry
-  id: MedicalReg
+  id: MedicalRegulations
   name: Medical Regulations
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/medical-regulation.xml"
