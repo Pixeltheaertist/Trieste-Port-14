@@ -29,6 +29,7 @@
       - id: ClothingUniformJumpsuitPrisoner
       - id: ClothingUniformJumpskirtPrisoner
       - id: ClothingShoesColorBlack
+      - id: ClothingHeadsetGrey #TP14
     - id: ClothingMaskMuzzle
     - !type:GroupSelector
       prob: 0.15

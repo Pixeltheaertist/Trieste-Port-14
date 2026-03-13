@@ -40,6 +40,10 @@ public sealed class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeSystem
     {
         if (TryComp(entity, out SpriteComponent? sprite))
         {
+            _sprite.LayerSetRsi((entity, sprite), BorgVisualLayers.Body, prototype.SpriteRsi);
+            _sprite.LayerSetRsi((entity, sprite), BorgVisualLayers.Light, prototype.SpriteRsi);
+            _sprite.LayerSetRsi((entity, sprite), BorgVisualLayers.LightStatus, prototype.SpriteRsi);
+
             _sprite.LayerSetRsiState((entity, sprite), BorgVisualLayers.Body, prototype.SpriteBodyState);
             _sprite.LayerSetRsiState((entity, sprite), BorgVisualLayers.LightStatus, prototype.SpriteToggleLightState);
         }

@@ -130,16 +130,16 @@
 - type: entity
   id: TP14DeepFryerCircuitboard
   parent: BaseMachineCircuitboard
-  suffix: Trieste, Circuit-Board
-  name: deep-fryer machine board
+  suffix: Machine board
+  name: deep fryer machine board
   components:
   - type: Sprite
     state: service
   - type: MachineBoard
-    prototype: TP14KitchenDeepFryer
+    prototype: TP14KitchenDeepFryerEmpty
     stackRequirements:
       Manipulator: 1
-      Steel: 40
+      Steel: 10
       Cable: 4
   - type: Tag
     tags:
