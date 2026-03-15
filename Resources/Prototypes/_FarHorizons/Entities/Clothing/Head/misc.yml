@@ -1,0 +1,31 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadBrightPerformerWig
+  name: bright performer's wig
+  description: On a closer inspection, it appears that it is made from optic fiber.
+  components:
+  - type: Sprite
+    sprite: _FarHorizons/Clothing/Head/Misc/bright-performer-wig.rsi
+  - type: Clothing
+    sprite: _FarHorizons/Clothing/Head/Misc/bright-performer-wig.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadDarkPerformerWig
+  name: dark performer's wig
+  description: On a closer inspection, it appears that it is made from optic fiber.
+  components:
+  - type: Sprite
+    sprite: _FarHorizons/Clothing/Head/Misc/dark-performer-wig.rsi
+  - type: Clothing
+    sprite: _FarHorizons/Clothing/Head/Misc/dark-performer-wig.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide

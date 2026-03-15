@@ -1,0 +1,17 @@
+- type: entity                                      #Cargo subgroup
+  parent: BaseThiefStealAnimalObjective
+  id: TP14ThiefObjectiveDaisy
+  components:
+  - type: NotJobRequirement
+    jobs: [ Botanist ]
+  - type: StealCondition
+    stealGroup: TP14StealTargetGroupDaisy
+  - type: Objective
+    difficulty: 2.5
+
+- type: stealTargetGroup
+  id: TP14StealTargetGroupDaisy
+  name: tp14-steal-target-groups-animal-daisy
+  sprite:
+    sprite: _TP/Mobs/Animals/sea-bunny.rsi
+    state: sea-rabbit-moving

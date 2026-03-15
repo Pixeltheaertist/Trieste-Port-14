@@ -48,7 +48,7 @@
   components:
   - type: BorgSwitchableType
     selectedBorgType: mining
-  - type: InGas # TP
+  - type: InGas # TP14
     gasID: 9
     damagedByGas: false
     gasThreshold: 50
@@ -60,6 +60,10 @@
   components:
   - type: BorgSwitchableType
     selectedBorgType: engineering
+  - type: InGas # TP14
+    gasID: 9
+    damagedByGas: false
+    gasThreshold: 50
 
 - type: entity
   id: BorgChassisJanitor
@@ -223,6 +227,10 @@
     interactFailureString: petting-failure-derelict-cyborg
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: InGas # TP14
+    gasID: 9
+    damagedByGas: false
+    gasThreshold: 50
 
 - type: entity
   parent: BaseBorgChassisDerelict

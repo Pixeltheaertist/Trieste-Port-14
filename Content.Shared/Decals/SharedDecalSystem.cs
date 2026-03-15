@@ -142,10 +142,12 @@ namespace Content.Shared.Decals
     public sealed class RequestDecalRemovalEvent : EntityEventArgs
     {
         public NetCoordinates Coordinates;
+        public uint? DecalId; // Trieste Specific //
 
-        public RequestDecalRemovalEvent(NetCoordinates coordinates)
+        public RequestDecalRemovalEvent(NetCoordinates coordinates, uint? decalId = null)
         {
             Coordinates = coordinates;
+            DecalId = decalId;
         }
     }
 }

@@ -53,7 +53,7 @@
   content:
   - RadioJammer
   - Emag
-  - AccessBreaker
+  #- AccessBreaker
   - Lighter
   - CigPackSyndicate
   - Telecrystal10 #The thief cannot use them, but it may induce communication with traitors

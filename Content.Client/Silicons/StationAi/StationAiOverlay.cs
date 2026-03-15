@@ -37,6 +37,8 @@ public sealed class StationAiOverlay : Overlay
         IoCManager.InjectDependencies(this);
     }
 
+    private EntityUid _lastGridUid = EntityUid.Invalid;
+
     protected override void Draw(in OverlayDrawArgs args)
     {
         var res = _resources.GetForViewport(args.Viewport, static _ => new CachedResources());
@@ -55,9 +57,34 @@ public sealed class StationAiOverlay : Overlay
 
         var worldBounds = args.WorldBounds;
 
+
         var playerEnt = _player.LocalEntity;
-        _entManager.TryGetComponent(playerEnt, out TransformComponent? playerXform);
-        var gridUid = playerXform?.GridUid ?? EntityUid.Invalid;
+
+        EntityUid? eyeEntity = null;
+        TransformComponent? eyeXform = null;
+
+        if (_entManager.TryGetComponent(playerEnt, out StationAiHeldComponent? aiHeld))
+        {
+            if (_entManager.EntitySysManager.GetEntitySystem<SharedStationAiSystem>().TryGetCore(playerEnt.Value, out var core) &&
+                core.Comp?.RemoteEntity != null)
+            {
+                eyeEntity = core.Comp.RemoteEntity;
+                _entManager.TryGetComponent(eyeEntity, out eyeXform);
+            }
+            else
+            {
+                eyeEntity = playerEnt;
+                _entManager.TryGetComponent(playerEnt, out eyeXform);
+            }
+        }
+        else
+        {
+            eyeEntity = playerEnt;
+            _entManager.TryGetComponent(playerEnt, out eyeXform);
+        }
+
+        var gridUid = eyeXform?.GridUid ?? EntityUid.Invalid;
+
         _entManager.TryGetComponent(gridUid, out MapGridComponent? grid);
         _entManager.TryGetComponent(gridUid, out BroadphaseComponent? broadphase);
 
@@ -116,7 +143,8 @@ public sealed class StationAiOverlay : Overlay
             {
                 worldHandle.SetTransform(Matrix3x2.Identity);
                 worldHandle.DrawRect(worldBounds, Color.Black);
-            }, Color.Black);
+            },
+            Color.Black);
         }
 
         // Use the lighting as a mask

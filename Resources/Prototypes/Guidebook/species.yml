@@ -5,7 +5,7 @@
   children:
     - Arachnid
     - Diona
-    - Dwarf
+#    - Dwarf # TP14
     - Human
     - Moth
     - Reptilian
@@ -24,10 +24,11 @@
   name: species-name-diona
   text: "/ServerInfo/Guidebook/Mobs/Diona.xml"
 
-- type: guideEntry
-  id: Dwarf
-  name: species-name-dwarf
-  text: "/ServerInfo/Guidebook/Mobs/Dwarf.xml"
+# TP14 - We have removed dwarves as a species
+#- type: guideEntry
+#  id: Dwarf
+#  name: species-name-dwarf
+#  text: "/ServerInfo/Guidebook/Mobs/Dwarf.xml"
 
 - type: guideEntry
   id: Human

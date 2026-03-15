@@ -7,6 +7,8 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Gravity;
+using Content.Shared.StationAi;
+using Content.Shared.SurveillanceCamera.Components;
 
 namespace Content.Shared.Silicons.StationAi;
 
@@ -59,15 +61,50 @@ public abstract partial class SharedStationAiSystem
 
     private void OnLevelChange(Entity<StationAiHeldComponent> ent, ref ChangeLevelEvent args)
     {
-
         if (!TryGetCore(ent.Owner, out var core) || core.Comp?.RemoteEntity == null)
             return;
 
-        var query = EntityQueryEnumerator<TriesteComponent>();
-        if (query.MoveNext(out var triesteUid, out _))
+        // Find a camera on Trieste
+        var triesteQuery = EntityQueryEnumerator<TriesteComponent>();
+        if (!triesteQuery.MoveNext(out var triesteUid, out _))
+            return;
+
+        var triesteMapId = Transform(triesteUid).MapID;
+
+        // Find a camera on Trieste's map (preferably a bridge camera)
+        var cameraQuery = EntityQueryEnumerator<StationAiVisionComponent, TransformComponent>();
+        EntityUid? targetCamera = null;
+
+        while (cameraQuery.MoveNext(out var camUid, out var vision, out var xform))
         {
-            _transform.SetCoordinates(core.Comp.RemoteEntity.Value, Transform(triesteUid).Coordinates);
+            if (xform.MapID != triesteMapId)
+                continue;
+
+            if (!vision.Enabled)
+                continue;
+
+            if (MetaData(camUid).EntityName?.Contains("bridge", StringComparison.OrdinalIgnoreCase) == true ||
+                MetaData(camUid).EntityName?.Contains("command", StringComparison.OrdinalIgnoreCase) == true)
+            {
+                targetCamera = camUid;
+                break;
+            }
+
+            targetCamera ??= camUid;
         }
+
+        if (targetCamera == null)
+        {
+            targetCamera = triesteUid;
+        }
+
+        var targetCoords = Transform(targetCamera.Value).Coordinates;
+
+        _transform.SetCoordinates(core.Comp.RemoteEntity.Value, targetCoords);
+
+        // Force immediate network sync
+        var eyeXform = Transform(core.Comp.RemoteEntity.Value);
+        Dirty(core.Comp.RemoteEntity.Value, eyeXform);
     }
 
     /// <summary>

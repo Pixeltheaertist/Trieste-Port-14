@@ -1,7 +1,7 @@
 ﻿- type: entity
   id: FloorChasmEntity
   name: chasm
-  description: You can't even see the bottom.
+  description: You can't help but feel watched...
   placement:
     mode: SnapgridCenter
     snap:

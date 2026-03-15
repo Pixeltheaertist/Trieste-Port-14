@@ -1,0 +1,24 @@
+- type: loadoutEffectGroup
+  id: TP14EffectSpeciesMask
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - JellidPerson
+
+- type: loadoutGroup
+  id: TP14GroupSpeciesBreathToolNeck
+  name: loadout-group-breath-tool
+  minLimit: 1
+  maxLimit: 1
+  hidden: true
+  loadouts:
+  - TP14LoadoutSpeciesBreathToolNeck
+
+- type: loadoutGroup
+  id: TP14GroupSpeciesBreathTool
+  name: loadout-group-breath-tool
+  minLimit: 1
+  maxLimit: 1
+  hidden: true
+  loadouts:
+  - TP14LoadoutSpeciesBreathTool

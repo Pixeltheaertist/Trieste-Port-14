@@ -1,0 +1,56 @@
+- type: loadout
+  id: TP14LoadoutGoldenCoffeeFilterBar
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorBar
+  storage:
+    back:
+    - TP14CoffeeFilterInfinite
+
+- type: loadout
+  id: TP14LoadoutGoldenCoffeeFilterHoP
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobHeadOfPersonnel
+      time: 187200 # 52-ish hours, I think? WHY WAS THIS NOT SWITCHED TO HOURS???
+  storage:
+    back:
+    - TP14CoffeeFilterInfinite
+
+- type: loadout
+  id: TP14LoadoutLizardPlushieBasinTechnician
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: TP14BasinTechTracker
+      time: 72000 # 20hr
+  storage:
+    back:
+    - PlushieLizardJobSalvagespecialist
+
+- type: loadout
+  id: TP14LoadoutLizardPlushieExpeditioneer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: TP14ExpeditioneerTracker
+      time: 72000 # 20hr
+  storage:
+    back:
+    - PlushieLizardJobSalvagespecialist
+
+- type: loadout
+  id: TP14LoadoutLizardPlushiePilot
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: TP14PilotTracker
+      time: 72000 # 20hr
+  storage:
+    back:
+    - PlushieLizardJobSalvagespecialist

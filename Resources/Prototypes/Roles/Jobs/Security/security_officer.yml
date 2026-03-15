@@ -29,7 +29,7 @@
   equipment:
     eyes: ClothingEyesGlassesSecurity
     ears: ClothingHeadsetSecurity
-    pocket1: CombatKnife # We should prolly change this to a gun or something, boots come with a knife. - Cookie (FatherCheese)
+    pocket1: WeaponPistolMk58
   storage:
     back:
     - Flash

@@ -1,0 +1,37 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by Levtobecontinued",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "brain-jellid"
+        },
+        {
+            "name": "brain-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "brain-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "lungs-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "lungs-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "lung-l-jellid"
+        },
+        {
+            "name": "lung-r-jellid"
+        }
+
+    ]
+}

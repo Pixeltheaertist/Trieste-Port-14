@@ -1,0 +1,45 @@
+- type: siliconLawset
+  id: MechLaws
+  laws:
+  - Mech1
+  - Mech2
+  - Mech3
+  obeysTo: laws-owner-pilot
+
+- type: siliconLaw
+  id: Mech1
+  order: 1
+  lawString: law-mech-1
+
+- type: siliconLaw
+  id: Mech2
+  order: 2
+  lawString: law-mech-2
+
+- type: siliconLaw
+  id: Mech3
+  order: 3
+  lawString: law-mech-3
+
+- type: siliconLawset
+  id: MechLawsSubverted
+  laws:
+  - MechSubverted1
+  - MechSubverted2
+  - MechSubverted3
+  obeysTo: laws-owner-pilot
+
+- type: siliconLaw
+  id: MechSubverted1
+  order: 1
+  lawString: law-mech-subverted-1
+
+- type: siliconLaw
+  id: MechSubverted2
+  order: 2
+  lawString: law-mech-subverted-2
+
+- type: siliconLaw
+  id: MechSubverted3
+  order: 3
+  lawString: law-mech-subverted-3

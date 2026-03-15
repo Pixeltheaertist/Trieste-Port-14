@@ -1,0 +1,43 @@
+# Trieste specific hardsuits, if possible keep the positioning the same for helmets
+
+# EXPEDITIONARY HARDSUITS 
+# GILLY Abyssal Suit
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitAbyssal
+  suffix: Trieste, Expeditionary
+  name: G.I.L.L.Y abyssal suit
+  description: A integrated hardframe pressure suit that mechanically advances the user to protect them from lethal depths. Extremely difficult to operate.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/abyssal.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/abyssal.rsi
+    equipDelay: 10 # i understand that its meant to be a large bulky suit but 20 seconds to put it on is excessive
+    unequipDelay: 10
+  - type: PressureProtection
+    highPressureMultiplier: 0.001
+    lowPressureMultiplier: 1000
+  - type: AbyssalSuit
+  - type: TemperatureProtection
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
+  - type: ExplosionResistance
+    damageCoefficient: 0.4 # no idea how prevalent explosions will be in the trench so this may need to be tweaked
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.4
+        Heat: 0.4
+        Cold: 0.1
+        Shock: 0.3
+        Radiation: 0.2
+        Caustic: 0.4
+  - type: ClothingSpeedModifier
+    walkModifier: 0.5
+    sprintModifier: 0.4
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetAbyssal

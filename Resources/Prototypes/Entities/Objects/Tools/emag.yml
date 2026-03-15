@@ -2,10 +2,11 @@
   parent: [BaseItem, BaseSyndicateContraband]
   id: EmagUnlimited
   suffix: Unlimited
-  name: cryptographic sequencer
+  name: Emag
   description: The all-in-one hacking solution. Friend of any syndicate. The iconic EMAG.
   components:
   - type: Emag
+    emagType: All # WizDen can eat a boot
   - type: Sprite
     sprite: Objects/Tools/emag.rsi
     state: icon

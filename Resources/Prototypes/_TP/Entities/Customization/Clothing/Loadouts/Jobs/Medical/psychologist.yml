@@ -1,0 +1,23 @@
+- type: loadoutGroup
+  id: TP14GroupPsychologistOuterwear
+  name: tp14-loadout-group-psychologist-outerwear
+  minLimit: 0
+  defaultSelected: 1
+  loadouts:
+  - MedicalDoctorWintercoat
+  - TP14LoadoutCoatTrenchcoat
+
+- type: loadoutGroup
+  id: TP14GroupPsychologistFootwear
+  name: tp14-loadout-group-psychologist-footwear
+  minLimit: 1
+  loadouts:
+  - TP14LoadoutFootwearLeather
+  - TP14LoadoutFootwearLaceup
+
+- type: loadoutGroup
+  id: TP14GroupPsychologistNeckwear
+  name: tp14-loadout-group-psychologist-neckwear
+  minLimit: 0
+  loadouts:
+    - TP14LoadoutNeckStethoscope

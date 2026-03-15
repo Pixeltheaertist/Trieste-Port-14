@@ -1,0 +1,25 @@
+- type: emoteSounds
+  id: Jellid
+  sounds:
+    Squish:
+      collection: JellidSquishes
+    Scream:
+      collection: JellidScreams
+    Laugh:
+      collection: JellidLaughs
+    Honk:
+      collection: BikeHorn
+    Buzz:
+      path: /Audio/_TP/Voice/Jellid/Buzz/jellid_buzz.ogg
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: JellidGasp
+    DefaultDeathgasp:
+      collection: JellidDeathGasp
+    TP14_HorrificGiggle:
+      collection: CluwneScreams
+  params:
+    variation: 0.125

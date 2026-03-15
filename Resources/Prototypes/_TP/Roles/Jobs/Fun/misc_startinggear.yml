@@ -11,9 +11,11 @@
     pocket1: FlashlightLantern
     pocket2: CrowbarRed
 
-# Expeditionary
 - type: startingGear
-  id: TP14StepfatherGear
+  id: TP14HermitGear
   equipment:
-    id: SalvagePDA
-    pocket1: TP14PinpointerPilot # This was commented out, not sure why. - Cookie (FatherCheese)
+    jumpsuit: TP14ClothingUniformHardyOveralls
+    shoes: ClothingShoesBootsSalvage
+    back: ClothingBackpackSatchelLeather
+    outerClothing: ClothingOuterCoatHermit
+    suitstorage: TP14WeaponRifleEnergyRepeater

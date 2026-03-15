@@ -1,0 +1,107 @@
+- type: speciesBaseSprites
+  id: TP14SpritesMobDwarf
+  sprites:
+    Special: MobHumanoidAnyMarking
+    Head: TP14SpriteDwarfHead
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+    Chest: TP14SpriteDwarfTorso
+    Tail: MobHumanoidAnyMarking
+    Eyes: MobHumanoidEyes
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    LArm: TP14SpriteDwarfLArm
+    RArm: TP14SpriteDwarfRArm
+    LHand: TP14SpriteDwarfLHand
+    RHand: TP14SpriteDwarfRHand
+    LLeg: TP14SpriteDwarfLLeg
+    RLeg: TP14SpriteDwarfRLeg
+    LFoot: TP14SpriteDwarfLFoot
+    RFoot: TP14SpriteDwarfRFoot
+
+- type: humanoidBaseSprite
+  id: TP14SpriteDwarfHead
+  baseSprite:
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: TP14SpriteDwarfHeadMale
+  baseSprite:
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: TP14SpriteDwarfHeadFemale
+  baseSprite:
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: TP14SpriteDwarfTorso
+  baseSprite:
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: TP14SpriteDwarfTorsoMale
+  baseSprite:
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: TP14SpriteDwarfTorsoFemale
+  baseSprite:
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: torso_f
+
+- type: humanoidBaseSprite
+  id: TP14SpriteDwarfLLeg
+  baseSprite:
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: TP14SpriteDwarfLArm
+  baseSprite:
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: TP14SpriteDwarfLHand
+  baseSprite:
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: TP14SpriteDwarfLFoot
+  baseSprite:
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: TP14SpriteDwarfRLeg
+  baseSprite:
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: TP14SpriteDwarfRArm
+  baseSprite:
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: TP14SpriteDwarfRHand
+  baseSprite:
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: TP14SpriteDwarfRFoot
+  baseSprite:
+    sprite: _TP/Mobs/Species/Dwarves/parts.rsi
+    state: r_foot

@@ -1,0 +1,96 @@
+
+- type: entity
+  id: TP14JellidCore
+  parent: [BaseItem, OrganHumanBrain]
+  suffix: Trieste, Organ
+  name: Jellid core
+  description: "The source of incredible, unending electricity, It looks like it might sting a little if you pick it up."
+  components:
+  - type: Sprite
+    sprite: _TP/Mobs/Species/Jellids/organs.rsi
+    state: brain-jellid
+    color: "#303030" #Once the Slime organ PR comes out, make sure these also inherit colors from the entities using them
+  - type: Stomach
+  - type: Metabolizer
+    maxReagents: 6
+    metabolizerTypes: [ Slime ]
+    removeEmpty: true
+    groups:
+    - id: Food
+    - id: Drink
+    - id: Medicine
+    - id: Poison
+    - id: Narcotic
+    - id: Alcohol
+      rateModifier: 0.25
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 50.0
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: GreyMatter
+          Quantity: 5
+      organ:
+        reagents:
+        - ReagentId: Slime
+          Quantity: 10
+  - type: Item
+    size: Small
+    heldPrefix: brain
+    inhandVisuals:
+      left:
+      - state: brain-inhand-left
+        color: "#303030"
+      right:
+      - state: brain-inhand-right
+        color: "#303030"
+
+#Used for both Jellids and Fish
+- type: entity
+  id: TP14OrganWaterLungs
+  parent: BaseHumanOrgan
+  suffix: Trieste, Organ
+  name: gills
+  description: "Filters air out of water to breathe."
+  components:
+  - type: Sprite
+    sprite: _TP/Mobs/Species/Jellids/organs.rsi
+    layers:
+    - state: lung-l-jellid
+      color: "#4fb5d1" #Once the Slime organ PR comes out, make sure these also inherit colors from the entities using them
+    - state: lung-r-jellid
+      color: "#4fb5d1"
+  - type: Lung
+    alert: Lysis
+  - type: Metabolizer
+    removeEmpty: true
+    solutionOnBody: false
+    solution: "Lung"
+    metabolizerTypes: [ Jellid ]
+    groups:
+    - id: Gas
+      rateModifier: 100.0
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+      Lung:
+        maxVol: 100.0
+        canReact: false
+  - type: Item
+    size: Small
+    inhandVisuals:
+      left:
+      - state: lungs-inhand-left
+        color: "#4fb5d1"
+      right:
+      - state: lungs-inhand-right
+        color: "#4fb5d1"
+    heldPrefix: Lungs
+
+
+

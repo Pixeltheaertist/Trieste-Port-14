@@ -1,19 +1,4 @@
 - type: parallax
-  id: Sky
-  layers:
-    - texture:
-        !type:ImageParallaxTextureSource
-        path: "/Textures/_TP/Parallaxes/land.png"
-      slowness: 0.98
-      scale: 1,1
-    - texture:
-        !type:ImageParallaxTextureSource
-        path: "/Textures/Parallaxes/noise.png"
-      slowness: 0.95
-      scale: "2, 2"
-      scrolling: "0.1, -0.05"
-
-- type: parallax
   id: Dirt
   layers:
     - texture:
@@ -63,4 +48,6 @@
       slowness: 0.85
       scale: "1, 1"
       scrolling: "0.1, -0.05"
+
+
 

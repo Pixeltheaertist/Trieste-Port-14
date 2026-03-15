@@ -1,0 +1,70 @@
+- type: loadoutGroup
+  id: TP14GroupBartenderBackpacks
+  name: tp14-loadout-group-backpacks-bartender
+  loadouts:
+  - CommonBackpack
+  - CommonSatchel
+  - CommonDuffel
+
+- type: loadoutGroup
+  id: TP14GroupBartenderFootwear
+  name: tp14-loadout-group-footwear-bartender
+  minLimit: 0
+  defaultSelected: 1
+  loadouts:
+  - TP14LoadoutFootwearLaceup
+  - TP14LoadoutFootwearBlack
+  - TP14LoadoutFootwearBrown
+  - TP14LoadoutFootwearWhite
+
+- type: loadoutGroup
+  id: TP14GroupBartenderHeadwear
+  name: tp14-loadout-group-headwear-bartender
+  minLimit: 0
+  loadouts:
+  - TP14LoadoutHeadwearTophat
+  - TP14LoadoutHeadwearBowler
+  - TP14LoadoutHeadwearBucketBlack
+
+- type: loadoutGroup
+  id: TP14GroupBartenderJumpers
+  name: tp14-loadout-group-jumpers-bartender
+  loadouts:
+  - TP14LoadoutJumpsuitBartender
+  - TP14LoadoutJumpskirtBartender
+  - TP14LoadoutJumpskirtBartenderPurple
+  - TP14LoadoutJumpsuitBlack
+  - TP14LoadoutJumpskirtBlack
+  - TP14LoadoutJumpsuitPurple
+  - TP14LoadoutJumpskirtPurple
+  - TP14LoadoutJumpsuitWhite
+  - TP14LoadoutJumpskirtWhite
+  - TP14LoadoutJumpsuitLieutenantTanktop
+
+- type: loadoutGroup
+  id: TP14GroupBartenderNeckwear
+  name: tp14-loadout-group-neckwear-bartender
+  minLimit: 0
+  loadouts:
+  - TP14LoadoutScarfBlack
+  - TP14LoadoutScarfPurple
+  - TP14LoadoutScarfZebra
+
+- type: loadoutGroup
+  id: TP14GroupBartenderOuter
+  name: tp14-loadout-group-outer-bartender
+  loadouts:
+  - TP14LoadoutOuterWinterBartender
+  - TP14LoadoutOuterWinterBlack
+  - TP14LoadoutOuterWinterPurple
+  - TP14LoadoutOuterWinterWhite
+  - TP14LoadoutOuterVest
+  - TP14LoadoutOuterApronBar
+
+- type: loadoutGroup
+  id: TP14BartenderGloves
+  name: tp14-loadout-group-gloves-bartender
+  minLimit: 0
+  loadouts:
+  - TP14LoadoutGlovesFingerless
+  - TP14LoadoutGlovesWhite

@@ -46,8 +46,8 @@
 - type: entity
   parent: BasePlushieLizardJob
   id: PlushieLizardJobCaptain
-  name: captain lizard plushie
-  description: An adorable stuffed toy that resembles a lizardperson as the captain. There's bits of pie on its face.
+  name: overseer lizard plushie # TP14 - Was "captain", same as the line below
+  description: An adorable stuffed toy that resembles a lizardperson as the overseer. There's bits of pie on its face.
   components:
   - type: Sprite
     state: captain
@@ -241,8 +241,8 @@
 - type: entity
   parent: BasePlushieLizardJob
   id: PlushieLizardJobPassenger
-  name: passenger lizard plushie
-  description: An adorable stuffed toy that resembles a lizardperson as a passenger. Its eyes look at you, a little bit more beady than the rest.
+  name: citizen lizard plushie # TP14 - Was "passenger", same as the line below
+  description: An adorable stuffed toy that resembles a lizardperson as a citizen. Its eyes look at you, a little bit more beady than the rest.
   components:
   - type: Sprite
     state: passenger
@@ -268,8 +268,8 @@
 - type: entity
   parent: BasePlushieLizardJob
   id: PlushieLizardJobReporter
-  name: reporter lizard plushie
-  description: An adorable stuffed toy that resembles a lizardperson as a reporter. It smells faintly of ink.
+  name: journalist lizard plushie # TP14 - Was "reporter", same as the line below
+  description: An adorable stuffed toy that resembles a lizardperson as a journalist. It smells faintly of ink.
   components:
   - type: Sprite
     state: reporter

@@ -177,16 +177,11 @@ public abstract partial class SharedStationAiSystem : EntitySystem
 
         args.Result = BoundUserInterfaceRangeResult.Fail;
 
-        // Similar to the inrange check but more optimised so server doesn't die.
         var targetXform = Transform(args.Target);
+        var actorXform = args.Actor.Comp; // This has GridUid cached
 
-        // No cross-grid
-        if (targetXform.GridUid != args.Actor.Comp.GridUid)
-        {
-            return;
-        }
-
-        if (!_broadphaseQuery.TryComp(targetXform.GridUid, out var broadphase) || !_gridQuery.TryComp(targetXform.GridUid, out var grid))
+        if (!_broadphaseQuery.TryComp(targetXform.GridUid, out var broadphase) ||
+            !_gridQuery.TryComp(targetXform.GridUid, out var grid))
         {
             return;
         }
@@ -206,16 +201,12 @@ public abstract partial class SharedStationAiSystem : EntitySystem
     {
         args.Handled = true;
         var targetXform = Transform(args.Target);
-
-        // No cross-grid
-        if (targetXform.GridUid != Transform(args.User).GridUid)
-        {
-            return;
-        }
+        var userXform = Transform(args.User);
 
         // Validate it's in camera range yes this is expensive.
-        // Yes it needs optimising
-        if (!_broadphaseQuery.TryComp(targetXform.GridUid, out var broadphase) || !_gridQuery.TryComp(targetXform.GridUid, out var grid))
+        // Yes it needs optimizing
+        if (!_broadphaseQuery.TryComp(targetXform.GridUid, out var broadphase) ||
+            !_gridQuery.TryComp(targetXform.GridUid, out var grid))
         {
             return;
         }

@@ -30,7 +30,7 @@
   job: Musician
   equipment:
     head: ClothingHeadHatTophat
-    mask: ClothingMaskBreath
+    mask: TP14ClothingMaskAir #TP14
     neck: ClothingMultipleHeadphones
     outerClothing: ClothingOuterWinterMusician
     gloves: ClothingHandsGlovesColorBlack

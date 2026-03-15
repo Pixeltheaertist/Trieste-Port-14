@@ -1,0 +1,5 @@
+- type: soundCollection
+  id: JellidScreams
+  files:
+  - /Audio/_TP/Voice/Jellid/Scream/jellid_scream1.ogg
+  - /Audio/_TP/Voice/Jellid/Scream/jellid_scream2.ogg

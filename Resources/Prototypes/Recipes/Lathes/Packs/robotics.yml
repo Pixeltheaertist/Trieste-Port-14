@@ -11,6 +11,7 @@
 - type: latheRecipePack
   id: BorgModulesStatic
   recipes:
+  - TP14BorgModuleMailRecipe # TP14
   - BorgModuleTool
   - BorgModuleCable
   - BorgModuleFireExtinguisher

@@ -1,0 +1,8 @@
+- type: speechSounds
+  id: Jellid
+  saySound:
+    path: /Audio/_TP/Voice/Jellid/Talk/jellid_speech.ogg
+  askSound:
+    path: /Audio/_TP/Voice/Jellid/Talk/jellid_ask.ogg
+  exclaimSound:
+    path: /Audio/_TP/Voice/Jellid/Talk/jellid_exclaim.ogg

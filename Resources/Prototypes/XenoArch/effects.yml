@@ -1022,10 +1022,10 @@
     replaceDescription: true
     reagents:
     #- Dermaline TP14
-    - HyperMarrow # TP14
+    - RegenerationAlgae # TP14
     - Arithrazine
     #- Bicaridine TP14 
-    - HyperPlatelet
+    - ReinforcementAlgae
     - Inaprovaline
     #- Kelotane TP14
     #- Dexalin TP14

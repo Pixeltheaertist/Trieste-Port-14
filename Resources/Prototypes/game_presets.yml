@@ -73,11 +73,11 @@
   - extended
   - shittersafari
   name: extended-title
-  showInVote: false #2boring2vote
+  showInVote: true #2boring2vote #TP14 - You guys are dumb
   description: extended-description
   rules:
   - BasicStationEventScheduler
-#  - MeteorSwarmScheduler
+  - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
 
@@ -121,16 +121,17 @@
   rules:
     - Secret
 
-- type: gamePreset
-  id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
-  alias:
-    - secretextended
-  name: secret-title
-  showInVote: false #Admin Use
-  description: secret-description
-  rules:
-    - BasicStationEventScheduler
-    - BasicRoundstartVariation
+# TP14 - We don't need this shit, oh my god.
+#- type: gamePreset
+#  id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
+#  alias:
+#    - secretextended
+#  name: secret-title
+#  showInVote: false #Admin Use
+#  description: secret-description
+#  rules:
+#    - BasicStationEventScheduler
+#    - BasicRoundstartVariation
 
 - type: gamePreset
   id: SecretGreenshift #For Admin Use: Runs Greenshift but shows "Secret" in lobby.

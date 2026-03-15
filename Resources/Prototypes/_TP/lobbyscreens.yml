@@ -13,3 +13,7 @@
 - type: lobbyBackground
   id: SweetwaterCam
   background: /Textures/_TP/LobbyScreens/SweetwaterCam.webp
+
+- type: lobbyBackground
+  id: CargoView
+  background: /Textures/_TP/LobbyScreens/cargoview.webp

@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from vgstation at commit https://github.com/vgstation-coders/vgstation13/commit/cdbcb1e858b11f083994a7a269ed67ef5b452ce9, inflatable module by FungiFellow (GitHub), Module actions by Scarky0. chem, adv-chem, and adv-mining by mubururu_, xenoborg actions by Samuka-C (github), advclown by ThatGuyUSA.  c20r and esword by RedBookcase on Github, artistry-module by Kittygyat, with help from TiniestShark",
+    "copyright": "Taken from vgstation at commit https://github.com/vgstation-coders/vgstation13/commit/cdbcb1e858b11f083994a7a269ed67ef5b452ce9, inflatable module by FungiFellow (GitHub), Module actions by Scarky0. chem, adv-chem, and adv-mining by mubururu_, xenoborg actions by Samuka-C (github), advclown by ThatGuyUSA.  c20r and esword by RedBookcase on Github, artistry-module by Kittygyat, with help from TiniestShark, mail-module by FatherCheese for TriestePort 14",
     "size": {
         "x": 32,
         "y": 32
@@ -14,160 +14,163 @@
             "name": "no-action"
         },
         {
-            "name":"tool-module"
+            "name": "tool-module"
         },
         {
-            "name":"wire-module"
+            "name": "wire-module"
         },
         {
-            "name":"gps-module"
+            "name": "gps-module"
         },
         {
-            "name":"extinguisher-module"
+            "name": "extinguisher-module"
         },
         {
-            "name":"artistry-module"
+            "name": "artistry-module"
         },
         {
-            "name":"geiger-module"
+            "name": "geiger-module"
         },
         {
-            "name":"inflatable-module"
+            "name": "inflatable-module"
         },
         {
-            "name":"rcd-module"
+            "name": "rcd-module"
         },
         {
-            "name":"adv-tools-module"
+            "name": "adv-tools-module"
         },
         {
-            "name":"construction-module"
+            "name": "construction-module"
         },
         {
-            "name":"appraisal-module"
+            "name": "appraisal-module"
         },
         {
-            "name":"grappling-module"
+            "name": "grappling-module"
         },
         {
-            "name":"mining-module"
+            "name": "mining-module"
         },
         {
-            "name":"adv-mining-module"
+            "name": "adv-mining-module"
         },
         {
-            "name":"light-replacer-module"
+            "name": "light-replacer-module"
         },
         {
-            "name":"cleaning-module"
+            "name": "mail-module"
         },
         {
-            "name":"adv-cleaning-module"
+            "name": "cleaning-module"
         },
         {
-            "name":"diagnosis-module"
+            "name": "adv-cleaning-module"
         },
         {
-            "name":"treatment-module"
+            "name": "diagnosis-module"
         },
         {
-            "name":"chem-module"
+            "name": "treatment-module"
         },
         {
-            "name":"adv-chem-module"
+            "name": "chem-module"
         },
         {
-            "name":"adv-diagnosis-module"
+            "name": "adv-chem-module"
         },
         {
-            "name":"defib-module"
+            "name": "adv-diagnosis-module"
         },
         {
-            "name":"node-scanner-module"
+            "name": "defib-module"
         },
         {
-            "name":"anomaly-module"
+            "name": "node-scanner-module"
         },
         {
-            "name":"service-module"
+            "name": "anomaly-module"
         },
         {
-            "name":"musical-module"
+            "name": "service-module"
         },
         {
-            "name":"gardening-module"
+            "name": "musical-module"
         },
         {
-            "name":"harvesting-module"
+            "name": "gardening-module"
         },
         {
-            "name":"clowning-module"
+            "name": "harvesting-module"
         },
         {
-            "name":"adv-clowning-module"
+            "name": "clowning-module"
         },
         {
-            "name":"syndicate-weapon-module"
+            "name": "adv-clowning-module"
         },
         {
-            "name":"syndicate-operative-module"
+            "name": "syndicate-weapon-module"
         },
         {
-            "name":"syndicate-desword-module"
+            "name": "syndicate-operative-module"
         },
         {
-            "name":"syndicate-esword-module"
+            "name": "syndicate-desword-module"
         },
         {
-            "name":"syndicate-l6c-module"
+            "name": "syndicate-esword-module"
         },
         {
-            "name":"syndicate-c20r-module"
+            "name": "syndicate-l6c-module"
         },
         {
-            "name":"syndicate-martyr-module"
+            "name": "syndicate-c20r-module"
         },
         {
-            "name":"xenoborg-access-breaker-module"
+            "name": "syndicate-martyr-module"
         },
         {
-            "name":"xenoborg-basic-module"
+            "name": "xenoborg-access-breaker-module"
         },
         {
-            "name":"xenoborg-extinguisher-module"
+            "name": "xenoborg-basic-module"
         },
         {
-            "name":"xenoborg-eye-module"
+            "name": "xenoborg-extinguisher-module"
         },
         {
-            "name":"xenoborg-eye2-module"
+            "name": "xenoborg-eye-module"
         },
         {
-            "name":"xenoborg-hypo-module"
+            "name": "xenoborg-eye2-module"
         },
         {
-            "name":"xenoborg-jammer-module"
+            "name": "xenoborg-hypo-module"
         },
         {
-            "name":"xenoborg-laser-module"
+            "name": "xenoborg-jammer-module"
         },
         {
-            "name":"xenoborg-laser2-module"
+            "name": "xenoborg-laser-module"
         },
         {
-            "name":"xenoborg-projector-module"
+            "name": "xenoborg-laser2-module"
         },
         {
-            "name":"xenoborg-space-movement-module"
+            "name": "xenoborg-projector-module"
         },
         {
-            "name":"xenoborg-sword-module"
+            "name": "xenoborg-space-movement-module"
         },
         {
-            "name":"xenoborg-sword2-module"
+            "name": "xenoborg-sword-module"
         },
         {
-            "name":"xenoborg-tool-module"
+            "name": "xenoborg-sword2-module"
+        },
+        {
+            "name": "xenoborg-tool-module"
         },
         {
             "name": "select-type"

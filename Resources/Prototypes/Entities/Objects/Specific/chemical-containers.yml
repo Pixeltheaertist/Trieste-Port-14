@@ -92,7 +92,6 @@
   parent: Jug
   suffix: carbon
   id: JugCarbon
-  categories: [ HideSpawnMenu ]
   components:
   - type: Label
     currentLabel: reagent-name-carbon

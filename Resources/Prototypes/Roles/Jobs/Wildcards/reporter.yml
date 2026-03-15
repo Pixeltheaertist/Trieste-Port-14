@@ -26,7 +26,7 @@
   equipment:
     head: ClothingHeadHatFedoraGrey
     eyes: ClothingEyesGlassesCheapSunglasses
-    mask: ClothingMaskBreath
+    mask: TP14ClothingMaskAir # TP14
     outerClothing: ClothingOuterCoatTrench
     neck: ClothingNeckTieRed
     gloves: ClothingHandsGlovesFingerless

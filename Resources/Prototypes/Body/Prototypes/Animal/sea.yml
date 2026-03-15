@@ -6,5 +6,5 @@
     torso:
       part: TorsoAnimal
       organs:
-        lungs: OrganWaterLungs
+        lungs: TP14OrganWaterLungs
         stomach: OrganMouseStomach

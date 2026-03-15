@@ -1,0 +1,9 @@
+- type: trait
+  id: TP14ScottishAccent
+  name: tp14-trait-scottish-name
+  description: tp14-trait-scottish-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: ReplacementAccent
+    accent: dwarf

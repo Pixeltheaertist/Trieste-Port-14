@@ -1232,7 +1232,7 @@
       hands:
       - item: Crowbar
       - item: Emag
-      - item: AccessBreaker
+      #- item: AccessBreaker
       - item: PinpointerSyndicateNuclear
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module }

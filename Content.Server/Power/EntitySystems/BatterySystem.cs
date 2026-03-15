@@ -111,7 +111,8 @@ public sealed partial class BatterySystem : SharedBatterySystem
         var curTime = _timing.CurTime;
         while (query.MoveNext(out var uid, out var comp, out var bat))
         {
-            if (!comp.AutoRecharge || IsFull((uid, bat)))
+            // TP14 Change - WizDen broke shit again!
+            if (!comp.AutoRecharge || (IsFull((uid, bat)) && comp.AutoRechargeRate > 0))
                 continue;
 
             if (comp.NextAutoRecharge > curTime)

@@ -21,14 +21,14 @@
       - !type:MovementSpeedModifier
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect
         conditions:
         - !type:ReagentCondition
           reagent: DrifterToxin
           min: 7 #More efficient than Chloral Hydrate, and it doesn't OD you. Could be useful.
-        key: ForcedSleep
-        component: ForcedSleeping
-        type: Add
+        effectProto: StatusEffectForcedSleeping
+        time: 6
+        type: Update
 
 - type: reagent
   id: SeagullToxin

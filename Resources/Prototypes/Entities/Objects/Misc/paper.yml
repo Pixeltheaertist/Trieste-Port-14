@@ -375,8 +375,15 @@
 #      grey: "#999999"
 #      black: "#3f3f3f"
 #      green: "#43bc38"
+  - type: Sprite # TP14 - This had to be changed, as "paper" doesn't hold folders or the folder overlay anymore.
+    sprite: Objects/Misc/folders.rsi
+    layers:
+    - state: folder-centcom
+    - state: folder-overlay-paper
+      map: ["folder-overlay-paper"]
+      visible: false
   - type: Item
-    sprite: Objects/Misc/bureaucracy.rsi
+    sprite: Objects/Misc/folders.rsi
     size: Small
     shape: null
   - type: Storage

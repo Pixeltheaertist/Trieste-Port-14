@@ -658,7 +658,7 @@
           Quantity: 15
         - ReagentId: Water
           Quantity: 5
-        - ReagentId: ActivatedProtein
+        - ReagentId: ActivatedAlgae # placeholder
           Quantity: 5
         - ReagentId: Lexodine
           Quantity: 5

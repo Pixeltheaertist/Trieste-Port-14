@@ -35,7 +35,7 @@
   equipment:
     head: ClothingHeadBandBotany
     eyes: ClothingEyesGlassesCheapSunglasses
-    mask: ClothingMaskBreath
+    mask: TP14ClothingMaskAir # TP14
     neck: ClothingNeckScarfStripedGreen
     outerClothing: ClothingOuterApronBotanist
     gloves: ClothingHandsGlovesLeather

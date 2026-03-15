@@ -1,0 +1,18 @@
+{
+  "copyright" : "Rotund sprite made by unknown for Trieste Port 14, presumably PixelTheAertist",
+  "license" : "CC-BY-SA-3.0",
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "stepfather",
+      "directions": 4
+    },
+	{
+      "name": "stepfather-open"
+    }
+  ]
+}

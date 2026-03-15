@@ -1,0 +1,24 @@
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskBreathNeck
+  name: lung-adaption apparatus
+  description: A series of tubes that connects from a tank to the wearer's lungs. Allows more comfortable use. After putting on, of course.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Clothing/Mask/neckapparatus.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/neckapparatus.rsi
+  - type: BreathMask
+
+- type: entity
+  parent: ClothingMaskBreath
+  id: TP14ClothingMaskAir
+  name: air mask
+  description: It'll at least keep your eyes and lungs dry...
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Mask/breath.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Mask/breath.rsi

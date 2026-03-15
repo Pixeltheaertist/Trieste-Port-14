@@ -256,7 +256,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 6,18
   tags:
-    - SeaWreckFiveByFive
+    - SeaWreck
 
 - type: dungeonRoom
   id: Wreck5x5c
@@ -288,7 +288,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 30,18
   tags:
-    - SeaWreckFiveByFive
+    - SeaWreck
 
 # 3x5
 - type: dungeonRoom

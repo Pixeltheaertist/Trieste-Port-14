@@ -1,32 +1,4 @@
 # Actions
-- type: entity
-  parent: BaseAction
-  id: ActionJumpToCore
-  name: Jump to Sweetwater.
-  description: Sends your eye back to your core in Sweetwater.
-  components:
-  - type: Action
-    priority: -9
-    itemIconStyle: BigAction
-    icon:
-      sprite: Interface/Actions/actions_ai.rsi
-      state: ai_core
-  - type: InstantAction
-    event: !type:JumpToCoreEvent
-
-- type: entity
-  id: ActionChangeLevel
-  name: Jump to Trieste
-  description: Sends your eye to Trieste.
-  components:
-  - type: Action
-    priority: -9
-    itemIconStyle: BigAction
-    icon:
-      sprite: Interface/Actions/actions_ai.rsi
-      state: ai_core
-  - type: InstantAction
-    event: !type:ChangeLevelEvent
 
 - type: entity
   parent: BaseAction

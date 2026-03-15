@@ -1,0 +1,26 @@
+- type: latheRecipe
+  id: TP14ChemistryHudEyepatchRecipe
+  result: TP14ClothingEyepatchHudChemist
+  completetime: 2
+  materials:
+    Steel: 200
+    Cloth: 300
+    Glass: 250
+
+- type: latheRecipe
+  id: TP14MedicalHudRecipe
+  result: ClothingEyesHudMedical
+  completetime: 2
+  materials:
+    Steel: 200
+    Plastic: 300
+    Glass: 500
+
+- type: latheRecipe
+  id: TP14MedicalHudEyepatchRecipe
+  result: ClothingEyesEyepatchHudMedical
+  completetime: 2
+  materials:
+    Steel: 200
+    Cloth: 300
+    Glass: 250
