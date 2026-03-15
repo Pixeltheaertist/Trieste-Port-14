@@ -1,0 +1,59 @@
+- type: contrabandSeverity
+  id: C1C
+  examineText: contraband-examine-text-c1c
+
+- type: contrabandSeverity
+  id: C1M
+  examineText: contraband-examine-text-c1m
+
+- type: contrabandSeverity
+  id: C1S
+  examineText: contraband-examine-text-c1s
+
+- type: contrabandSeverity
+  id: C1CB
+  examineText: contraband-examine-text-c1cb
+
+- type: contrabandSeverity
+  id: C1N
+  examineText: contraband-examine-text-c1n
+
+- type: contrabandSeverity
+  id: C1T
+  examineText: contraband-examine-text-c1t
+
+- type: contrabandSeverity
+  id: C2C
+  examineText: contraband-examine-text-c2c
+
+- type: contrabandSeverity
+  id: C2M
+  examineText: contraband-examine-text-c2m
+
+- type: contrabandSeverity
+  id: C2S
+  examineText: contraband-examine-text-c2s
+
+- type: contrabandSeverity
+  id: C2N
+  examineText: contraband-examine-text-c2n
+
+- type: contrabandSeverity
+  id: C2T
+  examineText: contraband-examine-text-c2t
+
+- type: contrabandSeverity
+  id: C3S
+  examineText: contraband-examine-text-c3s
+
+- type: contrabandSeverity
+  id: C3N
+  examineText: contraband-examine-text-c3n
+
+- type: contrabandSeverity
+  id: C3T
+  examineText: contraband-examine-text-c3t
+
+- type: contrabandSeverity
+  id: C4
+  examineText: contraband-examine-text-c4
