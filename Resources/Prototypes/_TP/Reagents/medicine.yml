@@ -33,6 +33,7 @@
   desc: reagent-desc-hiscylin
   physicalDesc: reagent-physical-desc-milky
   flavor: bitter
+  contrabandSeverity: C1M #TP14
   color: "#990073"
   metabolisms:
     Medicine:
@@ -106,6 +107,7 @@
   group: Medicine
   desc: reagent-desc-calordine
   physicalDesc: reagent-physical-desc-bubbling
+  contrabandSeverity: C1M
   color: "#ff9e1c"
   metabolisms:
     Medicine:
@@ -119,6 +121,7 @@
   group: Medicine
   desc: reagent-desc-cryodine
   physicalDesc: reagent-physical-desc-frosty
+  contrabandSeverity: C1M
   color: "#1cc5ff"
   metabolisms:
     Medicine:

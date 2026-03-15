@@ -118,7 +118,7 @@
   group: Narcotics
   desc: reagent-desc-stimulants
   physicalDesc: reagent-physical-desc-energizing
-  contrabandSeverity: Syndicate
+  contrabandSeverity: C3S #TP14
   flavor: sharp
   color: "#9A040E"
   boilingPoint: 212.0
