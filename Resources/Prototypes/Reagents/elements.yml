@@ -27,6 +27,7 @@
   desc: reagent-desc-chlorine
   physicalDesc: reagent-physical-desc-gaseous
   flavor: bitter
+  contrabandSeverity: C1C #TP14
   color: "#a2ff00"
   meltingPoint: -101.5
   boilingPoint: -34.04
@@ -84,6 +85,7 @@
   desc: reagent-desc-fluorine
   physicalDesc: reagent-physical-desc-gaseous
   flavor: bitter
+  contrabandSeverity: C1C #TP14
   color: "#ba85cc"
   boilingPoint: -188.11
   meltingPoint: -219.67
@@ -201,6 +203,7 @@
   desc: reagent-desc-mercury
   physicalDesc: reagent-physical-desc-shiny
   flavor: metallic
+  contrabandSeverity: C1C #TP14
   color: "#929296"
   meltingPoint: -38.83
   boilingPoint: 356.73
@@ -233,6 +236,7 @@
   desc: reagent-desc-phosphorus
   physicalDesc: reagent-physical-desc-powdery
   flavor: metallic
+  contrabandSeverity: C1C #TP14
   color: "#f5da9a"
   meltingPoint: 44.2
   boilingPoint: 280.5
@@ -252,6 +256,7 @@
   desc: reagent-desc-radium
   physicalDesc: reagent-physical-desc-glowing
   flavor: metallic
+  contrabandSeverity: C1C #TP14
   color: "#00ff04"
   meltingPoint: 700.0
   boilingPoint: 1737.0
@@ -292,6 +297,7 @@
   desc: reagent-desc-sulfur
   physicalDesc: reagent-physical-desc-powdery
   flavor: bitter
+  contrabandSeverity: C1C #TP14
   color: "#fff385"
   boilingPoint: 445.0
   meltingPoint: 120.0
@@ -321,6 +327,7 @@
   desc: reagent-desc-uranium
   physicalDesc: reagent-physical-desc-metallic
   flavor: metallic
+  contrabandSeverity: C1C #TP14
   color: "#8fa191"
   meltingPoint: 1133.0
   boilingPoint: 4131.0
