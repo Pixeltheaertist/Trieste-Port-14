@@ -139,6 +139,7 @@
   name: reagent-name-exotic-poison
   desc: reagent-desc-exotic-poison
   physicalDesc: reagent-physical-desc-sticky
+  contrabandSeverity: C4
   color: "#6600ff"
   flavor: bitter
   slipData:
@@ -160,6 +161,7 @@
   name: reagent-name-juice-that
   desc: reagent-desc-juice-that
   physicalDesc: reagent-physical-desc-sticky
+  contrabandSeverity: C4
   color: "#66ffff"
   flavor: bitter
   slipData:
