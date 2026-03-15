@@ -7,7 +7,6 @@
   contrabandSeverity: C3T #TP14
   color: "#cf3600"
   physicalDesc: reagent-physical-desc-opaque
-  contrabandSeverity: Minor
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: 10
