@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.4.0
   forkId: ""
   forkVersion: ""
-  time: 02/05/2026 22:26:57
-  entityCount: 23086
+  time: 03/14/2026 02:35:32
+  entityCount: 23088
 maps:
 - 1
 grids:
@@ -1414,12 +1414,13 @@ entities:
             1086: -27,36
             1087: -28,36
             1088: -28,33
-            1089: -27,33
             1090: -26,33
             1091: -26,30
             1092: -27,30
             1093: -28,30
             1788: -18,43
+            1944: -27,33
+            1945: -20,40
         - node:
             zIndex: 20
             color: '#334E6DC8'
@@ -2996,6 +2997,13 @@ entities:
           decals:
             1817: -10,7
         - node:
+            zIndex: 3
+            angle: -1.5707963267948966 rad
+            color: '#EFCE46DD'
+            id: arrow
+          decals:
+            1948: -25.751348,31.818481
+        - node:
             angle: 0.3490658503988659 rad
             color: '#FFFFFFFF'
             id: body
@@ -3055,6 +3063,25 @@ entities:
           decals:
             64: 16.854095,42.359875
             68: 18.424408,42.3755
+        - node:
+            zIndex: 2
+            color: '#EFCE46DD'
+            id: electricdanger
+          decals:
+            1946: -25,33
+        - node:
+            zIndex: 3
+            color: '#EFCE46DD'
+            id: electricdanger
+          decals:
+            1947: -25,33
+        - node:
+            angle: -1.5707963267948966 rad
+            color: '#FFD346FF'
+            id: electricdanger
+          decals:
+            1941: -24.999294,32.84973
+            1942: -24.930262,33.084106
         - node:
             color: '#894E00FF'
             id: l
@@ -11161,6 +11188,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: -44.5,38.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
 - proto: AirlockAtmosphericsLocked
   entities:
   - uid: 55
@@ -11251,7 +11280,7 @@ entities:
       pos: -63.5,26.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -202880.6
+      secondsUntilStateChange: -205956.97
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11370,6 +11399,12 @@ entities:
     - type: Transform
       pos: -33.5,36.5
       parent: 2
+    - type: Door
+      secondsUntilStateChange: -804.92255
+      state: Opening
+    - type: DeviceLinkSource
+      lastSignals:
+        DoorStatus: True
   - uid: 79
     components:
     - type: MetaData
@@ -11415,7 +11450,7 @@ entities:
       pos: -24.5,30.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -217195.83
+      secondsUntilStateChange: -220272.2
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11432,6 +11467,8 @@ entities:
     - type: Transform
       pos: -37.5,38.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 87
     components:
     - type: MetaData
@@ -11646,7 +11683,7 @@ entities:
       pos: 3.5,29.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -286441.9
+      secondsUntilStateChange: -289518.28
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11693,7 +11730,7 @@ entities:
       pos: -0.5,24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -187955.58
+      secondsUntilStateChange: -191031.95
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11764,7 +11801,7 @@ entities:
       - - Command
       - - Salvage
     - type: Door
-      secondsUntilStateChange: -282827
+      secondsUntilStateChange: -285903.38
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11954,7 +11991,7 @@ entities:
       access:
       - - HeadOfPersonnel
     - type: Door
-      secondsUntilStateChange: -198084.36
+      secondsUntilStateChange: -201160.73
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -71309,6 +71346,17 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+  - uid: 12005
+    components:
+    - type: MetaData
+      desc: "An worn old board. There's a paper posted that reads: \"When you're all done clockin' in and getting the atmos and collectors around the Artifact on, make sure to head topside. Storm Array up there behind our little shack next to the bell, has been acting up again. Make sure it hasn't blown up and fix the piping loop if ya have to. Just fix any missing pipes, turn that freezer real low, and get some gas flowing in it.\""
+      name: Storm Array Notice
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -24.5,32.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: NTDefaultCircuitBoard
   entities:
   - uid: 9846
@@ -71986,7 +72034,7 @@ entities:
       - - External
       - - Salvage
     - type: Door
-      secondsUntilStateChange: -279344.03
+      secondsUntilStateChange: -282420.4
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -80559,6 +80607,15 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: SignElectricalMed
+  entities:
+  - uid: 12006
+    components:
+    - type: Transform
+      pos: -24.548223,33.146606
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: SignEngine
   entities:
   - uid: 11312
@@ -82427,11 +82484,21 @@ entities:
     - type: Transform
       pos: -60.5,45.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal:
+      - - Atmospherics
+      - - Engineering
+      - - Research
   - uid: 61542
     components:
     - type: Transform
       pos: -60.5,47.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal:
+      - - Atmospherics
+      - - Engineering
+      - - Research
 - proto: SubstationBasic
   entities:
   - uid: 11606
@@ -140450,7 +140517,7 @@ entities:
       pos: -38.5,13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -198309.86
+      secondsUntilStateChange: -201386.23
       state: Opening
   - uid: 69854
     components:
@@ -140460,7 +140527,7 @@ entities:
       pos: -31.5,22.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -26826.531
+      secondsUntilStateChange: -29902.908
       state: Opening
 - proto: WoodenBench
   entities:
