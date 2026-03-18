@@ -38,5 +38,5 @@
 
 - type: guideEntry
   id: MedicalRegulations
-  name: Medical Regulations
+  name: Medical SOP
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/medical-regulation.xml"
