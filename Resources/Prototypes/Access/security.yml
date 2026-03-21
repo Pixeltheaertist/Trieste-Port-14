@@ -37,10 +37,16 @@
 - type: accessLevel
   id: GenpopEnter
   name: id-card-access-level-genpop-enter
+  departments: # TP14
+  - DepartmentAA
+  - Security
 
 - type: accessLevel
   id: GenpopLeave
   name: id-card-access-level-genpop-leave
+  departments: # TP14
+  - DepartmentAA
+  - Security
 
 - type: accessGroup
   id: Security

@@ -18,7 +18,7 @@
         <!-- Right side: everything else -->
         <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="8 0 0 0">
             <BoxContainer Orientation="Horizontal" Margin="4 -4 0 0">
-                <BoxContainer Orientation="Vertical">
+                <BoxContainer Orientation="Vertical" MinSize="225 64" MaxSize="225 64">
                     <BoxContainer Orientation="Horizontal">
                         <Label Text="{Loc 'id-card-console-window-privileged-id'}" VerticalAlignment="Center" StyleClasses="LabelKeyText" />
                         <Button Name="PrivilegedIdButton"
