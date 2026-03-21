@@ -28,7 +28,6 @@ namespace Content.Client.Access.UI
         private int _maxNameLength;
         private int _maxIdJobLength;
 
-        private AccessLevelControl _accessButtons = new();
         private readonly List<string> _jobPrototypeIds = new();
 
         private string? _lastFullName;
@@ -93,10 +92,24 @@ namespace Content.Client.Access.UI
             };
 
             JobPresetOptionButton.OnItemSelected += SelectJobPreset;
-            _accessButtons.Populate(accessLevels, prototypeManager);
-            AccessLevelControlContainer.AddChild(_accessButtons);
+            AccessButtons.Populate(accessLevels, prototypeManager);
 
-            foreach (var (id, button) in _accessButtons.ButtonsList)
+            DepartmentList.OnItemSelected += args =>
+            {
+                var name = DepartmentList[args.ItemIndex].Text;
+                if (name != null)
+                    AccessButtons.PopulateGrid(name);
+            };
+
+            // Populate the sidebar from AccessButtons' department data
+            foreach (var dept in AccessButtons.GetDepartmentNames())
+            {
+                DepartmentList.AddItem(dept);
+            }
+
+            if (DepartmentList.Count > 0) DepartmentList[0].Selected = true;
+
+            foreach (var (id, button) in AccessButtons.ButtonsList)
             {
                 button.OnPressed += _ => SubmitData();
             }
@@ -105,7 +118,7 @@ namespace Content.Client.Access.UI
         /// <param name="enabled">If true, every individual access button will be pressed. If false, each will be depressed.</param>
         private void SetAllAccess(bool enabled)
         {
-            foreach (var button in _accessButtons.ButtonsList.Values)
+            foreach (var button in AccessButtons.ButtonsList.Values)
             {
                 if (!button.Disabled && button.Pressed != enabled)
                     button.Pressed = enabled;
@@ -127,7 +140,7 @@ namespace Content.Client.Access.UI
             // this is a sussy way to do this
             foreach (var access in job.Access)
             {
-                if (_accessButtons.ButtonsList.TryGetValue(access, out var button) && !button.Disabled)
+                if (AccessButtons.ButtonsList.TryGetValue(access, out var button) && !button.Disabled)
                 {
                     button.Pressed = true;
                 }
@@ -142,7 +155,7 @@ namespace Content.Client.Access.UI
 
                 foreach (var access in groupPrototype.Tags)
                 {
-                    if (_accessButtons.ButtonsList.TryGetValue(access, out var button) && !button.Disabled)
+                    if (AccessButtons.ButtonsList.TryGetValue(access, out var button) && !button.Disabled)
                     {
                         button.Pressed = true;
                     }
@@ -222,7 +235,7 @@ namespace Content.Client.Access.UI
 
             JobPresetOptionButton.Disabled = !interfaceEnabled;
 
-            _accessButtons.UpdateState(state.TargetIdAccessList?.ToList() ??
+            AccessButtons.UpdateState(state.TargetIdAccessList?.ToList() ??
                                        new List<ProtoId<AccessLevelPrototype>>(),
                 state.AllowedModifyAccessList?.ToList() ??
                 new List<ProtoId<AccessLevelPrototype>>());
@@ -253,7 +266,7 @@ namespace Content.Client.Access.UI
                 FullNameLineEdit.Text,
                 JobTitleLineEdit.Text,
                 // Iterate over the buttons dictionary, filter by `Pressed`, only get key from the key/value pair
-                _accessButtons.ButtonsList.Where(x => x.Value.Pressed).Select(x => x.Key).ToList(),
+                AccessButtons.ButtonsList.Where(x => x.Value.Pressed).Select(x => x.Key).ToList(),
                 jobProtoDirty ? _jobPrototypeIds[JobPresetOptionButton.SelectedId] : string.Empty);
         }
     }

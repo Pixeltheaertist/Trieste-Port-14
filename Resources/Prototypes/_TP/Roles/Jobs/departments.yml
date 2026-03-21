@@ -1,4 +1,59 @@
 - type: department
+  id: DepartmentAA
+  name: tp-department-AA
+  description: tp-department-AA-description
+  editorHidden: true
+  color: "#A46106"
+  roles:
+  - CargoTechnician
+  - Quartermaster
+  - Bartender
+  - Botanist
+  - Boxer
+  - Chaplain
+  - Chef
+  - Clown
+  - HeadOfPersonnel
+  - Janitor
+  - Lawyer
+  - Librarian
+  - Mime
+  - Musician
+  - Passenger
+  - Reporter
+  - Visitor
+  - Zookeeper
+  - ServiceWorker
+  - Captain
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - CentralCommandOfficial
+  - CBURN
+  - ERTLeader
+  - ERTChaplain
+  - ERTJanitor
+  - ERTMedical
+  - ERTSecurity
+  - ERTEngineer
+  - DeathSquad
+  - AtmosphericTechnician
+  - StationEngineer
+  - TechnicalAssistant
+  - Chemist
+  - MedicalDoctor
+  - MedicalIntern
+  - Psychologist
+  - Paramedic
+  - SecurityCadet
+  - SecurityOfficer
+  - Detective
+  - Warden
+  - Scientist
+  - ResearchAssistant
+
+- type: department
   id: Expeditionary
   name: department-Expeditionary
   description: department-Expeditioneering-description
