@@ -20,6 +20,15 @@ public sealed partial class IdCardConsoleComponent : Component
     [DataField]
     public ItemSlot TargetIdSlot = new();
 
+    // TRIESTE PORT - BEGIN //
+    // Access logging snapshot
+    [DataField]
+    public List<ProtoId<AccessLevelPrototype>> TargetIdAccessSnapshot = new();
+
+    [DataField]
+    public string TargetIdNameSnapshot = string.Empty;
+    // TRIESTE PORT - END //
+
     [Serializable, NetSerializable]
     public sealed class WriteToTargetIdMessage : BoundUserInterfaceMessage
     {
@@ -38,7 +47,6 @@ public sealed partial class IdCardConsoleComponent : Component
     }
 
     // Put this on shared so we just send the state once in PVS range rather than every time the UI updates.
-
     [DataField, AutoNetworkedField]
     public List<ProtoId<AccessLevelPrototype>> AccessLevels = new()
     {
@@ -87,6 +95,10 @@ public sealed partial class IdCardConsoleComponent : Component
         public readonly List<ProtoId<AccessLevelPrototype>>? TargetIdAccessList;
         public readonly List<ProtoId<AccessLevelPrototype>>? AllowedModifyAccessList;
         public readonly ProtoId<JobPrototype> TargetIdJobPrototype;
+        // TRIESTE PORT - START //
+        public readonly NetEntity? PrivilegedIdEntity;
+        public readonly NetEntity? TargetIdEntity;
+        // TRIESTE PORT - END //
 
         public IdCardConsoleBoundUserInterfaceState(bool isPrivilegedIdPresent,
             bool isPrivilegedIdAuthorized,
@@ -97,7 +109,9 @@ public sealed partial class IdCardConsoleComponent : Component
             List<ProtoId<AccessLevelPrototype>>? allowedModifyAccessList,
             ProtoId<JobPrototype> targetIdJobPrototype,
             string privilegedIdName,
-            string targetIdName)
+            string targetIdName,
+            NetEntity? privilegedIdEntity = null,   // Trieste
+            NetEntity? targetIdEntity = null)       // Trieste
         {
             IsPrivilegedIdPresent = isPrivilegedIdPresent;
             IsPrivilegedIdAuthorized = isPrivilegedIdAuthorized;
@@ -109,6 +123,8 @@ public sealed partial class IdCardConsoleComponent : Component
             TargetIdJobPrototype = targetIdJobPrototype;
             PrivilegedIdName = privilegedIdName;
             TargetIdName = targetIdName;
+            PrivilegedIdEntity = privilegedIdEntity;    // Trieste
+            TargetIdEntity = targetIdEntity;            // Trieste
         }
     }
 

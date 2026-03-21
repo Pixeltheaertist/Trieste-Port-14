@@ -16,6 +16,7 @@ public interface IButtonConfig : ISheetletConfig
     public ResPath MonotoneOpenLeftButtonPath { get; }
     public ResPath MonotoneOpenRightButtonPath { get; }
     public ResPath MonotoneOpenBothButtonPath { get; }
+    public ResPath BaseButtonIdCardPath { get; } // TP14
 
     public ColorPalette ButtonPalette { get; }
     public ColorPalette PositiveButtonPalette { get; }

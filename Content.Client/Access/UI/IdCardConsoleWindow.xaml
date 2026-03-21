@@ -1,21 +1,46 @@
 <DefaultWindow xmlns="https://spacestation14.io"
-            MinSize="650 290">
+            MinSize="775 290"
+            Resizable="False">
     <BoxContainer Orientation="Vertical">
         <!-- Privileged and target IDs, crew manifest button. -->
-        <GridContainer Columns="2">
-            <GridContainer Columns="3" HorizontalExpand="True">
-                <Label Text="{Loc 'id-card-console-window-privileged-id'}" />
-                <Button Name="PrivilegedIdButton" Access="Public"/>
-                <Label Name="PrivilegedIdLabel" />
-
-                <Label Text="{Loc 'id-card-console-window-target-id'}" />
-                <Button Name="TargetIdButton" Access="Public"/>
-                <Label Name="TargetIdLabel" />
-            </GridContainer>
+        <BoxContainer Orientation="Horizontal">
             <BoxContainer Orientation="Vertical">
-                <Button Name="CrewManifestButton" Access="Public" Text="{Loc 'crew-manifest-button-label'}" />
+                <BoxContainer Orientation="Horizontal">
+                    <Label Text="{Loc 'id-card-console-window-privileged-id'}" VerticalAlignment="Center" StyleClasses="LabelKeyText" />
+                    <Button Name="PrivilegedIdButton"
+                            Access="Public"
+                            SetSize="33 33"
+                            Margin="4 0 16 0"
+                            StyleClasses="ButtonIdCard">
+                        <SpriteView Name="PrivilegedEntityView"
+                                    Access="Public"
+                                    Stretch="None"
+                                    Scale="1.5 1.5"
+                                    RectClipContent="False"/>
+                    </Button>
+                </BoxContainer>
+                <Label Name="PrivilegedIdLabel" MinSize="0 25" />
             </BoxContainer>
-        </GridContainer>
+            <BoxContainer Orientation="Vertical">
+                <BoxContainer Orientation="Horizontal">
+                    <Label Text="{Loc 'id-card-console-window-target-id'}" VerticalAlignment="Center" StyleClasses="LabelKeyText" />
+                    <Button Name="TargetIdButton"
+                            Access="Public"
+                            SetSize="33 33"
+                            Margin="4 0 0 0"
+                            StyleClasses="ButtonIdCard">
+                        <SpriteView Name="TargetEntityView"
+                                    Access="Public"
+                                    Stretch="None"
+                                    Scale="1.5 1.5"
+                                    RectClipContent="False"/>
+                    </Button>
+                </BoxContainer>
+                <Label Name="TargetIdLabel" MinSize="0 25" />
+            </BoxContainer>
+            <Control HorizontalExpand="True"/>
+            <Button Name="CrewManifestButton" Access="Public" Text="{Loc 'crew-manifest-button-label'}" VerticalAlignment="Center" />
+        </BoxContainer>
         <Control MinSize="0 8" />
         <!-- Full name and job title editing. -->
         <GridContainer Columns="3" HSeparationOverride="4">

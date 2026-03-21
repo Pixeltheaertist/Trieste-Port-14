@@ -19,6 +19,7 @@ namespace Content.Client.Access.UI
         [Dependency] private readonly IConfigurationManager _cfgManager = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
+        [Dependency] private readonly IEntityManager _entManager = default!; // TRIESTE
         private readonly ISawmill _logMill = default!;
 
         private readonly IdCardConsoleBoundUserInterface _owner;
@@ -153,17 +154,47 @@ namespace Content.Client.Access.UI
 
         public void UpdateState(IdCardConsoleBoundUserInterfaceState state)
         {
-            PrivilegedIdButton.Text = state.IsPrivilegedIdPresent
-                ? Loc.GetString("id-card-console-window-eject-button")
-                : Loc.GetString("id-card-console-window-insert-button");
+            // TRIESTE PORT - START //
+            /*
+            // Privileged ID slot
+            if (state.IsPrivilegedIdPresent)
+            {
+                if (state.PrivilegedIdEntity is { } privEnt)
+                    PrivilegedEntityView.SetEntity(privEnt);
+            }
+            else
+            {
+                PrivilegedEntityView.SetEntity(null);
+            }
 
             PrivilegedIdLabel.Text = state.PrivilegedIdName;
 
-            TargetIdButton.Text = state.IsTargetIdPresent
-                ? Loc.GetString("id-card-console-window-eject-button")
-                : Loc.GetString("id-card-console-window-insert-button");
+            // Target ID slot
+            if (state.IsTargetIdPresent)
+            {
+                if (state.TargetIdEntity is { } targetEnt)
+                    TargetEntityView.SetEntity(targetEnt);
+            }
+            else
+            {
+                TargetEntityView.SetEntity(null);
+            }
 
             TargetIdLabel.Text = state.TargetIdName;
+            */
+
+            // Render IDs in the slot buttons
+            PrivilegedEntityView.SetEntity(state.PrivilegedIdEntity != null
+                ? _entManager.GetEntity(state.PrivilegedIdEntity)
+                : null);
+            TargetEntityView.SetEntity(state.TargetIdEntity != null
+                ? _entManager.GetEntity(state.TargetIdEntity)
+                : null);
+
+            PrivilegedIdLabel.Text = state.PrivilegedIdName;
+            TargetIdLabel.Text = state.TargetIdName;
+
+            // TRIESTE PORT - END //
 
             var interfaceEnabled =
                 state.IsPrivilegedIdPresent && state.IsPrivilegedIdAuthorized && state.IsTargetIdPresent;
@@ -193,8 +224,8 @@ namespace Content.Client.Access.UI
 
             _accessButtons.UpdateState(state.TargetIdAccessList?.ToList() ??
                                        new List<ProtoId<AccessLevelPrototype>>(),
-                                       state.AllowedModifyAccessList?.ToList() ??
-                                       new List<ProtoId<AccessLevelPrototype>>());
+                state.AllowedModifyAccessList?.ToList() ??
+                new List<ProtoId<AccessLevelPrototype>>());
 
             var jobIndex = _jobPrototypeIds.IndexOf(state.TargetIdJobPrototype);
             // If the job index is < 0 that means they don't have a job registered in the station records
