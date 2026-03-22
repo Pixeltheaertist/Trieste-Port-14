@@ -1,0 +1,165 @@
+<Document>
+# Capital Crimes
+  - Capital crimes should usually lead to a death sentence or shift lasting detainment.
+  <Table Columns="4">
+    <ColorBox>
+      <Box>
+        Offense
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Description
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Notes
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Code
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Breach of Perma
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To break someone sentenced to Permanent Confinement out of a cell or custody with the intention of escaping.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Includes breaking out other people sentenced to Permanent Confinement.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        5-00
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Production of Class 4 Chems
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        To be found producing any Class 4 Chems. These are never authorized.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        5-03
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Station-Wide Destruction
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To engage in maliciously destructive actions which threaten to destroy, or successfully destroy a vessel or habitat.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Summed up; extreme sabotage of station systems or setting off self-destruction systems. This includes any means causing the entire station to become uninhabitable, such as through station-wide atmospherics sabotage.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        5-05
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Prevention of Revival
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To render a body unresurrectable.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        This covers gibbing, spacing, intentionally hiding a body, or other ways of preventing a body with a soul from being resurrected.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        5-07
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Mass Murder
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To kill three or more sapient beings with malicious intent.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Only applies when there have been multiple killings with intention.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        5-08
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Refusal of Mental Shielding
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To refuse to comply with a reasonable Mind Shielding procedure.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Applies if the suspect is excessively uncooperative or the implant fails to function due to the mental state of the prisoner already being too far gone. If the implant fails execution is heavily recommended.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        5-09
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Crimes against Sapience
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To commit crimes which violate rights of sapient life.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        This includes crimes such as torture, cannibalism, or forced infections.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        5-10
+      </Box>
+    </ColorBox>
+  </Table>
+</Document>

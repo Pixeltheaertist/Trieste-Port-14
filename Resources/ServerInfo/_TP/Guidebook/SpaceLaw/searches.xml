@@ -18,4 +18,15 @@
   ## Confiscated Contraband
   Officers may not be permitted to use any items, chemicals, or weapons confiscated during searches. This restriction may only be lifted if extreme, hostile force is present on the rig and the use of such items are deemed beneficial.
   Otherwise, all contraband confiscated by Officers is considered evidence and must be stored in either an evidence locker or the armory.  
+
+  ## Investigative Detainment 
+   Officers may request a suspect to be brought under investigative detainment, if they wish to find solid evidence of wrongdoing. Suspects may only be detained after recieving an approval and warrant by the Marshal. 
+   Detainees have a right to request that a lawyer be present during their detainment. Detainess may not be held for longer than 5 minutes; after this time they must be released.
+
+   While a suspect is under Investigative Detainment officers may:
+   - Interview the detainee, or any persons affiliated with them who are not detained.
+   - Conduct a search of the detainee and their belongings.
+
+  If evidence of wrongdoing is found, then the detainee is to be charged and processed as a prisoner. The time spent in detention must be subtracted from their total sentence.
+  If insufficient evidence is found, then detainee must be released.
   </Document>

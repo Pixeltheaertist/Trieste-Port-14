@@ -1,32 +1,22 @@
 <Document>
-  # Space Law: Crime Listing
-  Crime codes are colored by linked crime groups, which are collections of non-stackable crimes. Suffixes are also included in the Quick Crime Guide to identify linked crimes.
-
-  ## Quick Crime Guide
-  <Table Columns="6">
+ # Major Crimes
+  - The maximum sentence per major crime is 10 minutes.
+  - Assault and Manslaughter are linked crimes, and cannot be stacked against a suspect.
+  - It is recommended to not use maximum sentences for those being compliant.
+  <Table Columns="4">
     <ColorBox>
       <Box>
-        1-XX - Minor
+        Offense
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        2-XX - Moderate
+        Description
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        3-XX - Major
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        4-XX - Extreme
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        5-XX - Capital
+        Notes
       </Box>
     </ColorBox>
     <ColorBox>
@@ -36,296 +26,206 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Disorderly Conduct in Custody
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#593a4e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Failure to Comply (E)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#593a4e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Breach of Arrest (E)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#593a4e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Breach of Custody (E)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#593a4e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Breach of Permanent Confinement (E)
+        Breach of Arrest
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        00
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2f3832">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession: Minor (P)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2f3832">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession: Major (P)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2f3832">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession: Highly Illegal (P)
+        To intentionally resist and flee arrest or detainment by an authorized staff.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        This only applies if someone is actively being physically arrested. People uncuffing or assisting others out of
+        an arrest can also be charged with this. Breach of custody is a separate crime.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        3-00
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        01
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2f3832">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession: Class 1 Chems (P)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2f3832">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession: Class 2 Chems (P)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2f3832">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession: Class 3 Chems (P)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2f3832">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession: Class 4 Chems (P)
-      </Box>
-    </ColorBox>
-    <ColorBox >
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession/Use of Highly Illegal Contraband
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      02
+        To make, hold, or use highly illegal contraband.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#70978b">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Production: Class 1 Chems (C)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#70978b">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Production: Class 2 Chems (C)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#70978b">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Production: Class 3 Chems (C)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#70978b">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Production: Class 4 Chems (C)
+        Highly illegal contraband includes Syndicate contraband and magical contraband. Without explicit authorization from Central Command, highly illegal contraband may only be used in emergencies, and only to prevent death or gross bodily harm.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        03
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2e422e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Petty Theft (H)
+        3-01
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2e422e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Grand Theft (H)
+        Possession of Class 3 Chems
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Kidnapping
+        To hold or use Class 3 contraband chemicals. 
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        This includes potent toxins like Mindbreaker Toxin and Nocturine. These chems can not be authorized by anyone.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        04
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#453a59">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Vandalism (D)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#453a59">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Damage of Property (D)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#453a59">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Destruction of Critical Property (D)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#453a59">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Destruction of Vital Infrastructure (D)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#453a59">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Station-Wide Destruction (D)
+        3-02
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        05
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#59563a">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Trespass (T)
+        Production of Class 2 Chems
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#59563a">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Secure Trespass (T)
+        To produce Class 2 Contraband chemicals without authorization.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        The CMO and Overseer or Marshal may authorize production.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        3-03
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        06
+        Grand Theft
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4d2e2e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Endangerment (V)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4d2e2e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Assault (V)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4d2e2e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Attempted Murder (V)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4d2e2e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Prevention of Revival (V)
+        To take critical or unreplaceable property of another individual or organization without consent.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        07
+        The difference between petty theft and grand theft is based on how crucial the stolen item is, this mostly is
+        used for the theft of command staff items, things like door remotes, hardsuits, jetpacks, and unreplaceable
+        machine parts.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        3-04
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4d2e2e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Manslaughter (V)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4d2e2e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Murder (V)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4d2e2e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Mass Murder (V)
+        Destruction of Critical Property
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        08
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#3b4354">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Disturbance (R)
+        To destroy critical settlement equipment and systems. 
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#3b4354">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Rioting (R)
+        Includes destruction of machinery like ID computers, telecomms, substations, and non-hostile silicons.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#3b4354">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Refusal of Mental Shielding (R)
+        3-05
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        09
+        Secure Trespass
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To enter a secured area without permission.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        This covers places like telecomms, head offices, security zones, command areas, the vault and armory.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        3-06
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Assault/Battery
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To threaten to or to use physical force against someone without the intent to kill.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Attempted murder and battery are different; a fist fight is most likely assault. A shooting is most likely an
+        attempt at murder.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        3-07
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Manslaughter
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To incidentally kill a sapient being without intent.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Includes manslaughter in self-defense and negligent manslaughter.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        3-08
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Rioting
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To take part in a large group of personnel creating an unlawful public disturbance.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Crimes like damage of property or battery are expected to be thrown on top of this charge. Leaders of a riot can be charged with all crimes that happen under their lead.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        3-09
       </Box>
     </ColorBox>
     <ColorBox>
@@ -335,45 +235,39 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To inflict unnecessary suffering or harm on a non-sapient being with malicious intent.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Crimes against Sapience
+        This doesn’t include legitimate and authorized animal testing and usually doesn't extend to vermin or creatures
+        that could pose a threat to the station.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      10
+        3-10
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Misuse of Authority Major
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#9c682f">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Misusing Authority Major (M)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#9c682f">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Misusing Authority Extreme (M)
+        For any department head to issue or enforce orders which would either unnecessarily harm citizens or lead to illegal actions.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        This includes orders such as the CMO ordering chem to produce illegal reagents, or for the Harbormaster to order Cargo to purchase weapons and attack crew.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-       11
+        3-11
       </Box>
     </ColorBox>
   </Table>
-
 </Document>

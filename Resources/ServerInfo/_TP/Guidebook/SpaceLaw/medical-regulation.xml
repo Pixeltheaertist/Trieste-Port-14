@@ -7,11 +7,12 @@ Due to the importance of emergency medical aid, Medical facilities are expected 
   -  The Chief Medical Officer is the highest authority within the medbay. All personnel within the medbay, including non-patients, must listen to all orders given by the Chief Medical Officer. Only the Overseer is exempt from this.
 
 ## Do Not Resucitate Orders
- DNRs are orders to halt all efforts to resucitate a persons once they enter cardiac failure. It is recommended that these be filed on paperwork for record keeping and proof. 
+ DNRs are orders to halt all efforts to resucitate a persons once they enter a critical state. It is recommended that these be filed on paperwork for record keeping and proof. 
  
 [color=#a4885c]Personal DNRs:[/color]
- Any person may request to have a DNR approved for themself, if they wish to not be resucitated in the event of an emergency. These requests must be approved by the Chief Medical Officer.
- Command members may request a DNR for themself, but must obtain the approval of the Chief Medical Officer and Overseer. If the CMO is requesting a personal DNR, it must be approved by the Overseer and one other available command member.
+ - May be requested by any citizen, for themselves. These require the approval of the CMO.
+ - Command members may request one for themselves, but require approval of the CMO and Overseer.
+ - The CMO may request one for themself, but requires approval of the Overseer.
 
 [color=#a4885c]Emergency DNRs:[/color] 
  During crises, temporary DNR orders can be issued to individuals whose revival would pose a continual threat to the crew. This includes any parties whom raid the settlement, pose significant armed threat to the settlement, or whose goals would mean mass destruction of the settlement or loss of life.
@@ -22,16 +23,18 @@ Due to the importance of emergency medical aid, Medical facilities are expected 
 ## Do Not Borg Orders
 DNBs are orders to not place a person's brain into an MMI and/or use the MMI to control a cyborg unit if they should enter brain death and be unrevivable by usual means. It is recommended that these be filed on paperwork for record keeping and proof.
 
-Any person may request to have a DNB approved for themself, if they wish to not be used in a borg chassis or MMI after death. DNBs must obtain the approval of the Chief Medical Officer. 
-Members of Command may request to have a DNB approved for themself, but must obtain approval by the Chief Medical Officer. If the Chief Medical Officer wishes to file a DNB, it must be approved by the Overseer. Command members should notify the Overseer once they have an approved DNB. 
+ - May be request by any citizen, for themselves. These require the approval of the CMO.
+ - Command members may request one for themselves and require the approval of the CMO.
+ - The CMO may request one for themself, but requires the approval of the Overseer.
 
-Persons with a DNB must have their bodies stored within the morgue. These should then be brought aboard transit to the nearest SolGov facility for cloning, if the person wished. 
+Persons with a DNB must have their bodies transported to local SolGov facilities for cloning or proper return when possible.
 
 ## Do Not Clone Orders
 DNCs are orders to not use cloning machines to create a genetic clone of a person after their death. It is recommended that these be filed on paperwork for record keeping and proof. 
 
-Any person may request to have a DNC filed for themselves, if they wish to not be cloned into a new body after death. They must obtain approval by the Chief Medical Officer.
-Members of Command may request to have a DNC filed for themselves, and must obtain approval from the Chief Medical Officer. If the Chief Medical Officer requests a personal DNC, they must obtain approval from the Overseer. Command members should notify the Overseer once they have an approved DNC.
+ - May be requested by any citizen, for themselves. These require the approval of the CMO.
+ - Command members may request one for themselves and require the approval of the CMO.
+ - The CMO may request one for themself, but requires the approval of the Overseer.
 
 Persons with a DNC do not need to be transferred to SolGov facilities aboard transport shuttles. They may instead remain in the local morgue until their proper funeral and/or burial. 
 </Document>

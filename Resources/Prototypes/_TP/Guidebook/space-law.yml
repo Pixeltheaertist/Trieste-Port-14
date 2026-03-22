@@ -15,6 +15,37 @@
   id: CrimeList
   name: Crime List
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/crime-list.xml"
+  children:
+   - MinorCrimeList
+   - ModerateCrimeList
+   - MajorCrimeList
+   - ExtremeCrimeList
+   - CapitalCrimeList
+
+- type: guideEntry
+  id: MinorCrimeList
+  name: Minor Crimes
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/minor-crimes.xml"
+
+- type: guideEntry
+  id: ModerateCrimeList
+  name: Moderate Crimes
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/moderate-crimes.xml"
+
+- type: guideEntry
+  id: MajorCrimeList
+  name: Major Crimes
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/major-crimes.xml"
+
+- type: guideEntry
+  id: ExtremeCrimeList
+  name: Extreme Crimes
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/extreme-crimes.xml"
+
+- type: guideEntry
+  id: CapitalCrimeList
+  name: Capital Crimes
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/capital-crimes.xml"
 
 - type: guideEntry
   id: PrisonerRights
@@ -28,7 +59,7 @@
 
 - type: guideEntry
   id: Searches
-  name: Searches
+  name: Search and Seizure
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/searches.xml"
 
 - type: guideEntry
