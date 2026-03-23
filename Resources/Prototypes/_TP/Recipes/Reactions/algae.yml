@@ -7,7 +7,7 @@
       DenaturedProteins:
         amount: 1
   products:
-      DormantProtein: .5
+      DormantOrganics: .5
       DecayedProtein: .5
 
 - type: reaction
@@ -24,81 +24,113 @@
       Oxygen: .25
 
 - type: reaction
-  id: ActivatedProtein
+  id: ActivatedAlgae
   requiredMixerCategories:
   - Incubation
   reactants:
-      DormantProtein:
+      DormantOrganics:
         amount: 1
       Carbon:
         amount: 1
       Oxygen:
         amount: 1
-      Nutriment:
+      SeaWater:
+        amount: 1
+      AlgalFeedstock:
         amount: 3
   products:
-      ActivatedProtein: 5
+      ActivatedAlgae: 6
 
 - type: reaction
-  id: StabilizationProtein
+  id: StabilizationAlgae
   requiredMixerCategories:
   - Incubation
   reactants:
-      ActivatedProtein:
+      ActivatedAlgae:
         amount: 1
       Arithrazine:
         amount: 1
-      Nutriment:
+      AlgalFeedstock:
         amount: 1
   products:
-      StabilizationProtein: 2
+      StabilizationAlgae: 2
 
 - type: reaction
-  id: HyperPlatelet
+  id: ReinforcementAlgae
   requiredMixerCategories:
   - Incubation
   reactants:
-      ActivatedProtein:
+      ActivatedAlgae:
         amount: 1
       Calordine:
         amount: 1
-      Nutriment:
+      AlgalFeedstock:
         amount: 1
       Carbon:
         amount: 1
   products:
-      HyperPlatelet: 3
+      ReinforcementAlgae: 3
 
 - type: reaction
-  id: HyperMarrow
+  id: RegenerationAlgae
   requiredMixerCategories:
   - Incubation
   reactants:
-      ActivatedProtein:
+      ActivatedAlgae:
         amount: 1
       Calcium:
         amount: 1
-      Nutriment:
+      AlgalFeedstock:
         amount: 1
       Plasma:
         amount: 1
       Cryodine:
         amount: 1
   products:
-      HyperMarrow: 4
+      RegenerationAlgae: 4
 
 - type: reaction
   id: OxygenatedSaline
   requiredMixerCategories:
   - Incubation
   reactants:
-      ActivatedProtein:
+      ActivatedAlgae:
         amount: 1
       Oxygen:
         amount: 1
       Saline:
         amount: 1
-      Nutriment:
+      AlgalFeedstock:
         amount: 1
   products:
       OxygenatedSaline: 3
+
+- type: reaction
+  id: AlgalFeedstockNutriment
+  reactants:
+      Nutriment:
+        amount: 1
+      Carbon:
+        amount: 1
+      Hydrogen:
+        amount: 1
+  products:
+      AlgalFeedstock: 3  
+
+- type: reaction
+  id: AlgalFeedstockRaw
+  requiredMixerCategories:
+  - Incubation
+  reactants:
+      Carbon:
+        amount: 1
+      Oxygen:
+        amount: 1
+      Hydrogen:
+        amount: 2
+      DenaturedProteins:
+        amount: 1
+      SeaWater:
+        amount: 1
+  products:
+      AlgalFeedstock: 3

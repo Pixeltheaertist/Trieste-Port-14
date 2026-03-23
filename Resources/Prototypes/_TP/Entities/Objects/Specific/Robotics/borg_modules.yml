@@ -10,3 +10,60 @@
   - type: ItemBorgModule
     hands:
     - item: TP14WeaponNtBlaster
+
+# Cargo
+- type: entity
+  parent: MailBag
+  id: TP14IntegratedMailBag
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Unremoveable
+
+- type: entity
+  parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
+  id: TP14BorgModuleMail
+  name: mail delivery cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: cargo
+    - state: icon-mail
+  - type: ItemBorgModule
+    hands:
+    - item: TP14IntegratedMailBag
+    - hand:
+        emptyRepresentative: PackageDelivery
+        emptyLabel: tp14-borg-slot-package-empty
+        whitelist:
+          components:
+          - Delivery
+          - MultiHandedItem
+        blacklist:
+          components:
+          - Paper
+          - CargoBountyLabel
+          tags:
+          - Paper
+    - hand:
+        emptyRepresentative: PackageDelivery
+        emptyLabel: tp14-borg-slot-package-empty
+        whitelist:
+          components:
+          - Delivery
+          - MultiHandedItem
+        blacklist:
+          components:
+          - Paper
+          tags:
+          - Paper
+    - hand:
+        emptyRepresentative: PaperCargoBountyManifest
+        emptyLabel: tp14-borg-slot-bounty-empty
+        whitelist:
+          components:
+          - CargoBountyLabel
+        blacklist:
+          components:
+          - MultiHandedItem
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: mail-module }

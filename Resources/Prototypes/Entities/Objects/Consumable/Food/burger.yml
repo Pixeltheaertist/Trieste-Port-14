@@ -545,7 +545,7 @@
       food:
         maxVol: 25
         reagents:
-        - ReagentId: ActivatedProtein #keeping it somewhat consistent with the meat itself
+        - ReagentId: ActivatedAlgae # placeholder
           Quantity: 7
         - ReagentId: Vitamin
           Quantity: 12

@@ -329,13 +329,13 @@
   - type: StealCondition
     stealGroup: JetpackCaptainFilled
 
-- type: entity
-  parent: BaseCaptainObjective
-  id: CaptainGunStealObjective
-  components:
-  - type: StealCondition
-    stealGroup: WeaponAntiqueLaser
-    owner: job-name-captain
+#- type: entity  TP14, removing laser objective
+#  parent: BaseCaptainObjective
+#  id: CaptainGunStealObjective
+#  components:
+#  - type: StealCondition
+#    stealGroup: WeaponAntiqueLaser
+#    owner: job-name-captain
 
 - type: entity
   parent: BaseCaptainObjective

@@ -46,20 +46,23 @@
 - type: roleLoadout
   id: JobPassenger
   groups:
-  - PassengerJumpsuit
-  - CommonBackpack
-  - PassengerNeck
-  - PassengerFace
-  - PassengerGloves
-  - PassengerOuterClothing
-  - PassengerShoes
-  - Glasses
-  - Survival
-  - Trinkets
-  - PassengerJobTrinkets
-#  - GroupSpeciesBreathTool # TP14
+  # Required
   - TP14GroupSpeciesBreathTool # TP14
   - TP14GroupSpeciesBreathToolNeck # TP14
+  - GroupTankHarness
+  - PassengerJumpsuit
+  - PassengerOuterClothing
+  - CommonBackpack
+  - Survival
+  # Optional
+  - TP14GroupCitizenHeadwear # TP14
+  - PassengerFace
+  - PassengerNeck
+  - PassengerGloves
+  - PassengerShoes
+  - Glasses
+  - Trinkets
+  - PassengerJobTrinkets
 
 - type: roleLoadout # TP14 - This has been overhauled
   id: JobBartender
@@ -629,16 +632,21 @@
 - type: roleLoadout
   id: JobPsychologist
   groups:
-  - GroupTankHarness
-  - PsychologistJumpsuit
-  - MedicalBackpack
-  - Glasses
-  - Survival
-  - Trinkets
-  - PsychologistJobTrinkets
-#  - GroupSpeciesBreathTool # TP14
+  # Required
   - TP14GroupSpeciesBreathTool # TP14
   - TP14GroupSpeciesBreathToolNeck # TP14
+  - GroupTankHarness
+  - PsychologistJumpsuit
+  - TP14GroupPsychologistOuterwear
+  - TP14GroupPsychologistFootwear
+  - MedicalBackpack
+  - Survival
+  # Optional
+  - TP14GroupPsychologistNeckwear
+  - Glasses
+  - Trinkets
+  - PsychologistJobTrinkets
+
 
 - type: roleLoadout
   id: JobBoxer

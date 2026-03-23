@@ -1,0 +1,125 @@
+- type: entity
+  parent: MobArachnid
+  id: TP14MobArachnidSettler
+  name: arachnid settler
+  suffix: Trieste, Settler
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: Loadout
+    prototypes: [ TP14SettlerGear ]
+    roleLoadout: [ RoleSurvivalStandard ]
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  parent: MobDiona
+  id: TP14MobDionaSettler
+  name: diona settler
+  suffix: Trieste, Settler
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: Loadout
+    prototypes: [ TP14SettlerGear ]
+    roleLoadout: [ RoleSurvivalStandard ]
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  parent: MobHuman
+  id: TP14MobHumanSettler
+  name: human settler
+  suffix: Trieste, Settler
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: Loadout
+    prototypes: [ TP14SettlerGear ]
+    roleLoadout: [ RoleSurvivalStandard ]
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  parent: TP14MobJellidPerson
+  id: TP14MobJellidSettler
+  name: jellid settler
+  suffix: Trieste, Settler
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: Loadout
+    prototypes: [ TP14SettlerGear ]
+    roleLoadout: [ RoleSurvivalStandard ]
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  parent: MobLizard
+  id: TP14MobLizardSettler
+  name: lizard settler
+  suffix: Trieste, Settler
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: Loadout
+    prototypes: [ TP14SettlerGear ]
+    roleLoadout: [ RoleSurvivalStandard ]
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  parent: MobMoth
+  id: TP14MobMothSettler
+  name: moth settler
+  suffix: Trieste, Settler
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: Loadout
+    prototypes: [ TP14SettlerGear ]
+    roleLoadout: [ RoleSurvivalStandard ]
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  parent: MobSlimePerson
+  id: TP14MobSlimePersonSettler
+  name: slime person settler
+  suffix: Trieste, Settler
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: Loadout
+    prototypes: [ TP14SettlerGear ]
+    roleLoadout: [ RoleSurvivalStandard ]
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  parent: MobVulpkanin
+  id: TP14MobVulpkaninSettler
+  name: vulpkanin settler
+  suffix: Trieste, Settler
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: Loadout
+    prototypes: [ TP14SettlerGear ]
+    roleLoadout: [ RoleSurvivalStandard ]
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  parent: MobVox
+  id: TP14MobVoxSettler
+  name: vox settler
+  suffix: Trieste, Settler
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: Loadout
+    prototypes: [ TP14SettlerGear ]
+    roleLoadout: [ RoleSurvivalStandard ]
+  - type: GhostTakeoverAvailable

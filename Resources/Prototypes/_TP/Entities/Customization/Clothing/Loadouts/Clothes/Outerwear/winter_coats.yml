@@ -12,16 +12,19 @@
   id: TP14LoadoutOuterWinterBlack
   equipment:
     outerClothing: ClothingOuterWinterColorBlack
+  groupBy: "coloredcoat"
 
 - type: loadout
   id: TP14LoadoutOuterWinterBlue
   equipment:
     outerClothing: ClothingOuterWinterColorBlue
+  groupBy: "coloredcoat"
 
 - type: loadout
   id: TP14LoadoutOuterWinterBrown
   equipment:
     outerClothing: ClothingOuterWinterColorBrown
+  groupBy: "coloredcoat"
 
 - type: loadout
   id: TP14LoadoutOuterWinterCargo
@@ -52,6 +55,7 @@
   id: TP14LoadoutOuterWinterCoat
   equipment:
     outerClothing: ClothingOuterWinterCoat
+  groupBy: "coloredcoat"
 
 - type: loadout
   id: TP14LoadoutOuterWinterClown
@@ -77,11 +81,13 @@
   id: TP14LoadoutOuterWinterGrey
   equipment:
     outerClothing: ClothingOuterWinterColorGray
+  groupBy: "coloredcoat"
 
 - type: loadout
   id: TP14LoadoutOuterWinterGreen
   equipment:
     outerClothing: ClothingOuterWinterColorGreen
+  groupBy: "coloredcoat"
 
 - type: loadout
   id: TP14LoadoutOuterWinterHM
@@ -112,6 +118,7 @@
   id: TP14LoadoutOuterWinterLightBrown
   equipment:
     outerClothing: ClothingOuterWinterColorLightBrown
+  groupBy: "coloredcoat"
 
 - type: loadout
   id: TP14LoadoutOuterWinterMedical
@@ -137,6 +144,7 @@
   id: TP14LoadoutOuterWinterOrange
   equipment:
     outerClothing: ClothingOuterWinterColorOrange
+  groupBy: "coloredcoat"
 
 - type: loadout
   id: TP14LoadoutOuterWinterOverseer
@@ -152,11 +160,13 @@
   id: TP14LoadoutOuterWinterPurple
   equipment:
     outerClothing: ClothingOuterWinterColorPurple
+  groupBy: "coloredcoat"
 
 - type: loadout
   id: TP14LoadoutOuterWinterRed
   equipment:
     outerClothing: ClothingOuterWinterColorRed
+  groupBy: "coloredcoat"
 
 - type: loadout
   id: TP14LoadoutOuterWinterRD
@@ -177,8 +187,10 @@
   id: TP14LoadoutOuterWinterWhite
   equipment:
     outerClothing: ClothingOuterWinterColorWhite
+  groupBy: "coloredcoat"
 
 - type: loadout
   id: TP14LoadoutOuterWinterYellow
   equipment:
     outerClothing: ClothingOuterWinterColorYellow
+  groupBy: "coloredcoat"

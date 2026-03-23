@@ -9,7 +9,6 @@ namespace Content.Client.Commands;
 internal sealed class MappingClientSideSetupCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly ILightManager _lightManager = default!;
-    [Dependency] private readonly ActionsSystem _actionSystem = default!;
     [Dependency] private readonly MarkerSystem _markerSystem = default!;
     [Dependency] private readonly SubFloorHideSystem _subfloorSystem = default!;
 
@@ -23,7 +22,8 @@ internal sealed class MappingClientSideSetupCommand : LocalizedEntityCommands
         _markerSystem.MarkersVisible = true;
         _lightManager.Enabled = false;
         _subfloorSystem.ShowAll = true;
-        _actionSystem.LoadActionAssignments("/mapping_actions.yml", false);
+        // TP14 Specific - This is just weird :/
+        //_actionSystem.LoadActionAssignments("/mapping_actions.yml", false);
     }
 }
 

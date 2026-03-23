@@ -12,10 +12,12 @@
   - PlushieSpaceLizard
   - ThreeCandles
   - Lighter
+  - TP14LoadoutCigPackMixed # TP14
   - CigPackGreen
   - CigPackRed
   - CigPackBlue
   - CigPackBlack
+  - TP14LoadoutSmokingPipe # TP14
   - CigarCase
   - CigarGold
   - BoxFolderBaseThreePapers
@@ -257,14 +259,37 @@
   id: PassengerOuterClothing
   name: loadout-group-passenger-outerclothing
   minLimit: 0
+  defaultSelected: 1 # TP14
   loadouts:
   - PassengerWintercoat
+  - TP14LoadoutOuterWinterBlack # TP14
+  - TP14LoadoutOuterWinterBlue # TP14
+  - TP14LoadoutOuterWinterBrown # TP14
+  - TP14LoadoutOuterWinterGrey # TP14
+  - TP14LoadoutOuterWinterGreen # TP14
+  - TP14LoadoutOuterWinterLightBrown # TP14
+  - TP14LoadoutOuterWinterOrange # TP14
+  - TP14LoadoutOuterWinterPurple # TP14
+  - TP14LoadoutOuterWinterRed # TP14
+  - TP14LoadoutOuterWinterWhite # TP14
+  - TP14LoadoutOuterWinterYellow # TP14
 
 - type: loadoutGroup
   id: PassengerShoes
   name: loadout-group-passenger-shoes
+  minLimit: 0 # TP14
+  defaultSelected: 1 # TP14
   loadouts:
-  - BlackShoes
+  - TP14LoadoutFootwearBlack # TP14
+  - TP14LoadoutFootwearBlue # TP14
+  - TP14LoadoutFootwearBrown # TP14
+  - TP14LoadoutFootwearGreen # TP14
+  - TP14LoadoutFootwearOrange # TP14
+  - TP14LoadoutFootwearPurple # TP14
+  - TP14LoadoutFootwearRed # TP14
+  - TP14LoadoutFootwearWhite # TP14
+  - TP14LoadoutFootwearYellow # TP14
+  # - BlackShoes # TP14
   - WinterBoots
 
 - type: loadoutGroup
@@ -1434,6 +1459,7 @@
   id: MedicalDoctorOuterClothing
   name: loadout-group-medical-doctor-outerclothing
   minLimit: 0
+  defaultSelected: 1
   loadouts:
   - MedicalLabcoat
   - MedicalCoat

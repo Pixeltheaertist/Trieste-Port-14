@@ -315,7 +315,7 @@
         amount: 4
       #- id: PunctAutoInjector # TP14 - Removed entity
       #  amount: 4
-      - id: PyraAutoInjector
+      - id: RegenerationAlgaeAutoInjector
         amount: 4
       - id: AirlossAutoInjector
         amount: 4

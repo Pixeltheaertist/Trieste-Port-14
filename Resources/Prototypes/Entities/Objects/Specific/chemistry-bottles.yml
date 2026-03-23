@@ -306,17 +306,17 @@
 
 - type: entity
   id: ChemistryBottleDermaline
-  suffix: Hyper-Marrow # TP14 - Was dermaline
+  suffix: Regeneration Algae # TP14 - Was dermaline
   parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: reagent-name-hyper-marrow # TP14 - Was Dermaline
+    currentLabel: reagent-name-regeneration-algae # TP14 - Was Dermaline
   - type: SolutionContainerManager
     solutions:
       drink:
         maxVol: 30
         reagents:
-        - ReagentId: HyperMarrow # TP14 - Was Dermaline
+        - ReagentId: RegenerationAlgae # TP14 - Was Dermaline
           Quantity: 30
 
 - type: entity

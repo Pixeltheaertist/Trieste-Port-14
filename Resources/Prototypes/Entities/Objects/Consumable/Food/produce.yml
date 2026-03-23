@@ -1541,7 +1541,7 @@
         reagents:
         - ReagentId: Aloe
           Quantity: 10
-        - ReagentId: HyperMarrow
+        - ReagentId: RegenerationAlgae # placeholder
           Quantity: 10
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/aloe.rsi
@@ -1579,7 +1579,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 2
-        - ReagentId: HyperPlatelet
+        - ReagentId: ReinforcementAlgae # placeholder
           Quantity: 20
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/poppy.rsi
@@ -1611,7 +1611,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 2
-        - ReagentId: HyperPlatelet
+        - ReagentId: ReinforcementAlgae # placeholder
           Quantity: 20
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/lily.rsi
@@ -1677,7 +1677,7 @@
       food:
         maxVol: 14
         reagents:
-        - ReagentId: HyperPlatelet
+        - ReagentId: ReinforcementAlgae # placeholder
           Quantity: 5
         - ReagentId: Lexodine
           Quantity: 5
