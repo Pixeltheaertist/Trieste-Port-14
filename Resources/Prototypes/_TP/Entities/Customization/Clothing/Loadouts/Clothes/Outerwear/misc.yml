@@ -2,6 +2,7 @@
   id: TP14LoadoutOuterVest
   equipment:
     outerClothing: ClothingOuterVest
+  groupBy: bartenderVests
 
 # Tank Harness
 - type: loadout

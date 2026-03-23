@@ -2,91 +2,109 @@
   id: TP14LoadoutJumpsuitBartender
   equipment:
     jumpsuit: ClothingUniformJumpsuitBartender
+  groupBy: "bartenderSuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitBlack
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBlack
+  groupBy: "coloredJumpsuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitBlue
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBlue
+  groupBy: "coloredJumpsuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitBrown
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBrown
+  groupBy: "coloredJumpsuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitDarkBlue
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorDarkBlue
+  groupBy: "coloredJumpsuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitDarkGreen
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorDarkGreen
+  groupBy: "coloredJumpsuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitGreen
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorGreen
+  groupBy: "coloredJumpsuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitGrey
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorGrey
+  groupBy: "coloredJumpsuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitLightBrown
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorLightBrown
+  groupBy: "coloredJumpsuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitLightMaroon
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorMaroon
+  groupBy: "coloredJumpsuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitOrange
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorOrange
+  groupBy: "coloredJumpsuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitPink
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorPink
+  groupBy: "coloredJumpsuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitPurple
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorPurple
+  groupBy: "coloredJumpsuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitRainbow
   equipment:
     jumpsuit: ClothingUniformColorRainbow
+  groupBy: "coloredJumpsuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitRed
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorRed
+  groupBy: "coloredJumpsuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitTeal
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorTeal
+  groupBy: "coloredJumpsuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitWhite
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorWhite
+  groupBy: "coloredJumpsuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitYellow
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorYellow
+  groupBy: "coloredJumpsuits"
 
 - type: loadout
   id: TP14LoadoutJumpsuitMercenary

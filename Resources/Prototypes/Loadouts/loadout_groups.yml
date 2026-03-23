@@ -367,10 +367,11 @@
   id: ChefOuterClothing
   name: loadout-group-chef-outerclothing
   minLimit: 0
+  defaultSelected: 1
   loadouts:
-  - ChefApron
-  - ChefJacket
   - ChefWintercoat
+  - ChefJacket
+  - ChefApron
 
 - type: loadoutGroup
   id: ChefJobTrinkets
