@@ -1,0 +1,65 @@
+<Document>
+  ## Cutting & Rolling
+
+  # Doughs
+  <Box>
+    <GuideEntityEmbed Entity="FoodDough" Caption="Dough"/>
+    <GuideEntityEmbed Entity="RollingPin" Caption="Rolling Pin"/>
+    <GuideEntityEmbed Entity="FoodDoughFlat" Caption="Flat Dough"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="FoodDough" Caption="Dough"/>
+    <GuideEntityEmbed Entity="KitchenKnife" Caption="Kitchen Knife"/>
+    <GuideEntityEmbed Entity="FoodDoughSlice" Caption="Dough Slice (3x)"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="FoodDoughSlice" Caption="Dough Slice"/>
+    <GuideEntityEmbed Entity="RollingPin" Caption="Rolling Pin"/>
+    <GuideEntityEmbed Entity="FoodDoughRope" Caption="Dough Rope"/>
+  </Box>
+
+
+  # Cotton Doughs
+
+  <Box>
+    <GuideEntityEmbed Entity="FoodDoughCotton" Caption="Cotton Dough"/>
+    <GuideEntityEmbed Entity="RollingPin" Caption="Rolling Pin"/>
+    <GuideEntityEmbed Entity="FoodDoughCottonFlat" Caption="Flat Cotton Dough"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="FoodDoughCotton" Caption="Cotton Dough"/>
+    <GuideEntityEmbed Entity="KitchenKnife" Caption="Kitchen Knife"/>
+    <GuideEntityEmbed Entity="FoodDoughCottonSlice" Caption="Cotton Dough Slice (3x)"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="FoodDoughCottonSlice" Caption="Cotton Dough Slice"/>
+    <GuideEntityEmbed Entity="RollingPin" Caption="Rolling Pin"/>
+    <GuideEntityEmbed Entity="FoodDoughCottonRope" Caption="Cotton Dough Rope"/>
+  </Box>
+
+
+  # Meat & Dairy
+
+  <Box>
+    <GuideEntityEmbed Entity="FoodMeatCutlet" Caption="Raw Cutlet"/>
+    <GuideEntityEmbed Entity="RollingPin" Caption="Rolling Pin"/>
+    <GuideEntityEmbed Entity="TP14FoodMeatSausage" Caption="Sausage"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="FoodMeatMeatball" Caption="Meatball"/>
+    <GuideEntityEmbed Entity="RollingPin" Caption="Rolling Pin"/>
+    <GuideEntityEmbed Entity="FoodMeatPatty" Caption="Meat Patty"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="FoodCheese" Caption="Cheese Wheel"/>
+    <GuideEntityEmbed Entity="KitchenKnife" Caption="Kitchen Knife"/>
+    <GuideEntityEmbed Entity="FoodCheeseSlice" Caption="Cheese Wedge (4x)"/>
+  </Box>
+
+</Document>

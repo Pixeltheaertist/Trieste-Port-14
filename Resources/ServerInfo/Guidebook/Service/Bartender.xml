@@ -13,11 +13,12 @@ The materials for these drinks can be found in various places:
 <GuideEntityEmbed Entity="VendingMachineBooze"/>
 </Box>
 
+<!-- TP14 - Changed from 'Glass' -->
 <Box>
 Don't forget containers to serve them in!
 </Box>
 <Box>
-<GuideEntityEmbed Entity="DrinkGlass" Caption="Metamorphic Glass"/> <!-- TP14 - Changed from 'Glass' -->
+<GuideEntityEmbed Entity="DrinkGlass" Caption="Metamorphic Glass"/>
 <GuideEntityEmbed Entity="DrinkGlassCoupeShaped"/>
 <GuideEntityEmbed Entity="DrinkShotGlass"/>
 <GuideEntityEmbed Entity="DrinkShaker"/>

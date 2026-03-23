@@ -1,5 +1,43 @@
+# FOOD
 - type: guideEntry
   id: TP14-Deep-Fry
-  name: guide-entry-deep-fryer-recipes
+  name: tp-guide-entry-deep-fryer-recipes
   text: "/ServerInfo/_TP/Guidebook/Service/DeepFryerRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TP14-Reactives
+  name: tp-guide-entry-reactives
+  text: "/ServerInfo/_TP/Guidebook/Service/ReactiveRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TP14-Tool-Recipes
+  name: tp-guide-entry-tool-recipes
+  text: "/ServerInfo/_TP/Guidebook/Service/ToolRecipes.xml"
+  filterEnabled: True
+
+# DRINKS
+- type: guideEntry
+  id: DrinksHard
+  name: tp-guide-entry-drinks-hard
+  text: "/ServerInfo/_TP/Guidebook/Service/DrinksHard.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: DrinksSoft
+  name: tp-guide-entry-drinks-soft
+  text: "/ServerInfo/_TP/Guidebook/Service/DrinksSoft.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: DrinksHardMix
+  name: tp-guide-entry-drinks-hard-mix
+  text: "/ServerInfo/_TP/Guidebook/Service/DrinksHardMix.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: DrinksSoftMix
+  name: tp-guide-entry-drinks-soft-mix
+  text: "/ServerInfo/_TP/Guidebook/Service/DrinksSoftMix.xml"
   filterEnabled: True
