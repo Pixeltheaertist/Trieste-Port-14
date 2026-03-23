@@ -2,3 +2,12 @@
   id: TP14LoadoutOuterVest
   equipment:
     outerClothing: ClothingOuterVest
+
+# Tank Harness
+- type: loadout
+  id: TP14LoadoutTankHarness
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: TP14EffectSpeciesMask
+  equipment:
+    outerClothing: ClothingOuterVestTank

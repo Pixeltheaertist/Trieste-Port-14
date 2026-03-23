@@ -5,39 +5,21 @@
   editorHidden: true
   color: "#A46106"
   roles:
-  - CargoTechnician
-  - Quartermaster
-  - Bartender
-  - Botanist
-  - Boxer
-  - Chaplain
-  - Chef
-  - Clown
-  - HeadOfPersonnel
-  - Janitor
-  - Lawyer
-  - Librarian
-  - Mime
-  - Musician
-  - Passenger
-  - Reporter
-  - Visitor
-  - Zookeeper
-  - ServiceWorker
   - Captain
+  - HeadOfPersonnel
   - ChiefEngineer
   - ChiefMedicalOfficer
   - HeadOfSecurity
+  - Quartermaster
   - ResearchDirector
-  - CentralCommandOfficial
-  - CBURN
-  - ERTLeader
-  - ERTChaplain
-  - ERTJanitor
-  - ERTMedical
-  - ERTSecurity
-  - ERTEngineer
-  - DeathSquad
+  - Warden
+  - Detective
+  - SecurityCadet
+  - SecurityOfficer
+  - CargoTechnician
+  - TP14Expeditioneer
+  - TP14BasinTech
+  - TP14Pilot
   - AtmosphericTechnician
   - StationEngineer
   - TechnicalAssistant
@@ -46,12 +28,24 @@
   - MedicalIntern
   - Psychologist
   - Paramedic
-  - SecurityCadet
-  - SecurityOfficer
-  - Detective
-  - Warden
   - Scientist
   - ResearchAssistant
+  - Bartender
+  - Botanist
+  - Boxer
+  - Chaplain
+  - Chef
+  - Clown
+  - Janitor
+  - Lawyer
+  - Librarian
+  - Mime
+  - Musician
+  - Passenger
+  - Reporter
+  - ServiceWorker
+  - Visitor
+  - Zookeeper
 
 - type: department
   id: Expeditionary

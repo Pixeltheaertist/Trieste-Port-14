@@ -80,6 +80,7 @@
   hidden: true
   loadouts:
   - LoadoutTankHarness
+  - TP14LoadoutTankHarness
 
 - type: loadoutGroup
   id: Survival
