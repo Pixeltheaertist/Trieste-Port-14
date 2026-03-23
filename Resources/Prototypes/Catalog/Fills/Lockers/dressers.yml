@@ -57,12 +57,13 @@
 - type: entity
   id: DresserHeadOfSecurityFilled
   parent: Dresser
-  suffix: Filled, Head Of Security
+  suffix: Filled, Marshal # TP14 - Was 'Head of Security'
   components:
   - type: StorageFill
     contents:
       - id: ClothingHeadHatBeretHoS
       - id: ClothingHeadHatHoshat
+      - id: ClothingMaskNeckGaiter
       - id: ClothingUniformJumpskirtHoSAlt
       - id: ClothingUniformJumpsuitHoSAlt
       - id: ClothingUniformJumpskirtHosFormal
