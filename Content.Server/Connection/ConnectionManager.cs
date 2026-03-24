@@ -20,6 +20,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Content.Server._NullLink.PlayerData;
+using Content.Server._Starlight.Connection;
 
 /*
  * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.
@@ -45,6 +46,13 @@ namespace Content.Server.Connection
         void AddTemporaryConnectBypass(NetUserId user, TimeSpan duration);
 
         void Update();
+
+        /// <summary>
+        /// Gets the resolved real client IP for a connected user.
+        /// When conntrack resolution is active, this returns the real IP behind SNAT.
+        /// Returns <c>null</c> if the user has no cached address.
+        /// </summary>
+        IPAddress? GetResolvedAddress(NetUserId user); // Starlight
     }
 
     /// <summary>
@@ -71,6 +79,7 @@ namespace Content.Server.Connection
 
         private ISawmill _sawmill = default!;
         private readonly Dictionary<NetUserId, TimeSpan> _temporaryBypasses = [];
+        private readonly Dictionary<NetUserId, IPAddress> _resolvedAddresses = []; // Starlight
         private IPIntel.IPIntel _ipintel = default!;
         private ConntrackResolver _conntrack = default!; // Starlight
 
@@ -100,6 +109,12 @@ namespace Content.Server.Connection
             // Make sure we only update the time if we wouldn't shrink it.
             if (newTime > time)
                 time = newTime;
+        }
+
+        // Starlight: resolved IP cache
+        public IPAddress? GetResolvedAddress(NetUserId user)
+        {
+            return _resolvedAddresses.GetValueOrDefault(user);
         }
 
         public async void Update()
@@ -167,6 +182,7 @@ namespace Content.Server.Connection
             }
             else
             {
+                _resolvedAddresses[userId] = addr; // Starlight: cache resolved IP for later lookups
                 await _db.AddConnectionLogAsync(userId, e.UserName, addr, hwid, trust, null, serverId);
 
                 if (!ServerPreferencesManager.ShouldStorePrefs(e.AuthType))
@@ -182,6 +198,8 @@ namespace Content.Server.Connection
             {
                 AdminAlertIfSharedConnection(args.Session);
             }
+            else if (args.NewStatus == SessionStatus.Disconnected) // Starlight
+                _resolvedAddresses.Remove(args.Session.UserId); // Starlight
         }
 
         private void AdminAlertIfSharedConnection(ICommonSession newSession)
@@ -190,11 +208,13 @@ namespace Content.Server.Connection
             if (playerThreshold < 0)
                 return;
 
-            var addr = newSession.Channel.RemoteEndPoint.Address;
+            var addr = _resolvedAddresses.GetValueOrDefault(newSession.UserId)
+                       ?? newSession.Channel.RemoteEndPoint.Address; // Starlight: use resolved IP
 
             var otherConnectionsFromAddress = _plyMgr.Sessions.Where(session =>
                     session.Status is SessionStatus.Connected or SessionStatus.InGame
-                    && session.Channel.RemoteEndPoint.Address.Equals(addr)
+                    && (_resolvedAddresses.GetValueOrDefault(session.UserId)
+                        ?? session.Channel.RemoteEndPoint.Address).Equals(addr) // Starlight: use resolved IP
                     && session.UserId != newSession.UserId)
                 .ToList();
 

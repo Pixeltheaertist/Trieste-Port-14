@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Chat.Managers;
+using Content.Server.Connection;
 using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Shared.CCVar;
@@ -26,6 +27,7 @@ namespace Content.Server.Administration.Managers;
 
 public sealed partial class BanManager : IBanManager, IPostInjectInit
 {
+    [Dependency] private readonly IConnectionManager _connectionManager = default!; // Starlight
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IServerDbManager _db = default!;
@@ -72,7 +74,9 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         var netChannel = player.Channel;
         ImmutableArray<byte>? hwId = netChannel.UserData.HWId.Length == 0 ? null : netChannel.UserData.HWId;
         var modernHwids = netChannel.UserData.ModernHWIds;
-        var roleBans = await _db.GetServerRoleBansAsync(netChannel.RemoteEndPoint.Address, player.UserId, hwId, modernHwids, false);
+        var addr = _connectionManager.GetResolvedAddress(player.UserId)
+                   ?? netChannel.RemoteEndPoint.Address; // Starlight: prefer resolved IP
+        var roleBans = await _db.GetServerRoleBansAsync(addr, player.UserId, hwId, modernHwids, false);
 
         var userRoleBans = new List<ServerRoleBanDef>();
         foreach (var ban in roleBans)
@@ -189,7 +193,8 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         var playerInfo = new BanMatcher.PlayerInfo
         {
             UserId = player.UserId,
-            Address = player.Channel.RemoteEndPoint.Address,
+            Address = _connectionManager.GetResolvedAddress(player.UserId)
+                      ?? player.Channel.RemoteEndPoint.Address, // Starlight: prefer resolved IP
             HWId = player.Channel.UserData.HWId,
             ModernHWIds = player.Channel.UserData.ModernHWIds,
             // It's possible for the player to not have cached data loading yet due to coincidental timing.
