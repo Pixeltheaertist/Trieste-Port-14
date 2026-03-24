@@ -4,17 +4,35 @@
   priority: 20
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/space-law.xml"
   children:
+  - StandardOperatingProcedure
   - CrimeList
   - PrisonerRights
   - Sentencing
   - Searches
   - ImplantDevices
+
+- type: guideEntry
+  id: StandardOperatingProcedure
+  name: Standard Operating Procedure 
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/SOP/SOP.xml"
+  children: 
+  - HiringAccesses
   - MedicalRegulations
+
+- type: guideEntry
+  id: HiringAccesses
+  name: Hiring and ID Accesses
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/SOP/hiring-accesses.xml"
+
+- type: guideEntry
+  id: MedicalRegulations
+  name: Medical SOP
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/SOP/medical-regulation.xml"
 
 - type: guideEntry
   id: CrimeList
   name: Crime List
-  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/crime-list.xml"
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/crime-list.xml"
   children:
    - MinorCrimeList
    - ModerateCrimeList
@@ -67,7 +85,3 @@
   name: Implant Devices
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/implant-devices.xml"
 
-- type: guideEntry
-  id: MedicalRegulations
-  name: Medical SOP
-  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/medical-regulation.xml"

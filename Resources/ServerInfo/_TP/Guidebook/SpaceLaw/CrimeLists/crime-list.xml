@@ -107,9 +107,8 @@
         Possession: Class 3 Chems (P)
       </Box>
     </ColorBox>
-    <ColorBox Color="#2f3832">
+    <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession: Class 4 Chems (P)
       </Box>
     </ColorBox>
     <ColorBox >
@@ -140,9 +139,8 @@
         Production: Class 3 Chems (C)
       </Box>
     </ColorBox>
-    <ColorBox Color="#70978b">
+    <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Production: Class 4 Chems (C)
       </Box>
     </ColorBox>
     <ColorBox>

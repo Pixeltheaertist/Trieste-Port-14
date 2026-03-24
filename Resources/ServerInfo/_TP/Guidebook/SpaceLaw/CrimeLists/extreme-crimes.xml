@@ -46,26 +46,6 @@
       </Box>
     </ColorBox>
     <ColorBox>
-      <Box>
-        Possession of Class 4 Chems
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        To be found carrying or using Class 4 contraband chemicals. 
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        This is restricted to chemicals which would rapidly kill when metabolized, such as exotic poison. Lethal force to subdue the suspect is authorized if they resist.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        4-02
-      </Box>
-    </ColorBox>
-    <ColorBox>
         <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
           Production of Class 3 Chems
         </Box>
@@ -181,7 +161,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-11
+        4-11
       </Box>
     </ColorBox>
   </Table>

@@ -43,25 +43,6 @@
       </Box>
     </ColorBox>
     <ColorBox>
-      <Box>
-        Production of Class 4 Chems
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        To be found producing any Class 4 Chems. These are never authorized.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        5-03
-      </Box>
-    </ColorBox>
-    <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Station-Wide Destruction
       </Box>
@@ -73,7 +54,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Summed up; extreme sabotage of station systems or setting off self-destruction systems. This includes any means causing the entire station to become uninhabitable, such as through station-wide atmospherics sabotage.
+        Extreme sabotage of the rig's systems or structural integrity. This includes any means causing the rig or Sweetwater to become uninhabitable, such as through network-wide atmospherics sabotage.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -93,7 +74,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        This covers gibbing, spacing, intentionally hiding a body, or other ways of preventing a body with a soul from being resurrected.
+        This covers gibbing, intentionally hiding a body, or other ways of preventing a body with a soul from being resurrected.
       </Box>
     </ColorBox>
     <ColorBox>
