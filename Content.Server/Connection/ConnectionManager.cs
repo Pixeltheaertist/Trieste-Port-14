@@ -1,5 +1,6 @@
 using System.Collections.Immutable;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using Content.Server.Administration.Managers;
@@ -71,10 +72,12 @@ namespace Content.Server.Connection
         private ISawmill _sawmill = default!;
         private readonly Dictionary<NetUserId, TimeSpan> _temporaryBypasses = [];
         private IPIntel.IPIntel _ipintel = default!;
+        private ConntrackResolver _conntrack = default!; // Starlight
 
         public void PostInit()
         {
             InitializeWhitelist();
+            _conntrack = new ConntrackResolver(_http, _cfg, _logManager); // Starlight
         }
 
         public void Initialize()
@@ -134,9 +137,10 @@ namespace Content.Server.Connection
 
         private async Task NetMgrOnConnecting(NetConnectingArgs e)
         {
-            var deny = await ShouldDeny(e);
+            // Starlight: resolve real client IP via conntrack-agent (SNAT bypass)
+            var addr = await _conntrack.ResolveRealIp(e.IP) ?? e.IP.Address;
 
-            var addr = e.IP.Address;
+            var deny = await ShouldDeny(e, addr); // Starlight
             var userId = e.UserId;
 
             var serverId = (await _serverDbEntry.ServerEntity).Id;
@@ -213,10 +217,9 @@ namespace Content.Server.Connection
          * TODO: Break this apart into is constituent steps.
          */
         private async Task<(ConnectionDenyReason, string, List<ServerBanDef>? bansHit)?> ShouldDeny(
-            NetConnectingArgs e)
+            NetConnectingArgs e, IPAddress addr) // Starlight: accept resolved IP
         {
             // Check if banned.
-            var addr = e.IP.Address;
             var userId = e.UserId;
             ImmutableArray<byte>? hwId = e.UserData.HWId;
             if (hwId.Value.Length == 0 || !_cfg.GetCVar(CCVars.BanHardwareIds))
@@ -346,7 +349,7 @@ namespace Content.Server.Connection
             // ALWAYS keep this at the end, to preserve the API limit.
             if (_cfg.GetCVar(CCVars.GameIPIntelEnabled) && adminData == null)
             {
-                var result = await _ipintel.IsVpnOrProxy(e);
+                var result = await _ipintel.IsVpnOrProxy(e, addr); // Starlight: pass resolved IP
 
                 if (result.IsBad)
                     return (ConnectionDenyReason.IPChecks, result.Reason, null);
