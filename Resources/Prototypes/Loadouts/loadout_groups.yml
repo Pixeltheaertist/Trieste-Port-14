@@ -122,53 +122,55 @@
   - LoadoutSpeciesJellidWater # TP
 
 # Command
+#~~~~~~~ TP14
 - type: loadoutGroup
-  id: CaptainHead
+  id: OverseerHead
   name: loadout-group-captain-head
   minLimit: 0
   loadouts:
-  - CaptainHead
-  - CaptainCap
+  - OverseerHead
+  - OverseerCap
 
 - type: loadoutGroup
-  id: CaptainJumpsuit
+  id: OverseerJumpsuit
   name: loadout-group-captain-jumpsuit
   loadouts:
-  - CaptainJumpsuit
-  - CaptainJumpskirt
-  - CaptainFormalSuit
-  - CaptainFormalSkirt
+  - OverseerJumpsuit
+  - OverseerJumpskirt
+  - OverseerFormalSuit
+  - OverseerFormalSkirt
 
 - type: loadoutGroup
-  id: CaptainNeck
+  id: OverseerNeck
   name: loadout-group-captain-neck
   minLimit: 0
   loadouts:
-  - CaptainCloak
-  - CaptainCloakFormal
-  - CaptainMantle
+  - OverseerCloak
+  - OverseerCloakFormal
+  - OverseerMantle
 
 - type: loadoutGroup
-  id: CaptainBackpack
+  id: OverseerBackpack
   name: loadout-group-captain-backpack
   loadouts:
-  - CaptainBackpack
-  - CaptainSatchel
-  - CaptainDuffel
+  - OverseerBackpack
+  - OverseerSatchel
+  - OverseerDuffel
 
 - type: loadoutGroup
-  id: CaptainOuterClothing
+  id: OverseerOuterClothing
   name: loadout-group-captain-outerclothing
   loadouts:
-  - CaptainOuterClothing
-  - CaptainWintercoat
+  - OverseerOuterClothing
+  - OverseerWintercoat
 
 - type: loadoutGroup
-  id: CaptainJobTrinkets
+  id: OverseerJobTrinkets
   name: loadout-group-jobtrinkets
   minLimit: 0
   loadouts:
   - LizardPlushieCaptain
+# ~~~~~~ TP14
 
 - type: loadoutGroup
   id: HoPHead
@@ -410,6 +412,7 @@
   - LawyerJumpskirtRed
   - LawyerJumpsuitGood
   - LawyerJumpskirtGood
+  - PinstripedSuit
 
 - type: loadoutGroup
   id: LawyerNeck
@@ -803,6 +806,7 @@
   - CargoTechnicianJumpsuit
   - TankTop
   - CargoTechnicianJumpskirt
+  - WoodCarver #TP14
 
 - type: loadoutGroup
   id: CargoTechnicianBackpack
@@ -1090,6 +1094,7 @@
   - ScientificBucket
   - SkullBandana
   - ScientificBeret
+  - SuspiciousCap #TP14
 
 - type: loadoutGroup
   id: ScientistNeck
@@ -1108,6 +1113,7 @@
   - MadScientistJumpskirt
   - RoboticistJumpsuit
   - RoboticistJumpskirt
+  - SuspiciousSuit #TP14
   - SeniorResearcherJumpsuit
   - SeniorResearcherJumpskirt
 
@@ -1628,6 +1634,7 @@
   loadouts:
   - ReporterJumpsuit
   - JournalistJumpsuit
+  - TVHostJumpsuit # - TP14
 
 - type: loadoutGroup
   id: ReporterHead
@@ -1650,12 +1657,20 @@
   loadouts:
   - LizardPlushieReporter
 
+- type: loadoutGroup # - TP14
+  id: PsychologistHead # - TP14
+  name: tp14-loadout-group-psychologist-head # - TP14
+  minLimit: 0 # - TP14
+  loadouts: # - TP14
+  - Fez # - TP14
+
 - type: loadoutGroup
   id: PsychologistJumpsuit
   name: loadout-group-psychologist-jumpsuit
   loadouts:
   - PsychologistJumpsuit
   - PsychologistJumpskirt
+  - DoctorsJumpsuit # - TP14
 
 - type: loadoutGroup
   id: PsychologistJobTrinkets

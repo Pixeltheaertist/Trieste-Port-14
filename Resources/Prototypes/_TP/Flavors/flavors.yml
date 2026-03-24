@@ -13,10 +13,6 @@
   flavorType: Complex
   description: flavor-complex-vanilla
 
-- type: flavor
-  id: people
-  flavorType: Complex
-  description: flavor-complex-people
 
 # Coffee
 - type: flavor

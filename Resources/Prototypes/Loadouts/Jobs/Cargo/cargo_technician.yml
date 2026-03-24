@@ -40,6 +40,11 @@
   equipment:
     jumpsuit: ClothingUniformJumpskirtCargo
 
+- type: loadout
+  id: WoodCarver
+  equipment:
+    jumpsuit: TP14ClothingUniformWoodcarver
+
 # Back
 - type: loadout
   id: CargoTechnicianBackpack

@@ -1,6 +1,6 @@
 # For mantles
 - type: loadoutEffectGroup
-  id: MasterCap
+  id: MasterOverseer
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
@@ -8,85 +8,85 @@
       role: JobCaptain
       time: 20h
 
- Jumpsuit
+# Jumpsuit
 - type: loadout
-  id: CaptainJumpsuit
+  id: OverseerJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitCaptain
 
 - type: loadout
-  id: CaptainJumpskirt
+  id: OverseerJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtCaptain
 
 - type: loadout
-  id: CaptainFormalSuit
+  id: OverseerFormalSuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitCapFormal
 
 - type: loadout
-  id: CaptainFormalSkirt
+  id: OverseerFormalSkirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtCapFormalDress
 
- Head
+# Head
 - type: loadout
-  id: CaptainHead
+  id: OverseerHead
   equipment:
-    head: ClothingHeadHatCaptain
+    head: TP14ClothingHeadHatBeretOverseer
 
 - type: loadout
-  id: CaptainCap
+  id: OverseerCap
   equipment:
     head: ClothingHeadHatCapcap
 
- Neck
+# Neck
 - type: loadout
-  id: CaptainCloak
+  id: OverseerCloak
   equipment:
     neck: ClothingNeckCloakCap
 
 - type: loadout
-  id: CaptainCloakFormal
+  id: OverseerCloakFormal
   equipment:
     neck: ClothingNeckCloakCapFormal
 
 - type: loadout
- id: CaptainMantle
+  id: OverseerMantle
   equipment:
     neck: ClothingNeckMantleCap
   effects:
   - !type:GroupLoadoutEffect
-    proto: MasterCap
+    proto: MasterOverseer
 
 - type: startingGear
-  id: CaptainMantle
+  id: OverseerMantle
   equipment:
     neck: ClothingNeckMantleCap
 
- Back
+# Back
 - type: loadout
-  id: CaptainBackpack
+  id: OverseerBackpack
   equipment:
     back: ClothingBackpackCaptain
 
 - type: loadout
-  id: CaptainSatchel
+  id: OverseerSatchel
   equipment:
     back: ClothingBackpackSatchelCaptain
 
 - type: loadout
-  id: CaptainDuffel
+  id: OverseerDuffel
   equipment:
     back: ClothingBackpackDuffelCaptain
 
- Outer clothing
+# Outer clothing
 - type: loadout
-  id: CaptainOuterClothing
+  id: OverseerOuterClothing
   equipment:
-    outerClothing: ClothingOuterArmorCaptainCarapace
+    outerClothing: TP14ClothingOuterArmorOverseerHeavyCoat
 
 - type: loadout
-  id: CaptainWintercoat
+  id: OverseerWintercoat
   equipment:
     outerClothing: ClothingOuterWinterCap

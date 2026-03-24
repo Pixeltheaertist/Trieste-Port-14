@@ -9,26 +9,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitJournalist
 
-# Head
 - type: loadout
-  id: ReporterPressFedora
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobReporter
-      time: 10h
+  id: TVHostJumpsuit
   equipment:
-    head: ClothingHeadHatFedoraPress
-
-# Outerclothing
-- type: loadout
-  id: ReporterPressVest
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobReporter
-      time: 35h
-  equipment:
-    outerClothing: ClothingOuterVestPress
+    jumpsuit: TP14ClothingUniformTVSuit

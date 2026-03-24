@@ -144,7 +144,7 @@
   id: TP14ClothingUniformWoodcarver
   suffix: Trieste, Uniform,
   name: woodcarver shirt and pants
-  description: pairs well with a labcoat
+  description: perfect for hard labor
   components:
   - type: Sprite
     sprite: _TP/Clothing/Uniforms/Jumpsuit/woodcarver.rsi

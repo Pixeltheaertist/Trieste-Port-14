@@ -2,14 +2,14 @@
 - type: roleLoadout
   id: JobCaptain
   groups:
-  - CaptainHead
-  - CaptainNeck
-  - CaptainJumpsuit
-  - CaptainBackpack
-  - CaptainOuterClothing
+  - OverseerHead #TP14
+  - OverseerNeck #TP14
+  - OverseerJumpsuit #TP14
+  - OverseerBackpack #TP14
+  - OverseerOuterClothing #TP14
   - Survival
   - Trinkets
-  - CaptainJobTrinkets
+  - OverseerJobTrinkets #TP14
 #  - GroupSpeciesBreathTool # TP14
   - TP14GroupSpeciesBreathTool # TP14
   - TP14GroupSpeciesBreathToolNeck # TP14
@@ -649,6 +649,7 @@
   - MedicalBackpack
   - Survival
   # Optional
+  - PsychologistHead # TP14
   - TP14GroupPsychologistNeckwear
   - Glasses
   - Trinkets

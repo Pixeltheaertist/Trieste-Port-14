@@ -36,6 +36,11 @@
   equipment:
     head: ClothingHeadBandSkull
 
+- type: loadout
+  id: SuspiciousCap
+  equipment:
+    head: TP14ClothingHeadHatSuspiciousCap
+
 # Neck
 
 - type: loadout
@@ -73,6 +78,11 @@
   id: RoboticistJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtRoboticist
+
+- type: loadout
+  id: SuspiciousSuit
+  equipment:
+    jumpsuit: TP14ClothingUniformSuspiciousSuit
 
 - type: loadout
   id: SeniorResearcherJumpsuit
