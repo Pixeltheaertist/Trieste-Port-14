@@ -17,7 +17,7 @@
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/SOP/SOP.xml"
   children: 
   - HiringAccesses
-  - MedicalRegulations
+  - MedicalSOP
 
 - type: guideEntry
   id: HiringAccesses
@@ -25,9 +25,9 @@
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/SOP/hiring-accesses.xml"
 
 - type: guideEntry
-  id: MedicalRegulations
+  id: MedicalSOP
   name: Medical SOP
-  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/SOP/medical-regulation.xml"
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/SOP/medical-SOP.xml"
 
 - type: guideEntry
   id: CrimeList
