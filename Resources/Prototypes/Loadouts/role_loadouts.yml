@@ -7,6 +7,7 @@
   - OverseerJumpsuit #TP14
   - OverseerBackpack #TP14
   - OverseerOuterClothing #TP14
+  - CaptainEyewear # Moffstation - Eyepatches!
   - Survival
   - Trinkets
   - OverseerJobTrinkets #TP14
@@ -23,7 +24,8 @@
   - HoPJumpsuit
   - HoPBackpack
   - HoPOuterClothing
-  - Glasses
+  # - Glasses # Moffstation - Eyepatches!
+  - HopEyewear # Moffstation - Eyepatches!
   - Survival
   - Trinkets
   - HoPJobTrinkets
@@ -80,8 +82,8 @@
   - TP14GroupBartenderNeckwear
   - TP14BartenderGloves
   - TP14GroupBartenderFootwear
-  - TP14GroupBartenderBelts
-  - Glasses
+  # - Glasses # Moffstation - Eyepatches!
+  - BartenderEyewear # Moffstation - Eyepatches!
   - Survival
   - Trinkets
   - BartenderJobTrinkets
@@ -100,25 +102,22 @@
   - TP14GroupSpeciesBreathTool # TP14
   - TP14GroupSpeciesBreathToolNeck # TP14
 
-- type: roleLoadout # TP14 - This has been overhauled
+- type: roleLoadout
   id: JobChef
   groups:
-  # Required
-  - TP14GroupSpeciesBreathTool
-  - TP14GroupSpeciesBreathToolNeck
   - GroupTankHarness
-  - ChefJumpsuit
-  - ChefOuterClothing
-  - CommonBackpack
   - ChefHead
-  # Optional
   - ChefMask
-  - GroupChefGloves
-  - GroupChefFootwear
+  - ChefJumpsuit
+  - CommonBackpack
+  - ChefOuterClothing
   - Glasses
   - Survival
   - Trinkets
   - ChefJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
 
 - type: roleLoadout
   id: JobLibrarian
@@ -317,6 +316,7 @@
   - ChiefEngineerNeck
   - ChiefEngineerOuterClothing
   - ChiefEngineerShoes
+  - EngineeringEyewear # Moffstation - Eyepatches!
   - SurvivalExtended
   - Trinkets
   - ChiefEngineerJobTrinkets
@@ -346,6 +346,7 @@
   - StationEngineerBackpack
   - StationEngineerOuterClothing
   - StationEngineerShoes
+  - EngineeringEyewear # Moffstation - Eyepatches!
   - StationEngineerID
   - SurvivalExtended
   - Trinkets
@@ -362,6 +363,7 @@
   - AtmosphericTechnicianBackpack
   - AtmosphericTechnicianOuterClothing
   - AtmosphericTechnicianShoes
+  - EngineeringEyewear # Moffstation - Eyepatches!
   - SurvivalExtended
   - Trinkets
   - AtmosphericTechnicianJobTrinkets
@@ -381,7 +383,8 @@
   - ResearchDirectorOuterClothing
   - ScientistGloves
   - ResearchDirectorShoes
-  - Glasses
+  # - Glasses # Moffstation - Eyepatches!
+  - ScienceEyewear # Moffstation - Eyepatches!
   - Survival
   - Trinkets
   - ResearchDirectorJobTrinkets
@@ -401,7 +404,8 @@
   - ScientistGloves
   - ScientistShoes
   - ScientistPDA
-  - Glasses
+  # - Glasses # Moffstation - Eyepatches!
+  - ScienceEyewear # Moffstation - Eyepatches!
   - Survival
   - Trinkets
   - ScientistJobTrinkets
@@ -434,6 +438,7 @@
   - SecurityBelt
   - HeadofSecurityOuterClothing
   - SecurityShoes
+  - SecurityEyewear # Moffstation - Eyepatches!
   - SurvivalSecurity
   - Trinkets
   - HeadofSecurityJobTrinkets
@@ -451,6 +456,7 @@
   - SecurityBelt
   - WardenOuterClothing
   - SecurityShoes
+  - SecurityEyewear # Moffstation - Eyepatches!
   - SurvivalSecurity
   - Trinkets
   - WardenJobTrinkets
@@ -469,6 +475,7 @@
   - SecurityShoes
   - SecurityPDA
   - SecurityBelt
+  - SecurityEyewear # Moffstation - Eyepatches!
   - SurvivalSecurity
   - Trinkets
   - SecurityJobTrinkets
@@ -486,6 +493,7 @@
   - SecurityBackpack
   - DetectiveOuterClothing
   - SecurityShoes
+  - DetectiveEyewear # Moffstation - Eyepatches!
   - SurvivalSecurity
   - Trinkets
   - DetectiveJobTrinkets
@@ -520,7 +528,8 @@
   - ChiefMedicalOfficerOuterClothing
   - ChiefMedicalOfficerNeck
   - ChiefMedicalOfficerShoes
-  - MedicalEyewear
+  # - MedicalEyewear
+  - ChemistryEyewear # Moffstation - Eyepatches!
   - SurvivalMedical
   - Trinkets
   - ChiefMedicalOfficerJobTrinkets
@@ -582,7 +591,7 @@
   - MedicalMask
   - MedicalGloves
   - MedicalShoes
-  - GroupChemistBelt
+  - ChemistryEyewear # Moffstation - Eyepatches!
   - Trinkets
   - ChemistJobTrinkets
 
@@ -625,8 +634,6 @@
   groups:
   - GroupTankHarness
   - ReporterJumpsuit
-  - ReporterHead
-  - ReporterOuterClothing
   - CommonBackpack
   - Glasses
   - Survival

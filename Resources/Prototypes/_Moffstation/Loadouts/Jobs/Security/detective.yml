@@ -1,0 +1,33 @@
+
+# Outer Clothing
+- type: loadout
+  id: DetectiveCoatSleuth
+  equipment:
+    outerClothing: ClothingOuterCoatSleuth
+
+# Jumpsuits
+- type: loadout
+  id: SleuthSuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitDetSleuth
+
+- type: loadout
+  id: SleuthSkirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtDetSleuth
+
+- type: loadout
+  id: InvestigatorJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitDetInvestigator
+
+- type: loadout
+  id: InvestigatorJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtDetInvestigator
+
+#Neck
+- type: loadout
+  id: DetectiveBadge
+  equipment:
+    jumpsuit: ClothingNeckDetBadge
