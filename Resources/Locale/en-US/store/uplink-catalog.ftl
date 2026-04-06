@@ -86,6 +86,9 @@ uplink-incendiary-grenade-desc = Releases a spray of incendiary fragments, ignit
 uplink-shrapnel-grenade-name = Shrapnel Grenade
 uplink-shrapnel-grenade-desc = Launches a spray of sharp fragments dealing great damage against unarmored targets.
 
+uplink-deadman-switch-name = Deadman's Switch
+uplink-deadman-switch-desc = A modified remote signaller that triggers when you let go of it. Useful for dramatic ultimatums, bombs optional.
+
 # Ammo
 uplink-pistol-magazine-name = Pistol Magazine (.35 auto)
 uplink-pistol-magazine-desc = Pistol magazine with 10 cartridges. Compatible with the Viper.
@@ -498,3 +501,6 @@ uplink-smuggler-satchel-desc = A handy, suspicious looking satchel. Just flat en
 
 uplink-acolyte-armor-name = Acolyte Armor
 uplink-acolyte-armor-desc = The must have of any self respecting cult leader. An evil looking piece of armor, made of bones, and surprisingly resistant to damage.
+
+uplink-energycrossbow-name = Mini Energy Crossbow
+uplink-energycrossbow-desc = The go-to sidearm of any operative who prefers their victims not to be moving. Fires regenerating toxic arrows that floors victims in an instant.

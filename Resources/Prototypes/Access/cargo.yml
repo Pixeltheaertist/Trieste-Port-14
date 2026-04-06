@@ -1,14 +1,23 @@
 - type: accessLevel
   id: Quartermaster
   name: id-card-access-level-quartermaster
+  departments: # TP14
+  - DepartmentAA
+  - Cargo
 
 - type: accessLevel
   id: Cargo
   name: id-card-access-level-cargo
+  departments: # TP14
+  - DepartmentAA
+  - Cargo
 
 - type: accessLevel
   id: Salvage
   name: id-card-access-level-salvage
+  departments: # TP14
+  - DepartmentAA
+  - Cargo
 
 - type: accessGroup
   id: Cargo

@@ -1,0 +1,8 @@
+<BoxContainer xmlns="https://spacestation14.io"
+              Orientation="Vertical"
+              HorizontalExpand="True"
+              VerticalExpand="True">
+    <GridContainer Name="AccessGrid"
+                   Columns="5"
+                   HorizontalAlignment="Center" />
+</BoxContainer>

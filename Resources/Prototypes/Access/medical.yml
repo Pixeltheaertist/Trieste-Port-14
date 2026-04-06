@@ -1,18 +1,31 @@
 - type: accessLevel
   id: ChiefMedicalOfficer
   name: id-card-access-level-chief-medical-officer
+  departments: # TP14
+  - DepartmentAA
+  - Command
+  - Medical
 
 - type: accessLevel
   id: Medical
   name: id-card-access-level-medical
+  departments: # TP14
+  - DepartmentAA
+  - Medical
 
 - type: accessLevel
   id: Chemistry
   name: id-card-access-level-chemistry
-  
+  departments: # TP14
+  - DepartmentAA
+  - Medical
+
 - type: accessLevel
   id: Paramedic
   name: id-card-access-level-paramedic
+  departments: # TP14
+  - DepartmentAA
+  - Medical
 
 - type: accessGroup
   id: Medical

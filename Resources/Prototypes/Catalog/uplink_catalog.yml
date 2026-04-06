@@ -81,6 +81,22 @@
   - UplinkWeaponry
 
 - type: listing
+  id: UplinkEnergyCrossbow
+  name: uplink-energycrossbow-name
+  description: uplink-energycrossbow-desc
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  productEntity: WeaponEnergyCrossbow
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkWeaponry
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
   id: UplinkThrowingKnivesKit
   name: uplink-knives-kit-name
   description: uplink-knives-kit-desc
@@ -487,6 +503,21 @@
     Telecrystal: 6
   categories:
     - UplinkExplosives
+
+- type: listing
+  id: UplinkDeadmanSwitch
+  name: uplink-deadman-switch-name
+  description: uplink-deadman-switch-desc
+  productEntity: RemoteSignallerDeadman
+  cost:
+    Telecrystal: 1
+  categories:
+    - UplinkExplosives
+  conditions:
+  - !type:StoreWhitelistCondition
+     blacklist:
+       tags:
+       - NukeOpsUplink
 
 # Ammo
 

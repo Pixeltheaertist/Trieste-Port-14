@@ -86,6 +86,7 @@
     - type: Tag
       tags:
       - ChemDispensable
+      - TagJug # TP14
     - type: DnaSubstanceTrace
 
 - type: entity

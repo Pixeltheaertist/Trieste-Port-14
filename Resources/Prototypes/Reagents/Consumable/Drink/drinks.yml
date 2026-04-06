@@ -231,7 +231,7 @@
   id: Lemonade
   parent: BaseJuice
   name: reagent-name-lemonade
-  group: Drinks
+  group: DrinksSoftMix
   desc: reagent-desc-lemonade
   physicalDesc: reagent-physical-desc-tart
   flavor: sweet
@@ -359,6 +359,7 @@
 
 - type: reagent
   id: SodaWater
+  group: DrinksSoftMix
   name: reagent-name-soda-water
   parent: BaseDrink
   desc: reagent-desc-soda-water
@@ -567,6 +568,7 @@
 
 - type: reagent
   id: OrangeLimeSoda
+  group: DrinksSoftMix
   name: reagent-name-orange-lime-soda
   parent: BaseDrink
   desc: reagent-desc-orange-lime-soda
@@ -613,6 +615,7 @@
 
 - type: reagent
   id: Tortuga
+  group: DrinksSoftMix
   name: reagent-name-tortuga
   parent: BaseDrink
   desc: reagent-desc-tortuga

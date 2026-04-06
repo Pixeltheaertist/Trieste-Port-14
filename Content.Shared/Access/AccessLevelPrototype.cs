@@ -1,3 +1,4 @@
+using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Access
@@ -23,6 +24,12 @@ namespace Content.Shared.Access
         /// </summary>
         [DataField]
         public bool CanAddToIdCard = true;
+
+        /// <summary>
+        ///     The department(s) this access level belongs to, for display in the ID card console.
+        /// </summary>
+        [DataField]
+        public List<ProtoId<DepartmentPrototype>> Departments { get; set; } = new();
 
         public string GetAccessLevelName()
         {

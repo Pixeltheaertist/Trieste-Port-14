@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server.Containers;
 using Content.Server.StationRecords.Systems;
@@ -11,7 +12,6 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Chat;
 using Content.Shared.Construction;
 using Content.Shared.Containers.ItemSlots;
-using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Roles;
@@ -47,14 +47,54 @@ public sealed class IdCardConsoleSystem : SharedIdCardConsoleSystem
         SubscribeLocalEvent<IdCardConsoleComponent, WriteToTargetIdMessage>(OnWriteToTargetIdMessage);
 
         // one day, maybe bound user interfaces can be shared too.
+        SubscribeLocalEvent<IdCardConsoleComponent, EntInsertedIntoContainerMessage>(OnIdInserted); // TRIESTE //
+        SubscribeLocalEvent<IdCardConsoleComponent, EntRemovedFromContainerMessage>(OnIdRemoved); // TRIESTE //
         SubscribeLocalEvent<IdCardConsoleComponent, ComponentStartup>(UpdateUserInterface);
-        SubscribeLocalEvent<IdCardConsoleComponent, EntInsertedIntoContainerMessage>(UpdateUserInterface);
-        SubscribeLocalEvent<IdCardConsoleComponent, EntRemovedFromContainerMessage>(UpdateUserInterface);
         SubscribeLocalEvent<IdCardConsoleComponent, DamageChangedEvent>(OnDamageChanged);
 
         // Intercept the event before anyone can do anything with it!
         SubscribeLocalEvent<IdCardConsoleComponent, MachineDeconstructedEvent>(OnMachineDeconstructed,
             before: [typeof(EmptyOnMachineDeconstructSystem), typeof(ItemSlotsSystem)]);
+
+    }
+
+    /// <summary>
+    /// TRIESTE SPECIFIC
+    /// <para>Logs the target ID when inserted.</para>
+    /// </summary>
+    /// <param name="uid">Target UID</param>
+    /// <param name="component">IDCardConsole Component</param>
+    /// <param name="args">EntInsertedIntoContainerMessage Argument</param>
+    private void OnIdInserted(EntityUid uid, IdCardConsoleComponent component, EntInsertedIntoContainerMessage args)
+    {
+        if (args.Container.ID == TargetIdCardSlotId)
+        {
+
+            var targetId = args.Entity;
+            component.TargetIdAccessSnapshot = _access.TryGetTags(targetId)?.ToList()
+                                               ?? new List<ProtoId<AccessLevelPrototype>>();
+            component.TargetIdNameSnapshot = Comp<MetaDataComponent>(targetId).EntityName;
+        }
+
+        UpdateUserInterface(uid, component, args);
+    }
+
+    /// <summary>
+    /// TRIESTE SPECIFIC
+    /// <para>Logs all ID changes when an ID is exported, rather than check clicked.</para>
+    /// </summary>
+    /// <param name="uid"></param>
+    /// <param name="component"></param>
+    /// <param name="args"></param>
+    private void OnIdRemoved(EntityUid uid, IdCardConsoleComponent component, EntRemovedFromContainerMessage args)
+    {
+        if (args.Container.ID == TargetIdCardSlotId)
+        {
+            component.TargetIdAccessSnapshot.Clear();
+            component.TargetIdNameSnapshot = string.Empty;
+        }
+
+        UpdateUserInterface(uid, component, args);
     }
 
     private void OnWriteToTargetIdMessage(EntityUid uid, IdCardConsoleComponent component, WriteToTargetIdMessage args)
@@ -74,14 +114,15 @@ public sealed class IdCardConsoleSystem : SharedIdCardConsoleSystem
 
         var privilegedIdName = string.Empty;
         List<ProtoId<AccessLevelPrototype>>? possibleAccess = null;
+        EntityUid? privilegedIdEntity = null; // TRIESTE SPECIFIC
         if (component.PrivilegedIdSlot.Item is { Valid: true } item)
         {
             privilegedIdName = Comp<MetaDataComponent>(item).EntityName;
             possibleAccess = _accessReader.FindAccessTags(item).ToList();
+            privilegedIdEntity = item; // TRIESTE SPECIFIC
         }
 
         IdCardConsoleBoundUserInterfaceState newState;
-        // this could be prettier
         if (component.TargetIdSlot.Item is not { Valid: true } targetId)
         {
             newState = new IdCardConsoleBoundUserInterfaceState(
@@ -94,7 +135,9 @@ public sealed class IdCardConsoleSystem : SharedIdCardConsoleSystem
                 possibleAccess,
                 string.Empty,
                 privilegedIdName,
-                string.Empty);
+                string.Empty,
+    privilegedIdEntity != null ? GetNetEntity(privilegedIdEntity.Value) : null,  // TRIESTE PORT
+        null);                                                                      // TRIESTE PORT
         }
         else
         {
@@ -119,7 +162,9 @@ public sealed class IdCardConsoleSystem : SharedIdCardConsoleSystem
                 possibleAccess,
                 jobProto,
                 privilegedIdName,
-                Name(targetId));
+                Name(targetId),
+                privilegedIdEntity != null ? GetNetEntity(privilegedIdEntity.Value) : null, // TRIESTE PORT
+                GetNetEntity(targetId));                                                                  // TRIESTE PORT
         }
 
         _userInterface.SetUiState(uid, IdCardConsoleUiKey.Key, newState);
@@ -140,13 +185,17 @@ public sealed class IdCardConsoleSystem : SharedIdCardConsoleSystem
         if (!Resolve(uid, ref component))
             return;
 
-        if (component.TargetIdSlot.Item is not { Valid: true } targetId || !PrivilegedIdIsAuthorized(uid, component, out var privilegedId))
+        if (component.TargetIdSlot.Item is not { Valid: true } targetId ||
+            !PrivilegedIdIsAuthorized(uid, component, out var privilegedId))
             return;
 
         _idCard.TryChangeFullName(targetId, newFullName, player: player);
         _idCard.TryChangeJobTitle(targetId, newJobTitle, player: player);
 
-        if (_prototype.Resolve(newJobProto, out var job)
+        JobPrototype? job = null;
+
+        if (newJobProto != string.Empty
+            && _prototype.TryIndex(newJobProto, out job)
             && _prototype.Resolve(job.Icon, out var jobIcon))
         {
             _idCard.TryChangeJobIcon(targetId, jobIcon, player: player);
@@ -155,8 +204,8 @@ public sealed class IdCardConsoleSystem : SharedIdCardConsoleSystem
 
         UpdateStationRecord(uid, targetId, newFullName, newJobTitle, job);
         if ((!TryComp<StationRecordKeyStorageComponent>(targetId, out var keyStorage)
-            || keyStorage.Key is not { } key
-            || !_record.TryGetRecord<GeneralStationRecord>(key, out _))
+             || keyStorage.Key is not { } key
+             || !_record.TryGetRecord<GeneralStationRecord>(key, out _))
             && newJobProto != string.Empty)
         {
             Comp<IdCardComponent>(targetId).JobPrototype = newJobProto;
@@ -183,14 +232,27 @@ public sealed class IdCardConsoleSystem : SharedIdCardConsoleSystem
             return;
         }
 
-        var addedTags = newAccessList.Except(oldTags).Select(tag => "+" + tag).ToList();
-        var removedTags = oldTags.Except(newAccessList).Select(tag => "-" + tag).ToList();
         _access.TrySetTags(targetId, newAccessList);
 
-        /*TODO: ECS SharedIdCardConsoleComponent and then log on card ejection, together with the save.
-        This current implementation is pretty shit as it logs 27 entries (27 lines) if someone decides to give themselves AA*/
-        _adminLogger.Add(LogType.Action,
-            $"{player} has modified {targetId} with the following accesses: [{string.Join(", ", addedTags.Union(removedTags))}] [{string.Join(", ", newAccessList)}]");
+        //_adminLogger.Add(LogType.Action, $"{player} has modified {targetId} with the following accesses: [{string.Join(", ", addedTags.Union(removedTags))}] [{string.Join(", ", newAccessList)}]");
+
+        // This is still cursed, but it's more readable I guess??? I hate Wiz code lol.
+        // It also didn't work when we changed it to be in 'onIdRemoved' despite the log working. I don't know.
+        if (!oldTags.SequenceEqual(newAccessList))
+        {
+            _access.TrySetTags(targetId, newAccessList);
+
+            var addedTags = newAccessList.Except(component.TargetIdAccessSnapshot).Select(tag => "+" + tag).ToList();
+            var removedTags = component.TargetIdAccessSnapshot.Except(newAccessList).Select(tag => "-" + tag).ToList();
+
+            if (addedTags.Any() || removedTags.Any())
+            {
+                _adminLogger.Add(LogType.Action, LogImpact.Medium,
+                    $"{ToPrettyString(player):player} modified {ToPrettyString(targetId):entity} " +
+                    $"with access changes: [{string.Join(", ", addedTags.Concat(removedTags))}] " +
+                    $"final access: [{string.Join(", ", newAccessList)}]");
+            }
+        }
     }
 
     /// <summary>

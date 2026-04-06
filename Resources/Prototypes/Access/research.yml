@@ -1,10 +1,17 @@
 - type: accessLevel
   id: ResearchDirector
   name: id-card-access-level-research-director
+  departments: # TP14
+  - DepartmentAA
+  - Command
+  - Science
 
 - type: accessLevel
   id: Research
   name: id-card-access-level-research
+  departments: # TP14
+  - DepartmentAA
+  - Science
 
 - type: accessGroup
   id: Research

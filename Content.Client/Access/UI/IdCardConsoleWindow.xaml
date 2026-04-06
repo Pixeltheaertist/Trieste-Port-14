@@ -1,46 +1,80 @@
 <DefaultWindow xmlns="https://spacestation14.io"
-            MinSize="650 290">
-    <BoxContainer Orientation="Vertical">
-        <!-- Privileged and target IDs, crew manifest button. -->
-        <GridContainer Columns="2">
-            <GridContainer Columns="3" HorizontalExpand="True">
-                <Label Text="{Loc 'id-card-console-window-privileged-id'}" />
-                <Button Name="PrivilegedIdButton" Access="Public"/>
-                <Label Name="PrivilegedIdLabel" />
-
-                <Label Text="{Loc 'id-card-console-window-target-id'}" />
-                <Button Name="TargetIdButton" Access="Public"/>
-                <Label Name="TargetIdLabel" />
-            </GridContainer>
-            <BoxContainer Orientation="Vertical">
-                <Button Name="CrewManifestButton" Access="Public" Text="{Loc 'crew-manifest-button-label'}" />
-            </BoxContainer>
-        </GridContainer>
-        <Control MinSize="0 8" />
-        <!-- Full name and job title editing. -->
-        <GridContainer Columns="3" HSeparationOverride="4">
-            <Label Name="FullNameLabel" Text="{Loc 'id-card-console-window-full-name-label'}" />
-            <LineEdit Name="FullNameLineEdit" HorizontalExpand="True" />
-            <Button Name="FullNameSaveButton" Text="{Loc 'id-card-console-window-save-button'}" Disabled="True" />
-
-            <Label Name="JobTitleLabel" Text="{Loc 'id-card-console-window-job-title-label'}" />
-            <LineEdit Name="JobTitleLineEdit" HorizontalExpand="True" />
-            <Button Name="JobTitleSaveButton" Text="{Loc 'id-card-console-window-save-button'}" Disabled="True" />
-        </GridContainer>
-        <Control MinSize="0 8" />
-        <!-- Job preset selection, grant/revoke all access buttons. -->
-        <BoxContainer Margin="0 8 0 4">
-            <BoxContainer>
-                <Label Text="{Loc 'id-card-console-window-job-selection-label'}" />
-                <OptionButton Name="JobPresetOptionButton" />
-            </BoxContainer>
-            <Control HorizontalExpand="True"/>
-            <BoxContainer>
-                <Button Name="SelectAllButton" Text="{Loc 'id-card-console-window-select-all-button'}" />
-                <Button Name="DeselectAllButton" Text="{Loc 'id-card-console-window-deselect-all-button'}" />
-            </BoxContainer>
+               xmlns:ui1="clr-namespace:Content.Client._TP14.Access.UI"
+               MinSize="1000 500"
+               Resizable="False">
+    <BoxContainer Orientation="Horizontal">
+        <!-- Left sidebar: department list -->
+        <BoxContainer Orientation="Vertical"
+                      MinSize="200 290">
+            <Label Text="{Loc 'tp-id-card-console-window-department-label'}" StyleClasses="LabelKeyText" HorizontalAlignment="Center" />
+            <ItemList Name="DepartmentList"
+                      VerticalExpand="True"
+                      SelectMode="Single" />
+                <BoxContainer>
+                    <Button Name="SelectAllButton" Text="{Loc 'id-card-console-window-select-all-button'}" />
+                    <Button Name="DeselectAllButton" Text="{Loc 'id-card-console-window-deselect-all-button'}" />
+                </BoxContainer>
         </BoxContainer>
-        <!-- Individual access buttons -->
-        <Control Name="AccessLevelControlContainer" />
+        <!-- Right side: everything else -->
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="8 0 0 0">
+            <BoxContainer Orientation="Horizontal" Margin="4 -4 0 0">
+                <BoxContainer Orientation="Vertical" MinSize="225 64" MaxSize="225 64">
+                    <BoxContainer Orientation="Horizontal">
+                        <Label Text="{Loc 'id-card-console-window-privileged-id'}" VerticalAlignment="Center" StyleClasses="LabelKeyText" />
+                        <Button Name="PrivilegedIdButton"
+                                Access="Public"
+                                SetSize="33 33"
+                                Margin="4 0 16 0"
+                                StyleClasses="ButtonIdCard">
+                            <SpriteView Name="PrivilegedEntityView"
+                                        Access="Public"
+                                        Stretch="None"
+                                        Scale="1.5 1.5"
+                                        RectClipContent="False"/>
+                        </Button>
+                    </BoxContainer>
+                    <Label Name="PrivilegedIdLabel" MinSize="0 25" />
+                </BoxContainer>
+                <BoxContainer Orientation="Vertical">
+                    <BoxContainer Orientation="Horizontal">
+                        <Label Text="{Loc 'id-card-console-window-target-id'}" VerticalAlignment="Center" StyleClasses="LabelKeyText" />
+                        <Button Name="TargetIdButton"
+                                Access="Public"
+                                SetSize="33 33"
+                                Margin="4 0 0 0"
+                                StyleClasses="ButtonIdCard">
+                            <SpriteView Name="TargetEntityView"
+                                        Access="Public"
+                                        Stretch="None"
+                                        Scale="1.5 1.5"
+                                        RectClipContent="False"/>
+                        </Button>
+                    </BoxContainer>
+                    <Label Name="TargetIdLabel" MinSize="0 25" />
+                </BoxContainer>
+                <Control HorizontalExpand="True"/>
+                <Button Name="CrewManifestButton" Access="Public" Text="{Loc 'crew-manifest-button-label'}" VerticalAlignment="Center" />
+            </BoxContainer>
+            <Control MinSize="0 8" />
+            <GridContainer Columns="3" HSeparationOverride="4">
+                <Label Name="FullNameLabel" Text="{Loc 'id-card-console-window-full-name-label'}" />
+                <LineEdit Name="FullNameLineEdit" HorizontalExpand="True" />
+                <Button Name="FullNameSaveButton" Text="{Loc 'id-card-console-window-save-button'}" Disabled="True" />
+
+                <Label Name="JobTitleLabel" Text="{Loc 'id-card-console-window-job-title-label'}" />
+                <LineEdit Name="JobTitleLineEdit" HorizontalExpand="True" />
+                <Button Name="JobTitleSaveButton" Text="{Loc 'id-card-console-window-save-button'}" Disabled="True" />
+            </GridContainer>
+            <Control MinSize="0 8" />
+            <BoxContainer Margin="0 8 0 4">
+                <BoxContainer>
+                    <Label Text="{Loc 'id-card-console-window-job-selection-label'}" />
+                    <OptionButton Name="JobPresetOptionButton" />
+                </BoxContainer>
+                <Control HorizontalExpand="True"/>
+            </BoxContainer>
+            <!-- Individual access buttons -->
+            <ui1:TriesteAccessLevelControl Name="AccessButtons" HorizontalExpand="True" VerticalExpand="True" />
+        </BoxContainer>
     </BoxContainer>
 </DefaultWindow>

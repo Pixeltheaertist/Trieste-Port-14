@@ -25,6 +25,7 @@
       children:
       - id: BoxBeanbag
       - id: RagItem
+    - id: BookBartendersManual # TP14 - Why not?
 
 #- type: entity
 #  id: LockerFormalFilled
@@ -64,6 +65,7 @@
       children:
       - id: FoodCondimentPacketSalt
       - id: FoodCondimentPacketPepper
+    - id: BookHowToCookForFortySpaceman # TP14 - Why not?
 
 - type: entity
   id: ClosetJanitorFilled
