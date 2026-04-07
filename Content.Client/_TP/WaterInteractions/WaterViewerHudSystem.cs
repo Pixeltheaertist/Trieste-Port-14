@@ -1,18 +1,14 @@
-using Content.Shared.CCVar;
-using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
+using Content.Shared.Overlays;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
+using Robust.Shared.Configuration;
+using Robust.Shared.Enums;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Content.Shared.Overlays;
 using Robust.Shared.Timing;
-using Robust.Client.Graphics;
-using Robust.Shared.Enums;
-using Content.Shared.Clothing;
-using Robust.Shared.Configuration;
 
-namespace Content.Client.Overlays
+namespace Content.Client._TP.WaterInteractions
 {
     public sealed class WaterViewerHudSystem : EntitySystem
 {

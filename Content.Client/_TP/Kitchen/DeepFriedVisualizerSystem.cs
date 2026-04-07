@@ -2,7 +2,7 @@ using Content.Shared._TP.Kitchen.Events;
 using Robust.Client.GameObjects;
 using Robust.Shared.Containers;
 
-namespace Content.Client._TP14.Kitchen;
+namespace Content.Client._TP.Kitchen;
 
 /// <summary>
 ///     Client-side sprite visualizer system for the deep-fried item component.

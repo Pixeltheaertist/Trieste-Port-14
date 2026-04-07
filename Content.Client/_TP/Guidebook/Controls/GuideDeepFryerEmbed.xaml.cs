@@ -1,7 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Client.Guidebook.Controls;
 using Content.Client.Guidebook.Richtext;
-using Content.Client.Message;
 using Content.Client.UserInterface.ControlExtensions;
 using Content.Shared._TP.Kitchen;
 using JetBrains.Annotations;
@@ -12,7 +11,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Client._TP14.Guidebook.Controls;
+namespace Content.Client._TP.Guidebook.Controls;
 
 /// <summary>
 ///     Control for embedding a deep-fryer recipe into a guidebook.

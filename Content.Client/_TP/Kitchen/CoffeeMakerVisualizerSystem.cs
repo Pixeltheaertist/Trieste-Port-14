@@ -1,7 +1,7 @@
 using Content.Shared._TP.Kitchen.Components;
 using Robust.Client.GameObjects;
 
-namespace Content.Client._TP14.Kitchen;
+namespace Content.Client._TP.Kitchen;
 
 public sealed class CoffeeMakerVisualizerSystem : VisualizerSystem<SharedCoffeeMakerComponent>
 {

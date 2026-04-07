@@ -1,9 +1,9 @@
-using Content.Client._TP14.Temperature.Components;
+using Content.Client._TP.Temperature.Components;
 using Content.Client.Examine;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._TP14.Temperature.Systems;
+namespace Content.Client._TP.Temperature.Systems;
 
 /// <summary>
 ///     Client-side logic for the storm array.

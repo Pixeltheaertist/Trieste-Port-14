@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Weather;
+namespace Content.Shared._TP.RWEvent;
 
 /// <summary>
 /// This entity will protect players from The Rain if they're on top of it.

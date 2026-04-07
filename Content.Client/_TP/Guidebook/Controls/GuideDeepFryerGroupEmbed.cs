@@ -7,7 +7,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._TP14.Guidebook.Controls;
+namespace Content.Client._TP.Guidebook.Controls;
 
 /// <summary>
 ///     Control for listing deep-fryer recipes in a guidebook.

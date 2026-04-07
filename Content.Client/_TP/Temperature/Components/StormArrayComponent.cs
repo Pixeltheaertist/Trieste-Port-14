@@ -1,4 +1,4 @@
-namespace Content.Client._TP14.Temperature.Components;
+namespace Content.Client._TP.Temperature.Components;
 
 /// <summary>
 ///     Client-side component for the Storm Array.

@@ -36,7 +36,7 @@ public sealed class DeathRainSystem : EntitySystem
         if (_updateTimer >= RumbleInterval)
         {
 
-          foreach (var rumbler in EntityManager.EntityQuery<RainCrushableComponent>())
+          foreach (var rumbler in EntityManager.EntityQuery<Shared._TP.RWEvent.RainCrushableComponent>())
             {
                 var rumble = rumbler.Owner;
                 var kick = new Vector2(_random.NextFloat(), _random.NextFloat()) * 2f;
@@ -50,17 +50,17 @@ public sealed class DeathRainSystem : EntitySystem
             _updateTimer = 0f;
 
             // In shelter?
-            foreach (var entity in EntityManager.EntityQuery<RainCrushableComponent>())
+            foreach (var entity in EntityManager.EntityQuery<Shared._TP.RWEvent.RainCrushableComponent>())
             {
                 var entityUid = entity.Owner;
 
-                if (TryComp<RainImmuneComponent>(entityUid, out var immune))
+                if (TryComp<Shared._TP.RWEvent.RainImmuneComponent>(entityUid, out var immune))
                 {
                     // This creature is innately immune to rain. Spared.
                      continue;
                 }
 
-                var shelters = GetEntityQuery<RainShelterComponent>();
+                var shelters = GetEntityQuery<Shared._TP.RWEvent.RainShelterComponent>();
                 foreach (var shelter in _lookup.GetEntitiesInRange(entityUid, 1f))
                 {
                      Log.Info("Found shelter");

@@ -91,7 +91,7 @@ public sealed class WaterInteractionSystem : EntitySystem
                     }
                 }
 
-                if (TryComp<AbyssalProtectedComponent>(uid, out var abyssalProtected))
+                if (TryComp<Shared._TP.WaterInteractions.AbyssalProtectedComponent>(uid, out var abyssalProtected))
                 {
                     continue;
                 }

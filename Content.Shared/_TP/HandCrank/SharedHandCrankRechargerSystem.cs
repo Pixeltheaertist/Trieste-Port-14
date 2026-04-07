@@ -1,8 +1,8 @@
-using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Verbs;
+using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Utility;
 
-namespace Content.Shared.Weapons.Ranged.Systems;
+namespace Content.Shared._TP.HandCrank;
 
 public abstract class SharedHandCrankRechargerSystem : EntitySystem
 {
