@@ -4,6 +4,7 @@
   group: Toxins
   desc: reagent-desc-horrific-laughter
   physicalDesc: reagent-physical-desc-viscous
+  contrabandSeverity: C2T
   flavor: strange
   color: "#5273ff"
   slipData:

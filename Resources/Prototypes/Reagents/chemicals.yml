@@ -117,8 +117,7 @@
   name: reagent-name-benzene
   desc: reagent-desc-benzene
   physicalDesc: reagent-physical-desc-acidic
-  allowedJobs:
-  - Chemist
+  contrabandSeverity: C1C
   color: "#E7EA91"
   boilingPoint: 353.2
   meltingPoint: 278.7

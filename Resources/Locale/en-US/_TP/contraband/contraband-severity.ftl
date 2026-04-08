@@ -13,7 +13,7 @@ contraband-examine-text-c1c =
 contraband-examine-text-c1m =
     { $type ->
         *[item] [color=red]You should not be seeing this, please report this to a contrib![/color]
-        [reagent] [color=green]This reagent is a restricted class 01-M, meaning it is restricted to medical or anyone with a perscription.[/color]
+        [reagent] [color=green]This reagent is a restricted class 01-M, meaning it is restricted to medical or anyone with a prescription.[/color]
     }
 
 contraband-examine-text-c1s =
@@ -28,6 +28,12 @@ contraband-examine-text-c1cb =
         [reagent] [color=green]This reagent is a restricted class 01-CB, meaning it is restricted to chemistry and botany.[/color]
     }
 
+contraband-examine-text-c1sm =
+    { $type ->
+        *[item] [color=red]You should not be seeing this, please report this to a contrib![/color]
+        [reagent] [color=green]This reagent is a restricted class 01-SM, meaning it is restricted to security and medical.[/color]
+    }
+    
 contraband-examine-text-c1n =
     { $type ->
         *[item] [color=red]You should not be seeing this, please report this to a contrib![/color]
@@ -43,19 +49,19 @@ contraband-examine-text-c1t =
 contraband-examine-text-c2c =
     { $type ->
         *[item] [color=red]You should not be seeing this, please report this to a contrib![/color]
-        [reagent] [color=yellow]This reagent is a restricted class 02-C, and thus required written permission from at least 2 members of command, with those members being the CMO and Overseer if possible. It is also restricted only to chemistry once authorized.[/color]
+        [reagent] [color=yellow]This reagent is a restricted class 02-C, and requires written permission from at least 2 members of command, with those members being the CMO and Overseer if possible. It is also restricted only to chemistry once authorized.[/color]
     }
 
 contraband-examine-text-c2s =
     { $type ->
         *[item] [color=red]You should not be seeing this, please report this to a contrib![/color]
-        [reagent] [color=yellow]This reagent is a restricted class 02-S, and thus required written permission from at least 2 members of command, with those members being the CMO and Overseer if possible. It is also restricted only to security once authorized.[/color]
+        [reagent] [color=yellow]This reagent is a restricted class 02-S, and requires written permission from at least 2 members of command, with those members being the CMO and Overseer if possible. It is also restricted only to security once authorized.[/color]
     }
 
 contraband-examine-text-c2m =
     { $type ->
         *[item] [color=red]You should not be seeing this, please report this to a contrib![/color]
-        [reagent] [color=yellow]This reagent is a restricted class 02-M, and thus required written permission from at least 2 members of command, with those members being the CMO and Overseer if possible. It is also restricted only to medical once authorized.[/color]
+        [reagent] [color=yellow]This reagent is a restricted class 02-M, and requires written permission from at least 2 members of command, with those members being the CMO and Overseer if possible. It is also restricted only to medical once authorized.[/color]
     }
 
 contraband-examine-text-c2t =
@@ -73,7 +79,7 @@ contraband-examine-text-c2n =
 contraband-examine-text-c3s =
     { $type ->
         *[item] [color=red]You should not be seeing this, please report this to a contrib![/color]
-        [reagent] [color=red]This reagent is a restricted class 03-S, and thus is only authorized once an existential threat to the platform has been confirmed. It is also restricted only to security once authorized.[/color]
+        [reagent] [color=red]This reagent is a restricted class 03-S, and is only authorized once an existential threat to the platform has been confirmed. It is also restricted only to security once authorized.[/color]
     }
 
 contraband-examine-text-c3n =

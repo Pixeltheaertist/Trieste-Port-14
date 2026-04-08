@@ -364,6 +364,7 @@
   group: Toxins
   desc: reagent-desc-histamine
   physicalDesc: reagent-physical-desc-abrasive
+  contrabandSeverity: C2T
   color: "#FA6464"
   metabolisms:
     Poison:
@@ -553,11 +554,7 @@
   group: Narcotics
   desc: reagent-desc-pax
   physicalDesc: reagent-physical-desc-soothing
-  allowedDepartments:
-  - Security
-  - Medical
-  allowedJobs:
-  - Zookeeper
+  contrabandSeverity: C1S #TP14
   color: "#AAAAAA"
   metabolisms:
     Poison:
