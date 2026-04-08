@@ -554,7 +554,7 @@
   group: Narcotics
   desc: reagent-desc-pax
   physicalDesc: reagent-physical-desc-soothing
-  contrabandSeverity: C1S #TP14
+  contrabandSeverity: C1SM #TP14
   color: "#AAAAAA"
   metabolisms:
     Poison:

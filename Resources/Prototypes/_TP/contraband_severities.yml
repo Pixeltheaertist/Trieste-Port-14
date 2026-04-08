@@ -15,6 +15,18 @@
   examineText: contraband-examine-text-c1cb
 
 - type: contrabandSeverity
+  id: C1SM
+  examineText: contraband-examine-text-c1sm
+
+- type: contrabandSeverity
+  id: C1R
+  examineText: contraband-examine-text-c1r
+
+- type: contrabandSeverity
+  id: C1E
+  examineText: contraband-examine-text-c1e
+
+- type: contrabandSeverity
   id: C1N
   examineText: contraband-examine-text-c1n
 

@@ -34,6 +34,18 @@ contraband-examine-text-c1sm =
         [reagent] [color=green]This reagent is a restricted class 01-SM, meaning it is restricted to security and medical.[/color]
     }
     
+contraband-examine-text-c1r =
+    { $type ->
+        *[item] [color=red]You should not be seeing this, please report this to a contrib![/color]
+        [reagent] [color=green]This reagent is a restricted class 01-R, meaning it is restricted to science.[/color]
+    }
+
+contraband-examine-text-c1e =
+    { $type ->
+        *[item] [color=red]You should not be seeing this, please report this to a contrib![/color]
+        [reagent] [color=green]This reagent is a restricted class 01-E, meaning it is restricted to engineering.[/color]
+    }
+
 contraband-examine-text-c1n =
     { $type ->
         *[item] [color=red]You should not be seeing this, please report this to a contrib![/color]
@@ -49,31 +61,31 @@ contraband-examine-text-c1t =
 contraband-examine-text-c2c =
     { $type ->
         *[item] [color=red]You should not be seeing this, please report this to a contrib![/color]
-        [reagent] [color=yellow]This reagent is a restricted class 02-C, and requires written permission from at least 2 members of command, with those members being the CMO and Overseer if possible. It is also restricted only to chemistry once authorized.[/color]
+        [reagent] [color=yellow]This reagent is a restricted class 02-C, and requires written permission from the CMO along with either the Marshal or Overseer. It is also restricted only to chemistry once authorized.[/color]
     }
 
 contraband-examine-text-c2s =
     { $type ->
         *[item] [color=red]You should not be seeing this, please report this to a contrib![/color]
-        [reagent] [color=yellow]This reagent is a restricted class 02-S, and requires written permission from at least 2 members of command, with those members being the CMO and Overseer if possible. It is also restricted only to security once authorized.[/color]
+        [reagent] [color=yellow]This reagent is a restricted class 02-S, andrequires written permission from the CMO along with either the Marshal or Overseer. It is also restricted only to security once authorized.[/color]
     }
 
 contraband-examine-text-c2m =
     { $type ->
         *[item] [color=red]You should not be seeing this, please report this to a contrib![/color]
-        [reagent] [color=yellow]This reagent is a restricted class 02-M, and requires written permission from at least 2 members of command, with those members being the CMO and Overseer if possible. It is also restricted only to medical once authorized.[/color]
+        [reagent] [color=yellow]This reagent is a restricted class 02-M, and requires written permission from the CMO along with either the Marshal or Overseer. It is also restricted only to medical once authorized.[/color]
     }
 
 contraband-examine-text-c2t =
     { $type ->
         *[item] [color=red]You should not be seeing this, please report this to a contrib![/color]
-        [reagent] [color=yellow]This reagent is a restricted class 02-T, meaning it is illegal to possess.[/color]
+        [reagent] [color=yellow]This reagent is a restricted class 02-T, meaning it requires written permission from the CMO along with either the Marshal or Overseer.[/color]
     }
 
 contraband-examine-text-c2n =
     { $type ->
         *[item] [color=red]You should not be seeing this, please report this to a contrib![/color]
-        [reagent] [color=yellow]This reagent is a restricted class 02-N, meaning it is illegal to possess.[/color]
+        [reagent] [color=yellow]This reagent is a restricted class 02-N, meaning it requires written permission from the CMO along with either the Marshal or Overseer.[/color]
     }
 
 contraband-examine-text-c3s =

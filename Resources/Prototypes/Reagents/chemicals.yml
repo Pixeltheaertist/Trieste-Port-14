@@ -80,8 +80,7 @@
   desc: reagent-desc-artifexium
   flavor: metallic
   physicalDesc: reagent-physical-desc-crystalline
-  allowedDepartments:
-  - Science
+  contrabandSeverity: C1R #TP14
   color: "#776291"
   metabolisms:
     Poison:
@@ -104,6 +103,7 @@
   desc: reagent-desc-artifact-glue
   flavor: artifactglue
   physicalDesc: reagent-physical-desc-non-newtonian
+  contrabandSeverity: C1R #TP14
   color: "#827394"
   reactiveEffects:
     Acidic:
