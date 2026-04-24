@@ -16,7 +16,8 @@
   Prisoners must have their brig timer started while they wait for an appeal.
   
   [color=#a4885c]Handling an Appeal:[/color]
-  Appeals may be handled by either the Overseer or Marshal. If neither are available, the appeal may be adressed to the Warden. Appeals may be addressed to SolGov, regardless of if an appeal with prior persons has begun.
+  Appeals are made out to a designated handler, who is always an uninvolved party to the crime and not a witness. Appeals may first be handled by the Marshal or Overseer; if neither area available they may be handled by the Warden. If any of these are currently occupied and can not come to the Brig, they may defer the appeal. Ideally it is deferred to the next available of the three listed prior. When all are occupied or involved in the arrest, then it may be deferred to an uninvolved member of Security.
+  Appeals may be addressed to SolGov, regardless of if an appeal with prior persons has begun. Any decision made in a response by SolGov is final. If no response is received within 10 minutes the appeal is considered denied.
   Prisoners have a right to a lawyer during the appeal process, if one is available. 
 
   The appeal processor must meet with the prisoner, and the appeal must be handled in person unless adressed to SolGov. The charges are listed one by one, by either the handler or any Security Officer. Discussion of witness accounts, story of accused, and evidence is recommended.
