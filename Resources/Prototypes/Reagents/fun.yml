@@ -48,7 +48,7 @@
   group: Toxins
   desc: reagent-desc-buzzochloric-bees
   physicalDesc: reagent-physical-desc-buzzy
-  contrabandSeverity: Minor
+  contrabandSeverity: C2T #TP14
   flavor: bee
   color: "#FFD35D"
   tileReactions:
@@ -159,7 +159,7 @@
   group: Toxins
   desc: reagent-desc-licoxide
   physicalDesc: reagent-physical-desc-electric
-  contrabandSeverity: Minor
+  contrabandSeverity: C2T #TP14
   flavor: shocking
   color: "#FDD023"
   metabolisms:
@@ -190,6 +190,7 @@
   desc: reagent-desc-razorium
   physicalDesc: reagent-physical-desc-reflective
   flavor: sharp
+  contrabandSeverity: C3T #TP14
   color: "#e3fffb"
   reactiveEffects:
     Acidic:
@@ -228,8 +229,7 @@
     requiredSlipSpeed: 3.5
   desc: reagent-desc-fresium
   physicalDesc: reagent-physical-desc-frosty
-  allowedDepartments:
-  - Medical
+  contrabandSeverity: C2M #TP14
   flavor: cold
   color: "#b3f1ff"
   boilingPoint: 50.0

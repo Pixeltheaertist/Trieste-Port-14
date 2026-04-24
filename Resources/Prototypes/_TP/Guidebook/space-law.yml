@@ -1,0 +1,87 @@
+- type: guideEntry
+  id: TPSpaceLaw
+  name: Space Law
+  priority: 20
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/space-law.xml"
+  children:
+  - StandardOperatingProcedure
+  - CrimeList
+  - PrisonerRights
+  - Sentencing
+  - Searches
+  - ImplantDevices
+
+- type: guideEntry
+  id: StandardOperatingProcedure
+  name: Standard Operating Procedure 
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/SOP/SOP.xml"
+  children: 
+  - HiringAccesses
+  - MedicalSOP
+
+- type: guideEntry
+  id: HiringAccesses
+  name: Hiring and ID Accesses
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/SOP/hiring-accesses.xml"
+
+- type: guideEntry
+  id: MedicalSOP
+  name: Medical SOP
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/SOP/medical-SOP.xml"
+
+- type: guideEntry
+  id: CrimeList
+  name: Crime List
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/crime-list.xml"
+  children:
+   - MinorCrimeList
+   - ModerateCrimeList
+   - MajorCrimeList
+   - ExtremeCrimeList
+   - CapitalCrimeList
+
+- type: guideEntry
+  id: MinorCrimeList
+  name: Minor Crimes
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/minor-crimes.xml"
+
+- type: guideEntry
+  id: ModerateCrimeList
+  name: Moderate Crimes
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/moderate-crimes.xml"
+
+- type: guideEntry
+  id: MajorCrimeList
+  name: Major Crimes
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/major-crimes.xml"
+
+- type: guideEntry
+  id: ExtremeCrimeList
+  name: Extreme Crimes
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/extreme-crimes.xml"
+
+- type: guideEntry
+  id: CapitalCrimeList
+  name: Capital Crimes
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/capital-crimes.xml"
+
+- type: guideEntry
+  id: PrisonerRights
+  name: Prisoner Rights
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/prisoner-rights.xml"
+
+- type: guideEntry
+  id: Sentencing
+  name: Sentencing
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/sentencing.xml"
+
+- type: guideEntry
+  id: Searches
+  name: Search and Seizure
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/searches.xml"
+
+- type: guideEntry
+  id: ImplantDevices
+  name: Implant Devices
+  text: "/ServerInfo/_TP/Guidebook/SpaceLaw/implant-devices.xml"
+

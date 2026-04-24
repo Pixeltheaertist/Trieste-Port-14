@@ -4,9 +4,9 @@
   group: Toxins
   desc: reagent-desc-toxin
   flavor: bitter
+  contrabandSeverity: C3T #TP14
   color: "#cf3600"
   physicalDesc: reagent-physical-desc-opaque
-  contrabandSeverity: Minor
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: 10
@@ -26,6 +26,7 @@
   group: Toxins
   desc: reagent-desc-carpotoxin
   flavor: bitter
+  contrabandSeverity: C1C #TP14
   color: "#e2a38c"
   physicalDesc: reagent-physical-desc-exotic-smelling
   allowedDepartments:
@@ -54,6 +55,7 @@
   group: Toxins
   desc: reagent-desc-chloral-hydrate
   flavor: bitter
+  contrabandSeverity: C2M #TP14
   color: "#000067"
   physicalDesc: reagent-physical-desc-nondescript
   allowedDepartments:
@@ -128,7 +130,7 @@
   group: Toxins
   desc: reagent-desc-polytrinic-acid
   physicalDesc: reagent-physical-desc-strong-smelling
-  contrabandSeverity: Major
+  contrabandSeverity: C3T #TP14
   flavor: acid
   color: "#a1000b"
   boilingPoint: 78.2 # This isn't a real chemical...
@@ -175,6 +177,7 @@
   group: Toxins
   desc: reagent-desc-ferrochromic-acid
   flavor: sour
+  contrabandSeverity: C1T #TP14
   color: "#48b3b8"
   physicalDesc: reagent-physical-desc-ferrous
   metabolisms:
@@ -195,7 +198,7 @@
   group: Toxins
   desc: reagent-desc-fluorosulfuric-acid
   physicalDesc: reagent-physical-desc-strong-smelling
-  contrabandSeverity: Minor
+  contrabandSeverity: C2T #TP14
   flavor: acid
   color: "#5050ff"
   boilingPoint: 165
@@ -235,8 +238,7 @@
   group: Toxins
   desc: reagent-desc-sulfuric-acid
   physicalDesc: reagent-physical-desc-oily
-  allowedJobs:
-  - Chemist
+  contrabandSeverity: C1C #TP14
   flavor: acid
   color: "#BF8C00"
   recognizable: true
@@ -284,9 +286,7 @@
   group: Toxins
   desc: reagent-desc-unstable-mutagen
   physicalDesc: reagent-physical-desc-glowing
-  allowedJobs:
-  - Chemist
-  - Botanist
+  contrabandSeverity: C1CB #TP14
   flavor: bitter
   color: "#00ff5f"
   boilingPoint: 340282300000000000000000000000000000000 # Ethidium bromide, which doesn't boil.
@@ -308,7 +308,7 @@
   group: Toxins
   desc: reagent-desc-heartbreaker-toxin
   physicalDesc: reagent-physical-desc-strong-smelling
-  contrabandSeverity: Major
+  contrabandSeverity: C3T #TP14
   color: "#5f959c"
   metabolisms:
     Poison:
@@ -327,7 +327,7 @@
   group: Toxins
   desc: reagent-desc-lexorin
   physicalDesc: reagent-physical-desc-pungent
-  contrabandSeverity: Syndicate
+  contrabandSeverity: C3T #TP14
   color: "#6b0007"
   metabolisms:
     Poison:
@@ -344,6 +344,7 @@
   desc: reagent-desc-mindbreaker-toxin
   physicalDesc: reagent-physical-desc-opaque
   flavor: bitter
+  contrabandSeverity: C2N #TP14
   color: "#77b58e"
   plantMetabolism:
   - !type:PlantAdjustToxins
@@ -363,6 +364,7 @@
   group: Toxins
   desc: reagent-desc-histamine
   physicalDesc: reagent-physical-desc-abrasive
+  contrabandSeverity: C2T
   color: "#FA6464"
   metabolisms:
     Poison:
@@ -430,7 +432,7 @@
   group: Toxins
   desc: reagent-desc-amatoxin
   physicalDesc: reagent-physical-desc-nondescript
-  contrabandSeverity: Major
+  contrabandSeverity: C3T #TP14
   color: "#D6CE7B"
   metabolisms:
     Poison:
@@ -463,7 +465,7 @@
   group: Toxins
   desc: reagent-desc-romerol
   physicalDesc: reagent-physical-desc-necrotic
-  contrabandSeverity: Syndicate
+  contrabandSeverity: C3T #TP14
   flavor: bitter
   color: "#7e916e"
   worksOnTheDead: true
@@ -552,11 +554,7 @@
   group: Narcotics
   desc: reagent-desc-pax
   physicalDesc: reagent-physical-desc-soothing
-  allowedDepartments:
-  - Security
-  - Medical
-  allowedJobs:
-  - Zookeeper
+  contrabandSeverity: C1SM #TP14
   color: "#AAAAAA"
   metabolisms:
     Poison:
@@ -601,7 +599,7 @@
   group: Toxins
   desc: reagent-desc-lead
   physicalDesc: reagent-physical-desc-metallic
-  contrabandSeverity: Major
+  contrabandSeverity: C3T #TP14
   color: "#5C6274"
   metabolisms:
     Poison:
@@ -618,7 +616,7 @@
   group: Toxins
   desc: reagent-desc-bungotoxin
   physicalDesc: reagent-physical-desc-nondescript
-  contrabandSeverity: Major
+  contrabandSeverity: C3T #TP14
   color: "#EBFF8E"
   metabolisms:
     Poison:
@@ -635,7 +633,7 @@
   group: Toxins
   desc: reagent-desc-vestine
   physicalDesc: reagent-physical-desc-shiny
-  contrabandSeverity: Syndicate
+  contrabandSeverity: C3S #TP14
   flavor: medicine
   color: "#435166"
   metabolisms:
@@ -660,7 +658,7 @@
   group: Toxins
   desc: reagent-desc-tazinide
   physicalDesc: reagent-physical-desc-metallic
-  contrabandSeverity: Syndicate
+  contrabandSeverity: C2T #TP14
   flavor: shocking
   color: "#FDD023"
   metabolisms:
@@ -675,8 +673,7 @@
   group: Toxins
   desc: reagent-desc-lipolicide
   physicalDesc: reagent-physical-desc-strong-smelling
-  allowedDepartments:
-  - Medical
+  contrabandSeverity: C2M #TP14
   flavor: mothballs #why does weightloss juice taste like mothballs
   color: "#F0FFF0"
   metabolisms:

@@ -11,16 +11,16 @@
   Acceptable:
   - As an engineer, helping the bartender remodel the bar.
   - As a bartender, remodeling the bar.
-  - As a passenger, building a maintenance bar.
+  - As a citizen, building a maintenance bar.
   - As an engineer, reinforcing substations.
   - As an engineer, increasing the security of airlocks.
   - As an atmospherics technician, improving atmospheric systems.
-  - As a passenger, fighting cascade operatives.
-  - As a passenger, fighting or preparing to defend yourself from someone who has been trying to kill you.
+  - As a citizen, fighting cascade operatives.
+  - As a citizen, fighting or preparing to defend yourself from someone who has been trying to kill you.
   - As a citizen on a station with no engineering department, you complete engineering tasks.
 
   Prohibited:
-  - As a passenger, reinforcing substations.
-  - As a passenger, hunting for antagonists or lawbreakers.
-  - As a passenger, fighting or preparing to defend someone else from someone who has been trying to kill a random citizen.
+  - As a citizen, reinforcing substations.
+  - As a citizen, hunting for antagonists or lawbreakers.
+  - As a citizen, fighting or preparing to defend someone else from someone who has been trying to kill a random citizen.
 </Document>
