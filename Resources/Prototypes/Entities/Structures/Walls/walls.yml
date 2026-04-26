@@ -1423,6 +1423,8 @@
   - type: IconSmooth
     key: walls
     base: mining
+  - type: RadiationBlocker
+    resistance: 5
   - type: RandomIconSmooth
     randomStates:
     - mining
@@ -1441,6 +1443,8 @@
   - type: Icon
     sprite: Structures/Walls/mining_diagonal.rsi
     state: state0
+  - type: RadiationBlocker
+    resistance: 5
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrong
