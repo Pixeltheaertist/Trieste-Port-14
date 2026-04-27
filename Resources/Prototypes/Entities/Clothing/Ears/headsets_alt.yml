@@ -34,8 +34,7 @@
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyCentCom
-      - EncryptionKeyStationMaster
+      - EncryptionKeyCentCom # Removed normal comms cus they don't command TP14 
   - type: Sprite
     sprite: Clothing/Ears/Headsets/centcom.rsi
   - type: Clothing

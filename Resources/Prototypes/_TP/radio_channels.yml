@@ -1,0 +1,7 @@
+- type: radioChannel
+  id: SolGov
+  name: chat-radio-solgov
+  keycode: 'y'
+  frequency: 1337
+  color: "#ffb840"
+  longRange: true
