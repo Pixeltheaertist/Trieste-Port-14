@@ -149,15 +149,18 @@
   id: MobAghostGear
   equipment:
     back: ClothingBackpackSatchelAdmin
+    belt: ClothingBeltChiefEngineerFilled # Belt for the admins :pray:
     id: AdminPDA
+    eyes: TP14ClothingEyesGlassesCoolAdmin # holy crap your so cool...
   storage:
     back:
-    - GasAnalyzer
+    # - GasAnalyzer # - ToolDebug # TP14 | Toolbelt Moment
     # - trayScanner # TP14 - AGhosts already have underfloor view.
     - AccessConfiguratorUniversal
-    - Multitool
+    # - Multitool # TP14 | Toolbelt Moment
     - SprayPainterRecharging # TP14
-    - ToolDebug # TP14
+    - ToolDebug # TP14 | I wanted to remove this... Cheese said otherwise grrrrrr
+    - TP14RubberStampSG # SolGov Stamp for admins momento
 
 #Gladiator with spear
 - type: startingGear
