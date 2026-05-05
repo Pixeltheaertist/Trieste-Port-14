@@ -828,6 +828,15 @@
 
 - type: entity
   parent: BaseSign
+  id: SignDrop
+  name: drop sign
+  description: A sign warning you to mind the gap before the gap minds you.
+  components:
+  - type: Sprite
+    state: drop
+
+- type: entity
+  parent: BaseSign
   id: SignSurgery
   name: surgery sign
   description: A sign indicating the operating theater.
