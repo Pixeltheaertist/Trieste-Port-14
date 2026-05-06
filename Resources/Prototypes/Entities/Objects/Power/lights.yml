@@ -150,6 +150,25 @@
     - LightBulb
     - Trash
 
+- type: entity  #TP14 Light for Sweetwater External Lights
+  parent: BaseLightbulb
+  name: marine light bulb
+  id: MarineLightBulb
+  description: An efficient, sturdy bulb for deep water light fixtures. Why did this come with algae on it?
+  components:
+    - type: LightBulb
+      bulb: Bulb
+      color: "#71cef0"
+      lightEnergy: 1
+      lightRadius: 8
+      lightSoftness: 3
+      BurningTemperature: 350
+      PowerUse: 5
+    - type: Tag
+      tags:
+      - LightBulb 
+      - Trash 
+
 - type: entity
   parent: BaseLightbulb
   name: dim light bulb
