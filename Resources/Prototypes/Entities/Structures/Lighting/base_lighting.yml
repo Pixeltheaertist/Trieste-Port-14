@@ -383,7 +383,7 @@
 
 - type: entity  #TP14 Sweetwater External Lights
   id: PoweredMarineSmallLight
-  suffix: Marine
+  suffix: Marine, Waterproof
   parent: PoweredSmallLightEmpty
   components:
   - type: Sprite
@@ -401,6 +401,13 @@
       types:
         Heat: 1
     popupText: powered-light-component-burn-hand
+  - type: InGas
+    gasID: 9
+    damagedByGas: false # waterproof
+    gasThreshold: 75
+    damage:
+      types:
+        Blunt: 3
 
 
 - type: entity
