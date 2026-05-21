@@ -6,6 +6,7 @@ tp14-loadout-group-jumpers-bartender = Bartender jumpers
 tp14-loadout-group-neckwear-bartender = Bartender neckwear
 tp14-loadout-group-outer-bartender = Bartender outer clothing
 tp14-loadout-group-gloves-bartender = Bartender gloves
+tp14-loadout-group-belts-bartender = Bartender belts
 
 ## Basin Technician
 loadout-group-backpack-basin-tech = Basin Technician backpacks
@@ -15,6 +16,10 @@ loadout-group-jumper-basin-tech = Basin Technician jumpers
 loadout-group-mask-basin-tech = Basin Technician masks
 loadout-group-neck-basin-tech = Basin Technician neckwear
 loadout-group-outer-basin-tech = Basin Technician outer clothing
+
+# Chef
+loadout-group-footwear-chef = Chef Footwear
+loadout-group-gloves-chef = Chef gloves
 
 # Citizen
 tp14-loadout-group-passenger-headwear = Citizen headwear
@@ -40,7 +45,8 @@ loadout-group-neck-pilot = Pilot neckwear
 loadout-group-outer-pilot = Pilot outer clothing
 
 # Medical
-loadout-group-eyewear-chemist = Chemical glasses
+loadout-group-eyewear-chemist = Chemist glasses
+loadout-group-belt-chemist = Chemist belt
 
 # Misc
 loadout-group-outer-bomber = Bomber Jacket

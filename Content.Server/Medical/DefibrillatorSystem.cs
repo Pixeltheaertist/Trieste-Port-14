@@ -47,6 +47,7 @@ public sealed class DefibrillatorSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
+    [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -185,6 +186,17 @@ public sealed class DefibrillatorSystem : EntitySystem
         _electrocution.TryDoElectrocution(target, null, component.ZapDamage, component.WritheDuration, true, ignoreInsulation: true);
         if (!TryComp<UseDelayComponent>(uid, out var useDelay))
             return;
+
+        var interacters = new HashSet<EntityUid>();
+        _interactionSystem.GetEntitiesInteractingWithTarget(target, interacters);
+        foreach (var other in interacters)
+        {
+            if (other == user)
+                continue;
+
+            // Anyone else still operating on the target gets zapped too
+            _electrocution.TryDoElectrocution(other, null, component.ZapDamage, component.WritheDuration, true);
+        }
 
         _useDelay.SetLength((uid, useDelay), component.ZapDelay, component.DelayId);
         _useDelay.TryResetDelay((uid, useDelay), id: component.DelayId);

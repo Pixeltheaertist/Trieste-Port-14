@@ -28,11 +28,12 @@ namespace Content.Client.Lobby.UI
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
         [Dependency] private readonly IConfigurationManager _configManager = default!;
+        [Dependency] private readonly IEntityManager _entityManager = default!;
         [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
         [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
         [Dependency] private readonly IClientPreferencesManager _preferencesManager = default!;
-        [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
+        [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
 
         /// <summary>
         /// Action invoked when a job is pressed
@@ -58,6 +59,8 @@ namespace Content.Client.Lobby.UI
             _crewManifest = _entitySystem.GetEntitySystem<CrewManifestSystem>();
             _gameTicker = _entitySystem.GetEntitySystem<ClientGameTicker>();
             _sawmill = _logManager.GetSawmill("latejoin.panel");
+
+            Title = Loc.GetString("late-join-gui-title");
 
             _jobRequirements.Updated += RebuildUI;
             RebuildUI();
@@ -407,9 +410,9 @@ namespace Content.Client.Lobby.UI
             }
             Amount = amount;
 
-            JobLabel.Text = Amount != null ?
-                Loc.GetString("late-join-gui-job-slot-capped", ("jobName", JobLocalisedName), ("amount", Amount)) :
-                Loc.GetString("late-join-gui-job-slot-uncapped", ("jobName", JobLocalisedName));
+            JobLabel.Text = Amount != null
+                ? Loc.GetString("late-join-gui-job-slot-capped", ("jobName", JobLocalisedName), ("amount", Amount))
+                : Loc.GetString("late-join-gui-job-slot-uncapped", ("jobName", JobLocalisedName));
         }
     }
 }

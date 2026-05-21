@@ -233,6 +233,12 @@ namespace Content.Shared.SubFloor
     [Serializable, NetSerializable]
     public enum SubfloorLayers : byte
     {
-        FirstLayer
+        Disposal = 0,   // ThickPipe = Default - 19
+        HVCable = 1,    // ThickWire = Default - 18
+        GasPipe = 2,    // ThinPipeAlt2 = Default - 17
+        MVCable = 3,    // ThinPipeAlt1 = Default - 16
+        LVCable = 4,    // ThinPipe = Default - 15
+        Misc = 5,       // ThinWire = Default - 14
+        FirstLayer = Misc
     }
 }

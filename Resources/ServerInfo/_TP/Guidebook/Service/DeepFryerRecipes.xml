@@ -1,9 +1,8 @@
 <Document>
 
-# Deep-Fried & Carnival Foods
+  ## Deep-Fried & Carnival Foods
 
-Oily treats made from your local ready fry-cook!
-
-<GuideDeepFryerGroupEmbed Group="TP14-Deep-Fry"/>
+  Oily treats made from your local ready fry-cook!
+  <GuideDeepFryerGroupEmbed Group="TP14-Deep-Fry"/>
 
 </Document>

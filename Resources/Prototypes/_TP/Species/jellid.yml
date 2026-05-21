@@ -1,6 +1,7 @@
 - type: species
   id: JellidPerson
   name: species-name-jellid
+  customName: true
   roundStart: true
   prototype: TP14MobJellidPerson
   sprites: MobJellidSprites

@@ -1,3 +1,5 @@
 - type: accessLevel
   id: External
   name: id-card-access-level-external
+  departments: # TP14
+  - DepartmentAA

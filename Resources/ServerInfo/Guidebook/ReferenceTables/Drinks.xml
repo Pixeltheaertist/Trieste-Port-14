@@ -1,6 +1,16 @@
 <Document>
-# Drinks
-Knowing how to make a requested drink is important. Here are the different drinks in the game, including their recipes:
+  # Drinks
+  Knowing how to make a requested drink is important. Here are the different drinks in the game, including their recipes:
 
-<GuideReagentGroupEmbed Group="Drinks"/>
+  ## Hard Drinks
+  <GuideReagentGroupEmbed Group="DrinksHard"/>
+
+  ## Soft Drinks
+  <GuideReagentGroupEmbed Group="DrinksSoft"/>
+
+  ## Hard Mixes
+  <GuideReagentGroupEmbed Group="DrinksHardMix"/>
+
+  ## Soft Mixes
+  <GuideReagentGroupEmbed Group="DrinksSoftMix"/>
 </Document>

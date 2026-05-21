@@ -153,9 +153,10 @@
   storage:
     back:
     - GasAnalyzer
-    - trayScanner
+    # - trayScanner # TP14 - AGhosts already have underfloor view.
     - AccessConfiguratorUniversal
     - Multitool
+    - SprayPainterRecharging # TP14
     - ToolDebug # TP14
 
 #Gladiator with spear

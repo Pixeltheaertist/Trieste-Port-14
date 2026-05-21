@@ -14,6 +14,11 @@
   id: Drinks
   name: guide-entry-drinks
   text: "/ServerInfo/Guidebook/ReferenceTables/Drinks.xml"
+  children: # TP14
+  - DrinksHard
+  - DrinksSoft
+  - DrinksHardMix
+  - DrinksSoftMix
   filterEnabled: True
 
 - type: guideEntry
@@ -22,11 +27,13 @@
   text: "/ServerInfo/Guidebook/Service/FoodRecipes.xml"
   filterEnabled: True
   children:
+  - TP14-Reactives    # TP14
+  - TP14-Tool-Recipes # TP14
   - PizzaRecipes
   - SavoryRecipes
   - BreadRecipes
   - BreakfastRecipes
-  - TP14-Deep-Fry # TP14
+  - TP14-Deep-Fry     # TP14
   - MothRecipes
   - PastaRecipes
   - DessertRecipes

@@ -1,14 +1,24 @@
 - type: accessLevel
   id: Command
   name: id-card-access-level-command
+  departments:
+  - DepartmentAA
+  - Command # TP14
 
 - type: accessLevel
   id: Captain
   name: id-card-access-level-captain
+  departments:
+  - DepartmentAA
+  - Command # TP14
 
 - type: accessLevel
   id: HeadOfPersonnel
   name: id-card-access-level-head-of-personnel
+  departments:
+  - DepartmentAA
+  - Command # TP14
+  - Civilian
 
 - type: accessGroup
   id: Command
@@ -22,7 +32,7 @@
   - HeadOfSecurity
   - Quartermaster
   - ResearchDirector
-  
+
 - type: accessLevel
   id: EmergencyShuttleRepealAll
   name: id-card-access-level-emergency-shuttle-repeal
@@ -31,3 +41,6 @@
 - type: accessLevel
   id: Cryogenics
   name: id-card-access-level-cryogenics
+  departments: # TP14
+  - DepartmentAA
+  - Medical

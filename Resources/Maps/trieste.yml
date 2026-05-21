@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.4.0
   forkId: ""
   forkVersion: ""
-  time: 03/09/2026 20:57:59
-  entityCount: 12893
+  time: 03/14/2026 02:20:23
+  entityCount: 12894
 maps:
 - 1
 grids:
@@ -4753,6 +4753,11 @@ entities:
             424: -1.0668488,4.757694
             425: -1.0668488,4.757694
             426: -1.0668488,4.757694
+        - node:
+            color: '#FFD346FF'
+            id: trade
+          decals:
+            4215: -10.007347,32.986153
     - type: GridAtmosphere
       version: 2
       data:
@@ -6347,7 +6352,7 @@ entities:
       pos: 49.5,-23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -25377.818
+      secondsUntilStateChange: -27603.637
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6528,7 +6533,7 @@ entities:
       pos: 47.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -93081.61
+      secondsUntilStateChange: -95307.43
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6597,7 +6602,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -355788.78
+      secondsUntilStateChange: -358014.6
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6609,6 +6614,8 @@ entities:
     - type: Transform
       pos: -15.5,8.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 57
     components:
     - type: MetaData
@@ -6616,6 +6623,8 @@ entities:
     - type: Transform
       pos: -14.5,8.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 58
     components:
     - type: MetaData
@@ -6696,6 +6705,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: -21.5,11.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 5955
     components:
     - type: MetaData
@@ -6733,18 +6744,6 @@ entities:
       parent: 2
     - type: AccessReader
       accessListsOriginal: []
-- proto: AirlockExternalGlassBell
-  entities:
-  - uid: 4304
-    components:
-    - type: Transform
-      pos: -24.5,6.5
-      parent: 2
-  - uid: 12889
-    components:
-    - type: Transform
-      pos: -23.5,6.5
-      parent: 2
 - proto: AirlockExternalGlassBellFilled
   entities:
   - uid: 69
@@ -6821,7 +6820,7 @@ entities:
       pos: 36.5,17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3427.7527
+      secondsUntilStateChange: -5653.5703
       state: Opening
     - type: AccessReader
       accessListsOriginal: []
@@ -6993,7 +6992,7 @@ entities:
       pos: 18.5,23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -394904.56
+      secondsUntilStateChange: -397130.38
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7007,6 +7006,8 @@ entities:
     - type: Transform
       pos: -16.5,14.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
 - proto: AirlockMaintLawyerLocked
   entities:
   - uid: 82
@@ -7318,7 +7319,7 @@ entities:
       pos: 33.5,-26.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -971.98846
+      secondsUntilStateChange: -3197.806
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7334,7 +7335,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -23945.607
+      secondsUntilStateChange: -26171.426
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7486,7 +7487,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -371486.3
+      secondsUntilStateChange: -373712.12
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -29291,7 +29292,7 @@ entities:
       pos: -10.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -68647.664
+      secondsUntilStateChange: -70873.484
       state: Opening
   - uid: 10921
     components:
@@ -38697,20 +38698,10 @@ entities:
     - type: Transform
       pos: 28.5,39.5
       parent: 2
-  - uid: 4310
-    components:
-    - type: Transform
-      pos: -25.5,6.5
-      parent: 2
   - uid: 4754
     components:
     - type: Transform
       pos: -5.5,22.5
-      parent: 2
-  - uid: 4928
-    components:
-    - type: Transform
-      pos: -22.5,6.5
       parent: 2
   - uid: 5047
     components:
@@ -40128,7 +40119,7 @@ entities:
       pos: 12.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -125657.234
+      secondsUntilStateChange: -127883.055
       state: Closing
   - uid: 3844
     components:
@@ -41475,6 +41466,16 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 27.5,7.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 9299
+    components:
+    - type: MetaData
+      desc: "A worn old noticed board. On the middle of the board is a sheet reading: 'Remember to check the Storm Array out back. The thing keeps breakin' whenever we look away for too long. Just fix the piping on the floor and keep it cold.'"
+      name: Storm Array Notice
+    - type: Transform
+      pos: -16.5,8.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -45401,6 +45402,11 @@ entities:
     - type: Transform
       pos: -18.5,6.5
       parent: 2
+  - uid: 4304
+    components:
+    - type: Transform
+      pos: -23.5,6.5
+      parent: 2
   - uid: 4306
     components:
     - type: Transform
@@ -45422,6 +45428,11 @@ entities:
     components:
     - type: Transform
       pos: -19.5,6.5
+      parent: 2
+  - uid: 4310
+    components:
+    - type: Transform
+      pos: -24.5,6.5
       parent: 2
   - uid: 4312
     components:
@@ -47238,6 +47249,11 @@ entities:
     components:
     - type: Transform
       pos: 16.5,-5.5
+      parent: 2
+  - uid: 4928
+    components:
+    - type: Transform
+      pos: -22.5,6.5
       parent: 2
   - uid: 4964
     components:
@@ -49322,6 +49338,12 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 34.5,29.5
+      parent: 2
+  - uid: 5438
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -25.5,6.5
       parent: 2
   - uid: 6253
     components:
@@ -52934,6 +52956,15 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: SignElectricalMed
+  entities:
+  - uid: 12889
+    components:
+    - type: Transform
+      pos: -16.875221,8.463542
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: SignEngineering
   entities:
   - uid: 5337
@@ -53979,15 +54010,6 @@ entities:
       name: platform map
     - type: Transform
       pos: 26.5,4.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-  - uid: 5438
-    components:
-    - type: MetaData
-      name: platform map
-    - type: Transform
-      pos: -16.5,8.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -79728,7 +79750,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -352005.66
+      secondsUntilStateChange: -354231.47
       state: Opening
     - type: Airlock
       autoClose: False
@@ -80526,7 +80548,7 @@ entities:
       pos: 39.5,45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -48775.13
+      secondsUntilStateChange: -51000.945
       state: Opening
   - uid: 6259
     components:

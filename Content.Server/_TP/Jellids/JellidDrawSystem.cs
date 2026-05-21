@@ -3,6 +3,7 @@ using Content.Shared._TP.Jellids;
 using Content.Shared.Alert;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Electrocution;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
@@ -33,6 +34,16 @@ public sealed class JellidDrawSystem : EntitySystem
 
         SubscribeLocalEvent<JellidComponent, ChargeChangedEvent>(OnChargeChanged);
         SubscribeLocalEvent<JellidComponent, ComponentShutdown>(OnShutdown);
+        SubscribeLocalEvent<JellidComponent, ElectrocutedEvent>(OnElectrocution);
+    }
+
+    private void OnElectrocution(Entity<JellidComponent> ent, ref ElectrocutedEvent args)
+    {
+        if (!TryComp<BatteryComponent>(ent.Owner, out var battery))
+            return;
+
+        var chargeGain = 100f * args.SiemensCoefficient;
+        _battery.SetCharge(ent.Owner, Math.Min(battery.CurrentCharge + chargeGain, battery.MaxCharge));
     }
 
     private void OnShutdown(Entity<JellidComponent> ent, ref ComponentShutdown args)
