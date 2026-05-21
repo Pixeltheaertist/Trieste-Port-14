@@ -63,7 +63,7 @@
           False: {state: icon}
   - type: PowerCellDraw
     drawRate: 1
-    useCharge: 0
+    useRate: 0
   - type: ToggleCellDraw
   - type: ItemToggle
   - type: ProximityBeeper
