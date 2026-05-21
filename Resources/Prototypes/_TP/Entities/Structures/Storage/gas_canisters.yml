@@ -6,8 +6,9 @@
   description: It's GAS canister! Who the hell put water in it?
   components:
   - type: Sprite
+    sprite: _TP/Structures/Storage/canisters.rsi
     layers:
-    - state: yellow # You can replace it with water canister sprite if you'll make one
+    - state: water # You can replace it with water canister sprite if you'll make one
   - type: GasCanister
     gasMixture:
       volume: 1500
@@ -45,4 +46,5 @@
   name: broken water canister
   components:
   - type: Sprite
-    state: yellow-1
+    sprite: _TP/Structures/Storage/canisters.rsi
+    state: water-1
