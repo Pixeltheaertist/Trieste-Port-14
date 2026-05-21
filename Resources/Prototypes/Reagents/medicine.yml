@@ -4,8 +4,9 @@
   group: Medicine
   desc: reagent-desc-cryptobiolin
   physicalDesc: reagent-physical-desc-fizzy
-  allowedDepartments:
-  - Medical
+  #allowedDepartments:
+  #- Medical
+  contrabandSeverity: C1M #TP14
   flavor: medicine
   color: "#081a80"
   metabolisms:
@@ -424,8 +425,9 @@
   group: Medicine
   desc: reagent-desc-ipecac
   physicalDesc: reagent-physical-desc-inky
-  allowedDepartments:
-  - Medical
+  #allowedDepartments:
+  #- Medical
+  contrabandSeverity: C1M #TP14
   flavor: medicine
   color: "#422912"
   metabolisms:
@@ -537,6 +539,7 @@
   desc: reagent-desc-barozine
   physicalDesc: reagent-physical-desc-viscous
   flavor: medicine
+  contrabandSeverity: C1M #TP14
   color: "#ff867d"
   metabolisms:
     Medicine:
@@ -583,6 +586,7 @@
   desc: reagent-desc-phalanximine
   physicalDesc: reagent-physical-desc-acrid
   flavor: medicine
+  contrabandSeverity: C1M #TP14
   color: "#c8ff75"
   plantMetabolism:
     - !type:PlantAdjustToxins
@@ -755,6 +759,7 @@
   desc: reagent-desc-synaptizine
   physicalDesc: reagent-physical-desc-pungent
   flavor: medicine
+  contrabandSeverity: C1S #TP14
   color: "#d49a2f"
   metabolisms:
     Poison:
@@ -828,8 +833,9 @@
   name: reagent-name-lipozine
   group: Medicine
   desc: reagent-desc-lipozine
-  allowedDepartments:
-  - Medical
+  #allowedDepartments:
+  #- Medical
+  contrabandSeverity: C1M #TP14
   physicalDesc: reagent-physical-desc-oily
   flavor: medicine
   color: "#2690b5"
@@ -866,6 +872,7 @@
   desc: reagent-desc-ultravasculine
   physicalDesc: reagent-physical-desc-thick-and-grainy
   flavor: medicine
+  contrabandSeverity: C1M #TP14
   color: "#520e30"
   metabolisms:
     Medicine:
@@ -1360,6 +1367,7 @@
   desc: reagent-desc-psicodine
   physicalDesc: reagent-physical-desc-shiny
   flavor: bitter
+  contrabandSeverity: C1M #TP14
   color: "#07E79E"
   metabolisms:
     Medicine:
