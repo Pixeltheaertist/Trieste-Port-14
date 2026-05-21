@@ -144,6 +144,7 @@
   desc: reagent-desc-zombie-blood
   physicalDesc: reagent-physical-desc-necrotic
   flavor: bitter
+  contrabandSeverity: C2C #TP14
   color: "#2b0700"
   metabolisms:
     Drink:

@@ -1,0 +1,50 @@
+<Document>
+ # Sentencing
+  Security teams should ensure that they are only placing sentences exceeding 20 minutes where the prisoner is otherwise eligible for permanent confinement. Prisoners already serving a sentence can always have their sentence increased if they commit crimes in the brig. 
+  The Marshal and Warden must ensure that prisoners are given fair sentences, and work to correct any inappropriate sentence.
+  Unreasonable failures to ensure just punishment is liable to intervention by SolGov.  
+
+  Follow common sense when determining sentences for prisoners. Follow the spirit of the law, rather than the exact wording. You do not have to find the harshest possible sentence, only the punishment that is fair for the prisoner to learn their lesson.
+  For example, a citizen tresspassing can simply be escorted out and warned, instead of being arrested. A cooperative prisoner can be given a slightly reduced sentence.
+
+  ## Charging Order 
+  Charging and processing should be done by the first available person in the following order:
+  - Warden
+  - Marshal
+  - Uninvolved Officer
+  - Arresting Officer
+  - Overseer
+  If none of the above are available, the Cadets may step in to charge prisoners. Any person on the list may defer to the next in line if they are urgently needed elsewhere. This provision should be used sparingly.
+
+  ## Sentencing Procedure 
+  - The Arresting Officer should leave the suspect in the holding cell until another security member comes to process the prisoner.
+  - The processor must determing the charges and sentence for the prisoner
+  - Inform the prisoner of their charges and sentence, and move them to the genpop lockers
+  - If the sentence is 15 minutes or longer, inform them of their right to appeal. If the sentence is permanent confinement, inform them of the option of parole.
+  - Remove all of their belongings, including uniform, PDA, and headset. 
+  - Provide them with the orange jumpsuit and common radio headset. 
+  - Search their belongings. Confiscate any contraband and store it in a seperate evidence locker. 
+  - Input their name, sentence, and charges in their locker. Provide them with their prisoner ID.
+  - Bring the prisoner into the brig, then remove their restraints.
+
+  [color=#a4885c]Stackable Crimes:[/color] Crimes are to be considered 'stackable' in the sense that if you charge someone with two or more different crimes, you should combine the times you would give them for each crime. Linked crimes, shown in matching colors and suffixes on the Quick Crime Guide, can not be stacked and instead override each other, you should pick the highest crime that matches the case.
+
+  - Example: A suspect has committed a 2-01 (possession: major) and a 3-01 (possession: highly illegal). The maximum sentence here would be 10 minutes due to them being linked crimes, and 3-01 is the greater crime.
+  - Example 2: A suspect commits a 3-04 (Secure trespassing) and a 3-06 (manslaughter). Those crimes stack since they are not linked crimes. You could sentence for a maximum of 20 minutes, but context matters heavily, and maximum sentences should only be used for the worst offenders.
+
+  [color=#a4885c]Repeater Offenders:[/color] Repeated crimes are when someone is released for a crime and then goes to commit the same crime within the same shift. Repeated crimes can be charged with tacked-on time; first repeat: 3:00, second repeat: 6:00, third repeat: permanent confinement. It should be noted each tacked-on time is directly linked to one type of crime, so for example, if someone does their first repeat of trespass and petty theft, you can charge them with an extra 6 minutes.
+
+  [color=#a4885c]Accessory, Attempting, And Intention:[/color] If someone intentionally, knowingly and substantially assists someone in enacting a crime they can be charged with the relevant crimes, such as an engineer giving someone tools, who says they are going to break into an area.
+   Same goes for a clear and solid attempt at a crime, or a person who shows clear intent to act out a crime; such as someone being found next to a secured door with the panel open, with tools and insulated gloves. This could be charged as Trespassing. Does not apply to crimes that have an attempted listing already, like attempted murder.
+   
+   Accessory, Attempted, and suspects with clear intention may be charged with the crime with they are attempting.
+
+  ## Normal Punishments
+  - [color=#a4885c]Warning:[/color] For minor crimes, fix the issue, then warn the person not to attempt the crime again. If they still proceed to do it at a later date, a brig time may be better.
+  - [color=#a4885c]Confinement:[/color] The typical punishment, being confined in the brig for a temporary amount of time according to the crimes.
+  - [color=#a4885c]Demotion:[/color] Entails removing all departmental gear they have on their person and revoking the involved department access off their ID. This requires the overseer's or involved department head's approval. Demotions should only be issued if the person pose a threat to their own department or are in a position where they have/can abuse their job's gear to commit further crimes.
+
+  ## Major Punishments
+  - [color=#a4885c]Permanent Confinement:[/color] Being held in the permanent brig for the entire duration of the shift. A person is eligible for permanent confinement if their timed sentence would exceed 15 minutes. Any persons subject to this punishment are required to be transported in cuffs to a SolGov facility at the end of the shift. A permanent prisoner can not be deprived of anything covered by the section "Treatment Of Prisoners".
+  - [color=#a4885c]Execution:[/color] A humane way of dealing with extremely unruly crewmates. Within reason, a prisoner who has been given the death sentence may pick how they wish to be killed, common methods are firing line, lethal injection, exile, and high voltage electrocution. Another alternate method of "execution" is the process of placing a staff's mind into a borg, this is allowed so long as it is lawful. Executions can only be authorized by the Overseer. If no Overseer is present and an Acting Overseer is appointed, all heads of staff are to hold a vote on the matter.
+</Document>
