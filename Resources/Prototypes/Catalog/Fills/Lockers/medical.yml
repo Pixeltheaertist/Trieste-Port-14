@@ -130,6 +130,8 @@
     - id: ClothingHeadsetMedical
     - id: ClothingMaskSterile
     - id: HandheldGPSBasic
+    - id: EmergencyBeaconLocator # TP14
+    - id: SurvivalKnife # TP14
     - id: MedkitFilled
       prob: 0.3
 
