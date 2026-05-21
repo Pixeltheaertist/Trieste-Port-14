@@ -48,12 +48,14 @@
   id: CrateEngineeringSingularityCollector
   parent: CrateEngineeringSecure
   name: radiation collector crate
-  description: A radiation collector, best used for singularity engines. Plasma is included.
+  description: A set of 3 radiation collectors for generating power. Plasma tanks are also included.
   components:
   - type: StorageFill
     contents:
       - id: RadiationCollectorFlatpack
+        amount: 3
       - id: PlasmaTankFilled
+        amount: 3
 
 - type: entity
   id: CrateEngineeringSingularityContainment
@@ -156,11 +158,12 @@
   id: CrateEngineeringTeslaCoil
   parent: CrateEngineeringSecure
   name: tesla coil crate
-  description: Tesla coil. Attracts lightning and generates energy from it.
+  description: A crate containing 3 flatpacked tesla coils. Attracts lightning and generates energy from it.
   components:
   - type: StorageFill
     contents:
       - id: TeslaCoilFlatpack
+        amount: 3
 
 - type: entity
   id: CrateEngineeringTeslaGroundingRod
