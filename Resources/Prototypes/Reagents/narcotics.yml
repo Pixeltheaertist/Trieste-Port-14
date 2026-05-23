@@ -4,7 +4,7 @@
   group: Narcotics
   desc: reagent-desc-desoxyephedrine
   physicalDesc: reagent-physical-desc-translucent
-  contrabandSeverity: Major
+  contrabandSeverity: C2S #TP14
   flavor: bitter
   color: "#FAFAFA"
   boilingPoint: 212.0  # Dexosyephedrine vape when?
@@ -63,7 +63,7 @@
   group: Narcotics
   desc: reagent-desc-ephedrine
   physicalDesc: reagent-physical-desc-powdery
-  contrabandSeverity: Minor
+  contrabandSeverity: C2C #TP14
   flavor: bitter
   color: "#D2FFFA"
   boilingPoint: 255.0
@@ -118,7 +118,7 @@
   group: Narcotics
   desc: reagent-desc-stimulants
   physicalDesc: reagent-physical-desc-energizing
-  contrabandSeverity: Syndicate
+  contrabandSeverity: C3S #TP14
   flavor: sharp
   color: "#9A040E"
   boilingPoint: 212.0
@@ -226,7 +226,7 @@
   group: Narcotics
   desc: reagent-desc-impedrezene
   physicalDesc: reagent-physical-desc-acrid
-  contrabandSeverity: Minor
+  contrabandSeverity: C1N #TP14
   flavor: bitter
   color: "#215263"
   metabolisms:
@@ -255,6 +255,7 @@
   desc: reagent-desc-space-drugs
   physicalDesc: reagent-physical-desc-syrupy
   flavor: bitter
+  contrabandSeverity: C1N #TP14
   color: "#63806e"
   metabolisms:
     Narcotic:
@@ -287,7 +288,7 @@
   group: Narcotics
   desc: reagent-desc-nocturine
   physicalDesc: reagent-physical-desc-powdery
-  contrabandSeverity: Syndicate
+  contrabandSeverity: C2S #TP14
   color: "#128e80"
   boilingPoint: 444.0
   meltingPoint: 128.0
@@ -312,7 +313,7 @@
   group: Narcotics
   desc: reagent-desc-mute-toxin
   physicalDesc: reagent-physical-desc-syrupy
-  contrabandSeverity: Syndicate
+  contrabandSeverity: C2S #TP14
   color: "#000000"
   boilingPoint: 255.0
   meltingPoint: 36.0
@@ -331,7 +332,7 @@
   group: Narcotics
   desc: reagent-desc-norepinephric-acid
   physicalDesc: reagent-physical-desc-milky
-  contrabandSeverity: Minor
+  contrabandSeverity: C2S #TP14
   flavor: salty
   color: "#96a8b5"
   boilingPoint: 255.0
@@ -378,8 +379,7 @@
   group: Narcotics
   desc: reagent-desc-tear-gas
   physicalDesc: reagent-physical-desc-milky
-  allowedDepartments:
-  - Security
+  contrabandSeverity: C1S #TP14
   flavor: salty
   color: "#ffffff4d"
   boilingPoint: 255.0
@@ -440,6 +440,7 @@
   desc: reagent-desc-happiness
   physicalDesc: reagent-physical-desc-soothing
   flavor: paintthinner
+  contrabandSeverity: C1N #TP14
   color: "#EE35FF"
   metabolisms:
     Narcotic:

@@ -22,6 +22,8 @@
   - HandheldStationMap
   - ClothingHeadHatWelding
   - ClothingHeadHatCone
+  - EmergencyBeacon # TP14
+  - EmergencyBeaconLocator # TP14
 
 - type: latheRecipePack
   id: AtmosStatic
