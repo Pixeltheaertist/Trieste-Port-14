@@ -158,7 +158,7 @@
   components:
     - type: LightBulb
       bulb: Bulb
-      color: "#71cef0"
+      color: "#76a0b0"
       lightEnergy: 1
       lightRadius: 8
       lightSoftness: 3

@@ -383,7 +383,7 @@
 
 - type: entity  #TP14 Sweetwater External Lights
   id: PoweredMarineSmallLight
-  suffix: Marine, Waterproof
+  suffix: Marine, Waterproof, Trieste
   parent: PoweredSmallLightEmpty
   components:
   - type: Sprite
@@ -393,7 +393,7 @@
     radius: 8
     energy: 1
     softness: 3
-    color: "#71cef0"
+    color: "#76a0b0"
   - type: PoweredLight
     hasLampOnSpawn: MarineLightBulb
   - type: DamageOnInteract
