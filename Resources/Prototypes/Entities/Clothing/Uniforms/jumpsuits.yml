@@ -23,7 +23,7 @@
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
   id: ClothingUniformJumpsuitBartender
-  name: bartender's uniform
+  name: bartender's jumpsuit # TP14 - Was "bartender's uniform"
   description: A nice and tidy uniform. Shame about the bar though.
   components:
   - type: Sprite
@@ -47,7 +47,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitBartenderPurple
-  name: purple bartender's uniform
+  name: purple bartender's jumpskirt # TP14 - Was "purple bartender's uniform"
   description: A special purple outfit to serve drinks.
   components:
   - type: Sprite
@@ -151,7 +151,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitChef
-  name: chef uniform
+  name: chef jumpsuit # TP14 - Was "chef uniform"
   description: Can't cook without this.
   components:
   - type: Sprite

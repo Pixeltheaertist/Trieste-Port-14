@@ -7,3 +7,13 @@
   cost: 1500
   category: cargoproduct-category-name-atmospherics
   group: market
+
+- type: cargoProduct
+  id: AtmosphericsSell
+  icon:
+    sprite: _TP/Structures/Storage/canisters.rsi
+    state: engi
+  product: TP14EngiCanister
+  cost: 100
+  category: cargoproduct-category-name-atmospherics
+  group: market

@@ -80,6 +80,7 @@
   - TP14GroupBartenderNeckwear
   - TP14BartenderGloves
   - TP14GroupBartenderFootwear
+  - TP14GroupBartenderBelts
   - Glasses
   - Survival
   - Trinkets
@@ -99,22 +100,25 @@
   - TP14GroupSpeciesBreathTool # TP14
   - TP14GroupSpeciesBreathToolNeck # TP14
 
-- type: roleLoadout
+- type: roleLoadout # TP14 - This has been overhauled
   id: JobChef
   groups:
+  # Required
+  - TP14GroupSpeciesBreathTool
+  - TP14GroupSpeciesBreathToolNeck
   - GroupTankHarness
-  - ChefHead
-  - ChefMask
   - ChefJumpsuit
-  - CommonBackpack
   - ChefOuterClothing
+  - CommonBackpack
+  - ChefHead
+  # Optional
+  - ChefMask
+  - GroupChefGloves
+  - GroupChefFootwear
   - Glasses
   - Survival
   - Trinkets
   - ChefJobTrinkets
-#  - GroupSpeciesBreathTool # TP14
-  - TP14GroupSpeciesBreathTool # TP14
-  - TP14GroupSpeciesBreathToolNeck # TP14
 
 - type: roleLoadout
   id: JobLibrarian
@@ -578,6 +582,7 @@
   - MedicalMask
   - MedicalGloves
   - MedicalShoes
+  - GroupChemistBelt
   - Trinkets
   - ChemistJobTrinkets
 
@@ -620,6 +625,8 @@
   groups:
   - GroupTankHarness
   - ReporterJumpsuit
+  - ReporterHead
+  - ReporterOuterClothing
   - CommonBackpack
   - Glasses
   - Survival

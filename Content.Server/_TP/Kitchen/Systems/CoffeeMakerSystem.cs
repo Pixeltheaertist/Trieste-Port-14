@@ -37,7 +37,7 @@ public sealed class CoffeeMakerSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<SharedCoffeeMakerComponent, GetVerbsEvent<AlternativeVerb>>(OnAlternativeVerb);
+        SubscribeLocalEvent<SharedCoffeeMakerComponent, GetVerbsEvent<ActivationVerb>>(OnActivationVerb);
         SubscribeLocalEvent<SharedCoffeeMakerComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
         SubscribeLocalEvent<SharedCoffeeMakerComponent, EntInsertedIntoContainerMessage>(OnEntInserted);
         SubscribeLocalEvent<SharedCoffeeMakerComponent, ContainerIsRemovingAttemptEvent>(OnAttemptRemove);
@@ -94,7 +94,7 @@ public sealed class CoffeeMakerSystem : EntitySystem
     /// </summary>
     /// <param name="ent">CoffeeMaker entity</param>
     /// <param name="args">AlternativeVerb arguments</param>
-    private void OnAlternativeVerb(Entity<SharedCoffeeMakerComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
+    private void OnActivationVerb(Entity<SharedCoffeeMakerComponent> ent, ref GetVerbsEvent<ActivationVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract)
             return;
@@ -102,7 +102,7 @@ public sealed class CoffeeMakerSystem : EntitySystem
         if (!ent.Comp.IsEnabled)
         {
             var user = args.User;
-            var verb = new AlternativeVerb
+            var verb = new ActivationVerb
             {
                 Text = Loc.GetString("coffee-maker-verb-enable"),
                 Act = () => AttemptEnable(ent, user),

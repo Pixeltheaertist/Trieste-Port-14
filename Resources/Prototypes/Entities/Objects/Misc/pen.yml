@@ -26,6 +26,16 @@
         maxDistance: 2
   - type: UseDelay
     delay: 1.5
+  - type: EmbeddableProjectile
+    offset: 0.3,0.0
+    removalTime: 0.0
+  - type: ThrowingAngle
+    angle: 315
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 1
   - type: Fixtures
     fixtures:
       fix1:
@@ -43,25 +53,19 @@
 
 - type: entity
   parent: Pen
-  id: PenEmbeddable
+  id: BasePenFancy
   abstract: true
   components:
-  - type: EmbeddableProjectile
-    offset: 0.3,0.0
-    removalTime: 0.0
-  - type: ThrowingAngle
-    angle: 315
-  - type: LandAtCursor
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 3
+        Piercing: 3 #nothing shows luxury like inflicting injury
 
 #TODO: I want the luxury pen to write a cool font like Merriweather in the future.
 
 - type: entity
   name: luxury pen
-  parent: Pen
+  parent: BasePenFancy
   id: LuxuryPen
   description: A fancy and expensive pen that you only deserve to own if you're qualified to handle vast amounts of paperwork.
   components:
@@ -72,13 +76,14 @@
 
 - type: entity
   id: BaseAdvancedPen
-  parent: PenEmbeddable
+  parent: BasePenFancy
   abstract: true
   components:
   - type: Tag
     tags:
     - Write
     - WriteIgnoreStamps
+    - Pickaxe
     - Pen
   - type: MeleeWeapon
     wideAnimationRotation: -45
@@ -118,8 +123,8 @@
     heldPrefix: pen_centcom
 
 - type: entity
-  name: overseer's fountain pen
-  parent: PenEmbeddable
+  name: captain's fountain pen
+  parent: BasePenFancy
   id: PenCap
   description: A luxurious fountain pen for the captain of the station.
   components:
@@ -128,7 +133,7 @@
 
 - type: entity
   name: hop's fountain pen
-  parent: PenEmbeddable
+  parent: BasePenFancy
   id: PenHop
   description: A luxurious fountain pen for the hop of the station.
   components:
@@ -137,7 +142,7 @@
 
 - type: entity
   name: wizard's magical pen
-  parent: [ PenEmbeddable, BaseMagicalContraband ]
+  parent: [ BasePenFancy, BaseMagicalContraband ]
   id: PenWiz
   description: A luxurious fountain pen. Seems to have a magical crystal eraser.
   components:

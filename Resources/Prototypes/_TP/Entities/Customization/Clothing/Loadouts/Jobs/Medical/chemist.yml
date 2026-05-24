@@ -7,3 +7,11 @@
   - TP14LoadoutEyewearChemistryEyepatch
   - MedicalHud
   - MedicalEyePatchHud
+
+- type: loadoutGroup
+  id: GroupChemistBelt
+  name: loadout-group-belt-chemist
+  minLimit: 0
+  defaultSelected: 1
+  loadouts:
+  - TP14LoadoutBeltChemBag

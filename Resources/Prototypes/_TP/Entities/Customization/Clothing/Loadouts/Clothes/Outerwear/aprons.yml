@@ -7,6 +7,7 @@
   id: TP14LoadoutOuterApronBar
   equipment:
     outerClothing: ClothingOuterApronBar
+  groupBy: bartenderVests
 
 - type: loadout
   id: TP14LoadoutOuterApronBotanist

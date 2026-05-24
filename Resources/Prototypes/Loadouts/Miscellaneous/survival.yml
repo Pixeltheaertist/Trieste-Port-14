@@ -246,8 +246,6 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: EffectSpeciesMask
-  - !type:GroupLoadoutEffect # TP14
-    proto: TP14EffectSpeciesMask
   equipment:
     outerClothing: ClothingOuterVestTank
 

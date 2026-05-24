@@ -12,3 +12,18 @@
         reagents:
         - ReagentId: Calcium
           Quantity: 200
+
+- type: entity
+  parent: Jug
+  suffix: Trieste, Sea Water
+  id: TP14EntJugSeaWater
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Label
+    currentLabel: reagent-name-seawater
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: SeaWater
+          Quantity: 200

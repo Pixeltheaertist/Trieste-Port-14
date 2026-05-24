@@ -1,14 +1,24 @@
 - type: accessLevel
   id: ChiefEngineer
   name: id-card-access-level-chief-engineer
+  departments: # TP14
+  - DepartmentAA
+  - Command
+  - Engineering
 
 - type: accessLevel
   id: Engineering
   name: id-card-access-level-engineering
+  departments: # TP14
+  - DepartmentAA
+  - Engineering
 
 - type: accessLevel
   id: Atmospherics
   name: id-card-access-level-atmospherics
+  departments: # TP14
+  - DepartmentAA
+  - Engineering
 
 - type: accessGroup
   id: Engineering

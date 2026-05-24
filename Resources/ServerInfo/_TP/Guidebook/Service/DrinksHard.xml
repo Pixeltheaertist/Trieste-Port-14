@@ -1,0 +1,6 @@
+<Document>
+  # Hard Drinks
+  These drinks contain ethanol. Perfect after a long day's work!
+
+  <GuideReagentGroupEmbed Group="DrinksHard"/>
+</Document>

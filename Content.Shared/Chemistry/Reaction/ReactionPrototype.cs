@@ -84,6 +84,11 @@ namespace Content.Shared.Chemistry.Reaction
         [DataField("priority")]
         public int Priority;
 
+        // TRIESTE SPECIFIC - START //
+        // Guidebook Group for food recipes
+        [DataField]
+        public string Group = "Other";
+
         /// <summary>
         /// Determines whether or not this reaction creates a new chemical (false) or if it's a breakdown for existing chemicals (true)
         /// Used in the chemistry guidebook to make divisions between recipes and reaction sources.

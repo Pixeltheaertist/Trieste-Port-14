@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtBartender
-  name: bartender's uniform
+  name: bartender's jumpskirt # TP14 - Was "bartender's uniform"
   description: A nice and tidy uniform. Shame about the bar though.
   components:
   - type: Sprite
@@ -67,7 +67,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtChef
-  name: chef uniform
+  name: chef jumpskirt # TP14 - Was "chef uniform"
   description: Can't cook without this.
   components:
   - type: Sprite

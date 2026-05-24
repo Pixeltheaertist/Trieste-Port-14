@@ -1,5 +1,7 @@
 - type: reaction
   id: Curdling
+  name: Cheese          # TP14
+  group: TP14-Reactives # TP14
   impact: Low
   quantized: true
   conserveEnergy: false
@@ -15,6 +17,8 @@
 
 - type: reaction
   id: ChevreCurdling
+  name: Chevre          # TP14
+  group: TP14-Reactives # TP14
   impact: low
   quantized: true
   conserveEnergy: false
@@ -30,6 +34,8 @@
 
 - type: reaction
   id: CreateDough
+  name: Dough           # TP14
+  group: TP14-Reactives # TP14
   impact: Low
   quantized: true
   conserveEnergy: false
@@ -44,6 +50,8 @@
 
 - type: reaction
   id: CreateCornmealDough
+  name: Cornmeal Dough  # TP14
+  group: TP14-Reactives # TP14
   impact: Low
   quantized: true
   conserveEnergy: false
@@ -60,6 +68,8 @@
 
 - type: reaction
   id: CreateTortillaDough
+  name: Tortilla Dough  # TP14
+  group: TP14-Reactives # TP14
   impact: Low
   quantized: true
   conserveEnergy: false
@@ -74,6 +84,8 @@
 
 - type: reaction
   id: CreateDoughCotton
+  name: Cotton Dough    # TP14
+  group: TP14-Reactives # TP14
   impact: Low
   quantized: true
   conserveEnergy: false
@@ -90,6 +102,8 @@
 
 - type: reaction
   id: CreateCakeBatter
+  name: Cake Batter     # TP14
+  group: TP14-Reactives # TP14
   impact: Low
   quantized: true
   conserveEnergy: false
@@ -108,6 +122,8 @@
 
 - type: reaction
   id: CreateButter
+  name: Butter          # TP14
+  group: TP14-Reactives # TP14
   impact: Low
   quantized: true
   conserveEnergy: false
@@ -123,6 +139,8 @@
 
 - type: reaction
   id: CreatePieDough
+  name: Pie Dough       # TP14
+  group: TP14-Reactives # TP14
   impact: Low
   quantized: true
   conserveEnergy: false
@@ -142,6 +160,8 @@
 # Maybe change this if you want to do allergies or something
 - type: reaction
   id: CreateVeganCakeBatter
+  name: Vegan Cake Batter   # TP14
+  group: TP14-Reactives     # TP14
   impact: Low
   quantized: true
   conserveEnergy: false
@@ -158,6 +178,8 @@
 
 - type: reaction
   id: CreateTofu
+  name: Tofu            # TP14
+  group: TP14-Reactives # TP14
   impact: Low
   quantized: true
   conserveEnergy: false
@@ -173,6 +195,8 @@
 
 - type: reaction
   id: CreateMeatball
+  name: Meatball        # TP14
+  group: TP14-Reactives # TP14
   impact: Low
   quantized: true
   conserveEnergy: false
@@ -189,6 +213,8 @@
 
 - type: reaction
   id: CreateChocolate
+  name: Chocolate Bar   # TP14
+  group: TP14-Reactives # TP14
   impact: Low
   quantized: true
   conserveEnergy: false

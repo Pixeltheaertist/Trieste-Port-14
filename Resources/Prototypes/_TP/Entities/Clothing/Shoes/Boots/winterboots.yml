@@ -1,0 +1,299 @@
+- type: entity
+  parent: ClothingShoesBaseWinterBoots
+  id: TP14EntClothesBlackWinterBoots
+  name: black winter boots
+  suffix: Trieste, Footwear
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Shoes/Boots/colorable-winterboots.rsi
+    layers:
+    - state: icon
+      color: "#3f3f3f"
+    - state: soles-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3f3f3f"
+      - state: soles-inhand-left
+      right:
+      - state: inhand-right
+        color: "#3f3f3f"
+      - state: soles-inhand-right
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/Boots/winterboots.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        color: "#1d1d1d"
+      - state: soles-equipped-FEET
+
+- type: entity
+  parent: ClothingShoesBaseWinterBoots
+  id: TP14EntClothesWhiteWinterBoots
+  name: white winter boots
+  suffix: Trieste, Footwear
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Shoes/Boots/colorable-winterboots.rsi
+    layers:
+    - state: icon
+      color: "#EAE8E8"
+    - state: soles-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#EAE8E8"
+      - state: soles-inhand-left
+      right:
+      - state: inhand-right
+        color: "#EAE8E8"
+      - state: soles-inhand-right
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/Boots/winterboots.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        color: "#EAE8E8"
+      - state: soles-equipped-FEET
+
+- type: entity
+  parent: ClothingShoesBaseWinterBoots
+  id: TP14EntClothesBlueWinterBoots
+  name: blue winter boots
+  suffix: Trieste, Footwear
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Shoes/Boots/colorable-winterboots.rsi
+    layers:
+    - state: icon
+      color: "#52AECC"
+    - state: soles-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#52AECC"
+      - state: soles-inhand-left
+      right:
+      - state: inhand-right
+        color: "#52AECC"
+      - state: soles-inhand-right
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/Boots/winterboots.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        color: "#52AECC"
+      - state: soles-equipped-FEET
+
+- type: entity
+  parent: ClothingShoesBaseWinterBoots
+  id: TP14EntClothesDarkBlueWinterBoots
+  name: dark blue winter boots
+  suffix: Trieste, Footwear
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Shoes/Boots/colorable-winterboots.rsi
+    layers:
+    - state: icon
+      color: "#3285BA"
+    - state: soles-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3285BA"
+      - state: soles-inhand-left
+      right:
+      - state: inhand-right
+        color: "#3285BA"
+      - state: soles-inhand-right
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/Boots/winterboots.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        color: "#3285BA"
+      - state: soles-equipped-FEET
+
+- type: entity
+  parent: ClothingShoesBaseWinterBoots
+  id: TP14EntClothesBrownWinterBoots
+  name: brown winter boots
+  suffix: Trieste, Footwear
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Shoes/Boots/colorable-winterboots.rsi
+    layers:
+    - state: icon
+      color: "#723A02"
+    - state: soles-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#723A02"
+      - state: soles-inhand-left
+      right:
+      - state: inhand-right
+        color: "#723A02"
+      - state: soles-inhand-right
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/Boots/winterboots.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        color: "#592D01"
+      - state: soles-equipped-FEET
+
+- type: entity
+  parent: ClothingShoesBaseWinterBoots
+  id: TP14EntClothesGreenWinterBoots
+  name: green winter boots
+  suffix: Trieste, Footwear
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Shoes/Boots/colorable-winterboots.rsi
+    layers:
+    - state: icon
+      color: "#5ABF2F"
+    - state: soles-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#5ABF2F"
+      - state: soles-inhand-left
+      right:
+      - state: inhand-right
+        color: "#5ABF2F"
+      - state: soles-inhand-right
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/Boots/winterboots.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        color: "#5ABF2F"
+      - state: soles-equipped-FEET
+
+- type: entity
+  parent: ClothingShoesBaseWinterBoots
+  id: TP14EntClothesOrangeWinterBoots
+  name: orange winter boots
+  suffix: Trieste, Footwear
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Shoes/Boots/colorable-winterboots.rsi
+    layers:
+    - state: icon
+      color: "#EF8100"
+    - state: soles-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#EF8100"
+      - state: soles-inhand-left
+      right:
+      - state: inhand-right
+        color: "#EF8100"
+      - state: soles-inhand-right
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/Boots/winterboots.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        color: "#EF8100"
+      - state: soles-equipped-FEET
+
+- type: entity
+  parent: ClothingShoesBaseWinterBoots
+  id: TP14EntClothesRedWinterBoots
+  name: red winter boots
+  suffix: Trieste, Footwear
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Shoes/Boots/colorable-winterboots.rsi
+    layers:
+    - state: icon
+      color: "#940000"
+    - state: soles-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#940000"
+      - state: soles-inhand-left
+      right:
+      - state: inhand-right
+        color: "#940000"
+      - state: soles-inhand-right
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/Boots/winterboots.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        color: "#940000"
+      - state: soles-equipped-FEET
+
+- type: entity
+  parent: ClothingShoesBaseWinterBoots
+  id: TP14EntClothesYellowWinterBoots
+  name: yellow winter boots
+  suffix: Trieste, Footwear
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Shoes/Boots/colorable-winterboots.rsi
+    layers:
+    - state: icon
+      color: "#EBE216"
+    - state: soles-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#EBE216"
+      - state: soles-inhand-left
+      right:
+      - state: inhand-right
+        color: "#EBE216"
+      - state: soles-inhand-right
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/Boots/winterboots.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        color: "#EBE216"
+      - state: soles-equipped-FEET
+
+- type: entity
+  parent: ClothingShoesBaseWinterBoots
+  id: TP14EntClothesPurpleWinterBoots
+  name: purple winter boots
+  suffix: Trieste, Footwear
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Shoes/Boots/colorable-winterboots.rsi
+    layers:
+    - state: icon
+      color: "#9C0DE1"
+    - state: soles-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#9C0DE1"
+      - state: soles-inhand-left
+      right:
+      - state: inhand-right
+        color: "#9C0DE1"
+      - state: soles-inhand-right
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/Boots/winterboots.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        color: "#9C0DE1"
+      - state: soles-equipped-FEET

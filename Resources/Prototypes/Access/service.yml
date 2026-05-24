@@ -1,34 +1,58 @@
 - type: accessLevel
   id: Bar
   name: id-card-access-level-bar
+  departments:
+  - DepartmentAA
+  - Civilian # TP14
 
 - type: accessLevel
   id: Kitchen
   name: id-card-access-level-kitchen
+  departments:
+  - DepartmentAA
+  - Civilian # TP14
 
 - type: accessLevel
   id: Hydroponics
   name: id-card-access-level-hydroponics
+  departments:
+  - DepartmentAA
+  - Civilian # TP14
 
 - type: accessLevel
   id: Service
   name: id-card-access-level-service
+  departments:
+  - DepartmentAA
+  - Civilian # TP14
 
 - type: accessLevel
   id: Janitor
   name: id-card-access-level-janitor
+  departments:
+  - DepartmentAA
+  - Civilian # TP14
 
 - type: accessLevel
   id: Theatre
   name: id-card-access-level-theatre
+  departments:
+  - DepartmentAA
+  - Civilian # TP14
 
 - type: accessLevel
   id: Chapel
   name: id-card-access-level-chapel
+  departments:
+  - DepartmentAA
+  - Civilian # TP14
 
 - type: accessLevel
   id: Lawyer
   name: id-card-access-level-lawyer
+  departments:
+  - DepartmentAA
+  - Civilian # TP14
 
 - type: accessGroup
   id: Service

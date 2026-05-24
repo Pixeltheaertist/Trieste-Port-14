@@ -1,0 +1,18 @@
+- type: loadoutGroup
+  id: GroupChefFootwear
+  name: loadout-group-footwear-chef
+  minLimit: 0
+  defaultSelected: 1
+  loadouts:
+  - TP14LoadoutFootwearChef
+  - TP14LoadoutFootwearBlack
+  - TP14LoadoutFootwearBrown
+  - TP14LoadoutFootwearWhite
+
+- type: loadoutGroup
+  id: GroupChefGloves
+  name: loadout-group-gloves-chef
+  minLimit: 0
+  defaultSelected: 1
+  loadouts:
+  - Tp14LoadoutGlovesLatex

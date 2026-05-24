@@ -18,6 +18,7 @@
     - id: AppraisalTool
     - id: FireExtinguisher
     - id: MiningDrill # TP14
+    - id: EmergencyBeacon # TP14
     - id: Flare
       prob: 0.3
       rolls: !type:ConstantNumberSelector

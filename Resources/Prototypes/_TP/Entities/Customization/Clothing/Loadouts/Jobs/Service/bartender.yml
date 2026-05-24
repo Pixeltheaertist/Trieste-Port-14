@@ -68,3 +68,10 @@
   loadouts:
   - TP14LoadoutGlovesFingerless
   - TP14LoadoutGlovesWhite
+
+- type: loadoutGroup
+  id: TP14GroupBartenderBelts
+  name: tp14-loadout-group-belts-bartender
+  minLimit: 0
+  loadouts:
+  - TP14LoadoutBeltBandolier
