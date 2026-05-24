@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server.CrewManifest;
 using Content.Server.Station.Systems;
 using Content.Shared.CartridgeLoader;
@@ -9,6 +10,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.CartridgeLoader.Cartridges;
 
+// !! TRIESTE MODIFIED !! //
 public sealed class CrewManifestCartridgeSystem : EntitySystem
 {
     [Dependency] private readonly CartridgeLoaderSystem _cartridgeLoader = default!;
@@ -37,7 +39,7 @@ public sealed class CrewManifestCartridgeSystem : EntitySystem
     /// The ui messages received here get wrapped by a CartridgeMessageEvent and are relayed from the <see cref="CartridgeLoaderSystem"/>
     /// </summary>
     /// <remarks>
-    /// The cartridge specific ui message event needs to inherit from the CartridgeMessageEvent
+    /// The cartridge-specific ui message event needs to inherit from the CartridgeMessageEvent
     /// </remarks>
     private void OnUiMessage(EntityUid uid, CrewManifestCartridgeComponent component, CartridgeMessageEvent args)
     {
@@ -57,12 +59,12 @@ public sealed class CrewManifestCartridgeSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
-        var owningStation = _stationSystem.GetOwningStation(uid);
+        // TRIESTE:
+        // A fix for the Sweetwater PDA issue.
+        // Just get the first station available, which is Trieste. (for now!)
+        var owningStation = _stationSystem.GetOwningStation(uid) ?? _stationSystem.GetStations().FirstOrDefault();
 
-        if (owningStation is null)
-            return;
-
-        var (stationName, entries) = _crewManifest.GetCrewManifest(owningStation.Value);
+        var (stationName, entries) = _crewManifest.GetCrewManifest(owningStation);
 
         var state = new CrewManifestUiState(stationName, entries);
         _cartridgeLoader.UpdateCartridgeUiState(loaderUid, state);
