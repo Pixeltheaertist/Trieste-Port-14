@@ -191,7 +191,7 @@
 - type: soundCollection
   id: SweetwaterAmbience
   files:
-    - /Audio/Effects/whale_groan.ogg
+    - /Audio/_TP/Effects/whale_groan.ogg
 
 - type: soundCollection
   id: AmbienceRuins

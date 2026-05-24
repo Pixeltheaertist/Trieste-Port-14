@@ -37,9 +37,9 @@
   - type: StationEvent
     startAnnouncement: whale-migration
     startAudio:
-      path: /Audio/Effects/whale_groan.ogg
+      path: /Audio/_TP/Effects/whale_groan.ogg
     earliestStart: 5
-    minimumPlayers: 0
+    minimumPlayers: 1
     weight: 6
     duration: 100
   - type: MassHallucinationsRule
@@ -50,6 +50,7 @@
     # SWEETWATER ONLY IS SO INSANELY FUCKED DO NOT USE IT FOR ANYTHING HOLY MOLY
     sounds:
       collection: WhaleMigration
+  - type: WhaleMigrationRule
 
 - type: entity
   id: DeathWhaleMigration

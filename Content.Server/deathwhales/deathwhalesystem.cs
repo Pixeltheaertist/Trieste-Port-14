@@ -1,14 +1,15 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Deathwhale;
 using Content.Shared.Body.Components;
+using Content.Shared.Database;
 using Content.Shared.Salvage.Fulton;
 
 namespace Content.Server.deathwhales;
 
 public sealed class DeathWhaleSystem : EntitySystem
 {
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
 
     private const float UpdateInterval = 1f;
     private float _updateTimer = 0f;
@@ -46,7 +47,10 @@ public sealed class DeathWhaleSystem : EntitySystem
     // Log message when the component is initialized
     private void OnCompInit(EntityUid uid, DeathWhaleComponent component, ComponentInit args)
     {
-
+        _adminLogger.Add(
+            LogType.EntitySpawn,
+            LogImpact.High,
+            $"{uid}: {nameof(DeathWhaleComponent)} initialized.");
     }
 
     private void DeathWhaleCheck(EntityUid uid, DeathWhaleComponent component)
@@ -69,10 +73,11 @@ public sealed class DeathWhaleSystem : EntitySystem
                 continue;
             }
 
+            // Pix pls no
             var preycaught = EnsureComp<FultonedComponent>(prey); // This will harpoon the prey and drag them up offscreen to be eaten
             preycaught.Removeable = false;
             preycaught.Beacon = uid;
-            QueueDel(prey);
+            // QueueDel(prey);
         }
     }
 }
