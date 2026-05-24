@@ -85,11 +85,5 @@ reagent-desc-lipolicide = A powerful toxin that will destroy fat cells, massivel
 reagent-name-mechanotoxin = mechanotoxin
 reagent-desc-mechanotoxin = A neurotoxin used as venom by some species of spider. Degrades movement when built up.
 
-reagent-name-mimicrium = mimicrium
-reagent-desc-mimicrium = A highly effective, but rare liquid used by deep sea ambush predators to electrocute their prey.
-
-reagent-name-seagulltoxin = seagull poop
-reagent-desc-seagulltoxin = The droppings of sky rats. Definitely not safe to eat.
-
 reagent-name-toxintrash = reprocessed material
 reagent-desc-toxintrash = An awful-smelling slurry efficiently refined from discarded matter. It represents a perfect, zero-waste conversion of salvage into Vox sustenance, though it is a violent poison to others.
