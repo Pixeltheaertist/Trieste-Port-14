@@ -1,0 +1,18 @@
+- type: entity
+  parent: [ClothingEyesBase, BaseSolGovContraband] # Solgov cus you shouldn't have it lowkey
+  id: TP14ClothingEyesGlassesCoolAdmin # holy crap this is so cool!!!!
+  name: cool admin glasses 
+  description: You really shouldn't have these unless you know...
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/commandglasses.rsi # New sprites eventually :fall:
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/commandglasses.rsi # New sprites eventually :fall:
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: ShowCriminalRecordIcons 
+  - type: ShowJobIcons
+  - type: ShowMindShieldIcons
+  - type: ShowSyndicateIcons
+  - type: ShowAntagIcons
+  - type: ShowHealthBars

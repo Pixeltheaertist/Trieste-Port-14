@@ -76,7 +76,7 @@
 - type: entity
   parent: FaxMachineBase
   id: FaxMachineCentcom
-  name: SolGov long-range fax machine
+  name: SolGov long-range fax machine # TP14
   suffix: CentCom
   components:
   - type: Sprite

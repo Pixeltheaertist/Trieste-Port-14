@@ -8,6 +8,8 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.Parallax;
 
+// !! TRIESTE MODIFIED !! //
+
 public sealed class ParallaxSystem : SharedParallaxSystem
 {
     [Dependency] private readonly IOverlayManager _overlay = default!;
@@ -49,10 +51,19 @@ public sealed class ParallaxSystem : SharedParallaxSystem
 
     private void OnAfterAutoHandleState(EntityUid uid, ParallaxComponent component, ref AfterAutoHandleStateEvent args)
     {
+        // TRIESTE OVERHAULED
+        // Unload the previously loaded parallax first.
+        if (component.LoadedParallax != null && component.LoadedParallax != component.Parallax)
+        {
+            _parallax.UnloadParallax(component.LoadedParallax);
+        }
+
         if (!_parallax.IsLoaded(component.Parallax))
         {
             _parallax.LoadParallaxByName(component.Parallax);
         }
+
+        component.LoadedParallax = component.Parallax;
     }
 
     public ParallaxLayerPrepared[] GetParallaxLayers(MapId mapId)

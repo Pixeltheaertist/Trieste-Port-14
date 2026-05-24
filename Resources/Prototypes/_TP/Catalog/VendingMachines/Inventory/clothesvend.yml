@@ -66,6 +66,18 @@
     ClothingShoesColorOrange: 2
     ClothingShoesColorRed: 2
     ClothingShoesColorPurple: 2
+
+    TP14EntClothesBlackWinterBoots: 2
+    TP14EntClothesWhiteWinterBoots: 2
+    TP14EntClothesBlueWinterBoots: 2
+    TP14EntClothesDarkBlueWinterBoots: 2
+    TP14EntClothesBrownWinterBoots: 2
+    TP14EntClothesGreenWinterBoots: 2
+    TP14EntClothesOrangeWinterBoots: 2
+    TP14EntClothesRedWinterBoots: 2
+    TP14EntClothesYellowWinterBoots: 2
+    TP14EntClothesPurpleWinterBoots: 2
+
     ClothingHeadHatGreysoft: 8
     ClothingHeadHatMimesoft: 3
     ClothingHeadHatBluesoft: 2
@@ -77,6 +89,7 @@
     ClothingHeadHatBlacksoft: 2
     ClothingHeadHatPurplesoft: 2
     ClothingHeadHatCorpsoft: 2
+
     TP14ClothingHeadBucket: 2
     TP14ClothingHeadCivilianBucket: 2
     TP14ClothingHeadBucketBlack: 2
@@ -98,6 +111,7 @@
     ClothingHeadRastaHat: 2
     ClothingHeadPropellerHat: 2
     ClothingBeltStorageWaistbag: 3
+
     ClothingEyesGlasses: 6
     ClothingHandsGlovesColorBlack: 4
     ClothingHandsGlovesColorGray: 4
@@ -119,6 +133,7 @@
     ClothingNeckScarfStripedLightBlue: 3
     ClothingNeckScarfStripedOrange: 3
     ClothingNeckScarfStripedPurple: 3
+
     ClothingOuterCoatTrench: 6
     ClothingOuterWinterCoat: 6
     ClothingShoesBootsWinter: 6
