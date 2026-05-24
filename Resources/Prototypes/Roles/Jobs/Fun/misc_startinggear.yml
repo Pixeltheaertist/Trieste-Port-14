@@ -149,7 +149,6 @@
   id: MobAghostGear
   equipment:
     back: ClothingBackpackSatchelAdmin
-    belt: ClothingBeltChiefEngineerFilled # Belt for the admins :pray:
     id: AdminPDA
     eyes: TP14ClothingEyesGlassesCoolAdmin # holy crap your so cool...
   storage:
