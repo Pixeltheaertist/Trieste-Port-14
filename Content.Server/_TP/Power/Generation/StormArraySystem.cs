@@ -1,17 +1,20 @@
-using Content.Server._TP.Temperature.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.Destructible;
 using Content.Server.NodeContainer.Nodes;
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Temperature.Components;
+using Content.Shared._TP.Power.Generation;
 using Content.Shared.Atmos;
+using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Explosion.Components;
 using Content.Shared.NodeContainer;
+using Content.Shared.Popups;
 using Content.Shared.Temperature.Components;
+using Content.Shared.Verbs;
 
-namespace Content.Server._TP.Temperature.Systems;
+namespace Content.Server._TP.Power.Generation;
 
 /// <summary>
 ///     Systems handling the Storm Array.
@@ -24,8 +27,11 @@ public sealed class StormArraySystem : EntitySystem
     private const string NodeNameInlet = "inlet";
     private const string NodeNameOutlet = "outlet";
 
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly DestructibleSystem _destructible = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly RadioSystem _radio = default!;
 
     private EntityQuery<NodeContainerComponent> _nodeContainerQuery;
@@ -34,10 +40,65 @@ public sealed class StormArraySystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<Components.StormArrayComponent, AtmosDeviceUpdateEvent>(OnAtmosUpdate);
+        SubscribeLocalEvent<StormArrayComponent, AtmosDeviceUpdateEvent>(OnAtmosUpdate);
         SubscribeLocalEvent<StormArrayComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<StormArrayComponent, GetVerbsEvent<ActivationVerb>>(OnVerbActivation);
+        SubscribeLocalEvent<StormArrayComponent, StormArrayDoAfterEvent>(OnStormArrayEnabled);
 
         _nodeContainerQuery = GetEntityQuery<NodeContainerComponent>();
+    }
+
+    private void OnVerbActivation(Entity<StormArrayComponent> ent, ref GetVerbsEvent<ActivationVerb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract)
+            return;
+
+        if (ent.Comp.IsActive)
+            return;
+
+        var user = args.User;
+        var verb = new ActivationVerb()
+        {
+            Act = () => HandleEnabling(ent, user),
+            Text = Loc.GetString("storm-array-verb-enable"),
+            Message = Loc.GetString("storm-array-verb-enabling"),
+        };
+
+        args.Verbs.Add(verb);
+    }
+
+    private void HandleEnabling(Entity<StormArrayComponent> ent, EntityUid user)
+    {
+        _popup.PopupEntity(Loc.GetString("storm-array-message-enabling"), ent.Owner, user, PopupType.LargeCaution);
+
+        var doAfter = new DoAfterArgs(EntityManager,
+            user,
+            TimeSpan.FromSeconds(10),
+            new StormArrayDoAfterEvent(),
+            ent.Owner,
+            ent.Owner)
+        {
+            BreakOnMove = true,
+            BreakOnDamage = true,
+            NeedHand = true,
+        };
+
+        _doAfter.TryStartDoAfter(doAfter);
+    }
+
+
+    private void OnStormArrayEnabled(Entity<StormArrayComponent> ent, ref StormArrayDoAfterEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        ent.Comp.IsActive = true;
+
+        _popup.PopupEntity(Loc.GetString("storm-array-message-enabled"), args.User, args.User, PopupType.LargeCaution);
+        _radio.SendRadioMessage(ent.Owner, Loc.GetString("storm-array-alert-enabled"), "Engineering", ent.Owner);
+
+        _appearance.SetData(ent.Owner, StormArrayVisuals.Idle, false);
+        _appearance.SetData(ent.Owner, StormArrayVisuals.Active, true);
     }
 
     private void OnExamined(Entity<StormArrayComponent> ent, ref ExaminedEvent args)
@@ -46,6 +107,12 @@ public sealed class StormArraySystem : EntitySystem
             return;
 
         var comp = ent.Comp;
+
+        if (!comp.IsActive)
+        {
+            args.PushMarkup(Loc.GetString("storm-array-examine-disabled"));
+            return;
+        }
 
         // Show the internal temperature in both Kelvin and Celsius
         var tempC = temp.CurrentTemperature - 273.15f;
@@ -68,8 +135,11 @@ public sealed class StormArraySystem : EntitySystem
         }
     }
 
-    private void OnAtmosUpdate(Entity<Components.StormArrayComponent> ent, ref AtmosDeviceUpdateEvent args)
+    private void OnAtmosUpdate(Entity<StormArrayComponent> ent, ref AtmosDeviceUpdateEvent args)
     {
+        if (!ent.Comp.IsActive)
+            return;
+
         // Get the nodes from the entity for Radiant Temperature and Temperature.
         // We also make a variable for the storm array component, for easy access.
         if (!TryComp<RadiantTemperatureComponent>(ent, out var radiantTempComp))
@@ -125,7 +195,7 @@ public sealed class StormArraySystem : EntitySystem
         announcementFlag = true;
     }
 
-    private void UpdateCoolant(Entity<Components.StormArrayComponent> ent, ref AtmosDeviceUpdateEvent args)
+    private void UpdateCoolant(Entity<StormArrayComponent> ent, ref AtmosDeviceUpdateEvent args)
     {
         // Set a StormArrayComponent variable, for easy access.
         // We also get the nodes from the entity for Coolant and Temperature.
@@ -148,14 +218,14 @@ public sealed class StormArraySystem : EntitySystem
         {
             comp.LastCoolingRate = 0;
             comp.LastCoolantFlow = 0;
-            comp.StatusMessage = "NO COOLANT: Inlet has no gas";
+            comp.StatusMessage = Loc.GetString("storm-array-status-no-coolant");
             return;
         }
 
         // Calculate gas transfer based on pressure difference, then
         // calculate heat difference from the Array and coolant.
         // We return if there's no coolant or no heat capacity.
-        var (coolantGas, pressureDelta) = GetCoolantTransfer(inlet.Air, outlet.Air);
+        var (coolantGas, _) = GetCoolantTransfer(inlet.Air, outlet.Air);
 
         if (coolantGas.TotalMoles <= 0)
             return;
@@ -164,7 +234,7 @@ public sealed class StormArraySystem : EntitySystem
 
         if (coolantHeatCapacity <= 0)
         {
-            comp.StatusMessage = "COOLANT ERROR: Zero heat capacity";
+            comp.StatusMessage = Loc.GetString("storm-array-status-no-capacity");
             _atmosphere.Merge(outlet.Air, coolantGas);
             return;
         }
@@ -175,8 +245,9 @@ public sealed class StormArraySystem : EntitySystem
 
         if (tempDifference <= 0)
         {
-            comp.StatusMessage =
-                $"COOLANT WARMER: Coolant ({coolantGas.Temperature:F1}K) is warmer than array ({temp.CurrentTemperature:F1}K)";
+            comp.StatusMessage = Loc.GetString("storm-array-status-warmer-coolant",
+                ("temp1", coolantGas.Temperature.ToString("F1")),
+                ("temp2", temp.CurrentTemperature.ToString("F1")));
             _atmosphere.Merge(outlet.Air, coolantGas);
             return;
         }
@@ -206,15 +277,16 @@ public sealed class StormArraySystem : EntitySystem
         comp.LastCoolingRate = heatTransferred / args.dt;
         comp.LastCoolantFlow = coolantGas.TotalMoles;
 
+        comp.StatusMessage = Loc.GetString("storm-array-status-cooling",
+            ("last1", comp.LastCoolingRate.ToString("F1")),
+            ("last2", comp.LastCoolantFlow.ToString("F2")));
         comp.StatusMessage = $"COOLING: {comp.LastCoolingRate / 1000:F1} kW | Flow: {comp.LastCoolantFlow:F2} mol/s";
-
-        comp.LastPressureDelta = pressureDelta;
 
         // Merge heated coolant back into the outlet
         _atmosphere.Merge(outlet.Air, coolantGas);
     }
 
-    private static (GasMixture gas, float pressureDelta) GetCoolantTransfer(GasMixture airInlet, GasMixture airOutlet)
+    private static (GasMixture gas, float _) GetCoolantTransfer(GasMixture airInlet, GasMixture airOutlet)
     {
         var mole1 = airInlet.TotalMoles;
         var mole2 = airOutlet.TotalMoles;

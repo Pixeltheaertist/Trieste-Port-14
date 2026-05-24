@@ -1,4 +1,7 @@
-namespace Content.Server._TP.Temperature.Components;
+using Content.Shared.DoAfter;
+using Robust.Shared.Serialization;
+
+namespace Content.Shared._TP.Power.Generation;
 
 /// <summary>
 ///     Component for the storm array.
@@ -33,6 +36,12 @@ public sealed partial class StormArrayComponent : Component
     [DataField]
     public float CoolingEfficiency = 0.8F;
 
+    /// <summary>
+    ///     Whether the storm array is currently active and generating power.
+    /// </summary>
+    [DataField]
+    public bool IsActive;
+
     #endregion
 
     #region AtmosStorage
@@ -43,9 +52,16 @@ public sealed partial class StormArrayComponent : Component
     [ViewVariables]
     public float LastCoolantFlow = 0.0F;
 
-    [ViewVariables]
-    public float LastPressureDelta = 0.0F;
-
     #endregion
 
 }
+
+[Serializable, NetSerializable]
+public enum StormArrayVisuals : byte
+{
+    Idle,
+    Active,
+}
+
+[Serializable, NetSerializable]
+public sealed partial class StormArrayDoAfterEvent : SimpleDoAfterEvent;
