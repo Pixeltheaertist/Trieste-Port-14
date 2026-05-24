@@ -1,3 +1,4 @@
+using Content.Shared.Overlays;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 
@@ -23,11 +24,13 @@ public sealed class SharedUnderwaterEffectSystem : EntitySystem
             SoundSpecifier rumblingSound = new SoundPathSpecifier("/Audio/_TP/Ambience/Ocean/rumbling.ogg");
             var audio = _audio.PlayGlobal(rumblingSound, GetEntity(msg.Entity), AudioParams.Default.WithVolume(-3f).WithLoop(true));
             _soundEntity = audio?.Entity;
+            EnsureComp<WaterViewerComponent>(GetEntity(msg.Entity));
         }
         else if (!msg.InWater && _soundEntity != null)
         {
             _audio.Stop(_soundEntity);
             _soundEntity = null;
+            RemComp<WaterViewerComponent>(GetEntity(msg.Entity));
         }
     }
 }

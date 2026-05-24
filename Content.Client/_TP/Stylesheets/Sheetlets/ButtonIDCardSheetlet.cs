@@ -6,7 +6,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using static Content.Client.Stylesheets.StylesheetHelpers;
 
-namespace Content.Client._TP14.Stylesheets.Sheetlets;
+namespace Content.Client._TP.Stylesheets.Sheetlets;
 
 // Taken from https://github.com/space-wizards/space-station-14/pull/41033/
 [CommonSheetlet]

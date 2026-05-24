@@ -3,7 +3,7 @@ using Content.Shared._TP.Power.Generation;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._TP.Power;
+namespace Content.Client._TP.Power.Generation;
 
 /// <summary>
 ///     Client-side logic for the storm array.

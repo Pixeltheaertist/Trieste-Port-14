@@ -1,9 +1,7 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Server._TP.Oil;
+namespace Content.Shared._TP.Oil;
 
 [RegisterComponent]
 [NetworkedComponent]
-public sealed partial class FitsInPumpjackComponent : Component
-{
-}
+public sealed partial class FitsInPumpjackComponent : Component;
