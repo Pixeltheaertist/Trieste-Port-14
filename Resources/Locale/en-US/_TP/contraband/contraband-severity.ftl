@@ -4,6 +4,12 @@ contraband-examine-text-Nanotrasen =
         [reagent] [color=cyan]This reagent is highly illegal Nanotrasen contraband![/color]
     }
 
+contraband-examine-text-SolGov =
+    { $type ->
+        *[item] [color=gold]This item is restricted to SolGov and is considered major contraband.[/color]
+        [reagent] [color=gold]This item is restricted to SolGov and is considered major contraband.[/color]
+    }
+
 contraband-examine-text-c1c =
     { $type ->
         *[item] [color=red]You should not be seeing this, please report this to a contrib![/color]
