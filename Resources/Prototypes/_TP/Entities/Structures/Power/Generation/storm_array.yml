@@ -181,7 +181,7 @@
         rotation: 270
         color: "#FFFFFFBB"
       - state: arrow
-        offset: -2.20, 0
+        offset: -2, 0
         rotation: 270
         color: "#FFAAAABB"
   - type: TimedDespawn

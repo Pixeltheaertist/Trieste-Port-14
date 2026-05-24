@@ -5,7 +5,7 @@ storm-array-alert-2 = Warning! Storm Array heat levels are now at 50%
 storm-array-alert-3 = Warning! Storm Array heat levels are now at 75% and meltdown will be imminent.
 
 # Examining
-storm-array-examine-disabled = The Storm Array is currently folded! Please setup all systems and unfold.
+storm-array-examine-disabled = The Storm Arrays are currently folded! Please setup all systems and unfold.
 storm-array-examine-temperature = Temperature: [color=yellow]{$tempK}K ({$tempC}°C)[/color]
 storm-array-examine-status = Status: [color=cyan]{$status}[/color]
 storm-array-examine-cooling = Cooling Rate: [color=green]{$rate} kW[/color]
@@ -20,4 +20,4 @@ storm-array-status-cooling = COOLING: {$last1} kW | Flow: {$last2} mol/S
 storm-array-verb-enable = Unfold Arrays
 storm-array-verb-enabling = Unfolds the Storm Arrays to gather thunder from Trieste's sky.
 storm-array-message-enabling = You begin to unfold the Storm Arrays...
-storm-array-message-enabled = Bbzzz! The Storm Array was unfolded.
+storm-array-message-enabled = Bbzzz! The Storm Arrays were unfolded.
