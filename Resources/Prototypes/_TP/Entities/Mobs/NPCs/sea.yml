@@ -299,7 +299,7 @@
     range: 30
     volume: -15
     sound:
-      path: /Audio/Effects/whale_groan.ogg
+      path: /Audio/_TP/Effects/whale_groan.ogg
   - type: MovementSpeedModifier
     baseWalkSpeed : 0.7
 

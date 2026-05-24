@@ -1,11 +1,9 @@
-using Content.Server.GameTicking.Rules.Components;
-using Content.Server.StationEvents.Components;
+using Content.Server._TP.StationEvents.Components;
+using Content.Server.StationEvents.Events;
 using Content.Shared.GameTicking.Components;
 using Robust.Shared.Map;
-using Robust.Shared.Random;
-using Content.Server.Deathwhale;
 
-namespace Content.Server.StationEvents.Events
+namespace Content.Server._TP.StationEvents.Events
 {
     public sealed class OceanSpawnRule : StationEventSystem<OceanSpawnRuleComponent>
     {
@@ -13,33 +11,29 @@ namespace Content.Server.StationEvents.Events
         {
             base.Started(uid, comp, gameRule, args);
 
-            float Amount = comp.Amount;
+            var amount = comp.Amount;
 
-            if (!TryGetRandomStation(out var station))
-            {
+            if (!TryGetRandomStation(out _))
                 return;
-            }
 
             var locations = EntityQueryEnumerator<DeathWhaleSpawnLocationComponent, TransformComponent>(); // TODO: Make choosing the location possible.
             var validLocations = new List<EntityCoordinates>();
 
-            while (locations.MoveNext(out var _, out var spawnLocation, out var transform))
+            while (locations.MoveNext(out var _, out _, out var transform))
             {
                 validLocations.Add(transform.Coordinates);
 
-                if (comp.CurrentAmount >= Amount) break;
+                if (comp.CurrentAmount >= amount) break;
                 Spawn(comp.Prototype, transform.Coordinates);
                 comp.CurrentAmount += 1;
             }
 
             if (validLocations.Count == 0)
-            {
                 return;
-            }
 
             foreach (var location in validLocations)
             {
-                if (comp.CurrentAmount >= Amount) break;
+                if (comp.CurrentAmount >= amount) break;
 
                 Spawn(comp.Prototype, location);
                 comp.CurrentAmount += 1;
@@ -51,7 +45,7 @@ namespace Content.Server.StationEvents.Events
             base.Ended(uid, comp, gameRule, args);
             comp.CurrentAmount = 0f;
 
-            foreach (var whales in EntityManager.EntityQuery<DeathWhaleComponent>())
+            foreach (var whales in EntityManager.EntityQuery<Shared._TP.DeathWhales.DeathWhaleComponent>())
             {
                 var whaleUid = whales.Owner;
                 QueueDel(whaleUid);  // Deleting the whale entity, they've left!!

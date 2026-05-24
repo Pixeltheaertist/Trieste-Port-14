@@ -1,17 +1,20 @@
 using Content.Server.Administration.Logs;
-using Content.Server.Deathwhale;
+using Content.Shared._TP.DeathWhales;
 using Content.Shared.Body.Components;
+using Content.Shared.Database;
 using Content.Shared.Salvage.Fulton;
+using Robust.Shared.Timing;
 
-namespace Content.Server.deathwhales;
+namespace Content.Server._TP.DeathWhales;
 
 public sealed class DeathWhaleSystem : EntitySystem
 {
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
 
     private const float UpdateInterval = 1f;
-    private float _updateTimer = 0f;
+    private float _updateTimer;
 
     // Store the caught prey UIDs
     private readonly HashSet<EntityUid> _caughtPrey = new();
@@ -29,13 +32,11 @@ public sealed class DeathWhaleSystem : EntitySystem
 
         if (_updateTimer >= UpdateInterval)
         {
-            // Check for prey within the DeathWhale's range
-            foreach (var entity in EntityManager.EntityQuery<DeathWhaleComponent>())
+            var query = EntityQueryEnumerator<DeathWhaleComponent>();
+            while (query.MoveNext(out var uid, out var component))
             {
-                var uid = entity.Owner;
-                var component = EntityManager.GetComponent<DeathWhaleComponent>(uid); // Get the DeathWhaleComponent
-
-                DeathWhaleCheck(uid, component);
+                // Temporarily commented out for a FULL rework, eventually. Does work though!
+                // DeathWhaleCheck(uid, component);
             }
 
             // Reset the update timer
@@ -46,7 +47,10 @@ public sealed class DeathWhaleSystem : EntitySystem
     // Log message when the component is initialized
     private void OnCompInit(EntityUid uid, DeathWhaleComponent component, ComponentInit args)
     {
-
+        _adminLogger.Add(
+            LogType.EntitySpawn,
+            LogImpact.Extreme,
+            $"{uid}: {nameof(DeathWhaleComponent)} initialized.");
     }
 
     private void DeathWhaleCheck(EntityUid uid, DeathWhaleComponent component)
@@ -55,24 +59,36 @@ public sealed class DeathWhaleSystem : EntitySystem
         foreach (var prey in _lookup.GetEntitiesInRange(uid, component.Radius))
         {
             if (!EntityManager.HasComponent<BodyComponent>(prey))
-            {
                 continue;
-            }
 
             if (_caughtPrey.Contains(prey))
-            {
                 continue;
-            }
 
             if (EntityManager.HasComponent<DeathWhaleComponent>(prey))
-            {
                 continue;
-            }
 
-            var preycaught = EnsureComp<FultonedComponent>(prey); // This will harpoon the prey and drag them up offscreen to be eaten
-            preycaught.Removeable = false;
-            preycaught.Beacon = uid;
-            QueueDel(prey);
+            _caughtPrey.Add(prey);
+        }
+
+        var caught = _caughtPrey;
+        foreach (var prey in caught)
+        {
+            var fulton = EnsureComp<FultonedComponent>(prey);
+            fulton.Beacon = uid;
+            fulton.FultonDuration = TimeSpan.FromSeconds(1);
+            fulton.NextFulton = _timing.CurTime;
+            fulton.Removeable = false;
+
+            Timer.Spawn(TimeSpan.FromSeconds(0.25),
+                () =>
+                {
+                    if (EntityManager.EntityExists(prey))
+                    {
+                        QueueDel(prey);
+                    }
+                });
+
+            _caughtPrey.Remove(prey);
         }
     }
 }
