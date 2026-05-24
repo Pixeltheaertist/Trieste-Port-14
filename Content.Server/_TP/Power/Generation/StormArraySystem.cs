@@ -176,6 +176,15 @@ public sealed class StormArraySystem : EntitySystem
             tempComp.CurrentTemperature >= 1233,
             ref arrayComp.ThirdAnnouncement);
 
+        if (arrayComp.ThirdAnnouncement && tempComp.CurrentTemperature < 822)
+            arrayComp.ThirdAnnouncement = false;
+
+        if (arrayComp.SecondAnnouncement && tempComp.CurrentTemperature < 411)
+            arrayComp.SecondAnnouncement = false;
+
+        if (arrayComp.FirstAnnouncement && tempComp.CurrentTemperature < 202)
+            arrayComp.FirstAnnouncement = false;
+
         // This part handles the explosion at 500 degrees.
         // If the explosion component doesn't exist, however, we return. (This shouldn't happen!)
         if (!TryComp<ExplosiveComponent>(ent, out var explComp))

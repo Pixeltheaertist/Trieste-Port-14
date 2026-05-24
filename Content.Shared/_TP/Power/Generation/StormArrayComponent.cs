@@ -21,12 +21,6 @@ public sealed partial class StormArrayComponent : Component
     [DataField]
     public bool ThirdAnnouncement;
 
-    [DataField]
-    public bool FourthAnnouncement;
-
-    [DataField]
-    public bool FifthAnnouncement;
-
     public string StatusMessage;
 
     #endregion
