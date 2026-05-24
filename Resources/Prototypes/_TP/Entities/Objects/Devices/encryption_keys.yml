@@ -12,3 +12,19 @@
   - type: Sprite
     layers:
     - state: crypt_rusted
+
+- type: entity
+  parent: [ EncryptionKey, BaseSolGovContraband ]
+  id: TP14EncryptionKeySolGov 
+  name: solgov encryption key
+  suffix: Trieste, Encryption-Key
+  description: An encryption key for the very highest represenatives.
+  components:
+  - type: EncryptionKey
+    channels:
+    - SolGov
+    defaultChannel: SolGov
+  - type: Sprite
+    layers:
+    - state: crypt_gold
+    - state: com_label
