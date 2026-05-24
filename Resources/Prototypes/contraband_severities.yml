@@ -32,11 +32,16 @@
   examineText: contraband-examine-text-Syndicate
 
 # This is clear syndicate contraband and is illegal to own IC.
-- type: contrabandSeverity
-  id: Nanotrasen
-  examineText: contraband-examine-text-Nanotrasen
+- type: contrabandSeverity # TP 14
+  id: Nanotrasen # TP 14
+  examineText: contraband-examine-text-Nanotrasen # TP 14
 
 # This is magical contraband and not permitted to be used IC.
 - type: contrabandSeverity
   id: Magical
   examineText: contraband-examine-text-Magical
+
+# This is SolGov Contraband.
+- type: contrabandSeverity # TP 14
+  id: SolGov # TP 14
+  examineText: contraband-examine-text-SolGov # TP 14

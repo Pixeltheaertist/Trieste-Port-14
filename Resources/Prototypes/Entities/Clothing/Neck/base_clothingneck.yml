@@ -1,3 +1,5 @@
+# !! TRIESTE MODIFIED !! #
+
 - type: entity
   abstract: true
   parent: Clothing
@@ -39,6 +41,9 @@
   parent: ClothingNeckBase
   id: ClothingScarfBase
   components:
+  - type: TemperatureProtection # TP: Added
+    heatingCoefficient: 1.025
+    coolingCoefficient: 0.5
   - type: Tag
     tags:
     - Scarf
