@@ -7,7 +7,7 @@
     tag: DockBell
   - type: ContainerFill
     containers:
-      board: [ DoorElectronics ]
+      board: [ DoorElectronicsExternal ] # Just so new players don't keep dying.
 
 - type: entity
   parent: AirlockExternalGlassBell
@@ -30,7 +30,7 @@
     tag: DockTrench
   - type: ContainerFill
     containers:
-      board: [ DoorElectronics ]
+      board: [ DoorElectronicsExternal ]
 
 - type: entity
   parent: AirlockExternalTrench

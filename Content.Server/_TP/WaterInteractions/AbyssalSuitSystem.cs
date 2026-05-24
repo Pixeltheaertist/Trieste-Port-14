@@ -1,5 +1,5 @@
+using Content.Shared._TP.WaterInteractions;
 using Content.Shared.Inventory.Events;
-using Content.Shared.TP.Abyss.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 

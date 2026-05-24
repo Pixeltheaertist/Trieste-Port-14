@@ -6,7 +6,6 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Overlays;
 using Content.Shared.Silicons.Laws.Components;
-using Content.Shared.TP.Abyss.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 
@@ -86,7 +85,7 @@ public sealed class WaterInteractionSystem : EntitySystem
                     }
                 }
 
-                if (TryComp<AbyssalProtectedComponent>(uid, out var abyssalProtected))
+                if (TryComp<Shared._TP.WaterInteractions.AbyssalProtectedComponent>(uid, out var abyssalProtected))
                 {
                     continue;
                 }
