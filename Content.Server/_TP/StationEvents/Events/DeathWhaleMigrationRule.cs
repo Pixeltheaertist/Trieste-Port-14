@@ -46,7 +46,7 @@ namespace Content.Server._TP.StationEvents.Events
             base.Ended(uid, comp, gameRule, args);
             comp.CurrentAmount = 0f;
 
-            foreach (var whales in EntityManager.EntityQuery<DeathWhaleComponent>())
+            foreach (var whales in EntityManager.EntityQuery<Shared._TP.DeathWhales.DeathWhaleComponent>())
             {
                 var whaleUid = whales.Owner;
                 QueueDel(whaleUid);  // Deleting the whale entity, they've left!!

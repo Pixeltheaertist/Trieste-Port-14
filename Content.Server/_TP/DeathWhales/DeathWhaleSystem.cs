@@ -1,10 +1,10 @@
 using Content.Server.Administration.Logs;
-using Content.Server.Deathwhale;
+using Content.Shared._TP.DeathWhales;
 using Content.Shared.Body.Components;
 using Content.Shared.Database;
 using Content.Shared.Salvage.Fulton;
 
-namespace Content.Server.deathwhales;
+namespace Content.Server._TP.DeathWhales;
 
 public sealed class DeathWhaleSystem : EntitySystem
 {
