@@ -1,13 +1,13 @@
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using System.Numerics;
 using Content.Shared.Physics;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
-using Robust.Shared.Toolshed.Commands.Values;
 
 namespace Content.Shared.Maps;
+
+// !! TRIESTE PORT MODIFIED !! //
 
 /// <summary>
 ///     This system provides various useful helper methods for turfs & tiles. Replacement for <see cref="TurfHelpers"/>
@@ -142,6 +142,30 @@ public sealed class TurfSystem : EntitySystem
     public bool IsSpace(TileRef tile)
     {
         return IsSpace(tile.Tile);
+    }
+
+
+
+    /// <summary>
+    ///     TRIESTE SPECIFIC
+    ///     Returns whether a tile is considered to be subfloor.
+    /// </summary>
+    /// <param name="tile">The tile in question.</param>
+    /// <returns>True if the tile is considered to be a subfloor, false otherwise.</returns>
+    public bool IsSubfloor(Tile tile)
+    {
+        return GetContentTileDefinition(tile).IsSubFloor;
+    }
+
+    /// <summary>
+    ///     TRIESTE SPECIFIC
+    ///     Returns whether a tile is considered to be subfloor.
+    /// </summary>
+    /// <param name="tile">The tile in question.</param>
+    /// <returns>True if the tile is considered to be a subfloor, false otherwise.</returns>
+    public bool IsSubfloor(TileRef tile)
+    {
+        return IsSubfloor(tile.Tile);
     }
 
     /// <summary>

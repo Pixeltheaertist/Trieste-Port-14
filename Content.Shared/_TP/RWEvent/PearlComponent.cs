@@ -1,4 +1,4 @@
-namespace Content.Server._TP;
+namespace Content.Shared._TP.RWEvent;
 
 [RegisterComponent]
 public sealed partial class PearlComponent : Component

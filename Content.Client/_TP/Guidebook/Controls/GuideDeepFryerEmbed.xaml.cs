@@ -12,7 +12,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Client._TP14.Guidebook.Controls;
+namespace Content.Client._TP.Guidebook.Controls;
 
 /// <summary>
 ///     Control for embedding a deep-fryer recipe into a guidebook.
@@ -78,8 +78,8 @@ public sealed partial class GuideDeepFryerEmbed : PanelContainer, IDocumentTag, 
         RepresentedPrototype = entity;
 
         IconContainer.AddChild(new GuideEntityEmbed(recipe.Result, false, false));
-        ResultName.SetMarkup(entity.Name);
-        ResultDescription.SetMarkup(entity.Description);
+        RichTextLabelExt.SetMarkup(ResultName, entity.Name);
+        RichTextLabelExt.SetMarkup(ResultDescription, entity.Description);
     }
 
     public GuideDeepFryerEmbed(DeepFryingRecipePrototype recipe) : this()

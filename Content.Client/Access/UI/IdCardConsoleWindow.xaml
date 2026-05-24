@@ -1,5 +1,5 @@
 <DefaultWindow xmlns="https://spacestation14.io"
-               xmlns:ui1="clr-namespace:Content.Client._TP14.Access.UI"
+               xmlns:ui="clr-namespace:Content.Client._TP.Access.UI"
                MinSize="1000 500"
                Resizable="False">
     <BoxContainer Orientation="Horizontal">
@@ -74,7 +74,7 @@
                 <Control HorizontalExpand="True"/>
             </BoxContainer>
             <!-- Individual access buttons -->
-            <ui1:TriesteAccessLevelControl Name="AccessButtons" HorizontalExpand="True" VerticalExpand="True" />
+            <ui:TriesteAccessLevelControl Name="AccessButtons" HorizontalExpand="True" VerticalExpand="True" />
         </BoxContainer>
     </BoxContainer>
 </DefaultWindow>

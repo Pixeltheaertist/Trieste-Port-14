@@ -6,7 +6,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._TP14.Access.UI;
+namespace Content.Client._TP.Access.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class TriesteAccessLevelControl : BoxContainer
