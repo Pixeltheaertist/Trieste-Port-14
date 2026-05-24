@@ -1,0 +1,11 @@
+- type: entity
+  parent: [ClothingHeadsetEngineering, BaseSolGovContraband]
+  id: TP14ClothingHeadsetSolGov
+  name: solgov headset
+  description: A headset for the elite solgov officials.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - TP14EncryptionKeySolGov
+      - EncryptionKeyStationMaster

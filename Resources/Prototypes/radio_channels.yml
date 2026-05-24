@@ -8,8 +8,8 @@
 - type: radioChannel
   id: CentCom
   name: chat-radio-centcom
-  keycode: 'y'
-  frequency: 1337
+  keycode: 'p' # heh P for centcomm... What a odd choice... (TP14)
+  frequency: 2457 # TP14
   color: "#2681a5"
   longRange: true
 
@@ -70,13 +70,16 @@
   color: "#8f4a4b"
   longRange: true
 
+# TP14 Start
 - type: radioChannel
   id: Nanotrasen
   name: chat-radio-nanotrasen
   keycode: 'r'
-  frequency: 1257
+  frequency: 2257
   color: "#89a8d6"
   longRange: true
+  # TP 14 End 
+  # Fixing this shit because pain.
 
 - type: radioChannel
   id: Handheld
