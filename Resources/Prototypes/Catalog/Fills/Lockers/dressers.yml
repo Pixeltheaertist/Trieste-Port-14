@@ -14,7 +14,7 @@
       - id: ClothingHandsGlovesCaptain
       - id: ClothingOuterWinterCap
       - id: ClothingNeckCloakCap
-      - id: EntClothesDarkBlueWinterBoots # TP: Added
+      - id: TP14EntClothesDarkBlueWinterBoots # TP: Added
 
 - type: entity
   id: DresserChiefEngineerFilled

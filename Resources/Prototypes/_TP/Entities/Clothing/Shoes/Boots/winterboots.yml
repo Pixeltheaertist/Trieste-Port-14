@@ -1,6 +1,6 @@
 - type: entity
   parent: ClothingShoesBaseWinterBoots
-  id: EntClothesBlackWinterBoots
+  id: TP14EntClothesBlackWinterBoots
   name: black winter boots
   suffix: Trieste, Footwear
   components:
@@ -30,7 +30,7 @@
 
 - type: entity
   parent: ClothingShoesBaseWinterBoots
-  id: EntClothesWhiteWinterBoots
+  id: TP14EntClothesWhiteWinterBoots
   name: white winter boots
   suffix: Trieste, Footwear
   components:
@@ -60,7 +60,7 @@
 
 - type: entity
   parent: ClothingShoesBaseWinterBoots
-  id: EntClothesBlueWinterBoots
+  id: TP14EntClothesBlueWinterBoots
   name: blue winter boots
   suffix: Trieste, Footwear
   components:
@@ -90,7 +90,7 @@
 
 - type: entity
   parent: ClothingShoesBaseWinterBoots
-  id: EntClothesDarkBlueWinterBoots
+  id: TP14EntClothesDarkBlueWinterBoots
   name: dark blue winter boots
   suffix: Trieste, Footwear
   components:
@@ -120,7 +120,7 @@
 
 - type: entity
   parent: ClothingShoesBaseWinterBoots
-  id: EntClothesBrownWinterBoots
+  id: TP14EntClothesBrownWinterBoots
   name: brown winter boots
   suffix: Trieste, Footwear
   components:
@@ -150,7 +150,7 @@
 
 - type: entity
   parent: ClothingShoesBaseWinterBoots
-  id: EntClothesGreenWinterBoots
+  id: TP14EntClothesGreenWinterBoots
   name: green winter boots
   suffix: Trieste, Footwear
   components:
@@ -180,7 +180,7 @@
 
 - type: entity
   parent: ClothingShoesBaseWinterBoots
-  id: EntClothesOrangeWinterBoots
+  id: TP14EntClothesOrangeWinterBoots
   name: orange winter boots
   suffix: Trieste, Footwear
   components:
@@ -210,7 +210,7 @@
 
 - type: entity
   parent: ClothingShoesBaseWinterBoots
-  id: EntClothesRedWinterBoots
+  id: TP14EntClothesRedWinterBoots
   name: red winter boots
   suffix: Trieste, Footwear
   components:
@@ -240,7 +240,7 @@
 
 - type: entity
   parent: ClothingShoesBaseWinterBoots
-  id: EntClothesYellowWinterBoots
+  id: TP14EntClothesYellowWinterBoots
   name: yellow winter boots
   suffix: Trieste, Footwear
   components:
@@ -270,7 +270,7 @@
 
 - type: entity
   parent: ClothingShoesBaseWinterBoots
-  id: EntClothesPurpleWinterBoots
+  id: TP14EntClothesPurpleWinterBoots
   name: purple winter boots
   suffix: Trieste, Footwear
   components:
