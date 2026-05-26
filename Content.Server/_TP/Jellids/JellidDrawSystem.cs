@@ -172,7 +172,7 @@ public sealed class JellidDrawSystem : EntitySystem
 
             var damage = new DamageSpecifier
             {
-                DamageDict = { ["Slash"] = 0.1f }
+                DamageDict = { ["Slash"] = 1f }
             };
             _damageable.TryChangeDamage(uid, damage, origin: uid);
         }
