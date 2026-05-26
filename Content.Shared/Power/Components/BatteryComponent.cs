@@ -1,7 +1,5 @@
-using Content.Shared.Alert;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Guidebook;
-using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Power.Components;
 
@@ -31,11 +29,4 @@ public partial class BatteryComponent : Component
     /// </summary>
     [DataField]
     public float PricePerJoule = 0.0001f;
-
-    /// <summary>
-    /// !! TRIESTE SPECIFIC !!
-    /// The alert to play when the battery is empty.
-    /// </summary>
-     [DataField]
-     public ProtoId<AlertPrototype> NoBatteryAlert = "JellidBatteryNone";
 }

@@ -11,7 +11,7 @@
     - id: TP14WaterTankEmergencyFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: PowerCellSmall
+    - id: PowerCellMedium
     - id: TP14ClothingHandsGlovesFireproof
   - type: Sprite
     layers:

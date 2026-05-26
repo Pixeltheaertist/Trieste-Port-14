@@ -2,3 +2,8 @@
   license: "CC0-1.0"
   copyright: "Created by github.com/Jakeybobble for Trieste Port 14"
   source: "https://github.com/Pixeltheaertist/Trieste-Port-14/pull/292"
+
+- files: ["jellid_battery_use.ogg"]
+  license: "CC0-1.0"
+  copyright: "Added to Trieste Port 14 and converted to mono by Cookie."
+  source: "https://freesound.org/people/danielpodlovics/sounds/530356/"
