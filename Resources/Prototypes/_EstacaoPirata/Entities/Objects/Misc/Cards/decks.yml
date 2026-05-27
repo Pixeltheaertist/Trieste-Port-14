@@ -168,7 +168,7 @@
 
 # Standard Playing Card Deck (Syndicate)
 - type: entity
-  parent: [CardBoxBase, BaseSyndicateContraband]
+  parent: CardBoxBase
   id: CardBoxSyndicate
   name: box of syndicate playing cards 
   components:
