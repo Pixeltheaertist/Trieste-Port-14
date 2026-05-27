@@ -833,3 +833,7 @@ PillCanisterDexalin: PillCanisterOxygenatedSaline
 RandomHumanoidSettler: null
 PlanetarySettler: null
 TP14PlanetarySettlerSpawner: TP14PlanetarySettlerSpawnerHuman
+
+# 2026-05-26
+TP14ChemistryColdplate: MachineThermobath
+TP14ColdplateMachineCircuitboard: ThermobathMachineCircuitboard

@@ -267,10 +267,10 @@
   parent: FaxMachineFlatpack
   id: HotplateFlatpack
   name: fax machine flatpack
-  description: A flatpack used for constructing a hotplate.
+  description: A flatpack used for constructing a thermobath.
   components:
   - type: Flatpack
-    entity: ChemistryHotplate
+    entity: MachineThermobath
 
 - type: entity
   parent: FaxMachineFlatpack

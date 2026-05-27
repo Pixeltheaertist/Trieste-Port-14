@@ -8,6 +8,8 @@ using Robust.Client.UserInterface;
 
 namespace Content.Client.Chemistry.UI.Thermobath;
 
+// !! TRIESTE PORT MODIFIED !! //
+
 [UsedImplicitly]
 public sealed class ThermobathBoundUserInterface : BoundUserInterface, IBuiPreTickUpdate
 {
@@ -55,6 +57,7 @@ public sealed class ThermobathBoundUserInterface : BoundUserInterface, IBuiPreTi
             SendMessage(new ThermobathModeChangedMessage(modeValue));
     }
 
+
     public override void Update()
     {
         if (_window == null)
@@ -73,14 +76,38 @@ public sealed class ThermobathBoundUserInterface : BoundUserInterface, IBuiPreTi
         }
     }
 
+    // TRIESTE PORT SPECIFIC
+    // Cache the previous tempatures to try and prevent jitteriness
+    private float _lastSolutionTemp;
+    private float _lastCurrentTemp;
+    private float _lastSetpoint;
+
     private void UpdateThermoBath(ThermobathMenu window, ThermobathComponent comp)
     {
         window.SetBeakerPresent(comp.HasBeaker);
-        window.SetSolutionTemperature(comp.SolutionTemperature);
+
+        if (comp.SolutionTemperature == null)
+            return;
+
+        // Only update display if change is more than 1 kelvin
+        if (Math.Abs(_lastSolutionTemp - comp.SolutionTemperature.Value) < 1f)
+            return;
+
+        _lastSolutionTemp = comp.SolutionTemperature.Value;
+        window.SetSolutionTemperature(comp.SolutionTemperature.Value);
     }
 
     private void UpdateThermoRegulator(ThermobathMenu window, ThermoregulatorComponent comp)
     {
+        // TRIESTE START
+        if (MathHelper.CloseTo(_lastCurrentTemp, comp.Temperature)
+            && MathHelper.CloseTo(_lastSetpoint, comp.Setpoint))
+            return;
+
+        _lastCurrentTemp = comp.Temperature;
+        _lastSetpoint = comp.Setpoint;
+        // TRIESTE END
+
         window.SetCurrentTemperature(comp.Temperature);
         window.SetTemperatureLimits(comp.MinTemperature, comp.MaxTemperature);
         window.SetSetpoint(comp.Setpoint, 5f); // We add tolerance to account for the temp exchange jitter

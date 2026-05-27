@@ -7,6 +7,8 @@ using Robust.Shared.Timing;
 
 namespace Content.Client.Chemistry.UI.Thermobath;
 
+// !! TRIESTE PORT MODIFIED !! //
+
 [GenerateTypedNameReferences]
 public sealed partial class ThermobathMenu : FancyWindow
 {
@@ -204,6 +206,7 @@ public sealed partial class ThermobathMenu : FancyWindow
         TemperatureVfd.Value = displayValue;
         TemperatureVfd.ShowDecimalPoint = true;
         TemperatureVfd.DecimalPosition = 1;
+        TemperatureVfd.ActiveColor = Color.FromHex("#FFE500"); //  TP14 : Custom yellow
     }
 
     private void UpdateSetpointDisplay()
@@ -212,6 +215,7 @@ public sealed partial class ThermobathMenu : FancyWindow
         SetpointVfd.Value = displayValue;
         SetpointVfd.ShowDecimalPoint = true;
         SetpointVfd.DecimalPosition = 1;
+        SetpointVfd.ActiveColor = Color.FromHex("#FFE500"); //  TP14 : Custom yellow
     }
 
     private void UpdateSolutionTemperatureDisplay(float? temperature)
@@ -223,11 +227,13 @@ public sealed partial class ThermobathMenu : FancyWindow
             SolutionTemperatureVfd.ShowDecimalPoint = true;
             SolutionTemperatureVfd.DecimalPosition = 1;
             SolutionTemperatureVfd.ClearAllBitmaskOverrides();
+            SolutionTemperatureVfd.ActiveColor = Color.FromHex("#FFE500"); //  TP14 : Custom yellow
         }
         else
         {
             SolutionTemperatureVfd.SetGlobalBitmaskOverride(0b1000000);
             SolutionTemperatureVfd.ShowDecimalPoint = false;
+            SolutionTemperatureVfd.ActiveColor = Color.FromHex("#FFE500"); //  TP14 : Custom yellow
         }
     }
 

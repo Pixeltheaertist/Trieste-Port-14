@@ -5,10 +5,13 @@ using Robust.Client.UserInterface;
 
 namespace Content.Client.UserInterface.Controls;
 
+// !! TRIESTE MODIFIED !! //
+
 public sealed class SegmentDisplay : Control
 {
-    private static readonly Color ActiveColor = Color.FromHex("#94daca");
-    private static readonly Color InactiveColor = Color.FromHex("#46635c");
+    // TRIESE - Made these public for the Thermobath.
+    public Color ActiveColor { get; set; } = Color.FromHex("#94daca");
+    public Color InactiveColor { get; set; } = Color.FromHex("#46635c");
     private static readonly Color BackgroundColor = Color.FromHex("#1e272a");
 
     /// <summary>

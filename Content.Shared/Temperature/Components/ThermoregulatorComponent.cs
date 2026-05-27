@@ -71,13 +71,14 @@ public sealed partial class ThermoregulatorComponent : Component, IHeatContainer
     /// Maximum allowed temperature setpoint.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float MaxTemperature = 573.15f; // 300C, taken from HUBER CC-308B datasheet
+    public float MaxTemperature = 999.15f; // 300C, taken from HUBER CC-308B datasheet|TP14: 727C for (temp) oil.
 
     /// <summary>
+    /// TRIESTE MODIFIED
     /// Minimum allowed temperature setpoint.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float MinTemperature = 253.15f; // -20C, taken from HUBER CC-308B datasheet
+    public float MinTemperature = 70.15f; // -20C, taken from HUBER CC-308B datasheet|TP14: -203C, for Calordine.
 
     /// <summary>
     /// Temperature hysteresis in Kelvin.
