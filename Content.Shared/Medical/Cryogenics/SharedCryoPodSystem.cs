@@ -131,7 +131,7 @@ public abstract partial class SharedCryoPodSystem : EntitySystem
 
         if (solutionToInject.Volume > 0)
         {
-            _bloodstream.TryAddToBloodstream((patient.Value, bloodstream), solutionToInject);
+            _bloodstream.TryAddToChemicals((patient.Value, bloodstream), solutionToInject);
             _reactive.DoEntityReaction(patient.Value, solutionToInject, ReactionMethod.Injection);
         }
     }

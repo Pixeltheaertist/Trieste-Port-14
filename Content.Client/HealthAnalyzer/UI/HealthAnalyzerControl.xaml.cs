@@ -3,9 +3,9 @@ using System.Numerics;
 using Content.Shared.Atmos;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
-using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.IdentityManagement;
 using Content.Shared.MedicalScanner;
 using Content.Shared.Mobs;
@@ -23,6 +23,8 @@ namespace Content.Client.HealthAnalyzer.UI;
 // Health analyzer UI is split from its window because it's used by both the
 // health analyzer item and the cryo pod UI.
 
+// !! TRIESTE MODIFIED !! //
+
 [GenerateTypedNameReferences]
 public sealed partial class HealthAnalyzerControl : BoxContainer
 {
@@ -30,6 +32,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
     private readonly SpriteSystem _spriteSystem;
     private readonly IPrototypeManager _prototypes;
     private readonly IResourceCache _cache;
+    private readonly DamageableSystem _damageable;
 
     public HealthAnalyzerControl()
     {
@@ -40,6 +43,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         _spriteSystem = _entityManager.System<SpriteSystem>();
         _prototypes = dependencies.Resolve<IPrototypeManager>();
         _cache = dependencies.Resolve<IResourceCache>();
+        _damageable = _entityManager.System<DamageableSystem>();
     }
 
     public void Populate(HealthAnalyzerUiState state)
@@ -78,10 +82,13 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             : Loc.GetString("health-analyzer-window-entity-unknown-text"));
         NameLabel.SetMessage(name);
 
+        // !! STARLIGHT SPECIFIC !!
+        // Changed to include custom specie names
         SpeciesLabel.Text =
             _entityManager.TryGetComponent<HumanoidAppearanceComponent>(target.Value,
                 out var humanoidAppearanceComponent)
-                ? Loc.GetString(_prototypes.Index<SpeciesPrototype>(humanoidAppearanceComponent.Species).Name)
+                ? humanoidAppearanceComponent.CustomSpecieName + " (" +
+                  Loc.GetString(_prototypes.Index(humanoidAppearanceComponent.Species).Name) + ")"
                 : Loc.GetString("health-analyzer-window-entity-unknown-species-text");
 
         // Basic Diagnostic
