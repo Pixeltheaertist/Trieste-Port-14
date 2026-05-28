@@ -141,6 +141,8 @@
   loadouts:
   - OverseerJumpsuit
   - OverseerJumpskirt
+  - OverseerHighvisJumpsuit
+  - OverseerHighvisJumpskirt
   - OverseerFormalSuit
   - OverseerFormalSkirt
 
@@ -149,8 +151,8 @@
   name: loadout-group-captain-neck
   minLimit: 0
   loadouts:
+  - CommandTie
   - OverseerCloak
-  - OverseerCloakFormal
   - OverseerMantle
 
 - type: loadoutGroup
@@ -167,13 +169,14 @@
   loadouts:
   - OverseerOuterClothing
   - OverseerWintercoat
+  - OverseerArmor
 
 - type: loadoutGroup
   id: OverseerJobTrinkets
   name: loadout-group-jobtrinkets
   minLimit: 0
   loadouts:
-  - LizardPlushieCaptain
+  - LizardPlushieOverseer
 # ~~~~~~ TP14
 
 - type: loadoutGroup
@@ -195,6 +198,7 @@
   name: loadout-group-hop-neck
   minLimit: 0
   loadouts:
+  - CommandTie
   - HoPCloak
   - HoPMantle
 

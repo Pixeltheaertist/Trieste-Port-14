@@ -12,22 +12,32 @@
 - type: loadout
   id: OverseerJumpsuit
   equipment:
-    jumpsuit: ClothingUniformJumpsuitCaptain
+    jumpsuit: TP14ClothingUniformJumpsuitOverseer
 
 - type: loadout
   id: OverseerJumpskirt
   equipment:
-    jumpsuit: ClothingUniformJumpskirtCaptain
+    jumpsuit: TP14ClothingUniformJumpskirtOverseer
+
+- type: loadout
+  id: OverseerHighvisJumpsuit
+  equipment:
+    jumpsuit: TP14ClothingUniformHighVisJumpsuitOverseer
+
+- type: loadout
+  id: OverseerHighvisJumpskirt
+  equipment:
+    jumpsuit: TP14ClothingUniformHighVisJumpskirtOverseer
 
 - type: loadout
   id: OverseerFormalSuit
   equipment:
-    jumpsuit: ClothingUniformJumpsuitCapFormal
+    jumpsuit: TP14ClothingUniformFormalJumpsuitOverseer
 
 - type: loadout
   id: OverseerFormalSkirt
   equipment:
-    jumpsuit: ClothingUniformJumpskirtCapFormalDress
+    jumpsuit: TP14ClothingUniformFormalJumpskirtOverseer
 
 # Head
 - type: loadout
@@ -38,23 +48,24 @@
 - type: loadout
   id: OverseerCap
   equipment:
-    head: ClothingHeadHatCapcap
+    head: ClothingHeadHatHardhatWhite
 
 # Neck
 - type: loadout
-  id: OverseerCloak
+  id: CommandTie
   equipment:
-    neck: ClothingNeckCloakCap
+    neck: TP14ClothingNeckTieCommand
 
 - type: loadout
-  id: OverseerCloakFormal
+  id: OverseerCloak
   equipment:
-    neck: ClothingNeckCloakCapFormal
+    neck: TP14ClothingNeckCloakOverseer
+
 
 - type: loadout
   id: OverseerMantle
   equipment:
-    neck: ClothingNeckMantleCap
+    neck: TP14ClothingNeckMantleOverseer
   effects:
   - !type:GroupLoadoutEffect
     proto: MasterOverseer
@@ -62,23 +73,23 @@
 - type: startingGear
   id: OverseerMantle
   equipment:
-    neck: ClothingNeckMantleCap
+    neck: TP14ClothingNeckMantleOverseer
 
 # Back
 - type: loadout
   id: OverseerBackpack
   equipment:
-    back: ClothingBackpackCaptain
+    back: TP14ClothingBackpackOverseer
 
 - type: loadout
   id: OverseerSatchel
   equipment:
-    back: ClothingBackpackSatchelCaptain
+    back: TP14ClothingBackpackSatchelOverseer
 
 - type: loadout
   id: OverseerDuffel
   equipment:
-    back: ClothingBackpackDuffelCaptain
+    back: TP14ClothingBackpackDuffelOverseer
 
 # Outer clothing
 - type: loadout
@@ -89,4 +100,22 @@
 - type: loadout
   id: OverseerWintercoat
   equipment:
-    outerClothing: ClothingOuterWinterCap
+    outerClothing: TP14ClothingOuterVestOverseerHighVis
+
+- type: loadout
+  id: OverseerArmor
+  equipment:
+    outerClothing: TP14ClothingOuterVestOverseerArmoredVest
+
+#JobSpecific
+- type: loadout
+  id: LizardPlushieOverseer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobCaptain
+      time: 72000 # 20hr
+  storage:
+    back:
+    - TP14PlushieLizardJobOverseer

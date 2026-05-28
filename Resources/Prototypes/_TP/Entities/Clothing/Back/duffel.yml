@@ -1,0 +1,9 @@
+- type: entity
+  parent: [ClothingBackpackDuffel, BaseCommandContraband]
+  id: TP14ClothingBackpackDuffelOverseer
+  suffix: Trieste, Back, Command
+  name: overseers's duffel bag
+  description: A large duffel bag for holding extra Overseer goods.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Back/Duffels/overseer.rsi

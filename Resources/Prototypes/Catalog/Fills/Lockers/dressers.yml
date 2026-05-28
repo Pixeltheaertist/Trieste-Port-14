@@ -1,20 +1,16 @@
-# !! TRIESTE MODIFIED !! #
-
 - type: entity
   id: DresserCaptainFilled
   parent: Dresser
-  suffix: Filled, Overseer # TP: "Captain" -> "Overseer"
+  suffix: Filled, Overseer #TP14
   components:
   - type: StorageFill
     contents:
-      - id: ClothingHeadHatCaptain
-      - id: ClothingHeadHatCapcap
-      - id: ClothingUniformJumpsuitCapFormal
-      - id: ClothingUniformJumpskirtCapFormalDress
-      - id: ClothingHandsGlovesCaptain
-      - id: ClothingOuterWinterCap
-      - id: ClothingNeckCloakCap
-      - id: TP14EntClothesDarkBlueWinterBoots # TP: Added
+      - id: TP14ClothingHeadHatBeretOverseer #TP14
+      - id: TP14ClothingUniformFormalJumpsuitOverseer #TP14
+      - id: TP14ClothingUniformFormalJumpskirtOverseer #TP14
+      - id: TP14ClothingHandsGlovesOverseer #TP14
+      - id: TP14ClothingOuterArmorOverseerHeavyCoat #TP14
+      - id: TP14ClothingNeckCloakOverseer #TP14
 
 - type: entity
   id: DresserChiefEngineerFilled
@@ -60,13 +56,12 @@
 - type: entity
   id: DresserHeadOfSecurityFilled
   parent: Dresser
-  suffix: Filled, Marshal # TP14 - Was 'Head of Security'
+  suffix: Filled, Head Of Security
   components:
   - type: StorageFill
     contents:
       - id: ClothingHeadHatBeretHoS
       - id: ClothingHeadHatHoshat
-      - id: ClothingMaskNeckGaiter
       - id: ClothingUniformJumpskirtHoSAlt
       - id: ClothingUniformJumpsuitHoSAlt
       - id: ClothingUniformJumpskirtHosFormal

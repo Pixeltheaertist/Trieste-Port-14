@@ -111,9 +111,9 @@
     sprite: Clothing/Back/Backpacks/medical.rsi
 
 - type: entity
-  parent: [ClothingBackpack, BaseCommandContraband]
+  parent: [ClothingBackpack, BaseNanotrasenContraband ] #TP14
   id: ClothingBackpackCaptain
-  name: overseer's backpack
+  name: captains's backpack
   description: It's a special blue backpack, reminicent of those worn by Nanotrasen command.
   components:
   - type: Sprite

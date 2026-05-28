@@ -63,7 +63,7 @@
     sprite: _TP/Clothing/OuterClothing/Coats/lieutenant_coat.rsi
   - type: TemperatureProtection
     heatingCoefficient: 1.1
-    coolingCoefficient: 0.3
+    coolingCoefficient: 0.1
 
 
 - type: entity

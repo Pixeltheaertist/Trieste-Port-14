@@ -13,7 +13,7 @@
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
-    sprite: _TP/Structures/Machines/VendingMachines/industrialclothesvend.rsi
+    sprite: _TP/Structures/Machines/VendingMachines/swimvend.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]

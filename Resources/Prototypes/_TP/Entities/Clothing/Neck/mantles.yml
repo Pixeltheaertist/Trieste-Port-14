@@ -1,0 +1,11 @@
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
+  id: TP14ClothingNeckMantleOverseer
+  suffix: Trieste, Neck, Command
+  name: overseer's mantle
+  description: A comfortable and chique mantle, perfect for the sholders of an overseer.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Neck/mantles/overseer.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Neck/mantles/overseer.rsi

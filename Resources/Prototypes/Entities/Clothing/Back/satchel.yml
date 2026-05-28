@@ -133,9 +133,9 @@
     sprite: Clothing/Back/Satchels/brigmedic.rsi
 
 - type: entity
-  parent: [ClothingBackpackSatchel, BaseCommandContraband]
+  parent: [ClothingBackpackSatchel, BaseNanotrasenContraband ] #TP14
   id: ClothingBackpackSatchelCaptain
-  name: overseer's satchel
+  name: Captain's satchel
   description: An exclusive satchel for Nanotrasen officers.
   components:
   - type: Sprite

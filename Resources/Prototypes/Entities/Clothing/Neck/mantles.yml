@@ -1,8 +1,8 @@
 - type: entity
-  parent: [ClothingNeckBase, BaseCommandContraband]
+  parent: [ClothingNeckBase, BaseNanotrasenContraband] #TP14
   id: ClothingNeckMantleCap
-  name: overseer's mantle
-  description: A comfortable and chique mantle, perfect for the sholders of an overseer.
+  name: captain's mantle
+  description: A comfortable and chique mantle, perfect for the sholders of an captain.
   components:
   - type: Sprite
     sprite: Clothing/Neck/mantles/capmantle.rsi
