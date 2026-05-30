@@ -2,8 +2,6 @@ using System.Linq;
 using System.Numerics;
 using Content.Client.CrewManifest;
 using Content.Client.GameTicking.Managers;
-using Content.Client.Lobby;
-using Content.Client.Lobby.UI;
 using Content.Client.UserInterface.Controls;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Shared.CCVar;
@@ -37,7 +35,10 @@ namespace Content.Client.Lobby.UI
         [Dependency] private readonly ILogManager _logManager = default!;
         [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
 
-        public event Action<(NetEntity, string)> SelectedId;
+        /// <summary>
+        /// Action invoked when a job is pressed
+        /// </summary>
+        public event Action<(NetEntity, int, string)> SelectedId;
 
         private readonly ClientGameTicker _gameTicker;
         private readonly SpriteSystem _sprites;
@@ -47,6 +48,8 @@ namespace Content.Client.Lobby.UI
         private readonly Dictionary<NetEntity, Dictionary<string, List<JobButton>>> _jobButtons = new();
         private readonly Dictionary<NetEntity, Dictionary<string, BoxContainer>> _jobCategories = new();
         private readonly List<ScrollContainer> _jobLists = new();
+
+        private int? _selectedSlot;
 
         public LateJoinGui()
         {
@@ -64,9 +67,11 @@ namespace Content.Client.Lobby.UI
 
             SelectedId += x =>
             {
-                var (station, jobId) = x;
-                _sawmill.Info($"Late joining as ID: {jobId}");
-                _consoleHost.ExecuteCommand($"joingame {CommandParsing.Escape(jobId)} {station}");
+                var (station, slot, jobId) = x;
+                if (slot < 0)
+                    return;
+                Logger.InfoS("latejoin", $"Late joining as ID: {jobId}");
+                _consoleHost.ExecuteCommand($"joingame {slot} {CommandParsing.Escape(jobId)} {station}");
                 Close();
             };
 
@@ -80,26 +85,30 @@ namespace Content.Client.Lobby.UI
         {
             CharacterList.RemoveAllChildren();
 
-            if (_preferencesManager.Preferences == null)
-                return;
-
-            var preferences = _preferencesManager.Preferences;
             var group = new ButtonGroup();
-            foreach (var (slot, profile) in preferences.Characters)
+            var first = !_selectedSlot.HasValue;
+            foreach (var (slot, profile) in _preferencesManager.Preferences!.Characters)
             {
-                var isSelected = (slot == preferences.SelectedCharacterIndex);
+                var isSelected = _selectedSlot.HasValue ? slot == _selectedSlot : first;
                 if (profile is not HumanoidCharacterProfile humanoid)
                     continue;
                 var characterPickerButton =
-                    new CharacterPickerButton(_entityManager, _prototypeManager, group, humanoid, isSelected, true);
+                    new CharacterPickerButton(_preferencesManager, _prototypeManager, _playerManager, group, humanoid, isSelected, true);
                 CharacterList.AddChild(characterPickerButton);
+
+                if (isSelected && _selectedSlot != slot)
+                {
+                    _selectedSlot = slot;
+                    RebuildJobList();
+                }
 
                 characterPickerButton.OnPressed += _ =>
                 {
-                    _preferencesManager.SelectCharacter(slot);
-                     UserInterfaceManager.GetUIController<LobbyUIController>().ReloadCharacterSetup();
+                    _selectedSlot = slot;
                     RebuildJobList();
                 };
+                if(first)
+                    first = false;
             }
         }
 
@@ -110,8 +119,12 @@ namespace Content.Client.Lobby.UI
             _jobButtons.Clear();
             _jobCategories.Clear();
 
-            if (!_gameTicker.DisallowedLateJoin && _gameTicker.StationNames.Count == 0)
+            if (_gameTicker is { DisallowedLateJoin: false, StationNames.Count: 0 })
                 _sawmill.Warning("No stations exist, nothing to display in late-join GUI");
+
+            if (!_selectedSlot.HasValue ||
+                !_preferencesManager.Preferences!.TryGetHumanoidInSlot(_selectedSlot.Value, out var humanoid))
+                return;
 
             foreach (var (id, name) in _gameTicker.StationNames)
             {
@@ -284,9 +297,10 @@ namespace Content.Client.Lobby.UI
                         jobButton.AddChild(jobSelector);
                         category.AddChild(jobButton);
 
-                        jobButton.OnPressed += _ => SelectedId.Invoke((id, jobButton.JobId));
+                        // just send a -1 if there is no selected slot... catch it later
+                        jobButton.OnPressed += _ => SelectedId.Invoke((id, _selectedSlot ?? -1, jobButton.JobId));
 
-                        if (!_jobRequirements.IsAllowed(prototype, (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter, out var reason))
+                        if (!_jobRequirements.IsAllowed(prototype, humanoid, out var reason))
                         {
                             jobButton.Disabled = true;
 
