@@ -86,13 +86,13 @@
     - type: Tag
       tags:
       - ChemDispensable
+      - TagJug # TP14
     - type: DnaSubstanceTrace
 
 - type: entity
   parent: Jug
   suffix: carbon
   id: JugCarbon
-  categories: [ HideSpawnMenu ]
   components:
   - type: Label
     currentLabel: reagent-name-carbon

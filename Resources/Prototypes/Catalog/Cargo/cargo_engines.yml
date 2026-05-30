@@ -28,15 +28,15 @@
 #  category: cargoproduct-category-name-engineering
 #  group: market
 
-#- type: cargoProduct
-#  id: EngineSingularityCollector
-#  icon:
-#    sprite: Structures/Power/Generation/Singularity/collector.rsi
-#    state: ca_on
-#  product: CrateEngineeringSingularityCollector
-#  cost: 1000
-#  category: cargoproduct-category-name-engineering
-#  group: market
+- type: cargoProduct
+  id: EngineSingularityCollector
+  icon:
+    sprite: Structures/Power/Generation/Singularity/collector.rsi
+    state: ca_on
+  product: CrateEngineeringSingularityCollector
+  cost: 1000
+  category: cargoproduct-category-name-engineering
+  group: market
 
 #- type: cargoProduct
 #  id: EngineParticleAccelerator

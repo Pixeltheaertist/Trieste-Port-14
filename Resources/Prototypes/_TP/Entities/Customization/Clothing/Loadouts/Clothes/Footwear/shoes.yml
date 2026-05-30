@@ -2,16 +2,19 @@
   id: TP14LoadoutFootwearBlack
   equipment:
     shoes: ClothingShoesColorBlack
+  groupBy: "coloredshoes"
 
 - type: loadout
   id: TP14LoadoutFootwearBlue
   equipment:
     shoes: ClothingShoesColorBlue
+  groupBy: "coloredshoes"
 
 - type: loadout
   id: TP14LoadoutFootwearBrown
   equipment:
     shoes: ClothingShoesColorBrown
+  groupBy: "coloredshoes"
 
 - type: loadout
   id: TP14LoadoutFootwearChef
@@ -22,6 +25,7 @@
   id: TP14LoadoutFootwearGreen
   equipment:
     shoes: ClothingShoesColorGreen
+  groupBy: "coloredshoes"
 
 - type: loadout
   id: TP14LoadoutFootwearLaceup
@@ -37,6 +41,7 @@
   id: TP14LoadoutFootwearOrange
   equipment:
     shoes: ClothingShoesColorOrange
+  groupBy: "coloredshoes"
 
 - type: loadout
   id: TP14LoadoutFootwearPierrot
@@ -47,11 +52,13 @@
   id: TP14LoadoutFootwearPurple
   equipment:
     shoes: ClothingShoesColorPurple
+  groupBy: "coloredshoes"
 
 - type: loadout
   id: TP14LoadoutFootwearRed
   equipment:
     shoes: ClothingShoesColorRed
+  groupBy: "coloredshoes"
 
 - type: loadout
   id: TP14LoadoutFootwearTourist
@@ -62,6 +69,7 @@
   id: TP14LoadoutFootwearWhite
   equipment:
     shoes: ClothingShoesColorWhite
+  groupBy: "coloredshoes"
 
 - type: loadout
   id: TP14LoadoutFootwearYakuza
@@ -72,3 +80,4 @@
   id: TP14LoadoutFootwearYellow
   equipment:
     shoes: ClothingShoesColorYellow
+  groupBy: "coloredshoes"

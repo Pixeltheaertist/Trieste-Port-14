@@ -9,6 +9,8 @@
     prototype: Mothroach
   - type: Loadout
     prototypes: [ TP14MobDaisyGear ]
+  - type: StealTarget
+    stealGroup: TP14StealTargetGroupDaisy
 
 - type: entity
   id: TP14MobOpossumMorty

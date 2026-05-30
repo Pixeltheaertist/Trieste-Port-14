@@ -93,6 +93,17 @@
     ClothingHandsGlovesColorOrange: 2
     ClothingHandsGlovesColorPurple: 2
     ClothingEyesGlassesCheapSunglasses: 3
+    #Far Horizons-Start
+    ClothingShoesBootsPerformer: 2
+    ClothingUniformJumpskirtPerformer: 2
+    ClothingHeadPerformerWig: 2
+    TP14ClothingShoesBootsDarkPerformer: 2
+    TP14ClothingUniformJumpskirtDarkPerformer: 2
+    ClothingHeadDarkPerformerWig: 2
+    ClothingShoesBootsBrightPerformer: 2
+    ClothingUniformJumpskirtBrightPerformer: 2
+    ClothingHeadBrightPerformerWig: 2
+    #Far Horizons-End
     # DO NOT ADD MORE, USE UNIFORM DYING
   contrabandInventory:
     ClothingMaskNeckGaiter: 2

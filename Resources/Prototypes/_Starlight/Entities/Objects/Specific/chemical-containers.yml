@@ -1,0 +1,13 @@
+- type: entity
+  parent: Jug
+  suffix: Starlight, Corn oil
+  id: JugCornoil
+  components:
+  - type: Label
+    currentLabel: Corn Oil
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: Cornoil
+          Quantity: 200

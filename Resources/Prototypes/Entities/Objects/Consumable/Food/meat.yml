@@ -361,7 +361,7 @@
     solutions:
       food:
         reagents:
-        - ReagentId: ActivatedProtein
+        - ReagentId: ActivatedAlgae # placeholder
           Quantity: 20
   - type: StaticPrice
     price: 750

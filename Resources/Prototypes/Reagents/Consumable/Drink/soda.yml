@@ -117,6 +117,7 @@
 
 - type: reagent
   id: LemonLime
+  group: DrinksSoftMix
   name: reagent-name-lemon-lime
   parent: BaseSoda
   desc: reagent-desc-lemon-lime

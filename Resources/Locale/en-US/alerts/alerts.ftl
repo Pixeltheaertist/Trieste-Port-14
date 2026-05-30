@@ -69,9 +69,6 @@ alerts-battery-desc = If your battery depletes, you will be unable to use your a
 alerts-no-battery-name = No Battery
 alerts-no-battery-desc = You don't have a battery, rendering you unable to charge or use your abilities.
 
-jellid-alerts-no-battery-name = Low Energy
-jellid-alerts-no-battery-desc = You're feeling dangerously [color=red]drained[/color]. Find something with a [color=yellow]Battery[/color] to charge up.
-
 alerts-internals-name = Toggle internals
 alerts-internals-desc = Toggles your gas tank internals on or off.
 

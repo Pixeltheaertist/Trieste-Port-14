@@ -60,8 +60,8 @@
   - quantity: 10
     weight: 3
     reagents:
-    - HyperPlatelet
-    - HyperMarrow
+    - ReinforcementAlgae
+    - RegenerationAlgae
     - Ephedrine
     - NorepinephricAcid
     - Tricordrazine

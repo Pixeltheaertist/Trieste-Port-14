@@ -1,0 +1,25 @@
+{
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Sprite based off of Goobstation/FarHorizon fission generator turbine, and created by Cookie for Trieste Port 14.",
+    "version": 1,
+    "size": {
+        "x": 96,
+        "y": 160
+    },
+    "states": [
+        {
+            "name": "storm_array_active",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "storm_array_idle"
+        }
+    ]
+}

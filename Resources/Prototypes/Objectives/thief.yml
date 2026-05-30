@@ -341,16 +341,16 @@
   - type: Objective
     difficulty: 1
 
-- type: entity
-  parent: BaseThiefStealObjective
-  id: CaptainSwordStealObjective
-  components:
-  - type: NotJobRequirement
-    jobs: [ Captain ]
-  - type: StealCondition
-    stealGroup: CaptainSword
-  - type: Objective
-    difficulty: 1.5
+#- type: entity  TP14, removing Cap objectives.
+#  parent: BaseThiefStealObjective
+#  id: CaptainSwordStealObjective
+#  components:
+#  - type: NotJobRequirement
+#    jobs: [ Captain ]
+#  - type: StealCondition
+#    stealGroup: CaptainSword
+#  - type: Objective
+#    difficulty: 1.5
 
 # Structures
 

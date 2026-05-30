@@ -7,10 +7,23 @@
   id: TP14StormArray
   name: storm array
   description: The core of a massive array of lightning rods, siphoning searing energy from the eternal storm above. Must be kept cool.
-  suffix: Trieste, 100kW
+  suffix: Trieste, 150kW
   placement:
     mode: AlignTileAny
   components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _TP/Structures/Power/storm-array.rsi
+    layers:
+    - state: storm_array_idle
+      map: [ "enum.StormArrayVisuals.Idle" ]
+      visible: true
+    - state: storm_array_active
+      map: [ "enum.StormArrayVisuals.Active" ]
+      visible: false
+    drawdepth: Mobs
+    offset: 0, 1
+    snapCardinals: false
   - type: Physics
     bodyType: Static
   - type: IntrinsicRadioTransmitter
@@ -24,14 +37,14 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-1.0,0.0,1.0,1.10"
+          bounds: "-1.25, -1, 1.25, 0.75"
         density: 50
         mask:
         - LargeMobMask
         layer:
         - WallLayer
   - type: PowerSupplier
-    supplyRate: 100000
+    supplyRate: 150000
   - type: GuideHelp
     guides:
     - StormArray
@@ -55,21 +68,17 @@
     onBump: true
     requirePower: false
     highVoltageNode: input
-  - type: Sprite
-    sprite: _TP/Structures/Machines/StormArray.rsi # Might need to make the folder name lowercase, server compresses files weird sometimes.
-    offset: 0, 1
-    state: storm_array_new
-    drawdepth: Mobs
-  - type: DamageVisuals
-    thresholds: [100, 200, 400]
-    damageDivisor: 4
-    trackAllDamage: true
-    damageOverlay:
-      sprite: Structures/Windows/cracks.rsi
+# Commented out for now due to client-side sprite errors.
+#  - type: DamageVisuals
+#    thresholds: [100, 200, 400]
+#    damageDivisor: 4
+#    trackAllDamage: true
+#    damageOverlay:
+#      sprite: Structures/Windows/cracks.rsi
   - type: AmbientSound
     enabled: true
-    volume: 10
-    range: 5
+    volume: 5
+    range: 10
     sound:
       path: /Audio/Ambience/Objects/buzzing.ogg
   - type: Explosive
@@ -149,12 +158,12 @@
       inlet:
         !type:PipeNode
         nodeGroupID: Pipe
-        pipeDirection: South
+        pipeDirection: East
         volume: 100
       outlet:
         !type:PipeNode
         nodeGroupID: Pipe
-        pipeDirection: North
+        pipeDirection: West
         volume: 100
       output_hv:
         !type:CableDeviceNode
@@ -166,13 +175,15 @@
   components:
   - type: Sprite
     sprite: Markers/teg_arrow.rsi
-    color: "#FFFFFFBB"
     layers:
       - state: arrow
-        offset: 0, -2.75
+        offset: 2, 0
+        rotation: 270
+        color: "#FFFFFFBB"
       - state: arrow
-        offset: 0, 0.90
-    rotation: 180
+        offset: -2, 0
+        rotation: 270
+        color: "#FFAAAABB"
   - type: TimedDespawn
     lifetime: 2
   - type: Tag

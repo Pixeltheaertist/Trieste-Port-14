@@ -17,6 +17,7 @@
     damageContainer: StructuralInorganic
     damageModifierSet: Metallic
   - type: SubFloorHide
+    subfloorLayer: GasPipe  # TP14 - Newly added
   - type: CollideOnAnchor
   - type: Anchorable
   - type: Rotatable

@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-3.0",
+  "copyright": "This sprite features an adaptation of Akita Neru, a derivative of Hatsune Miku, © Crypton Future Media, Inc. 2007, licensed under a CC BY-NC: https://creativecommons.org/licenses/by-nc/3.0/, Akita Neru version made by CorruptOmega",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "equipped-FEET",
+      "directions": 4
+    }
+  ]
+}

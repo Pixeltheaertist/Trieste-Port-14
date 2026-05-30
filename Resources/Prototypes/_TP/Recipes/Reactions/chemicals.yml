@@ -30,7 +30,7 @@
 
 - type: reaction
   id: OilRefinementStage4
-  minTemp: 1000
+  minTemp: 999
   reactants:
     RefinedOil:
       amount: 1
@@ -57,7 +57,7 @@
   reactants:
     ExoticOil:
       amount: 1
-    HyperPlatelet:
+    ActivatedAlgae:
       amount: 1
   products:
     Omnizine: 1

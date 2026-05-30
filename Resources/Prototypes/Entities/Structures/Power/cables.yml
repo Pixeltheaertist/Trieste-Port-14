@@ -107,6 +107,8 @@
     range: 2
     sound:
       path: /Audio/Ambience/Objects/emf_buzz.ogg
+  - type: SubFloorHide      # TP14
+    subfloorLayer: HVCable  # TP14 - Newly added
 
 - type: entity
   id: CableHVUncuttable
@@ -161,6 +163,8 @@
   - type: CableVisualizer
     statePrefix: mvcable_
     extraLayerPrefix: mvstripes_
+  - type: SubFloorHide      # TP14
+    subfloorLayer: MVCable  # TP14 - Newly added
 
 - type: entity
   id: CableMVUncuttable
@@ -215,6 +219,8 @@
         acts: [ "Destruction" ]
   - type: CableVisualizer
     statePrefix: lvcable_
+  - type: SubFloorHide      # TP14
+    subfloorLayer: LVCable  # TP14 - Newly added
 
 - type: entity
   id: CableApcExtensionUncuttable

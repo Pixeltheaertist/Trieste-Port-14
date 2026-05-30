@@ -1,0 +1,136 @@
+- type: reaction
+  id: DenatureBreakdown
+  source: true
+  requiredMixerCategories:
+  - Centrifuge
+  reactants:
+      DenaturedProteins:
+        amount: 1
+  products:
+      DormantOrganics: .5
+      DecayedProtein: .5
+
+- type: reaction
+  id: DecayedBreakdown
+  source: true
+  requiredMixerCategories:
+  - Centrifuge
+  reactants:
+      DecayedProtein:
+        amount: 1
+  products:
+      Carbon: .25
+      Hydrogen: .5
+      Oxygen: .25
+
+- type: reaction
+  id: ActivatedAlgae
+  requiredMixerCategories:
+  - Incubation
+  reactants:
+      DormantOrganics:
+        amount: 1
+      Carbon:
+        amount: 1
+      Oxygen:
+        amount: 1
+      SeaWater:
+        amount: 1
+      AlgalFeedstock:
+        amount: 3
+  products:
+      ActivatedAlgae: 6
+
+- type: reaction
+  id: StabilizationAlgae
+  requiredMixerCategories:
+  - Incubation
+  reactants:
+      ActivatedAlgae:
+        amount: 1
+      Arithrazine:
+        amount: 1
+      AlgalFeedstock:
+        amount: 1
+  products:
+      StabilizationAlgae: 2
+
+- type: reaction
+  id: ReinforcementAlgae
+  requiredMixerCategories:
+  - Incubation
+  reactants:
+      ActivatedAlgae:
+        amount: 1
+      Calordine:
+        amount: 1
+      AlgalFeedstock:
+        amount: 1
+      Carbon:
+        amount: 1
+  products:
+      ReinforcementAlgae: 3
+
+- type: reaction
+  id: RegenerationAlgae
+  requiredMixerCategories:
+  - Incubation
+  reactants:
+      ActivatedAlgae:
+        amount: 1
+      Calcium:
+        amount: 1
+      AlgalFeedstock:
+        amount: 1
+      Plasma:
+        amount: 1
+      Cryodine:
+        amount: 1
+  products:
+      RegenerationAlgae: 4
+
+- type: reaction
+  id: OxygenatedSaline
+  requiredMixerCategories:
+  - Incubation
+  reactants:
+      ActivatedAlgae:
+        amount: 1
+      Oxygen:
+        amount: 1
+      Saline:
+        amount: 1
+      AlgalFeedstock:
+        amount: 1
+  products:
+      OxygenatedSaline: 3
+
+- type: reaction
+  id: AlgalFeedstockNutriment
+  reactants:
+      Nutriment:
+        amount: 1
+      Carbon:
+        amount: 1
+      Hydrogen:
+        amount: 1
+  products:
+      AlgalFeedstock: 3  
+
+- type: reaction
+  id: AlgalFeedstockRaw
+  requiredMixerCategories:
+  - Incubation
+  reactants:
+      Carbon:
+        amount: 1
+      Oxygen:
+        amount: 1
+      Hydrogen:
+        amount: 2
+      DenaturedProteins:
+        amount: 1
+      SeaWater:
+        amount: 1
+  products:
+      AlgalFeedstock: 3

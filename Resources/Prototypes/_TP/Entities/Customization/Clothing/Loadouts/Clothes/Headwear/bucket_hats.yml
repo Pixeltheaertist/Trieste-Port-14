@@ -2,11 +2,13 @@
   id: TP14LoadoutHeadwearBucketBlack
   equipment:
     head: TP14ClothingHeadBucketBlack
+  groupBy: "coloredbuckethats"
 
 - type: loadout
   id: TP14LoadoutHeadwearBucketBlue
   equipment:
     head: TP14ClothingHeadBucketBlue
+  groupBy: "coloredbuckethats"
 
 - type: loadout
   id: TP14LoadoutHeadwearBucketBotany
@@ -17,26 +19,31 @@
   id: TP14LoadoutHeadwearBucketBrown
   equipment:
     head: TP14ClothingHeadBucketBrown
+  groupBy: "coloredbuckethats"
 
 - type: loadout
   id: TP14LoadoutHeadwearBucketDarkBlue
   equipment:
     head: TP14ClothingHeadBucketDarkBlue
+  groupBy: "coloredbuckethats"
 
 - type: loadout
   id: TP14LoadoutHeadwearBucketDarkGreen
   equipment:
     head: TP14ClothingHeadBucketDarkGreen
+  groupBy: "coloredbuckethats"
 
 - type: loadout
   id: TP14LoadoutHeadwearBucketGreen
   equipment:
     head: TP14ClothingHeadBucketGreen
+  groupBy: "coloredbuckethats"
 
 - type: loadout
   id: TP14LoadoutHeadwearBucketGrey
   equipment:
     head: TP14ClothingHeadCivilianBucket
+  groupBy: "coloredbuckethats"
 
 - type: loadout
   id: TP14LoadoutHeadwearBucketKhaki
@@ -47,11 +54,13 @@
   id: TP14LoadoutHeadwearBucketLightBrown
   equipment:
     head: TP14ClothingHeadBucketLightBrown
+  groupBy: "coloredbuckethats"
 
 - type: loadout
   id: TP14LoadoutHeadwearBucketMaroon
   equipment:
     head: TP14ClothingHeadBucketMaroon
+  groupBy: "coloredbuckethats"
 
 - type: loadout
   id: TP14LoadoutHeadwearBucketMedical
@@ -62,26 +71,31 @@
   id: TP14LoadoutHeadwearBucketOlive
   equipment:
     head: TP14ClothingHeadBucketOlive
+  groupBy: "coloredbuckethats"
 
 - type: loadout
   id: TP14LoadoutHeadwearBucketOrange
   equipment:
     head: TP14ClothingHeadBucketOrange
+  groupBy: "coloredbuckethats"
 
 - type: loadout
   id: TP14LoadoutHeadwearBucketPink
   equipment:
     head: TP14ClothingHeadBucketPink
+  groupBy: "coloredbuckethats"
 
 - type: loadout
   id: TP14LoadoutHeadwearBucketPurple
   equipment:
     head: TP14ClothingHeadBucketPurple
+  groupBy: "coloredbuckethats"
 
 - type: loadout
   id: TP14LoadoutHeadwearBucketRed
   equipment:
     head: TP14ClothingHeadBucketRed
+  groupBy: "coloredbuckethats"
 
 - type: loadout
   id: TP14LoadoutHeadwearBucketScience
@@ -97,14 +111,17 @@
   id: TP14LoadoutHeadwearBucketTeal
   equipment:
     head: TP14ClothingHeadBucketTeal
+  groupBy: "coloredbuckethats"
 
 - type: loadout
   id: TP14LoadoutHeadwearBucketWhite
   equipment:
     head: TP14ClothingHeadBucket
+  groupBy: "coloredbuckethats"
 
 - type: loadout
   id: TP14LoadoutHeadwearBucketYellow
   equipment:
     head: TP14ClothingHeadBucketYellow
+  groupBy: "coloredbuckethats"
 

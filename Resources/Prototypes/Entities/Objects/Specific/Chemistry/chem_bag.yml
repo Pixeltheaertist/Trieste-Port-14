@@ -30,4 +30,5 @@
         - Bottle
         - Syringe
         - Dropper
+        - TagJug
   - type: Dumpable

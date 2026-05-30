@@ -1,0 +1,6 @@
+<Document>
+  # Mixed Hard Drinks
+  These drinks contain alcohol, and have been shaken or stirred.
+
+  <GuideReagentGroupEmbed Group="DrinksHardMix"/>
+</Document>

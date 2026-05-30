@@ -1,0 +1,27 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by FatherCheese for TriestePort 14",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "cargo",
+            "directions": 4
+        },
+        {
+            "name": "cargo_e",
+            "directions": 4
+        },
+        {
+            "name": "cargo_e_r",
+            "directions": 4
+        },
+        {
+            "name": "cargo_l",
+            "directions": 4
+        }
+    ]
+}

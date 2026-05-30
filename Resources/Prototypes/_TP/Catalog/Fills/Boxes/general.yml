@@ -9,7 +9,7 @@
     contents:
       - id: TP14ClothingShoesBootsDarkPerformer
       - id: TP14ClothingUniformJumpskirtDarkPerformer
-      - id: ClothingHeadHatHairflower
+      - id: ClothingHeadDarkPerformerWig
       - id: FoodBreadBaguette
 
 - type: entity

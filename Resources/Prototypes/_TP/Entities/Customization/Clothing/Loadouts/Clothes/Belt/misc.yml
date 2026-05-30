@@ -7,3 +7,8 @@
   id: TP14LoadoutBeltMedicalBeltFilled
   equipment:
     belt: ClothingBeltMedicalFilled
+
+- type: loadout
+  id: TP14LoadoutBeltBandolier
+  equipment:
+    belt: ClothingBeltBandolier

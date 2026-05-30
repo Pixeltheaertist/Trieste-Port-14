@@ -1,3 +1,5 @@
+# !! TRIESTE PORT MODIFIED !! #
+
 - type: entity
   abstract: true
   parent: Clothing
@@ -193,6 +195,7 @@
     - HeadTop
     - HeadSide
     - FacialHair
+  - type: AirtightHelmet # TP: Added
 
 - type: entity
   abstract: true

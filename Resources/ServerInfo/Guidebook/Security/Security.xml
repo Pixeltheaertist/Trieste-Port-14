@@ -1,21 +1,27 @@
 <Document>
 # Security
-Ensuring the safety of both station and crew is number one for [color=#cb0000]Security[/color]. They are ready for any situation, and [color=#cb0000]Security[/color] are on hand to maintain order and control crowds.
+Welcome aboard to Trieste's [color=#cb0000]Security[/color] team. You will be responsible for maintaining the well-being and safety of Trieste's citizens. [color=#cb0000]Security[/color] are local enforcers of Space Law, and act on behalf of SolGov's interstellar law enforcement. 
+Our job is to ensure people are safe, protected, and abide by the law. This includes both being able to help where we are needed, de-escalate situations, and step in with force when necessary.
 
-They face [textlink="Syndicate Agents" link="Traitors"], [textlink="Nuclear Operatives" link="NuclearOperatives"], [textlink="Zombies" link="Zombies"] and unruly staff.
+Remember that your most powerful tool and weapon as a member of security is your words. Both talking with the people we serve and as de-escalation is key to our performance. Many situations can be resolved without needing to perform an arrest, and without any use of force.
+
 
 ## Personnel
-[color=#cb0000]Security[/color]'s staff is made up of Security Cadets, Security Officers, and the Detective. [color=#cb0000]Security[/color] is run by the Warden and Head of Security.
+[color=#cb0000]Security[/color]'s staff is made up of Security Cadets, Security Officers, and the Detective. Our department is ran by the Marshal, and internal department matters such as firearms, the brig, and paperwork are handled by the Warden. If the Marshal is not present, the Warden is to take lead of [color=#cb0000]Security[/color] until a Marshal arrives.
 
   <Box>
     <GuideEntityEmbed Entity="ToyFigurineSecurity" Caption="Secoff"/>
     <GuideEntityEmbed Entity="ToyFigurineDetective" Caption="Detective"/>
     <GuideEntityEmbed Entity="ToyFigurineWarden" Caption="Warden"/>
-    <GuideEntityEmbed Entity="ToyFigurineHeadOfSecurity" Caption="HoS"/>
+    <GuideEntityEmbed Entity="ToyFigurineHeadOfSecurity" Caption="Marshal"/>
   </Box>
 
 ## Gear
-First we have non-lethals a step above simply telling someone to cooperate with instructions. Both the stunbaton and disabler are capable of limiting the movement of an assailant, whereas handcuffs can be applied to deny a criminal free movement and access to their hands. Cuffs will also shove the person down if your [color=red]harm mode[/color] is active during uncuff.
+When verbal de-escalation fails, nonlethals are standard for all members of security. Remember that use of force is only warranted when people refuse to cooperate otherwise.
+
+The simplest is the Stun Baton. When activated, hitting a suspect with the Baton will gradually strain their stamina. After a few hits, they will be force to the ground.
+The Disabler is a ranged stunning device. It will take more discharges before stunning than the Baton, but allows you to halt a suspect from a safe distance.
+Handcuffs are restraints applied after stunning a suspect, prior to taking them in. Cuffs will also shove the person down if your [color=red]harm mode[/color] is active during uncuff.
   <Box>
     <GuideEntityEmbed Entity="Stunbaton"/>
     <GuideEntityEmbed Entity="Handcuffs"/>
@@ -24,7 +30,7 @@ First we have non-lethals a step above simply telling someone to cooperate with 
 
 ## Flashes
 [color=#a4885c]Flashes[/color] are an effective tool for dispersing crowds and apprehending particularly evasive targets, with a large area of effect blinding all those without protection.
-It is worth noting that flashes can be both used in a large area ([color=yellow]Z[/color] hotkey) and if you attack somebody with it while [color=red]harm mode[/color] is active. Important to note that localized flashes last [color=yellow]2.5[/color] times as long as large area ones.
+This area flash is used by activating the flash while it's in your hand. Swinging the flash at a suspect directly instead flashes only that suspect. Important to note that localized flashes last [color=yellow]2.5[/color] times as long as large area ones.
 [color=#cb0000]Security[/color] and [color=#a4885c]some[/color] other members of staff have eye protection from flashbangs and flashes.
   <Box>
     <GuideEntityEmbed Entity="Flash"/>
@@ -33,9 +39,12 @@ It is worth noting that flashes can be both used in a large area ([color=yellow]
   </Box>
 
 ## Lethals
-Should the situation dictate, [color=#cb0000]Security[/color] have access to laser rifles, shotguns, handguns and automatic rifles able to put down substantial fire against any who would stand against the station.
+  Lethal force, while an option for extreme situations, is considered a last resort; it's only to be used in self-defense or the defense of others.
+
+  Officers may carry sidearms on their person at all times as precautionary measures. The Mk58 is currently the standard sidearm of security forces.
+
+  On [color=red]Red Alert[/color], Officers may retrieve longarms from the department armory. At our disposal are assault rifles, shotguns, and submachine guns. These provide us with the necessary firepower to repel hostile, miltiant threats to the rig and are to be used sparingly. 
   <Box>
-    <GuideEntityEmbed Entity="WeaponLaserCarbine"/>
     <GuideEntityEmbed Entity="WeaponShotgunKammerer"/>
     <GuideEntityEmbed Entity="WeaponPistolMk58"/>
     <GuideEntityEmbed Entity="WeaponRifleLecter"/>

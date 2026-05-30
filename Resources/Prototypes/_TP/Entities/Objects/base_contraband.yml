@@ -4,3 +4,10 @@
   components:
   - type: Contraband
     severity: Nanotrasen
+
+- type: entity
+  id: BaseSolGovContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: SolGov

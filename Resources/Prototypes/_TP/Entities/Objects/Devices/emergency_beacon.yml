@@ -1,0 +1,83 @@
+- type: entity
+  id: EmergencyBeacon
+  parent: BaseItem
+  name: handheld emergency beacon
+  description: A device used to signal for rescue in dire situations.
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Devices/emergency_beacon.rsi
+    layers:
+      - state: icon
+        map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: {state: icon-on}
+          False: {state: icon}
+  - type: ToggleableVisuals
+    spriteLayer: blade
+    inhandVisuals:
+      left:
+      - state: inhand-left-on
+      right:
+      - state: inhand-right-on
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
+  - type: ComponentToggler
+    components:
+    - type: EnabledEmergencyBeacon
+  - type: UseDelay
+    delay: 1.0
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_TP/Items/emergency_beep.ogg
+  - type: ItemTogglePointLight
+  - type: PointLight
+    enabled: false
+    radius: 2
+    color: red
+    netsync: false
+
+- type: entity
+  id: EmergencyBeaconLocator
+  parent: [ BaseItem, PowerCellSlotSmallItem ]
+  name: emergency beacon locator
+  description: A device used to locate active emergency beacons.
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Devices/emergency_beacon_locator.rsi
+    layers:
+      - state: icon
+        map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: {state: icon-on}
+          False: {state: icon}
+  - type: PowerCellDraw
+    drawRate: 1
+    useRate: 0
+  - type: ToggleCellDraw
+  - type: ItemToggle
+  - type: ProximityBeeper
+  - type: ProximityDetector
+    range: 50
+    components:
+    - type: EnabledEmergencyBeacon
+  - type: Beeper
+    isMuted: true
+    minBeepInterval: 0.5
+    maxBeepInterval: 1.00
+    beepSound:
+      path: "/Audio/Items/locator_beep.ogg"
+      params:
+        maxDistance: 1
+        volume: -8
+

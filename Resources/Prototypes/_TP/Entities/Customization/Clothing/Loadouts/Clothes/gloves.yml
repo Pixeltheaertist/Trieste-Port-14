@@ -7,3 +7,10 @@
   id: TP14LoadoutGlovesWhite
   equipment:
     gloves: ClothingHandsGlovesColorWhite
+  groupBy: coloredGloves
+
+- type: loadout
+  id: Tp14LoadoutGlovesLatex
+  equipment:
+    gloves: ClothingHandsGlovesLatex
+  groupBy: sterileGloves

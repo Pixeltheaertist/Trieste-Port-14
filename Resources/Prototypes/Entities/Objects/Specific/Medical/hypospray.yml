@@ -230,7 +230,7 @@
   name: brute auto-injector
   parent: ChemicalMedipen
   id: BruteAutoInjector
-  description: A rapid dose of hyper-platelets and tranexamic acid, intended for combat applications.
+  description: A rapid dose of reinforcement algae and tranexamic acid, intended for combat applications.
   components:
   - type: Item
     inhandVisuals:
@@ -263,7 +263,7 @@
       pen:
         maxVol: 20
         reagents:
-        - ReagentId: HyperPlatelet
+        - ReagentId: ReinforcementAlgae
           Quantity: 15
         - ReagentId: TranexamicAcid
           Quantity: 5
@@ -314,7 +314,7 @@
   name: rad auto-injector
   parent: ChemicalMedipen
   id: RadAutoInjector
-  description: A rapid dose of anti-radiation. Contains arithrazine and hyper-platelets.
+  description: A rapid dose of anti-radiation. Contains arithrazine and reinforcement algae.
   components:
   - type: Item
     inhandVisuals:
@@ -349,7 +349,7 @@
         reagents:
         - ReagentId: Arithrazine
           Quantity: 15
-        - ReagentId: HyperPlatelet
+        - ReagentId: ReinforcementAlgae
           Quantity: 5
 
 #- type: entity
@@ -395,10 +395,10 @@
 #          Quantity: 5
 
 - type: entity
-  name: lexodine auto-injector
+  name: regeneration auto-injector
   parent: ChemicalMedipen
-  id: PyraAutoInjector
-  description: A rapid dose of hyper-platelets, intended for combat applications.
+  id:  RegenerationAlgaeAutoInjector
+  description: A rapid dose of regeneration algae, intended for combat applications.
   components:
   - type: Item
     inhandVisuals:
@@ -431,14 +431,14 @@
       pen:
         maxVol: 20
         reagents:
-        - ReagentId: HyperPlatelet
+        - ReagentId:  RegenerationAlgae
           Quantity: 20
 
 - type: entity
   name: airloss auto-injector
   parent: ChemicalMedipen
   id: AirlossAutoInjector
-  description: A rapid dose of saline and oxygenated saline, intended to get someone up quickly.
+  description: A rapid dose of oxygenated saline, intended to get someone up quickly.
   components:
   - type: Item
     inhandVisuals:

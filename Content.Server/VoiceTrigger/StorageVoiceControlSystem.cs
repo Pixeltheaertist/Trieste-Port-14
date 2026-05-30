@@ -2,6 +2,7 @@ using Content.Server.Hands.Systems;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
+using Content.Shared.Examine;
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using Content.Shared.Storage;
@@ -26,6 +27,28 @@ public sealed class StorageVoiceControlSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<StorageVoiceControlComponent, VoiceTriggeredEvent>(VoiceTriggered);
+
+        // TRIESTE SPECIFIC //
+        SubscribeLocalEvent<StorageVoiceControlComponent,ExaminedEvent>(OnExamined);
+    }
+
+    // TRIESTE SPECIFIC //
+    private void OnExamined(EntityUid uid, StorageVoiceControlComponent component, ExaminedEvent args)
+    {
+        if (!args.IsInDetailsRange)
+            return;
+
+        if (component.AllowedSlots != null && _inventory.TryGetContainingSlot(uid, out var itemSlot) &&
+            (itemSlot.SlotFlags & component.AllowedSlots) == 0)
+            return;
+
+        if (!TryComp<StorageComponent>(uid, out var storage))
+            return;
+
+        foreach (var item in storage.Container.ContainedEntities)
+        {
+            args.PushMarkup(Name(item));
+        }
     }
 
     private void VoiceTriggered(Entity<StorageVoiceControlComponent> ent, ref VoiceTriggeredEvent args)

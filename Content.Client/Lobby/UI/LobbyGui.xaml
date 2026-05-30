@@ -5,6 +5,7 @@
     xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:vote="clr-namespace:Content.Client.Voting.UI"
+    xmlns:style="clr-namespace:Content.Client.Stylesheets"
     xmlns:lobbyUi="clr-namespace:Content.Client.Lobby.UI"
     xmlns:info="clr-namespace:Content.Client.Info"
     xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Chat.Widgets"
@@ -51,7 +52,8 @@
                     <!-- Vertical Padding-->
                     <Control VerticalExpand="True" />
                     <!-- Left Bot Panel -->
-                    <!-- NullLink start -->
+
+                    <!-- Null Link start -->
                     <BoxContainer Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Bottom">
 
                         <nullLink:Hub />
@@ -60,10 +62,12 @@
                             <info:DevInfoBanner Name="DevInfoBanner" VerticalExpand="false" Margin="3 3 3 3" />
                             <PanelContainer StyleClasses="AngleRect">
                                 <RichTextLabel Name="LobbySong" Access="Public" HorizontalAlignment="Center" />
+                                <RichTextLabel Name="LobbyBackground" Access="Public" HorizontalAlignment="Left" />
                             </PanelContainer>
                         </BoxContainer>
                     </BoxContainer>
-                    <!-- NullLink end -->
+                    <!-- Null Link end -->
+
                 </Control>
                 <!-- Character setup state -->
                 <!-- This is injected on startup. Funky! -->

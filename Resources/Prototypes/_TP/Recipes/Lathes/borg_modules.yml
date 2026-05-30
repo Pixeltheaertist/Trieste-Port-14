@@ -1,0 +1,4 @@
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: TP14BorgModuleMailRecipe
+  result: TP14BorgModuleMail

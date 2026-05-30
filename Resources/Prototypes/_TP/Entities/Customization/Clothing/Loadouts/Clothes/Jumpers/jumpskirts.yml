@@ -2,103 +2,124 @@
   id: TP14LoadoutJumpskirtBartender
   equipment:
     jumpsuit: ClothingUniformJumpskirtBartender
+  groupBy: "bartenderSuits"
 
 - type: loadout
   id: TP14LoadoutJumpskirtBartenderPurple
   equipment:
     jumpsuit: ClothingUniformJumpsuitBartenderPurple
+  groupBy: "bartenderSuits"
 
 - type: loadout
   id: TP14LoadoutJumpskirtBlack
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorBlack
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutJumpskirtBlue
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorBlue
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutJumpskirtBrown
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorBrown
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutJumpskirtDarkBlue
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorDarkBlue
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutJumpskirtDarkGreen
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorDarkGreen
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutJumpskirtLightBrown
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorLightBrown
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutJumpskirtMaroon
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorMaroon
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutJumpskirtOrange
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorOrange
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutJumpskirtPurple
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorPurple
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutJumpskirtRed
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorRed
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutJumpskirtRainbow
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorRainbow
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutJumpskirtTeal
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorTeal
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutJumpskirtWhite
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorWhite
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutJumpskirtYellow
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorYellow
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutDressElegantBlack
   equipment:
     jumpsuit: ClothingUniformJumpskirtBlackElegantDress
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutDressElegantRed
   equipment:
     jumpsuit: ClothingUniformJumpskirtRedElegantDress
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutDressElegantGreen
   equipment:
     jumpsuit: ClothingUniformJumpskirtGreenElegantDress
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutDressElegantBlue
   equipment:
     jumpsuit: ClothingUniformJumpskirtBlueElegantDress
+  groupBy: "coloredJumpskirts"
 
 - type: loadout
   id: TP14LoadoutDressElegantPurple
   equipment:
     jumpsuit: ClothingUniformJumpskirtPurpleElegantDress
+  groupBy: "coloredJumpskirts"

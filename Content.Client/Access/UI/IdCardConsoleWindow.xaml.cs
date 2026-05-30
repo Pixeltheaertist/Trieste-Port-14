@@ -19,6 +19,7 @@ namespace Content.Client.Access.UI
         [Dependency] private readonly IConfigurationManager _cfgManager = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
+        [Dependency] private readonly IEntityManager _entManager = default!; // TRIESTE
         private readonly ISawmill _logMill = default!;
 
         private readonly IdCardConsoleBoundUserInterface _owner;
@@ -27,7 +28,6 @@ namespace Content.Client.Access.UI
         private int _maxNameLength;
         private int _maxIdJobLength;
 
-        private AccessLevelControl _accessButtons = new();
         private readonly List<string> _jobPrototypeIds = new();
 
         private string? _lastFullName;
@@ -92,10 +92,24 @@ namespace Content.Client.Access.UI
             };
 
             JobPresetOptionButton.OnItemSelected += SelectJobPreset;
-            _accessButtons.Populate(accessLevels, prototypeManager);
-            AccessLevelControlContainer.AddChild(_accessButtons);
+            AccessButtons.Populate(accessLevels, prototypeManager);
 
-            foreach (var (id, button) in _accessButtons.ButtonsList)
+            DepartmentList.OnItemSelected += args =>
+            {
+                var name = DepartmentList[args.ItemIndex].Text;
+                if (name != null)
+                    AccessButtons.PopulateGrid(name);
+            };
+
+            // Populate the sidebar from AccessButtons' department data
+            foreach (var dept in AccessButtons.GetDepartmentNames())
+            {
+                DepartmentList.AddItem(dept);
+            }
+
+            if (DepartmentList.Count > 0) DepartmentList[0].Selected = true;
+
+            foreach (var (id, button) in AccessButtons.ButtonsList)
             {
                 button.OnPressed += _ => SubmitData();
             }
@@ -104,7 +118,7 @@ namespace Content.Client.Access.UI
         /// <param name="enabled">If true, every individual access button will be pressed. If false, each will be depressed.</param>
         private void SetAllAccess(bool enabled)
         {
-            foreach (var button in _accessButtons.ButtonsList.Values)
+            foreach (var button in AccessButtons.ButtonsList.Values)
             {
                 if (!button.Disabled && button.Pressed != enabled)
                     button.Pressed = enabled;
@@ -126,7 +140,7 @@ namespace Content.Client.Access.UI
             // this is a sussy way to do this
             foreach (var access in job.Access)
             {
-                if (_accessButtons.ButtonsList.TryGetValue(access, out var button) && !button.Disabled)
+                if (AccessButtons.ButtonsList.TryGetValue(access, out var button) && !button.Disabled)
                 {
                     button.Pressed = true;
                 }
@@ -141,7 +155,7 @@ namespace Content.Client.Access.UI
 
                 foreach (var access in groupPrototype.Tags)
                 {
-                    if (_accessButtons.ButtonsList.TryGetValue(access, out var button) && !button.Disabled)
+                    if (AccessButtons.ButtonsList.TryGetValue(access, out var button) && !button.Disabled)
                     {
                         button.Pressed = true;
                     }
@@ -153,17 +167,47 @@ namespace Content.Client.Access.UI
 
         public void UpdateState(IdCardConsoleBoundUserInterfaceState state)
         {
-            PrivilegedIdButton.Text = state.IsPrivilegedIdPresent
-                ? Loc.GetString("id-card-console-window-eject-button")
-                : Loc.GetString("id-card-console-window-insert-button");
+            // TRIESTE PORT - START //
+            /*
+            // Privileged ID slot
+            if (state.IsPrivilegedIdPresent)
+            {
+                if (state.PrivilegedIdEntity is { } privEnt)
+                    PrivilegedEntityView.SetEntity(privEnt);
+            }
+            else
+            {
+                PrivilegedEntityView.SetEntity(null);
+            }
 
             PrivilegedIdLabel.Text = state.PrivilegedIdName;
 
-            TargetIdButton.Text = state.IsTargetIdPresent
-                ? Loc.GetString("id-card-console-window-eject-button")
-                : Loc.GetString("id-card-console-window-insert-button");
+            // Target ID slot
+            if (state.IsTargetIdPresent)
+            {
+                if (state.TargetIdEntity is { } targetEnt)
+                    TargetEntityView.SetEntity(targetEnt);
+            }
+            else
+            {
+                TargetEntityView.SetEntity(null);
+            }
 
             TargetIdLabel.Text = state.TargetIdName;
+            */
+
+            // Render IDs in the slot buttons
+            PrivilegedEntityView.SetEntity(state.PrivilegedIdEntity != null
+                ? _entManager.GetEntity(state.PrivilegedIdEntity)
+                : null);
+            TargetEntityView.SetEntity(state.TargetIdEntity != null
+                ? _entManager.GetEntity(state.TargetIdEntity)
+                : null);
+
+            PrivilegedIdLabel.Text = state.PrivilegedIdName;
+            TargetIdLabel.Text = state.TargetIdName;
+
+            // TRIESTE PORT - END //
 
             var interfaceEnabled =
                 state.IsPrivilegedIdPresent && state.IsPrivilegedIdAuthorized && state.IsTargetIdPresent;
@@ -191,10 +235,10 @@ namespace Content.Client.Access.UI
 
             JobPresetOptionButton.Disabled = !interfaceEnabled;
 
-            _accessButtons.UpdateState(state.TargetIdAccessList?.ToList() ??
+            AccessButtons.UpdateState(state.TargetIdAccessList?.ToList() ??
                                        new List<ProtoId<AccessLevelPrototype>>(),
-                                       state.AllowedModifyAccessList?.ToList() ??
-                                       new List<ProtoId<AccessLevelPrototype>>());
+                state.AllowedModifyAccessList?.ToList() ??
+                new List<ProtoId<AccessLevelPrototype>>());
 
             var jobIndex = _jobPrototypeIds.IndexOf(state.TargetIdJobPrototype);
             // If the job index is < 0 that means they don't have a job registered in the station records
@@ -222,7 +266,7 @@ namespace Content.Client.Access.UI
                 FullNameLineEdit.Text,
                 JobTitleLineEdit.Text,
                 // Iterate over the buttons dictionary, filter by `Pressed`, only get key from the key/value pair
-                _accessButtons.ButtonsList.Where(x => x.Value.Pressed).Select(x => x.Key).ToList(),
+                AccessButtons.ButtonsList.Where(x => x.Value.Pressed).Select(x => x.Key).ToList(),
                 jobProtoDirty ? _jobPrototypeIds[JobPresetOptionButton.SelectedId] : string.Empty);
         }
     }

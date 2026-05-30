@@ -1,8 +1,9 @@
 using Content.Server.StationEvents.Events;
 using Robust.Shared.Audio;
-using Robust.Shared.Collections;
 
 namespace Content.Server.StationEvents.Components;
+
+// !! TRIESTE PORT MODIFIED !! //
 
 [RegisterComponent, Access(typeof(MassHallucinationsRule))]
 public sealed partial class MassHallucinationsRuleComponent : Component
@@ -22,8 +23,9 @@ public sealed partial class MassHallucinationsRuleComponent : Component
     [DataField("maxSoundDistance", required: true), ViewVariables(VVAccess.ReadWrite)]
     public float MaxSoundDistance;
 
-    [DataField("sweetwaterOnly"), ViewVariables(VVAccess.ReadWrite)]
-    public bool SweetwaterOnly = false;
+    // TRIESTE SPECIFIC
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool SweetwaterOnly;
 
     [DataField("sounds", required: true)]
     public SoundSpecifier Sounds = default!;

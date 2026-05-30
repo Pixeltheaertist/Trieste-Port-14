@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC0-1.0",
-    "copyright": "Created by EmoGarbage404 (github) for Space Station 14. icon-construction.png created by deltanedas (github). syndicateborgbomb.png created by Mangohydra (github). icon-chem.png & icon-mining-adv.png created by mubururu_ (github) icon-inflatable.png made by FungiFellow (GitHub), Xenoborg modules sprites by Samuka-C (github), icon-artistry by Kittygyat",
+    "copyright": "Created by EmoGarbage404 (github) for Space Station 14. icon-construction.png created by deltanedas (github). syndicateborgbomb.png created by Mangohydra (github). icon-chem.png & icon-mining-adv.png created by mubururu_ (github) icon-inflatable.png made by FungiFellow (GitHub), Xenoborg modules sprites by Samuka-C (github), icon-artistry by Kittygyat, icon-mail by FatherCheese for Trieste Port 14.",
     "size": {
         "x": 32,
         "y": 32
@@ -75,6 +75,9 @@
         },
         {
             "name": "icon-light-replacer"
+        },
+        {
+            "name": "icon-mail"
         },
         {
             "name": "icon-mining"
@@ -232,5 +235,4 @@
             "directions": 4
         }
     ]
-
 }

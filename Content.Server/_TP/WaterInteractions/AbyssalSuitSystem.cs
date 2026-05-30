@@ -1,17 +1,12 @@
-using Content.Shared.Inventory;
+using Content.Shared._TP.WaterInteractions;
 using Content.Shared.Inventory.Events;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Content.Shared.Overlays;
 using Robust.Shared.Timing;
-using Robust.Shared.Enums;
-using Content.Shared.Clothing;
-using Content.Shared.TP.Abyss.Components;
 
 // Summary//
 // This system controls abyssal pressure suits protecting users from crush depths when equipped.
 // Summary//
-namespace Content.Server.TP.Abyss.Systems
+namespace Content.Server._TP.WaterInteractions
 {
     public sealed class AbyssalSuitSystem : EntitySystem
 {

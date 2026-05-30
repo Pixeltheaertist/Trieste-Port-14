@@ -1,0 +1,53 @@
+- type: tile
+  parent: FloorAsteroidSandBorderless
+  id: TP14FloorSandBorderless
+  name: tp14-tiles-sand-borderless
+  isSpace: true
+
+- type: tile
+  parent: FloorAsteroidSand
+  id: TP14FloorSand
+  name: tp14-tiles-sand
+  isSpace: true
+
+- type: tile
+  parent: FloorAsteroidSandRedBorderless
+  id: TP14FloorSandRedBorderless
+  name: tp14-tiles-sand-red-borderless
+  isSpace: true
+
+- type: tile
+  parent: FloorAsteroidSandRed
+  id: TP14FloorSandRed
+  name: tp14-tiles-sand-red
+  isSpace: true
+
+- type: tile
+  parent: FloorAsteroidIronsandBorderless
+  id: TP14FloorSandIronBorderless
+  name: tp14-tiles-sand-iron-borderless
+  isSpace: true
+
+- type: tile
+  parent: FloorAsteroidIronsand
+  id: TP14FloorSandIron
+  name: tp14-tiles-sand-iron
+  isSpace: true
+
+- type: tile
+  parent: FloorCave
+  id: TP14FloorCave
+  name: tp14-tiles-cave
+  isSpace: true
+
+- type: tile
+  parent: FloorBasalt
+  id: TP14FloorBasalt
+  name: tp14-tiles-basalt
+  isSpace: true
+
+- type: tile
+  parent: FloorLowDesert
+  id: TP14FloorLowDesert
+  name: tp14-tiles-desert
+  isSpace: true
