@@ -1,0 +1,9 @@
+﻿- type: entity
+    save: false
+    parent:
+      - BaseMobSpecies
+    id: TPBaseMobSpeciesAberrant
+    abstract: true
+    components:
+    - type: Aberrant
+
