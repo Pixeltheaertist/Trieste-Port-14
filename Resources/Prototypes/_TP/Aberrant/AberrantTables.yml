@@ -1,0 +1,22 @@
+- type: entityTable
+  id: aberrantEffectsLow
+  table: !type:AllSelector
+    children:
+      - id: AberrantEffectHallucination
+        prob: 1
+
+- type: entityTable
+  id: aberrantEffectsMedium
+  table: !type:AllSelector
+    children:
+    - id: AberrantEffectHallucination
+      prob: 1
+
+- type: entityTable
+  id: aberrantEffectsHigh
+  table: !type:AllSelector
+    children:
+    - id: AberrantEffectHallucination
+      prob: 1
+
+
