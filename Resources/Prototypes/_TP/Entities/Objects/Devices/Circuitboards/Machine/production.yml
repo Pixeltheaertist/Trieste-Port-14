@@ -1,17 +1,4 @@
 - type: entity
-  id: TP14ColdplateMachineCircuitboard
-  parent: BaseMachineCircuitboard
-  suffix: Trieste, Circuit-Board
-  name: coldplate machine board
-  description: A machine printed circuit board for a coldplate.
-  components:
-    - type: MachineBoard
-      prototype: TP14ChemistryColdplate
-      stackRequirements:
-        Manipulator: 2
-        Glass: 1
-
-- type: entity
   id: JellidPortableScrubberMachineCircuitBoard
   parent: BaseMachineCircuitboard
   suffix: Trieste, Circuit-Board
