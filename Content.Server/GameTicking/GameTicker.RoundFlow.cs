@@ -370,7 +370,7 @@ namespace Content.Server.GameTicking
             SendServerMessage(Loc.GetString("game-ticker-start-round"));
 
             var readyPlayers = new List<ICommonSession>();
-            var readyPlayerIds = new HashSet<NetUserId>();
+            var readyPlayerProfiles = new Dictionary<NetUserId, HumanoidCharacterProfile>();
             var autoDeAdmin = _cfg.GetCVar(CCVars.AdminDeadminOnJoin);
             foreach (var (userId, status) in _playerGameStatuses)
             {
@@ -386,7 +386,16 @@ namespace Content.Server.GameTicking
 #endif
 
                 readyPlayers.Add(session);
-                readyPlayerIds.Add(userId);
+                HumanoidCharacterProfile profile;
+                if (_prefsManager.TryGetCachedPreferences(userId, out var preferences))
+                {
+                    profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
+                }
+                else
+                {
+                    profile = HumanoidCharacterProfile.Random();
+                }
+                readyPlayerProfiles.Add(userId, profile);
             }
 
             DebugTools.AssertEqual(readyPlayers.Count, ReadyPlayerCount());
@@ -416,7 +425,7 @@ namespace Content.Server.GameTicking
             // MapInitialize *before* spawning players, our codebase is too shit to do it afterwards...
             _map.InitializeMap(DefaultMap);
 
-            SpawnPlayers(readyPlayers, readyPlayerIds, force);
+            SpawnPlayers(readyPlayers, readyPlayerProfiles, force);
 
             _roundStartDateTime = DateTime.UtcNow;
             RunLevel = GameRunLevel.InRound;
@@ -931,11 +940,13 @@ namespace Content.Server.GameTicking
         /// </summary>
         /// <remarks>If you spawn a player by yourself from this event, don't forget to call <see cref="GameTicker.PlayerJoinGame"/> on them.</remarks>
         public List<ICommonSession> PlayerPool { get; }
+        public IReadOnlyDictionary<NetUserId, HumanoidCharacterProfile> Profiles { get; }
         public bool Forced { get; }
 
-        public RulePlayerSpawningEvent(List<ICommonSession> playerPool, bool forced)
+        public RulePlayerSpawningEvent(List<ICommonSession> playerPool, IReadOnlyDictionary<NetUserId, HumanoidCharacterProfile> profiles, bool forced)
         {
             PlayerPool = playerPool;
+            Profiles = profiles;
             Forced = forced;
         }
     }
@@ -947,11 +958,13 @@ namespace Content.Server.GameTicking
     public sealed class RulePlayerJobsAssignedEvent
     {
         public ICommonSession[] Players { get; }
+        public IReadOnlyDictionary<NetUserId, HumanoidCharacterProfile> Profiles { get; }
         public bool Forced { get; }
 
-        public RulePlayerJobsAssignedEvent(ICommonSession[] players, bool forced)
+        public RulePlayerJobsAssignedEvent(ICommonSession[] players, IReadOnlyDictionary<NetUserId, HumanoidCharacterProfile> profiles, bool forced)
         {
             Players = players;
+            Profiles = profiles;
             Forced = forced;
         }
     }
