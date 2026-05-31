@@ -8,7 +8,6 @@
   - !type:OverallPlaytimeRequirement
     time: 5h
   guides: [ NuclearOperatives ]
-  previewStartingGear: SyndicateOperativeGearFull
 
 - type: antag
   id: NukeopsMedic
@@ -23,7 +22,6 @@
     role: JobChemist
     time: 3h
   guides: [ NuclearOperatives ]
-  previewStartingGear: SyndicateOperativeMedicFull
 
 - type: antag
   id: NukeopsCommander
@@ -39,7 +37,6 @@
     time: 5h
   # should be changed to nukie playtime when thats tracked (wyci)
   guides: [ NuclearOperatives ]
-  previewStartingGear: SyndicateCommanderGearFull
 
 - type: startingGear
   id: SyndicateOperativeGearFullNoUplink
