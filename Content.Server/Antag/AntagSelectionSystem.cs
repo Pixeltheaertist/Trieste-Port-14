@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server.Administration.Managers;
 using Content.Server.Antag.Components;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
@@ -8,6 +9,7 @@ using Content.Server.Ghost.Roles;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Mind;
 using Content.Server.Objectives;
+using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
 using Content.Server.Roles.Jobs;
@@ -39,18 +41,19 @@ namespace Content.Server.Antag;
 public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelectionComponent>
 {
     [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly IBanManager _ban = default!;
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly GhostRoleSystem _ghostRole = default!;
     [Dependency] private readonly JobSystem _jobs = default!;
     [Dependency] private readonly LoadoutSystem _loadout = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly PlayTimeTrackingSystem _playTime = default!;
     [Dependency] private readonly IServerPreferencesManager _pref = default!;
     [Dependency] private readonly RoleSystem _role = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly SharedHumanoidAppearanceSystem _appearance = default!;
 
     // arbitrary random number to give late joining some mild interest.
     public const float LateJoinRandomChance = 0.5f;
@@ -344,21 +347,14 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     {
         _adminLogger.Add(LogType.AntagSelection, $"Start trying to make {session} become the antagonist: {ToPrettyString(ent)}");
 
-        if (!IsSessionValid(ent, session, def))
-        {
-            _adminLogger.Add(LogType.AntagSelection, $"{session} didn't have valid session");
+        if (checkPref && !ValidAntagPreference(session, def.PrefRoles))
             return false;
-        }
+
+        if (!IsSessionValid(ent, session, def) || !IsEntityValid(session?.AttachedEntity, def))
+            return false;
 
         if (onlyPreSelect && session != null)
         {
-            // This is preselection, so check if the PLAYER AS A WHOLE is compatible with the antagonist
-            if (checkPref && !HasPrimaryAntagPreference(session, def, ent.Comp.SelectionTime))
-            {
-                _adminLogger.Add(LogType.AntagSelection, $"{session} didn't have antagonist preference for {ToPrettyString(ent)}");
-                return false;
-            }
-
             if (!ent.Comp.PreSelectedSessions.TryGetValue(def, out var set))
                 ent.Comp.PreSelectedSessions.Add(def, set = new HashSet<ICommonSession>());
             set.Add(session);
@@ -367,14 +363,6 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         }
         else
         {
-            // This is not preselection, so check the player's actual entity to see if it's compatible with the antagonist.
-            // This function will also check the character profile's antagonist preferences.
-            if (!IsEntityValid(session?.AttachedEntity, def))
-            {
-                _adminLogger.Add(LogType.AntagSelection, $"{session} didn't have valid entity for {ToPrettyString(ent)}");
-                return false;
-            }
-
             MakeAntag(ent, session, def, ignoreSpawner);
         }
 
@@ -408,7 +396,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
         if (!antagEnt.HasValue)
         {
-            var getEntEv = new AntagSelectEntityEvent(session, ent, def);
+            var getEntEv = new AntagSelectEntityEvent(session, ent);
             RaiseLocalEvent(ent, ref getEntEv, true);
             antagEnt = getEntEv.Entity;
         }
@@ -512,11 +500,12 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             if (ent.Comp.PreSelectedSessions.TryGetValue(def, out var preSelected) && preSelected.Contains(session))
                 continue;
 
-            if (HasPrimaryAntagPreference(session, def, ent.Comp.SelectionTime))
+            // Add player to the appropriate antag pool
+            if (ValidAntagPreference(session, def.PrefRoles))
             {
                 preferredList.Add(session);
             }
-            else if (HasFallbackAntagPreference(session, def, ent.Comp.SelectionTime))
+            else if (ValidAntagPreference(session, def.FallbackRoles))
             {
                 fallbackList.Add(session);
             }
@@ -588,15 +577,6 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         if (!def.AllowNonHumans && !HasComp<HumanoidAppearanceComponent>(entity))
             return false;
 
-        // Ensure that the profile has the antag preference set, if this is a late join this hasn't been checked!
-        var baseProfile = _appearance.GetBaseProfile(entity.Value);
-        if (baseProfile is not null)
-        {
-            if (!def.PrefRoles.ToHashSet().Overlaps(baseProfile.AntagPreferences) &&
-                !def.FallbackRoles.ToHashSet().Overlaps(baseProfile.AntagPreferences))
-                return false;
-        }
-
         if (def.Whitelist != null)
         {
             if (!_whitelist.IsValid(def.Whitelist, entity.Value))
@@ -627,15 +607,13 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 /// Only raised if the selected player's current entity is invalid.
 /// </summary>
 [ByRefEvent]
-public record struct AntagSelectEntityEvent(ICommonSession? Session, Entity<AntagSelectionComponent> GameRule, AntagSelectionDefinition Def)
+public record struct AntagSelectEntityEvent(ICommonSession? Session, Entity<AntagSelectionComponent> GameRule)
 {
     public readonly ICommonSession? Session = Session;
 
     public bool Handled => Entity != null;
 
     public EntityUid? Entity;
-
-    public AntagSelectionDefinition Def = Def;
 }
 
 /// <summary>

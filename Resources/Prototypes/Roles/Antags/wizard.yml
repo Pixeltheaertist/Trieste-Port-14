@@ -15,6 +15,5 @@
   - !type:OverallPlaytimeRequirement
     time: 5h
   guides: [ Wizard ]
-  previewStartingGear: WizardBlueGear
 
 # See wizard_startinggear for wiz start gear options

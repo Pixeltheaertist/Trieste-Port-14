@@ -1,5 +1,4 @@
 using Content.Server.Administration.Managers;
-using Content.Server.Preferences.Managers;
 using Content.Server.Station.Systems;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
@@ -18,7 +17,6 @@ namespace Content.Server.GameTicking.Commands
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly IServerPreferencesManager _preferencesManager = default!;
 
         public string Command => "joingame";
         public string Description => "";
@@ -30,7 +28,7 @@ namespace Content.Server.GameTicking.Commands
         }
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
-            if (args.Length != 3)
+            if (args.Length != 2)
             {
                 shell.WriteError(Loc.GetString("shell-wrong-arguments-number"));
                 return;
@@ -60,13 +58,9 @@ namespace Content.Server.GameTicking.Commands
             }
             else if (ticker.RunLevel == GameRunLevel.InRound)
             {
-                if (!int.TryParse(args[0], out var charSlot))
-                {
-                    shell.WriteError(Loc.GetString("shell-argument-must-be-number"));
-                }
-                string id = args[1];
+                string id = args[0];
 
-                if (!int.TryParse(args[2], out var sid))
+                if (!int.TryParse(args[1], out var sid))
                 {
                     shell.WriteError(Loc.GetString("shell-argument-must-be-number"));
                 }
@@ -79,18 +73,12 @@ namespace Content.Server.GameTicking.Commands
                     return;
                 }
 
-                if (!_preferencesManager.GetPreferences(player.UserId).TryGetHumanoidInSlot(charSlot, out var humanoid))
-                {
-                    shell.WriteLine("No profile in slot");
-                    return;
-                }
-
                 if (_adminManager.IsAdmin(player) && _cfg.GetCVar(CCVars.AdminDeadminOnJoin))
                 {
                     _adminManager.DeAdmin(player);
                 }
 
-                ticker.MakeJoinGame(player, humanoid, station, id);
+                ticker.MakeJoinGame(player, station, id);
                 return;
             }
 
