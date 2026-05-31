@@ -20,12 +20,12 @@ using Robust.Shared.Configuration;
 
 namespace Content.Server._TP;
 
-public sealed partial class ThunderSystem : EntitySystem
+public sealed class ThunderSystem : EntitySystem
 {
-    [Dependency] private IEntityManager _entityManager = default!;
-    [Dependency] private TransformSystem _transform = default!;
-    [Dependency] private MapSystem _mapSystem = default!;
-    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly MapSystem _mapSystem = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] protected readonly IConfigurationManager CfgManager = default!;
 
     public float ThunderInterval = 10f;

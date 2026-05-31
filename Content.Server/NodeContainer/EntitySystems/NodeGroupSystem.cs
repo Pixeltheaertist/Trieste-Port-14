@@ -2,6 +2,7 @@ using System.Diagnostics;
 using System.Linq;
 using Content.Server.Administration.Managers;
 using Content.Server.NodeContainer.NodeGroups;
+using Content.Server.NodeContainer.Nodes;
 using Content.Shared.Administration;
 using Content.Shared.NodeContainer;
 using Content.Shared.NodeContainer.NodeGroups;
@@ -19,14 +20,12 @@ namespace Content.Server.NodeContainer.EntitySystems
     /// </summary>
     /// <seealso cref="NodeContainerSystem"/>
     [UsedImplicitly]
-    public sealed partial class NodeGroupSystem : EntitySystem
+    public sealed class NodeGroupSystem : EntitySystem
     {
-        [Dependency] private IPlayerManager _playerManager = default!;
-        [Dependency] private IAdminManager _adminManager = default!;
-        [Dependency] private INodeGroupFactory _nodeGroupFactory = default!;
-        [Dependency] private ILogManager _logManager = default!;
-        [Dependency] private EntityQuery<NodeContainerComponent> _nodeContainerQuery = default!;
-        [Dependency] private EntityQuery<TransformComponent> _xformQuery = default!;
+        [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly IAdminManager _adminManager = default!;
+        [Dependency] private readonly INodeGroupFactory _nodeGroupFactory = default!;
+        [Dependency] private readonly ILogManager _logManager = default!;
 
         private readonly List<int> _visDeletes = new();
         private readonly List<BaseNodeGroup> _visSends = new();
@@ -168,6 +167,9 @@ namespace Content.Server.NodeContainer.EntitySystems
 
             var sw = Stopwatch.StartNew();
 
+            var xformQuery = GetEntityQuery<TransformComponent>();
+            var nodeQuery = GetEntityQuery<NodeContainerComponent>();
+
             foreach (var toRemove in _toRemove)
             {
                 if (toRemove.NodeGroup == null)
@@ -213,7 +215,7 @@ namespace Content.Server.NodeContainer.EntitySystems
                 // based on position & anchored neighbours However, here more than one node could be attached to the
                 // same parent. So there is probably a better way of doing this.
 
-                foreach (var compatible in GetCompatibleNodes(node))
+                foreach (var compatible in GetCompatibleNodes(node, xformQuery, nodeQuery))
                 {
                     ClearReachableIfNecessary(compatible);
 
@@ -345,20 +347,20 @@ namespace Content.Server.NodeContainer.EntitySystems
             return allNodes;
         }
 
-        private IEnumerable<Node> GetCompatibleNodes(Node node)
+        private IEnumerable<Node> GetCompatibleNodes(Node node, EntityQuery<TransformComponent> xformQuery, EntityQuery<NodeContainerComponent> nodeQuery)
         {
-            var xform = Transform(node.Owner);
-            Entity<MapGridComponent>? gridEnt = TryComp<MapGridComponent>(xform.GridUid, out var grid) ? (xform.GridUid.Value, grid) : null;
+            var xform = xformQuery.GetComponent(node.Owner);
+            TryComp<MapGridComponent>(xform.GridUid, out var grid);
 
             if (!node.Connectable(EntityManager, xform))
                 yield break;
 
-            foreach (var reachable in node.GetReachableNodes((node.Owner, xform), _nodeContainerQuery, _xformQuery, gridEnt, EntityManager))
+            foreach (var reachable in node.GetReachableNodes(xform, nodeQuery, xformQuery, grid, EntityManager))
             {
                 DebugTools.Assert(reachable != node, "GetReachableNodes() should not include self.");
 
                 if (reachable.NodeGroupID == node.NodeGroupID
-                    && reachable.Connectable(EntityManager, Transform(reachable.Owner)))
+                    && reachable.Connectable(EntityManager, xformQuery.GetComponent(reachable.Owner)))
                 {
                     yield return reachable;
                 }

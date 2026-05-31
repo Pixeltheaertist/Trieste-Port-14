@@ -7,11 +7,11 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._TP.DeathWhales;
 
-public sealed partial class DeathWhaleSystem : EntitySystem
+public sealed class DeathWhaleSystem : EntitySystem
 {
-    [Dependency] private IAdminLogManager _adminLogger = default!;
-    [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
 
     private const float UpdateInterval = 1f;
     private float _updateTimer;

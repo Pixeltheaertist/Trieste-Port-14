@@ -1,14 +1,11 @@
-using Content.Server.Atmos.EntitySystems;
 using Content.Server.DoAfter;
 using Content.Server.Power.EntitySystems;
 using Content.Shared._TP.Jellids;
 using Content.Shared.Alert;
-using Content.Shared.Atmos.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.Electrocution;
-using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
@@ -26,19 +23,18 @@ namespace Content.Server._TP.Jellids;
 ///     The JellidComponent system handling everything related to power.
 ///     Such as charging, draining, and alerts.
 /// </summary>
-public sealed partial class JellidDrawSystem : EntitySystem
+public sealed class JellidDrawSystem : EntitySystem
 {
-    [Dependency] private AlertsSystem _alerts = default!;
-    [Dependency] private SharedAudioSystem _audio = default!;
-    [Dependency] private BatterySystem _battery = default!;
-    [Dependency] private DamageableSystem _damageable = default!;
-    [Dependency] private DoAfterSystem _doAfter = default!;
-    [Dependency] private FlammableSystem _flammable = default!;
-    [Dependency] private SharedHandsSystem _hands = default!;
-    [Dependency] private InventorySystem _inventory = default!;
-    [Dependency] private SharedPopupSystem _popup = default!;
-    [Dependency] private TagSystem _tag = default!;
-    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly BatterySystem _battery = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly DoAfterSystem _doAfter = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     // The jellid-proof gloves tag proto ID.
     private static readonly ProtoId<TagPrototype> FireproofTag = "PreventsFire";
@@ -164,34 +160,13 @@ public sealed partial class JellidDrawSystem : EntitySystem
 
             // Held item check!
             // If the user DOES NOT have gloves on and a battery is held, it will slowly drain into the Jellid.
-            // Also check if the user has BURNABLE ITEMS in their hands. If so, burn it to ash.
-            var hasFireproofGloves = _inventory.TryGetSlotEntity(uid, "gloves", out var glovesUid)
-                                     && _tag.HasTag(glovesUid.Value, FireproofTag);
-
-            if (!hasFireproofGloves)
-            {
-                UpdateHeldBatteries(uid, jellidBattery);
-                UpdateHeldBurnables(uid);
-            }
+            UpdateHeldBatteries(uid, jellidBattery);
 
             // Damage check!
             // If the internal battery is below 20, damage the Jellid and add it to a previous charge dict.
             // We only damage the Jellid if it's NOT charging. we deal 1 slash damage.
             UpdatePowerDamage(uid, jellidBattery);
         }
-    }
-
-    private void UpdateHeldBurnables(EntityUid uid)
-    {
-        if (_hands.GetActiveItem(uid) is not { } heldItem)
-            return;
-
-        if (!TryComp<FlammableComponent>(heldItem, out var flammable))
-            return;
-
-        _flammable.AdjustFireStacks(heldItem, flammable.FireStacks, flammable);
-        if (flammable.FireStacks >= 0)
-            _flammable.Ignite(heldItem, heldItem, flammable, uid);
     }
 
     /// <summary>
@@ -228,17 +203,23 @@ public sealed partial class JellidDrawSystem : EntitySystem
     /// <param name="jellidBattery">Jellid's BatteryComponent</param>
     private void UpdateHeldBatteries(EntityUid uid, BatteryComponent jellidBattery)
     {
-        foreach (var hand in _hands.EnumerateHands(uid))
+        var hasFireproofGloves = _inventory.TryGetSlotEntity(uid, "gloves", out var glovesUid)
+                                 && _tag.HasTag(glovesUid.Value, FireproofTag);
+
+        if (!hasFireproofGloves)
         {
-            if (!_hands.TryGetHeldItem(uid, hand, out var heldItem))
-                continue;
+            foreach (var hand in _hands.EnumerateHands(uid))
+            {
+                if (!_hands.TryGetHeldItem(uid, hand, out var heldItem))
+                    continue;
 
-            if (!TryComp<BatteryComponent>(heldItem, out var batteryComp))
-                continue;
+                if (!TryComp<BatteryComponent>(heldItem, out var batteryComp))
+                    continue;
 
-            // Drain at a rate of a constant 2.5 power.
-            _battery.SetCharge(heldItem.Value, batteryComp.CurrentCharge - 2.5f);
-            _battery.SetCharge(uid, jellidBattery.CurrentCharge + 2.5f);
+                // Drain at a rate of a constant 2.5 power.
+                _battery.SetCharge(heldItem.Value, batteryComp.CurrentCharge - 2.5f);
+                _battery.SetCharge(uid, jellidBattery.CurrentCharge + 2.5f);
+            }
         }
     }
 
