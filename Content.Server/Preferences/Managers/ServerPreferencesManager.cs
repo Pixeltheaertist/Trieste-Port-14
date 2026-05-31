@@ -22,16 +22,16 @@ namespace Content.Server.Preferences.Managers
     /// Receives <see cref="MsgSetCharacterEnable"/>, <see cref="MsgUpdateCharacter"/>,
     /// <see cref="MsgDeleteCharacter"/>, and <see cref="MsgUpdateJobPriorities"/> at any time.
     /// </summary>
-    public sealed class ServerPreferencesManager : IServerPreferencesManager, IPostInjectInit
+    public sealed partial class ServerPreferencesManager : IServerPreferencesManager, IPostInjectInit
     {
-        [Dependency] private readonly IServerNetManager _netManager = default!;
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly IServerDbManager _db = default!;
-        [Dependency] private readonly IPlayerManager _playerManager = default!;
-        [Dependency] private readonly IDependencyCollection _dependencies = default!;
-        [Dependency] private readonly ILogManager _log = default!;
-        [Dependency] private readonly UserDbDataManager _userDb = default!;
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+        [Dependency] private IServerNetManager _netManager = default!;
+        [Dependency] private IConfigurationManager _cfg = default!;
+        [Dependency] private IServerDbManager _db = default!;
+        [Dependency] private IPlayerManager _playerManager = default!;
+        [Dependency] private IDependencyCollection _dependencies = default!;
+        [Dependency] private ILogManager _log = default!;
+        [Dependency] private UserDbDataManager _userDb = default!;
+        [Dependency] private IPrototypeManager _prototypeManager = default!;
 
         // Cache player prefs on the server so we don't need as much async hell related to them.
         private readonly Dictionary<NetUserId, PlayerPrefData> _cachedPlayerPrefs =
@@ -61,7 +61,7 @@ namespace Content.Server.Preferences.Managers
                 _sawmill.Error(
                     $"User {userId} sent a {nameof(MsgUpdateCharacter)} with a null profile in slot {message.Slot}.");
             else
-                SetProfile(userId, message.Slot, message.Profile);
+                SetProfile(userId, message.Slot, message.Profile).Wait();
         }
 
         public async Task SetProfile(NetUserId userId, int slot, ICharacterProfile profile)
@@ -127,12 +127,12 @@ namespace Content.Server.Preferences.Managers
                 await _db.SaveJobPrioritiesAsync(userId, jobPriorities);
         }
 
-        private void HandleDeleteCharacterMessage(MsgDeleteCharacter message)
+        private async void HandleDeleteCharacterMessage(MsgDeleteCharacter message)
         {
             var slot = message.Slot;
             var userId = message.MsgChannel.UserId;
 
-            DeleteProfile(userId, slot).Wait();
+            await DeleteProfile(userId, slot);
         }
 
         /// <summary>
@@ -152,6 +152,15 @@ namespace Content.Server.Preferences.Managers
             }
 
             var curPrefs = prefsData.Prefs!;
+
+            // Bail if the slot doesn't actually contain a character.
+            if (!curPrefs.Characters.ContainsKey(slot))
+                return;
+
+            // Don't allow deleting the last remaining character.
+            if (curPrefs.Characters.Count <= 1)
+                return;
+
             var session = _playerManager.GetSessionById(userId);
 
             var arr = new Dictionary<int, ICharacterProfile>(curPrefs.Characters);
@@ -159,7 +168,7 @@ namespace Content.Server.Preferences.Managers
 
             prefsData.Prefs = new PlayerPreferences(arr, curPrefs.AdminOOCColor, curPrefs.ConstructionFavorites, curPrefs.JobPriorities);
 
-            if (ShouldStorePrefs(session.AuthType))
+            if (ShouldStorePrefs(session.Channel.AuthType))
             {
                 await _db.SaveCharacterSlotAsync(userId, null, slot);
             }
