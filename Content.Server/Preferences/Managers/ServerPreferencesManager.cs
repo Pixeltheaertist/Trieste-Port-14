@@ -52,7 +52,7 @@ namespace Content.Server.Preferences.Managers
             _sawmill = _log.GetSawmill("prefs");
         }
 
-        private void HandleUpdateCharacterMessage(MsgUpdateCharacter message)
+        private async void HandleUpdateCharacterMessage(MsgUpdateCharacter message)
         {
             var userId = message.MsgChannel.UserId;
 
@@ -61,7 +61,7 @@ namespace Content.Server.Preferences.Managers
                 _sawmill.Error(
                     $"User {userId} sent a {nameof(MsgUpdateCharacter)} with a null profile in slot {message.Slot}.");
             else
-                SetProfile(userId, message.Slot, message.Profile).Wait();
+               await SetProfile(userId, message.Slot, message.Profile);
         }
 
         public async Task SetProfile(NetUserId userId, int slot, ICharacterProfile profile)
