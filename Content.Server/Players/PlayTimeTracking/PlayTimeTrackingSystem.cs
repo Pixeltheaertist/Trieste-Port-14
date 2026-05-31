@@ -14,7 +14,6 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Players;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Roles;
-using Robust.Client.Prototypes;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
