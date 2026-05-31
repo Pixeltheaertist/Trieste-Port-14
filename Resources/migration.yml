@@ -689,10 +689,6 @@ CigaretteSpaceDrugs: CigaretteLipolicide
 CigaretteMilk: CigaretteHaloperidol
 CigaretteBread: CigaretteBbqSauce
 
-# 2025-05-05
-ChemistryHotplate: MachineThermobath
-HotplateMachineCircuitboard: ThermobathMachineCircuitboard
-
 # 2025-05-09
 # ClothingOuterHardsuitBasic: ClothingOuterHardsuitEVA
 # ClothingHeadHelmetHardsuitBasic: null
@@ -833,7 +829,3 @@ PillCanisterDexalin: PillCanisterOxygenatedSaline
 RandomHumanoidSettler: null
 PlanetarySettler: null
 TP14PlanetarySettlerSpawner: TP14PlanetarySettlerSpawnerHuman
-
-# 2026-05-26
-TP14ChemistryColdplate: MachineThermobath
-TP14ColdplateMachineCircuitboard: ThermobathMachineCircuitboard

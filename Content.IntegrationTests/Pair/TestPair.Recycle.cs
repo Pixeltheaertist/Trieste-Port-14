@@ -1,7 +1,6 @@
 #nullable enable
 using System.IO;
 using System.Linq;
-using Content.Client.Lobby;
 using Content.Server.GameTicking;
 using Content.Server.Preferences.Managers;
 using Content.Shared.CCVar;
@@ -24,29 +23,13 @@ public sealed partial class TestPair
 
     private async Task ResetModifiedPreferences()
     {
-        if (Player == null)
-            return;
-
-        await ReallyBeIdle();
-
-        // reset through the client so that the client's cached preferences get updated
-        var prefMan = Client.ResolveDependency<IClientPreferencesManager>();
-        var prefs = prefMan.Preferences;
-
-        await Client.WaitAssertion(() =>
+        var prefMan = Server.ResolveDependency<IServerPreferencesManager>();
+        foreach (var user in _modifiedProfiles)
         {
-            foreach (var slot in prefs!.Characters.Keys)
-            {
-                if (slot == 0)
-                    continue;
-                prefMan.DeleteCharacter(slot);
-            }
+            await Server.WaitPost(() => prefMan.SetProfile(user, 0, new HumanoidCharacterProfile()).Wait());
+        }
 
-            prefMan.UpdateCharacter(new HumanoidCharacterProfile().AsEnabled(), 0);
-            prefMan.UpdateJobPriorities(new() { { SharedGameTicker.FallbackOverflowJob, JobPriority.High } });
-        });
-
-        await ReallyBeIdle();
+        _modifiedProfiles.Clear();
     }
 
     protected override async Task Recycle(PairSettings next, TextWriter testOut)
