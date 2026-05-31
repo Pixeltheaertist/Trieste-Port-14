@@ -12,14 +12,14 @@ namespace Content.Server._TP.Events.Systems;
 /// <summary>
 /// This handles reactor events like light flickering and global announcements for the floatsam event.
 /// </summary>
-public sealed class EventReactorSystem : EntitySystem
+public sealed partial class EventReactorSystem : EntitySystem
 {
 
-    [Dependency] private readonly ChatSystem _chatSystem = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly GhostSystem _ghost = default!;
-    [Dependency] private readonly ExplosionSystem _explosion = default!;
+    [Dependency] private ChatSystem _chatSystem = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private GhostSystem _ghost = default!;
+    [Dependency] private ExplosionSystem _explosion = default!;
 
 
     private float _updateTimer = 0f;

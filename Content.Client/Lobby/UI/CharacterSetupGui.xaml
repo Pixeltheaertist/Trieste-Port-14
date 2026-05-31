@@ -1,12 +1,12 @@
 <Control xmlns="https://spacestation14.io"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-         xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-         xmlns:style="clr-namespace:Content.Client.Stylesheets"
          xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
          VerticalExpand="True">
     <Control>
         <PanelContainer Name="BackgroundPanel" />
         <BoxContainer Orientation="Vertical" SeparationOverride="0">
+
+            <!-- This holds the buttons in the top right of the window -->
             <BoxContainer Orientation="Horizontal" MinSize="0 40">
                 <Label Text="{Loc 'character-setup-gui-character-setup-label'}"
                        Margin="8 0 0 0" VAlign="Center"
@@ -30,13 +30,37 @@
             </BoxContainer>
             <PanelContainer StyleClasses="highlight">
             </PanelContainer>
+
             <BoxContainer Orientation="Horizontal" VerticalExpand="True" SeparationOverride="0">
-                <ScrollContainer MinSize="325 0" Margin="5 5 0 0">
-                    <BoxContainer Name="Characters" Orientation="Vertical" />
-                </ScrollContainer>
+
+                <!-- This box holds all the character pickers and job priority button, the left side of the window  -->
+                <BoxContainer MinSize="400 0" Margin="5 0 0 0" Orientation="Vertical">
+
+                    <!-- Button to edit job priorities -->
+                    <Button Name="JobPrioritiesButton"
+                            Text="{Loc 'character-setup-gui-edit-job-priorities-button'}"
+                            MaxWidth="300"
+                            MinHeight="64"
+                            Margin="0 5"
+                            StyleClasses="ButtonBig"/>
+
+                    <!-- Horizontal rule -->
+                    <PanelContainer StyleClasses="highlight">
+                    </PanelContainer>
+
+                    <!-- This is the box where we stuff the character picker buttons into -->
+                    <ScrollContainer HorizontalExpand="True" VerticalExpand="True" Margin="0 5 0 0">
+                        <BoxContainer Name="Characters" Orientation="Vertical" />
+                    </ScrollContainer>
+                </BoxContainer> <!-- End "Left side of the window" -->
+
+                <!-- Vertical rule -->
                 <PanelContainer MinSize="2 0" StyleClasses="highlight">
                 </PanelContainer>
+
+                <!-- The "right" side of the window, where the character and priority editors are instantiated -->
                 <BoxContainer Name="CharEditor" HorizontalExpand="True" />
+                <BoxContainer Name="JobPriorityEditor" HorizontalExpand="True" Visible="False"/>
             </BoxContainer>
         </BoxContainer>
     </Control>
