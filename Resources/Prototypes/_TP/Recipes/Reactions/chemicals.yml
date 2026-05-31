@@ -30,7 +30,7 @@
 
 - type: reaction
   id: OilRefinementStage4
-  minTemp: 999
+  minTemp: 1000
   reactants:
     RefinedOil:
       amount: 1
