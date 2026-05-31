@@ -8,11 +8,11 @@ using Robust.Shared.Configuration;
 
 namespace Content.Client.Parallax.Managers;
 
-public sealed partial class ParallaxManager : IParallaxManager
+public sealed class ParallaxManager : IParallaxManager
 {
-    [Dependency] private IPrototypeManager _prototypeManager = default!;
-    [Dependency] private IConfigurationManager _configurationManager = default!;
-    [Dependency] private IDependencyCollection _deps = null!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
+    [Dependency] private readonly IDependencyCollection _deps = null!;
 
     private ISawmill _sawmill = Logger.GetSawmill("parallax");
 
@@ -98,13 +98,10 @@ public sealed partial class ParallaxManager : IParallaxManager
             }
             else
             {
-                // Explicitly allocate params array to avoid sandbox violation since C# 14.
-                var tasks = new[]
-                {
+                layers = await Task.WhenAll(
                     LoadParallaxLayers(parallaxPrototype.Layers, loadedLayers, cancel),
-                    LoadParallaxLayers(parallaxPrototype.LayersLQ, loadedLayers, cancel),
-                };
-                layers = await Task.WhenAll(tasks);
+                    LoadParallaxLayers(parallaxPrototype.LayersLQ, loadedLayers, cancel)
+                );
             }
 
             cancel.ThrowIfCancellationRequested();
@@ -162,3 +159,4 @@ public sealed partial class ParallaxManager : IParallaxManager
         return prepared;
     }
 }
+

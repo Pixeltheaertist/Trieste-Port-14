@@ -15,15 +15,15 @@ namespace Content.Server._TP.Kitchen.Systems;
 /// <summary>
 ///     Makes an entity... make coffee. Idunno how else to describe this.
 /// </summary>
-public sealed partial class CoffeeMakerSystem : EntitySystem
+public sealed class CoffeeMakerSystem : EntitySystem
 {
-    [Dependency] private SharedAppearanceSystem _appearance = default!;
-    [Dependency] private SharedAudioSystem _audio = default!;
-    [Dependency] private SharedContainerSystem _container = default!;
-    [Dependency] private SharedPopupSystem _popup = default!;
-    [Dependency] private PowerReceiverSystem _power = default!;
-    [Dependency] private SharedSolutionContainerSystem _solution = default!;
-    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly PowerReceiverSystem _power = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     private readonly List<ReagentId> _coffeeGroundIDs =
     [

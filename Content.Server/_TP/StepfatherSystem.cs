@@ -21,14 +21,14 @@ namespace Content.Server._TP;
 /// <summary>
 ///     The system handling the StepfatherComponent.
 /// </summary>
-public sealed partial class StepfatherSystem : EntitySystem
+public sealed class StepfatherSystem : EntitySystem
 {
-    [Dependency] private AlertsSystem _alerts = default!;
-    [Dependency] private SharedContainerSystem _container = default!;
-    [Dependency] private MovementSpeedModifierSystem _movementSpeedModifier = default!;
-    [Dependency] private BatterySystem _battery = default!;
-    [Dependency] private IPrototypeManager _proto = default!;
-    [Dependency] private SiliconLawSystem _siliconLaw = default!;
+    [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
+    [Dependency] private readonly BatterySystem _battery = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly SiliconLawSystem _siliconLaw = default!;
 
     public override void Initialize()
     {

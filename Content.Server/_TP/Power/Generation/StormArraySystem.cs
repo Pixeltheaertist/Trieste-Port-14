@@ -21,18 +21,18 @@ namespace Content.Server._TP.Power.Generation;
 ///     This is similar to the TEG coolant loop, absorbing heat and transferring it to pipe gas.
 ///     Created by Cookie (Father Cheese) for Trieste Port 14.
 /// </summary>
-public sealed partial class StormArraySystem : EntitySystem
+public sealed class StormArraySystem : EntitySystem
 {
     // Pipe names from the Storm Array entity.
     private const string NodeNameInlet = "inlet";
     private const string NodeNameOutlet = "outlet";
 
-    [Dependency] private SharedAppearanceSystem _appearance = default!;
-    [Dependency] private AtmosphereSystem _atmosphere = default!;
-    [Dependency] private DestructibleSystem _destructible = default!;
-    [Dependency] private SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private SharedPopupSystem _popup = default!;
-    [Dependency] private RadioSystem _radio = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
+    [Dependency] private readonly DestructibleSystem _destructible = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly RadioSystem _radio = default!;
 
     private EntityQuery<NodeContainerComponent> _nodeContainerQuery;
 
