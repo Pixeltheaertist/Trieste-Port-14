@@ -30,5 +30,6 @@
     <PackageVersion Include="System.Text.Encoding.Extensions" Version="4.3.0" />
     <PackageVersion Include="prometheus-net" Version="8.2.1" />
     <PackageVersion Include="Microsoft.Extensions.ObjectPool" Version="9.0.0" />
+    <PackageVersion Include="JetBrains.Annotations" Version="2024.3.0" />
   </ItemGroup>
 </Project>
