@@ -9,7 +9,7 @@ namespace Content.Server._TP.StationEvents.Events;
 /// <summary>
 ///     Handles the whale migration event, including changing the parallax background.
 /// </summary>
-public sealed class WhaleMigrationRule : StationEventSystem<WhaleMigrationRuleComponent>
+public sealed partial class WhaleMigrationRule : StationEventSystem<WhaleMigrationRuleComponent>
 {
     protected override void Started(EntityUid uid,
         WhaleMigrationRuleComponent comp,
