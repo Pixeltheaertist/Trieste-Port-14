@@ -1,5 +1,6 @@
 using Content.Client._NullLink;
 using Content.Client.Administration.Managers;
+using Content.Shared._NullLink;
 using Content.Shared.NullLink;
 using Robust.Client.Player;
 using Robust.Shared.Player;
