@@ -4,7 +4,7 @@
   parent: MarkerBase
   components:
     - type: Sprite
-      layers:/
+      layers:
         - state: blue
         - sprite: Mobs/Species/Human/parts.rsi
           state: full

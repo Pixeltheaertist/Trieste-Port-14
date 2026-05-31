@@ -7,13 +7,13 @@ using Robust.Shared.Audio.Systems;
 
 namespace Content.Server._TP.RWEvent;
 
-public sealed class PearlScannerSystem : EntitySystem
+public sealed partial class PearlScannerSystem : EntitySystem
 {
-    [Dependency] private readonly UseDelaySystem _useDelay = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly PaperSystem _paper = default!;
-    [Dependency] private readonly MetaDataSystem _metaSystem = default!;
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
+    [Dependency] private UseDelaySystem _useDelay = default!;
+    [Dependency] private PopupSystem _popupSystem = default!;
+    [Dependency] private PaperSystem _paper = default!;
+    [Dependency] private MetaDataSystem _metaSystem = default!;
+    [Dependency] private SharedAudioSystem _audioSystem = default!;
 
     public override void Initialize()
     {
