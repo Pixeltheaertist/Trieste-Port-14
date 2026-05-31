@@ -16,18 +16,18 @@ namespace Content.Server._TP.WaterInteractions;
 /// In real terms, this system measures the "depth" of objects, and relates it to their designated crush depths.
 /// If you are deeper than your crush depth and don't have an abyssal hardsuit on. Ruh roh.
 /// </summary>
-public sealed class WaterInteractionSystem : EntitySystem
+public sealed partial class WaterInteractionSystem : EntitySystem
 {
     private const float UpdateTimer = 1f;
     private float _timer;
     private const float NoiseTimer = 1f;
     private float _noisetimer;
 
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private SharedSolutionContainerSystem _solution = default!;
 
     private EntityUid? _soundEntity;
 

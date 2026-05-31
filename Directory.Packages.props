@@ -6,25 +6,30 @@
     -->
     <PackageVersion Remove="Npgsql.EntityFrameworkCore.PostgreSQL" />
     <PackageVersion Remove="Microsoft.EntityFrameworkCore.Design" />
-    <PackageVersion Include="CsvHelper" Version="33.0.1" />
+    <PackageVersion Include="CsvHelper" Version="33.1.0" />
     <PackageVersion Include="ImGui.NET" Version="1.87.3" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.1">
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageVersion>
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="10.0.0" />
     <PackageVersion Include="NetCord" Version="1.0.0-alpha.388" />
+    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
+    <PackageVersion Include="OpenTK" Version="4.9.4" />
+    <PackageVersion Include="Veldrid" Version="4.8.0" />
+    <PackageVersion Include="Veldrid.SPIRV" Version="1.0.15" />
+    <PackageVersion Include="SS14.Starlight.NullLink" Version="1.0.24" />
+    <PackageVersion Include="SS14.Starlight.NullLink" Version="1.0.24" />
     <PackageVersion Include="Microsoft.Orleans.Client" Version="9.2.1" />
     <PackageVersion Include="Microsoft.Orleans.Clustering.Redis" Version="9.2.1" />
     <PackageVersion Include="Microsoft.Orleans.Sdk" Version="9.2.1" />
-    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.3" />
-    <PackageVersion Include="OpenTK" Version="4.9.4" />
-    <PackageVersion Include="SS14.Starlight.NullLink" Version="1.0.24" />
-    <PackageVersion Include="System.IO.FileSystem" Version="4.3.0" />
-    <PackageVersion Include="System.IO.FileSystem.Primitives" Version="4.3.0" />
+    <PackageVersion Include="Serilog.Sinks.Loki" Version="3.0.0" />
+    <PackageVersion Include="StackExchange.Redis" Version="2.8.0" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
     <PackageVersion Include="System.Runtime.Handles" Version="4.3.0" />
     <PackageVersion Include="System.Text.Encoding.Extensions" Version="4.3.0" />
-    <PackageVersion Include="Veldrid" Version="4.8.0" />
-    <PackageVersion Include="Veldrid.SPIRV" Version="1.0.15" />
+    <PackageVersion Include="prometheus-net" Version="8.2.1" />
+    <PackageVersion Include="Microsoft.Extensions.ObjectPool" Version="9.0.0" />
+    <PackageVersion Include="JetBrains.Annotations" Version="2024.3.0" />
   </ItemGroup>
 </Project>
