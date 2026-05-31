@@ -1,32 +1,32 @@
 reagent-name-crude-oil = crude oil
-reagent-desc-crude-oil = Black oily gold
+reagent-desc-crude-oil = A thick, dark mixture from underground deposits. Rumours say the harbormaster puts some in their coffee every morning.
 
 reagent-name-less-crude-oil = less crude oil
-reagent-desc-less-crude-oil = crude oil, but a bit more mature
+reagent-desc-less-crude-oil = Partially processed crude oil with its heavier impurities removed.
 
 reagent-name-even-less-crude-oil = even less crude oil
-reagent-desc-even-less-crude-oil = crude oil, but has had a stern talking to
+reagent-desc-even-less-crude-oil = Further treated oil with fewer contaminants and improved stability.
 
 reagent-name-refined-oil = refined oil
-reagent-desc-refined-oil = oil nobility
+reagent-desc-refined-oil = Highly processed and purified oil for advanced industrial use.
 
 reagent-name-hyper-refined-oil = hyper refined oil
-reagent-desc-hyper-refined-oil = the most posh of the oils. somthing unnatural glimmers just beneath its surface
+reagent-desc-hyper-refined-oil = Extremely purified oil with an unnatural glimmer just beneath its surface.
 
 reagent-name-exotic-oil = exotic oil
-reagent-desc-exotic-oil = due to the proximity to the artifact, bits of the oil have become this. Has extremely transmutative properties
+reagent-desc-exotic-oil = Oil altered by prolonged exposure to The Artifact, giving it strong transmutative properties.
 
 reagent-name-exotic-poison = exotic poison
-reagent-desc-exotic-poison = an extremely dangerous poison derived from exotic oil
+reagent-desc-exotic-poison = A highly toxic compound derived from exotic oil.
 
 reagent-name-juice-that = juice that makes you explode
-reagent-desc-juice-that = what do you think it does?
+reagent-desc-juice-that = What do you think it does?
 
 reagent-name-desoxyephedrine-plus = desoxyephedrine+
-reagent-desc-desoxyephedrine-plus = a highly potent and dangerous narcotic
+reagent-desc-desoxyephedrine-plus = A highly potent and dangerous stimulant.
 
 reagent-name-petroleum = petroleum
-reagent-desc-petroleum = liquid petroleum, used for creating welding fuel
+reagent-desc-petroleum = Liquid petroleum used in the production of welding fuel.
 
 reagent-name-naphtha = naphtha
-reagent-desc-naphtha = a chemical commonly used to manufacture plastic. Mix one part this, one part carbon, and 0.1 part oxygen at high temperatures and you can make some
+reagent-desc-naphtha = A volatile mixture commonly used in plastic and fuel production.
