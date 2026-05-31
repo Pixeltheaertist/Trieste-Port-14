@@ -13,10 +13,10 @@ namespace Content.Server._TP.Ladder;
 /// <summary>
 ///     A class to handle Ladders.
 /// </summary>
-public sealed partial class LadderSystem : EntitySystem
+public sealed class LadderSystem : EntitySystem
 {
-    [Dependency] private SharedTransformSystem _transform = default!;
-    [Dependency] private DoAfterSystem _doAfter = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly DoAfterSystem _doAfter = default!;
 
     public override void Initialize()
     {

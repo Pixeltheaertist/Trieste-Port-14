@@ -6,9 +6,9 @@ using Content.Shared.Verbs;
 
 namespace Content.Server._TP;
 
-public sealed partial class PilotAssignmentSystem : EntitySystem
+public sealed class PilotAssignmentSystem : EntitySystem
 {
-    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
 
     public override void Initialize()
     {

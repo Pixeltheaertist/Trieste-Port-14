@@ -32,9 +32,16 @@ public sealed class OutfitSystem : EntitySystem
         if (!_prototypeManager.TryIndex<StartingGearPrototype>(gear, out var startingGear))
             return false;
 
-        // Check if the entity was spawned in with a player's character profile to respect loadouts
-        var appearanceSystem = EntityManager.System<SharedHumanoidAppearanceSystem>();
-        var profile = appearanceSystem.GetBaseProfile(target);
+        HumanoidCharacterProfile? profile = null;
+        ICommonSession? session = null;
+        // Check if we are setting the outfit of a player to respect the preferences
+        if (EntityManager.TryGetComponent(target, out ActorComponent? actorComponent))
+        {
+            session = actorComponent.PlayerSession;
+            var userId = actorComponent.PlayerSession.UserId;
+            var prefs = _preferenceManager.GetPreferences(userId);
+            profile = prefs.SelectedCharacter as HumanoidCharacterProfile;
+        }
 
         if (_invSystem.TryGetSlots(target, out var slots))
         {
@@ -91,11 +98,6 @@ public sealed class OutfitSystem : EntitySystem
 
             if (roleLoadout == null)
             {
-                // This session is required when making a default loadout to check requirements for loadout items
-                ICommonSession? session = null;
-                if (EntityManager.TryGetComponent(target, out ActorComponent? actorComponent))
-                    session = actorComponent.PlayerSession;
-
                 // If they don't have a loadout for the role, make a default one
                 roleLoadout = new RoleLoadout(jobProtoId);
                 roleLoadout.SetDefault(profile, session, _prototypeManager);

@@ -1,10 +1,10 @@
-using Content.Shared.NullLink;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._NullLink;
+namespace Content.Shared.NullLink;
 
+[Virtual]
 public abstract class SharedPlayerRolesReqManager : ISharedNullLinkPlayerRolesReqManager
 {
     [Dependency] protected readonly IPrototypeManager _proto = default!;
