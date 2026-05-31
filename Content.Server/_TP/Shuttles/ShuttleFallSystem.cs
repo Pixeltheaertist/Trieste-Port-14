@@ -30,14 +30,14 @@ namespace Content.Server._TP.Shuttles;
 // Add some docks to Trieste to allow these vessels to properly dock. - ESSENTIAL!
 // Add a limiter system, with a grid-propeller ratio. The larger a grid is, the more operational thrusters it needs to have to fly.
 
-public sealed class ShuttleFallSystem : EntitySystem
+public sealed partial class ShuttleFallSystem : EntitySystem
 {
-    [Dependency] private readonly ThrusterSystem _thruster = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly ShuttleSystem _shuttle = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly MapSystem _mapSystem = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private ThrusterSystem _thruster = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private ShuttleSystem _shuttle = default!;
+    [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private MapSystem _mapSystem = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     // Timer for fall updates
     private const float UpdateInterval = 6f; // This should help maybe with uhh, making sure it doesnt fall immediately.
