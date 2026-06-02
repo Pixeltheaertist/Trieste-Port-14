@@ -1,5 +1,5 @@
 reagent-name-crude-oil = crude oil
-reagent-desc-crude-oil = A thick, dark mixture from underground deposits. Rumours say the harbormaster puts some in their coffee every morning.
+reagent-desc-crude-oil = A thick, dark mixture from underground deposits. It has a strong smell and stains almost anything it touches.
 
 reagent-name-less-crude-oil = less crude oil
 reagent-desc-less-crude-oil = Partially processed crude oil with its heavier impurities removed.
