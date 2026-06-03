@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 267.4.0
+  engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 06/02/2026 01:09:59
+  time: 06/03/2026 13:40:01
   entityCount: 13078
 maps:
 - 1
@@ -391,6 +391,7 @@ entities:
             4448: 62,-21
             4450: 64,-22
             4451: 63,-24
+            5096: 64,-19
         - node:
             color: '#334E6DC8'
             id: BrickCornerOverlayNE
@@ -7473,7 +7474,7 @@ entities:
       pos: 45.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -21762.488
+      secondsUntilStateChange: -21810.877
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7486,7 +7487,7 @@ entities:
       pos: 47.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -120518.68
+      secondsUntilStateChange: -120567.07
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7542,7 +7543,7 @@ entities:
       pos: 32.5,-31.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -21095.057
+      secondsUntilStateChange: -21143.445
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7561,7 +7562,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -383225.78
+      secondsUntilStateChange: -383274.16
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7772,7 +7773,7 @@ entities:
       pos: 36.5,17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -30864.818
+      secondsUntilStateChange: -30913.207
       state: Opening
     - type: AccessReader
       accessListsOriginal: []
@@ -7938,7 +7939,7 @@ entities:
       pos: 18.5,23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -422341.56
+      secondsUntilStateChange: -422389.94
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8039,7 +8040,7 @@ entities:
       pos: 40.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -5984.3696
+      secondsUntilStateChange: -6032.7583
       state: Opening
     - type: AccessReader
       accessListsOriginal: []
@@ -8296,7 +8297,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -51382.676
+      secondsUntilStateChange: -51431.062
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8331,7 +8332,7 @@ entities:
       pos: 39.5,-30.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -18213.36
+      secondsUntilStateChange: -18261.748
       state: Opening
     - type: AccessReader
       accessListsOriginal: []
@@ -8357,7 +8358,7 @@ entities:
       pos: 32.5,-23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -10670.769
+      secondsUntilStateChange: -10719.157
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8405,7 +8406,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -16823.826
+      secondsUntilStateChange: -16872.215
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8459,7 +8460,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -398923.3
+      secondsUntilStateChange: -398971.7
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -30812,7 +30813,7 @@ entities:
       pos: -10.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -96084.734
+      secondsUntilStateChange: -96133.125
       state: Opening
   - uid: 10921
     components:
@@ -41935,7 +41936,7 @@ entities:
       pos: 12.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -153094.3
+      secondsUntilStateChange: -153142.69
       state: Closing
   - uid: 3844
     components:
@@ -82029,7 +82030,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -379442.66
+      secondsUntilStateChange: -379491.03
       state: Opening
     - type: Airlock
       autoClose: False
@@ -82857,7 +82858,7 @@ entities:
       pos: 39.5,45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -76212.19
+      secondsUntilStateChange: -76260.58
       state: Opening
   - uid: 6259
     components:
