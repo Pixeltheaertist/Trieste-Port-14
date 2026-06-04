@@ -103,3 +103,7 @@ BurntCheeto - Mapping
 neadsy_ - Mapping
 
 Cheese - Bugfixing
+
+gmandawesome - Bugfixing
+
+Beinskalle - Bugfixing, Spriting
