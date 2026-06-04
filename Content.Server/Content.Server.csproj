@@ -1,55 +1,42 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <!-- Work around https://github.com/dotnet/project-system/issues/4314 -->
-    <TargetFramework>$(TargetFramework)</TargetFramework>
-    <LangVersion>12</LangVersion>
-    <IsPackable>false</IsPackable>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\bin\Content.Server\</OutputPath>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <OutputType Condition="'$(FullRelease)' != 'True'">Exe</OutputType>
-    <NoWarn>1998;NU1605</NoWarn>
+    <NoWarn>1998</NoWarn>
     <WarningsAsErrors>RA0032;nullable</WarningsAsErrors>
-    <Nullable>enable</Nullable>
     <ServerGarbageCollection>true</ServerGarbageCollection>
-    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
   </PropertyGroup>
-  
-  <!-- Auto-detect runtime identifier for NetCord compatibility -->
-  <PropertyGroup Condition="'$(RuntimeIdentifier)' == ''">
-    <RuntimeIdentifier Condition="$([MSBuild]::IsOSPlatform('Windows'))">win-x64</RuntimeIdentifier>
-    <RuntimeIdentifier Condition="$([MSBuild]::IsOSPlatform('Linux'))">linux-x64</RuntimeIdentifier>
-    <RuntimeIdentifier Condition="$([MSBuild]::IsOSPlatform('OSX'))">osx-x64</RuntimeIdentifier>
-  </PropertyGroup>
-  
+  <Import Project="../MSBuild/Content.props" />
   <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="NetCord" />
-    <PackageReference Include="Microsoft.Orleans.Client" />
-    <PackageReference Include="Microsoft.Orleans.Clustering.Redis" />
-    <PackageReference Include="Microsoft.Orleans.Sdk" OutputItemType="Analyzer" PrivateAssets="all" />
-    <PackageReference Include="Serilog.Sinks.Loki" />
-    <PackageReference Include="SS14.Starlight.NullLink" />
-    <PackageReference Include="System.Runtime.Handles" />
-    <PackageReference Include="System.Text.Encoding.Extensions" />
+      <PackageReference Include="JetBrains.Annotations" PrivateAssets="All" />
+      <PackageReference Include="NetCord" />
+      <PackageReference Include="prometheus-net" />
+      <PackageReference Include="Microsoft.Extensions.ObjectPool" />
+      <!-- Trieste additions -->
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.Orleans.Client" />
+      <PackageReference Include="Microsoft.Orleans.Clustering.Redis" />
+      <PackageReference Include="Microsoft.Orleans.Sdk" OutputItemType="Analyzer" PrivateAssets="all" />
+      <PackageReference Include="Serilog.Sinks.Loki" />
+      <PackageReference Include="SS14.Starlight.NullLink" />
+      <PackageReference Include="System.Runtime.Handles" />
+      <PackageReference Include="System.Text.Encoding.Extensions" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Content.Packaging\Content.Packaging.csproj" />
     <ProjectReference Include="..\Content.Server.Database\Content.Server.Database.csproj" />
     <ProjectReference Include="..\Content.Shared.Database\Content.Shared.Database.csproj" />
-    <ProjectReference Include="..\RobustToolbox\Lidgren.Network\Lidgren.Network.csproj" />
-    <ProjectReference Include="..\RobustToolbox\Robust.Client\Robust.Client.csproj" />
-    <ProjectReference Include="..\RobustToolbox\Robust.Shared.Maths\Robust.Shared.Maths.csproj" />
-    <ProjectReference Include="..\RobustToolbox\Robust.Shared\Robust.Shared.csproj" />
-    <ProjectReference Include="..\RobustToolbox\Robust.Server\Robust.Server.csproj" />
     <ProjectReference Include="..\Content.Shared\Content.Shared.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="_EmberFall\" />
-  </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
+
+  <Import Project="..\RobustToolbox\Imports\Lidgren.props" />
+  <Import Project="..\RobustToolbox\Imports\Server.props" />
+  <Import Project="..\RobustToolbox\Imports\Shared.props" />
+  <Import Project="..\RobustToolbox\Imports\Packaging.props" />
 </Project>

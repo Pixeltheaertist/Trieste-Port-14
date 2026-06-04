@@ -7,14 +7,14 @@ using Robust.Shared.Random;
 
 namespace Content.Server._TP.RWEvent;
 
-public sealed class DeathRainSystem : EntitySystem
+public sealed partial class DeathRainSystem : EntitySystem
 {
 
-    [Dependency] private readonly ChatSystem _chatSystem = default!;
-    [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private ChatSystem _chatSystem = default!;
+    [Dependency] private SharedCameraRecoilSystem _sharedCameraRecoil = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
 
     private const float UpdateInterval = 20f;
     private const float RumbleInterval = 10;

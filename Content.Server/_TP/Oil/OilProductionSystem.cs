@@ -9,16 +9,16 @@ using Robust.Shared.Timing;
 using Content.Shared.FixedPoint;
 
 namespace Content.Server._TP.Oil;
-public sealed class OilProductionSystem : EntitySystem
+public sealed partial class OilProductionSystem : EntitySystem
 {
     //Somehow have to make this shit produce oil
     //Wish me luck
     // of corse there was a easy way to do it, only found after like 8 hours of suffering
 
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
-    [Dependency] private readonly PowerReceiverSystem _power = default!;
-    [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private PowerReceiverSystem _power = default!;
+    [Dependency] private ItemSlotsSystem _itemSlotsSystem = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
     {
