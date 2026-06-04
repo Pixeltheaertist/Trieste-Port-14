@@ -70,7 +70,7 @@ Ermucat - Programming
 
 Slckstr - Bugfixing
 
-FatherCheese - Programming, Debugging, Mapping
+DaCookieCakes - Programming, Debugging, Mapping
 
 Powsu - Programming, Spriting
 
@@ -102,3 +102,8 @@ BurntCheeto - Mapping
 
 neadsy_ - Mapping
 
+Cheese - Bugfixing
+
+gmandawesome - Bugfixing
+
+Beinskalle - Bugfixing, Spriting
