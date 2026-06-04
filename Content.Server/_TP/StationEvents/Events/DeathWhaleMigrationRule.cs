@@ -5,7 +5,7 @@ using Robust.Shared.Map;
 
 namespace Content.Server._TP.StationEvents.Events
 {
-    public sealed class OceanSpawnRule : StationEventSystem<OceanSpawnRuleComponent>
+    public sealed partial class OceanSpawnRule : StationEventSystem<OceanSpawnRuleComponent>
     {
         protected override void Started(EntityUid uid, OceanSpawnRuleComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
         {

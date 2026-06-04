@@ -18,13 +18,13 @@ using Robust.Shared.Map;
 
 namespace Content.Server._TP.Falling.Systems;
 
-public sealed class FallSystem : EntitySystem
+public sealed partial class FallSystem : EntitySystem
 {
-    [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
-    [Dependency] private readonly ClimbSystem _climb = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private SharedTransformSystem _transformSystem = default!;
+    [Dependency] private ClimbSystem _climb = default!;
 
     public override void Initialize()
     {
