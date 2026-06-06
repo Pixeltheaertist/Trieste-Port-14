@@ -44,7 +44,10 @@
         layer:
         - WallLayer
   - type: PowerSupplier
+    enabled: false
     supplyRate: 150000
+    supplyRampRate: 1500
+    supplyRampTolerance: 1500
   - type: GuideHelp
     guides:
     - StormArray
@@ -63,6 +66,7 @@
       types:
         Heat: 10.0
   - type: Electrified
+    enabled: false
     onHandInteract: true
     onInteractUsing: true
     onBump: true
