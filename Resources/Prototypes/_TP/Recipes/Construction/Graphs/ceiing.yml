@@ -1,0 +1,26 @@
+- type: constructionGraph
+  id: ConstructionGraphRoof
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: inside marker
+      steps:
+      - material: MetalRod
+        amount: 4
+        doAfter: 3
+      - material: Steel
+        amount: 2
+        doAfter: 2
+  - node: inside marker
+    entity: TP14MarkerInside
+
+- type: construction
+  id: ConstructionRoof
+  graph: ConstructionGraphRoof
+  startNode: start
+  targetNode: inside marker
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
