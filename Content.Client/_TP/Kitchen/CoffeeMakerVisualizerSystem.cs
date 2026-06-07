@@ -3,10 +3,10 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client._TP.Kitchen;
 
-public sealed class CoffeeMakerVisualizerSystem : VisualizerSystem<SharedCoffeeMakerComponent>
+public sealed class CoffeeMakerVisualizerSystem : VisualizerSystem<CoffeeMakerComponent>
 {
         protected override void OnAppearanceChange(EntityUid uid,
-        SharedCoffeeMakerComponent component,
+        CoffeeMakerComponent component,
         ref AppearanceChangeEvent args)
     {
         if (args.Sprite == null)

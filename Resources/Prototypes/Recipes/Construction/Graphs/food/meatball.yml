@@ -1,3 +1,5 @@
+# !! TRIESTE PORT MODIFIED !! #
+
 - type: constructionGraph
   id: MeatMeatballCooked
   start: start
@@ -11,13 +13,14 @@
         sound: /Audio/Effects/sizzle.ogg
       steps:
       - minTemperature: 335
-    - to: meat patty
-      steps:
-      - tool: Rolling
-        doAfter: 1
+# TP14: Moved to cutlets.
+#    - to: meat patty
+#      steps:
+#      - tool: Rolling
+#        doAfter: 1
 
   - node: meatball cooked
     entity: FoodMeatMeatballCooked
 
-  - node: meat patty
-    entity: FoodMeatPatty
+#  - node: meat patty
+#    entity: FoodMeatPatty

@@ -4,8 +4,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._TP.Kitchen.Components;
 
 [RegisterComponent]
-[ComponentProtoName("CoffeeMaker")]
-public sealed partial class SharedCoffeeMakerComponent : Component
+public sealed partial class CoffeeMakerComponent : Component
 {
     [DataField]
     public bool IsEnabled;
