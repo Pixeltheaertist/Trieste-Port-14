@@ -1,5 +1,3 @@
-# !! TRIESTE PORT MODIFIED !! #
-
 - type: entity
   abstract: true
   parent: Clothing
@@ -22,10 +20,21 @@
         reagents:
         - ReagentId: Fiber
           Quantity: 10
+      stain:
+        maxVol: 5
   - type: Tag
     tags:
     - ClothMade
     - WhitelistChameleon
+  - type: Appearance
+  - type: Stainable
+    clothingVisuals:
+      head:
+      - sprite: _Funkystation/Effects/blood.rsi
+        state: helmetblood
+    iconVisuals:
+    - sprite: _Funkystation/Effects/blood.rsi
+      state: helmetbloodicon
 
 - type: entity
   abstract: true
@@ -117,7 +126,6 @@
 #  - type: SlotBlock
 #    slots: [ears, eyes, mask]
   - type: BreathMask
-  - type: WaterBlocker
   - type: Item
     size: Normal
   - type: PressureProtection
@@ -145,6 +153,8 @@
     - HeadTop
     - HeadSide
     - FacialHair
+  - type: StainBlocker
+    slots: [MASK]
 
 - type: entity
   abstract: true
@@ -157,7 +167,6 @@
 #  - type: SlotBlock
 #    slots: [ears, eyes, mask]
   - type: BreathMask
-  - type: WaterBlocker
   - type: Sprite
     state: icon # default state used by most inheritors
   - type: Clickable
@@ -195,7 +204,17 @@
     - HeadTop
     - HeadSide
     - FacialHair
-  - type: AirtightHelmet # TP: Added
+  - type: Appearance
+  - type: Stainable
+    clothingVisuals:
+      head:
+      - sprite: _Funkystation/Effects/blood.rsi
+        state: helmetblood
+    iconVisuals:
+    - sprite: _Funkystation/Effects/blood.rsi
+      state: helmetbloodicon
+  - type: StainBlocker
+    slots: [MASK]
 
 - type: entity
   abstract: true
@@ -216,13 +235,12 @@
       map: [ "light" ]
   - type: Clothing
     equippedPrefix: off
-  - type: WaterBlocker
   - type: ToggleableVisuals
     spriteLayer: light
   - type: ItemTogglePointLight
   - type: PointLight
     enabled: false
-    radius: 5
+    radius: 3
     energy: 2
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
@@ -284,3 +302,12 @@
     - Hair
     - HeadTop
     - HeadSide
+  - type: Appearance
+  - type: Stainable
+    clothingVisuals:
+      head:
+      - sprite: _Funkystation/Effects/blood.rsi
+        state: helmetblood
+    iconVisuals:
+    - sprite: _Funkystation/Effects/blood.rsi
+      state: helmetbloodicon
