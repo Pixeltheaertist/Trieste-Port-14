@@ -131,6 +131,7 @@
     - Xenoborg
     - GenpopEnter
     - GenpopLeave
+    - TP14SettlerAccessLevel
     privilegedIdSlot:
       name: id-card-console-privileged-id
       startingItem: UniversalIDCard

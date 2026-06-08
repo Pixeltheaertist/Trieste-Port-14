@@ -1,3 +1,5 @@
+# !! TRIESTE PORT MODIFIED !! #
+
 - type: entity
   id: BaseNuclearReactor
   parent: BaseStructure
@@ -151,7 +153,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: AccessReader # You got a permit for that meltdown?
-    access: [["Engineering"], ["TP14SettlerAccessLevel"]]
+    access: [["Engineering"], ["TP14SettlerAccessLevel"]] # TP14: Added settler access.
   - type: Lock
     unlockOnClick: false
   - type: WarpPoint

@@ -114,7 +114,7 @@
       enum.TurbineUiKey.Key:
         type: TurbineBoundUserInterface
   - type: AccessReader # Keeps some random tider from blowing up the turbine
-    access: [["Engineering"], ["TP14SettlerAccessLevel"]]
+    access: [["Engineering"], ["TP14SettlerAccessLevel"]] # TP14: Added settler access.
   - type: Lock
     unlockOnClick: false
   - type: GuideHelp

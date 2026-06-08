@@ -1,3 +1,5 @@
+# !! TRIESTE PORT MODIFIED !! #
+
 - type: entity
   parent: BaseComputerAiAccess
   id: NuclearReactorMonitor
@@ -25,7 +27,7 @@
       enum.NuclearReactorUiKey.Key:
         type: NuclearReactorBoundUserInterface
   - type: AccessReader # You got a permit for that meltdown?
-    access: [["Engineering"], ["TP14SettlerAccessLevel"]]
+    access: [["Engineering"], ["TP14SettlerAccessLevel"]] # TP14: Added settler access.
   - type: Lock
     unlockOnClick: false
   - type: DeviceList
@@ -69,7 +71,7 @@
       enum.TurbineUiKey.Key:
         type: TurbineBoundUserInterface
   - type: AccessReader # Keeps some random tider from blowing up the turbine
-    access: [["Engineering"], ["TP14SettlerAccessLevel"]]
+    access: [["Engineering"], ["TP14SettlerAccessLevel"]] # TP14: Added settler access.
   - type: Lock
     unlockOnClick: false
   - type: DeviceList

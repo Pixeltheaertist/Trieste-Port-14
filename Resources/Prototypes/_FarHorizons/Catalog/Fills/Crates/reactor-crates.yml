@@ -1,3 +1,5 @@
+# !! TRIESTE PORT MODIFIED !! #
+
 - type: entity
   id: CrateCerenkiteFuelRod
   parent: CrateEngineeringSecure
@@ -8,6 +10,8 @@
     contents:
     - id: CerenkiteReactorFuelRod
       amount: 3
+  - type: AccessReader
+    access: [ [ "Engineering" ], ["TP14SettlerAccessLevel"] ] # TP14: Added settlers.
 
 - type: entity
   id: CrateBohrumControlRod
