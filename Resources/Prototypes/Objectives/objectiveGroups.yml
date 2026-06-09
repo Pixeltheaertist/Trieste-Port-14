@@ -1,3 +1,6 @@
+# !! FAR HORIZONS MODIFIED !! #
+# !! TRIESTE PORT MODIFIED !! #
+
 # Traitor
 - type: weightedRandom
   id: TraitorObjectiveGroups
@@ -68,6 +71,7 @@
     MailStealCollectionObjective: 1                     #cargo
     IDCardsStealCollectionObjective: 1
     LAMPStealCollectionObjective: 0.1                   #only for moth, weight decreased cause boring and insanely easy
+  # ReactorFuelRodStealCollectionObjective: 1 #Far Horizons/Nuclear Reactor Port # TP14: NOT on the station.
 
 - type: weightedRandom
   id: ThiefObjectiveGroupItem

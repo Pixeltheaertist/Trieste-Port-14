@@ -954,18 +954,18 @@
 
 # Disruption
 
-#- type: listing
-#  id: UplinkAccessBreaker
-#  name: uplink-access-breaker-name
-#  description: uplink-access-breaker-desc
-#  productEntity: AccessBreaker
-#  discountCategory: rareDiscounts
-#  discountDownTo:
-#    Telecrystal: 2
-#  cost:
-#    Telecrystal: 4
-#  categories:
-#  - UplinkDisruption
+- type: listing
+  id: UplinkAccessBreaker
+  name: uplink-access-breaker-name
+  description: uplink-access-breaker-desc
+  productEntity: AccessBreaker
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkDisruption
 
 - type: listing
   id: UplinkEmag

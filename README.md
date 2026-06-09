@@ -3,7 +3,7 @@
 
 Trieste Port is a fork of Space Station 14, taking place on a ex-nanotrasen oil rig repurposed into a corporate-free safe haven on an outer-rim frontier ocean planet. It focuses on the daily lives of the citizens of Trieste, both above and beneath the waves. Citizens face dangers such as Nanotrasen infiltrators, pirates, horrific deep-sea fauna, and the crushing depths of the abyss. Enjoy the chaos and adventure as you carve your story across the rusted hull of the platform.
 
-Our community discord where we announce events and playtests: https://discord.gg/Y8jM7fkxe3
+Our community discord where we announce events and playtests: https://discord.gg/hqWUbBXyTf
 - If there are any issues with the link, ping Pixeltheaertist on the main SS14 discord
 
 TRIESTE PORT is also open-source, so anyone is free to contribute to the project! If you have questions or need help, don't hesitate to ask in the discord!
@@ -103,3 +103,7 @@ BurntCheeto - Mapping
 neadsy_ - Mapping
 
 Cheese - Bugfixing
+
+gmandawesome - Bugfixing
+
+Beinskalle - Bugfixing, Spriting

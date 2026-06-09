@@ -1,3 +1,5 @@
+# !! TRIESTE PORT MODIFIED !! #
+
 # rules for transferring recipes from microwaveMealRecipe
 # 1) leave room for variation. If the original recipe calls for 2 pieces of meat, allow players to put in 2-3 pieces.
 # 2) max SequenceLength must be 1 element greater than the minimum ingredient set requires. This will allow you to put 1 poison fly or 1 other ingredient in different recipes and the recipes will still be valid.
@@ -11,10 +13,11 @@
     range:
       min: 3
       max: 4
-  - !type:IngredientsWithTags # 1 meat cutlet
+  - !type:IngredientsWithTags # 1 meat cutlet # TP14: Changed to patties.
     tags:
     - Cooked
-    - Cutlet
+#   - Cutlet
+    - TP14TagFoodMeatPatty
     - Meat
     count:
       min: 1

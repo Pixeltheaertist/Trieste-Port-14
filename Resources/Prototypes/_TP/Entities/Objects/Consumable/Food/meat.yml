@@ -67,7 +67,7 @@
         - ReagentId: Fat
           Quantity: 2
   - type: Construction
-    graph: Cutlet
+    graph: MeatSteak
     node: sausage
   - type: Item
     size: Small

@@ -27,6 +27,7 @@ public sealed partial class CoffeeMakerSystem : EntitySystem
 
     private readonly List<ReagentId> _coffeeGroundIDs =
     [
+        new("TP14ReagentInstantCoffee", null),
         new("TP14ReagentGroundCoffee", null),
         new("TP14ReagentMixedCoffee", null),
         new("TP14ReagentTamperedCoffee", null),
@@ -37,13 +38,13 @@ public sealed partial class CoffeeMakerSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<SharedCoffeeMakerComponent, GetVerbsEvent<ActivationVerb>>(OnActivationVerb);
-        SubscribeLocalEvent<SharedCoffeeMakerComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
-        SubscribeLocalEvent<SharedCoffeeMakerComponent, EntInsertedIntoContainerMessage>(OnEntInserted);
-        SubscribeLocalEvent<SharedCoffeeMakerComponent, ContainerIsRemovingAttemptEvent>(OnAttemptRemove);
+        SubscribeLocalEvent<CoffeeMakerComponent, GetVerbsEvent<ActivationVerb>>(OnActivationVerb);
+        SubscribeLocalEvent<CoffeeMakerComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
+        SubscribeLocalEvent<CoffeeMakerComponent, EntInsertedIntoContainerMessage>(OnEntInserted);
+        SubscribeLocalEvent<CoffeeMakerComponent, ContainerIsRemovingAttemptEvent>(OnAttemptRemove);
     }
 
-    private void OnAttemptRemove(Entity<SharedCoffeeMakerComponent> ent, ref ContainerIsRemovingAttemptEvent args)
+    private void OnAttemptRemove(Entity<CoffeeMakerComponent> ent, ref ContainerIsRemovingAttemptEvent args)
     {
         if (ent.Comp.IsEnabled)
         {
@@ -51,7 +52,7 @@ public sealed partial class CoffeeMakerSystem : EntitySystem
         }
     }
 
-    private void OnEntInserted(Entity<SharedCoffeeMakerComponent> ent, ref EntInsertedIntoContainerMessage args)
+    private void OnEntInserted(Entity<CoffeeMakerComponent> ent, ref EntInsertedIntoContainerMessage args)
     {
         switch (args.Container.ID)
         {
@@ -64,7 +65,7 @@ public sealed partial class CoffeeMakerSystem : EntitySystem
         }
     }
 
-    private void OnEntRemoved(Entity<SharedCoffeeMakerComponent> ent, ref EntRemovedFromContainerMessage args)
+    private void OnEntRemoved(Entity<CoffeeMakerComponent> ent, ref EntRemovedFromContainerMessage args)
     {
         switch (args.Container.ID)
         {
@@ -94,7 +95,7 @@ public sealed partial class CoffeeMakerSystem : EntitySystem
     /// </summary>
     /// <param name="ent">CoffeeMaker entity</param>
     /// <param name="args">AlternativeVerb arguments</param>
-    private void OnActivationVerb(Entity<SharedCoffeeMakerComponent> ent, ref GetVerbsEvent<ActivationVerb> args)
+    private void OnActivationVerb(Entity<CoffeeMakerComponent> ent, ref GetVerbsEvent<ActivationVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract)
             return;
@@ -117,7 +118,7 @@ public sealed partial class CoffeeMakerSystem : EntitySystem
     /// </summary>
     /// <param name="ent">CoffeeMaker entity</param>
     /// <param name="user">User uid</param>
-    private void AttemptEnable(Entity<SharedCoffeeMakerComponent> ent, EntityUid user)
+    private void AttemptEnable(Entity<CoffeeMakerComponent> ent, EntityUid user)
     {
         // First, we check for each container if it has items in it.
         // If any of them return null or empty, we return and display a popup message.
@@ -202,7 +203,7 @@ public sealed partial class CoffeeMakerSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<SharedCoffeeMakerComponent>();
+        var query = EntityQueryEnumerator<CoffeeMakerComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
             // If the coffee maker isn't enabled we don't do anything.
@@ -262,13 +263,12 @@ public sealed partial class CoffeeMakerSystem : EntitySystem
 
                     _solution.RemoveReagent(basketSolution.Value, groundId, groundsAmount);
 
-                    if (groundId.Prototype == "TP14ReagentGroundCoffee")
+                    if (groundId.Prototype is "TP14ReagentGroundCoffee" or "TP14ReagentInstantCoffee")
                     {
                         _solution.TryAddReagent(beakerSolution.Value, "Coffee", groundsAmount * 2, out _);
                     }
 
-                    if (groundId.Prototype == "TP14ReagentMixedCoffee" ||
-                        groundId.Prototype == "TP14ReagentTamperedCoffee")
+                    if (groundId.Prototype is "TP14ReagentMixedCoffee" or "TP14ReagentTamperedCoffee")
                     {
                         _solution.TryAddReagent(beakerSolution.Value, "TP14ReagentBadCoffee", groundsAmount * 2, out _);
                     }
