@@ -2,7 +2,7 @@
   parent: GasCanister
   id: TP14WaterCanister
   name: water canister
-  suffix: Trieste, Engineering, Survival, Jellid
+  suffix: Trieste
   description: It's GAS canister! Who the hell put water in it?
   components:
   - type: Sprite

@@ -1,3 +1,5 @@
+# !! FAR HORIZONS MODIFIED !! #
+
 - type: entity
   id: BaseLathe
   parent: [ BaseMachinePowered, ConstructibleMachine ]
@@ -263,6 +265,7 @@
     - CameraBoards
     - MechBoards
     - ShuttleBoards
+    - ReactorCircuitboards # FH edit
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityBoards
