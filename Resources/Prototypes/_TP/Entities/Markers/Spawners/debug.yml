@@ -1,8 +1,10 @@
 - type: entity
-  name: InsideMarker
-  id: TP14MarkerInside
   parent: MarkerBase
-  suffix: Trieste, Inside, Blocks-Weather
+  id: TP14MarkerInside
+  name: ceiling
+  suffix: Trieste
+  placement:
+    mode: SnapgridCenter
   components:
   - type: Sprite
     sprite: Markers/inside.rsi
@@ -10,8 +12,12 @@
   - type: UnderRoof
   - type: IsRoof
   - type: BlockWeather
-  placement:
-    mode: SnapgridCenter
+  - type: Construction
+    graph: ConstructionGraphRoof
+    node: inside marker
+  - type: Icon
+    sprite: Structures/Walls/solid.rsi
+    state: full
 
 - type: entity
   name: LightingMarker

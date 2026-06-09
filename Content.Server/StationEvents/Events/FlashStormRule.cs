@@ -78,7 +78,7 @@ public sealed class FlashStormRule : StationEventSystem<FlashStormRuleComponent>
             Log.Error("Weather set");
         }
 
-        foreach (var thunder in EntityManager.EntityQuery<LightningMarkerComponent>())
+        foreach (var thunder in EntityManager.EntityQuery<Shared._TP.Weather.LightningMarkerComponent>())
         {
             thunder.ThunderRange = 50f; // Decrease thunder range
             thunder.ThunderFrequency = 0.5f; // Increase thunder frequency
@@ -95,7 +95,7 @@ public sealed class FlashStormRule : StationEventSystem<FlashStormRuleComponent>
         var lights = GetEntityQuery<PoweredLightComponent>();
         comp.Flickering = true;
 
-        foreach (var thunder in EntityManager.EntityQuery<LightningMarkerComponent>())
+        foreach (var thunder in EntityManager.EntityQuery<Shared._TP.Weather.LightningMarkerComponent>())
         {
             var thunderSite = thunder.Owner;
 
@@ -127,7 +127,7 @@ public sealed class FlashStormRule : StationEventSystem<FlashStormRuleComponent>
             // bell.CanMove = true;
         }
 
-        foreach (var thunder in EntityManager.EntityQuery<LightningMarkerComponent>())
+        foreach (var thunder in EntityManager.EntityQuery<Shared._TP.Weather.LightningMarkerComponent>())
         {
             thunder.ThunderRange = 70f; // Normalize lightning range
             thunder.ThunderFrequency = 8f; // Normalize lightning frequency

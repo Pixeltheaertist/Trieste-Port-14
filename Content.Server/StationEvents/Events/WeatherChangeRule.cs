@@ -71,7 +71,7 @@ public sealed class WeatherChangeRule : StationEventSystem<WeatherChangeRuleComp
 
         if (!comp.Lightning)
         {
-            foreach (var thunder in EntityManager.EntityQuery<LightningMarkerComponent>())
+            foreach (var thunder in EntityManager.EntityQuery<Shared._TP.Weather.LightningMarkerComponent>())
             {
                 thunder.Cleared = true;
             }
@@ -111,7 +111,7 @@ public sealed class WeatherChangeRule : StationEventSystem<WeatherChangeRuleComp
 
         if (!comp.Lightning)
         {
-            foreach (var thunder in EntityManager.EntityQuery<LightningMarkerComponent>())
+            foreach (var thunder in EntityManager.EntityQuery<Shared._TP.Weather.LightningMarkerComponent>())
             {
                 thunder.Cleared = false;
             }
