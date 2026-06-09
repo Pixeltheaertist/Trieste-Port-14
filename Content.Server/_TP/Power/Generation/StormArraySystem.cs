@@ -2,11 +2,13 @@ using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.Destructible;
 using Content.Server.NodeContainer.Nodes;
+using Content.Server.Power.Components;
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Temperature.Components;
 using Content.Shared._TP.Power.Generation;
 using Content.Shared.Atmos;
 using Content.Shared.DoAfter;
+using Content.Shared.Electrocution;
 using Content.Shared.Examine;
 using Content.Shared.Explosion.Components;
 using Content.Shared.NodeContainer;
@@ -99,6 +101,15 @@ public sealed partial class StormArraySystem : EntitySystem
 
         _appearance.SetData(ent.Owner, StormArrayVisuals.Idle, false);
         _appearance.SetData(ent.Owner, StormArrayVisuals.Active, true);
+        if (TryComp<PowerSupplierComponent>(ent, out var powerSupp))
+        {
+            powerSupp.Enabled = true;
+        }
+
+        if (TryComp<ElectrifiedComponent>(ent, out var electrified))
+        {
+            electrified.Enabled = true;
+        }
     }
 
     private void OnExamined(Entity<StormArrayComponent> ent, ref ExaminedEvent args)

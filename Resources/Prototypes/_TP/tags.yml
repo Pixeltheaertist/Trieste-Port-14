@@ -28,6 +28,9 @@
   id: Fish
 
 - type: Tag
+  id: TP14TagFoodMeatPatty
+
+- type: Tag
   id: Harpoon
 
 - type: Tag

@@ -1,4 +1,7 @@
-﻿- type: guideEntry
+﻿# !! FAR HORIZONS MODIFIED !! #
+# !! TRIESTE PORT MODIFIED !! #
+
+- type: guideEntry
   id: Engineering
   name: guide-entry-engineering
   text: "/ServerInfo/Guidebook/Engineering/Engineering.xml"
@@ -10,6 +13,7 @@
   - Networking
   - Flooding
   - TheArtifact # TP
+  - NuclearReactor # FH edit
 
 - type: guideEntry
   id: Construction

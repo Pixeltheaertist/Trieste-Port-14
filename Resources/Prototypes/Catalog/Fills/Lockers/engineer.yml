@@ -1,3 +1,5 @@
+# !! FAR HORIZONS MODIFIED !! #
+
 - type: entity
   id: ClosetToolFilled
   parent: ClosetTool
@@ -202,6 +204,7 @@
     - id: RCD
     - id: RCDAmmo
     - id: MetalFoamGrenade
+    - id: PillCanisterPotassiumIodide # Far Horizons / Nuclear Reactor Port
 
 - type: entityTable
   id: FillEngineerHardsuit
@@ -232,6 +235,11 @@
     - id: GeigerCounter
       amount: !type:ConstantNumberSelector
         value: 2
+    # Far Horizons / Nuclear Reactor Port Start
+    - id: PillCanisterPotassiumIodide
+      amount: !type:ConstantNumberSelector
+        value: 2
+    # Far Horizons / Nuclear Reactor Port End
 
 - type: entity
   parent: LockerEvacRepair

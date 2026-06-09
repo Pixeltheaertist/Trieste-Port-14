@@ -120,6 +120,7 @@
     energy: 0.2
     color: "#Ffffff"
   - type: Internals
+  - type: Fingerprint
 
 - type: entity
   parent: MobHumanDummy
