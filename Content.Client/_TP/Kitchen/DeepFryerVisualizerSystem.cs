@@ -3,10 +3,10 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client._TP.Kitchen;
 
-public sealed class DeepFryerVisualizerSystem : VisualizerSystem<SharedDeepFryerComponent>
+public sealed class DeepFryerVisualizerSystem : VisualizerSystem<DeepFryerComponent>
 {
     protected override void OnAppearanceChange(EntityUid uid,
-        SharedDeepFryerComponent component,
+        DeepFryerComponent component,
         ref AppearanceChangeEvent args)
     {
         if (args.Sprite == null)

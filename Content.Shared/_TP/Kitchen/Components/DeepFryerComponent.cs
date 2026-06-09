@@ -10,8 +10,7 @@ namespace Content.Shared._TP.Kitchen.Components;
 ///     Created by Cookie (FatherCheese) for Trieste Port 14.
 /// </summary>
 [RegisterComponent]
-[ComponentProtoName("DeepFryer")]
-public sealed partial class SharedDeepFryerComponent : Component
+public sealed partial class DeepFryerComponent : Component
 {
     [DataField]
     public bool IsEnabled;

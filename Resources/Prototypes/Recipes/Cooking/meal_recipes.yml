@@ -1,3 +1,5 @@
+# !! TRIESTE PORT MODIFIED !! #
+
 - type: microwaveMealRecipe
   id: RecipeBun
   name: bun recipe
@@ -96,7 +98,7 @@
   group: Savory
   solids:
     FoodBreadBun: 1
-    FoodMeat: 2
+    FoodMeatPatty: 2 # TP14: 'FoodMeat' -> 'FoodMeatPatty'
     FoodCheeseSlice: 1
     FoodTomato: 1
     FoodOnionSlice: 2
@@ -119,7 +121,7 @@
   group: Savory
   solids:
     FoodBreadBun: 1
-    FoodMeat: 1
+    FoodMeatPatty: 1 # TP14: 'foodMeat' -> 'foodMeatPatty'
     ClothingHeadHatCatEars: 1
 
 - type: microwaveMealRecipe #Added to metamorph recipes
@@ -130,7 +132,7 @@
   group: Savory
   solids:
     FoodBreadBun: 1
-    FoodMeat: 1
+    FoodMeatPatty: 1 # TP14: 'foodMeat' -> 'foodMeatPatty'
     FoodCheeseSlice: 1
 
 - type: microwaveMealRecipe #Added to metamorph recipes
@@ -185,7 +187,7 @@
     OilOlive: 15
   solids:
     FoodBreadBun: 1
-    FoodMeat: 2
+    FoodMeatPatty: 2 # TP14: 'foodMeat' -> 'foodMeatPatty'
     FoodCheeseSlice: 2
     FoodChiliPepper: 1
     FoodCabbage: 1
@@ -232,7 +234,7 @@
   group: Savory
   solids:
     FoodBreadBun: 1
-    FoodMeat: 1
+    FoodMeatPatty: 1 # TP14: 'FoodMeat' -> 'FoodMeatPatty'
     FoodChiliPepper: 3
 
 - type: microwaveMealRecipe
@@ -306,7 +308,7 @@
   group: Savory
   solids:
     FoodBreadBun: 1
-    FoodMeat: 1
+    FoodMeatPatty: 1 # TP14: 'FoodMeat' -> 'FoodMeatPatty'
 
 - type: microwaveMealRecipe
   id: RecipeRatBurger
@@ -361,7 +363,7 @@
     Egg: 12
   solids:
     FoodBreadBun: 1
-    FoodMeat: 2
+    FoodMeatPatty: 2 # TP14: 'FoodMeat' -> 'FoodMeatPatty'
     FoodCheeseSlice: 2
     FoodTomato: 2
 

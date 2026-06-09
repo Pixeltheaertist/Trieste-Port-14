@@ -43,15 +43,14 @@
 
 
   # Meat & Dairy
-
   <Box>
-    <GuideEntityEmbed Entity="FoodMeatCutlet" Caption="Raw Cutlet"/>
+    <GuideEntityEmbed Entity="FoodMeat" Caption="Raw Meat"/>
     <GuideEntityEmbed Entity="RollingPin" Caption="Rolling Pin"/>
-    <GuideEntityEmbed Entity="TP14FoodMeatSausage" Caption="Sausage"/>
+    <GuideEntityEmbed Entity="TP14FoodMeatSausage" Caption="Raw Sausage"/>
   </Box>
 
   <Box>
-    <GuideEntityEmbed Entity="FoodMeatMeatball" Caption="Meatball"/>
+    <GuideEntityEmbed Entity="FoodMeatCutlet" Caption="Raw Cutlet"/>
     <GuideEntityEmbed Entity="RollingPin" Caption="Rolling Pin"/>
     <GuideEntityEmbed Entity="FoodMeatPatty" Caption="Meat Patty"/>
   </Box>

@@ -3,7 +3,7 @@ using Robust.Shared.GameStates;
 namespace Content.Shared._TP.Kitchen.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-public sealed partial class SharedDeepFriedComponent : Component
+public sealed partial class DeepFriedComponent : Component
 {
     [DataField, AutoNetworkedField]
     public FriedLevel CurrentFriedLevel = FriedLevel.None;

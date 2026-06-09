@@ -1,9 +1,9 @@
 - type: entity
   parent: [ BaseMachinePowered, SmallConstructibleMachine ]
   id: TP14KitchenDeepFryer
-  suffix: Service
   name: deep fryer
   description: Can be used to fry delicious food, or all of mining's gold. Directions on the side say to use corn oil only.
+  suffix: Trieste
   components:
   - type: ApcPowerReceiver
     powerLoad: 50 # Off by default
@@ -47,39 +47,42 @@
     solution: fryer
   - type: SolutionTransfer
     maxTransferAmount: 50
+  - type: Transform # FarHorizons - resprite
+    noRot: false
   - type: Sprite
-    sprite: _TP/Structures/Machines/deepfryer.rsi
+    sprite: _FarHorizons/Structures/Machines/deepfryer.rsi
     layers:
     - state: icon
     - state: active
       map: [ "enum.DeepFryerVisuals.Active" ]
       visible: false
     drawdepth: SmallObjects
-    snapCardinals: true
+
 #For the previous entity several components were added to allow fluids to be added to the fryer and to allow removal to prevent bricking.
-#In addition power was changed from 0 to 50 so its not powered always.
-#As well as an insert sound to replace the default gun one
-#Lastly theres a blacklist so liquid containers do not go inside the fryer when trying to fill with oil
+#In addition, power was changed from 0 to 50 so it's not always powered.
+#As well as an insert sound to replace the default gun one.
+#Lastly there's a blacklist so liquid containers do not go inside the fryer when trying to fill it with oil.
 
 - type: entity
   parent: TP14KitchenDeepFryer
   id: TP14KitchenDeepFryerTabletop
-  suffix: Service
   name: table-top deep fryer
+  suffix: Trieste
   components:
   - type: Sprite
-    sprite: _TP/Structures/Machines/deepfryer.rsi
+    sprite: _FarHorizons/Structures/Machines/deepfryer.rsi
     layers:
     - state: table-icon
     - state: table-active
       map: [ "enum.DeepFryerVisuals.Active" ]
       visible: false
 
-#additional empty variants of the fryers for both mapping purposes and so we have an empty fryer that gets built rather than the one with oil in it
+# Ddditional empty variants of the fryers for both mapping purposes,
+# and so we have an empty fryer that gets built rather than the one with oil in it.
 - type: entity
   parent: TP14KitchenDeepFryer
   id: TP14KitchenDeepFryerEmpty
-  suffix: Empty, Service
+  suffix: Trieste, Empty
   components:
   - type: SolutionContainerManager
     solutions:
@@ -89,7 +92,7 @@
 - type: entity
   parent: TP14KitchenDeepFryerTabletop
   id: TP14KitchenDeepFryerTabletopEmpty
-  suffix: Empty, Service
+  suffix: Trieste, Empty
   components:
   - type: SolutionContainerManager
     solutions:
