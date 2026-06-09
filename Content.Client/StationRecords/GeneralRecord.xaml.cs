@@ -7,6 +7,8 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.StationRecords;
 
+// !! TRIESTE PORT MODIFIED !! //
+
 [GenerateTypedNameReferences]
 public sealed partial class GeneralRecord : Control
 {
@@ -18,8 +20,17 @@ public sealed partial class GeneralRecord : Control
         Age.Text = Loc.GetString("general-station-record-console-record-age", ("age", record.Age.ToString()));
         Title.Text = Loc.GetString("general-station-record-console-record-title",
             ("job", Loc.GetString(record.JobTitle)));
-        var species = Loc.GetString(prototypeManager.Index<SpeciesPrototype>(record.Species).Name);
-        Species.Text = Loc.GetString("general-station-record-console-record-species", ("species", species));
+
+        // TRIESTE - START //
+        // Hack for now until I can look into the subspecies storing.
+        // A fallback the text if it's a display-name or if the species is invalid.
+        var speciesText = prototypeManager.TryIndex<SpeciesPrototype>(record.Species, out var speciesProto)
+            ? Loc.GetString(speciesProto.Name)
+            : record.Species;
+
+        Species.Text = Loc.GetString("general-station-record-console-record-species", ("species", speciesText));
+        // TRIESTE - END //
+
         Gender.Text = Loc.GetString("general-station-record-console-record-gender",
             ("gender", record.Gender.ToString()));
         Fingerprint.Text = Loc.GetString("general-station-record-console-record-fingerprint",
