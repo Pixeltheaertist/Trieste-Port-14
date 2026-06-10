@@ -23,14 +23,6 @@
         Heat: 0.80
   - type: ExplosionResistance
     damageCoefficient: 0.90
-  - type: Stainable
-    clothingVisuals:
-      outerClothing:
-      - sprite: _Funkystation/Effects/blood.rsi
-        state: armorblood
-    iconVisuals:
-    - sprite: _Funkystation/Effects/blood.rsi
-      state: armorbloodicon
 
 #Standard armor vest, allowed for security and bartenders
 - type: entity

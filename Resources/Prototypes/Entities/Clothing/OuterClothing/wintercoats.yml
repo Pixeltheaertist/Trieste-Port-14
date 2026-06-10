@@ -30,8 +30,6 @@
         reagents:
         - ReagentId: Fiber
           Quantity: 30
-      stain:
-        maxVol: 5
   - type: Tag
     tags:
     - ClothMade
