@@ -660,7 +660,7 @@
         - ReagentId: DeadRum
           Quantity: 30
   - type: Icon
-    sprite: Objects/Consumable/Drinks/rumglass.rsi
+    sprite: _TP/Objects/Consumable/Drinks/deadrumglass.rsi
     state: icon
 
 - type: entity

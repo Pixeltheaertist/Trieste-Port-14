@@ -6,11 +6,6 @@
   components:
   - type: EntityTableContainerFill
     containers:
-      entity_storage: !type:NestedSelector
-        tableId: FillGunSafeWardenEnergyShotgun
-
-- type: entityTable
-  id: FillGunSafeWardenEnergyShotgun
-  table: !type:AllSelector
-  children:
-  - id: WeaponEnergyShotgun
+      entity_storage: !type:AllSelector
+        children:
+        - id: WeaponEnergyShotgun
