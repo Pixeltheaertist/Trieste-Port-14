@@ -14,3 +14,14 @@
         board: [ DoorElectronicsResearch ]
     - type: Wires
       layoutId: AirlockScience
+
+- type: entity
+  parent: AirlockGlass
+  id: TP14AirlockHatchGlass
+  name: glass airlock hatch
+  suffix: Trieste
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Doors/hatch_glass.rsi
+  - type: Paintable
+    group: null
