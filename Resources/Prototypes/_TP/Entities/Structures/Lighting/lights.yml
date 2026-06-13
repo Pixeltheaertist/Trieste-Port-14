@@ -161,3 +161,31 @@
       types:
         Heat: 1
     popupText: powered-light-component-burn-hand
+
+- type: entity  
+  id: TP14PoweredCoolSmallLightWaterproof
+  suffix: Trieste, Sweetwater, Internal, Waterproof
+  parent: PoweredSmallLightEmpty
+  components:
+  - type: Sprite
+    state: base
+  - type: PointLight
+    enabled: true
+    radius: 6
+    energy: 1
+    softness: 2
+    color: "#8FC4BC"
+  - type: PoweredLight
+    hasLampOnSpawn: TP14MarineLightBulb
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 1
+    popupText: powered-light-component-burn-hand
+  - type: InGas
+    gasID: 9
+    damagedByGas: false # waterproof
+    gasThreshold: 75
+    damage:
+      types:
+        Blunt: 3
