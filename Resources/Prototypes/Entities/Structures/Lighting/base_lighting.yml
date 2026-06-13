@@ -381,35 +381,6 @@
         Heat: 1
     popupText: powered-light-component-burn-hand
 
-- type: entity  #TP14 Sweetwater External Lights
-  id: PoweredMarineSmallLight
-  suffix: Marine, Waterproof, Trieste
-  parent: PoweredSmallLightEmpty
-  components:
-  - type: Sprite
-    state: base
-  - type: PointLight
-    enabled: true
-    radius: 8
-    energy: 1
-    softness: 3
-    color: "#76a0b0"
-  - type: PoweredLight
-    hasLampOnSpawn: MarineLightBulb
-  - type: DamageOnInteract
-    damage:
-      types:
-        Heat: 1
-    popupText: powered-light-component-burn-hand
-  - type: InGas
-    gasID: 9
-    damagedByGas: false # waterproof
-    gasThreshold: 75
-    damage:
-      types:
-        Blunt: 3
-
-
 - type: entity
   id: PoweredDimSmallLight
   suffix: Dim
