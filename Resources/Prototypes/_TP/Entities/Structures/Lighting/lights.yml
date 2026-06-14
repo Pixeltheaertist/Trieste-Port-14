@@ -130,7 +130,7 @@
   components:
     - type: LightBulb
       bulb: Bulb
-      color: "#8FC4BC"
+      color: "#b2dced"
       lightEnergy: 1
       lightRadius: 6
       lightSoftness: 2
@@ -153,7 +153,7 @@
     radius: 6
     energy: 1
     softness: 2
-    color: "#8FC4BC"
+    color: "#b2dced"
   - type: PoweredLight
     hasLampOnSpawn: TP14MarineLightBulb
   - type: DamageOnInteract
@@ -174,7 +174,7 @@
     radius: 6
     energy: 1
     softness: 2
-    color: "#8FC4BC"
+    color: "#b2dced"
   - type: PoweredLight
     hasLampOnSpawn: TP14MarineLightBulb
   - type: DamageOnInteract
