@@ -337,20 +337,3 @@
     children:
     - id: WeaponLaserCarbine
       amount: 3
-
-- type: entity
-  parent: [GunSafeBaseSecure, BaseSecurityContraband]
-  id: GunSafeWardenEnergyShotgun
-  name: warden's energy shotgun safe
-  suffix: Warden, Energy Shotgun
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:NestedSelector
-        tableId: FillGunSafeWardenEnergyShotgun
-
-- type: entityTable
-  id: FillGunSafeWardenEnergyShotgun
-  table: !type:AllSelector
-    children:
-    - id: WeaponEnergyShotgun

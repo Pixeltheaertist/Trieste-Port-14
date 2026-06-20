@@ -136,7 +136,7 @@
   flavor: rum
   color: "#664300"
   metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/rumglass.rsi
+    sprite: _TP/Objects/Consumable/Drinks/deadrumglass.rsi
     state: icon_empty
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
