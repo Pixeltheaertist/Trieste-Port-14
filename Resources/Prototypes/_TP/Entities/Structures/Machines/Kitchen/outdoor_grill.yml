@@ -1,0 +1,16 @@
+- type: entity
+  parent: KitchenElectricGrill
+  id: TP14OutdoorGrill
+  name: outdoor grill
+  description: a staple of barbecue's everywhere, now with... no emmissions?
+  suffix: Trieste
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Machines/outdoor_grill.rsi
+    drawdepth: SmallObjects
+    snapCardinals: true
+    layers:
+    - state: icon
+    - map: ["enum.EntityHeaterVisuals.Setting"]
+      shader: unshaded
+      visible: false
