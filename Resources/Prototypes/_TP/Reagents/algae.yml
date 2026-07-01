@@ -54,10 +54,6 @@
         reagent: DestabilizedAlgae
         amount: 0.2
       - !type:HealthChange
-        conditions:
-        - !type:TemperatureCondition
-          max: 305
-          min: 285
         damage:
           types:
             Blunt: -1
@@ -65,8 +61,9 @@
             Slash: -3
       - !type:HealthChange
         conditions:
-        - !type:TemperatureCondition
-          min: 305
+        - !type:ReagentCondition
+          reagent: Calordine
+          min: .1
         damage:
           types:
             Blunt: -1
@@ -74,8 +71,9 @@
             Slash: -1
       - !type:HealthChange
         conditions:
-        - !type:TemperatureCondition
-          max: 285
+        - !type:ReagentCondition
+          reagent: Cryodine
+          min: .1
         damage:
           types:
             Blunt: -3
@@ -101,10 +99,6 @@
         reagent: DestabilizedAlgae
         amount: 0.2
       - !type:HealthChange
-        conditions:
-        - !type:TemperatureCondition
-          max: 305
-          min: 285
         damage:
           types:
             Heat: -1
@@ -114,8 +108,9 @@
             Blunt: -.5
       - !type:HealthChange
         conditions:
-        - !type:TemperatureCondition
-          min: 305
+        - !type:ReagentCondition
+          reagent: Calordine
+          min: .1
         damage:
           types:
             Heat: -1
@@ -125,8 +120,9 @@
             Blunt: -1
       - !type:HealthChange
         conditions:
-        - !type:TemperatureCondition
-          max: 285
+        - !type:ReagentCondition
+          reagent: Cryodine
+          min: .1
         damage:
           types:
             Heat: -3
