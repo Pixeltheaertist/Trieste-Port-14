@@ -47,7 +47,7 @@
         !type:String
         pda-overseer
   - type: PdaBorderColor
-    borderColor: "#7C5D00"
+    borderColor: "#3a665a"
   - type: Icon
     state: pda-overseer
   - type: Item

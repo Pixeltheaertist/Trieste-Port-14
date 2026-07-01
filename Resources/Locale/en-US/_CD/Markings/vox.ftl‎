@@ -94,7 +94,7 @@ marking-SpotsArmR-spots = Spotted Arm R
 marking-VoxArmsStripesRHand = Stripes (Right Arm)
 marking-VoxArmsStripesRHand-stripes = Stripes (Right Arm)
 
-marking-VoxRArmScales = Arm Scales R
+
 
 # LArm
 
@@ -104,7 +104,7 @@ marking-SpotsArmL-spots = Spotted Arm L
 marking-VoxArmsStripesLHand = Stripes (Left Arm)
 marking-VoxArmsStripesLHand-stripes = Stripes (Left Arm)
 
-marking-VoxLArmScales = Arm Scales L
+
 
 # RLeg
 
@@ -117,7 +117,7 @@ marking-VoxLegGradientRLeg-gradient = Solid (Right Leg)
 marking-VoxLegsStripesRLeg = Stripes (Right)
 marking-VoxLegsStripesRLeg-stripes = Stripes (Right)
 
-marking-VoxRLegScales = Leg Scales R
+
 
 # LLeg
 
@@ -130,21 +130,21 @@ marking-VoxLegGradientLLeg-gradient = Solid (Left Leg)
 marking-VoxLegsStripesLLeg = Stripes (Left)
 marking-VoxLegsStripesLLeg-stripes = Stripes (Left)
 
-marking-VoxLLegScales = Leg Scales L
+
 
 # LFoot
 
 marking-VoxFootGradientLFoot = Solid (Left Foot)
 marking-VoxFootGradientLFoot-gradient = Solid (Left Foot)
 
-marking-VoxLFootScales = Foot Scales L
+
 
 # RFoot
 
 marking-VoxFootGradientRFoot = Solid (Right Foot)
 marking-VoxFootGradientRFoot-gradient = Solid (Right Foot)
 
-marking-VoxRFootScales = Foot Scales R
+
 
 # LHand
 
@@ -156,7 +156,7 @@ marking-VoxHandGradientLHand-gradient3 = Top
 marking-VoxLArmProsthetic = Prosthetic (Left)
 marking-VoxLArmProsthetic-prosthetic = Prosthetic (Left)
 
-marking-VoxLHandScales = Hand Scales L
+
 
 # RHand
 
@@ -168,7 +168,7 @@ marking-VoxHandGradientRHand-gradient3 = Top
 marking-VoxRArmProsthetic = Prosthetic (Right)
 marking-VoxRArmProsthetic-prosthetic = Prosthetic (Right)
 
-marking-VoxRHandScales = Hand Scales R
+
 
 # FacialHair
 

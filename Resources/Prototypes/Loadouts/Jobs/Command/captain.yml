@@ -52,7 +52,7 @@
     neck: ClothingNeckCloakCapFormal
 
 - type: loadout
- id: CaptainMantle
+  id: CaptainMantle
   equipment:
     neck: ClothingNeckMantleCap
   effects:
