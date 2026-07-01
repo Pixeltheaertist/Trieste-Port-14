@@ -37,9 +37,9 @@
   id: CaptainGear
   equipment:
     shoes: ClothingShoesBootsLaceup
-    eyes: ClothingEyesGlassesCommand
-    gloves: ClothingHandsGlovesCaptain
-    id: CaptainPDA
+    # eyes: ClothingEyesGlassesCommand  # Moffstation - Eyepatches!
+    gloves: TP14ClothingHandsGlovesOverseer #TP14
+    id: TP14OverseerPDA #TP14
     ears: ClothingHeadsetAltCommand
   storage:
     back:

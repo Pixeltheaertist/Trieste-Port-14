@@ -43,9 +43,9 @@
     sprite: Clothing/Back/Duffels/medical.rsi
 
 - type: entity
-  parent: [ClothingBackpackDuffel, BaseCommandContraband]
+  parent: [ClothingBackpackDuffel, BaseNanotrasenContraband ] #TP14
   id: ClothingBackpackDuffelCaptain
-  name: overseer's duffel bag
+  name: captain's duffel bag
   description: A large duffel bag for holding extra captainly goods.
   components:
   - type: Sprite

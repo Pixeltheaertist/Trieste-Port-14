@@ -6,9 +6,14 @@
     ClothingShoesColorBrown: 2
     ClothingOuterCoatDetectiveLoadout: 1
     ClothingOuterCoatDetectiveLoadoutGrey: 1
+    ClothingOuterCoatSleuth: 1 # Moffstation - (New Detective Outfits)
     ClothingHeadHatFedoraBrown: 2
     ClothingUniformJumpsuitDetectiveGrey: 2
     ClothingUniformJumpskirtDetectiveGrey: 2
+    ClothingUniformJumpsuitDetSleuth: 2 # Moffstation - Start (New Detective Outfits)
+    ClothingUniformJumpskirtDetSleuth: 2
+    ClothingUniformJumpsuitDetInvestigator: 2
+    ClothingUniformJumpskirtDetInvestigator: 2 # Moffstation - End (New Detective Outfits)
     ClothingOuterVestDetective: 2
     ClothingNeckTieDet: 2
     ClothingHeadHatFedoraGrey: 2

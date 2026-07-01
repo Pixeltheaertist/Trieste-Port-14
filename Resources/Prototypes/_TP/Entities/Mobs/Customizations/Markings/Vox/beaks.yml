@@ -1,0 +1,75 @@
+#Duck
+- type: marking
+  id: TP14VoxBeakDuck
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vox]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Vox/beaks.rsi
+    state: beak_duck_primary
+  - sprite: _TP/Mobs/Customization/Markings/Vox/beaks.rsi
+    state: beak_duck_secondary
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#937e3d"
+
+#Hornbill
+- type: marking
+  id: TP14VoxBeakHornbill
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vox]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Vox/beaks.rsi
+    state: beak_hornbill_primary
+  - sprite: _TP/Mobs/Customization/Markings/Vox/beaks.rsi
+    state: beak_hornbill_secondary
+  - sprite: _TP/Mobs/Customization/Markings/Vox/beaks.rsi
+    state: beak_hornbill_tertiary
+  - sprite: _TP/Mobs/Customization/Markings/Vox/beaks.rsi
+    state: beak_hornbill_quaternary
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#937e3d"
+
+#pelican
+- type: marking
+  id: TP14VoxBeakPelican
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vox]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Vox/beaks.rsi
+    state: beak_pelican_primary
+  - sprite: _TP/Mobs/Customization/Markings/Vox/beaks.rsi
+    state: beak_pelican_secondary
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#937e3d"
+
+#toucan
+- type: marking
+  id: TP14VoxBeakToucan
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vox]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Vox/beaks.rsi
+    state: beak_toucan_primary
+  - sprite: _TP/Mobs/Customization/Markings/Vox/beaks.rsi
+    state: beak_toucan_secondary
+  - sprite: _TP/Mobs/Customization/Markings/Vox/beaks.rsi
+    state: beak_toucan_tertiary
+  - sprite: _TP/Mobs/Customization/Markings/Vox/beaks.rsi
+    state: beak_toucan_quaternary
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#937e3d"

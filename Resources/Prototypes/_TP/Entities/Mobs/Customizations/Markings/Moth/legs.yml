@@ -1,0 +1,37 @@
+- type: marking
+  id: TP14MarkingsMothLeftLegSplotch
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/legs.rsi
+    state: splotch_leg_left
+
+
+- type: marking
+  id: TP14MarkingsMothRightLegSplotch
+  bodyPart: UndergarmentBottom #it's weird I know but it makes the layers work correctly
+  markingCategory: Legs
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/legs.rsi
+    state: splotch_leg_right
+
+
+- type: marking
+  id: TP14MarkingsMothLeftFootSplotch
+  bodyPart: LHand #it's weird I know but it makes the layers work correctly
+  markingCategory: Legs
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/legs.rsi
+    state: splotch_foot_left
+
+- type: marking
+  id: TP14MarkingsMothRightFootSplotch
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/legs.rsi
+    state: splotch_foot_right

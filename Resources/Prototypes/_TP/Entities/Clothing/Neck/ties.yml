@@ -15,3 +15,21 @@
     - WhitelistChameleon
     - ClothMade
     - Recyclable
+
+- type: entity
+  parent: ClothingNeckBase
+  id: TP14ClothingNeckTieCommand
+  suffix: Trieste, Neck, Command
+  name: command tie
+  description: A complementary colored tie, pairs well with seafoam green.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Neck/Ties/command_tie.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Neck/Ties/command_tie.rsi
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - ClothMade
+    - Recyclable

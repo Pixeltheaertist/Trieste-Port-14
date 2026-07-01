@@ -1,3 +1,54 @@
+#command
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: TP14ClothingUniformJumpsuitOverseer
+  suffix: Trieste, Uniform, Command
+  name: overseer's jumpsuit
+  description: It's a seafoam polo with some gold markings denoting rank.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/overseer.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/overseer.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: TP14ClothingUniformFormalJumpsuitOverseer
+  suffix: Trieste, Uniform, Command
+  name: overseer's formal suit
+  description: It's a dark seafoam suit, it looks sharp and portrays a calming sense of order.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/overseerformal.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/overseerformal.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: TP14ClothingUniformHighVisJumpsuitOverseer
+  suffix: Trieste, Uniform, Command
+  name: overseer's high vis jumpsuit
+  description: a seafoam jumpsuit with retroreflective stripes to keep the wearer safe on the rig.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/overseerhighvis.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+    - state: icon-unshaded
+      shader: shaded
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/overseerhighvis.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+      - state: equipped-INNERCLOTHING-unshaded
+        shader: unshaded
+      - state: equipped-INNERCLOTHING-unshaded
+        shader: shaded
+
+#service
 - type: entity
   parent: ClothingUniformBase
   id: TP14ClothingUniformJumpsuitWearyClownOveralls
@@ -14,7 +65,52 @@
     - ClownSuit
     - WhitelistChameleon
 
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformFishermanOveralls
+  suffix: Trieste, Uniform,
+  name: fisherman overalls
+  description: A waterproof set of overalls paired with a thick blue sweater to keep fishermen warm on cold nights.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/fisherman_overalls.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/fisherman_overalls.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
 
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformHydroponicsOveralls
+  suffix: Trieste, Uniform, Service
+  name: hydroponics overalls
+  description: A warm sweater and a pair of rugged overalls, what else could you need?
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/hydro_overalls.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/hydro_overalls.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformPierrot
+  suffix: Trieste, Uniform, Mime
+  name: pierrot jumpsuit
+  description: A tragic figure's uniform, indicative of heartbreak.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/pierrot.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/pierrot.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+#science
 - type: entity
   parent: ClothingUniformBase
   id: TP14ClothingUniformJumpsuitScience
@@ -30,6 +126,7 @@
     tags:
     - WhitelistChameleon
 
+#security
 - type: entity
   parent: [ ClothingUniformBase, BaseSecurityContraband ]
   id: TP14ClothingUniformHardyOveralls
@@ -41,22 +138,6 @@
     sprite: _TP/Clothing/Uniforms/Jumpsuit/hardy_overalls.rsi
   - type: Clothing
     sprite: _TP/Clothing/Uniforms/Jumpsuit/hardy_overalls.rsi
-  - type: Tag
-    tags:
-    - WhitelistChameleon
-
-
-- type: entity
-  parent: ClothingUniformBase
-  id: TP14ClothingUniformHydroponicsOveralls
-  suffix: Trieste, Uniform, Service
-  name: hydroponics overalls
-  description: A warm sweater and a pair of rugged overalls, what else could you need?
-  components:
-  - type: Sprite
-    sprite: _TP/Clothing/Uniforms/Jumpsuit/hydro_overalls.rsi
-  - type: Clothing
-    sprite: _TP/Clothing/Uniforms/Jumpsuit/hydro_overalls.rsi
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -76,22 +157,7 @@
     tags:
     - WhitelistChameleon
 
-
-- type: entity
-  parent: ClothingUniformBase
-  id: TP14ClothingUniformPierrot
-  suffix: Trieste, Uniform, Mime
-  name: pierrot jumpsuit
-  description: A tragic figure's uniform, indicative of heartbreak.
-  components:
-  - type: Sprite
-    sprite: _TP/Clothing/Uniforms/Jumpsuit/pierrot.rsi
-  - type: Clothing
-    sprite: _TP/Clothing/Uniforms/Jumpsuit/pierrot.rsi
-  - type: Tag
-    tags:
-    - WhitelistChameleon
-
+#Medical
 
 - type: entity
   parent: ClothingUniformBase
@@ -123,3 +189,21 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+
+#Misc
+
+- type: entity
+  parent: ClothingUniformBase
+  id: TP14ClothingUniformWoodcarver
+  suffix: Trieste, Uniform,
+  name: woodcarver shirt and pants
+  description: perfect for hard labor
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/woodcarver.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpsuit/woodcarver.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+

@@ -1,0 +1,28 @@
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSwimsuits
+  name: SwimVend
+  description: A vending machine for swimsuits.
+  components:
+  - type: VendingMachine
+    pack: SwimvendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: _TP/Structures/Machines/VendingMachines/swimvend.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.8
+    energy: 1.6
+    color: "#e0e0e0"

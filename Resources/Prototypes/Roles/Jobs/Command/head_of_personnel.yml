@@ -68,7 +68,7 @@
     gloves: ClothingHandsGlovesHop
     ears: ClothingHeadsetAltCommand
     belt: BoxFolderClipboardThreePapers
-    eyes: ClothingEyesHudCommand
+  # eyes: ClothingEyesHudCommand # Moffstation - Eyepatches!
   storage:
     back:
     - Flash

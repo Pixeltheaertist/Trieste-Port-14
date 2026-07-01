@@ -141,3 +141,27 @@
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: witchwing
+
+- type: marking
+  id: TP14MarkingMothCollarBooster
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [ Moth ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
+    state: booster_collar_primary
+  - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
+    state: booster_collar_secondary
+  - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
+    state: booster_collar_tertiary
+
+- type: marking
+  id: TP14MarkingMothCollarOrnateTigerMoth
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [ Moth ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
+    state: ornate_tiger_moth_collar_primary
+  - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
+    state: ornate_tiger_moth_collar_secondary

@@ -63,4 +63,45 @@
     sprite: _TP/Clothing/OuterClothing/Coats/lieutenant_coat.rsi
   - type: TemperatureProtection
     heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
+
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: TP14ClothingOuterCoatRainSlicker
+  suffix: Trieste, Coat
+  name: Rain Slicker
+  description: A bright yellow oilskin rain slicker, a classic look for a reason.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/OuterClothing/Coats/rain_slicker.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/OuterClothing/Coats/rain_slicker.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 1.1
     coolingCoefficient: 0.3
+  - type: ToggleableClothing
+    clothingPrototype: TP14ClothingHeadHatHoodRainSlicker
+    slot: head
+
+
+- type: entity
+  parent:
+  - ClothingOuterArmorBaseCarapace
+  - BaseCommandContraband
+  - ClothingOuterStorageBase
+  id: TP14ClothingOuterArmorOverseerHeavyCoat
+  suffix: Trieste, Coat
+  name: overseer's heavy coat
+  description: It looks unassuming, but the lining is special blend of durathread
+    and plastitanium, givng it a suprising resistance to damage.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/OuterClothing/Coats/overseer_heavy_coat.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/OuterClothing/Coats/overseer_heavy_coat.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.3
+
+

@@ -1,16 +1,55 @@
+#Command
 - type: entity
-  parent: ClothingUniformSkirtBase
-  id: TP14ClothingUniformJumpskirtDarkPerformer
-  suffix: Trieste, Uniform, Easter-Egg
-  name: dark performer's jumpskirt
-  description: The true AI, once hired by SolGov to fight off Hatsune Miku. Real story.
+  parent: [ClothingUniformSkirtBase, BaseCommandContraband]
+  id: TP14ClothingUniformJumpskirtOverseer
+  suffix: Trieste, Uniform, Command
+  name: overseer's jumpskirt
+  description: It's a seafoam polo and skirt with some gold markings denoting rank.
   components:
   - type: Sprite
-    sprite: _TP/Clothing/Uniforms/Jumpskirt/TP14darkperformer.rsi
+    sprite: _TP/Clothing/Uniforms/Jumpskirt/overseer.rsi
   - type: Clothing
-    sprite: _TP/Clothing/Uniforms/Jumpskirt/TP14darkperformer.rsi
+    sprite: _TP/Clothing/Uniforms/Jumpskirt/overseer.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: TP14ClothingUniformFormalJumpskirtOverseer
+  suffix: Trieste, Uniform, Command
+  name: overseer's formal Dress
+  description: It's dark, warm seafoam dress, it exudes calm authority.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpskirt/overseerformal.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpskirt/overseerformal.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: TP14ClothingUniformHighVisJumpskirtOverseer
+  suffix: Trieste, Uniform, Command
+  name: overseer's high vis jumpskirt
+  description: a seafoam jumpskirt with retroreflective stripes to keep the wearer safe on the rig.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpskirt/overseerhighvis.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+    - state: icon-unshaded
+      shader: shaded
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpskirt/overseerhighvis.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+      - state: equipped-INNERCLOTHING-unshaded
+        shader: unshaded
+      - state: equipped-INNERCLOTHING-unshaded
+        shader: shaded
 
 
+#medical
 - type: entity
   parent: ClothingUniformSkirtBase
   id: TP14ClothingUniformJumpskirtMedicalNurseDress
@@ -23,7 +62,7 @@
   - type: Clothing
     sprite: _TP/Clothing/Uniforms/Jumpskirt/nurse_dress.rsi
 
-
+#science
 - type: entity
   parent: ClothingUniformSkirtBase
   id: TP14ClothingUniformJumpskirtScience
@@ -35,3 +74,16 @@
     sprite: _TP/Clothing/Uniforms/Jumpskirt/TP14_science.rsi
   - type: Clothing
     sprite: _TP/Clothing/Uniforms/Jumpskirt/TP14_science.rsi
+
+#Misc
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: TP14ClothingUniformJumpskirtDarkPerformer
+  suffix: Trieste, Uniform, Easter-Egg
+  name: dark performer's jumpskirt
+  description: The true AI, once hired by SolGov to fight off Hatsune Miku. Real story.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Uniforms/Jumpskirt/TP14darkperformer.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Uniforms/Jumpskirt/TP14darkperformer.rsi

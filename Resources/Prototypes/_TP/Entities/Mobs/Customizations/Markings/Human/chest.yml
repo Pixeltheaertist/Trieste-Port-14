@@ -1,0 +1,50 @@
+#Harpy
+
+- type: marking
+  id: TP14MarkingsHumanChestHarpy
+  bodyPart: UndergarmentTop
+  markingCategory: Chest
+  speciesRestriction: [ Human ]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/chest.rsi
+    state: harpy_torso_primary
+  - sprite: _TP/Mobs/Customization/Markings/Humans/chest.rsi
+    state: harpy_torso_secondary
+
+#Bird claw
+- type: marking
+  id: TP14MarkingsHumanChestBirdClawLeft
+  bodyPart: LArm
+  markingCategory: Chest
+  speciesRestriction: [ Human ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#e5e3d1"
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/chest.rsi
+    state: bird_claw_shoulder_left
+
+- type: marking
+  id: TP14MarkingsHumanChestBirdClawRight
+  bodyPart: RArm
+  markingCategory: Chest
+  speciesRestriction: [ Human ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#e5e3d1"
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/chest.rsi
+    state: bird_claw_shoulder_right

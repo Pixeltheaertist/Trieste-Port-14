@@ -1,0 +1,56 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatClownSunhat
+  name: clown sunhat
+  description: A silly hat to protect from the sun.
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Head/Hats/sunhat-clown.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Head/Hats/sunhat-clown.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSunhat
+  name: sunhat
+  description: A big hat to protect from the sun.
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Head/Hats/sunhat.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Head/Hats/sunhat.rsi
+
+- type: entity
+  parent: BaseWhistle
+  id: ClothingNeckLifeguardWhistle
+  name: lifeguard whistle
+  description: prevents drowning 99% of the time.
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Neck/lifeguard-whistle.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Neck/lifeguard-whistle.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesClownSandals
+  name: clown sandals
+  description: silly shoes for the beach.
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Shoes/clown-sandals.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Shoes/clown-sandals.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieLifeguardBuoy
+  name: safety buoy
+  description: the favored equipment of lifeguards.
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Objects/Fun/rescuebuoy.rsi
+    state: icon
+  - type: Item
+    sprite: _Moffstation/Objects/Fun/rescuebuoy.rsi

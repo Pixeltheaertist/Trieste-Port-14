@@ -70,6 +70,26 @@
         {
             "name": "witchwing",
             "directions": 4
+        },
+        {
+            "name": "booster_collar_primary",
+            "directions": 4
+        },
+        {
+            "name": "booster_collar_secondary",
+            "directions": 4
+        },
+        {
+            "name": "booster_collar_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "ornate_tiger_moth_collar_primary",
+            "directions": 4
+        },
+        {
+            "name": "ornate_tiger_moth_collar_secondary",
+            "directions": 4
         }
     ]
 }

@@ -7,3 +7,13 @@
   cost: 300 # The inventory + crate is worth 220
   category: cargoproduct-category-name-fun
   group: market
+
+- type: cargoProduct
+  id: TP14CargoProductSuitCrate
+  icon:
+    sprite: _TP/Clothing/Uniforms/Suits/killer_suit.rsi
+    state: icon
+  product: TP14CrateFilledSuits
+  cost: 400 # The inventory + crate is worth 390
+  category: cargoproduct-category-name-fun
+  group: market

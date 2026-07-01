@@ -1,0 +1,107 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Rusty and robo cybernetics Created by MysteriousPeeko (sharkpeekotwoelecticboogaloo) for Trieste Port 14, corroded and azurus made by LevToBeContinued",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "l_arm_azurus_primary",
+            "directions": 4
+        },
+        {
+            "name": "l_arm_azurus_secondary",
+            "directions": 4
+        },
+        {
+            "name": "l_arm_azurus_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "l_arm_corroded",
+            "directions": 4
+        },
+        {
+            "name": "l_hand_azurus_primary",
+            "directions": 4
+        },
+        {
+            "name": "l_hand_azurus_secondary",
+            "directions": 4
+        },
+        {
+            "name": "l_hand_corroded",
+            "directions": 4
+        },
+        {
+            "name": "left_arm_robo",
+            "directions": 4
+        },
+        {
+            "name": "left_arm_robo_short",
+            "directions": 4
+        },
+        {
+            "name": "left_arm_rusted",
+            "directions": 4
+        },
+        {
+            "name": "left_hand_robo",
+            "directions": 4
+        },
+        {
+            "name": "left_hand_rusted",
+            "directions": 4
+        },
+        {
+            "name": "r_arm_azurus_primary",
+            "directions": 4
+        },
+        {
+            "name": "r_arm_azurus_secondary",
+            "directions": 4
+        },
+        {
+            "name": "r_arm_azurus_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "r_arm_corroded",
+            "directions": 4
+        },
+        {
+            "name": "r_hand_azurus_primary",
+            "directions": 4
+        },
+        {
+            "name": "r_hand_azurus_secondary",
+            "directions": 4
+        },
+        {
+            "name": "r_hand_corroded",
+            "directions": 4
+        },
+        {
+            "name": "right_arm_robo",
+            "directions": 4
+        },
+        {
+            "name": "right_arm_robo_short",
+            "directions": 4
+        },
+        {
+            "name": "right_arm_rusted",
+            "directions": 4
+        },
+        {
+            "name": "right_hand_robo",
+            "directions": 4
+        },
+        {
+            "name": "right_hand_rusted",
+            "directions": 4
+        }
+    ]
+}

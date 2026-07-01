@@ -1,0 +1,27 @@
+#Finder
+- type: marking
+  id: TP14VulpEarFinder
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Vulpkanin ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Vulpkanin/ears.rsi
+    state: ear_clue_finder_left
+  - sprite: _TP/Mobs/Customization/Markings/Vulpkanin/ears.rsi
+    state: ear_clue_finder_right
+
+#Fluffy ears
+- type: marking
+  id: TP14VulpEarFluffy
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Vulpkanin ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Vulpkanin/ears.rsi
+    state: fluffy_ears_left_primary
+  - sprite: _TP/Mobs/Customization/Markings/Vulpkanin/ears.rsi
+    state: fluffy_ears_left_secondary
+  - sprite: _TP/Mobs/Customization/Markings/Vulpkanin/ears.rsi
+    state: fluffy_ears_right_primary
+  - sprite: _TP/Mobs/Customization/Markings/Vulpkanin/ears.rsi
+    state: fluffy_ears_right_secondary

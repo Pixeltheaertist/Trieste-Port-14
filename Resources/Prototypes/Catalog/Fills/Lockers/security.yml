@@ -167,6 +167,18 @@
     - id: HoloprojectorSecurity
     - id: BoxEvidenceMarkers
     - id: HandLabeler
+    - id: LuxuryPen # Moffstation - Start (New Detective Clothes)
+    - id: ClothingNeckDetBadge
+    - !type:GroupSelector # Detective needs their notes
+      rolls: !type:RangeNumberSelector
+        range: 0, 2
+      children:
+      - id: BoxFolderBlue
+      - id: BoxFolderRed
+      - id: BoxFolderYellow
+      - id: BoxFolderWhite
+      - id: BoxFolderGrey
+      - id: BoxFolderBlack # Moffstation - End (New Detective Clothes)
 
 - type: entity
   id: ClosetBombFilled

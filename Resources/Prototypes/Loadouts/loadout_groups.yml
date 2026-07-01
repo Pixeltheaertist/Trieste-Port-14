@@ -72,6 +72,10 @@
   - Glasses
   - GlassesJamjar
   - GlassesJensen
+  # Moffstation - Start - Eyepatches!
+  - EyePatch
+  - EyePatchFlipped
+  # Moffstation - End
 
 - type: loadoutGroup
   id: GroupTankHarness
@@ -122,53 +126,58 @@
   - LoadoutSpeciesJellidWater # TP
 
 # Command
+#~~~~~~~ TP14
 - type: loadoutGroup
-  id: CaptainHead
+  id: OverseerHead
   name: loadout-group-captain-head
   minLimit: 0
   loadouts:
-  - CaptainHead
-  - CaptainCap
+  - OverseerHead
+  - OverseerCap
 
 - type: loadoutGroup
-  id: CaptainJumpsuit
+  id: OverseerJumpsuit
   name: loadout-group-captain-jumpsuit
   loadouts:
-  - CaptainJumpsuit
-  - CaptainJumpskirt
-  - CaptainFormalSuit
-  - CaptainFormalSkirt
+  - OverseerJumpsuit
+  - OverseerJumpskirt
+  - OverseerHighvisJumpsuit
+  - OverseerHighvisJumpskirt
+  - OverseerFormalSuit
+  - OverseerFormalSkirt
 
 - type: loadoutGroup
-  id: CaptainNeck
+  id: OverseerNeck
   name: loadout-group-captain-neck
   minLimit: 0
   loadouts:
-  - CaptainCloak
-  - CaptainCloakFormal
-  - CaptainMantle
+  - CommandTie
+  - OverseerCloak
+  - OverseerMantle
 
 - type: loadoutGroup
-  id: CaptainBackpack
+  id: OverseerBackpack
   name: loadout-group-captain-backpack
   loadouts:
-  - CaptainBackpack
-  - CaptainSatchel
-  - CaptainDuffel
+  - OverseerBackpack
+  - OverseerSatchel
+  - OverseerDuffel
 
 - type: loadoutGroup
-  id: CaptainOuterClothing
+  id: OverseerOuterClothing
   name: loadout-group-captain-outerclothing
   loadouts:
-  - CaptainOuterClothing
-  - CaptainWintercoat
+  - OverseerOuterClothing
+  - OverseerWintercoat
+  - OverseerArmor
 
 - type: loadoutGroup
-  id: CaptainJobTrinkets
+  id: OverseerJobTrinkets
   name: loadout-group-jobtrinkets
   minLimit: 0
   loadouts:
-  - LizardPlushieCaptain
+  - LizardPlushieOverseer
+# ~~~~~~ TP14
 
 - type: loadoutGroup
   id: HoPHead
@@ -189,6 +198,7 @@
   name: loadout-group-hop-neck
   minLimit: 0
   loadouts:
+  - CommandTie
   - HoPCloak
   - HoPMantle
 
@@ -410,6 +420,7 @@
   - LawyerJumpskirtRed
   - LawyerJumpsuitGood
   - LawyerJumpskirtGood
+  - PinstripedSuit
 
 - type: loadoutGroup
   id: LawyerNeck
@@ -803,6 +814,7 @@
   - CargoTechnicianJumpsuit
   - TankTop
   - CargoTechnicianJumpskirt
+  - WoodCarver #TP14
 
 - type: loadoutGroup
   id: CargoTechnicianBackpack
@@ -1090,6 +1102,7 @@
   - ScientificBucket
   - SkullBandana
   - ScientificBeret
+  - SuspiciousCap #TP14
 
 - type: loadoutGroup
   id: ScientistNeck
@@ -1108,6 +1121,7 @@
   - MadScientistJumpskirt
   - RoboticistJumpsuit
   - RoboticistJumpskirt
+  - SuspiciousSuit #TP14
   - SeniorResearcherJumpsuit
   - SeniorResearcherJumpskirt
 
@@ -1330,6 +1344,9 @@
   minLimit: 0
   loadouts:
   - DetectiveTie
+  # Moffstation - Begin (New Detective Outfits)
+  - DetectiveBadge
+  # Moffstation - End (New Detective Outfits)
 
 - type: loadoutGroup
   id: DetectiveJumpsuit
@@ -1339,6 +1356,12 @@
   - DetectiveJumpskirt
   - NoirJumpsuit
   - NoirJumpskirt
+  # Moffstation - Begin (New Detective Outfits)
+  - SleuthSuit
+  - SleuthSkirt
+  - InvestigatorJumpsuit
+  - InvestigatorJumpskirt
+  # Moffstation - End (New Detective Outfits)
 
 - type: loadoutGroup
   id: DetectiveOuterClothing
@@ -1347,6 +1370,9 @@
   - DetectiveArmorVest
   - DetectiveCoat
   - DetectiveCoatGrey
+  # Moffstation - Begin (New Detective Outfits)
+  - DetectiveCoatSleuth
+  # Moffstation - End (New Detective Outfits)
 
 - type: loadoutGroup
   id: DetectiveJobTrinkets
@@ -1605,9 +1631,14 @@
   loadouts:
   - MedicalHud
   - MedicalEyePatchHud
+  - MedicalEyePatchHudFlipped # Moffstation - Eyepatches!
   - Glasses
   - GlassesJamjar
   - GlassesJensen
+  # Moffstation - Start - Eyepatches!
+  - EyePatch
+  - EyePatchFlipped
+  # Moffstation - End
 
 - type: loadoutGroup
   id: SurvivalMedical
@@ -1628,6 +1659,7 @@
   loadouts:
   - ReporterJumpsuit
   - JournalistJumpsuit
+  - TVHostJumpsuit # - TP14
 
 - type: loadoutGroup
   id: ReporterHead
@@ -1650,12 +1682,20 @@
   loadouts:
   - LizardPlushieReporter
 
+- type: loadoutGroup # - TP14
+  id: PsychologistHead # - TP14
+  name: tp14-loadout-group-psychologist-head # - TP14
+  minLimit: 0 # - TP14
+  loadouts: # - TP14
+  - Fez # - TP14
+
 - type: loadoutGroup
   id: PsychologistJumpsuit
   name: loadout-group-psychologist-jumpsuit
   loadouts:
   - PsychologistJumpsuit
   - PsychologistJumpskirt
+  - DoctorsJumpsuit # - TP14
 
 - type: loadoutGroup
   id: PsychologistJobTrinkets

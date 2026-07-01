@@ -1,0 +1,19 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "dragon eyes sprites created by Cinnabar-Furrofin (GitHub)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "tattoo_eye_dragon_shadow",
+            "directions": 4
+        },
+        {
+            "name": "tattoo_eye_dragon_color",
+            "directions": 4
+        }
+    ]
+}

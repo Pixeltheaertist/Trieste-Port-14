@@ -40,6 +40,7 @@
   - TP14LoadoutJumpsuitWhite
   - TP14LoadoutJumpskirtWhite
   - TP14LoadoutJumpsuitLieutenantTanktop
+  - TP14LoadoutJumpsuitOldBartenderSuit
 
 - type: loadoutGroup
   id: TP14GroupBartenderNeckwear

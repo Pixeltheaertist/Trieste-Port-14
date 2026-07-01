@@ -1,3 +1,22 @@
+#Command
+- type: entity
+  parent: [ClothingHandsBase, BaseCommandContraband]
+  id: TP14ClothingHandsGlovesOverseer
+  suffix: Trieste, Hands, Command
+  name: overseer's work gloves
+  description: Yellow canvas gloves with black rubberized tips, these gloves provide protection from the elements and electricity.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Hands/Gloves/overseer.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Hands/Gloves/overseer.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-rubber
+  - type: FingerprintMask
+
+#Misc
 - type: entity
   parent: [ ClothingHandsBase, BaseNanotrasenContraband ]
   id: TP14ClothingHandsKnuckleDustersNT

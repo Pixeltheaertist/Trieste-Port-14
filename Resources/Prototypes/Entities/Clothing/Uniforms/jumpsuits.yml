@@ -56,10 +56,10 @@
     sprite: Clothing/Uniforms/Jumpsuit/bartender_purple.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, BaseCommandContraband]
+  parent: [ClothingUniformBase, BaseNanotrasenContraband] #TP14
   id: ClothingUniformJumpsuitCaptain
-  name: overseer's jumpsuit
-  description: It's a blue jumpsuit with some gold markings denoting the rank of "Overseer".
+  name: captain's jumpsuit
+  description: It's a blue jumpsuit with some gold markings denoting the rank of "Captain".
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/captain.rsi
@@ -783,9 +783,9 @@
     sprite: Clothing/Uniforms/Jumpsuit/nanotrasen.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, BaseCommandContraband]
+  parent: [ClothingUniformBase, BaseNanotrasenContraband] #TP14
   id: ClothingUniformJumpsuitCapFormal
-  name: overseer's formal suit
+  name: captain's formal suit
   description: A suit for special occasions.
   components:
   - type: Sprite

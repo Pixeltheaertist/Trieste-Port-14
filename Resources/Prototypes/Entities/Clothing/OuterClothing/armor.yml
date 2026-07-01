@@ -124,9 +124,9 @@
   - type: GroupExamine
 
 - type: entity
-  parent: [ClothingOuterArmorBaseCarapace, BaseCommandContraband]
+  parent: [ClothingOuterArmorBaseCarapace, BaseNanotrasenContraband] #TP14
   id: ClothingOuterArmorCaptainCarapace
-  name: overseer's carapace
+  name: captain's carapace
   description: An armored chestpiece protecting the overseer from the dangers of the platform.
   components:
   - type: Sprite

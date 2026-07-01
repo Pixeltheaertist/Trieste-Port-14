@@ -6,7 +6,7 @@
   sprites: MobVoxSprites
   markingLimits: MobVoxMarkingLimits
   dollPrototype: MobVoxDummy
-  skinColoration: VoxFeathers
+  skinColoration: Hues #TP14
   defaultSkinTone: "#6c741d"
   maleFirstNames: NamesVox
   femaleFirstNames: NamesVox
@@ -19,6 +19,7 @@
   id: MobVoxSprites
   sprites:
     Head: MobVoxHead
+    HeadSide: MobHumanoidAnyMarking # CD
     Snout: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
@@ -46,24 +47,29 @@
     FacialHair:
       points: 1
       required: false
+    # CD - Start - markings
     Head:
-      points: 4
-      required: true
+      points: 2
+      required: false
+    HeadSide:
+      points: 2
+      required: false
+    # CD - End
     Snout:
       points: 1
-      required: true
-      defaultMarkings: [ VoxBeak ]
+      required: false # CD
+      defaultMarkings: [ VoxBeak ] # Moffstation
     SnoutCover:
       points: 1
       required: false
     Arms:
       points: 4
-      required: true
-      defaultMarkings: [ VoxLArmScales, VoxRArmScales, VoxRHandScales, VoxLHandScales ]
+      required: false
+      defaultMarkings: [ VoxLArmScales, VoxRArmScales, VoxRHandScales, VoxLHandScales ] # Moffstation
     Legs:
       points: 4
-      required: true
-      defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
+      required: false
+      defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ] # Moffstation
     UndergarmentTop:
       points: 1
       required: false
@@ -73,10 +79,15 @@
     Chest:
       points: 2
       required: false
+    # Moffstation - Start
+    Overlay:
+      points: 4
+      required: false
+    # Moffstation - End
     Tail:
       points: 1
-      required: true
-      defaultMarkings: [ VoxTail ]
+      required: false # CD
+      defaultMarkings: [ VoxTailBack ]  # Moffstation - Vox markings
 
 - type: humanoidBaseSprite
   id: MobVoxEyes

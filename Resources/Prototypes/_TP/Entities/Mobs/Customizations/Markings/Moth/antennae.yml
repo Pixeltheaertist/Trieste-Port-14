@@ -42,3 +42,12 @@
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/antenna.rsi
     state: antenna_5
+
+- type: marking
+  id: TP14MarkingsMothAntennaeBooster
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Moth ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/antenna.rsi
+    state: booster_antenna

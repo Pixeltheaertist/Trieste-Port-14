@@ -1,5 +1,3 @@
-# !! TRIESTE MODIFIED !! #
-
 - type: entity
   id: DresserCaptainFilled
   parent: Dresser
@@ -7,13 +5,12 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingHeadHatCaptain
-      - id: ClothingHeadHatCapcap
-      - id: ClothingUniformJumpsuitCapFormal
-      - id: ClothingUniformJumpskirtCapFormalDress
-      - id: ClothingHandsGlovesCaptain
-      - id: ClothingOuterWinterCap
-      - id: ClothingNeckCloakCap
+      - id: TP14ClothingHeadHatBeretOverseer # TP: Added
+      - id: TP14ClothingUniformFormalJumpsuitOverseer # TP: Added
+      - id: TP14ClothingUniformFormalJumpskirtOverseer # TP: Added
+      - id: TP14ClothingHandsGlovesOverseer # TP: Added
+      - id: TP14ClothingOuterArmorOverseerHeavyCoat # TP: Added
+      - id: TP14ClothingNeckCloakOverseer # TP: Added
       - id: TP14EntClothesDarkBlueWinterBoots # TP: Added
 
 - type: entity
