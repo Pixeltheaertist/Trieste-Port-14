@@ -34,7 +34,7 @@
     mask: /Textures/Effects/LightMasks/double_cone.png
     color: "#FFE4CE"
     energy: 5
-    radius: 10
+    radius: 4
     softness: 1
     offset: "0, 0.35"
   - type: RotatingLight

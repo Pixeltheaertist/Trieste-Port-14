@@ -1,0 +1,27 @@
+## This is just for all the eventual hatch airlock resprites and other stuff for Sweetwater's doors bc they would look better than the regular airlocks.
+
+## The Locked science one is being made early because of a mapping goof i can't be bothered to fix.
+## Once someone starts spriting and adding entities for the new airlocks change this to a generic AirlockHatchScience, then make a new Locked entity parenting off of it.
+## I'm just being lazy and want a locked door so the map can just be done - Cheeto
+- type: entity
+  parent: AirlockHatch
+  id: TP14AirlockHatchScienceLocked
+  name: airtight hatch
+  suffix: Science, Locked
+  components: 
+    - type: ContainerFill
+      containers:
+        board: [ DoorElectronicsResearch ]
+    - type: Wires
+      layoutId: AirlockScience
+
+- type: entity
+  parent: AirlockGlass
+  id: TP14AirlockHatchGlass
+  name: glass airtight hatch
+  suffix: Trieste
+  components:
+    - type: Sprite
+      sprite: _TP/Structures/Doors/Glass/hatch_glass.rsi
+    - type: Paintable
+      group: null
