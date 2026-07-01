@@ -12,3 +12,6 @@ tp-lobby-sweetwater-cam-artist = Pixeltheaertist
 
 tp-lobby-cargo-view-title = Cargo View
 tp-lobby-cargo-view-artist = Conflee
+
+tp-lobby-shift-adjacent-doodles-title = Shift-adjacent Doodles
+tp-lobby-shift-adjacent-doodles-artist = orangeAlligator

@@ -8,7 +8,7 @@
       role: JobCaptain
       time: 20h
 
- Jumpsuit
+# Jumpsuit
 - type: loadout
   id: CaptainJumpsuit
   equipment:
@@ -29,7 +29,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpskirtCapFormalDress
 
- Head
+# Head
 - type: loadout
   id: CaptainHead
   equipment:
@@ -40,7 +40,7 @@
   equipment:
     head: ClothingHeadHatCapcap
 
- Neck
+# Neck
 - type: loadout
   id: CaptainCloak
   equipment:
@@ -64,7 +64,7 @@
   equipment:
     neck: ClothingNeckMantleCap
 
- Back
+# Back
 - type: loadout
   id: CaptainBackpack
   equipment:
@@ -80,7 +80,7 @@
   equipment:
     back: ClothingBackpackDuffelCaptain
 
- Outer clothing
+# Outer clothing
 - type: loadout
   id: CaptainOuterClothing
   equipment:
