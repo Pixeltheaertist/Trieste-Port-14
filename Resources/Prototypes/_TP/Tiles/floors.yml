@@ -51,3 +51,58 @@
   id: TP14FloorLowDesert
   name: tp14-tiles-desert
   isSpace: true
+
+- type: tile
+  id: TP14FloorSteelGrateMaints
+  name: steel grated maintenance floor
+  sprite: /Textures/_TP/Tiles/steel-grated-maints.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: TP14FloorTileItemSteelGrateMaint
+  heatCapacity: 10000
+
+- type: tile
+  id: TP14FloorRustGrateMaints
+  name: rusting grated maintenance floor
+  sprite: /Textures/_TP/Tiles/rust-grated-maints.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: TP14FloorTileItemRustGrateMaint
+  heatCapacity: 10000
+
+- type: tile
+  id: TP14FloorOldRustMaints
+  name: old rusted maintenance floor
+  sprite: /Textures/_TP/Tiles/old-rust-maints.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: TP14FloorTileItemOldRustMaint
+  heatCapacity: 10000
+

@@ -1,3 +1,138 @@
+#Sweetwater walls
+- type: entity
+  parent: WallSolid
+  suffix: Trieste, Sweetwater
+  id: TP14WallPressurized
+  name: pressurized wall
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/pressurizedwall.rsi
+  - type: Icon
+    sprite: _TP/Structures/Walls/pressurizedwall.rsi
+  - type: IconSmooth
+    key: walls
+    base: solid
+  - type: Construction
+    graph: Girder
+    node: pressurizedwall
+
+
+- type: entity
+  parent: WallReinforced
+  suffix: Trieste, Sweetwater
+  id: TP14WallReinforcedPressurized
+  name: reinforced pressurized wall
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/pressurizedwall.rsi
+  - type: Icon
+    sprite: _TP/Structures/Walls/pressurizedwall.rsi
+    state: rgeneric
+  - type: IconSmooth
+    key: walls
+    base: reinf_over
+  - type: Construction
+    graph: Girder
+    node: reinforcedpressurizedwall
+
+
+- type: entity
+  parent: WallSolidRust
+  suffix: Rusted, Trieste, Sweetwater
+  id: TP14WallRustyPressurized
+  name: pressurized wall
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/rustypressurizedwall.rsi
+  - type: Icon
+    sprite: _TP/Structures/Walls/rustypressurizedwall.rsi
+  - type: IconSmooth
+    key: walls
+    base: solid
+  - type: Construction
+    graph: Girder
+    node: rustypressurizedwall
+
+
+- type: entity
+  parent: WallReinforcedRust
+  suffix: Rusted, Trieste, Sweetwater
+  id: TP14WallRustyReinforcedPressurized
+  name: reinforced pressurized wall
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/rustypressurizedwall.rsi
+  - type: Icon
+    sprite: _TP/Structures/Walls/rustypressurizedwall.rsi
+    state: rgeneric
+  - type: IconSmooth
+    key: walls
+    base: reinf_over
+  - type: Construction
+    graph: Girder
+    node: reinforcedrustypressurizedwall
+
+
+#Diagonal sweetwater walls
+- type: entity
+  parent: WallSolidDiagonal
+  suffix: Trieste, Sweetwater
+  id: TP14WallDiagonalPressurized
+  name: pressurized wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _TP/Structures/Walls/pressurized_diagonal.rsi
+    state: state0
+  - type: Icon
+    sprite: _TP/Structures/Walls/pressurized_diagonal.rsi
+    state: state0
+
+
+- type: entity
+  parent: WallReinforcedDiagonal
+  suffix: Trieste, Sweetwater
+  id: TP14WallDiagonalReinforcedPressurized
+  name: reinforced pressurized wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _TP/Structures/Walls/reinforcedpressurized_diagonal.rsi
+    state: state0
+  - type: Icon
+    sprite: _TP/Structures/Walls/reinforcedpressurized_diagonal.rsi
+    state: state0
+
+
+- type: entity
+  parent: WallSolidDiagonal
+  suffix: Rusted, Trieste, Sweetwater
+  id: TP14WallDiagonalRustyPressurized
+  name: pressurized wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _TP/Structures/Walls/rustypressurized_diagonal.rsi
+    state: state0
+  - type: Icon
+    sprite: _TP/Structures/Walls/rustypressurized_diagonal.rsi
+    state: state0
+
+- type: entity
+  parent: WallReinforcedDiagonal
+  suffix: Rusted, Trieste, Sweetwater
+  id: TP14WallDiagonalRustyReinforcedPressurizedWall
+  name: reinforced pressurized wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _TP/Structures/Walls/rustyreinforcedpressurized_diagonal.rsi
+    state: state0
+  - type: Icon
+    sprite: _TP/Structures/Walls/rustyreinforcedpressurized_diagonal.rsi
+    state: state0
+
+
 #Border indestructible wall
 - type: entity
   id: TP14WallRockIndestructible
