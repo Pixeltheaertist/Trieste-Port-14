@@ -34,6 +34,6 @@
   suffix: Trieste, Science, NoWater
   components:
   - type: GasVentScrubber
-    widenet: true
+    wideNet: true
     filterGases:
     - Water
