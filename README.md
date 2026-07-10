@@ -98,7 +98,7 @@ worstdragonhere - Spriting
 
 Pharaz4 - Mapping
 
-BurntCheeto - Mapping
+BurntCheeto - Mapping, Spriting
 
 neadsy_ - Mapping
 

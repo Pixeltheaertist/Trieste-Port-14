@@ -78,6 +78,18 @@
     TP14EntClothesYellowWinterBoots: 2
     TP14EntClothesPurpleWinterBoots: 2
 
+    ClothingOuterWinterColorBlack: 2
+    ClothingOuterWinterColorBlue: 2
+    ClothingOuterWinterColorBrown: 2 
+    ClothingOuterWinterColorGray: 2
+    ClothingOuterWinterColorGreen: 2
+    ClothingOuterWinterColorLightBrown: 2
+    ClothingOuterWinterColorOrange: 2
+    ClothingOuterWinterColorPurple: 2
+    ClothingOuterWinterColorRed: 2
+    ClothingOuterWinterColorWhite: 2
+    ClothingOuterWinterColorYellow: 2
+
     ClothingHeadHatGreysoft: 8
     ClothingHeadHatMimesoft: 3
     ClothingHeadHatBluesoft: 2
@@ -159,17 +171,7 @@
     ClothingHeadHatCanadaBeanie: 4
     ClothingHeadHatSantahat: 2
     ClothingHeadHatXmasCrown: 2
-    #Far Horizons-Start
-    ClothingShoesBootsPerformer: 2
-    ClothingUniformJumpskirtPerformer: 2
-    ClothingHeadPerformerWig: 2
-    TP14ClothingShoesBootsDarkPerformer: 2
-    TP14ClothingUniformJumpskirtDarkPerformer: 2
-    ClothingHeadDarkPerformerWig: 2
-    ClothingShoesBootsBrightPerformer: 2
-    ClothingUniformJumpskirtBrightPerformer: 2
-    ClothingHeadBrightPerformerWig: 2
-    #Far Horizons-End
+    
   contrabandInventory:
     ClothingMaskNeckGaiter: 2
     ClothingUniformJumpsuitTacticool: 1
