@@ -66,7 +66,7 @@
       points: 1
       required: false
     Head:
-      points: 1
+      points: 2 # TP14 - Was set as 1
       required: false
     UndergarmentTop:
       points: 1
@@ -78,10 +78,10 @@
       points: 2
       required: false
     Legs:
-      points: 2
+      points: 4 #TP14 - Was set at 2
       required: false
     Arms:
-      points: 2
+      points: 4 #TP14 - Was set at 2
       required: false
 
 - type: humanoidBaseSprite

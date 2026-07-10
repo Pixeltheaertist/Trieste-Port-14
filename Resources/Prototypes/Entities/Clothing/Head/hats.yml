@@ -267,9 +267,9 @@
     - CorgiWearable
 
 - type: entity
-  parent: [ClothingHeadBase, BaseCommandContraband]
+  parent: [ClothingHeadBase, BaseNanotrasenContraband ]
   id: ClothingHeadHatCaptain
-  name: overseer's hardhat
+  name: captain's hardhat
   description: Feels good being the king.
   components:
   - type: Sprite
@@ -1163,10 +1163,10 @@
     - CorgiWearable
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ClothingHeadBase, BaseNanotrasenContraband] #TP14
   id: ClothingHeadHatCapcap
   name: cap cap
-  description: A grand, stylish cap worn by the Overseer. Shows the station who's in charge.
+  description: A grand, stylish cap worn by the Captain. Shows the station who's in charge.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/capcap.rsi

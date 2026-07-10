@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Created by MysteriousPeeko (sharkpeekotwoelecticboogaloo) for Trieste Port 14",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "ancient_king",
+            "directions": 4
+        },
+        {
+            "name": "card_nerd",
+            "directions": 4
+        },
+        {
+            "name": "cyber_city",
+            "directions": 4
+        }
+    ]
+}

@@ -1,0 +1,106 @@
+# General
+
+- type: loadout
+  id: EyePatch
+  equipment:
+    eyes: ClothingEyesEyepatch
+
+- type: loadout
+  id: EyePatchFlipped
+  equipment:
+    eyes: ClothingEyesEyepatchFlipped
+
+# Command
+
+- type: loadout
+  id: AdminGlasses
+  equipment:
+    eyes: ClothingEyesGlassesCommand
+
+- type: loadout
+  id: AdminHud
+  equipment:
+    eyes: ClothingEyesHudCommand
+
+# Security
+
+- type: loadout
+  id: NoirGlasses
+  equipment:
+    eyes: ClothingEyesGlassesNoir
+
+- type: loadout
+  id: SecurityGlasses
+  equipment:
+    eyes: ClothingEyesGlassesSecurity
+
+- type: loadout
+  id: SecurityHud
+  equipment:
+    eyes: ClothingEyesHudSecurity
+
+- type: loadout
+  id: SecurityEyePatchHud
+  equipment:
+    eyes: ClothingEyesEyepatchHudSecurity
+
+- type: loadout
+  id: SecurityEyePatchHudFlipped
+  equipment:
+    eyes: ClothingEyesEyepatchHudSecurityFlipped
+
+# Cargo
+
+# Engineering
+
+
+- type: loadout
+  id: EngineeringGoggles
+  equipment:
+    eyes: ClothingEyesGlassesMeson
+
+# Medical
+
+- type: loadout
+  id: ChemistryGoggles
+  equipment:
+    eyes: ClothingEyesGlassesChemical
+
+- type: loadout
+  id: MedicalEyePatchHudFlipped
+  equipment:
+    eyes: ClothingEyesEyepatchHudMedicalFlipped
+
+# Science
+
+- type: loadout
+  id: RoboticsHud
+  equipment:
+    eyes: ClothingEyesHudDiagnostic
+
+- type: loadout
+  id: RoboticsEyePatchHud
+  equipment:
+    eyes: ClothingEyesEyepatchHudDiag
+
+- type: loadout
+  id: RoboticsEyePatchHudFlipped
+  equipment:
+    eyes: ClothingEyesEyepatchHudDiagFlipped
+
+# Service
+
+- type: loadout
+  id: BeerGlasses
+  equipment:
+    eyes: ClothingEyesHudBeer
+
+- type: loadout
+  id: BeerEyePatchHud
+  equipment:
+    eyes: ClothingEyesEyepatchHudBeer
+
+- type: loadout
+  id: BeerEyePatchHudFlipped
+  equipment:
+    eyes: ClothingEyesEyepatchHudBeerFlipped

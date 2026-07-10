@@ -1,3 +1,5 @@
+#clown and mime
+
 - type: entity
   parent: ClothingHeadBase
   id: TP14ClothingHeadHatWearyClownHat
@@ -62,4 +64,136 @@
     - HamsterWearable
     - WhitelistChameleon
 
+#Fisherman
 
+- type: entity
+  parent:  ClothingHeadBase
+  id: TP14ClothingHeadHatSouwester
+  suffix: Trieste, Headwear
+  name: sou'wester
+  description: The iconic bright oilskin rain cap, keeps you dry.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/souwester_hat.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/souwester_hat.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - PetWearable
+    - CorgiWearable
+
+#Command
+
+- type: entity
+  parent: [ ClothingHeadBase, BaseCommandContraband ]
+  id: TP14ClothingHeadHatBeretCommand
+  suffix: Trieste, Headwear
+  name: command beret
+  description: A beret with a Trieste Port emblem on it. It has an aura of authority.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_command.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_command.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: [ ClothingHeadBase, BaseCommandContraband ]
+  id: TP14ClothingHeadHatBeretOverseer
+  suffix: Trieste, Headwear
+  name: overseer beret
+  description: A seafoam green beret, calms crew and establishes authority
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/overseer_beret.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/overseer_beret.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+    - PetWearable
+    - CorgiWearable
+
+# Misc
+
+- type: entity
+  parent:  ClothingHeadBase
+  id: TP14ClothingHeadHatAmnesiacsSailorCap
+  suffix: Trieste, Headwear
+  name: amnesiac's sailor cap
+  description: This hat comes from nowhere, nothing, it comes from the dirt.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/amnesiacs_sailor_cap.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/amnesiacs_sailor_cap.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent:  ClothingHeadBase
+  id: TP14ClothingHeadHatEclipseThiefTophat
+  suffix: Trieste, Headwear
+  name: eclipse thief tophat
+  description: Welcome to the dark of darkness!
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/eclipse_thief_tophat.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/eclipse_thief_tophat.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent:  ClothingHeadBase
+  id: TP14ClothingHeadHatMidnightHeistTophat
+  suffix: Trieste, Headwear
+  name: midnight heist tophat
+  description: Welcome to the shining night!
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/midnight_heist_tophat.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/midnight_heist_tophat.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent:  ClothingHeadBase
+  id: TP14ClothingHeadHatSuspiciousCap
+  suffix: Trieste, Headwear
+  name: suspicious cap
+  description: Somehow, this hat always comes back.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hats/suspicious_cap.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hats/suspicious_cap.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - PetWearable
+    - CorgiWearable

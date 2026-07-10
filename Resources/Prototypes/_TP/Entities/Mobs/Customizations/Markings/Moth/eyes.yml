@@ -1,0 +1,15 @@
+- type: marking
+  id: TP14EyeSlitsMoth
+  bodyPart: Eyes
+  markingCategory: Overlay
+  speciesRestriction: [Moth]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: true
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/eyes.rsi
+    state: moth_head_eye_vertical_slit_primary
+  - sprite: _TP/Mobs/Customization/Markings/Moth/eyes.rsi
+    state: moth_head_eye_vertical_slit_secondary

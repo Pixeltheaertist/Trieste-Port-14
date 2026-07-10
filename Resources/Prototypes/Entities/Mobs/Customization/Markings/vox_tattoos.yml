@@ -151,7 +151,9 @@
   bodyPart: Eyes
   markingCategory: Overlay
   speciesRestriction: [Vox]
-  forcedColoring: true
+#  forcedColoring: true #TP14
+# I don't really care about the limitations because in my experience people don't usually go out of their way to make bad avatars on trieste
+# so it doesn't make sense here to have this limitation
   sprites:
   - sprite: Mobs/Customization/vox_tattoos.rsi
     state: eyeshadow_small
@@ -161,7 +163,7 @@
   bodyPart: Eyes
   markingCategory: Overlay
   speciesRestriction: [Vox]
-  forcedColoring: true
+#  forcedColoring: true #TP14
   sprites:
   - sprite: Mobs/Customization/vox_tattoos.rsi
     state: eyeshadow_medium
@@ -171,11 +173,11 @@
   bodyPart: Eyes
   markingCategory: Overlay
   speciesRestriction: [Vox]
-  forcedColoring: true
+#  forcedColoring: true #TP14
   sprites:
   - sprite: Mobs/Customization/vox_tattoos.rsi
     state: eyeshadow_large
-    
+
 - type: marking
   id: VoxTattooEyeliner
   bodyPart: Eyes

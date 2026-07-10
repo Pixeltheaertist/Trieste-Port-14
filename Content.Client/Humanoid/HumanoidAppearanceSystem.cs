@@ -9,6 +9,7 @@ using Robust.Client.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+// ReSharper disable InvalidXmlDocComment
 
 namespace Content.Client.Humanoid;
 
@@ -368,6 +369,14 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 _sprite.LayerMapSet((entity.Owner, sprite), layerId, layer);
                 _sprite.LayerSetSprite((entity.Owner, sprite), layerId, rsi);
             }
+            /// CD Addition, originally written by beck for Impstation. check if there's a shader defined in the markingPrototype's shader datafield, and if there is...
+            if (markingPrototype.Shader != null)
+            {
+                /// use spriteComponent's layersetshader function to set the layer's shader to that which is specified.
+                sprite.LayerSetShader(layerId, markingPrototype.Shader);
+            }
+            /// end CD Addition
+
 
             _sprite.LayerSetVisible((entity.Owner, sprite), layerId, visible);
 

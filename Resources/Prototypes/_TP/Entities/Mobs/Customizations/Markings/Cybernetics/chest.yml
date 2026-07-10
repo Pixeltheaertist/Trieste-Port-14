@@ -1,0 +1,33 @@
+#Cyber Heart
+
+- type: marking
+  id: TP14MarkingsHumanChestCyberHeartLeft
+  bodyPart: UndergarmentTop
+  markingCategory: Chest
+  speciesRestriction: [ Arachnid, Human, Reptilian, SlimePerson ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Cybernetics/chest.rsi
+    state: cybernetic_heart_left
+  - sprite: _TP/Mobs/Customization/Markings/Cybernetics/chest.rsi
+    state: cybernetic_heart_left_recolorable_light
+
+- type: marking
+  id: TP14MarkingsHumanChestCyberHeartRight
+  bodyPart: UndergarmentTop
+  markingCategory: Chest
+  speciesRestriction: [ Arachnid, Human, Reptilian, SlimePerson ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Cybernetics/chest.rsi
+    state: cybernetic_heart_right
+  - sprite: _TP/Mobs/Customization/Markings/Cybernetics/chest.rsi
+    state: cybernetic_heart_right_recolorable_light

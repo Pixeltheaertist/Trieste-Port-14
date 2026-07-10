@@ -10,10 +10,10 @@
     sprite: Clothing/Uniforms/Jumpskirt/bartender.rsi
 
 - type: entity
-  parent: [ClothingUniformSkirtBase, BaseCommandContraband]
+  parent: [ClothingUniformSkirtBase, BaseNanotrasenContraband] #TP14
   id: ClothingUniformJumpskirtCaptain
-  name: overseer's jumpskirt
-  description: It's a blue jumpskirt with some gold markings denoting the rank of "Overseer".
+  name: captain's jumpskirt
+  description: It's a blue jumpskirt with some gold markings denoting the rank of "captain".
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/captain.rsi
@@ -479,9 +479,9 @@
     sprite: Clothing/Uniforms/Jumpskirt/performer.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [ClothingUniformSkirtBase, BaseNanotrasenContraband]
   id: ClothingUniformJumpskirtCapFormalDress
-  name: overseer's formal dress
+  name: captain's formal dress
   description: A dress for special occasions.
   components:
   - type: Sprite

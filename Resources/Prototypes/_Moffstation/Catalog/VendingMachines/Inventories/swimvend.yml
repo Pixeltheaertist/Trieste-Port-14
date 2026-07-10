@@ -1,0 +1,80 @@
+- type: vendingMachineInventory
+  id: SwimvendInventory
+  startingInventory:
+    ClothingUniformCoconutSkirt: 2
+    ClothingUniformFishsuit: 2
+    ClothingUniformGrassSkirt: 2
+    ClothingUniformHeartOnepiece: 2
+    ClothingUniformHonkini: 2
+    ClothingUniformMedShorts: 2
+    ClothingUniformMedkini: 2
+    ClothingUniformMermaid: 2
+    ClothingUniformOldtimeyOnepiece: 2
+    ClothingUniformShirtkini: 2
+    ClothingUniformSpeedo: 2
+    ClothingUniformSundress: 2
+    ClothingUniformWetsuitOrange: 2
+    # Other clothing
+    ClothingHeadHatClownSunhat: 1
+    ClothingShoesClownSandals: 1
+    ClothingHeadHatSunhat: 2
+    ClothingShoesTourist: 3
+    # Accessories
+    ClothingNeckLifeguardWhistle: 1
+    PlushieLifeguardBuoy: 2
+    BeachBall: 2
+    ClothingEyesGlassesCheapSunglasses: 3
+    # Generic Bikini Color Variants
+    ClothingUniformBikiniWhite: 2
+    ClothingUniformBikiniBlack: 2
+    ClothingUniformBikiniBlue: 2
+    ClothingUniformBikiniRed: 2
+    ClothingUniformBikiniGreen: 2
+    ClothingUniformBikiniYellow: 2
+    ClothingUniformBikiniPink: 2
+    # Generic One-piece Color Variants
+    ClothingUniformOnepieceWhite: 2
+    ClothingUniformOnepieceBlack: 2
+    ClothingUniformOnepieceBlue: 2
+    ClothingUniformOnepieceRed: 2
+    ClothingUniformOnepieceGreen: 2
+    ClothingUniformOnepieceYellow: 2
+    ClothingUniformOnepiecePink: 2
+    # Generic Shorts Variants
+    ClothingUniformShortsWhite: 2
+    ClothingUniformShortsBlack: 2
+    ClothingUniformShortsBlue: 2
+    ClothingUniformShortsRed: 2
+    ClothingUniformShortsGreen: 2
+    ClothingUniformShortsYellow: 2
+    ClothingUniformShortsPink: 2
+    # Towels
+    TowelColorPurple: 2
+    TowelColorRed: 2
+    TowelColorBlue: 2
+    TowelColorDarkBlue: 2
+    TowelColorLightBlue: 2
+    TowelColorTeal: 2
+    TowelColorBrown: 2
+    TowelColorLightBrown: 2
+    TowelColorGray: 2
+    TowelColorGreen: 2
+    TowelColorDarkGreen: 2
+    TowelColorGold: 2
+    TowelColorOrange: 2
+    TowelColorBlack: 2
+    TowelColorPink: 2
+    TowelColorYellow: 2
+    TowelColorMaroon: 2
+    TowelColorSilver: 2
+    TowelColorMime: 1
+  contrabandInventory:
+    FoodSnackBoritos: 3
+    ClothingEyesGlassesSunglasses: 1
+  emaggedInventory:
+    ClothingUniformSyndikini: 2
+    ClothingUniformNtBikini: 2
+    TowelColorSyndicate: 1
+    TowelColorCentcom: 1
+    TowelColorNT: 1
+    ClothingUniformNinjaSurfsuit: 2

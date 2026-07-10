@@ -123,3 +123,42 @@
     state: tail_rounded
   - sprite: _TP/Mobs/Customization/Markings/Humans/tails.rsi
     state: tail_rounded_stripes
+
+- type: marking
+  id: TP14MarkingsHumanTailBasicBird
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Human ]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/tails.rsi
+    state: tail_basic_bird_primary
+  - sprite: _TP/Mobs/Customization/Markings/Humans/tails.rsi
+    state: tail_basic_bird_secondary
+
+- type: marking
+  id: TP14MarkingsHumanTailRooster
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Human ]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/tails.rsi
+    state: tail_rooster
+

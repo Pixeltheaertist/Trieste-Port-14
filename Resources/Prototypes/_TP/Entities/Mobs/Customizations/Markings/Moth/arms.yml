@@ -1,0 +1,37 @@
+- type: marking
+  id: TP14MarkingsMothLeftArmSplotch
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/arms.rsi
+    state: splotch_arm_left
+
+
+- type: marking
+  id: TP14MarkingsMothRightArmSplotch
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/arms.rsi
+    state: splotch_arm_right
+
+
+- type: marking
+  id: TP14MarkingsMothLeftHandSplotch
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/arms.rsi
+    state: splotch_hand_left
+
+- type: marking
+  id: TP14MarkingsMothRightHandSplotch
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/arms.rsi
+    state: splotch_hand_right

@@ -36,11 +36,23 @@
             "directions": 4
         },
         {
+            "name": "tail_rounded_stripes",
+            "directions": 4
+        },
+        {
             "name": "tail_rounded_leopard",
             "directions": 4
         },
         {
-            "name": "tail_rounded_stripes",
+            "name": "tail_basic_bird_primary",
+            "directions": 4
+        },
+        {
+            "name": "tail_basic_bird_secondary",
+            "directions": 4
+        },
+        {
+            "name": "tail_rooster",
             "directions": 4
         }
     ]

@@ -1,0 +1,31 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Created by MysteriousPeeko (sharkpeekotwoelecticboogaloo) for Trieste Port 14",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "tail_rooster_primary",
+            "directions": 4
+        },
+        {
+            "name": "tail_rooster_quaternary",
+            "directions": 4
+        },
+        {
+            "name": "tail_rooster_quinary",
+            "directions": 4
+        },
+        {
+            "name": "tail_rooster_secondary",
+            "directions": 4
+        },
+        {
+            "name": "tail_rooster_tertiary",
+            "directions": 4
+        }
+    ]
+}

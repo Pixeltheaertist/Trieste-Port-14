@@ -1,0 +1,306 @@
+
+# Vanilla
+- type: entity
+  parent: FoodSnackBase
+  id: TP14FoodSnackSaltwaterTaffy
+  suffix: Trieste, Food
+  name: vanilla saltwater taffy
+  description: A piece of vanilla saltwater taffy, this is about as basic as you can get
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - vanilla
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
+    layers:
+    - state: taffy_wrapper
+    - state: taffy_vanilla
+
+# apple
+- type: entity
+  parent: TP14FoodSnackSaltwaterTaffy
+  id: TP14FoodSnackSaltwaterTaffyApple
+  name: apple saltwater taffy
+  description: A piece of apple flavored saltwater taffy, it's refreshingly tart
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sour
+    - apple
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
+    layers:
+    - state: taffy_wrapper
+    - state: taffy_apple
+
+# banana
+- type: entity
+  parent: TP14FoodSnackSaltwaterTaffy
+  id: TP14FoodSnackSaltwaterTaffyBanana
+  name: banana saltwater taffy
+  description: A piece of banana flavored saltwater taffy, does this even taste like bananas?
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - banana
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 2.5
+        - ReagentId: Laughter
+          Quantity: 2.5
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
+    layers:
+    - state: taffy_wrapper
+    - state: taffy_banana
+
+# blue rasberry
+- type: entity
+  parent: TP14FoodSnackSaltwaterTaffy
+  id: TP14FoodSnackSaltwaterTaffyBlueRasberry
+  name: blue rasberry saltwater taffy
+  description: A piece of blue rasberry flavored saltwater taffy, what the hell is a blue rasberry?
+  components:
+  - type: FlavorProfile
+    flavors:
+    - blue
+    - berry
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
+    layers:
+    - state: taffy_wrapper
+    - state: taffy_bluerasberry
+
+# bungo
+- type: entity
+  parent: TP14FoodSnackSaltwaterTaffy
+  id: TP14FoodSnackSaltwaterTaffyBungo
+  name: bungo saltwater taffy
+  description: A humble piece of bungo flavored taffy, exotic!
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - bungo
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
+    layers:
+    - state: taffy_wrapper
+    - state: taffy_bungo
+
+# chocolate
+- type: entity
+  parent: TP14FoodSnackSaltwaterTaffy
+  id: TP14FoodSnackSaltwaterTaffyChocolate
+  name: chocolate saltwater taffy
+  description: A piece of chocolate flavored saltwater taffy, Another clasic, can't go wrong with chocolate.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - chocolate
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
+    layers:
+    - state: taffy_wrapper
+    - state: taffy_chocolate
+
+# cinnamon
+- type: entity
+  parent: TP14FoodSnackSaltwaterTaffy
+  id: TP14FoodSnackSaltwaterTaffyCinnamon
+  name: cinnamon saltwater taffy
+  description: A piece of cinnamon flavored saltwater taffy, is cinnamon supposed to be spicy?
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - spicy
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
+    layers:
+    - state: taffy_wrapper
+    - state: taffy_cinnamon
+
+# creamsicle
+- type: entity
+  parent: TP14FoodSnackSaltwaterTaffy
+  id: TP14FoodSnackSaltwaterTaffyCreamsicle
+  name: creamsicle saltwater taffy
+  description: A piece of creamsicle flavored saltwater taffy, it tastes like a warm sunny day.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - icecream
+    - orange
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
+    layers:
+    - state: taffy_wrapper
+    - state: taffy_creamsicle
+
+# flyamanita
+- type: entity
+  parent: TP14FoodSnackSaltwaterTaffy
+  id: TP14FoodSnackSaltwaterTaffyFlyAmanita
+  name: fly amanita saltwater taffy
+  description: A piece of fly amanita flavored saltwater taffy, why is this a flavor?
+  components:
+  - type: FlavorProfile
+    flavors:
+    - mushroom
+    - medicine
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
+    layers:
+    - state: taffy_wrapper
+    - state: taffy_flyamanita
+
+# grape
+
+- type: entity
+  parent: TP14FoodSnackSaltwaterTaffy
+  id: TP14FoodSnackSaltwaterTaffyGrape
+  name: grape saltwater taffy
+  description: A piece of grape flavored saltwater taffy, tastes like cough syrup.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - grape
+    - medicine
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
+    layers:
+    - state: taffy_wrapper
+    - state: taffy_grape
+
+
+# licorice
+- type: entity
+  parent: TP14FoodSnackSaltwaterTaffy
+  id: TP14FoodSnackSaltwaterTaffyLicorice
+  name: licorice saltwater taffy
+  description: A piece of licorice flavored saltwater taffy, it's like taffy if it was goth.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - salty
+    - spooky
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
+    layers:
+    - state: taffy_wrapper
+    - state: taffy_licorice
+
+# Neopolitan
+- type: entity
+  parent: TP14FoodSnackSaltwaterTaffy
+  id: TP14FoodSnackSaltwaterTaffyNeopolitan
+  name: neopolitan saltwater taffy
+  description: A piece of neopolitan flavored saltwater taffy, the best of all three worlds.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - vanilla
+    - chocolate
+    - berry
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
+    layers:
+    - state: taffy_wrapper
+    - state: taffy_neopolitan
+
+# Peppermint
+- type: entity
+  parent: TP14FoodSnackSaltwaterTaffy
+  id: TP14FoodSnackSaltwaterTaffyPeppermint
+  name: peppermint saltwater taffy
+  description: A piece of peppermint flavored saltwater taffy, it's reminiscent of christmas.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - minty
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
+    layers:
+    - state: taffy_wrapper
+    - state: taffy_peppermint
+
+
+# Soylent green
+- type: entity
+  parent: TP14FoodSnackSaltwaterTaffy
+  id: TP14FoodSnackSaltwaterTaffySoylentGreen
+  name: soylent green saltwater taffy
+  description: A piece of soylent green flavored saltwater taffy, what's this stuff made of anyways?
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - people
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
+    layers:
+    - state: taffy_wrapper
+    - state: taffy_soylentgreen
+
+# watermelon
+- type: entity
+  parent: TP14FoodSnackSaltwaterTaffy
+  id: TP14FoodSnackSaltwaterTaffyWatermelon
+  name: watermelon saltwater taffy
+  description: A piece of watermelon flavored saltwater taffy, tastes like a picnic.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - watermelon
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
+    layers:
+    - state: taffy_wrapper
+    - state: taffy_watermelon
+
+#cotton
+- type: entity
+  parent: FoodSnackBase
+  id: TP14FoodSnackSaltwaterTaffyCotton
+  suffix: Trieste, Food
+  name: cotton saltwater taffy
+  description: A piece of cotton flavored saltwater taffy, it's a bit stringy.
+  components:
+  - type: Edible
+    requiresSpecialDigestion: true
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - cotton
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 2.5
+        - ReagentId: Fiber
+          Quantity: 2.5
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
+    layers:
+    - state: taffy_wrapper
+    - state: taffy_cotton
+  - type: Tag
+    tags:
+    - ClothMade
+

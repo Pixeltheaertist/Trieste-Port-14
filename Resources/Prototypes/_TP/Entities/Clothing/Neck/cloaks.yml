@@ -1,0 +1,13 @@
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
+  id: TP14ClothingNeckCloakOverseer
+  name: overseer's cloak
+  description: A very warm thick cloak, with a slight waterproof coating
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Neck/Cloaks/overseercloak.rsi
+  - type: StealTarget
+    stealGroup: HeadCloak
+  - type: TemperatureProtection
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.3

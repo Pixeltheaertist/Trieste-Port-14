@@ -45,3 +45,12 @@ marking-TP14MarkingMothCollarWhiteFly = Neck Fluff (White Fly)
 
 marking-TP14MarkingMothCollarWitchWing-witchwing = Neck Fluff
 marking-TP14MarkingMothCollarWitchWing = Neck Fluff (Witch Wing)
+
+marking-TP14MarkingMothCollarBooster-booster_collar_primary = Primary
+marking-TP14MarkingMothCollarBooster-booster_collar_secondary = Secondary
+marking-TP14MarkingMothCollarBooster-booster_collar_tertiary = Tertiary
+marking-TP14MarkingMothCollarBooster = Booster Collar
+
+marking-TP14MarkingMothCollarOrnateTigerMoth-ornate_tiger_moth_collar_primary = Primary
+marking-TP14MarkingMothCollarOrnateTigerMoth-ornate_tiger_moth_collar_secondary = Secondary
+marking-TP14MarkingMothCollarOrnateTigerMoth = Neck Fluff (Ornate Tiger Moth)

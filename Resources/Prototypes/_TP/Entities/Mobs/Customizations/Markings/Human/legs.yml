@@ -1,0 +1,156 @@
+#birdclaw
+
+- type: marking
+  id: TP14MarkingsBirdClawLeftLeg
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Human]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#e5e3d1"
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/legs.rsi
+    state: bird_claw_leg_left_primary
+  - sprite: _TP/Mobs/Customization/Markings/Humans/legs.rsi
+    state: bird_claw_leg_left_secondary
+
+- type: marking
+  id: TP14MarkingsBirdClawRightLeg
+  bodyPart: UndergarmentBottom #it's weird I know but it makes the layers work correctly
+  markingCategory: Legs
+  speciesRestriction: [Human]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#e5e3d1"
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/legs.rsi
+    state: bird_claw_leg_right_primary
+  - sprite: _TP/Mobs/Customization/Markings/Humans/legs.rsi
+    state: bird_claw_leg_right_secondary
+
+- type: marking
+  id: TP14MarkingsBirdClawLeftFoot
+  bodyPart: LHand #it's weird I know but it makes the layers work correctly
+  markingCategory: Legs
+  speciesRestriction: [Human]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#e5e3d1"
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/legs.rsi
+    state: bird_claw_foot_left
+
+- type: marking
+  id: TP14MarkingsBirdClawRightFoot
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Human]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#e5e3d1"
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/legs.rsi
+    state: bird_claw_foot_right
+
+
+
+
+
+
+
+
+#Claws
+
+- type: marking
+  id: TP14MarkingsClawsLeftFoot
+  bodyPart: LHand #it's weird I know but it makes the layers work correctly
+  markingCategory: Legs
+  speciesRestriction: [Human]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#e5e3d1"
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/legs.rsi
+    state: foot_claws_left
+
+- type: marking
+  id: TP14MarkingsClawsRightFoot
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Human]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#e5e3d1"
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/legs.rsi
+    state: foot_claws_right
+
+#Hatched
+
+- type: marking
+  id: TP14MarkingsHatchedLeftLeg
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Human]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#e5e3d1"
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/legs.rsi
+    state: hatched_left_leg
+
+- type: marking
+  id: TP14MarkingsHatchedRightLeg
+  bodyPart: UndergarmentBottom #it's weird I know but it makes the layers work correctly
+  markingCategory: Legs
+  speciesRestriction: [Human]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#e5e3d1"
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/legs.rsi
+    state: hatched_right_leg
+
+- type: marking
+  id: TP14MarkingsHatchedLeftFoot
+  bodyPart: LHand #it's weird I know but it makes the layers work correctly
+  markingCategory: Legs
+  speciesRestriction: [Human]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#e5e3d1"
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/legs.rsi
+    state: hatched_left_foot
+
+- type: marking
+  id: TP14MarkingsHatchedRightFoot
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Human]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#e5e3d1"
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Humans/legs.rsi
+    state: hatched_right_foot

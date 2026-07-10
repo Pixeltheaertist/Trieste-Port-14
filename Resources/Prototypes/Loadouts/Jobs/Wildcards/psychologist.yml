@@ -4,7 +4,19 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitPsychologist
 
+- type: loadout # - TP14
+  id: DoctorsJumpsuit # - TP14
+  equipment: # - TP14
+    jumpsuit: TP14ClothingUniformGastroenterologistSuit # - TP14
+
 - type: loadout
   id: PsychologistJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtPsychologist
+
+#head - TP14
+
+- type: loadout # - TP14
+  id: Fez # - TP14
+  equipment: # - TP14
+    head: ClothingHeadHatFez # - TP14

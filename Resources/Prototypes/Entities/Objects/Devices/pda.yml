@@ -636,7 +636,7 @@
 - type: entity
   parent: BasePDA
   id: CaptainPDA
-  name: overseer PDA # TP
+  name: Captain PDA
   description: Surprisingly no different from your PDA.
   components:
   - type: Pda

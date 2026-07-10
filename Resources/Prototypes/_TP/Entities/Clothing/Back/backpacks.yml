@@ -1,3 +1,16 @@
+#Command
+- type: entity
+  parent: [ClothingBackpack, BaseCommandContraband]
+  id: TP14ClothingBackpackOverseer
+  suffix: Trieste, Back, Command
+  name: overseer's backpack
+  description: It's a rugged seafoam backpack, which is decorated with golden clasps denoting rank.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Back/Backpacks/overseer.rsi
+
+#service
+
 - type: entity
   parent: [ Clothing, ContentsExplosionResistanceBase ]
   id: TP14ClothingBackpackClownBindle
@@ -37,5 +50,8 @@
     tags:
     - WhitelistChameleon
     - Backpack
+
+
+
 
 

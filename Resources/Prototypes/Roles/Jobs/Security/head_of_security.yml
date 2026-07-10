@@ -43,7 +43,7 @@
 - type: startingGear
   id: HoSGear
   equipment:
-    eyes: ClothingEyesGlassesSecurity
+    # eyes: ClothingEyesGlassesSecurity # Moffstation - Eyepatches!
     id: HoSPDA
     gloves: ClothingHandsGlovesCombat
     ears: ClothingHeadsetAltSecurity

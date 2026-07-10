@@ -1,0 +1,621 @@
+#white
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBeanie
+  suffix: Trieste, Headwear
+  name: white beanie
+  description: A generic white beanie, keeps your head warm and cozy
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie.rsi
+    layers:
+    - state: cuffcrown-icon
+    - state: body-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: cuffcrown-inhand-left
+      - state: body-inhand-left
+      right:
+      - state: cuffcrown-inhand-right
+      - state: body-inhand-right
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie.rsi
+    clothingVisuals:
+      head:
+      - state: cuffcrown-equipped-HELMET
+      - state: body-equipped-HELMET
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+
+#black
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBlackBeanie
+  suffix: Trieste, Headwear
+  name: black beanie
+  description: A generic black beanie, keeps your head warm and cozy
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie.rsi
+    layers:
+    - state: cuffcrown-icon
+      color: "#3f3f3f"
+    - state: body-icon
+      color: "#3f3f3f"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: cuffcrown-inhand-left
+        color: "#3f3f3f"
+      - state: body-inhand-left
+        color: "#3f3f3f"
+      right:
+      - state: cuffcrown-inhand-right
+        color: "#3f3f3f"
+      - state: body-inhand-right
+        color: "#3f3f3f"
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie.rsi
+    clothingVisuals:
+      head:
+      - state: cuffcrown-equipped-HELMET
+        color: "#3f3f3f"
+      - state: body-equipped-HELMET
+        color: "#3f3f3f"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+
+#Blue
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBlueBeanie
+  suffix: Trieste, Headwear
+  name: blue beanie
+  description: A generic blue beanie, keeps your head warm and cozy
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie.rsi
+    layers:
+    - state: cuffcrown-icon
+      color: "#52aecc"
+    - state: body-icon
+      color: "#52aecc"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: cuffcrown-inhand-left
+        color: "#52aecc"
+      - state: body-inhand-left
+        color: "#52aecc"
+      right:
+      - state: cuffcrown-inhand-right
+        color: "#52aecc"
+      - state: body-inhand-right
+        color: "#52aecc"
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie.rsi
+    clothingVisuals:
+      head:
+      - state: cuffcrown-equipped-HELMET
+        color: "#52aecc"
+      - state: body-equipped-HELMET
+        color: "#52aecc"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+
+#DarkBlue
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadDarkBlueBeanie
+  suffix: Trieste, Headwear
+  name: dark blue beanie
+  description: A generic dark blue beanie, keeps your head warm and cozy
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie.rsi
+    layers:
+    - state: cuffcrown-icon
+      color: "#3285ba"
+    - state: body-icon
+      color: "#3285ba"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: cuffcrown-inhand-left
+        color: "#3285ba"
+      - state: body-inhand-left
+        color: "#3285ba"
+      right:
+      - state: cuffcrown-inhand-right
+        color: "#3285ba"
+      - state: body-inhand-right
+        color: "#3285ba"
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie.rsi
+    clothingVisuals:
+      head:
+      - state: cuffcrown-equipped-HELMET
+        color: "#3285ba"
+      - state: body-equipped-HELMET
+        color: "#3285ba"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+
+#Teal
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadTealBeanie
+  suffix: Trieste, Headwear
+  name: teal beanie
+  description: A generic teal beanie, keeps your head warm and cozy
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie.rsi
+    layers:
+    - state: cuffcrown-icon
+      color: "#77f3b7"
+    - state: body-icon
+      color: "#77f3b7"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: cuffcrown-inhand-left
+        color: "#77f3b7"
+      - state: body-inhand-left
+        color: "#77f3b7"
+      right:
+      - state: cuffcrown-inhand-right
+        color: "#77f3b7"
+      - state: body-inhand-right
+        color: "#77f3b7"
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie.rsi
+    clothingVisuals:
+      head:
+      - state: cuffcrown-equipped-HELMET
+        color: "#77f3b7"
+      - state: body-equipped-HELMET
+        color: "#77f3b7"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+
+#green
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadGreenBeanie
+  suffix: Trieste, Headwear
+  name: green beanie
+  description: A generic green beanie, keeps your head warm and cozy
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie.rsi
+    layers:
+    - state: cuffcrown-icon
+      color: "#9ed63a"
+    - state: body-icon
+      color: "#9ed63a"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: cuffcrown-inhand-left
+        color: "#9ed63a"
+      - state: body-inhand-left
+        color: "#9ed63a"
+      right:
+      - state: cuffcrown-inhand-right
+        color: "#9ed63a"
+      - state: body-inhand-right
+        color: "#9ed63a"
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie.rsi
+    clothingVisuals:
+      head:
+      - state: cuffcrown-equipped-HELMET
+        color: "#9ed63a"
+      - state: body-equipped-HELMET
+        color: "#9ed63a"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+
+#DarkGreen
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadDarkGreenBeanie
+  suffix: Trieste, Headwear
+  name: dark green beanie
+  description: A generic dark green beanie, keeps your head warm and cozy
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie.rsi
+    layers:
+    - state: cuffcrown-icon
+      color: "#007923"
+    - state: body-icon
+      color: "#007923"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: cuffcrown-inhand-left
+        color: "#007923"
+      - state: body-inhand-left
+        color: "#007923"
+      right:
+      - state: cuffcrown-inhand-right
+        color: "#007923"
+      - state: body-inhand-right
+        color: "#007923"
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie.rsi
+    clothingVisuals:
+      head:
+      - state: cuffcrown-equipped-HELMET
+        color: "#007923"
+      - state: body-equipped-HELMET
+        color: "#007923"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+
+#orange
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadOrangeBeanie
+  suffix: Trieste, Headwear
+  name: orange beanie
+  description: A generic orange beanie, keeps your head warm and cozy
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie.rsi
+    layers:
+    - state: cuffcrown-icon
+      color: "#ff8c19"
+    - state: body-icon
+      color: "#ff8c19"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: cuffcrown-inhand-left
+        color: "#ff8c19"
+      - state: body-inhand-left
+        color: "#ff8c19"
+      right:
+      - state: cuffcrown-inhand-right
+        color: "#ff8c19"
+      - state: body-inhand-right
+        color: "#ff8c19"
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie.rsi
+    clothingVisuals:
+      head:
+      - state: cuffcrown-equipped-HELMET
+        color: "#ff8c19"
+      - state: body-equipped-HELMET
+        color: "#ff8c19"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+
+#pink
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadPinkBeanie
+  suffix: Trieste, Headwear
+  name: pink beanie
+  description: A generic pink beanie, keeps your head warm and cozy
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie.rsi
+    layers:
+    - state: cuffcrown-icon
+      color: "#ffa69b"
+    - state: body-icon
+      color: "#ffa69b"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: cuffcrown-inhand-left
+        color: "#ffa69b"
+      - state: body-inhand-left
+        color: "#ffa69b"
+      right:
+      - state: cuffcrown-inhand-right
+        color: "#ffa69b"
+      - state: body-inhand-right
+        color: "#ffa69b"
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie.rsi
+    clothingVisuals:
+      head:
+      - state: cuffcrown-equipped-HELMET
+        color: "#ffa69b"
+      - state: body-equipped-HELMET
+        color: "#ffa69b"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+
+#red
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadRedBeanie
+  suffix: Trieste, Headwear
+  name: red beanie
+  description: A generic red beanie, keeps your head warm and cozy
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie.rsi
+    layers:
+    - state: cuffcrown-icon
+      color: "#eb0c07"
+    - state: body-icon
+      color: "#eb0c07"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: cuffcrown-inhand-left
+        color: "#eb0c07"
+      - state: body-inhand-left
+        color: "#ffa69b"
+      right:
+      - state: cuffcrown-inhand-right
+        color: "#eb0c07"
+      - state: body-inhand-right
+        color: "#eb0c07"
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie.rsi
+    clothingVisuals:
+      head:
+      - state: cuffcrown-equipped-HELMET
+        color: "#eb0c07"
+      - state: body-equipped-HELMET
+        color: "#eb0c07"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+
+#Yellow
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadYellowBeanie
+  suffix: Trieste, Headwear
+  name: yellow beanie
+  description: A generic yellow beanie, keeps your head warm and cozy
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie.rsi
+    layers:
+    - state: cuffcrown-icon
+      color: "#ffe14d"
+    - state: body-icon
+      color: "#ffe14d"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: cuffcrown-inhand-left
+        color: "#ffe14d"
+      - state: body-inhand-left
+        color: "#ffe14d"
+      right:
+      - state: cuffcrown-inhand-right
+        color: "#ffe14d"
+      - state: body-inhand-right
+        color: "#ffe14d"
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie.rsi
+    clothingVisuals:
+      head:
+      - state: cuffcrown-equipped-HELMET
+        color: "#ffe14d"
+      - state: body-equipped-HELMET
+        color: "#ffe14d"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+
+#purple
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadPurpleBeanie
+  suffix: Trieste, Headwear
+  name: purple beanie
+  description: A generic purple beanie, keeps your head warm and cozy
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie.rsi
+    layers:
+    - state: cuffcrown-icon
+      color: "#9f70cc"
+    - state: body-icon
+      color: "#9f70cc"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: cuffcrown-inhand-left
+        color: "#9f70cc"
+      - state: body-inhand-left
+        color: "#9f70cc"
+      right:
+      - state: cuffcrown-inhand-right
+        color: "#9f70cc"
+      - state: body-inhand-right
+        color: "#9f70cc"
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie.rsi
+    clothingVisuals:
+      head:
+      - state: cuffcrown-equipped-HELMET
+        color: "#9f70cc"
+      - state: body-equipped-HELMET
+        color: "#9f70cc"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+
+#lightbrown
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadLightBrownBeanie
+  suffix: Trieste, Headwear
+  name: light brown beanie
+  description: A generic light brown beanie, keeps your head warm and cozy
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie.rsi
+    layers:
+    - state: cuffcrown-icon
+      color: "#c59431"
+    - state: body-icon
+      color: "#c59431"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: cuffcrown-inhand-left
+        color: "#c59431"
+      - state: body-inhand-left
+        color: "#c59431"
+      right:
+      - state: cuffcrown-inhand-right
+        color: "#c59431"
+      - state: body-inhand-right
+        color: "#c59431"
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie.rsi
+    clothingVisuals:
+      head:
+      - state: cuffcrown-equipped-HELMET
+        color: "#c59431"
+      - state: body-equipped-HELMET
+        color: "#c59431"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+
+#brown
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadBrownBeanie
+  suffix: Trieste, Headwear
+  name: brown beanie
+  description: A generic brown beanie, keeps your head warm and cozy
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie.rsi
+    layers:
+    - state: cuffcrown-icon
+      color: "#a17229"
+    - state: body-icon
+      color: "#a17229"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: cuffcrown-inhand-left
+        color: "#a17229"
+      - state: body-inhand-left
+        color: "#a17229"
+      right:
+      - state: cuffcrown-inhand-right
+        color: "#a17229"
+      - state: body-inhand-right
+        color: "#a17229"
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie.rsi
+    clothingVisuals:
+      head:
+      - state: cuffcrown-equipped-HELMET
+        color: "#a17229"
+      - state: body-equipped-HELMET
+        color: "#a17229"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+
+#maroon
+- type: entity
+  parent: ClothingHeadBase
+  id: TP14ClothingHeadMaroonBeanie
+  suffix: Trieste, Headwear
+  name: maroon beanie
+  description: A generic maroon beanie, keeps your head warm and cozy
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie.rsi
+    layers:
+    - state: cuffcrown-icon
+      color: "#cc295f"
+    - state: body-icon
+      color: "#cc295f"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: cuffcrown-inhand-left
+        color: "#cc295f"
+      - state: body-inhand-left
+        color: "#cc295f"
+      right:
+      - state: cuffcrown-inhand-right
+        color: "#cc295f"
+      - state: body-inhand-right
+        color: "#cc295f"
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie.rsi
+    clothingVisuals:
+      head:
+      - state: cuffcrown-equipped-HELMET
+        color: "#cc295f"
+      - state: body-equipped-HELMET
+        color: "#cc295f"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable

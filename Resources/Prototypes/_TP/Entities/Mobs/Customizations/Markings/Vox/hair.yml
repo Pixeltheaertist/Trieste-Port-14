@@ -1,0 +1,21 @@
+- type: marking
+  id: TP14VoxHairCrownedCrane
+  bodyPart: Hair
+  markingCategory: Hair
+  canBeDisplaced: false
+  speciesRestriction: [Vox]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Vox/hair.rsi
+    state: feathers_crowned_crane
+
+
+- type: marking
+  id: TP14VoxHairSecretaryBird
+  bodyPart: Hair
+  markingCategory: Hair
+  canBeDisplaced: false
+  speciesRestriction: [Vox]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Vox/hair.rsi
+    state: feathers_secretary_bird
+

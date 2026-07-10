@@ -55,3 +55,4 @@ loadout-group-outer-bomber = Bomber Jacket
 tp14-loadout-group-psychologist-outerwear = Psychologist Outerwear
 tp14-loadout-group-psychologist-footwear = Psychologist Footwear
 tp14-loadout-group-psychologist-neckwear = Psychologist Neckwear
+tp14-loadout-group-psychologist-head = Psychologist Head

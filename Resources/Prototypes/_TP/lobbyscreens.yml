@@ -27,3 +27,9 @@
   background: /Textures/_TP/LobbyScreens/cargoview.webp
   title: tp-lobby-cargo-view-title
   artist: tp-lobby-cargo-view-artist
+
+- type: lobbyBackground
+  id: ShiftDoodles
+  background: /Textures/_TP/LobbyScreens/ShiftDoodles.webp
+  title: tp-lobby-shift-adjacent-doodles-title
+  artist: tp-lobby-shift-adjacent-doodles-artist

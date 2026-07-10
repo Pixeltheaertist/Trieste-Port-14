@@ -9,6 +9,11 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitJournalist
 
+- type: loadout
+  id: TVHostJumpsuit
+  equipment:
+    jumpsuit: TP14ClothingUniformTVSuit
+
 # Head
 - type: loadout
   id: ReporterPressFedora

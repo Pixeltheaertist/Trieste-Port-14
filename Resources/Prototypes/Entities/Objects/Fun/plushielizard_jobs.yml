@@ -44,10 +44,10 @@
     state: boxer
 
 - type: entity
-  parent: BasePlushieLizardJob
+  parent: [BasePlushieLizardJob, BaseNanotrasenContraband] #TP14 for the funny
   id: PlushieLizardJobCaptain
-  name: overseer lizard plushie # TP14 - Was "captain", same as the line below
-  description: An adorable stuffed toy that resembles a lizardperson as the overseer. There's bits of pie on its face.
+  name: captain lizard plushie
+  description: An adorable stuffed toy that resembles a lizardperson as the captain. There's bits of pie on its face.
   components:
   - type: Sprite
     state: captain

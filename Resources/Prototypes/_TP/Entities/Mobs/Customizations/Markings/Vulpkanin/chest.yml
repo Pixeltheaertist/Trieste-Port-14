@@ -1,0 +1,8 @@
+- type: marking
+  id: TP14VulpTorsoStitched
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Vulpkanin ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Vulpkanin/chest.rsi
+    state: torso_stitched

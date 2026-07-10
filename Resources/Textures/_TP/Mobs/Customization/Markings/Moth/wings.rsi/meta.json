@@ -23,8 +23,56 @@
             "name": "mothwings_2_secondary",
             "directions": 4
         },
-            {
+        {
             "name": "mothwings_2_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "booster_wings_primary",
+            "directions": 4
+        },
+        {
+            "name": "booster_wings_secondary",
+            "directions": 4
+        },
+        {
+            "name": "booster_wings_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "kaleido_moth_wings",
+            "directions": 4
+        },
+        {
+            "name": "kaleido_moth_wings_markings_primary",
+            "directions": 4
+        },
+        {
+            "name": "kaleido_moth_wings_markings_quaternary",
+            "directions": 4
+        },
+        {
+            "name": "kaleido_moth_wings_markings_secondary",
+            "directions": 4
+        },
+        {
+            "name": "kaleido_moth_wings_markings_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "ornate_tiger_moth_wings_markings_primary",
+            "directions": 4
+        },
+        {
+            "name": "ornate_tiger_moth_wings_markings_secondary",
+            "directions": 4
+        },
+        {
+            "name": "ornate_tiger_moth_wings_primary",
+            "directions": 4
+        },
+        {
+            "name": "ornate_tiger_moth_wings_secondary",
             "directions": 4
         }
     ]

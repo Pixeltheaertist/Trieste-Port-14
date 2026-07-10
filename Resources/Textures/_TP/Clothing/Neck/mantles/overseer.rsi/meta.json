@@ -1,0 +1,18 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "edited by Levtobecontinued based on sprites made by Emisse (github) for ss14, edited by Skarletto (github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "equipped-NECK",
+            "directions": 4
+        }
+    ]
+}

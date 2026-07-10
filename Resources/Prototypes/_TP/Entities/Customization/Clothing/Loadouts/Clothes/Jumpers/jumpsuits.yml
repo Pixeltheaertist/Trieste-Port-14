@@ -1,4 +1,9 @@
 - type: loadout
+  id: TP14LoadoutJumpsuitOldBartenderSuit
+  equipment:
+    jumpsuit: TP14ClothingUniformOldBartenderSuit
+
+- type: loadout
   id: TP14LoadoutJumpsuitBartender
   equipment:
     jumpsuit: ClothingUniformJumpsuitBartender

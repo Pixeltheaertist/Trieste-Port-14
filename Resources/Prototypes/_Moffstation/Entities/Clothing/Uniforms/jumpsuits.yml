@@ -1,0 +1,22 @@
+# Detective
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband]
+  id: ClothingUniformJumpsuitDetSleuth
+  name: sleuth suit
+  description: An outfit for a sleuth who has just one more thing to tell you about.
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/sleuth.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/sleuth.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband, ClothingUniformFoldableBase]
+  id: ClothingUniformJumpsuitDetInvestigator
+  name: Investigator Suit
+  description: An outfit for an Ace Investigator in search of missing animals.
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/investigator.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/investigator.rsi

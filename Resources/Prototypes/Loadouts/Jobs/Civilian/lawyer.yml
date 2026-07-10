@@ -49,6 +49,10 @@
   equipment:
     jumpsuit: ClothingUniformJumpskirtLawyerGood
 
+- type: loadout
+  id: PinstripedSuit
+  equipment:
+    jumpsuit: TP14ClothingUniformPinstripedSuit
 # Neck
 - type: loadout
   id: LawyerNeck

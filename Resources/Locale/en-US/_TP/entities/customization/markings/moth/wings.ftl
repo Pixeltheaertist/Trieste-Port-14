@@ -6,3 +6,21 @@ marking-TP14MarkingMothWings2-mothwings_2_primary = Primary
 marking-TP14MarkingMothWings2-mothwings_2_secondary = Secondary
 marking-TP14MarkingMothWings2-mothwings_2_tertiary = Tertiary
 marking-TP14MarkingMothWings2 = Wings (2)
+
+marking-TP14MarkingMothWingsBooster-booster_wings_primary = Primary
+marking-TP14MarkingMothWingsBooster-booster_wings_secondary = Secondary
+marking-TP14MarkingMothWingsBooster-booster_wings_tertiary = Tertiary
+marking-TP14MarkingMothWingsBooster = Booster Wings
+
+marking-TP14MarkingMothWingsKaleido-kaleido_moth_wings =  Wing
+marking-TP14MarkingMothWingsKaleido-kaleido_moth_wings_markings_primary = Primary Marking
+marking-TP14MarkingMothWingsKaleido-kaleido_moth_wings_markings_secondary = Secondary Marking
+marking-TP14MarkingMothWingsKaleido-kaleido_moth_wings_markings_tertiary = Tertiary Marking
+marking-TP14MarkingMothWingsKaleido-kaleido_moth_wings_markings_quaternary = Quaternary Marking
+marking-TP14MarkingMothWingsKaleido = Kaleidoscope Wings
+
+marking-TP14MarkingMothWingsOrnateTiger-ornate_tiger_moth_wings_primary = Primary Wing
+marking-TP14MarkingMothWingsOrnateTiger-ornate_tiger_moth_wings_secondary = Secondary wing
+marking-TP14MarkingMothWingsOrnateTiger-ornate_tiger_moth_wings_markings_primary = Primary Marking
+marking-TP14MarkingMothWingsOrnateTiger-ornate_tiger_moth_wings_markings_secondary = Secondary Marking
+marking-TP14MarkingMothWingsOrnateTiger = Ornate Tiger Moth Wings

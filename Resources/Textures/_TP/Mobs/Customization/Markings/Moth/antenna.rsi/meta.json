@@ -8,6 +8,10 @@
     },
     "states": [
         {
+            "name": "booster_antenna",
+            "directions": 4
+        },
+        {
             "name": "antenna_1",
             "directions": 4
         },

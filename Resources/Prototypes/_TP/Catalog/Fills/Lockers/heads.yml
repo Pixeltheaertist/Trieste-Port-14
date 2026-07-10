@@ -6,7 +6,7 @@
     - id: CigarGoldCase
       prob: 0.25
     - id: ClothingHeadsetAltCommand
-    - id: ClothingOuterArmorCaptainCarapace
+    - id: TP14ClothingOuterVestOverseerArmoredVest
     - id: BoxCaptainCircuitboards
     - id: DoorRemoteCustom
     - id: TP14WeaponTrident

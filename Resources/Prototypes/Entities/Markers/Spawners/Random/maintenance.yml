@@ -68,6 +68,10 @@
         children:
         - id: ClothingOuterCoatPirate
         - id: ClothingHeadHatPirateTricord
+      - !type:AllSelector #TP14
+        children: #TP14
+        - id: TP14ClothingUniformJumpsuitAmnesiacsSailorUniform #TP14
+        - id: TP14ClothingHeadHatAmnesiacsSailorCap #TP14
       - id: ClothingHeadHatTophat
       - id: ClothingOuterHoodieBlack
         weight: 0.5
@@ -94,6 +98,7 @@
       children:
       - id: ClothingNeckCloakHerald
       - id: ClothingHeadHelmetTemplar
+      - id: TP14ClothingUniformJumpsuitItsTime #TP14
       # Cloaks
       - !type:GroupSelector
         children:

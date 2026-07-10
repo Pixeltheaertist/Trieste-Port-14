@@ -1,0 +1,62 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Sprites made by Levtobecontinued for Trieste Port 14",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "taffy_apple"
+        },
+        {
+            "name": "taffy_banana"
+        },
+        {
+            "name": "taffy_bluerasberry"
+        },
+        {
+            "name": "taffy_bungo"
+        },
+        {
+            "name": "taffy_chocolate"
+        },
+        {
+            "name": "taffy_cinnamon"
+        },
+        {
+            "name": "taffy_creamsicle"
+        },
+        {
+            "name": "taffy_flyamanita"
+        },
+        {
+            "name": "taffy_grape"
+        },
+        {
+            "name": "taffy_licorice"
+        },
+        {
+            "name": "taffy_neopolitan"
+        },
+        {
+            "name": "taffy_peppermint"
+        },
+        {
+            "name": "taffy_soylentgreen"
+        },
+        {
+            "name": "taffy_vanilla"
+        },
+        {
+            "name": "taffy_watermelon"
+        },
+        {
+            "name": "taffy_cotton"
+        },
+        {
+            "name": "taffy_wrapper"
+        }
+    ]
+}

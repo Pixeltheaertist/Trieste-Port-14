@@ -12,7 +12,7 @@
 
 - type: entity
   abstract: true
-  parent: ClothingOuterBase
+  parent: [ClothingOuterBase, AllowSuitStorageClothingGasTanks] #Moffstation - Adds tank storage for biosuits
   id: ClothingOuterBaseLarge
   components:
   - type: Item
@@ -27,7 +27,7 @@
 
 - type: entity
   abstract: true
-  parent: ClothingOuterBase
+  parent: [ClothingOuterBase, AllowSuitStorageClothingGasTanks] #Moffstation - Adds tanks storage for all coats
   id: ClothingOuterStorageBase
   components:
   - type: Storage

@@ -12,3 +12,6 @@ marking-TP14MarkingsMothAntennae4 = Antennae (4)
 
 marking-TP14MarkingsMothAntennae5-antenna_5 = Antennae
 marking-TP14MarkingsMothAntennae5 = Antennae (5)
+
+marking-TP14MarkingsMothAntennaeBooster-booster_antenna = Antennae
+marking-TP14MarkingsMothAntennaeBooster = Booster Antenna

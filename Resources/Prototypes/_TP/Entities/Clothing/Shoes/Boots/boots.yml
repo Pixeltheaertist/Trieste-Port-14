@@ -39,3 +39,15 @@
     sprite: _TP/Clothing/Shoes/Boots/work_boots.rsi
   - type: Matchbox
 
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: TP14ClothingShoesRainBoots
+  suffix: Trieste, Shoes
+  name: rain boots
+  description: A set of classic black rubber rainboots
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Shoes/Boots/rain_boots.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Shoes/Boots/rain_boots.rsi
+  - type: Matchbox
