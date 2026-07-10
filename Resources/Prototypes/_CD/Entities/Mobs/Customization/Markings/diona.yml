@@ -79,7 +79,6 @@
     state: bigfirefly
   shader: unshaded
 
-
 - type: marking
   id: JackHead
   bodyPart: Head
