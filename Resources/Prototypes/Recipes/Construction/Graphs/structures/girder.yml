@@ -39,7 +39,18 @@
             - material: Steel
               amount: 2
               doAfter: 2
-
+#TP14
+        - to: pressurizedwall
+          completed:
+          - !type:SnapToGrid
+            southRotation: true
+          conditions:
+          - !type:EntityAnchored {}
+          steps:
+          - material: Steel
+            amount: 2
+            doAfter: 2
+#TP14
         - to: reinforcedGirder
           completed:
             - !type:SnapToGrid
@@ -145,7 +156,19 @@
           steps:
             - tool: Welding
               doAfter: 10
-
+#TP14
+    - node: pressurizedwall
+      entity: TP14WallPressurized
+      edges:
+      - to: girder
+        completed:
+        - !type:GivePrototype
+          prototype: SheetSteel1
+          amount: 2
+        steps:
+        - tool: Welding
+          doAfter: 10
+#TP14
     - node: wallChitin
       entity: WallSolidChitin
       edges:
@@ -265,6 +288,17 @@
             - material: Plasteel
               amount: 2
               doAfter: 1
+
+        - to: reinforcedpressurizedwall
+          completed:
+          - !type:SnapToGrid
+            southRotation: true
+          conditions:
+          - !type:EntityAnchored { }
+          steps:
+          - material: Plasteel
+            amount: 2
+            doAfter: 1
 
         - to: shuttleWall
           completed:
@@ -411,6 +445,59 @@
                   data: 0
             - tool: Cutting
               doAfter: 1
+#TP14
+    - node: reinforcedpressurizedwall
+      entity: TP14WallReinforcedPressurized
+      edges:
+      - to: reinforcedGirder
+        completed:
+        - !type:SpawnPrototype
+          prototype: SheetPlasteel1
+          amount: 2
+        steps:
+        - tool: Cutting
+          doAfter: 1
+          completed:
+          - !type:VisualizerDataInt
+            key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+            data: 5
+        - tool: Screwing
+          doAfter: 1
+        - tool: Welding
+          doAfter: 5
+          completed:
+          - !type:VisualizerDataInt
+            key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+            data: 4
+        - tool: Prying
+          doAfter: 1
+        - tool: Anchoring
+          doAfter: 1
+          completed:
+          - !type:VisualizerDataInt
+            key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+            data: 3
+        - tool: Welding
+          doAfter: 10
+          completed:
+          - !type:VisualizerDataInt
+            key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+            data: 2
+        - tool: Prying
+          doAfter: 1
+          completed:
+          - !type:VisualizerDataInt
+            key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+            data: 1
+        - tool: Screwing
+          doAfter: 1
+          completed:
+          - !type:VisualizerDataInt
+            key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+            data: 0
+        - tool: Cutting
+          doAfter: 1
+#TP14
 
     - node: shuttleWall
       entity: WallShuttle
@@ -526,3 +613,28 @@
           steps:
             - tool: Brushing
               doAfter: 12
+#TP14
+    - node: rustypressurizedwall
+      entity: TP14WallRustyPressurized
+      edges:
+      - to: pressurizedwall
+        steps:
+        - tool: Welding
+          doAfter: 5
+      - to: pressurizedwall
+        steps:
+        - tool: Brushing
+          doAfter: 12
+
+    - node: reinforcedrustypressurizedwall
+      entity: TP14WallRustyReinforcedPressurized
+      edges:
+      - to: reinforcedpressurizedwall
+        steps:
+        - tool: Welding
+          doAfter: 5
+      - to: reinforcedpressurizedwall
+        steps:
+        - tool: Brushing
+          doAfter: 12
+#TP14

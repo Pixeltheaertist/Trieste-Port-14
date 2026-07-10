@@ -34,7 +34,7 @@
     sprite: Structures/Power/Generation/Singularity/collector.rsi
     state: ca_on
   product: CrateEngineeringSingularityCollector
-  cost: 1000
+  cost: 2500
   category: cargoproduct-category-name-engineering
   group: market
 
@@ -74,7 +74,7 @@
     sprite: Structures/Power/Generation/Tesla/coil.rsi
     state: coil
   product: CrateEngineeringTeslaCoil
-  cost: 1200
+  cost: 3000
   category: cargoproduct-category-name-engineering
   group: market
 

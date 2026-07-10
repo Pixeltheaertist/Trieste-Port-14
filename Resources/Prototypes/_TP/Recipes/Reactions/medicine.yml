@@ -18,7 +18,7 @@
         amount: 1
       Hydrogen:
         amount: 1
-      Ephedrine:
+      Diethylamine:
         amount: 1
   products:
       Calordine: 5
@@ -27,7 +27,7 @@
   id: Cryodine
   minTemp: 310
   reactants:
-      OxygenatedSaline:
+      Saline:
         amount: 1
       SeaWater:
         amount: 1

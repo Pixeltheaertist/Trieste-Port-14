@@ -98,7 +98,7 @@ worstdragonhere - Spriting
 
 Pharaz4 - Mapping
 
-BurntCheeto - Mapping
+BurntCheeto - Mapping, Spriting
 
 neadsy_ - Mapping
 
@@ -107,3 +107,5 @@ Cheese - Bugfixing
 gmandawesome - Bugfixing
 
 Beinskalle - Bugfixing, Spriting
+
+orangeAligator - Lobby Art

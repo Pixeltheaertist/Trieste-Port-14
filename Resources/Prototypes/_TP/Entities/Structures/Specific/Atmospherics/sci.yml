@@ -5,3 +5,35 @@
   components:
   - type: AccessReader
     access: [ [ "Atmospherics" ], [ "Research" ] ]
+
+## For ArtSci, by Cheese's request. Drains only water so artsci doesn't loose plasma to the external pumps. 
+- type: entity
+  parent: AirSensorBase
+  id: AirSensorNoWaterBase
+  suffix: Trieste, NoWater
+  components:
+  - type: AtmosMonitor
+    temperatureThresholdId: stationTemperature
+    pressureThresholdId: stationPressure
+    gasThresholdPrototypes:
+      Oxygen: stationOxygen
+      Nitrogen: stationNitrogen
+      CarbonDioxide: stationCO2
+      Plasma: stationPlasma
+      Tritium: stationTritium
+      WaterVapor: stationWaterVapor
+      Ammonia: stationAmmonia
+      NitrousOxide: stationNO
+      Frezon: danger
+      Water: danger
+    
+
+- type: entity
+  parent: [ AirSensorNoWaterBase, GasVentScrubber ]
+  id: GasVentScrubberNoWater
+  suffix: Trieste, Science, NoWater
+  components:
+  - type: GasVentScrubber
+    wideNet: true
+    filterGases:
+    - Water

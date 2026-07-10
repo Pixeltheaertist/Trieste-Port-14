@@ -1,0 +1,322 @@
+# Service
+- type: entity
+  parent: AirlockHatchMaintenance
+  id: AirlockHatchMaintServiceLocked
+  suffix: Service, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsService ]
+  - type: Wires
+    layoutId: AirlockService
+
+- type: entity
+  parent: AirlockHatchMaintServiceLocked
+  id: AirlockHatchMaintLawyerLocked
+  suffix: Laywer, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsLawyer ]
+
+- type: entity
+  parent: AirlockHatchMaintServiceLocked
+  id: AirlockHatchMaintTheatreLocked
+  suffix: Theatre, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsTheatre ]
+
+- type: entity
+  parent: AirlockHatchMaintServiceLocked
+  id: AirlockHatchMaintServiceTheatreLocked
+  suffix: Service, Theatre, Locked
+  components:
+  - type: ContainerFill
+    containers: 
+      board: [ DoorElectronicsServiceTheatre ]
+
+- type: entity
+  parent: AirlockHatchMaintServiceLocked
+  id: AirlockHatchMaintChapelLocked
+  suffix: Chapel, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChapel ]
+
+- type: entity
+  parent: AirlockHatchMaintServiceLocked
+  id: AirlockHatchMaintJanitorLocked
+  suffix: Janitor, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsJanitor ]
+
+- type: entity
+  parent: AirlockHatchMaintServiceLocked
+  id: AirlockHatchMaintKitchenLocked
+  suffix: Kitchen, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsKitchen]
+
+- type: entity
+  parent: AirlockHatchMaintServiceLocked
+  id: AirlockHatchMaintBarLocked
+  suffix: Bar, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBar ]
+
+- type: entity
+  parent: AirlockHatchMaintServiceLocked
+  id: AirlockHatchMaintBarKitchenLocked
+  suffix: Bar&Kitchen, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBarKitchen ]
+
+- type: entity
+  parent: AirlockHatchMaintServiceLocked
+  id: AirlockHatchMaintHydroponicsLocked
+  suffix: Hydroponics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsHydroponics ]
+
+# Engineering
+- type: entity    
+  parent: AirlockHatchMaintenance
+  id: AirlockHatchMaintEngiLocked
+  suffix: Engineering, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEngineering]
+  - type: Wires
+    layoutId: AirlockEngineering
+
+- type: entity
+  parent: AirlockHatchMaintEngiLocked
+  id: AirlockHatchMaintAtmosLocked
+  suffix: Atmospherics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsAtmospherics ]
+
+# Add Petrochem's maint hatch here later
+
+# Cargo
+- type: entity  
+  parent: AirlockHatchMaintenance
+  id: AirlockHatchMaintCargoLocked
+  suffix: Cargo, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCargo ]
+  - type: Wires
+    layoutId: AirlockCargo
+
+- type: entity  # this will be labelled exped for TP14, access is still going to be Salvage since no once changed it yet
+  parent: AirlockHatchMaintCargoLocked
+  id: AirlockHatchMaintExpedLocked
+  suffix: Expeditionary, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSalvage ]
+
+# Medical
+- type: entity 
+  parent: AirlockHatchMaintenance
+  id: AirlockHatchMaintMedicalLocked
+  suffix: Medical, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMedical ]
+  - type: Wires
+    layoutId: AirlockMedical 
+
+- type: entity
+  parent: AirlockHatchMaintMedicalLocked
+  id: AirlockHatchMaintChemistryLocked
+  suffix: Chemistry, Locked
+  components: 
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChemistry ]
+
+- type: entity
+  parent: AirlockHatchMaintMedicalLocked
+  id: AirlockHatchMaintMorgueLocked
+  suffix: Morgue, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMorgue ]
+
+# Science
+- type: entity 
+  parent: AirlockHatchMaintenance
+  id: AirlockHatchMaintScienceLocked
+  suffix: Science, Locked
+  components: 
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsResearch ]
+  - type: Wires
+    layoutId: AirlockScience
+
+# Command
+- type: entity  
+  parent: AirlockHatchMaintenance
+  id: AirlockHatchMaintCommandLocked
+  suffix: Command, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCommand ]
+  - type: Wires
+    layoutId: AirlockCommand 
+
+- type: entity #naming it Overseer for TP14, its the Captain access
+  parent: AirlockHatchMaintCommandLocked
+  id: AirlockHatchMaintOverseerLocked
+  suffix: Overseer, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCaptain ]
+
+- type: entity
+  parent: AirlockHatchMaintCommandLocked
+  id: AirlockHatchMaintCMOLocked
+  suffix: ChiefMedicalOfficer, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChiefMedicalOfficer ]
+
+- type: entity
+  parent: AirlockHatchMaintCommandLocked
+  id: AirlockHatchMaintCELocked
+  suffix: ChiefEngineer, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChiefEngineer ]
+
+- type: entity # Naming Marshal for TP14, its HOS access
+  parent: AirlockHatchMaintCommandLocked
+  id: AirlockHatchMaintMarshalLocked
+  suffix: Marshal, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsHeadOfSecurity ]
+
+- type: entity
+  parent: AirlockHatchMaintCommandLocked
+  id: AirlockHatchMaintHOPLocked
+  suffix: HeadOfPersonnel, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsHeadOfPersonnel ]
+
+- type: entity
+  parent: AirlockHatchMaintCommandLocked
+  id: AirlockHatchMaintRDLocked
+  suffix: ResearchDirector, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsResearchDirector ]
+
+- type: entity #Harbormaster for TP14, its QM Access
+  parent: AirlockHatchMaintCommandLocked
+  id: AirlockHatchMaintHMLocked
+  suffix: Harbormaster, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsQuartermaster ]
+
+- type: entity 
+  parent: AirlockHatchMaintCommandLocked
+  id: AirlockHatchMaintEVALocked
+  suffix: EVA, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]
+
+# Security
+- type: entity
+  parent: AirlockHatchMaintenance
+  id: AirlockHatchMaintSecurityLocked
+  suffix: Security, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurity ]
+  - type: Wires
+    layoutId: AirlockSecurity 
+
+- type: entity
+  parent: AirlockHatchMaintSecurityLocked
+  id: AirlockHatchMaintDetectiveLocked
+  suffix: Detective, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsDetective ]
+
+- type: entity
+  parent: AirlockHatchMaintSecurityLocked
+  id: AirlockHatchMaintBrigLocked
+  suffix: Brig, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBrig ]
+
+- type: entity
+  parent: AirlockHatchMaintSecurityLocked
+  id: AirlockHatchMaintSecurityLaywerLocked
+  suffix: Security/Lawyer, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurityLawyer ]
+
+- type: entity
+  parent: AirlockHatchMaintSecurityLocked 
+  id: AirlockHatchMaintArmoryLocked
+  suffix: Armory, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsArmory ]
+  - type: Wires
+    layoutId: AirlockArmory
+
+- type: entity
+  parent: AirlockHatchMaintSecurityLocked
+  id: AirlockHatchMaintVaultLocked
+  suffix: Vault, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsVault ]
+
