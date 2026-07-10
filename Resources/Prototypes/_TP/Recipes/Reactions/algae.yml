@@ -84,6 +84,7 @@
         amount: 1
       Plasma:
         amount: 1
+        catalyst: true
       Cryodine:
         amount: 1
   products:

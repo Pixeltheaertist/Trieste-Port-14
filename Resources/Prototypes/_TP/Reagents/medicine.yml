@@ -111,9 +111,10 @@
   color: "#ff9e1c"
   metabolisms:
     Medicine:
+      metabolismRate: .1
       effects:
         - !type:AdjustTemperature
-          amount: 20000
+          amount: 2000
 
 - type: reagent
   id: Cryodine
@@ -125,9 +126,10 @@
   color: "#1cc5ff"
   metabolisms:
     Medicine:
+      metabolismRate: .1
       effects:
           - !type:AdjustTemperature
-            amount: -20000
+            amount: -2000
 
 - type: reagent
   id: Somnuzine
