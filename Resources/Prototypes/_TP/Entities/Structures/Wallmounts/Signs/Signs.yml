@@ -20,6 +20,39 @@
     sprite: _TP/Structures/Wallmounts/Signs/misc.rsi
     state: Jellid
 
+- type: entity
+  parent: BaseSign
+  id: TPSignDrop
+  suffix: Trieste, Wall-Sign, Drop
+  name: drop sign
+  description: A sign warning you to mind the drop. Seriously.
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Wallmounts/Signs/misc.rsi
+    state: drop
+
+- type: entity
+  parent: BaseSign
+  id: TPSignWater
+  suffix: Trieste, Wall-Sign, Water
+  name: water sign
+  description: A sign warning that the area ahead is nothing but cold, crushing water.
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Wallmounts/Signs/misc.rsi
+    state: water
+
+- type: entity
+  parent: BaseSign
+  id: TPSignWaste
+  suffix: Trieste, Wall-Sign, Waste
+  name: waste ladder sign
+  description: A sign indicating the ladder to the ocean's surface.
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Wallmounts/Signs/misc.rsi
+    state: waste
+
 # Cargo
 - type: entity
   parent: BaseSign
@@ -120,14 +153,3 @@
   components:
   - type: Sprite
     state: virology
-    
-- type: entity
-  parent: BaseSign
-  id: TPSignDrop
-  suffix: Trieste, Wall-Sign, Drop
-  name: drop sign
-  description: A sign warning you to mind the drop. Seriously.
-  components:
-  - type: Sprite
-    sprite: _TP/Structures/Wallmounts/Signs/misc.rsi
-    state: drop
