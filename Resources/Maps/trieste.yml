@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/14/2026 22:30:29
-  entityCount: 13318
+  time: 07/16/2026 22:17:48
+  entityCount: 13321
 maps:
 - 1
 grids:
@@ -76443,6 +76443,20 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+  - uid: 13320
+    components:
+    - type: Transform
+      pos: -11.5,42.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 13321
+    components:
+    - type: Transform
+      pos: -33.5,17.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: TPSignJellid
   entities:
   - uid: 7432
@@ -76458,6 +76472,15 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 15.5,20.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+- proto: TPSignWaste
+  entities:
+  - uid: 13319
+    components:
+    - type: Transform
+      pos: 15.5,9.5
       parent: 2
     - type: Fixtures
       fixtures: {}

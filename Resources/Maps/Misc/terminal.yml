@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/10/2026 20:51:54
-  entityCount: 25979
+  time: 07/16/2026 22:27:11
+  entityCount: 25985
 maps:
 - 1
 grids:
@@ -124154,6 +124154,50 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 5.5,7.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+- proto: TPSignWater
+  entities:
+  - uid: 19000
+    components:
+    - type: Transform
+      pos: -12.5,32.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 19001
+    components:
+    - type: Transform
+      pos: -13.5,35.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 19002
+    components:
+    - type: Transform
+      pos: -14.5,34.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 19003
+    components:
+    - type: Transform
+      pos: 22.5,46.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 19004
+    components:
+    - type: Transform
+      pos: 22.5,49.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 19005
+    components:
+    - type: Transform
+      pos: 17.5,49.5
       parent: 2
     - type: Fixtures
       fixtures: {}
