@@ -1,0 +1,23 @@
+﻿{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Sprite by Marceline Hardwick",
+    "states": [
+        {
+            "name": "aberrant0"
+        },
+        {
+            "name": "aberrant1"
+        },
+        {
+            "name": "aberrant2"
+        },
+        {
+            "name": "aberrant3"
+        }
+    ]
+}
