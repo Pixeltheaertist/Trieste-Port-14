@@ -92,6 +92,10 @@
             "directions": 4
         },
         {
+            "name": "text_ladder",
+            "directions": 4
+        },
+        {
             "name": "text_library",
             "directions": 4
         },
