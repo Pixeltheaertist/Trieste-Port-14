@@ -218,3 +218,39 @@
   components:
   - type: Sprite
     offset: 0, -0.25
+
+# Ladder
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalLadder
+  suffix: Trieste, Civilian, Wall-Sign
+  name: ladder wall sign
+  description: A direction sign, pointing out which way the ladder is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#C4A484" # Light-brown
+    - state: text_ladder
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalLadder
+      Secondary: TP14SignDirectionalLadderAlt1
+      Tertiary: TP14SignDirectionalLadderAlt2
+
+- type: entity
+  parent: TP14SignDirectionalLadder
+  id: TP14SignDirectionalLadderAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalLadder
+  id: TP14SignDirectionalLadderAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
