@@ -202,14 +202,17 @@ public sealed partial class FallSystem : EntitySystem
         _popup.PopupEntity(Loc.GetString("fell-to-seafloor"), owner, PopupType.LargeCaution);
 
         // Raise event for fall monitoring systems if player has sensors on.
-        if (TryComp<InventoryComponent>(owner, out var inventoryComponent))
+        if (HasComp<JumpAbilityComponent>(owner))
         {
-            if (TryComp<SuitSensorComponent>(inventoryComponent.Containers[Array.FindIndex(inventoryComponent.Slots, slot => slot.Name == "jumpsuit")].ContainedEntity, out var suitSensorComponent))
+            if (TryComp<InventoryComponent>(owner, out var inventoryComponent))
             {
-                if (suitSensorComponent.Mode >= Shared.Medical.SuitSensor.SuitSensorMode.SensorVitals)
+                if (TryComp<SuitSensorComponent>(inventoryComponent.Containers[Array.FindIndex(inventoryComponent.Slots, slot => slot.Name == "jumpsuit")].ContainedEntity, out var suitSensorComponent))
                 {
-                    var fallDetectedEvent = new FallDetectedEvent(ownerCoords);
-                    RaiseLocalEvent<FallDetectedEvent>(owner, ref fallDetectedEvent);
+                    if (suitSensorComponent.Mode >= Shared.Medical.SuitSensor.SuitSensorMode.SensorVitals)
+                    {
+                        var fallDetectedEvent = new FallDetectedEvent(ownerCoords);
+                        RaiseLocalEvent<FallDetectedEvent>(owner, ref fallDetectedEvent);
+                    }
                 }
             }
         }
