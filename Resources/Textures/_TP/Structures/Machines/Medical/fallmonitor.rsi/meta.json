@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "license": "CC-BY-4.0",
+  "copyright": "Made by mrbeaver2K, heavily derived and partially copied from DaCookieCakes' computer designs on Discord.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "active"
+    }
+  ]
+}

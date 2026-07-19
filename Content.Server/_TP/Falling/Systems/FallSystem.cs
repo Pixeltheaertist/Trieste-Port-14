@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._TP.Falling.Components;
 using Content.Server._TP.Ladder;
 using Content.Server.Popups;
 using Content.Shared.Climbing.Components;
@@ -7,6 +8,8 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Ghost;
 using Content.Shared.Gravity;
+using Content.Shared.Inventory;
+using Content.Shared.Medical.SuitSensors;
 using Content.Shared.Movement.Components;
 using Content.Shared.Popups;
 using Content.Shared.Revenant.Components;
@@ -197,5 +200,18 @@ public sealed partial class FallSystem : EntitySystem
         };
         _damageable.TryChangeDamage(owner, damage, origin: owner);
         _popup.PopupEntity(Loc.GetString("fell-to-seafloor"), owner, PopupType.LargeCaution);
+
+        // Raise event for fall monitoring systems if player has sensors on.
+        if (TryComp<InventoryComponent>(owner, out var inventoryComponent))
+        {
+            if (TryComp<SuitSensorComponent>(inventoryComponent.Containers[Array.FindIndex(inventoryComponent.Slots, slot => slot.Name == "jumpsuit")].ContainedEntity, out var suitSensorComponent))
+            {
+                if (suitSensorComponent.Mode >= Shared.Medical.SuitSensor.SuitSensorMode.SensorVitals)
+                {
+                    var fallDetectedEvent = new FallDetectedEvent(ownerCoords);
+                    RaiseLocalEvent<FallDetectedEvent>(owner, ref fallDetectedEvent);
+                }
+            }
+        }
     }
 }
