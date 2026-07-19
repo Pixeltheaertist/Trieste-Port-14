@@ -8,7 +8,10 @@
   },
   "states": [
     {
-      "name": "active"
+      "name": "rusty"
+    },
+    {
+        "name": "new"
     }
   ]
 }

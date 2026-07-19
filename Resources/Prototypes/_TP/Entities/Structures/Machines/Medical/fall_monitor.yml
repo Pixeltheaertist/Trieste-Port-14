@@ -1,12 +1,12 @@
 - type: entity
   parent: [ BaseMachinePowered, ConstructibleMachine ]
-  id: FallMonitor
+  id: TP14FallMonitor
   name: overboard alerting system
   description: Monitors vital trackers on the platform and sends an alert if someone falls.
   components:
   - type: Sprite
     sprite: _TP/Structures/Machines/Medical/fallmonitor.rsi
-    state: active
+    state: new
   - type: FallMonitor
   - type: AmbientOnPowered
   - type: AmbientSound
@@ -15,3 +15,23 @@
     enabled: false
     sound:
       path: /Audio/Ambience/Objects/server_fans.ogg
+  - type: EncryptionKeyHolder
+    keysExtractionMethod: Prying
+    keySlots: 4
+  - type: Machine
+    board: TP14FallMonitorCircuitboard
+  - type: WiresPanel
+
+- type: entity
+  parent: TP14FallMonitor
+  id: TP14FallMonitorOld
+  name: overboard alerting system
+  description: Monitors vital trackers on the platform and sends an alert if someone falls. This one is rusty from months outside.
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Machines/Medical/fallmonitor.rsi
+    state: rusty
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyMedical

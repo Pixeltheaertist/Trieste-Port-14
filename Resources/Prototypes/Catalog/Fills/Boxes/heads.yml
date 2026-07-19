@@ -113,6 +113,7 @@
     contents:
       - id: MedicalTechFabCircuitboard
       - id: CargoRequestMedicalComputerCircuitboard
+      - id: TP14FallMonitorCircuitboard
 
 - type: entity
   name: circuit tote [RD]
