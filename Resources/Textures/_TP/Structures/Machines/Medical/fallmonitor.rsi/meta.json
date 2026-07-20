@@ -11,7 +11,10 @@
       "name": "rusty"
     },
     {
-        "name": "new"
-    }
+      "name": "new"
+    },
+	{
+	  "name": "panel"
+	}
   ]
 }
