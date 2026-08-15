@@ -1,15 +1,20 @@
 reagent-name-ground-coffee = Coffee Grounds
-reagent-name-instant-coffee = Instant Coffee
-reagent-name-tampered-coffee = Tampered Coffee Grounds
-reagent-name-mixed-coffee = Mixed Coffee Grounds
-reagent-name-mixed-tampered-coffee = Mixed and Tampered Coffee Grounds
-reagent-name-bad-coffee = Poorly Made Coffee
-reagent-name-quality-coffee = Quality Coffee
+reagent-desc-ground-coffee = Ground coffee beans, ready for further preparation.
 
-reagent-desc-ground-coffee = Lumps of ground-up coffee beans.
-reagent-desc-instant-coffee = Ground coffee that's been industrially processed.
-reagent-desc-tampered-coffee = Ground coffee that's been tampered down.
-reagent-desc-mixed-coffee = Ground and mixed coffee.
-reagent-desc-mixed-tampered-coffee = Coffee that's been mixed AND tampered down.
-reagent-desc-bad-coffee = Coffee that's poorly made. You can see clumps...
-reagent-desc-quality-coffee = It smells good, and probably tastes great!
+reagent-name-instant-coffee = Instant Coffee
+reagent-desc-instant-coffee = Ground coffee that has been industrially processed for quick preparation.
+
+reagent-name-tampered-coffee = Tamped Coffee Grounds
+reagent-desc-tampered-coffee = Ground coffee that has been firmly tamped in preparation for brewing.
+
+reagent-name-mixed-coffee = Mixed Coffee Grounds
+reagent-desc-mixed-coffee = Ground coffee that has been thoroughly mixed for a more even brew.
+
+reagent-name-mixed-tampered-coffee = Mixed and Tamped Coffee Grounds
+reagent-desc-mixed-tampered-coffee = Coffee grounds that have been thoroughly mixed and firmly tamped, ready for brewing.
+
+reagent-name-bad-coffee = Poorly Made Coffee
+reagent-desc-bad-coffee = Poorly prepared coffee with visible clumps and an uneven consistency... yuck.
+
+reagent-name-quality-coffee = Quality Coffee
+reagent-desc-quality-coffee = Properly prepared coffee with a rich aroma. It probably tastes as good as it smells!

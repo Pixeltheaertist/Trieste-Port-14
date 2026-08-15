@@ -115,6 +115,10 @@
       effects:
         - !type:AdjustTemperature
           amount: 2000
+        - !type:SatiateHunger
+          factor: -0.5
+        - !type:SatiateThirst
+          factor: -0.5
 
 - type: reagent
   id: Cryodine
@@ -190,6 +194,7 @@
           damage:
             types:
               Heat: -4
+              Shock: -1
         - !type:AdjustTemperature
           conditions:
           - !type:TemperatureCondition
