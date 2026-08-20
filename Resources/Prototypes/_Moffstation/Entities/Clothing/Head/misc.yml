@@ -19,7 +19,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadPerformerWigYellow
-  name: yellow performer's wig # TP - match old name
+  name: bright performer's wig # TP - match old name
   description: Banana!? Oh, no, it's just a wig...
   components:
   - type: Sprite

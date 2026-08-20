@@ -1,16 +1,3 @@
-#- type: entity
-#  parent: ClothingShoesBaseButcherable
-#  id: TP14ClothingShoesBootsDarkPerformer
-#  suffix: Trieste, Shoes, Easter-Egg
-#  name: dark performer's boots
-#  description: With these, you could dance, and be a ninja in the night!
-#  components:
-#  - type: Sprite
-#    sprite: _Moffstation/Clothing/Shoes/Boots/performer-red.rsi # Moff
-#  - type: Clothing
-#    sprite: _Moffstation/Clothing/Shoes/Boots/performer-red.rsi # Moff
-
-
 - type: entity
   parent: [ClothingShoesMilitaryBase, BaseSecurityContraband]
   id: TP14ClothingShoesBootsHardy
