@@ -1,0 +1,28 @@
+- type: entity
+  name: kasane teto night bag # TP - match old name
+  parent: ClothingBackpackDuffel
+  id: BoxPerformerRed
+  description: Darkness is this one's friend on the stage. # TP - match old description
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingShoesBootsPerformerRed
+        - id: ClothingUniformJumpskirtPerformerRed
+        - id: ClothingHeadPerformerWigRed
+        - id: FoodBreadBaguette
+
+- type: entity
+  name: akita neru day bag # TP - match old name
+  parent: ClothingBackpackDuffel
+  id: BoxPerformerYellow
+  description: Happy Akita Neru Day! # TP - match old description
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingShoesBootsPerformerYellow
+        - id: ClothingUniformJumpskirtPerformerYellow
+        - id: ClothingHeadPerformerWigYellow

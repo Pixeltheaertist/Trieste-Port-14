@@ -377,9 +377,9 @@
   description: On a closer inspection, it appears that it is made from optic fiber.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Misc/performer-wig.rsi
+    sprite: _Moffstation/Clothing/Head/Misc/performer-wig.rsi # Moff
   - type: Clothing
-    sprite: Clothing/Head/Misc/performer-wig.rsi
+    sprite: _Moffstation/Clothing/Head/Misc/performer-wig.rsi # Moff
   - type: HideLayerClothing
     slots:
     - Hair

@@ -60423,7 +60423,7 @@ entities:
     - type: Transform
       pos: 64.81815,-11.132816
       parent: 2
-- proto: TP14BoxDarkPerformer
+- proto: BoxPerformerRed
   entities:
   - uid: 3719
     components:

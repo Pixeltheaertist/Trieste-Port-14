@@ -42,9 +42,9 @@
   description: These boots provide great traction for when you're up on stage.
   components:
   - type: Sprite
-    sprite: Clothing/Shoes/Boots/performer.rsi
+    sprite: _Moffstation/Clothing/Shoes/performer.rsi # Moff
   - type: Clothing
-    sprite: Clothing/Shoes/Boots/performer.rsi
+    sprite: _Moffstation/Clothing/Shoes/performer.rsi # Moff
 
 - type: entity
   parent: [ClothingShoesMilitaryBase, BaseSecurityContraband]

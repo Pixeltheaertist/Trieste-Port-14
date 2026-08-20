@@ -1,0 +1,23 @@
+# Red Performer (Kasane Teto)
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesBootsPerformerRed
+  name: dark performer's boots # TP - match old name
+  description: With these, you could dance, and be a ninja in the night! # TP - match old description
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Shoes/performer-red.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Shoes/performer-red.rsi
+
+# Yellow Performer (Akita Neru)
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesBootsPerformerYellow
+  name: bright performer's boots # TP - match old name
+  description: They're jet-black, just waiting to be obscured by darkness.
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Shoes/performer-yellow.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Shoes/performer-yellow.rsi

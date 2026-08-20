@@ -474,9 +474,9 @@
   description: Hi, I'm Scott, president of Donk Pizza. Have you heard of [FAMOUS VIRTUAL PERFORMER]?
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirt/performer.rsi
+    sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/performer.rsi # Moff
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirt/performer.rsi
+    sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/performer.rsi # Moff
 
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseNanotrasenContraband]

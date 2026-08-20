@@ -20,3 +20,27 @@
     sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/investigator.rsi
   - type: Clothing
     sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/investigator.rsi
+
+# Red Performer (Kasane Teto)
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtPerformerRed
+  name: dark performer's wig # TP - match old name
+  description: The true AI, once hired by SolGov to fight off Hatsune Miku. Real story. # TP - match old description
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/performer-red.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/performer-red.rsi
+
+# Yellow Performer (Akita Neru)
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtPerformerYellow
+  name: bright performer's jumpskirt # TP - match old name
+  description: The lesser known AI, but that hasn't stopped her from making a name for herself! # TP - match old description
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/performer-yellow.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/performer-yellow.rsi
