@@ -28,6 +28,7 @@ public sealed partial class FallSystem : EntitySystem
     [Dependency] private PopupSystem _popup = default!;
     [Dependency] private SharedTransformSystem _transformSystem = default!;
     [Dependency] private ClimbSystem _climb = default!;
+    [Dependency] private InventorySystem _inventory = default!;
 
     public override void Initialize()
     {
@@ -202,20 +203,10 @@ public sealed partial class FallSystem : EntitySystem
         _popup.PopupEntity(Loc.GetString("fell-to-seafloor"), owner, PopupType.LargeCaution);
 
         // Raise event for fall monitoring systems if player has sensors on.
-        if (TryComp<InventoryComponent>(owner, out var inventoryComponent))
+        if (_inventory.TryGetSlotEntity(owner, "jumpsuit", out var suitEntity) && TryComp<SuitSensorComponent>(suitEntity, out var suitSensorComponent) && suitSensorComponent.Mode >= Shared.Medical.SuitSensor.SuitSensorMode.SensorVitals)
         {
-            int suitIndex = Array.FindIndex(inventoryComponent.Slots, slot => slot.Name == "jumpsuit");
-            if (suitIndex > -1)
-            {
-                if (TryComp<SuitSensorComponent>(inventoryComponent.Containers[suitIndex].ContainedEntity, out var suitSensorComponent))
-                {
-                    if (suitSensorComponent.Mode >= Shared.Medical.SuitSensor.SuitSensorMode.SensorVitals)
-                    {
-                        var fallDetectedEvent = new FallDetectedEvent(ownerCoords);
-                        RaiseLocalEvent<FallDetectedEvent>(owner, ref fallDetectedEvent);
-                    }
-                }
-            }
+            var fallDetectedEv = new FallDetectedEvent(ownerCoords);
+            RaiseLocalEvent<FallDetectedEvent>(owner, ref fallDetectedEv);
         }
     }
 }
