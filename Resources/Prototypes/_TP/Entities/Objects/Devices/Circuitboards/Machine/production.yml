@@ -144,3 +144,18 @@
   - type: Tag
     tags:
     - TP14TagDeepFryerBoard
+
+- type: entity
+  id: TP14FallMonitorCircuitboard
+  parent: BaseMachineCircuitboard
+  suffix: Trieste, Circuit-Board
+  name: fall monitor machine board
+  components:
+  - type: Sprite
+    state: medical
+  - type: MachineBoard
+    prototype: TP14FallMonitor
+    stackRequirements:
+      Manipulator: 4
+      Steel: 4
+      CableMV: 10
