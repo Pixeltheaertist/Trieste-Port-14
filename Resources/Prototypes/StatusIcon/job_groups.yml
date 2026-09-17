@@ -5,7 +5,7 @@
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: CargoTechnician
   icons:
-  - JobIconQuarterMaster
+  - TP14JobIconHarbormaster # TRIESTE: 'JobIconQuarterMaster'
   - JobIconCargoTechnician
   - JobIconShaftMiner
 
@@ -17,13 +17,13 @@
     state: Captain
   icons:
   - JobIconNanotrasen
-  - JobIconCaptain
-  - JobIconChiefEngineer
-  - JobIconChiefMedicalOfficer
-  - JobIconHeadOfPersonnel
-  - JobIconHeadOfSecurity
-  - JobIconQuarterMaster
-  - JobIconResearchDirector
+  - TP14JobIconOverseer # TRIESTE: 'JobIconCaptain'
+  - TP14JobIconChiefEngineer # TRIESTE: 'JobIconChiefEngineer'
+  - TP14JobIconChiefMedicalOfficer # TRIESTE: 'JobIconChiefMedicalOfficer'
+  - TP14JobIconHeadOfPersonnel # TRIESTE: 'JobIconHeadOfPersonnel'
+  - TP14JobIconMarshal # TRIESTE: 'JobIconHeadOfSecurity'
+  - TP14JobIconHarbormaster # TRIESTE: 'JobIconQuarterMaster'
+  - TP14JobIconResearchDirector # TRIESTE: 'JobIconResearchDirector'
 
 - type: jobIconGroup
   id: EngineeringIconGroup
@@ -32,7 +32,7 @@
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: StationEngineer
   icons:
-  - JobIconChiefEngineer
+  - TP14JobIconChiefEngineer # TRIESTE: 'JobIconChiefEngineer'
   - JobIconStationEngineer
   - JobIconTechnicalAssistant
   - JobIconAtmosphericTechnician
@@ -44,7 +44,7 @@
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: MedicalDoctor
   icons:
-  - JobIconChiefMedicalOfficer
+  - TP14JobIconChiefMedicalOfficer # TRIESTE: 'JobIconChiefMedicalOfficer'
   - JobIconMedicalDoctor
   - JobIconMedicalIntern
   - JobIconChemist
@@ -60,7 +60,7 @@
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: Scientist
   icons:
-  - JobIconResearchDirector
+  - TP14JobIconResearchDirector # TRIESTE: 'JobIconResearchDirector'
   - JobIconScientist
   - JobIconResearchAssistant
   - JobIconRoboticist
@@ -72,7 +72,7 @@
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: SecurityOfficer
   icons:
-  - JobIconHeadOfSecurity
+  - TP14JobIconMarshal # TRIESTE: 'JobIconHeadOfSecurity'
   - JobIconSecurityOfficer
   - JobIconSecurityCadet
   - JobIconBrigmedic
@@ -86,7 +86,7 @@
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: ServiceWorker
   icons:
-  - JobIconHeadOfPersonnel
+  - TP14JobIconHeadOfPersonnel # TRIESTE: 'JobIconHeadOfPersonnel'
   - JobIconBartender
   - JobIconBotanist
   - JobIconBoxer

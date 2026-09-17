@@ -270,9 +270,9 @@
           collection: MetalBreak
   - type: DirectionalArrowIndicator
     arrows:
-    - offset: -1, 2
+    - offset: -1, 1
       arrowType: BlueDirectionalArrowIndicator
-    - offset: 1, 2
+    - offset: 1, 1
       rotation: 180
       arrowType: BlueDirectionalArrowIndicator
 

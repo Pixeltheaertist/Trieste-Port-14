@@ -20,7 +20,7 @@
       time: 2h
   weight: 20
   startingGear: CaptainGear
-  icon: "JobIconCaptain"
+  icon: "TP14JobIconOverseer" # TRIESTE: 'JobIconCaptain'
   joinNotifyCrew: true
   supervisors: job-supervisors-centcom
   accessGroups:

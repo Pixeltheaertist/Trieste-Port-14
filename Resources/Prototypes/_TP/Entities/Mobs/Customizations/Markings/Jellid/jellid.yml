@@ -2,7 +2,7 @@
 
 - type: marking
   id: JellidMantle
-  bodyPart: Hair
+  bodyPart: HeadTop
   groupWhitelist: [ TP14MarkingsGroupJellid ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Jellid/mantles.rsi
@@ -10,7 +10,7 @@
 
 - type: marking
   id: JellidBox
-  bodyPart: Hair
+  bodyPart: HeadTop
   groupWhitelist: [ TP14MarkingsGroupJellid ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Jellid/mantles.rsi
@@ -18,7 +18,7 @@
 
 - type: marking
   id: JellidEgg
-  bodyPart: Hair
+  bodyPart: HeadTop
   groupWhitelist: [ TP14MarkingsGroupJellid ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Jellid/mantles.rsi
@@ -28,7 +28,7 @@
 
 - type: marking
   id: JellidComb
-  bodyPart: Hair
+  bodyPart: HeadTop
   groupWhitelist: [ TP14MarkingsGroupJellid ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Jellid/mantles.rsi
@@ -40,7 +40,7 @@
 
 - type: marking
   id: JellidCrystal
-  bodyPart: Hair
+  bodyPart: HeadTop
   groupWhitelist: [ TP14MarkingsGroupJellid ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Jellid/mantles.rsi
@@ -48,7 +48,7 @@
 
 - type: marking
   id: JellidManOWar
-  bodyPart: Hair
+  bodyPart: HeadTop
   groupWhitelist: [ TP14MarkingsGroupJellid ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Jellid/mantles.rsi
@@ -58,7 +58,7 @@
 
 - type: marking
   id: JellidMoon
-  bodyPart: Hair
+  bodyPart: HeadTop
   groupWhitelist: [ TP14MarkingsGroupJellid ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Jellid/mantles.rsi
@@ -66,7 +66,7 @@
 
 - type: marking
   id: JellidPhantom
-  bodyPart: Hair
+  bodyPart: HeadTop
   groupWhitelist: [ TP14MarkingsGroupJellid ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Jellid/mantles.rsi
@@ -76,7 +76,7 @@
 
 - type: marking
   id: JellidSpotted
-  bodyPart: Hair
+  bodyPart: HeadTop
   groupWhitelist: [ TP14MarkingsGroupJellid ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Jellid/mantles.rsi
@@ -86,7 +86,7 @@
 
 - type: marking
   id: JellidStellarid
-  bodyPart: Hair
+  bodyPart: HeadTop
   groupWhitelist: [ TP14MarkingsGroupJellid ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Jellid/mantles.rsi
@@ -98,7 +98,7 @@
 
 - type: marking
   id: JellidCrown
-  bodyPart: Eyes
+  bodyPart: HeadSide
   groupWhitelist: [ TP14MarkingsGroupJellid ]
   coloring:
     default:
@@ -114,27 +114,37 @@
     state: crown_tertiary
 
 - type: marking
-  id: JellidMulti
-  bodyPart: Eyes
+  id: JellidSingle
+  bodyPart: HeadSide
   groupWhitelist: [ TP14MarkingsGroupJellid ]
   coloring:
     default:
       type:
         !type:EyeColoring
-        negative: true
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Jellid/core.rsi
+    state: single
+
+- type: marking
+  id: JellidMulti
+  bodyPart: HeadSide
+  groupWhitelist: [ TP14MarkingsGroupJellid ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Jellid/core.rsi
     state: multi_core
 
 - type: marking
   id: JellidTri
-  bodyPart: Eyes
+  bodyPart: HeadSide
   groupWhitelist: [ TP14MarkingsGroupJellid ]
   coloring:
     default:
       type:
         !type:EyeColoring
-        negative: true
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Jellid/core.rsi
     state: tri_primary

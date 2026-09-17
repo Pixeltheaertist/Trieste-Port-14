@@ -63,6 +63,8 @@
   id: TP14BaseMobSeaLandCreature
   abstract: true
   components:
+  - type: TemperatureProtection
+    coolingCoefficient: 0.0
   - type: Body
   - type: EntityTableContainerFill
     containers:
@@ -79,6 +81,11 @@
   id: TP14BaseMobSeaCreature
   abstract: true
   components:
+  - type: TemperatureProtection
+    coolingCoefficient: 0.0
+  - type: TemperatureDamage
+    heatDamageThreshold: 360
+    coldDamageThreshold: -150
   - type: Body
   - type: EntityTableContainerFill
     containers:
@@ -95,6 +102,9 @@
   id: TP14BaseMobMimicCreature
   abstract: true
   components:
+  - type: TemperatureProtection
+    coolingCoefficient: 0.0
+
   - type: Body
   - type: EntityTableContainerFill
     containers:

@@ -3,6 +3,8 @@
   suffix: Trieste
   abstract: true
   components:
+  - type: TemperatureProtection
+    coolingCoefficient: 0.0
   - type: Body
   - type: EntityTableContainerFill
     containers:

@@ -12,7 +12,7 @@
     time: 2h
   weight: 10
   startingGear: ResearchDirectorGear
-  icon: "JobIconResearchDirector"
+  icon: "TP14JobIconResearchDirector" # TRIESTE: 'JobIconResearchDirector'
   supervisors: job-supervisors-captain
   access:
   - Research

@@ -21,7 +21,7 @@
       time: 2h
   weight: 10
   startingGear: QuartermasterGear
-  icon: "JobIconQuarterMaster"
+  icon: "TP14JobIconHarbormaster" # TRIESTE: 'JobIconQuarterMaster'
   supervisors: job-supervisors-captain
   access:
   - Cargo

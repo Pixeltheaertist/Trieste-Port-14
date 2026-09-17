@@ -20,7 +20,7 @@
       time: 3h
   weight: 10
   startingGear: HoSGear
-  icon: "JobIconHeadOfSecurity"
+  icon: "TP14JobIconMarshal" # TRIESTE: 'JobIconHeadOfSecurity'
   supervisors: job-supervisors-captain
   access:
   - HeadOfSecurity

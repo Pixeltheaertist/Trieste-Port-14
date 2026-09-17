@@ -23,7 +23,7 @@
       time: 1h
   weight: 20
   startingGear: HoPGear
-  icon: "JobIconHeadOfPersonnel"
+  icon: "TP14JobIconHeadOfPersonnel" # TRIESTE: 'JobIconHeadOfPersonnel'
   supervisors: job-supervisors-captain
   access:
   - Command

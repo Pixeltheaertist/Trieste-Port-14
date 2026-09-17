@@ -1,5 +1,4 @@
-﻿using Content.Server.Atmos.Components;
-using Content.Shared._TP.WaterInteractions;
+﻿using Content.Shared._TP.WaterInteractions;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
@@ -11,6 +10,7 @@ using Content.Shared.Fluids.Components;
 namespace Content.Server.Atmos.EntitySystems;
 
 /// <summary>
+/// TRIESTE SPECIFIC
 /// Handles detecting whether an entity is in a given gas and applying effects if so.
 /// </summary>
 public sealed partial class AtmosphereSystem
@@ -24,7 +24,7 @@ public sealed partial class AtmosphereSystem
     public bool InGas(EntityUid uid, int? gasId = null, float? gasThreshold = null)
     {
         var mixture = _atmosphere.GetContainingMixture(uid);
-        TryComp<InGasComponent>(uid, out var inGas);
+        TryComp<_TP.Atmos.InGasComponent>(uid, out var inGas);
         //Use provided data if no component present
         if (inGas == null)
         {
@@ -43,7 +43,7 @@ public sealed partial class AtmosphereSystem
     private bool InWater(EntityUid uid, int? gasId = 9)
     {
         // Check for an 'InGasComponent' on the entity.
-        if (!TryComp<InGasComponent>(uid, out var inGas))
+        if (!TryComp<_TP.Atmos.InGasComponent>(uid, out var inGas))
         {
             return false;
         }
@@ -102,17 +102,17 @@ public sealed partial class AtmosphereSystem
         // Two lists of entities we want to process
         // One is a list of entities that we should process for damage,
         // the other is a list of entities that are in water.
-        var entitiesToProcess = new List<(EntityUid uid, InGasComponent inGas, DamageableComponent damageable)>();
-        var entitiesInWater = new List<(EntityUid, InGasComponent inGas)>();
+        var entitiesToProcess = new List<(EntityUid uid, _TP.Atmos.InGasComponent inGas, DamageableComponent damageable)>();
+        var entitiesInWater = new List<(EntityUid, _TP.Atmos.InGasComponent inGas)>();
         var puddlesToDelete = new List<EntityUid>();
 
-        var waterEnumerator = EntityQueryEnumerator<InGasComponent>();
+        var waterEnumerator = EntityQueryEnumerator<_TP.Atmos.InGasComponent>();
         while (waterEnumerator.MoveNext(out var uid, out var inGas))
         {
             entitiesInWater.Add((uid, inGas));
         }
 
-        var damageEnumerator = EntityQueryEnumerator<InGasComponent, DamageableComponent>();
+        var damageEnumerator = EntityQueryEnumerator<_TP.Atmos.InGasComponent, DamageableComponent>();
         while (damageEnumerator.MoveNext(out var uid, out var inGas, out var damageable))
         {
             if (!inGas.DamagedByGas)

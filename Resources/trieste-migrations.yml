@@ -106,3 +106,7 @@ SoapNTTraitor: TP14SoapNT
 
 # 2026-09-02
 CrudeOilVial: TP14ChemistryVialCrudeOil
+
+# 2026-09-11
+TP14PoweredCoolSmallLight: TP14CoolCageLight
+TP14PoweredCoolSmallLightWaterproof: TP14CoolWaterproofCageLight

@@ -37,9 +37,9 @@ public sealed partial class WaterInteractionSystem : EntitySystem
         if (_timer >= UpdateTimer)
         {
             // FIRST: Collect ALL entities into a list to avoid enumeration issues
-            var entitiesToProcess = new List<(EntityUid uid, InGasComponent inGas)>();
+            var entitiesToProcess = new List<(EntityUid uid, Atmos.InGasComponent inGas)>();
 
-            var entities = EntityQueryEnumerator<InGasComponent>();
+            var entities = EntityQueryEnumerator<Atmos.InGasComponent>();
             while (entities.MoveNext(out var uid, out var inGas))
             {
                 entitiesToProcess.Add((uid, inGas));

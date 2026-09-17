@@ -26,7 +26,7 @@
         ratios:
           CarbonDioxide: 1.0
           Oxygen: -1.0
-      - !type:ModifyLungGas
+      - !type:ModifyLungGas # TRIESTE
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Jellid, TP14WaterBreather ]
@@ -40,14 +40,6 @@
         damage:
           types:
             Poison: 1.5
-      - !type:HealthChange
-        conditions:
-        - !type:MetabolizerTypeCondition
-          type: [ Jellid, TP14WaterBreather ]
-        ignoreResistances: true
-        damage:
-          types:
-            Slash: 1.5
       - !type:AdjustAlert
         alertType: Toxins
         minScale: 1
@@ -85,6 +77,22 @@
         conditions:
           - !type:MetabolizerTypeCondition
             type: [ Vox ]
+        clear: true
+        time: 5
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Jellid ]
+        ignoreResistances: true
+        damage:
+          types:
+            Slash: 0.7
+      - !type:AdjustAlert
+        alertType: TP14AlertLysis
+        minScale: 0.5
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Jellid ]
         clear: true
         time: 5
 

@@ -1,4 +1,6 @@
+using System.Numerics;
 using Content.Shared.DoAfter;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._TP.Power.Generation;
@@ -48,6 +50,56 @@ public sealed partial class StormArrayComponent : Component
 
     #endregion
 
+    #region Pipe Connections
+    /// <summary>
+    /// Name of the pipe node
+    /// </summary>
+    [DataField]
+    public string PipeName { get; set; } = "pipe";
+
+    /// <summary>
+    /// Inlet entity
+    /// </summary>
+    [ViewVariables]
+    public EntityUid? InletEnt;
+
+    /// <summary>
+    /// Position of the inlet entity
+    /// </summary>
+    [DataField]
+    public Vector2 InletPos = new(-1, 0);
+
+    /// <summary>
+    /// Rotation of the inlet entity, in degrees
+    /// </summary>
+    [DataField]
+    public float InletRot;
+
+    /// <summary>
+    /// Outlet entity
+    /// </summary>
+    [ViewVariables]
+    public EntityUid? OutletEnt;
+
+    /// <summary>
+    /// Position of the outlet entity
+    /// </summary>
+    [DataField]
+    public Vector2 OutletPos = new(1, 0);
+
+    /// <summary>
+    /// Rotation of the outlet entity, in degrees
+    /// </summary>
+    [DataField]
+    public float OutletRot;
+
+    /// <summary>
+    /// Name of the prototype of the pipes the reactor uses to connect to the pipe network
+    /// </summary>
+    [DataField]
+    public EntProtoId PipePrototype = "TP14StormArrayGasPipes";
+
+    #endregion
 }
 
 [Serializable, NetSerializable]

@@ -89,7 +89,7 @@
       BurningTemperature: 350
       PowerUse: 5
     - type: Tag
-      tags:
+      tags: &lightTags
       - LightBulb
       - Trash
 
@@ -136,54 +136,4 @@
       BurningTemperature: 350
       PowerUse: 5
     - type: Tag
-      tags:
-      - LightBulb
-      - Trash
-
-- type: entity  # Sweetwater Internal Lights
-  id: TP14PoweredCoolSmallLight
-  suffix: Trieste, Sweetwater, Internal
-  parent: PoweredSmallLightEmpty
-  components:
-  - type: Sprite
-    state: base
-  - type: PointLight
-    enabled: true
-    radius: 6
-    energy: 1
-    softness: 2
-    color: "#b2dced"
-  - type: PoweredLight
-    hasLampOnSpawn: TP14MarineLightBulb
-  - type: DamageOnInteract
-    damage:
-      types:
-        Heat: 1
-    popupText: powered-light-component-burn-hand
-
-- type: entity
-  id: TP14PoweredCoolSmallLightWaterproof
-  suffix: Trieste, Sweetwater, Internal, Waterproof
-  parent: PoweredSmallLightEmpty
-  components:
-  - type: Sprite
-    state: base
-  - type: PointLight
-    enabled: true
-    radius: 6
-    energy: 1
-    softness: 2
-    color: "#b2dced"
-  - type: PoweredLight
-    hasLampOnSpawn: TP14MarineLightBulb
-  - type: DamageOnInteract
-    damage:
-      types:
-        Heat: 1
-    popupText: powered-light-component-burn-hand
-  - type: InGas
-    damagedByGas: false # waterproof
-    gasThreshold: 75
-    damage:
-      types:
-        Blunt: 3
+      tags: *lightTags

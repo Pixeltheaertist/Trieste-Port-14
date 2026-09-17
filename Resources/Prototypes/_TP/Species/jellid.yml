@@ -2,9 +2,9 @@
   id: TP14SpeciesJellid
   name: species-name-slime
   roundStart: true
-  prototype: MobSlimePerson
+  prototype: TP14MobJellidPerson
   defaultSkinTone: "#b8b8b8"
-  dollPrototype: AppearanceSlimePerson
+  dollPrototype: TP14AppearanceJellid
   skinColoration: Hues
   maleFirstNames: TP14LocalizedDatasetJellidNames
   femaleFirstNames: TP14LocalizedDatasetJellidNames

@@ -3,12 +3,16 @@
   parent: Undergarments
   id: TP14MarkingsGroupJellid
   limits:
-    enum.HumanoidVisualLayers.Head:
-      limit: 1
-      required: true
     enum.HumanoidVisualLayers.HeadTop:
       limit: 1
-      required: false
+      onlyGroupWhitelisted: true
+      required: true
+      default: [ JellidMantle ]
+    enum.HumanoidVisualLayers.HeadSide:
+      limit: 1
+      onlyGroupWhitelisted: true
+      required: true
+      default: [ JellidSingle ]
     enum.HumanoidVisualLayers.Chest:
       limit: 2
       required: false
@@ -88,3 +92,23 @@
     proto: TP14TypingIndicatorJellid
   - type: Vocal
     emoteSounds: TP14EmoteSoundsJellid
+  - type: TemperatureProtection
+    coolingCoefficient: 0.0
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: SeaWater
+        Quantity: 50
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#135c4f"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
+  - type: Jellid
+  - type: Battery
+    maxCharge: 1800
+    startingCharge: 1800 # 20 minutes until death from the AutoRecharge being 1.5x
+  - type: BatterySelfRecharger
+    autoRechargeRate: -1.5

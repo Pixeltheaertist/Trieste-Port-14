@@ -155,5 +155,5 @@
     angle: 0
   - type: Electrified # TODO: Look into alternatives, as this is a bit op.
     shockTime: 1.5
-    shockDamage: 1
+    shockDamage: 2
     requirePower: false

@@ -83,7 +83,7 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
 
         if (borgType == "mining" || borgType == "engineering")
         {
-            var inGas = EnsureComp<InGasComponent>(ent);
+            var inGas = EnsureComp<_TP.Atmos.InGasComponent>(ent);
             inGas.GasId = Gas.Water; // Water
             inGas.DamagedByGas = false;
             inGas.GasThreshold = 50;

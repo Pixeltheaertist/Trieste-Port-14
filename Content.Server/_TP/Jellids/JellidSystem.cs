@@ -77,7 +77,7 @@ public sealed partial class JellidSystem : EntitySystem
             _alerts.ShowAlert(ent.Owner, ent.Comp.NoBatteryAlert);
         }
 
-        // Damage jellids bellow the damage start value.
+        // Damage jellids below the damage start value.
         if (currentCharge <= batteryComp.MaxCharge * 0.1)
         {
             var isCharging = currentCharge > batteryComp.LastCharge;
@@ -132,11 +132,9 @@ public sealed partial class JellidSystem : EntitySystem
     /// <param name="args">JellidBatteryDoAfterEvent Arguments</param>
     private void OnJellidDoAfter(Entity<JellidComponent> ent, ref JellidBatteryDoAfterEvent args)
     {
-        // If the do-after is canceled, or the user has already used the battery, return.
         if (args.Cancelled || args.Handled)
             return;
 
-        // If the held item and user aren't a battery, and the user is NOT a Jellid, return.
         if (!TryComp<BatteryComponent>(args.Used, out var batteryComp))
             return;
 
@@ -146,32 +144,30 @@ public sealed partial class JellidSystem : EntitySystem
         if (!TryComp<JellidComponent>(args.User, out var jellidComp))
             return;
 
-        // Now get the battery's max charge and multiply it by the JellidComponent drain percent.
-        // If the battery's current charge is less than the drain, return with a popup.
-        // Otherwise, drain the battery and add the charge to the Jellid's battery.
         var drain = batteryComp.MaxCharge * jellidComp.DrainPercent;
-        var currCharge = _battery.GetCharge((ent.Owner, jellidBatteryComp));
-        if (currCharge < drain)
+
+        var itemCharge = _battery.GetCharge((args.Used.Value, batteryComp));
+        if (itemCharge < drain)
         {
             _popup.PopupEntity(Loc.GetString("jellid-used-failed"), args.User, args.User);
             args.Repeat = false;
-
             return;
         }
 
-        if (currCharge + drain >= jellidBatteryComp.MaxCharge)
+        var jellidCharge = _battery.GetCharge((args.User, jellidBatteryComp));
+        if (jellidCharge + drain >= jellidBatteryComp.MaxCharge)
         {
             args.Repeat = false;
             return;
         }
 
         _battery.ChangeCharge(args.Used.Value, -drain);
-        _battery.SetCharge(args.User, drain);
+        _battery.ChangeCharge(args.User, drain);
 
         _audio.PlayPvs(jellidComp.BatteryUseSound, ent.Owner, AudioParams.Default.WithLoop(false).WithVolume(-3));
         _popup.PopupEntity(Loc.GetString("jellid-used-success"), args.User, args.User);
 
-        args.Repeat = currCharge + drain <= jellidBatteryComp.MaxCharge;
+        args.Repeat = jellidCharge + drain <= jellidBatteryComp.MaxCharge;
         args.Handled = true;
     }
 

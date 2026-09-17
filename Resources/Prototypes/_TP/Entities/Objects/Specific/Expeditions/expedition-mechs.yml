@@ -1,4 +1,36 @@
 - type: entity
+  parent: OrganBase
+  id: TP14OrganBaseMechLeftHand
+  categories: [ HideSpawnMenu ]
+  name: mech left hand
+  components:
+  - type: Organ
+    category: HandLeft
+  - type: HandOrgan
+    handID: left
+    data:
+      location: Left
+  - type: Tag
+    tags:
+    - HideContextMenu
+
+- type: entity
+  parent: OrganBase
+  id: TP14OrganBaseMechRightHand
+  categories: [ HideSpawnMenu ]
+  name: right hand
+  components:
+  - type: Organ
+    category: HandRight
+  - type: HandOrgan
+    handID: right
+    data:
+      location: Right
+  - type: Tag
+    tags:
+    - HideContextMenu
+
+- type: entity
   id: TP14MechStepfather
   parent: [ BaseMech, BaseMob, StripableInventoryBase ]
   suffix: Trieste, Expeditionary
@@ -71,7 +103,7 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellMedium
+        startingItem: PowerCellHigh
   - type: PointLight
     enabled: false
   - type: MovementSpeedModifier
@@ -88,7 +120,6 @@
   - type: ComplexInteraction
   - type: MindContainer
   - type: MindExaminable
-  - type: Strippable
   - type: Input
     context: "aghost"
   - type: CombatMode
@@ -184,6 +215,17 @@
     - Binary
     - Common
     - Supply
+  - type: Body
+  - type: InitialBody
+    organs:
+      HandRight: TP14OrganBaseMechRightHand
+      HandLeft: TP14OrganBaseMechLeftHand
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: TP14OrganBaseMechLeftHand
+        - id: TP14OrganBaseMechRightHand
 
 - type: startingGear
   id: TP14StepfatherGear

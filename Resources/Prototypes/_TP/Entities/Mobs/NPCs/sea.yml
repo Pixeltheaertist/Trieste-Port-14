@@ -5,6 +5,17 @@
   name: drifter
   description: A spindly, opportunistic predator which injects prey with a paralyzing agent before siphoning their blood.
   components:
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: NpcFactionMember
+    factions:
+    - AllHostile
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -71,6 +82,20 @@
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: drifter
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 5
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: drifter
+      Dead:
+        Base: drifter_dead
 
 - type: entity
   parent: [SolutionWeapon, SolutionTiny]
@@ -266,12 +291,11 @@
     blackboard:
       NavClimb: !type:Bool
         true
-      NavInteract: !type:Bool
-        true
-      NavPry: !type:Bool
-        true
       NavSmash: !type:Bool
         true
+  - type: NpcFactionMember
+    factions:
+    - AllHostile
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -334,9 +358,6 @@
       reagents:
       - ReagentId: Blood
         Quantity: 10
-  - type: NpcFactionMember
-    factions:
-    - SimpleHostile
   - type: NonSpreaderZombie
   - type: MeleeWeapon
     soundHit:
@@ -354,6 +375,17 @@
   name: mimic
   description: A horrific ambush predator. It infests fish until disturbed by larger prey and uses elecricity to immobilize their targets.
   components:
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: NpcFactionMember
+    factions:
+    - AllHostile
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -423,8 +455,9 @@
   id: TP14SolutionWeaponMimic
   categories: [ HideSpawnMenu ]
   components:
-  - type: SolutionRegeneration
-    generated:
+  - type: Solution
+    solution:
+      maxVol: 1
       reagents:
       - ReagentId: Mimicrium
         Quantity: 1
@@ -464,6 +497,7 @@
   components:
   - type: MovementSpeedModifier
     baseWalkSpeed : 0
+    baseSprintSpeed: 0
 
 - type: entity
   parent: [ TP14BaseMobSeaLandCreature, MobCockroach, BaseSlicingRefinable ]

@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ MobRespirator, SimpleSpaceMobBase ]
+  parent: [ BaseSimpleMob, MobAtmosExposed, MobCombat, MobBloodstream, MobFlammable, MobRespirator ]
   id: TP14BaseSimpleMob
   suffix: Trieste, AI
   abstract: true

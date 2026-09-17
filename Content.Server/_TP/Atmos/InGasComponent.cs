@@ -2,10 +2,10 @@
 using Content.Shared.Atmos;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 
-namespace Content.Server.Atmos.Components;
+namespace Content.Server._TP.Atmos;
 
 /// <summary>
 /// Component to handle non-breathing gas interactions.
@@ -14,7 +14,6 @@ namespace Content.Server.Atmos.Components;
 [RegisterComponent]
 public sealed partial class InGasComponent : Component
 {
-
     /// <summary>
     ///     ID of gas to check for as an int. Defaults to water.
     /// </summary>
@@ -52,6 +51,7 @@ public sealed partial class InGasComponent : Component
     /// </summary>
     [DataField("damagedByGas"), ViewVariables(VVAccess.ReadWrite)]
     public bool DamagedByGas = false;
+
     /// <summary>
     /// Damage caused by gas contact
     /// </summary>

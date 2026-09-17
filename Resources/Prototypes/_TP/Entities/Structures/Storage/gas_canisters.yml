@@ -14,7 +14,7 @@
       volume: 1500
       moles:
         Water: 2769.36
-      temperature: 293.15
+      temperature: 243.15 # -30c
   - type: Destructible
     thresholds:
     - trigger:

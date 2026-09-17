@@ -9,8 +9,20 @@
   boilingPoint: 100.0
   meltingPoint: 0.0
   metabolisms:
-    Bloodstream:
+    Respiration:
       effects:
+      # Oxygenate for Jellids
+      - !type:Oxygenate
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Jellid, TP14WaterBreather ]
+      - !type:ModifyLungGas
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Jellid, TP14WaterBreather ]
+        ratios:
+          Water: -1.0
+      # Drowning effects for non-Jellids
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
@@ -19,53 +31,29 @@
         ignoreResistances: true
         damage:
           types:
-            Asphyxiation: 2
-    Respiration:
-      effects:
-        # Oxygenate for Jellids
-        - !type:Oxygenate
-          conditions:
-          - !type:MetabolizerTypeCondition
-            type: [ Jellid, TP14WaterBreather ]
-        - !type:ModifyLungGas
-          conditions:
-          - !type:MetabolizerTypeCondition
-            type: [ Jellid, TP14WaterBreather ]
-          ratios:
-            Water: -1.0
-        # Drowning effects for non-Jellids
-        - !type:HealthChange
-          conditions:
-          - !type:MetabolizerTypeCondition
-            type: [ Jellid, TP14WaterBreather ]
-            inverted: true
-          ignoreResistances: true
-          damage:
-            types:
-              Cold: 0.33
-              Asphyxiation: 2
-        - !type:AdjustTemperature
-          conditions:
-          - !type:MetabolizerTypeCondition
-            type: [ Jellid, TP14WaterBreather ]
-            inverted: true
-          - !type:TemperatureCondition
-            min: 10.00
-          amount: -20
-        - !type:PopupMessage
-          conditions:
-          - !type:MetabolizerTypeCondition
-            type: [ Jellid, TP14WaterBreather ]
-            inverted: true
-          type: Local
-          messages: [ "water-in-lungs" ]
-          probability: 0.7
-        - !type:AdjustAlert
-          conditions:
-          - !type:MetabolizerTypeCondition
-            type: [ Jellid, TP14WaterBreather ]
-            inverted: true
-          alertType: Drowning
-          minScale: 1
-          clear: True
-          time: 6
+            Cold: 0.02
+      - !type:AdjustTemperature
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Jellid, TP14WaterBreather ]
+          inverted: true
+        - !type:TemperatureCondition
+          min: 10.00
+        amount: -20
+      - !type:PopupMessage
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Jellid, TP14WaterBreather ]
+          inverted: true
+        type: Local
+        messages: [ "water-in-lungs" ]
+        probability: 0.7
+      - !type:AdjustAlert
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Jellid, TP14WaterBreather ]
+          inverted: true
+        alertType: Drowning
+        minScale: 1
+        clear: True
+        time: 6
