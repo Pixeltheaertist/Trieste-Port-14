@@ -1,12 +1,7 @@
 {
     "version": 1,
-<<<<<<<< HEAD:Resources/Textures/Clothing/Head/Hats/mitre_clown.rsi/meta.json
     "license": "CC-BY-SA-3.0",
     "copyright": "Taken from /tg/station 13 at commit https://github.com/tgstation/tgstation/commit/3dbc8c3c121e3ade9158303c2819b47206b0f93d | inhand-left and inhand-right by K-Dynamic (github) | icon modified by TiniestShark (github)",
-========
-    "license": "CC-BY-SA-4.0",
-    "copyright": "Sprites by gummyema... AAAHHHHH!!!",
->>>>>>>> upstream/master:Resources/Textures/_Moffstation/Clothing/Head/Misc/performer-wig-yellow.rsi/meta.json
     "size": {
         "x": 32,
         "y": 32

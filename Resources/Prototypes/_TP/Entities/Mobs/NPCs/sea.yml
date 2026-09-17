@@ -500,7 +500,7 @@
     baseSprintSpeed: 0
 
 - type: entity
-  parent: [ TP14BaseMobSeaLandCreature, MobCockroach, BaseSlicingRefinable ]
+  parent: [ TP14BaseMobSeaLandCreature, TP14BaseSimpleMob, BaseSlicingRefinable, MobNightVision ]
   id: TP14MobSeaBunny
   suffix: Trieste, Sea
   name: sea bunny

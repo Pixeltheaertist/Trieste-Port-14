@@ -89,8 +89,8 @@
         - id: CargoRequestComputerCircuitboard
         - id: CargoSaleComputerCircuitboard
         - id: CargoShuttleConsoleCircuitboard
-        - id: SalvageMagnetMachineCircuitboard
-        - id: SalvageJobBoardComputerCircuitboard
+      # - id: SalvageMagnetMachineCircuitboard    # TRIESTE
+      # - id: SalvageJobBoardComputerCircuitboard # TRIESTE
         - id: MailTeleporterMachineCircuitboard
 
 - type: entity
@@ -98,11 +98,13 @@
   id: BoxQMStamps
   name: quartermaster's stamp box
   components:
-  - type: StorageFill
-    contents:
-      - id: MedicalTechFabCircuitboard
-      - id: CargoRequestMedicalComputerCircuitboard
-      - id: TP14FallMonitorCircuitboard
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: RubberStampApproved
+        - id: RubberStampDenied
+        - id: RubberStampQm
 
 - type: entity
   parent: ToteBase

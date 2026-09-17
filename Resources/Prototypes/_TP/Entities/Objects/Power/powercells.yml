@@ -6,7 +6,7 @@
   parent: [BasePowerCell, BaseNanotrasenContraband]
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/MagCell.rsi
+    sprite: _TP/Objects/Weapons/Guns/Ammunition/Magazine/mag-cell.rsi
     layers:
     - state: icon
   - type: Battery
@@ -27,7 +27,7 @@
   parent: TP14BaseMagCell
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/MagCell.rsi
+    sprite: _TP/Objects/Weapons/Guns/Ammunition/Magazine/mag-cell.rsi
     layers:
     - state: icon
   - type: Battery
