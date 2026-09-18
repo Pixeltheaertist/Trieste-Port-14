@@ -1,6 +1,6 @@
 - type: species
   id: TP14SpeciesJellid
-  name: species-name-slime
+  name: species-name-jellid
   roundStart: true
   prototype: TP14MobJellidPerson
   defaultSkinTone: "#b8b8b8"
