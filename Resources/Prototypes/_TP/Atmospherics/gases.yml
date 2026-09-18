@@ -1,11 +1,13 @@
 - type: gas
-  id: 9
-  name: gases-water
-  specificHeat: 1000 # Or change it to low values
+  id: Water
+  name: gas-water
+  abbreviation: gas-water-abbreviation
+  molarHeatCapacity: 40 # Or change it to low values
   heatCapacityRatio: 1.33
   molarMass: 18
-  gasOverlaySprite: /Textures/_TP/Effects/atmospherics.rsi
-  gasOverlayState: water
-  color: 135c4f # You can change it if you want, it's here for the gas analyzer afaik
+  gasOverlaySprite:
+    sprite: /Textures/_TP/Effects/atmospherics.rsi
+    state: water
+  color: "#135C4F" # You can change it if you want, it's here for the gas analyzer afaik
   reagent: SeaWater
-  pricePerMole: 0.04
+  pricePerMole: 0

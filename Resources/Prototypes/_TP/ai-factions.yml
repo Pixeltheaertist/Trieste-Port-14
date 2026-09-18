@@ -1,0 +1,12 @@
+- type: npcFaction
+  id: NanoTrasenTraitor
+  hostile:
+  - SimpleHostile
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Dragon
+  - AllHostile
+  - Wizard
+  - Xenoborg

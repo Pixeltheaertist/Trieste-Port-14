@@ -3,8 +3,7 @@
 - type: marking
   id: BadMoltChest
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/chest.rsi
     state: badmolt
@@ -14,8 +13,7 @@
 - type: marking
   id: BadMoltHead
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/head.rsi
     state: badmolt
@@ -23,8 +21,7 @@
 - type: marking
   id: ScarSlash
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/head.rsi
     state: snoutscar
@@ -32,8 +29,7 @@
 - type: marking
   id: ScarTalons
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/head.rsi
     state: talonscar
@@ -44,8 +40,7 @@
 - type: marking
   id: LizardBeard
   bodyPart: Snout
-  markingCategory: Overlay
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/snout.rsi
     state: beard
@@ -53,8 +48,7 @@
 - type: marking
   id: LizardDroopySnout
   bodyPart: Snout
-  markingCategory: Snout
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/snout.rsi
     state: droopy
@@ -62,9 +56,8 @@
 - type: marking
   id: LizardSnoutpiercings
   bodyPart: Snout
-  markingCategory: Overlay
   forcedColoring: true
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   coloring:
     default:
       type:
@@ -78,8 +71,7 @@
   id: LizardSnoutTall
   bodyPart: Snout
   forcedColoring: true
-  markingCategory: Snout
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/snout.rsi
     state: tall
@@ -87,8 +79,7 @@
 - type: marking
   id: LizardUpperSnout
   bodyPart: Snout
-  markingCategory: Snout
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/snout.rsi
     state: upper
@@ -100,8 +91,7 @@
 - type: marking
   id: BadMoltRArm
   bodyPart: RArm
-  markingCategory: Arms
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/rarm.rsi
     state: badmolt
@@ -111,8 +101,7 @@
 - type: marking
   id: BadMoltLArm
   bodyPart: LArm
-  markingCategory: Arms
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/larm.rsi
     state: badmolt
@@ -126,8 +115,7 @@
 - type: marking
   id: UnderwearLowridersR
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   coloring:
     default:
       type:
@@ -140,8 +128,7 @@
 - type: marking
   id: UnderwearTangaR
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   coloring:
     default:
       type:
@@ -170,8 +157,7 @@
 - type: marking
   id: LizardKoboldEarsMid
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/headside.rsi
     state: koboldearsmid
@@ -179,8 +165,7 @@
 - type: marking
   id: LizardKoboldEarsTall
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/headside.rsi
     state: koboldearstall
@@ -190,8 +175,7 @@
 - type: marking
   id: LizardHeadFlat
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/headtop.rsi
     state: flat
@@ -199,8 +183,7 @@
 - type: marking
   id: LizardHornsKoboldEarspiercings
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/headtop.rsi
     state: koboldears
@@ -210,8 +193,7 @@
 - type: marking
   id: LizardHornsNubby
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/headtop.rsi
     state: nubby
@@ -219,8 +201,7 @@
 - type: marking
   id: LizardLittleHorns
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/headtop.rsi
     state: little
@@ -228,8 +209,7 @@
 - type: marking
   id: LizardFrill
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/headtop.rsi
     state: frill
@@ -239,8 +219,7 @@
 - type: marking
   id: TailDropped
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/tail.rsi
     state: dropped
@@ -248,8 +227,7 @@
 - type: marking
   id: TailDroppedAnimated
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ ]
+  groupWhitelist: [ ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/tail.rsi
     state: droppedwagging
@@ -257,8 +235,7 @@
 - type: marking
   id: TailGecko
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/taillayers.rsi
     state: gecko1_behind
@@ -275,8 +252,7 @@
 - type: marking
   id: LizardTailSnake
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/snaketail.rsi
     state: tail_snake_primary
@@ -286,8 +262,7 @@
 - type: marking
   id: LizardTailSnakeStripe
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/snaketailstripe.rsi
     state: tail_snake_primary
@@ -297,8 +272,7 @@
 - type: marking
   id: LizardTailSnakeUnder
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/snaketailunder.rsi
     state: tail_snake_primary
@@ -308,8 +282,7 @@
 - type: marking
   id: LizardTailSnakeDual
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/snaketaildual.rsi
     state: tail_snake_primary
@@ -319,8 +292,7 @@
 - type: marking
   id: LizardTailSnakeAnimated
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: []
+  groupWhitelist: []
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/snaketail.rsi
     state: tail_snake_wag_primary
@@ -330,8 +302,7 @@
 - type: marking
   id: LizardTailSnakeStripeAnimated
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: []
+  groupWhitelist: []
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/snaketailstripe.rsi
     state: tail_snake_wag_primary
@@ -341,8 +312,7 @@
 - type: marking
   id: LizardTailSnakeUnderAnimated
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: []
+  groupWhitelist: []
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/snaketailunder.rsi
     state: tail_snake_wag_primary
@@ -352,8 +322,7 @@
 - type: marking
   id: LizardTailSnakeDualAnimated
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: []
+  groupWhitelist: []
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/snaketaildual.rsi
     state: tail_snake_wag_primary

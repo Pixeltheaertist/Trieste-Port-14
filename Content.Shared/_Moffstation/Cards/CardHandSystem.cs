@@ -7,11 +7,11 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Moffstation.Cards;
 
-public sealed class CardHandSystem : CardStackSystem<CardHandComponent>
+public sealed partial class CardHandSystem : CardStackSystem<CardHandComponent>
 {
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedUserInterfaceSystem _ui = default!;
 
     private static readonly EntProtoId<CardHandComponent> CardHandEntId = "CardHandBase";
 
@@ -57,7 +57,7 @@ public sealed class CardHandSystem : CardStackSystem<CardHandComponent>
             return;
         var card = new Entity<CardComponent>(cardEnt, cardComp);
 
-        CardStack.RemoveCard(entity, card, args.Actor);
+        _cardStack.RemoveCard(entity, card, args.Actor);
         _hands.TryPickupAnyHand(args.Actor, card, animate: false);
         CheckDegenerate(entity);
     }
@@ -124,8 +124,8 @@ public sealed class CardHandSystem : CardStackSystem<CardHandComponent>
         {
             // Can't insert cards into a predicted hand.
             var hand = new Entity<CardHandComponent>(spawned, Comp<CardHandComponent>(spawned));
-            CardStack.InsertCards(hand, cardsList);
-            Card.Flip(base.GetCards(hand), false);
+            _cardStack.InsertCards(hand, cardsList);
+            _card.Flip(base.GetCards(hand), false);
         }
 
         return spawned;

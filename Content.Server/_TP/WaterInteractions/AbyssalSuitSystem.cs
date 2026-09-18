@@ -10,9 +10,7 @@ namespace Content.Server._TP.WaterInteractions
 {
     public sealed partial class AbyssalSuitSystem : EntitySystem
 {
-    [Dependency] private IPrototypeManager _prototypeManager = default!;
-    [Dependency] private IEntityManager _entityManager = default!;
-    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IEntityManager _entMan = default!;
 
 
     public override void Initialize()
@@ -24,13 +22,13 @@ namespace Content.Server._TP.WaterInteractions
     private void OnEquipped(Entity<AbyssalSuitComponent> ent, ref GotEquippedEvent args)
     {
         // On equip, protect the user from abyssal pressures.
-        EnsureComp<AbyssalProtectedComponent>(args.Equipee);
+        EnsureComp<AbyssalProtectedComponent>(args.EquipTarget);
     }
 
     private void OnUnequipped(Entity<AbyssalSuitComponent> ent, ref GotUnequippedEvent args)
     {
         // On unequip, make the user able to be crushed.
-        _entityManager.RemoveComponent<AbyssalProtectedComponent>(args.Equipee);
+        _entMan.RemoveComponent<AbyssalProtectedComponent>(args.EquipTarget);
     }
 }
 }

@@ -12,10 +12,10 @@
       steps:
       - material: MetalRod
         amount: 4
-        doAfter: 20
+        doAfter: 20 # TRIESTE: Added.
       - material: Steel
         amount: 1
-        doAfter: 40
+        doAfter: 40 # TRIESTE: '6'
 
   - node: turnstile
     entity: Turnstile
@@ -28,8 +28,8 @@
       - !type:DeleteEntity
       steps:
       - tool: Welding
-        doAfter: 40.0 # TP x10
+        doAfter: 40 # TRIESTE: '4'
       - tool: Cutting
-        doAfter: 20.0 # TP x10
+        doAfter: 20 # TRIESTE: '2'
       - tool: Screwing
-        doAfter: 20.0 # TP
+        doAfter: 20 # TRIESTE: Added.

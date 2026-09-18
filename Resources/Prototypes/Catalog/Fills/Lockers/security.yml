@@ -28,7 +28,6 @@
     children:
     - id: FlashlightSeclite
     - id: WeaponDisabler
-#    - id: WeaponTaser # Trieste
     - id: ClothingBeltSecurityFilled
     - id: Flash
     - id: ClothingEyesGlassesSecurity
@@ -46,6 +45,8 @@
       amount: 2
     - id: NetworkConfigurator
     - id: Binoculars
+    - id: PlushieLizardJobWarden
+      prob: 0.02
 
 - type: entityTable
   id: FillLockerWardenHarduit
@@ -53,8 +54,7 @@
     children:
     - id: ClothingOuterHardsuitWarden
     - id: OxygenTankFilled
-    - id: ClothingMaskBreath
-    - id: TP14ClothingMaskAir # TP14
+    - id: TP14ClothingMaskAir # Trieste: 'ClothingMaskBreath'
 
 - type: entity
   id: LockerSecurityFilled
@@ -73,7 +73,6 @@
     - id: FlashlightSeclite
       prob: 0.8
     - id: WeaponDisabler
-#    - id: WeaponTaser # Trieste
     - id: ClothingUniformJumpsuitSecGrey
       prob: 0.3
     - id: ClothingHeadHelmetBasic
@@ -91,6 +90,10 @@
       prob: 0.6
     - id: BookSpaceLaw
       prob: 0.5
+    - id: PlushieLizardJobSecuritycadet
+      prob: 0.02
+    - id: PlushieLizardJobSecurityofficer
+      prob: 0.02
 
 - type: entity
   id: LockerBrigmedicFilled
@@ -107,7 +110,6 @@
   table: !type:AllSelector
     children:
     - id: ClothingEyesGlassesSecurity
-#    - id: WeaponTaser # Trieste
     - id: WeaponDisabler
     - id: TrackingImplanter
       amount: 2
@@ -179,6 +181,8 @@
       - id: BoxFolderWhite
       - id: BoxFolderGrey
       - id: BoxFolderBlack # Moffstation - End (New Detective Clothes)
+    - id: PlushieLizardJobDetective
+      prob: 0.02
 
 - type: entity
   id: ClosetBombFilled

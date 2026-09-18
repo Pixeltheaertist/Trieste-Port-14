@@ -5,7 +5,9 @@
   suffix: Trieste, Command
   description: A trident modified with mysterious alien technology, wielded by the platform Overseer.
   components:
-  - type: Sharp
+  - type: Tool
+    qualities:
+    - Slicing
   - type: Sprite
     sprite: Objects/Weapons/Melee/trident.rsi
     state: icon

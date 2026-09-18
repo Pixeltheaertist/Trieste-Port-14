@@ -27,7 +27,7 @@
     fireRate: 1.5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: WatcherBoltMagmawing
     fireCost: 60
 
@@ -60,7 +60,7 @@
         whitelist:
           tags:
           - MagCell
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: NtBolt
     fireCost: 50
 
@@ -94,7 +94,7 @@
     - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: NtBolt
     fireCost: 33
   - type: StaticPrice

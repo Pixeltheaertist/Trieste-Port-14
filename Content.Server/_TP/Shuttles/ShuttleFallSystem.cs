@@ -69,7 +69,7 @@ public sealed partial class ShuttleFallSystem : EntitySystem
             _updateTimer = 0f;
 
             // Get all shuttles
-            foreach (var entity in EntityManager.EntityQuery<ShuttleComponent>())
+            foreach (var entity in EntityQuery<ShuttleComponent>())
             {
                 // Get the EntityUid from the ShuttleComponent
                 var entityUid = entity.Owner;
@@ -108,7 +108,7 @@ public sealed partial class ShuttleFallSystem : EntitySystem
 
                 // Find where the shuttle will be falling to
                 Log.Info("It be falling, SHITE!!");
-                var destination = EntityManager.EntityQuery<FallingDestinationComponent>().FirstOrDefault();
+                var destination = EntityQuery<FallingDestinationComponent>().FirstOrDefault();
                 if (destination != null)
                 {
                     var targetMap = Transform(destination.Owner).MapID;
@@ -133,7 +133,7 @@ public sealed partial class ShuttleFallSystem : EntitySystem
             return;
 
         // Get each atmospheric thruster on the map for flight checks
-        foreach (var atmoThruster in EntityManager.EntityQuery<AtmosphericThrusterComponent>())
+        foreach (var atmoThruster in EntityQuery<AtmosphericThrusterComponent>())
         {
             // Find the thruster's UID for FlightChecks
             var thrusterId = atmoThruster.Owner;
@@ -219,7 +219,7 @@ public sealed partial class ShuttleFallSystem : EntitySystem
             flyingComp.IsFlying = false;
 
             // Check every atmospheric thruster to see if it is enabled. Is it a bit intensive? Yes. Do I know how to code it better? Haha, absolutely not!!
-            foreach (var engine in EntityManager.EntityQuery<AtmosphericThrusterComponent>())
+            foreach (var engine in EntityQuery<AtmosphericThrusterComponent>())
             {
                 // If this engine does not belong to the shuttle we are processing, skip it.
                 if (Transform(engine.Owner).GridUid != shuttle)

@@ -1,5 +1,4 @@
 using Content.Server.Administration.Logs;
-using Content.Server.Body.Systems;
 using Content.Server.Buckle.Systems;
 using Content.Server.Parallax;
 using Content.Server.Procedural;
@@ -9,6 +8,7 @@ using Content.Server.Station.Systems;
 using Content.Server.Stunnable;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Gibbing;
 using Content.Shared.Gravity;
 using Content.Shared.Light.Components;
 using Content.Shared.Movement.Events;
@@ -21,19 +21,15 @@ using Robust.Server.GameStates;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.EntitySerialization.Systems;
-using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Maps;
 
 namespace Content.Server.Shuttles.Systems;
-
-// !! TRIESTE PORT MODIFIED !! //
 
 [UsedImplicitly]
 public sealed partial class ShuttleSystem : SharedShuttleSystem
@@ -41,11 +37,9 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
     [Dependency] private IAdminLogManager _logger = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IGameTiming _gameTiming = default!;
-    [Dependency] private IMapManager _mapManager = default!;
-    [Dependency] private IPrototypeManager _protoManager = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private BiomeSystem _biomes = default!;
-    [Dependency] private BodySystem _bobby = default!;
+    [Dependency] private GibbingSystem _gibbing = default!;
     [Dependency] private BuckleSystem _buckle = default!;
     [Dependency] private DamageableSystem _damageSys = default!;
     [Dependency] private DockingSystem _dockSystem = default!;
@@ -67,19 +61,13 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
     [Dependency] private UserInterfaceSystem _uiSystem = default!;
     [Dependency] private TurfSystem _turf = default!;
 
-    private EntityQuery<BuckleComponent> _buckleQuery;
-    private EntityQuery<MapGridComponent> _gridQuery;
-    private EntityQuery<PhysicsComponent> _physicsQuery;
-    private EntityQuery<TransformComponent> _xformQuery;
+    [Dependency] private EntityQuery<BuckleComponent> _buckleQuery = default!;
+    [Dependency] private EntityQuery<MapGridComponent> _gridQuery = default!;
+    [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery = default!;
 
     public override void Initialize()
     {
         base.Initialize();
-
-        _buckleQuery = GetEntityQuery<BuckleComponent>();
-        _gridQuery = GetEntityQuery<MapGridComponent>();
-        _physicsQuery = GetEntityQuery<PhysicsComponent>();
-        _xformQuery = GetEntityQuery<TransformComponent>();
 
         InitializeFTL();
         InitializeGridFills();
@@ -113,7 +101,7 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
             RemComp<ImplicitRoofComponent>(ev.EntityUid);
         else
         {
-            // TRIESTE
+            // TRIESTE:
             // If we're the oil rig, aka Trieste, do NOT ensure implicit roof.
             if (!HasComp<TriesteComponent>(ev.EntityUid))
                 EnsureComp<ImplicitRoofComponent>(ev.EntityUid);

@@ -1,6 +1,7 @@
 - type: entity
+  parent: SolutionTile
   id: TP14WasteWaterOcean
-  suffix: Trieste, Sea
+  suffix: Trieste
   name: ocean water
   description: Salty.
   placement:
@@ -18,15 +19,13 @@
     drawdepth: BelowFloor
     layers:
     - state: water
-  - type: SolutionContainerManager
-    solutions:
-      pool:
-        maxVol: 9999999 #.inf seems to break the whole yaml file, but would definitely be preferable.
-        reagents:
-        - ReagentId: SeaWater
-          Quantity: 9999999
+  - type: Solution
+    id: pool
+    solution:
+      reagents:
+      - ReagentId: SeaWater
+        Quantity: 7680
   - type: SolutionRegeneration
-    solution: tank
     generated:
       reagents:
       - ReagentId: SeaWater

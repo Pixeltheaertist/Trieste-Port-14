@@ -6,13 +6,13 @@
   parent: [BasePowerCell, BaseNanotrasenContraband]
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/MagCell.rsi
+    sprite: _TP/Objects/Weapons/Guns/Ammunition/Magazine/mag-cell.rsi
     layers:
     - state: icon
   - type: Battery
     maxCharge: 4000
     startingCharge: 4000
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: NtBolt
     fireCost: 400  #10 shots
   - type: Tag
@@ -27,13 +27,13 @@
   parent: TP14BaseMagCell
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/MagCell.rsi
+    sprite: _TP/Objects/Weapons/Guns/Ammunition/Magazine/mag-cell.rsi
     layers:
     - state: icon
   - type: Battery
     maxCharge: 4000
     startingCharge: 4000
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: BulletDisabler
     fireCost: 800  #5 shots
   - type: Tag
@@ -50,7 +50,7 @@
   - type: Battery
     maxCharge: 20000
     startingCharge: 20000
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: NtBolt
     fireCost: 800  #25 shots
 
@@ -64,9 +64,8 @@
   - type: Battery
     maxCharge: 4000
     startingCharge: 4000
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: NtBolt
     fireCost: 400 #10 shots
   - type: BatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 40 # Takes 100 seconds to recharge itself.

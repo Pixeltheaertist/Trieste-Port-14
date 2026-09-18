@@ -1,8 +1,7 @@
 - type: marking
   id: TP14MarkingsHumanEarsAnimalFluffy
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Human ]
+  groupWhitelist: [ Human ]
   coloring:
     default:
       type:
@@ -21,8 +20,7 @@
 - type: marking
   id: TP14MarkingsHumanEarsAnimalFolded
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Human ]
+  groupWhitelist: [ Human ]
   coloring:
     default:
       type:
@@ -39,8 +37,7 @@
 - type: marking
   id: TP14MarkingsHumanEarsAnimalPointed
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Human ]
+  groupWhitelist: [ Human ]
   coloring:
     default:
       type:
@@ -59,8 +56,7 @@
 - type: marking
   id: TP14MarkingsHumanEarsAnimalRounded
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Human ]
+  groupWhitelist: [ Human ]
   coloring:
     default:
       type:
@@ -79,8 +75,7 @@
 - type: marking
   id: TP14MarkingsHumanEarsAnimalSemiFolded
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Human ]
+  groupWhitelist: [ Human ]
   coloring:
     default:
       type:

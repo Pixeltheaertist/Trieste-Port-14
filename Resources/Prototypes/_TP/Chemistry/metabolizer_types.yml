@@ -1,3 +1,8 @@
 - type: metabolizerType
   id: Jellid
   name: metabolizer-type-jellid
+
+- type: metabolizerType
+  id: TP14WaterBreather
+  name: metabolism-group-water-breather
+

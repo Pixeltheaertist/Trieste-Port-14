@@ -1,4 +1,21 @@
 # Try to keep the location of helmet prototypes synced with the corresponding hardsuit please :)
+# Standard Pressure Suit
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: TP14ClothingHeadHelmetHardsuitBasic
+  name: basic pressure suit
+  description: A basic-looking pressure suit helmet that provides minor protection against the nightmares of the sea.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hardsuits/basic.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hardsuits/basic.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
 
 # EXPEDITIONRAY HARDSUITS
 # GILLY Abyssal Suit

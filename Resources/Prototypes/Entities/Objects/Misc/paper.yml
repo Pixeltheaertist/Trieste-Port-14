@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseItem
+  parent: [SolutionFood, BaseItem]
   id: BasePaper
   abstract: true
   components:
@@ -8,9 +8,15 @@
     - Document
     - Paper
   - type: Appearance
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+  - type: ExtinguishableSetCollisionWake
   - type: Flammable
     fireSpread: true
     alwaysCombustible: true
+    canExtinguish: true
     damage:
       types:
         Heat: 1
@@ -19,14 +25,9 @@
     normalState: fire
   - type: Damageable
     damageModifierSet: Wood
+  - type: Injurable
   - type: Destructible
     thresholds:
-    - trigger: # Excess damage, don't spawn entities
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
         damage: 15
@@ -45,22 +46,21 @@
     flavors:
     - paper
   - type: BadFood
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 1
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 1
+  - type: Solution
+    solution:
+      maxVol: 2.5 # I consider paper to be like material sheets, so we divide their capacity by 12
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 1.25
   - type: Item
     size: Tiny
   - type: PhysicalComposition
 
 - type: entity
-  name: paper
   parent: BasePaper
   id: Paper
-  description: 'A piece of white paper.'
+  name: paper
+  description: A piece of white paper.
   components:
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
@@ -82,7 +82,9 @@
       enum.PaperUiKey.Key:
         type: PaperBoundUserInterface
   - type: FaxableObject
+  - type: PaperVisualizer
   - type: PaperVisuals
+  - type: StationAiWhitelist
 
 - type: entity
   name: paper scrap
@@ -202,8 +204,8 @@
 - type: entity
   id: PaperNanoTaskItem
   parent: Paper
-  name: Taskkeeper item
-  description: A printed TaskKeeper item. Can be inserted into your PDA to add it to your tasks.
+  name: NanoTask item
+  description: A printed NanoTask item. Can be inserted into your PDA to add it to your tasks.
   components:
   - type: Tag
     tags:
@@ -320,15 +322,15 @@
     content: book-cnc-sheet
   - type: Sprite
     layers:
-      - state: paper
-        color: "#cccccc"
-      - state: paper_words
-        map: ["enum.PaperVisualLayers.Writing"]
-        color: "#cccccc" #aaaaaaaaaaaaaaaaaaaaaaa
-        visible: false
-      - state: paper_stamp-generic
-        map: ["enum.PaperVisualLayers.Stamp"]
-        visible: false
+    - state: paper
+      color: "#cccccc"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#cccccc" #aaaaaaaaaaaaaaaaaaaaaaa
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
   - type: PaperVisuals
     backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
     contentImagePath: "/Textures/Interface/Paper/paper_content_lined.svg.96dpi.png"
@@ -363,79 +365,23 @@
   components:
   - type: NukeCodePaper
 
-# RandomSpriteColor requires netsync which is currently incompatible with ItemMapper
-#  - type: RandomSpriteColor
-#    sprite: Objects/Misc/bureaucracy.rsi
-#    state: folder-colormap
-#    colors:
-#      red: "#cc2323"
-#      blue: "#355d99"
-#      yellow: "#b38e3c"
-#      white: "#e6e6e6"
-#      grey: "#999999"
-#      black: "#3f3f3f"
-#      green: "#43bc38"
-  - type: Sprite # TP14 - This had to be changed, as "paper" doesn't hold folders or the folder overlay anymore.
-    sprite: Objects/Misc/folders.rsi
-    layers:
-    - state: folder-centcom
-    - state: folder-overlay-paper
-      map: ["folder-overlay-paper"]
-      visible: false
-  - type: Item
-    sprite: Objects/Misc/folders.rsi
-    size: Small
-    shape: null
-  - type: Storage
-    maxItemSize: Small
-    grid:
-    - 0,0,4,3
-    whitelist:
-      tags:
-        - Document
-  - type: ItemMapper
-    mapLayers:
-      folder-overlay-paper:
-        whitelist:
-          tags:
-          - Document
-  - type: Appearance
-  - type: Tag
-    tags:
-    - Folder
-  - type: StorageFill
-    contents:
-      - id: Paper
-        prob: 0.5
-      - id: PaperOffice
-        prob: 0.4
-      - id: Paper
-        prob: 0.3
-      - id: PaperOffice
-        prob: 0.2
-      - id: Paper
-        prob: 0.2
-
 - type: entity
   parent: [Paper, BaseSyndicateContraband] # eat or burn your damn piece of paper damn thieves
   id: TraitorCodePaper
   name: syndicate codeword
   description: A leaked codeword to possibly get in touch with the Syndicate.
   categories: [ DoNotMap ]
-  suffix: Syndicate
   components:
   - type: TraitorCodePaper
-    codewordFaction: Traitor
 
 - type: entity
   parent: [Paper, BaseSyndicateContraband]
   id: AllTraitorCodesPaper
   name: syndicate codewords registry
   description: A registry of all active Syndicate codewords.
-  suffix: Admeme, Syndicate
+  suffix: Admeme
   components:
   - type: TraitorCodePaper
-    codewordFaction: Traitor
     fakeCodewords: false
     codewordShowAll: true
 
@@ -477,8 +423,10 @@
         insertSound: /Audio/Effects/packetrip.ogg
         ejectSound: /Audio/Effects/packetrip.ogg
         whitelist:
+          components:
+          - Cash
           tags:
-            - Paper
+          - Paper
   - type: ActivatableUI
     key: enum.PaperUiKey.Key
     requiresComplex: false
@@ -515,3 +463,5 @@
       - !type:EmptyAllContainersBehaviour
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Injurable
+  - type: StationAiWhitelist

@@ -42,11 +42,14 @@ public sealed partial class EventReactorSystem : EntitySystem
 
             if (_updateTimer >= UpdateInterval)
             {
-                foreach (var entity in EntityManager.EntityQuery<Components.EventReactorComponent>())
+                foreach (var entity in EntityQuery<Components.EventReactorComponent>())
                 {
                     entity.RemainingTime -= frameTime;
                     EntityUid uid = entity.Owner;
-                    var component = EntityManager.GetComponent<Components.EventReactorComponent>(uid);
+
+                    if (!TryComp<Components.EventReactorComponent>(uid, out var component))
+                        continue;
+
                     ReactorCheck(uid, component);
                 }
                 _updateTimer = 0f;
@@ -54,7 +57,7 @@ public sealed partial class EventReactorSystem : EntitySystem
 
             if (_flickerTimer >= FlickerInterval)
             {
-                foreach (var entity in EntityManager.EntityQuery<Components.EventReactorComponent>())
+                foreach (var entity in EntityQuery<Components.EventReactorComponent>())
                 {
                     EntityUid uid = entity.Owner;
                     FlickerReactor(uid, entity);

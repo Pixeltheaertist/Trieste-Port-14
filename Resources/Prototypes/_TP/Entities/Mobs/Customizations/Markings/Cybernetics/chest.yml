@@ -3,8 +3,7 @@
 - type: marking
   id: TP14MarkingsHumanChestCyberHeartLeft
   bodyPart: UndergarmentTop
-  markingCategory: Chest
-  speciesRestriction: [ Arachnid, Human, Reptilian, SlimePerson ]
+  groupWhitelist: [ Arachnid, Human, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -19,8 +18,7 @@
 - type: marking
   id: TP14MarkingsHumanChestCyberHeartRight
   bodyPart: UndergarmentTop
-  markingCategory: Chest
-  speciesRestriction: [ Arachnid, Human, Reptilian, SlimePerson ]
+  groupWhitelist: [ Arachnid, Human, Reptilian, Slime ]
   coloring:
     default:
       type:

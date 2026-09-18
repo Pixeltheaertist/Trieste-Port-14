@@ -11,10 +11,10 @@ namespace Content.Server._EstacaoPirata.OpenTriggeredStorageFill;
 
 // TODO CENT This should be predicted so that it doesn't take a net-trip for the opened inventory to have its
 //  contents pop in.
-public sealed class OpenTriggeredStorageFillSystem : EntitySystem
+public sealed partial class OpenTriggeredStorageFillSystem : EntitySystem
 {
-    [Dependency] private readonly SharedStorageSystem _storage = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private SharedStorageSystem _storage = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
 
     /// <inheritdoc/>
     public override void Initialize()

@@ -1,20 +1,18 @@
 ﻿using Content.Server.Atmos.Components;
 using Content.Shared._TP.Jellids;
+using Content.Shared._TP.WaterInteractions;
 using Content.Shared.Atmos.Components;
-using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Overlays;
 using Content.Shared.Silicons.Laws.Components;
-using Robust.Shared.Audio.Systems;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server._TP.WaterInteractions;
 
 /// <summary>
 /// Water heavy. Lots of water hurt. Too much water makes person look like one of those hydraulic press videos on instagram.
 /// In real terms, this system measures the "depth" of objects, and relates it to their designated crush depths.
-/// If you are deeper than your crush depth and don't have an abyssal hardsuit on. Ruh roh.
+/// If you are deeper than your crush depth and don't have an abyssal hardsuit on... Ruh roh.
 /// </summary>
 public sealed partial class WaterInteractionSystem : EntitySystem
 {
@@ -25,11 +23,6 @@ public sealed partial class WaterInteractionSystem : EntitySystem
 
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private IEntityManager _entityManager = default!;
-    [Dependency] private SharedAudioSystem _audio = default!;
-    [Dependency] private IPrototypeManager _prototypeManager = default!;
-    [Dependency] private SharedSolutionContainerSystem _solution = default!;
-
-    private EntityUid? _soundEntity;
 
     public override void Update(float frameTime)
     {
@@ -44,9 +37,9 @@ public sealed partial class WaterInteractionSystem : EntitySystem
         if (_timer >= UpdateTimer)
         {
             // FIRST: Collect ALL entities into a list to avoid enumeration issues
-            var entitiesToProcess = new List<(EntityUid uid, InGasComponent inGas)>();
+            var entitiesToProcess = new List<(EntityUid uid, Atmos.InGasComponent inGas)>();
 
-            var entities = EntityQueryEnumerator<InGasComponent>();
+            var entities = EntityQueryEnumerator<Atmos.InGasComponent>();
             while (entities.MoveNext(out var uid, out var inGas))
             {
                 entitiesToProcess.Add((uid, inGas));
@@ -60,21 +53,14 @@ public sealed partial class WaterInteractionSystem : EntitySystem
             {
                 if (inGas.InWater)
                 {
-                    // Your water logic here
-
                     if (!HasComp<WaterViewerComponent>(uid))
-                    {
                         entitiesToAddWaterViewer.Add(uid);
-                    }
                 }
 
-                if (!TryComp<JellidComponent>(uid, out var jellid) &&
-                    !TryComp<SiliconLawProviderComponent>(uid, out var borg))
+                if (!HasComp<JellidComponent>(uid) && !HasComp<SiliconLawProviderComponent>(uid))
                 {
                     if (HasComp<WaterViewerComponent>(uid))
-                    {
                         entitiesToRemoveWaterViewer.Add(uid);
-                    }
                 }
 
                 if (TryComp<FlammableComponent>(uid, out var flame) && inGas.InWater)
@@ -85,10 +71,8 @@ public sealed partial class WaterInteractionSystem : EntitySystem
                     }
                 }
 
-                if (TryComp<Shared._TP.WaterInteractions.AbyssalProtectedComponent>(uid, out var abyssalProtected))
-                {
+                if (HasComp<AbyssalProtectedComponent>(uid))
                     continue;
-                }
 
                 if (inGas.InWater)
                 {

@@ -1,8 +1,7 @@
 - type: marking
   id: ReptilianDragonEye
   bodyPart: Eyes
-  markingCategory: Overlay
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   coloring:
     layers:
       tattoo_eye_dragon_shadow:

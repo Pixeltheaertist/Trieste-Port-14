@@ -7,9 +7,10 @@
   components:
   - type: Item
     size: Normal
-  - type: StorageFill
-    contents:
-      - id: TP14EncryptionKeyNanotrasen
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: TP14EncryptionKeyNanotrasen
         amount: 2
   - type: Storage
 
@@ -30,15 +31,17 @@
     whitelist:
       tags:
       - TP14MagicCandle
-  - type: StorageFill
-    contents:
-    - id: CandleInfinite
-      amount: 4
-    - id: CandleBlueInfinite
-      amount: 2
-    - id: CandleRedInfinite
-      amount: 2
-    - id: CandleGreenInfinite
-      amount: 2
-    - id: CandlePurpleInfinite
-      amount: 2
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: CandleInfinite
+          amount: 4
+        - id: CandleBlueInfinite
+          amount: 2
+        - id: CandleRedInfinite
+          amount: 2
+        - id: CandleGreenInfinite
+          amount: 2
+        - id: CandlePurpleInfinite
+          amount: 2

@@ -11,9 +11,9 @@ namespace Content.Server._TP.Falling.FallMonitor;
 
 public sealed partial class FallMonitorSystem : EntitySystem
 {
-    [Dependency] private readonly RadioSystem _radio = default!;
-    [Dependency] private readonly NavMapSystem _navMap = default!;
-    [Dependency] private SharedTransformSystem _transformSystem = default!;
+    [Dependency] private RadioSystem _radio = default!;
+    [Dependency] private NavMapSystem _navMap = default!;
+
     public override void Initialize()
     {
         base.Initialize();

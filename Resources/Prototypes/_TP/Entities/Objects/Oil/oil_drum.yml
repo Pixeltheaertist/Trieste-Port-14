@@ -1,19 +1,15 @@
 - type: entity
-  name: oil drum
-  parent: BaseItem
-  description: Used to store liquid gold
+  parent: [ BaseItem, SolutionGinormous ]
   id: TP14BaseOilDrum
-  suffix: Trieste, Petrochem, Empty
+  suffix: Trieste, Empty
+  name: oil drum
+  description: Used to store black gold
   components:
   - type: Sprite
     sprite: _TP/Structures/Storage/Drums.rsi
     noRot: true
     layers:
-      - state: crude
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 1000
+    - state: crude
   - type: ExaminableSolution
     solution: tank
   - type: SolutionItemStatus
@@ -36,10 +32,8 @@
   id: TP14BaseOilDrumCrudeOil
   suffix: Trieste, Petrochem, Filled, Crude-Oil
   components:
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 1000
-        reagents:
-        - ReagentId: CrudeOil
-          Quantity: 1000
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: CrudeOil
+        Quantity: 1000

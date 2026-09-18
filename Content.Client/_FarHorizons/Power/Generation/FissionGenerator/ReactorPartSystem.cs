@@ -30,5 +30,12 @@ public sealed partial class ReactorPartSystem : SharedReactorPartSystem
     }
 
     private void OnComponentInit(Entity<ReactorPartComponent> ent, ref ComponentInit args)
-        => _sprite.LayerSetColor((ent.Owner, EntityManager.GetComponent<SpriteComponent>(ent.Owner)), 0, _proto.Index(ent.Comp.Material).Color);
+    {
+        if (TryComp<SpriteComponent>(ent.Owner, out var sprite))
+        {
+            _sprite.LayerSetColor((ent.Owner, sprite),
+                0,
+                _proto.Index(ent.Comp.Material).Color);
+        }
+    }
 }

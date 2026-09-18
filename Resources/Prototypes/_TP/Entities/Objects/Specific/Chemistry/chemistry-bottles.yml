@@ -1,0 +1,12 @@
+- type: entity
+  parent: BaseChemistryBottleFilled
+  id: TP14ChemistryBottleArcryox
+  suffix: Trieste, arcryox
+  components:
+  - type: Label
+    currentLabel: reagent-name-arcryox
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Arcryox
+        Quantity: 30

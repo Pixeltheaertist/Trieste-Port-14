@@ -98,9 +98,6 @@ entities:
         - BellPlatform
     - type: Parallax
       parallax: Sky
-    - type: Weather
-      weather:
-        Rain: {}
     - type: MapAtmosphere
       space: False
       mixture:

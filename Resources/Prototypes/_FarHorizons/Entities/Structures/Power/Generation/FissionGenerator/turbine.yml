@@ -49,8 +49,9 @@
         - MachineMask
         layer:
         - MachineLayer
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallicStrong
   - type: Anchorable
     delay: 10
@@ -151,42 +152,14 @@
     inletRot: 0
     outletPos: -1, -1
     outletRot: 0
-    arrowPrototype: TurbineSmallFlowArrow
-
-# Arrow to indicate flow
-- type: entity
-  id: TurbineFlowArrow
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: Markers/teg_arrow.rsi
-    color: "#FFFFFFBB"
-    layers:
-    - state: arrow
+  - type: DirectionalArrowIndicator
+    arrows:
+    - offset: 2, -1
       rotation: 90
-      offset: 2, -1
-    - state: arrow
+      arrowType: BlueDirectionalArrowIndicator
+    - offset: -2, -1
       rotation: 90
-      offset: -2, -1
-  - type: TimedDespawn
-    lifetime: 2
-  - type: Tag
-    tags:
-    - HideContextMenu
-
-- type: entity
-  id: TurbineSmallFlowArrow
-  parent: TurbineFlowArrow
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    layers:
-    - state: arrow
-      rotation: 180
-      offset: 1, -2
-    - state: arrow
-      rotation: 0
-      offset: -1, -2
+      arrowType: BlueDirectionalArrowIndicator
 
 # Pipes the turbine uses to connect to the pipe network
 - type: entity

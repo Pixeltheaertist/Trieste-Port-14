@@ -14,7 +14,7 @@
       shader: unshaded # }
       state: watervapour
   - type: AtmosFixMarker
-    mode: 7
+    mode: 9
 
 - type: entity
   name: Atmos Fix Abyss Marker
@@ -32,4 +32,4 @@
       shader: unshaded # }
       state: plasma
   - type: AtmosFixMarker # EXTREMELY high pressure. Only abyssal suits will prevent you from being popped like a balloon.
-    mode: 9
+    mode: 10

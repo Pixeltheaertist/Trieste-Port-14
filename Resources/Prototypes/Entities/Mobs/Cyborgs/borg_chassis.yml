@@ -49,7 +49,6 @@
   - type: BorgSwitchableType
     selectedBorgType: mining
   - type: InGas # TP14
-    gasID: 9
     damagedByGas: false
     gasThreshold: 50
 
@@ -61,7 +60,6 @@
   - type: BorgSwitchableType
     selectedBorgType: engineering
   - type: InGas # TP14
-    gasID: 9
     damagedByGas: false
     gasThreshold: 50
 
@@ -228,7 +226,6 @@
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
   - type: InGas # TP14
-    gasID: 9
     damagedByGas: false
     gasThreshold: 50
 

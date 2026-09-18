@@ -8,11 +8,11 @@
     },
     "states": [
         {
-            "name": "bushy_s",
+            "name": "catfish_s",
             "directions": 4
         },
         {
-            "name": "catfish_s",
+            "name": "bushy_s",
             "directions": 4
         },
         {

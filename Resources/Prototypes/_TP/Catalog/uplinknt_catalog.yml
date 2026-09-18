@@ -440,7 +440,7 @@
   id: UplinkVestineChemistryVialHalf
   name: uplink-vestinehalf-name
   description: uplink-vestinehalf-desc
-  productEntity: VestineChemistryVialHalf
+  productEntity: TP14SmallChemistryVialVestineHalf
   cost:
     BluespaceCrystal: 3
   categories:

@@ -1,0 +1,9 @@
+# This is clear syndicate contraband and is illegal to own IC.
+- type: contrabandSeverity # TP 14
+  id: Nanotrasen # TP 14
+  examineText: contraband-examine-text-Nanotrasen # TP 14
+
+# This is SolGov Contraband.
+- type: contrabandSeverity # TP 14
+  id: SolGov # TP 14
+  examineText: contraband-examine-text-SolGov # TP 14

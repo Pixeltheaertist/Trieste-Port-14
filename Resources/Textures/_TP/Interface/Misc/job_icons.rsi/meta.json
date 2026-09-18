@@ -1,0 +1,32 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from SS14 and modified by piepie3.149 for Trieste Port.",
+    "size": {
+        "x": 8,
+        "y": 8
+    },
+    "states": [
+        {
+            "name": "chief-engineer"
+        },
+        {
+            "name": "chief-medical-officer"
+        },
+        {
+            "name": "harbormaster"
+        },
+        {
+            "name": "head-of-personnel"
+        },
+        {
+            "name": "marshal"
+        },
+        {
+            "name": "overseer"
+        },
+        {
+            "name": "research-director"
+        }
+    ]
+}

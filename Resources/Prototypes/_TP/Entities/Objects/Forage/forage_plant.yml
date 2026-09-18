@@ -8,8 +8,9 @@
       fix1:
         hard: false
   - type: InteractionOutline
-  - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
+  - type: Damageable
     damageModifierSet: Wood
   - type: Destructible
     thresholds:
@@ -58,7 +59,7 @@
     - id: SerpentsManeBulb
 
 - type: entity
-  parent: FoodInjectableBase
+  parent: [ FoodInjectableBase, SolutionTiny ]
   id: SerpentsManeBulb
   suffix: Trieste, Sea, Forage
   name: serpent's mane bulb
@@ -79,11 +80,9 @@
         Quantity: 16
       - ReagentId: Hiscylin
         Quantity: 10
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
+  - type: Solution
+    solution:
+      reagents:
         - ReagentId: Teratin
           Quantity: 16
         - ReagentId: Hiscylin
@@ -133,9 +132,8 @@
       reagents:
       - ReagentId: Vounarin
         Quantity: 4
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: Vounarin
-          Quantity: 4
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Vounarin
+        Quantity: 4

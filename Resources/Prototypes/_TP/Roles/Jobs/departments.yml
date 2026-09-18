@@ -32,7 +32,6 @@
   - ResearchAssistant
   - Bartender
   - Botanist
-  - Boxer
   - Chaplain
   - Chef
   - Clown
@@ -45,12 +44,11 @@
   - Reporter
   - ServiceWorker
   - Visitor
-  - Zookeeper
 
 - type: department
   id: Expeditionary
-  name: department-Expeditionary
-  description: department-Expeditioneering-description
+  name: department-Expeditions-name
+  description: department-Expeditions-desc
   color: "#846DCF"
   roles:
   - TP14Expeditioneer

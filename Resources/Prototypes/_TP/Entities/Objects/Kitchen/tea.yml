@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseItem
+  parent: [ BaseItem, SolutionVeryTiny ]
   id: TP14TeaBag
   suffix: Trieste
   name: tea bag
@@ -9,12 +9,11 @@
     solution: food
   - type: ExaminableSolution
     solution: food
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: TeaPowder
-          Quantity: 10
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: TeaPowder
+        Quantity: 15
   - type: SolutionTransfer
     canChangeTransferAmount: false
   - type: Sprite

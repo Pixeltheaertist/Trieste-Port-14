@@ -1,10 +1,12 @@
 using Content.Client._NullLink;
 using Content.Client.Administration.Managers;
+using Content.Client.Audio.Midi;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.Clickable;
 using Content.Client.DebugMon;
 using Content.Client.Eui;
+using Content.Client.FeedbackPopup;
 using Content.Client.Fullscreen;
 using Content.Client.GameTicking.Managers;
 using Content.Client.GhostKick;
@@ -12,7 +14,6 @@ using Content.Client.Guidebook;
 using Content.Client.Launcher;
 using Content.Client.Lobby;
 using Content.Client.Mapping;
-using Content.Client.NullLink;
 using Content.Client.Parallax.Managers;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Players.RateLimiting;
@@ -25,6 +26,7 @@ using Content.Client.Voting;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
+using Content.Shared.FeedbackSystem;
 using Content.Shared.NullLink;
 using Content.Shared.IoC;
 using Content.Shared.Players.PlayTimeTracking;
@@ -65,6 +67,9 @@ namespace Content.Client.IoC
             collection.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
             collection.Register<TitleWindowManager>();
             collection.Register<ClientsidePlaytimeTrackingManager>();
+            collection.Register<ClientFeedbackManager>();
+            collection.Register<ISharedFeedbackManager, ClientFeedbackManager>();
+            collection.Register<MidiFileCollectionManager>();
 
             // NullLink start
             collection.Register<INullLinkPlayerRolesManager, NullLinkPlayerRolesManager>();

@@ -39,7 +39,7 @@ public sealed partial class OilProductionSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<OilProductionComponent, SolutionContainerManagerComponent>();
+        var query = EntityQueryEnumerator<OilProductionComponent, SolutionManagerComponent>();
         while (query.MoveNext(out var uid, out var regen, out var manager))
         {
             if (_timing.CurTime < regen.NextRegenTime)

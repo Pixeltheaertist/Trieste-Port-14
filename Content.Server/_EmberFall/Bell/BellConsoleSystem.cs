@@ -15,12 +15,12 @@ using Robust.Shared.Map.Components;
 
 namespace Content.Server._EmberFall.Bell;
 
-public sealed class BellConsoleSystem : SharedBellConsoleSystem
+public sealed partial class BellConsoleSystem : SharedBellConsoleSystem
 {
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
-    [Dependency] private readonly ShuttleSystem _shuttle = default!;
-    [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private SharedUserInterfaceSystem _ui = default!;
+    [Dependency] private ShuttleSystem _shuttle = default!;
+    [Dependency] private StationSystem _station = default!;
 
     public override void Initialize()
     {

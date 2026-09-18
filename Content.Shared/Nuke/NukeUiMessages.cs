@@ -6,6 +6,12 @@ namespace Content.Shared.Nuke
     {
         public const string NukeDiskSlotId = "Nuke";
         public const string NukeResonanceSlotId = "Resonance";
+
+        /// <summary>
+        /// Cooldown time between attempts to enter the nuke code.
+        /// Used to prevent clients from trying to brute force it.
+        /// </summary>
+        public static readonly TimeSpan EnterCodeCooldown = TimeSpan.FromSeconds(1);
     }
 
     [Serializable, NetSerializable]

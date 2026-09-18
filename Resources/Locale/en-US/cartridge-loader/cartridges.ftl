@@ -7,6 +7,7 @@ news-read-program-name = Platform news
 
 crew-manifest-program-name = Trieste manifest
 crew-manifest-cartridge-loading = Loading ...
+crew-manifest-cartridge-loading-failed = Failed to load crew manifest!
 
 net-probe-program-name = NetProbe
 net-probe-scan = Scanned {$device}!

@@ -36,8 +36,9 @@
     radius: 4
     energy: 3
     color: "#8cd4cf"
-  - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
+  - type: Damageable
     damageModifierSet: Glass
   - type: EmpOnTrigger
     range: 1

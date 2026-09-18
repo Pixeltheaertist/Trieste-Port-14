@@ -15,8 +15,8 @@
       min: 10
       max: 15
   - type: FlashStormRule
-    stormWeather: "Storm"
-    normalWeather: "Rain"
+    stormWeather: "WeatherStorm"
+    normalWeather: "WeatherRain"
 
 - type: entity
   id: TP14RainClear
@@ -34,8 +34,8 @@
       min: 5
       max: 10
   - type: WeatherChangeRule
-    targetWeather: "Clear"
-    returnWeather: "Rain"
+    targetWeather: "WeatherClear"
+    returnWeather: "WeatherRain"
     lightning: false
     sunlight: true # This right here breaks the fabric reality in a couple of interesting ways, so that's fun.
 
@@ -55,8 +55,8 @@
       min: 10
       max: 15
   - type: WeatherChangeRule
-    targetWeather: "CloudStorm"
-    returnWeather: "Rain"
+    targetWeather: "WeatherCloudStorm"
+    returnWeather: "WeatherRain"
     lightning: true
 
 # Mass Migration triggers a scaled-up version of DrifterMigration, spawning 3-4x as many drifters. It is a major once-per-round event similar to FlashStorm. The platform fires illumination flares to assist in seeing the hostiles.
@@ -82,8 +82,8 @@
     - id: TP14DrifterTimedSpawner
       prob: 0.8
   - type: WeatherChangeRule
-    targetWeather: "Rain"
-    returnWeather: "Rain"
+    targetWeather: "WeatherRain"
+    returnWeather: "WeatherRain"
     lightning: true
     sunlight: true
     sunlightColor: "#EE4B2B"

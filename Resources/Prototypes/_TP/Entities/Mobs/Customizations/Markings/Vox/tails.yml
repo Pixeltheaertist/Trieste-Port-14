@@ -1,8 +1,7 @@
 - type: marking
   id: TP14VoxTailRooster
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vox]
+  groupWhitelist: [Vox]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Vox/tails.rsi
     state: tail_rooster_primary

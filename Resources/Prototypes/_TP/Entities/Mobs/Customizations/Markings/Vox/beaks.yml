@@ -2,8 +2,7 @@
 - type: marking
   id: TP14VoxBeakDuck
   bodyPart: Snout
-  markingCategory: Snout
-  speciesRestriction: [Vox]
+  groupWhitelist: [Vox]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Vox/beaks.rsi
     state: beak_duck_primary
@@ -19,8 +18,7 @@
 - type: marking
   id: TP14VoxBeakHornbill
   bodyPart: Snout
-  markingCategory: Snout
-  speciesRestriction: [Vox]
+  groupWhitelist: [Vox]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Vox/beaks.rsi
     state: beak_hornbill_primary
@@ -40,8 +38,7 @@
 - type: marking
   id: TP14VoxBeakPelican
   bodyPart: Snout
-  markingCategory: Snout
-  speciesRestriction: [Vox]
+  groupWhitelist: [Vox]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Vox/beaks.rsi
     state: beak_pelican_primary
@@ -57,8 +54,7 @@
 - type: marking
   id: TP14VoxBeakToucan
   bodyPart: Snout
-  markingCategory: Snout
-  speciesRestriction: [Vox]
+  groupWhitelist: [Vox]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Vox/beaks.rsi
     state: beak_toucan_primary

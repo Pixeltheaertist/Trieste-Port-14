@@ -1,4 +1,5 @@
 using Content.Shared._TP.Jellids;
+using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Overlays;
@@ -8,10 +9,10 @@ using Robust.Shared.Audio.Systems;
 
 namespace Content.Shared._TP.WaterInteractions;
 
-public sealed class SharedUnderwaterEffectSystem : EntitySystem
+public sealed partial class SharedUnderwaterEffectSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private InventorySystem _inventory = default!;
 
     private EntityUid? _soundEntity;
 

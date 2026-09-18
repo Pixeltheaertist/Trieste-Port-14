@@ -1,5 +1,6 @@
 using Content.Server._TP.StationEvents.Components;
 using Content.Server.StationEvents.Events;
+using Content.Shared._TP.DeathWhales;
 using Content.Shared.GameTicking.Components;
 using Robust.Shared.Map;
 
@@ -45,7 +46,7 @@ namespace Content.Server._TP.StationEvents.Events
             base.Ended(uid, comp, gameRule, args);
             comp.CurrentAmount = 0f;
 
-            foreach (var whales in EntityManager.EntityQuery<Shared._TP.DeathWhales.DeathWhaleComponent>())
+            foreach (var whales in EntityQuery<DeathWhaleComponent>())
             {
                 var whaleUid = whales.Owner;
                 QueueDel(whaleUid);  // Deleting the whale entity, they've left!!

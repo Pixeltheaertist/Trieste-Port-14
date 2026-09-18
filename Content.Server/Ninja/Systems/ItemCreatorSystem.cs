@@ -1,22 +1,17 @@
 using Content.Server.Ninja.Events;
-using Content.Server.Power.EntitySystems;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Ninja.Components;
 using Content.Shared.Ninja.Systems;
 using Content.Shared.Popups;
-using Content.Server.Power.Components;
-using Content.Shared.Actions;
-using Content.Shared.Ninja.Components;
-using Content.Shared.Power.Components;
+using Content.Shared.Power.EntitySystems;
 
 namespace Content.Server.Ninja.Systems;
 
-public sealed class ItemCreatorSystem : SharedItemCreatorSystem
+public sealed partial class ItemCreatorSystem : SharedItemCreatorSystem
 {
-    [Dependency] private readonly BatterySystem _battery = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
+    [Dependency] private SharedBatterySystem _battery = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -24,23 +19,12 @@ public sealed class ItemCreatorSystem : SharedItemCreatorSystem
 
         SubscribeLocalEvent<ItemCreatorComponent, CreateItemEvent>(OnCreateItem);
         SubscribeLocalEvent<ItemCreatorComponent, NinjaBatteryChangedEvent>(OnBatteryChanged);
-        SubscribeLocalEvent<ItemCreatorComponent, ComponentInit>(OnCompInit);
-    }
-
-
-    private void OnCompInit(EntityUid uid, ItemCreatorComponent component, ComponentInit args)
-    {
-        if (TryComp<BatteryComponent>(uid, out var playerBattery))
-        {
-            component.Battery = uid;
-            _actionContainer.EnsureAction(uid, ref component.ActionEntity, component.Action);
-        }
     }
 
     private void OnCreateItem(Entity<ItemCreatorComponent> ent, ref CreateItemEvent args)
     {
         var (uid, comp) = ent;
-        if (comp.Battery is not {} battery)
+        if (comp.Battery is not { } battery)
             return;
 
         args.Handled = true;

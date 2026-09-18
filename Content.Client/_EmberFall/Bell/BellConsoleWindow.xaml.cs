@@ -12,8 +12,8 @@ namespace Content.Client._EmberFall.Bell;
 [GenerateTypedNameReferences]
 public sealed partial class BellConsoleWindow : FancyWindow
 {
-    [Dependency] private readonly IEntityManager _entMan = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IEntityManager _entMan = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public event Action<int>? OnFTL;
 

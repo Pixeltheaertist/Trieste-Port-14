@@ -4,17 +4,18 @@
   parent: EventHumanoid
   components:
   - type: SlurredAccent # It learned english through it's Host's headset, so it makes sense.
-  - type: Temperature
+  - type: TemperatureDamage
     heatDamageThreshold: 320
     coldDamageThreshold: 230
-    currentTemperature: 310.15
-    specificHeat: 46
     coldDamage:
       types:
-        Cold : -0.05 # Heals in the cold, as an ocean creature
+        Cold: -0.05 # Heals in the cold, as an ocean creature
     heatDamage:
       types:
-        Heat : 4 # Burns very easily
+        Heat: 4 # Burns very easily
+  - type: Temperature
+    currentTemperature: 310.15
+    specificHeat: 46
   - type: TemperatureSpeed
     thresholds:
       289: 1.1
@@ -32,15 +33,12 @@
   - type: Devourer
     foodPreferenceWhitelist:
       components:
-      - HumanoidAppearance
+      - HumanoidProfile
     chemical: Ichor
     healRate: 10.0
     stomachStorageWhitelist:
       components:
       - MobState
-  - type: ActionGun
-    action: ActionThingySpit
-    gunProto: ThingyAcidSpit # Blinds targets temporarily. Not enough to permanently blind them unless mixed with something else.
   - type: Hunger
     baseDecayRate: 0.5
     starvingSlowdownModifier: 2 # Getting desperate for prey, over-exerting it's host
@@ -73,8 +71,6 @@
       types:
         Heat: 9
   - type: TransferMindOnGib # upon the body dying, it bursts from it's host in an attempt to survive
-  - type: Body
-    prototype: TheThingy
   - type: Destructible
     thresholds:
     - trigger:
@@ -82,6 +78,37 @@
         damage: 100
       behaviors:
       - !type:GibBehavior { }
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: OrganHumanTorso
+      Head: OrganHumanHead
+      ArmLeft: OrganHumanArmLeft
+      ArmRight: OrganHumanArmRight
+      HandRight: OrganHumanHandRight
+      HandLeft: OrganHumanHandLeft
+      LegLeft: OrganHumanLegLeft
+      LegRight: OrganHumanLegRight
+      FootLeft: OrganHumanFootLeft
+      FootRight: OrganHumanFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Tongue: OrganHumanTongue
+      Appendix: OrganHumanAppendix
+      Ears: OrganHumanEars
+      Lungs: OrganHumanLungs
+      Heart: OrganHumanHeart
+      Stomach: OrganTumor
+      Liver: OrganHumanLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: Human
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -113,7 +140,8 @@
     checkCanAccess: false
     range: 0
   - type: WorldTargetAction
-    event: !type:ActionGunShootEvent
+    event: !type:ProjectileSpellEvent
+      prototype: ThingyAcidSpit
 
 - type: entity
   id: ActionCreateThingySpine

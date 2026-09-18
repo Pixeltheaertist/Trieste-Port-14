@@ -5,6 +5,11 @@
     head: TP14ClothingHeadHatWearyClownHat
 
 
+- type: loadout
+  id: ClownMitre
+  equipment:
+    head: ClothingHeadHatMitreClown
+
 # Jumpsuit
 - type: loadout
   id: WearyOveralls

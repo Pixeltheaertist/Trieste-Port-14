@@ -19,19 +19,7 @@
             "directions": 4
         },
         {
-            "name": "equipped-EYES-dog",
-            "directions": 4
-        },
-        {
             "name": "equipped-EYES-moth",
-            "directions": 4
-        },
-        {
-            "name": "equipped-EYES-secdog",
-            "directions": 4
-        },
-        {
-            "name": "equipped-EYES-jellid",
             "directions": 4
         },
         {
@@ -41,7 +29,10 @@
         {
             "name": "inhand-right",
             "directions": 4
+        },
+        {
+            "name": "equipped-EYES-jellid",
+            "directions": 4
         }
     ]
 }
-

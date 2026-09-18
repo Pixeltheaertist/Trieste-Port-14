@@ -7,7 +7,7 @@
   color: "#000067"
   physicalDesc: reagent-physical-desc-nondescript
   metabolisms:
-    Poison:
+    Bloodstream:
       effects:
       - !type:PopupMessage
         conditions:
@@ -39,7 +39,7 @@
   color: "#F0ead6"
   physicalDesc: reagent-physical-desc-putrid
   metabolisms:
-    Poison:
+    Bloodstream:
       effects:
         - !type:HealthChange
           damage:
@@ -51,3 +51,17 @@
             reagent: SeagullToxin
             min: 2
           probability: 0.4
+
+
+- type: reagent
+  id: Mimicrium
+  name: reagent-name-mimicrium
+  group: Toxins
+  desc: reagent-desc-mimicrium
+  physicalDesc: reagent-physical-desc-electric
+  flavor: shocking
+  color: "#FDD023"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:Electrocute # mimics generally only have enough of this shit to do one good shock, so it's fineeee

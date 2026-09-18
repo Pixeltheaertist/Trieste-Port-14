@@ -14,11 +14,11 @@ namespace Content.Shared._Moffstation.Cards;
 [Virtual] // Can be instantiated on its own to provide an API for dealing with cards stacks.
 public partial class CardStackSystem : EntitySystem
 {
-    [Dependency] protected readonly SharedAudioSystem Audio = default!;
-    [Dependency] protected readonly CardSystem Card = default!;
-    [Dependency] protected readonly CardStackSystem CardStack = default!;
-    [Dependency] protected readonly SharedContainerSystem Container = default!;
-    [Dependency] protected readonly SharedStorageSystem Storage = default!;
+    [Dependency] protected SharedAudioSystem _audio = default!;
+    [Dependency] protected CardSystem _card = default!;
+    [Dependency] protected CardStackSystem _cardStack = default!;
+    [Dependency] protected SharedContainerSystem _container = default!;
+    [Dependency] protected SharedStorageSystem _storage = default!;
 
     public void InsertCard<T>(Entity<T> entity, Entity<CardComponent> card, EntityUid? user = null)
         where T : CardStackComponent
@@ -33,14 +33,14 @@ public partial class CardStackSystem : EntitySystem
         foreach (var card in cards)
         {
             firstCard ??= card;
-            Container.Insert(card.Owner, entity.Comp.ItemContainer);
+            _container.Insert(card.Owner, entity.Comp.ItemContainer);
             entity.Comp.NetCards.Add(GetNetEntity(card));
         }
 
         if (user is not null && firstCard is { } fc)
         {
-            Audio.PlayPredicted(entity.Comp.PlaceDownSound, Transform(entity).Coordinates, user);
-            Storage.PlayPickupAnimation(fc, Transform(user.Value).Coordinates, Transform(entity).Coordinates, 0, user);
+            _audio.PlayPredicted(entity.Comp.PlaceDownSound, Transform(entity).Coordinates, user);
+            _storage.PlayPickupAnimation(fc, Transform(user.Value).Coordinates, Transform(entity).Coordinates, 0, user);
         }
 
         Dirty(entity);
@@ -62,14 +62,14 @@ public partial class CardStackSystem : EntitySystem
         foreach (var card in cards)
         {
             firstCard ??= card;
-            Container.Remove(card.Owner, entity.Comp.ItemContainer);
+            _container.Remove(card.Owner, entity.Comp.ItemContainer);
             entity.Comp.NetCards.Remove(GetNetEntity(card));
         }
 
         if (user is not null && firstCard is { } fc)
         {
-            Audio.PlayPredicted(entity.Comp.PickUpSound, Transform(entity).Coordinates, user);
-            Storage.PlayPickupAnimation(fc, Transform(entity).Coordinates, Transform(user.Value).Coordinates, 0, user);
+            _audio.PlayPredicted(entity.Comp.PickUpSound, Transform(entity).Coordinates, user);
+            _storage.PlayPickupAnimation(fc, Transform(entity).Coordinates, Transform(user.Value).Coordinates, 0, user);
         }
 
         Dirty(entity);
@@ -99,8 +99,8 @@ public partial class CardStackSystem : EntitySystem
 
         if (user is not null)
         {
-            Audio.PlayPredicted(to.Comp.PlaceDownSound, Transform(to).Coordinates, user);
-            Storage.PlayPickupAnimation(
+            _audio.PlayPredicted(to.Comp.PlaceDownSound, Transform(to).Coordinates, user);
+            _storage.PlayPickupAnimation(
                 cardsList.Count == 1 ? cardsList.First() : from,
                 Transform(from).Coordinates,
                 Transform(to).Coordinates,
@@ -118,9 +118,9 @@ public partial class CardStackSystem : EntitySystem
     {
         foreach (var card in cards.ToList())
         {
-            Container.Remove(card.Owner, from.Comp.ItemContainer);
+            _container.Remove(card.Owner, from.Comp.ItemContainer);
             from.Comp.NetCards.Remove(GetNetEntity(card));
-            Container.Insert(card.Owner, to.Comp.ItemContainer);
+            _container.Insert(card.Owner, to.Comp.ItemContainer);
             to.Comp.NetCards.Add(GetNetEntity(card));
         }
 
@@ -175,14 +175,14 @@ public partial class CardStackSystem : EntitySystem
         if (entity.Comp is CardHandComponent)
         {
             var lastCard = GetCards(entity).Single();
-            CardStack.RemoveCard(entity, lastCard);
+            _cardStack.RemoveCard(entity, lastCard);
 
             // If the hand was in a container, leave the last card in its place in the container.
             var cardParent = Transform(entity).ParentUid;
-            if (Container.TryGetContainingContainer(cardParent, entity, out var container))
+            if (_container.TryGetContainingContainer(cardParent, entity, out var container))
             {
-                Container.Remove(entity.Owner, container, force: true);
-                Container.Insert(lastCard.Owner, container);
+                _container.Remove(entity.Owner, container, force: true);
+                _container.Insert(lastCard.Owner, container);
             }
 
             PredictedQueueDel(entity);
@@ -190,9 +190,10 @@ public partial class CardStackSystem : EntitySystem
     }
 }
 
-public abstract class CardStackSystem<TComp> : CardStackSystem where TComp : CardStackComponent
+public abstract partial class CardStackSystem<TComp> : CardStackSystem where TComp : CardStackComponent
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedContainerSystem _containerSystem = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -211,7 +212,7 @@ public abstract class CardStackSystem<TComp> : CardStackSystem where TComp : Car
 
     private void OnStartup(Entity<TComp> entity, ref ComponentStartup args)
     {
-        entity.Comp.ItemContainer = Container.EnsureContainer<Container>(entity, entity.Comp.ContainerId);
+        entity.Comp.ItemContainer = _containerSystem.EnsureContainer<Container>(entity, entity.Comp.ContainerId);
     }
 
     private void OnMapInit(Entity<TComp> entity, ref MapInitEvent args)
@@ -219,7 +220,7 @@ public abstract class CardStackSystem<TComp> : CardStackSystem where TComp : Car
         // Manually synchronize entities in the container to our internal list.
         entity.Comp.NetCards.AddRange(
             GetNetEntityList(
-                Container.GetContainer(entity, entity.Comp.ContainerId)
+                _containerSystem.GetContainer(entity, entity.Comp.ContainerId)
                     .ContainedEntities
             )
         );
@@ -247,7 +248,7 @@ public abstract class CardStackSystem<TComp> : CardStackSystem where TComp : Car
     {
         if (args.Using == args.Target ||
             args.Using is not { } usedEnt ||
-            !CardStack.TryComp(args.Using, out var usingStack))
+            !_cardStack.TryComp(args.Using, out var usingStack))
             return;
 
         var user = args.User;
@@ -269,29 +270,29 @@ public abstract class CardStackSystem<TComp> : CardStackSystem where TComp : Car
         var ev = new CardStackQuantityChangeEvent(StackQuantityChangeType.Joined, user);
         RaiseLocalEvent(entity, ref ev);
 
-        Audio.PlayPredicted(usedStack.Comp.PlaceDownSound, Transform(usedStack).Coordinates, user);
-        Storage.PlayPickupAnimation(entity, Transform(usedStack).Coordinates, Transform(entity).Coordinates, 0, user);
+        _audio.PlayPredicted(usedStack.Comp.PlaceDownSound, Transform(usedStack).Coordinates, user);
+        _storage.PlayPickupAnimation(entity, Transform(usedStack).Coordinates, Transform(entity).Coordinates, 0, user);
     }
 
     private void OnInteractUsing(Entity<TComp> entity, ref InteractUsingEvent args)
     {
         if (TryComp<CardComponent>(args.Used, out var usedCard))
         {
-            CardStack.InsertCard(entity, (args.Used, usedCard), args.User);
+            _cardStack.InsertCard(entity, (args.Used, usedCard), args.User);
             args.Handled = true;
             return;
         }
 
-        if (CardStack.TryComp(args.Used, out var usedStack))
+        if (_cardStack.TryComp(args.Used, out var usedStack))
         {
             var cardToDraw = GetCards(entity).TakeLast(1).ToList();
-            CardStack.TransferCards<TComp, CardStackComponent>(
+            _cardStack.TransferCards<TComp, CardStackComponent>(
                 entity,
                 (args.Used, usedStack),
                 cardToDraw,
                 args.User
             );
-            Card.Flip(cardToDraw, faceDown: false); // Flip drawn card
+            _card.Flip(cardToDraw, faceDown: false); // Flip drawn card
             args.Handled = true;
             return;
         }

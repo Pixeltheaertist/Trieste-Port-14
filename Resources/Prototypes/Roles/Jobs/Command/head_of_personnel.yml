@@ -23,9 +23,8 @@
       time: 1h
   weight: 20
   startingGear: HoPGear
-  icon: "JobIconHeadOfPersonnel"
+  icon: "TP14JobIconHeadOfPersonnel" # TRIESTE: 'JobIconHeadOfPersonnel'
   supervisors: job-supervisors-captain
-  canBeAntag: false
   access:
   - Command
   - HeadOfPersonnel
@@ -53,6 +52,8 @@
   - Cargo
   - Atmospherics
   - Medical
+  - GenpopEnter
+  - GenpopLeave
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

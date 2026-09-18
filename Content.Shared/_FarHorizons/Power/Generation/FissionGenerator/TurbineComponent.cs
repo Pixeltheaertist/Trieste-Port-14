@@ -219,12 +219,6 @@ public sealed partial class TurbineComponent : Component
     public float OutletRot = 90;
 
     /// <summary>
-    /// Name of the prototype of the arrows that indicate flow on inspect
-    /// </summary>
-    [DataField]
-    public EntProtoId ArrowPrototype = "TurbineFlowArrow";
-
-    /// <summary>
     /// Name of the prototype of the pipes the turbine uses to connect to the pipe network
     /// </summary>
     [DataField]

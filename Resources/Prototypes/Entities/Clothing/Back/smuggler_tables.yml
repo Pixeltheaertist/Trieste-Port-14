@@ -167,7 +167,7 @@
     children:
     - id: SpaceCash100
       weight: 2
-    - id: GlowstickBase
+    - id: GlowstickGreen
       amount: !type:RangeNumberSelector
         range: 1, 5
     - id: GlowstickRed
@@ -524,8 +524,6 @@
       weight: 10
     - id: SyringeAmbuzol
     - id: SyringeHyronalin
-    - id: SyringeReinforcementAlgae
-    - id: SyringeRegenerationAlgae
     - id: SyringeTranexamicAcid
     - id: SyringeInaprovaline
     - id: SyringeEphedrine

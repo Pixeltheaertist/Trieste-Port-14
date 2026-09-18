@@ -7,12 +7,12 @@ using Content.Server.Speech.EntitySystems;
 
 namespace Content.Server._TP.Speech.EntitySystems;
 
-public sealed class ChristmasAccentSystem : EntitySystem
+public sealed partial class ChristmasAccentSystem : EntitySystem
 {
     private static readonly Regex FirstWordAllCapsRegex = new(@"^(\S+)");
 
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private ReplacementAccentSystem _replacement = default!;
 
     public override void Initialize()
     {

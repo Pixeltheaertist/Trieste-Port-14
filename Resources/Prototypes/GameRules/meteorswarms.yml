@@ -4,14 +4,14 @@
   id: MeteorSwarmDustEventsTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
-    - id: GameRuleSpaceDustMinor
-    - id: GameRuleSpaceDustMajor
+    - id: SpaceDustMinor
+    - id: SpaceDustMajor
 
 - type: entityTable
   id: MeteorSwarmSmallChanceEventsTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
-    - id: GameRuleMeteorSwarmSmall
+    - id: MeteorSwarmSmall
       prob: 0
 
 - type: entityTable
@@ -29,14 +29,14 @@
     children:
     - !type:NestedSelector
         tableId: MeteorSwarmDustEventsTable
-    - id: GameRuleMeteorSwarmSmall
-    - id: GameRuleMeteorSwarmMedium
-    - id: GameRuleMeteorSwarmLarge
-    - id: GameRuleUristSwarm
-    - id: GameRuleClownSwarm
-    - id: GameRuleCowSwarm
-    - id: GameRulePotatoSwarm
-    - id: GameRuleFunSwarm
+    - id: MeteorSwarmSmall
+    - id: MeteorSwarmMedium
+    - id: MeteorSwarmLarge
+    - id: UristSwarm
+    - id: ClownSwarm
+    - id: CowSwarm
+    - id: PotatoSwarm
+    - id: FunSwarm
     - id: ImmovableRodSpawn
 
 - type: weightedRandomEntity
@@ -63,8 +63,8 @@
   - type: BasicStationEventScheduler
     minimumTimeUntilFirstEvent: 9999999 # fucking decades or something idk
     minMaxEventTiming:
-      min: 9999999
-      max: 9999999
+      min: 9999999 # TRIESTE: '12.5 min'
+      max: 9999999 # TRIESTE: '17.5 min'
     scheduledGameRules: !type:NestedSelector
       tableId: BasicMeteorSwarmEventsTable
 
@@ -74,44 +74,44 @@
   components:
   - type: GameRule
   - type: BasicStationEventScheduler
-    minimumTimeUntilFirstEvent: 9999999 # 10 min
+    minimumTimeUntilFirstEvent: 9999999 # TRIESTE: '600'
     minMaxEventTiming:
-      min: 9999999 # 12.5 min
-      max: 9999999 # 17.5 min
+      min: 9999999 # TRIESTE: 12.5 min
+      max: 9999999 # TRIESTE: 17.5 min
     scheduledGameRules: !type:NestedSelector
       tableId: MeteorSwarmMildTable
 
+- type: entity
+  parent: BaseGameRule
+  id: KesslerSyndromeScheduler
+  components:
+  - type: GameRule
+  - type: RampingStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicMeteorSwarmEventsTable
 
-- type: weightedRandomEntity
-  id: DefaultConfig
-  weights:
-    GameRuleSpaceDustMinor: 44
-    GameRuleSpaceDustMajor: 22
-    GameRuleMeteorSwarmSmall: 18
-    GameRuleMeteorSwarmMedium: 10
-    GameRuleMeteorSwarmLarge: 5
-    GameRuleUristSwarm: 0.05
+# Game Rules
 
 - type: entity
   parent: BaseGameRule
-  id: GameRuleMeteorSwarm
+  id: MeteorSwarm
   abstract: true
   components:
   - type: GameRule
   - type: StationEvent
     reoccurrenceDelay: 1
-    earliestStart: 9999999
-    minimumPlayers: 99999
+    earliestStart: 999999 # TRIESTE: '12'
+    minimumPlayers: 999 # TRIESTE: '25'
   - type: MeteorSwarm
 
 - type: entity
-  parent: GameRuleMeteorSwarm
-  id: GameRuleSpaceDustMinor
+  parent: MeteorSwarm
+  id: SpaceDustMinor
   components:
   - type: StationEvent
     weight: 44
-    earliestStart: 9999999
-    minimumPlayers: 9999999
+    earliestStart: 999999 # TRIESTE: '2'
+    minimumPlayers: 999 # TRIESTE: '0'
   - type: MeteorSwarm
     announcement: null
     announcementSound: null
@@ -126,12 +126,12 @@
       max: 5
 
 - type: entity
-  parent: GameRuleMeteorSwarm
-  id: GameRuleSpaceDustMajor
+  parent: MeteorSwarm
+  id: SpaceDustMajor
   components:
   - type: StationEvent
-    weight: 22
-    minimumPlayers: 9999999
+    weight: 999999 # TRIESTE: '22'
+    minimumPlayers: 999 # TRIESTE: '0'
   - type: MeteorSwarm
     announcement: station-event-space-dust-start-announcement
     announcementSound: /Audio/Announcements/attention.ogg
@@ -146,20 +146,20 @@
       max: 12
 
 - type: entity
-  parent: GameRuleMeteorSwarm
-  id: GameRuleMeteorSwarmSmall
+  parent: MeteorSwarm
+  id: MeteorSwarmSmall
   components:
   - type: StationEvent
-    weight: 18
-    minimumPlayers: 9999999
+    weight: 999999 # TRIESTE: '18'
+    minimumPlayers: 999 # TRIESTE: '15'
   - type: MeteorSwarm
     meteors:
       MeteorSmall: 7
       MeteorMedium: 3
 
 - type: entity
-  parent: GameRuleMeteorSwarm
-  id: GameRuleMeteorSwarmMedium
+  parent: MeteorSwarm
+  id: MeteorSwarmMedium
   components:
   - type: StationEvent
     weight: 10
@@ -170,8 +170,8 @@
       MeteorLarge: 1
 
 - type: entity
-  parent: GameRuleMeteorSwarm
-  id: GameRuleMeteorSwarmLarge
+  parent: MeteorSwarm
+  id: MeteorSwarmLarge
   components:
   - type: StationEvent
     weight: 5
@@ -182,8 +182,8 @@
       MeteorLarge: 4
 
 - type: entity
-  parent: GameRuleMeteorSwarm
-  id: GameRuleUristSwarm
+  parent: MeteorSwarm
+  id: UristSwarm
   components:
   - type: StationEvent
     weight: 0.05
@@ -210,8 +210,8 @@
     weight: 3.5
     reoccurrenceDelay: 1
     duration: 1
-    earliestStart: 9999999
-    minimumPlayers: 9999999
+    earliestStart: 999999 # TRIESTE: '30'
+    minimumPlayers: 999 # TRIESTE: '25'
   - type: ImmovableRodRule
     rodPrototypes:
     - id: ImmovableRodKeepTilesStill
@@ -243,8 +243,8 @@
       orGroup: rodProto
 
 - type: entity
-  parent: GameRuleMeteorSwarm
-  id: GameRuleCowSwarm
+  parent: MeteorSwarm
+  id: CowSwarm
   components:
   - type: StationEvent
     weight: 0.05
@@ -261,8 +261,8 @@
       max: 10
 
 - type: entity
-  parent: GameRuleMeteorSwarm
-  id: GameRuleClownSwarm
+  parent: MeteorSwarm
+  id: ClownSwarm
   components:
   - type: StationEvent
     weight: 0.05
@@ -279,8 +279,8 @@
       max: 10
 
 - type: entity
-  parent: GameRuleMeteorSwarm
-  id: GameRulePotatoSwarm
+  parent: MeteorSwarm
+  id: PotatoSwarm
   components:
   - type: StationEvent
     weight: 0.05
@@ -297,8 +297,8 @@
       max: 10
 
 - type: entity
-  parent: GameRuleMeteorSwarm
-  id: GameRuleFunSwarm
+  parent: MeteorSwarm
+  id: FunSwarm
   components:
   - type: StationEvent
     weight: 0.03

@@ -7,9 +7,9 @@
     layers:
       - state: red
       - sprite: Structures/Machines/arcade.rsi
-        state: arcade
-  - type: RandomSpawner
-    prototypes:
-      - BlockGameArcade
-      - SpaceVillainArcadeFilled
-    chance: 1
+        state: icon
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - id: BlockGameArcade
+      - id: SpaceVillainArcadeFilled

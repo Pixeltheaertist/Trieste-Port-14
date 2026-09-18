@@ -27,6 +27,7 @@ using Content.Server.Audio;
 using Content.Shared.Audio;
 using Robust.Shared.Timing;
 using System.Linq;
+using Content.Shared.Atmos.Components;
 
 namespace Content.Server._FarHorizons.Power.Generation.FissionGenerator;
 

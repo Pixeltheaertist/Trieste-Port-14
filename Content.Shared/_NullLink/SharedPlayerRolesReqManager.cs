@@ -1,3 +1,4 @@
+using Content.Shared._NullLink.CCVar;
 using Content.Shared.NullLink;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
@@ -5,34 +6,34 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._NullLink;
 
-public abstract class SharedPlayerRolesReqManager : ISharedNullLinkPlayerRolesReqManager
+public abstract partial class SharedPlayerRolesReqManager : ISharedNullLinkPlayerRolesReqManager
 {
-    [Dependency] protected readonly IPrototypeManager _proto = default!;
-    [Dependency] protected readonly IConfigurationManager _cfg = default!;
+    [Dependency] protected IPrototypeManager Proto = default!;
+    [Dependency] protected IConfigurationManager Cfg = default!;
 
     public void Initialize()
     {
-        _cfg.OnValueChanged(_NullLink.CCVar.NullLinkCCVars.RoleReqWithAccessToAllRoles, UpdateAllRoles, true);
-        _cfg.OnValueChanged(_NullLink.CCVar.NullLinkCCVars.RoleReqMentors, UpdateMentors, true);
-        _cfg.OnValueChanged(_NullLink.CCVar.NullLinkCCVars.RoleReqPeacefulBypass, UpdateRoleReqPeacefulBypass, true);
+        Cfg.OnValueChanged(NullLinkCCVars.RoleReqWithAccessToAllRoles, UpdateAllRoles, true);
+        Cfg.OnValueChanged(NullLinkCCVars.RoleReqMentors, UpdateMentors, true);
+        Cfg.OnValueChanged(NullLinkCCVars.RoleReqPeacefulBypass, UpdateRoleReqPeacefulBypass, true);
     }
 
     private void UpdateAllRoles(string obj)
     {
-        if (_proto.TryIndex<RoleRequirementPrototype>(obj, out var allRoles))
+        if (Proto.TryIndex<RoleRequirementPrototype>(obj, out var allRoles))
             AllRoles = allRoles;
     }
 
     private void UpdateMentors(string obj)
     {
-        if (!_proto.TryIndex<RoleRequirementPrototype>(obj, out var mentorReq))
+        if (!Proto.TryIndex<RoleRequirementPrototype>(obj, out var mentorReq))
             return;
         _mentorReq = mentorReq;
     }
 
     private void UpdateRoleReqPeacefulBypass(string obj)
     {
-        if (!_proto.TryIndex<RoleRequirementPrototype>(obj, out var peacefulBypass))
+        if (!Proto.TryIndex<RoleRequirementPrototype>(obj, out var peacefulBypass))
             return;
         _peacefulBypass = peacefulBypass;
     }

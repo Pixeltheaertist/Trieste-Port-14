@@ -1,8 +1,7 @@
 - type: marking
   id: TP14MarkingsHumanTailDeer
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Human ]
+  groupWhitelist: [ Human ]
   coloring:
     default:
       type:
@@ -20,8 +19,7 @@
 - type: marking
   id: TP14MarkingsHumanTailFox
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Human ]
+  groupWhitelist: [ Human ]
   coloring:
     default:
       type:
@@ -40,8 +38,7 @@
 - type: marking
   id: TP14MarkingsHumanTailLion
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Human ]
+  groupWhitelist: [ Human ]
   coloring:
     default:
       type:
@@ -60,8 +57,7 @@
 - type: marking
   id: TP14MarkingsHumanTailReptile
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Human ]
+  groupWhitelist: [ Human ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Humans/tails.rsi
     state: tail_reptile
@@ -69,8 +65,7 @@
 - type: marking
   id: TP14MarkingsHumanTailRounded
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Human ]
+  groupWhitelist: [ Human ]
   coloring:
     default:
       type:
@@ -87,8 +82,7 @@
 - type: marking
   id: TP14MarkingsHumanTailRoundedLeopard
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Human ]
+  groupWhitelist: [ Human ]
   coloring:
     default:
       type:
@@ -107,8 +101,7 @@
 - type: marking
   id: TP14MarkingsHumanTailRoundedStripes
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Human ]
+  groupWhitelist: [ Human ]
   coloring:
     default:
       type:
@@ -127,8 +120,7 @@
 - type: marking
   id: TP14MarkingsHumanTailBasicBird
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Human ]
+  groupWhitelist: [ Human ]
   coloring:
     default:
       type:
@@ -147,8 +139,7 @@
 - type: marking
   id: TP14MarkingsHumanTailRooster
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Human ]
+  groupWhitelist: [ Human ]
   coloring:
     default:
       type:

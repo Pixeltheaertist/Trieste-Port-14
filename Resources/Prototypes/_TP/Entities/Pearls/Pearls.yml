@@ -33,7 +33,7 @@
     backgroundModulate: "#3a434a"
     backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
     contentMargin: 32.0, 16.0, 32.0, 0.0
-    fontAccentColor: "#03A062"
+    defaultTextColor: "#03A062"
 
 - type: entity
   name: pearl

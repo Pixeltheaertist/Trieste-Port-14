@@ -11,17 +11,14 @@
       time: 2.5h
     - !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 1h
+      time: 2.5h
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 1h
-    - !type:OverallPlaytimeRequirement
-      time: 2h
+      time: 5h
   weight: 10
   startingGear: CMOGear
-  icon: "JobIconChiefMedicalOfficer"
+  icon: "TP14JobIconChiefMedicalOfficer" # TRIESTE: 'JobIconChiefMedicalOfficer'
   supervisors: job-supervisors-captain
-  canBeAntag: false
   access:
   - Medical
   - Command
@@ -42,7 +39,7 @@
   equipment:
     id: CMOPDA
     ears: ClothingHeadsetCMO
-    belt: TP14ClothingBeltStorageMedicalPouchFilled
+    belt: TP14ClothingBeltStorageMedicalPouchFilled # Trieste: Added.
   storage:
     back:
     - Flash

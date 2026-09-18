@@ -4589,7 +4589,6 @@ entities:
       parent: 2
     - type: BatterySelfRecharger
       autoRechargeRate: 200000
-      autoRecharge: True
   - uid: 22669
     components:
     - type: Transform
@@ -4597,7 +4596,6 @@ entities:
       parent: 2
     - type: BatterySelfRecharger
       autoRechargeRate: 200000
-      autoRecharge: True
 - proto: ArtifactFragment1
   entities:
   - uid: 6983

@@ -24,13 +24,6 @@ ghost-role-information-familiar-rules = You are a [color={role-type-familiar-col
                                         You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
                                         You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                         You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
-
-ghost-role-information-mech-rules = You are a [color=#6495ed][bold]Mech[/bold][/color]. Serve the interests of your pilot, whatever those may be.
-                                        You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-                                        You must follow your protocols to the best of your ability and work with your pilot in tandem.
-                                        When your pilot enters, you should hand over manual control to them unless it conflicts with Protocol 3.
-                                        You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
-
 ghost-role-information-silicon-rules = You are a [color={role-type-silicon-color}][bold]{role-type-silicon-name}[/bold][/color]. Obey your laws. You are a {role-type-free-agent-name} if you are not currently bound by any laws.
                                        You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
                                        You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
@@ -292,7 +285,7 @@ ghost-role-information-science-description = You are part of a science team, but
 
 ghost-role-information-civilian-name = Civilian
 ghost-role-information-civilian-description = You were just hanging out, but seem to have found yourself in a strange situation...
-ghost-role-information-civilian-centcom-lawyer-name = Centcomm Lawyer
+ghost-role-information-civilian-centcom-lawyer-name = Centcom Lawyer
 ghost-role-information-civilian-centcom-lawyer-description = A lawyer direct from the Central Legal Division.
 
 ghost-role-information-command-name = Commander
@@ -312,16 +305,6 @@ ghost-role-information-lost-challenge-cargo-technican-rules = You are not hostil
                                      You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                      You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 
-ghost-role-information-pirate-name = Pirate
-ghost-role-information-pirate-description = YAARGH!! Ye' be livin in yer pirate cove, near that wretched trade port's legs hidin' from the cops. Could be a good time for some plunderin' though...
-
-ghost-role-information-pirate-captain-name = Pirate Captain
-ghost-role-information-pirate-captain-description = Yer pirate lads built this place to hide from those SolGov dogs. Spirits are down, despite the booze. Maybe a good ol' raid will lighten their moods.
-
-ghost-role-information-hermit-name = Stranded Hermit
-ghost-role-information-hermit-description = The last thing you remember is the blaring alarms and cracking steel as your ship's failing engines sent you barreling off-course.
-                                            Barely making it to a life pod and floating for who-knows how long in a frozen sleep, you've finally been awoken.
-
 ghost-role-information-disaster-victim-name = Disaster Victim
 ghost-role-information-disaster-victim-description = You were rescued in an escape pod from another station that suffered a terrible fate. Perhaps you will be found and rescued.
 
@@ -340,6 +323,12 @@ ghost-role-information-blackmarketeer-description = Make trades or take odd jobs
 ghost-role-information-cossack-name = Ancient Traveler
 ghost-role-information-cossack-description = From a history lost to time, you find yourself cast into this day and age.
 
+ghost-role-information-pirate-name = Pirate
+ghost-role-information-pirate-description = YAARGH!! Ye' be livin in yer pirate cove, near that wretched trade port's legs hidin' from the cops. Could be a good time for some plunderin' though...
+
+ghost-role-information-pirate-captain-name = Pirate Captain
+ghost-role-information-pirate-captain-description = Yer pirate lads built this place to hide from those SolGov dogs. Spirits are down, despite the booze. Maybe a good ol' raid will lighten their moods.
+
 ghost-role-information-artifact-name = Sentient Artifact
 ghost-role-information-artifact-description = Enact your eldritch whims. Forcibly activate your nodes for good or for evil.
 
@@ -350,9 +339,11 @@ ghost-role-information-gingerbread-name = Gingerbread Man
 ghost-role-information-gingerbread-description = A being of pure holiday spirit.
                                      Spread molassesy goodness and to all good cheer.
 
-ghost-role-information-thethingy-name = The Thingy
-ghost-role-information-thethingy-description = You found this strange puppet long ago, resting limp and lifeless in the seabed. You meandered for years, listening and mimicking the speech of your prey through your costume's headset.
-                                               Now, you have finally found your new feeding ground. Let the hunt begin. Stealthily stalk and hunt citizens for satiation using your uniquely adapted abilities, without getting caught.
+ghost-role-information-mothership-core-name = Mothership Core
+ghost-role-information-mothership-core-desc = You are the core of the xenoborg mothership, help them multiply by borging any brain they bring to you.
+
+ghost-role-information-xenoborg-name = Xenoborg
+ghost-role-information-xenoborg-desc = A strange cyborg made to replicate itself and take over the station by turning any sentient being into xenoborgs.
 
 ghost-role-information-wizard-name = Wizard
 ghost-role-information-wizard-desc = YER A WIZARD! Show the station what your magic is made of.

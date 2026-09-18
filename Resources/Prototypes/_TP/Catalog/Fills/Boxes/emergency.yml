@@ -5,14 +5,16 @@
   description: It's a box with basic internals inside.
   suffix: Trieste, Filled, Survival, Jellid
   components:
-  - type: StorageFill
-    contents:
-    - id: ClothingMaskBreathNeck
-    - id: TP14WaterTankEmergencyFilled
-    - id: EmergencyMedipen
-    - id: Flare
-    - id: PowerCellMedium
-    - id: TP14ClothingHandsGlovesFireproof
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingMaskBreathNeck
+        - id: TP14WaterTankEmergencyFilled
+        - id: EmergencyMedipen
+        - id: Flare
+        - id: PowerCellMedium
+        - id: TP14ClothingHandsGlovesFireproof
   - type: Sprite
     layers:
     - state: internals

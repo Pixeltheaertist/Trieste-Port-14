@@ -1,9 +1,6 @@
 using Content.Client.Guidebook;
-using Content.Client.Humanoid;
-using Content.Client.Inventory;
 using Content.Client.Lobby.UI;
 using Content.Client.Players.PlayTimeTracking;
-using Content.Client.Station;
 using Content.Shared.CCVar;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -22,32 +19,22 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.Lobby;
 
-public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState>, IOnStateExited<LobbyState>
+public sealed partial class LobbyUIController : UIController, IOnStateEntered<LobbyState>, IOnStateExited<LobbyState>
 {
-    [Dependency] private readonly IClientPreferencesManager _preferencesManager = default!;
-    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
-    [Dependency] private readonly IFileDialogManager _dialogManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IResourceCache _resourceCache = default!;
-    [Dependency] private readonly IStateManager _stateManager = default!;
-    [Dependency] private readonly JobRequirementsManager _requirements = default!;
-    [Dependency] private readonly MarkingManager _markings = default!;
-    [UISystemDependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
-    [UISystemDependency] private readonly ClientInventorySystem _inventory = default!;
-    [UISystemDependency] private readonly StationSpawningSystem _spawn = default!;
+    [Dependency] private IClientPreferencesManager _preferencesManager = default!;
+    [Dependency] private IConfigurationManager _configurationManager = default!;
+    [Dependency] private IFileDialogManager _dialogManager = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IResourceCache _resourceCache = default!;
+    [Dependency] private IStateManager _stateManager = default!;
+    [Dependency] private JobRequirementsManager _requirements = default!;
+    [Dependency] private MarkingManager _markings = default!;
     [UISystemDependency] private readonly GuidebookSystem _guide = default!;
 
     private CharacterSetupGui? _characterSetup;
     private HumanoidProfileEditor? _profileEditor;
-    private JobPriorityEditor? _jobPriorityEditor;
     private CharacterSetupGuiSavePanel? _savePanel;
-
-    /// <summary>
-    /// Event invoked when any character or job selection or job priority is changed.
-    /// Basically anything that might change round start character/job selection.
-    /// </summary>
-    public event Action? OnAnyCharacterOrJobChange;
 
     /// <summary>
     /// This is the characher preview panel in the chat. This should only update if their character updates.
@@ -73,10 +60,10 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _profileEditor?.RefreshFlavorText();
         });
 
-        _configurationManager.OnValueChanged(CCVars.GameRoleTimers, _ => RefreshEditors());
-        _configurationManager.OnValueChanged(CCVars.GameRoleLoadoutTimers, _ => RefreshEditors());
+        _configurationManager.OnValueChanged(CCVars.GameRoleTimers, _ => RefreshProfileEditor());
+        _configurationManager.OnValueChanged(CCVars.GameRoleLoadoutTimers, _ => RefreshProfileEditor());
 
-        _configurationManager.OnValueChanged(CCVars.GameRoleWhitelist, _ => RefreshEditors());
+        _configurationManager.OnValueChanged(CCVars.GameRoleWhitelist, _ => RefreshProfileEditor());
     }
 
     private LobbyCharacterPreviewPanel? GetLobbyPreview()
@@ -91,9 +78,11 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
     private void OnRequirementsUpdated()
     {
-        _profileEditor?.RefreshAntags();
-        _profileEditor?.RefreshJobs();
-        _jobPriorityEditor?.RefreshJobs();
+        if (_profileEditor != null)
+        {
+            _profileEditor.RefreshAntags();
+            _profileEditor.RefreshJobs();
+        }
     }
 
     private void OnProtoReload(PrototypesReloadedEventArgs obj)
@@ -128,7 +117,6 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
                 _profileEditor.RefreshTraits();
             }
         }
-        OnAnyCharacterOrJobChange?.Invoke();
     }
 
     private void PreferencesDataLoaded()
@@ -138,27 +126,23 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         if (_stateManager.CurrentState is not LobbyState)
             return;
 
-        if (_characterSetup != null)
-            _characterSetup.SelectedCharacterSlot = null;
         ReloadCharacterSetup();
     }
 
     public void OnStateEntered(LobbyState state)
     {
         PreviewPanel?.SetLoaded(_preferencesManager.ServerDataLoaded);
-        if (_characterSetup != null)
-            _characterSetup.SelectedCharacterSlot = null;
         ReloadCharacterSetup();
     }
 
     public void OnStateExited(LobbyState state)
     {
         PreviewPanel?.SetLoaded(false);
+        _profileEditor?.Dispose();
+        _characterSetup?.Dispose();
 
-        if (_stateManager.CurrentState is LobbyState lobby)
-        {
-            lobby.Lobby?.CharacterSetupState.RemoveAllChildren();
-        }
+        _characterSetup = null;
+        _profileEditor = null;
     }
 
     /// <summary>
@@ -169,8 +153,9 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         RefreshLobbyPreview();
         var (characterGui, profileEditor) = EnsureGui();
         characterGui.ReloadCharacterPickers();
-        profileEditor.ResetToDefault();
-        _jobPriorityEditor?.LoadJobPriorities();
+        profileEditor.SetProfile(
+            _preferencesManager.Preferences?.SelectedCharacter,
+            _preferencesManager.Preferences?.SelectedCharacterIndex);
     }
 
     /// <summary>
@@ -178,38 +163,28 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     /// </summary>
     private void RefreshLobbyPreview()
     {
-        PreviewPanel?.Refresh();
+        if (PreviewPanel == null)
+            return;
+
+        // Get selected character, load it, then set it
+        var character = _preferencesManager.Preferences?.SelectedCharacter;
+
+        if (character is not HumanoidCharacterProfile humanoid)
+        {
+            PreviewPanel.ProfilePreviewSpriteView.ClearPreview();
+            PreviewPanel.SetSummaryText(string.Empty);
+            return;
+        }
+
+        PreviewPanel.ProfilePreviewSpriteView.LoadPreview(humanoid);
+        PreviewPanel.SetSummaryText(humanoid.Summary);
     }
 
-    private void RefreshEditors()
+    private void RefreshProfileEditor()
     {
         _profileEditor?.RefreshAntags();
         _profileEditor?.RefreshJobs();
         _profileEditor?.RefreshLoadouts();
-        _jobPriorityEditor?.RefreshJobs();
-    }
-
-    /// <summary>
-    /// Save job priorities locally and on the remote server, reload the character setup gui appropriately
-    /// </summary>
-    private void SaveJobPriorities()
-    {
-        if (_jobPriorityEditor == null)
-            return;
-        SaveJobPriorities(_jobPriorityEditor.SelectedJobPriorities);
-    }
-
-    /// <summary>
-    /// Save job priorities locally and on the remote server, reload the character setup gui appropriately
-    /// </summary>
-    /// <param name="newJobPriorities"></param>
-    private void SaveJobPriorities(Dictionary<ProtoId<JobPrototype>, JobPriority> newJobPriorities)
-    {
-        _preferencesManager.UpdateJobPriorities(newJobPriorities);
-        OnAnyCharacterOrJobChange?.Invoke();
-        _jobPriorityEditor?.LoadJobPriorities();
-        var (characterGui, _) = EnsureGui();
-        characterGui.ReloadCharacterPickers(selectJobPriorities: true);
     }
 
     private void SaveProfile()
@@ -219,13 +194,12 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         if (EditedProfile == null || EditedSlot == null)
             return;
 
-        var fixedProfile = EditedProfile.Clone();
-        if(_preferencesManager.Preferences!.TryGetHumanoidInSlot(EditedSlot.Value, out var humanoid))
-            fixedProfile = new HumanoidCharacterProfile(EditedProfile) { Enabled = humanoid.Enabled };
+        var selected = _preferencesManager.Preferences?.SelectedCharacterIndex;
 
-        _preferencesManager.UpdateCharacter(fixedProfile, EditedSlot.Value);
-        OnAnyCharacterOrJobChange?.Invoke();
-        _profileEditor?.SetProfile(EditedSlot.Value);
+        if (selected == null)
+            return;
+
+        _preferencesManager.UpdateCharacter(EditedProfile, EditedSlot.Value);
         ReloadCharacterSetup();
     }
 
@@ -241,10 +215,9 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         {
             lobbyGui.SwitchState(LobbyGui.LobbyGuiState.Default);
         }
-        RefreshLobbyPreview();
     }
 
-    private void OpenSavePanel(Action saveAction)
+    private void OpenSavePanel()
     {
         if (_savePanel is { IsOpen: true })
             return;
@@ -253,7 +226,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         _savePanel.SaveButton.OnPressed += _ =>
         {
-            saveAction?.Invoke();
+            SaveProfile();
 
             _savePanel.Close();
 
@@ -291,27 +264,16 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _requirements,
             _markings);
 
-        _jobPriorityEditor = new JobPriorityEditor(_preferencesManager, _prototypeManager, _requirements);
-
-        _jobPriorityEditor.Save += SaveJobPriorities;
-
         _profileEditor.OnOpenGuidebook += _guide.OpenHelp;
 
-        _characterSetup = new CharacterSetupGui(_profileEditor, _jobPriorityEditor);
+        _characterSetup = new CharacterSetupGui(_profileEditor);
 
         _characterSetup.CloseButton.OnPressed += _ =>
         {
             // Open the save panel if we have unsaved changes.
-            if( _profileEditor.Visible && _profileEditor.Profile != null && _profileEditor.IsDirty)
+            if (_profileEditor.Profile != null && _profileEditor.IsDirty)
             {
-                OpenSavePanel(SaveProfile);
-
-                return;
-            }
-
-            if (_jobPriorityEditor.Visible && _jobPriorityEditor.IsDirty())
-            {
-                OpenSavePanel(SaveJobPriorities);
+                OpenSavePanel();
 
                 return;
             }
@@ -324,9 +286,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         _characterSetup.SelectCharacter += args =>
         {
-            _profileEditor.SetProfile(args);
-            if (_characterSetup != null)
-                _characterSetup.SelectedCharacterSlot = args;
+            _preferencesManager.SelectCharacter(args);
             ReloadCharacterSetup();
         };
 
@@ -344,13 +304,6 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
                 // Only need to reload character pickers
                 _characterSetup?.ReloadCharacterPickers();
             }
-        };
-
-        _characterSetup.SetCharacterEnable += args =>
-        {
-            _preferencesManager.SetCharacterEnable(args.Item1, args.Item2);
-            OnAnyCharacterOrJobChange?.Invoke();
-            _characterSetup?.ReloadCharacterPickers();
         };
 
         if (_stateManager.CurrentState is LobbyState lobby)

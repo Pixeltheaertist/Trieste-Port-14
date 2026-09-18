@@ -8,10 +8,11 @@
   - type: Storage
     grid:
     - 0,0,2,3
-  - type: StorageFill
-    contents:
-    - id: TP14CoffeeFilter
-      amount: 6
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: TP14CoffeeFilter
+        amount: 6
 
 - type: entity
   id: TP14BoxCoffeeBeans
@@ -23,10 +24,11 @@
   - type: Storage
     grid:
     - 0,0,2,3
-  - type: StorageFill
-    contents:
-    - id: TP14CoffeeBeans
-      amount: 6
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: TP14CoffeeBeans
+        amount: 6
 
 - type: entity
   id: TP14BoxInstantCoffee
@@ -38,7 +40,8 @@
   - type: Storage
     grid:
     - 0,0,2,3
-  - type: StorageFill
-    contents:
-    - id: TP14InstantInstantCoffee
-      amount: 6
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: TP14InstantInstantCoffee
+        amount: 6

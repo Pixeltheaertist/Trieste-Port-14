@@ -28,7 +28,6 @@
       - SurgeryTool
       - Dropper
       components:
-      - Hypospray
       - Injector
       - Pill
       - HandLabeler
@@ -41,7 +40,7 @@
       hypo:
         whitelist:
           components:
-          - Hypospray
+          - Injector
       pill:
         whitelist:
           components:
@@ -62,13 +61,13 @@
   parent: TP14ClothingBeltStorageMedicalPouch
   suffix: Trieste, Clothing, Medical, Filled
   components:
-  - type: StorageFill
-    contents:
-    - id: Brutepack
-      amount: 2
-    - id: Ointment
-      amount: 1
-    - id: Bloodpack
-      amount: 1
-    - id: Gauze
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: Brutepack
+          amount: 2
+        - id: Ointment
+        - id: Bloodpack
+        - id: Gauze
 

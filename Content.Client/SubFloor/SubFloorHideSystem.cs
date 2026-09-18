@@ -6,36 +6,13 @@ using Robust.Shared.Player;
 
 namespace Content.Client.SubFloor;
 
-public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
+public sealed partial class SubFloorHideSystem : SharedSubFloorHideSystem
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
-    [Dependency] private readonly IUserInterfaceManager _ui = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
+    [Dependency] private IUserInterfaceManager _ui = default!;
 
     private bool _showAll;
-
-    // TRIESTE PORT - START //
-    private static readonly int[] SubfloorHiddenDepths =
-    [
-        (int)Shared.DrawDepth.DrawDepth.ThickPipe, // Disposal
-        (int)Shared.DrawDepth.DrawDepth.ThickWire, // HVCable
-        (int)Shared.DrawDepth.DrawDepth.ThinPipeAlt2, // GasPipe
-        (int)Shared.DrawDepth.DrawDepth.ThinPipeAlt1, // MVCable
-        (int)Shared.DrawDepth.DrawDepth.ThinPipe, // LVCable
-        (int)Shared.DrawDepth.DrawDepth.ThinWire, // Misc
-    ];
-
-    // Used when revealed by t-ray or sub-view - Shows EVERYTHING
-    private static readonly int[] SubfloorRevealedDepths =
-    [
-        (int)Shared.DrawDepth.DrawDepth.Overlays + 1, // Disposal
-        (int)Shared.DrawDepth.DrawDepth.Overlays + 2, // HVCable
-        (int)Shared.DrawDepth.DrawDepth.Overlays + 3, // GasPipe
-        (int)Shared.DrawDepth.DrawDepth.Overlays + 4, // MVCable
-        (int)Shared.DrawDepth.DrawDepth.Overlays + 5, // LVCable
-        (int)Shared.DrawDepth.DrawDepth.Overlays + 6, // Misc
-    ];
-    // TRIESTE PORT - END //
 
     [ViewVariables(VVAccess.ReadWrite)]
     public bool ShowAll
@@ -43,8 +20,7 @@ public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
         get => _showAll;
         set
         {
-            if (_showAll == value)
-                return;
+            if (_showAll == value) return;
             _showAll = value;
             _ui.GetUIController<SandboxUIController>().SetToggleSubfloors(value);
 
@@ -115,25 +91,21 @@ public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
         {
             // Allows sandbox mode to make wires visible over other stuff.
             component.OriginalDrawDepth ??= args.Sprite.DrawDepth;
-            // _sprite.SetDrawDepth((uid, args.Sprite), (int)Shared.DrawDepth.DrawDepth.Overdoors);
-            _sprite.SetDrawDepth((uid, args.Sprite), SubfloorRevealedDepths[(int)component.SubfloorLayer]);
+            var drawDepthDifference = Shared.DrawDepth.DrawDepth.ThickPipe - (Shared.DrawDepth.DrawDepth.Overdoors + 1);
+            _sprite.SetDrawDepth((uid, args.Sprite), args.Sprite.DrawDepth - drawDepthDifference);
         }
         else if (scannerRevealed)
         {
             // Allows a t-ray to show wires/pipes above carpets/puddles.
             if (component.OriginalDrawDepth is not null)
                 return;
-
             component.OriginalDrawDepth = args.Sprite.DrawDepth;
-
-            // var drawDepthDifference = Shared.DrawDepth.DrawDepth.ThickPipe - Shared.DrawDepth.DrawDepth.Puddles;
-            // _sprite.SetDrawDepth((uid, args.Sprite), args.Sprite.DrawDepth - (drawDepthDifference - 1));
-            _sprite.SetDrawDepth((uid, args.Sprite), SubfloorRevealedDepths[(int)component.SubfloorLayer]);
+            var drawDepthDifference = Shared.DrawDepth.DrawDepth.ThickPipe - (Shared.DrawDepth.DrawDepth.Puddles + 1);
+            _sprite.SetDrawDepth((uid, args.Sprite), args.Sprite.DrawDepth - drawDepthDifference);
         }
         else if (component.OriginalDrawDepth.HasValue)
         {
-            // _sprite.SetDrawDepth((uid, args.Sprite), component.OriginalDrawDepth.Value);
-            _sprite.SetDrawDepth((uid, args.Sprite), SubfloorHiddenDepths[(int)component.SubfloorLayer]);
+            _sprite.SetDrawDepth((uid, args.Sprite), component.OriginalDrawDepth.Value);
             component.OriginalDrawDepth = null;
         }
     }

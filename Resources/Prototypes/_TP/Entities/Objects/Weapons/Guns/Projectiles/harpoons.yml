@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseItem
+  parent: [ BaseItem, SolutionDart, BaseMinorContraband ]
   id: BaseHarpoon
   abstract: true
   components:
@@ -41,17 +41,13 @@
     damage:
       types:
         Piercing: 25
-  - type: SolutionContainerManager
-    solutions:
-      ammo:
-        maxVol: 2
   - type: RefillableSolution
-    solution: ammo
+    solution: melee
   - type: InjectableSolution
-    solution: ammo
+    solution: melee
   - type: SolutionInjectOnEmbed
     transferAmount: 2
-    solution: ammo
+    solution: melee
   - type: SolutionTransfer
     maxTransferAmount: 2
   - type: Appearance
@@ -90,6 +86,21 @@
       types:
         Piercing: 7
     angle: 0
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 9
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Piercing: 2
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 5
 
 - type: entity
   parent: BaseHarpoon
@@ -142,10 +153,7 @@
       types:
         Piercing: 4
     angle: 0
- # - type: Construction
-  #    graph: PiezoHarpoon
-  - type: Electrified
+  - type: Electrified # TODO: Look into alternatives, as this is a bit op.
+    shockTime: 1.5
+    shockDamage: 2
     requirePower: false
-  - type: StunOnCollide
-    stunAmount: 3
-    knockdownAmount: 3

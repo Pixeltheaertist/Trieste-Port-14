@@ -12,15 +12,15 @@ using Robust.Shared.Audio.Systems;
 
 namespace Content.Server.DeadmanSwitch;
 
-public sealed class DeadmanSwitchSystem : SharedDeadmanSwitchSystem
+public sealed partial class DeadmanSwitchSystem : SharedDeadmanSwitchSystem
 {
-    [Dependency] private readonly SignallerSystem _signal = default!;
-    [Dependency] private readonly SharedDeviceLinkSystem _deviceLink = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
-    [Dependency] private readonly TriggerSystem _trigger = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private SignallerSystem _signal = default!;
+    [Dependency] private SharedDeviceLinkSystem _deviceLink = default!;
+    [Dependency] private SharedTransformSystem _transformSystem = default!;
+    [Dependency] private TriggerSystem _trigger = default!;
+    [Dependency] private ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     public override void Trigger(Entity<DeadmanSwitchComponent?> ent, EntityUid? user)
     {

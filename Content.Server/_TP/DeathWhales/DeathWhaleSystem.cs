@@ -1,5 +1,6 @@
 using Content.Server.Administration.Logs;
 using Content.Shared._TP.DeathWhales;
+using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Database;
 using Content.Shared.Salvage.Fulton;
@@ -58,13 +59,13 @@ public sealed partial class DeathWhaleSystem : EntitySystem
         // Iterate through all entities within the DeathWhale's radius
         foreach (var prey in _lookup.GetEntitiesInRange(uid, component.Radius))
         {
-            if (!EntityManager.HasComponent<BodyComponent>(prey))
+            if (!HasComp<BodyComponent>(prey))
                 continue;
 
             if (_caughtPrey.Contains(prey))
                 continue;
 
-            if (EntityManager.HasComponent<DeathWhaleComponent>(prey))
+            if (HasComp<DeathWhaleComponent>(prey))
                 continue;
 
             _caughtPrey.Add(prey);
@@ -82,7 +83,7 @@ public sealed partial class DeathWhaleSystem : EntitySystem
             Timer.Spawn(TimeSpan.FromSeconds(0.25),
                 () =>
                 {
-                    if (EntityManager.EntityExists(prey))
+                    if (Exists(prey))
                     {
                         QueueDel(prey);
                     }

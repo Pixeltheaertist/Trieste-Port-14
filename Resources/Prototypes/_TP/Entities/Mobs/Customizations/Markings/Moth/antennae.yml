@@ -1,8 +1,7 @@
 - type: marking
   id: TP14MarkingsMothAntennae1
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/antenna.rsi
     state: antenna_1
@@ -10,8 +9,7 @@
 - type: marking
   id: TP14MarkingsMothAntennae2
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/antenna.rsi
     state: antenna_2
@@ -19,8 +17,7 @@
 - type: marking
   id: TP14MarkingsMothAntennae3
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/antenna.rsi
     state: antenna_3
@@ -28,8 +25,7 @@
 - type: marking
   id: TP14MarkingsMothAntennae4
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/antenna.rsi
     state: antenna_4
@@ -37,8 +33,7 @@
 - type: marking
   id: TP14MarkingsMothAntennae5
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/antenna.rsi
     state: antenna_5
@@ -46,8 +41,7 @@
 - type: marking
   id: TP14MarkingsMothAntennaeBooster
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/antenna.rsi
     state: booster_antenna

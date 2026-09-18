@@ -27,8 +27,6 @@ public sealed partial class TurbineSystem : SharedTurbineSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<TurbineComponent, ClientExaminedEvent>(TurbineExamined);
-
         SubscribeLocalEvent<TurbineComponent, AnimationCompletedEvent>(OnAnimationCompleted);
 
         SubscribeLocalEvent<TurbineComponent, ItemSlotInsertAttemptEvent>(OnInsertAttempt);
@@ -42,8 +40,6 @@ public sealed partial class TurbineSystem : SharedTurbineSystem
 
         _popupSystem.PopupClient(Loc.GetString("turbine-repair", ("target", uid), ("tool", args.Used!)), uid, args.User);
     }
-
-    private void TurbineExamined(EntityUid uid, TurbineComponent comp, ClientExaminedEvent args) => Spawn(comp.ArrowPrototype, new EntityCoordinates(uid, 0, 0));
 
     #region Animation
     private void OnAnimationCompleted(EntityUid uid, TurbineComponent comp, ref AnimationCompletedEvent args) => PlayAnimation(uid, comp);

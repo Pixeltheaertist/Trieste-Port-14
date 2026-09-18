@@ -12,12 +12,12 @@ namespace Content.Server._NullLink.EventBus;
 
 public sealed partial class NullLinkEventBusManager : IEventBusObserver, INullLinkEventBusManager
 {
-    private static readonly TimeSpan _grainDelay = TimeSpan.FromSeconds(180);
+    private static readonly TimeSpan GrainDelay = TimeSpan.FromSeconds(180);
     private Timer? _resubscribeTimer;
 
-    [Dependency] private readonly IActorRouter _actors = default!;
-    [Dependency] private readonly ILogManager _logManager = default!;
-    [Dependency] private readonly INullLinkPlayerManager _players = default!;
+    [Dependency] private IActorRouter _actors = default!;
+    [Dependency] private ILogManager _logManager = default!;
+    [Dependency] private INullLinkPlayerManager _players = default!;
 
     private ISawmill _sawmill = default!;
     private readonly ConcurrentQueue<BaseEvent> _eventQueue = [];
@@ -30,7 +30,7 @@ public sealed partial class NullLinkEventBusManager : IEventBusObserver, INullLi
             async _ => await Resubscribe(),
             null,
             dueTime: TimeSpan.Zero,
-            period: _grainDelay);
+            period: GrainDelay);
     }
 
 
@@ -41,7 +41,7 @@ public sealed partial class NullLinkEventBusManager : IEventBusObserver, INullLi
 
         if (!_actors.Enabled
             || !_actors.TryGetServerGrain(out var serverGrain)
-            || !_actors.TryCreateObjectReference<IEventBusObserver>(this, out var eventBusObserver) 
+            || !_actors.TryCreateObjectReference<IEventBusObserver>(this, out var eventBusObserver)
             || eventBusObserver is null)
             return;
 
@@ -51,7 +51,7 @@ public sealed partial class NullLinkEventBusManager : IEventBusObserver, INullLi
     public bool TryDequeue([MaybeNullWhen(false)] out BaseEvent result)
         => _eventQueue.TryDequeue(out result);
 
-    public ValueTask OnEventReceived<T>(T @event) where T : BaseEvent 
+    public ValueTask OnEventReceived<T>(T @event) where T : BaseEvent
         => @event switch
         {
             PlayerRolesSyncEvent playerRolesSyncEvent

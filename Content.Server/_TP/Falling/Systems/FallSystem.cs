@@ -153,7 +153,7 @@ public sealed partial class FallSystem : EntitySystem
 
     private void HandleFall(EntityUid owner, Components.FallSystemComponent component)
     {
-        var destination = EntityManager.EntityQuery<Components.FallingDestinationComponent>().FirstOrDefault();
+        var destination = EntityQuery<Components.FallingDestinationComponent>().FirstOrDefault();
         if (destination == null)
         {
             // If there's no destination, something broke
@@ -164,11 +164,11 @@ public sealed partial class FallSystem : EntitySystem
         // Now we set variables for Wastewater and Trieste's ladders.
         // Essentially, we get both ladder's positions as a marker point and offset the player's fall position.
         // We have to do this due to Trieste using trade station, and being offset by like 700 in any given direction.
-        var sourceLadder = EntityManager.EntityQuery<LadderComponent>()
+        var sourceLadder = EntityQuery<LadderComponent>()
         .FirstOrDefault(ladder => _transformSystem.GetMapCoordinates(ladder.Owner).MapId ==
                                   _transformSystem.GetMapCoordinates(owner).MapId);
 
-        var destLadder = EntityManager.EntityQuery<LadderComponent>()
+        var destLadder = EntityQuery<LadderComponent>()
         .FirstOrDefault(ladder => _transformSystem.GetMapCoordinates(ladder.Owner).MapId ==
                                   _transformSystem.GetMapCoordinates(destination.Owner).MapId);
 

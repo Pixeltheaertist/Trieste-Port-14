@@ -697,7 +697,7 @@
   parent: VendingMachine
   id: TP14VendingMachineClothesClown
   suffix: Trieste
-  name: Honk Vend 
+  name: Honk Vend
   description: A heavy duty vending machine specializing in clown and mime costumes
   components:
   - type: VendingMachine
@@ -754,8 +754,9 @@
     radius: 1.8
     energy: 1.6
     color: "#ffff00"
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallic
     damage:
       types:

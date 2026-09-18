@@ -1,6 +1,6 @@
 - type: guideEntry
   id: TPSpaceLaw
-  name: Space Law
+  name: guide-entry-rules-space-law
   priority: 20
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/space-law.xml"
   children:
@@ -13,25 +13,25 @@
 
 - type: guideEntry
   id: StandardOperatingProcedure
-  name: Standard Operating Procedure 
+  name: guide-entry-rules-sop
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/SOP/SOP.xml"
-  children: 
+  children:
   - HiringAccesses
   - MedicalSOP
 
 - type: guideEntry
   id: HiringAccesses
-  name: Hiring and ID Accesses
+  name: guide-entry-rules-hiring-accesses
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/SOP/hiring-accesses.xml"
 
 - type: guideEntry
   id: MedicalSOP
-  name: Medical SOP
+  name: guide-entry-rules-medical-sop
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/SOP/medical-SOP.xml"
 
 - type: guideEntry
   id: CrimeList
-  name: Crime List
+  name: guide-entry-rules-sl-crime-list
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/crime-list.xml"
   children:
    - MinorCrimeList
@@ -42,46 +42,46 @@
 
 - type: guideEntry
   id: MinorCrimeList
-  name: Minor Crimes
+  name: guide-entry-rules-minor-crime-list
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/minor-crimes.xml"
 
 - type: guideEntry
   id: ModerateCrimeList
-  name: Moderate Crimes
+  name: guide-entry-rules-moderate-crime-list
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/moderate-crimes.xml"
 
 - type: guideEntry
   id: MajorCrimeList
-  name: Major Crimes
+  name: guide-entry-rules-major-crime-list
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/major-crimes.xml"
 
 - type: guideEntry
   id: ExtremeCrimeList
-  name: Extreme Crimes
+  name: guide-entry-rules-extreme-crime-list
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/extreme-crimes.xml"
 
 - type: guideEntry
   id: CapitalCrimeList
-  name: Capital Crimes
+  name: guide-entry-rules-capital-crime-list
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/CrimeLists/capital-crimes.xml"
 
 - type: guideEntry
   id: PrisonerRights
-  name: Prisoner Rights
+  name: guide-entry-rules-prisoner-rights
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/prisoner-rights.xml"
 
 - type: guideEntry
   id: Sentencing
-  name: Sentencing
+  name: guide-entry-rules-sentencing
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/sentencing.xml"
 
 - type: guideEntry
   id: Searches
-  name: Search and Seizure
+  name: guide-entry-rules-searches
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/searches.xml"
 
 - type: guideEntry
   id: ImplantDevices
-  name: Implant Devices
+  name: guide-entry-rules-implant-devices
   text: "/ServerInfo/_TP/Guidebook/SpaceLaw/implant-devices.xml"
 

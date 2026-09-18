@@ -1,17 +1,18 @@
+using System.Diagnostics.CodeAnalysis;
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.Atmos.Piping.Components;
 using Content.Server.Destructible;
+using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.Nodes;
 using Content.Server.Power.Components;
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Temperature.Components;
 using Content.Shared._TP.Power.Generation;
 using Content.Shared.Atmos;
+using Content.Shared.Atmos.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Electrocution;
 using Content.Shared.Examine;
 using Content.Shared.Explosion.Components;
-using Content.Shared.NodeContainer;
 using Content.Shared.Popups;
 using Content.Shared.Temperature.Components;
 using Content.Shared.Verbs;
@@ -25,18 +26,13 @@ namespace Content.Server._TP.Power.Generation;
 /// </summary>
 public sealed partial class StormArraySystem : EntitySystem
 {
-    // Pipe names from the Storm Array entity.
-    private const string NodeNameInlet = "inlet";
-    private const string NodeNameOutlet = "outlet";
-
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private AtmosphereSystem _atmosphere = default!;
     [Dependency] private DestructibleSystem _destructible = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private NodeContainerSystem _nodeContainer = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private RadioSystem _radio = default!;
-
-    private EntityQuery<NodeContainerComponent> _nodeContainerQuery;
 
     public override void Initialize()
     {
@@ -46,8 +42,13 @@ public sealed partial class StormArraySystem : EntitySystem
         SubscribeLocalEvent<StormArrayComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<StormArrayComponent, GetVerbsEvent<ActivationVerb>>(OnVerbActivation);
         SubscribeLocalEvent<StormArrayComponent, StormArrayDoAfterEvent>(OnStormArrayEnabled);
+        SubscribeLocalEvent<StormArrayComponent, ComponentShutdown>(OnShutdown);
+    }
 
-        _nodeContainerQuery = GetEntityQuery<NodeContainerComponent>();
+    private void OnShutdown(Entity<StormArrayComponent> ent, ref ComponentShutdown args)
+    {
+        QueueDel(ent.Comp.InletEnt);
+        QueueDel(ent.Comp.OutletEnt);
     }
 
     private void OnVerbActivation(Entity<StormArrayComponent> ent, ref GetVerbsEvent<ActivationVerb> args)
@@ -148,6 +149,9 @@ public sealed partial class StormArraySystem : EntitySystem
 
     private void OnAtmosUpdate(Entity<StormArrayComponent> ent, ref AtmosDeviceUpdateEvent args)
     {
+        if (!GetPipes(ent.Owner, ent.Comp, out var inlet, out var outlet))
+            return;
+
         if (!ent.Comp.IsActive)
             return;
 
@@ -167,7 +171,7 @@ public sealed partial class StormArraySystem : EntitySystem
         tempComp.CurrentTemperature += selfHeating;
 
         // Now update the coolant AFTER the heating, in a separate function.
-        UpdateCoolant(ent, ref args);
+        UpdateCoolant(ent, ref args, inlet, outlet);
 
         // Then we announce if the temperature is too high, based on the thresholds.
         // This is also a separate function UNLESS the temperature is 500,
@@ -215,7 +219,7 @@ public sealed partial class StormArraySystem : EntitySystem
         announcementFlag = true;
     }
 
-    private void UpdateCoolant(Entity<StormArrayComponent> ent, ref AtmosDeviceUpdateEvent args)
+    private void UpdateCoolant(Entity<StormArrayComponent> ent, ref AtmosDeviceUpdateEvent args, PipeNode inlet, PipeNode outlet)
     {
         // Set a StormArrayComponent variable, for easy access.
         // We also get the nodes from the entity for Coolant and Temperature.
@@ -223,16 +227,8 @@ public sealed partial class StormArraySystem : EntitySystem
         if (!TryComp<TemperatureComponent>(ent, out var temp))
             return;
 
-        if (!_nodeContainerQuery.TryGetComponent(ent, out var nodeContainer))
+        if (!TryComp<TemperatureDamageComponent>(ent, out var tempDmg))
             return;
-
-        if (!nodeContainer.Nodes.TryGetValue(NodeNameInlet, out var inletNode) ||
-            !nodeContainer.Nodes.TryGetValue(NodeNameOutlet, out var outletNode))
-            return;
-
-        // Assign the nodes to inlet and outlet variables.
-        var inlet = (PipeNode)inletNode;
-        var outlet = (PipeNode)outletNode;
 
         if (inlet.Air.TotalMoles <= 0)
         {
@@ -285,7 +281,7 @@ public sealed partial class StormArraySystem : EntitySystem
         heatTransferred *= comp.CoolingEfficiency;
 
         // Cool the entity
-        var entityHeatCapacity = temp.HeatDamageThreshold;
+        var entityHeatCapacity = tempDmg.HeatDamageThreshold;
         var entityTempChange = heatTransferred / entityHeatCapacity;
         temp.CurrentTemperature -= entityTempChange;
 
@@ -323,6 +319,33 @@ public sealed partial class StormArraySystem : EntitySystem
 
         var transferMoles = mole1 - (mole1 + mole2) * temp2 * vol1 / deNom;
         return (airInlet.Remove(transferMoles), presDiff);
+    }
 
+    private bool GetPipes(EntityUid uid, StormArrayComponent comp, [NotNullWhen(true)] out PipeNode? inlet, [NotNullWhen(true)] out PipeNode? outlet)
+    {
+        inlet = null;
+        outlet = null;
+
+        if (!comp.InletEnt.HasValue || EntityManager.Deleted(comp.InletEnt.Value))
+            comp.InletEnt = SpawnAttachedTo(comp.PipePrototype, new(uid, comp.InletPos), rotation: Angle.FromDegrees(comp.InletRot));
+        if (!comp.OutletEnt.HasValue || EntityManager.Deleted(comp.OutletEnt.Value))
+            comp.OutletEnt = SpawnAttachedTo(comp.PipePrototype, new(uid, comp.OutletPos), rotation: Angle.FromDegrees(comp.OutletRot));
+
+        if (comp.InletEnt == null || comp.OutletEnt == null)
+            return false;
+
+        if (!Transform(comp.InletEnt.Value).Anchored || !Transform(comp.OutletEnt.Value).Anchored)
+        {
+            QueueDel(comp.InletEnt);
+            QueueDel(comp.OutletEnt);
+            return false;
+        }
+
+        if (!_nodeContainer.TryGetNode(comp.InletEnt.Value, comp.PipeName, out inlet))
+            return false;
+        if (!_nodeContainer.TryGetNode(comp.OutletEnt.Value, comp.PipeName, out outlet))
+            return false;
+
+        return true;
     }
 }

@@ -1,10 +1,24 @@
 - type: entity
-  parent: BaseStructureComputer
+  parent: BaseStructure
   id: BaseComputerBell
   abstract: true
   placement:
     mode: SnapgridCenter
   components:
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.35,0.25,0.35"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: InteractionOutline
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -53,6 +67,7 @@
     enabled: false
     usesApcPower: true
   - type: Sprite
+    drawdepth: Objects
     sprite: Structures/Machines/computers.rsi
     layers:
     - map: [ "computerLayerBody" ]
@@ -65,8 +80,6 @@
       state: generic_keys
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
-  - type: WorldLoader
-    radius: 256
   - type: BellConsole
   - type: ActivatableUI
     key: enum.BellUiKey.Key
@@ -76,19 +89,6 @@
         type: BellBoundUserInterface
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 1000000 # A million health, to basically make it unbreakable.
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: GlassBreak
-      - !type:ChangeConstructionNodeBehavior
-        node: monitorBroken
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: WiresPanel
   - type: WiresVisuals
   - type: Wires

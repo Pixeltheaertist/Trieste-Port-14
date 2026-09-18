@@ -1,8 +1,7 @@
 - type: marking
   id: TP14EyeSlitsMoth
   bodyPart: Eyes
-  markingCategory: Overlay
-  speciesRestriction: [Moth]
+  groupWhitelist: [Moth]
   coloring:
     default:
       type:

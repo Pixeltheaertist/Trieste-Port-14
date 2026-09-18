@@ -1,0 +1,37 @@
+- type: entity
+  parent: [ ClothingBackpackDuffelSyndicateBundle, BaseNanotrasenContraband ]
+  id: ClothingBackpackDuffelNtCburnFilled
+  suffix: Trieste, Filled, NanoTraitor
+  name: CBURN equipment bundle
+  description: "The label on the strap reads 'Turn and burn, Agent.'"
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: WeaponShotgunDoubleBarreled
+        - id: BoxShotgunIncendiary
+        - id: CombatMedipen
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateMedicalBundle
+  id: TP14ClothingBackpackDuffelSyndicateMedicalBundleFilled
+  suffix: Trieste
+  name: medical bundle
+  description: All you need to get your comrades back in the fight.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: DefibrillatorSyndicate
+        - id: MedkitCombatFilled
+          amount: 4
+        - id: Tourniquet
+          amount: 4
+        - id: CombatMedipen
+          amount: 4
+        - id: AirlossAutoInjector
+          amount: 4
+        - id: BruteAutoInjector
+          amount: 4

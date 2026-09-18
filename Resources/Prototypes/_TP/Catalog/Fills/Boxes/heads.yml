@@ -1,0 +1,45 @@
+- type: entity
+  name: circuit tote [HM]
+  parent: ToteBase
+  id: TP14BoxHMCircuitboards
+  description: A Tote filled with the HM's Circuit boards.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: CargoBountyComputerCircuitboard
+        - id: CargoRequestComputerCircuitboard
+        - id: CargoSaleComputerCircuitboard
+        # - id: CargoShuttleConsoleCircuitboard # TRIESTE: Removed.
+        # - id: SalvageMagnetMachineCircuitboard # TRIESTE: Removed.
+        - id: SalvageJobBoardComputerCircuitboard
+        - id: MailTeleporterMachineCircuitboard
+
+- type: entity
+  name: stamp box [HM]
+  parent: BoxCardboard
+  id: TP14BoxHMStamps
+  description: A box filled with the HM's Stamps. Stamped of course.
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: RubberStampApproved
+        - id: RubberStampDenied
+        - id: RubberStampQm
+  - type: Storage
+    grid:
+    - 0,0,1,1
+    whitelist:
+      components:
+      - Stamp
+  - type: Sprite
+    layers:
+    - state: box
+    - state: stamp

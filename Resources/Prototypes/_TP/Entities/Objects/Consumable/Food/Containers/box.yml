@@ -11,7 +11,8 @@
     state: Jonk-Box
   - type: Item
     sprite: _TP/Objects/Consumable/jonkpockets.rsi
-  - type: StorageFill
-    contents:
-    - id: TP14FoodJonkpocketBanana
-      amount: 6
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: TP14FoodJonkpocketBanana
+        amount: 6

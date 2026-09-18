@@ -49,25 +49,26 @@
     ClothingUniformShortsYellow: 2
     ClothingUniformShortsPink: 2
     # Towels
-    TowelColorPurple: 2
-    TowelColorRed: 2
-    TowelColorBlue: 2
-    TowelColorDarkBlue: 2
-    TowelColorLightBlue: 2
-    TowelColorTeal: 2
-    TowelColorBrown: 2
-    TowelColorLightBrown: 2
-    TowelColorGray: 2
-    TowelColorGreen: 2
-    TowelColorDarkGreen: 2
-    TowelColorGold: 2
-    TowelColorOrange: 2
-    TowelColorBlack: 2
-    TowelColorPink: 2
-    TowelColorYellow: 2
-    TowelColorMaroon: 2
-    TowelColorSilver: 2
-    TowelColorMime: 1
+    TowelColorWhite: 2
+    TP14TowelColorPurple: 2
+    TP14TowelColorRed: 2
+    TP14TowelColorBlue: 2
+    TP14TowelColorDarkBlue: 2
+    TP14TowelColorLightBlue: 2
+    TP14TowelColorTeal: 2
+    TP14TowelColorBrown: 2
+    TP14TowelColorLightBrown: 2
+    TP14TowelColorGray: 2
+    TP14TowelColorGreen: 2
+    TP14TowelColorDarkGreen: 2
+    TP14TowelColorGold: 2
+    TP14TowelColorOrange: 2
+    TP14TowelColorBlack: 2
+    TP14TowelColorPink: 2
+    TP14TowelColorYellow: 2
+    TP14TowelColorMaroon: 2
+    TP14TowelColorSilver: 2
+    TP14TowelColorMime: 1
   contrabandInventory:
     FoodSnackBoritos: 3
     ClothingEyesGlassesSunglasses: 1

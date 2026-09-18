@@ -6,7 +6,7 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 1h
+      time: 3h
     - !type:RoleTimeRequirement
       role: JobDetective
       time: 1h # knowing how to use the tools is important
@@ -20,9 +20,8 @@
       time: 3h
   weight: 10
   startingGear: HoSGear
-  icon: "JobIconHeadOfSecurity"
+  icon: "TP14JobIconMarshal" # TRIESTE: 'JobIconHeadOfSecurity'
   supervisors: job-supervisors-captain
-  canBeAntag: false
   access:
   - HeadOfSecurity
   - Command
@@ -33,6 +32,8 @@
   - External
   - Detective
   - Cryogenics
+  - GenpopEnter
+  - GenpopLeave
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -58,5 +59,6 @@
   job: HeadOfSecurity
   hasMindShield: true
   equipment:
+    head: ClothingHeadHatBeretHoS
     mask: ClothingMaskGasSecurity
     neck: ClothingNeckCloakHos

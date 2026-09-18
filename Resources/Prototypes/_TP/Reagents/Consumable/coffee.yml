@@ -8,11 +8,9 @@
   color: "#4E3629"
   recognizable: true
   metabolisms:
-    Drink:
-      effects:
-      - !type:AdjustReagent
-        reagent: Theobromine
-        amount: 0.05
+    Digestion:
+      metabolites:
+        Theobromine: 0.1
 
 - type: reagent
   id: TP14ReagentInstantCoffee
@@ -23,11 +21,9 @@
   color: "#4E3629"
   recognizable: true
   metabolisms:
-    Drink:
-      effects:
-      - !type:AdjustReagent
-        reagent: Theobromine
-        amount: 0.05
+    Digestion:
+      metabolites:
+        Theobromine: 0.1
 
 # Mixes
 - type: reagent
@@ -39,11 +35,9 @@
   color: "#4E3629"
   recognizable: true
   metabolisms:
-    Drink:
-      effects:
-      - !type:AdjustReagent
-        reagent: Theobromine
-        amount: 0.05
+    Digestion:
+      metabolites:
+        Theobromine: 0.1
 
 - type: reagent
   id: TP14ReagentMixedCoffee
@@ -54,11 +48,9 @@
   color: "#4E3629"
   recognizable: true
   metabolisms:
-    Drink:
-      effects:
-      - !type:AdjustReagent
-        reagent: Theobromine
-        amount: 0.05
+    Digestion:
+      metabolites:
+        Theobromine: 0.1
 
 - type: reagent
   id: TP14ReagentMixedTamperedCoffee
@@ -69,11 +61,9 @@
   color: "#4E3629"
   recognizable: true
   metabolisms:
-    Drink:
-      effects:
-      - !type:AdjustReagent
-        reagent: Theobromine
-        amount: 0.05
+    Digestion:
+      metabolites:
+        Theobromine: 0.1
 
 # Coffee
 - type: reagent
@@ -85,17 +75,16 @@
   color: "#664300"
   recognizable: true
   metabolisms:
-    Drink:
+    Digestion:
       effects:
       - !type:SatiateThirst
-        factor: 2
+        factor: 0.5
       - !type:ModifyStatusEffect
         effectProto: StatusEffectDrowsiness
-        time: 2
+        time: 4 # Eh, might as well give bad coffee a use.
         type: Remove
-      - !type:AdjustReagent
-        reagent: Theobromine
-        amount: 0.05
+      metabolites:
+        Theobromine: 0.1
 
 - type: reagent
   id: TP14ReagentQualityCoffee
@@ -106,7 +95,7 @@
   color: "#664300"
   recognizable: true
   metabolisms:
-    Drink:
+    Digestion:
       effects:
       - !type:SatiateThirst
         factor: 2
@@ -114,6 +103,5 @@
         effectProto: StatusEffectDrowsiness
         time: 2
         type: Remove
-      - !type:AdjustReagent
-        reagent: Theobromine
-        amount: 0.05
+      metabolites:
+        Theobromine: 0.05 # Less poison so more creatures can enjoy it.

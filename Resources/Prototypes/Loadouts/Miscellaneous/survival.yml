@@ -14,7 +14,7 @@
     species:
     - Arachnid
     - Diona
-#    - Dwarf # TP14
+    - Dwarf
     - Human
     - Moth
     - Reptilian
@@ -61,7 +61,7 @@
     proto: OxygenBreather
   storage:
     back:
-    - BoxHug
+    - BoxSurvivalHug
 
 - type: loadout
   id: EmergencyNitrogenClown
@@ -70,54 +70,7 @@
     proto: NitrogenBreather
   storage:
     back:
-    - BoxHugNitrogen
-
-# Mime
-- type: loadoutEffectGroup
-  id: OxygenBreatherMime
-  effects:
-  - !type:SpeciesLoadoutEffect
-    species:
-    - Arachnid
-    - Diona
-#    - Dwarf #TP14
-    - Human
-    - Reptilian
-    - Vulpkanin
-
-- type: loadoutEffectGroup
-  id: OxygenBreatherMimeMoth
-  effects:
-  - !type:SpeciesLoadoutEffect
-    species:
-    - Moth
-
-- type: loadout
-  id: EmergencyOxygenMime
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: OxygenBreatherMime
-  storage:
-    back:
-    - BoxMime
-
-- type: loadout
-  id: EmergencyNitrogenMime
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: NitrogenBreather
-  storage:
-    back:
-    - BoxMimeNitrogen
-
-- type: loadout
-  id: EmergencySpeciesMothMime
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: OxygenBreatherMimeMoth
-  storage:
-    back:
-    - BoxMimeMoth
+    - BoxSurvivalHugNitrogen
 
 # Engineering / Extended
 - type: loadout
@@ -176,7 +129,26 @@
     back:
     - BoxSurvivalSecurityNitrogen
 
-# Syndicate
+# Antagonist
+
+- type: loadout
+  id: EmergencyOxygenExtendedAntag
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OxygenBreather
+  storage:
+    back:
+    - BoxSurvivalDeluxeExtended
+
+- type: loadout
+  id: EmergencyNitrogenExtendedAntag
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: NitrogenBreather
+  storage:
+    back:
+    - BoxSurvivalDeluxeExtendedNitrogen
+
 - type: loadout
   id: EmergencyOxygenSyndicate
   effects:
@@ -194,6 +166,29 @@
   storage:
     back:
     - BoxSurvivalSyndicateNitrogen
+
+# Military / Double Extended
+- type: loadout
+  id: EmergencyOxygenMilitaryDouble
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OxygenBreather
+  equipment:
+    pocket1: DoubleEmergencyOxygenTankFilled
+  storage:
+    back:
+    - BoxSurvivalMilitaryDouble
+
+- type: loadout
+  id: EmergencyNitrogenMilitaryDouble
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: NitrogenBreather
+  equipment:
+    pocket1: DoubleEmergencyNitrogenTankFilled
+  storage:
+    back:
+    - BoxSurvivalMilitaryDoubleNitrogen
 
 # Pre-equipped species gear
 
@@ -246,6 +241,8 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: EffectSpeciesMask
+  - !type:GroupLoadoutEffect # TRIESTE
+    proto: TP14LEGWaterBreather
   equipment:
     outerClothing: ClothingOuterVestTank
 
@@ -256,13 +253,14 @@
   - !type:GroupLoadoutEffect
     proto: EffectSpeciesMask
   equipment:
-    mask: ClothingMaskBreath
+    mask: TP14ClothingMaskAir
 
+# TRIESTE: Added. Also what???
 - type: loadout
   id: LoadoutSpeciesGasMask
   effects:
   - !type:GroupLoadoutEffect
-    proto: WaterBreather
+    proto: TP14LEGWaterBreather
   equipment:
     mask: ClothingMaskGas
 

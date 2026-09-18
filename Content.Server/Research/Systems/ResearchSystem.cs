@@ -10,101 +10,95 @@ using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
 
-namespace Content.Server.Research.Systems;
-
-[UsedImplicitly]
-public sealed partial class ResearchSystem : SharedResearchSystem
+namespace Content.Server.Research.Systems
 {
-    [Dependency] private readonly IAdminLogManager _adminLog = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly AccessReaderSystem _accessReader = default!;
-    [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly RadioSystem _radio = default!;
-
-    public override void Initialize()
+    [UsedImplicitly]
+    public sealed partial class ResearchSystem : SharedResearchSystem
     {
-        base.Initialize();
-        InitializeClient();
-        InitializeConsole();
-        InitializeSource();
-        InitializeServer();
+        [Dependency] private IAdminLogManager _adminLog = default!;
+        [Dependency] private IGameTiming _timing = default!;
+        [Dependency] private AccessReaderSystem _accessReader = default!;
+        [Dependency] private EntityLookupSystem _lookup = default!;
+        [Dependency] private UserInterfaceSystem _uiSystem = default!;
+        [Dependency] private SharedPopupSystem _popup = default!;
+        [Dependency] private RadioSystem _radio = default!;
 
-        SubscribeLocalEvent<TechnologyDatabaseComponent, ResearchRegistrationChangedEvent>(
-            OnDatabaseRegistrationChanged);
-    }
-
-    /// <summary>
-    /// Gets a server based on it's unique numeric id.
-    /// </summary>
-    /// <param name="id"></param>
-    /// <param name="serverUid"></param>
-    /// <param name="serverComponent"></param>
-    /// <returns></returns>
-    public bool TryGetServerById(int id,
-        [NotNullWhen(true)] out EntityUid? serverUid,
-        [NotNullWhen(true)] out ResearchServerComponent? serverComponent)
-    {
-        serverUid = null;
-        serverComponent = null;
-
-        var query = EntityQueryEnumerator<ResearchServerComponent>();
-        while (query.MoveNext(out var uid, out var server))
+        public override void Initialize()
         {
-            if (server.Id != id)
-                continue;
-            serverUid = uid;
-            serverComponent = server;
-            return true;
+            base.Initialize();
+            InitializeClient();
+            InitializeConsole();
+            InitializeSource();
+            InitializeServer();
+
+            SubscribeLocalEvent<TechnologyDatabaseComponent, ResearchRegistrationChangedEvent>(OnDatabaseRegistrationChanged);
         }
 
-        return false;
-    }
-
-    /// <summary>
-    /// Gets the names of all the servers.
-    /// </summary>
-    /// <returns></returns>
-    public string[] GetServerNames()
-    {
-        var allServers = EntityQuery<ResearchServerComponent>(true).ToArray();
-        var list = new string[allServers.Length];
-
-        for (var i = 0; i < allServers.Length; i++)
+        /// <summary>
+        /// Gets a server based on its unique numeric id.
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="id"></param>
+        /// <param name="serverUid"></param>
+        /// <param name="serverComponent"></param>
+        /// <returns></returns>
+        public bool TryGetServerById(EntityUid client, int id, [NotNullWhen(true)] out EntityUid? serverUid, [NotNullWhen(true)] out ResearchServerComponent? serverComponent)
         {
-            list[i] = allServers[i].ServerName;
+            serverUid = null;
+            serverComponent = null;
+
+            var query = GetServers(client);
+            foreach (var (uid, server) in query)
+            {
+                if (server.Id != id)
+                    continue;
+                serverUid = uid;
+                serverComponent = server;
+                return true;
+            }
+            return false;
         }
 
-        return list;
-    }
-
-    /// <summary>
-    /// Gets the ids of all the servers
-    /// </summary>
-    /// <returns></returns>
-    public int[] GetServerIds()
-    {
-        var allServers = EntityQuery<ResearchServerComponent>(true).ToArray();
-        var list = new int[allServers.Length];
-
-        for (var i = 0; i < allServers.Length; i++)
+        /// <summary>
+        /// Gets the names of all the servers.
+        /// </summary>
+        /// <returns></returns>
+        public string[] GetServerNames(EntityUid client)
         {
-            list[i] = allServers[i].Id;
+            return GetServers(client).Select(x => x.Comp.ServerName).ToArray();
         }
 
-        return list;
-    }
-
-    public override void Update(float frameTime)
-    {
-        var query = EntityQueryEnumerator<ResearchServerComponent>();
-        while (query.MoveNext(out var uid, out var server))
+        /// <summary>
+        /// Gets the ids of all the servers
+        /// </summary>
+        /// <returns></returns>
+        public int[] GetServerIds(EntityUid client)
         {
-            if (server.NextUpdateTime > _timing.CurTime)
-                continue;
-            server.NextUpdateTime = _timing.CurTime + server.ResearchConsoleUpdateTime;
+            return GetServers(client).Select(x => x.Comp.Id).ToArray();
+        }
 
-            UpdateServer(uid, (int)server.ResearchConsoleUpdateTime.TotalSeconds, server);
+        public HashSet<Entity<ResearchServerComponent>> GetServers(EntityUid client)
+        {
+            var clientXform = Transform(client);
+            if (clientXform.GridUid is not { } grid)
+                return [];
+
+            var set = new HashSet<Entity<ResearchServerComponent>>();
+            _lookup.GetGridEntities(grid, set);
+            return set;
+        }
+
+        public override void Update(float frameTime)
+        {
+            var query = EntityQueryEnumerator<ResearchServerComponent>();
+            while (query.MoveNext(out var uid, out var server))
+            {
+                if (server.NextUpdateTime > _timing.CurTime)
+                    continue;
+                server.NextUpdateTime = _timing.CurTime + server.ResearchConsoleUpdateTime;
+
+                UpdateServer(uid, (int) server.ResearchConsoleUpdateTime.TotalSeconds, server);
+            }
         }
     }
 }

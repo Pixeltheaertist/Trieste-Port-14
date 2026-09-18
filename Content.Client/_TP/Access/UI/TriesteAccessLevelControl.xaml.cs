@@ -11,7 +11,7 @@ namespace Content.Client._TP.Access.UI;
 [GenerateTypedNameReferences]
 public sealed partial class TriesteAccessLevelControl : BoxContainer
 {
-    [Dependency] private readonly ILogManager _logManager = default!;
+    [Dependency] private ILogManager _logManager = default!;
     private ISawmill _sawmill = default!;
 
     public readonly Dictionary<ProtoId<AccessLevelPrototype>, Button> ButtonsList = new();

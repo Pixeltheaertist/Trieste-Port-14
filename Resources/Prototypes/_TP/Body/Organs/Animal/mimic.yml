@@ -1,100 +1,56 @@
 - type: entity
-  id: OrganTumor # Adding this organ to any creature will cause it to spawn a Mimic upon being gibbed
-  parent: OrganAnimalStomach
-  suffix: Trieste, Organ
-  name: festering tumor
-  description: "what- what is this?"
+  id: AnimalMimic
+  suffix: Trieste
+  abstract: true
   components:
-  - type: Stomach
-    specialDigestible:
-      tags:
-      - Raw # only can eat raw meats
-  - type: Metabolizer
-    metabolizerTypes: [ Bloodsucker ]
-  - type: SolutionContainerManager
-    solutions:
-      stomach:
-        maxVol: 50
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
-  - type: Nymph
-    entityPrototype: OrganTumorMimic
-  - type: Tag
-    tags:
-      - MindTransferTarget
+  - type: TemperatureProtection
+    coolingCoefficient: 0.0
+  - type: Body
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganSeaLandCreatureLungs
+        - id: OrganBloodsuckerHeart
+        - id: OrganTumor
+        - id: OrganBloodsuckerLiver
+        - id: OrganAnimalKidneys
+
 
 - type: entity
-  id: OrganTumorMimic
-  parent: TP14MobMimic # might just be able to switch the prototype to MobMimic and save some clutter, haven't tested it yet.
-  name: mimic
-  components:
-  - type: IsDeadIC
-  - type: Body
-    prototype: AnimalMimic
-  - type: Tag
-    tags:
-      - MindTransferTarget
-
-- type: body
-  id: AnimalMimic
-  name: "mimic"
-  root: torso
-  slots:
-    torso:
-      part: TorsoAnimal
-      organs:
-        tumor: OrganTumor # example of OrganTumor being applied to a body prototype
-
-- type: body
   id: TheThingy
-  name: "The Thingy"
-  root: torso
-  slots:
-    head:
-      part: HeadHuman
-      connections:
-      - torso
-      organs:
-        brain: OrganHumanBrain
-        eyes: OrganHumanEyes
-    torso:
-      part: TorsoHuman
-      connections:
-      - right_arm
-      - left_arm
-      - right_leg
-      - left_leg
-      organs:
-        heart: OrganBloodsuckerHeart
-        lungs: OrganHumanLungs
-        stomach: OrganTumor # The mimic replaces the host's stomach, hence why it needs to feed by absorbing meat or other lifeforms.
-        liver: OrganBloodsuckerLiver
-        kidneys: OrganHumanKidneys
-    right_arm:
-      part: RightArmHuman
-      connections:
-      - right_hand
-    left_arm:
-      part: LeftArmHuman
-      connections:
-      - left_hand
-    right_hand:
-      part: RightHandHuman
-    left_hand:
-      part: LeftHandHuman
-    right_leg:
-      part: RightLegHuman
-      connections:
-      - right_foot
-    left_leg:
-      part: LeftLegHuman
-      connections:
-      - left_foot
-    right_foot:
-      part: RightFootHuman
-    left_foot:
-      part: LeftFootHuman
-
+  suffix: Trieste
+  categories: [ HideSpawnMenu ]
+  name: the thingy appearance
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: OrganHumanTorso
+      Head: OrganHumanHead
+      ArmLeft: OrganHumanArmLeft
+      ArmRight: OrganHumanArmRight
+      HandRight: OrganHumanHandRight
+      HandLeft: OrganHumanHandLeft
+      LegLeft: OrganHumanLegLeft
+      LegRight: OrganHumanLegRight
+      FootLeft: OrganHumanFootLeft
+      FootRight: OrganHumanFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Tongue: OrganHumanTongue
+      Appendix: OrganHumanAppendix
+      Ears: OrganHumanEars
+      Lungs: OrganHumanLungs
+      Heart: OrganHumanHeart
+      Stomach: OrganTumor
+      Liver: OrganHumanLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: Human

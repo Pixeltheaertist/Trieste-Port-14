@@ -141,8 +141,9 @@
     offset: "0, 0.35"
   - type: RotatingLight
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:

@@ -1,6 +1,6 @@
 - type: entity
   name: bony spine
-  parent: Shiv
+  parent: [ Shiv, SolutionDart ]
   suffix: Trieste
   id: TP14ThingySpine
   description: A vile spine of bone created by a Thingy. It's extremely sharp, and hollow.
@@ -16,15 +16,16 @@
       path: /Audio/Weapons/bladeslice.ogg
   - type: Sprite
     sprite: Objects/Weapons/Melee/Thingy.rsi
-  - type: SolutionContainerManager
-    solutions:
-      melee:
-        reagents:
-        - ReagentId: DrifterToxin
-          Quantity: 10
+  - type: Solution
+    solution:
+      maxVol: 10
+      reagents:
+      - ReagentId: DrifterToxin
+        Quantity: 10
   - type: MeleeChemicalInjector
     solution: melee
-    transferAmount: 2
+  - type: SolutionTransfer
+    maxTransferAmount: 2
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
     offset: -0.15,0.0

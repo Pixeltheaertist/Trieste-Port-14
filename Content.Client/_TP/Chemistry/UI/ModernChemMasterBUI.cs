@@ -10,7 +10,7 @@ namespace Content.Client._TP.Chemistry.UI;
 ///     Initializes a <see cref="ModernChemMasterWindow"/> and updates it when new server messages are received.
 /// </summary>
 [UsedImplicitly]
-public sealed class ModernChemMasterBui(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
+public sealed partial class ModernChemMasterBui(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
 {
     [ViewVariables]
     private ModernChemMasterWindow? _window;

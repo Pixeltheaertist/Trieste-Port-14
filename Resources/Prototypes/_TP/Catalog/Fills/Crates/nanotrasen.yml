@@ -5,27 +5,29 @@
   name: portable chemistry lab crate
   description: Contains everything needed to go breaking bad. Does not include a second cook. # Walter we need to COOK
   components:
-  - type: StorageFill
-    contents:
-      - id: ReagentGrinderFlatpack
-      - id: HotplateFlatpack
-      - id: CentrifugeFlatpack
-      - id: Multitool
-      - id: BoxVial
-      - id: BoxBottle
-      - id: ClothingEyesGlassesChemical
-      - id: SugarChemistryVial
-      - id: Dropper
-        amount: 2
-      - id: Beaker
-        amount: 2
-      - id: VialBoxP
-      - id: VialBoxP2
-      - id: VialBoxS
-      - id: VialBoxD
-      - id: UniformScrubsColorBlue
-      - id: ClothingHeadHatSurgcapBlue
-      - id: ClothingMaskBreathMedicalSecurity
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ReagentGrinderFlatpack
+        - id: HotplateFlatpack
+        - id: CentrifugeFlatpack
+        - id: Multitool
+        - id: BoxVial
+        - id: BoxBottle
+        - id: ClothingEyesGlassesChemical
+        - id: TP14SmallChemistryVialSugar
+        - id: Dropper
+          amount: 2
+        - id: Beaker
+          amount: 2
+        - id: VialBoxP
+        - id: VialBoxP2
+        - id: VialBoxS
+        - id: VialBoxD
+        - id: UniformScrubsColorBlue
+        - id: ClothingHeadHatSurgcapBlue
+        - id: ClothingMaskBreathMedicalSecurity
 
 
 - type: entity
@@ -35,14 +37,16 @@
   name: NT borging kit
   description: The label reads 'We will add your financial and economical assets to our own' # da borg
   components:
-  - type: StorageFill
-    contents:
-      - id: MMI
-      #- id: BorgChassisNanotraitor
-      - id: PowerCellHigh
-      - id: ClothingHandsGlovesColorYellow
-      - id: Screwdriver
-      - id: TP14ToolboxNanoTrasenFilled
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: MMI
+        #- id: BorgChassisNanotraitor
+        - id: PowerCellHigh
+        - id: ClothingHandsGlovesColorYellow
+        - id: Screwdriver
+        - id: TP14ToolboxNanoTrasenFilled
 
 
 

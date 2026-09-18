@@ -1,8 +1,7 @@
 - type: marking
   id: TP14MarkingMothCollarCharred
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: charred
@@ -10,8 +9,7 @@
 - type: marking
   id: TP14MarkingMothCollarDefault
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: default
@@ -19,8 +17,7 @@
 - type: marking
   id: TP14MarkingMothCollarJungle
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: jungle
@@ -28,8 +25,7 @@
 - type: marking
   id: TP14MarkingMothCollarLadyBug
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: ladybug
@@ -37,8 +33,7 @@
 - type: marking
   id: TP14MarkingMothCollarMaple
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: maple
@@ -46,8 +41,7 @@
 - type: marking
   id: TP14MarkingMothCollarMoffra
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: moffra
@@ -55,8 +49,7 @@
 - type: marking
   id: TP14MarkingMothCollar2
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: mothcollar_2
@@ -64,8 +57,7 @@
 - type: marking
   id: TP14MarkingMothCollar3
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: mothcollar_3
@@ -73,8 +65,7 @@
 - type: marking
   id: TP14MarkingMothCollar4
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: mothcollar_4
@@ -82,8 +73,7 @@
 - type: marking
   id: TP14MarkingMothCollar5
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: mothcollar_5
@@ -91,8 +81,7 @@
 - type: marking
   id: TP14MarkingMothCollarOakworm
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: oakworm
@@ -100,8 +89,7 @@
 - type: marking
   id: TP14MarkingMothCollarPlasmaFire
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: plasmafire
@@ -109,8 +97,7 @@
 - type: marking
   id: TP14MarkingMothCollarStriped
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: striped
@@ -118,8 +105,7 @@
 - type: marking
   id: TP14MarkingMothCollarUnderWing
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: underwing
@@ -127,8 +113,7 @@
 - type: marking
   id: TP14MarkingMothCollarWhiteFly
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: whitefly
@@ -136,8 +121,7 @@
 - type: marking
   id: TP14MarkingMothCollarWitchWing
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: witchwing
@@ -145,8 +129,7 @@
 - type: marking
   id: TP14MarkingMothCollarBooster
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: booster_collar_primary
@@ -158,8 +141,7 @@
 - type: marking
   id: TP14MarkingMothCollarOrnateTigerMoth
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: ornate_tiger_moth_collar_primary

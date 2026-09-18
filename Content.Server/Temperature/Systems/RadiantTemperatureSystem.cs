@@ -1,16 +1,16 @@
 // Credit to git PR https://github.com/space-wizards/space-station-14/pull/32087
 
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.Atmos.Piping.Components;
 using Content.Server.Temperature.Components;
+using Content.Shared.Atmos.Components;
 using Robust.Server.GameObjects;
 
 namespace Content.Server.Temperature.Systems;
 
-public sealed class RadiantTemperatureSystem : EntitySystem
+public sealed partial class RadiantTemperatureSystem : EntitySystem
 {
-    [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
-    [Dependency] private readonly TransformSystem _xform = default!;
+    [Dependency] private AtmosphereSystem _atmosphere = default!;
+    [Dependency] private TransformSystem _xform = default!;
 
     public override void Initialize()
     {

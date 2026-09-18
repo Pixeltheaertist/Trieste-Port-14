@@ -1,19 +1,22 @@
 - type: entity
-  parent: [ BaseMachinePowered, SmallConstructibleMachine ]
-  id: TP14KitchenDeepFryer
+  parent: [ BaseMachinePowered, SmallConstructibleMachine, SolutionHuge ]
+  id: TP14KitchenDeepFryerEmpty
+  suffix: Trieste
   name: deep fryer
   description: Can be used to fry delicious food, or all of mining's gold. Directions on the side say to use corn oil only.
-  suffix: Trieste
   components:
   - type: ApcPowerReceiver
-    powerLoad: 50 # Off by default
+    powerLoad: 5 # Off by default
+  - type: PowerState
+    idlePowerDraw: 5
+    workingPowerDraw: 50
   - type: Appearance
   - type: ContainerContainer
     containers:
       fryer_slots: !type:ContainerSlot
   - type: DeepFryer
   - type: ExaminableSolution
-    solution: fryer
+    solution: reagents
   - type: ItemSlots
     slots:
       fryer_slots:
@@ -29,22 +32,15 @@
   - type: Machine
     board: TP14DeepFryerCircuitboard
   - type: DumpableSolution
-    solution: fryer
+    solution: reagents
   - type: RefillableSolution
-    solution: fryer
+    solution: reagents
   - type: DrainableSolution
-    solution: fryer
+    solution: reagents
   - type: DrawableSolution
-    solution: fryer
-  - type: SolutionContainerManager
-    solutions:
-      fryer:
-        maxVol: 400
-        reagents:
-        - ReagentId: Cornoil
-          Quantity: 400
+    solution: reagents
   - type: SolutionItemStatus
-    solution: fryer
+    solution: reagents
   - type: SolutionTransfer
     maxTransferAmount: 50
   - type: Transform # FarHorizons - resprite
@@ -64,8 +60,8 @@
 #Lastly there's a blacklist so liquid containers do not go inside the fryer when trying to fill it with oil.
 
 - type: entity
-  parent: TP14KitchenDeepFryer
-  id: TP14KitchenDeepFryerTabletop
+  parent: TP14KitchenDeepFryerEmpty
+  id: TP14KitchenDeepFryerTabletopEmpty
   name: table-top deep fryer
   suffix: Trieste
   components:
@@ -80,21 +76,23 @@
 # Ddditional empty variants of the fryers for both mapping purposes,
 # and so we have an empty fryer that gets built rather than the one with oil in it.
 - type: entity
-  parent: TP14KitchenDeepFryer
-  id: TP14KitchenDeepFryerEmpty
-  suffix: Trieste, Empty
+  parent: TP14KitchenDeepFryerEmpty
+  id: TP14KitchenDeepFryer
+  suffix: Trieste, Filled
   components:
-  - type: SolutionContainerManager
-    solutions:
-      fryer:
-        maxVol: 400
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Cornoil
+        Quantity: 480
 
 - type: entity
-  parent: TP14KitchenDeepFryerTabletop
-  id: TP14KitchenDeepFryerTabletopEmpty
-  suffix: Trieste, Empty
+  parent: TP14KitchenDeepFryerTabletopEmpty
+  id: TP14KitchenDeepFryerTabletop
+  suffix: Trieste, Filled
   components:
-  - type: SolutionContainerManager
-    solutions:
-      fryer:
-        maxVol: 400
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Cornoil
+        Quantity: 480

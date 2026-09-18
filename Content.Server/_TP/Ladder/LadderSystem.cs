@@ -76,7 +76,7 @@ public sealed partial class LadderSystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (!HasComp<BorgChassisComponent>(args.User) || !HasComp<StepfatherComponent>(args.User))
+        if (!HasComp<BorgChassisComponent>(args.User) || !HasComp<Shared._TP.Mechs.Components.StepfatherComponent>(args.User))
             return;
 
         HandleClimb(ladderUid, args.User);
@@ -122,7 +122,7 @@ public sealed partial class LadderSystem : EntitySystem
     /// <param name="userUid">User Uid</param>
     private void HandleClimbWithoutTimer(LadderComponent ladderComp, EntityUid userUid)
     {
-        var query = EntityManager.EntityQueryEnumerator<LadderComponent>();
+        var query = EntityQueryEnumerator<LadderComponent>();
         while (query.MoveNext(out var destUid, out var destComp))
         {
             if (destComp.ThisSide != ladderComp.TargetSide)

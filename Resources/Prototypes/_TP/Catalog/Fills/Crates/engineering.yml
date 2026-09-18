@@ -1,0 +1,28 @@
+- type: entity
+  parent: CrateEngineeringSecure
+  id: TP14CrateEngineeringTeslaCoils
+  suffix: Trieste
+  name: tesla coil flatpacks crate
+  description: A crate containing 3 flatpacked tesla coils. Attracts lightning and generates energy from it.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage:
+        id: TeslaCoilFlatpack
+        amount: 3
+
+- type: entity
+  parent: CrateEngineeringSecure
+  id: TP14CrateEngineeringRadiationCollectors
+  suffix: Trieste
+  name: radiation collector flatpacks crate
+  description: A set of 3 radiation collectors for generating power. Plasma tanks are also included.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: RadiationCollectorFlatpack
+          amount: 3
+        - id: PlasmaTankFilled
+          amount: 3

@@ -16,8 +16,9 @@
     sprite: _TP/Structures/Machines/array.rsi
     layers:
     - state: array_INTACT
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: TP14TelecommsDMS
   - type: Destructible
     thresholds:

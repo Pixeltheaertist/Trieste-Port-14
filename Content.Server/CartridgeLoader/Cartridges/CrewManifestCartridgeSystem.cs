@@ -4,19 +4,18 @@ using Content.Server.Station.Systems;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.CartridgeLoader.Cartridges;
 using Content.Shared.CCVar;
+using Content.Shared.CrewManifest;
 using Robust.Shared.Configuration;
-using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.CartridgeLoader.Cartridges;
 
-// !! TRIESTE MODIFIED !! //
-public sealed class CrewManifestCartridgeSystem : EntitySystem
+public sealed partial class CrewManifestCartridgeSystem : EntitySystem
 {
-    [Dependency] private readonly CartridgeLoaderSystem _cartridgeLoader = default!;
-    [Dependency] private readonly IConfigurationManager _configManager = default!;
-    [Dependency] private readonly CrewManifestSystem _crewManifest = default!;
-    [Dependency] private readonly StationSystem _stationSystem = default!;
+    [Dependency] private CartridgeLoaderSystem _cartridgeLoader = default!;
+    [Dependency] private IConfigurationManager _configManager = default!;
+    [Dependency] private CrewManifestSystem _crewManifest = default!;
+    [Dependency] private StationSystem _stationSystem = default!;
 
     private static readonly EntProtoId CartridgePrototypeName = "CrewManifestCartridge";
 
@@ -39,7 +38,7 @@ public sealed class CrewManifestCartridgeSystem : EntitySystem
     /// The ui messages received here get wrapped by a CartridgeMessageEvent and are relayed from the <see cref="CartridgeLoaderSystem"/>
     /// </summary>
     /// <remarks>
-    /// The cartridge-specific ui message event needs to inherit from the CartridgeMessageEvent
+    /// The cartridge specific ui message event needs to inherit from the CartridgeMessageEvent
     /// </remarks>
     private void OnUiMessage(EntityUid uid, CrewManifestCartridgeComponent component, CartridgeMessageEvent args)
     {
@@ -80,17 +79,17 @@ public sealed class CrewManifestCartridgeSystem : EntitySystem
     {
         _unsecureViewersAllowed = unsecureViewersAllowed;
 
-        var allCartridgeLoaders = AllEntityQuery<CartridgeLoaderComponent, ContainerManagerComponent>();
-        while (allCartridgeLoaders.MoveNext(out var loaderUid, out var comp, out var cont))
+        var allCartridgeLoaders = AllEntityQuery<CartridgeLoaderComponent>();
+        while (allCartridgeLoaders.MoveNext(out var loaderUid, out var comp))
         {
             if (_unsecureViewersAllowed)
             {
-                _cartridgeLoader.InstallProgram(loaderUid, CartridgePrototypeName, false, comp);
+                _cartridgeLoader.InstallProgram((loaderUid, comp), CartridgePrototypeName, false);
                 return;
             }
 
-            if (_cartridgeLoader.TryGetProgram<CrewManifestCartridgeComponent>(loaderUid, out var program, true, comp, cont))
-                _cartridgeLoader.UninstallProgram(loaderUid, program.Value, comp);
+            if (_cartridgeLoader.TryGetProgram<CrewManifestCartridgeComponent>((loaderUid, comp)) is { } program)
+                _cartridgeLoader.UninstallProgram((loaderUid, comp), program);
         }
     }
 }

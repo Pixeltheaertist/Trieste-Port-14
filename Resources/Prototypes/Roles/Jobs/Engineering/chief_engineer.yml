@@ -17,9 +17,8 @@
       time: 2h
   weight: 10
   startingGear: ChiefEngineerGear
-  icon: "JobIconChiefEngineer"
+  icon: "TP14JobIconChiefEngineer" # TRIESTE: 'JobIconChiefEngineer'
   supervisors: job-supervisors-captain
-  canBeAntag: false
   access:
   - Maintenance
   - Engineering

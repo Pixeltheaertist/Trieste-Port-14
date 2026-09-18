@@ -1,6 +1,33 @@
 # Trieste specific hardsuits, if possible keep the positioning the same for helmets
 
-# EXPEDITIONARY HARDSUITS 
+# Standard pressure suit
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: TP14ClothingOuterHardsuitBasic
+  name: basic pressure suit
+  description: A basic, universal pressure suit that protects the wearer against the horrors of the abyss. Beats not having one, at least.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/OuterClothing/Hardsuits/basic.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/OuterClothing/Hardsuits/basic.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Caustic: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 0.80
+    sprintModifier: 0.80
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: TP14ClothingHeadHelmetHardsuitBasic
+
+# EXPEDITIONARY HARDSUITS
 # GILLY Abyssal Suit
 - type: entity
   parent: ClothingOuterHardsuitBase

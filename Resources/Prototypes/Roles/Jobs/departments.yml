@@ -3,9 +3,10 @@
   name: department-Cargo
   description: department-Cargo-description
   color: "#A46106"
-  roles: # TP - Moved Salvage
+  roles:
   - CargoTechnician
   - Quartermaster
+# - SalvageSpecialist # Trieste: Moved to expeditions.
 
 - type: department
   id: Civilian
@@ -16,7 +17,6 @@
   roles:
   - Bartender
   - Botanist
-  - Boxer
   - Chaplain
   - Chef
   - Clown
@@ -29,7 +29,6 @@
   - Passenger
   - Reporter
   - Visitor
-  - Zookeeper
   - ServiceWorker
 
 - type: department
@@ -130,3 +129,14 @@
   roles:
   - Borg
   - StationAi
+
+- type: department
+  id: Specific
+  name: department-Specific
+  description: department-Specific-description
+  color: "#9FED58"
+  weight: 10
+  roles:
+  - Reporter
+  - Psychologist
+  primary: false

@@ -1,0 +1,92 @@
+## BASE ORGANS ##
+- type: entity
+  parent: OrganBaseOrganic
+  id: TP14OrganJellid
+  abstract: true
+  suffix: Trieste, Jellid
+
+- type: entity
+  id: TP14OrganJellidMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Jellid ]
+
+- type: entity
+  parent: TP14OrganJellid
+  id: TP14OrganJellidInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Slime/organs.rsi
+
+- type: entity
+  parent: TP14OrganJellid
+  id: TP14OrganJellidExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _TP/Mobs/Species/Jellids/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: _TP/Mobs/Species/Jellids/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: TP14MarkingsGroupJellid
+
+
+## EXTERNAL ORGANS ##
+- type: entity
+  parent: [ OrganBaseTorso, TP14OrganJellidExternal ]
+  id: TP14OrganJellidTorso
+
+- type: entity
+  parent: [ OrganBaseHead, TP14OrganJellidExternal ]
+  id: TP14OrganJellidHead
+
+- type: entity
+  parent: [ OrganBaseArmLeft, TP14OrganJellidExternal ]
+  id: TP14OrganJellidArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, TP14OrganJellidExternal ]
+  id: TP14OrganJellidArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, TP14OrganJellidExternal ]
+  id: TP14OrganJellidHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, TP14OrganJellidExternal ]
+  id: TP14OrganJellidHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, TP14OrganJellidExternal ]
+  id: TP14OrganJellidLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, TP14OrganJellidExternal ]
+  id: TP14OrganJellidLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, TP14OrganJellidExternal ]
+  id: TP14OrganJellidFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, TP14OrganJellidExternal ]
+  id: TP14OrganJellidFootRight
+
+
+## INTERNAL ORGANS ##
+- type: entity
+  parent: [ OrganBaseBrain, TP14OrganJellidInternal, TP14OrganJellidMetabolizer ]
+  id: TP14OrganJellidCore
+  name: jellid core
+
+- type: entity
+  parent: [ OrganBaseLungs, TP14OrganJellidInternal, TP14OrganJellidMetabolizer ]
+  id: TP14OrganJellidLungs
+  name: jellid gills
+  components:
+  - type: Lung
+    alert: TP14AlertLysis

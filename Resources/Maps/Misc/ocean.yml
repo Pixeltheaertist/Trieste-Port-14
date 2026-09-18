@@ -40,9 +40,6 @@ entities:
     - type: GridTree
     - type: Broadphase
     - type: OccluderTree
-    - type: Weather
-      weather:
-        Rain: {}
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg

@@ -11,7 +11,7 @@
   meltingPoint: 100
   pricePerUnit: 3
   metabolisms:
-    Poison:
+    Digestion:
       effects:
       - !type:Vomit
         conditions:
@@ -22,7 +22,7 @@
         damage:
           types:
             Poison: 3
-            Cellular: .25
+            Cellular: 0.25
 
 - type: reagent
   id: LessCrudeOil
@@ -35,7 +35,7 @@
     requiredSlipSpeed: 2
   pricePerUnit: 6
   metabolisms:
-    Poison:
+    Digestion:
       effects:
       - !type:Vomit
         conditions:
@@ -58,7 +58,7 @@
     requiredSlipSpeed: 2
   pricePerUnit: 10
   metabolisms:
-    Poison:
+    Digestion:
       effects:
       - !type:Vomit
         conditions:
@@ -81,7 +81,7 @@
     requiredSlipSpeed: 2
   pricePerUnit: 80
   metabolisms:
-    Poison:
+    Digestion:
       effects:
       - !type:Vomit
         conditions:
@@ -104,7 +104,7 @@
     requiredSlipSpeed: 2
   pricePerUnit: 300
   metabolisms:
-    Poison:
+    Digestion:
       effects:
       - !type:Vomit
         conditions:
@@ -127,7 +127,7 @@
   slipData:
     requiredSlipSpeed: 2
   metabolisms:
-    Poison:
+    Digestion:
       effects:
       - !type:HealthChange
         damage:
@@ -146,7 +146,7 @@
   slipData:
     requiredSlipSpeed: 2
   metabolisms:
-    Poison:
+    Digestion:
       effects:
       - !type:HealthChange
         damage:
@@ -168,7 +168,7 @@
   slipData:
     requiredSlipSpeed: 3.5
   metabolisms:
-    Poison:
+    Digestion:
       effects:
       - !type:HealthChange
         damage:
@@ -188,7 +188,7 @@
   color: "#FAFAFA"
   group: Narcotics
   metabolisms:
-    Poison:
+    Digestion:
       effects:
       - !type:HealthChange
         damage:
@@ -203,7 +203,7 @@
           types:
             Poison: 5
             Asphyxiation: 5
-    Narcotic:
+    Bloodstream:
       effects:
       - !type:MovementSpeedModifier
         walkSpeedModifier: 5
@@ -228,8 +228,6 @@
         key: Drowsiness
         time: 100
         type: Remove
-    Medicine:
-      effects:
       - !type:ResetNarcolepsy
         conditions:
         - !type:ReagentCondition
@@ -247,7 +245,7 @@
   slipData:
     requiredSlipSpeed: 3.5
   metabolisms:
-    Poison:
+    Digestion:
       effects:
       - !type:HealthChange
         damage:
@@ -264,7 +262,7 @@
   slipData:
     requiredSlipSpeed: 3.5
   metabolisms:
-    Poison:
+    Digestion:
       effects:
       - !type:HealthChange
         damage:

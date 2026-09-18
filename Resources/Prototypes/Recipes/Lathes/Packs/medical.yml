@@ -15,7 +15,8 @@
   - Syringe
   - PillCanister
   - HandLabeler
-  - BaseChemistryEmptyVial
+  - ChemistryEmptyVial
+  - ChemistryEmptyVialSmall
   - Dropper
 
 - type: latheRecipePack
@@ -25,7 +26,7 @@
   - Jug
   - ChemistryEmptyBottle01
   - ClothingEyesGlassesChemical
-  - TP14ChemistryHudEyepatchRecipe # TP14
+  - TP14ChemistryHudEyepatchRecipe # Trieste: Added.
 
 - type: latheRecipePack
   id: SurgeryStatic
@@ -48,6 +49,7 @@
   - WhiteCane
   - OffsetCane
   - OffsetCaneWood
+  - JetInjector
   - TP14MedicalHudRecipe # TP14
   - TP14MedicalHudEyepatchRecipe #TP14
 
@@ -103,6 +105,7 @@
   - SyringeBluespace
   - LauncherSyringe
   - MiniSyringe
+  - AdvancedJetInjector
 
 - type: latheRecipePack
   id: MedicalBoards

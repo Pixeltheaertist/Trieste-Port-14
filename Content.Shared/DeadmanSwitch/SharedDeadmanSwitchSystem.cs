@@ -10,10 +10,10 @@ namespace Content.Shared.DeadmanSwitch;
 /// Handles OnUseInHand event, preventing the signaller from being triggered the normal way.
 /// Instead, using it in hand arms / disarms it, and it will then trigger if dropped while armed.
 /// </summary>
-public abstract class SharedDeadmanSwitchSystem : EntitySystem
+public abstract partial class SharedDeadmanSwitchSystem : EntitySystem
 {
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
 
     public override void Initialize()
     {

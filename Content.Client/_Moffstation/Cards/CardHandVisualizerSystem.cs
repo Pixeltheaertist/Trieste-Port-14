@@ -10,7 +10,7 @@ namespace Content.Client._Moffstation.Cards;
 
 public sealed partial class CardHandVisualizerSystem : ManagedLayerVisualizerSystem<CardHandComponent>
 {
-    [Dependency] private readonly MetaDataSystem _meta = default!;
+    [Dependency] private MetaDataSystem _meta = default!;
 
     /// <inheritdoc/>
     public override void Initialize()

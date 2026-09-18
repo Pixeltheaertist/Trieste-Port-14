@@ -8,12 +8,12 @@ using Content.Shared.Verbs;
 
 namespace Content.Shared._Moffstation.Cards;
 
-public sealed class CardSystem : EntitySystem
+public sealed partial class CardSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly CardHandSystem _cardHand = default!;
-    [Dependency] private readonly CardStackSystem _cardStack = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private CardHandSystem _cardHand = default!;
+    [Dependency] private CardStackSystem _cardStack = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
 
     /// <inheritdoc/>
     public override void Initialize()

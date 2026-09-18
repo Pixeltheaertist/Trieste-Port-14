@@ -36,7 +36,7 @@ public sealed partial class DeathRainSystem : EntitySystem
         if (_updateTimer >= RumbleInterval)
         {
 
-            foreach (var rumbler in EntityManager.EntityQuery<Shared._TP.RWEvent.RainCrushableComponent>())
+            foreach (var rumbler in EntityQuery<Shared._TP.RWEvent.RainCrushableComponent>())
             {
                 var rumble = rumbler.Owner;
                 var kick = new Vector2(_random.NextFloat(), _random.NextFloat()) * 2f;
@@ -50,7 +50,7 @@ public sealed partial class DeathRainSystem : EntitySystem
             _updateTimer = 0f;
 
             // In shelter?
-            foreach (var entity in EntityManager.EntityQuery<Shared._TP.RWEvent.RainCrushableComponent>())
+            foreach (var entity in EntityQuery<Shared._TP.RWEvent.RainCrushableComponent>())
             {
                 var entityUid = entity.Owner;
 

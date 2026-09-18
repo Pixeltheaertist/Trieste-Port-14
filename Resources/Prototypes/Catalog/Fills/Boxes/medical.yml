@@ -4,9 +4,10 @@
   id: BoxSyringe
   description: A box full of syringes.
   components:
-  - type: StorageFill
-    contents:
-      - id: Syringe
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: Syringe
         amount: 6
   - type: Sprite
     layers:
@@ -19,9 +20,10 @@
   id: BoxPillCanister
   description: A box full of pill canisters.
   components:
-  - type: StorageFill
-    contents:
-      - id: PillCanister
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: PillCanister
         amount: 9
   - type: Sprite
     layers:
@@ -34,9 +36,10 @@
   id: BoxBottle
   description: A box full of bottles.
   components:
-  - type: StorageFill
-    contents:
-      - id: ChemistryEmptyBottle01
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: ChemistryEmptyBottle01
         amount: 6
   - type: Sprite
     layers:
@@ -49,9 +52,10 @@
   id: BoxSterileMask
   description: This box contains sterile medical masks.
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingMaskSterile
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: ClothingMaskSterile
         amount: 4
   - type: Sprite
     layers:
@@ -64,9 +68,10 @@
   id: BoxLatexGloves
   description: Contains sterile latex gloves.
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingHandsGlovesLatex
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: ClothingHandsGlovesLatex
         amount: 4
   - type: Sprite
     layers:
@@ -79,9 +84,10 @@
   id: BoxNitrileGloves
   description: Contains sterile nitrile gloves. Better than latex.
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingHandsGlovesNitrile
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: ClothingHandsGlovesNitrile
         amount: 4
   - type: Sprite
     layers:
@@ -94,9 +100,10 @@
   id: BoxBodyBag
   description: Contains body bags.
   components:
-  - type: StorageFill
-    contents:
-      - id: BodyBagFolded
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: BodyBagFolded
         amount: 4
   - type: Sprite
     layers:
@@ -115,11 +122,15 @@
   components:
   - type: Storage
     grid:
-    - 0,0,2,1
-  - type: StorageFill
-    contents:
-      - id: BaseChemistryEmptyVial
-        amount: 6
+    - 0,0,3,1
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ChemistryEmptyVial
+          amount: 3
+        - id: ChemistryEmptyVialSmall
+        rolls: 2 # group the small vials on the right column
   - type: Sprite
     layers:
       - state: box
@@ -127,78 +138,4 @@
 
 ##CHEM LAB STUFF
 
-- type: entity
-  id: VialBoxP
-  parent: BoxVial
-  name: vial box (P)
-  description:
-  components:
-    - type: StorageFill
-      contents:
-        - id: AluminiumChemistryVial
-          amount: 1
-        - id: CarbonChemistryVial
-          amount: 1
-        - id: ChlorineChemistryVial
-          amount: 1
-        - id: FluorineChemistryVial
-          amount: 1
-        - id: IodineChemistryVial
-          amount: 1
-        - id: PhosphorusChemistryVial
-          amount: 1
 
-- type: entity
-  id: VialBoxP2
-  parent: BoxVial
-  name: vial box (P)
-  description:
-  components:
-    - type: StorageFill
-      contents:
-        - id: SulfurChemistryVial
-          amount: 1
-        - id: SiliconChemistryVial
-          amount: 1
-        - id: OxygenChemistryVial
-          amount: 1
-        - id: NitrogenChemistryVial
-          amount: 1
-
-- type: entity
-  id: VialBoxS
-  parent: BoxVial
-  name: vial box (S)
-  description:
-  components:
-    - type: StorageFill
-      contents:
-        - id: HydrogenChemistryVial
-          amount: 1
-        - id: LithiumChemistryVial
-          amount: 1
-        - id: SodiumChemistryVial
-          amount: 1
-        - id: PotassiumChemistryVial
-          amount: 1
-        - id: RadiumChemistryVial
-          amount: 1
-
-- type: entity
-  id: VialBoxD
-  parent: BoxVial
-  name: vial box (D)
-  description:
-  components:
-    - type: StorageFill
-      contents:
-        - id: IronChemistryVial
-          amount: 1
-        - id: CopperChemistryVial
-          amount: 1
-        - id: GoldChemistryVial
-          amount: 1
-        - id: MercuryChemistryVial
-          amount: 1
-        - id: SilverChemistryVial
-          amount: 1

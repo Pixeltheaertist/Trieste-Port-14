@@ -57,7 +57,7 @@
   reactants:
     ExoticOil:
       amount: 1
-    ActivatedAlgae:
+    Bicaridine:
       amount: 1
   products:
     Omnizine: 1

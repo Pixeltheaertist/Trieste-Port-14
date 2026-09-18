@@ -1,1 +1,1 @@
-humanoid-profile-editor-customspeciename-label = Custom Species Name:
+humanoid-profile-editor-custom-species-label = Custom Species Name:

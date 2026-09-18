@@ -1,8 +1,7 @@
 - type: marking
   id: TP14MarkingReptileTailChameleon
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Reptilian/tails.rsi
     state: tail_chameleon

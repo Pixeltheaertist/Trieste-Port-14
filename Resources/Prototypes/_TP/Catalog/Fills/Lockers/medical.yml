@@ -1,3 +1,86 @@
+## TABLES ##
+- type: entityTable
+  id: TP14EntityTableMedicineReagentBottles
+  table: !type:GroupSelector
+    children:
+    - id: ChemistryBottleKelotane
+    - id: ChemistryBottleDylovene
+    - id: ChemistryBottleInaprovaline
+    - id: ChemistryBottleDexalin
+    - id: ChemistryBottleSaline
+    - id: ChemistryBottleTricordrazine
+    - id: ChemistryBottleHyronalin
+
+# TODO: Check these for replaced chems!
+- type: entityTable
+  id: TP14EntityTableAllMedicineReagentBottles
+  table: !type:GroupSelector
+    children:
+    - id: ChemistryBottleAloxadone
+    - id: ChemistryBottleAmbuzol
+    - id: ChemistryBottleAmbuzolPlus
+    - id: ChemistryBottleArithrazine
+    - id: ChemistryBottleBarozine
+    - id: ChemistryBottleCognizine
+    - id: ChemistryBottleCryoxadone
+    - id: ChemistryBottleCryptobiolin
+    - id: ChemistryBottleDermaline
+    - id: ChemistryBottleDexalin
+    - id: ChemistryBottleDiphenhydramine
+    - id: ChemistryBottleDiphenylmethylamine
+    - id: ChemistryBottleDoxarubixadone
+    - id: ChemistryBottleDylovene
+    - id: ChemistryBottleEpinephrine
+    - id: ChemistryBottleEthyloxyephedrine
+    - id: ChemistryBottleEthylredoxrazine
+    - id: ChemistryBottleHaloperidol
+    - id: ChemistryBottleHolywater
+    - id: ChemistryBottleHyronalin
+    - id: ChemistryBottleInaprovaline
+    - id: ChemistryBottleInsuzine
+    - id: ChemistryBottleIpecac
+    - id: ChemistryBottleKelotane
+    - id: ChemistryBottleLeporazine
+    - id: ChemistryBottleLipozine
+    - id: ChemistryBottleMannitol
+    - id: TP14ChemistryBottleArcryox
+    - id: ChemistryBottleOculine
+    - id: ChemistryBottleOmnizine
+    - id: ChemistryBottleOpporozidone
+    - id: ChemistryBottlePhalanximine
+    - id: ChemistryBottlePolypyryliumOligomers
+    - id: ChemistryBottlePotassiumIodide
+    - id: ChemistryBottlePsicodine
+    - id: ChemistryBottlePulpedBananaPeel
+    - id: ChemistryBottleSaline
+    - id: ChemistryBottleSiderlac
+    - id: ChemistryBottleSigynate
+    - id: ChemistryBottleStellibinin
+    - id: ChemistryBottleSynaptizine
+    - id: ChemistryBottleTranexamicAcid
+    - id: ChemistryBottleTricordrazine
+    - id: ChemistryBottleUltravasculine
+    - id: ChemistryBottleCharcoal
+    - id: ChemistryBottleLaughter
+
+- type: entityTable
+  id: TP14EntityTableLockerFillMedicine
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: TP14EntityTableMedicineReagentBottles
+      rolls: 2
+    - !type:GroupSelector # Basic topicals
+      rolls: 7
+      children:
+      - id: Brutepack
+      - id: Ointment
+      - id: Bloodpack
+      - id: Gauze
+        weight: 0.5
+
+
+## ENTITIES ##
 - type: entity
   parent: LockerMedicineFilled
   id: TP14LockerMedicineFilled
@@ -25,6 +108,6 @@
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
-        tableId: LockerFillMedicine
+        tableId: TP14EntityTableLockerFillMedicine
   - type: Sprite
     sprite: _TP/Structures/Storage/closet.rsi

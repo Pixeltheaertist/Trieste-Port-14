@@ -1,0 +1,14 @@
+
+- type: loadoutGroup
+  id: MimeJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieMime
+
+- type: loadoutGroup
+  id: PsychologistHead
+  name: tp14-loadout-group-psychologist-head
+  minLimit: 0
+  loadouts:
+  - Fez

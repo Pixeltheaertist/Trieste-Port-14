@@ -1,7 +1,7 @@
-using Robust.Shared.Random;
-using System.Linq;
 using Content.Shared.GameTicking.Prototypes;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
+using System.Linq;
 
 namespace Content.Server.GameTicking;
 
@@ -13,11 +13,11 @@ public sealed partial class GameTicker
     [ViewVariables]
     private List<ProtoId<LobbyBackgroundPrototype>>? _lobbyBackgrounds;
 
-    private static readonly string[] WhitelistedBackgroundExtensions = new string[] { "png", "jpg", "jpeg", "webp" };
+    private static readonly string[] WhitelistedBackgroundExtensions = new string[] {"png", "jpg", "jpeg", "webp"};
 
     private void InitializeLobbyBackground()
     {
-        var allprotos = _prototypeManager.EnumeratePrototypes<LobbyBackgroundPrototype>().ToList();
+        var allprotos = ProtoMan.EnumeratePrototypes<LobbyBackgroundPrototype>().ToList();
         _lobbyBackgrounds ??= new List<ProtoId<LobbyBackgroundPrototype>>();
 
         //create protoids from them

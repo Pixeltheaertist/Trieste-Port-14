@@ -1,0 +1,27 @@
+- type: entity
+  parent: MedkitBurn
+  id: TP14MedkitBurnFilled
+  suffix: Trieste, Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: Ointment
+          amount: 2
+        - id: PillCanisterDermaline
+        - id: PillTricordrazine
+
+- type: entity
+  parent: MedkitO2
+  id: TP14MedkitOxygenFilled
+  suffix: Trieste, Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: TP14ClothingMaskAir
+        - id: EmergencyOxygenTankFilled
+        - id: EmergencyMedipen
+        - id: SyringeInaprovaline

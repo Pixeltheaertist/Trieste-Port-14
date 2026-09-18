@@ -1,9 +1,13 @@
+using Content.Shared._FarHorizons.Power.Generation.FissionGenerator;
+using Content.Shared.Radiation.Systems;
+
 namespace Content.Shared.Radiation.Components;
 
 /// <summary>
 ///     Irradiate all objects in range.
 /// </summary>
 [RegisterComponent]
+[Access(typeof(SharedRadiationSystem), typeof(SharedNuclearReactorSystem), typeof(SharedReactorPartSystem))]
 public sealed partial class RadiationSourceComponent : Component
 {
     /// <summary>

@@ -18,18 +18,18 @@ namespace Content.Server._NullLink.PlayerData;
 
 public sealed partial class NullLinkPlayerManager : INullLinkPlayerManager
 {
-    [Dependency] private readonly IActorRouter _actors = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IServerNetManager _netMgr = default!;
-    [Dependency] private readonly ILogManager _logManager = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private IActorRouter _actors = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IServerNetManager _netMgr = default!;
+    [Dependency] private ILogManager _logManager = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
 
     private readonly ConcurrentDictionary<Guid, PlayerData> _playerById = [];
     private readonly ConcurrentDictionary<Guid, ICommonSession> _mentors = [];
     private ISawmill _sawmill = default!;
     private RoleRequirementPrototype? _mentorReq;
-    private TitleBuilderPrototype? _builder;
+    private Shared._NullLink.TitleBuilderPrototype? _builder;
 
     public IEnumerable<ICommonSession> Mentors => _mentors.Values;
     public void Initialize()
@@ -161,7 +161,7 @@ public sealed partial class NullLinkPlayerManager : INullLinkPlayerManager
     {
         if (_builder?.ID == obj)
             return;
-        if (!_proto.TryIndex<TitleBuilderPrototype>(obj, out var builder))
+        if (!_proto.TryIndex<Shared._NullLink.TitleBuilderPrototype>(obj, out var builder))
             return;
         _builder = builder;
 

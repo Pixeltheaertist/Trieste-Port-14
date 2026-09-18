@@ -6,21 +6,14 @@ using Content.Shared.Verbs;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
-using Content.Shared.Gravity;
-using Content.Shared.StationAi;
-using Content.Shared.SurveillanceCamera.Components;
 
 namespace Content.Shared.Silicons.StationAi;
 
-/// <summary>
-///     Added when an entity is inserted into a StationAiCore.
-/// </summary>
 public abstract partial class SharedStationAiSystem
 {
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-
-    //TODO: Fix this, please
-    private const string JobNameLocId = "job-name-station-ai";
+    /*
+     * Added when an entity is inserted into a StationAiCore.
+     */
 
     private void InitializeHeld()
     {
@@ -31,23 +24,16 @@ public abstract partial class SharedStationAiSystem
         SubscribeLocalEvent<StationAiHeldComponent, InteractionAttemptEvent>(OnHeldInteraction);
         SubscribeLocalEvent<StationAiHeldComponent, AttemptRelayActionComponentChangeEvent>(OnHeldRelay);
         SubscribeLocalEvent<StationAiHeldComponent, JumpToCoreEvent>(OnCoreJump);
-        SubscribeLocalEvent<StationAiHeldComponent, ChangeLevelEvent>(OnLevelChange);
 
-        SubscribeLocalEvent<TryGetIdentityShortInfoEvent>(OnTryGetIdentityShortInfo);
+        SubscribeLocalEvent<StationAiHeldComponent, TryGetIdentityShortInfoEvent>(OnTryGetIdentityShortInfo);
     }
 
-    private void OnTryGetIdentityShortInfo(TryGetIdentityShortInfoEvent args)
+    private void OnTryGetIdentityShortInfo(Entity<StationAiHeldComponent> ent, ref TryGetIdentityShortInfoEvent args)
     {
         if (args.Handled)
-        {
             return;
-        }
 
-        if (!HasComp<StationAiHeldComponent>(args.ForActor))
-        {
-            return;
-        }
-        args.Title = $"{Name(args.ForActor)} ({Loc.GetString(JobNameLocId)})";
+        args.Title = $"{Name(args.Target)} ({Loc.GetString("job-name-station-ai")})";
         args.Handled = true;
     }
 
@@ -56,55 +42,7 @@ public abstract partial class SharedStationAiSystem
         if (!TryGetCore(ent.Owner, out var core) || core.Comp?.RemoteEntity == null)
             return;
 
-        _transform.DropNextTo(core.Comp.RemoteEntity.Value, core.Owner);
-    }
-
-    private void OnLevelChange(Entity<StationAiHeldComponent> ent, ref ChangeLevelEvent args)
-    {
-        if (!TryGetCore(ent.Owner, out var core) || core.Comp?.RemoteEntity == null)
-            return;
-
-        // Find a camera on Trieste
-        var triesteQuery = EntityQueryEnumerator<TriesteComponent>();
-        if (!triesteQuery.MoveNext(out var triesteUid, out _))
-            return;
-
-        var triesteMapId = Transform(triesteUid).MapID;
-
-        // Find a camera on Trieste's map (preferably a bridge camera)
-        var cameraQuery = EntityQueryEnumerator<StationAiVisionComponent, TransformComponent>();
-        EntityUid? targetCamera = null;
-
-        while (cameraQuery.MoveNext(out var camUid, out var vision, out var xform))
-        {
-            if (xform.MapID != triesteMapId)
-                continue;
-
-            if (!vision.Enabled)
-                continue;
-
-            if (MetaData(camUid).EntityName?.Contains("bridge", StringComparison.OrdinalIgnoreCase) == true ||
-                MetaData(camUid).EntityName?.Contains("command", StringComparison.OrdinalIgnoreCase) == true)
-            {
-                targetCamera = camUid;
-                break;
-            }
-
-            targetCamera ??= camUid;
-        }
-
-        if (targetCamera == null)
-        {
-            targetCamera = triesteUid;
-        }
-
-        var targetCoords = Transform(targetCamera.Value).Coordinates;
-
-        _transform.SetCoordinates(core.Comp.RemoteEntity.Value, targetCoords);
-
-        // Force immediate network sync
-        var eyeXform = Transform(core.Comp.RemoteEntity.Value);
-        Dirty(core.Comp.RemoteEntity.Value, eyeXform);
+        _xforms.DropNextTo(core.Comp.RemoteEntity.Value, core.Owner);
     }
 
     /// <summary>
@@ -190,7 +128,7 @@ public abstract partial class SharedStationAiSystem
             !ValidateAi((ev.Actor, aiComp))))
         {
             // Don't allow the AI to interact with anything that isn't powered.
-            if (!_powerReceiver.IsPowered(ev.Target))
+            if (!PowerReceiver.IsPowered(ev.Target))
             {
                 ShowDeviceNotRespondingPopup(ev.Actor);
                 ev.Cancel();
@@ -257,12 +195,12 @@ public abstract partial class SharedStationAiSystem
 
     private void ShowDeviceNotRespondingPopup(EntityUid toEntity)
     {
-        _popup.PopupClient(Loc.GetString("ai-device-not-responding"), toEntity, PopupType.MediumCaution);
+        _popup.PopupEntity(Loc.GetString("ai-device-not-responding"), toEntity, toEntity, PopupType.MediumCaution);
     }
 
     private void ShowDeviceNoAccessPopup(EntityUid toEntity)
     {
-        _popup.PopupClient(Loc.GetString("ai-device-no-access"), toEntity, PopupType.MediumCaution);
+        _popup.PopupEntity(Loc.GetString("ai-device-no-access"), toEntity, toEntity, PopupType.MediumCaution);
     }
 }
 

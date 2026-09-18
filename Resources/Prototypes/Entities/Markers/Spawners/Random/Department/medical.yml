@@ -37,11 +37,7 @@
           state: firstaid
     - type: RandomSpawner
       rarePrototypes:
-        - PillCanisterReinforcementAlgae
         - PillCanisterDylovene
-        - PillCanisterRegenerationAlgae
-        - PillCanisterLexodine
-        - PillCanisterOxygenatedSaline
         - HandheldHealthAnalyzer
         - ClothingHandsGlovesLatex
       rareChance: 0.1

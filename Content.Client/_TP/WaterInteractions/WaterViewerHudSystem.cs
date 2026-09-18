@@ -8,13 +8,13 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._TP.WaterInteractions;
 
-public sealed class WaterViewerHudSystem : EntitySystem
+public sealed partial class WaterViewerHudSystem : EntitySystem
 {
 
-    [Dependency] private readonly IOverlayManager _overlayMan = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private IOverlayManager _overlayMan = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
 
     private ShaderInstance _waterViewerShader;
     private WaterViewerOverlay _waterViewerOverlay = null!;
@@ -72,12 +72,12 @@ public sealed class WaterViewerHudSystem : EntitySystem
 
     private void OnEquipped(Entity<WaterBlockerComponent> ent, ref GotEquippedEvent args)
     {
-        EnsureComp<WaterBlockerComponent>(args.Equipee);
+        EnsureComp<WaterBlockerComponent>(args.EquipTarget);
     }
 
     private void OnUnequipped(Entity<WaterBlockerComponent> ent, ref GotUnequippedEvent args)
     {
-        _entityManager.RemoveComponent<WaterBlockerComponent>(args.Equipee);
+        _entityManager.RemoveComponent<WaterBlockerComponent>(args.EquipTarget);
     }
 
     private void OnShutdown(Entity<WaterViewerComponent> ent, ref ComponentShutdown args)

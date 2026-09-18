@@ -1,4 +1,3 @@
-using Content.Client.NullLink;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.NullLink;
 using Robust.Client;
@@ -8,11 +7,11 @@ namespace Content.Client._NullLink;
 
 // It’s not finished, still needs a lot of info displayed, scroll support once more servers show up, max hub width, a hide button, etc.
 // But I’m rushing it for the upstream, will finish it properly someday.
-internal sealed class Hub : PanelContainer, IDisposable
+internal sealed partial class Hub : PanelContainer, IDisposable
 {
-    [Dependency] private readonly ILogManager _logs = default!;
-    [Dependency] private readonly IEntitySystemManager _systemManager = default!;
-    [Dependency] private readonly IGameController _game = default!;
+    [Dependency] private ILogManager _logs = default!;
+    [Dependency] private IEntitySystemManager _systemManager = default!;
+    [Dependency] private IGameController _game = default!;
 
     private HubSystem _hub = default!;
 

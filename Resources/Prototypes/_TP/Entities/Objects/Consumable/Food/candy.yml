@@ -11,12 +11,11 @@
     flavors:
     - sweet
     - vanilla
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: Sugar
-          Quantity: 5
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Sugar
+        Quantity: 5
   - type: Sprite
     sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
     layers:
@@ -51,14 +50,13 @@
     flavors:
     - sweet
     - banana
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: Sugar
-          Quantity: 2.5
-        - ReagentId: Laughter
-          Quantity: 2.5
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Sugar
+        Quantity: 2.5
+      - ReagentId: Laughter
+        Quantity: 2.5
   - type: Sprite
     sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
     layers:
@@ -287,14 +285,13 @@
     flavors:
     - sweet
     - cotton
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: Sugar
-          Quantity: 2.5
-        - ReagentId: Fiber
-          Quantity: 2.5
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Sugar
+        Quantity: 2.5
+      - ReagentId: Fiber
+        Quantity: 2.5
   - type: Sprite
     sprite: _TP/Objects/Consumable/Snacks/Candy/taffy.rsi
     layers:

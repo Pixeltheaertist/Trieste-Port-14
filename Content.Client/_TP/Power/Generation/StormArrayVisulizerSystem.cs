@@ -3,7 +3,7 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client._TP.Power.Generation;
 
-public sealed class StormArrayVisualizerSystem : VisualizerSystem<StormArrayComponent>
+public sealed partial class StormArrayVisualizerSystem : VisualizerSystem<StormArrayComponent>
 {
     protected override void OnAppearanceChange(EntityUid uid, StormArrayComponent component, ref AppearanceChangeEvent args)
     {

@@ -1,0 +1,23 @@
+- type: entity
+  parent: [SolutionNormal, BaseSoap]
+  id: TP14SoapNT
+  name: soap
+  description: A Nanotrasen brand bar of soap. This one leaves no residue.
+  components:
+  - type: Sprite
+    layers:
+    - state: nt-4
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    fillBaseName: nt-
+  - type: Item
+    heldPrefix: nt
+  - type: Solution
+    id: soap
+    solution:
+      reagents:
+      - ReagentId: SoapReagent
+        Quantity: 120
+  - type: Residue
+    residueAdjective: residue-none
+    residueColor: residue-empty

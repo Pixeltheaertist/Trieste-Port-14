@@ -1,13 +1,15 @@
-#- type: gamePreset
-  #id: Survival
- # alias:
- #   - survival
- # name: survival-title
- # showInVote: false # secret
- # description: survival-description
- # rules:
- #   - RampingStationEventScheduler
- #   - BasicRoundstartVariation
+- type: gamePreset
+  id: Survival
+  alias:
+    - survival
+  name: survival-title
+  showInVote: false # secret
+  description: survival-description
+  rules:
+  # - MeteorSwarmScheduler
+    - RampingStationEventScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation
 
 - type: gamePreset
   id: KesslerSyndrome
@@ -19,7 +21,7 @@
   showInVote: false # secret
   description: kessler-syndrome-description
   rules:
-#    - KesslerSyndromeScheduler
+  # - KesslerSyndromeScheduler # Trieste: Removed.
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
@@ -34,10 +36,11 @@
   rules:
     - Nukeops
     - Traitor
-#    - Revolutionary
+  # - Revolutionary # Trieste: Removed.
     - Zombie
     - Wizard
-#    - KesslerSyndromeScheduler
+    - Xenoborgs
+  # - KesslerSyndromeScheduler # Trieste: Removed.
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
@@ -58,13 +61,13 @@
 #    - Revolutionary
     - Zombie
     - Wizard
+    - Xenoborgs
     - BasicStationEventScheduler
 #    - KesslerSyndromeScheduler
 #    - MeteorSwarmMildScheduler
 #    - MeteorSwarmScheduler
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
-    - SpaceTrafficControlFriendlyEventScheduler
     - BasicRoundstartVariation
 
 - type: gamePreset
@@ -73,7 +76,7 @@
   - extended
   - shittersafari
   name: extended-title
-  showInVote: true #2boring2vote #TP14 - You guys are dumb
+  showInVote: true #2boring2vote # Trieste: Enabled.
   description: extended-description
   rules:
   - BasicStationEventScheduler
@@ -90,7 +93,6 @@
   showInVote: false #4boring4vote
   description: greenshift-description
   rules:
-  - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
 
 - type: gamePreset
@@ -120,29 +122,6 @@
   description: secret-description
   rules:
     - Secret
-
-# TP14 - We don't need this shit, oh my god.
-#- type: gamePreset
-#  id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
-#  alias:
-#    - secretextended
-#  name: secret-title
-#  showInVote: false #Admin Use
-#  description: secret-description
-#  rules:
-#    - BasicStationEventScheduler
-#    - BasicRoundstartVariation
-
-- type: gamePreset
-  id: SecretGreenshift #For Admin Use: Runs Greenshift but shows "Secret" in lobby.
-  alias:
-  - secretgreenshift
-  name: secret-title
-  showInVote: false #Admin Use
-  description: secret-description
-  rules:
-  - SpaceTrafficControlFriendlyEventScheduler
-  - BasicRoundstartVariation
 
 - type: gamePreset
   id: Sandbox
@@ -186,17 +165,6 @@
     - DeathMatch31
 
 - type: gamePreset
-  id: Longpast
-  alias:
-    - longpast
-    - lp
-  name: long-past-title
-  description: long-past-description
-  maxPlayers: 25
-  showInVote: true
-  supportedMaps: LongPastPool
-
-- type: gamePreset
   id: Nukeops
   alias:
     - nukeops
@@ -231,6 +199,22 @@
   - BasicRoundstartVariation
 
 - type: gamePreset
+  id: Xenoborgs
+  alias:
+    - xenoborgs
+  name: xenoborgs-title
+  description: xenoborgs-description
+  showInVote: false
+  rules:
+  - Xenoborgs
+  - DummyNonAntagChance
+  - SubGamemodesRuleNoWizardNoXenoborg # no two motherships
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
   id: Zombie
   alias:
   - zombie
@@ -244,6 +228,7 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
+# - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
 
@@ -261,19 +246,4 @@
   - BasicStationEventScheduler
 #  - KesslerSyndromeScheduler
   - SpaceTrafficControlEventScheduler
-  - BasicRoundstartVariation
-
-- type: gamePreset
-  id: SafeHarbor
-  alias:
-  - safeharbor
-  - crashedship
-  - ThatOneFuckedShip
-  - floatsam
-  - flotsam
-  name: safe-harbor-title
-  showInVote: false
-  description: safe-harbor-description
-  supportedMaps: SafeHarborPool
-  rules:
   - BasicRoundstartVariation

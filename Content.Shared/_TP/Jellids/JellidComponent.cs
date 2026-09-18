@@ -35,6 +35,25 @@ public sealed partial class JellidComponent : Component
     public ProtoId<AlertPrototype> NoBatteryAlert = "JellidBatteryNone";
 
     public SoundPathSpecifier BatteryUseSound = new("/Audio/_TP/Items/jellid_battery_use.ogg");
+
+    /// <summary>
+    ///     How much charge a jellid will get when zapped.
+    ///     Including defibs, cables, .etc.
+    /// </summary>
+    [DataField]
+    public float ZapCharge = 200f;
+
+    /// <summary>
+    ///     How much power is passively drained from HELD batteries.
+    /// </summary>
+    [DataField]
+    public float HeldPassiveDrain = 3f;
+
+    /// <summary>
+    ///     How much heat is transferred to thermal items, such as beakers.
+    /// </summary>
+    [DataField]
+    public float HeatTransfer = 30f;
 }
 
 [Serializable, NetSerializable]

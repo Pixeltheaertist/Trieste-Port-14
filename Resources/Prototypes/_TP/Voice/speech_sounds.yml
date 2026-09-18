@@ -1,5 +1,5 @@
 - type: speechSounds
-  id: Jellid
+  id: TP14SpeechSoundsJellid
   saySound:
     path: /Audio/_TP/Voice/Jellid/Talk/jellid_speech.ogg
   askSound:

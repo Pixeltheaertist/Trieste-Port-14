@@ -1,5 +1,7 @@
-- type: humanoidBaseSprite
+- type: marking
   id: TP14MobMothNeck
-  baseSprite:
-    sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
+  bodyPart: HeadSide
+  groupWhitelist: [ Moth ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/collars.rsi
     state: default

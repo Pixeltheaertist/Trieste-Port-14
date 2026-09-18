@@ -1,9 +1,8 @@
 using Content.Server.Power.EntitySystems;
 using Content.Server.Silicons.Laws;
-using Content.Shared._TP;
+using Content.Shared._TP.Mechs.Components;
 using Content.Shared.Alert;
 using Content.Shared.Emag.Systems;
-using Content.Shared.Mech.Components;
 using Content.Shared.Mech.EntitySystems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
@@ -24,9 +23,10 @@ namespace Content.Server._TP;
 public sealed partial class StepfatherSystem : EntitySystem
 {
     [Dependency] private AlertsSystem _alerts = default!;
+    [Dependency] private BatterySystem _battery = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private MovementSpeedModifierSystem _movementSpeedModifier = default!;
-    [Dependency] private BatterySystem _battery = default!;
+    [Dependency] private PowerCellSystem _powerCell = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private SiliconLawSystem _siliconLaw = default!;
 
@@ -64,9 +64,6 @@ public sealed partial class StepfatherSystem : EntitySystem
         if (ent.Comp.IsSubverted)
             return;
 
-        if (!TryComp<MechComponent>(ent.Owner, out var mech))
-            return;
-
         var protoLawset = new ProtoId<SiliconLawPrototype>("MechLawsSubverted");
         if (!_proto.TryIndex<SiliconLawsetPrototype>(protoLawset, out var newLawset))
             return;
@@ -84,7 +81,7 @@ public sealed partial class StepfatherSystem : EntitySystem
             }
         }
 
-        mech.PilotWhitelist = null;
+        ent.Comp.PilotWhitelist = null;
         ent.Comp.IsSubverted = true;
         _siliconLaw.SetLaws(laws, ent.Owner, _soundSpecifier);
 
@@ -106,10 +103,9 @@ public sealed partial class StepfatherSystem : EntitySystem
 
         // Then we check if the battery exists.
         // If it does, then we set the draw rate from 0.6 to 1, and the draw time from 0 to 2.
-        if (TryComp<PowerCellDrawComponent>(ent.Owner, out var drawComp))
+        if (TryComp<PowerCellDrawComponent>(ent.Owner, out _))
         {
-            drawComp.DrawRate = 1.0f;
-            ent.Comp.ResetDrawTime = 1.0f;
+            _powerCell.TryUseCharge(ent.Owner, 0.5f);
         }
     }
 
@@ -150,7 +146,7 @@ public sealed partial class StepfatherSystem : EntitySystem
         // Now we check the charge percentage.
         // If it's low (10%), we then halve the speed.
         // Otherwise, set it to full-speed YML values.
-        var chargePercent = powerCell.CurrentCharge / powerCell.MaxCharge;
+        var chargePercent = powerCell.LastCharge / powerCell.MaxCharge;
         if (chargePercent <= 0.1f)
         {
             _movementSpeedModifier.ChangeBaseSpeed(uid, 1.125f, 1.8f, 20f);
@@ -183,9 +179,9 @@ public sealed partial class StepfatherSystem : EntitySystem
             return;
         }
 
-        var chargePercent = (short)MathF.Round(battery.CurrentCharge / battery.MaxCharge * 10f);
+        var chargePercent = (short)MathF.Round(battery.LastCharge / battery.MaxCharge * 10f);
 
-        if (chargePercent == 0 && battery.CurrentCharge > 0)
+        if (chargePercent == 0 && battery.LastCharge > 0)
             chargePercent = 1;
 
         _alerts.ClearAlert(ent.Owner, ent.Comp.NoBatteryAlert);
@@ -199,14 +195,6 @@ public sealed partial class StepfatherSystem : EntitySystem
         var query = EntityQueryEnumerator<StepfatherComponent, PowerCellDrawComponent>();
         while (query.MoveNext(out var stepfatherUid, out var stepfather, out var draw))
         {
-            if (stepfather.ResetDrawTime > 0)
-            {
-                stepfather.ResetDrawTime -= frameTime;
-
-                if (stepfather.ResetDrawTime <= 0)
-                    draw.DrawRate = 0.6f;
-            }
-
             stepfather.DrainAccumulator += frameTime;
             if (stepfather.DrainAccumulator >= 1f)
             {

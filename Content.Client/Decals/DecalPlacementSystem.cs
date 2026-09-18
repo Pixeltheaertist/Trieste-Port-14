@@ -15,16 +15,16 @@ namespace Content.Client.Decals;
 
 // This is shit and basically a half-rewrite of PlacementManager
 // TODO refactor placementmanager so this isnt shit anymore
-public sealed class DecalPlacementSystem : EntitySystem
+public sealed partial class DecalPlacementSystem : EntitySystem
 {
-    [Dependency] private readonly IInputManager _inputManager = default!;
-    [Dependency] private readonly IOverlayManager _overlay = default!;
-    [Dependency] private readonly IPrototypeManager _protoMan = default!;
-    [Dependency] private readonly InputSystem _inputSystem = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private IInputManager _inputManager = default!;
+    [Dependency] private IOverlayManager _overlay = default!;
+    [Dependency] private InputSystem _inputSystem = default!;
+    [Dependency] private MetaDataSystem _metaData = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private SharedMapSystem _maps = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
 
     public static readonly EntProtoId DecalAction = "BaseMappingDecalAction";
 
@@ -41,113 +41,70 @@ public sealed class DecalPlacementSystem : EntitySystem
 
     public (DecalPrototype? Decal, bool Snap, Angle Angle, Color Color) GetActiveDecal()
     {
-        return _active && _decalId != null
-            ? (_protoMan.Index<DecalPrototype>(_decalId), _snap, _decalAngle, _decalColor)
-            : (null, false, Angle.Zero, Color.Wheat);
+        return _active && _decalId != null ?
+            (ProtoMan.Index<DecalPrototype>(_decalId), _snap, _decalAngle, _decalColor) :
+            (null, false, Angle.Zero, Color.Wheat);
     }
 
     public override void Initialize()
     {
         base.Initialize();
-        _overlay.AddOverlay(new DecalPlacementOverlay(this, _transform, _sprite));
+        _overlay.AddOverlay(new DecalPlacementOverlay(this, _maps, _transform, _sprite));
 
-        CommandBinds.Builder.Bind(EngineKeyFunctions.EditorPlaceObject,
-                new PointerStateInputCmdHandler(
-                    (session, coords, uid) =>
-                    {
-                        if (!_active || _placing || _decalId == null)
-                            return false;
+        CommandBinds.Builder.Bind(EngineKeyFunctions.EditorPlaceObject, new PointerStateInputCmdHandler(
+            (session, coords, uid) =>
+            {
+                if (!_active || _placing || _decalId == null)
+                    return false;
 
-                        _placing = true;
+                _placing = true;
 
-                        if (_snap)
-                        {
-                            var newPos = new Vector2(
-                                (float)(MathF.Round(coords.X - 0.5f, MidpointRounding.AwayFromZero) + 0.5),
-                                (float)(MathF.Round(coords.Y - 0.5f, MidpointRounding.AwayFromZero) + 0.5)
-                            );
-                            coords = coords.WithPosition(newPos);
-                        }
+                if (_snap)
+                {
+                    var newPos = new Vector2(
+                        (float) (MathF.Round(coords.X - 0.5f, MidpointRounding.AwayFromZero) + 0.5),
+                        (float) (MathF.Round(coords.Y - 0.5f, MidpointRounding.AwayFromZero) + 0.5)
+                    );
+                    coords = coords.WithPosition(newPos);
+                }
 
-                        coords = coords.Offset(new Vector2(-0.5f, -0.5f));
+                coords = coords.Offset(new Vector2(-0.5f, -0.5f));
 
-                        if (!coords.IsValid(EntityManager))
-                            return false;
+                if (!coords.IsValid(EntityManager))
+                    return false;
 
-                        var decal = new Decal(coords.Position, _decalId, _decalColor, _decalAngle, _zIndex, _cleanable);
-                        RaiseNetworkEvent(new RequestDecalPlacementEvent(decal, GetNetCoordinates(coords)));
+                var decal = new Decal(coords.Position, _decalId, _decalColor, _decalAngle, _zIndex, _cleanable);
+                RaiseNetworkEvent(new RequestDecalPlacementEvent(decal, GetNetCoordinates(coords)));
 
-                        return true;
-                    },
-                    (session, coords, uid) =>
-                    {
-                        if (!_active)
-                            return false;
+                return true;
+            },
+            (session, coords, uid) =>
+            {
+                if (!_active)
+                    return false;
 
-                        _placing = false;
-                        return true;
-                    },
-                    true))
-            .Bind(EngineKeyFunctions.EditorCancelPlace,
-                new PointerStateInputCmdHandler(
-                    (session, coords, uid) =>
-                    {
-                        if (!_active || _erasing)
-                            return false;
+                _placing = false;
+                return true;
+            }, true))
+            .Bind(EngineKeyFunctions.EditorCancelPlace, new PointerStateInputCmdHandler(
+            (session, coords, uid) =>
+            {
+                if (!_active || _erasing)
+                    return false;
 
-                        _erasing = true;
+                _erasing = true;
 
-                        // Trieste Specific //
-                        var gridId = _transform.GetGrid(coords);
-                        uint? targetDecalId = null;
+                RaiseNetworkEvent(new RequestDecalRemovalEvent(GetNetCoordinates(coords)));
 
-                        if (gridId != null && TryComp<DecalGridComponent>(gridId.Value, out var decalComp))
-                        {
-                            var adjustedPos = coords.Position - new Vector2(0.5f, 0.5f);
-                            var chunkIndices = SharedDecalSystem.GetChunkIndices(adjustedPos);
+                return true;
+            }, (session, coords, uid) =>
+            {
+                if (!_active)
+                    return false;
+                _erasing = false;
 
-                            if (decalComp.ChunkCollection.ChunkCollection.TryGetValue(chunkIndices, out var chunk))
-                            {
-                                // Find the closest decal to the click position
-                                var closestDistance = float.MaxValue;
-                                var highestZIndex = int.MinValue;
-
-                                foreach (var (decalId, decal) in chunk.Decals)
-                                {
-                                    // Calculate distance from the click position,
-                                    // and only get decals within 0.75 units (about 1 tile)
-                                    var distance = (adjustedPos - decal.Coordinates).Length();
-
-                                    if (distance > 0.75f)
-                                        continue;
-
-                                    // Prioritize by the Z-Index first, then by distance.
-                                    if (decal.ZIndex > highestZIndex
-                                        || (decal.ZIndex == highestZIndex && distance < closestDistance))
-                                    {
-                                        highestZIndex = decal.ZIndex;
-                                        closestDistance = distance;
-                                        targetDecalId = decalId;
-                                    }
-                                }
-                            }
-                        }
-
-                        // Send a removal request with a specific decal ID (or null if none found)
-                        RaiseNetworkEvent(new RequestDecalRemovalEvent(GetNetCoordinates(coords), targetDecalId));
-
-                        return true;
-                    },
-                    (session, coords, uid) =>
-                    {
-                        if (!_active)
-                            return false;
-                        _erasing = false;
-
-                        return true;
-                    },
-                    true))
-            .Register<DecalPlacementSystem>();
+                return true;
+            }, true)).Register<DecalPlacementSystem>();
 
         SubscribeLocalEvent<FillActionSlotEvent>(OnFillSlot);
         SubscribeLocalEvent<PlaceDecalActionEvent>(OnPlaceDecalAction);
@@ -186,7 +143,7 @@ public sealed class DecalPlacementSystem : EntitySystem
         if (ev.Action != null)
             return;
 
-        if (_decalId == null || !_protoMan.TryIndex<DecalPrototype>(_decalId, out var decalProto))
+        if (_decalId == null || !ProtoMan.TryIndex<DecalPrototype>(_decalId, out var decalProto))
             return;
 
         var actionEvent = new PlaceDecalActionEvent()

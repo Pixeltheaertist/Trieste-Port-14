@@ -6,11 +6,12 @@ using Robust.Shared.Console;
 
 namespace Content.Client.Commands;
 
-internal sealed class MappingClientSideSetupCommand : LocalizedEntityCommands
+internal sealed partial class MappingClientSideSetupCommand : LocalizedEntityCommands
 {
-    [Dependency] private readonly ILightManager _lightManager = default!;
-    [Dependency] private readonly MarkerSystem _markerSystem = default!;
-    [Dependency] private readonly SubFloorHideSystem _subfloorSystem = default!;
+    [Dependency] private ILightManager _lightManager = default!;
+    [Dependency] private ActionsSystem _actionSystem = default!;
+    [Dependency] private MarkerSystem _markerSystem = default!;
+    [Dependency] private SubFloorHideSystem _subfloorSystem = default!;
 
     public override string Command => "mappingclientsidesetup";
 
@@ -22,7 +23,8 @@ internal sealed class MappingClientSideSetupCommand : LocalizedEntityCommands
         _markerSystem.MarkersVisible = true;
         _lightManager.Enabled = false;
         _subfloorSystem.ShowAll = true;
-        // TP14 Specific - This is just weird :/
+
+        // TRIESTE: Removed.
         //_actionSystem.LoadActionAssignments("/mapping_actions.yml", false);
     }
 }

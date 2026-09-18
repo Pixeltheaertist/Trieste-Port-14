@@ -1,0 +1,114 @@
+## MARKINGS ##
+- type: markingsGroup
+  parent: Undergarments
+  id: TP14MarkingsGroupJellid
+  limits:
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      onlyGroupWhitelisted: true
+      required: true
+      default: [ JellidMantle ]
+    enum.HumanoidVisualLayers.HeadSide:
+      limit: 1
+      onlyGroupWhitelisted: true
+      required: true
+      default: [ JellidSingle ]
+    enum.HumanoidVisualLayers.Chest:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 1
+      required: false
+
+
+## APPEARANCE ##
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: TP14AppearanceJellid
+  suffix: Trieste
+  categories: [ HideSpawnMenu ]
+  name: Jellid appearance
+  components:
+  - type: Inventory
+    speciesId: jellid # This is what controls custom textures for clothing.
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: TP14OrganJellidTorso
+      Head: TP14OrganJellidHead
+      ArmLeft: TP14OrganJellidArmLeft
+      ArmRight: TP14OrganJellidArmRight
+      HandRight: TP14OrganJellidHandRight
+      HandLeft: TP14OrganJellidHandLeft
+      LegLeft: TP14OrganJellidLegLeft
+      LegRight: TP14OrganJellidLegRight
+      FootLeft: TP14OrganJellidFootLeft
+      FootRight: TP14OrganJellidFootRight
+      Brain: TP14OrganJellidCore
+      Eyes: TP14OrganJellidCore
+      Lungs: TP14OrganJellidLungs
+  - type: HumanoidProfile
+    species: TP14SpeciesJellid
+
+- type: entity
+  parent:
+  - TP14AppearanceJellid
+  - BaseSpeciesMobOrganic
+  id: TP14MobJellidPerson
+  suffix: Trieste
+  name: Urist McJellid
+  components:
+  - type: Speech
+    speechVerb: Slime
+    speechSounds: TP14SpeechSoundsJellid
+    allowedEmotes: [ 'Squish' ]
+  - type: TypingIndicator
+    proto: TP14TypingIndicatorJellid
+  - type: Vocal
+    emoteSounds: TP14EmoteSoundsJellid
+  - type: TemperatureProtection
+    coolingCoefficient: 0.0
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: SeaWater
+        Quantity: 50
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#135c4f"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
+  - type: Jellid
+  - type: Battery
+    maxCharge: 1800
+    startingCharge: 1800 # 20 minutes until death from the AutoRecharge being 1.5x
+  - type: BatterySelfRecharger
+    autoRechargeRate: -1.5

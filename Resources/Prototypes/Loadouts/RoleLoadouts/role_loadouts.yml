@@ -1,0 +1,699 @@
+# Command
+- type: roleLoadout
+  id: JobCaptain
+  groups:
+  - OverseerHead #TP14
+  - OverseerNeck #TP14
+  - OverseerJumpsuit #TP14
+  - OverseerBackpack #TP14
+  - OverseerOuterClothing #TP14
+  - CaptainEyewear # Moffstation - Eyepatches!
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - OverseerJobTrinkets #TP14
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobHeadOfPersonnel
+  groups:
+  - GroupTankHarness
+  - HoPHead
+  - HoPNeck
+  - HoPJumpsuit
+  - HoPBackpack
+  - HoPOuterClothing
+  # - Glasses # Moffstation - Eyepatches!
+  - HopEyewear # Moffstation - Eyepatches!
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - HoPJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+# Silicons
+- type: roleLoadout
+  id: JobBorg
+  nameDataset: NamesBorg
+  canCustomizeName: true
+
+- type: roleLoadout
+  id: JobStationAi
+  nameDataset: NamesAI
+  canCustomizeName: true
+
+# Civilian
+- type: roleLoadout
+  id: JobPassenger
+  groups:
+  # Required
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+  - GroupTankHarness
+  - PassengerJumpsuit
+  - PassengerOuterClothing
+  - CommonBackpack
+  - Survival
+  # Optional
+  - TP14GroupCitizenHeadwear # TP14
+  - PassengerFace
+  - PassengerNeck
+  - PassengerGloves
+  - PassengerShoes
+  - Glasses
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - PassengerJobTrinkets
+
+- type: roleLoadout # TP14 - This has been overhauled
+  id: JobBartender
+  groups:
+  # Required
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool
+  - TP14GroupSpeciesBreathToolNeck # TP14
+  - GroupTankHarness
+  - TP14GroupBartenderJumpers
+  - TP14GroupBartenderOuter
+  - TP14GroupBartenderBackpacks
+  - TP14GroupBartenderHeadwear
+  # Optional
+  - TP14GroupBartenderNeckwear
+  - TP14BartenderGloves
+  - TP14GroupBartenderFootwear
+  - TP14GroupBartenderBelts
+  # - Glasses # Moffstation - Eyepatches!
+  - BartenderEyewear # Moffstation - Eyepatches!
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - BartenderJobTrinkets
+
+- type: roleLoadout
+  id: JobServiceWorker
+  groups:
+  - GroupTankHarness
+  - BartenderJumpsuit
+  - CommonBackpack
+  - Glasses
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - ServiceWorkerJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout # TP14 - This has been overhauled
+  id: JobChef
+  groups:
+  # Required
+  - TP14GroupSpeciesBreathTool
+  - TP14GroupSpeciesBreathToolNeck
+  - GroupTankHarness
+  - ChefJumpsuit
+  - ChefOuterClothing
+  - CommonBackpack
+  - ChefHead
+  # Optional
+  - ChefMask
+  - GroupChefGloves
+  - GroupChefFootwear
+  - Glasses
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - ChefJobTrinkets
+
+- type: roleLoadout
+  id: JobLibrarian
+  groups:
+  - GroupTankHarness
+  - LibrarianJumpsuit
+  - CommonBackpack
+  - Glasses
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - LibrarianJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobLawyer
+  groups:
+  - GroupTankHarness
+  - LawyerNeck
+  - LawyerJumpsuit
+  - CommonBackpack
+  - Glasses
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - LawyerJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobChaplain
+  canCustomizeName: true
+  groups:
+  - GroupTankHarness
+  - ChaplainHead
+  - ChaplainMask
+  - ChaplainNeck
+  - ChaplainJumpsuit
+  - CommonBackpack
+  - ChaplainOuterClothing
+  - ChaplainBible
+  - Glasses
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - ChaplainJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobJanitor
+  groups:
+  - GroupTankHarness
+  - JanitorHead
+  - JanitorJumpsuit
+  - JanitorGloves
+  - CommonBackpack
+  - JanitorOuterClothing
+  - Glasses
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - JanitorJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobBotanist
+  groups:
+  - GroupTankHarness
+  - BotanistHead
+  - BotanistJumpsuit
+  - BotanistBackpack
+  - BotanistOuterClothing
+  - Glasses
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - BotanistJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobClown
+  canCustomizeName: true
+  groups:
+  - GroupTankHarness
+  - ClownHead
+  - ClownJumpsuit
+  - ClownBackpack
+  - ClownOuterClothing
+  - ClownNeck
+  - ClownShoes
+  - Glasses
+  - AssistiveItems
+  - SurvivalClown
+  - Trinkets
+  - ClownJobTrinkets
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobMime
+  canCustomizeName: true
+  groups:
+  - GroupTankHarness
+  - MimeHead
+  - MimeMask
+  - MimeJumpsuit
+  - MimeBackpack
+  #- MimeOuterClothing
+  - MimeBelt
+  - Glasses
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - MimeJobTrinkets
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobMusician
+  canCustomizeName: true
+  groups:
+  - GroupTankHarness
+  - MusicianJumpsuit
+  - CommonBackpack
+  - MusicianOuterClothing
+  - Instruments
+  - Glasses
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - MusicianJobTrinkets
+  - Instruments
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+# Cargo
+- type: roleLoadout
+  id: JobQuartermaster
+  groups:
+  - GroupTankHarness
+  - QuartermasterHead
+  - QuartermasterNeck
+  - QuartermasterJumpsuit
+  - CargoTechnicianBackpack
+  - QuartermasterOuterClothing
+  - QuartermasterShoes
+  - Glasses
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - QuartermasterJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobCargoTechnician
+  groups:
+  - GroupTankHarness
+  - CargoTechnicianHead
+  - CargoTechnicianJumpsuit
+  - CargoTechnicianBackpack
+  - CargoTechnicianOuterClothing
+  - CargoTechnicianShoes
+  - CargoTechnicianID
+  - Glasses
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - CargoTechnicianJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobSalvageSpecialist
+  groups:
+  - GroupTankHarness
+  - SalvageSpecialistBackpack
+  - SalvageSpecialistOuterClothing
+  - SalvageSpecialistShoes
+  - Glasses
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - SalvageSpecialistJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+# Engineering
+- type: roleLoadout
+  id: JobChiefEngineer
+  groups:
+  - GroupTankHarness
+  - ChiefEngineerHead
+  - ChiefEngineerJumpsuit
+  - StationEngineerBackpack
+  - ChiefEngineerNeck
+  - ChiefEngineerOuterClothing
+  - ChiefEngineerShoes
+  - EngineeringEyewear # Moffstation - Eyepatches!
+  - SurvivalExtended
+  - AssistiveItems
+  - Trinkets
+  - ChiefEngineerJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobTechnicalAssistant
+  groups:
+  - GroupTankHarness
+  - TechnicalAssistantJumpsuit
+  - StationEngineerBackpack
+  - AssistiveItems
+  - SurvivalExtended
+  - Trinkets
+  - TechnicalAssistantJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobStationEngineer
+  groups:
+  - GroupTankHarness
+  - StationEngineerHead
+  - StationEngineerJumpsuit
+  - StationEngineerBackpack
+  - StationEngineerOuterClothing
+  - StationEngineerShoes
+  - EngineeringEyewear # Moffstation - Eyepatches!
+  - StationEngineerID
+  - AssistiveItems
+  - SurvivalExtended
+  - Trinkets
+  - StationEngineerJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobAtmosphericTechnician
+  groups:
+  - GroupTankHarness
+  - AtmosphericTechnicianJumpsuit
+  - AtmosphericTechnicianBackpack
+  - AtmosphericTechnicianOuterClothing
+  - AtmosphericTechnicianShoes
+  - EngineeringEyewear # Moffstation - Eyepatches!
+  - AssistiveItems
+  - SurvivalExtended
+  - Trinkets
+  - AtmosphericTechnicianJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+# Science
+- type: roleLoadout
+  id: JobResearchDirector
+  groups:
+  - GroupTankHarness
+  - ResearchDirectorHead
+  - ResearchDirectorNeck
+  - ResearchDirectorJumpsuit
+  - ScientistBackpack
+  - ResearchDirectorOuterClothing
+  - ScientistGloves
+  - ResearchDirectorShoes
+  # - Glasses # Moffstation - Eyepatches!
+  - ScienceEyewear # Moffstation - Eyepatches!
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - ResearchDirectorJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobScientist
+  groups:
+  - GroupTankHarness
+  - ScientistHead
+  - ScientistNeck
+  - ScientistJumpsuit
+  - ScientistBackpack
+  - ScientistOuterClothing
+  - ScientistGloves
+  - ScientistShoes
+  - ScientistPDA
+  # - Glasses # Moffstation - Eyepatches!
+  - ScienceEyewear # Moffstation - Eyepatches!
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - ScientistJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobResearchAssistant
+  groups:
+  - GroupTankHarness
+  - ResearchAssistantJumpsuit
+  - ScientistBackpack
+  - Glasses
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - ResearchAssistantJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+# Security
+- type: roleLoadout
+  id: JobHeadOfSecurity
+  groups:
+  - HeadofSecurityHead
+  - HeadofSecurityNeck
+  - HeadofSecurityJumpsuit
+  - SecurityBackpack
+  - SecurityBelt
+  - HeadofSecurityOuterClothing
+  - SecurityShoes
+  - SecurityEyewear # Moffstation - Eyepatches!
+  - AssistiveItems
+  - SurvivalSecurity
+  - Trinkets
+  - HeadofSecurityJobTrinkets
+  - GroupSpeciesBreathToolSecurity
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobWarden
+  groups:
+  - WardenHead
+  - WardenJumpsuit
+  - SecurityBackpack
+  - SecurityBelt
+  - WardenOuterClothing
+  - SecurityShoes
+  - SecurityEyewear # Moffstation - Eyepatches!
+  - AssistiveItems
+  - SurvivalSecurity
+  - Trinkets
+  - WardenJobTrinkets
+  - GroupSpeciesBreathToolSecurity
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobSecurityOfficer
+  groups:
+  - SecurityHead
+  - SecurityJumpsuit
+  - SecurityBackpack
+  - SecurityOuterClothing
+  - SecurityShoes
+  - SecurityPDA
+  - SecurityBelt
+  - SecurityEyewear # Moffstation - Eyepatches!
+  - AssistiveItems
+  - SurvivalSecurity
+  - Trinkets
+  - SecurityJobTrinkets
+  - GroupSpeciesBreathToolSecurity
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobDetective
+  groups:
+  - DetectiveHead
+  - DetectiveNeck
+  - DetectiveJumpsuit
+  - SecurityBackpack
+  - DetectiveOuterClothing
+  - SecurityShoes
+  - DetectiveEyewear # Moffstation - Eyepatches!
+  - AssistiveItems
+  - SurvivalSecurity
+  - Trinkets
+  - DetectiveJobTrinkets
+  - GroupSpeciesBreathToolSecurity
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobSecurityCadet
+  groups:
+  - SecurityCadetJumpsuit
+  - SecurityBackpack
+  - AssistiveItems
+  - SurvivalSecurity
+  - Trinkets
+  - SecurityCadetJobTrinkets
+  - GroupSpeciesBreathToolSecurity
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+# Wildcards
+- type: roleLoadout
+  id: JobReporter
+  groups:
+  - GroupTankHarness
+  - ReporterJumpsuit
+  - ReporterHead
+  - ReporterOuterClothing
+  - CommonBackpack
+  - Glasses
+  - AssistiveItems
+  - Survival
+  - Trinkets
+  - ReporterJobTrinkets
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+
+- type: roleLoadout
+  id: JobPsychologist
+  groups:
+  # Required
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+  - GroupTankHarness
+  - PsychologistJumpsuit
+  - TP14GroupPsychologistOuterwear
+  - TP14GroupPsychologistFootwear
+  - MedicalBackpack
+  - AssistiveItems
+  - Survival
+  # Optional
+  - PsychologistHead # TP14
+  - TP14GroupPsychologistNeckwear
+  - Glasses
+  - Trinkets
+  - PsychologistJobTrinkets
+
+
+# These loadouts are used for non-crew spawns, like off-station antags and event mobs
+# They will be used without player configuration, thus they will only ever apply what is forced by MinLimit
+
+# gives vox a harness and breathing mask
+# nitrogen tank not included
+- type: roleLoadout
+  id: RoleSurvivalVoxSupport
+  groups:
+  - GroupSpeciesBreathTool # TP14
+  - GroupTankHarness
+
+# gives vox a nitrogen breathing tank
+# other species get nothing
+- type: roleLoadout
+  id: RoleSurvivalVoxTank
+  groups:
+  - GroupEVATankVox
+
+- type: roleLoadout
+  id: RoleSurvivalStandard
+  groups:
+  - Survival
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - GroupTankHarness
+
+- type: roleLoadout
+  id: RoleSurvivalClown
+  groups:
+  - SurvivalClown
+  - GroupTankHarness
+
+- type: roleLoadout
+  id: RoleSurvivalExtended
+  groups:
+  - SurvivalExtended
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+  - GroupTankHarness
+
+- type: roleLoadout
+  id: RoleSurvivalExtendedAntag # Used by antagonists that spawn off-station (e.g wizards)
+  groups:
+  - SurvivalExtendedAntag
+  - GroupSpeciesBreathTool
+  - GroupTankHarness
+
+- type: roleLoadout
+  id: RoleSurvivalMedical
+  groups:
+  - SurvivalMedical
+  - GroupSpeciesBreathToolMedical
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+  - GroupTankHarness
+
+- type: roleLoadout
+  id: RoleSurvivalSecurity
+  groups:
+  - SurvivalSecurity
+  - GroupSpeciesBreathToolSecurity
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+  - GroupTankHarness
+
+- type: roleLoadout
+  id: RoleSurvivalSyndicate
+  groups:
+  - SurvivalSyndicate
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+  - GroupTankHarness
+
+- type: roleLoadout
+  id: RoleSurvivalMilitaryDouble
+  groups:
+  - SurvivalMilitaryDouble
+
+- type: roleLoadout
+  id: RoleSurvivalNukie
+  groups:
+  - SurvivalSyndicate
+#  - GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathTool # TP14
+  - TP14GroupSpeciesBreathToolNeck # TP14
+  - GroupPocketTankDouble
+
+- type: roleLoadout
+  id: RoleSurvivalEVA
+  groups:
+  - GroupEVATank
+  - SurvivalExtended
+
+- type: roleLoadout
+  id: RoleSurvivalEVAAntag # Used by antagonists that spawn off-station AND in space (e.g ninjas)
+  groups:
+  - GroupEVATank
+  - SurvivalExtendedAntag
+
+- type: roleLoadout
+  id: RoleSurvivalSpaceNinja
+  groups:
+  - GroupEVATank

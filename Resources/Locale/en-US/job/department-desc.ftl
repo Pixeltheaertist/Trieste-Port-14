@@ -1,11 +1,10 @@
-﻿department-Cargo-description = Complete bounties, earn Spessos, and order useful supplies for the crew.
-department-Civilian-description = Perform small helpful tasks to keep the station sane and well catered.
+﻿department-Cargo-description = Acquire and deliver useful supplies for the rest of the station.
+department-Civilian-description = Attend to the crew's basic physical and psychological needs.
 department-Command-description = Manage the crew and keep them working efficiently.
 department-CentralCommand-description = Manage the crew and keep them working efficiently.
-department-Engineering-description = Keep the power on and the station operational.
+department-Engineering-description = Maintain and repair the station.
 department-Medical-description = Keep the crew healthy.
 department-Security-description = Keep the peace around the station.
 department-Science-description = Research artifacts and anomalies to invent new equipment for the station
-department-Expeditioneering-description = Go out into the depths to salvage wrecks, mine resources, and hunt the horrors of the depe.
 department-Silicon-description = Obey your laws and serve the crew.
 department-Specific-description = Jobs that not all stations have.

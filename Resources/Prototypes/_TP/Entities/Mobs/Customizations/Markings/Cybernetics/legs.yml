@@ -4,8 +4,7 @@
 - type: marking
   id: TP14MarkingsAzurusLeftLeg
   bodyPart: LLeg
-  markingCategory: Legs
-  speciesRestriction: [Arachnid, Human, Reptilian, SlimePerson]
+  groupWhitelist: [Arachnid, Human, Reptilian, Slime]
   coloring:
     default:
       type:
@@ -22,8 +21,7 @@
 - type: marking
   id: TP14MarkingsAzurusRightLeg
   bodyPart:  UndergarmentBottom #it's weird I know but it makes the layers work correctly
-  markingCategory: Legs
-  speciesRestriction: [Arachnid, Human, Reptilian, SlimePerson]
+  groupWhitelist: [Arachnid, Human, Reptilian, Slime]
   coloring:
     default:
       type:
@@ -40,8 +38,7 @@
 - type: marking
   id: TP14MarkingsAzurusLeftFoot
   bodyPart: LHand #it's weird I know but it makes the layers work correctly
-  markingCategory: Legs
-  speciesRestriction: [Arachnid, Human, Reptilian, SlimePerson]
+  groupWhitelist: [Arachnid, Human, Reptilian, Slime]
   coloring:
     default:
       type:
@@ -58,8 +55,7 @@
 - type: marking
   id: TP14MarkingsAzurusRightFoot
   bodyPart: RFoot
-  markingCategory: Legs
-  speciesRestriction: [Arachnid, Human, Reptilian, SlimePerson]
+  groupWhitelist: [Arachnid, Human, Reptilian, Slime]
   coloring:
     default:
       type:
@@ -78,8 +74,7 @@
 - type: marking
   id: TP14MarkingsCorrodedLeftLeg
   bodyPart: LLeg
-  markingCategory: Legs
-  speciesRestriction: [Arachnid, Human, Reptilian, SlimePerson]
+  groupWhitelist: [Arachnid, Human, Reptilian, Slime]
   coloring:
     default:
       type:
@@ -93,8 +88,7 @@
 - type: marking
   id: TP14MarkingsCorrodedRightLeg
   bodyPart: UndergarmentBottom #it's weird I know but it makes the layers work correctly
-  markingCategory: Legs
-  speciesRestriction: [Arachnid, Human, Reptilian, SlimePerson]
+  groupWhitelist: [Arachnid, Human, Reptilian, Slime]
   coloring:
     default:
       type:
@@ -108,8 +102,7 @@
 - type: marking
   id: TP14MarkingsCorrodedLeftFoot
   bodyPart: LHand #it's weird I know but it makes the layers work correctly
-  markingCategory: Legs
-  speciesRestriction: [Arachnid, Human, Reptilian, SlimePerson]
+  groupWhitelist: [Arachnid, Human, Reptilian, Slime]
   coloring:
     default:
       type:
@@ -123,8 +116,7 @@
 - type: marking
   id: TP14MarkingsCorrodedRightFoot
   bodyPart: RFoot
-  markingCategory: Legs
-  speciesRestriction: [Arachnid, Human, Reptilian, SlimePerson]
+  groupWhitelist: [Arachnid, Human, Reptilian, Slime]
   coloring:
     default:
       type:
@@ -139,8 +131,7 @@
 - type: marking
   id: TP14MarkingsRoboLeftLeg
   bodyPart: LLeg
-  markingCategory: Legs
-  speciesRestriction: [Arachnid, Human, Reptilian, SlimePerson]
+  groupWhitelist: [Arachnid, Human, Reptilian, Slime]
   coloring:
     default:
       type:
@@ -154,8 +145,7 @@
 - type: marking
   id: TP14MarkingsRoboRightLeg
   bodyPart: UndergarmentBottom #it's weird I know but it makes the layers work correctly
-  markingCategory: Legs
-  speciesRestriction: [Arachnid, Human, Reptilian, SlimePerson]
+  groupWhitelist: [Arachnid, Human, Reptilian, Slime]
   coloring:
     default:
       type:
@@ -169,8 +159,7 @@
 - type: marking
   id: TP14MarkingsRoboLeftFoot
   bodyPart: LHand #it's weird I know but it makes the layers work correctly
-  markingCategory: Legs
-  speciesRestriction: [Arachnid, Human, Reptilian, SlimePerson]
+  groupWhitelist: [Arachnid, Human, Reptilian, Slime]
   coloring:
     default:
       type:
@@ -184,8 +173,7 @@
 - type: marking
   id: TP14MarkingsRoboRightFoot
   bodyPart: RFoot
-  markingCategory: Legs
-  speciesRestriction: [Arachnid, Human, Reptilian, SlimePerson]
+  groupWhitelist: [Arachnid, Human, Reptilian, Slime]
   coloring:
     default:
       type:

@@ -10,7 +10,7 @@ namespace Content.Client._TP.Stylesheets.Sheetlets;
 
 // Taken from https://github.com/space-wizards/space-station-14/pull/41033/
 [CommonSheetlet]
-public sealed class ButtonIdCardSheetlet<T> : Sheetlet<T> where T : PalettedStylesheet, IButtonConfig
+public sealed partial class ButtonIdCardSheetlet<T> : Sheetlet<T> where T : PalettedStylesheet, IButtonConfig
 {
     public override StyleRule[] GetRules(T sheet, object config)
     {

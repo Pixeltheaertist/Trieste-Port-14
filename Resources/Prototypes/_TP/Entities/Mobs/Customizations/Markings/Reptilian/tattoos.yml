@@ -1,8 +1,7 @@
 - type: marking
   id: TP14MarkingReptileTattooBackDragon
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Reptilian ]
+  groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Reptilian/tattoos.rsi
     state: tattoo_back_dragon_primary

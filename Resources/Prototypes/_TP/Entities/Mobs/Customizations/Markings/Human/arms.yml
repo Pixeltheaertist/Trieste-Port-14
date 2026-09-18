@@ -3,8 +3,7 @@
 - type: marking
   id: TP14MarkingsBirdClawLeftArm
   bodyPart: LArm
-  markingCategory: Arms
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
@@ -17,8 +16,7 @@
 - type: marking
   id: TP14MarkingsBirdClawRightArm
   bodyPart: RArm
-  markingCategory: Arms
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
@@ -31,8 +29,7 @@
 - type: marking
   id: TP14MarkingsBirdClawLeftHand
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
@@ -45,8 +42,7 @@
 - type: marking
   id: TP14MarkingsBirdClawRightHand
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
@@ -63,8 +59,7 @@
 - type: marking
   id: TP14MarkingsClawsLeftHand
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
@@ -77,8 +72,7 @@
 - type: marking
   id: TP14MarkingsClawsRightHand
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
@@ -93,8 +87,7 @@
 - type: marking
   id: TP14MarkingsHatchedLeftArm
   bodyPart: LArm
-  markingCategory: Arms
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
@@ -107,8 +100,7 @@
 - type: marking
   id: TP14MarkingsHatchedRightArm
   bodyPart: RArm
-  markingCategory: Arms
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
@@ -121,8 +113,7 @@
 - type: marking
   id: TP14MarkingsHatchedLeftHand
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
@@ -135,8 +126,7 @@
 - type: marking
   id: TP14MarkingsHatchedRightHand
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:

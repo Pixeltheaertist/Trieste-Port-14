@@ -20,12 +20,12 @@ public sealed partial class HubSystem : EntitySystem, IServerObserver, IServerIn
 {
     private const int MaxEventsPerTick = 2;
 
-    [Dependency] private readonly ILogManager _logManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IActorRouter _actors = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private ILogManager _logManager = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private IActorRouter _actors = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private ISawmill _sawmill = default!;
 

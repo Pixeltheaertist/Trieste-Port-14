@@ -41,7 +41,7 @@
     - !type:PlantAdjustHealth
       amount: -1
   metabolisms:
-    Poison:
+    Bloodstream:
       effects:
       - !type:HealthChange
         damage:
@@ -59,7 +59,7 @@
   boilingPoint: 2595.0
   meltingPoint: 1083.0
   metabolisms:
-    Poison:
+    Bloodstream:
       metabolismRate: 0.1
       effects:
       - !type:HealthChange
@@ -70,8 +70,6 @@
         damage:
           types:
             Poison: 0.1
-    Medicine:
-      effects:
       - !type:ModifyBloodLevel
         conditions:
         - !type:MetabolizerTypeCondition
@@ -99,7 +97,7 @@
     - !type:PlantAdjustHealth
       amount: -2
   metabolisms:
-    Poison:
+    Bloodstream:
       effects:
       - !type:HealthChange
         damage:
@@ -150,7 +148,7 @@
   boilingPoint: 2862.0
   meltingPoint: 1538.0
   metabolisms:
-    Poison:
+    Bloodstream:
       metabolismRate: 0.1
       effects:
       - !type:HealthChange
@@ -160,8 +158,6 @@
         damage:
           types:
             Poison: 0.1
-    Medicine:
-      effects:
       - !type:ModifyBloodLevel
         conditions:
         - !type:MetabolizerTypeCondition
@@ -180,7 +176,7 @@
   meltingPoint: 180.5
   boilingPoint: 1330.0
   metabolisms:
-    Poison:
+    Bloodstream:
       metabolismRate: 0.1
       effects:
       - !type:HealthChange
@@ -208,7 +204,7 @@
   meltingPoint: -38.83
   boilingPoint: 356.73
   metabolisms:
-    Poison:
+    Bloodstream:
       effects:
       - !type:HealthChange
         damage:
@@ -272,7 +268,7 @@
   boilingPoint: 3265.0
   meltingPoint: 1414.0
   metabolisms:
-    Poison:
+    Bloodstream:
       effects:
       - !type:HealthChange
         damage:
@@ -302,7 +298,7 @@
   boilingPoint: 445.0
   meltingPoint: 120.0
   metabolisms:
-    Poison:
+    Bloodstream:
       effects:
       - !type:HealthChange
         damage:
@@ -342,7 +338,7 @@
     probability: 0.2
     amount: 0.1
   metabolisms:
-    Poison:
+    Bloodstream:
       effects:
       - !type:HealthChange
         damage:

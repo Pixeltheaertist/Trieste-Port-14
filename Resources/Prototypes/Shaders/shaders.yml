@@ -59,9 +59,9 @@
   path: "/Textures/Shaders/camera_static.swsl"
 
 - type: shader
-  id: Grainy
+  id: CameraStaticAccessible
   kind: source
-  path: "/Textures/Shaders/grainy.swsl"
+  path: "/Textures/Shaders/camera_static_accessible.swsl"
 
 - type: shader
   id: Drunk
@@ -120,3 +120,23 @@
   id: Hologram
   kind: source
   path: "/Textures/Shaders/hologram.swsl"
+
+- type: shader
+  id: HeatBlur
+  kind: source
+  path: "/Textures/Shaders/heatBlur.swsl"
+
+- type: shader
+  id: ScreechShockWave
+  kind: source
+  path: "/Textures/Shaders/screech_shock_wave.swsl"
+
+- type: shader
+  id: NightVision
+  kind: source
+  path: "/Textures/Shaders/nightvision.swsl"
+
+- type: shader
+  id: Sharpness
+  kind: source
+  path: "/Textures/Shaders/sharpness.swsl"

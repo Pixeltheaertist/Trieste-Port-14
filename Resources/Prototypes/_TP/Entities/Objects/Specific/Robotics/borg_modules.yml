@@ -94,4 +94,4 @@
           components:
           - MultiHandedItem
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: mail-module }
+    icon: { sprite: _TP/Interface/Actions/actions-borg.rsi, state: mail-module }

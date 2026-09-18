@@ -49,12 +49,11 @@ public abstract partial class InteractionTest
         public static implicit operator EntitySpecifier(string prototype)
             => new(prototype, 1);
 
-        public static implicit operator EntitySpecifier((string, int) tuple)
-            => new(tuple.Item1, tuple.Item2);
-
         public static implicit operator EntitySpecifier(EntProtoId prototype)
             => new(prototype.Id, 1);
 
+        public static implicit operator EntitySpecifier((string, int) tuple)
+            => new(tuple.Item1, tuple.Item2);
 
         /// <summary>
         /// Convert applicable entity prototypes into stack prototypes.
@@ -81,7 +80,7 @@ public abstract partial class InteractionTest
             StackComponent? stack = null;
             await server.WaitPost(() =>
             {
-                entProto.TryGetComponent(factory.GetComponentName<StackComponent>(), out stack);
+                entProto.TryComp(out stack, factory);
             });
 
             if (stack != null)
@@ -111,7 +110,7 @@ public abstract partial class InteractionTest
         StackComponent? stack = null;
         await Server.WaitPost(() =>
         {
-            entProto.TryGetComponent(Factory.GetComponentName<StackComponent>(), out stack);
+            entProto.TryComp(out stack, Factory);
         });
 
         if (stack != null)

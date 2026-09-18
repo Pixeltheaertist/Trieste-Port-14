@@ -1,15 +1,13 @@
 using System.Linq;
-using Content.Client._NullLink;
 using Content.Shared._NullLink;
-using Content.Shared.NullLink;
 using Robust.Shared.Network;
 
-namespace Content.Client.Administration.Managers;
+namespace Content.Client._NullLink;
 
-public sealed class NullLinkPlayerRolesManager : INullLinkPlayerRolesManager
+public sealed partial class NullLinkPlayerRolesManager : INullLinkPlayerRolesManager
 {
-    [Dependency] private readonly IClientNetManager _netMgr = default!;
-    [Dependency] private readonly ILogManager _logManager = default!;
+    [Dependency] private IClientNetManager _netMgr = default!;
+    [Dependency] private ILogManager _logManager = default!;
 
     private HashSet<ulong> _roles = [];
     private string? _discordLink;

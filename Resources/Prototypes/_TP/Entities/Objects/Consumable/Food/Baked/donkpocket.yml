@@ -14,14 +14,13 @@
       - slimy
       - tingly
       - strange
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 8
-        - ReagentId: HorrificLaughter
-          Quantity: 10
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 8
+      - ReagentId: HorrificLaughter
+        Quantity: 2
   - type: Sprite
     sprite: _TP/Objects/Consumable/jonkpockets.rsi
     state: Jonk
@@ -40,15 +39,13 @@
       - funny
       - meaty
       - holy
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 8
-        - ReagentId: Laughter
-          Quantity: 10
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 8
+      - ReagentId: Laughter
+        Quantity: 2
   - type: Sprite
     sprite: _TP/Objects/Consumable/jonkpockets.rsi
     state: Purified-Jonk

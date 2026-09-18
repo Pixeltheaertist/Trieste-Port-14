@@ -1,37 +1,25 @@
 - type: npcFaction
   id: Dragon
   hostile:
-    - NanoTrasen
-    - Syndicate
-    - Xeno
-    - PetsNT
-    - Zombie
-    - Revolutionary
-    - AllHostile
-    - NanoTrasenTraitor
-    - Wizard
-
-- type: npcFaction
-  id: NanoTrasen
-  hostile:
-  - NanoTrasenTraitor
-  - SimpleHostile
+  - NanoTrasen
   - Syndicate
   - Xeno
+  - PetsNT
   - Zombie
   - Revolutionary
-  - Dragon
   - AllHostile
   - Wizard
   - Xenoborg
+  - NanoTrasenTraitor # Trieste: Added.
 
 - type: npcFaction
-  id: NanoTrasenTraitor
+  id: NanoTrasen
+  friendly: # Trieste: Added.
+  - NanoTrasenTraitor
   hostile:
   - SimpleHostile
   - Syndicate
   - Xeno
-  - NanoTrasen
   - Zombie
   - Revolutionary
   - Dragon
@@ -53,6 +41,7 @@
   id: PetsNT
   friendly:
   - NanoTrasen
+  - NanoTrasenTraitor # Trieste: Added.
   hostile:
   - Mouse
   - SimpleHostile
@@ -73,7 +62,7 @@
   - Dragon
   - Xeno
   - AllHostile
-  - NanoTrasenTraitor
+  - NanoTrasenTraitor # Trieste: Added.
   - Wizard
   - Xenoborg
 
@@ -90,7 +79,7 @@
   - Zombie
   - Dragon
   - AllHostile
-  - NanoTrasenTraitor
+  - NanoTrasenTraitor # Trieste: Added.
   - Wizard
   - Xenoborg
 
@@ -104,7 +93,7 @@
   - Zombie
   - Revolutionary
   - AllHostile
-  - NanoTrasenTraitor
+  - NanoTrasenTraitor # Trieste: Added.
   - Wizard
   - Dragon
   - Xenoborg
@@ -120,7 +109,7 @@
   - PetsNT
   - Revolutionary
   - AllHostile
-  - NanoTrasenTraitor
+  - NanoTrasenTraitor # Trieste: Added.
   - Wizard
   - Dragon
   - Xenoborg
@@ -135,6 +124,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - NanoTrasenTraitor # Trieste: Added.
 
 - type: npcFaction
   id: AllHostile
@@ -150,7 +140,7 @@
   - Xeno
   - Zombie
   - Revolutionary
-  - NanoTrasenTraitor
+  - NanoTrasenTraitor # Trieste: Added.
   - Wizard
   - Xenoborg
 
@@ -170,6 +160,7 @@
   - Revolutionary
   - AllHostile
   - Xenoborg
+  - NanoTrasenTraitor # Trieste: Added.
 
 - type: npcFaction
   id: Xenoborg
@@ -180,6 +171,7 @@
   - Zombie
   - Revolutionary
   - Wizard
+  - NanoTrasenTraitor # Trieste: Added.
 
   - Xeno # rivalry
 

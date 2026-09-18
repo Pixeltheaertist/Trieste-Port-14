@@ -16,10 +16,11 @@
     PaperCNCSheet: 6
     MysteryFigureBox: 2
     BooksBag: 3
+    Magic9Ball: 2
     # Moffstation - Start - Card Games added to Vending Machine
-    CardBoxBlack: 2 
+    CardBoxBlack: 2
     CardBoxNuno: 1
-    # Moffstation - End 
+    # Moffstation - End
   contrabandInventory:
     Basketball: 1
     FoodSnackBoritos: 3

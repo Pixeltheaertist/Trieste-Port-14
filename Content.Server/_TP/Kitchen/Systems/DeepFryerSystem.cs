@@ -48,6 +48,12 @@ public sealed partial class DeepFryerSystem : EntitySystem
         SubscribeLocalEvent<DeepFryerComponent, InteractHandEvent>(OnInteractHand);
         SubscribeLocalEvent<DeepFryerComponent, InteractUsingEvent>(AfterInteractUsing);
         SubscribeLocalEvent<DeepFryerComponent, ComponentShutdown>(OnShutdown);
+        SubscribeLocalEvent<DeepFryerComponent, ComponentInit>(OnCompInit);
+    }
+
+    private void OnCompInit(Entity<DeepFryerComponent> ent, ref ComponentInit args)
+    {
+        ent.Comp.FryerContainer = _container.EnsureContainer<ContainerSlot>(ent, ent.Comp.ContainerId);
     }
 
     private readonly Dictionary<EntityUid, TimeSpan> _cookingStartTimes = new();
@@ -88,9 +94,7 @@ public sealed partial class DeepFryerSystem : EntitySystem
             return;
 
         if (TryComp<DamageableComponent>(args.Used, out _))
-        {
             _adminLogger.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(args.User):Player} put {ToPrettyString(args.Used)} into {ToPrettyString(ent):DeepFryer}");
-        }
 
         var usedMeta = MetaData(args.Used);
         if (usedMeta.EntityName.StartsWith("burnt") || usedMeta.EntityName.StartsWith("burned"))
@@ -100,7 +104,7 @@ public sealed partial class DeepFryerSystem : EntitySystem
             return;
         }
 
-        if (!_solutionContainer.TryGetSolution(ent.Owner, ent.Comp.SolutionContainerId, out _, out var solName))
+        if (!_solutionContainer.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out _, out var solName))
             return;
 
         if (solName.Volume <= 25)
@@ -179,7 +183,7 @@ public sealed partial class DeepFryerSystem : EntitySystem
         // NOW we check if the deep fryer has enough oil. This is done via Olive Oil for now.
         // This is also done with two checks - a total volume, and specifically olive oil.
         // If either are false, popup and return.
-        if (!_solutionContainer.TryGetSolution(deepFryerEnt.Owner, deepFryerComp.SolutionContainerId, out _, out var solName))
+        if (!_solutionContainer.TryGetSolution(deepFryerEnt.Owner, deepFryerEnt.Comp.SolutionId, out _, out var solName))
             return;
 
         if (solName.Volume <= 25)
@@ -200,6 +204,8 @@ public sealed partial class DeepFryerSystem : EntitySystem
         // Otherwise, we remove the item from the container and add it to the player's hand with TWO popups.
         if (!_container.TryGetContainer(deepFryerEnt, deepFryerComp.ContainerId, out var container))
             return;
+
+        Log.Warning("Passed container.");
 
         foreach (var entity in container.ContainedEntities)
         {
@@ -230,7 +236,7 @@ public sealed partial class DeepFryerSystem : EntitySystem
         }
 
         // Otherwise, if the container has NO items, we toggle the deep fryer with two popups.
-        if (container.ContainedEntities.Count == 0)
+        if (container.ContainedEntities.Count <= 0)
         {
             _popup.PopupEntity(deepFryerComp.IsEnabled
                 ? Loc.GetString("Deep-Fryer-Message-Toggle-Off", ("fryer", deepFryerEnt.Owner))
@@ -258,11 +264,9 @@ public sealed partial class DeepFryerSystem : EntitySystem
             {
                 _appearance.SetData(deepFryerEnt.Owner, DeepFryerVisuals.Active, true);
             }
-
-            deepFryerComp.IsEnabled = !deepFryerComp.IsEnabled;
         }
 
-        args.Handled = true;
+        deepFryerComp.IsEnabled = !deepFryerComp.IsEnabled;
     }
 
     /// <summary>
@@ -302,7 +306,7 @@ public sealed partial class DeepFryerSystem : EntitySystem
 
             // Now we check for if the deep fryer has enough oil. If not, disable it and skip the loop.
             if (!_solutionContainer.TryGetSolution(uid,
-                    deepFryerComp.SolutionContainerId,
+                    deepFryerComp.SolutionId,
                     out _,
                     out var solName))
                 continue;
@@ -377,7 +381,7 @@ public sealed partial class DeepFryerSystem : EntitySystem
         _container.Remove(friedEntUid, container);
         QueueDel(friedEntUid);
 
-		if (_solutionContainer.TryGetSolution(fryerEntUid, deepFryerComp.SolutionContainerId, out var solutionEnt, out _))
+		if (_solutionContainer.TryGetSolution(fryerEntUid, deepFryerComp.SolutionId, out var solutionEnt, out _))
             _solutionContainer.SplitSolution(solutionEnt.Value, FixedPoint2.New(2.5f));
 
         var recipeResult = Spawn(recipe.Result, Transform(fryerEntUid).Coordinates);
@@ -453,7 +457,7 @@ public sealed partial class DeepFryerSystem : EntitySystem
         }
 
 		//consumes fry oil per fry for nonfood
-		if (_solutionContainer.TryGetSolution(fryerEntUid, deepFryerComp.SolutionContainerId, out var solutionEnt, out _))
+		if (_solutionContainer.TryGetSolution(fryerEntUid, deepFryerComp.SolutionId, out var solutionEnt, out _))
             _solutionContainer.SplitSolution(solutionEnt.Value, FixedPoint2.New(2.5f));
 
         // Once the entity is fried, we dirty the entity and raise an event for sprite change.

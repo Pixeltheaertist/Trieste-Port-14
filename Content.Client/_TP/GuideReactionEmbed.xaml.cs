@@ -21,8 +21,8 @@ namespace Content.Client._TP;
 [UsedImplicitly, GenerateTypedNameReferences]
 public sealed partial class GuideReactionEmbed : PanelContainer, IDocumentTag, ISearchableControl
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly ILogManager _logManager = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private ILogManager _logManager = default!;
 
     private readonly ISawmill _sawmill;
 

@@ -2,12 +2,45 @@
 # It constantly heats up the surrounding room and needs to have its temperature carefully monitored to prevent a meltdown.
 # It also gives occasional warnings and spawning sparks while taking damage, eventually exploding.
 
+# Pipes the array uses to connect to the pipe network
+- type: entity
+  id: TP14StormArrayGasPipes
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Anchorable
+    flags: None
+  - type: NodeContainer
+    nodes:
+      pipe:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+        volume: 1000
+        pipeLayer: 0
+      pipe1:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+        volume: 1000
+        pipeLayer: 0
+  - type: GasPipeManifold
+    inlets:
+    - pipe
+    outlets:
+    - pipe1
+  - type: PipeRestrictOverlap
+  - type: Tag
+    tags:
+    - HideContextMenu
+
 - type: entity
   parent: BaseGenerator
   id: TP14StormArray
   name: storm array
   description: The core of a massive array of lightning rods, siphoning searing energy from the eternal storm above. Must be kept cool.
-  suffix: Trieste, 150kW
+  suffix: Trieste, 175kW
   placement:
     mode: AlignTileAny
   components:
@@ -45,20 +78,23 @@
         - WallLayer
   - type: PowerSupplier
     enabled: false
-    supplyRate: 150000
-    supplyRampRate: 1500
-    supplyRampTolerance: 1500
+    supplyRate: 175000
+    supplyRampRate: 1750
+    supplyRampTolerance: 1750
   - type: GuideHelp
     guides:
     - StormArray
     - Power
   - type: Damageable
+    damageModifierSet: StructuralMetallicStrong
+  - type: Injurable
     damageContainer: StructuralInorganic
   - type: Temperature
-    heatDamageThreshold: 500
-    coldDamageThreshold: -9999 # Doesn't take damage from cold
     currentTemperature: 243.15
     specificHeat: 42
+  - type: TemperatureDamage
+    heatDamageThreshold: 500
+    coldDamageThreshold: -9999 # Doesn't take damage from cold
     coldDamage:
       types:
         Cold: 0.0
@@ -155,41 +191,16 @@
   - type: RadiantTemperature # Constantly heats the air around it
     goalTemperature: 500
     energyChangedPerSecond: 5 # Around Hopefully around 3-minutes to reach 100. - Cookie (Father Cheese)
-  - type: StormArray # Announcements and Temperature
-  - type: NodeContainer # For the cold loop
-    examinable: true
-    nodes:
-      inlet:
-        !type:PipeNode
-        nodeGroupID: Pipe
-        pipeDirection: East
-        volume: 100
-      outlet:
-        !type:PipeNode
-        nodeGroupID: Pipe
-        pipeDirection: West
-        volume: 100
-      output_hv:
-        !type:CableDeviceNode
-        nodeGroupID: HVPower
-
-- type: entity
-  id: TP14StormArrayCirculatorArrow
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: Markers/teg_arrow.rsi
-    layers:
-      - state: arrow
-        offset: 2, 0
-        rotation: 270
-        color: "#FFFFFFBB"
-      - state: arrow
-        offset: -2, 0
-        rotation: 270
-        color: "#FFAAAABB"
-  - type: TimedDespawn
-    lifetime: 2
-  - type: Tag
-    tags:
-      - HideContextMenu
+  - type: StormArray
+    inletPos:   1, 0
+    outletPos: -1, 0
+    inletRot:   90
+    outletRot: -90
+  - type: DirectionalArrowIndicator
+    arrows:
+    - offset: 2, -0.75
+      arrowType: BlueDirectionalArrowIndicator
+      rotation: 270
+    - offset: -2, -0.75
+      rotation: 270
+      arrowType: BlueDirectionalArrowIndicator

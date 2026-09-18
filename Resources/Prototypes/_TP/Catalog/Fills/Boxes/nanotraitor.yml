@@ -1,0 +1,99 @@
+- type: entity
+  parent: BoxCardboard
+  id: CrimeCleanerKit
+  suffix: Trieste, NanoTraitor
+  name: evidence cleaning kit
+  description: A kit designed to clean any evidence of a crime. Contains soap, space cleaner, nitrile gloves and a cleanade.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,3,1
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: TP14SoapNT
+        - id: SprayBottleSpaceCleaner
+        - id: CleanerGrenade
+        - id: ClothingHandsGlovesNitrile
+
+- type: entity
+  parent: BoxVial
+  id: LubeBoxNT
+  suffix: Trieste, NanoTraitor
+  name: space lube box
+  description: A box containing three vials of space lube.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,3,2
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: TP14SmallChemistryVialLube
+        amount: 3
+
+## CHEM LAB ##
+- type: entity
+  id: VialBoxP
+  parent: BoxVial
+  name: vial box (P)
+  description:
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: TP14SmallChemistryVialAluminium
+        - id: TP14SmallChemistryVialCarbon
+        - id: TP14SmallChemistryVialChlorine
+        - id: TP14SmallChemistryVialFluorine
+        - id: TP14SmallChemistryVialIodine
+        - id: TP14SmallChemistryVialPhosphorus
+
+- type: entity
+  id: VialBoxP2
+  parent: BoxVial
+  name: vial box (P)
+  description:
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: TP14SmallChemistryVialSulfur
+        - id: TP14SmallChemistryVialSilicon
+        - id: TP14SmallChemistryVialOxygen
+        - id: TP14SmallChemistryVialNitrogen
+
+- type: entity
+  id: VialBoxS
+  parent: BoxVial
+  name: vial box (S)
+  description:
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: TP14SmallChemistryVialHydrogen
+        - id: TP14SmallChemistryVialLithium
+        - id: TP14SmallChemistryVialSodium
+        - id: TP14SmallChemistryVialPotassium
+        - id: TP14SmallChemistryVialRadium
+
+- type: entity
+  id: VialBoxD
+  parent: BoxVial
+  name: vial box (D)
+  description:
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: TP14SmallChemistryVialIron
+        - id: TP14SmallChemistryVialCopper
+        - id: TP14SmallChemistryVialGold
+        - id: TP14SmallChemistryVialMercury
+        - id: TP14SmallChemistryVialSilver

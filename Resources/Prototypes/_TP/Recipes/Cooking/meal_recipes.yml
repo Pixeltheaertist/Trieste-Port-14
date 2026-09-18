@@ -316,3 +316,14 @@
     SeaWater: 1
     Sugar: 1
     Fiber: 1
+
+- type: microwaveMealRecipe
+  id: TP14RecipeSashimi
+  name: sashimi recipe (fish)
+  result: FoodMealSashimi
+  time: 15
+  group: Savory
+  reagents:
+    TableSalt: 1
+  solids:
+    TP14FoodMeatFish: 1

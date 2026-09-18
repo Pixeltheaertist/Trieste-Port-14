@@ -48,9 +48,6 @@ public sealed partial class GunComponent : Component
     [DataField, AutoNetworkedField]
     public float CameraRecoilScalar = 1f;
 
-    [DataField]
-    public bool Waterproof = false;
-
     /// <summary>
     /// A scalar value applied to the vector governing camera recoil.
     /// If 0, there will be no camera recoil.
@@ -215,7 +212,7 @@ public sealed partial class GunComponent : Component
     /// The base value for how fast the projectile moves.
     /// </summary>
     [DataField]
-    public float ProjectileSpeed = 35f;
+    public float ProjectileSpeed = SharedGunSystem.ProjectileSpeed;
 
     /// <summary>
     /// How fast the projectile moves.
@@ -228,7 +225,7 @@ public sealed partial class GunComponent : Component
     /// When the gun is next available to be shot.
     /// Can be set multiple times in a single tick due to guns firing faster than a single tick time.
     /// </summary>
-    [DataField(customTypeSerializer:typeof(TimeOffsetSerializer))]
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     [AutoNetworkedField]
     [AutoPausedField]
     public TimeSpan NextFire = TimeSpan.Zero;

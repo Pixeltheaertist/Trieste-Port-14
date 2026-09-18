@@ -5,7 +5,9 @@
   name: piezo crystal shard
   description:  A small piece of of a shattered piezo crystal.
   components:
-  - type: Sharp
+  - type: Utensil
+    types:
+    - Knife
   - type: Sprite
     layers:
       - sprite: Objects/Materials/Shards/piezoshard.rsi
@@ -26,7 +28,6 @@
     maxCharge: 280
     startingCharge: 0
   - type: BatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 1
   - type: Tag
     tags:

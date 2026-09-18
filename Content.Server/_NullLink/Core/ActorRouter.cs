@@ -1,21 +1,13 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using System.Runtime.InteropServices.JavaScript;
 using System.Threading.Tasks;
 using Content.Server._NullLink.Helpers;
-using Content.Shared.CCVar;
-using Microsoft.CodeAnalysis;
-using Microsoft.Extensions.Configuration;
-using Orleans;
-using Orleans.Configuration;
-using Orleans.Hosting;
-using Robust.Shared.Configuration;
 using Starlight.NullLink;
 
 namespace Content.Server._NullLink.Core;
 
 public sealed partial class ActorRouter : IActorRouter, IDisposable
 {
-    [Dependency] private readonly Robust.Shared.Configuration.IConfigurationManager _cfg = default!;
+    [Dependency] private Robust.Shared.Configuration.IConfigurationManager _cfg = default!;
 
     private ISawmill _sawmill = default!;
     private string _clusterConnectionString = string.Empty;
@@ -107,6 +99,6 @@ public sealed partial class ActorRouter : IActorRouter, IDisposable
 
     public void Dispose()
     {
-        OrleansClientHolder.Shutdown();
+        _ = OrleansClientHolder.Shutdown();
     }
 }

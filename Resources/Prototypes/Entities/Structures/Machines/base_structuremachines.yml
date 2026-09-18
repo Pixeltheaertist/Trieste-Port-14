@@ -12,7 +12,6 @@
   - type: Transform
     noRot: true
   - type: InGas
-    gasID: 9
     damagedByGas: false
     crushDepth: 9999 # Extreme crush depth to prevent unintended destruction
     gasThreshold: 9999
@@ -31,16 +30,11 @@
         layer:
         - MachineLayer
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 200
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 100
@@ -82,7 +76,6 @@
     priority: 1
   - type: FallSystem
   - type: InGas
-    gasID: 9
     damagedByGas: false
     crushDepth: 9999 # Extreme crush depth to prevent unintended destruction
     gasThreshold: 9999

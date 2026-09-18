@@ -7,8 +7,8 @@
   - type: Sprite
     layers:
     - state: green
-    - state: fish-0
-      sprite: _TP/Mobs/Animals/fish.rsi
+    - sprite: _TP/Mobs/Animals/fish.rsi
+      state: fish-0
   - type: ConditionalSpawner
     prototypes:
     - TP14MobFish
@@ -22,8 +22,8 @@
   - type: Sprite
     layers:
     - state: green
-    - state: drifter
-      sprite: Mobs/Aliens/drifters.rsi
+    - sprite: _TP/Mobs/Aliens/drifters.rsi
+      state: drifter
   - type: ConditionalSpawner
     prototypes:
     - TP14MobDrifter
@@ -37,8 +37,8 @@
   - type: Sprite
     layers:
     - state: green
-    - state: sea-rabbit-idle
-      sprite: _TP/Mobs/Animals/sea-bunny.rsi
+    - sprite: _TP/Mobs/Animals/sea-bunny.rsi
+      state: sea-rabbit-idle
   - type: ConditionalSpawner
     prototypes:
     - TP14MobSeaBunny
@@ -52,8 +52,8 @@
   - type: Sprite
     layers:
     - state: green
-    - state: leaf-sheep-idle
-      sprite: _TP/Mobs/Animals/LeafSheep/normal.rsi
+    - sprite: _TP/Mobs/Animals/LeafSheep/normal.rsi
+      state: leaf-sheep-idle
   - type: ConditionalSpawner
     prototypes:
     - TP14MobLeafSheep

@@ -11,5 +11,6 @@ public sealed partial class EquipSprayComponent : Component
     /// <summary>
     /// Verb locid that will come up when interacting with the sprayer. Set to null for no verb!
     /// </summary>
-    [DataField] public LocId? VerbLocId;
+    [DataField]
+    public LocId? VerbLocId;
 }

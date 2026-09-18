@@ -1,0 +1,42 @@
+- type: entity
+  parent: WeatherBase
+  id: WeatherClear
+  components:
+  - type: WeatherStatusEffect
+    sprite:
+      sprite: /Textures/_TP/Effects/atmospherics.rsi
+      state: clear
+    sound:
+      path: /Audio/Effects/Weather/snowstorm.ogg
+      params:
+        loop: true
+        volume: -100
+
+- type: entity
+  parent: WeatherBase
+  id: WeatherSmogStorm
+  components:
+  - type: WeatherStatusEffect
+    sprite:
+      sprite: /Textures/Effects/atmospherics.rsi
+      state: nitryl
+      color: "#808080" # Test this see if it works
+    sound:
+      path: /Audio/Effects/Weather/snowstorm.ogg
+      params:
+        loop: true
+        volume: -5
+
+- type: entity
+  parent: WeatherBase
+  id: WeatherCloudStorm
+  components:
+  - type: WeatherStatusEffect
+    sprite:
+      sprite: /Textures/Effects/atmospherics.rsi
+      state: nitryl
+    sound:
+      path: /Audio/Effects/Weather/snowstorm.ogg
+      params:
+        loop: true
+        volume: -4

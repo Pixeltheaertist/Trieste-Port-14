@@ -16,8 +16,8 @@ namespace Content.Server._EmberFall.Bell;
 /// </summary>
 public sealed partial class BellSystem : SharedBellSystem
 {
-    [Dependency] private readonly BellConsoleSystem _console = default!;
-    [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private BellConsoleSystem _console = default!;
+    [Dependency] private StationSystem _station = default!;
 
     public override void Initialize()
     {

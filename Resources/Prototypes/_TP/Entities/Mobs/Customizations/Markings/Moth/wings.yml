@@ -1,8 +1,7 @@
 - type: marking
   id: TP14MarkingMothWings1
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
     state: mothwings_1
@@ -12,8 +11,7 @@
 - type: marking
   id: TP14MarkingMothWings2
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
     state: mothwings_2_primary
@@ -25,8 +23,7 @@
 - type: marking
   id: TP14MarkingMothWingsBooster
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
     state: booster_wings_primary
@@ -38,8 +35,7 @@
 - type: marking
   id: TP14MarkingMothWingsKaleido
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
     state: kaleido_moth_wings
@@ -55,8 +51,7 @@
 - type: marking
   id: TP14MarkingMothWingsOrnateTiger
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Moth ]
+  groupWhitelist: [ Moth ]
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Moth/wings.rsi
     state: ornate_tiger_moth_wings_primary

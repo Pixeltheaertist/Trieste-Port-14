@@ -45,3 +45,6 @@ comp-nuclear-reactor-ui-therm-format = { POWERWATTS($power) }t
 
 comp-nuclear-reactor-ui-footer-left = Danger: high radiation.
 comp-nuclear-reactor-ui-footer-right = 0.8 REV 3
+
+### WARPS - Added by Trieste
+location-nuclear-reactor = Nuclear Reactor

@@ -55,7 +55,7 @@ MagazineBoxLightRifleHighVelocity: MagazineBoxLightRifle
 MagazineBoxMagnumHighVelocity: MagazineBoxMagnum
 MagazineBoxPistolHighVelocity: MagazineBoxPistol
 MagazineBoxRifleHighVelocity: MagazineBoxRifle
-MagazineCaselessRifleHighVelocity: MagazineCaselessRifle
+MagazineCaselessRifleHighVelocity: MagazinePistolCaselessRifle
 MagazineCaselessRifleShortHighVelocity: null
 MagazineLightRifleHighVelocity: MagazineLightRifle
 MagazineMagnumSubMachineGunHighVelocity: null
@@ -65,7 +65,7 @@ MagazinePistolHighVelocity: MagazinePistol
 MagazinePistolSubMachineGunHighVelocity: MagazinePistolSubMachineGun
 MagazineRifleHighVelocity: MagazineRifle
 SpeedLoaderMagnumHighVelocity: SpeedLoaderMagnum
-SpeedLoaderPistolHighVelocity: SpeedLoaderPistol
+SpeedLoaderPistolHighVelocity: null
 
 # 2023-08-07
 #If the name is anything to go off of, these are presumably just CEV-Eris versions of the snow rock (which we already have.)
@@ -178,12 +178,12 @@ SpyCrewMonitorEmpty: null
 SyndiCrewMonitor: null
 SyndiCrewMonitorEmpty: null
 
-SpawnVehicleWheelchair: null
+#SpawnVehicleWheelchair: null
 SpawnVehicleWheelchairFolded: null
-VehicleWheelchair: null
+#VehicleWheelchair: null
 VehicleWheelchairFolded: null
 VehicleSecwayStealObjective: null
-VehicleKeyJanicart: null
+#VehicleKeyJanicart: null
 VehicleKeySecway: null
 VehicleKeyATV: null
 VehicleKeySkeleton: null
@@ -203,8 +203,8 @@ MobTaxiBot: null
 SpawnVehicleMotobike: null
 SpawnVehicleATV: null
 SpawnVehicleSecway: null
-SpawnVehicleJanicart: null
-VehicleJanicart: null
+#SpawnVehicleJanicart: null
+#VehicleJanicart: null
 VehicleJanicartDestroyed: null
 
 # 2024-02-01
@@ -305,9 +305,9 @@ MagazineMagnumRubber: MagazineMagnum
 MagazineMagnumSubMachineGunRubber: null
 MagazineLightRifleRubber: MagazineLightRifle
 MagazineRifleRubber: MagazineRifle
-MagazineCaselessRifleRubber: MagazineCaselessRifle
+MagazineCaselessRifleRubber: MagazinePistolCaselessRifle
 MagazineCaselessRifleShortRubber: null
-SpeedLoaderPistolRubber: SpeedLoaderPistol
+SpeedLoaderPistolRubber: null
 SpeedLoaderMagnumRubber: SpeedLoaderMagnum
 MagazineBoxPistolRubber: MagazineBoxPistol
 # RIP box of magnum rubbers 202X to 2024
@@ -367,61 +367,6 @@ BookChefGaming: BookHowToCookForFortySpaceman
 
 #2024-06-29
 IntercomAssesmbly: IntercomAssembly
-
-#2025-10-1
-# Good lord, this is a lot of migrating. You only have to do this once and then never again.
-MobDrifter: TP14MobDrifter
-MobFish: TP14MobFish
-MobFish2: TP14MobFish2
-MobFish3: TP14MobFish3
-MobFishMimic: TP14MobFishMimic
-MobMimic: TP14MobMimic
-HarpoonGun: TP14HarpoonGun
-FloorInvisibleReal: null
-Harpoon: TP14Harpoon
-HarpoonBomb: TP14HarpoonBomb
-PiezoHarpoon: TP14PiezoHarpoon
-WeaponBlaster: TP14WeaponBlaster
-WeaponNtBlaster: TP14WeaponNtBlaster
-WeaponEnergyCarbine: TP14WeaponEnergyCarbine
-LadderDownBase: TP14LadderDown
-LadderUpBase: TP14LadderUp
-TelecomRelay: TP14TelecomRelay
-EncryptionKeyNanotrasen: TP14EncryptionKeyNanotrasen
-WeaponTrident: TP14WeaponTrident
-EnergyBomb: TP14EnergyBomb
-BeachballGrenade: TP14BeachballGrenade
-BluespaceCrystal: TP14BluespaceCrystal
-BaseUplinkRadioNT: TP14BaseUplinkRadioNT
-CrateChemicalLabBundle: TP14CrateChemicalLabBundle
-WaterCanister: TP14WaterCanister
-SpawnMechStepfather: TP14SpawnMechStepfather
-MechStepfather: TP14MechStepfather
-TheArtifact: TP14TheArtifact
-PinpointerPilot: TP14PinpointerPilot
-ResonanceDelaminator: TP14ResonanceDelaminator
-PlanktonScanner: TP14PlanktonScanner
-MagCellDisabler: TP14MagCellDisabler
-BaseMagCell: TP14BaseMagCell
-MagCellAdvanced: TP14MagCellAdvanced
-MagCellExperimental: TP14MagCellExperimental
-WaterTankFilled: TP14WaterTankFilled
-AtmosFixWaterMarker: TP14AtmosFixWaterMarker
-MarkerInside: TP14MarkerInside
-MobJellidPerson: TP14MobJellidPerson
-PaperJellid: Paper
-FallingDestinationMarker: TP14FallingDestinationMarker
-SpawnPointPilot: TP14SpawnPointPilot
-SpawnPointBasinTech: TP14SpawnPointBasinTech
-SeaWreckRoomMarker: TP14SeaWreckRoomMarker
-PiezoCrystalShard: TP14PiezoCrystalShard
-PiezoCrystal: TP14PiezoCrystal
-WallRockIndestructible: TP14WallRockIndestructible
-PolaroidImage: TP14MyFriends
-BlackboxRecorder: TP14BlackboxRecorder
-FoodMeatFish: TP14FoodMeatFish
-ClothingOuterSuitCosplay: TP14ClothingOuterSuitCosplay
-CyberPen: null
 
 # 2024-07-7
 SignScience1: SignScience
@@ -535,7 +480,7 @@ PresentRandomAsh: PresentRandomCoal
 CrateCrewMonitoringBoards: CrateCrewMonitoring
 
 # 2024-11-25
-CrateSlimepersonLifeSupport: CrateNitrogenInternals
+CrateSlimepersonLifeSupport: CrateEmergencyEVA
 
 # 2024-12-01
 DungeonMasterCircuitBoard: GameMasterCircuitBoard
@@ -592,10 +537,6 @@ LightTree06: LightTree
 
 # 2024-12-28
 DrinkIrishCarBomb: DrinkIrishSlammer
-
-SettlerSpawner: null
-HermitSpawner: null
-#TP14SeaWreckRoomMarker: null
 
 # 2025-01-06
 BorgModuleRadiationDetection: null
@@ -690,19 +631,9 @@ CigaretteMilk: CigaretteHaloperidol
 CigaretteBread: CigaretteBbqSauce
 
 # 2025-05-09
-# ClothingOuterHardsuitBasic: ClothingOuterHardsuitEVA
-# ClothingHeadHelmetHardsuitBasic: null
+ClothingOuterHardsuitBasic: ClothingOuterHardsuitEVA
+ClothingHeadHelmetHardsuitBasic: null
 SuitStorageBasic: SuitStorageEVA
-
-# 2025-05-28
-SyringeBicaridine: SyringeReinforcementAlgae # tp14
-
-# 2025-06-07
-BaseOilDrum: TP14BaseOilDrum
-
-# 2025-07-12
-TP14LadderDownBase: TP14LadderDown
-TP14LadderUpBase: TP14LadderUp
 
 # 2025-05-18
 ClothingNeckCloakMiner: null
@@ -784,6 +715,10 @@ VimChassis: null
 # 2025-08-01
 FoodDonutJellySlugcat: FoodDonutJellyScurret
 
+# 2025-08-06
+TrashBagBlue: TrashBagHolding
+BagOfSummoningGarbage: null
+
 # 2025-08-11
 ClothingUniformJumpsuitChiefEngineerNT: ClothingUniformJumpsuitChiefEngineer
 ClothingUniformJumpsuitParamedicNT: ClothingUniformJumpsuitParamedic
@@ -791,10 +726,12 @@ ClothingUniformJumpsuitParamedicNT: ClothingUniformJumpsuitParamedic
 # 2025-08-29
 PrefilledSyringe: Syringe
 
+# 2025-09-12
+BaseChemistryEmptyVial: ChemistryEmptyVial
+
 # 2025-10-6
 BibleTanakh: null
 BibleSatanic: null
-
 
 # 2025-10-08
 ClothingBeltAssault: ClothingBeltMilitaryWebbing
@@ -804,31 +741,162 @@ WarpPointBombing: null
 ToyGriffin: ToyFigurineGriffin
 ToyOwlman: ToyFigurineOwlman
 ToySkeleton: ToyFigurineSkeleton
-BasinTechPDA: TP14BasinTechPDA
-BasinTechIDCard: TP14BasinTechIDCard
-PilotPDA: TP14PilotPDA
-PilotIDCard: TP14PilotIDCard
-SettlerIDCard: TP14SettlerIDCard
 
 # 2025-10-28
 DrinkKiraSpecial: DrinkOrangeLimeSodaGlass
 
-# 2025-11-04
-TP14PaperJellid: Paper
-TP14JellidProofPaperBin5: PaperBin5
-TP14JellidProofPaperBin10: PaperBin10
-TP14JellidProofPaperBin20: PaperBin20
+# 2025-12-02
+GhostWarpPoint: null
+DefaultStationBeaconGhost: null
 
-FloorPlatformEntity: null
+# 2025-11-08
+DebugSMES: SMESBasicEmpty
+DebugSubstation: SubstationBasicEmpty
+DebugSubstationWall: BaseSubstationWall
+DebugAPC: BaseAPC
+MagazineCaselessRifle: MagazinePistolCaselessRifle
+MagazineCaselessRiflePractice: MagazinePistolCaselessRiflePractice
+SpeedLoaderPistol: null
+SpeedLoaderPistolPractice: null
 
-# 2026 01-12
+# 2025-12-05
+GlowstickBase: GlowstickGreen
 
-PillCanisterDexalin: PillCanisterOxygenatedSaline
+# 2025-12-06
+SpawnPointZookeeper: null
+SpawnPointBoxer: null
 
-# 2026-02-05
-RandomHumanoidSettler: null
-PlanetarySettler: null
-TP14PlanetarySettlerSpawner: TP14PlanetarySettlerSpawnerHuman
+# 2025-12-07
+FigureSpawner: MechFigurineSpawner50
+ToySpawner: PlushieSpawner50
+SpacemenFigureSpawner: SpacemenFigurineSpawner90
 
-# 2026-06-13
-PoweredMarineSmallLight: TP14PoweredMarineSmallLight
+# 2026-01-07
+HandheldHealthAnalyzerUnpowered: HandheldHealthAnalyzer
+HandheldHealthAnalyzerEmpty: HandheldHealthAnalyzer
+
+#2026-01-09
+BorgModuleAdvancedChemical: BorgModuleAdvancedTopical
+
+# 2026-01-14
+HeadHuman: OrganHumanHead
+HeadSkeleton: OrganSkeletonPersonHead
+LeftArmHuman: OrganHumanArmLeft
+LeftArmSkeleton: OrganSkeletonPersonArmLeft
+LeftHandSkeleton: OrganSkeletonPersonHandLeft
+LeftLegHuman: OrganHumanLegLeft
+LeftLegSkeleton: OrganSkeletonPersonLegLeft
+RightArmHuman: OrganHumanArmRight
+RightHandSkeleton: OrganSkeletonPersonHandRight
+RightLegHuman: OrganHumanLegRight
+TorsoSkeleton: OrganSkeletonPersonTorso
+RightArmSkeleton: OrganSkeletonPersonArmRight
+
+# 2026-01-19
+TowelColorPurple: null
+TowelColorRed: null
+TowelColorBlue: null
+TowelColorDarkBlue: null
+TowelColorLightBlue: null
+TowelColorTeal: null
+TowelColorBrown: null
+TowelColorLightBrown: null
+TowelColorGray: null
+TowelColorGreen: null
+TowelColorDarkGreen: null
+TowelColorGold: null
+TowelColorOrange: null
+TowelColorBlack: null
+TowelColorPink: null
+TowelColorYellow: null
+TowelColorMaroon: null
+TowelColorSilver: null
+TowelColorMime: null
+
+# 2026-02-18
+# Replace cargo order crates which contain exactly one item with the item, parcel wrapped.
+CrateVendingMachineRestockBoozeFilled: VendingMachineRestockBooze
+CrateVendingMachineRestockChefvendFilled: VendingMachineRestockChefvend
+CrateVendingMachineRestockClothesFilled: VendingMachineRestockClothes
+CrateVendingMachineRestockAutoDrobeFilled: VendingMachineRestockCostumes
+CrateVendingMachineRestockCondimentStationFilled: VendingMachineRestockCondimentStation
+CrateVendingMachineRestockDinnerwareFilled: VendingMachineRestockDinnerware
+CrateVendingMachineRestockGamesFilled: VendingMachineRestockGames
+CrateVendingMachineRestockPTechFilled: VendingMachineRestockPTech
+CrateVendingMachineRestockSalvageEquipmentFilled: VendingMachineRestockSalvageEquipment
+CrateVendingMachineRestockVendomatFilled: VendingMachineRestockVendomat
+CrateVendingMachineRestockTankDispenserFilled: VendingMachineRestockTankDispenser
+# The crates below contained _two_ of the restock items, so these are technically not direct migrations. But eh.
+CrateVendingMachineRestockHotDrinksFilled: VendingMachineRestockHotDrinks
+CrateVendingMachineRestockRobustSoftdrinksFilled: VendingMachineRestockRobustSoftdrinks
+CrateVendingMachineRestockSmokesFilled: VendingMachineRestockSmokes
+CrateVendingMachineRestockHappyHonkFilled: VendingMachineRestockHappyHonk
+CrateVendingMachineRestockGetmoreChocolateCorpFilled: VendingMachineRestockGetmoreChocolateCorp
+CrateVendingMachineRestockChangFilled: VendingMachineRestockChang
+CrateVendingMachineRestockDiscountDansFilled: VendingMachineRestockDiscountDans
+CrateVendingMachineRestockDonutFilled: VendingMachineRestockDonut
+
+# 2026-03-28
+# The great solutions YAML nuke
+FoodMeatSnail: MobSnail
+
+# 2026-04-25
+CratePartsT3: null
+CratePartsT3T4: null
+CratePartsT4: null
+
+#2027-07-17
+WeaponRifleM90GrenadeLauncher: null
+
+# 2026-07-18
+SheetGlassLingering0: null
+SheetRGlassLingering0: null
+SheetRPGlassLingering0: null
+SheetSteelLingering0: null
+SheetPlasteelLingering0: null
+SheetPlasmaLingering0: null
+PartRodMetalLingering0: null
+FloorTileItemSteelLingering0: null
+FloorTileItemWhiteLingering0: null
+FloorTileItemDarkLingering0: null
+SoapBorg: Soap
+Ointment10Lingering: Ointment
+RegenerativeMeshLingering0: null
+Brutepack10Lingering: Brutepack
+MedicatedSutureLingering0: null
+Bloodpack10Lingering: Bloodpack
+Gauze10Lingering: Gauze
+BorgVial: ChemistryEmptyVial
+BorgBeaker: Beaker
+CableHVStackLingering10: CableHVStack10
+CableMVStackLingering10: CableMVStack10
+CableApcStackLingering10: CableApcStack10
+
+# 2026-07-19
+BoxHugNitrogen: BoxSurvivalHugNitrogen
+BoxMime: BoxSurvival
+BoxMimeNitrogen: BoxSurvivalNitrogen
+BoxMimeMoth: BoxSurvival
+
+# 2026-07-19
+CrateChemistryVials: null
+CrateSecurityHelmet: null
+CrateEmergencyInternals: CrateEmergencyEVA
+CrateEmergencyInternalsLarge: CrateEmergencyEVA
+CrateNitrogenInternals: CrateEmergencyEVA
+CrateServiceCleanerGrenades: CrateJanitorialCleanerGrenades
+CrateServiceColorfulLights: CrateJanitorialColorfulLights
+CrateServiceHolidayLights: CrateJanitorialHolidayLights
+CrateMousetrapBoxes: CrateJanitorialMousetraps
+CrateServiceReplacementLights: CrateJanitorialReplacementLights
+CrateServiceJanitorialSupplies: CrateJanitorialSupplies
+CrateMaterialTextiles: CrateMaterialCloth
+CrateFoodBarSupply: CrateServiceBarSupply
+CrateFoodCooking: CrateServiceCooking
+CrateFoodDinnerware: CrateServiceDinnerware
+CrateFoodGetMore: CrateServiceGetMore
+CrateEngineeringGyroscope: CrateSpaceGyroscope
+CrateEngineeringJetpack: CrateSpaceMiniJetpack
+CrateEngineeringMiniJetpack: CrateSpaceMiniJetpack
+CrateEngineeringShuttle: CrateSpaceShuttlePower
+CrateEngineeringThruster: CrateSpaceThruster

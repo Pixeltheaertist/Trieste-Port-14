@@ -5,11 +5,11 @@ using Robust.Shared.Timing;
 
 namespace Content.Client.DeadmanSwitch;
 
-public sealed class DeadmanSwitchSystem : SharedDeadmanSwitchSystem
+public sealed partial class DeadmanSwitchSystem : SharedDeadmanSwitchSystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     protected override void ToggleInHandFeedback(Entity<DeadmanSwitchComponent?> ent, EntityUid? user)
     {

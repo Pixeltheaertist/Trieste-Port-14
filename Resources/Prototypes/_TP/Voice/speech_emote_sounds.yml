@@ -1,5 +1,5 @@
 - type: emoteSounds
-  id: Jellid
+  id: TP14EmoteSoundsJellid
   sounds:
     Squish:
       collection: JellidSquishes

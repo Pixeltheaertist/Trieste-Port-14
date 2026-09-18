@@ -7,7 +7,7 @@
     amount: 1
     whitelist:
       tags:
-      - Drifter
+      - TP14TagDrifter
 
 - type: cargoBounty
   id: BountyMimic
@@ -18,4 +18,4 @@
     amount: 1
     whitelist:
       tags:
-      - Mimic
+      - TP14TagMimic

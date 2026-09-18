@@ -3,8 +3,7 @@
 - type: marking
   id: TP14MarkingsHumanChestHarpy
   bodyPart: UndergarmentTop
-  markingCategory: Chest
-  speciesRestriction: [ Human ]
+  groupWhitelist: [ Human ]
   coloring:
     default:
       type:
@@ -24,8 +23,7 @@
 - type: marking
   id: TP14MarkingsHumanChestBirdClawLeft
   bodyPart: LArm
-  markingCategory: Chest
-  speciesRestriction: [ Human ]
+  groupWhitelist: [ Human ]
   coloring:
     default:
       type:
@@ -38,8 +36,7 @@
 - type: marking
   id: TP14MarkingsHumanChestBirdClawRight
   bodyPart: RArm
-  markingCategory: Chest
-  speciesRestriction: [ Human ]
+  groupWhitelist: [ Human ]
   coloring:
     default:
       type:

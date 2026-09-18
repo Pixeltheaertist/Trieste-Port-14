@@ -2,4 +2,3 @@
   id: DefaultMapPool
   maps:
   - Trieste
-  #- Train <- return after station anchoring PR is finished and merged

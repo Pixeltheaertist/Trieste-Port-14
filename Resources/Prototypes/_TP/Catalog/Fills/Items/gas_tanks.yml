@@ -11,7 +11,7 @@
     size: Small
     sprite: _TP/Objects/Tanks/emergency_water.rsi
   - type: GasTank
-    outputPressure: 21.3
+    releasePressure: 21.3
     air:
       # 15 minutes
       volume: 2.5
@@ -37,7 +37,7 @@
   - type: Item
     sprite: _TP/Objects/Tanks/water.rsi
   - type: GasTank
-    outputPressure: 21.3
+    releasePressure: 21.3
     air:
       # 31 minutes
       volume: 5

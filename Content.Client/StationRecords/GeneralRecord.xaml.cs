@@ -7,8 +7,6 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.StationRecords;
 
-// !! TRIESTE PORT MODIFIED !! //
-
 [GenerateTypedNameReferences]
 public sealed partial class GeneralRecord : Control
 {
@@ -19,7 +17,7 @@ public sealed partial class GeneralRecord : Control
         RecordName.Text = record.Name;
         Age.Text = Loc.GetString("general-station-record-console-record-age", ("age", record.Age.ToString()));
         Title.Text = Loc.GetString("general-station-record-console-record-title",
-            ("job", Loc.GetString(record.JobTitle)));
+            ("job", record.JobTitle));
 
         // TRIESTE - START //
         // Hack for now until I can look into the subspecies storing.
