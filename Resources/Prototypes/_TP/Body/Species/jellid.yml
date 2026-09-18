@@ -3,6 +3,12 @@
   parent: Undergarments
   id: TP14MarkingsGroupJellid
   limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 0
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 0
+      required: false
     enum.HumanoidVisualLayers.HeadTop:
       limit: 1
       onlyGroupWhitelisted: true

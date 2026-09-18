@@ -104,7 +104,6 @@
     default:
       type:
         !type:EyeColoring
-        negative: true
   sprites:
   - sprite: _TP/Mobs/Customization/Markings/Jellid/core.rsi
     state: crown_primary
