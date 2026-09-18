@@ -32,4 +32,4 @@
       shader: unshaded # }
       state: plasma
   - type: AtmosFixMarker # EXTREMELY high pressure. Only abyssal suits will prevent you from being popped like a balloon.
-    mode: 9
+    mode: 10
