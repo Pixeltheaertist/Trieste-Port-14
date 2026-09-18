@@ -11,7 +11,9 @@
   lastNames: TP14LocalizedDatasetJellidNames
   sexes:
   - Unsexed
-  defaultSoundsBySex:
-  - TP14EmoteSoundsJellid
+  defaultSoundsBySex: # Turns out this is PER-SEX, even if the species only lists one. AKA M/F/U
+    - TP14EmoteSoundsJellid
+    - TP14EmoteSoundsJellid
+    - TP14EmoteSoundsJellid
   voices:
   - TP14EmoteSoundsJellid
