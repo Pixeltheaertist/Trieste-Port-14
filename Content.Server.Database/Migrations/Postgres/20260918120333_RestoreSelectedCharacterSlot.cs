@@ -11,6 +11,9 @@ namespace Content.Server.Database.Migrations.Postgres
         {
             migrationBuilder.Sql(
                 "ALTER TABLE preference ADD COLUMN IF NOT EXISTS selected_character_slot integer NOT NULL DEFAULT 0;");
+
+            migrationBuilder.Sql(
+                "ALTER TABLE preference ADD COLUMN IF NOT EXISTS selected_character_slot integer NOT NULL DEFAULT 0;");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
