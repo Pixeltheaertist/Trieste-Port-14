@@ -10,6 +10,9 @@ namespace Content.Server.Database.Migrations.Sqlite
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            // SQLite has no IF NOT EXISTS for ADD COLUMN - left as a normal EF operation.
+            // Not a production risk: this only runs against dev's local .sqlite file,
+            // which gets recreated fresh rather than accumulating stray tables.
             migrationBuilder.AddColumn<string>(
                 name: "custom_species_name",
                 table: "profile",
@@ -17,38 +20,26 @@ namespace Content.Server.Database.Migrations.Sqlite
                 nullable: false,
                 defaultValue: "");
 
-            migrationBuilder.CreateTable(
-                name: "star_light_profile",
-                columns: table => new
-                {
-                    star_light_profile_id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    profile_id = table.Column<int>(type: "INTEGER", nullable: false),
-                    custom_species_name = table.Column<string>(type: "TEXT", maxLength: 32, nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_star_light_profile", x => x.star_light_profile_id);
-                    table.ForeignKey(
-                        name: "FK_star_light_profile_profile_profile_id",
-                        column: x => x.profile_id,
-                        principalTable: "profile",
-                        principalColumn: "profile_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
+            migrationBuilder.Sql(@"
+                CREATE TABLE IF NOT EXISTS star_light_profile (
+                    star_light_profile_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    profile_id INTEGER NOT NULL,
+                    custom_species_name TEXT,
+                    CONSTRAINT ""FK_star_light_profile_profile_profile_id""
+                        FOREIGN KEY (profile_id)
+                        REFERENCES profile (profile_id)
+                        ON DELETE CASCADE
+                );
+            ");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_star_light_profile_profile_id",
-                table: "star_light_profile",
-                column: "profile_id",
-                unique: true);
+            migrationBuilder.Sql(
+                "CREATE UNIQUE INDEX IF NOT EXISTS \"IX_star_light_profile_profile_id\" ON star_light_profile(profile_id);");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "star_light_profile");
+            migrationBuilder.Sql("DROP TABLE IF EXISTS star_light_profile;");
 
             migrationBuilder.DropColumn(
                 name: "custom_species_name",
