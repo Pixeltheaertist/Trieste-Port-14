@@ -15,7 +15,7 @@
         true
   - type: NpcFactionMember
     factions:
-    - AllHostile
+    - TP14FactionSeaHostile
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -295,7 +295,7 @@
         true
   - type: NpcFactionMember
     factions:
-    - AllHostile
+    - TP14FactionSeaHostile
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -385,7 +385,7 @@
         true
   - type: NpcFactionMember
     factions:
-    - AllHostile
+    - TP14FactionSeaHostile
   - type: Physics
   - type: Fixtures
     fixtures:

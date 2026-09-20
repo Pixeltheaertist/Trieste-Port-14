@@ -25,6 +25,7 @@ public sealed partial class HumanoidProfileSystem : EntitySystem
 
         ent.Comp.Gender = profile.Gender;
         ent.Comp.Age = profile.Age;
+        ent.Comp.CustomSpeciesName = profile.CustomSpeciesName;
         ent.Comp.Species = profile.Species;
         ent.Comp.Voice = profile.Voice;
         ent.Comp.Sex = profile.Sex;
@@ -41,8 +42,13 @@ public sealed partial class HumanoidProfileSystem : EntitySystem
 
     private void OnExamined(Entity<HumanoidProfileComponent> ent, ref ExaminedEvent args)
     {
+        // STARLIGHT/TRIESTE
+        var customSpecies = ent.Comp.CustomSpeciesName != string.Empty
+            ? ent.Comp.CustomSpeciesName.ToLower()
+            : GetSpeciesRepresentation(ent.Comp.Species).ToLower();
+
         var identity = Identity.Entity(ent, EntityManager);
-        var species = GetSpeciesRepresentation(ent.Comp.Species).ToLower();
+        var species = customSpecies; // STARLIGHT/TRIESTE
         var age = GetAgeRepresentation(ent.Comp.Species, ent.Comp.Age);
 
         args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", species)));

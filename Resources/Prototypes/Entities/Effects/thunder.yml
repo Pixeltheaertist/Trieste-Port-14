@@ -61,7 +61,7 @@
     disableDuration: 3
   - type: Explosive
     explosionType: Default
-    maxIntensity: 7
+    maxIntensity: 8
     intensitySlope: 3
-    totalIntensity: 30 # about a ~4 tile radius
+    totalIntensity: 10 # about a ~4 tile radius
     canCreateVacuum: false
