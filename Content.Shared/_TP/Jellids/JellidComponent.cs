@@ -17,12 +17,6 @@ public sealed partial class JellidComponent : Component
     public float DrainPercent = 0.05F;
 
     /// <summary>
-    ///     The next time the Jellid power drain will be called.
-    /// </summary>
-    [DataField]
-    public TimeSpan NextPowerDrain = TimeSpan.Zero;
-
-    /// <summary>
     ///     The normal Jellid charge alert.
     /// </summary>
     [DataField]

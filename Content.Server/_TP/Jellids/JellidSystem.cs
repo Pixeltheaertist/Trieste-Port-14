@@ -13,7 +13,6 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Medical;
 using Content.Shared.Popups;
-using Content.Shared.Power;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Smoking;
@@ -50,46 +49,10 @@ public sealed partial class JellidSystem : EntitySystem
         // Proper charging.
         SubscribeLocalEvent<BatteryComponent, UseInHandEvent>(OnUseBatteryInHand);
         SubscribeLocalEvent<JellidComponent, JellidBatteryDoAfterEvent>(OnJellidDoAfter);
-        SubscribeLocalEvent<JellidComponent, ChargeChangedEvent>(OnChargeChanged);
 
         // Electrocution events.
         SubscribeLocalEvent<JellidComponent, ElectrocutedEvent>(OnElectrocution);
         SubscribeLocalEvent<JellidComponent, TargetBeforeDefibrillatorZapsEvent>(OnBeforeZapped);
-    }
-
-    private void OnChargeChanged(Entity<JellidComponent> ent, ref ChargeChangedEvent args)
-    {
-        if (!TryComp<BatteryComponent>(ent.Owner, out var batteryComp))
-            return;
-
-        var currentCharge = _battery.GetCharge((ent.Owner, batteryComp));
-        var chargeLevel = (short)MathF.Round(_battery.GetChargeLevel((ent.Owner, batteryComp)) * 10f);
-
-        // Battery alert stuff.
-        if (currentCharge > batteryComp.MaxCharge * 0.1)
-        {
-            _alerts.ClearAlert(ent.Owner, ent.Comp.NoBatteryAlert);
-            _alerts.ShowAlert(ent.Owner, ent.Comp.BatteryAlert, chargeLevel);
-        }
-        else
-        {
-            _alerts.ClearAlert(ent.Owner, ent.Comp.BatteryAlert);
-            _alerts.ShowAlert(ent.Owner, ent.Comp.NoBatteryAlert);
-        }
-
-        // Damage jellids below the damage start value.
-        if (currentCharge <= batteryComp.MaxCharge * 0.1)
-        {
-            var isCharging = currentCharge > batteryComp.LastCharge;
-            if (isCharging)
-                return;
-
-            var damage = new DamageSpecifier
-            {
-                DamageDict = { ["Slash"] = 2f }
-            };
-            _damageable.TryChangeDamage(ent.Owner, damage, origin: ent.Owner);
-        }
     }
 
     /// <summary>
@@ -193,31 +156,78 @@ public sealed partial class JellidSystem : EntitySystem
     // The jellid-proof gloves tag proto ID.
     private static readonly ProtoId<TagPrototype> FireproofTag = "PreventsFire";
 
+    private float _alertAccumulator;
+    private float _updateAccumulator;
+    private const float UpdateInterval = 1f;
+    private const float AlertInterval = 3f;
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<JellidComponent>();
-        while (query.MoveNext(out var uid, out var comp))
+        var query = EntityQueryEnumerator<JellidComponent, BatteryComponent>();
+        while (query.MoveNext(out var jellidUid, out var jellidComp, out var batteryComp))
         {
-            // Timing check so this doesn't run every tick.
-            if (_timing.CurTime < comp.NextPowerDrain)
-                continue;
+            _alertAccumulator += frameTime;
+            _updateAccumulator += frameTime;
 
-            comp.NextPowerDrain = _timing.CurTime + TimeSpan.FromSeconds(1f);
-
-            // Held item check!
-            // If the user DOES NOT have gloves on and a battery is held, it will slowly drain into the Jellid.
-            // Also check if the user has BURNABLE ITEMS in their hands. If so, burn it to ash.
-            var hasFireproofGloves = _inventory.TryGetSlotEntity(uid, "gloves", out var glovesUid)
-                                     && _tag.HasTag(glovesUid.Value, FireproofTag);
-
-            if (!hasFireproofGloves)
+            if (_updateAccumulator > UpdateInterval)
             {
-                UpdateHeldBatteries(uid, comp);
-                UpdateHeldBurnables(uid);
-                UpdateHeldThermals(uid, comp, frameTime);
+                _updateAccumulator = 0;
+
+                // Held item check!
+                // If the user DOES NOT have gloves on and a battery is held, it will slowly drain into the Jellid.
+                // Also check if the user has BURNABLE ITEMS in their hands. If so, burn it to ash.
+                var hasFireproofGloves = _inventory.TryGetSlotEntity(jellidUid, "gloves", out var glovesUid)
+                                         && _tag.HasTag(glovesUid.Value, FireproofTag);
+
+                if (!hasFireproofGloves)
+                {
+                    UpdateHeldBatteries(jellidUid, jellidComp);
+                    UpdateHeldBurnables(jellidUid);
+                    UpdateHeldThermals(jellidUid, jellidComp, frameTime);
+                }
             }
+
+            if (_alertAccumulator > AlertInterval)
+            {
+                _alertAccumulator = 0f;
+
+                // This is hacky as hell.
+                _battery.RefreshChargeRate(jellidUid);
+                UpdateJellidAlert((jellidUid, jellidComp), batteryComp);
+            }
+        }
+    }
+
+    private void UpdateJellidAlert(Entity<JellidComponent> ent, BatteryComponent batteryComp)
+    {
+        var currentCharge = _battery.GetCharge((ent.Owner, batteryComp));
+        var chargeLevel = (short)MathF.Round(_battery.GetChargeLevel((ent.Owner, batteryComp)) * 10f);
+
+        if (currentCharge > batteryComp.MaxCharge * 0.1)
+        {
+            _alerts.ClearAlert(ent.Owner, ent.Comp.NoBatteryAlert);
+            _alerts.ShowAlert(ent.Owner, ent.Comp.BatteryAlert, chargeLevel);
+        }
+        else
+        {
+            _alerts.ClearAlert(ent.Owner, ent.Comp.BatteryAlert);
+            _alerts.ShowAlert(ent.Owner, ent.Comp.NoBatteryAlert);
+        }
+
+        // Damage jellids below the damage start value.
+        if (currentCharge <= batteryComp.MaxCharge * 0.1)
+        {
+            var isCharging = currentCharge > batteryComp.LastCharge;
+            if (isCharging)
+                return;
+
+            var damage = new DamageSpecifier
+            {
+                DamageDict = { ["Heat"] = 2f }
+            };
+            _damageable.TryChangeDamage(ent.Owner, damage, origin: ent.Owner);
         }
     }
 

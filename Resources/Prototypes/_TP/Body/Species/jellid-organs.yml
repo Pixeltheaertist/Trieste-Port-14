@@ -82,6 +82,11 @@
   parent: [ OrganBaseBrain, TP14OrganJellidInternal, TP14OrganJellidMetabolizer ]
   id: TP14OrganJellidCore
   name: jellid core
+  components:
+  - type: Metabolizer
+    maxReagents: 6
+    metabolizerTypes: [ Jellid ]
+    stages: [ Digestion, Bloodstream, Metabolites ]
 
 - type: entity
   parent: [ OrganBaseLungs, TP14OrganJellidInternal, TP14OrganJellidMetabolizer ]
