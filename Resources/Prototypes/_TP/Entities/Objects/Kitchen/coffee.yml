@@ -51,7 +51,7 @@
   description: A bag of coffee beans.
   components:
   - type: Extractable
-    grindableSolutionName: GroundCoffee
+    grindableSolutionName: solution
   - type: Item
     size: Small
   - type: Solution

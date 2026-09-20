@@ -58,7 +58,8 @@
     containers:
       Artifact: !type:ContainerSlot
   - type: Anchorable
-    delay: 9999
+    flags:
+    - Anchorable
   - type: Nuke
     explosionType: Cryo
     maxIntensity: 100

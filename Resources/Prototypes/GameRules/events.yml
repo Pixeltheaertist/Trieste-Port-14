@@ -16,7 +16,6 @@
     - id: IonStorm # its calm like 90% of the time smh
     - id: KudzuGrowth
     - id: MassHallucinations
-    - id: TP14FlashStorm # TRIESTE: Added.
     - id: MouseMigration
     - id: PowerGridCheck
     - id: RandomSentience
@@ -47,6 +46,7 @@
     - id: RevenantSpawn # TRIESTE: Added.
     - id: SleeperAgents
     - id: ZombieOutbreak
+    - id: TP14FlashStorm # TRIESTE: Moved here since there's no "moderateEvents" NORMAL table.
     #- id: LoneOpsSpawn # TRIESTE: fuck you loneops
     - id: DerelictGenericCyborgSpawn # TRIESTE: Added.
     - id: WizardSpawn

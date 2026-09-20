@@ -8,7 +8,7 @@
   skinColoration: Hues
   maleFirstNames: TP14LocalizedDatasetJellidNames
   femaleFirstNames: TP14LocalizedDatasetJellidNames
-  lastNames: TP14LocalizedDatasetJellidNames
+  naming: First
   sexes:
   - Unsexed
   defaultSoundsBySex: # Turns out this is PER-SEX, even if the species only lists one. AKA M/F/U

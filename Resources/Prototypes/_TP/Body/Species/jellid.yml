@@ -104,7 +104,7 @@
     bloodReferenceSolution:
       reagents:
       - ReagentId: SeaWater
-        Quantity: 50
+        Quantity: 600
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:
@@ -118,3 +118,5 @@
     startingCharge: 1800 # 20 minutes until death from the AutoRecharge being 1.5x
   - type: BatterySelfRecharger
     autoRechargeRate: -1.5
+  - type: Damageable
+    damageModifierSet: Slime
