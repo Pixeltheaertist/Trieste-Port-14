@@ -34,4 +34,7 @@ public sealed partial class HumanoidProfileComponent : Component
 
     [DataField, AutoNetworkedField]
     public ProtoId<SpeciesPrototype> Species = HumanoidCharacterProfile.DefaultSpecies;
+
+    [DataField]
+    public string CustomSpeciesName { get; set; } = string.Empty;
 }

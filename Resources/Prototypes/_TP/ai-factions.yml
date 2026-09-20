@@ -10,3 +10,18 @@
   - AllHostile
   - Wizard
   - Xenoborg
+
+- type: npcFaction
+  id: TP14FactionSeaHostile
+  hostile:
+  - NanoTrasen
+  - Dragon
+  - Mouse
+  - PetsNT
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - NanoTrasenTraitor # Trieste: Added.
+  - Wizard
+  - Xenoborg

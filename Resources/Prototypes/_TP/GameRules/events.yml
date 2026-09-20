@@ -50,6 +50,7 @@
     endAnnouncement: station-event-cloud-storm-end-announcement
     weight: 3
     duration: 200
+    minimumPlayers: 10 # This should be enough? This storm event is devastating, so.
   - type: GameRule
     delay:
       min: 10

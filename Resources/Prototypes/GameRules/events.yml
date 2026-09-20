@@ -11,7 +11,7 @@
     - id: CockroachMigration
     - id: GasLeak
     - id: GreytideVirus
-    - id: TP14CloudStormEvent # TRIESTE: Added.
+    - id: TP14CloudStormEvent # TRIESTE - Temp removed
     - id: TP14RainClear # TRIESTE: Added.
     - id: IonStorm # its calm like 90% of the time smh
     - id: KudzuGrowth
@@ -33,8 +33,8 @@
     - id: ClosetSkeleton
     - id: KingRatMigration
     - id: RevenantSpawn
-    - !type:NestedSelector
-      tableId: DerelictBorgEventTable
+  # - !type:NestedSelector # TRIESTE
+  #   tableId: DerelictBorgEventTable
 
 - type: entityTable
   id: ModerateAntagEventsTable
@@ -50,8 +50,8 @@
     #- id: LoneOpsSpawn # TRIESTE: fuck you loneops
     - id: DerelictGenericCyborgSpawn # TRIESTE: Added.
     - id: WizardSpawn
-    - !type:NestedSelector
-      tableId: DerelictBorgEventTable
+  # - !type:NestedSelector # TRIESTE: They spawn in the air currently.
+  #   tableId: DerelictBorgEventTable
 
 - type: entityTable
   id: DerelictBorgEventTable #For Derelict Borg spawns

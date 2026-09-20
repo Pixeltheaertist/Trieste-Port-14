@@ -3,6 +3,7 @@ using Content.Server.Audio;
 using Content.Server.Ghost;
 using Content.Server.StationEvents.Events;
 using Content.Shared._EmberFall.Bell.Components;
+using Content.Shared._TP.Weather;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
@@ -11,6 +12,7 @@ using Content.Shared.Weather;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -47,31 +49,39 @@ public sealed partial class FlashStormRule : StationEventSystem<Components.Flash
         _adminLogger.Add(LogType.EventStarted, LogImpact.Extreme, $"{ToPrettyString(uid)} Flash Storm started.");
 
         _audio.ResolveSound(comp.StormMusic);
-        _entManager.System<ServerGlobalSoundSystem>().PlayAdminGlobal( Filter.Empty().AddAllPlayers(_playerManager), "/Audio/StationEvents/the_approaching_storm.ogg", AudioParams.Default.WithVolume(-2f), false);
+        _entManager.System<ServerGlobalSoundSystem>()
+            .PlayAdminGlobal(Filter.Empty()
+                .AddAllPlayers(_playerManager),
+                "/Audio/StationEvents/the_approaching_storm.ogg",
+                AudioParams.Default.WithVolume(-2f),
+                false);
 
-        foreach (var weather in EntityQuery<WeatherStatusEffectComponent>())
+        if (!_protoMan.TryIndex(comp.StormWeather, out var stormWeather))
+            return;
+
+        if (!stormWeather.HasComp<WeatherStatusEffectComponent>(_factory))
         {
-            if (!_protoMan.TryIndex(comp.StormWeather, out var stormWeather))
-                return;
+            Log.Error("Weather prototype not found!");
+            return;
+        }
 
-            var target = weather.Owner;
-            if (!stormWeather.HasComp<WeatherStatusEffectComponent>(_factory))
-            {
-                Log.Error("Weather prototype not found!");
-                return;
-            }
+        var mapIds = new HashSet<MapId>();
+        var query = EntityQueryEnumerator<WeatherStatusEffectComponent>();
+        while (query.MoveNext(out var target, out _))
+        {
+            mapIds.Add(Transform(target).MapID);
+        }
 
-            var mapId = Transform(target).MapID;
-
-
+        foreach (var mapId in mapIds)
+        {
             _weather.TrySetWeather(mapId, stormWeather, out _, TimeSpan.FromMinutes(99999));
             Log.Error("Weather set");
         }
 
-        foreach (var thunder in EntityQuery<Shared._TP.Weather.LightningMarkerComponent>())
+        foreach (var thunder in EntityQuery<LightningMarkerComponent>())
         {
-            thunder.ThunderRange = 50f; // Decrease thunder range
-            thunder.ThunderFrequency = 0.5f; // Increase thunder frequency
+            thunder.ThunderRange = 50f;
+            thunder.ThunderFrequency = 0.5f;
             thunder.StormMode = true;
         }
 
@@ -85,20 +95,17 @@ public sealed partial class FlashStormRule : StationEventSystem<Components.Flash
         var lights = GetEntityQuery<PoweredLightComponent>();
         comp.Flickering = true;
 
-        foreach (var thunder in EntityQuery<Shared._TP.Weather.LightningMarkerComponent>())
+        var query = EntityQueryEnumerator<LightningMarkerComponent>();
+        while (query.MoveNext(out var thunderSite, out _))
         {
-            var thunderSite = thunder.Owner;
-
             foreach (var light in _lookup.GetEntitiesInRange(thunderSite, 200f, LookupFlags.StaticSundries))
             {
                 if (!lights.HasComponent(light)) // Flicker lights
                     continue;
-                Log.Error("flickering");
 
                 _ghost.DoGhostBooEvent(light);
             }
         }
-
     }
 
     protected override void Ended(EntityUid uid, Components.FlashStormRuleComponent comp, GameRuleComponent gameRule, GameRuleEndedEvent args)
@@ -108,50 +115,37 @@ public sealed partial class FlashStormRule : StationEventSystem<Components.Flash
         Log.Error("flash storm ended");
         _adminLogger.Add(LogType.EventStarted, LogImpact.Extreme, $"{ToPrettyString(uid)} Flash Storm ended.");
 
-        foreach (var bell in EntityQuery<BellComponent>())
-        {
-            if (_entManager.HasComponent<BellComponent>(bell.Owner))
-            {
-                continue;
-            }
-
-            // bell.CanMove = true;
-        }
-
         foreach (var thunder in EntityQuery<Shared._TP.Weather.LightningMarkerComponent>())
         {
-            thunder.ThunderRange = 70f; // Normalize lightning range
-            thunder.ThunderFrequency = 8f; // Normalize lightning frequency
+            thunder.ThunderRange = 70f;
+            thunder.ThunderFrequency = 8f;
             thunder.StormMode = false;
         }
 
         if (!TryGetRandomStation(out var station))
+            return;
+
+        if (station.HasValue)
+            comp.TrueStation = station.Value;
+
+        if (!_protoMan.TryIndex(comp.NormalWeather, out var normalWeather))
+            return;
+
+        if (!normalWeather.HasComp<WeatherStatusEffectComponent>(_factory))
         {
+            Log.Error("Weather prototype not found!");
             return;
         }
 
-        if (station.HasValue)
+        var mapIds = new HashSet<MapId>();
+        var query = EntityQueryEnumerator<WeatherStatusEffectComponent>();
+        while (query.MoveNext(out var target, out _))
         {
-            comp.TrueStation = station.Value;
+            mapIds.Add(Transform(target).MapID);
         }
 
-        foreach (var weather in EntityQuery<WeatherStatusEffectComponent>())
+        foreach (var mapId in mapIds)
         {
-            var target = weather.Owner;
-
-            if (!_protoMan.TryIndex(comp.NormalWeather, out var normalWeather))
-                return;
-
-
-
-            if (!normalWeather.HasComp<WeatherStatusEffectComponent>(_factory))
-            {
-                Log.Error("Weather prototype not found!");
-                return;
-            }
-
-            var mapId = Transform(target).MapID;
-
             _weather.TrySetWeather(mapId, normalWeather, out _, TimeSpan.FromMinutes(99999));
             Log.Error("Weather set");
         }

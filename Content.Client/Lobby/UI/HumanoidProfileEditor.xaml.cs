@@ -394,6 +394,7 @@ namespace Content.Client.Lobby.UI
             UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
+            UpdateCustomSpecies();
 
             RefreshAntags();
             RefreshJobs();
