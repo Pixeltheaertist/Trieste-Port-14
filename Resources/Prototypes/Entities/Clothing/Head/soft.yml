@@ -85,10 +85,10 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadHeadHatBaseFlippable
+  parent: [ ClothingHeadHeadHatBaseFlippable, BaseCommandContraband ] # TP14 - Added Command Contra
   id: ClothingHeadHatQMsoft
-  name: quartermaster's cap
-  description: A baseball cap colored to match the Quartermaster's uniform.
+  name: harbormaster's cap
+  description: A baseball hat painted in the Harbormaster's colors.
   components:
   - type: Sprite
     sprite: Clothing/Head/Soft/qmsoft.rsi
@@ -98,10 +98,10 @@
 - type: entity
   parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatQMsoft]
   id: ClothingHeadHatQMsoftFlipped
-  name: quartermaster's cap
+  name: harbormaster's cap
 
 - type: entity
-  parent: ClothingHeadHeadHatBaseFlippable
+  parent: [ ClothingHeadHeadHatBaseFlippable, BaseCommandContraband ]
   id: ClothingHeadHatCommandSoft
   name: command cap
   description: A baseball cap in command's distinctive shade of blue.
@@ -120,7 +120,7 @@
   parent: ClothingHeadHeadHatBaseFlippable
   id: ClothingHeadHatCorpsoft
   name: corporate cap
-  description: A baseball cap in corporation colors.
+  description: A baseball bat in corporation colors. An affront to the entire platform.
   components:
   - type: Sprite
     sprite: Clothing/Head/Soft/corpsoft.rsi

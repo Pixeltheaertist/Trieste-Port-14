@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server.CrewManifest;
 using Content.Server.Station.Systems;
 using Content.Shared.CartridgeLoader;
@@ -57,18 +58,12 @@ public sealed partial class CrewManifestCartridgeSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
-        var owningStation = _stationSystem.GetOwningStation(uid);
+        // TRIESTE:
+        // A fix for the Sweetwater PDA issue.
+        // Just get the first station available, which is Trieste. (for now!)
+        var owningStation = _stationSystem.GetOwningStation(uid) ?? _stationSystem.GetStations().FirstOrDefault();
 
-        if (owningStation is null)
-        {
-            // Display "loading failed" message
-            var failureMessage = Loc.GetString("crew-manifest-cartridge-loading-failed");
-            var failureState = new CrewManifestUiState(failureMessage, new CrewManifestEntries());
-            _cartridgeLoader.UpdateCartridgeUiState(loaderUid, failureState);
-            return;
-        }
-
-        var (stationName, entries) = _crewManifest.GetCrewManifest(owningStation.Value);
+        var (stationName, entries) = _crewManifest.GetCrewManifest(owningStation);
 
         var state = new CrewManifestUiState(stationName, entries);
         _cartridgeLoader.UpdateCartridgeUiState(loaderUid, state);

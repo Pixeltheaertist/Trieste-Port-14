@@ -1,0 +1,21 @@
+- type: entityTable
+  id: TP14FillGunSafeHarpoon
+  table: !type:AllSelector
+    children: 
+    - id: TP14HarpoonGun
+      amount: 4
+    - id: TP14Harpoon
+      amount: 12
+
+- type: entity
+  parent: GunSafe
+  name: harpoon safe
+  id: TP14GunSafeHarpoon
+  suffix: Expeditionary, Trieste
+  components:
+  - type: AccessReader
+    access: [["Salvage"]]
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: TP14FillGunSafeHarpoon

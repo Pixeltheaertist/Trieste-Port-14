@@ -41,7 +41,7 @@
   container:
     entity: WrappedParcel
     containerId: contents
-  cost: 2500
+  cost: 2550 # TRIESTE: '2500'
   category: cargoproduct-category-name-service
   group: market
 

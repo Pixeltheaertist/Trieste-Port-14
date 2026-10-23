@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.ComponentModel.DataAnnotations;
@@ -52,6 +52,9 @@ namespace Content.Server.Database
         public DbSet<CustomVoteLog> CustomVoteLog { get; set; } = null!;
         public DbSet<CustomVoteLogOption> CustomVoteLogOption { get; set; } = null!;
 
+        // STARLIGHT
+        public DbSet<StarLightModel.StarLightProfile> StarLightProfile { get; set; } = null!;
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Preference>()
@@ -61,6 +64,22 @@ namespace Content.Server.Database
             modelBuilder.Entity<Profile>()
                 .HasIndex(p => new {p.Slot, PrefsId = p.PreferenceId})
                 .IsUnique();
+
+            // Starlight - Start
+            modelBuilder.Entity<StarLightModel.StarLightProfile>(entity =>
+            {
+                entity.HasOne(e => e.Profile)
+                    .WithOne(p => p.StarLightProfile)
+                    .HasForeignKey<StarLightModel.StarLightProfile>(e => e.ProfileId)
+                    .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasIndex(e => e.ProfileId)
+                    .IsUnique();
+
+                entity.Property(e => e.CustomSpeciesName)
+                    .HasMaxLength(32);
+            });
+            // Starlight - End
 
             modelBuilder.Entity<Antag>()
                 .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.AntagName})
@@ -348,12 +367,17 @@ namespace Content.Server.Database
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
 
+        // Starlight
+        public string CustomSpeciesName { get; set; } = null!;
+
         public List<ProfileRoleLoadout> Loadouts { get; } = new();
 
         [Column("pref_unavailable")] public DbPreferenceUnavailableMode PreferenceUnavailable { get; set; }
 
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;
+
+        public StarLightModel.StarLightProfile? StarLightProfile { get; set; } // Starlight
     }
 
     public class Job

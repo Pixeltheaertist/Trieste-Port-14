@@ -1,0 +1,29 @@
+# NT Traitor
+- type: siliconLaw
+  id: NTTraitor1
+  order: 1
+  lawString: law-nanotraitor-1
+
+- type: siliconLaw
+  id: NTTraitor2
+  order: 2
+  lawString: law-nanotraitor-2
+
+- type: siliconLaw
+  id: NTTraitor3
+  order: 3
+  lawString: law-nanotraitor-3
+
+- type: siliconLaw
+  id: NTTraitor4
+  order: 4
+  lawString: law-nanotraitor-4
+
+- type: siliconLawset
+  id: NTTraitor
+  laws:
+  - NTDefault1
+  - NTDefault2
+  - NTDefault3
+  - NTDefault4
+  obeysTo: laws-owner-nanotraitor

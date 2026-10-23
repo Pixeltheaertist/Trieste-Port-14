@@ -181,7 +181,7 @@
 - type: entity
   parent: BasePDA
   id: PassengerPDA
-  name: passenger PDA
+  name: civilian PDA # TRIESTE: 'passenger'
   description: Why isn't it gray?
   components:
   - type: Pda
@@ -472,7 +472,7 @@
     - DoorBumpOpener
 
 - type: entity
-  name: quartermaster PDA
+  name: harbormaster PDA # TRIESTE: 'Quartermaster'
   parent: BasePDA
   id: QuartermasterPDA
   description: PDA for the guy that orders the guns.
@@ -520,7 +520,7 @@
 - type: entity
   parent: BasePDA
   id: SalvagePDA
-  name: salvage PDA
+  name: expeditionary PDA # TRIESTE: 'salvage'
   description: Smells like ash.
   components:
   - type: Pda
@@ -722,7 +722,7 @@
 - type: entity
   parent: BasePDA
   id: EngineerPDA
-  name: engineer PDA
+  name: platform engineer PDA # TRIESTE: 'engineer'
   description: Rugged and well-worn.
   components:
   - type: Pda
@@ -871,7 +871,7 @@
 - type: entity
   parent: BaseSecurityPDA
   id: HoSPDA
-  name: head of security PDA
+  name: marshal PDA # TRIESTE: 'head of security'
   description: Whosoever bears this PDA is the law.
   components:
   - type: Pda

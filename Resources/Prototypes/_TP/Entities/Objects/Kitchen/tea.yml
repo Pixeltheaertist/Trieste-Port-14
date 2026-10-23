@@ -1,0 +1,24 @@
+- type: entity
+  parent: [ BaseItem, SolutionVeryTiny ]
+  id: TP14TeaBag
+  suffix: Trieste
+  name: tea bag
+  description: A cloth bag used to hold tea leaves and/or powder.
+  components:
+  - type: DrainableSolution
+    solution: food
+  - type: ExaminableSolution
+    solution: food
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: TeaPowder
+        Quantity: 15
+  - type: SolutionTransfer
+    canChangeTransferAmount: false
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/tea_plant.rsi
+    state: seed
+  - type: Tag
+    tags:
+    - TP14TagTeaBag

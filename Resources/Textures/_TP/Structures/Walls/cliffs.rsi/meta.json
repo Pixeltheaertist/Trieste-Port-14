@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from https://github.com/tgstation/tgstation/tree/f116442e34fe3e941a1df474bb57bb410dd177a3/icons/turf and modified. Modified further by Cookie for Trieste Port 14",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "basalt_side",
+            "directions": 4
+        },
+        {
+            "name": "basalt_corner",
+            "directions": 4
+        },
+        {
+            "name": "basalt_corner_small",
+            "directions": 4
+        },
+        {
+            "name": "sand_side",
+            "directions": 4
+        },
+        {
+            "name": "sand_corner",
+            "directions": 4
+        },
+        {
+            "name": "sand_corner_small",
+            "directions": 4
+        }
+    ]
+}

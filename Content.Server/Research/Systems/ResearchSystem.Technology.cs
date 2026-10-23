@@ -74,7 +74,7 @@ public sealed partial class ResearchSystem
         if (!Resolve(client, ref component, ref clientDatabase, false))
             return false;
 
-        if (!TryGetClientServer(client, out var serverEnt, out _, component))
+        if (!TryGetClientServer(client, out var serverEnt, out var serverDatabase, component))
             return false;
 
         if (!CanServerUnlockTechnology(client, prototype, clientDatabase, component))
@@ -84,6 +84,11 @@ public sealed partial class ResearchSystem
         TrySetMainDiscipline(prototype, serverEnt.Value);
         ModifyServerPoints(serverEnt.Value, -prototype.Cost);
         UpdateTechnologyCards(serverEnt.Value);
+
+        // !! TRIESTE SPECIFIC !!
+        // Hopefully, marking these as dirty will fix the client not updating properly.
+        Dirty(serverEnt.Value, serverDatabase);
+        Dirty(client, clientDatabase);
 
         _adminLog.Add(LogType.Action, LogImpact.Medium,
             $"{ToPrettyString(user):player} unlocked {prototype.ID} (discipline: {prototype.Discipline}, tier: {prototype.Tier}) at {ToPrettyString(client)}, for server {ToPrettyString(serverEnt.Value)}.");

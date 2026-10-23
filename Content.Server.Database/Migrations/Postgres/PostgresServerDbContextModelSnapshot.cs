@@ -1117,6 +1117,11 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("char_name");
 
+                    b.Property<string>("CustomSpeciesName")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("custom_species_name");
+
                     b.Property<string>("EyeColor")
                         .IsRequired()
                         .HasColumnType("text")
@@ -1401,6 +1406,33 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasDatabaseName("IX_server_ban_hit_connection_id");
 
                     b.ToTable("server_ban_hit", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.StarLightModel+StarLightProfile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("star_light_profile_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CustomSpeciesName")
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)")
+                        .HasColumnName("custom_species_name");
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("integer")
+                        .HasColumnName("profile_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_star_light_profile");
+
+                    b.HasIndex("ProfileId")
+                        .IsUnique();
+
+                    b.ToTable("star_light_profile", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.Trait", b =>
@@ -2071,6 +2103,18 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("Connection");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.StarLightModel+StarLightProfile", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithOne("StarLightProfile")
+                        .HasForeignKey("Content.Server.Database.StarLightModel+StarLightProfile", "ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_star_light_profile_profile_profile_id");
+
+                    b.Navigation("Profile");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Trait", b =>
                 {
                     b.HasOne("Content.Server.Database.Profile", "Profile")
@@ -2203,6 +2247,8 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("Jobs");
 
                     b.Navigation("Loadouts");
+
+                    b.Navigation("StarLightProfile");
 
                     b.Navigation("Traits");
                 });

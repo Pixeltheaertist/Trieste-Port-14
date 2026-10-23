@@ -439,7 +439,7 @@ public sealed partial class ClimbSystem : VirtualController
         StopClimb(uid, component);
     }
 
-    private void StopClimb(EntityUid uid, ClimbingComponent? climbing = null, FixturesComponent? fixtures = null)
+    public void StopClimb(EntityUid uid, ClimbingComponent? climbing = null, FixturesComponent? fixtures = null)
     {
         if (!Resolve(uid, ref climbing, ref fixtures, false))
             return;

@@ -1,0 +1,19 @@
+- type: species
+  id: TP14SpeciesJellid
+  name: species-name-jellid
+  roundStart: true
+  prototype: TP14MobJellidPerson
+  defaultSkinTone: "#b8b8b8"
+  dollPrototype: TP14AppearanceJellid
+  skinColoration: Hues
+  maleFirstNames: TP14LocalizedDatasetJellidNames
+  femaleFirstNames: TP14LocalizedDatasetJellidNames
+  naming: First
+  sexes:
+  - Unsexed
+  defaultSoundsBySex: # Turns out this is PER-SEX, even if the species only lists one. AKA M/F/U
+    - TP14EmoteSoundsJellid
+    - TP14EmoteSoundsJellid
+    - TP14EmoteSoundsJellid
+  voices:
+  - TP14EmoteSoundsJellid

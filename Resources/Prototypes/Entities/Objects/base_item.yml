@@ -46,6 +46,7 @@
   - type: DamageExaminable
   - type: Rotatable
     increment: 30
+  - type: FallSystem # TRIESTE: Added.
 
 - type: entity
   abstract: true

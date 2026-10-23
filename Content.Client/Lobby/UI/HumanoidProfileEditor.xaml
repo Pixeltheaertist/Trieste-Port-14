@@ -36,7 +36,6 @@
                                 <ui:RandomizeLockButton For="Sex" LabelText="{Loc 'humanoid-profile-editor-randomize-sex-button'}"/>
                                 <ui:RandomizeLockButton For="Skin" LabelText="{Loc 'humanoid-profile-editor-randomize-skin-button'}"/>
                                 <ui:RandomizeLockButton For="Eyes" LabelText="{Loc 'humanoid-profile-editor-randomize-eye-button'}"/>
-                                <ui:RandomizeLockButton For="Markings" LabelText="{Loc 'humanoid-profile-editor-randomize-markings-button'}"/>
                             </GridContainer>
                             <Button
                                 Name="RandomizeUnlockedButton"
@@ -75,6 +74,12 @@
                                                    VerticalAlignment="Center"
                                                    ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
                                     <OptionButton Name="SpeciesButton" HorizontalAlignment="Right" />
+                                </BoxContainer>
+                                <!-- Custom Species -->
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Text="{Loc 'humanoid-profile-editor-custom-species-label'}" />
+                                    <Control HorizontalExpand="True"/>
+                                    <LineEdit Name="CustomSpeciesName" MinSize="100 0" HorizontalAlignment="Right" />
                                 </BoxContainer>
                                 <!-- Age -->
                                 <BoxContainer HorizontalExpand="True">

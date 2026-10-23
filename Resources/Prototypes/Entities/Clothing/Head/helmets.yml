@@ -279,7 +279,7 @@
   parent: ClothingHeadHelmetBase
   id: ClothingHeadHelmetWizardHelm
   name: wizard helm
-  description: Strange-looking helmet that most certainly belongs to a real magic user.
+  description: You can feel the whimsy from a mile away.
   components:
   - type: Sprite
     sprite: Clothing/Head/Helmets/wizardhelm.rsi

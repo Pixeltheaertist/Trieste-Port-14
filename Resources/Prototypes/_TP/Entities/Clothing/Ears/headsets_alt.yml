@@ -1,0 +1,28 @@
+- type: entity
+  parent: ClothingHeadsetAltCentCom
+  id: TP14ClothingHeadsetAltCaskie
+  suffix: Trieste, Headset, NanoTrasen-Operative
+  name: operative headset
+  description: A modular earpiece assigned to Nanotrasen footsoldiers.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - TP14EncryptionKeyNanotrasen
+  - type: Contraband
+    severity: Nanotrasen
+
+- type: entity
+  parent: [ClothingHeadsetAlt, BaseSolGovContraband]
+  id: TP14ClothingHeadsetAltSolGov
+  name: solgov over-ear headset
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - TP14EncryptionKeySolGov
+      - EncryptionKeyStationMaster
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/engineering.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/engineering.rsi

@@ -1,0 +1,277 @@
+- type: reagent
+  id: CrudeOil
+  name: reagent-name-crude-oil
+  desc: reagent-desc-crude-oil
+  physicalDesc: reagent-physical-desc-sticky
+  color: "#1a1a1a"
+  flavor: bitter
+  slipData:
+    requiredSlipSpeed: 2 # Not as much as lube
+  boilingPoint: 600
+  meltingPoint: 100
+  pricePerUnit: 3
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:Vomit
+        conditions:
+        - !type:ReagentCondition
+          reagent: CrudeOil
+          min: 20
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 3
+            Cellular: 0.25
+
+- type: reagent
+  id: LessCrudeOil
+  name: reagent-name-less-crude-oil
+  desc: reagent-desc-less-crude-oil
+  physicalDesc: reagent-physical-desc-sticky
+  color: "#333333"
+  flavor: bitter
+  slipData:
+    requiredSlipSpeed: 2
+  pricePerUnit: 6
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:Vomit
+        conditions:
+        - !type:ReagentCondition
+          reagent: LessCrudeOil
+          min: 20
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 3
+
+- type: reagent
+  id: EvenLessCrudeOil
+  name: reagent-name-even-less-crude-oil
+  desc: reagent-desc-even-less-crude-oil
+  physicalDesc: reagent-physical-desc-sticky
+  color: "#333333"
+  flavor: bitter
+  slipData:
+    requiredSlipSpeed: 2
+  pricePerUnit: 10
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:Vomit
+        conditions:
+        - !type:ReagentCondition
+          reagent: EvenLessCrudeOil
+          min: 20
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 2
+
+- type: reagent
+  id: RefinedOil
+  name: reagent-name-refined-oil
+  desc: reagent-desc-refined-oil
+  physicalDesc: reagent-physical-desc-sticky
+  color: "#666666"
+  flavor: bitter
+  slipData:
+    requiredSlipSpeed: 2
+  pricePerUnit: 80
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:Vomit
+        conditions:
+        - !type:ReagentCondition
+          reagent: RefinedOil
+          min: 20
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 2
+
+- type: reagent
+  id: HyperRefinedOil
+  name: reagent-name-hyper-refined-oil
+  desc: reagent-desc-hyper-refined-oil
+  physicalDesc: reagent-physical-desc-sticky
+  color: "#666680"
+  flavor: bitter
+  slipData:
+    requiredSlipSpeed: 2
+  pricePerUnit: 300
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:Vomit
+        conditions:
+        - !type:ReagentCondition
+          reagent: HyperRefinedOil
+          min: 20
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 2
+
+- type: reagent
+  id: ExoticOil
+  name: reagent-name-exotic-oil
+  desc: reagent-desc-exotic-oil
+  physicalDesc: reagent-physical-desc-sticky
+  color: "#6666bd"
+  contrabandSeverity: C2C #TP14
+  flavor: bitter
+  slipData:
+    requiredSlipSpeed: 2
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 10
+            Slash: 10
+
+- type: reagent
+  id: ExoticPoison
+  name: reagent-name-exotic-poison
+  desc: reagent-desc-exotic-poison
+  physicalDesc: reagent-physical-desc-sticky
+  contrabandSeverity: C4
+  color: "#6600ff"
+  flavor: bitter
+  slipData:
+    requiredSlipSpeed: 2
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 20
+            Slash: 20
+            Blunt: 20
+            Cellular: 20
+            Caustic: 20
+
+- type: reagent
+  id: JuiceThatMakesYouExplode
+  name: reagent-name-juice-that
+  desc: reagent-desc-juice-that
+  physicalDesc: reagent-physical-desc-sticky
+  contrabandSeverity: C4
+  color: "#66ffff"
+  flavor: bitter
+  slipData:
+    requiredSlipSpeed: 3.5
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Blunt: 2000
+      - !type:Explosion
+        explosionType: Default
+        intensityPerUnit: 150
+        intensitySlope: 3
+
+- type: reagent
+  id: DesoxyephedrinePlus
+  name: reagent-name-desoxyephedrine-plus
+  desc: reagent-desc-desoxyephedrine-plus
+  physicalDesc: reagent-physical-desc-translucent
+  contrabandSeverity: C3S
+  color: "#FAFAFA"
+  group: Narcotics
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 0.75
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: DesoxyephedrinePlus
+          min: 30
+        damage:
+          types:
+            Poison: 5
+            Asphyxiation: 5
+    Bloodstream:
+      effects:
+      - !type:MovementSpeedModifier
+        walkSpeedModifier: 5
+        sprintSpeedModifier: 5
+      - !type:GenericStatusEffect
+        key: Stutter
+        component: StutteringAccent
+      - !type:Jitter
+      - !type:GenericStatusEffect
+        key: Stun
+        time: 30
+        type: Remove
+      - !type:GenericStatusEffect
+        key: KnockedDown
+        time: 30
+        type: Remove
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentCondition
+          reagent: Haloperidol
+          max: 0.01
+        key: Drowsiness
+        time: 100
+        type: Remove
+      - !type:ResetNarcolepsy
+        conditions:
+        - !type:ReagentCondition
+          reagent: DesoxyephedrinePlus
+          min: 1
+
+
+- type: reagent
+  id: Petroleum
+  name: reagent-name-petroleum
+  desc: reagent-desc-petroleum
+  physicalDesc: reagent-physical-desc-oily
+  color: "#25221a"
+  flavor: bitter
+  slipData:
+    requiredSlipSpeed: 3.5
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 3
+
+- type: reagent
+  id: Naphtha
+  name: reagent-name-naphtha
+  desc: reagent-desc-naphtha
+  physicalDesc: reagent-physical-desc-oily
+  color: "#EDA41B"
+  flavor: bitter
+  slipData:
+    requiredSlipSpeed: 3.5
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 3
+
+- type: reagent
+  id: Lime
+  name: reagent-name-lime
+  desc: reagent-desc-lime
+  physicalDesc: reagent-physical-desc-chalky
+  color: "#ffffff"

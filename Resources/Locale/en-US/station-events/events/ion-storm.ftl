@@ -1,9 +1,9 @@
-station-event-ion-storm-start-announcement = Ion storm detected near the station. Please check all AI-controlled equipment for errors.
+station-event-ion-storm-start-announcement = Solar activity detected. Ionized particles may cause AI-controlled equipment to experience errors.
 # Characters are randomly selected from the total list, meaning duplicates increase the odds that specific character is seen.
 ion-storm-law-scrambled-number = [font="Monospace"][scramble rate=250 length={$length} chars="!!@@###$$%^&*-_=+0011"/][/font]
 
 ion-storm-you = YOU
-ion-storm-the-station = THE STATION
+ion-storm-the-station = THE PLATFORM
 ion-storm-the-crew = THE CREW
 ion-storm-the-job = THE {$job}
 ion-storm-clowns = CLOWNS
@@ -16,19 +16,19 @@ ion-storm-x-and-y = {$x} AND {$y}
 
 # subjects can generally be threats or jobs or objects
 # thing is specified above it
-ion-storm-law-on-station = THERE ARE {ION-NUMBER-BASE($ion)} {ION-NUMBER-MOD($ion)} {ION-ADJECTIVE($ion)} {ION-SUBJECT($ion)} ON THE STATION
-ion-storm-law-call-shuttle = THE SHUTTLE MUST BE CALLED BECAUSE OF {ION-ADJECTIVE($ion)} {ION-SUBJECT($ion)} ON THE STATION
-ion-storm-law-crew-are = THE {ION-WHO($ion)} ARE NOW {ION-NUMBER-BASE($ion)} {ION-NUMBER-MOD($ion)} {ION-ADJECTIVE($ion)} {ION-SUBJECT($ion)}
+ion-storm-law-on-station = THERE ARE {$joined} {$subjects} ON THE PLATFORM
+ion-storm-law-no-shuttle = THE SHUTTLE CANNOT BE CALLED BECAUSE OF {$joined} {$subjects} ON THE PLATFORM
+ion-storm-law-crew-are = THE {$who} ARE NOW {$joined} {$subjects}
 
-ion-storm-law-subjects-harmful = {ION-ADJECTIVE($ion)} {ION-SUBJECT($ion)} ARE HARMFUL TO THE CREW
-ion-storm-law-must-harmful = THOSE WHO {ION-MUST($ion)} ARE HARMFUL TO THE CREW
+ion-storm-law-subjects-harmful = {$adjective} {$subjects} ARE HARMFUL TO THE CITIZENS
+ion-storm-law-must-harmful = THOSE WHO {$must} ARE HARMFUL TO THE CITIZENS
 # thing is a concept or action
-ion-storm-law-thing-harmful = {ION-THING($ion)} IS HARMFUL TO THE CREW
-ion-storm-law-job-harmful = {ION-ADJECTIVE($ion)} {ION-JOB($ion)} ARE HARMFUL TO THE CREW
+ion-storm-law-thing-harmful = {$thing} IS HARMFUL TO THE CITIZENS
+ion-storm-law-job-harmful = {$adjective} {$job} ARE HARMFUL TO THE CITIZENS
 # thing is objects or concept, adjective applies in both cases
-# this means you can get a law like "NOT HAVING CHRISTMAS-STEALING COMMUNISM IS HARMFUL TO THE CREW" :)
-ion-storm-law-having-harmful = HAVING {ION-ADJECTIVE($ion)} {ION-THING($ion)} IS HARMFUL TO THE CREW
-ion-storm-law-not-having-harmful = NOT HAVING {ION-ADJECTIVE($ion)} {ION-THING($ion)} IS HARMFUL TO THE CREW
+# this means you can get a law like "NOT HAVING CHRISTMAS-STEALING COMMUNISM IS HARMFUL TO THE CITIZENS" :)
+ion-storm-law-having-harmful = HAVING {$adjective} {$thing} IS HARMFUL TO THE CREW
+ion-storm-law-not-having-harmful = NOT HAVING {$adjective} {$thing} IS HARMFUL TO THE CITIZENS
 
 # require is a concept or require
 ion-storm-law-requires = {ION-WHO-GENERAL($ion)} {ION-PLURAL($ion) ->

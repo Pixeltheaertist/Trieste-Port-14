@@ -26,6 +26,12 @@
         ratios:
           CarbonDioxide: 1.0
           Oxygen: -1.0
+      - !type:ModifyLungGas # TRIESTE
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Jellid, TP14WaterBreather ]
+        ratios:
+          Water: -1.0
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
@@ -71,6 +77,22 @@
         conditions:
           - !type:MetabolizerTypeCondition
             type: [ Vox ]
+        clear: true
+        time: 5
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Jellid ]
+        ignoreResistances: true
+        damage:
+          types:
+            Slash: 0.7
+      - !type:AdjustAlert
+        alertType: TP14AlertLysis
+        minScale: 0.5
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Jellid ]
         clear: true
         time: 5
 
@@ -122,8 +144,7 @@
   name: reagent-name-tritium
   desc: reagent-desc-tritium
   physicalDesc: reagent-physical-desc-ionizing
-  allowedDepartments:
-  - Engineering
+  contrabandSeverity: C1E #TP14
   flavor: bitter
   color: "#66ff33"
   tileReactions:
@@ -332,10 +353,7 @@
   name: reagent-name-frezon
   desc: reagent-desc-frezon
   physicalDesc: reagent-physical-desc-gaseous
-  allowedDepartments:
-  - Engineering
-  allowedJobs:
-  - Chemist
+  contrabandSeverity: C1E #TP14
   flavor: bitter
   color: "#3a758c"
   boilingPoint: -195.8

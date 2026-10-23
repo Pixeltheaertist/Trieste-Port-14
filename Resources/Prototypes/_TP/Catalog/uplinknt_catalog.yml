@@ -1,0 +1,709 @@
+## WEAPONS
+
+- type: listing
+  id: UplinkCaptainSabre
+  name: uplink-CaptainSabre-name
+  description: uplink-CaptainSabre-desc
+  productEntity: CaptainSabre
+  cost:
+    BluespaceCrystal: 8
+  categories:
+  - UplinkNtWeaponry
+
+- type: listing
+  id: TP14_UplinkGlovesKnuckleDusters
+  name: uplink-NTknuckleduster-name
+  description: uplink-NTknuckleduster-desc
+  productEntity: TP14ClothingHandsKnuckleDustersNT
+  cost:
+    BluespaceCrystal: 6
+  categories:
+  - UplinkNtWeaponry
+
+- type: listing
+  id: UplinkRPG7 # SAY HELLO TO MY LITTLE FRIEND # it's a rocket launcher
+  name: uplink-rpg-name
+  description: uplink-rpg-desc
+  productEntity: WeaponLauncherMultipleRocket
+  cost:
+    BluespaceCrystal: 16
+  categories:
+  - UplinkNtWeaponry
+
+- type: listing
+  id: UplinkAtreides
+  name: uplink-atreides-name
+  description: uplink-atreides-desc
+  productEntity: WeaponSubMachineGunAtreides
+  cost:
+    BluespaceCrystal: 8
+  categories:
+  - UplinkNtWeaponry
+
+- type: listing
+  id: UplinkEnergyCarbine
+  name: uplink-carbine-name
+  description: uplink-carbine-desc
+  productEntity: TP14WeaponEnergyCarbine
+  cost:
+    BluespaceCrystal: 11
+  categories:
+  - UplinkNtWeaponry
+
+- type: listing
+  id: UplinkNtBlaster
+  name: uplink-blaster-name
+  description: uplink-blaster-desc
+  productEntity: TP14WeaponNtBlaster
+  cost:
+    BluespaceCrystal: 5 # cheap, but modules cost more so it evens out
+  categories:
+  - UplinkNtWeaponry
+
+- type: listing
+  id: UplinkDuffelNtCburnFilled
+  name: uplink-cburn-name
+  description: uplink-cburn-desc
+  productEntity: ClothingBackpackDuffelNtCburnFilled
+  cost:
+    BluespaceCrystal: 8
+  categories:
+  - UplinkNtWeaponry
+
+- type: listing
+  id: UplinkPistolN1984
+  name: uplink-pistol-N1984-name
+  description: uplink-pistol-N1984-desc
+  productEntity: WeaponPistolN1984
+  cost:
+    BluespaceCrystal: 7
+  categories:
+  - UplinkNtWeaponry
+
+- type: listing
+  id: UplinkPistolMk58
+  name: uplink-pistol-Mk58-name
+  description: uplink-pistol-Mk58-desc
+  productEntity: WeaponPistolMk58
+  cost:
+    BluespaceCrystal: 3
+  categories:
+  - UplinkNtWeaponry
+
+##EXPLOSIVES
+
+# BEACHBALL DOES NOT WORK RIGHT NOW. IDK WHY. DO NOT USE.
+# FIXED. YOU SHOULD 100% USE IT :godo: - Cookie
+#- type: listing
+ # id: UplinkBeachballGrenade
+ # name: uplink-beachball-name
+  #description: uplink-beachball-desc
+  #productEntity: BeachballGrenade
+  #cost:
+  #  BluespaceCrystal: 4
+  #categories:
+  #- UplinkNtExplosives
+
+
+- type: listing
+  id: UplinkExplosiveGrenadeNT
+  name: uplink-explosive-grenade-name
+  description: uplink-explosive-grenade-desc
+  productEntity: ExGrenade
+  cost:
+    BluespaceCrystal: 4
+  categories:
+  - UplinkNtExplosives
+
+- type: listing
+  id: UplinkExplosiveGrenadeFlashNT
+  name: uplink-flash-grenade-name
+  description: uplink-flash-grenade-desc
+  productEntity: GrenadeFlashBang
+  cost:
+    BluespaceCrystal: 1
+  categories:
+  - UplinkNtExplosives
+
+- type: listing
+  id: UplinkSmokeGrenadeNT
+  name: uplink-smoke-grenade-name
+  description: uplink-smoke-grenade-desc
+  productEntity: SmokeGrenade
+  cost:
+    BluespaceCrystal: 1
+  categories:
+  - UplinkNtExplosives
+
+- type: listing
+  id: UplinkNanoMiniBomb
+  name: uplink-mini-bomb-name
+  description: uplink-mini-bomb-desc
+  productEntity: NanoMiniBomb
+  cost:
+    BluespaceCrystal: 6
+  categories:
+    - UplinkNtExplosives
+
+- type: listing
+  id: UplinkGrenadePenguinNT
+  name: uplink-penguin-grenade-name
+  description: uplink-penguin-grenade-desc
+  productEntity: MobGrenadePenguin
+  cost:
+    BluespaceCrystal: 5
+  categories:
+    - UplinkNtExplosives
+
+- type: listing
+  id: UplinkC4NT
+  name: uplink-c4-name
+  description: uplink-c4-desc
+  productEntity: C4
+  cost:
+    BluespaceCrystal: 2
+  categories:
+  - UplinkNtExplosives
+
+- type: listing
+  id: UplinkIncendiaryGrenade
+  name: uplink-firebomb-name
+  description: uplink-firebomb-desc
+  productEntity: GrenadeIncendiary # I'm like 90% sure this is the wrong prototype, ngl.
+  cost:
+    BluespaceCrystal: 5
+  categories:
+  - UplinkNtExplosives
+
+- type: listing
+  id: UplinkEnergyBomb
+  name: uplink-energybomb-name
+  description: uplink-energybomb-desc
+  productEntity: TP14EnergyBomb # IT'S DIFFERENT BECAUSE IT'S BLUE
+  cost:
+    BluespaceCrystal: 15
+  categories:
+  - UplinkNtExplosives
+
+## AMMO
+
+- type: listing
+  id: UplinkMagnumMag
+  name: uplink-magnum-name
+  description: uplink-magnum-desc
+  productEntity: MagazineMagnum
+  cost:
+    BluespaceCrystal: 4
+  categories:
+  - UplinkNtAmmo
+
+- type: listing
+  id: UplinkRocket
+  name: uplink-rocket-name
+  description: uplink-rocket-desc
+  productEntity: CartridgeRocket
+  cost:
+    BluespaceCrystal: 4
+  categories:
+  - UplinkNtAmmo
+
+- type: listing
+  id: Uplink35Auto
+  name: uplink-35auto-name
+  description: uplink-35auto-desc
+  productEntity: BoxMagazinePistolSubMachineGun
+  cost:
+    BluespaceCrystal: 5
+  categories:
+  - UplinkNtAmmo
+
+- type: listing
+  id: UplinkMagCellDisabler
+  name: uplink-disabler-name
+  description: uplink-disabler-desc
+  productEntity: TP14MagCellDisabler
+  cost:
+    BluespaceCrystal: 5
+  categories:
+  - UplinkNtAmmo
+
+- type: listing
+  id: UplinkAutoMagazine
+  name: uplink-pistolmag-name
+  description: uplink-pistolmag-desc
+  productEntity: MagazinePistol
+  cost:
+    BluespaceCrystal: 2
+  categories:
+  - UplinkNtAmmo
+
+- type: listing
+  id: UplinkMagCell
+  name: uplink-magcell-name
+  description: uplink-magcell-desc
+  productEntity: TP14BaseMagCell
+  cost:
+    BluespaceCrystal: 2
+  categories:
+  - UplinkNtAmmo
+
+- type: listing
+  id: UplinkMagCellAdvanced
+  name: uplink-magcelladv-name
+  description: uplink-magcelladv-desc
+  productEntity: TP14MagCellAdvanced
+  cost:
+    BluespaceCrystal: 6
+  categories:
+  - UplinkNtAmmo
+
+- type: listing
+  id: UplinkMagCellExperimental
+  name: uplink-magcellexp-name
+  description: uplink-magcellexp-desc
+  productEntity: TP14MagCellExperimental
+  cost:
+    BluespaceCrystal: 10
+  categories:
+  - UplinkNtAmmo
+
+## ARMOR
+
+- type: listing
+  id: UplinkClothingBulletproof
+  name: uplink-bulletproof-name
+  description: uplink-bulletproof-desc
+  productEntity: ClothingOuterArmorBulletproof
+  cost:
+    BluespaceCrystal: 3
+  categories:
+  - UplinkNtWearables
+
+- type: listing
+  id: UplinkVoiceMaskNT
+  name: uplink-voice-mask-name
+  description: uplink-voice-mask-desc
+  productEntity: ClothingMaskGasVoiceChameleon
+  cost:
+    BluespaceCrystal: 2
+  categories:
+  - UplinkNtWearables
+
+- type: listing
+  id: UplinkChestRigNT
+  name: uplink-chest-rig-name
+  description: uplink-chest-rig-desc
+  productEntity: ClothingBeltMilitaryWebbing
+  cost:
+    BluespaceCrystal: 1
+  categories:
+  - UplinkNtWearables
+
+- type: listing
+  id: UplinkChameleonNT
+  name: uplink-chameleon-name
+  description: uplink-chameleon-desc
+  productEntity: ClothingBackpackChameleonFill
+  icon: { sprite: /Textures/Clothing/Uniforms/Jumpsuit/rainbow.rsi, state: icon }
+  cost:
+    BluespaceCrystal: 4
+  categories:
+    - UplinkNtWearables
+
+- type: listing
+  id: UplinkClothingNoSlipsShoesNT
+  name: uplink-clothing-no-slips-shoes-name
+  description: uplink-clothing-no-slips-shoes-desc
+  productEntity: ClothingShoesChameleonNoSlips
+  cost:
+    BluespaceCrystal: 2
+  categories:
+  - UplinkNtWearables
+
+# TODO: Revert back to normal thieving gloves when clothes dyeing is added
+- type: listing
+  id: UplinkgClothingThievingGlovesNT
+  name: uplink-clothing-chameleon-thieving-gloves-name
+  description: uplink-clothing-chameleon-thieving-gloves-desc
+  productEntity: ClothingHandsChameleonThief
+  cost:
+    BluespaceCrystal: 5
+  categories:
+  - UplinkNtWearables
+
+- type: listing
+  id: UplinkClothingOuterVestWebNT
+  name: uplink-clothing-outer-vest-web-name
+  description: uplink-clothing-outer-vest-web-desc
+  productEntity: ClothingOuterVestWeb
+  cost:
+    BluespaceCrystal: 3
+  categories:
+  - UplinkNtWearables
+
+- type: listing
+  id: UplinkClothingOuterVestWebEliteNT
+  name: uplink-clothing-outer-vest-web-elite-name
+  description: uplink-clothing-outer-vest-web-elite-desc
+  productEntity: ClothingOuterVestWebElite
+  cost:
+    BluespaceCrystal: 5
+  categories:
+  - UplinkNtWearables
+
+- type: listing
+  id: UplinkHardsuitERTLeader
+  name: uplink-bluehardsuit-name
+  description: uplink-bluehardsuit-desc
+  productEntity: ClothingOuterHardsuitERTLeader # stats are equal to a bloodred
+  cost:
+    BluespaceCrystal: 8
+  categories:
+  - UplinkNtWearables
+
+- type: listing
+  id: UplinkClothingConductingGlovesNT
+  name: uplink-clothing-conducting-gloves-name
+  description: uplink-clothing-conducting-gloves-desc
+  productEntity: ClothingHandsGlovesConducting
+  cost:
+    BluespaceCrystal: 2
+  categories:
+  - UplinkNtWearables
+
+
+##CHEMICALS
+
+- type: listing
+  id: UplinkHypopenNT
+  name: uplink-hypopen-name
+  description: uplink-hypopen-desc
+  icon: { sprite: /Textures/Objects/Misc/pens.rsi, state: pen }
+  productEntity: HypopenBox
+  cost:
+    BluespaceCrystal: 6
+  categories:
+  - UplinkNtChemicals
+
+- type: listing
+  id: UplinkHypoDartNT
+  name: uplink-hypodart-name
+  description: uplink-hypodart-desc
+  icon: { sprite: /Textures/Objects/Fun/Darts/dart_red.rsi, state: icon }
+  productEntity: HypoDartBox
+  cost:
+    BluespaceCrystal: 2
+  categories:
+  - UplinkNtChemicals
+
+- type: listing
+  id: UplinkCombatMedkitNT
+  name: uplink-combat-medkit-name
+  description: uplink-combat-medkit-desc
+  productEntity: MedkitCombatFilled
+  cost:
+    BluespaceCrystal: 5
+  categories:
+  - UplinkNtChemicals
+
+- type: listing
+  id: UplinkCombatMedipenNT
+  name: uplink-combat-medipen-name
+  description: uplink-combat-medipen-desc
+  productEntity: CombatMedipen
+  cost:
+    BluespaceCrystal: 4
+  categories:
+  - UplinkNtChemicals
+
+- type: listing
+  id: UplinkStimpackNT
+  name: uplink-stimpack-name
+  description: uplink-stimpack-desc
+  productEntity: Stimpack
+  cost:
+    BluespaceCrystal: 4
+  categories:
+  - UplinkNtChemicals
+
+- type: listing
+  id: UplinkStimkitNT
+  name: uplink-stimkit-name
+  description: uplink-stimkit-desc
+  productEntity: StimkitFilled
+  cost:
+    BluespaceCrystal: 12
+  categories:
+  - UplinkNtChemicals
+
+- type: listing
+  id: UplinkVestineChemistryVialHalf
+  name: uplink-vestinehalf-name
+  description: uplink-vestinehalf-desc
+  productEntity: TP14SmallChemistryVialVestineHalf
+  cost:
+    BluespaceCrystal: 3
+  categories:
+  - UplinkNtChemicals
+
+- type: listing
+  id: UplinkCrateChemicalLabBundle # WALTER WE NEED TO COOK WALTER
+  name: uplink-lab-name
+  description: uplink-lab-desc
+  productEntity: TP14CrateChemicalLabBundle
+  cost:
+    BluespaceCrystal: 15
+  categories:
+  - UplinkNtChemicals
+
+##DISRUPTION
+
+- type: listing
+  id: UplinkAccessBreakerNT
+  name: uplink-access-breaker-name
+  description: uplink-access-breaker-desc
+  productEntity: NTAccessBreaker
+  cost:
+    BluespaceCrystal: 4
+  categories:
+  - UplinkNtDisruption
+
+- type: listing
+  id: UplinkEmagNT
+  name: uplink-emag-name
+  description: uplink-emag-desc
+  productEntity: Emag
+  cost:
+    BluespaceCrystal: 5
+  categories:
+  - UplinkNtDisruption
+
+- type: listing
+  id: UplinkRadioJammerNT
+  name: uplink-radio-jammer-name
+  description: uplink-radio-jammer-desc
+  productEntity: RadioJammer
+  cost:
+    BluespaceCrystal: 3
+  categories:
+  - UplinkNtDisruption
+
+- type: listing
+  id: UplinkLubeBoxNT # heheheheheh
+  name: uplink-lube-name
+  description: uplink-lube-desc
+  productEntity: LubeBoxNT
+  cost:
+    BluespaceCrystal: 2
+  categories:
+  - UplinkNtDisruption
+
+- type: listing
+  id: UplinkToolboxNanotrasenFilled
+  name: uplink-toolboxnt-name
+  description: uplink-toolboxnt-desc
+  productEntity: TP14ToolboxNanoTrasenFilled
+  cost:
+    BluespaceCrystal: 3
+  categories:
+  - UplinkNtDisruption
+
+- type: listing
+  id: UplinkNanoTraitorLawBoard
+  name: uplink-lawboard-name
+  description: uplink-lawboard-desc
+  productEntity: TP14NanoTraitorCircuitBoard
+  cost:
+    BluespaceCrystal: 8
+  categories:
+  - UplinkNtDisruption
+
+- type: listing
+  id: UplinkAnnouncementPad
+  name: uplink-announcer-name
+  description: uplink-announcer-desc
+  productEntity: HandHeldAnnouncementPad
+  cost:
+    BluespaceCrystal: 7
+  categories:
+  - UplinkNtDisruption
+
+- type: listing
+  id: UplinkWhiteholeGrenadeNT
+  name: uplink-whitehole-grenade-name
+  description: uplink-whitehole-grenade-desc
+  productEntity: WhiteholeGrenade
+  cost:
+    BluespaceCrystal: 2
+  categories:
+    - UplinkNtDisruption
+
+- type: listing
+  id: UplinkSingularityGrenadeNT
+  name: uplink-singularity-grenade-name
+  description: uplink-singularity-grenade-desc
+  productEntity: SingularityGrenade
+  cost:
+    BluespaceCrystal: 2
+  categories:
+    - UplinkNtDisruption
+
+# need a retexture of the two syndi borg modules to finish filling this out, ill do that another time,
+
+##DECEPTION
+
+- type: listing
+  id: UplinkAgentIDCardNT
+  name: uplink-agent-id-card-name
+  description: uplink-agent-id-card-desc
+  productEntity: AgentIDCard
+  cost:
+    BluespaceCrystal: 3
+  categories:
+  - UplinkNtDeception
+
+- type: listing
+  id: UplinkStealthBoxNT
+  name: uplink-stealth-box-name
+  description: uplink-stealth-box-desc
+  productEntity: StealthBox
+  cost:
+    BluespaceCrystal: 5
+  categories:
+  - UplinkNtDeception
+
+- type: listing
+  id: UplinkChameleonProjectorNT
+  name: uplink-chameleon-projector-name
+  description: uplink-chameleon-projector-desc
+  productEntity: ChameleonProjector
+  cost:
+    BluespaceCrystal: 7
+  categories:
+  - UplinkNtDeception
+
+- type: listing
+  id: UplinkUltrabrightLanternNT
+  name: uplink-ultrabright-lantern-name
+  description: uplink-ultrabright-lantern-desc
+  productEntity: LanternFlash
+  cost:
+    BluespaceCrystal: 2
+  categories:
+  - UplinkNtDeception
+
+# a couple of the following items are just made again for some reason? it prevents me from running the local host so ill probably just hashtag them out and hope nothing goes wrong.
+# - type: listing
+#   id: UplinkAgentIDCardNT
+#   name: uplink-agent-id-card-name
+#   description: uplink-agent-id-card-desc
+#   productEntity: AgentIDCard
+#   cost:
+#     BluespaceCrystal: 3
+#   categories:
+#   - UplinkNtDeception
+
+# - type: listing
+#   id: UplinkStealthBoxNT
+#   name: uplink-stealth-box-name
+#   description: uplink-stealth-box-desc
+#   productEntity: StealthBox
+#   cost:
+#     BluespaceCrystal: 5
+#   categories:
+#   - UplinkNtDeception
+
+# - type: listing
+#   id: UplinkChameleonProjectorNT
+#   name: uplink-chameleon-projector-name
+#   description: uplink-chameleon-projector-desc
+#   productEntity: ChameleonProjector
+#   cost:
+#     BluespaceCrystal: 7
+#   categories:
+#   - UplinkNtDeception
+
+- type: listing
+  id: UplinkEncryptionKeyNanotrasen
+  name: uplink-key-name
+  description: uplink-key-desc
+  productEntity: BoxEncryptionKeyNanotrasen
+  cost:
+    BluespaceCrystal: 2
+  categories:
+  - UplinkNtDeception
+
+- type: listing
+  id: UplinkCrimeCleanerKit
+  name: uplink-cleaner-name
+  description: uplink-cleaner-desc
+  productEntity: CrimeCleanerKit
+  cost:
+    BluespaceCrystal: 4
+  categories:
+  - UplinkNtDeception
+
+- type: listing
+  id: UplinkBinaryKey
+  name: uplink-binary-name
+  description: uplink-binary-desc
+  productEntity: EncryptionKeyBinary
+  cost:
+    BluespaceCrystal: 1
+  categories:
+  - UplinkNtDeception
+
+- type: listing
+  id: UplinkLobbyingBundleNT
+  name: uplink-lobbying-name
+  description: uplink-lobbying-desc
+  productEntity: BriefcaseNTBribingBundleFilled
+  cost:
+    BluespaceCrystal: 5
+  categories:
+  - UplinkNtDeception
+
+##ALLIES
+
+#- type: listing
+  #id: UplinkBorgingBundle
+  #name: uplink-borging-name
+  #description: uplink-borging-desc
+ # productEntity: CrateBorgingBundle
+ # cost:
+ #   BluespaceCrystal: 15
+ # categories:
+ # - UplinkNtAllies
+
+##POINTLESS
+
+- type: listing
+  id: UplinkPai
+  name: uplink-pai-name
+  description: uplink-pai-desc
+  productEntity: PersonalAI
+  cost:
+    BluespaceCrystal: 1
+  categories:
+  - UplinkNtPointless
+
+- type: listing
+  id: UplinkLottery
+  name: uplink-lottery-name
+  description: uplink-lottery-desc
+  productEntity: CrateCargoGambling
+  cost:
+    BluespaceCrystal: 13
+  categories:
+  - UplinkNtPointless
+
+- type: listing
+  id: TP14_UplinkVape
+  name: uplink-NTvape-name
+  description: uplink-NTvape-desc
+  productEntity: TP14_NTvape
+  cost:
+    BluespaceCrystal: 1
+  categories:
+  - UplinkNtPointless
+

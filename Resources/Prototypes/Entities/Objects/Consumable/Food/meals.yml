@@ -265,7 +265,7 @@
       reagents:
       - ReagentId: Nutriment
         Quantity: 100
-      - ReagentId: CarpoToxin
+      - ReagentId: FishOil # TRIESTE: 'CarpoToxin'
         Quantity: 5
       - ReagentId: CapsaicinOil
         Quantity: 10
@@ -513,7 +513,7 @@
       reagents:
       - ReagentId: Nutriment
         Quantity: 30
-      - ReagentId: CarpoToxin
+      - ReagentId: FishOil # TRIESTE: 'CarpoToxin'
         Quantity: 5
       - ReagentId: TableSalt
         Quantity: 1

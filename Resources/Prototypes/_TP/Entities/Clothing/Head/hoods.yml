@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: TP14ClothingHeadHatHoodRainSlicker
+  categories: [ HideSpawnMenu ]
+  name: rain slicker hood
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hoods/rain_slicker.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hoods/rain_slicker.rsi

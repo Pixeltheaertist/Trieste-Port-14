@@ -17,15 +17,24 @@
       enum.SprayPainterUiKey.Key:
         type: SprayPainterBoundUserInterface
   - type: SprayPainter
-    colorPalette: # Atmos pipes preset colors
-      red: '#FF1212FF'
-      yellow: '#B3A234FF'
-      brown: '#947507FF'
-      green: '#3AB334FF'
-      cyan: '#03FCD3FF'
-      blue: '#0335FCFF'
-      white: '#FFFFFFFF'
-      black: '#333333FF'
+    pipeChargeCost: 0 # TRIESTE
+    decalChargeCost: 0 # TRIESTE
+    colorPalette:
+      # TP14 - Upstream colors
+      # yellow: '#B3A234FF'
+      # green: '#3AB334FF'
+      # blue: '#0335FCFF'
+      red: '#FF1212'
+      orange: '#FF9900'
+      yellow: '#FFFF00'
+      brown: '#947507'
+      green: '#00FF00'
+      cyan: '#03FCD3'
+      blue: '#5050FF'
+      white: '#FFFFFF'
+      black: '#333333'
+      pink: '#FF99FF' # TP14
+      purple: '#FF00FF' # TP14
       # standard atmos pipes
       waste: '#990000'
       distro: '#0055cc'
@@ -42,6 +51,9 @@
   id: SprayPainter
   suffix: ""
   components:
+  - type: SprayPainter
+    pipeChargeCost: 1
+    decalChargeCost: 1
   - type: LimitedCharges
     maxCharges: 15
     lastCharges: 15

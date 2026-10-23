@@ -1,0 +1,29 @@
+- type: entity
+  parent: MarkerBase
+  id: TP14SpawnerMobDaisy
+  name: Daisy spawner
+  suffix: Trieste, Botanist Pet
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: sea-rabbit-idle
+      sprite: _TP/Mobs/Animals/sea-bunny.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - TP14MobSeaBunnyDaisy
+
+- type: entity
+  parent: MarkerBase
+  id: TP14SpawnerMobMorty
+  name: Morty spawner
+  suffix: Trieste, Spawner, Medical
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: opossum
+      sprite: _TP/Mobs/Animals/opossum.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - TP14MobOpossumMorty

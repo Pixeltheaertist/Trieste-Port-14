@@ -1,0 +1,5 @@
+## UNIFORMS ##
+- type: loadout
+  id: TVHostJumpsuit
+  equipment:
+    jumpsuit: TP14ClothingUniformTVSuit

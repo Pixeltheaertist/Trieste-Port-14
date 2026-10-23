@@ -312,11 +312,6 @@
   id: CargoTelepadMachineCircuitboard
   result: CargoTelepadMachineCircuitboard
 
-- type: latheRecipe
-  parent: [ BaseGoldCircuitboardRecipe, BaseSupplyMachineRecipeCategory ]
-  id: SalvageMagnetMachineCircuitboard
-  result: SalvageMagnetMachineCircuitboard
-
 # Shuttle
 - type: latheRecipe
   parent: [ BaseCircuitboardRecipe, BaseSupplyMachineRecipeCategory ]

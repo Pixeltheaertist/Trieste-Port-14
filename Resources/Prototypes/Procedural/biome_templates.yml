@@ -594,3 +594,19 @@
     - !type:BiomeTileLayer
       threshold: -1.0
       tile: FloorAsteroidSand
+
+# Ocean World (for waste zone to allow ship landings for things like Caskies)
+- type: biomeTemplate
+  id: OceanWorld
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: FloorGlass
+    - !type:BiomeEntityLayer
+      threshold: -1.0
+      allowedTiles:
+        - FloorGlass
+      entities:
+        - FloorWaterEntity # Yes, these will be destroyed when ships land. But ships will probably never take off again.
+
+

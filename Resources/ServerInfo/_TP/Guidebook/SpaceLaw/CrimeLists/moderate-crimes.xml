@@ -1,0 +1,149 @@
+<Document>
+# Moderate Crimes
+  - The maximum sentence per moderate crime is 5 minutes.
+  - Depending on the situation you may want to issue a warning instead of a detaining.
+  <Table Columns="4">
+    <ColorBox>
+      <Box>
+        Offense
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Description
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Notes
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Code
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Failure to Comply
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To resist reasonable orders given by an authority. This extends to authorized searches.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        The order has to be reasonable and the person has to receive a good amount of warning before the arrest is
+        issued.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        2-00
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession of Major Contra
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To make, hold, or use major contraband without authorization.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        The Overseer may authorize individual use of major contraband. Any contraband which is restricted to the command or security department is major contraband unless otherwise specified.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        2-01
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession/Use of Class 2 Chems
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To be found holding or using class 2 contraband chemicals. This includes stronger toxins or stimulants like desoxyephedrine. 
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        The Chief Medical Officer and either the Overseer or Marshal may authorize the use of class 2 chemicals. 
+      </Box>
+    </ColorBox>
+     <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        2-02
+      </Box>
+    </ColorBox>
+    <ColorBox>
+        <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+          Production of Class 1 Chems
+        </Box>
+    </ColorBox>
+    <ColorBox>
+        <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+          To have made Class 1 contraband chemicals without authorization.
+        </Box>
+    </ColorBox>
+    <ColorBox>
+        <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+          These can be authorized by job necessity (ex: botany needs mutagen), or by the CMO
+        </Box>
+    </ColorBox>
+    <ColorBox>
+        <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        2-03
+        </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Damage/Destruction of Property
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To maliciously damage or deface public or private property or equipment
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Includes destruction of job equipment such as hydro trays, booze dispensers, chemical dispensers. Step up from
+        vandalism but a step down from mass destruction.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        2-05
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Endangerment
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To recklessly put yourself or others in danger, either through direct action, or failure to act.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Covers industrial accidents, industrial negligence, self-experimentation, or even medical malpractice.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        2-07
+      </Box>
+    </ColorBox>
+  </Table>
+</Document>

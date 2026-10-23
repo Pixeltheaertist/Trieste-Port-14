@@ -140,7 +140,7 @@
   # some of these limitations could possibly be removed with better control over how the marking can be customized - possibly removing stacking, allowing recoloring & clamping higher-end colors for the eyeshadow, etc.
   bodyPart: Eyes
   groupWhitelist: [Vox]
-  forcedColoring: true
+  forcedColoring: false # TRIESTE: 'true'
   sprites:
   - sprite: Mobs/Customization/vox_tattoos.rsi
     state: eyeshadow_small
@@ -149,7 +149,7 @@
   id: TattooEyeshadowVoxMedium
   bodyPart: Eyes
   groupWhitelist: [Vox]
-  forcedColoring: true
+  forcedColoring: false # TRIESTE: 'true'
   sprites:
   - sprite: Mobs/Customization/vox_tattoos.rsi
     state: eyeshadow_medium
@@ -158,7 +158,7 @@
   id: TattooEyeshadowVoxLarge
   bodyPart: Eyes
   groupWhitelist: [Vox]
-  forcedColoring: true
+  forcedColoring: false # TRIESTE: 'true'
   sprites:
   - sprite: Mobs/Customization/vox_tattoos.rsi
     state: eyeshadow_large

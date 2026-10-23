@@ -1,0 +1,35 @@
+- type: entity
+  parent: Dresser
+  id: TP14DresserOverseerFilled
+  suffix: Trieste, Filled, Overseer
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: TP14ClothingHeadHatBeretOverseer
+        - id: TP14ClothingUniformFormalJumpsuitOverseer
+        - id: TP14ClothingUniformFormalJumpskirtOverseer
+        - id: TP14ClothingHandsGlovesOverseer
+        - id: TP14ClothingOuterArmorOverseerHeavyCoat
+        - id: TP14ClothingNeckCloakOverseer
+        - id: TP14EntClothesDarkBlueWinterBoots
+
+- type: entity
+  parent: Dresser
+  id: TP14DresserMarshalFilled
+  suffix: Trieste, Filled, Marshal
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingHeadHatBeretHoS
+        - id: ClothingHeadHatHoshat
+        - id: ClothingMaskNeckGaiter
+        - id: ClothingUniformJumpskirtHoSAlt
+        - id: ClothingUniformJumpsuitHoSAlt
+        - id: ClothingUniformJumpskirtHosFormal
+        - id: ClothingUniformJumpsuitHosFormal
+        - id: ClothingOuterWinterHoS
+        - id: ClothingNeckCloakHos

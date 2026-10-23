@@ -1,0 +1,30 @@
+# Synthliz markings
+
+# tail
+- type: marking
+  id: LizardTailSynth
+  bodyPart: Tail
+  forcedColoring: false
+  groupWhitelist: [ Reptilian ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Synthliz/tails.rsi
+    state: tail_synthliz
+
+- type: marking
+  id: LizardTailSynthAnimated
+  bodyPart: Tail
+  groupWhitelist: []
+  sprites:
+  - sprite: _CD/Mobs/Customization/Synthliz/tails.rsi
+    state: tail_synthliz_wagging
+
+
+
+
+
+
+
+
+
+
+

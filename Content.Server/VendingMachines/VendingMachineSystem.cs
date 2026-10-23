@@ -1,9 +1,12 @@
 using System.Linq;
 using System.Numerics;
 using Content.Server.Cargo.Systems;
+using Content.Server.Destructible;
+using Content.Server.Power.Components;
 using Content.Server.VendingMachines.Components;
 using Content.Server.Vocalization.Systems;
 using Content.Shared.Cargo;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Emp;
 using Content.Shared.Throwing;
@@ -107,6 +110,26 @@ public sealed partial class VendingMachineSystem : SharedVendingMachineSystem
         }
 
         args.Price += price;
+    }
+
+    // TRIESTE SPECIFIC
+    protected override void OnMapInit(EntityUid uid, VendingMachineComponent component, MapInitEvent args)
+    {
+        base.OnMapInit(uid, component, args);
+        // Because health is dumb and the mapping is even dumber,
+        // we're adding a damage check on the map init. (aka when spawned)
+
+        if (TryComp<DamageableComponent>(uid, out var damageableComp) && TryComp<DestructibleComponent>(uid, out var desstructibleComp))
+        {
+            // Hard-coded health threshold. Typically, you'd check for a half-health or damage state,
+            // but I'm lazy. - Cookie
+            var totalDamage = damageableComp.TotalDamage;
+            if (totalDamage >= 100)
+            {
+                component.Broken = true;
+                Dirty(uid, component);
+            }
+        }
     }
 
     [SubscribeLocalEvent]

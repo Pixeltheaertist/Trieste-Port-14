@@ -12,6 +12,13 @@
         sound: /Audio/Effects/sizzle.ogg
       steps:
       - minTemperature: 335
+    - to: sausage # TP14: Added
+      steps:
+      - tool: Rolling
+        doAfter: 1
+
+  - node: sausage
+    entity: TP14FoodMeatSausage
 
   - node: meat steak
     entity: FoodMeatCooked
@@ -219,6 +226,14 @@
         sound: /Audio/Effects/sizzle.ogg
       steps:
       - minTemperature: 335
+    - to: meat patty # TP14: Added cutlets to patties.
+      steps:
+      - tool: Rolling
+        doAfter: 1
+
+  - node: meat patty
+    entity: FoodMeatPatty
+
   - node: cutlet
     entity: FoodMeatCutletCooked
 

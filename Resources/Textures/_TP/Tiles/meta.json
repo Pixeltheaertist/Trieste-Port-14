@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created for Trieste Port 14 by BurntCheeto",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+        "name": "rust-grated-maints"
+    },
+    {
+        "name": "steel-grated-maints"
+    },
+    {
+        "name": "old-rust-maints"
+    }
+  ]
+}

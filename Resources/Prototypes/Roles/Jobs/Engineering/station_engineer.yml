@@ -21,7 +21,7 @@
 - type: startingGear
   id: StationEngineerGear
   equipment:
-    eyes: ClothingEyesGlassesMeson
+    # eyes: ClothingEyesGlassesMeson # Moffstation - Eyepatches!
     belt: ClothingBeltUtilityEngineering
     ears: ClothingHeadsetEngineering
   #storage:
@@ -33,7 +33,7 @@
   job: StationEngineer
   equipment:
     head: ClothingHeadHatHardhatYellow
-    mask: ClothingMaskBreath
+    mask: TP14ClothingMaskAir #TP14
     neck: ClothingNeckScarfStripedOrange
     outerClothing: ClothingOuterWinterEngi
     gloves: ClothingHandsGlovesColorYellow

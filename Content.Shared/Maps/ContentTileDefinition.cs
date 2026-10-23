@@ -120,8 +120,9 @@ public sealed partial class ContentTileDefinition : IPrototype, IInheritingProto
 
     /// <summary>
     /// Can weather affect this tile.
+    /// TRIESTE: Changed to true.
     /// </summary>
-    [DataField] public bool Weather = false;
+    [DataField] public bool Weather = true;
 
     /// <summary>
     /// Is this tile immune to RCD deconstruct.

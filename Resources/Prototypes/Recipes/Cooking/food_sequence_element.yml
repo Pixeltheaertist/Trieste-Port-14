@@ -74,9 +74,11 @@
   sprites:
   - sprite: Objects/Consumable/Food/meat.rsi
     state: patty
+    scale: 0.75,0.75
   tags:
   - Cooked
   - Meat
+  - TP14TagFoodMeatPatty # TP14: Added
 
 # Dragon Steak
 

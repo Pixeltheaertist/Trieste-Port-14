@@ -482,7 +482,7 @@
       reagents:
       - ReagentId: Nutriment
         Quantity: 20
-      - ReagentId: Bicaridine #keeping it somewhat consistent with the meat itself
+      - ReagentId: Bicaridine
         Quantity: 20
       - ReagentId: Vitamin
         Quantity: 10

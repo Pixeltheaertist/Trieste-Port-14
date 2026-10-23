@@ -359,15 +359,15 @@
     content: book-cnc-sheet
   - type: Sprite
     layers:
-      - state: paper
-        color: "#cccccc"
-      - state: paper_words
-        map: ["enum.PaperVisualLayers.Writing"]
-        color: "#cccccc" #aaaaaaaaaaaaaaaaaaaaaaa
-        visible: false
-      - state: paper_stamp-generic
-        map: ["enum.PaperVisualLayers.Stamp"]
-        visible: false
+    - state: paper
+      color: "#cccccc"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#cccccc" #aaaaaaaaaaaaaaaaaaaaaaa
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
   - type: PaperVisuals
     backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
     contentImagePath: "/Textures/Interface/Paper/paper_content_lined.svg.96dpi.png"
@@ -469,9 +469,9 @@
         ejectSound: /Audio/Effects/packetrip.ogg
         whitelist:
           components:
-            - Cash
+          - Cash
           tags:
-            - Paper
+          - Paper
   - type: ActivatableUI
     key: enum.PaperUiKey.Key
     requiresComplex: false

@@ -20,7 +20,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskBreath
+        - id: TP14ClothingMaskAir # Trieste: 'ClothingMaskBreath'
         - id: EmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
@@ -40,7 +40,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskBreath
+        - id: TP14ClothingMaskAir # Trieste: 'ClothingMaskBreath'
         - id: EmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
@@ -60,7 +60,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskBreath
+        - id: TP14ClothingMaskAir # Trieste: 'ClothingMaskBreath'
         - id: ExtendedEmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
@@ -80,7 +80,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskBreath
+        - id: TP14ClothingMaskAir # Trieste: 'ClothingMaskBreath'
         - id: ExtendedEmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
@@ -136,7 +136,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskBreathMedical
+        - id: TP14ClothingMaskAir # Trieste: 'ClothingMaskBreath'Medical
         - id: EmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
@@ -152,7 +152,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskBreathMedical
+        - id: TP14ClothingMaskAir # Trieste: 'ClothingMaskBreath'Medical
         - id: EmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
@@ -171,7 +171,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskBreath
+        - id: TP14ClothingMaskAir # Trieste: 'ClothingMaskBreath'
         - id: EmergencyFunnyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
@@ -186,7 +186,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskBreath
+        - id: TP14ClothingMaskAir # Trieste: 'ClothingMaskBreath'
         - id: EmergencyNitrogenTankFilled # This should probably be replaced by an equivalent to the funny emergency oxygen tank, once that exists
         - id: EmergencyMedipen
         - id: Flare
@@ -205,7 +205,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskBreath
+        - id: TP14ClothingMaskAir # Trieste: 'ClothingMaskBreath'
         - id: ExtendedEmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
@@ -226,7 +226,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskBreath
+        - id: TP14ClothingMaskAir # Trieste: 'ClothingMaskBreath'
         - id: ExtendedEmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare

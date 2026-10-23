@@ -1,0 +1,107 @@
+# Bases
+- type: reagent
+  id: TP14ReagentGroundCoffee
+  name: reagent-name-ground-coffee
+  desc: reagent-desc-ground-coffee
+  physicalDesc: reagent-physical-desc-clumpy
+  flavor: TP14FlavorGroundCoffee
+  color: "#4E3629"
+  recognizable: true
+  metabolisms:
+    Digestion:
+      metabolites:
+        Theobromine: 0.1
+
+- type: reagent
+  id: TP14ReagentInstantCoffee
+  name: reagent-name-instant-coffee
+  desc: reagent-desc-instant-coffee
+  physicalDesc: reagent-physical-desc-powdery
+  flavor: TP14FlavorInstantCoffee
+  color: "#4E3629"
+  recognizable: true
+  metabolisms:
+    Digestion:
+      metabolites:
+        Theobromine: 0.1
+
+# Mixes
+- type: reagent
+  id: TP14ReagentTamperedCoffee
+  name: reagent-name-tampered-coffee
+  desc: reagent-desc-tampered-coffee
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: coffee
+  color: "#4E3629"
+  recognizable: true
+  metabolisms:
+    Digestion:
+      metabolites:
+        Theobromine: 0.1
+
+- type: reagent
+  id: TP14ReagentMixedCoffee
+  name: reagent-name-mixed-coffee
+  desc: reagent-desc-mixed-coffee
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: coffee
+  color: "#4E3629"
+  recognizable: true
+  metabolisms:
+    Digestion:
+      metabolites:
+        Theobromine: 0.1
+
+- type: reagent
+  id: TP14ReagentMixedTamperedCoffee
+  name: reagent-name-mixed-tampered-coffee
+  desc: reagent-desc-mixed-tampered-coffee
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: coffee
+  color: "#4E3629"
+  recognizable: true
+  metabolisms:
+    Digestion:
+      metabolites:
+        Theobromine: 0.1
+
+# Coffee
+- type: reagent
+  id: TP14ReagentBadCoffee
+  name: reagent-name-bad-coffee
+  desc: reagent-desc-bad-coffee
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: TP14FlavorBadCoffee
+  color: "#664300"
+  recognizable: true
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 0.5
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
+        time: 4 # Eh, might as well give bad coffee a use.
+        type: Remove
+      metabolites:
+        Theobromine: 0.1
+
+- type: reagent
+  id: TP14ReagentQualityCoffee
+  name: reagent-name-quality-coffee
+  desc: reagent-desc-quality-coffee
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: TP14FlavorQualityCoffee
+  color: "#664300"
+  recognizable: true
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
+        time: 2
+        type: Remove
+      metabolites:
+        Theobromine: 0.05 # Less poison so more creatures can enjoy it.

@@ -19,7 +19,7 @@ holopad-window-controls-unlock-countdown = It will automatically unlock in: {$co
 # Buttons
 holopad-window-answer-call = Answer call
 holopad-window-end-call = End call
-holopad-window-request-station-ai = Request station AI
+holopad-window-request-station-ai = Request PAIL
 holopad-window-activate-projector = Activate projector
 holopad-window-emergency-broadcast = Emergency broadcast
 holopad-window-emergency-broadcast-with-countdown = Emergency broadcast ({$countdown})
@@ -61,13 +61,13 @@ holopad-command-vault = Command - Vault
 holopad-command-bridge-hallway = Command - Bridge Hallway
 holopad-command-meeting-room = Command - Meeting Room
 holopad-command-lounge = Command - Lounge
-holopad-command-captain = Command - Captain
+holopad-command-captain = Command - Overseer
 holopad-command-hop = Command - HoP
 holopad-command-cmo = Command - CMO
-holopad-command-qm = Command - QM
+holopad-command-qm = Command - HM
 holopad-command-ce = Command - CE
 holopad-command-rd = Command - RD
-holopad-command-hos = Command - HoS
+holopad-command-hos = Command - Marshall
 
 # Science
 holopad-science-anomaly = Science - Anomaly
@@ -93,7 +93,7 @@ holopad-medical-clinic = Medical - Clinic
 
 # Cargo
 holopad-cargo-front = Cargo - Front
-holopad-cargo-bay = Cargo - Cargo Bay
+holopad-cargo-bay = Cargo - Cargo Dock
 holopad-cargo-salvage-bay = Cargo - Salvage Bay
 holopad-cargo-breakroom  = Cargo - Breakroom
 holopad-cargo-ats = Cargo - ATS

@@ -1,0 +1,12 @@
+- type: entity
+  parent: ChemistryEmptyVial
+  suffix: Trieste, Full
+  id: PlanktonVial
+  name:  plankton sample
+  description: A vial designed to hold plankton cultures.
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: SeaWater
+        Quantity: 30

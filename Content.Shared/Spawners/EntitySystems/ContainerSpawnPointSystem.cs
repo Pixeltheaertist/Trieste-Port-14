@@ -33,8 +33,6 @@ public sealed partial class ContainerSpawnPointSystem : EntitySystem
 
         while (query.MoveNext(out var uid, out var spawnPoint, out var container, out var xform))
         {
-            if (args.Station != null && _station.GetOwningStation(uid, xform) != args.Station)
-                continue;
 
             // If it's unset, then we allow it to be used for both roundstart and midround joins
             if (spawnPoint.SpawnType == SpawnPointType.Unset)

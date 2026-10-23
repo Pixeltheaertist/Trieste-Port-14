@@ -27,7 +27,7 @@ public sealed partial class CCVars
     ///     Useful to prevent clipping through objects.
     /// </summary>
     public static readonly CVarDef<float> SpaceWindMaxVelocity =
-        CVarDef.Create("atmos.space_wind_max_velocity", 30f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_max_velocity", 25f, CVar.SERVERONLY);
 
     /// <summary>
     ///     The maximum force that may be applied to an object by pushing (i.e. not throwing) atmospheric pressure differences.
@@ -40,7 +40,7 @@ public sealed partial class CCVars
     ///     Whether monstermos tile equalization is enabled.
     /// </summary>
     public static readonly CVarDef<bool> MonstermosEqualization =
-        CVarDef.Create("atmos.monstermos_equalization", true, CVar.SERVERONLY);
+        CVarDef.Create("atmos.monstermos_equalization", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether monstermos explosive depressurization is enabled.
@@ -99,7 +99,7 @@ public sealed partial class CCVars
     ///     Heat loss per tile due to radiation at 20 degC, in W.
     /// </summary>
     public static readonly CVarDef<float> SuperconductionTileLoss =
-        CVarDef.Create("atmos.superconduction_tile_loss", 30f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.superconduction_tile_loss", 20f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether excited groups will be processed and created.
@@ -120,13 +120,13 @@ public sealed partial class CCVars
     ///     Maximum time in milliseconds that atmos can take processing.
     /// </summary>
     public static readonly CVarDef<float> AtmosMaxProcessTime =
-        CVarDef.Create("atmos.max_process_time", 3f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.max_process_time", 8f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Atmos tickrate in TPS. Atmos processing will happen every 1/TPS seconds.
     /// </summary>
     public static readonly CVarDef<float> AtmosTickRate =
-        CVarDef.Create("atmos.tickrate", 15f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.tickrate", 34f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Scale factor for how fast things happen in our atmosphere
@@ -135,7 +135,7 @@ public sealed partial class CCVars
     ///     in-game.
     /// </summary>
     public static readonly CVarDef<float> AtmosSpeedup =
-        CVarDef.Create("atmos.speedup", 8f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.speedup", 40f, CVar.SERVERONLY);
 
     /// <summary>
     /// Like atmos.speedup, but only for gas and reaction heat values. 64x means
@@ -151,7 +151,7 @@ public sealed partial class CCVars
     /// <example>Mechanics like the thermomachine or TEG should be affected by this CVAR change,
     /// whereas gas reactions and heat-only interactions should stay the same.</example>
     public static readonly CVarDef<float> AtmosHeatScale =
-        CVarDef.Create("atmos.heat_scale", 8f, CVar.REPLICATED | CVar.SERVER);
+        CVarDef.Create("atmos.heat_scale", 6f, CVar.REPLICATED | CVar.SERVER);
 
     /// <summary>
     ///     Maximum explosion intensity for explosions caused by bursting a gas tank ("max caps").

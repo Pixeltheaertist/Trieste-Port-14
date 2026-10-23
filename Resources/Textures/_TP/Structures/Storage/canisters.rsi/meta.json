@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Recoloured Frezon Canister to Water Canister by Fatgorilla https://github.com/Pixeltheaertist/Trieste-Port-14/pull/295",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "water"
+    },
+    {
+      "name": "water-1"
+    },
+    {
+      "name": "can-connector"
+    },
+    {
+      "name": "locked"
+    },
+    {
+      "name": "unlocked"
+    },
+    {
+      "name": "can-o0",
+      "delays": [
+          [
+              0.2,
+              0.2
+          ]
+      ]
+    },
+    {
+      "name": "can-o1"
+    },
+    {
+      "name": "can-o2"
+    },
+    {
+      "name": "can-o3"
+    },
+    {
+      "name": "can-oa1"
+    },
+    {
+      "name": "can-open"
+    },
+      {
+          "name": "engi"
+      },
+      {
+          "name": "engi-1"
+      }
+  ]
+}

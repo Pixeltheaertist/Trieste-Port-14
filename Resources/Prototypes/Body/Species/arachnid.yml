@@ -13,24 +13,33 @@
       limit: 1
       required: true
       default: [ ArachnidAppendagesDefault ]
+    # MoffStation: Start - Spooder markings.
     enum.HumanoidVisualLayers.Chest:
-      limit: 2
+      limit: 4 # Moffstation: Increase markings
+      required: false
+    enum.HumanoidVisualLayers.Head:
+      limit: 1
+      default: [ ArachnidEyesDefault ]
+      required: true
+    # Moffstation - End
+    enum.HumanoidVisualLayers.HeadTop: # Trieste: Added.
+      limit: 1
       required: false
     enum.HumanoidVisualLayers.HeadSide:
       limit: 1
       required: true
       default: [ ArachnidCheliceraeDownwards ]
     enum.HumanoidVisualLayers.LArm:
-      limit: 1
+      limit: 3 # Trieste: '1'
       required: false
     enum.HumanoidVisualLayers.RArm:
-      limit: 1
+      limit: 3 # Trieste: '1'
       required: false
     enum.HumanoidVisualLayers.LLeg:
-      limit: 1
+      limit: 3 # Trieste: '1'
       required: false
     enum.HumanoidVisualLayers.RLeg:
-      limit: 1
+      limit: 3 # Trieste: '1'
       required: false
 
 - type: entity

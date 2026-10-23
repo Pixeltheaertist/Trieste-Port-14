@@ -472,6 +472,7 @@
         - id: ClothingHeadHatHardhatYellow
         - id: ClothingNeckMantleQM
         - id: ClothingHeadsetCargo
+        - id: ClothingOuterCoatBomber # TRIESTE: Scurrets need warmth too!
 
 - type: entity
   parent: CrateGenericSteel

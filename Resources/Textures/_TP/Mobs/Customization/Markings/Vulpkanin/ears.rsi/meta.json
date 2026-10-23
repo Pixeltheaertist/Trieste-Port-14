@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Created by MysteriousPeeko (sharkpeekotwoelecticboogaloo) for Trieste Port 14",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "ear_clue_finder_left",
+            "directions": 4
+        },
+        {
+            "name": "ear_clue_finder_right",
+            "directions": 4
+        },
+        {
+            "name": "fluffy_ears_left_primary",
+            "directions": 4
+        },
+        {
+            "name": "fluffy_ears_left_secondary",
+            "directions": 4
+        },
+        {
+            "name": "fluffy_ears_right_primary",
+            "directions": 4
+        },
+        {
+            "name": "fluffy_ears_right_secondary",
+            "directions": 4
+        }
+    ]
+}

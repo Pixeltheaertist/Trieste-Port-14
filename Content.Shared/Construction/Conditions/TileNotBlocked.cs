@@ -5,6 +5,8 @@ using Robust.Shared.Map;
 
 namespace Content.Shared.Construction.Conditions;
 
+// !! TRIESTE PORT MODIFIED !! //
+
 [UsedImplicitly]
 [DataDefinition]
 public sealed partial class TileNotBlocked : IConstructionCondition
@@ -23,9 +25,12 @@ public sealed partial class TileNotBlocked : IConstructionCondition
             return false;
         }
 
-        if (turfSystem.IsSpace(tileRef.Value) && _failIfSpace)
+        // TRIESTE
+        // If it's a subfloor, let it be constructed on.
+        if (turfSystem.IsSpace(tileRef.Value))
         {
-            return false;
+            if (!turfSystem.IsSubfloor(tileRef.Value))
+                return false;
         }
 
         if (!turfSystem.GetContentTileDefinition(tileRef.Value).Sturdy && _failIfNotSturdy)

@@ -51,7 +51,7 @@
   parent: [ EncryptionKey, BaseCentcommContraband ]
   id: EncryptionKeyCentCom
   name: central command encryption key
-  description: An encryption key used by captain's bosses.
+  description: An encryption key used by evil executives. # Why was this shit changed without a tag out - Letalone changed for SolGov???? Make a new file :guh:
   components:
   - type: EncryptionKey
     channels:
@@ -241,7 +241,7 @@
     price: 500 # 1000 for 2
 
 - type: entity
-  parent: [ EncryptionKey, BaseSiliconScienceContraband ]
+  parent: EncryptionKey
   id: EncryptionKeyBinary
   name: binary translator key
   description: An encryption key that translates binary signals used by silicons.

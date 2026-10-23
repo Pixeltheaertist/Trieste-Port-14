@@ -90,8 +90,8 @@
 - type: entity
   parent: ClothingBackpackSatchel
   id: ClothingBackpackSatchelVirology
-  name: virology satchel
-  description: A satchel made of hypo-allergenic fibers. It's designed to help prevent the spread of disease. Smells like monkey.
+  name: medical satchel
+  description: A satchel made of hypo-allergenic fibers. It's designed to help prevent the spread of disease.
   components:
   - type: Sprite
     sprite: Clothing/Back/Satchels/virology.rsi
@@ -133,9 +133,9 @@
     sprite: Clothing/Back/Satchels/brigmedic.rsi
 
 - type: entity
-  parent: [ClothingBackpackSatchel, BaseCommandContraband]
+  parent: [ClothingBackpackSatchel, BaseNanotrasenContraband ] #TP14
   id: ClothingBackpackSatchelCaptain
-  name: captain's satchel
+  name: Captain's satchel
   description: An exclusive satchel for Nanotrasen officers.
   components:
   - type: Sprite

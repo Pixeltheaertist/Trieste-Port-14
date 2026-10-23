@@ -70,10 +70,29 @@ public sealed partial class AutoEmoteSystem : EntitySystem
 
     private void OnUnpaused(EntityUid uid, AutoEmoteComponent autoEmote, ref EntityUnpausedEvent args)
     {
+        // Safety check: if paused time is suspiciously long or negative, skip the adjustment.
+        if (args.PausedTime <= TimeSpan.Zero || args.PausedTime > TimeSpan.FromDays(365))
+        {
+            Log.Warning($"Entity {uid} had invalid pause time: {args.PausedTime}. Skipping timer adjustment.");
+            return;
+        }
+
+        // Check if adding time would overflow before doing it.
+        if (autoEmote.NextEmoteTime > TimeSpan.MaxValue - args.PausedTime)
+        {
+            Log.Warning($"Entity {uid} would overflow NextEmoteTime. Skipping adjustment.");
+            return;
+        }
+
         foreach (var key in autoEmote.EmoteTimers.Keys)
         {
-            autoEmote.EmoteTimers[key] += args.PausedTime;
+            // Run a safety check for each timer too.
+            if (autoEmote.EmoteTimers[key] <= TimeSpan.MaxValue - args.PausedTime)
+            {
+                autoEmote.EmoteTimers[key] += args.PausedTime;
+            }
         }
+
         autoEmote.NextEmoteTime += args.PausedTime;
     }
 

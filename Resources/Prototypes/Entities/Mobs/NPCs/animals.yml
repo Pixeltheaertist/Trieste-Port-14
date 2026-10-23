@@ -1646,7 +1646,7 @@
     soundsId: Nymph
   - type: Reform
     actionPrototype: DionaReformAction
-    reformTime: 10
+    reformTime: 5
     popupText: diona-reform-attempt
     reformPrototype: MobDionaReformed
 

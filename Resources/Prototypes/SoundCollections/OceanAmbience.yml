@@ -1,0 +1,4 @@
+﻿- type: soundCollection
+  id: WhaleMigration
+  files:
+    - /Audio/_TP/Effects/whale_groan.ogg

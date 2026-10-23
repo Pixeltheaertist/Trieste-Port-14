@@ -100,7 +100,7 @@
 
 - type: entity
   id: TowelColorCentcom
-  name: centcom towel
+  name: centcomm towel
   parent: BaseTowel
   components:
   - type: Sprite

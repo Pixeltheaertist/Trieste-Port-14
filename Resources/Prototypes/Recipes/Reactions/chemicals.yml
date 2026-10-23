@@ -25,6 +25,16 @@
     Nitrogen: 1
 
 - type: reaction
+  id: FishWelding
+  reactants:
+    FishOil:
+      amount: 1
+    Hydroxide:
+      amount: 1
+  products:
+     WeldingFuel: 1
+
+- type: reaction
   id: CelluloseBreakdown
   source: true
   requiredMixerCategories:
@@ -35,6 +45,19 @@
   products:
     Sugar: 2
     Carbon: 1
+
+- type: reaction
+  id: SeawaterElectrolysis
+  source: true
+  requiredMixerCategories:
+  - Electrolysis
+  reactants:
+    SeaWater:
+      amount: 5
+  products:
+    Hydrogen: 3
+    Oxygen: 1.5
+    Chlorine: 0.5
 
 - type: reaction
   id: Diethylamine
@@ -56,17 +79,15 @@
   products:
     Phenol: 2
 
-- type: reaction
-  id: Acetone
-  reactants:
-    Oil:
-      amount: 1
-    WeldingFuel:
-      amount: 1
-    Oxygen:
-      amount: 1
-  products:
-    Acetone: 2
+#- type: reaction # TP14
+#  id: Acetone
+#  reactants:
+#    Oil:
+#      amount: 1
+#    Oxygen:
+#      amount: 1
+#  products:
+#    Acetone: 2
 
 - type: reaction
   id: FoamingAgent

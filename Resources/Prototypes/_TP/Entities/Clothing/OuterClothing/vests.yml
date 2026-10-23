@@ -1,0 +1,52 @@
+- type: entity
+  parent:
+  - ClothingOuterArmorBaseCarapace
+  - BaseCommandContraband
+  id: TP14ClothingOuterVestOverseerHighVis
+  suffix: Trieste, Vest
+  name: overseer's armored high-vis vest
+  description: A high-visibility puffy vest in command colors.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/OuterClothing/Vests/overseerhighvis.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+    - state: icon-unshaded
+      shader: shaded
+  - type: Clothing
+    sprite: _TP/Clothing/OuterClothing/Vests/overseerhighvis.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: shaded
+  - type: TemperatureProtection
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.3
+  - type: Tag
+    tags:
+    - HiViz
+    - WhitelistChameleon
+
+- type: entity
+  parent:
+  - ClothingOuterArmorBaseCarapace
+  - BaseCommandContraband
+  id: TP14ClothingOuterVestOverseerArmoredVest
+  suffix: Trieste, Vest
+  name: overseer's body armor
+  description: The overseer's custom body armor, it's got a little badge on the front, how cute.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/OuterClothing/Vests/overseerarmored.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    sprite: _TP/Clothing/OuterClothing/Vests/overseerarmored.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon

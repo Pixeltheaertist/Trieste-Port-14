@@ -17,6 +17,7 @@
   - BorgModuleInflatable
   - BorgModuleMusique
   - BorgModuleTool
+  - TP14BorgModuleMailRecipe # TRIESTE
 
 - type: latheRecipePack
   id: BorgLimbsStatic

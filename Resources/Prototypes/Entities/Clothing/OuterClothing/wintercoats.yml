@@ -2,7 +2,7 @@
   parent: [ TemperatureProtection, ClothingOuterJacketBase ]
   id: ClothingOuterWinterCoat
   name: winter coat
-  description: A heavy jacket made from 'synthetic' animal furs.
+  description: A heavy, water resistant jacket for those cold days on the platform.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
@@ -87,7 +87,7 @@
     clothingPrototype: ClothingHeadHatHoodWinterBartender
 
 - type: entity
-  parent: [ClothingOuterWinterCoatToggleable, BaseCommandContraband]
+  parent: [ClothingOuterWinterCoatToggleable, BaseNanotrasenContraband] #TP14
   id: ClothingOuterWinterCap
   name: captain's winter coat
   components:
@@ -351,7 +351,7 @@
 - type: entity
   parent: [ClothingOuterArmorHoS, ClothingOuterWinterCoatToggleable, BaseSecurityCommandContraband]
   id: ClothingOuterWinterHoS
-  name: head of security's armored winter coat
+  name: marshal's armored winter coat # TP
   description: A sturdy, utilitarian winter coat designed to protect a head of security from any brig-bound threats and hypothermic events.
   components:
   - type: Sprite
@@ -370,7 +370,7 @@
 - type: entity
   parent: [ClothingOuterWinterCoatToggleable, BaseSecurityCommandContraband]
   id: ClothingOuterWinterHoSUnarmored
-  name: head of security's winter coat
+  name: marshal's winter coat # TP
   description: A sturdy coat, a warm coat, but not an armored coat.
   components:
   - type: Sprite
@@ -553,7 +553,7 @@
 - type: entity
   parent: [ClothingOuterWinterCoatToggleable, BaseCommandContraband]
   id: ClothingOuterWinterQM
-  name: quartermaster's winter coat
+  name: harbormaster's winter coat
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
@@ -684,7 +684,7 @@
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterViro
-  name: virology winter coat
+  name: medical winter coat
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi

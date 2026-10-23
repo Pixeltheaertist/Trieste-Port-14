@@ -5,7 +5,7 @@ A fella has gotta eat, and it's the chef's job to make sure folks have something
 
 [textlink="Click here to see a list of food recipes." link="FoodRecipes"]
 
-First and foremost, you'll need to familiarize yourself with the kitchen, and the tools available to you.
+First and foremost, you'll need to familiarize yourself with the kitchen and the tools available to you.
 
 <Box>
 <GuideEntityEmbed Entity="KitchenKnife"/>
@@ -16,7 +16,8 @@ First and foremost, you'll need to familiarize yourself with the kitchen, and th
 </Box>
 <Box>
 <GuideEntityEmbed Entity="VendingMachineChefvend" Caption="Chef Vendor"/>
-<GuideEntityEmbed Entity="KitchenMicrowave"/>
+<GuideEntityEmbed Entity="TP14KitchenOven"/>
+<GuideEntityEmbed Entity="TP14KitchenDeepFryer"/>
 <GuideEntityEmbed Entity="KitchenSpike"/>
 <GuideEntityEmbed Entity="VendingMachineDinnerware" Caption="Dinnerware Vend"/>
 </Box>
@@ -25,12 +26,12 @@ First and foremost, you'll need to familiarize yourself with the kitchen, and th
 
 It's hard to put into words how to play chef without feeling like you're being given orders, but here are some basics.
 
-- Check what you have on hand when it comes to ingredients, most kitchens have some Flour, Rice, Eggs, Monkey Cubes, and a few other things to get started with.
+- Check what you have on hand when it comes to ingredients; most kitchens have some Flour, Rice, Eggs, Monkey Cubes, and a few other things to get started with.
 - Try your hand at mixing up some dough by putting water and flour together in a beaker. (Use the sinks!)
-- Check the Wiki (or Food Recipes) guidebook for things you can make, and put all the listed ingredients into a microwave to cook it into a meal.
-- Set up mouse traps. Yes, really. It's easy to see all your hard work disappear if you don't take precautions for mice infestations.
+- Check the Wiki (or Food Recipes) guidebook for things you can make and put all the listed ingredients into the oven or deep-fryer to cook it into a meal.
+- Set up mousetraps. Yes, really. It's easy to see all your hard work disappear if you don't take precautions for mice infestations.
 
-Once you're a bit more experienced and familiar with what you can make, it might be best to put together a few menus, or a "cheat sheet" so you can give a list of ingredients to botany.
+Once you're a bit more experienced and familiar with what you can make, it might be best to put together a few menus or a "cheat sheet" so you can give a list of ingredients to botany.
 
 ## Mixing Dough:
 Add Flour and Water together in a beaker. (Use the sink for water!)
@@ -56,7 +57,7 @@ Ask Botany for what you need, without a botanist, you may need to grow more plan
 <GuideEntityEmbed Entity="WheatBushel"/>
 </Box>
 ## Gathering Milk:
-Alt-Click on a Cow with a container in your hand. (Beakers, Buckets, Milk Jugs, ect.)
+Alt-Click on a Cow or Goat with a container in your hand. (Beakers, Buckets, Milk Jugs, ect.)
 <Box>
 <GuideEntityEmbed Entity="Bucket"/>
 <GuideEntityEmbed Entity="MobCow"/>

@@ -7,14 +7,14 @@ game-ticker-unknown-role = Unknown
 game-ticker-delay-start = Round start has been delayed for {$seconds} seconds.
 game-ticker-pause-start = Round start has been paused.
 game-ticker-pause-start-resumed = Round start countdown is now resumed.
-game-ticker-player-join-game-message = Welcome to Space Station 14! If this is your first time playing, be sure to read the game rules, and don't be afraid to ask for help in LOOC (local OOC) or OOC (usually available only between rounds).
+game-ticker-player-join-game-message = Welcome to Trieste Port! If this is your first time playing, be sure to read the game rules, and don't be afraid to ask for help in LOOC (local OOC) or OOC (usually available only between rounds).
 game-ticker-get-info-text = Hi and welcome to [color=white]Space Station 14![/color]
                             The current round is: [color=white]#{$roundId}[/color]
                             The current player count is: [color=white]{$playerCount}[/color]
                             The current map is: [color=white]{$mapName}[/color]
                             The current game mode is: [color=white]{$gmTitle}[/color]
                             >[color=yellow]{$desc}[/color]
-game-ticker-get-info-preround-text = Hi and welcome to [color=white]Space Station 14![/color]
+game-ticker-get-info-preround-text = Hi and welcome to [color=white]Trieste Port![/color]
                             The current round is: [color=white]#{$roundId}[/color]
                             The current player count is: [color=white]{$playerCount}[/color] ([color=white]{$readyCount}[/color] {$readyCount ->
                                 [one] is
@@ -25,6 +25,7 @@ game-ticker-get-info-preround-text = Hi and welcome to [color=white]Space Statio
                             >[color=yellow]{$desc}[/color]
 game-ticker-no-map-selected = [color=yellow]Map not yet selected![/color]
 game-ticker-player-no-jobs-available-when-joining = When attempting to join to the game, no jobs were available.
+game-ticker-player-no-character-for-job-available-when-joining = When attempting to join the game, no characters were available for selected job {$job}.
 
 # Displayed in chat to admins when a player joins
 player-join-message = Player {$name} joined.

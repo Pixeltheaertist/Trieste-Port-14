@@ -1,0 +1,11 @@
+- type: entity
+  parent: ChemistryHotplate
+  id: TP14ChemistryColdplate
+  suffix: Trieste
+  name: coldplate
+  description: "!etalptoh eht :ygolonhcet gnitaeh rekaeb ni noitnevni tsewen ruo ,sevaworcim eht fo tnednecsed ehT"
+  components:
+  - type: SolutionHeater
+    heatPerSecond: -160
+  - type: Machine
+    board: TP14ColdplateMachineCircuitboard

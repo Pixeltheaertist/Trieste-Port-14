@@ -12,7 +12,7 @@
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
     - id: MeteorSwarmSmall
-      prob: 0.15
+      prob: 0
 
 - type: entityTable
   id: MeteorSwarmMildTable
@@ -60,10 +60,10 @@
   components:
   - type: GameRule
   - type: BasicStationEventScheduler
-    minimumTimeUntilFirstEvent: 600 # 10 min
+    minimumTimeUntilFirstEvent: 9999999 # fucking decades or something idk
     minMaxEventTiming:
-      min: 750 # 12.5 min
-      max: 930 # 17.5 min
+      min: 9999999 # TRIESTE: '12.5 min'
+      max: 9999999 # TRIESTE: '17.5 min'
     scheduledGameRules: !type:NestedSelector
       tableId: BasicMeteorSwarmEventsTable
 
@@ -73,10 +73,10 @@
   components:
   - type: GameRule
   - type: BasicStationEventScheduler
-    minimumTimeUntilFirstEvent: 600 # 10 min
+    minimumTimeUntilFirstEvent: 9999999 # TRIESTE: '600'
     minMaxEventTiming:
-      min: 750 # 12.5 min
-      max: 930 # 17.5 min
+      min: 9999999 # TRIESTE: 12.5 min
+      max: 9999999 # TRIESTE: 17.5 min
     scheduledGameRules: !type:NestedSelector
       tableId: MeteorSwarmMildTable
 
@@ -99,8 +99,8 @@
   - type: GameRule
   - type: StationEvent
     reoccurrenceDelay: 1
-    earliestStart: 12
-    minimumPlayers: 25
+    earliestStart: 999999 # TRIESTE: '12'
+    minimumPlayers: 999 # TRIESTE: '25'
   - type: MeteorSwarm
 
 - type: entity
@@ -109,8 +109,8 @@
   components:
   - type: StationEvent
     weight: 44
-    earliestStart: 2
-    minimumPlayers: 0
+    earliestStart: 999999 # TRIESTE: '2'
+    minimumPlayers: 999 # TRIESTE: '0'
   - type: MeteorSwarm
     announcement: null
     announcementSound: null
@@ -129,8 +129,8 @@
   id: SpaceDustMajor
   components:
   - type: StationEvent
-    weight: 22
-    minimumPlayers: 0
+    weight: 999999 # TRIESTE: '22'
+    minimumPlayers: 999 # TRIESTE: '0'
   - type: MeteorSwarm
     announcement: station-event-space-dust-start-announcement
     announcementSound: /Audio/Announcements/attention.ogg
@@ -149,8 +149,8 @@
   id: MeteorSwarmSmall
   components:
   - type: StationEvent
-    weight: 18
-    minimumPlayers: 15
+    weight: 999999 # TRIESTE: '18'
+    minimumPlayers: 999 # TRIESTE: '15'
   - type: MeteorSwarm
     meteors:
       MeteorSmall: 7
@@ -209,8 +209,8 @@
     weight: 3.5
     reoccurrenceDelay: 1
     duration: 1
-    earliestStart: 30
-    minimumPlayers: 25
+    earliestStart: 999999 # TRIESTE: '30'
+    minimumPlayers: 999 # TRIESTE: '25'
   - type: ImmovableRodRule
     rodPrototypes: !type:GroupSelector
       children:

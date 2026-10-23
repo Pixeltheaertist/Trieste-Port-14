@@ -1,0 +1,38 @@
+- type: entity
+  id: AdminThunderTest
+  parent: AdminInstantEffectBase
+  name: instant thunder
+  components:
+  - type: Sprite
+    sprite: /Textures/Objects/Fun/goldbikehorn.rsi
+    visible: false
+    state: icon
+  - type: TriggerOnSpawn
+  - type: TimedDespawn
+    lifetime: 3
+  - type: LightBehaviour
+    behaviours:
+    - !type:FadeBehaviour
+      id: radiating
+      maxDuration: 2.0
+      startValue: 3.0
+      endValue: 2.0
+      isLooped: true
+      reverseWhenFinished: true
+    - !type:PulseBehaviour
+      id: blinking
+      interpolate: Nearest
+      maxDuration: 1.0
+      startValue: 0.1
+      endValue: 2.0
+      isLooped: true
+  - type: PointLight
+    enabled: true
+    radius: 20.5
+    softness: 4
+  - type: AmbientSound
+    enabled: true
+    volume: -5
+    range: 14
+    sound:
+      path: /Audio/Effects/tesla_collapse.ogg

@@ -101,6 +101,7 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
 
         UpdateProcessing(frameTime);
         UpdateHighPressure(frameTime);
+        UpdateInGas(frameTime); // TRIESTE: Added.
 
         var delay = TimeSpan.FromSeconds(ExposedUpdateDelay);
 

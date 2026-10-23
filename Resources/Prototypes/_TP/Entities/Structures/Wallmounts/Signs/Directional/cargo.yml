@@ -1,0 +1,72 @@
+# Expeditionary
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalExped
+  suffix: Trieste, Exped, Wall-Sign
+  name: expeditionary wall sign
+  description: A direction sign, pointing out which way the Expeditionary department is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#808080" # Gray
+    - state: text_exped
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalExped
+      Secondary: TP14SignDirectionalExpedAlt1
+      Tertiary: TP14SignDirectionalExpedAlt2
+
+- type: entity
+  parent: TP14SignDirectionalExped
+  id: TP14SignDirectionalExpedAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalExped
+  id: TP14SignDirectionalExpedAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# Cargo
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalCargo
+  suffix: Trieste, Cargo, Wall-Sign
+  name: cargo wall sign
+  description: A direction sign, pointing out which way the Cargo department is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#964B00" # Brown
+    - state: text_supply
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalCargo
+      Secondary: TP14SignDirectionalCargoAlt1
+      Tertiary: TP14SignDirectionalCargoAlt2
+
+- type: entity
+  parent: TP14SignDirectionalCargo
+  id: TP14SignDirectionalCargoAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalCargo
+  id: TP14SignDirectionalCargoAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25

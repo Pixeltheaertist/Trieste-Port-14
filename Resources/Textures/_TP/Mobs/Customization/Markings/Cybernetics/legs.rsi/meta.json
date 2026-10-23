@@ -1,0 +1,91 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Rusty and robo cybernetics Created by MysteriousPeeko (sharkpeekotwoelecticboogaloo) for Trieste Port 14, corroded and azurus made by LevToBeContinued",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "l_foot_azurus_primary",
+            "directions": 4
+        },
+        {
+            "name": "l_foot_azurus_secondary",
+            "directions": 4
+        },
+        {
+            "name": "l_foot_azurus_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "l_foot_corroded",
+            "directions": 4
+        },
+        {
+            "name": "l_leg_azurus_primary",
+            "directions": 4
+        },
+        {
+            "name": "l_leg_azurus_secondary",
+            "directions": 4
+        },
+        {
+            "name": "l_leg_azurus_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "l_leg_corroded",
+            "directions": 4
+        },
+        {
+            "name": "left_foot_robo",
+            "directions": 4
+        },
+        {
+            "name": "left_leg_robo",
+            "directions": 4
+        },
+        {
+            "name": "r_foot_azurus_primary",
+            "directions": 4
+        },
+        {
+            "name": "r_foot_azurus_secondary",
+            "directions": 4
+        },
+        {
+            "name": "r_foot_azurus_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "r_foot_corroded",
+            "directions": 4
+        },
+        {
+            "name": "r_leg_azurus_primary",
+            "directions": 4
+        },
+        {
+            "name": "r_leg_azurus_secondary",
+            "directions": 4
+        },
+        {
+            "name": "r_leg_azurus_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "r_leg_corroded",
+            "directions": 4
+        },
+        {
+            "name": "right_foot_robo",
+            "directions": 4
+        },
+        {
+            "name": "right_leg_robo",
+            "directions": 4
+        }
+    ]
+}

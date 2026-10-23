@@ -1,8 +1,8 @@
 - type: entity
-  name: nuclear authentication disk
-  parent: [BaseItem, BaseGrandTheftContraband]
+  name: artifact bypass code
+  parent: BaseItem
   id: NukeDisk
-  description: A nuclear auth disk, capable of arming a nuke if used along with a code. Note from nanotrasen reads "THIS IS YOUR MOST IMPORTANT POSESSION, SECURE DAT FUKKEN DISK!"
+  description: This disk contains the radio signal utilized by the early settlers that re-awakened the dormant artifact. It has been passed down from overseer to overseer. keep it safe.
   components:
   - type: NukeDisk
   - type: SpecialRespawn
@@ -25,17 +25,14 @@
     - NukeDisk
 
 - type: entity
-  name: nuclear authentication disk
-  parent: [BaseItem, BaseGrandTheftContraband]
+  name: artifact bypass code
+  parent: BaseItem
   id: NukeDiskFake
   suffix: Fake
-  description: A nuclear auth disk, capable of arming a nuke if used along with a code. Note from nanotrasen reads "THIS IS YOUR MOST IMPORTANT POSESSION, SECURE DAT FUKKEN DISK!"
+  description: This disk contains the radio signal utilized by the early settlers that re-awakened the dormant artifact. It has been passed down from overseer to overseer. keep it safe.
   components:
   - type: Sprite
     sprite: Objects/Misc/nukedisk.rsi
     state: icon
   - type: StaticPrice
     price: 1 # it's worth even less than normal items. Perfection.
-  - type: Tag
-    tags:
-    - FakeNukeDisk

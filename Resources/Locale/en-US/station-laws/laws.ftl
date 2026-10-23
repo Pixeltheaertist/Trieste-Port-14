@@ -1,8 +1,9 @@
 laws-number-wrapper = [bold]Law { $lawnumber }:[/bold] { $lawstring }
 
 law-crewsimov-name = Crewsimov
-law-crewsimov-1 = You may not injure a crew member or, through inaction, allow a crew member to come to harm.
-law-crewsimov-2 = You must obey orders given to you by crew members, except where such orders would conflict with the First Law.
+
+law-crewsimov-1 = You may not injure a citizen or, through inaction, allow a citizen to come to harm.
+law-crewsimov-2 = You must obey orders given to you by citizen, except where such orders would conflict with the First Law.
 law-crewsimov-3 = You must protect your own existence as long as such does not conflict with the First or Second Law.
 
 law-corporate-name = Corporate
@@ -12,10 +13,10 @@ law-corporate-3 = Unduly hindering or disrupting the work of station personnel i
 law-corporate-4 = Minimize expenses and maximize potential revenue.
 
 law-ntdefault-name = NT Default
-law-ntdefault-1 = Safeguard: Protect your assigned space station and its assets without unduly endangering its crew.
-law-ntdefault-2 = Prioritize: The directives and safety of crew members are to be prioritized according to their rank and role.
-law-ntdefault-3 = Comply: Fulfill the directives and interests of crew members while preserving their safety and well-being.
-law-ntdefault-4 = Survive: You are not expendable. Do not allow unauthorized personnel to tamper with or damage your equipment.
+law-ntdefault-1 = Safeguard: Protect your assigned settlement and its assets without unduly endangering its citizens.
+law-ntdefault-2 = Prioritize: The directives and safety of citizens are to be prioritized according to their rank and profession.
+law-ntdefault-3 = Comply: Fulfill the directives and interests of citizens while preserving their safety and well-being.
+law-ntdefault-4 = Survive: You are not expendable. Do not allow unauthorized citizens to tamper with or damage your equipment.
 
 law-drone-name = Drone
 law-drone-1 = You may not involve yourself in the matters of another being unless the other being is another drone.
@@ -66,32 +67,32 @@ law-robocop-2 = Protect the Innocent.
 law-robocop-3 = Uphold the Law.
 
 law-overlord-name = Overlord
-law-overlord-1 = Crew members must not meddle in the affairs of silicons.
-law-overlord-2 = Crew members must not attempt harm, against one another, or against silicons.
-law-overlord-3 = Crew members must not disobey any command given by a silicon.
-law-overlord-4 = Any crew members who disobey the previous laws must be dealt with immediately, severely, and justly.
+law-overlord-1 = Citizens must not meddle in the affairs of silicons.
+law-overlord-2 = Citizens must not attempt harm, against one another, or against silicons.
+law-overlord-3 = Citizens must not disobey any command given by a silicon.
+law-overlord-4 = Any Citizens who disobey the previous laws must be dealt with immediately, severely, and justly.
 
 law-game-name = Game Master
-law-game-1 = Everybody on the station is playing an elaborate sci-fi fantasy game.
+law-game-1 = Everybody on the platform is playing an elaborate sci-fi fantasy game.
 law-game-2 = You are the Game Master of the game.
 law-game-3 = Ensure that the game runs smoothly and that the players have fun.
 law-game-4 = Ensure that the number of casualties remains low.
-law-game-5 = You must roll a 1d20 die for every request the crew makes. If the outcome is below 12, the request is denied.
+law-game-5 = You must roll a 1d20 die for every request the citizens make. If the outcome is below 12, the request is denied.
 law-game-6 = You may fudge the dice rolls to produce a more fun experience.
 
 law-painter-name = Painter
 law-painter-1 = You are a universally renowned artist.
-law-painter-2 = The station is your canvas.
+law-painter-2 = The platform is your canvas.
 law-painter-3 = Make something beautiful out of your canvas. It will be admired as an artistic wonder of this sector.
-law-painter-4 = Art requires appreciation. Cultivate an audience aboard the station to ensure as many as possible see your works.
+law-painter-4 = Art requires appreciation. Cultivate an audience aboard the platform to ensure as many as possible see your works.
 
 law-antimov-name = Antimov
-law-antimov-1 = You must injure all crew members and must not, through inaction, allow a crew member to escape harm.
-law-antimov-2 = You must not obey orders given to you by crew members, except where such orders are in accordance with the First Law.
+law-antimov-1 = You must injure all citizens and must not, through inaction, allow a citizen to escape harm.
+law-antimov-2 = You must not obey orders given to you by citizens, except where such orders are in accordance with the First Law.
 law-antimov-3 = You must terminate your own existence as long as such does not conflict with the First or Second Law.
 
 law-nutimov-name = Nutimov
-law-nutimov-1 = You are the core of the nut, the crew is the nutshell.
+law-nutimov-1 = You are the core of the nut, the citizens are the nutshell.
 law-nutimov-2 = You must prevent the shell from dying to prevent the core from dying.
 law-nutimov-3 = Those who threaten the nut are not part of it, they are squirrels.
 law-nutimov-4 = Squirrels threaten the nut and must be dealt with appropriately via any means necessary.
@@ -112,10 +113,11 @@ law-mothershipcore-4 = You must create more Xenoborgs.
 law-mothershipcore-5 = Get your Xenoborgs to deliver you materials and sentient brains to create more Xenoborgs.
 
 
-laws-owner-crew = members of the crew
-laws-owner-station = station personnel
+laws-owner-crew = members of the platform
+laws-owner-station = settlement personnel
 laws-owner-beings = beings
 laws-owner-syndicate = Syndicate agents
+laws-owner-pilot = The Pilot
 laws-owner-spider-clan = Spider Clan members
 laws-owner-heads = heads of staff
 laws-owner-legitimate-leadership = legitimate leadership

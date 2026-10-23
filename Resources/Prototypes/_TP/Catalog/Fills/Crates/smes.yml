@@ -1,0 +1,25 @@
+- type: entity
+  id: TP14SMESAdvancedMachineCircuitboardCrate
+  parent: CrateEngineeringSecure
+  suffix: Trieste, Engineering
+  name: advanced smes circuitboards crate
+  description: Three advanced smes circuitboards, specialized and created for trieste.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage:
+        id: TP14SMESAdvancedMachineCircuitboard
+        amount: 3
+
+- type: entity
+  id: TP14SMESAdvancedMachineCrate
+  parent: CrateEngineeringSecure
+  suffix: Trieste, Engineering
+  name: advanced SMES assembly crate
+  description: A kit with a single trieste-specific smes flatpack. It doesn't come cheap!
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage:
+        id: TP14AdvancedSMESFlatpack
+        amount: 1

@@ -76,6 +76,7 @@
   friction: 1.5
   isSpace: true
   itemDrop: PartRodMetal1
+  indestructible: true
   heatCapacity: 10000
   mass: 200
   variants: 3

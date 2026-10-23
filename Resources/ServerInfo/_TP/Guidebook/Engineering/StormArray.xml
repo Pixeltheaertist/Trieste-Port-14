@@ -1,0 +1,33 @@
+<Document>
+  # The Storm Array
+
+  Down at Trieste it's a relatively simple machine, producing energy at a near constant rate in exchange for heat.
+
+  Not only must the Storm Array's room be kept cool from the eventual heat build-up caused by the storm's energy field, but it must have cold air piped into it using [textlink="piping." link="Pipes"]
+
+
+  ## Generator
+  The Storm Array siphons energy from the stormy weather of Trieste.
+
+  All engineers working at Trieste Port should note that the Storm Array is far too dangerous and complex to repair, meaning that any damage is permanent. This means that damage, either from people or heat, should be negated.
+
+  Side note: It is important to know that the generator, even at the base, is electrically charged. This means that protective equipment IS required to handle or even come near the base.
+
+
+  ## The pipes and Cold Loop
+  There is one major pipe [textlink="pipenet" link="PipeNetworks"] to worry about: [color=cyan]The Cold Loop.[/color] (where cold air gets heated by the Storm Array, and in exchange, cools off)
+
+  It is important to keep an eye on the [textlink="piping," link="Pipes"] as only the coldest of temperatures will sufficiently cool the Storm Array.
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPort" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPressurePump" Rotation="90" Caption="" Margin=""/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="180" Caption="" Margin=""/>
+    <GuideEntityEmbed Entity="GasPressurePump" Rotation="270" Caption="" Margin=""/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="180" Caption="" Margin=""/>
+    <GuideEntityEmbed Entity="GasThermoMachineFreezerEnabled" Caption="" Rotation="270" Margin="1"/>
+  </Box>
+
+  ## Backup Power
+  In the event of a catastrophic meltdown and/or the destruction of the Storm Array, backup SMES' should be brought up from Sweetwater to Trieste for battery power.
+</Document>

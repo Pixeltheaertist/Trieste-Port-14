@@ -1043,12 +1043,12 @@
       maxVol: 500
       canReact: false
     possibleChemicals:
-    - Dermaline
+    #- Dermaline TP14
     - Arithrazine
-    - Bicaridine
+    #- Bicaridine TP 14
     - Inaprovaline
-    - Kelotane
-    - Dexalin
+    #- Kelotane TP14
+    #- Dexalin TP14
     - Omnizine
     - Napalm
     - Toxin

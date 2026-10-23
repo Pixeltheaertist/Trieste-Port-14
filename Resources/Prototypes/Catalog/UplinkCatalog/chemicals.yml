@@ -141,7 +141,7 @@
   id: UplinkMedsBundle
   name: uplink-meds-bundle-name
   description: uplink-meds-bundle-desc
-  productEntity: ClothingBackpackDuffelSyndicateMedicalBundleFilled
+  productEntity: TP14ClothingBackpackDuffelSyndicateMedicalBundleFilled # TRIESTE: 'ClothingBackpackDuffelSyndicateMedicalBundleFilled'
   discountCategory: rareDiscounts
   discountDownTo:
     Telecrystal: 16

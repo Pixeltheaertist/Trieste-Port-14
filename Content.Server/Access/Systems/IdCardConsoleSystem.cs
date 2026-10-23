@@ -49,14 +49,54 @@ public sealed partial class IdCardConsoleSystem : SharedIdCardConsoleSystem
         SubscribeLocalEvent<IdCardConsoleComponent, WriteToTargetIdMessage>(OnWriteToTargetIdMessage);
 
         // one day, maybe bound user interfaces can be shared too.
+        SubscribeLocalEvent<IdCardConsoleComponent, EntInsertedIntoContainerMessage>(OnIdInserted); // TRIESTE //
+        SubscribeLocalEvent<IdCardConsoleComponent, EntRemovedFromContainerMessage>(OnIdRemoved); // TRIESTE //
         SubscribeLocalEvent<IdCardConsoleComponent, ComponentStartup>(UpdateUserInterface);
-        SubscribeLocalEvent<IdCardConsoleComponent, EntInsertedIntoContainerMessage>(UpdateUserInterface);
-        SubscribeLocalEvent<IdCardConsoleComponent, EntRemovedFromContainerMessage>(UpdateUserInterface);
         SubscribeLocalEvent<IdCardConsoleComponent, DamageChangedEvent>(OnDamageChanged);
 
         // Intercept the event before anyone can do anything with it!
         SubscribeLocalEvent<IdCardConsoleComponent, MachineDeconstructedEvent>(OnMachineDeconstructed,
             before: [typeof(EmptyOnMachineDeconstructSystem), typeof(ItemSlotsSystem)]);
+
+    }
+
+    /// <summary>
+    /// TRIESTE SPECIFIC
+    /// <para>Logs the target ID when inserted.</para>
+    /// </summary>
+    /// <param name="uid">Target UID</param>
+    /// <param name="component">IDCardConsole Component</param>
+    /// <param name="args">EntInsertedIntoContainerMessage Argument</param>
+    private void OnIdInserted(EntityUid uid, IdCardConsoleComponent component, EntInsertedIntoContainerMessage args)
+    {
+        if (args.Container.ID == TargetIdCardSlotId)
+        {
+
+            var targetId = args.Entity;
+            component.TargetIdAccessSnapshot = _access.TryGetTags(targetId)?.ToList()
+                                               ?? new List<ProtoId<AccessLevelPrototype>>();
+            component.TargetIdNameSnapshot = Comp<MetaDataComponent>(targetId).EntityName;
+        }
+
+        UpdateUserInterface(uid, component, args);
+    }
+
+    /// <summary>
+    /// TRIESTE SPECIFIC
+    /// <para>Logs all ID changes when an ID is exported, rather than check clicked.</para>
+    /// </summary>
+    /// <param name="uid"></param>
+    /// <param name="component"></param>
+    /// <param name="args"></param>
+    private void OnIdRemoved(EntityUid uid, IdCardConsoleComponent component, EntRemovedFromContainerMessage args)
+    {
+        if (args.Container.ID == TargetIdCardSlotId)
+        {
+            component.TargetIdAccessSnapshot.Clear();
+            component.TargetIdNameSnapshot = string.Empty;
+        }
+
+        UpdateUserInterface(uid, component, args);
     }
 
     private void OnWriteToTargetIdMessage(EntityUid uid, IdCardConsoleComponent component, WriteToTargetIdMessage args)
@@ -76,14 +116,15 @@ public sealed partial class IdCardConsoleSystem : SharedIdCardConsoleSystem
 
         var privilegedIdName = string.Empty;
         List<ProtoId<AccessLevelPrototype>>? possibleAccess = null;
+        EntityUid? privilegedIdEntity = null; // TRIESTE SPECIFIC
         if (component.PrivilegedIdSlot.Item is { Valid: true } item)
         {
             privilegedIdName = Comp<MetaDataComponent>(item).EntityName;
             possibleAccess = _accessReader.FindAccessTags(item).ToList();
+            privilegedIdEntity = item; // TRIESTE SPECIFIC
         }
 
         IdCardConsoleBoundUserInterfaceState newState;
-        // this could be prettier
         if (component.TargetIdSlot.Item is not { Valid: true } targetId)
         {
             newState = new IdCardConsoleBoundUserInterfaceState(
@@ -96,7 +137,9 @@ public sealed partial class IdCardConsoleSystem : SharedIdCardConsoleSystem
                 possibleAccess,
                 string.Empty,
                 privilegedIdName,
-                string.Empty);
+                string.Empty,
+    privilegedIdEntity != null ? GetNetEntity(privilegedIdEntity.Value) : null,  // TRIESTE PORT
+        null);                                                                      // TRIESTE PORT
         }
         else
         {
@@ -121,7 +164,9 @@ public sealed partial class IdCardConsoleSystem : SharedIdCardConsoleSystem
                 possibleAccess,
                 jobProto,
                 privilegedIdName,
-                Name(targetId));
+                Name(targetId),
+                privilegedIdEntity != null ? GetNetEntity(privilegedIdEntity.Value) : null, // TRIESTE PORT
+                GetNetEntity(targetId));                                                                  // TRIESTE PORT
         }
 
         _userInterface.SetUiState(uid, IdCardConsoleUiKey.Key, newState);
@@ -142,7 +187,8 @@ public sealed partial class IdCardConsoleSystem : SharedIdCardConsoleSystem
         if (!Resolve(uid, ref component))
             return;
 
-        if (component.TargetIdSlot.Item is not { Valid: true } targetId || !PrivilegedIdIsAuthorized(uid, component, out var privilegedId))
+        if (component.TargetIdSlot.Item is not { Valid: true } targetId ||
+            !PrivilegedIdIsAuthorized(uid, component, out var privilegedId))
             return;
 
         // Limit name and job title lengths

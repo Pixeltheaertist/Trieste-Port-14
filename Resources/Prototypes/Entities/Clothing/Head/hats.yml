@@ -136,9 +136,9 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseCommandContraband ]
   id: ClothingHeadHatBeretQM
-  name: quartermaster's beret
+  name: harbormaster's beret # TRIESTE: 'quartermaster'
   description: A beret with the cargo department's insignia.
   components:
   - type: Sprite
@@ -157,7 +157,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretHoS
-  name: head of security's beret
+  name: marshal's beret # TP
   description: A black beret with a commander's rank emblem. For officers that are more inclined towards style than safety.
   components:
   - type: Sprite
@@ -174,7 +174,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseSecurityContraband ]
   id: ClothingHeadHatBeretWarden
   name: warden's beret
   description: A corporate-blue beret with a warden's rank emblem. For officers that are more inclined towards style than safety.
@@ -236,7 +236,7 @@
     - CorgiWearable
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseNanotrasenContraband ] #TP14 - Added NT Contra
   id: ClothingHeadHatBeretCommand
   name: command beret
   description: A beret with the Nanotrasen logo. It has an aura of authority.
@@ -270,7 +270,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingHeadBase, BaseCommandContraband]
+  parent: [ClothingHeadBase, BaseNanotrasenContraband ]
   id: ClothingHeadHatCaptain
   name: captain's hardhat
   description: Feels good being the king.
@@ -304,10 +304,10 @@
   - type: IngestionBlocker
 
 - type: entity
-  parent: [ ClothingHeadBase, BaseCentcommContraband ]
+  parent: [ ClothingHeadBase, BaseNanotrasenContraband ] # TP14 - Was Centcomm Contraband
   id: ClothingHeadHatCentcom
   name: CentComm brand hat
-  description: Feels good being the king's boss.
+  description: "It's good to be the emperor."
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/centcom.rsi
@@ -430,8 +430,8 @@
 - type: entity
   parent: [ClothingHeadBase, BaseCommandContraband]
   id: ClothingHeadHatHoshat
-  name: head of security cap
-  description: A stylish cap worn by the Head of Security. Shows the officers who's in charge.
+  name: marshal cap # TP14 - was "Head of Security", same as the line below
+  description: A stylish cap worn by the Marshal. Shows the officers who's in charge.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/hoshat.rsi
@@ -719,7 +719,7 @@
         color: "#a60b0b"
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseSecurityContraband ]
   id: ClothingHeadHatWarden
   name: warden's cap
   description: This hat emphasizes that you are THE LAW.
@@ -1188,7 +1188,7 @@
     - CorgiWearable
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ClothingHeadBase, BaseNanotrasenContraband] #TP14
   id: ClothingHeadHatCapcap
   name: cap cap
   description: A grand, stylish cap worn by the Captain. Shows the station who's in charge.
@@ -1213,7 +1213,7 @@
   - type: BlockMovement
 
 - type: entity
-  parent: [ ClothingHeadBase, BaseCentcommContraband ]
+  parent: [ ClothingHeadBase, BaseNanotrasenContraband ] # TP14 - Was Centcomm Contra
   id: ClothingHeadHatCentcomcap
   name: CentComm cap
   description: An extravagant, stylish cap worn by CentComm officials. Shows the Captain who's in charge.

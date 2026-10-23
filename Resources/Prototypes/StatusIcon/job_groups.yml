@@ -10,6 +10,7 @@
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: Captain
   icons:
+  - JobIconNanotrasen
   - JobIconCaptain
   - JobIconChiefEngineer
   - JobIconChiefMedicalOfficer

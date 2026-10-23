@@ -1,0 +1,25 @@
+- type: damageModifierSet
+  id: Jellid
+  coefficients:
+    Blunt: 0.6
+    Slash: 1.2
+    Piercing: 1.2
+    Heat: 1.2 # They burn easier and take increased slash and bloodloss damage due to their osmosis getting McFucked up
+    Shock: 0.0 # NO shock damage
+    Bloodloss: 1.2
+    Cold: 0.2
+    Poison: 0.8
+    Cellular: 1
+
+- type: damageModifierSet
+  id: TP14TelecommsDMS
+  coefficients:
+    Shock: 1.2
+    Heat: 0.5
+    Structural: 0.25
+  flatReductions:
+    Blunt: 25
+    Slash: 25
+    Piercing: 25
+    Heat: 25
+    Structural: 30

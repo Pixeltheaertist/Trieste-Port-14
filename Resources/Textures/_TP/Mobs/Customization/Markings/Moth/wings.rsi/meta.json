@@ -1,0 +1,79 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Created by MysteriousPeeko (sharkpeekotwoelecticboogaloo) for Trieste Port 14",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "mothwings_1",
+            "directions": 4
+        },
+        {
+            "name": "mothwings_1_secondary",
+            "directions": 4
+        },
+        {
+            "name": "mothwings_2_primary",
+            "directions": 4
+        },
+        {
+            "name": "mothwings_2_secondary",
+            "directions": 4
+        },
+        {
+            "name": "mothwings_2_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "booster_wings_primary",
+            "directions": 4
+        },
+        {
+            "name": "booster_wings_secondary",
+            "directions": 4
+        },
+        {
+            "name": "booster_wings_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "kaleido_moth_wings",
+            "directions": 4
+        },
+        {
+            "name": "kaleido_moth_wings_markings_primary",
+            "directions": 4
+        },
+        {
+            "name": "kaleido_moth_wings_markings_quaternary",
+            "directions": 4
+        },
+        {
+            "name": "kaleido_moth_wings_markings_secondary",
+            "directions": 4
+        },
+        {
+            "name": "kaleido_moth_wings_markings_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "ornate_tiger_moth_wings_markings_primary",
+            "directions": 4
+        },
+        {
+            "name": "ornate_tiger_moth_wings_markings_secondary",
+            "directions": 4
+        },
+        {
+            "name": "ornate_tiger_moth_wings_primary",
+            "directions": 4
+        },
+        {
+            "name": "ornate_tiger_moth_wings_secondary",
+            "directions": 4
+        }
+    ]
+}

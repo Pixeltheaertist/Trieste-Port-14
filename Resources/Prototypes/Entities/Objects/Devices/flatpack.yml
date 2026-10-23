@@ -272,6 +272,36 @@
   - type: Flatpack
     entity: ComputerCrewMonitoring
 
+
+##CHEM LAB STUFF
+
+- type: entity
+  parent: FaxMachineFlatpack
+  id: ReagentGrinderFlatpack
+  name: fax machine flatpack
+  description: A flatpack used for constructing a reagent grinder.
+  components:
+  - type: Flatpack
+    entity: KitchenReagentGrinder
+
+- type: entity
+  parent: FaxMachineFlatpack
+  id: HotplateFlatpack
+  name: fax machine flatpack
+  description: A flatpack used for constructing a hotplate.
+  components:
+  - type: Flatpack
+    entity: ChemistryHotplate
+
+- type: entity
+  parent: FaxMachineFlatpack
+  id: CentrifugeFlatpack
+  name: fax machine flatpack
+  description: A flatpack used for constructing a centrifuge.
+  components:
+  - type: Flatpack
+    entity: MachineCentrifuge
+
 - type: entity
   parent: BaseFlatpack
   id: HydroponicsTrayFlatpack

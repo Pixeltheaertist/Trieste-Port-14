@@ -10,7 +10,7 @@
       entity_storage: !type:AllSelector
         children:
         - id: ClothingOuterHardsuitSalvage
-        - id: ClothingMaskBreath
+        - id: TP14ClothingMaskAir # Trieste: 'ClothingMaskBreath'
         - id: OxygenTankFilled
         - id: FireExtinguisher
         - id: ClothingShoesBootsMag
@@ -182,7 +182,7 @@
       entity_storage: !type:AllSelector
         children:
         - id: ClothingOuterHardsuitSalvage
-        - id: ClothingMaskBreath
+        - id: TP14ClothingMaskAir # Trieste: 'ClothingMaskBreath'
         - id: OxygenTankFilled
         - id: NitrogenTankFilled
 

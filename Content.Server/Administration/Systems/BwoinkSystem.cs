@@ -48,7 +48,7 @@ namespace Content.Server.Administration.Systems
         private static partial Regex DiscordRegex();
 
         private string _webhookUrl = string.Empty;
-        private WebhookData? _webhookData;
+        private WebhookData? _webhookData = null;
 
         private string _onCallUrl = string.Empty;
         private WebhookData? _onCallData;
@@ -342,7 +342,7 @@ namespace Content.Server.Administration.Systems
 
             RaiseNetworkEvent(new BwoinkDiscordRelayUpdated(!string.IsNullOrWhiteSpace(url)));
 
-            if (url == string.Empty)
+            if (string.IsNullOrEmpty(url))
                 return;
 
             // Basic sanity check and capturing webhook ID and token
@@ -361,11 +361,14 @@ namespace Content.Server.Administration.Systems
                 return;
             }
 
-            var webhookId = match.Groups[1].Value;
-            var webhookToken = match.Groups[2].Value;
-
             // Fire and forget
-            _webhookData = await GetWebhookData(webhookId, webhookToken);
+            // This if is a debug check added by Trieste Port 14
+            #if !DEBUG && !DEVELOPMENT
+                var webhookId = match.Groups[1].Value;
+                var webhookToken = match.Groups[2].Value;
+
+                _webhookData = await GetWebhookData(webhookId, webhookToken);
+            #endif
         }
 
         private async Task<WebhookData?> GetWebhookData(string id, string token)

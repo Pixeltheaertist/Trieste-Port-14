@@ -166,7 +166,7 @@
     children:
     - id: ClothingOuterHardsuitAtmos
     - id: OxygenTankFilled
-    - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # Trieste: 'ClothingMaskBreath'
 
 - type: entity
   id: LockerEngineerFilledHardsuit
@@ -202,6 +202,7 @@
     - id: RCD
     - id: RCDAmmo
     - id: MetalFoamGrenade
+    - id: PillCanisterPotassiumIodide # Far Horizons / Nuclear Reactor Port
     - id: PlushieLizardJobTechnicalassistant
       prob: 0.02
     - id: PlushieLizardJobStationengineer
@@ -214,7 +215,7 @@
     - id: ClothingOuterHardsuitEngineering
     - id: OxygenTankFilled
     - id: ClothingShoesBootsMag
-    - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # Trieste: 'ClothingMaskBreath'
 
 - type: entity
   id: ClosetRadiationSuitFilled
@@ -235,7 +236,7 @@
     - id: GeigerCounter
       amount: 2
     - id: PillCanisterPotassiumIodide
-      prob: 0.75
+      amount: 2 # Trieste: 'prob: 0.75'
 
 - type: entity
   parent: LockerEvacRepair

@@ -1,0 +1,175 @@
+# Chest
+
+- type: marking
+  id: DionaFirefly
+  bodyPart: Chest
+  groupWhitelist: [ Diona ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Diona/chest.rsi
+    state: firefly
+  shaders:
+    firefly: unshaded
+
+- type: marking
+  id: DionaLivingNymph
+  bodyPart: Chest
+  groupWhitelist: [ Diona ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Diona/chest.rsi
+    state: livingnymph
+
+- type: marking
+  id: DionaMossChest
+  bodyPart: Chest
+  groupWhitelist: [ Diona ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Diona/chest.rsi
+    state: moss
+
+- type: marking
+  id: MycenaChest
+  bodyPart: Chest
+  groupWhitelist: [ Diona ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Diona/chest.rsi
+    state: mycena
+
+- type: marking
+  id: MycenaChestGlow
+  bodyPart: Chest
+  groupWhitelist: [ Diona ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Diona/chest.rsi
+    state: mycena
+  shaders:
+    mycena: unshaded
+
+- type: marking
+  id: ShelfChest
+  bodyPart: Chest
+  groupWhitelist: [ Diona ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Diona/chest.rsi
+    state: shelf
+
+# Head
+
+- type: marking
+  id: Amanita
+  bodyPart: Head
+  groupWhitelist: [ Diona ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Diona/head.rsi
+    state: amanita1
+  - sprite: _CD/Mobs/Customization/Diona/head.rsi
+    state: amanita2
+
+- type: marking
+  id: DionaBigFirefly
+  bodyPart: Head
+  groupWhitelist: [ Diona ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Diona/head.rsi
+    state: bigfirefly
+  shaders:
+    bigfirefly: unshaded
+
+- type: marking
+  id: JackHead
+  bodyPart: Head
+  groupWhitelist: [ Diona ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Diona/head.rsi
+    state: jack
+  shaders:
+    jack: unshaded
+
+- type: marking
+  id: MycenaHead
+  bodyPart: Head
+  groupWhitelist: [ Diona ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Diona/head.rsi
+    state: mycena
+
+- type: marking
+  id: MycenaHeadGlow
+  bodyPart: Head
+  groupWhitelist: [ Diona ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Diona/head.rsi
+    state: mycena
+  shaders:
+    mycena: unshaded
+
+- type: marking
+  id: ShelfHead
+  bodyPart: Head
+  groupWhitelist: [ Diona ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Diona/head.rsi
+    state: shelf
+
+# Snout
+
+# Eyes
+
+# RArm
+
+# LArm
+
+- type: marking
+  id: MycenaArm
+  bodyPart: LArm
+  groupWhitelist: [ Diona ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Diona/larm.rsi
+    state: mycena
+
+- type: marking
+  id: MycenaArmGlow
+  bodyPart: LArm
+  groupWhitelist: [ Diona ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Diona/larm.rsi
+    state: mycena
+  shaders:
+    mycena: unshaded
+
+# RLeg
+
+# LLeg
+
+# UndergarmentBottom
+
+# UndergarmentTop
+
+# LFoot
+
+# RFoot
+
+# LHand
+
+# RHand
+
+# FacialHair
+
+# Hair
+
+# HeadSide
+
+# HeadTop
+
+- type: marking
+  id: DionaMoonBloom
+  bodyPart: HeadTop
+  groupWhitelist: [ Diona ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Diona/headtop.rsi
+    state: moonbloom
+  shaders:
+    moonbloom: unshaded
+
+# Tail
+
+# RArmExtension

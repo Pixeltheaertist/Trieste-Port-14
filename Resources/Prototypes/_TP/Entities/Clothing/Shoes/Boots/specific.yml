@@ -1,0 +1,41 @@
+- type: entity
+  parent: ClothingShoesClownBase
+  id: TP14ClothingShoesWearyClown
+  suffix: Trieste, Shoes, Clown
+  name: weary clown shoes
+  description: Some old clown shoes, the soles have worn thin.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Shoes/Specific/weary.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Shoes/Specific/weary.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepClown
+      params:
+        variation: 0.17
+  # for H.O.N.K. construction
+  - type: Tag
+    tags:
+    - ClownShoes
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingShoesClown
+  id: TP14ClothingShoesPierrot
+  suffix: Trieste, Shoes, Mime
+  name: pierrot shoes
+  description: Dark shoes, with pompoms and a small bell on their end.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Shoes/Specific/pierrot.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Shoes/Specific/pierrot.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepJester
+      params:
+        variation: 0.07
+  - type: Tag
+    tags:
+    - WhitelistChameleon

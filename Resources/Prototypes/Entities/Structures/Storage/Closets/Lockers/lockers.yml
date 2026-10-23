@@ -35,7 +35,7 @@
 - type: entity
   parent: LockerBase
   id: LockerQuarterMaster
-  name: quartermaster's locker
+  name: harbormaster's locker # TRIESTE: 'quatermaster'
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -48,7 +48,7 @@
 - type: entity
   parent: LockerBase
   id: LockerSalvageSpecialist
-  name: salvage specialist's equipment
+  name: expeditionary's equipment # TRIESTE: 'salvage specialist'
   description: Nevermind the pickaxe.
   components:
   - type: Appearance
@@ -63,7 +63,7 @@
 - type: entity
   parent: LockerBase
   id: LockerCaptain
-  name: captain's locker
+  name: overseer's locker # TRIESTE: 'captain'
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -319,7 +319,7 @@
 - type: entity
   parent: LockerBase
   id: LockerHeadOfSecurity
-  name: head of security's locker
+  name: marshal's locker # TRIESTE: 'head of security'
   components:
   - type: Appearance
   - type: EntityStorageVisuals

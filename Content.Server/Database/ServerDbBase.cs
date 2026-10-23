@@ -1,4 +1,4 @@
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
@@ -212,6 +212,7 @@ namespace Content.Server.Database
             profile.CharacterName = humanoid.Name;
             profile.FlavorText = humanoid.FlavorText;
             profile.Species = humanoid.Species;
+            profile.CustomSpeciesName = humanoid.CustomSpeciesName;
             profile.Age = humanoid.Age;
             profile.Sex = humanoid.Sex.ToString();
             profile.Voice = humanoid.Voice.ToString();

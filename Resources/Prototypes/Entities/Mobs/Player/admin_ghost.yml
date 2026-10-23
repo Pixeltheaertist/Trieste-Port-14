@@ -4,6 +4,13 @@
   name: admin observer
   categories: [ HideSpawnMenu ]
   components:
+  - type: Sprite
+    color: "#fffe"
+    layers:
+      - sprite: Mobs/Ghosts/ghost_human.rsi
+        state: animated
+        shader: unshaded
+        color: "#fff4"
   - type: ContentEye
     maxZoom: 8.916104, 8.916104
   - type: Tag
@@ -104,6 +111,10 @@
   - type: IgnoreUIRange
   - type: ShowAntagIcons
   - type: ShowContrabandDetails
+  - type: ShowCriminalRecordIcons # TP14
+  - type: ShowJobIcons # TP14
+  - type: ShowMindShieldIcons # TP14
+  - type: ShowSyndicateIcons # TP14
   - type: Inventory
     templateId: aghost
   - type: Loadout

@@ -18,6 +18,7 @@
     FoodContainerEgg: 1
     DrinkMilkCarton: 2
     DrinkSoyMilkCarton: 1
+    JugCornoil: 1 # STARLIGHT
     FoodButter: 3
     FoodCheese: 1
     FoodMeat: 6
@@ -26,3 +27,4 @@
     FoodBoxDonkpocket: 1
     FoodFrozenSandwich: 2
     FoodFrozenSandwichStrawberry: 2
+

@@ -25,6 +25,7 @@
       children:
       - id: BoxBeanbag
       - id: RagItem
+    - id: BookBartendersManual # Trieste: Added.
     - id: PlushieLizardJobBartender
       prob: 0.02
     - id: PlushieLizardJobServiceworker
@@ -68,6 +69,7 @@
       children:
       - id: FoodCondimentPacketSalt
       - id: FoodCondimentPacketPepper
+    - id: BookHowToCookForFortySpaceman # Trieste: Added.
     - id: PlushieLizardJobChef
       prob: 0.02
     - id: PlushieLizardJobServiceworker

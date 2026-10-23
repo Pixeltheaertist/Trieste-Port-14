@@ -157,6 +157,11 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+  - type: JumpAbility # Trieste: Added.
+  - type: AutoEmote # Trieste: Added.
+    emotes:
+    - NaturalSneeze
+    - NaturalCough
 
 - type: entity
   abstract: true
@@ -206,9 +211,9 @@
         Heat: 1.5 #per second, scales with temperature & other constants
   - type: TemperatureSpeed
     thresholds:
-      293: 0.9
-      280: 0.8
-      260: 0.7
+      293: 1 # Trieste: '0.9'
+      280: 1 # Trieste: '0.8'
+      260: 1 # Trieste: '0.7'
   - type: ThermalRegulator
     metabolismHeat: 800
     radiatedHeat: 100

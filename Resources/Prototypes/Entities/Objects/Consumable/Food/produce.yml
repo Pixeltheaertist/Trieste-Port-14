@@ -1578,7 +1578,7 @@
       reagents:
       - ReagentId: Nutriment
         Quantity: 5
-      - ReagentId: Bicaridine
+      - ReagentId: Bicaridine # TRIESTE: 'Bicaridine', Placeholder.
         Quantity: 10
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/lily.rsi

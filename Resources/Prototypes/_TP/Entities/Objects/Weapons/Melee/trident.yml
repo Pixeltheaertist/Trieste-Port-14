@@ -1,0 +1,48 @@
+- type: entity
+  parent: [ BaseItem, BaseCommandContraband ]
+  id: TP14WeaponTrident
+  name: overseer's trident
+  suffix: Trieste, Command
+  description: A trident modified with mysterious alien technology, wielded by the platform Overseer.
+  components:
+  - type: Tool
+    qualities:
+    - Slicing
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/trident.rsi
+    state: icon
+  - type: AmmoCounter
+  - type: UseDelayOnShoot
+  - type: UseDelay
+    delay: 0.3
+  - type: Gun
+    soundGunshot: /Audio/Weapons/plasma_cutter.ogg
+    fireRate: 1
+    useKey: false
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 0.5
+  - type: BasicEntityAmmoProvider
+    proto: BulletTrident
+    capacity: 1
+    count: 1
+  - type: MeleeWeapon
+    attackRate: 1.5
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Slash: 12
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Slash: 3.5
+        Structural: 30
+  - type: GunRequiresWield
+  - type: Item
+    size: Ginormous
+  - type: DisarmMalus
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - suitStorage
+    - Belt

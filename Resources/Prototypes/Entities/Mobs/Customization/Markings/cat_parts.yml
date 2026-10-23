@@ -1,13 +1,18 @@
 - type: marking
   id: CatEars
-  bodyPart: Special
+  bodyPart: HeadTop # TRIESTE: 'Special'
   groupWhitelist: [Human]
   coloring:
     default:
       type: !type:CategoryColoring
         category: Hair
       fallbackTypes:
-      - !type:SkinColoring {}
+      - !type:SkinColoring # TRIESTE: ' - !type:SkinColoring {}'
+        layers:
+          ears_cat_inner:
+            type:
+              !type:SimpleColoring
+                color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/cat_parts.rsi
     state: ears_cat_outer
@@ -28,7 +33,7 @@
       fallbackTypes:
       - !type:CategoryColoring
         category: FacialHair
-      - !type:SkinColoring {}
+      - !type:SkinColoring
   sprites:
   - sprite: Mobs/Customization/cat_parts.rsi
     state: tail_cat

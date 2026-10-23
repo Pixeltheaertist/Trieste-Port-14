@@ -25,7 +25,7 @@ public sealed partial class CCVars
     ///     Whether the arrivals terminal should be on a planet map.
     /// </summary>
     public static readonly CVarDef<bool> ArrivalsPlanet =
-        CVarDef.Create("shuttle.arrivals_planet", true, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.arrivals_planet", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether the arrivals shuttle is enabled.
@@ -49,7 +49,7 @@ public sealed partial class CCVars
     ///     Are players allowed to return on the arrivals shuttle.
     /// </summary>
     public static readonly CVarDef<bool> ArrivalsReturns =
-        CVarDef.Create("shuttle.arrivals_returns", false, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.arrivals_returns", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Should all players who spawn at arrivals have godmode until they leave the map?
@@ -96,9 +96,10 @@ public sealed partial class CCVars
 
     /// <summary>
     ///     How much time in seconds that needs to pass before a non-arrivals shuttle can FTL again.
+    ///     TRIESTE: '60f'
     /// </summary>
     public static readonly CVarDef<float> FTLCooldown =
-        CVarDef.Create("shuttle.cooldown", 60f, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.cooldown", 10f, CVar.SERVERONLY);
 
     /// <summary>
     ///     How much time in seconds that needs to pass before the arrivals shuttle can FTL again.

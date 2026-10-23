@@ -1,0 +1,90 @@
+- type: entity
+  id: TP14FlashStorm
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-flash-storm-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    endAnnouncement: station-event-flash-storm-end-announcement
+    weight: 5
+    duration: 181 # Exactly the amount of time that the song lasts.
+    maxOccurrences: 1 # This event is so insanely cataclysmic, genuinely it's kind of insane. ONLY ONCE PER ROUND, OR IT'S LITERAL DOOMSDAY.
+  - type: GameRule
+    delay:
+      min: 10
+      max: 15
+  - type: FlashStormRule
+    stormWeather: "WeatherStorm"
+    normalWeather: "WeatherRain"
+
+- type: entity
+  id: TP14RainClear
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-rain-clear-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    endAnnouncement: station-event-rain-clear-end-announcement
+    weight: 3
+    duration: 201
+  - type: GameRule
+    delay:
+      min: 5
+      max: 10
+  - type: WeatherChangeRule
+    targetWeather: "WeatherClear"
+    returnWeather: "WeatherRain"
+    lightning: false
+    sunlight: true # This right here breaks the fabric reality in a couple of interesting ways, so that's fun.
+
+- type: entity
+  id: TP14CloudStormEvent
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-cloud-storm-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    endAnnouncement: station-event-cloud-storm-end-announcement
+    weight: 3
+    duration: 200
+    minimumPlayers: 10 # This should be enough? This storm event is devastating, so.
+  - type: GameRule
+    delay:
+      min: 10
+      max: 15
+  - type: WeatherChangeRule
+    targetWeather: "WeatherCloudStorm"
+    returnWeather: "WeatherRain"
+    lightning: true
+
+# Mass Migration triggers a scaled-up version of DrifterMigration, spawning 3-4x as many drifters. It is a major once-per-round event similar to FlashStorm. The platform fires illumination flares to assist in seeing the hostiles.
+- type: entity
+  id: TP14MassMigration
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement:
+    startAudio:
+      path: /Audio/Effects/alert.ogg
+    endAnnouncement: station-event-mass-migration-end-announcement
+    weight: 3
+    duration: 100
+    startAnnouncementColor: "#EE4B2B"
+    maxOccurrences: 1
+  - type: GameRule
+    delay:
+      min: 5
+      max: 10
+  - type: VentCrittersRule
+    entries:
+    - id: TP14DrifterTimedSpawner
+      prob: 0.8
+  - type: WeatherChangeRule
+    targetWeather: "WeatherRain"
+    returnWeather: "WeatherRain"
+    lightning: true
+    sunlight: true
+    sunlightColor: "#EE4B2B"

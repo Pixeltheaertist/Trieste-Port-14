@@ -1,0 +1,38 @@
+- type: entity
+  name: handheld announcement pad
+  parent: BaseHandheldComputer
+  id: HandHeldAnnouncementPad
+  description: A nifty handheld device that hacks into the Platform's announcement system. Make sure to remove your ID before use.
+  components:
+  - type: Item
+  - type: Sprite
+    sprite: Objects/Tools/handheld_mass_scanner.rsi
+    state: icon
+    layers:
+    - state: icon
+    - state: scanner
+      shader: unshaded
+      visible: true
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  - type: CommunicationsConsole
+    title: comms-console-announcement-title-station
+    canShuttle: false
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.BatteryVisuals.State:
+        enum.PowerDeviceVisualLayers.Powered:
+          Full: { visible: true }
+          Neither: { visible: true }
+          Empty: { visible: false }
+  - type: PowerCellDraw
+    drawRate: 3
+    useCharge: 100
+  - type: ActivatableUI
+    key: enum.CommunicationsConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.CommunicationsConsoleUiKey.Key:
+        type: CommunicationsConsoleBoundUserInterface
+  - type: Computer
+    board: CommsComputerCircuitboard

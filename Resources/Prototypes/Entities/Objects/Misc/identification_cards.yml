@@ -2,7 +2,7 @@
   parent: Clothing
   id: IDCardStandard
   name: identification card
-  description: A card necessary to access various areas aboard the station.
+  description: A card necessary to access various areas across Trieste and Sweetwater.
   abstract: true
   components:
   - type: Sprite
@@ -32,7 +32,7 @@
 - type: entity
   parent: IDCardStandard
   id: PassengerIDCard
-  name: passenger ID card
+  name: citizen ID card # Trieste: 'passenger'
   components:
   - type: Sprite
     layers:
@@ -48,7 +48,7 @@
 - type: entity
   parent: [IDCardStandard, BaseGrandTheftContraband]
   id: CaptainIDCard
-  name: captain ID card
+  name: overseer ID card # Trieste: 'captain'
   components:
   - type: Sprite
     layers:
@@ -157,7 +157,7 @@
 - type: entity
   parent: IDCardStandard
   id: HoSIDCard
-  name: head of security ID card
+  name: marshal ID card # Trieste: 'head of security'
   components:
   - type: Sprite
     layers:

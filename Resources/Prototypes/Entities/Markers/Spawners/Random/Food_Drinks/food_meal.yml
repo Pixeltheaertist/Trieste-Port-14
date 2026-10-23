@@ -76,6 +76,7 @@
         - id: FoodSoupBungo
         - id: FoodMealCornInButter
         - id: FoodSoupStew
+        - id: TP14FoodBurritoBowl # TRIESTE: Added.
       - !type:GroupSelector #rare
         weight: 0.05
         children:

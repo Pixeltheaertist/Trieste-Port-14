@@ -35,26 +35,26 @@ public sealed partial class ShuttleSystem
 
             while (query.MoveNext(out var uid, out var comp))
             {
-                GridSpawns(uid, comp);
+              //GridSpawns(uid, comp);
             }
 
             var cargoQuery = AllEntityQuery<StationCargoShuttleComponent>();
 
             while (cargoQuery.MoveNext(out var uid, out var comp))
             {
-                CargoSpawn(uid, comp);
+              //CargoSpawn(uid, comp);
             }
         }
     }
 
     private void OnGridSpawnPostInit(EntityUid uid, GridSpawnComponent component, ref StationPostInitEvent args)
     {
-        GridSpawns(uid, component);
+      //GridSpawns(uid, component);
     }
 
     private void OnCargoSpawnPostInit(EntityUid uid, StationCargoShuttleComponent component, ref StationPostInitEvent args)
     {
-        CargoSpawn(uid, component);
+      //CargoSpawn(uid, component);
     }
 
     private void CargoSpawn(EntityUid uid, StationCargoShuttleComponent component)

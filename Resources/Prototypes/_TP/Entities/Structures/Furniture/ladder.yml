@@ -1,0 +1,36 @@
+- type: entity
+  parent: BaseStructure
+  id: TP14LadderBase
+  abstract: true
+  description: WEEEEE.
+  components:
+    - type: Transform
+    - type: Climbable
+    - type: Clickable
+
+- type: entity
+  parent: TP14LadderBase
+  id: TP14LadderDown
+  name: Ladder
+  suffix: Trieste, Ladder, Goes-Down
+  components:
+    - type: Ladder
+      thisSide: up
+      targetSide: down
+    - type: Sprite
+      sprite: _TP/Structures/Furniture/ladder.rsi
+      state: down
+
+- type: entity
+  parent: TP14LadderBase
+  id: TP14LadderUp
+  name: Ladder
+  suffix: Trieste, Ladder, Goes-Up
+  components:
+    - type: Ladder
+      thisSide: down
+      targetSide: up
+    - type: Sprite
+      sprite: _TP/Structures/Furniture/ladder.rsi
+      state: up
+

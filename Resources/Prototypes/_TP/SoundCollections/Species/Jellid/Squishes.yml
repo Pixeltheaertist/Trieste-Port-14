@@ -1,0 +1,6 @@
+- type: soundCollection
+  id: JellidSquishes
+  files:
+  - /Audio/_TP/Voice/Jellid/Squish/jellid_squish1.ogg
+  - /Audio/_TP/Voice/Jellid/Squish/jellid_squish2.ogg
+  - /Audio/_TP/Voice/Jellid/Squish/jellid_squish3.ogg

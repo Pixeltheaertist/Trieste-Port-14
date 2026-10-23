@@ -1,0 +1,108 @@
+- type: tile
+  parent: FloorAsteroidSandBorderless
+  id: TP14FloorSandBorderless
+  name: tp14-tiles-sand-borderless
+  isSpace: true
+
+- type: tile
+  parent: FloorAsteroidSand
+  id: TP14FloorSand
+  name: tp14-tiles-sand
+  isSpace: true
+
+- type: tile
+  parent: FloorAsteroidSandRedBorderless
+  id: TP14FloorSandRedBorderless
+  name: tp14-tiles-sand-red-borderless
+  isSpace: true
+
+- type: tile
+  parent: FloorAsteroidSandRed
+  id: TP14FloorSandRed
+  name: tp14-tiles-sand-red
+  isSpace: true
+
+- type: tile
+  parent: FloorAsteroidIronsandBorderless
+  id: TP14FloorSandIronBorderless
+  name: tp14-tiles-sand-iron-borderless
+  isSpace: true
+
+- type: tile
+  parent: FloorAsteroidIronsand
+  id: TP14FloorSandIron
+  name: tp14-tiles-sand-iron
+  isSpace: true
+
+- type: tile
+  parent: FloorCave
+  id: TP14FloorCave
+  name: tp14-tiles-cave
+  isSpace: true
+
+- type: tile
+  parent: FloorBasalt
+  id: TP14FloorBasalt
+  name: tp14-tiles-basalt
+  isSpace: true
+
+- type: tile
+  parent: FloorLowDesert
+  id: TP14FloorLowDesert
+  name: tp14-tiles-desert
+  isSpace: true
+
+- type: tile
+  id: TP14FloorSteelGrateMaints
+  name: steel grated maintenance floor
+  sprite: /Textures/_TP/Tiles/steel-grated-maints.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: TP14FloorTileItemSteelGrateMaint
+  heatCapacity: 10000
+
+- type: tile
+  id: TP14FloorRustGrateMaints
+  name: rusting grated maintenance floor
+  sprite: /Textures/_TP/Tiles/rust-grated-maints.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: TP14FloorTileItemRustGrateMaint
+  heatCapacity: 10000
+
+- type: tile
+  id: TP14FloorOldRustMaints
+  name: old rusted maintenance floor
+  sprite: /Textures/_TP/Tiles/old-rust-maints.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: TP14FloorTileItemOldRustMaint
+  heatCapacity: 10000
+

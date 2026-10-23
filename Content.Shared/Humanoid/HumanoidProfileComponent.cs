@@ -40,4 +40,7 @@ public sealed partial class HumanoidProfileComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool Examinable = true;
+
+    [DataField]
+    public string CustomSpeciesName { get; set; } = string.Empty;
 }

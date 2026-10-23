@@ -8,6 +8,9 @@ using Content.Shared.Cargo.Prototypes;
 using Content.Shared.CCVar;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
+using Content.Shared.Salvage.Fulton;
+using Robust.Shared.Containers;
+using Robust.Shared.Timing;
 
 namespace Content.Server.Cargo.Systems;
 
@@ -138,10 +141,43 @@ public sealed partial class CargoSystem
         var ev = new EntitySoldEvent(toSell, station);
         RaiseLocalEvent(ref ev);
 
+        // TRIESTE EDITS!!
+        // This will allow items being sold to "launch" into the air,
+        // waiting to be intercepted by trade vessels or whatnot
         foreach (var ent in toSell)
         {
-            Del(ent);
+            var fulton = EnsureComp<FultonedComponent>(ent);
+            fulton.Beacon = gridUid;
+            fulton.FultonDuration = TimeSpan.FromSeconds(1);
+            fulton.NextFulton = _timing.CurTime;
+            fulton.Removeable = false;
         }
+
+        Timer.Spawn(TimeSpan.FromSeconds(1),
+            () =>
+            {
+                foreach (var ent in toSell)
+                {
+                    if (!Exists(ent))
+                        continue;
+
+                    // Delete contained entities (aka crates/closets)
+                    if (TryComp<ContainerManagerComponent>(ent, out var containerManager))
+                    {
+                        foreach (var container in containerManager.Containers.Values)
+                        {
+                            var containedEntities = container.ContainedEntities.ToList();
+                            foreach (var containedEnt in containedEntities)
+                            {
+                                if (Exists(containedEnt))
+                                    Del(containedEnt);
+                            }
+                        }
+                    }
+
+                    Del(ent);
+                }
+            });
 
         return true;
     }

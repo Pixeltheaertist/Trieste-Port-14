@@ -128,7 +128,7 @@
   - type: StaticPrice
     price: 200
   - type: AccessReader
-    access: [["Atmospherics"], ["Engineering"], ["Research"]]
+    access: [["Atmospherics"], ["Engineering"], ["Research"], ["TP14SettlerAccessLevel"]] # TRIESTE: Added settlers.
   - type: Lock
     locked: false
   - type: GuideHelp

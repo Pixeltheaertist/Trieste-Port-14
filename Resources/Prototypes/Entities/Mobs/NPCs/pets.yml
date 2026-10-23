@@ -620,7 +620,7 @@
   parent: [ BaseUniquePet, MobFox, BaseSlicingRefinableButchering ]
   id: MobFoxRenault
   name: Renault
-  description: The captain's trustworthy fox.
+  description: The overseer's trustworthy fox.
   components:
   - type: InteractionPopup
     successChance: 1

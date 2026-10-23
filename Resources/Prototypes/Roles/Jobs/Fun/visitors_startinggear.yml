@@ -783,7 +783,7 @@
     head: ClothingHeadBandGreen
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackDuffelMedical
+    back: ClothingBackpackDuffelVirology
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     pocket1: Ointment
@@ -800,7 +800,7 @@
     head: ClothingHeadBandBlue
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackDuffelMedical
+    back: ClothingBackpackDuffelVirology
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     pocket1: Ointment

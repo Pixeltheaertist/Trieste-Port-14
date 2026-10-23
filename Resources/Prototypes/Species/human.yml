@@ -5,3 +5,4 @@
   prototype: MobHuman
   dollPrototype: AppearanceHuman
   skinColoration: HumanToned
+  customName: true # Starlight

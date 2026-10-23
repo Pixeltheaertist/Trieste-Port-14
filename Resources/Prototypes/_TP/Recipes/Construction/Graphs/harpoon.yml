@@ -1,0 +1,80 @@
+- type: constructionGraph
+  id: TP14ConstructionGraphHarpoon
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: harpoon
+      steps:
+      - material: MetalRod
+        amount: 1
+        doAfter: 3
+      - material: Steel
+        amount: 1
+        doAfter: 2
+      completed:
+      - !type:AdminLog
+        message: "Construction"
+        impact: High
+    - to: piezoHarpoon
+      steps:
+      - material: MetalRod
+        amount: 1
+        doAfter: 3
+      - tag: TP14TagPiezoShard
+        icon:
+          sprite: Objects/Materials/Shards/piezoshard.rsi
+          state: icon
+        name: construction-graph-tag-piezo-shard
+      completed:
+      - !type:AdminLog
+        message: "Construction"
+        impact: High
+    - to: bombHarpoon
+      steps:
+      - material: MetalRod
+        amount: 1
+        doAfter: 3
+      - material: Gunpowder
+        amount: 1
+        doAfter: 1
+      - material: Steel
+        amount: 1
+        doAfter: 2
+      completed:
+      - !type:AdminLog
+        message: "Construction"
+        impact: High
+
+  - node: harpoon
+    entity: TP14Harpoon
+
+  - node: piezoHarpoon
+    entity: TP14PiezoHarpoon
+
+  - node: bombHarpoon
+    entity: TP14HarpoonBomb
+
+- type: construction
+  id: TP14ConstructionHarpoon
+  graph: TP14ConstructionGraphHarpoon
+  startNode: start
+  targetNode: harpoon
+  category: construction-category-weapons
+  objectType: Item
+
+- type: construction
+  id: TP14ConstructionPiezoHarpoon
+  graph: TP14ConstructionGraphHarpoon
+  startNode: start
+  targetNode: piezoHarpoon
+  category: construction-category-weapons
+  objectType: Item
+
+- type: construction
+  id: TP14ConstructionBombHarpoon
+  graph: TP14ConstructionGraphHarpoon
+  startNode: start
+  targetNode: bombHarpoon
+  category: construction-category-weapons
+  objectType: Item

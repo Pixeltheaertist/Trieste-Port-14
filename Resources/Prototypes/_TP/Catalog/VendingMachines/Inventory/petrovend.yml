@@ -1,0 +1,15 @@
+- type: vendingMachineInventory
+  id: TP14PetroVendInventory
+  startingInventory:
+    ClothingUniformJumpsuitColorBlack: 3
+    ClothingUniformJumpskirtColorBlack: 3
+    ClothingHandsGlovesColorBlack: 2
+    ClothingOuterWinterColorOrange: 3
+    TP14ClothingHeadBucketOrange: 3
+    ClothingHeadBandBlack: 3
+    ClothingHeadHatPurplesoft: 3
+    ClothingNeckScarfStripedPurple: 3
+    HandLabeler: 3
+    ChemBag: 3
+    ClothingShoesBootsWork: 3
+    ClothingShoesColorBlack: 3

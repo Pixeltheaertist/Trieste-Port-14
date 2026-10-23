@@ -85,7 +85,7 @@
         offset: "0, 0.03"
 
 - type: entity
-  parent: BasePlushieLizardJob
+  parent: [BasePlushieLizardJob, BaseNanotrasenContraband] #TP14 for the funny
   id: PlushieLizardJobCaptain
   name: captain lizard plushie
   description: An adorable stuffed toy that resembles a lizardperson as the captain. There's bits of pie on its face.
@@ -306,8 +306,8 @@
 - type: entity
   parent: BasePlushieLizardJob
   id: PlushieLizardJobHeadofsecurity
-  name: head of security lizard plushie
-  description: An adorable stuffed toy that resembles a lizardperson as the head of security. It seems to have been ripped and re-stitched a few times.
+  name: marshal lizard plushie # TP14 - was "Head of Security", same as the line below
+  description: An adorable stuffed toy that resembles a lizardperson as the marshal. It seems to have been ripped and re-stitched a few times.
   components:
   - type: Sprite
     sprite: Objects/Fun/plushielizard_jobs/hos.rsi
@@ -501,8 +501,8 @@
 - type: entity
   parent: BasePlushieLizardJob
   id: PlushieLizardJobPassenger
-  name: passenger lizard plushie
-  description: An adorable stuffed toy that resembles a lizardperson as a passenger. Its eyes look at you, a little bit more beady than the rest.
+  name: citizen lizard plushie # TP14 - Was "passenger", same as the line below
+  description: An adorable stuffed toy that resembles a lizardperson as a citizen. Its eyes look at you, a little bit more beady than the rest.
   components:
   - type: Sprite
     sprite: Objects/Fun/plushielizard_jobs/passenger.rsi
@@ -541,8 +541,8 @@
 - type: entity
   parent: BasePlushieLizardJob
   id: PlushieLizardJobQuartermaster
-  name: quartermaster lizard plushie
-  description: An adorable stuffed toy that resembles a lizardperson as the quartermaster. Its covered in sticky residue left behind from thousands of shipment invoices.
+  name: harbormaster lizard plushie # TP14 - Was "quartermaster" - Same as the line below
+  description: An adorable stuffed toy that resembles a lizardperson as the harbormaster. Its covered in sticky residue left behind from thousands of shipment invoices.
   components:
   - type: Sprite
     sprite: Objects/Fun/plushielizard_jobs/qm.rsi
@@ -561,8 +561,8 @@
 - type: entity
   parent: BasePlushieLizardJob
   id: PlushieLizardJobReporter
-  name: reporter lizard plushie
-  description: An adorable stuffed toy that resembles a lizardperson as a reporter. It smells faintly of ink.
+  name: journalist lizard plushie # TP14 - Was "reporter", same as the line below
+  description: An adorable stuffed toy that resembles a lizardperson as a journalist. It smells faintly of ink.
   components:
   - type: Sprite
     sprite: Objects/Fun/plushielizard_jobs/reporter.rsi

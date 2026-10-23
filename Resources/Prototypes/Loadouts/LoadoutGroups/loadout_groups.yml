@@ -7,6 +7,10 @@
   - Glasses
   - GlassesJamjar
   - GlassesJensen
+  # Moffstation - Start - Eyepatches!
+  - EyePatch
+  - EyePatchFlipped
+  # Moffstation - End
 
 - type: loadoutGroup
   id: Trinkets
@@ -21,10 +25,12 @@
   - PlushieSpaceLizard
   - ThreeCandles
   - Lighter
+  - TP14LoadoutCigPackMixed # TP14
   - CigPackGreen
   - CigPackRed
   - CigPackBlue
   - CigPackBlack
+  - TP14LoadoutSmokingPipe # TP14
   - CigarCase
   - CigarGold
   - BoxFolderBaseThreePapers
@@ -62,6 +68,7 @@
   - OffsetCaneMime
   - OffsetCaneNT
   - Cane
+  - TowelColorWhite
 
 - type: loadoutGroup
   id: GroupTankHarness
@@ -70,6 +77,7 @@
   hidden: true
   loadouts:
   - LoadoutTankHarness
+  - TP14LoadoutTankHarness # TRIESTE: Added.
 
 - type: loadoutGroup
   id: Survival
@@ -79,7 +87,9 @@
   loadouts:
   - EmergencyNitrogen
   - EmergencyOxygen
+  - EmergencyWater # TRIESTE: Added.
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesJellidWater # TRIESTE: Added.
 
 # nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup
@@ -89,6 +99,7 @@
   loadouts:
   - LoadoutSpeciesEVANitrogen
   - LoadoutSpeciesEVAOxygen
+  - LoadoutSpeciesJellidWater # TRIESTE: Added.
 
 # vox get a nitrogen tank, other species get nothing
 - type: loadoutGroup
@@ -105,54 +116,61 @@
   loadouts:
   - LoadoutSpeciesPocketDoubleNitrogen
   - LoadoutSpeciesPocketDoubleOxygen
+  - LoadoutSpeciesJellidWater # TRIESTE: Added.
 
 # Command
+#~~~~~~~ TP14
 - type: loadoutGroup
-  id: CaptainHead
+  id: OverseerHead
   name: loadout-group-captain-head
   minLimit: 0
   loadouts:
-  - CaptainHead
-  - CaptainCap
+  - OverseerHead
+  - OverseerCap
 
 - type: loadoutGroup
-  id: CaptainJumpsuit
+  id: OverseerJumpsuit
   name: loadout-group-captain-jumpsuit
   loadouts:
-  - CaptainJumpsuit
-  - CaptainJumpskirt
-  - CaptainFormalSuit
-  - CaptainFormalSkirt
+  - OverseerJumpsuit
+  - OverseerJumpskirt
+  - OverseerHighvisJumpsuit
+  - OverseerHighvisJumpskirt
+  - OverseerFormalSuit
+  - OverseerFormalSkirt
 
 - type: loadoutGroup
-  id: CaptainNeck
+  id: OverseerNeck
   name: loadout-group-captain-neck
   minLimit: 0
   loadouts:
-  - CaptainCloak
-  - CaptainCloakFormal
-  - CaptainMantle
+  - CommandTie
+  - OverseerCloak
+  - OverseerMantle
 
 - type: loadoutGroup
-  id: CaptainBackpack
+  id: OverseerBackpack
   name: loadout-group-captain-backpack
   loadouts:
-  - CaptainBackpack
-  - CaptainSatchel
-  - CaptainDuffel
+  - OverseerBackpack
+  - OverseerSatchel
+  - OverseerDuffel
 
 - type: loadoutGroup
-  id: CaptainOuterClothing
+  id: OverseerOuterClothing
   name: loadout-group-captain-outerclothing
   loadouts:
-  - CaptainOuterClothing
-  - CaptainWintercoat
+  - OverseerOuterClothing
+  - OverseerWintercoat
+  - OverseerArmor
 
-#- type: loadoutGroup
-#  id: CaptainJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts: []
+- type: loadoutGroup
+  id: OverseerJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieOverseer
+# ~~~~~~ TP14
 
 - type: loadoutGroup
   id: HoPHead
@@ -173,6 +191,7 @@
   name: loadout-group-hop-neck
   minLimit: 0
   loadouts:
+  - CommandTie
   - HoPCloak
   - HoPMantle
 
@@ -192,11 +211,13 @@
   loadouts:
   - HoPWintercoat
 
-#- type: loadoutGroup
-#  id: HoPJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts: []
+- type: loadoutGroup
+  id: HoPJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieHeadOfPersonnel
+  - TP14LoadoutGoldenCoffeeFilterHoP
 
 # Civilian
 - type: loadoutGroup
@@ -242,21 +263,45 @@
   id: PassengerOuterClothing
   name: loadout-group-passenger-outerclothing
   minLimit: 0
+  defaultSelected: 1 # TP14
   loadouts:
   - PassengerWintercoat
+  - TP14LoadoutOuterWinterBlack # TP14
+  - TP14LoadoutOuterWinterBlue # TP14
+  - TP14LoadoutOuterWinterBrown # TP14
+  - TP14LoadoutOuterWinterGrey # TP14
+  - TP14LoadoutOuterWinterGreen # TP14
+  - TP14LoadoutOuterWinterLightBrown # TP14
+  - TP14LoadoutOuterWinterOrange # TP14
+  - TP14LoadoutOuterWinterPurple # TP14
+  - TP14LoadoutOuterWinterRed # TP14
+  - TP14LoadoutOuterWinterWhite # TP14
+  - TP14LoadoutOuterWinterYellow # TP14
 
 - type: loadoutGroup
   id: PassengerShoes
   name: loadout-group-passenger-shoes
+  minLimit: 0 # TP14
+  defaultSelected: 1 # TP14
   loadouts:
-  - BlackShoes
+  - TP14LoadoutFootwearBlack # TP14
+  - TP14LoadoutFootwearBlue # TP14
+  - TP14LoadoutFootwearBrown # TP14
+  - TP14LoadoutFootwearGreen # TP14
+  - TP14LoadoutFootwearOrange # TP14
+  - TP14LoadoutFootwearPurple # TP14
+  - TP14LoadoutFootwearRed # TP14
+  - TP14LoadoutFootwearWhite # TP14
+  - TP14LoadoutFootwearYellow # TP14
+  # - BlackShoes # TP14
   - WinterBoots
 
-#- type: loadoutGroup
-#  id: PassengerJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts: []
+- type: loadoutGroup
+  id: PassengerJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushiePassenger
 
 - type: loadoutGroup
   id: BartenderHead
@@ -287,14 +332,17 @@
   id: BartenderJobTrinkets
   name: loadout-group-jobtrinkets
   minLimit: 0
+  maxLimit: 2
   loadouts:
   - BartenderGoldenShaker
+  - TP14LoadoutGoldenCoffeeFilterBar
 
-#- type: loadoutGroup
-#  id: ServiceWorkerJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: ServiceWorkerJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieServiceWorker
 
 - type: loadoutGroup
   id: ChefHead
@@ -321,16 +369,18 @@
   id: ChefOuterClothing
   name: loadout-group-chef-outerclothing
   minLimit: 0
+  defaultSelected: 1
   loadouts:
-  - ChefApron
-  - ChefJacket
   - ChefWintercoat
+  - ChefJacket
+  - ChefApron
 
-#- type: loadoutGroup
-#  id: ChefJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: ChefJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieChef
 
 - type: loadoutGroup
   id: LibrarianJumpsuit
@@ -341,11 +391,12 @@
   - CuratorJumpsuit
   - CuratorJumpskirt
 
-#- type: loadoutGroup
-#  id: LibrarianJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: LibrarianJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieLibrarian
 
 - type: loadoutGroup
   id: LawyerJumpsuit
@@ -361,6 +412,7 @@
   - LawyerJumpskirtRed
   - LawyerJumpsuitGood
   - LawyerJumpskirtGood
+  - PinstripedSuit
 
 - type: loadoutGroup
   id: LawyerNeck
@@ -369,11 +421,12 @@
   loadouts:
   - LawyerNeck
 
-#- type: loadoutGroup
-#  id: LawyerJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: LawyerJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieLawyer
 
 - type: loadoutGroup
   id: ChaplainHead
@@ -427,11 +480,12 @@
   - BlackSandals
   - BrownSandals
 
-#- type: loadoutGroup
-#  id: ChaplainJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: ChaplainJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieChaplain
 
 - type: loadoutGroup
   id: ChaplainBible
@@ -488,6 +542,7 @@
   minLimit: 0
   loadouts:
   - BotanistHead
+  - BotanistBucket
   - BotanistBandana
 
 - type: loadoutGroup
@@ -496,6 +551,7 @@
   loadouts:
   - BotanistJumpsuit
   - BotanistJumpskirt
+  - BotanistWarmOveralls
   - BotanistOveralls
 
 - type: loadoutGroup
@@ -514,52 +570,52 @@
   - BotanistApron
   - BotanistWintercoat
 
-#- type: loadoutGroup
-#  id: BotanistJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: BotanistJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieBotanist
 
 - type: loadoutGroup
   id: ClownHead
   name: loadout-group-clown-head
   minLimit: 0
   loadouts:
-  - JesterHat
-  - JesterAltHat
-  - ClownMitre
+  - WearyClownHat
 
 - type: loadoutGroup
   id: ClownJumpsuit
   name: loadout-group-clown-jumpsuit
   loadouts:
-  - ClownSuit
-  - ClownSkirt
-  - JesterSuit
-  - JesterAltSuit
+  - WearyOveralls
 
 - type: loadoutGroup
   id: ClownBackpack
   name: loadout-group-clown-backpack
   loadouts:
-  - ClownBackpack
-  - ClownSatchel
-  - ClownDuffel
+  - ClownBindle
 
 - type: loadoutGroup
   id: ClownOuterClothing
   name: loadout-group-clown-outerclothing
   minLimit: 0
   loadouts:
-  - ClownRobes
-  - ClownWintercoat
+  - WearyClownCoat
+
+- type: loadoutGroup
+  id: ClownNeck
+  name: loadout-group-clown-neck
+  minLimit: 0
+  loadouts:
+  - RedBowtie
+
 
 - type: loadoutGroup
   id: ClownShoes
   name: loadout-group-clown-shoes
   loadouts:
-  - ClownShoes
-  - JesterShoes
+  - WearyClownShoes
 
 - type: loadoutGroup
   id: SurvivalClown
@@ -569,7 +625,9 @@
   loadouts:
   - EmergencyNitrogenClown
   - EmergencyOxygenClown
+  - EmergencyWater
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesJellidWater
 
 - type: loadoutGroup
   id: ClownJobTrinkets
@@ -583,24 +641,22 @@
   name: loadout-group-mime-head
   minLimit: 0
   loadouts:
-  - MimeHead
+  - PierrotHat
   - MimeFrenchBeret
   - MimeCap
 
 - type: loadoutGroup
   id: MimeMask
   name: loadout-group-mime-mask
+  minLimit: 1
   loadouts:
-  - MimeMask
-  - MimeMaskSad
-  - MimeMaskScared
+  - PierrotMask
 
 - type: loadoutGroup
   id: MimeJumpsuit
   name: loadout-group-mime-jumpsuit
   loadouts:
-  - MimeJumpsuit
-  - MimeJumpskirt
+  - PierrotJumpsuit
 
 - type: loadoutGroup
   id: MimeBackpack
@@ -611,15 +667,9 @@
   - MimeDuffel
 
 - type: loadoutGroup
-  id: MimeOuterClothing
-  name: loadout-group-mime-outerclothing
-  minLimit: 0
-  loadouts:
-  - MimeWintercoat
-
-- type: loadoutGroup
   id: MimeBelt
   name: loadout-group-mime-belt
+  minLimit: 0
   loadouts:
   - MimeSuspendersRed
   - MimeSuspendersBlack
@@ -679,11 +729,12 @@
   - Ocarina
   - Bagpipe
 
-#- type: loadoutGroup
-#  id: MusicianJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: MusicianJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieMusician
 
 # Cargo
 - type: loadoutGroup
@@ -727,11 +778,12 @@
   - BrownShoes
   - CargoWinterBoots
 
-#- type: loadoutGroup
-#  id: QuartermasterJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: QuartermasterJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieQuartermaster
 
 - type: loadoutGroup
   id: CargoTechnicianHead
@@ -745,7 +797,9 @@
   name: loadout-group-cargo-technician-jumpsuit
   loadouts:
   - CargoTechnicianJumpsuit
+  - TankTop
   - CargoTechnicianJumpskirt
+  - WoodCarver #TP14
 
 - type: loadoutGroup
   id: CargoTechnicianBackpack
@@ -776,11 +830,12 @@
   - CargoTechnicianPDA
   - SeniorCourierPDA
 
-#- type: loadoutGroup
-#  id: CargoTechnicianJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: CargoTechnicianJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieCargoTechnician
 
 - type: loadoutGroup
   id: SalvageSpecialistBackpack
@@ -804,11 +859,12 @@
   - SalvageBoots
   - CargoWinterBoots
 
-#- type: loadoutGroup
-#  id: SalvageSpecialistJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: SalvageSpecialistJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieSalvageSpecialist
 
 # Engineering
 - type: loadoutGroup
@@ -850,11 +906,12 @@
   - BrownShoes
   - EngineeringWinterBoots
 
-#- type: loadoutGroup
-#  id: ChiefEngineerJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: ChiefEngineerJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieChiefEngineer
 
 - type: loadoutGroup
   id: TechnicalAssistantJumpsuit
@@ -863,11 +920,12 @@
   - YellowJumpsuit
   - YellowJumpskirt
 
-#- type: loadoutGroup
-#  id: TechnicalAssistantJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: TechnicalAssistantJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieTechnicalAssistant
 
 - type: loadoutGroup
   id: StationEngineerHead
@@ -919,11 +977,12 @@
   - StationEngineerPDA
   - SeniorEngineerPDA
 
-#- type: loadoutGroup
-#  id: StationEngineerJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: StationEngineerJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieStationEngineer
 
 - type: loadoutGroup
   id: AtmosphericTechnicianJumpsuit
@@ -955,11 +1014,12 @@
   - WhiteShoes
   - EngineeringWinterBoots
 
-#- type: loadoutGroup
-#  id: AtmosphericTechnicianJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: AtmosphericTechnicianJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieAtmosphericTechnician
 
 - type: loadoutGroup
   id: SurvivalExtended
@@ -969,7 +1029,9 @@
   loadouts:
   - EmergencyNitrogenExtended
   - EmergencyOxygenExtended
+  - EmergencyWater
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesJellidWater
 
 # Science
 - type: loadoutGroup
@@ -1009,11 +1071,12 @@
   - BrownShoes
   - ScienceWinterBoots
 
-#- type: loadoutGroup
-#  id: ResearchDirectorJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: ResearchDirectorJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieResearchDirector
 
 - type: loadoutGroup
   id: ScientistHead
@@ -1021,8 +1084,10 @@
   minLimit: 0
   loadouts:
   - RoboticistCap
+  - ScientificBucket
   - SkullBandana
   - ScientificBeret
+  - SuspiciousCap #TP14
 
 - type: loadoutGroup
   id: ScientistNeck
@@ -1037,8 +1102,11 @@
   loadouts:
   - ScientistJumpsuit
   - ScientistJumpskirt
+  - MadScientistJumpsuit
+  - MadScientistJumpskirt
   - RoboticistJumpsuit
   - RoboticistJumpskirt
+  - SuspiciousSuit #TP14
   - SeniorResearcherJumpsuit
   - SeniorResearcherJumpskirt
 
@@ -1086,11 +1154,12 @@
   - ScientistPDA
   - SeniorResearcherPDA
 
-#- type: loadoutGroup
-#  id: ScientistJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: ScientistJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieScientist
 
 - type: loadoutGroup
   id: ResearchAssistantJumpsuit
@@ -1099,11 +1168,12 @@
   - WhiteJumpsuit
   - WhiteJumpskirt
 
-#- type: loadoutGroup
-#  id: ResearchAssistantJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: ResearchAssistantJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieResearchAssistant
 
 # Security
 - type: loadoutGroup
@@ -1145,6 +1215,7 @@
   name: loadout-group-jobtrinkets
   minLimit: 0
   loadouts:
+  - LizardPlushieHeadofSecurity
   - SecStar
 
 - type: loadoutGroup
@@ -1174,6 +1245,7 @@
   name: loadout-group-jobtrinkets
   minLimit: 0
   loadouts:
+  - LizardPlushieWarden
   - SecStar
 
 - type: loadoutGroup
@@ -1182,21 +1254,20 @@
   minLimit: 0
   loadouts:
   - SecurityHelmet
-  - SecurityBeret
+  - SecurityBandana
   - SecurityHat
-  - TrooperHat
+  - SecurityBeret
+  - SecurityBucketHat
 
 - type: loadoutGroup
   id: SecurityJumpsuit
   name: loadout-group-security-jumpsuit
   loadouts:
   - SecurityJumpsuit
-  - SecurityJumpskirt
-  - SecurityJumpsuitGrey
-  - SecurityJumpskirtGrey
+  - SecurityTanktop
+  - SecurityJumpsuitBlue
   - SeniorOfficerJumpsuit
   - SeniorOfficerJumpskirt
-  - TrooperUniform
 
 - type: loadoutGroup
   id: SecurityBackpack
@@ -1225,6 +1296,7 @@
   id: SecurityShoes
   name: loadout-group-security-shoes
   loadouts:
+  - CombatBoots
   - JackBoots
   - SecurityWinterBoots
 
@@ -1240,6 +1312,7 @@
   name: loadout-group-jobtrinkets
   minLimit: 0
   loadouts:
+  - LizardPlushieSecurity
   - SecStar
 
 - type: loadoutGroup
@@ -1256,6 +1329,9 @@
   minLimit: 0
   loadouts:
   - DetectiveTie
+  # Moffstation - Begin (New Detective Outfits)
+  - DetectiveBadge
+  # Moffstation - End (New Detective Outfits)
 
 - type: loadoutGroup
   id: DetectiveJumpsuit
@@ -1265,6 +1341,12 @@
   - DetectiveJumpskirt
   - NoirJumpsuit
   - NoirJumpskirt
+  # Moffstation - Begin (New Detective Outfits)
+  - SleuthSuit
+  - SleuthSkirt
+  - InvestigatorJumpsuit
+  - InvestigatorJumpskirt
+  # Moffstation - End (New Detective Outfits)
 
 - type: loadoutGroup
   id: DetectiveOuterClothing
@@ -1273,27 +1355,31 @@
   - DetectiveArmorVest
   - DetectiveCoat
   - DetectiveCoatGrey
-  - SecurityOfficerWintercoat
+  # Moffstation - Begin (New Detective Outfits)
+  - DetectiveCoatSleuth
+  # Moffstation - End (New Detective Outfits)
 
 - type: loadoutGroup
   id: DetectiveJobTrinkets
   name: loadout-group-jobtrinkets
   minLimit: 0
   loadouts:
+  - LizardPlushieDetective
   - SecStar
 
 - type: loadoutGroup
   id: SecurityCadetJumpsuit
   name: loadout-group-security-cadet-jumpsuit
   loadouts:
-  - RedJumpsuit
-  - RedJumpskirt
+  - BlueJumpsuit
+  - BlueJumpskirt
 
-#- type: loadoutGroup
-#  id: SecurityCadetJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: SecurityCadetJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieSecurityCadet
 
 - type: loadoutGroup
   id: SurvivalSecurity
@@ -1303,7 +1389,9 @@
   loadouts:
   - EmergencyNitrogenSecurity
   - EmergencyOxygenSecurity
+  - EmergencyWater
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesJellidWater
 
 # Wildcards
 - type: loadoutGroup
@@ -1312,6 +1400,7 @@
   loadouts:
   - ReporterJumpsuit
   - JournalistJumpsuit
+  - TVHostJumpsuit # - TP14
 
 - type: loadoutGroup
   id: ReporterHead
@@ -1319,6 +1408,7 @@
   minLimit: 0
   loadouts:
   - ReporterPressFedora
+  - Fez
 
 - type: loadoutGroup
   id: ReporterOuterClothing
@@ -1339,12 +1429,14 @@
   loadouts:
   - PsychologistJumpsuit
   - PsychologistJumpskirt
+  - DoctorsJumpsuit # - TP14
 
-#- type: loadoutGroup
-#  id: PsychologistJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
+- type: loadoutGroup
+  id: PsychologistJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushiePsychologist
 
 - type: loadoutGroup
   id: TramDriverJumpsuit
@@ -1396,7 +1488,9 @@
   loadouts:
   - EmergencyNitrogenSyndicate
   - EmergencyOxygenSyndicate
+  - EmergencyWater
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesJellidWater
 
 - type: loadoutGroup
   id: SurvivalMilitaryDouble # Survival box mostly used by ERT/deathsquad
@@ -1415,6 +1509,15 @@
   hidden: true
   loadouts:
   - LoadoutSpeciesBreathTool
+
+- type: loadoutGroup
+  id: GroupSpeciesGasMask
+  name: loadout-group-breath-tool
+  minLimit: 1
+  maxLimit: 1
+  hidden: true
+  loadouts:
+  - LoadoutSpeciesGasMask
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolMedical

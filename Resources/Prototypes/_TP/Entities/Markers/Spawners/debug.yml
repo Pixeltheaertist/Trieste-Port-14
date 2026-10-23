@@ -1,0 +1,46 @@
+- type: entity
+  parent: MarkerBase
+  id: TP14MarkerInside
+  name: ceiling
+  suffix: Trieste
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: Markers/inside.rsi
+    state: default
+  - type: UnderRoof
+  - type: IsRoof
+  - type: BlockWeather
+  - type: Construction
+    graph: ConstructionGraphRoof
+    node: inside marker
+  - type: Icon
+    sprite: Structures/Walls/solid.rsi
+    state: full
+
+- type: entity
+  name: LightingMarker
+  id: TP14MarkerLightning
+  parent: MarkerBase
+  suffix: Trieste, Lightning
+  components:
+  - type: Sprite
+    sprite: Markers/inside.rsi
+    state: default
+  - type: LightningMarker
+
+- type: entity
+  name: WhisperMarker
+  id: TP14MarkerWhispers
+  parent: MarkerBase
+  suffix: Trieste, Trench
+  components:
+  - type: Sprite
+    sprite: Markers/inside.rsi
+    state: default
+  - type: AmbientSound
+    range: 10
+    volume: -2
+    sound:
+      path: /Audio/Ambience/anomaly_scary.ogg

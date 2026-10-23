@@ -134,9 +134,9 @@
       - id: ClothingHandsGlovesBoxingRiggedYellow
 
 - type: entity
-  parent: [ClothingHandsBase, BaseCommandContraband]
+  parent: [ClothingHandsBase, BaseNanotrasenContraband ] #TP14
   id: ClothingHandsGlovesCaptain
-  name: captain gloves
+  name: captain's gloves
   description: Regal blue gloves, with a nice gold trim. Swanky.
   components:
   - type: Sprite
@@ -544,8 +544,8 @@
 - type: entity
   parent: [ClothingHandsBase, BaseGrandTheftContraband]
   id: ClothingHandsKnuckleDustersQM
-  name: QM's golden knuckle dusters
-  description: "24karat gold infused with plasteel and branded with the Nanotrasen logo. A true symbol of the Quartermaster's might."
+  name: HM's golden knuckle dusters
+  description: "24karat gold branded with the Solgov logo. A true symbol of the Harbormaster's might, though not a very durable one."
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/KnuckleDusters/goldenknuckleduster.rsi

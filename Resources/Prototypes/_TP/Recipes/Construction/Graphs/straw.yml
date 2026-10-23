@@ -1,0 +1,16 @@
+- type: constructionGraph
+  id: Straw
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: straw
+      steps:
+      - tag: Wheat
+        name: construction-graph-tag-wheat-bushel
+        icon:
+          sprite: Objects/Specific/Hydroponics/wheat.rsi
+          state: produce
+        doAfter: .5
+  - node: straw
+    entity: TP14ClothingMaskStraw

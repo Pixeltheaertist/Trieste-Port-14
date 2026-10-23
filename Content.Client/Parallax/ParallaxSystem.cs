@@ -49,10 +49,19 @@ public sealed partial class ParallaxSystem : SharedParallaxSystem
 
     private void OnAfterAutoHandleState(EntityUid uid, ParallaxComponent component, ref AfterAutoHandleStateEvent args)
     {
+        // TRIESTE:
+        // Unload the previously loaded parallax first.
+        if (component.LoadedParallax != null && component.LoadedParallax != component.Parallax)
+        {
+            _parallax.UnloadParallax(component.LoadedParallax);
+        }
+
         if (!_parallax.IsLoaded(component.Parallax))
         {
             _parallax.LoadParallaxByName(component.Parallax);
         }
+
+        component.LoadedParallax = component.Parallax;
     }
 
     public ParallaxLayerPrepared[] GetParallaxLayers(MapId mapId)

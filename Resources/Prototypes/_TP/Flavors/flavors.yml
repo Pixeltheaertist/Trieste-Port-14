@@ -1,0 +1,37 @@
+- type: flavor
+  id: blue
+  flavorType: Base
+  description: flavor-base-blue
+
+- type: flavor
+  id: TP14Custard
+  flavorType: Complex
+  description: flavor-complex-custard
+
+- type: flavor
+  id: vanilla
+  flavorType: Complex
+  description: flavor-complex-vanilla
+
+
+# Coffee
+- type: flavor
+  id: TP14FlavorGroundCoffee
+  flavorType: Complex
+  description: flavor-complex-ground-coffee
+
+- type: flavor
+  id: TP14FlavorInstantCoffee
+  flavorType: Complex
+  description: flavor-complex-instant-coffee
+
+- type: flavor
+  id: TP14FlavorBadCoffee
+  flavorType: Complex
+  description: flavor-complex-bad-coffee
+
+- type: flavor
+  id: TP14FlavorQualityCoffee
+  flavorType: Complex
+  description: flavor-complex-quality-coffee
+

@@ -1,52 +1,55 @@
 <Document>
 
-# Microwave Recipes
+  # Microwave Recipes
 
-This is the latest published version of NanoTrasen Central Command Kitchen de Cuisine's recipe collection for chefs upon NanoTrasen vessels to prepare.
+  This is the latest published version of NanoTrasen Central Command Kitchen de Cuisine's recipe collection for chefs upon NanoTrasen vessels to prepare.
 
-## Pizza Pies
-<GuideMicrowaveGroupEmbed Group="Pizza"/>
+  ## Pizza Pies
+  <GuideMicrowaveGroupEmbed Group="Pizza"/>
 
-## Savory Cooking
-<GuideMicrowaveGroupEmbed Group="Savory"/>
+  ## Savory Cooking
+  <GuideMicrowaveGroupEmbed Group="Savory"/>
 
-## Breads
-<GuideMicrowaveGroupEmbed Group="Breads"/>
+  ## Breads
+  <GuideMicrowaveGroupEmbed Group="Breads"/>
 
-## Breakfast Foods
-<GuideMicrowaveGroupEmbed Group="Breakfast"/>
+  ## Breakfast Foods
+  <GuideMicrowaveGroupEmbed Group="Breakfast"/>
 
-## Moth Foods
-<GuideMicrowaveGroupEmbed Group="Moth"/>
+  ## Deep-fried & Carnival Foods
+  <GuideDeepFryerGroupEmbed Group="TP14-Deep-Fry"/>
 
-## Pastas & Noodles
-<GuideMicrowaveGroupEmbed Group="Pasta"/>
+  ## Moth Foods
+  <GuideMicrowaveGroupEmbed Group="Moth"/>
 
-## Pastries & Desserts
-<GuideMicrowaveGroupEmbed Group="Dessert"/>
+  ## Pastas & Noodles
+  <GuideMicrowaveGroupEmbed Group="Pasta"/>
 
-## Soups & Stews
-<GuideMicrowaveGroupEmbed Group="Soup"/>
+  ## Pastries & Desserts
+  <GuideMicrowaveGroupEmbed Group="Dessert"/>
 
-## Pies & Tarts
-<GuideMicrowaveGroupEmbed Group="Pie"/>
+  ## Soups & Stews
+  <GuideMicrowaveGroupEmbed Group="Soup"/>
 
-## Bars & Cookies
-<GuideMicrowaveGroupEmbed Group="BarsAndCookies"/>
+  ## Pies & Tarts
+  <GuideMicrowaveGroupEmbed Group="Pie"/>
 
-## Cakes
-<GuideMicrowaveGroupEmbed Group="Cake"/>
+  ## Bars & Cookies
+  <GuideMicrowaveGroupEmbed Group="BarsAndCookies"/>
 
-## Salads
-<GuideMicrowaveGroupEmbed Group="Salad"/>
+  ## Cakes
+  <GuideMicrowaveGroupEmbed Group="Cake"/>
 
-## Medicinal
-<GuideMicrowaveGroupEmbed Group="Medicinal"/>
+  ## Salads
+  <GuideMicrowaveGroupEmbed Group="Salad"/>
 
-## Other
-<GuideMicrowaveGroupEmbed Group="Other"/>
+  ## Medicinal
+  <GuideMicrowaveGroupEmbed Group="Medicinal"/>
 
-## Secret
-<GuideMicrowaveGroupEmbed Group="Secret"/>
+  ## Other
+  <GuideMicrowaveGroupEmbed Group="Other"/>
+
+  ## Secret
+  <GuideMicrowaveGroupEmbed Group="Secret"/>
 
 </Document>

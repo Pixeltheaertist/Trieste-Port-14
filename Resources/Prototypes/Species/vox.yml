@@ -4,7 +4,7 @@
   roundStart: true
   prototype: MobVox
   dollPrototype: AppearanceVox
-  skinColoration: VoxFeathers
+  skinColoration: Hues # TRIESTE: 'VoxFeathers'
   defaultSkinTone: "#6c741d"
   maleFirstNames: NamesVox
   femaleFirstNames: NamesVox
@@ -17,3 +17,4 @@
   - UnisexVox
   voices:
   - UnisexVox
+  customName: true # Starlight

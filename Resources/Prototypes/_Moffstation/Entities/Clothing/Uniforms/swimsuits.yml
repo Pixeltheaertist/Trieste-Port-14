@@ -1,0 +1,548 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformCoconutSkirt
+  name: coconut skirt
+  description: A tropical coconut-themed swim skirt
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/coconut-skirt.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/coconut-skirt.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformFishsuit
+  name: fishsuit
+  description: A swimsuit with fish-like features
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/fishsuit.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/fishsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformGrassSkirt
+  name: grass skirt
+  description: A traditional grass skirt swimwear
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/grass-skirt.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/grass-skirt.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformHeartOnepiece
+  name: heart one-piece
+  description: A cute one-piece swimsuit with heart patterns
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/heart-onepiece.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/heart-onepiece.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformHonkini
+  name: honkini
+  description: A clown-themed swimsuit that honks
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/honkini.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/honkini.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformMedShorts
+  name: medical shorts
+  description: Medical-themed swim shorts
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/med-shorts.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/med-shorts.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformMedkini
+  name: medkini
+  description: A medical-themed bikini
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/medkini.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/medkini.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformMermaid
+  name: mermaid swimsuit
+  description: A swimsuit resembling mermaid scales
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/mermaid.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/mermaid.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformNinjaSurfsuit
+  name: ninja surfsuit
+  description: A stealthy ninja-themed swimsuit
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/ninja-surfsuit.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/ninja-surfsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformNtBikini
+  name: nanotrasen bikini
+  description: An official Nanotrasen-branded bikini
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/nt-bikini.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/nt-bikini.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformOldtimeyOnepiece
+  name: vintage one-piece
+  description: An old-fashioned one-piece swimsuit
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/oldtimey-onepiece.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/oldtimey-onepiece.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformShirtkini
+  name: shirtkini
+  description: A shirt with an attached swimsuit
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/shirtkini.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/shirtkini.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformSpeedo
+  name: speedo
+  description: Classic tight swim briefs
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/speedo.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/speedo.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformSundress
+  name: swim sundress
+  description: A light sundress suitable for swimming
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/sundress.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/sundress.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformSyndikini
+  name: syndikini
+  description: A suspiciously red swimsuit
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/syndikini.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/syndikini.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformWetsuitOrange
+  name: orange wetsuit
+  description: A bright orange wetsuit for visibility
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/wetsuit-orange.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/wetsuit-orange.rsi
+
+# ========== Generic colored swimsuits ==============
+# Abstract Base Types
+- type: entity
+  id: BaseGenericBikini
+  name: generic bikini
+  abstract: true
+  parent: ClothingUniformBase
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/bikini-generic.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/bikini-generic.rsi
+
+- type: entity
+  id: BaseGenericOnepiece
+  name: generic one-piece
+  abstract: true
+  parent: ClothingUniformBase
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/onepiece-generic.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/onepiece-generic.rsi
+
+- type: entity
+  id: BaseGenericShorts
+  name: generic shorts
+  abstract: true
+  parent: ClothingUniformBase
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/shorts-generic.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Uniforms/Swimsuit/shorts-generic.rsi
+
+# Bikini Variants
+- type: entity
+  parent: BaseGenericBikini
+  id: ClothingUniformBikiniWhite
+  name: white bikini
+  description: A standard bikini in white
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#EAE8E8"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#EAE8E8"
+
+- type: entity
+  parent: BaseGenericBikini
+  id: ClothingUniformBikiniBlack
+  name: black bikini
+  description: A standard bikini in black
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#535353"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#535353"
+
+- type: entity
+  parent: BaseGenericBikini
+  id: ClothingUniformBikiniBlue
+  name: blue bikini
+  description: A standard bikini in corporate blue
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#004787"  # NT Blue
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#004787"
+
+- type: entity
+  parent: BaseGenericBikini
+  id: ClothingUniformBikiniRed
+  name: red bikini
+  description: A standard bikini in alert red
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#940000"  # Emergency Red
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#940000"
+
+- type: entity
+  parent: BaseGenericBikini
+  id: ClothingUniformBikiniGreen
+  name: green bikini
+  description: A standard bikini in safety green
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#29722e"  # CentCom Green
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#29722e"
+
+- type: entity
+  parent: BaseGenericBikini
+  id: ClothingUniformBikiniYellow
+  name: yellow bikini
+  description: A standard bikini in hazard yellow
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#F7C430"  # Gold/Yellow
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#F7C430"
+
+- type: entity
+  parent: BaseGenericBikini
+  id: ClothingUniformBikiniPink
+  name: pink bikini
+  description: A standard bikini in cheerful pink
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffa69b"  # Soft Pink
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ffa69b"
+# One-piece Variants
+- type: entity
+  parent: BaseGenericOnepiece
+  id: ClothingUniformOnepieceWhite
+  name: white one-piece
+  description: A standard one-piece in white
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#EAE8E8"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#EAE8E8"
+
+- type: entity
+  parent: BaseGenericOnepiece
+  id: ClothingUniformOnepieceBlack
+  name: black one-piece
+  description: A standard one-piece in black
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#535353"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#535353"
+
+- type: entity
+  parent: BaseGenericOnepiece
+  id: ClothingUniformOnepieceBlue
+  name: blue one-piece
+  description: A standard one-piece in corporate blue
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#004787"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#004787"
+
+- type: entity
+  parent: BaseGenericOnepiece
+  id: ClothingUniformOnepieceRed
+  name: red one-piece
+  description: A standard one-piece in alert red
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#940000"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#940000"
+
+- type: entity
+  parent: BaseGenericOnepiece
+  id: ClothingUniformOnepieceGreen
+  name: green one-piece
+  description: A standard one-piece in safety green
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#29722e"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#29722e"
+
+- type: entity
+  parent: BaseGenericOnepiece
+  id: ClothingUniformOnepieceYellow
+  name: yellow one-piece
+  description: A standard one-piece in hazard yellow
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#F7C430"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#F7C430"
+
+- type: entity
+  parent: BaseGenericOnepiece
+  id: ClothingUniformOnepiecePink
+  name: pink one-piece
+  description: A standard one-piece in cheerful pink
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffa69b"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ffa69b"
+
+# Shorts Variants
+- type: entity
+  parent: BaseGenericShorts
+  id: ClothingUniformShortsWhite
+  name: white swim shorts
+  description: Standard swim shorts in white
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#EAE8E8"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#EAE8E8"
+
+- type: entity
+  parent: BaseGenericShorts
+  id: ClothingUniformShortsBlack
+  name: black swim shorts
+  description: Standard swim shorts in black
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#535353"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#535353"
+
+- type: entity
+  parent: BaseGenericShorts
+  id: ClothingUniformShortsBlue
+  name: blue swim shorts
+  description: Standard swim shorts in corporate blue
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#004787"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#004787"
+
+- type: entity
+  parent: BaseGenericShorts
+  id: ClothingUniformShortsRed
+  name: red swim shorts
+  description: Standard swim shorts in alert red
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#940000"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#940000"
+
+- type: entity
+  parent: BaseGenericShorts
+  id: ClothingUniformShortsGreen
+  name: green swim shorts
+  description: Standard swim shorts in safety green
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#29722e"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#29722e"
+
+- type: entity
+  parent: BaseGenericShorts
+  id: ClothingUniformShortsYellow
+  name: yellow swim shorts
+  description: Standard swim shorts in hazard yellow
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#F7C430"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#F7C430"
+
+- type: entity
+  parent: BaseGenericShorts
+  id: ClothingUniformShortsPink
+  name: pink swim shorts
+  description: Standard swim shorts in cheerful pink
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffa69b"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ffa69b"

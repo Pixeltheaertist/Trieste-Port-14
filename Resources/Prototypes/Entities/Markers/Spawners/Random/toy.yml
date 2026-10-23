@@ -25,6 +25,7 @@
     children:
     - !type:NestedSelector
       tableId: AllLizardPlushieTable
+    - id: TP14carbatteryplushie # Trieste: Added.
     - id: PlushieNuke
     - id: PlushieSlime
     - id: PlushieSnake

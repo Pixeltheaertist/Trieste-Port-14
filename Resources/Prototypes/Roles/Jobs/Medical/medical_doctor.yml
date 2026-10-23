@@ -25,6 +25,7 @@
   id: DoctorGear
   equipment:
     ears: ClothingHeadsetMedical
+    belt: TP14ClothingBeltStorageMedicalPouchFilled # Trieste: Added.
 
 - type: chameleonOutfit
   id: MedicalDoctorChameleonOutfit

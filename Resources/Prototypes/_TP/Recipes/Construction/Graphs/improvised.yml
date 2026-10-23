@@ -1,0 +1,7 @@
+- type: construction
+  id: straw
+  graph: Straw
+  startNode: start
+  targetNode: straw
+  category: construction-category-clothing
+  objectType: Item

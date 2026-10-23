@@ -1338,6 +1338,7 @@
     - Cooked
     - Meat
     - Steak
+    - TP14TagFoodMeatPatty # Trieste: Added.
   - type: Sprite
     state: patty
   - type: Solution

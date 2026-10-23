@@ -598,7 +598,7 @@
 # cargo modules
 - type: entity
   id: BorgModuleAppraisal
-  parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
+  parent: [ BaseBorgModuleTriesteCargo, BaseProviderBorgModule ] # TP14 - Was BaseBorgModuleCargo
   name: appraisal cyborg module
   components:
   - type: Sprite

@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Drawn by Ubaser and modified by alzore_(discord). Modified to be colorable by Cookie for multiple servers.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "equipped-FEET",
+      "directions": 4
+    },
+    {
+      "name": "icon"
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "soles-equipped-FEET",
+      "directions": 4
+    },
+    {
+      "name": "soles-icon"
+    },
+    {
+      "name": "soles-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "soles-inhand-right",
+      "directions": 4
+    }
+  ]
+}

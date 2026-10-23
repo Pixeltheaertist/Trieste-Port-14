@@ -1,0 +1,110 @@
+<Document>
+    # Cascade Operatives
+
+    <Box>
+        [color=#999999][italic]"OPERATIVES STANDBY. YOUR OBJECTIVES ARE SIMPLE.[/italic][/color]
+    </Box>
+    <Box>
+        [color=#999999][italic]LOCATE OVERSEER'S OVERRIDE. PROTECT DELAMINATOR. STERILIZE PLANET UTILIZING ARTIFACT. BEGIN OPERATION."[/italic][/color]
+    </Box>
+    <Box>
+        <GuideEntityEmbed Entity="PosterContrabandEnlistGorlex" Caption=""/>
+    </Box>
+
+    You've just been chosen to be a cascade operative for [color=#ADD8E6]Nanotrasen[/color]. You have one goal, deal with Trieste Port.
+
+    ## Operatives
+    Your team will be made up of several different roles, which are:
+    - [bold]Operatives[/bold], standard soldiers who can take up the grunt work.
+    - The [bold]Corpsman[/bold] who works with reagents to make medicines or chemical weapons.
+    - The [bold]Commander[/bold] who draws up the plan and leads the team.
+
+    <Box>
+        <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndie"/>
+        <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndieMedic" Caption="corpsman's hardsuit"/>
+        <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndieCommander" Caption="commander's hardsuit"/>
+    </Box>
+
+    If you have been selected as the Corpsman or Commander but don't feel ready, one of your teammates can take over your responsibilities.
+
+    ## The Disk
+
+    Each operative starts with a [color=cyan]pinpointer[/color], which you should turn on and keep with you at all times. It will always point to the [color=cyan]Artifact Override Codes.[/color]
+    The codes are stored on a disk which belongs to the [color=yellow]Overseer[/color], who will almost always have it on them. Follow the direction of the arrow on the pinpointer to the disk, and [italic]do whatever it takes to get it[/italic].
+
+    <Box>
+        <GuideEntityEmbed Entity="PinpointerNuclear"/>
+        <GuideEntityEmbed Entity="NukeDisk"/>
+    </Box>
+
+    ## Preparation
+    Each member in your squad has been given an [color=cyan]uplink[/color] to purchase everything you will need for the mission, similar to [textlink="traitors." link="Traitors"]
+
+    <Box>
+        <GuideEntityEmbed Entity="BaseUplinkRadio40TC" Caption="your uplink"/>
+    </Box>
+
+    You can purchase the same kinds of gear traitors can, but you have higher quality gear available to you and more bluespace crystals to spend.
+    <Box>
+        <GuideEntityEmbed Entity="WeaponLightMachineGunL6" Caption="Weaponry"/>
+        <GuideEntityEmbed Entity="MagazineLightRifleBox" State="icon" Caption="Ammo"/>
+        <GuideEntityEmbed Entity="C4" Caption="Explosives"/>
+        <GuideEntityEmbed Entity="ClothingOuterHardsuitJuggernaut" Caption="Wearables"/>
+        <GuideEntityEmbed Entity="Stimpack" Caption="Chemicals"/>
+    </Box>
+    <Box>
+        <GuideEntityEmbed Entity="ChameleonProjector" Caption="Deception"/>
+        <GuideEntityEmbed Entity="Emag" Caption="Disruption"/>
+        <GuideEntityEmbed Entity="MacroBombImplanter" Caption="Implants"/>
+        <GuideEntityEmbed Entity="BorgChassisSyndicateAssault" Caption="Allies"/>
+        <GuideEntityEmbed Entity="ClothingEyesGlassesOutlawGlasses" Caption="Pointless"/>
+    </Box>
+
+    You'll also have to choose if you want to [color=red]declare war[/color] or not. Doing so grants your team [bold]40 extra bluespace crystals each[/bold].
+    However, the citizens will immediately know of your existence and will have plenty of time to prepare for your arrival.
+
+    The [bold]Commander[/bold] is the only person who can declare war. Make your choice quick, [italic]this is a limited-time offer![/italic]
+    <Box>
+        <GuideEntityEmbed Entity="NukeOpsDeclarationOfWar"/>
+    </Box>
+
+    ## Getting to the Platform
+    You've got the plan, you've got the gear. Now, execute.
+
+    Your landing area will be the generally uninhabited Waste Zone. Prepare to move fast post-splashdown.
+
+    When everyone is ready, FTL to the planet and touch down on the surface. Your pinpointers and delaminator.
+
+
+    ## The Artifact & Arming Procedure
+    You have a device called the [color=cyan]Resonance Delaminator[/color] on your ship. This device is used the re-arm the Artifact's primary function:
+
+    [color=red]destroying planets.[/color]
+
+
+    - Obtain the [bold]Override Codes[/bold]
+    - Move to Sweetwater, locate [color=purple]The Artifact[/color]
+    - Insert the [bold]Override Codes[/bold] and [bold]Resonance Delaminator[/bold]
+    - The [color=red]arming sequence[/color] will begin automatically
+    - Protect The Artifact. Prevent the citizens from disarming it once more.
+    - It takes 30 seconds for someone to [bold]disarm[/bold] the Artifact. Re-arming it is possible, but the chance of mission success drops if you let it happen.
+
+    ## Winning Conditions
+
+    The [color=#00ff00]victor[/color] of the round is announced on the round end screen, as well as the scale of their victory.
+
+    [bold][color=blue]Syndicate Major Victory![/color][/bold]
+    - The Artifact detonates, destroying the planet.
+    - The citizens escapes on evac, but the Artifact is still armed.
+    - The Artifact is armed and delivered to SolGov on the evac shuttle.
+
+    [bold][color=blue]Nanotrasen Minor Victory[/color][/bold]
+    - The citizens escape on evac, but every operative survives.
+    - The citizens escape and some operatives die, but the citizens lose the codes.
+
+    [bold][color=green]Citizen Minor Victory[/color][/bold]
+    - The citizens escape on evac with the codes and some operatives die.
+
+    [bold][color=green]Citizen Major Victory![/color][/bold]
+    - All operatives are killed.
+</Document>

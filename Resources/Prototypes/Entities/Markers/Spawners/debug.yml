@@ -12,3 +12,5 @@
   - type: ConditionalSpawner
     prototypes:
     - MobHuman
+
+

@@ -1,0 +1,56 @@
+- type: entity
+  parent: BaseSMES
+  id: TP14SMESAdvanced
+  suffix: Trieste, Engineering, 100MJ
+  name: advanced SMES
+  description: The highest capacity superconducting magnetic energy storage (SMES) unit. It was modified from a standard unit after Trieste Port was founded.
+  components:
+  - type: Sprite
+    sprite: Structures/Power/smes.rsi
+    snapCardinals: true
+    layers:
+    - state: advancedsmes
+    - map: [ "enum.SmesVisualLayers.Charge" ]
+      state: "smes-og1" # -og0 does not exist
+      shader: unshaded
+      visible: false
+    - map: [ "enum.SmesVisualLayers.Input" ]
+      state: "smes-oc0"
+      shader: unshaded
+    - map: [ "enum.SmesVisualLayers.Output" ]
+      state: "smes-op1"
+      shader: unshaded
+    - map: ["enum.WiresVisualLayers.MaintenancePanel"]
+      state: advancedsmes-open
+  - type: Machine
+    board: TP14SMESAdvancedMachineCircuitboard
+  - type: Battery
+    maxCharge: 100000000
+    startingCharge: 100000000
+  - type: PowerMonitoringDevice
+    group: SMES
+    sourceNode: input
+    loadNode: output
+    collectionName: smes
+    sprite: Structures/Power/smes.rsi
+    state: advancedsmes-static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 63 # Let's pretend it's on wheels
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+
+- type: entity
+  parent: TP14SMESAdvanced
+  id: TP14SMESAdvancedEmpty
+  suffix: Trieste, Engineering, Empty
+  components:
+  - type: Battery
+    startingCharge: 0

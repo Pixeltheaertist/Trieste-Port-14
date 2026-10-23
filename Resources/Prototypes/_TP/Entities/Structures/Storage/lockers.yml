@@ -1,0 +1,78 @@
+# Medical
+- type: entity
+  parent: LockerMedicine
+  id: TP14LockerMedicine
+  suffix: Trieste, Medical
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Storage/closet.rsi
+
+- type: entity
+  parent: LockerMedical
+  id: TP14LockerMedical
+  suffix: Trieste, Medical
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Storage/closet.rsi
+
+- type: entity
+  parent: ClosetSteelBase
+  id: TP14LockerMedicalUnlocked
+  suffix: Trieste, Medical, Unlocked
+  name: medicine locker
+  description: Filled to the brim with medical junk. This one's been broken, and is permanently locked open.
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: med
+    stateDoorOpen: med_open
+    stateDoorClosed: med_unlocked
+  - type: Sprite
+    sprite: _TP/Structures/Storage/closet.rsi
+
+#Unlocked the bartender's closet to use as a generic wardrobe
+- type: entity
+  id: LockerWardrobe
+  parent: LockerBase
+  name: wooden wardrobe
+  suffix: unlocked
+  description: A fancy-ish looking closet for keeping personal belongings. 
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: cabinet
+    stateDoorOpen: cabinet_open
+    stateDoorClosed: cabinet_door
+
+  - type: EntityStorage
+    closeSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+    openSound:
+      path: /Audio/Effects/woodenclosetopen.ogg
+  - type: Paintable
+    group: null # not shaped like other lockers
+
+# Added a kitchen locked version of the bartender's closet because it would be nice. Add more access versions later, it takes like 30 seconds.
+- type: entity
+  id: LockerWardrobeChef
+  parent: LockerWardrobe
+  name: wooden wardrobe
+  suffix: Kitchen
+  components: 
+  - type: AccessReader
+    access: [["Kitchen"]]
+
+# Filled, Chaplain version
+- type: entity
+  id: LockerWardrobeChaplain
+  parent: LockerWardrobe
+  name: chaplain's wardrobe
+  suffix: Chapel, Filled
+  description: It's a storage unit for religious attire.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillWardrobeChapel
+  - type: AccessReader
+    access: [["Chapel"]]

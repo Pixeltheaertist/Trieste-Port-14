@@ -12,7 +12,7 @@ advertisement-space-villain-11 = CHALLENGE ME!
 advertisement-space-villain-12 = FEAR ME!
 advertisement-space-villain-13 = Do you dare to face me in battle!?
 advertisement-space-villain-14 = Beware, I live!
-advertisement-space-villain-15 = I hunger!
+advertisement-space-villain-15 = I'M HALF HUMAN, AND HALF MACHINE
 
 thankyou-space-villain-1 = And where do you think you're going, punk?
 thankyou-space-villain-2 = Is that all you've got?

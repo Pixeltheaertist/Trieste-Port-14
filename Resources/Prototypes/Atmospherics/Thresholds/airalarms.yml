@@ -102,6 +102,14 @@
     threshold: 0.0001
 
 - type: alarmThreshold
+  id: stationWater
+  upperBound: !type:AlarmThresholdSetting
+    threshold: 0.06
+  upperWarnAround: !type:AlarmThresholdSetting
+    threshold: 0.2
+
+
+- type: alarmThreshold
   id: voxOxygen
   upperBound: !type:AlarmThresholdSetting
     threshold: 0.02 # 2%

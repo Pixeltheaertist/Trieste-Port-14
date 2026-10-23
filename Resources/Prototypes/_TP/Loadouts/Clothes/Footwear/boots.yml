@@ -1,0 +1,4 @@
+- type: loadout
+  id: TP14LoadoutFootwearWorkboots
+  equipment:
+    shoes: TP14ClothingShoesWorkboots

@@ -1,0 +1,31 @@
+- type: marking
+  id: TP14MarkingReptileHeadDilophosaurus
+  bodyPart: Head
+  groupWhitelist: [ Reptilian ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Reptilian/head.rsi
+    state: head_dilophosaurus
+
+- type: marking
+  id: TP14MarkingReptileHeadOviraptor
+  bodyPart: Head
+  groupWhitelist: [ Reptilian ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Reptilian/head.rsi
+    state: head_oviraptor
+
+- type: marking
+  id: TP14MarkingReptileHeadParasaurolophus
+  bodyPart: Head
+  groupWhitelist: [ Reptilian ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Reptilian/head.rsi
+    state: head_parasaurolophus
+
+- type: marking
+  id: TP14MarkingReptileHeadTriceratops
+  bodyPart: Head
+  groupWhitelist: [ Reptilian ]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Reptilian/head.rsi
+    state: head_triceratops

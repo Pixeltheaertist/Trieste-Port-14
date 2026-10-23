@@ -34,7 +34,6 @@
   - type: ActionGrant
     removeOnShutdown: false
     actions:
-    - ActionJumpToCore
     - ActionAIViewLaws
   - type: UserInterface
     interfaces:

@@ -4,14 +4,17 @@
   limits:
     enum.HumanoidVisualLayers.Hair:
       limit: 1
-      onlyGroupWhitelisted: true
+      onlyGroupWhitelisted: false # Trieste: 'true'
       required: false
     enum.HumanoidVisualLayers.FacialHair:
       limit: 1
-      onlyGroupWhitelisted: true
+      onlyGroupWhitelisted: false # Trieste: 'true'
       required: false
     enum.HumanoidVisualLayers.Head:
       limit: 4
+      required: false
+    enum.HumanoidVisualLayers.HeadSide: # Trieste: Added.
+      limit: 2
       required: false
     enum.HumanoidVisualLayers.Snout:
       limit: 1

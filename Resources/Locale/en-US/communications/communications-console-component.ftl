@@ -23,7 +23,7 @@ comms-console-char-limit = {$count}/{$max}
 
 # Popup
 comms-console-permission-denied = Permission denied
-comms-console-shuttle-unavailable = Shuttle is currently unavailable
+comms-console-shuttle-unavailable = Evacuation is currently unavailable
 comms-console-message-too-long = Message is too long
 comms-console-message-cannot-send = Communications temporarily disabled
 
@@ -32,14 +32,14 @@ comms-console-announcement-unknown-sender = Unknown
 
 # Comms console variant titles
 comms-console-announcement-title-station = Communications Console
-comms-console-announcement-title-centcom = Central Command
+comms-console-announcement-title-centcom = SolGov
 comms-console-announcement-title-nukie = Syndicate Nuclear Operative
-comms-console-announcement-title-station-ai = Station AI
+comms-console-announcement-title-station-ai = P.A.I.L
 comms-console-announcement-title-wizard = Wizard
 
 # Flavor text for alert levels
 comms-console-level-Green-flavour-label = Work is to proceed as normal
-comms-console-level-Blue-flavour-label = Record suspicious activity with form NT-4772-b
+comms-console-level-Blue-flavour-label = Record suspicious activity with form SG-4772-b
 comms-console-level-Violet-flavour-label = Maintain social distancing
 comms-console-level-Yellow-flavour-label = Prepare to hold your breath
 comms-console-level-Red-flavour-label = Remain vigilant

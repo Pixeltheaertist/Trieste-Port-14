@@ -54,7 +54,7 @@
     children:
     - id: ClothingOuterHardsuitWarden
     - id: OxygenTankFilled
-    - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # Trieste: 'ClothingMaskBreath'
 
 - type: entity
   id: LockerSecurityFilled
@@ -169,6 +169,18 @@
     - id: HoloprojectorSecurity
     - id: BoxEvidenceMarkers
     - id: HandLabeler
+    - id: LuxuryPen # Moffstation - Start (New Detective Clothes)
+    - id: ClothingNeckDetBadge
+    - !type:GroupSelector # Detective needs their notes
+      rolls: !type:RangeNumberSelector
+        range: 0, 2
+      children:
+      - id: BoxFolderBlue
+      - id: BoxFolderRed
+      - id: BoxFolderYellow
+      - id: BoxFolderWhite
+      - id: BoxFolderGrey
+      - id: BoxFolderBlack # Moffstation - End (New Detective Clothes)
     - id: PlushieLizardJobDetective
       prob: 0.02
 

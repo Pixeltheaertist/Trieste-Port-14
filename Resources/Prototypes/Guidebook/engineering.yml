@@ -1,4 +1,4 @@
-- type: guideEntry
+﻿- type: guideEntry
   id: Engineering
   name: guide-entry-engineering
   text: "/ServerInfo/Guidebook/Engineering/Engineering.xml"
@@ -8,6 +8,9 @@
   - Atmospherics
   - ShuttleCraft
   - Networking
+  - Flooding        # TRIESTE
+  - TheArtifact     # TRIESTE
+  - NuclearReactor  # FH edit
 
 - type: guideEntry
   id: Construction
@@ -322,6 +325,7 @@
   - TEG
   - RTG
   - SolarPanels
+  - StormArray # TRIESTE
 
 - type: guideEntry
   id: AME

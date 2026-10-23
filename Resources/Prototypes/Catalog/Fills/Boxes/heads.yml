@@ -36,6 +36,7 @@
         children:
         - id: MedicalTechFabCircuitboard
         - id: CargoRequestMedicalComputerCircuitboard
+        - id: TP14FallMonitorCircuitboard # TRIESTE
 
 - type: entity
   parent: ToteBase
@@ -88,8 +89,8 @@
         - id: CargoRequestComputerCircuitboard
         - id: CargoSaleComputerCircuitboard
         - id: CargoShuttleConsoleCircuitboard
-        - id: SalvageMagnetMachineCircuitboard
-        - id: SalvageJobBoardComputerCircuitboard
+      # - id: SalvageMagnetMachineCircuitboard    # TRIESTE
+      # - id: SalvageJobBoardComputerCircuitboard # TRIESTE
         - id: MailTeleporterMachineCircuitboard
 
 - type: entity

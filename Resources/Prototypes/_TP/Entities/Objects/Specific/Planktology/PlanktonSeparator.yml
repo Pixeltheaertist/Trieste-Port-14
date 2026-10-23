@@ -1,0 +1,13 @@
+- type: entity
+  id: PlanktonSeparator
+  parent: [WaterTank]
+  name: plankton separator
+  description: A liquid tank with an advanced filter, capable to divvying up plankton species.
+  suffix: Trieste, Full
+  components:
+  - type: PlanktonSeparator
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: SeaWater
+        Quantity: 960

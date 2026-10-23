@@ -1,3 +1,6 @@
+using Content.Server._NullLink.Core;
+using Content.Server._NullLink.EventBus;
+using Content.Server._NullLink.PlayerData;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -29,6 +32,7 @@ using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
 using Content.Shared.FeedbackSystem;
 using Content.Shared.IoC;
+using Content.Shared.NullLink;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
 
@@ -83,5 +87,11 @@ internal static class ServerContentIoC
         deps.Register<ServerFeedbackManager>();
         deps.Register<ISharedFeedbackManager, ServerFeedbackManager>();
         deps.Register<WhitelistManager>();
+        // nulllink start
+        IoCManager.Register<IActorRouter, ActorRouter>();
+        IoCManager.Register<INullLinkPlayerManager, NullLinkPlayerManager>();
+        IoCManager.Register<INullLinkEventBusManager, NullLinkEventBusManager>();
+        IoCManager.Register<ISharedNullLinkPlayerRolesReqManager, PlayerRolesReqManager>();
+        // nulllink end
     }
 }

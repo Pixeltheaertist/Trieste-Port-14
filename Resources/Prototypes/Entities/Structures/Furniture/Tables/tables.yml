@@ -152,7 +152,7 @@
 - type: entity
   parent: [ TableBase, StructureHealthFurniture ]
   id: Table
-  name: table
+  name: metal table # TRIESTE: 'table'
   description: A square piece of metal standing on four metal legs.
   components:
   - type: Sprite

@@ -1,3 +1,4 @@
+# !! TRIESTE PORT MODIFIED !! #
 - type: accessGroup
   id: AllAccess
   tags:
@@ -34,6 +35,7 @@
   - Atmospherics
   - GenpopEnter
   - GenpopLeave
+  - TP14SettlerAccessLevel # TP14: Added.
 
 - type: accessGroup
   id: General

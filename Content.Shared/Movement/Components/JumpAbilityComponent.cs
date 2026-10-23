@@ -30,13 +30,13 @@ public sealed partial class JumpAbilityComponent : Component
     /// How far you will jump (in tiles).
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float JumpDistance = 5f;
+    public float JumpDistance = 1f;
 
     /// <summary>
     /// Basic “throwing” speed for TryThrow method.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float JumpThrowSpeed = 10f;
+    public float JumpThrowSpeed = 5f;
 
     /// <summary>
     /// Whether this entity can collide with another entity, leading to it getting knocked down.

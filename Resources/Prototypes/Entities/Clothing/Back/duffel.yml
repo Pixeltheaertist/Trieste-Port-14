@@ -43,7 +43,7 @@
     sprite: Clothing/Back/Duffels/medical.rsi
 
 - type: entity
-  parent: [ClothingBackpackDuffel, BaseCommandContraband]
+  parent: [ClothingBackpackDuffel, BaseNanotrasenContraband ] #TP14
   id: ClothingBackpackDuffelCaptain
   name: captain's duffel bag
   description: A large duffel bag for holding extra captainly goods.
@@ -99,8 +99,8 @@
 - type: entity
   parent: ClothingBackpackDuffel
   id: ClothingBackpackDuffelVirology
-  name: virology duffel bag
-  description: A large duffel bag made of hypo-allergenic fibers. It's designed to help prevent the spread of disease. Smells like monkey.
+  name: medical duffel bag
+  description: A large duffel bag made of hypo-allergenic fibers. It's designed to help prevent the spread of disease.
   components:
   - type: Sprite
     sprite: Clothing/Back/Duffels/virology.rsi

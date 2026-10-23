@@ -1,0 +1,9 @@
+- type: entity
+  parent: [ClothingBackpackSatchel, BaseCommandContraband]
+  id: TP14ClothingBackpackSatchelOverseer
+  suffix: Trieste, Back, Command
+  name: overseer's satchel
+  description: An old satchel, dyed in a classic command seafoam green.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Back/Satchels/overseer.rsi

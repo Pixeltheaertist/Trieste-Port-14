@@ -159,7 +159,7 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: default
 
 - type: marking
@@ -167,7 +167,7 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: charred
 
 - type: marking
@@ -175,9 +175,9 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: dbushy_primary
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: dbushy_secondary
 
 - type: marking
@@ -185,9 +185,9 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: deathhead_primary
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: deathhead_secondary
 
 - type: marking
@@ -195,7 +195,7 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: fan
 
 - type: marking
@@ -203,7 +203,7 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: dfan
 
 - type: marking
@@ -211,7 +211,7 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: feathery
 
 - type: marking
@@ -219,9 +219,9 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: firewatch_primary
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: firewatch_secondary
 
 - type: marking
@@ -229,7 +229,7 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: gothic
 
 - type: marking
@@ -237,7 +237,7 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: jungle
 
 - type: marking
@@ -245,7 +245,7 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: ladybug
 
 - type: marking
@@ -253,9 +253,9 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: maple_primary
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: maple_secondary
 
 - type: marking
@@ -263,9 +263,9 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: moffra_primary
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: moffra_secondary
 
 - type: marking
@@ -273,7 +273,7 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: oakworm
 
 - type: marking
@@ -281,9 +281,9 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: plasmafire_primary
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: plasmafire_secondary
 
 - type: marking
@@ -291,7 +291,7 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: pointy
 
 - type: marking
@@ -299,9 +299,9 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: royal_primary
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: royal_secondary
 
 - type: marking
@@ -309,7 +309,7 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: stellar
 
 - type: marking
@@ -317,7 +317,7 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: striped
 
 - type: marking
@@ -325,7 +325,7 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: swirly
 
 - type: marking
@@ -333,7 +333,7 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: whitefly
 
 - type: marking
@@ -341,7 +341,7 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: witchwing
 
 - type: marking
@@ -349,9 +349,9 @@
   bodyPart: Tail
   groupWhitelist: [Moth]
   sprites:
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: underwing_primary
-  - sprite: Mobs/Customization/Moth/moth_wings.rsi
+  - sprite: _TP/Mobs/Customization/Markings/Moth/default-wings.rsi # TP14
     state: underwing_secondary
 
 # Body markings:

@@ -16,3 +16,4 @@
   voices:
   - MaleVulpkanin
   - FemaleVulpkanin
+  customName: true # TP14

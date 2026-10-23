@@ -1,0 +1,75 @@
+using Content.Server.Popups;
+using Content.Shared.Interaction;
+using Content.Shared.Paper;
+using Content.Shared.Timing;
+using Content.Shared.Verbs;
+using Robust.Shared.Audio.Systems;
+
+namespace Content.Server._TP.RWEvent;
+
+public sealed partial class PearlScannerSystem : EntitySystem
+{
+    [Dependency] private UseDelaySystem _useDelay = default!;
+    [Dependency] private PopupSystem _popupSystem = default!;
+    [Dependency] private PaperSystem _paper = default!;
+    [Dependency] private MetaDataSystem _metaSystem = default!;
+    [Dependency] private SharedAudioSystem _audioSystem = default!;
+
+    public override void Initialize()
+    {
+        SubscribeLocalEvent<PearlScannerComponent, BeforeRangedInteractEvent>(OnBeforeRangedInteract);
+        SubscribeLocalEvent<PearlScannerComponent, GetVerbsEvent<UtilityVerb>>(AddScanVerb);
+    }
+
+    private void OnBeforeRangedInteract(EntityUid uid, PearlScannerComponent component, BeforeRangedInteractEvent args)
+{
+    if (args.Handled || !args.CanReach || !args.Target.HasValue)
+        return;
+
+    var target = args.Target.Value; // Safe to use Value here
+    if (!TryComp<Shared._TP.RWEvent.PearlComponent>(target, out var pearl))
+        return;
+
+    CreatePopup(uid, target, pearl, component); // Now passing a non-null EntityUid
+
+    args.Handled = true;
+}
+
+
+    private void AddScanVerb(EntityUid uid, PearlScannerComponent component, GetVerbsEvent<UtilityVerb> args)
+    {
+        if (!args.CanAccess)
+            return;
+
+        if (!TryComp<Shared._TP.RWEvent.PearlComponent>(args.Target, out var pearl))
+            return;
+
+        var verb = new UtilityVerb()
+        {
+            Act = () =>
+            {
+                CreatePopup(uid, args.Target, pearl, component);
+            },
+            Text = Loc.GetString("pearl-scan-tooltip")
+        };
+
+        args.Verbs.Add(verb);
+    }
+
+    private void CreatePopup(EntityUid uid, EntityUid target, Shared._TP.RWEvent.PearlComponent pearl, PearlScannerComponent scanner)
+    {
+        if (TryComp(uid, out UseDelayComponent? useDelay)
+            && !_useDelay.TryResetDelay((uid, useDelay), true))
+            return;
+
+        // Header for the paper report
+        var message = pearl.PearlMessage;
+
+        var report = Spawn(scanner.PearlReportEntityId, Transform(uid).Coordinates);
+        _metaSystem.SetEntityName(report, Loc.GetString("pearl-analysis-report-title", ("id", $"Pearl Analysis Report")));
+        _audioSystem.PlayPvs(scanner.PrintSound, uid);
+
+        if (TryComp<PaperComponent>(report, out var paperComp))
+            _paper.SetContent((report, paperComp), message);
+    }
+}

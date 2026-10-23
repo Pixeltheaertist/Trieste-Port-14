@@ -1,0 +1,17 @@
+- type: stack
+  parent: BaseTileStack
+  id: TP14FloorStackSteelGrateMaints
+  name: stack-steel-grate-tile
+  spawn: TP14FloorTileItemSteelGrateMaint
+
+- type: stack
+  parent: BaseTileStack
+  id: TP14FloorStackRustGrateMaints
+  name: stack-rust-grate-tile
+  spawn: TP14FloorTileItemRustGrateMaint
+
+- type: stack
+  parent: BaseTileStack
+  id: TP14FloorStackOldRustMaints
+  name: stack-oldrust-tile
+  spawn: TP14FloorTileItemOldRustMaint

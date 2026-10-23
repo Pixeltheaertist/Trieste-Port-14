@@ -1,8 +1,8 @@
 - type: entity
-  parent: [ClothingNeckBase, BaseCommandContraband]
+  parent: [ClothingNeckBase, BaseNanotrasenContraband] #TP14
   id: ClothingNeckMantleCap
   name: captain's mantle
-  description: A comfortable and chique mantle befitting of only the most experienced captain.
+  description: A comfortable and chique mantle, perfect for the sholders of an captain.
   components:
   - type: Sprite
     sprite: Clothing/Neck/mantles/capmantle.rsi
@@ -45,8 +45,8 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckMantleHOS
-  name: head of security's mantle
-  description: Shootouts with syndicate agents are just another Tuesday for this HoS. This mantle is a symbol of commitment to the station.
+  name: marshal's mantle # TP
+  description: Blasting corporate scum is all in a day's work for this Marshal.
   components:
   - type: Sprite
     sprite: Clothing/Neck/mantles/hosmantle.rsi
@@ -67,7 +67,7 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckMantleQM
-  name: quartermaster's mantle
+  name: harbormaster's mantle
   description: For the master of goods and materials to rule over the department, a befitting mantle to show off superiority!
   components:
   - type: Sprite
@@ -84,4 +84,4 @@
   - type: Sprite
     sprite: Clothing/Neck/mantles/mantle.rsi
   - type: Clothing
-    sprite: Clothing/Neck/mantles/mantle.rsi 
+    sprite: Clothing/Neck/mantles/mantle.rsi

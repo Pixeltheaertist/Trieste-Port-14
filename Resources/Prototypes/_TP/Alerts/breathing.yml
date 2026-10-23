@@ -1,0 +1,26 @@
+- type: alert
+  id: Drowning
+  category: Breathing
+  icons:
+  - sprite: /Textures/_TP/Interface/Alerts/breathing.rsi
+    state: drowning
+  name: alerts-drowning-name
+  description: alerts-drowning-desc
+
+- type: alert
+  id: TP14AlertLysis
+  category: Breathing
+  icons:
+  - sprite: /Textures/_TP/Interface/Alerts/breathing.rsi
+    state: drowning
+  name: alerts-lysis-name
+  description: alerts-lysis-desc
+
+- type: alert
+  id: ShortCircuit
+  category: Breathing
+  icons:
+  - sprite: /Textures/_TP/Interface/Alerts/breathing.rsi
+    state: drowning
+  name: alerts-short-circuit-name
+  description: alerts-short-circuit-desc

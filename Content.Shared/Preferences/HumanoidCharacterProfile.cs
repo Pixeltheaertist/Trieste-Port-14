@@ -1,6 +1,7 @@
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Content.Shared._Starlight.CCVar;
 using Content.Shared.CCVar;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.EntityEffects.Effects;
@@ -36,6 +37,7 @@ namespace Content.Shared.Preferences
         public static readonly ProtoId<SpeciesPrototype> DefaultSpecies = "Human";
         public static readonly ProtoId<EmoteSoundsPrototype> DefaultVoice = "MaleHuman";
         private static readonly Regex RestrictedNameRegex = new(@"[^A-Za-z0-9 '\-]");
+        private static readonly Regex RestrictedCustomSpeciesNameRegex = new(@"[^A-Za-z0-9 '\-,]|\B\s+|\s+\B"); //Starlight
         private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
 
         /// <summary>
@@ -83,6 +85,10 @@ namespace Content.Shared.Preferences
         /// </summary>
         [DataField]
         public ProtoId<SpeciesPrototype> Species { get; set; } = DefaultSpecies;
+
+        // Starlight
+        [DataField]
+        public string CustomSpeciesName { get; set; } = "";
 
         [DataField]
         public int Age { get; set; } = 18;
@@ -134,6 +140,7 @@ namespace Content.Shared.Preferences
             string name,
             string flavortext,
             string species,
+            string customSpeciesName, // Starlight
             int age,
             Sex sex,
             ProtoId<EmoteSoundsPrototype> voice,
@@ -149,6 +156,7 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             Species = species;
+            CustomSpeciesName =  customSpeciesName;
             Age = age;
             Sex = sex;
             Voice = voice;
@@ -181,6 +189,7 @@ namespace Content.Shared.Preferences
             : this(other.Name,
                 other.FlavorText,
                 other.Species,
+                other.CustomSpeciesName,
                 other.Age,
                 other.Sex,
                 other.Voice,
@@ -244,6 +253,7 @@ namespace Content.Shared.Preferences
 
         /// <summary>
         /// A randomize config that covers all possible values (including appearance).
+        /// TRIESTE: Removed markings.
         /// </summary>
         public const RandomizeCfg RandomizeConfigAll =
             RandomizeCfg.Name
@@ -252,8 +262,7 @@ namespace Content.Shared.Preferences
             | RandomizeCfg.Sex
             | RandomizeCfg.Gender
             | RandomizeCfg.Eyes
-            | RandomizeCfg.Skin
-            | RandomizeCfg.Markings;
+            | RandomizeCfg.Skin;
 
         /// <summary>
         /// Picks a random species from roundstart species.
@@ -424,6 +433,12 @@ namespace Content.Shared.Preferences
             return new(this) { Species = species };
         }
 
+        // Starlight - Start
+        public HumanoidCharacterProfile WithCustomSpeciesName(string customSpeciesName)
+        {
+            return new(this) { CustomSpeciesName = customSpeciesName };
+        }
+        // Starlight - End
 
         public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance)
         {
@@ -619,7 +634,7 @@ namespace Content.Shared.Preferences
             if (Voice != other.Voice) return false;
             if (Gender != other.Gender) return false;
             if (Species != other.Species) return false;
-            if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
+            if (CustomSpeciesName != other.CustomSpeciesName) return false; // Starlight
             if (SpawnPriority != other.SpawnPriority) return false;
             if (!_jobPriorities.SequenceEqual(other._jobPriorities)) return false;
             if (!_antagPreferences.SequenceEqual(other._antagPreferences)) return false;
@@ -700,6 +715,35 @@ namespace Content.Shared.Preferences
                 name = GetName(Species, gender);
             }
 
+            // Starlight - Start
+            var customSpeciesName =
+            !speciesPrototype.CustomName
+            || string.IsNullOrWhiteSpace(CustomSpeciesName)
+                ? ""
+                : CustomSpeciesName.Length > maxNameLength
+                    ? CustomSpeciesName[..maxNameLength]
+                    : CustomSpeciesName;
+
+            if (!string.IsNullOrWhiteSpace(CustomSpeciesName) &&
+                configManager.GetCVar(StarlightCCVars.RestrictedCustomSpeciesNames))
+            {
+                customSpeciesName = RestrictedCustomSpeciesNameRegex.Replace(customSpeciesName, string.Empty);
+
+                var speciesPrototypes = prototypeManager.EnumeratePrototypes<SpeciesPrototype>();
+                foreach (var specieNames in speciesPrototypes)
+                {
+                    if (specieNames == speciesPrototype)
+                        continue;
+
+                    if (Loc.GetString(specieNames.Name).ToLower() == customSpeciesName.ToLower())
+                    {
+                        customSpeciesName = "";
+                        break;
+                    }
+                }
+            }
+            // Starlight - End
+
             string flavortext;
             var maxFlavorTextLength = configManager.GetCVar(CCVars.MaxFlavorTextLength);
             if (FlavorText.Length > maxFlavorTextLength)
@@ -758,6 +802,7 @@ namespace Content.Shared.Preferences
                          .ToList();
 
             Name = name;
+            CustomSpeciesName = customSpeciesName; // Starlight
             FlavorText = flavortext;
             Age = age;
             Sex = sex;
@@ -880,6 +925,7 @@ namespace Content.Shared.Preferences
             hashCode.Add(Name);
             hashCode.Add(FlavorText);
             hashCode.Add(Species);
+            hashCode.Add(CustomSpeciesName); // Starlight
             hashCode.Add(Age);
             hashCode.Add((int)Sex);
             hashCode.Add(Voice);

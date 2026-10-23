@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Notes;
+using Content.Server.Connection;
 using Content.Server.Database;
 using Content.Server.EUI;
 using Content.Shared.Administration;
@@ -24,6 +25,8 @@ public sealed partial class PlayerPanelEui : BaseEui
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private EuiManager _eui = default!;
     [Dependency] private IAdminLogManager _adminLog = default!;
+
+    [Dependency] private IConnectionManager _connectionManager = default!; // Starlight
 
     private readonly LocatedPlayerData _targetPlayer;
     private int? _notes;
@@ -184,7 +187,10 @@ public sealed partial class PlayerPanelEui : BaseEui
             _notes = null;
         }
 
-        _sharedConnections = _player.Sessions.Count(s => s.Channel.RemoteEndPoint.Address.Equals(_targetPlayer.LastAddress) && s.UserId != _targetPlayer.UserId);
+        _sharedConnections = _player.Sessions.Count(s =>
+            (_connectionManager.GetResolvedAddress(s.UserId) ?? s.Channel.RemoteEndPoint.Address) // Starlight: prefer resolved IP
+                .Equals(_targetPlayer.LastAddress)
+            && s.UserId != _targetPlayer.UserId);
 
     // Apparently the Bans flag is also used for whitelists
     if (_admins.HasAdminFlag(Player, AdminFlags.Ban))

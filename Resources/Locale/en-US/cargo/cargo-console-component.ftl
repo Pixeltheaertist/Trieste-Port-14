@@ -1,6 +1,6 @@
 ## UI
 
-cargo-console-menu-title = Cargo request console
+cargo-console-menu-title = Shipment request console
 cargo-console-menu-flavor-left = Order even more pizza boxes than usual!
 cargo-console-menu-flavor-right = v2.1
 cargo-console-menu-account-name-label = Account:{" "}

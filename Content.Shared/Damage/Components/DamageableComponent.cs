@@ -38,9 +38,10 @@ public sealed partial class DamageableComponent : Component
     /// </summary>
     /// <remarks>
     ///     If this data-field is specified, this allows damageable components to be initialized with non-zero damage.
+    ///     TRIESTE: Changed 'Other' permissions.
     /// </remarks>
     [DataField]
-    [Access(typeof(DamageableSystem), Other = AccessPermissions.None)]
+    [Access(typeof(DamageableSystem), Other = AccessPermissions.ReadExecute)]
     public DamageSpecifier Damage = new();
 
     /// <summary>
@@ -58,7 +59,7 @@ public sealed partial class DamageableComponent : Component
     ///     The sum of all damages in the DamageableComponent.
     /// </summary>
     [ViewVariables]
-    [Access(typeof(DamageableSystem), Other = AccessPermissions.None)]
+    [Access(typeof(DamageableSystem), Other = AccessPermissions.Read)]
     public FixedPoint2 TotalDamage;
 
     [DataField("radiationDamageTypes")]

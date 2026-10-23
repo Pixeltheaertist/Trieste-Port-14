@@ -187,9 +187,12 @@
   # the reason these are also not recolorable is because allowing for the full RGB range makes these look not very good (especially considering they are stackable, and ESPECIALLY considering vox can stack 3 at once.)
   # this is not a very big issue on humans, but is much more pronounced on vox & other nonhuman species, where the skin being more colorful can make for some truly dreadful meshing with the sprite thats definitely not desired.
   # some of these limitations could possibly be removed with better control over how the marking can be customized - possibly removing stacking, allowing recoloring & clamping higher-end colors for the eyeshadow, etc.
+  # TRIESTE:
+  # I don't really care about the limitations because in my experience people don't usually go out of their way to make bad avatars on trieste
+  # so it doesn't make sense here to have this limitation
   bodyPart: Eyes
   groupWhitelist: [Human, Slime, Reptilian]
-  forcedColoring: true
+# forcedColoring: true # TRIESTE: Removed.
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: eyeshadow_upper
@@ -198,7 +201,7 @@
   id: TattooEyeshadowLower
   bodyPart: Eyes
   groupWhitelist: [Human, Slime, Reptilian]
-  forcedColoring: true
+# forcedColoring: true # Trieste: Removed.
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: eyeshadow_lower

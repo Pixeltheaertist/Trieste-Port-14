@@ -468,7 +468,7 @@
         Quantity: 42
       - ReagentId: Protein
         Quantity: 6
-      - ReagentId: Dexalin #This is probably a reference to something but I don't get it. Same.
+      - ReagentId: Dexalin
         Quantity: 6.5
       - ReagentId: Epinephrine
         Quantity: 2

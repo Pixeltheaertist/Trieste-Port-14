@@ -1,0 +1,43 @@
+- type: entity
+  name: fish timed spawner
+  id: FishTimedSpawner
+  parent: MarkerBase
+  suffix: Fish, Mimic, Trieste
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: _TP/Mobs/Animals/fish.rsi
+      state: icon-0
+    - state: timed
+  - type: TimedSpawner
+    prototypes:
+    - TP14MobFish
+    - TP14MobFish2
+    - TP14MobFish3
+    - TP14MobFishMimic
+    chance: 0.5
+    intervalSeconds: 540
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 3
+
+- type: entity
+  name: drifter timed spawner
+  id: TP14DrifterTimedSpawner # For Mass Migration event
+  parent: MarkerBase
+  suffix: Drifter, Mass Migration, Trieste
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: _TP/Mobs/Animals/fish.rsi
+      state: icon-0
+    - state: timed
+  - type: TimedSpawner
+    prototypes:
+    - TP14MobDrifter
+    chance: 0.9
+    intervalSeconds: 20
+    minimumEntitiesSpawned: 3
+    maximumEntitiesSpawned: 4
+

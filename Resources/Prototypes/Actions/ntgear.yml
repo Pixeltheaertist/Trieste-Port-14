@@ -1,0 +1,7 @@
+- type: entity
+  id: ActionTogglePowerSiphon
+  name: Toggle power siphon
+  description: Toggles your weapon's built in-power siphon!
+  components:
+  - type: InstantAction
+    event: !type:ToggleActionEvent {}

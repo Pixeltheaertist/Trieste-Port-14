@@ -429,9 +429,9 @@
   description: The sides feature swirls that look a lot like drill bits. Come to think of it, you could use them to drill a hole in the wall and more.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Misc/virtual-chimera-wig.rsi
+    sprite: _Moffstation/Clothing/Head/Misc/performer-wig.rsi # Moff
   - type: Clothing
-    sprite: Clothing/Head/Misc/virtual-chimera-wig.rsi
+    sprite: _Moffstation/Clothing/Head/Misc/performer-wig.rsi # Moff
   - type: Tag
     tags:
     - HamsterWearable

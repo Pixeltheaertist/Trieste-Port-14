@@ -5,7 +5,8 @@ chat-radio-message-wrap-bold = [color={$color}]{$channel} [bold]{$name}[/bold] {
 examine-headset-default-channel = Use {$prefix} for the default channel ([color={$color}]{$channel}[/color]).
 
 chat-radio-common = Common
-chat-radio-centcom = CentComm
+chat-radio-centcom = CentCom 
+# Fucking Kill me.
 chat-radio-command = Command
 chat-radio-engineering = Engineering
 chat-radio-medical = Medical
@@ -14,6 +15,7 @@ chat-radio-security = Security
 chat-radio-service = Service
 chat-radio-supply = Supply
 chat-radio-syndicate = Syndicate
+chat-radio-nanotrasen  = Nanotrasen
 chat-radio-freelance = Freelance
 
 # not headset but whatever

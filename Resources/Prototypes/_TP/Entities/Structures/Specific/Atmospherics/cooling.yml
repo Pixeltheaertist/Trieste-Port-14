@@ -1,0 +1,48 @@
+- type: entity
+  abstract: true
+  parent: AirSensorBase
+  id: AirSensorCoolingBase
+  suffix: Trieste, Engineering, Cooling
+  components:
+  - type: AtmosMonitor
+    gasThresholdPrototypes:
+      Oxygen: ignore
+      Nitrogen: ignore
+      CarbonDioxide: ignore
+      Plasma: ignore
+      Tritium: ignore
+      WaterVapor: ignore
+      Ammonia: ignore
+      NitrousOxide: ignore
+      Frezon: ignore
+      Water: ignore
+    temperatureThresholdId: ignore
+    pressureThresholdId: ignore
+
+- type: entity
+  parent: [AirSensorCoolingBase, AirSensor]
+  id: AirSensorHighTemperature
+  suffix: Trieste, Engineering, Cooling
+  components:
+  - type: AtmosMonitor
+    temperatureThresholdId: coolingHighTemperature
+
+- type: entity
+  parent: [AirSensorCoolingBase, GasVentScrubber]
+  id: GasVentScrubberCooling
+  suffix: Trieste, Engineering, Cooling
+  components:
+  - type: GasVentScrubber
+    wideNet: true # Air alarm with auto mode overrides filters with hardcoded defaults so default to widenet
+    filterGases:
+    - Oxygen # filter out the air for cooling
+    - Nitrogen
+
+# use this to prevent overriding filters with hardcoded defaults
+- type: entity
+  parent: AirAlarm
+  id: AirAlarmCooling
+  suffix: Trieste, Engineering, Cooling, Auto-Mode Disabled
+  components:
+  - type: AirAlarm
+    autoMode: false

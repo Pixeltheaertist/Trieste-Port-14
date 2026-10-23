@@ -1,0 +1,36 @@
+- type: entity
+  id: TP14ClosetEmergencyH2OFilledRandom
+  parent: TP14ClosetEmergencyH2O
+  suffix: Trieste, Filled, Random, Survival
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: TP14FillLockerEmergencyH2OStandard
+
+- type: entity
+  parent: TP14ClosetWallEmergencyH2O
+  id: TP14ClosetWallEmergencyH20FilledRandom
+  suffix: Trieste, Filled, Random, Survival
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: TP14FillLockerEmergencyH2OStandard
+
+# Entity Tables
+- type: entityTable
+  id: TP14FillLockerEmergencyH2OStandard
+  table: !type:AllSelector
+    children:
+    - id: ClothingMaskBreathNeck
+    - id: ClothingOuterVestTank
+    - id: BoxMRE
+      prob: 0.1
+    - id: ToolboxEmergencyFilled
+      prob: 0.05
+    - !type:GroupSelector
+      children:
+      - id: TP14WaterTankEmergencyFilled
+        weight: 4
+      - id: TP14WaterTankFilled

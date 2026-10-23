@@ -3,7 +3,10 @@
   id: Human
   limits:
     enum.HumanoidVisualLayers.HeadTop:
-      limit: 1
+      limit: 2 # TRIESTE: '1'
+      required: false
+    enum.HumanoidVisualLayers.HeadSide: # TRIESTE: Added.
+      limit: 2
       required: false
     enum.HumanoidVisualLayers.Hair:
       limit: 1
@@ -43,7 +46,7 @@
       limit: 1
       required: false
     enum.HumanoidVisualLayers.Tail:
-      limit: 0
+      limit: 1 # Triest: '0'
       required: false
     enum.HumanoidVisualLayers.Special:
       limit: 0

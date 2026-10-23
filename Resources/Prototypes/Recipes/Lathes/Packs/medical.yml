@@ -27,6 +27,7 @@
   - Jug
   - ChemistryEmptyBottle01
   - ClothingEyesGlassesChemical
+  - TP14ChemistryHudEyepatchRecipe # TRIESTE
 
 - type: latheRecipePack
   id: SurgeryStatic
@@ -51,6 +52,8 @@
   - OffsetCaneWood
   - JetInjector
   - VehicleWheelchairFolded
+  - TP14MedicalHudRecipe # TP14
+  - TP14MedicalHudEyepatchRecipe #TP14
 
 - type: latheRecipePack
   id: RollerBedsStatic
@@ -88,6 +91,8 @@
   - ChemMasterMachineCircuitboard
   - CondenserMachineCircuitBoard
   - HotplateMachineCircuitboard
+  - TP14ColdplateMachineCircuitboard # TP14
+  - IncubatorMachineCircuitboard # TP14
 
 ## Dynamic
 

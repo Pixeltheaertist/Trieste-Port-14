@@ -6,7 +6,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 10h
+      time: 5h
       inverted: true # stop playing intern if you're good at med!
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"
@@ -22,6 +22,7 @@
     shoes: ClothingShoesColorWhite
     id: MedicalInternPDA
     ears: ClothingHeadsetMedical
+    belt: TP14ClothingBeltStorageMedicalPouchFilled # Trieste: Added.
     pocket2: BookMedicalReferenceBook
 
 - type: chameleonOutfit

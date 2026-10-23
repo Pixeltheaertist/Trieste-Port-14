@@ -2,6 +2,7 @@
   suffix: Exploding
   parent: Pen
   id: PenExploding
+  name: pen
   components:
   - type: TimerTrigger
     delay: 4
@@ -34,7 +35,7 @@
     - type: DamageOtherOnHit
       damage:
         types:
-          Piercing: 3
+          Piercing: 1
 
 - type: entity
   parent: [BaseItem, BaseSyndicateContraband]

@@ -1,4 +1,5 @@
 using Content.Client.FeedbackPopup;
+using Content.Client._NullLink;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Guidebook;
@@ -28,6 +29,8 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
     [Dependency] private GuidebookUIController _guidebook = default!;
     [Dependency] private FeedbackPopupUIController _feedback = null!;
     [Dependency] private ILocalizationManager _loc = default!;
+
+    [Dependency] private INullLinkPlayerRolesManager _playerRoles = default!; // NullLink
 
     private Options.UI.EscapeMenu? _escapeWindow;
 
@@ -71,6 +74,17 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
             CloseEscapeWindow();
             _feedback.ToggleWindow();
         };
+
+        // NullLink start
+        _escapeWindow.DiscordButton.OnPressed += _ =>
+        {
+            var link = _playerRoles.GetDiscordLink();
+            if (!string.IsNullOrWhiteSpace(link))
+                _uri.OpenUri(link);
+            else
+                Log.Error("NullLink - Discord link is empty.");
+        };
+        // NullLink end
 
         _escapeWindow.ChangelogButton.OnPressed += _ =>
         {

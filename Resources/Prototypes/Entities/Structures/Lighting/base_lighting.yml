@@ -42,6 +42,12 @@
     fx: EffectRCDDeconstruct2
   - type: Physics
     bodyType: Static
+  - type: InGas
+    damagedByGas: true # Water pressure shatters them
+    gasThreshold: 75
+    damage:
+        types:
+            Blunt: 3
   - type: Fixtures
     fixtures:
       fix1:
@@ -414,6 +420,29 @@
       types:
         Heat: 2
     popupText: powered-light-component-burn-hand
+
+- type: entity
+  id: PoweredSmallLightWaterProof
+  suffix: Waterproof
+  parent: PoweredSmallLightEmpty
+  components:
+  - type: Sprite
+    state: base
+  - type: PointLight
+    enabled: true
+  - type: PoweredLight
+    hasLampOnSpawn: LightBulb
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 2
+    popupText: powered-light-component-burn-hand
+  - type: InGas
+    damagedByGas: false # waterproof
+    gasThreshold: 75
+    damage:
+      types:
+        Blunt: 3
 
 #Emergency Lights
 - type: entity

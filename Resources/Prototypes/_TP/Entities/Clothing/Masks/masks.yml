@@ -1,0 +1,70 @@
+- type: entity
+  parent: ClothingMaskClownBase
+  id: TP14ClothingMaskWearyClown
+  suffix: Trieste, Mask, Clown
+  name: weary clown mask
+  description: A sad clown is a tragic clown, at least they have a mask.
+  components:
+  - type: WaterBlocker
+  - type: Sprite
+    sprite: _TP/Clothing/Mask/weary_mask.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Mask/weary_mask.rsi
+  - type: Tag
+    tags:
+    - ClownMask
+    - HamsterWearable
+    - WhitelistChameleon
+  - type: HideLayerClothing
+  - type: BreathMask
+    allowedSlots:
+    - mask
+
+- type: entity
+  parent: ClothingMaskBase
+  id: TP14ClothingMaskPierrot
+  suffix: Trieste, Mask, Mime
+  name: pierrot mask
+  description: The traditional commedia dell'spazio Pierrot mask. It looks melancholic.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Mask/pierrot.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Mask/pierrot.rsi
+  - type: BreathMask
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Snout
+
+
+#Breath masks
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskBreathNeck
+  name: lung-adaption apparatus
+  description: A series of tubes that connects from a tank to the wearer's lungs. Allows more comfortable use. After putting on, of course.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Clothing/Mask/neckapparatus.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/neckapparatus.rsi
+  - type: BreathMask
+
+- type: entity
+  parent: ClothingMaskBreath
+  id: TP14ClothingMaskAir
+  name: air mask
+  description: It'll at least keep your eyes and lungs dry...
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Mask/breath.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Mask/breath.rsi

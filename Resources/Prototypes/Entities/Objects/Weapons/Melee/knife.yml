@@ -106,10 +106,12 @@
 
 - type: entity
   name: combat knife
-  parent: [BaseKnife, BaseSecurityContraband]
+  parent: [BaseKnife] # TRIESTE: 'BaseSecurityContraband'
   id: CombatKnife
   description: A deadly knife intended for melee confrontations.
   components:
+  - type: Contraband # TRIESTE
+    allowedDepartments: [ Security, Expeditionary ]
   - type: Tag
     tags:
     - CombatKnife

@@ -21,7 +21,7 @@ public abstract partial class SharedShuttleSystem : EntitySystem
     [Dependency] protected SharedTransformSystem XformSystem = default!;
     [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
 
-    public const float FTLRange = 256f;
+    public const float FTLRange = 9999;
     public const float FTLBufferRange = 8f;
     public const float TileDensityMultiplier = 800f;
 

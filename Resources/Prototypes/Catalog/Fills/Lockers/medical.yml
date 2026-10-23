@@ -123,6 +123,8 @@
     - id: JetInjector
     - id: HandheldHealthAnalyzer
     - id: BoxBodyBag
+    - id: EmergencyBeaconLocator # TP14
+    - id: SurvivalKnife # TP14
     - !type:GroupSelector
       children:
       - id: RollerBedSpawnFolded

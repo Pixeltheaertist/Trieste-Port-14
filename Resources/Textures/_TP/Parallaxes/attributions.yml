@@ -1,0 +1,14 @@
+- files: ["Asteroids.png"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Blanked by Pixeltheaertist for Trieste Port"
+  source: "https://github.com/Pixeltheaertist"
+
+- files: ["land.png"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Made by Pixeltheaertist for Trieste Port"
+  source: "https://github.com/Pixeltheaertist"
+
+- files: ["Trieste.png"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Made by Pixeltheaertist for Trieste Port"
+  source: "https://github.com/Pixeltheaertist"

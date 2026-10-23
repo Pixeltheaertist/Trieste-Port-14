@@ -1,0 +1,4 @@
+﻿- type: soundCollection
+  id: StormMusic
+  files:
+    - /Audio/StationEvents/the_approaching_storm.ogg

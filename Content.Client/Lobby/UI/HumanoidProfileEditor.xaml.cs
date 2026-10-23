@@ -149,6 +149,14 @@ namespace Content.Client.Lobby.UI
 
             #endregion Name
 
+            // TRIESTE: Custom Species
+            # region CustomSpecies
+
+            CustomSpeciesName.OnTextChanged += args => { SetCustomSpecies(args.Text); };
+            CustomSpeciesName.IsValid = args => args.Length <= _maxNameLength;
+
+            # endregion CustomSpecies
+
             #region Appearance
 
             TabContainer.SetTabTitle(0, Loc.GetString("humanoid-profile-editor-appearance-tab"));
@@ -386,6 +394,7 @@ namespace Content.Client.Lobby.UI
             UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
+            UpdateCustomSpecies();
 
             RefreshAntags();
             RefreshJobs();

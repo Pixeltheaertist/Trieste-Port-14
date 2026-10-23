@@ -62,6 +62,24 @@ namespace Content.Server.Chemistry.EntitySystems
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterCreatePillsMessage>(OnCreatePillsMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterOutputToBottleMessage>(OnOutputToBottleMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterOutputDrawSourceMessage>(OnSetDrawSourceMessage);
+
+            SubscribeLocalEvent<ChemMasterComponent, ChemMasterSetTransferAmountMessage>(OnSetTransferAmountMessage);
+        }
+
+        /// <summary>
+        ///     TRIESTE SPECIFIC
+        ///     Handles changing the transfer amounts so they make a click sound.
+        /// </summary>
+        /// <param name="chemMaster"></param>
+        /// <param name="message"></param>
+        private void OnSetTransferAmountMessage(Entity<ChemMasterComponent> chemMaster, ref ChemMasterSetTransferAmountMessage message)
+        {
+            if (!Enum.IsDefined(typeof(ChemMasterReagentAmount), message.Amount))
+                return;
+
+            chemMaster.Comp.TransferAmount = message.Amount;
+            UpdateUiState(chemMaster);
+            ClickSound(chemMaster);
         }
 
         private void SubscribeUpdateUiState<T>(Entity<ChemMasterComponent> ent, ref T ev)
@@ -80,9 +98,20 @@ namespace Content.Server.Chemistry.EntitySystems
             var bufferReagents = bufferSolution.Contents;
             var bufferCurrentVolume = bufferSolution.Volume;
 
-            var state = new ChemMasterBoundUserInterfaceState(
-                chemMaster.Mode, chemMaster.SortingType, BuildInputContainerInfo(inputContainer), BuildOutputContainerInfo(outputContainer),
-                bufferReagents, bufferCurrentVolume, chemMaster.PillType, chemMaster.PillDosageLimit, updateLabel, chemMaster.DrawSource);
+        // TRIESTE //
+        // Added Transfer Amounts
+        var state = new ChemMasterBoundUserInterfaceState(
+            chemMaster.Mode,
+            chemMaster.SortingType,
+            BuildInputContainerInfo(inputContainer),
+            BuildOutputContainerInfo(outputContainer),
+            bufferReagents,
+            bufferCurrentVolume,
+            chemMaster.PillType,
+            chemMaster.PillDosageLimit,
+            updateLabel,
+            ent.Comp.DrawSource,
+            ent.Comp.TransferAmount);
 
             _userInterfaceSystem.SetUiState(owner, ChemMasterUiKey.Key, state);
         }

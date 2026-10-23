@@ -6,13 +6,13 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobCargoTechnician
-      time: 5h
+      time: 2.5h # TRIESTE: '5h'
     - !type:RoleTimeRequirement
       role: JobSalvageSpecialist
       time: 2.5h
     - !type:DepartmentTimeRequirement
       department: Cargo
-      time: 10h
+      time: 5h # TRIESTE: '5'
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
   supervisors: job-supervisors-captain
@@ -51,7 +51,7 @@
   equipment:
     head: ClothingHeadHatQMsoft
     eyes: ClothingEyesGlassesSunglasses
-    mask: ClothingMaskBreath
+    mask: TP14ClothingMaskAir #TP14
     outerClothing: ClothingOuterWinterQM
     neck: ClothingNeckCloakQm
     gloves: ClothingHandsKnuckleDustersQM

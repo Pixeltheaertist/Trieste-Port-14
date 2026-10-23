@@ -24,6 +24,12 @@ public sealed partial class TraitorRuleComponent : Component
     public ProtoId<NpcFactionPrototype> NanoTrasenFaction = "NanoTrasen";
 
     [DataField]
+    public ProtoId<LocalizedDatasetPrototype> CodewordstarSystems = "TP14LocalizedDatasetJellidNames";
+
+    [DataField]
+    public ProtoId<NpcFactionPrototype> NanoTrasenTraitorFaction = "NanoTrasenTraitor";
+
+    [DataField]
     public ProtoId<NpcFactionPrototype> SyndicateFaction = "Syndicate";
 
     [DataField]
@@ -34,6 +40,12 @@ public sealed partial class TraitorRuleComponent : Component
     /// </summary>
     [DataField]
     public bool GiveUplink = true;
+
+    /// <summary>
+    /// Give the NT traitors an Uplink on spawn.
+    /// </summary>
+    [DataField]
+    public bool GiveUplinkNT = true;
 
     /// <summary>
     /// Give this traitor the codewords.
@@ -47,8 +59,17 @@ public sealed partial class TraitorRuleComponent : Component
     [DataField]
     public bool GiveBriefing = true;
 
+    // Codeword arrays
+    public string[] SyndicateCodewords = new string[3];
+    public string[] NanoTrasenCodewords = new string[3];
+
+    // Total traitors
     public int TotalTraitors => TraitorMinds.Count;
 
+    // Array of Codewords
+    public string[] Codewords = new string[3];
+
+    // Enum for traitor selection states
     public enum SelectionState
     {
         WaitingForSpawn = 0,
@@ -72,6 +93,13 @@ public sealed partial class TraitorRuleComponent : Component
     /// </summary>
     [DataField]
     public SoundSpecifier GreetSoundNotification = new SoundPathSpecifier("/Audio/Ambience/Antag/traitor_start.ogg");
+
+    [DataField]
+    public SoundSpecifier GreetSoundNotificationNT = new SoundPathSpecifier("/Audio/Ambience/Antag/NT_start.ogg");
+
+    // The amount of codewords selected for traitors
+    [DataField]
+    public int CodewordCount = 4;
 
     /// <summary>
     /// The amount of TC traitors start with.

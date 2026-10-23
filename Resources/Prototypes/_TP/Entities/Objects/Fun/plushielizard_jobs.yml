@@ -1,0 +1,16 @@
+- type: entity
+  parent: PlushieLizard
+  id: TP14BasePlushieLizardJob
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Misc/plushielizard_jobs.rsi
+
+- type: entity
+  parent: TP14BasePlushieLizardJob
+  id: TP14PlushieLizardJobOverseer
+  name: overseer lizard plushie
+  description: An adorable stuffed toy that resembles a lizardperson as the overseer. There's bits of pie on its face.
+  components:
+  - type: Sprite
+    state: overseer

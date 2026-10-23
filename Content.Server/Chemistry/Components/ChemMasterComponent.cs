@@ -32,5 +32,13 @@ namespace Content.Server.Chemistry.Components
         /// </summary>
         [DataField]
         public ChemMasterDrawSource DrawSource = ChemMasterDrawSource.Internal;
+
+        /// <summary>
+        ///     TRIESTE SPECIFIC
+        ///     The transfer amount so the UI buttons make a click.
+        /// </summary>
+        [DataField]
+        public ChemMasterReagentAmount TransferAmount = ChemMasterReagentAmount.U5;
+
     }
 }

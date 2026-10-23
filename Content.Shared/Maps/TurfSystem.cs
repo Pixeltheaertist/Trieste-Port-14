@@ -204,6 +204,30 @@ public sealed partial class TurfSystem : EntitySystem
         return IsSpace(tile.Tile);
     }
 
+
+
+    /// <summary>
+    ///     TRIESTE SPECIFIC
+    ///     Returns whether a tile is considered to be subfloor.
+    /// </summary>
+    /// <param name="tile">The tile in question.</param>
+    /// <returns>True if the tile is considered to be a subfloor, false otherwise.</returns>
+    public bool IsSubfloor(Tile tile)
+    {
+        return GetContentTileDefinition(tile).IsSubFloor;
+    }
+
+    /// <summary>
+    ///     TRIESTE SPECIFIC
+    ///     Returns whether a tile is considered to be subfloor.
+    /// </summary>
+    /// <param name="tile">The tile in question.</param>
+    /// <returns>True if the tile is considered to be a subfloor, false otherwise.</returns>
+    public bool IsSubfloor(TileRef tile)
+    {
+        return IsSubfloor(tile.Tile);
+    }
+
     /// <summary>
     /// Returns the location of the centre of the tile in grid coordinates.
     /// </summary>

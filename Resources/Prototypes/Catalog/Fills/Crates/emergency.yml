@@ -48,7 +48,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: ClothingMaskBreath
+        - id: TP14ClothingMaskAir # Trieste: 'ClothingMaskBreath'
           amount: 6
         - id: OxygenTankFilled
           amount: 6
@@ -71,6 +71,7 @@
           amount: 2
         - id: GeigerCounter
           amount: 2
+        - id: RadiationBlockingProjector # Far Horizons
 
 - type: entity
   parent: CratePlastic

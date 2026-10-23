@@ -36,6 +36,25 @@
     - type: ExtensionCableReceiver
     - type: DeviceNetwork
       prefix: device-address-prefix-vent
+      sendBroadcastAttemptEvent: true
+      examinableAddress: true
+    - type: WiredNetworkConnection
+    - type: DeviceNetworkRequiresPower
+    - type: AtmosDevice
+    - type: AtmosMonitor
+      temperatureThresholdId: stationTemperature
+      pressureThresholdId: stationPressure
+      gasThresholdPrototypes:
+        Oxygen: stationOxygen
+        Nitrogen: ignore
+        CarbonDioxide: stationCO2
+        Plasma: stationPlasma # everything below is usually bad
+        Tritium: danger
+        WaterVapor: stationWaterVapor
+        Ammonia: stationAmmonia
+        NitrousOxide: stationNO
+        Frezon: danger
+        Water: stationWater
     - type: Tag
       tags:
         - GasVent

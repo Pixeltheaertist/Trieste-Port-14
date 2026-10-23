@@ -1,0 +1,182 @@
+# /THINGY ACTIONS AND SETTINGS/
+- type: randomHumanoidSettings
+  id: TheThingy
+  parent: EventHumanoid
+  components:
+  - type: SlurredAccent # It learned english through it's Host's headset, so it makes sense.
+  - type: TemperatureDamage
+    heatDamageThreshold: 320
+    coldDamageThreshold: 230
+    coldDamage:
+      types:
+        Cold: -0.05 # Heals in the cold, as an ocean creature
+    heatDamage:
+      types:
+        Heat: 4 # Burns very easily
+  - type: Temperature
+    currentTemperature: 310.15
+    specificHeat: 46
+  - type: TemperatureSpeed
+    thresholds:
+      289: 1.1
+      275: 1.3 # Gets faster in the cold (ocean and on the platform)
+      250: 1.5
+  - type: GhostRole
+    name: ghost-role-information-thethingy-name
+    description: ghost-role-information-thethingy-description
+    rules: ghost-role-information-antagonist-rules
+    raffle:
+      settings: default
+  - type: Loadout
+    prototypes: [ TheThingyStartingGear ]
+    roleLoadout: [ RoleSurvivalEVA ]
+  - type: Devourer
+    foodPreferenceWhitelist:
+      components:
+      - HumanoidProfile
+    chemical: Ichor
+    healRate: 10.0
+    stomachStorageWhitelist:
+      components:
+      - MobState
+  - type: Hunger
+    baseDecayRate: 0.5
+    starvingSlowdownModifier: 2 # Getting desperate for prey, over-exerting it's host
+    starvationDamage:
+      types:
+        Slash: 3 # Upon starving, begins panicking and damaging the host
+  - type: Thirst
+    baseDecayRate: 0.5 # Uses the Bloodsucker metabolism, meaning it can only drink blood for thirst quenching.
+  - type: ItemCreator
+    action: ActionCreateThingySpine
+    charge: 0
+    spawnedPrototype: TP14ThingySpine
+    noPowerPopup: thingy-no-power
+  - type: ActionGrant
+    actions:
+    - ActionCreateThingySpine
+  - type: BatterySelfRecharger
+    autoRechargeRate: 0.5
+  - type: Battery
+    startingCharge: 10000
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 0
+    damageRecovery:
+      types:
+        Asphyxiation: 0
+  - type: Flammable
+    damage:
+      types:
+        Heat: 9
+  - type: TransferMindOnGib # upon the body dying, it bursts from it's host in an attempt to survive
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:GibBehavior { }
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: OrganHumanTorso
+      Head: OrganHumanHead
+      ArmLeft: OrganHumanArmLeft
+      ArmRight: OrganHumanArmRight
+      HandRight: OrganHumanHandRight
+      HandLeft: OrganHumanHandLeft
+      LegLeft: OrganHumanLegLeft
+      LegRight: OrganHumanLegRight
+      FootLeft: OrganHumanFootLeft
+      FootRight: OrganHumanFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Tongue: OrganHumanTongue
+      Appendix: OrganHumanAppendix
+      Ears: OrganHumanEars
+      Lungs: OrganHumanLungs
+      Heart: OrganHumanHeart
+      Stomach: OrganTumor
+      Liver: OrganHumanLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: Human
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: ThingyAcidSpit
+  name: thingy's acid sack
+  description: For thingy acid spitting.
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 5
+    rechargeSound: null
+  - type: BasicEntityAmmoProvider
+    proto: BulletAcid
+    capacity: 1
+    count: 1
+  - type: Gun
+    soundGunshot: /Audio/Weapons/Xeno/alien_spitacid.ogg
+    soundEmpty: null
+    projectileSpeed: 30
+
+- type: entity
+  id: ActionThingySpit
+  name: "[color=green]Acid Spit[/color]"
+  description: Spit a blinding glob of burning acid at your prey!
+  components:
+  - type: Action
+    priority: 2
+    itemIconStyle: BigAction
+  - type: TargetAction
+    checkCanAccess: false
+    range: 0
+  - type: WorldTargetAction
+    event: !type:ProjectileSpellEvent
+      prototype: ThingyAcidSpit
+
+- type: entity
+  id: ActionCreateThingySpine
+  name: Release a spine
+  description: Releases a paralyzing, bony spine from your wrist.
+  components:
+  - type: Action
+    useDelay: 60
+    itemIconStyle: NoItem
+  - type: InstantAction
+    event: !type:CreateItemEvent {}
+
+- type: startingGear
+  id: TheThingyStartingGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
+    head: ClothingHeadHelmetHardsuitSpatio
+    outerClothing: ClothingOuterHardsuitSpatio
+    shoes: ClothingShoesBootsSalvage
+    id: SalvagePDA
+    ears: ClothingHeadsetCargo
+  storage:
+    back:
+    - BoxSurvival
+
+# / END THINGY ACTIONS AND SETTINGS/
+
+- type: randomHumanoidSettings
+  id: StrandedHermit
+  parent: EventHumanoid
+  components:
+  - type: GhostRole
+    name: ghost-role-information-hermit-name
+    description: ghost-role-information-hermit-description
+    rules: ghost-role-information-freeagent-rules
+  - type: Loadout
+    prototypes: [ TP14HermitGear ]
+    roleLoadout: [ RoleSurvivalStandard ]

@@ -1,0 +1,19 @@
+- type: cargoProduct
+  id: TP14SMESAdvancedMachineCircuitboardCargoProduct
+  icon:
+    sprite: Objects/Misc/module.rsi
+    state: power_mod
+  product: TP14SMESAdvancedMachineCircuitboard
+  cost: 3300
+  category: cargoproduct-category-name-engineering
+  group: market
+
+- type: cargoProduct
+  id: TP14SMESAdvancedCargoProduct
+  icon:
+    sprite: Structures/Power/smes.rsi
+    state: advancedsmes
+  product: TP14SMESAdvancedMachineCrate
+  cost: 22000
+  category: cargoproduct-category-name-engineering
+  group: market

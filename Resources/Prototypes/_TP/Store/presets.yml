@@ -1,0 +1,22 @@
+- type: entity
+  id: StorePresetUplinkNT
+  abstract: true
+  components:
+  - type: Store
+    name: store-preset-name-uplink-nt
+    categories:
+    - UplinkNtWeaponry
+    - UplinkNtAmmo
+    - UplinkNtExplosives
+    - UplinkNtChemicals
+    - UplinkNtDeception
+    - UplinkNtDisruption
+    - UplinkNtImplants
+    - UplinkNtAllies
+    - UplinkNtWearables
+    - UplinkNtJob
+    - UplinkNtPointless
+    currencyWhitelist:
+    - BluespaceCrystal
+    balance:
+      BluespaceCrystal: 0

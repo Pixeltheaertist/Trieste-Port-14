@@ -39,6 +39,13 @@
     state: supersynth
   - type: Item
     heldPrefix: super
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - neck
+    sprite: Objects/Fun/Instruments/h_synthesizer.rsi
+  - type: ActivatableUI
+    inHandsOnly: false 
 
 - type: entity
   parent: SuperSynthesizerInstrument
@@ -47,6 +54,13 @@
   components:
   - type: Instrument
     respectMidiLimits: false
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - neck
+    sprite: Objects/Fun/Instruments/h_synthesizer.rsi
+  - type: ActivatableUI
+    inHandsOnly: false 
 
 - type: entity
   parent: BaseKeyedInstrument

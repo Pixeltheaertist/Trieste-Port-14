@@ -132,6 +132,8 @@
   cost: 10000
   recipeUnlocks:
   - ShuttleConsoleCircuitboard
+  - TP14AtmosphericThrusterMachineCircuitboardRecipe # TP
+  - TP14LargePropellerMachineCircuitboardRecipe # TP
   - ThrusterMachineCircuitboard
   - GyroscopeMachineCircuitboard
   - MiniGravityGeneratorCircuitboard
@@ -148,6 +150,7 @@
   recipeUnlocks:
   - HellfireFreezerMachineCircuitBoard
   - PortableScrubberMachineCircuitBoard
+  - JellidPortableScrubberMachineCircuitBoard # TP
   - HolofanProjector
   technologyPrerequisites:
   - AtmosphericTech

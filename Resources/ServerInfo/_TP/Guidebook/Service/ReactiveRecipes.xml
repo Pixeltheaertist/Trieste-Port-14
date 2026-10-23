@@ -1,0 +1,15 @@
+<Document>
+  ## Doughs & Reactions
+
+  Dough is created by mixing reagents together. Some doughs can be further processed using the kitchen tools available to you.
+  <Box>
+    <GuideEntityEmbed Entity="Beaker" Caption="Beaker"/>
+    <GuideEntityEmbed Entity="LargeBeaker" Caption="Large Beaker"/>
+    <GuideEntityEmbed Entity="RollingPin" Caption="Rolling Pin"/>
+    <GuideEntityEmbed Entity="KitchenKnife" Caption="Kitchen Knife"/>
+  </Box>
+
+  # Reactive Recipes
+  <GuideReactionGroupEmbed Group="TP14-Reactives"/>
+
+</Document>

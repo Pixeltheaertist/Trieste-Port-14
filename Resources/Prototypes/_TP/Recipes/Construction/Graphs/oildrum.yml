@@ -1,0 +1,21 @@
+- type: constructionGraph
+  id: TP14OilDrumGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: done
+      steps:
+      - material: Steel
+        amount: 10
+        doAfter: 15
+  - node: done
+    entity: TP14BaseOilDrum
+
+- type: construction
+  id: TP14OilDrumConstruction
+  graph: TP14OilDrumGraph
+  startNode: start
+  targetNode: done
+  category: construction-category-storage
+  objectType: Structure

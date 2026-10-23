@@ -1,8 +1,8 @@
 # Head
 - type: loadout
-  id: MimeHead
+  id: PierrotHat
   equipment:
-    head: ClothingHeadHatBeret
+    head: TP14ClothingHeadHatPierrot
 
 - type: loadout
   id: MimeFrenchBeret
@@ -16,30 +16,17 @@
 
 # Mask
 - type: loadout
-  id: MimeMask
+  id: PierrotMask
   equipment:
-    mask: ClothingMaskMime
+    mask: TP14ClothingMaskPierrot
 
-- type: loadout
-  id: MimeMaskSad
-  equipment:
-    mask: ClothingMaskSadMime
-
-- type: loadout
-  id: MimeMaskScared
-  equipment:
-    mask: ClothingMaskScaredMime
 
 # Jumpsuit
 - type: loadout
-  id: MimeJumpsuit
+  id: PierrotJumpsuit
   equipment:
-    jumpsuit: ClothingUniformJumpsuitMime
+    jumpsuit: TP14ClothingUniformPierrot
 
-- type: loadout
-  id: MimeJumpskirt
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtMime
 
 # Back
 - type: loadout
@@ -57,11 +44,6 @@
   equipment:
     back: ClothingBackpackDuffelMime
 
-# Outerclothing
-- type: loadout
-  id: MimeWintercoat
-  equipment:
-    outerClothing: ClothingOuterWinterMime
 
 # Belt
 - type: loadout

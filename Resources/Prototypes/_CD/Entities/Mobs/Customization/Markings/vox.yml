@@ -1,0 +1,800 @@
+# Chest
+
+- type: marking
+  id: ScarsVoxClawTorso
+  bodyPart: Chest
+  groupWhitelist: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/chest.rsi
+    state: claw
+
+- type: marking
+  id: SpotsChest
+  bodyPart: Chest
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/chest.rsi
+    state: spots1
+  - sprite: _CD/Mobs/Customization/Vox/chest.rsi
+    state: spots2
+
+- type: marking
+  id: VChest
+  bodyPart: Chest
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/chest.rsi
+    state: v1
+  - sprite: _CD/Mobs/Customization/Vox/chest.rsi
+    state: v2
+  - sprite: _CD/Mobs/Customization/Vox/chest.rsi
+    state: v3
+
+- type: marking
+  id: VoxBelly
+  bodyPart: Chest
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/chest.rsi
+    state: belly
+
+- type: marking
+  id: VoxChestPlumage
+  bodyPart: Chest
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/chest.rsi
+    state: plumage
+
+- type: marking
+  id: VoxScarIncision
+  bodyPart: Chest
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/chest.rsi
+    state: scarincision
+
+- type: marking
+  id: VoxScarMangled
+  bodyPart: Chest
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/chest.rsi
+    state: scarmangled
+
+- type: marking
+  id: VoxScarSpinal
+  bodyPart: Chest
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/chest.rsi
+    state: scarspinal
+
+- type: marking
+  id: VoxTailSingleStripe
+  bodyPart: Chest
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/chest.rsi
+    state: tailsinglestripe
+
+- type: marking
+  id: VoxTailStripes
+  bodyPart: Chest
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/chest.rsi
+    state: tailstripes
+
+# Head
+
+- type: marking
+  id: ScarsVoxBigslashLeftHead
+  bodyPart: Head
+  groupWhitelist: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/head.rsi
+    state: bigslashleft
+
+- type: marking
+  id: ScarsVoxBigslashRightHead
+  bodyPart: Head
+  groupWhitelist: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/head.rsi
+    state: bigslashright
+
+- type: marking
+  id: ScarsVoxRoadrashLeftHead
+  bodyPart: Head
+  groupWhitelist: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/head.rsi
+    state: roadrashleft
+
+- type: marking
+  id: ScarsVoxRoadrashRightHead
+  bodyPart: Head
+  groupWhitelist: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/head.rsi
+    state: roadrashright
+
+- type: marking
+  id: ScarsVoxSlashLeftHead
+  bodyPart: Head
+  groupWhitelist: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/head.rsi
+    state: slashleft
+
+- type: marking
+  id: ScarsVoxSlashRightHead
+  bodyPart: Head
+  groupWhitelist: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/head.rsi
+    state: slashright
+
+- type: marking
+  id: VoxCheeks
+  bodyPart: Head
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/head.rsi
+    state: cheeks
+
+- type: marking
+  id: VoxEarhole
+  bodyPart: Head
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/head.rsi
+    state: earhole
+
+- type: marking
+  id: VoxHeadGradient
+  bodyPart: Head
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/head.rsi
+    state: gradient1
+  - sprite: _CD/Mobs/Customization/Vox/head.rsi
+    state: gradient2
+  - sprite: _CD/Mobs/Customization/Vox/head.rsi
+    state: gradient3
+
+- type: marking
+  id: VoxNeckband
+  bodyPart: Head
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/head.rsi
+    state: neckband
+
+- type: marking
+  id: VoxScarBlasted
+  bodyPart: Head
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/head.rsi
+    state: scarblasted
+
+# Snout
+
+- type: marking
+  id: VoxBeakColor
+  bodyPart: Snout
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/snout.rsi
+    state: color
+
+- type: marking
+  id: VoxBeakSplit
+  bodyPart: Snout
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/snout.rsi
+    state: split1
+  - sprite: _CD/Mobs/Customization/Vox/snout.rsi
+    state: split2
+
+- type: marking
+  id: VoxBeakTipped
+  bodyPart: Snout
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/snout.rsi
+    state: tipped
+
+# Eyes
+
+# RArm
+
+- type: marking
+  id: SpotsArmR
+  bodyPart: RArm
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/rarm.rsi
+    state: spots
+
+- type: marking
+  id: VoxArmsStripesRHand # what i would pay to be able to rename prototypes
+  bodyPart: RArm
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/rarm.rsi
+    state: stripes
+
+# LArm
+
+- type: marking
+  id: SpotsArmL
+  bodyPart: LArm
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/larm.rsi
+    state: spots
+
+- type: marking
+  id: VoxArmsStripesLHand
+  bodyPart: LArm
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/larm.rsi
+    state: stripes
+
+# RLeg
+
+- type: marking
+  id: FeatheredLegR
+  bodyPart: RLeg
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/rleg.rsi
+    state: feathered
+
+- type: marking
+  id: VoxLegGradientRLeg
+  bodyPart: RLeg
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/rleg.rsi
+    state: gradient
+
+- type: marking
+  id: VoxLegsStripesRLeg
+  bodyPart: RLeg
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/rleg.rsi
+    state: stripes
+
+# LLeg
+
+- type: marking
+  id: FeatheredLegL
+  bodyPart: LLeg
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/lleg.rsi
+    state: feathered
+
+- type: marking
+  id: VoxLegGradientLLeg
+  bodyPart: LLeg
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/lleg.rsi
+    state: gradient
+
+- type: marking
+  id: VoxLegsStripesLLeg
+  bodyPart: LLeg
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/lleg.rsi
+    state: stripes
+
+# UndergarmentBottom
+
+- type: marking
+  id: UnderwearBriefsVox
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [ Vox ]
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/undergarmentbottom.rsi
+    state: briefs
+
+- type: marking
+  id: UnderwearHighWaisted
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [ Vox ]
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/undergarmentbottom.rsi
+    state: highwaisted
+
+- type: marking
+  id: UnderwearIxixSpecial
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [ Vox ]
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/undergarmentbottom.rsi
+    state: ixixspecial1
+  - sprite: _CD/Mobs/Customization/Vox/undergarmentbottom.rsi
+    state: ixixspecial2
+
+- type: marking
+  id: UnderwearLowridersV
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/undergarmentbottom.rsi
+    state: lowriders
+
+- type: marking
+  id: UnderwearStrappy
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [ Vox ]
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#703c14'
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/undergarmentbottom.rsi
+    state: strappy1
+  - sprite: _CD/Mobs/Customization/Vox/undergarmentbottom.rsi
+    state: strappy2
+  - sprite: _CD/Mobs/Customization/Vox/undergarmentbottom.rsi
+    state: strappy3
+
+- type: marking
+  id: UnderwearTangaV
+  bodyPart: UndergarmentBottom
+  groupWhitelist: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/undergarmentbottom.rsi
+    state: tanga
+
+# UndergarmentTop
+
+# LFoot
+
+- type: marking
+  id: VoxFootGradientLFoot
+  bodyPart: LFoot
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/lfoot.rsi
+    state: gradient
+
+# RFoot
+
+- type: marking
+  id: VoxFootGradientRFoot
+  bodyPart: RFoot
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/rfoot.rsi
+    state: gradient
+
+# LHand
+
+- type: marking
+  id: VoxHandGradientLHand
+  bodyPart: LHand
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/lhand.rsi
+    state: gradient1
+  - sprite: _CD/Mobs/Customization/Vox/lhand.rsi
+    state: gradient2
+  - sprite: _CD/Mobs/Customization/Vox/lhand.rsi
+    state: gradient3
+
+- type: marking
+  id: VoxLArmProsthetic
+  bodyPart: LHand
+  groupWhitelist: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#E4E4E4"
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/lhand.rsi
+    state: prosthetic
+
+# RHand
+
+- type: marking
+  id: VoxHandGradientRHand
+  bodyPart: RHand
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/rhand.rsi
+    state: gradient1
+  - sprite: _CD/Mobs/Customization/Vox/rhand.rsi
+    state: gradient2
+  - sprite: _CD/Mobs/Customization/Vox/rhand.rsi
+    state: gradient3
+
+- type: marking
+  id: VoxRArmProsthetic
+  bodyPart: RHand
+  groupWhitelist: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#E4E4E4"
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/rhand.rsi
+    state: prosthetic
+
+# FacialHair
+
+- type: marking
+  id: BeardPadovana
+  bodyPart: FacialHair
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/facialhair.rsi
+    state: padovana
+
+- type: marking
+  id: LargeWattle
+  bodyPart: FacialHair
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/facialhair.rsi
+    state: largewattle
+
+- type: marking
+  id: SmallWattle
+  bodyPart: FacialHair
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/facialhair.rsi
+    state: smallwattle
+
+# Hair
+
+- type: marking
+  id: HairPadovana
+  bodyPart: Hair
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/hair.rsi
+    state: padovana
+
+- type: marking
+  id: HijabSimpleVox
+  bodyPart: Hair
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/hair.rsi
+    state: hijabsimple
+
+- type: marking
+  id: HijabFashionableVox
+  bodyPart: Hair
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/hair.rsi
+    state: hijabchic
+
+- type: marking
+  id: LargeComb
+  bodyPart: Hair
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/hair.rsi
+    state: largecomb
+
+- type: marking
+  id: TichelSimpleVox
+  bodyPart: Hair
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/hair.rsi
+    state: tichelsimple
+
+- type: marking
+  id: TichelFashionableVox
+  bodyPart: Hair
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/hair.rsi
+    state: tichelfashionable
+
+- type: marking
+  id: VoxBald
+  bodyPart: Hair
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/hair.rsi
+    state: balding
+
+- type: marking
+  id: VoxEmover
+  bodyPart: Hair
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/hair.rsi
+    state: emover
+
+- type: marking
+  id: VoxPolish
+  bodyPart: Hair
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/hair.rsi
+    state: polish
+
+- type: marking
+  id: VoxWindswept
+  bodyPart: Hair
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/hair.rsi
+    state: windswept
+
+# HeadSide
+
+- type: marking
+  id: SideQuills
+  bodyPart: HeadSide
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/headside.rsi
+    state: quills1
+  - sprite: _CD/Mobs/Customization/Vox/headside.rsi
+    state: quills2
+  - sprite: _CD/Mobs/Customization/Vox/headside.rsi
+    state: quills3
+
+- type: marking
+  id: VoxStreamers
+  bodyPart: HeadSide
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/headside.rsi
+    state: streamers1
+  - sprite: _CD/Mobs/Customization/Vox/headside.rsi
+    state: streamers2
+  - sprite: _CD/Mobs/Customization/Vox/headside.rsi
+    state: streamers3
+
+# HeadTop
+
+# Tail
+
+- type: marking
+  id: FriendsOfAFeather
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: friendsfeather1
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: friendsfeather2
+
+- type: marking
+  id: SpotsTail
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: spots
+
+- type: marking
+  id: TailBloom
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: bloom1
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: bloom2
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: bloom3
+
+- type: marking
+  id: VoxChains
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: chains
+
+- type: marking
+  id: VoxCocktail
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: cocktail1
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: cocktail2
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: cocktail3
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: cocktail4
+
+- type: marking
+  id: VoxFootSpines
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: footspines
+
+- type: marking
+  id: VoxTailBack
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: colorable
+
+- type: marking
+  id: VoxTailBalled
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: balled
+
+- type: marking
+  id: VoxTailBell
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: tail
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: bell1
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: bell2
+
+- type: marking
+  id: VoxTailLantern
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: tail
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: lantern
+  shaders:
+    lantern: unshaded
+
+- type: marking
+  id: VoxTailNub
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: nub1
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: nub2
+
+- type: marking
+  id: VoxTailRaptor
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: raptor
+
+- type: marking
+  id: VoxTailShort2
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: short
+
+- type: marking
+  id: VoxTailShort3
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: short2
+
+- type: marking
+  id: VoxTailSmallPlume
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: smallplume
+
+- type: marking
+  id: VoxTailSpines
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: spines
+
+- type: marking
+  id: VoxSunAndMoon
+  bodyPart: Tail
+  groupWhitelist: [ Vox ]
+  sprites:
+  - sprite: _CD/Mobs/Customization/Vox/tail.rsi
+    state: sunandmoon
+
+# RArmExtension

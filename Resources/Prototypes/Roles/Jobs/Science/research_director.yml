@@ -6,10 +6,10 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobScientist
-    time: 5h
+    time: 2.5h # TRIESTE: '5h'
   - !type:DepartmentTimeRequirement
     department: Science
-    time: 10h
+    time: 5h # TRIESTE: '10h'
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
   supervisors: job-supervisors-captain

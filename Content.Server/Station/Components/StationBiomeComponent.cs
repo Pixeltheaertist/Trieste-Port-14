@@ -7,7 +7,7 @@ namespace Content.Server.Station.Components;
 /// <summary>
 /// Runs EnsurePlanet against the largest grid on Mapinit.
 /// </summary>
-[RegisterComponent, Access(typeof(StationBiomeSystem))]
+[RegisterComponent]
 public sealed partial class StationBiomeComponent : Component
 {
     [DataField(required: true)]

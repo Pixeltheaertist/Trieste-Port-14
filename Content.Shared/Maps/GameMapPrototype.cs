@@ -13,6 +13,8 @@ namespace Content.Shared.Maps;
 /// Forks should not directly edit existing parts of this class.
 /// Make a new partial for your fancy new feature, it'll save you time later.
 /// </remarks>
+///
+            // how about no.
 [Prototype, PublicAPI]
 [DebuggerDisplay("GameMapPrototype [{ID} - {MapName}]")]
 public sealed partial class GameMapPrototype : IPrototype
@@ -30,7 +32,7 @@ public sealed partial class GameMapPrototype : IPrototype
     [DataField] public bool IsGrid;
 
     [DataField]
-    public bool RandomRotation = true;
+    public bool RandomRotation = false;
 
     /// <summary>
     /// Name of the map to use in generic messages, like the map vote.

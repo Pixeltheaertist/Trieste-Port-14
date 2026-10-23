@@ -1,0 +1,35 @@
+- type: gamePreset
+  id: SecretGreenshift #For Admin Use: Runs Greenshift but shows "Secret" in lobby.
+  alias:
+  - secretgreenshift
+  name: secret-title
+  showInVote: false #Admin Use
+  description: secret-description
+  rules:
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: Longpast
+  alias:
+  - longpast
+  - lp
+  name: long-past-title
+  description: long-past-description
+  maxPlayers: 25
+  showInVote: true
+  supportedMaps: LongPastPool
+
+- type: gamePreset
+  id: SafeHarbor
+  alias:
+  - safeharbor
+  - crashedship
+  - ThatOneFuckedShip
+  - floatsam
+  - flotsam
+  name: safe-harbor-title
+  showInVote: false
+  description: safe-harbor-description
+  supportedMaps: SafeHarborPool
+  rules:
+  - BasicRoundstartVariation

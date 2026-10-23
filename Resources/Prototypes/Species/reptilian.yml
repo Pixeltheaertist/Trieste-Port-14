@@ -16,3 +16,4 @@
   voices:
   - MaleReptilian
   - FemaleReptilian
+  customName: true # Starlight

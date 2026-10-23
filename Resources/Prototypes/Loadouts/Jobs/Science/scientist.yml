@@ -15,6 +15,11 @@
     head: ClothingHeadHatBeretRND
 
 - type: loadout
+  id: ScientificBucket
+  equipment:
+    head: TP14ClothingHeadScienceBucket
+
+- type: loadout
   id: ScientificBeret
   startingGear: ScientificBeret
   effects:
@@ -30,6 +35,11 @@
   id: SkullBandana
   equipment:
     head: ClothingHeadBandSkull
+
+- type: loadout
+  id: SuspiciousCap
+  equipment:
+    head: TP14ClothingHeadHatSuspiciousCap
 
 # Neck
 
@@ -50,6 +60,16 @@
     jumpsuit: ClothingUniformJumpskirtScientist
 
 - type: loadout
+  id: MadScientistJumpsuit
+  equipment:
+    jumpsuit: TP14ClothingUniformJumpsuitScience
+
+- type: loadout
+  id: MadScientistJumpskirt
+  equipment:
+    jumpsuit: TP14ClothingUniformJumpskirtScience
+
+- type: loadout
   id: RoboticistJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitRoboticist
@@ -58,6 +78,11 @@
   id: RoboticistJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtRoboticist
+
+- type: loadout
+  id: SuspiciousSuit
+  equipment:
+    jumpsuit: TP14ClothingUniformSuspiciousSuit
 
 - type: loadout
   id: SeniorResearcherJumpsuit

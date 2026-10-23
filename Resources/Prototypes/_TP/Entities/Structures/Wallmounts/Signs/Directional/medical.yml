@@ -1,0 +1,146 @@
+# Chem
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalChem
+  suffix: Trieste, Medical, Wall-Sign
+  name: chem wall sign
+  description: A direction sign, pointing out which way the chem lab is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#008008" # Green. Had to hehe.
+    - state: text_chem
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalChem
+      Secondary: TP14SignDirectionalChemAlt1
+      Tertiary: TP14SignDirectionalChemAlt2
+
+- type: entity
+  parent: TP14SignDirectionalChem
+  id: TP14SignDirectionalChemAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalChem
+  id: TP14SignDirectionalChemAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# Examination
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalExam
+  suffix: Trieste, Medical, Wall-Sign
+  name: exam wall sign
+  description: A direction sign, pointing out which way the medical examination room is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#008008" # Green
+    - state: text_exam
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalExam
+      Secondary: TP14SignDirectionalExamAlt1
+      Tertiary: TP14SignDirectionalExamAlt2
+
+- type: entity
+  parent: TP14SignDirectionalExam
+  id: TP14SignDirectionalExamAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalExam
+  id: TP14SignDirectionalExamAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# ICU
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalICU
+  suffix: Trieste, Medical, Wall-Sign
+  name: ICU wall sign
+  description: A direction sign, pointing out which way the ICU is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#008008" # Green
+    - state: text_icu
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalICU
+      Secondary: TP14SignDirectionalICUAlt1
+      Tertiary: TP14SignDirectionalICUAlt2
+
+- type: entity
+  parent: TP14SignDirectionalICU
+  id: TP14SignDirectionalICUAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalICU
+  id: TP14SignDirectionalICUAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# Medical
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalMedical
+  suffix: Trieste, Medical, Wall-Sign
+  name: medical wall sign
+  description: A direction sign, pointing out which way the Medical department is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#008008" # Green. Had to hehe.
+    - state: text_med
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalMedical
+      Secondary: TP14SignDirectionalMedicalAlt1
+      Tertiary: TP14SignDirectionalMedicalAlt2
+
+- type: entity
+  parent: TP14SignDirectionalMedical
+  id: TP14SignDirectionalMedicalAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalMedical
+  id: TP14SignDirectionalMedicalAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25

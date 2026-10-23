@@ -1,0 +1,3 @@
+marking-TP14MarkingReptileTattooBackDragon-tattoo_back_dragon_primary = Primary
+marking-TP14MarkingReptileTattooBackDragon-tattoo_back_dragon_secondary = Secondary
+marking-TP14MarkingReptileTattooBackDragon = Back Tattoo (Dragon)

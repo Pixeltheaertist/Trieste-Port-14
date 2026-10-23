@@ -8,6 +8,7 @@ using Content.Server.Stunnable;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Gibbing;
+using Content.Shared.Gravity;
 using Content.Shared.Light.Components;
 using Content.Shared.Maps;
 using Content.Shared.Movement.Events;
@@ -99,7 +100,12 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
         if (HasComp<RoofComponent>(ev.EntityUid))
             RemComp<ImplicitRoofComponent>(ev.EntityUid);
         else
-            EnsureComp<ImplicitRoofComponent>(ev.EntityUid);
+        {
+            // TRIESTE:
+            // If we're the oil rig, aka Trieste, do NOT ensure implicit roof.
+            if (!HasComp<TriesteComponent>(ev.EntityUid))
+                EnsureComp<ImplicitRoofComponent>(ev.EntityUid);
+        }
     }
 
     private void OnShuttleStartup(EntityUid uid, ShuttleComponent component, ComponentStartup args)

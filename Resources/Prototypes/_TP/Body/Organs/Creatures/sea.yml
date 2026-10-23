@@ -1,0 +1,117 @@
+- type: entity
+  id: OrganSeaCreatureMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ TP14WaterBreather ]
+
+- type: entity
+  id: OrganSeaLandCreatureMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ TP14WaterBreather, Animal ]
+
+- type: entity
+  parent: OrganBaseOrganic
+  id: OrganSeaCreature
+  abstract: true
+  suffix: Animal
+
+- type: entity
+  parent: OrganSeaCreature
+  id: OrganSeaCreatureInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+
+- type: entity
+  parent: OrganSeaCreature
+  id: OrganSeaLandCreatureInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganSeaCreatureInternal, OrganSeaCreatureMetabolizer ]
+  id: OrganSeaCreatureLungs
+  suffix: Trieste
+  name: gills
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganSeaCreatureInternal, OrganSeaLandCreatureMetabolizer ]
+  id: OrganSeaLandCreatureLungs
+  suffix: Trieste
+  name: gills
+
+- type: entity
+  id: OrganTumor
+  parent: [ OrganBloodsucker, OrganAnimalStomach ]
+  suffix: Trieste
+  name: festering tumor
+  description: What... what is this?
+  components:
+  - type: Nymph
+    transferMind: true
+    entityPrototype: TP14MobMimic
+
+# BASE MOBS #
+- type: entity
+  parent: [ MobNightVision ]
+  id: TP14BaseMobSeaLandCreature
+  abstract: true
+  components:
+  - type: TemperatureProtection
+    coolingCoefficient: 0.0
+  - type: Body
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganSeaLandCreatureLungs
+        - id: OrganAnimalHeart
+        - id: OrganMothStomach
+        - id: OrganAnimalLiver
+        - id: OrganAnimalKidneys
+
+- type: entity
+  parent: [ MobNightVision ]
+  id: TP14BaseMobSeaCreature
+  abstract: true
+  components:
+  - type: TemperatureProtection
+    coolingCoefficient: 0.0
+  - type: TemperatureDamage
+    heatDamageThreshold: 360
+    coldDamageThreshold: -150
+  - type: Body
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganSeaCreatureLungs
+        - id: OrganAnimalHeart
+        - id: OrganMothStomach
+        - id: OrganAnimalLiver
+        - id: OrganAnimalKidneys
+
+- type: entity
+  parent: [ MobNightVision ]
+  id: TP14BaseMobMimicCreature
+  abstract: true
+  components:
+  - type: TemperatureProtection
+    coolingCoefficient: 0.0
+
+  - type: Body
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganSeaLandCreatureLungs
+        - id: OrganAnimalHeart
+        - id: OrganTumor
+        - id: OrganAnimalLiver
+        - id: OrganAnimalKidneys

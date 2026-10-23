@@ -198,10 +198,15 @@ namespace Content.Shared.Chemistry
 
         public readonly ChemMasterDrawSource DrawSource;
 
+        // TRIESTE SPECIFIC
+        // Transfer amount
+        public ChemMasterReagentAmount TransferAmount;
+
         public ChemMasterBoundUserInterfaceState(
             ChemMasterMode mode, ChemMasterSortingType sortingType, ContainerInfo? inputContainerInfo, ContainerInfo? outputContainerInfo,
             IReadOnlyList<ReagentQuantity> bufferReagents, FixedPoint2 bufferCurrentVolume,
-            uint selectedPillType, uint pillDosageLimit, bool updateLabel, ChemMasterDrawSource drawSource)
+            uint selectedPillType, uint pillDosageLimit, bool updateLabel, ChemMasterDrawSource drawSource,
+            ChemMasterReagentAmount transferAmount)
         {
             InputContainerInfo = inputContainerInfo;
             OutputContainerInfo = outputContainerInfo;
@@ -213,6 +218,7 @@ namespace Content.Shared.Chemistry
             PillDosageLimit = pillDosageLimit;
             UpdateLabel = updateLabel;
             DrawSource = drawSource;
+            TransferAmount = transferAmount;
         }
     }
 
@@ -220,5 +226,20 @@ namespace Content.Shared.Chemistry
     public enum ChemMasterUiKey
     {
         Key
+    }
+
+    /// <summary>
+    ///     TRIESTE SPECIFIC
+    ///     Transfer Amount message between the BUI and the server.
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class ChemMasterSetTransferAmountMessage : BoundUserInterfaceMessage
+    {
+        public ChemMasterReagentAmount Amount;
+
+        public ChemMasterSetTransferAmountMessage(ChemMasterReagentAmount amount)
+        {
+            Amount = amount;
+        }
     }
 }

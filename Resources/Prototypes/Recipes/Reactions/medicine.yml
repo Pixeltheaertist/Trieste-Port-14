@@ -171,6 +171,7 @@
   products:
     TranexamicAcid: 3
 
+
 - type: reaction
   id: Kelotane
   reactants:
@@ -268,7 +269,7 @@
 - type: reaction
   id: HeartbreakerToxin
   reactants:
-    DexalinPlus:
+    Dexalin:
       amount: 1
     MindbreakerToxin:
       amount: 1
@@ -562,6 +563,7 @@
       amount: 1
   products:
     Diphenhydramine: 3
+
 
 - type: reaction
   id: Pyrazine

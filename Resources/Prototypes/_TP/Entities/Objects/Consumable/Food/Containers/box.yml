@@ -1,0 +1,18 @@
+# jonk pockets
+- type: entity
+  parent: FoodBoxDonkpocket
+  id: TP14FoodBoxJonkpocketJonk
+  suffix: Trieste, Food, Box
+  name: box of jonk-pockets
+  description: A box of jonk pockets, the smell of rotten Donk fills the air?
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Consumable/jonkpockets.rsi
+    state: Jonk-Box
+  - type: Item
+    sprite: _TP/Objects/Consumable/jonkpockets.rsi
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: TP14FoodJonkpocketBanana
+        amount: 6

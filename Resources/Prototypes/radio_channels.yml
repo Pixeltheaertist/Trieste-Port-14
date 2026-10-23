@@ -8,8 +8,8 @@
 - type: radioChannel
   id: CentCom
   name: chat-radio-centcom
-  keycode: 'y'
-  frequency: 133.7
+  keycode: 'p' # TRIESTE: Heh.. P for centcom.. what an odd choice...
+  frequency: 245.7 # TRIESTE: '133.7'
   color: "#2681a5"
   longRange: true
 

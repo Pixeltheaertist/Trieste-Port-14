@@ -9,12 +9,13 @@
       time: 2.5h
     - !type:RoleTimeRequirement
       role: JobStationEngineer
-      time: 5h
+      time: 2.5h # TRIESTE: '5h'
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 10h
+      time: 5h # TRIESTE: '10h'
+  weight: 10
   startingGear: ChiefEngineerGear
-  icon: "JobIconChiefEngineer"
+  icon: "TP14JobIconChiefEngineer" # TRIESTE: 'JobIconChiefEngineer'
   supervisors: job-supervisors-captain
   guides: [ Command ] # TODO: should have a more specific guidebook page instead of using the department itself
   access:
@@ -37,7 +38,7 @@
   id: ChiefEngineerGear
   equipment:
     id: CEPDA
-    eyes: ClothingEyesGlassesMeson
+    # eyes: ClothingEyesGlassesMeson # Moffstation - Eyepatches!
     ears: ClothingHeadsetCE
     belt: ClothingBeltUtilityEngineering
   storage:
@@ -50,7 +51,7 @@
   hasMindShield: true
   equipment:
     head: ClothingHeadHatBeretEngineering
-    mask: ClothingMaskBreath
+    mask: TP14ClothingMaskAir #TP14
     neck: ClothingNeckCloakCe
     outerClothing: ClothingOuterWinterCE
     gloves: ClothingHandsGlovesColorYellow

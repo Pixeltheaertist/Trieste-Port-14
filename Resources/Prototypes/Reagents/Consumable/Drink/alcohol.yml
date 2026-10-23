@@ -121,7 +121,7 @@
   flavor: rum
   color: "#664300"
   metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/rumglass.rsi
+    sprite: _TP/Objects/Consumable/Drinks/deadrumglass.rsi # Trieste: 'Objects/Consumable/Drinks/rumglass.rsi'
     state: icon_empty
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
@@ -176,6 +176,7 @@
           type: [ Dwarf ]
         damage:
           Brute: -0.1
+          Burn: -0.1 # Trieste: Added.
       - !type:Vomit
         probability: 0.04
         conditions:

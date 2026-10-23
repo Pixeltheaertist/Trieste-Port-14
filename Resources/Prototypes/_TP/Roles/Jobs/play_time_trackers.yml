@@ -1,0 +1,13 @@
+# Civilian
+- type: playTimeTracker
+  id: TP14SettlerTracker
+
+# Expeditionary
+- type: playTimeTracker
+  id: TP14BasinTechTracker
+
+- type: playTimeTracker
+  id: TP14ExpeditioneerTracker
+
+- type: playTimeTracker
+  id: TP14PilotTracker

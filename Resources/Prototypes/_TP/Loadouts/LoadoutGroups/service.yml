@@ -1,0 +1,6 @@
+- type: loadoutGroup
+  id: ReporterJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieReporter

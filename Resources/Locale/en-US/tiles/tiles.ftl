@@ -1,4 +1,4 @@
-tiles-space = space
+tiles-space = nothing
 tiles-plating = plating
 tiles-rcd-plating = RCD plating
 tiles-lattice = lattice

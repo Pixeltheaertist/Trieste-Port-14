@@ -13,3 +13,4 @@
   voices:
   - MaleSlime
   - FemaleSlime
+  customName: true # Starlight

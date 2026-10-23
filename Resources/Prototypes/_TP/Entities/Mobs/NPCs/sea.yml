@@ -1,0 +1,731 @@
+- type: entity
+  id: TP14MobDrifter
+  parent: [ TP14BaseSimpleMob, TP14BaseMobSeaLandCreature, MobCombat, BaseSlicingRefinable, MobNightVision ]
+  suffix: Trieste
+  name: drifter
+  description: A spindly, opportunistic predator which injects prey with a paralyzing agent before siphoning their blood.
+  components:
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: NpcFactionMember
+    factions:
+    - TP14FactionSeaHostile
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 130
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMeatSpider
+      amount: 2
+  - type: CombatMode
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      30: Dead
+  - type: SolutionManager
+    solutions:
+    - TP14SolutionWeaponDrifter
+  - type: MeleeChemicalInjector
+    transferAmount: 4
+    solution: melee
+  - type: Puller
+    needsHands: false
+  - type: NoSlip
+  - type: IgnoreSpiderWeb
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 50
+  - type: Speech
+    speechVerb: Arachnid
+    speechSounds: Arachnid
+    allowedEmotes: ['Click', 'Chitter']
+  - type: Vocal
+    emoteSounds: UnisexArachnid
+  - type: TypingIndicator
+    proto: spider
+  - type: Tag
+    tags:
+    - FootstepSound
+    - TP14TagDrifter
+  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute from base.yml.
+    allowedStates:
+    - Alive
+    damage:
+      types:
+        Poison: -0.07
+        Blunt: -0.03
+        Slash: -0.03
+        Piercing: -0.03
+        Heat: -0.03
+        Cold: -0.03
+        Shock: -0.03
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _TP/Mobs/Aliens/drifters.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: drifter
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 5
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: drifter
+      Dead:
+        Base: drifter_dead
+
+- type: entity
+  parent: [SolutionWeapon, SolutionTiny]
+  id: TP14SolutionWeaponDrifter
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SolutionRegeneration
+    generated:
+      reagents:
+      - ReagentId: DrifterToxin
+        Quantity: 1
+      - ReagentId: SpaceDrugs
+        Quantity: 1
+
+- type: entity
+  parent: [ SolutionFood, SolutionTiny, TP14BaseSimpleMob, TP14BaseMobSeaCreature, BaseSlicingRefinable, MobNightVision ]
+  id: TP14MobFish
+  suffix: Trieste
+  name: fish
+  description: It's a fish.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: fish-0
+      sprite: _TP/Mobs/Animals/fish.rsi
+  - type: Item
+    size: Tiny
+  - type: CombatMode
+  - type: HTN
+    constantlyReplan: false
+    rootTask:
+      task: MouseCompound
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 100
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 5
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: fish-0
+      Dead:
+        Base: splat-0
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 20
+  - type: Edible
+  - type: FlavorProfile
+    flavors:
+    - horrible
+    - terrible
+    - chewy
+    - fishy
+  - type: Hunger
+    baseDecayRate: 0.25
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Speech
+    speechVerb: SmallMob
+    speechSounds: TP14SpeechSoundsJellid
+  - type: Tag
+    tags:
+    - Trash
+    - TP14TagFish
+  - type: Reproductive
+    breedChance: 0.05
+    birthPopup: reproductive-laid-egg-popup
+    makeOffspringInfant: false
+    partnerWhitelist:
+      tags:
+      - TP14TagFish
+    offspring:
+    - id: TP14FoodEggCaviar
+      maxAmount: 1
+  - type: ReproductivePartner
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: FishOil
+        Quantity: 10
+  - type: ToolRefinable
+    refineResult:
+    - id: TP14FoodMeatFish
+      amount: 2
+  - type: NpcFactionMember
+    factions:
+    - Passive
+  - type: BadFood
+  - type: NonSpreaderZombie
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 0
+
+- type: entity
+  parent: FoodEgg
+  id: TP14FoodEggCaviar
+  suffix: Trieste
+  name: caviar
+  components:
+  - type: TimedSpawner
+    prototypes:
+    - TP14MobFish
+    - TP14MobFish2
+    - TP14MobFish3
+    intervalSeconds: 20
+  - type: TimedDespawn # Delete the egg after it spawns
+    lifetime: 21
+
+- type: entity
+  parent: TP14MobFish
+  id: TP14MobFish2
+  components:
+  - type: Sprite
+    drawdepth: SmallMobs
+    sprite: _TP/Mobs/Animals/fish.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: fish-1
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: fish-1
+      Dead:
+        Base: splat-1
+
+- type: entity
+  parent: TP14MobFish
+  id: TP14MobFish3
+  components:
+  - type: Sprite
+    drawdepth: SmallMobs
+    sprite: _TP/Mobs/Animals/fish.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: fish-2
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: fish-2
+      Dead:
+        Base: splat-2
+
+- type: entity
+  parent: [ SolutionFood, SolutionTiny, TP14BaseSimpleMob, AnimalMimic, BaseSlicingRefinable, MobNightVision ]
+  id: TP14MobFishMimic
+  suffix: Trieste
+  name: fish
+  description: It's a fish.
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5 # Gibs immidiately upon being disturbed
+      behaviors:
+      - !type:GibBehavior { }
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: fish-0
+      sprite: _TP/Mobs/Animals/fish.rsi
+  - type: Item
+    size: Tiny
+  - type: CombatMode
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: NpcFactionMember
+    factions:
+    - TP14FactionSeaHostile
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 100
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 2.5 # Halved for these half-dead fish.
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: fish-0
+      Dead:
+        Base: splat-0
+  - type: Hunger
+    baseDecayRate: 0.25
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Speech
+    speechVerb: SmallMob
+    speechSounds: TP14SpeechSoundsJellid
+  - type: Tag
+    tags:
+    - Trash
+    - TP14TagFish
+  - type: Reproductive
+    breedChance: 0.05
+    birthPopup: reproductive-laid-egg-popup
+    makeOffspringInfant: false
+    partnerWhitelist:
+      tags:
+      - TP14TagFish
+    offspring:
+    - id: TP14FoodEggCaviar
+      maxAmount: 1
+  - type: ReproductivePartner
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: FishOil
+        Quantity: 10
+  - type: ToolRefinable
+    refineResult:
+    - id: TP14FoodMeatFish
+      amount: 2
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 10
+  - type: NonSpreaderZombie
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 0
+
+- type: entity
+  parent: [ TP14BaseSimpleMob, TP14BaseMobSeaLandCreature, MobCombat, MobNightVision ]
+  id: TP14MobMimic
+  suffix: Trieste
+  name: mimic
+  description: A horrific ambush predator. It infests fish until disturbed by larger prey and uses elecricity to immobilize their targets.
+  components:
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: NpcFactionMember
+    factions:
+    - TP14FactionSeaHostile
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 130
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: CombatMode
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      65: Dead
+  - type: SolutionManager
+    solutions:
+    - TP14SolutionWeaponMimic
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 1
+  - type: ReplacementAccent
+    accent: xeno
+  - type: NoSlip
+  - type: IgnoreSpiderWeb
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 50
+  - type: Vocal
+    emoteSounds: TP14EmoteSoundsJellid
+  - type: Tag
+    tags:
+    - TP14TagMimic
+    - FootstepSound
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Slash: 10
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _TP/Mobs/Aliens/mimics.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: mimic
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: mimic
+      Dead:
+        Base: mimic_dead
+  - type: PointLight
+    radius: 1.5
+    energy: 1
+    color: "#FFFF33"
+
+- type: entity
+  parent: [SolutionWeapon, SolutionTiny]
+  id: TP14SolutionWeaponMimic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    solution:
+      maxVol: 1
+      reagents:
+      - ReagentId: Mimicrium
+        Quantity: 1
+
+  # TODO: work on a new Tumorous Brain organ that spawns MimicSmart, which starts by infesting a randomly generated salvager outside Sweetwater. Make new stomach type that only eats raw meat and blood.
+  # Also give MimicSmart the ability to burst out of it's host at any time, and use cloaking like a space cobra if it has to escape it's puppet.
+
+- type: entity
+  id: MobDeathWhale
+  parent: [ TP14BaseSimpleMob, TP14BaseMobSeaLandCreature, MobCombat, MobNightVision ]
+  suffix: Trieste
+  name: deathwhale
+  description: Don't go into the light.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: null
+  - type: PointLight
+    radius: 20
+    energy: 40
+    color: "#FFA400"
+  - type: DeathWhale
+  - type: AmbientSound
+    range: 30
+    volume: -15
+    sound:
+      path: /Audio/_TP/Effects/whale_groan.ogg
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 0.7
+
+- type: entity
+  parent: MobXenoSpitter
+  id: TP14MobSeaBarnacle
+  suffix: Trieste
+  name: sea barnacle
+  description: A heaving mass of coral and flesh, capable of spitting corrosive acid at it's prey.
+  components:
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 0
+    baseSprintSpeed: 0
+
+- type: entity
+  parent: [ TP14BaseMobSeaLandCreature, TP14BaseSimpleMob, BaseSlicingRefinable, MobNightVision ]
+  id: TP14MobSeaBunny
+  suffix: Trieste, Sea
+  name: sea bunny
+  description: An adorable bunny-like creature that lives in.. the sea!
+  components:
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-sea-bunny-name
+    description: ghost-role-information-sea-bunny-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgentHarmless
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 120
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: GhostTakeoverAvailable
+  - type: Speech
+    speechVerb: Moth
+    speechSounds: Squeak
+    allowedEmotes: ['Chitter', 'Squeak']
+  - type: MothAccent
+  - type: Sprite
+    sprite: _TP/Mobs/Animals/sea-bunny.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+      state: sea-rabbit-moving
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: sea-rabbit-moving
+    noMovementLayers:
+      movement:
+        state: sea-rabbit-idle
+  - type: Item
+    size: Normal
+  - type: Clothing
+    quickEquip: false
+    sprite: _TP/Mobs/Animals/sea-bunny.rsi
+    equippedPrefix: 0
+    slots:
+    - HEAD
+  - type: Appearance
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: sea-rabbit-idle
+      Critical:
+        Base: sea-rabbit-dead
+      Dead:
+        Base: sea-rabbit-dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      40: Critical
+      60: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 4
+    weightlessAcceleration: 1.5
+    weightlessFriction: 1
+    baseWeightlessModifier: 1
+  - type: Damageable
+    damageModifierSet: Moth
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: InsectBlood
+        Quantity: 20
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 0.5
+    damageRecovery:
+      types:
+        Asphyxiation: -0.5
+  - type: CombatMode
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMeatSlime
+      amount: 2
+  - type: Extractable
+    grindableSolutionName: food
+  - type: ReplacementAccent
+    accent: mothroach
+  - type: ZombieAccentOverride
+    accent: zombieMoth
+  - type: Vocal
+    emoteSounds: UnisexMoth
+  - type: MobPrice
+    price: 150
+  - type: Tag
+    tags:
+    - Trash
+    - CannotSuicide
+    - VimPilot
+  - type: CanEscapeInventory
+  - type: NpcFactionMember
+    factions:
+    - Mouse
+  - type: TypingIndicator
+    proto: moth
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 60
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Mouse_burning
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+  - type: InventorySlots
+  - type: Inventory
+    speciesId: hamster
+    templateId: hamster
+    displacements:
+      head:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/sea-bunny-displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/sea-bunny-displacement.rsi
+            state: mask
+      suitstorage:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/sea-bunny-displacement.rsi
+            state: suitstorage
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/sea-bunny-displacement.rsi
+            state: eyes
+      neck:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/sea-bunny-displacement.rsi
+            state: neck
+
+- type: entity
+  parent: TP14MobSeaBunny
+  id: TP14MobLeafSheep
+  suffix: Trieste
+  name: leaf sheep
+  description: Similar to sea bunnies, but have beautiful leaf-like growths on their backs.
+  components:
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-leaf-sheep-name
+    description: ghost-role-information-leaf-sheep-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgentHarmless
+  - type: Sprite
+    sprite: _TP/Mobs/Animals/LeafSheep/normal.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+      state: leaf-sheep-moving
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: leaf-sheep-moving
+    noMovementLayers:
+      movement:
+        state: leaf-sheep-idle
+  - type: Clothing
+    quickEquip: false
+    sprite: _TP/Mobs/Animals/LeafSheep/normal.rsi
+    equippedPrefix: 0
+    slots:
+    - HEAD
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: leaf-sheep-idle
+      Critical:
+        Base: leaf-sheep-dead
+      Dead:
+        Base: leaf-sheep-dead
+  - type: Inventory
+    displacements:
+      head:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/LeafSheep/displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/LeafSheep/displacement.rsi
+            state: mask
+      suitstorage:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/LeafSheep/displacement.rsi
+            state: suitstorage
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/LeafSheep/displacement.rsi
+            state: eyes
+      neck:
+        sizeMaps:
+          32:
+            sprite: _TP/Mobs/Animals/LeafSheep/displacement.rsi
+            state: neck

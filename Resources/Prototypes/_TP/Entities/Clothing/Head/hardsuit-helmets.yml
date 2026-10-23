@@ -1,0 +1,43 @@
+# Try to keep the location of helmet prototypes synced with the corresponding hardsuit please :)
+# Standard Pressure Suit
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: TP14ClothingHeadHelmetHardsuitBasic
+  name: basic pressure suit
+  description: A basic-looking pressure suit helmet that provides minor protection against the nightmares of the sea.
+  components:
+  - type: Sprite
+    sprite: _TP/Clothing/Head/Hardsuits/basic.rsi
+  - type: Clothing
+    sprite: _TP/Clothing/Head/Hardsuits/basic.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
+
+# EXPEDITIONRAY HARDSUITS
+# GILLY Abyssal Suit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingHeadHelmetAbyssal
+  suffix: Trieste, Expeditionary
+  name: G.I.L.L.Y abyssal helmet
+  description: A heavy helmet designed to withstand indescribable pressure. Utilizes a built-in camera for user vision.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardsuits/abyssal.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardsuits/abyssal.rsi
+  - type: AbyssalSuit
+  - type: PointLight
+    color: orange
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    heatingCoefficient: 0.005
+    coolingCoefficient: 0.005
+  - type: StaticViewer
+  # Removed armor component due to armor rebalancing and the fact that youd already be wearing the helmet 99% of the tine

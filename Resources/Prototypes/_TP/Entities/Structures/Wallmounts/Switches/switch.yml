@@ -1,0 +1,7 @@
+- type: entity
+  parent: LockableButton
+  id: TP14EntLockableButtonSettler
+  suffix: Settlers, Trieste
+  components:
+  - type: AccessReader
+    access: [["TP14SettlerAccessLevel"]]

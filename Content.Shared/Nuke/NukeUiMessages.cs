@@ -5,6 +5,7 @@ namespace Content.Shared.Nuke
     public abstract partial class SharedNukeComponent : Component
     {
         public const string NukeDiskSlotId = "Nuke";
+        public const string NukeResonanceSlotId = "Resonance";
 
         /// <summary>
         /// Cooldown time between attempts to enter the nuke code.

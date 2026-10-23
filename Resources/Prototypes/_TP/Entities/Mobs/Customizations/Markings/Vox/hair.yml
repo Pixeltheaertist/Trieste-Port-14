@@ -1,0 +1,19 @@
+- type: marking
+  id: TP14VoxHairCrownedCrane
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Vox/hair.rsi
+    state: feathers_crowned_crane
+
+
+- type: marking
+  id: TP14VoxHairSecretaryBird
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Vox/hair.rsi
+    state: feathers_secretary_bird
+

@@ -296,9 +296,9 @@ public abstract partial class InventorySystem
                     if (!HasComp(slotEntity, entry.Component.GetType()))
                         return false;
 
-                    if (TryComp<AllowSuitStorageComponent>(slotEntity, out var comp) &&
-                        _whitelistSystem.IsWhitelistFailOrNull(comp.Whitelist, itemUid))
-                        return false;
+                    //if (TryComp<AllowSuitStorageComponent>(slotEntity, out var comp) &&
+                        //_whitelistSystem.IsWhitelistFailOrNull(comp.Whitelist, itemUid))
+                        //return false;
                 }
             }
         }

@@ -1,0 +1,13 @@
+- type: entity
+  id: BriefcaseNTBribingBundleFilled
+  parent: BriefcaseSyndie
+  suffix: Trieste, NanoTraitor
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingEyesGlassesSunglasses
+        - id: SpaceCash20000
+        - id: ClothingOuterCoatJensen
+        - id: ClothingHandsGlovesColorBlack

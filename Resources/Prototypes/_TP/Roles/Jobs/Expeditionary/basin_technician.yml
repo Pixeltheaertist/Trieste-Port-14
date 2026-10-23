@@ -1,0 +1,29 @@
+- type: job
+  id: TP14BasinTech
+  name: job-name-basintech
+  description: job-description-basintech
+  playTimeTracker: TP14BasinTechTracker
+  icon: "JobIconShaftMiner"
+  startingGear: TP14BasinTechGear
+  supervisors: job-supervisors-qm
+  access:
+  - Salvage
+  - Maintenance
+  - External
+
+- type: startingGear
+  id: TP14BasinTechGear
+  equipment:
+    id: TP14BasinTechPDA
+    ears: ClothingHeadsetMining
+
+- type: chameleonOutfit
+  id: TP14BasinTechChameleonOutfit
+  job: TP14BasinTech
+  equipment:
+    head: ClothingHeadHatCargosoft
+    eyes: ClothingEyesGlassesCheapSunglasses
+    mask: ClothingMaskGasExplorer
+    outerClothing: ClothingOuterWinterMiner
+    neck: ClothingNeckScarfStripedBrown
+    gloves: ClothingHandsGlovesColorBlack

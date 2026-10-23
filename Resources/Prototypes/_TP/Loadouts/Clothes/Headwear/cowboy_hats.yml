@@ -1,0 +1,29 @@
+- type: loadout
+  id: TP14LoadoutHeadwearCowboyHatBlack
+  equipment:
+    head: ClothingHeadHatCowboyBlack
+
+- type: loadout
+  id: TP14LoadoutHeadwearCowboyHatBountyHunter
+  equipment:
+    head: ClothingHeadHatCowboyBountyHunter
+
+- type: loadout
+  id: TP14LoadoutHeadwearCowboyHatBrown
+  equipment:
+    head: ClothingHeadHatCowboyBrown
+
+- type: loadout
+  id: TP14LoadoutHeadwearCowboyHatRed
+  equipment:
+    head: ClothingHeadHatCowboyRed
+
+- type: loadout
+  id: TP14LoadoutHeadwearCowboyHatWhite
+  equipment:
+    head: ClothingHeadHatCowboyWhite
+
+- type: loadout
+  id: TP14LoadoutHeadwearOutlawHat
+  equipment:
+    head: ClothingHeadHatOutlawHat

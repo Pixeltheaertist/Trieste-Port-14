@@ -287,8 +287,8 @@
   parent: ClothingHeadHatHoodWinterBase
   id: ClothingHeadHatHoodWinterCaptain
   categories: [ HideSpawnMenu ]
-  name: captain's winter coat hood
-  description: An expensive hood, to keep the captain's head warm.
+  name: overseer's winter coat hood
+  description: An expensive hood, to keep the overseer's head warm.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hoods/Coat/hoodcaptain.rsi
@@ -377,7 +377,7 @@
   parent: ClothingHeadHatHoodWinterBase
   id: ClothingHeadHatHoodWinterHOS
   categories: [ HideSpawnMenu ]
-  name: head of security's winter coat hood
+  name: marshal's winter coat hood # TP
   components:
   - type: Sprite
     sprite: Clothing/Head/Hoods/Coat/hoodhos.rsi
@@ -454,7 +454,7 @@
   parent: ClothingHeadHatHoodWinterBase
   id: ClothingHeadHatHoodWinterQM
   categories: [ HideSpawnMenu ]
-  name: quartermaster's coat hood
+  name: harbormaster's coat hood
   components:
   - type: Sprite
     sprite: Clothing/Head/Hoods/Coat/hoodqm.rsi

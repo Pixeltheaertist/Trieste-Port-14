@@ -1,0 +1,206 @@
+# This is the Storm Array, a device that "siphons lighting" offscreen.
+# It constantly heats up the surrounding room and needs to have its temperature carefully monitored to prevent a meltdown.
+# It also gives occasional warnings and spawning sparks while taking damage, eventually exploding.
+
+# Pipes the array uses to connect to the pipe network
+- type: entity
+  id: TP14StormArrayGasPipes
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Anchorable
+    flags: None
+  - type: NodeContainer
+    nodes:
+      pipe:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+        volume: 1000
+        pipeLayer: 0
+      pipe1:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+        volume: 1000
+        pipeLayer: 0
+  - type: GasPipeManifold
+    inlets:
+    - pipe
+    outlets:
+    - pipe1
+  - type: PipeRestrictOverlap
+  - type: Tag
+    tags:
+    - HideContextMenu
+
+- type: entity
+  parent: BaseGenerator
+  id: TP14StormArray
+  name: storm array
+  description: The core of a massive array of lightning rods, siphoning searing energy from the eternal storm above. Must be kept cool.
+  suffix: Trieste, 175kW
+  placement:
+    mode: AlignTileAny
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _TP/Structures/Power/storm-array.rsi
+    layers:
+    - state: storm_array_idle
+      map: [ "enum.StormArrayVisuals.Idle" ]
+      visible: true
+    - state: storm_array_active
+      map: [ "enum.StormArrayVisuals.Active" ]
+      visible: false
+    drawdepth: Mobs
+    offset: 0, 1
+    snapCardinals: false
+  - type: Physics
+    bodyType: Static
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Engineering
+  - type: ActiveRadio
+    channels:
+    - Engineering
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.25, -1, 1.25, 0.75"
+        density: 50
+        mask:
+        - LargeMobMask
+        layer:
+        - WallLayer
+  - type: PowerSupplier
+    enabled: false
+    supplyRate: 175000
+    supplyRampRate: 1750
+    supplyRampTolerance: 1750
+  - type: GuideHelp
+    guides:
+    - StormArray
+    - Power
+  - type: Damageable
+    damageModifierSet: StructuralMetallicStrong
+  - type: Injurable
+    damageContainer: StructuralInorganic
+  - type: Temperature
+    currentTemperature: 243.15
+    specificHeat: 42
+  - type: TemperatureDamage
+    heatDamageThreshold: 500
+    coldDamageThreshold: -9999 # Doesn't take damage from cold
+    coldDamage:
+      types:
+        Cold: 0.0
+    heatDamage:
+      types:
+        Heat: 10.0
+  - type: Electrified
+    enabled: false
+    onHandInteract: true
+    onInteractUsing: true
+    onBump: true
+    requirePower: false
+    highVoltageNode: input
+# Commented out for now due to client-side sprite errors.
+#  - type: DamageVisuals
+#    thresholds: [100, 200, 400]
+#    damageDivisor: 4
+#    trackAllDamage: true
+#    damageOverlay:
+#      sprite: Structures/Windows/cracks.rsi
+  - type: AmbientSound
+    enabled: true
+    volume: 5
+    range: 10
+    sound:
+      path: /Audio/Ambience/Objects/buzzing.ogg
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 200
+    intensitySlope: 30
+    maxIntensity: 120
+  - type: Anchorable
+    flags: None
+  - type: Destructible # Gives warnings every 100 damage, eventually exploding
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              EffectSparks:
+                min: 1
+                max: 5
+          - !type:TriggerBehavior
+      - trigger:
+          !type:DamageTrigger
+          damage: 400
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              EffectSparks:
+                min: 1
+                max: 5
+          - !type:TriggerBehavior
+      - trigger:
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+          - !type:TriggerBehavior
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              EffectSparks:
+                min: 1
+                max: 5
+      - trigger:
+          !type:DamageTrigger
+          damage: 500
+        behaviors:
+          - !type:ExplodeBehavior
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 300
+        behaviors:
+          - !type:PopupBehavior
+            popup: "The array rumbles and hisses!"
+            popupType: LargeCaution
+          - !type:TriggerBehavior
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              EffectSparks:
+                min: 1
+                max: 5
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+  - type: AtmosDevice # Needed for the RadiantTemperature component
+    requireAnchored: true
+  - type: RadiantTemperature # Constantly heats the air around it
+    goalTemperature: 500
+    energyChangedPerSecond: 5 # Around Hopefully around 3-minutes to reach 100. - Cookie (Father Cheese)
+  - type: StormArray
+    inletPos:   1, 0
+    outletPos: -1, 0
+    inletRot:   90
+    outletRot: -90
+  - type: DirectionalArrowIndicator
+    arrows:
+    - offset: 2, -0.75
+      arrowType: BlueDirectionalArrowIndicator
+      rotation: 270
+    - offset: -2, -0.75
+      rotation: 270
+      arrowType: BlueDirectionalArrowIndicator

@@ -1,0 +1,161 @@
+- type: entity
+  id: TP14ColdplateMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  suffix: Trieste, Circuit-Board
+  name: coldplate machine board
+  description: A machine printed circuit board for a coldplate.
+  components:
+    - type: MachineBoard
+      prototype: TP14ChemistryColdplate
+      stackRequirements:
+        Manipulator: 2
+        Glass: 1
+
+- type: entity
+  id: JellidPortableScrubberMachineCircuitBoard
+  parent: BaseMachineCircuitboard
+  suffix: Trieste, Circuit-Board
+  name: jellid portable scrubber machine board
+  description: A machine printed circuit board for a jellid portable scrubber.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: JellidPortableScrubber
+    stackRequirements:
+      Manipulator: 3
+      Cable: 5
+      Glass: 2
+
+- type: entity
+  id: IncubatorMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  suffix: Trieste, Circuit-Board
+  name: incubator machine board
+  description: A machine printed circuit board for an incubator.
+  components:
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: MachineIncubator
+      stackRequirements:
+        Manipulator: 2
+        Glass: 1
+        Steel: 1
+
+- type: entity
+  id: TP14SMESAdvancedMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  suffix: Trieste, Circuit-Board
+  name: trieste's advanced SMES machine board
+  description: A machine printed circuit board for a trieste-speciifc Advanced SMES.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: power_mod
+  - type: MachineBoard
+    prototype: TP14SMESAdvancedEmpty
+    stackRequirements:
+      Manipulator: 3
+      CableHV: 30
+    componentRequirements:
+      PowerCell:
+        amount: 8
+        defaultPrototype: PowerCellMedium
+
+- type: entity
+  id: TP14AtmosphericThrusterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  suffix: Trieste, Circuit-Board
+  name: atmospheric thruster machine board
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: AtmosphericThruster
+    stackRequirements:
+      Manipulator: 4
+      Steel: 5
+
+- type: entity
+  id: TP14LargePropellerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  suffix: Trieste, Circuit-Board
+  name: large propeller machine board
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: TP14LargePropeller
+    stackRequirements:
+      Manipulator: 4
+      Steel: 10
+
+- type: entity
+  id: TP14OvenMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  suffix: Trieste, Circuit-Board
+  name: oven machine board
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: TP14KitchenOven
+      stackRequirements:
+        Manipulator: 2
+        Glass: 4
+        Cable: 4
+    - type: Tag
+      tags:
+      - TP14OvenMachineBoard
+
+- type: entity
+  id: TP14CoffeeMakerCircuitboard
+  parent: BaseMachineCircuitboard
+  suffix: Trieste, Circuit-Board
+  name: coffee maker machine board
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: TP14CoffeeMaker
+      stackRequirements:
+        Manipulator: 3
+        Steel: 20
+        Cable: 6
+    - type: Tag
+      tags:
+      - TP14TagCoffeeMakerBoard
+
+- type: entity
+  id: TP14DeepFryerCircuitboard
+  parent: BaseMachineCircuitboard
+  suffix: Machine board
+  name: deep fryer machine board
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: TP14KitchenDeepFryerEmpty
+    stackRequirements:
+      Manipulator: 1
+      Steel: 10
+      Cable: 4
+  - type: Tag
+    tags:
+    - TP14TagDeepFryerBoard
+
+- type: entity
+  id: TP14FallMonitorCircuitboard
+  parent: BaseMachineCircuitboard
+  suffix: Trieste, Circuit-Board
+  name: fall monitor machine board
+  components:
+  - type: Sprite
+    state: medical
+  - type: MachineBoard
+    prototype: TP14FallMonitor
+    stackRequirements:
+      Manipulator: 4
+      Steel: 4
+      CableMV: 10

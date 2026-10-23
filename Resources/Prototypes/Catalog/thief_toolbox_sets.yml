@@ -51,7 +51,6 @@
     state: telecrystal
   content:
   - RadioJammer
-  - TraitorCodePaper
   - Emag
   - AccessBreaker
   - Lighter
@@ -80,7 +79,6 @@
     state: old-radio
   content:
   - EncryptionKeyStationMaster
-  - CyberPen
   - BriefcaseThiefBribingBundleFilled
   - VoiceMaskImplanter
   #- todo Chameleon Stamp

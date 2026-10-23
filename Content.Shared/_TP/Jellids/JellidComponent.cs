@@ -1,0 +1,54 @@
+using Content.Shared.Alert;
+using Content.Shared.DoAfter;
+using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
+
+namespace Content.Shared._TP.Jellids;
+
+[RegisterComponent]
+public sealed partial class JellidComponent : Component
+{
+    /// <summary>
+    ///     How much percentage to drain from a held battery when used.
+    ///     This is calculated against the battery's max charge.
+    /// </summary>
+    [DataField]
+    public float DrainPercent = 0.05F;
+
+    /// <summary>
+    ///     The normal Jellid charge alert.
+    /// </summary>
+    [DataField]
+    public ProtoId<AlertPrototype> BatteryAlert = "JellidBattery";
+
+    /// <summary>
+    ///     The alert to play when the Jellid's internal charge is low empty.
+    /// </summary>
+    [DataField]
+    public ProtoId<AlertPrototype> NoBatteryAlert = "JellidBatteryNone";
+
+    public SoundPathSpecifier BatteryUseSound = new("/Audio/_TP/Items/jellid_battery_use.ogg");
+
+    /// <summary>
+    ///     How much charge a jellid will get when zapped.
+    ///     Including defibs, cables, .etc.
+    /// </summary>
+    [DataField]
+    public float ZapCharge = 200f;
+
+    /// <summary>
+    ///     How much power is passively drained from HELD batteries.
+    /// </summary>
+    [DataField]
+    public float HeldPassiveDrain = 3f;
+
+    /// <summary>
+    ///     How much heat is transferred to thermal items, such as beakers.
+    /// </summary>
+    [DataField]
+    public float HeatTransfer = 30f;
+}
+
+[Serializable, NetSerializable]
+public sealed partial class JellidBatteryDoAfterEvent : SimpleDoAfterEvent;

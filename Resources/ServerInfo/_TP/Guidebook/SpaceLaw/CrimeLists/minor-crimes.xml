@@ -1,0 +1,172 @@
+<Document>
+ # Minor Crimes
+  - Warnings should be issued for a first offense.
+  - If multiple minor crimes have been committed or it is a repeat offense, 5 minutes per minor crime is the maximum.
+  <Table Columns="4">
+    <ColorBox>
+      <Box>
+        Offense
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Description
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Notes
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Code
+      </Box>
+    </ColorBox>
+    <ColorBox>
+        <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Disorderly Conduct in Confinement
+        </Box>
+    </ColorBox>
+    <ColorBox>
+        <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To cause significant disruption in the brig while under arrest
+        </Box>
+    </ColorBox>
+    <ColorBox>
+        <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        </Box>
+    </ColorBox>
+    <ColorBox>
+        <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        1-00
+        </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession of Minor Contra
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To make, hold, or use minor contraband without authorization.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Any contraband which is restricted to a department other than command or security is minor contraband unless otherwise specified. The Captain or Head of Security may authorize individual use of minor contraband, and other department heads may authorize individual use of minor contraband restricted to their assigned department.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        1-01
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession of Class 1 Chems
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To hold or use Class 1 chems without authorization.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        This includes job specific reagents like Unstable Mutagen or weak hallucinogens like Space Mirage. These may be authorized by job necessity (botany needs mutagen) or the CMO.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        1-02
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Petty Theft
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To take non-vital or inexpensive property of another individual, organization, or common property, without
+        consent.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        The difference between petty theft and grand theft is based on how crucial the stolen item is, things like
+        instruments, clothing and tools fall under petty theft. In most cases all you need to do is detain the thief,
+        return the stolen item and let them go with a warning.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        1-04
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Vandalism
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To intentionally deface or superficially damage public or private property.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Painting graffiti, smashing bar glasses, and cracking internal windows is vandalism, breaking a window into
+        space or secure areas is not.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        1-05
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Trespass
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To enter a non-secured area without permission.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        It's best to just remove them from the area unless this is a repeated crime.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        1-06
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Disturbance
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To cause a public disturbance.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Sometimes referred to as hooliganism. The catch-all for obnoxious crewmates. Covers things such as public
+        nudity, needless insults, obstructing authorities, and inciting crime or violence.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        1-09
+      </Box>
+    </ColorBox>
+  </Table>
+
+</Document>

@@ -12,3 +12,4 @@ ui-escape-bug-report = Report Bugs
 ui-escape-remarks = Admin Remarks
 
 ui-escape-remarks-button-disabled = This functionality has been disabled by the server.
+ui-escape-connect-discord = Link Discord

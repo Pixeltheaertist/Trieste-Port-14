@@ -1,0 +1,98 @@
+- type: reagent
+  id: Vounarin
+  name: reagent-name-vounarin
+  group: Medicine
+  desc: reagent-desc-vounarin
+  physicalDesc: reagent-physical-desc-milky
+  flavor: oily
+  color: "#ccccff"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Vounarin
+          min: 10
+        damage:
+          Brute: -0.5
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: -2
+            Cold: -2
+
+- type: reagent
+  id: VounarinPlus
+  name: reagent-name-vounarin-plus
+  group: Medicine
+  desc: reagent-desc-vounarin-plus
+  physicalDesc: reagent-physical-desc-viscous
+  flavor: medicine
+  color: "#9898e6"
+  metabolisms:
+    Bloodstream:
+      metabolismRate: 0.2
+      effects:
+      - !type:EvenHealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: VounarinPlus
+          min: 10
+        damage:
+          Brute: -0.5
+          Burn: -1.5
+
+- type: reagent
+  id: Teratin
+  name: reagent-name-teratin
+  group: Medicine
+  desc: reagent-desc-teratin
+  physicalDesc: reagent-physical-desc-fibrous
+  flavor: bitter
+  color: "#4d0099"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Teratin
+          min: 15
+        damage:
+          types:
+            Poison: 3
+      - !type:HealthChange
+        damage:
+          types:
+            Bloodloss: -6
+      - !type:EvenHealthChange
+        damage:
+          Brute: -0.5
+      - !type:ModifyBleed
+        amount: -0.25
+
+- type: reagent
+  id: Hiscylin
+  name: reagent-name-hiscylin
+  group: Medicine
+  desc: reagent-desc-hiscylin
+  physicalDesc: reagent-physical-desc-milky
+  flavor: bitter
+  contrabandSeverity: C1M
+  color: "#990073"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: 1
+            Piercing: 2
+      - !type:GenericStatusEffect
+        key: Jitter
+        time: 2.0
+        conditions:
+        - !type:ReagentCondition
+          reagent: Hiscylin
+          min: 6

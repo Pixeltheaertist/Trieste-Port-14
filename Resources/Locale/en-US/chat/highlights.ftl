@@ -1,11 +1,11 @@
 # Command
-highlights-captain = Captain, "Cap", "Bridge", "Command"
-highlights-headofpersonnel = Head Of Personnel, "HoP", Service, "Serv", "Bridge", "Command"
-highlights-chiefengineer = Chief Engineer, "CE", Engineering, "Engi", "Bridge", "Command"
-highlights-chiefmedicalofficer = Chief Medical Officer, "CMO", Medbay, Medical, "Med", "Bridge", "Command"
-highlights-headofsecurity = Head of Security, "HoS", Armory, Security, "Sec", "Bridge", "Command"
-highlights-quartermaster = Quartermaster, "QM", Cargo, Supply, "Bridge", "Command"
-highlights-researchdirector = Research Director, "RD", Science, "Sci", "Bridge", "Command"
+highlights-captain = Overseer, Bridge, Command
+highlights-head-of-personnel = Head Of Personnel, "HoP", Service, Bridge, Command
+highlights-chief-engineer = Chief Engineer, "CE", Engineering, Engineer, "Engi", Bridge, Command
+highlights-chief-medical-officer = Chief Medical Officer, "CMO", MedBay, "Med", Bridge, Command
+highlights-head-of-security = Marshal, Security, "Sec", Bridge, Command
+highlights-quartermaster = Harbormaster, "HM", Cargo, Bridge, Command
+highlights-research-director = Research Director, "RD", Science, "Sci", Bridge, Command
 
 # Security
 highlights-detective = Detective, "Det", Armory, Security, "Sec"
@@ -14,8 +14,8 @@ highlights-securityofficer = Security Officer, Secoff, Officer, Armory, Security
 highlights-warden = Warden, "Ward", Brig, Genpop, Jail, "Prison", Armory, Security, "Sec"
 
 # Cargo
-highlights-cargotechnician = Cargo Technician, Cargo Tech, "Cargo", Supply
-highlights-salvagespecialist = Salvage Specialist, Salvager, Salvage, "Salv", "Cargo", Supply
+highlights-cargo-technician = Cargo Technician, Cargo Tech, "Cargo"
+highlights-salvage-specialist = Salvage Specialist, Salvager, Expeditionary, "Exped", Miner
 
 # Engineering
 highlights-atmospherictechnician = Atmospheric Technician, Atmos Tech, Atmospheric, Engineering, "Atmos", "Engi"

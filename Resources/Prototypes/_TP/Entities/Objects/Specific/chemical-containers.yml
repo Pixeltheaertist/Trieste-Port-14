@@ -1,0 +1,13 @@
+- type: entity
+  parent: Jug
+  id: TP14JugSeaWater
+  suffix: Trieste, Sea Water
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Label
+    localizedLabel: reagent-name-seawater
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: SeaWater
+        Quantity: 240

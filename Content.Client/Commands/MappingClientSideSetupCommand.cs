@@ -23,7 +23,9 @@ internal sealed partial class MappingClientSideSetupCommand : LocalizedEntityCom
         _markerSystem.MarkersVisible = true;
         _lightManager.Enabled = false;
         _subfloorSystem.ShowAll = true;
-        _actionSystem.LoadActionAssignments("/mapping_actions.yml", false);
+
+        // TRIESTE: Removed.
+        //_actionSystem.LoadActionAssignments("/mapping_actions.yml", false);
     }
 }
 

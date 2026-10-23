@@ -90,15 +90,12 @@
     slots:
       cell_slot:
         name: Magazine
-        startingItem: PowerCellSmall
+        startingItem: TP14BaseMagCell #TP
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         whitelist:
           tags:
-            - PowerCell
-            - PowerCellSmall
-  - type: PowerCellSlot
-    cellSlotId: cell_slot
+            - MagCell
   - type: Appearance
   - type: StaticPrice
     price: 500
@@ -995,6 +992,48 @@
   - type: BatterySelfRecharger
     autoRechargeRate: 48
     autoRechargePauseTime: 10
+
+- type: entity
+  name: old repeater
+  parent: [BaseWeaponBattery, BaseGunWieldable]
+  id: TP14WeaponRifleEnergyRepeater
+  description: An ancient energy repeater used by the old space cowboys. Severely underpowered by modern standards. Uses a hand crank to recharge its power cell.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/old_repeater.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Battery/old_repeater.rsi
+  - type: Item
+    sprite: Objects/Weapons/Guns/Battery/inhands_repeater.rsi
+    size: Large
+    shape:
+    - 0,0,3,1
+    heldPrefix: energy
+  - type: BatteryAmmoProvider
+    proto: BulletLaser
+    fireCost: 100
+  - type: HandCrankRecharger
+    amountRechargedPerCrank: 10
+    timeToCrank: 1
+  - type: Battery
+    maxCharge: 500
+    startingCharge: 500
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: Contraband
+    severity: Major
+  - type: Gun
+    fireRate: 0.8
+    projectileSpeed: 30
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
 
 - type: entity
   name: temperature gun

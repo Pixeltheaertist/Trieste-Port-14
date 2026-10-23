@@ -6,14 +6,14 @@
   parent: [ClothingOuterHardsuitBase, BaseEngineeringContraband]
   id: ClothingOuterHardsuitAtmos
   name: atmos hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Has thermal shielding.
+  description: A special suit that protects against hazardous, high pressure environments. Has thermal shielding.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/atmospherics.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/atmospherics.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.02
+    highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
   - type: FireProtection
     reduction: 0.8
@@ -43,14 +43,14 @@
   parent: [ClothingOuterHardsuitBase, BaseEngineeringContraband]
   id: ClothingOuterHardsuitEngineering
   name: engineering hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Has radiation shielding.
+  description: A special suit that protects against hazardous, high pressure environments. Has radiation shielding.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/engineering.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/engineering.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.04
+    highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
@@ -78,15 +78,15 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCargoContraband]
   id: ClothingOuterHardsuitSpatio
-  name: spationaut hardsuit
-  description: A lightweight hardsuit designed for industrial EVA in zero gravity.
+  name: aquanaut hardsuit
+  description: A lightweight pressure suit designed for industrial work in extreme pressure and cold.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/spatio.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/spatio.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.7
+    highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
   - type: Armor
     modifiers:
@@ -113,14 +113,14 @@
   parent: [ClothingOuterHardsuitBase, BaseCargoContraband]
   id: ClothingOuterHardsuitSalvage
   name: mining hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters.
+  description: A special suit that protects against hazardous, extreme pressure environments. Has reinforced plating for wildlife encounters.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/salvage.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/salvage.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.5
+    highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.7
@@ -156,7 +156,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/goliath.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.5
+    highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
@@ -187,15 +187,15 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCargoContraband]
   id: ClothingOuterHardsuitMaxim
-  name: salvager maxim hardsuit
-  description: Fire. Heat. These things forge great weapons, they also forge great salvagers.
+  name: expeditioneer maxim hardsuit
+  description: Fire. Heat. These things forge great weapons, they also forge great expeditioneers.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/maxim.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/maxim.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.02
+    highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
   - type: ClothingSpeedModifier
     walkModifier: 1.0
@@ -218,14 +218,14 @@
   parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]
   id: ClothingOuterHardsuitSecurity
   name: security hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
+  description: A special suit that protects against hazardous, high pressure environments. Has an additional layer of armor.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/security.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/security.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.5
+    highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
@@ -253,14 +253,14 @@
   parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]
   id: ClothingOuterHardsuitBrigmedic
   name: brigmedic hardsuit
-  description: Special hardsuit of the guardian angel of the brig. It is the medical version of the security hardsuit.
+  description: Special pressure suit of the guardian angel of the brig. It is the medical version of the security hardsuit.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/brigmedic.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/brigmedic.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.3
+    highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
   - type: Armor
     modifiers:
@@ -280,14 +280,14 @@
   parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]
   id: ClothingOuterHardsuitWarden
   name: warden's hardsuit
-  description: A specialized riot suit geared to combat low pressure environments.
+  description: A specialized riot suit geared to combat extreme pressure environments.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/security-warden.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/security-warden.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.5
+    highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
@@ -310,15 +310,15 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitCap
-  name: captain's armored spacesuit
-  description: A formal armored spacesuit, made for the station's captain.
+  name: overseer's armored pressure suit
+  description: A formal armored pressure suit, made for when the overseer is somehow in the water.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/capspace.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/capspace.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.02
+    highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.7
@@ -350,14 +350,14 @@
   parent: [ TemperatureProtectionGreat, ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitEngineeringWhite
   name: chief engineer's hardsuit
-  description: A special hardsuit that protects against hazardous, low pressure environments, made for the chief engineer of the station.
+  description: A special hardsuit that protects against hazardous, high pressure environments, made for the chief engineer of the platform.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/engineering-white.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/engineering-white.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.02
+    highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
   - type: FireProtection
     reduction: 0.8
@@ -391,14 +391,14 @@
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitMedical
   name: chief medical officer's hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Built with lightweight materials for easier movement.
+  description: A special suit that protects against hazardous, high pressure environments. Built with lightweight materials for easier movement.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/medical.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/medical.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.3
+    highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
   - type: Armor
     modifiers:
@@ -425,14 +425,14 @@
   parent: [ClothingOuterHardsuitBase, BaseGrandTheftContraband]
   id: ClothingOuterHardsuitRd
   name: experimental research hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
+  description: A special suit that protects against hazardous, extreme pressure environments. Has an additional layer of armor.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/rd.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/rd.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.02
+    highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
   - type: Armor
     modifiers:
@@ -471,15 +471,15 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitSecurityRed
-  name: head of security's hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
+  name: marshal's hardsuit # TP
+  description: A special suit that protects against hazardous, extreme pressure environments. Has an additional layer of armor.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/security-red.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/security-red.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.45
+    highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
@@ -507,7 +507,7 @@
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitLuxury #DO NOT MAP - https://github.com/space-wizards/space-station-14/pull/19738#issuecomment-1703486738
   name: luxury mining hardsuit
-  description: A refurbished mining hardsuit, fashioned after the Quartermaster's colors. Graphene lining provides less protection, but is much easier to move.
+  description: A refurbished mining pressure suit, fashioned after the Harbormaster's colors. Graphene lining provides less protection, but is much easier to move.
   categories: [ DoNotMap ]
   components:
   - type: Sprite
@@ -515,7 +515,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/luxury.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.5
+    highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.9
@@ -541,7 +541,7 @@
   parent: [ ClothingOuterHardsuitBase, BaseSyndicateContraband ]
   id: ClothingOuterHardsuitSyndie
   name: blood-red hardsuit
-  description: A heavily armored hardsuit designed for work in special operations. Property of Gorlex Marauders.
+  description: A heavily armored pressure suit designed for work in special operations. Property of Gorlex Marauders.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
@@ -552,7 +552,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.05
+    highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
@@ -587,7 +587,7 @@
   parent: [ClothingOuterHardsuitSyndie, BaseSyndicateContraband]
   id: ClothingOuterHardsuitSyndieMedic
   name: blood-red medic hardsuit
-  description: A heavily armored and agile advanced hardsuit specifically designed for field medic operations.
+  description: A heavily armored and agile advanced pressure suit specifically designed for field medic operations.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndiemedic.rsi
@@ -605,14 +605,14 @@
   parent: [ TemperatureProtectionGreat, ClothingOuterHardsuitBase, BaseSyndicateContraband ]
   id: ClothingOuterHardsuitSyndieElite
   name: syndicate elite hardsuit
-  description: An elite version of the blood-red hardsuit, with improved radiation resistance and fireproofing. Property of Gorlex Marauders.
+  description: An elite version of the blood-red pressure suit, with improved mobility and fireproofing. Property of Gorlex Marauders.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.02
+    highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.3
@@ -649,14 +649,14 @@
   parent: [ClothingOuterHardsuitBase, BaseSyndicateContraband]
   id: ClothingOuterHardsuitSyndieCommander
   name: syndicate commander hardsuit
-  description: A bulked up version of the blood-red hardsuit, purpose-built for the commander of a syndicate operative squad. Has significantly improved armor for those deadly front-lines firefights.
+  description: A bulked up version of the blood-red pressure suit, purpose-built for the commander of a syndicate operative squad. Has significantly improved armor for those deadly front-lines firefights.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.05
+    highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
@@ -688,14 +688,14 @@
   parent: [ClothingOuterHardsuitBase, BaseSyndicateContraband]
   id: ClothingOuterHardsuitJuggernaut
   name: cybersun juggernaut suit
-  description: A suit made by the cutting edge R&D department at cybersun to be hyper resilient.
+  description: A suit made by the cutting edge R&D department at cybersun to be hyper resilient. Tough as a submarine.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/cybersun.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/cybersun.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.2
+    highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
   # - type: StaminaResistance # Should not have stamina resistance, this is purely so people know it was not forgotten.
   - type: Armor
@@ -731,7 +731,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/wizard.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.05
+    highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
@@ -767,7 +767,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/lingspacesuit.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.225
+    highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.2
@@ -790,9 +790,9 @@
 - type: entity
   parent: [ ClothingOuterHardsuitBase, BaseMajorContraband ]
   id:  ClothingOuterHardsuitPirateEVA
-  name: deep space EVA suit
+  name: deep-sea pressure suit
   suffix: Pirate
-  description: A heavy space suit that provides some basic protection from the cold harsh realities of deep space.
+  description: A heavy pressure suit that provides some basic protection from the cold extreme realities of the abyss.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/pirateeva.rsi
@@ -826,7 +826,7 @@
   parent: [ ClothingOuterHardsuitBase, BaseMajorContraband ]
   id: ClothingOuterHardsuitPirateCap
   name: pirate captain's hardsuit
-  description: An ancient armored hardsuit, perfect for defending against space scurvy and toolbox-wielding scallywags.
+  description: An ancient armored pressure suit, perfect for defending against space scurvy and toolbox-wielding scallywags.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/piratecaptain.rsi
@@ -863,8 +863,8 @@
 - type: entity
   parent: [ BaseTaskForceContraband, ClothingOuterHardsuitSyndieCommander ]
   id: ClothingOuterHardsuitERTLeader
-  name: ERT leader's hardsuit
-  description: A protective hardsuit worn by the leader of an emergency response team.
+  name: storm-blue pressure suit
+  description: A protective pressure suit tipically worn by Nanotrasen agents.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi
@@ -926,7 +926,7 @@
 
 #ERT Medic Hardsuit
 - type: entity
-  parent: [ BaseTaskForceContraband, ClothingOuterHardsuitSyndieMedic ]
+  parent: [ BaseTaskForceContraband, ClothingOuterHardsuitSyndieMedic, BaseNanotrasenContraband ] # TRIESTE
   id: ClothingOuterHardsuitERTMedical
   name: ERT medic's hardsuit
   description: A protective hardsuit worn by the medics of an emergency response team.
@@ -993,7 +993,7 @@
 
 #Deathsquad
 - type: entity
-  parent: [ BaseDeathSquadContraband, ClothingOuterHardsuitBase ]
+  parent: [ BaseDeathSquadContraband, ClothingOuterHardsuitBase, BaseNanotrasenContraband ] # TRIESTE
   id: ClothingOuterHardsuitDeathsquad
   name: death squad hardsuit
   description: An advanced hardsuit favored by commandos for use in special operations.
@@ -1110,7 +1110,7 @@
   parent: ClothingOuterHardsuitClown
   id: ClothingOuterHardsuitMime
   name: mime hardsuit
-  description: A custom-made mime hardsuit.
+  description: A custom-made mime pressure suit.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/mime.rsi
@@ -1127,7 +1127,7 @@
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitSanta
   name: Santa's hardsuit
-  description: A festive, cheerful hardsuit that protects the jolly gift-giver while on sleighrides in space. Offers some resistance against asteroid strikes.
+  description: A festive, cheerful pressure suit that protects the jolly gift-giver while on sleighrides in the sea. Offers some resistance against drifter attacks.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/santahardsuit.rsi

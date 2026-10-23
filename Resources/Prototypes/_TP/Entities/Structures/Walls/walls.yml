@@ -1,0 +1,164 @@
+#Sweetwater walls
+- type: entity
+  parent: WallSolid
+  suffix: Trieste, Sweetwater
+  id: TP14WallPressurized
+  name: pressurized wall
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/pressurizedwall.rsi
+  - type: Icon
+    sprite: _TP/Structures/Walls/pressurizedwall.rsi
+  - type: IconSmooth
+    key: walls
+    base: solid
+  - type: Construction
+    graph: Girder
+    node: pressurizedwall
+
+
+- type: entity
+  parent: WallReinforced
+  suffix: Trieste, Sweetwater
+  id: TP14WallReinforcedPressurized
+  name: reinforced pressurized wall
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/pressurizedwall.rsi
+  - type: Icon
+    sprite: _TP/Structures/Walls/pressurizedwall.rsi
+    state: rgeneric
+  - type: IconSmooth
+    key: walls
+    base: reinf_over
+  - type: Construction
+    graph: Girder
+    node: reinforcedpressurizedwall
+
+
+- type: entity
+  parent: WallSolidRust
+  suffix: Rusted, Trieste, Sweetwater
+  id: TP14WallRustyPressurized
+  name: pressurized wall
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/rustypressurizedwall.rsi
+  - type: Icon
+    sprite: _TP/Structures/Walls/rustypressurizedwall.rsi
+  - type: IconSmooth
+    key: walls
+    base: solid
+  - type: Construction
+    graph: Girder
+    node: rustypressurizedwall
+
+
+- type: entity
+  parent: WallReinforcedRust
+  suffix: Rusted, Trieste, Sweetwater
+  id: TP14WallRustyReinforcedPressurized
+  name: reinforced pressurized wall
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/rustypressurizedwall.rsi
+  - type: Icon
+    sprite: _TP/Structures/Walls/rustypressurizedwall.rsi
+    state: rgeneric
+  - type: IconSmooth
+    key: walls
+    base: reinf_over
+  - type: Construction
+    graph: Girder
+    node: reinforcedrustypressurizedwall
+
+
+#Diagonal sweetwater walls
+- type: entity
+  parent: WallSolidDiagonal
+  suffix: Trieste, Sweetwater
+  id: TP14WallDiagonalPressurized
+  name: pressurized wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _TP/Structures/Walls/pressurized_diagonal.rsi
+    state: state0
+  - type: Icon
+    sprite: _TP/Structures/Walls/pressurized_diagonal.rsi
+    state: state0
+
+
+- type: entity
+  parent: WallReinforcedDiagonal
+  suffix: Trieste, Sweetwater
+  id: TP14WallDiagonalReinforcedPressurized
+  name: reinforced pressurized wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _TP/Structures/Walls/reinforcedpressurized_diagonal.rsi
+    state: state0
+  - type: Icon
+    sprite: _TP/Structures/Walls/reinforcedpressurized_diagonal.rsi
+    state: state0
+
+
+- type: entity
+  parent: WallSolidDiagonal
+  suffix: Rusted, Trieste, Sweetwater
+  id: TP14WallDiagonalRustyPressurized
+  name: pressurized wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _TP/Structures/Walls/rustypressurized_diagonal.rsi
+    state: state0
+  - type: Icon
+    sprite: _TP/Structures/Walls/rustypressurized_diagonal.rsi
+    state: state0
+
+- type: entity
+  parent: WallReinforcedDiagonal
+  suffix: Rusted, Trieste, Sweetwater
+  id: TP14WallDiagonalRustyReinforcedPressurizedWall
+  name: reinforced pressurized wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _TP/Structures/Walls/rustyreinforcedpressurized_diagonal.rsi
+    state: state0
+  - type: Icon
+    sprite: _TP/Structures/Walls/rustyreinforcedpressurized_diagonal.rsi
+    state: state0
+
+
+#Border indestructible wall
+- type: entity
+  id: TP14WallRockIndestructible
+  parent: BaseWall
+  suffix: Trieste, Indestructible
+  name: indestructible rock wall
+  description: Born from extreme pressure and never-ending pyroclastic layers, this wall might as well be indestructible.
+  components:
+  - type: Transform
+    noRot: true
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+  - type: SmoothEdge
+  - type: Icon
+    sprite: Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite
+    sprite: Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - map: [ "enum.EdgeLayer.South" ]
+      state: rock_asteroid_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: rock_asteroid_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: rock_asteroid_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: rock_asteroid_west

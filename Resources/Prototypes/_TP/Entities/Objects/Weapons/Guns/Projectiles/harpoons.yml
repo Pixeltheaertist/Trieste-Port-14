@@ -1,0 +1,159 @@
+- type: entity
+  parent: [ BaseItem, SolutionDart, BaseMinorContraband ]
+  id: BaseHarpoon
+  abstract: true
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _TP/Objects/Weapons/Guns/Projectiles/harpoons.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.2
+        density: 5
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+    embedOnThrow: false
+  - type: ThrowingAngle
+    angle: 0
+  - type: Ammo
+    muzzleFlash: null
+  - type: Tag
+    tags:
+    - Harpoon
+  - type: Projectile
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+    damage:
+      types:
+        Piercing: 25
+  - type: RefillableSolution
+    solution: melee
+  - type: InjectableSolution
+    solution: melee
+  - type: SolutionInjectOnEmbed
+    transferAmount: 2
+    solution: melee
+  - type: SolutionTransfer
+    maxTransferAmount: 2
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    fillBaseName: solution
+
+- type: entity
+  parent: BaseHarpoon
+  id: TP14Harpoon
+  suffix: Trieste, Weapon, Projectile, Melee
+  name: harpoon
+  description: Pointy end into target!
+  components:
+  - type: Construction
+    graph: TP14ConstructionGraphHarpoon
+    node: harpoon
+  - type: Sprite
+    layers:
+    - state: tail
+      color: darkgray
+    - state: rod
+      color: darkgray
+    - state: tip
+      color: darkgray
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 35
+  - type: MeleeWeapon
+    wideAnimationRotation: 0
+    damage:
+      types:
+        Piercing: 7
+    angle: 0
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 9
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Piercing: 2
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 5
+
+- type: entity
+  parent: BaseHarpoon
+  id: TP14HarpoonBomb
+  suffix: Trieste, Weapon, Explosive, Projectile, Melee
+  name: explosive harpoon
+  description: This'll really blow their minds...
+  components:
+  - type: Construction
+    graph: TP14ConstructionGraphHarpoon
+    node: bombHarpoon
+  - type: Sprite
+    sprite: _TP/Objects/Weapons/Guns/Projectiles/explosive_harpoons.rsi
+    state: explosive
+  - type: CartridgeAmmo
+    proto: HarpoonBombBullet
+    deleteOnSpawn: true
+  - type: Projectile
+    deleteOnCollide: true
+
+- type: entity
+  parent: BaseHarpoon
+  id: TP14PiezoHarpoon
+  suffix: Trieste, Weapon, Projectile, Melee
+  name: static harpoon
+  description: A harpoon with a piezo crystal fastened to the front. Shocking!
+  components:
+  - type: Construction
+    graph: TP14ConstructionGraphHarpoon
+    node: piezoHarpoon
+  - type: Sprite
+    layers:
+    - state: tail
+      color: darkgray
+    - state: rod
+      color: darkgray
+    - state: tip
+      color: cyan
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 10
+        Shock: 10
+  - type: MeleeWeapon
+    wideAnimationRotation: 0
+    damage:
+      types:
+        Piercing: 4
+    angle: 0
+  - type: Electrified # TODO: Look into alternatives, as this is a bit op.
+    shockTime: 1.5
+    shockDamage: 2
+    requirePower: false

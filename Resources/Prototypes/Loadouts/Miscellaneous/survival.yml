@@ -27,6 +27,13 @@
     species:
     - Vox
 
+- type: loadoutEffectGroup
+  id: EffectSpeciesMask
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Vox
+
 # Basic
 - type: loadout
   id: EmergencyOxygen
@@ -233,7 +240,9 @@
   id: LoadoutTankHarness
   effects:
   - !type:GroupLoadoutEffect
-    proto: EffectSpeciesVox
+    proto: EffectSpeciesMask
+  - !type:GroupLoadoutEffect # TRIESTE
+    proto: TP14LEGWaterBreather
   equipment:
     outerClothing: ClothingOuterVestTank
 
@@ -242,9 +251,18 @@
   id: LoadoutSpeciesBreathTool
   effects:
   - !type:GroupLoadoutEffect
-    proto: EffectSpeciesVox
+    proto: EffectSpeciesMask
   equipment:
-    mask: ClothingMaskBreath
+    mask: TP14ClothingMaskAir
+
+# TRIESTE: Added. Also what???
+- type: loadout
+  id: LoadoutSpeciesGasMask
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: TP14LEGWaterBreather
+  equipment:
+    mask: ClothingMaskGas
 
 - type: loadout
   id: LoadoutSpeciesBreathToolMedical

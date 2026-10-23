@@ -565,7 +565,7 @@
   - type: UserInterface
     interfaces:
       enum.IdCardConsoleUiKey.Key:
-        type: IdCardConsoleBoundUserInterface
+        type: NewIdCardConsoleBui # TRIESTE: 'IdCardConsoleBoundUserInterface'
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
   - type: CrewManifestViewer

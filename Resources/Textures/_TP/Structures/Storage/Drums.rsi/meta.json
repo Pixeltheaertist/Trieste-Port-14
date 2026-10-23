@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Edited by Lev on discord, based upon https://github.com/T4D2",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "crude"
+        }
+    ]
+}

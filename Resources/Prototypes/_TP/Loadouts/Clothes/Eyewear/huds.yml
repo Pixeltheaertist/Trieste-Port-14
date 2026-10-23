@@ -1,0 +1,9 @@
+- type: loadout
+  id: TP14LoadoutEyewearChemistryGoggles
+  equipment:
+    eyes: ClothingEyesGlassesChemical
+
+- type: loadout
+  id: TP14LoadoutEyewearChemistryEyepatch
+  equipment:
+    eyes: TP14ClothingEyepatchHudChemist

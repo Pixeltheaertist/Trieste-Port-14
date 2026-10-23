@@ -77,6 +77,8 @@ namespace Content.Server.Administration
         [Dependency] private IServerDbManager _db = default!;
         [Dependency] private ILogManager _logManager = default!;
 
+        [Dependency] private IConnectionManager _connectionManager = default!; // Starlight
+
         private readonly HttpClient _httpClient = new();
         private ISawmill _sawmill = default!;
 
@@ -148,10 +150,11 @@ namespace Content.Server.Administration
             return new LocatedPlayerData(new NetUserId(responseData.UserId), null, null, responseData.UserName, null, []);
         }
 
-        private static LocatedPlayerData ReturnForSession(ICommonSession session)
+        private LocatedPlayerData ReturnForSession(ICommonSession session) // Starlight: non-static, uses resolved IP
         {
             var userId = session.UserId;
-            var address = session.Channel.RemoteEndPoint.Address;
+            var address = _connectionManager.GetResolvedAddress(userId)
+                          ?? session.Channel.RemoteEndPoint.Address; // Starlight: prefer resolved IP
             var hwId = session.Channel.UserData.GetModernHwid();
             return new LocatedPlayerData(
                 userId,

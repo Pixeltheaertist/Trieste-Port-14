@@ -281,7 +281,7 @@
   id: FillResearchDirectorHardsuit
   table: !type:AllSelector
     children:
-    - id: ClothingMaskBreath
+    - id: TP14ClothingMaskAir # TRIESTE: 'ClothingMaskBreath'
     - id: ClothingOuterHardsuitRd
     - id: OxygenTankFilled
 

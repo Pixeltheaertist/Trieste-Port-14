@@ -23,6 +23,8 @@
   - ClothingHeadHatWelding
   - ClothingHeadHatCone
   - Binoculars
+  - EmergencyBeacon         # TRIESTE
+  - EmergencyBeaconLocator  # TRIESTE
 
 - type: latheRecipePack
   id: AtmosStatic

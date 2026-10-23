@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC0-1.0",
+    "copyright": "Advanced SMES by Cookie (FatherCheese) for Trieste Port 14 using the base from Space Station 14",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "advanced-smes"
+        }
+    ]
+}

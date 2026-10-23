@@ -1,0 +1,9 @@
+- type: reagent
+  id: TP14CondimentCustard
+  name: reagent-name-custard
+  desc: reagent-desc-custard
+  physicalDesc: reagent-physical-desc-thick
+  flavor: TP14Custard
+  group: Foods
+  color: "#F9E7BF"
+  recognizable: true

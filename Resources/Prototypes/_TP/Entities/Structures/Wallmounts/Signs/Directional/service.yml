@@ -1,0 +1,257 @@
+# Aquaponics
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalAquaponics
+  suffix: Trieste, Service, Wall-Sign
+  name: aquaponics wall sign
+  description: A direction sign, pointing out which way the Aquaponics department is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#90EE90" # Light-green
+    - state: text_aqua
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalAquaponics
+      Secondary: TP14SignDirectionalAquaponicsAlt1
+      Tertiary: TP14SignDirectionalAquaponicsAlt2
+
+- type: entity
+  parent: TP14SignDirectionalAquaponics
+  id: TP14SignDirectionalAquaponicsAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalAquaponics
+  id: TP14SignDirectionalAquaponicsAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# Bar
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalBar
+  suffix: Trieste, Service, Wall-Sign
+  name: bar wall sign
+  description: A direction sign, pointing out which way the Bar is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#90EE90" # Light-green
+    - state: text_bar
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalBar
+      Secondary: TP14SignDirectionalBarAlt1
+      Tertiary: TP14SignDirectionalBarAlt2
+
+- type: entity
+  parent: TP14SignDirectionalBar
+  id: TP14SignDirectionalBarAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalBar
+  id: TP14SignDirectionalBarAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# Chapel
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalChapel
+  suffix: Trieste, Service, Wall-Sign
+  name: chapel wall sign
+  description: A direction sign, pointing out which way the chapel is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#90EE90" # Light-green
+    - state: text_chapel
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalChapel
+      Secondary: TP14SignDirectionalChapelAlt1
+      Tertiary: TP14SignDirectionalChapelAlt2
+
+- type: entity
+  parent: TP14SignDirectionalChapel
+  id: TP14SignDirectionalChapelAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalChapel
+  id: TP14SignDirectionalChapelAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# Kitchen
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalFood
+  suffix: Trieste, Service, Wall-Sign
+  name: food wall sign
+  description: A direction sign, pointing out which way the Cafeteria is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#90EE90" # Light-green
+    - state: text_food
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalFood
+      Secondary: TP14SignDirectionalFoodAlt1
+      Tertiary: TP14SignDirectionalFoodAlt2
+
+- type: entity
+  parent: TP14SignDirectionalFood
+  id: TP14SignDirectionalFoodAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalFood
+  id: TP14SignDirectionalFoodAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# Hydroponics
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalHydroponics
+  suffix: Trieste, Service, Wall-Sign
+  name: hydroponics wall sign
+  description: A direction sign, pointing out which way the Hydroponics department is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#90EE90" # Light-green
+    - state: text_hydro
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalHydroponics
+      Secondary: TP14SignDirectionalHydroponicsAlt1
+      Tertiary: TP14SignDirectionalHydroponicsAlt2
+
+- type: entity
+  parent: TP14SignDirectionalHydroponics
+  id: TP14SignDirectionalHydroponicsAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalHydroponics
+  id: TP14SignDirectionalHydroponicsAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# Janitorial
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalJanitor
+  suffix: Trieste, Service, Wall-Sign
+  name: janitor wall sign
+  description: A direction sign, pointing out which way the Janitor room is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#90EE90" # Light-green
+    - state: text_jani
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalJanitor
+      Secondary: TP14SignDirectionalJanitorAlt1
+      Tertiary: TP14SignDirectionalJanitorAlt2
+
+- type: entity
+  parent: TP14SignDirectionalJanitor
+  id: TP14SignDirectionalJanitorAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalJanitor
+  id: TP14SignDirectionalJanitorAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25
+
+
+# Library
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalLibrary
+  suffix: Trieste, Service, Wall-Sign
+  name: library wall sign
+  description: A direction sign, pointing out which way the Library is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#90EE90" # Light-green
+    - state: text_library
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalLibrary
+      Secondary: TP14SignDirectionalLibraryAlt1
+      Tertiary: TP14SignDirectionalLibraryAlt2
+
+- type: entity
+  parent: TP14SignDirectionalLibrary
+  id: TP14SignDirectionalLibraryAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalLibrary
+  id: TP14SignDirectionalLibraryAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25

@@ -327,3 +327,12 @@
 - type: tileAlias
   id: FloorAsphalt
   target: FloorConcrete
+
+
+- type: tileAlias
+  id: FloorInvisibleReal
+  target: FloorGlass
+
+- type: tileAlias
+  id: FloorInvisible
+  target: FloorGlass

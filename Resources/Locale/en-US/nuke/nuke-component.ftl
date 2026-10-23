@@ -1,10 +1,9 @@
 nuke-component-cant-anchor-floor = The anchoring bolts fail to lock into the floor!
-nuke-component-cant-anchor-toggle = The nuclear authentication disk is required to toggle the floor bolts!
-nuke-component-announcement-sender = Nuclear Fission Explosive
-nuke-component-announcement-armed = Attention! The station's self-destruct mechanism has been engaged {$location}. {$time} seconds until detonation. If this was made in error, the mechanism may still be disarmed.
-nuke-component-announcement-unarmed = The station's self-destruct was deactivated! Have a nice day!
+nuke-component-announcement-sender = Artifact Observation Center
+nuke-component-announcement-armed = WARNING: The Artifact's self-containment field has grown dangerously unstable. Massive energy readings detected. {$time} seconds until class-IV resonance cascade occurs. Re-contain immediately.
+nuke-component-announcement-unarmed = Artifact containment fields have returned to full stability. No further danger detected.
 nuke-component-announcement-send-codes = Attention! Self-destruction codes have been sent to designated fax machines.
-nuke-component-doafter-warning = You start fiddling with wires and knobs in order to disarm the nuke.. This may take a while.
+nuke-component-doafter-warning = You start fiddling with the shaking machinery... this could take a bit..
 
 nuke-disk-component-microwave = The disk sparks and fizzles a bit, but seems mostly unharmed?
 
@@ -44,6 +43,9 @@ nuke-codes-fax-paper-name = nuclear authentication codes
 
 # Nuke disk slot
 nuke-slot-component-slot-name-disk = Disk
+
+# Delaminator slot
+nuke-slot-component-slot-name-delaminator = Delaminator
 
 ## Examine
 nuke-examine-armed = Hey uh, why's that [color=red]red light[/color] blinking?

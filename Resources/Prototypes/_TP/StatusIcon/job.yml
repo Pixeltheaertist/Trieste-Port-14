@@ -1,0 +1,55 @@
+- type: jobIcon
+  parent: JobIcon
+  id: TP14JobIconChiefEngineer
+  icon:
+    sprite: &icon-rsi /Textures/_TP/Interface/Misc/job_icons.rsi
+    state: chief-engineer
+  jobName: job-name-ce
+
+- type: jobIcon
+  parent: JobIcon
+  id: TP14JobIconChiefMedicalOfficer
+  icon:
+    sprite: *icon-rsi
+    state: chief-medical-officer
+  jobName: job-name-cmo
+
+- type: jobIcon
+  parent: JobIcon
+  id: TP14JobIconHarbormaster
+  icon:
+    sprite: *icon-rsi
+    state: harbormaster
+  jobName: job-name-qm
+
+- type: jobIcon
+  parent: JobIcon
+  id: TP14JobIconHeadOfPersonnel
+  icon:
+    sprite: *icon-rsi
+    state: head-of-personnel
+  jobName: job-name-hop
+
+- type: jobIcon
+  parent: JobIcon
+  id: TP14JobIconMarshal
+  icon:
+    sprite: *icon-rsi
+    state: marshal
+  jobName: job-name-hos
+
+- type: jobIcon
+  parent: JobIcon
+  id: TP14JobIconOverseer
+  icon:
+    sprite: *icon-rsi
+    state: overseer
+  jobName: job-name-captain
+
+- type: jobIcon
+  parent: JobIcon
+  id: TP14JobIconResearchDirector
+  icon:
+    sprite: *icon-rsi
+    state: research-director
+  jobName: job-name-rd

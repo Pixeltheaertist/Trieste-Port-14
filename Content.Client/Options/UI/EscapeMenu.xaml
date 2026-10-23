@@ -7,6 +7,9 @@
                 Resizable="False">
 
     <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
+        <!-- NullLink Start-->
+        <Button Access="Public" Name="DiscordButton" Text="{Loc 'ui-escape-connect-discord'}"/>
+        <!-- NullLink End-->
         <ui:VoteCallMenuButton />
         <controls:Separator StyleClasses="LowDivider" Margin="0 2.5 0 2.5"/>
         <Button Access="Public" Name="RulesButton" Text="{Loc 'ui-escape-rules'}" StyleClasses="OpenLeft" />

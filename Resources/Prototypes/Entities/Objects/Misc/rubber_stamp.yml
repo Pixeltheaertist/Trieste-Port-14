@@ -48,7 +48,7 @@
         maxDistance: 5
 
 - type: entity
-  name: captain's rubber stamp
+  name: overseer's rubber stamp
   parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampCaptain
   categories: [ DoNotMap ]
@@ -232,7 +232,7 @@
         color: "#004f71"
 
 - type: entity
-  name: head of security's rubber stamp
+  name: marshal's rubber stamp
   parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampHos
   categories: [ DoNotMap ]
@@ -279,7 +279,7 @@
         color: "#777777"
 
 - type: entity
-  name: quartermaster's rubber stamp
+  name: harbormaster's rubber stamp
   parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampQm
   categories: [ DoNotMap ]

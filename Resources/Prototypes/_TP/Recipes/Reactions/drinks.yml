@@ -1,0 +1,9 @@
+- type: reaction
+  id: DeadRum
+  reactants:
+    Rum:
+      amount: 2
+    SeaWater:
+      amount: 1
+  products:
+    DeadRum: 3

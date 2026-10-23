@@ -22,7 +22,7 @@
 - type: guideEntry
   id: NuclearOperatives
   name: guide-entry-nuclear-operatives
-  text: "/ServerInfo/Guidebook/Antagonist/Nuclear Operatives.xml"
+  text: "/ServerInfo/_TP/Guidebook/Antagonist/CascadeOperatives.xml" # TRIESTE: "/ServerInfo/Guidebook/Antagonist/Nuclear Operatives.xml"
 
 - type: guideEntry
   id: Zombies

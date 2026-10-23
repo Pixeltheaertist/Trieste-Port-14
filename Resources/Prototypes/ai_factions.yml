@@ -10,9 +10,12 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - NanoTrasenTraitor # Trieste: Added.
 
 - type: npcFaction
   id: NanoTrasen
+  friendly: # Trieste: Added.
+  - NanoTrasenTraitor
   hostile:
   - SimpleHostile
   - Syndicate
@@ -38,6 +41,7 @@
   id: PetsNT
   friendly:
   - NanoTrasen
+  - NanoTrasenTraitor # Trieste: Added.
   hostile:
   - Mouse
   - SimpleHostile
@@ -58,6 +62,7 @@
   - Dragon
   - Xeno
   - AllHostile
+  - NanoTrasenTraitor # Trieste: Added.
   - Wizard
   - Xenoborg
 
@@ -74,6 +79,7 @@
   - Zombie
   - Dragon
   - AllHostile
+  - NanoTrasenTraitor # Trieste: Added.
   - Wizard
   - Xenoborg
 
@@ -87,6 +93,7 @@
   - Zombie
   - Revolutionary
   - AllHostile
+  - NanoTrasenTraitor # Trieste: Added.
   - Wizard
   - Dragon
   - Xenoborg
@@ -102,6 +109,7 @@
   - PetsNT
   - Revolutionary
   - AllHostile
+  - NanoTrasenTraitor # Trieste: Added.
   - Wizard
   - Dragon
   - Xenoborg
@@ -116,6 +124,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - NanoTrasenTraitor # Trieste: Added.
 
 - type: npcFaction
   id: AllHostile
@@ -131,6 +140,7 @@
   - Xeno
   - Zombie
   - Revolutionary
+  - NanoTrasenTraitor # Trieste: Added.
   - Wizard
   - Xenoborg
 
@@ -150,6 +160,7 @@
   - Revolutionary
   - AllHostile
   - Xenoborg
+  - NanoTrasenTraitor # Trieste: Added.
 
 - type: npcFaction
   id: Xenoborg
@@ -160,6 +171,7 @@
   - Zombie
   - Revolutionary
   - Wizard
+  - NanoTrasenTraitor # Trieste: Added.
 
   - Xeno # rivalry
 

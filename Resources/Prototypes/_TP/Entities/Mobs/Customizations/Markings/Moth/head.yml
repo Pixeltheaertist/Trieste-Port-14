@@ -1,0 +1,16 @@
+- type: marking
+  id: TP14MothHeadLeftSpot
+  bodyPart: Head
+  groupWhitelist: [Moth]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/head.rsi
+    state: moth_head_marking_left_eye_spot
+
+- type: marking
+  id: TP14MothHeadRightSpot
+  bodyPart: Head
+  groupWhitelist: [Moth]
+  sprites:
+  - sprite: _TP/Mobs/Customization/Markings/Moth/head.rsi
+    state: moth_head_marking_right_eye_spot
+

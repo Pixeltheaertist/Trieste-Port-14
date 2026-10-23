@@ -175,9 +175,6 @@ public abstract partial class AntagSelectionSystem
         if (!Whitelist.CheckBoth(uid, def.Blacklist, def.Whitelist))
             return false;
 
-        if (_arrivals.IsOnArrivals((uid.Value, null)))
-            return false;
-
         // No ghosts!!!
         if (HasComp<GhostComponent>(uid))
             return false;

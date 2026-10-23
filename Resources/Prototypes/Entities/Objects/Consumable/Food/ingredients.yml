@@ -612,7 +612,7 @@
   parent: FoodDoughRopeBase
   id: FoodDoughCottonRope
   name: cotton dough rope
-  description: A thin noodle of cotton dough. Can be cooked into a cotton bagel.
+  description: A thin noodle of cotton dough. # TP14 - Included "Can be cooked into a cotton bagel."
   components:
   - type: FlavorProfile
     flavors:

@@ -37,15 +37,27 @@ public sealed partial class ShuttleSystem
     [Dependency] private EntityQuery<MapComponent> _mapQuery = default!;
     [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
 
-    private readonly SoundSpecifier _startupSound = new SoundPathSpecifier("/Audio/Effects/Shuttle/hyperspace_begin.ogg")
+    private readonly SoundSpecifier _startupSound = new SoundPathSpecifier("/Audio/_TP/Effects/Shuttle/hyperspace_begin.ogg")
     {
         Params = AudioParams.Default.AddVolume(-5f),
     };
 
-    private readonly SoundSpecifier _arrivalSound = new SoundPathSpecifier("/Audio/Effects/Shuttle/hyperspace_end.ogg")
+    private readonly SoundSpecifier _arrivalSound = new SoundPathSpecifier("/Audio/_TP/Effects/Shuttle/hyperspace_end.ogg")
     {
         Params = AudioParams.Default.AddVolume(-5f),
     };
+
+    // TRIESTE: Start
+    private readonly SoundSpecifier _bellStartupSound = new SoundPathSpecifier("/Audio/_TP/Effects/Shuttle/hyperspace_begin.ogg")
+    {
+        Params = AudioParams.Default.WithVolume(-10f),
+    };
+
+    private readonly SoundSpecifier _bellArrivalSound = new SoundPathSpecifier("/Audio/_TP/Effects/Shuttle/hyperspace_end.ogg")
+    {
+        Params = AudioParams.Default.WithVolume(-10f),
+    };
+    // TRIESTE: End
 
     public float DefaultStartupTime;
     public float DefaultTravelTime;
@@ -128,6 +140,7 @@ public sealed partial class ShuttleSystem
         Log.Debug($"Setup hyperspace map at {mapUid}");
         DebugTools.Assert(!_mapSystem.IsPaused(mapId));
         var parallax = EnsureComp<ParallaxComponent>(mapUid);
+        ftlMap.Parallax = "Sea"; // TRIESTE: New FTL parallax.
         parallax.Parallax = ftlMap.Parallax;
 
         return mapUid;
@@ -349,9 +362,20 @@ public sealed partial class ShuttleSystem
 
         component = AddComp<FTLComponent>(uid);
         component.State = FTLState.Starting;
-        var audio = _audio.PlayPvs(_startupSound, uid);
-        _audio.SetGridAudio(audio);
-        component.StartupStream = audio?.Entity;
+
+        // TRIESTE: Check for the diving bell.
+        if (HasComp<DivingBellComponent>(uid))
+        {
+            var audio = _audio.PlayPvs(_bellStartupSound, uid);
+            _audio.SetGridAudio(audio);
+            component.StartupStream = audio?.Entity;
+        }
+        else
+        {
+            var audio = _audio.PlayPvs(_startupSound, uid);
+            _audio.SetGridAudio(audio);
+            component.StartupStream = audio?.Entity;
+        }
 
         // Make sure the map is setup before we leave to avoid pop-in (e.g. parallax).
         EnsureFTLMap();
@@ -531,8 +555,16 @@ public sealed partial class ShuttleSystem
         _thruster.DisableLinearThrusters(entity.Comp2);
 
         comp.TravelStream = _audio.Stop(comp.TravelStream);
-        var audio = _audio.PlayPvs(_arrivalSound, uid);
-        _audio.SetGridAudio(audio);
+        if (HasComp<DivingBellComponent>(uid))
+        {
+            var audio = _audio.PlayPvs(_bellArrivalSound, uid);
+            _audio.SetGridAudio(audio);
+        }
+        else
+        {
+            var audio = _audio.PlayPvs(_arrivalSound, uid);
+            _audio.SetGridAudio(audio);
+        }
 
         if (TryComp<FTLDestinationComponent>(uid, out var dest))
         {

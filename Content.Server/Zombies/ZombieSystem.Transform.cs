@@ -12,6 +12,8 @@ using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
 using Content.Server.StationEvents.Components;
 using Content.Shared.Body;
+using Content.Server.Temperature.Components;
+using Content.Shared._TP.Jellids;
 using Content.Shared.Body.Components;
 using Content.Shared.CombatMode;
 using Content.Shared.CombatMode.Pacification;
@@ -151,6 +153,7 @@ public sealed partial class ZombieSystem
         RemComp<ReproductivePartnerComponent>(target);
         RemComp<LegsParalyzedComponent>(target);
         RemComp<ComplexInteractionComponent>(target);
+        RemComp<JellidComponent>(target);
         RemComp<SentienceTargetComponent>(target);
 
         // remove the metabolizer from all the body's organs. they're an undead.

@@ -524,8 +524,6 @@
       weight: 10
     - id: SyringeAmbuzol
     - id: SyringeHyronalin
-    - id: SyringeDermaline
-    - id: SyringeBicaridine
     - id: SyringeTranexamicAcid
     - id: SyringeInaprovaline
     - id: SyringeEphedrine

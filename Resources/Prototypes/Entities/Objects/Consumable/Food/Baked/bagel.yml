@@ -33,7 +33,7 @@
   parent: FoodBagelBase
   id: FoodBagelPoppy
   name: poppy seed bagel
-  description: A delicious bagel topped with bicaridine-infused poppy seeds.
+  description: A delicious bagel topped with medicine-infused poppy seeds.
   components:
   - type: FlavorProfile
     flavors:

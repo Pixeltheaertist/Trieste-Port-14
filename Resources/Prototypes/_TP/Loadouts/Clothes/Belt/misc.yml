@@ -1,0 +1,14 @@
+- type: loadout
+  id: TP14LoadoutBeltChemBag
+  equipment:
+    belt: ChemBag
+
+- type: loadout
+  id: TP14LoadoutBeltMedicalBeltFilled
+  equipment:
+    belt: ClothingBeltMedicalFilled
+
+- type: loadout
+  id: TP14LoadoutBeltBandolier
+  equipment:
+    belt: ClothingBeltBandolier

@@ -1,0 +1,168 @@
+<Document>
+ # Extreme Crimes
+  - The maximum sentence per extreme crime is 15 minutes.
+  - Particularly violent offenders may be placed in perma. (Attacking officers in an attempt to escape prison)
+  - Attempted murder and murder are linked crimes and cannot be stacked together.
+  - Attempted murderers should be granted a more lenient sentence than a murderer.
+  <Table Columns="4">
+    <ColorBox>
+      <Box>
+        Offense
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Description
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Notes
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Code
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Breach of Custody
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To break out of a cell or custody with the intention of escaping.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Includes breaking out other people.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        4-00
+      </Box>
+    </ColorBox>
+    <ColorBox>
+        <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+          Production of Class 3 Chems
+        </Box>
+    </ColorBox>
+    <ColorBox>
+        <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+          Producing and/or distributing Class 3 Chems without authorization
+        </Box>
+    </ColorBox>
+    <ColorBox>
+        <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        </Box>
+    </ColorBox>
+    <ColorBox>
+        <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        4-03
+        </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Kidnapping
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To unlawfully restrain, transport, control or confine a sapient being against that individual’s will.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        A large range of things, used mostly as a catch all when dealing with unlawful control of another being.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        4-04
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Destruction of Vital Infrastructure
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Destruction of equipment or infrastructure that renders a department inoperable or severely degraded.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        This is mostly used for large-scale bombings or the sabotage of major station systems such as power production, the Diving Bell, or PAIL.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        4-05
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Attempted Murder
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To make an attempt to use physical force against someone with the clear intent to kill.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Make sure you've got the proof to back up the intention claims, such as proof of a lethal weapon being used.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        4-07
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Murder
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To kill a sapient being with malicious intent.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        This only changes from attempted to full-on murder if the victim enters a state of being deceased, having to be resurrected.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        4-08
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Misusing Authority Extreme
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        For the Overseer or Security to issue orders or take actions which lead to others breaking laws or harm to citizens. 
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        This also includes misuse of force by security
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        4-11
+      </Box>
+    </ColorBox>
+  </Table>
+</Document>

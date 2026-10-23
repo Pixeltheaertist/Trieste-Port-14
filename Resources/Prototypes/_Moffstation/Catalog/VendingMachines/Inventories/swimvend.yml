@@ -1,0 +1,81 @@
+- type: vendingMachineInventory
+  id: SwimvendInventory
+  startingInventory:
+    ClothingUniformCoconutSkirt: 2
+    ClothingUniformFishsuit: 2
+    ClothingUniformGrassSkirt: 2
+    ClothingUniformHeartOnepiece: 2
+    ClothingUniformHonkini: 2
+    ClothingUniformMedShorts: 2
+    ClothingUniformMedkini: 2
+    ClothingUniformMermaid: 2
+    ClothingUniformOldtimeyOnepiece: 2
+    ClothingUniformShirtkini: 2
+    ClothingUniformSpeedo: 2
+    ClothingUniformSundress: 2
+    ClothingUniformWetsuitOrange: 2
+    # Other clothing
+    ClothingHeadHatClownSunhat: 1
+    ClothingShoesClownSandals: 1
+    ClothingHeadHatSunhat: 2
+    ClothingShoesTourist: 3
+    # Accessories
+    ClothingNeckLifeguardWhistle: 1
+    PlushieLifeguardBuoy: 2
+    BeachBall: 2
+    ClothingEyesGlassesCheapSunglasses: 3
+    # Generic Bikini Color Variants
+    ClothingUniformBikiniWhite: 2
+    ClothingUniformBikiniBlack: 2
+    ClothingUniformBikiniBlue: 2
+    ClothingUniformBikiniRed: 2
+    ClothingUniformBikiniGreen: 2
+    ClothingUniformBikiniYellow: 2
+    ClothingUniformBikiniPink: 2
+    # Generic One-piece Color Variants
+    ClothingUniformOnepieceWhite: 2
+    ClothingUniformOnepieceBlack: 2
+    ClothingUniformOnepieceBlue: 2
+    ClothingUniformOnepieceRed: 2
+    ClothingUniformOnepieceGreen: 2
+    ClothingUniformOnepieceYellow: 2
+    ClothingUniformOnepiecePink: 2
+    # Generic Shorts Variants
+    ClothingUniformShortsWhite: 2
+    ClothingUniformShortsBlack: 2
+    ClothingUniformShortsBlue: 2
+    ClothingUniformShortsRed: 2
+    ClothingUniformShortsGreen: 2
+    ClothingUniformShortsYellow: 2
+    ClothingUniformShortsPink: 2
+    # Towels
+    TowelColorWhite: 2
+    TP14TowelColorPurple: 2
+    TP14TowelColorRed: 2
+    TP14TowelColorBlue: 2
+    TP14TowelColorDarkBlue: 2
+    TP14TowelColorLightBlue: 2
+    TP14TowelColorTeal: 2
+    TP14TowelColorBrown: 2
+    TP14TowelColorLightBrown: 2
+    TP14TowelColorGray: 2
+    TP14TowelColorGreen: 2
+    TP14TowelColorDarkGreen: 2
+    TP14TowelColorGold: 2
+    TP14TowelColorOrange: 2
+    TP14TowelColorBlack: 2
+    TP14TowelColorPink: 2
+    TP14TowelColorYellow: 2
+    TP14TowelColorMaroon: 2
+    TP14TowelColorSilver: 2
+    TP14TowelColorMime: 1
+  contrabandInventory:
+    FoodSnackBoritos: 3
+    ClothingEyesGlassesSunglasses: 1
+  emaggedInventory:
+    ClothingUniformSyndikini: 2
+    ClothingUniformNtBikini: 2
+    TowelColorSyndicate: 1
+    TowelColorCentcom: 1
+    TowelColorNT: 1
+    ClothingUniformNinjaSurfsuit: 2

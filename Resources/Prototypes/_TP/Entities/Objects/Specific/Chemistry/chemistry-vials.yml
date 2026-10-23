@@ -1,0 +1,420 @@
+## A ##
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialAluminium
+  suffix: Trieste, Aluminium, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-aluminium
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Aluminium
+        Quantity: 15
+  - type: Tag
+    tags: &TP14TagVial
+    - CentrifugeCompatible
+
+
+## B ##
+
+
+## C ##
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialCarbon
+  suffix: Trieste, Carbon, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-carbon
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Carbon
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialChlorine
+  suffix: Trieste, Chlorine, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-chlorine
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Chlorine
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialCopper
+  suffix: Trieste, Copper, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-copper
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Copper
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+- type: entity
+  parent: ChemistryEmptyVial
+  id: TP14ChemistryVialCrudeOil
+  description: A vial containing a sample of crude oil.
+  suffix: Trieste, Crude Oil
+  components:
+  - type: Label
+    localizedLabel: reagent-name-crude-oil
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: CrudeOil
+        Quantity: 30
+  - type: Tag
+    tags: *TP14TagVial
+
+
+## D ##
+
+
+## E ##
+
+
+## F ##
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialFluorine
+  suffix: Trieste, Fluorine, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-fluorine
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Fluorine
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+
+## G ##
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialGold
+  suffix: Trieste, Gold, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-gold
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Gold
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+
+## H ##
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialHydrogen
+  suffix: Trieste, Hydrogen, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-hydrogen
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Hydrogen
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+
+## I ##
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialIodine
+  suffix: Trieste, Iodine, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-iodine
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Iodine
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialIron
+  suffix: Trieste, Iron, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-iron
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Iron
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+
+## J ##
+
+
+## K ##
+
+
+## L ##
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialLithium
+  suffix: Trieste, Lithium, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-lithium
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Lithium
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialLube
+  suffix: Trieste, Lube, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-space-lube
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: SpaceLube
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+
+## M ##
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialMercury
+  suffix: Trieste, Mercury, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-mercury
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Mercury
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+
+## N ##
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialNitrogen
+  suffix: Trieste, Nitrogen, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-nitrogen
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nitrogen
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+
+## O ##
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialOxygen
+  suffix: Trieste, Oxygen, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-oxygen
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Oxygen
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+
+## P ##
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialPhosphorus
+  suffix: Trieste, Phosphorus, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-phosphorus
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Phosphorus
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialPotassium
+  suffix: Trieste, Potassium, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-potassium
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Potassium
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+
+## Q ##
+
+
+## R ##
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialRadium
+  suffix: Trieste, Radium, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-radium
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Radium
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+
+## S ##
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialSilicon
+  suffix: Trieste, Silicon, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-silicon
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Silicon
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialSilver
+  suffix: Trieste, Silver, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-silver
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Silver
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialSodium
+  suffix: Trieste, Sodium, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-sodium
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Sodium
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialSulfur
+  suffix: Trieste, Sulfur, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-sulfur
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Sulfur
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialSugar
+  suffix: Trieste, Sugar, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-sugar
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Sugar
+        Quantity: 15
+  - type: Tag
+    tags: *TP14TagVial
+
+## T ##
+
+
+## U ##
+
+
+## V ##
+
+- type: entity
+  parent: ChemistryEmptyVialSmall
+  id: TP14SmallChemistryVialVestineHalf
+  suffix: Trieste, Vestine, NanoTraitor
+  components:
+  - type: Label
+    localizedLabel: reagent-name-vestine
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Vestine
+        Quantity: 7.5
+  - type: Tag
+    tags: *TP14TagVial
+
+## X ##
+
+
+## Y ##
+
+
+## Z ##

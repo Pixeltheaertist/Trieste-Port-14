@@ -36,6 +36,17 @@
   - type: Matchbox
 
 - type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesBootsPerformer
+  name: performer's boots
+  description: These boots provide great traction for when you're up on stage.
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Shoes/performer.rsi # Moff
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Shoes/performer.rsi # Moff
+
+- type: entity
   parent: [ClothingShoesMilitaryBase, BaseSecurityContraband]
   id: ClothingShoesBootsCombat
   name: combat boots

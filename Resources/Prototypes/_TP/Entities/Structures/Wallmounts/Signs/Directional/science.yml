@@ -1,0 +1,35 @@
+# Science
+- type: entity
+  parent: TP14BaseSignDirectional
+  id: TP14SignDirectionalSci
+  suffix: Trieste, Science, Wall-Sign
+  name: science wall sign
+  description: A direction sign, pointing out which way the Science department is.
+  components:
+  - type: Sprite
+    layers:
+    - state: overlay
+    - state: background
+      color: "#BF77F6" # Light-purple
+    - state: text_sci
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: TP14SignDirectionalSci
+      Secondary: TP14SignDirectionalSciAlt1
+      Tertiary: TP14SignDirectionalSciAlt2
+
+- type: entity
+  parent: TP14SignDirectionalSci
+  id: TP14SignDirectionalSciAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, 0.25
+
+- type: entity
+  parent: TP14SignDirectionalSci
+  id: TP14SignDirectionalSciAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    offset: 0, -0.25

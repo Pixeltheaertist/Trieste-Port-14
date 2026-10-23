@@ -39,6 +39,9 @@ namespace Content.Server.Nuke
         [DataField]
         public int Cooldown = 30;
 
+        [DataField("isArtifact")]
+        public bool IsArtifact = false;
+
         /// <summary>
         ///     The <see cref="ItemSlot"/> that stores the nuclear disk. The entity whitelist, sounds, and some other
         ///     behaviours are specified by this <see cref="ItemSlot"/> definition. Make sure the whitelist, is correct
@@ -46,6 +49,9 @@ namespace Content.Server.Nuke
         /// </summary>
         [DataField("diskSlot")]
         public ItemSlot DiskSlot = new();
+
+        [DataField("resonanceSlot")]
+        public ItemSlot ResonanceSlot = new();
 
         /// <summary>
         ///     When this time is left, nuke will play last alert sound

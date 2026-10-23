@@ -1,1 +1,1 @@
-station-event-zombie-outbreak-announcement = Confirmed sightings of various undead aboard the station. All personnel should arm themselves, barricade doors, and secure their location in order to prevent further infection.
+station-event-zombie-outbreak-announcement = Confirmed reports of a Type-III prion onboard. All citizens are to arm themselves immediately and quarantine those showing signs of infection. SOS signal active.

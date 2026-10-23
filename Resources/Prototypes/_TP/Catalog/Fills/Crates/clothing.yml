@@ -1,0 +1,81 @@
+- type: entity
+  parent: CratePlastic
+  id: TP14CrateFilledDresses
+  suffix: Trieste, Filled
+  name: dresses crate
+  description: Contains dresses for any occasion. Perfect for anyone, too!
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingUniformJumpskirtBlackElegantDress
+        - id: ClothingUniformJumpskirtRedElegantDress
+        - id: ClothingUniformJumpskirtGreenElegantDress
+        - id: ClothingUniformJumpskirtBlueElegantDress
+        - id: ClothingShoesBootsLaceup
+          amount: 4
+        - id: ClothingHeadHatHairflower
+          amount: 4
+
+
+- type: entity
+  parent: CratePlastic
+  id: TP14CrateFilledSuits
+  suffix: Trieste, Filled
+  name: suit crate
+  description: Contains a suit for just about any occasion, lookin sharp!
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: TP14ClothingUniformCogSuit
+        - id: TP14ClothingUniformEclipseThiefSuit
+        - id: TP14ClothingUniformGastroenterologistSuit
+          amount: 1
+        - id: TP14ClothingUniformHotstreakSuit
+          amount: 1
+        - id: TP14ClothingUniformKillerSuit
+          amount: 1
+        - id: TP14ClothingUniformMidnightSuit
+          amount: 1
+        - id: TP14ClothingUniformOldBartenderSuit
+          amount: 1
+        - id: TP14ClothingUniformPinstripedSuit
+          amount: 1
+        - id: TP14ClothingUniformRevengeSuit
+          amount: 1
+        - id: TP14ClothingUniformSuspiciousSuit
+          amount: 1
+        - id: TP14ClothingUniformTVSuit
+          amount: 1
+        - id: TP14ClothingHeadHatEclipseThiefTophat
+          amount: 1
+        - id: TP14ClothingHeadHatMidnightHeistTophat
+          amount: 1
+        - id: TP14ClothingHeadHatSuspiciousCap
+          amount: 1
+        - id: ClothingUniformJumpsuitLawyerBlue
+          amount: 1
+        - id: ClothingUniformJumpskirtLawyerBlue
+          amount: 1
+        - id: ClothingUniformJumpsuitLawyerPurple
+          amount: 1
+        - id: ClothingUniformJumpskirtLawyerPurple
+          amount: 1
+        - id: ClothingUniformJumpsuitLawyerRed
+          amount: 1
+        - id: ClothingUniformJumpskirtLawyerRed
+          amount: 1
+        - id: ClothingUniformJumpsuitLawyerBlack
+          amount: 1
+        - id: ClothingUniformJumpskirtLawyerBlack
+          amount: 1
+        - id: ClothingUniformJumpsuitLawyerGood
+          amount: 1
+        - id: ClothingUniformJumpskirtLawyerGood
+          amount: 1
+        - id: ClothingShoesBootsLaceup
+          amount: 5
+

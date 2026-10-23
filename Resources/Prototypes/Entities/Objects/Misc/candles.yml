@@ -37,7 +37,7 @@
       firestackFade: -0.01
       damage:
         types:
-          Heat: 0.1
+          Heat: 0.05 # TRIESTE: '0.1'
     - type: FireVisuals
       sprite: Objects/Misc/candles.rsi
       normalState: fire-big
@@ -272,6 +272,9 @@
     color: "#e39c40"
     radius: 2.5
     power: 10
+  - type: Tag # TRIESTE
+    tags:
+    - TP14MagicCandle
 
 - type: entity
   name: magic red candle

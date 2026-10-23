@@ -23,7 +23,7 @@ public sealed partial class CCVars
     ///     Should users be able to see their own notes? Admins will be able to see and set notes regardless
     /// </summary>
     public static readonly CVarDef<bool> SeeOwnNotes =
-        CVarDef.Create("admin.see_own_notes", false, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
+        CVarDef.Create("admin.see_own_notes", true, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
 
     /// <summary>
     ///     Should the server play a quick sound to the active admins whenever a new player joins?
@@ -105,7 +105,7 @@ public sealed partial class CCVars
     ///     If you set this to 0 or 1 then it will alert on every connection, so probably don't do that.
     /// </remarks>
     public static readonly CVarDef<int> AdminAlertMinPlayersSharingConnection =
-        CVarDef.Create("admin.alert.min_players_sharing_connection", -1, CVar.SERVERONLY);
+        CVarDef.Create("admin.alert.min_players_sharing_connection", 2, CVar.SERVERONLY);
 
     /// <summary>
     ///     Minimum explosion intensity to create an admin alert message. -1 to disable the alert.

@@ -7,6 +7,7 @@
   </PropertyGroup>
   <Import Project="../MSBuild/Content.props" />
   <ItemGroup>
+    <PackageReference Include="prometheus-net" />
     <PackageReference Include="Nett" />
     <PackageReference Include="JetBrains.Annotations" PrivateAssets="All" />
     <PackageReference Include="SixLabors.ImageSharp" />

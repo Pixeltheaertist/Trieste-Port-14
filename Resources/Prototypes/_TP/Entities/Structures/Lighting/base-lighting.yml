@@ -1,0 +1,160 @@
+- type: entity
+  parent: PoweredSmallLightEmpty
+  id: TP14EmptyCageLight
+  name: cage light
+  suffix: Trieste, Empty
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Wallmounts/Lighting/cage_light.rsi
+    state: empty
+
+- type: entity
+  parent: TP14EmptyCageLight
+  id: TP14CageLight
+  suffix: Trieste
+  components:
+  - type: Sprite
+    state: base
+  - type: PointLight
+    enabled: true
+  - type: PoweredLight
+    hasLampOnSpawn: LightBulb
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 2
+    popupText: &popup powered-light-component-burn-hand
+
+- type: entity
+  parent: TP14EmptyCageLight
+  id: TP14DimCageLight
+  suffix: Trieste, Dim
+  components:
+  - type: Sprite
+    state: base
+  - type: PointLight
+    enabled: true
+    radius: 5
+    energy: 0.5
+    softness: 3
+    color: "#ba473f"
+  - type: PoweredLight
+    hasLampOnSpawn: DimLightBulb
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 1
+    popupText: *popup
+
+- type: entity
+  parent: TP14EmptyCageLight
+  id: TP14LEDCageLight
+  suffix: Trieste, LED
+  components:
+  - type: Sprite
+    state: base
+  - type: PointLight
+    enabled: true
+    radius: 8
+    energy: 1
+    softness: 1
+    color: "#EEEEFF"
+  - type: PoweredLight
+    hasLampOnSpawn: LedLightBulb
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 1
+    popupText: *popup
+
+- type: entity
+  parent: TP14EmptyCageLight
+  id: TP14WarmCageLight
+  suffix: Trieste, Warm
+  components:
+  - type: Sprite
+    state: base
+  - type: PointLight
+    enabled: true
+    radius: 6
+    energy: 1
+    softness: 3
+    color: "#FF8A0C"
+  - type: PoweredLight
+    hasLampOnSpawn: WarmLightBulb
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 2
+    popupText: *popup
+
+- type: entity
+  parent: TP14EmptyCageLight
+  id: TP14WaterproofCageLight
+  suffix: Trieste, Waterproof
+  components:
+  - type: Sprite
+    state: base
+  - type: PointLight
+    enabled: true
+  - type: PoweredLight
+    hasLampOnSpawn: LightBulb
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 2
+    popupText: *popup
+  - type: InGas
+    damagedByGas: false # waterproof
+    gasThreshold: 75
+    damage:
+      types:
+        Blunt: 3
+
+- type: entity  # Sweetwater Internal Lights
+  parent: TP14EmptyCageLight
+  id: TP14CoolCageLight
+  suffix: Trieste, Cool
+  components:
+  - type: Sprite
+    state: base
+  - type: PointLight
+    enabled: true
+    radius: 6
+    energy: 1
+    softness: 2
+    color: "#b2dced"
+  - type: PoweredLight
+    hasLampOnSpawn: TP14MarineLightBulb
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 1
+    popupText: *popup
+
+- type: entity
+  parent: TP14EmptyCageLight
+  id: TP14CoolWaterproofCageLight
+  suffix: Trieste, Cool, Waterproof
+  components:
+  - type: Sprite
+    state: base
+  - type: PointLight
+    enabled: true
+    radius: 6
+    energy: 1
+    softness: 2
+    color: "#b2dced"
+  - type: PoweredLight
+    hasLampOnSpawn: TP14MarineLightBulb
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 1
+    popupText: *popup
+  - type: InGas
+    damagedByGas: false # waterproof
+    gasThreshold: 75
+    damage:
+      types:
+        Blunt: 3

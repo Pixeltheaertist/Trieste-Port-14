@@ -25,7 +25,7 @@ chat-manager-speech-double-quote-begin = “
 chat-manager-speech-double-quote-end = ”
 
 chat-manager-server-wrap-message = [bold]{$message}[/bold]
-chat-manager-sender-announcement = Central Command
+chat-manager-sender-announcement = P.A.I.L
 chat-manager-sender-announcement-wrap-message = [font size=14][bold]{$sender} Announcement:[/font][font size=12]
                                                 {$message}[/bold][/font]
 chat-manager-sender-announcement-wrap-message-signed = [font size=14][bold]{$sender} Announcement:[/bold][/font][font size=12]

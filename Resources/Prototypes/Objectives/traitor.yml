@@ -37,7 +37,7 @@
 - type: entity
   parent: [BaseTraitorObjective, BaseLivingObjective]
   id: EscapeShuttleObjective
-  name: Escape to CentComm alive and unrestrained via the escape shuttle.
+  name: Escape to SolGov alive and unrestrained.
   description: One of our undercover agents will debrief you when you arrive. Don't show up in cuffs.
   components:
   - type: Objective
@@ -85,7 +85,7 @@
 - type: entity
   parent: [BaseTraitorObjective, BaseKillRandomObjective]
   id: KillRandomPersonObjective
-  description: Do it however you like, just make sure they don't get off the station.
+  description: Do it however you like, just make sure they don't survive the day.
   components:
   - type: Objective
     difficulty: 1.75
@@ -98,7 +98,7 @@
 - type: entity
   parent: [BaseTraitorObjective, BaseKillRandomObjective]
   id: KillRandomHeadObjective
-  description: We need this head gone and you probably know why. Make sure they don't make it to CentComm, even if they're dead. Good luck, agent.
+  description: We need this head gone and you probably know why. Make sure they don't make it to SolGov, even if they're dead. Good luck, agent.
   components:
   - type: Objective
     # technically its still possible for KillRandomPersonObjective to roll a head but this is guaranteed, so higher difficulty
@@ -341,13 +341,13 @@
   - type: StealCondition
     stealGroup: JetpackCaptainFilled
 
-- type: entity
-  parent: BaseCaptainObjective
-  id: CaptainGunStealObjective
-  components:
-  - type: StealCondition
-    stealGroup: WeaponAntiqueLaser
-    owner: job-name-captain
+#- type: entity  TP14, removing laser objective
+#  parent: BaseCaptainObjective
+#  id: CaptainGunStealObjective
+#  components:
+#  - type: StealCondition
+#    stealGroup: WeaponAntiqueLaser
+#    owner: job-name-captain
 
 - type: entity
   parent: BaseCaptainObjective

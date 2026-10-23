@@ -1,0 +1,56 @@
+- type: entity
+  id: AnimalMimic
+  suffix: Trieste
+  abstract: true
+  components:
+  - type: TemperatureProtection
+    coolingCoefficient: 0.0
+  - type: Body
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganSeaLandCreatureLungs
+        - id: OrganBloodsuckerHeart
+        - id: OrganTumor
+        - id: OrganBloodsuckerLiver
+        - id: OrganAnimalKidneys
+
+
+- type: entity
+  id: TheThingy
+  suffix: Trieste
+  categories: [ HideSpawnMenu ]
+  name: the thingy appearance
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: OrganHumanTorso
+      Head: OrganHumanHead
+      ArmLeft: OrganHumanArmLeft
+      ArmRight: OrganHumanArmRight
+      HandRight: OrganHumanHandRight
+      HandLeft: OrganHumanHandLeft
+      LegLeft: OrganHumanLegLeft
+      LegRight: OrganHumanLegRight
+      FootLeft: OrganHumanFootLeft
+      FootRight: OrganHumanFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Tongue: OrganHumanTongue
+      Appendix: OrganHumanAppendix
+      Ears: OrganHumanEars
+      Lungs: OrganHumanLungs
+      Heart: OrganHumanHeart
+      Stomach: OrganTumor
+      Liver: OrganHumanLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: Human

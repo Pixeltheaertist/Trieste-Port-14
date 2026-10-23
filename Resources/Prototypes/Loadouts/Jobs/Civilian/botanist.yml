@@ -5,6 +5,11 @@
     head: ClothingHeadHatTrucker
 
 - type: loadout
+  id: BotanistBucket
+  equipment:
+    head: TP14ClothingHeadBucketBotany
+
+- type: loadout
   id: BotanistBandana
   equipment:
     head: ClothingHeadBandBotany
@@ -19,6 +24,11 @@
   id: BotanistJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtHydroponics
+
+- type: loadout
+  id: BotanistWarmOveralls
+  equipment:
+    jumpsuit: TP14ClothingUniformHydroponicsOveralls
 
 - type: loadout
   id: BotanistOveralls

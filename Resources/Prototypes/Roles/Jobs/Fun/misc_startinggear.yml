@@ -150,12 +150,16 @@
   equipment:
     back: ClothingBackpackSatchelAdmin
     id: AdminPDA
+    eyes: TP14ClothingEyesGlassesCoolAdmin # holy crap your so cool...
   storage:
     back:
     - GasAnalyzer
-    - TRayScanner
+   # - TRayScanner # TRIESTE: AGhosts already have subfloor view.
     - AccessConfiguratorUniversal
     - Multitool
+    - SprayPainterRecharging # TP14
+    - ToolDebug # TP14 | I wanted to remove this... Cheese said otherwise grrrrrr
+    - TP14RubberStampSG # SolGov Stamp for admins momento
 
 #Gladiator with spear
 - type: startingGear

@@ -1,0 +1,50 @@
+- type: entity
+  name: steel grate maint floor
+  parent: FloorTileItemBase
+  id: TP14FloorTileItemSteelGrateMaint
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Tiles/tile.rsi
+    state: steelgratemaintfloor
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - TP14FloorSteelGrateMaints
+  - type: Stack
+    stackType: TP14FloorStackSteelGrateMaints
+
+- type: entity
+  name: rusting grate maint floor
+  parent: FloorTileItemBase
+  id: TP14FloorTileItemRustGrateMaint
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Tiles/tile.rsi
+    state: rustgratemaintfloor
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - TP14FloorRustGrateMaints
+  - type: Stack
+    stackType: TP14FloorStackRustGrateMaints
+
+- type: entity
+  name: old rusted maint floor
+  parent: FloorTileItemBase
+  id: TP14FloorTileItemOldRustMaint
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Tiles/tile.rsi
+    state: oldrustmaintfloor
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - TP14FloorOldRustMaints
+  - type: Stack
+    stackType: TP14FloorStackOldRustMaints

@@ -688,6 +688,11 @@
       - doors
       base: wall
     # Rusted walls should be made weaker through a damage mod status effect.
+  - type: InGas
+    damagedByGas: true
+    damage:
+        types:
+            Blunt: 5
 
 - type: entity
   parent: [ WallDiagonalBase, StructureHealthWallStrong ]
@@ -1468,6 +1473,8 @@
   - type: Icon
     sprite: Structures/Walls/mining-diagonal.rsi
     state: state0
+  - type: RadiationBlocker
+    resistance: 5
   - type: Damageable
     damageModifierSet: SteelStaticMod
   - type: Destructible

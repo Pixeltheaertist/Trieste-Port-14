@@ -34,7 +34,7 @@
       storagebase: !type:AllSelector
         children:
         - id: DrinkCoconutWaterJug
-        - id: DrinkCoffeeJug
+      # - id: DrinkCoffeeJug # Trieste: Brew your coffee, nerds!
         - id: DrinkColaBottleFull
         - id: DrinkCreamCartonXL
         - id: DrinkDrGibbJug

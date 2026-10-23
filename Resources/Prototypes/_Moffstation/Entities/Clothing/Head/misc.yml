@@ -1,0 +1,33 @@
+# Red Performer (Kasane Teto)
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadPerformerWigRed
+  name: dark performer's wig # TP - match old name
+  description: It has sharp drills that should be handled with care.
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Head/Misc/performer-wig-red.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Head/Misc/performer-wig-red.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide
+
+# Yellow Performer (Akita Neru)
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadPerformerWigYellow
+  name: bright performer's wig # TP - match old name
+  description: Banana!? Oh, no, it's just a wig...
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Head/Misc/performer-wig-yellow.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Head/Misc/performer-wig-yellow.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide

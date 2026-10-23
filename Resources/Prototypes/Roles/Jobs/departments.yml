@@ -6,7 +6,7 @@
   roles:
   - CargoTechnician
   - Quartermaster
-  - SalvageSpecialist
+# - SalvageSpecialist # Trieste: Moved to expeditions.
 
 - type: department
   id: CentralCommand

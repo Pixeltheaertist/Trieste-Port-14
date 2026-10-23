@@ -100,6 +100,7 @@
     - id: PlasmaCanister
     - id: TritiumCanister
     - id: WaterVaporCanister
+    - id: TP14WaterCanister # Trieste: Added.
 
 - type: entityTable
   id: LotteryWeaponsEntityTable
@@ -188,6 +189,7 @@
   id: LotteryPlushiesEntityTable
   table: !type:GroupSelector
     children:
+    - id: TP14carbatteryplushie # Trieste: Added.
     - id: PlushieRGBee
     - id: PlushieGhost
     - id: PlushieHampter
@@ -230,6 +232,7 @@
   id: LotteryNotUsefulEntityTable
   table: !type:GroupSelector
     children:
+    - id: TP14FoodBoxJonkpocketJonk # Trieste: Added.
     - id: LidSalami
     - id: MobHamsterHamlet
     - id: MobLaserRaptor

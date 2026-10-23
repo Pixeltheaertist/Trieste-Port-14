@@ -11,6 +11,8 @@
     - id: CockroachMigration
     - id: GasLeak
     - id: GreytideVirus
+    - id: TP14CloudStormEvent # TRIESTE
+    - id: TP14RainClear       # TRIESTE
     - id: IonStorm # its calm like 90% of the time smh
     - id: KudzuGrowth
     - id: MassHallucinations
@@ -32,8 +34,8 @@
     - id: ClosetSkeleton
     - id: KingRatMigration
     - id: RevenantSpawn
-    - !type:NestedSelector
-      tableId: DerelictBorgEventTable
+  # - !type:NestedSelector # TRIESTE
+  #   tableId: DerelictBorgEventTable
 
 - type: entityTable
   id: ModerateAntagEventsTable
@@ -44,11 +46,12 @@
     - id: ParadoxCloneSpawn
     - id: SleeperAgents
     - id: ZombieOutbreak
-    - id: LoneOpsSpawn
+    - id: TP14FlashStorm  # TRIESTE: Moved here since there's no "moderateEvents" NORMAL table.
+    #- id: LoneOpsSpawn   # TRIESTE: fuck you loneops
     - id: WizardSpawn
     - id: SpaceChangelingSpawn
-    - !type:NestedSelector
-      tableId: DerelictBorgEventTable
+    #- !type:NestedSelector # TRIESTE: Glitched.
+    #  tableId: DerelictBorgEventTable
 
 - type: entityTable
   id: DerelictBorgEventTable #For Derelict Borg spawns
@@ -228,7 +231,7 @@
     weight: 6.5
     earliestStart: 40
     reoccurrenceDelay: 20
-    minimumPlayers: 20
+    minimumPlayers: 40 # TRIESTE: '20'
     duration: null
     occursDuringRoundEnd: false
   - type: SpaceSpawnRule

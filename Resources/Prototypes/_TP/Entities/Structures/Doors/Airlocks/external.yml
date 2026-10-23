@@ -1,0 +1,19 @@
+- type: entity
+  parent: PinionAirlock
+  id: ExternalClockworkAirlock
+  suffix: External, Sweetwater
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]
+  - type: Wires
+    layoutId: AirlockExternal 
+
+- type: entity
+  parent: AirlockMiningLocked
+  id: ExternalMiningAirlock
+  suffix: Mining, External, Sweetwater
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]
