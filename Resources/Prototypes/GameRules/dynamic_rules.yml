@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   parent: BaseGameRule
   id: DynamicRule
   components:
@@ -158,16 +158,16 @@
             min: 15
           - !type:RoundDurationCondition
             min: 1800 # 30 minutes
-        - !type:NestedSelector
-          tableId: DerelictBorgEventTable
-          weight: 25
-          conditions:
-          - !type:HasBudgetCondition
-          - !type:MaxRuleOccurenceCondition
-          - !type:PlayerCountCondition
-            min: 20
-          - !type:RoundDurationCondition
-            min: 1800 # 30 minutes
+#        - !type:NestedSelector # TRIESTE: Glitched.
+#          tableId: DerelictBorgEventTable
+#          weight: 25
+#          conditions:
+#          - !type:HasBudgetCondition
+#          - !type:MaxRuleOccurenceCondition
+#          - !type:PlayerCountCondition
+#            min: 20
+#          - !type:RoundDurationCondition
+#            min: 1800 # 30 minutes
         - id: ZombieOutbreak
           weight: 2.5
           conditions:

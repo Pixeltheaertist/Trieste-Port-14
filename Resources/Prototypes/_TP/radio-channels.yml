@@ -1,0 +1,8 @@
+- type: radioChannel
+  id: Nanotrasen
+  name: chat-radio-nanotrasen
+  keycode: 'r'
+  frequency: 225.7
+  color: "#89a8d6"
+  longRange: true
+  # Fixing this shit because pain.

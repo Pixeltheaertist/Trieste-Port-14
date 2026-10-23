@@ -212,21 +212,22 @@
     graph: Seat
     node: chairOfficeDark
 
-- type: entity
-  parent: [ ChairBase, StructureHealthFurniture ]
-  id: ComfyChair
-  name: comfy chair
-  description: It looks comfy.
-  components:
-  - type: Sprite
-    state: comfy
-  - type: Construction
-    graph: Seat
-    node: chairComfy
-  - type: Damageable
-    damageModifierSet: SteelMod
-  - type: Destructible
-    thresholds: *ThresholdsFurnitureNormalSteel
+# STARLIGHT: Replaced by '/_Starlight/Entities/Structures/Furniture/chairs.yml`
+#- type: entity
+#  parent: [ ChairBase, StructureHealthFurniture ]
+#  id: ComfyChair
+#  name: comfy chair
+#  description: It looks comfy.
+#  components:
+#  - type: Sprite
+#    state: comfy
+#  - type: Construction
+#    graph: Seat
+#    node: chairComfy
+#  - type: Damageable
+#    damageModifierSet: SteelMod
+#  - type: Destructible
+#    thresholds: *ThresholdsFurnitureNormalSteel
 
 - type: entity
   parent: [ ChairBase, StructureHealthFurniture ]

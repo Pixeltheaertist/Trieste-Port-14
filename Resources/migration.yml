@@ -631,7 +631,7 @@ CigaretteMilk: CigaretteHaloperidol
 CigaretteBread: CigaretteBbqSauce
 
 # 2025-05-09
-ClothingOuterHardsuitBasic: ClothingOuterHardsuitEVA
+ClothingOuterHardsuitBasic: TP14ClothingOuterHardsuitBasic # TRIESTE: 'ClothingOuterHardsuitEVA'
 ClothingHeadHelmetHardsuitBasic: null
 SuitStorageBasic: SuitStorageEVA
 
@@ -1172,3 +1172,6 @@ hydroponicsSoil: HydroponicsSoil
 hydroponicsTray: HydroponicsTray
 trayScanner: TRayScanner
 voicesensor: VoiceSensor
+
+# 2026-10-22
+FloorPlatformEntity: TP14FloorPlatformChasm
