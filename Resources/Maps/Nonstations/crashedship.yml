@@ -54,7 +54,7 @@ entities:
       mixture:
         volume: 2500
         immutable: True
-        temperature: -233.2
+        temperature: 243.15
         moles:
         - 0
         - 0

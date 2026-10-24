@@ -146,10 +146,26 @@
 
 
 #Border indestructible wall
-# Same visuals/smoothing as AsteroidRock, but no health, destruction or gathering, so it can't be broken or mined.
+# Pre-respriting rock look with edge smoothing; no health, destruction or gathering, so it can't be broken or mined.
 - type: entity
-  parent: [ BaseAsteroidRockVisuals, BaseAsteroidRock ]
+  parent: BaseWall
   id: TP14WallRockIndestructible
   suffix: Trieste, Indestructible
   name: indestructible rock wall
   description: Born from extreme pressure and never-ending pyroclastic layers, this wall might as well be indestructible.
+  components:
+  - type: Transform
+    noRot: true
+  - type: Icon
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+  - type: IconSmooth
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing
+      mask: [ walls, stone ]
+      base: rock_asteroid_

@@ -11,15 +11,15 @@
     layers:
     - state: crude
   - type: ExaminableSolution
-    solution: tank
+    solution: solution
   - type: SolutionItemStatus
-    solution: tank
+    solution: solution
   - type: Item
     size: Ginormous
   - type: RefillableSolution
-    solution: tank
+    solution: solution
   - type: DrainableSolution
-    solution: tank
+    solution: solution
   - type: SolutionTransfer
     canChangeTransferAmount: true
   - type: FitsInPumpjack

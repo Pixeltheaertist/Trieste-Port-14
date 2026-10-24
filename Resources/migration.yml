@@ -1013,18 +1013,29 @@ WallRockChromiteBananium: WallRockChromite
 WallRockSandBananium: WallRockSand
 WallRockSnowBananium: WallRockSnow
 MeteorRockBananium: AsteroidRock
-WallRockBasalt: WallRock
-WallRockBasaltCoal: WallRockCoal
-WallRockBasaltGold: WallRockGold
-WallRockBasaltDiamond: WallRockDiamond
-WallRockBasaltPlasma: WallRockPlasma
-WallRockBasaltQuartz: WallRockQuartz
-WallRockBasaltSilver: WallRockSilver
+# TRIESTE: restored in _TP/Entities/Structures/Walls/basalt.yml
+# WallRockBasalt: WallRock
+# TRIESTE: restored in _TP/Entities/Structures/Walls/basalt.yml
+# WallRockBasaltCoal: WallRockCoal
+# TRIESTE: restored in _TP/Entities/Structures/Walls/basalt.yml
+# WallRockBasaltGold: WallRockGold
+# TRIESTE: restored in _TP/Entities/Structures/Walls/basalt.yml
+# WallRockBasaltDiamond: WallRockDiamond
+# TRIESTE: restored in _TP/Entities/Structures/Walls/basalt.yml
+# WallRockBasaltPlasma: WallRockPlasma
+# TRIESTE: restored in _TP/Entities/Structures/Walls/basalt.yml
+# WallRockBasaltQuartz: WallRockQuartz
+# TRIESTE: restored in _TP/Entities/Structures/Walls/basalt.yml
+# WallRockBasaltSilver: WallRockSilver
 WallRockBasaltBananium: WallRock
-WallRockBasaltTin: WallRockTin
-WallRockBasaltUranium: WallRockUranium
-WallRockBasaltArtifactFragment: WallRockArtifactFragment
-WallRockBasaltSalt: WallRockSalt
+# TRIESTE: restored in _TP/Entities/Structures/Walls/basalt.yml
+# WallRockBasaltTin: WallRockTin
+# TRIESTE: restored in _TP/Entities/Structures/Walls/basalt.yml
+# WallRockBasaltUranium: WallRockUranium
+# TRIESTE: restored in _TP/Entities/Structures/Walls/basalt.yml
+# WallRockBasaltArtifactFragment: WallRockArtifactFragment
+# TRIESTE: restored in _TP/Entities/Structures/Walls/basalt.yml
+# WallRockBasaltSalt: WallRockSalt
 WallRockAndesite: WallRock
 WallRockAndesiteCoal: WallRockCoal
 WallRockAndesiteGold: WallRockGold

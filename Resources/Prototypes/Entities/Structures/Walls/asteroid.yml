@@ -297,60 +297,230 @@
 - type: entity
   parent: [ BaseAsteroidRockVisuals, BaseAsteroidRock, BaseAsteroidDestructible ]
   id: AsteroidRock
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
 
 - type: entity
   parent: [ BaseVeinCoal, AsteroidRock ]
   id: AsteroidRockCoal
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - state: rock_coal
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: AsteroidRockCoal
   id: AsteroidRockCoalCrab
   suffix: Coal Crab
   components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - state: rock_coal
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
   - type: OreVein
     currentOre: OreCoalCrab
 
 - type: entity
   parent: [ BaseVeinGold, AsteroidRock ]
   id: AsteroidRockGold
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - state: rock_gold
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: AsteroidRockGold
   id: AsteroidRockGoldCrab
   suffix: Gold Crab
   components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - state: rock_gold
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
   - type: OreVein
     currentOre: OreGoldCrab
 
 - type: entity
   parent: [ BaseVeinDiamond, AsteroidRock ]
   id: AsteroidRockDiamond
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - state: rock_diamond
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinPlasma, AsteroidRock ]
   id: AsteroidRockPlasma
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - state: rock_phoron
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinQuartz, AsteroidRock ]
   id: AsteroidRockQuartz
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - state: rock_quartz
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: AsteroidRockQuartz
   id: AsteroidRockQuartzCrab
   suffix: Quartz Crab
   components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - state: rock_quartz
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
   - type: OreVein
     currentOre: OreQuartzCrab
 
 - type: entity
   parent: [ BaseVeinSilver, AsteroidRock ]
   id: AsteroidRockSilver
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - state: rock_silver
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: AsteroidRockSilver
   id: AsteroidRockSilverCrab
   suffix: Silver Crab
   components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - state: rock_silver
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
   - type: OreVein
     currentOre: OreSilverCrab
 
@@ -358,46 +528,171 @@
 - type: entity
   parent: [ BaseVeinSteel, AsteroidRock ]
   id: AsteroidRockTin
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - state: rock_tin
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: AsteroidRockTin
   id: AsteroidRockTinCrab
   suffix: Iron Crab
   components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - state: rock_tin
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
   - type: OreVein
     currentOre: OreIronCrab
 
 - type: entity
   parent: [ BaseVeinUranium, AsteroidRock ]
   id: AsteroidRockUranium
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - state: rock_uranium
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: AsteroidRockUranium
   id: AsteroidRockUraniumCrab
   suffix: Uranium Crab
   components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - state: rock_uranium
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
   - type: OreVein
     currentOre: OreUraniumCrab
 
 - type: entity
   parent: [ BaseVeinSalt, AsteroidRock ]
   id: AsteroidRockSalt
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - state: rock_salt
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinArtifactFragment, AsteroidRock ]
   id: AsteroidRockArtifactFragment
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - state: rock_artifact_fragment
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseRockGibtonite, BaseAsteroidRockVisuals, BaseAsteroidRock ]
   id: AsteroidRockGibtonite
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - state: gibtonite_inactive
+      sprite: Structures/Walls/stone-ore.rsi
+      visible: false
+      map: [ "enum.MiningScannerVisualLayers.Overlay", "gib" ]
 
 - type: entity
   parent: [ BaseVeinRandom, AsteroidRock ]
   id: AsteroidRockMining
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_asteroid_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_asteroid
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
 
 #endregion
 #region Iron Rock
-
 - type: entity
   abstract: true
   id: BaseIronRockVisuals
@@ -413,54 +708,260 @@
 - type: entity
   parent: [ BaseIronRockVisuals, BaseAsteroidRock, BaseAsteroidDestructible ]
   id: IronRock
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: ironrock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: ironrock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: ironrock
 
 - type: entity
   parent: [ BaseVeinRandom, IronRock ]
   id: IronRockMining
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: ironrock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: ironrock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: ironrock
 
 - type: entity
   parent: [ BaseVeinCoal, IronRock ]
   id: IronRockCoal
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: ironrock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: ironrock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: ironrock
+    - state: rock_coal
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinGold, IronRock ]
   id: IronRockGold
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: ironrock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: ironrock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: ironrock
+    - state: rock_gold
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinPlasma, IronRock ]
   id: IronRockPlasma
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: ironrock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: ironrock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: ironrock
+    - state: rock_phoron
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinQuartz, IronRock ]
   id: IronRockQuartz
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: ironrock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: ironrock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: ironrock
+    - state: rock_quartz
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinSilver, IronRock ]
   id: IronRockSilver
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: ironrock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: ironrock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: ironrock
+    - state: rock_silver
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinSteel, IronRock ]
   id: IronRockIron
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: ironrock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: ironrock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: ironrock
+    - state: rock_tin
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinUranium, IronRock ]
   id: IronRockUranium
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: ironrock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: ironrock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: ironrock
+    - state: rock_uranium
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinSalt, IronRock ]
   id: IronRockSalt
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: ironrock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: ironrock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: ironrock
+    - state: rock_salt
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinArtifactFragment, IronRock ]
   id: IronRockArtifactFragment
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: ironrock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: ironrock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: ironrock
+    - state: rock_artifact_fragment
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseRockGibtonite, BaseIronRockVisuals, BaseAsteroidRock ]
   id: IronRockGibtonite
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: ironrock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: ironrock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: ironrock
+    - state: gibtonite_inactive
+      sprite: Structures/Walls/stone-ore.rsi
+      visible: false
+      map: [ "enum.MiningScannerVisualLayers.Overlay", "gib" ]
 
 - type: entity
   parent: [ BaseVeinDiamond, IronRock ]
   id: IronRockDiamond
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: ironrock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: ironrock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: ironrock
+    - state: rock_diamond
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 #endregion
 #region Wall Rock
@@ -488,27 +989,43 @@
         damage: 150
       behaviors:
       - *SoundStoneBreak
-  - type: IconSmooth
-    key: stone
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
     states:
-    - !type:CornerSpriteSmoothing
-      mask: [ stone, doors ]
-      base: stone
-      index: 0
-  - type: Icon
-    sprite: Structures/Walls/stone-dirt.rsi
-    state: full
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock
   - type: MiningScannerViewable
-  - type: Sprite
-    sprite: Structures/Walls/stone-dirt.rsi
-
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock
 # Ore veins
 - type: entity
   parent: [ BaseVeinCoal, WallRock ]
   id: WallRockCoal
   components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock
+    - state: rock_coal
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
   - type: EntityRemap
     mask:
+      WallRockBasalt: WallRockBasaltCoal # TRIESTE
       AsteroidRock: AsteroidRockCoal
       WallRockChromite: WallRockChromiteCoal
       WallRockSand: WallRockSandCoal
@@ -518,8 +1035,24 @@
   parent: [ BaseVeinGold, WallRock ]
   id: WallRockGold
   components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock
+    - state: rock_gold
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
   - type: EntityRemap
     mask:
+      WallRockBasalt: WallRockBasaltGold # TRIESTE
       AsteroidRock: AsteroidRockGold
       WallRockChromite: WallRockChromiteGold
       WallRockSand: WallRockSandGold
@@ -529,8 +1062,24 @@
   parent: [ BaseVeinDiamond, WallRock ]
   id: WallRockDiamond
   components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock
+    - state: rock_diamond
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
   - type: EntityRemap
     mask:
+      WallRockBasalt: WallRockBasaltDiamond # TRIESTE
       AsteroidRock: AsteroidRockDiamond
       WallRockChromite: WallRockChromiteDiamond
       WallRockSand: WallRockSandDiamond
@@ -540,8 +1089,24 @@
   parent: [ BaseVeinPlasma, WallRock ]
   id: WallRockPlasma
   components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock
+    - state: rock_phoron
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
   - type: EntityRemap
     mask:
+      WallRockBasalt: WallRockBasaltPlasma # TRIESTE
       AsteroidRock: AsteroidRockPlasma
       WallRockChromite: WallRockChromitePlasma
       WallRockSand: WallRockSandPlasma
@@ -551,8 +1116,24 @@
   parent: [ BaseVeinQuartz, WallRock ]
   id: WallRockQuartz
   components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock
+    - state: rock_quartz
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
   - type: EntityRemap
     mask:
+      WallRockBasalt: WallRockBasaltQuartz # TRIESTE
       AsteroidRock: AsteroidRockQuartz
       WallRockChromite: WallRockChromiteQuartz
       WallRockSand: WallRockSandQuartz
@@ -562,8 +1143,24 @@
   parent: [ BaseVeinSilver, WallRock ]
   id: WallRockSilver
   components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock
+    - state: rock_silver
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
   - type: EntityRemap
     mask:
+      WallRockBasalt: WallRockBasaltSilver # TRIESTE
       AsteroidRock: AsteroidRockSilver
       WallRockChromite: WallRockChromiteSilver
       WallRockSand: WallRockSandSilver
@@ -573,8 +1170,24 @@
   parent: [ BaseVeinSteel, WallRock ]
   id: WallRockTin
   components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock
+    - state: rock_tin
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
   - type: EntityRemap
     mask:
+      WallRockBasalt: WallRockBasaltTin # TRIESTE
       AsteroidRock: AsteroidRockTin
       WallRockChromite: WallRockChromiteTin
       WallRockSand: WallRockSandTin
@@ -584,8 +1197,24 @@
   parent: [ BaseVeinUranium, WallRock ]
   id: WallRockUranium
   components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock
+    - state: rock_uranium
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
   - type: EntityRemap
     mask:
+      WallRockBasalt: WallRockBasaltUranium # TRIESTE
       AsteroidRock: AsteroidRockUranium
       WallRockChromite: WallRockChromiteUranium
       WallRockSand: WallRockSandUranium
@@ -595,8 +1224,24 @@
   parent: [ BaseVeinArtifactFragment, WallRock ]
   id: WallRockArtifactFragment
   components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock
+    - state: rock_artifact_fragment
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
   - type: EntityRemap
     mask:
+      WallRockBasalt: WallRockBasaltArtifactFragment # TRIESTE
       AsteroidRock: AsteroidRockArtifactFragment
       WallRockChromite: WallRockChromiteArtifactFragment
       WallRockSand: WallRockSandArtifactFragment
@@ -606,8 +1251,24 @@
   parent: [ BaseVeinSalt, WallRock ]
   id: WallRockSalt
   components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock
+    - state: rock_salt
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
   - type: EntityRemap
     mask:
+      WallRockBasalt: WallRockBasaltSalt # TRIESTE
       AsteroidRock: AsteroidRockSalt
       WallRockChromite: WallRockChromiteSalt
       WallRockSand: WallRockSandSalt
@@ -621,158 +1282,657 @@
   id: WallRockSnow
   name: snowdrift
   components:
-  - type: Icon
-    sprite: Structures/Walls/stone-snow.rsi
-    state: full
-  - type: Sprite
-    sprite: Structures/Walls/stone-snow.rsi
-
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_snow_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_snow
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_snow
 - type: entity
   parent: [ BaseVeinCoal, WallRockSnow ]
   id: WallRockSnowCoal
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_snow_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_snow
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_snow
+    - state: rock_coal
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinGold, WallRockSnow ]
   id: WallRockSnowGold
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_snow_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_snow
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_snow
+    - state: rock_gold
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinDiamond, WallRockSnow ]
   id: WallRockSnowDiamond
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_snow_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_snow
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_snow
+    - state: rock_diamond
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinPlasma, WallRockSnow ]
   id: WallRockSnowPlasma
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_snow_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_snow
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_snow
+    - state: rock_phoron
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinQuartz, WallRockSnow ]
   id: WallRockSnowQuartz
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_snow_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_snow
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_snow
+    - state: rock_quartz
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinSilver, WallRockSnow ]
   id: WallRockSnowSilver
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_snow_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_snow
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_snow
+    - state: rock_silver
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinSteel, WallRockSnow ]
   id: WallRockSnowTin
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_snow_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_snow
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_snow
+    - state: rock_tin
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinUranium, WallRockSnow ]
   id: WallRockSnowUranium
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_snow_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_snow
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_snow
+    - state: rock_uranium
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinArtifactFragment, WallRockSnow ]
   id: WallRockSnowArtifactFragment
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_snow_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_snow
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_snow
+    - state: rock_artifact_fragment
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinSalt, WallRockSnow ]
   id: WallRockSnowSalt
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_snow_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_snow
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_snow
+    - state: rock_salt
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 #endregion
 #region Wall Rock (Sand)
-
 - type: entity
   parent: WallRock
   id: WallRockSand
   name: sandstone
   components:
-  - type: Icon
-    sprite: Structures/Walls/stone-sand.rsi
-    state: full
-  - type: Sprite
-    sprite: Structures/Walls/stone-sand.rsi
-
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_sand_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_sand
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_sand
 - type: entity
   parent: [ BaseVeinCoal, WallRockSand ]
   id: WallRockSandCoal
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_sand_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_sand
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_sand
+    - state: rock_coal
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinGold, WallRockSand ]
   id: WallRockSandGold
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_sand_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_sand
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_sand
+    - state: rock_gold
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinDiamond, WallRockSand ]
   id: WallRockSandDiamond
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_sand_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_sand
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_sand
+    - state: rock_diamond
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinPlasma, WallRockSand ]
   id: WallRockSandPlasma
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_sand_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_sand
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_sand
+    - state: rock_phoron
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinQuartz, WallRockSand ]
   id: WallRockSandQuartz
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_sand_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_sand
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_sand
+    - state: rock_quartz
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinSilver, WallRockSand ]
   id: WallRockSandSilver
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_sand_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_sand
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_sand
+    - state: rock_silver
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinSteel, WallRockSand ]
   id: WallRockSandTin
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_sand_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_sand
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_sand
+    - state: rock_tin
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinUranium, WallRockSand ]
   id: WallRockSandUranium
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_sand_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_sand
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_sand
+    - state: rock_uranium
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinArtifactFragment, WallRockSand ]
   id: WallRockSandArtifactFragment
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_sand_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_sand
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_sand
+    - state: rock_artifact_fragment
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinSalt, WallRockSand ]
   id: WallRockSandSalt
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_sand_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_sand
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_sand
+    - state: rock_salt
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 #endregion
 #region Wall Rock (Chromite)
-
 - type: entity
   id: WallRockChromite
   name: chromite
   parent: WallRock
   components:
-  - type: Icon
-    sprite: Structures/Walls/stone-chromite.rsi
-    state: full
-  - type: Sprite
-    sprite: Structures/Walls/stone-chromite.rsi
-
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_chromite_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_chromite
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_chromite
 - type: entity
   parent: [ BaseVeinCoal, WallRockChromite ]
   id: WallRockChromiteCoal
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_chromite_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_chromite
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_chromite
+    - state: rock_coal
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinGold, WallRockChromite ]
   id: WallRockChromiteGold
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_chromite_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_chromite
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_chromite
+    - state: rock_gold
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinDiamond, WallRockChromite ]
   id: WallRockChromiteDiamond
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_chromite_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_chromite
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_chromite
+    - state: rock_diamond
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinPlasma, WallRockChromite ]
   id: WallRockChromitePlasma
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_chromite_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_chromite
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_chromite
+    - state: rock_phoron
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinQuartz, WallRockChromite ]
   id: WallRockChromiteQuartz
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_chromite_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_chromite
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_chromite
+    - state: rock_quartz
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinSilver, WallRockChromite ]
   id: WallRockChromiteSilver
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_chromite_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_chromite
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_chromite
+    - state: rock_silver
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinSteel, WallRockChromite ]
   id: WallRockChromiteTin
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_chromite_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_chromite
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_chromite
+    - state: rock_tin
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinUranium, WallRockChromite ]
   id: WallRockChromiteUranium
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_chromite_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_chromite
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_chromite
+    - state: rock_uranium
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinArtifactFragment, WallRockChromite ]
   id: WallRockChromiteArtifactFragment
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_chromite_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_chromite
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_chromite
+    - state: rock_artifact_fragment
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 - type: entity
   parent: [ BaseVeinSalt, WallRockChromite ]
   id: WallRockChromiteSalt
+  components:
+  - type: IconSmooth # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing # old SmoothEdge look: edges drawn onto open neighbouring tiles
+      mask: [ walls, stone ]
+      base: rock_chromite_
+  - type: Icon # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_chromite
+  - type: Sprite # TRIESTE: old rock sprites with edge smoothing, see _TP/Structures/Walls
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_chromite
+    - state: rock_salt
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
 #endregion

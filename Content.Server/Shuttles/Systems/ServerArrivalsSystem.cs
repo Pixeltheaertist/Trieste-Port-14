@@ -138,7 +138,7 @@ public sealed partial class ServerArrivalsSystem : ArrivalsSystem
             return;
 
         _metaData.SetEntityName(mapUid, "SWEETWATER");
-        _mapSystem.InitializeMap((Entity<MapComponent?>) map.Value, true);
+        _mapSystem.InitializeMap(map.Value.AsNullable(), true);
 
         // Setup planet arrivals if relevant
         if (Cfg.GetCVar(CCVars.ArrivalsPlanet))
@@ -161,7 +161,7 @@ public sealed partial class ServerArrivalsSystem : ArrivalsSystem
             return;
 
         _metaData.SetEntityName(mapUid2, "OCEAN");
-        _mapSystem.InitializeMap((Entity<MapComponent?>) map2.Value, true);
+        _mapSystem.InitializeMap(map2.Value.AsNullable(), true);
 
         // TRIESTE: No arrivals shuttle; players travel from Sweetwater themselves.
         // var query = AllEntityQuery<StationArrivalsComponent>();

@@ -1,0 +1,132 @@
+# Basalt rock walls. Upstream merged these into WallRock (#44857) and migrates them away;
+# Trieste maps use thousands of them, so they're restored here with their pre-respriting look,
+# and the WallRockBasalt* lines in migration.yml are commented out (# TRIESTE).
+
+- type: entity
+  parent: WallRock
+  id: WallRockBasalt
+  name: basalt
+  components:
+  - type: Icon
+    sprite: _TP/Structures/Walls/rock.rsi
+    state: rock_wall
+  - type: Sprite
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_wall
+  - type: IconSmooth
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing
+      mask: [ walls, stone ]
+      base: rock_wall_
+
+- type: entity
+  parent: [ BaseVeinCoal, WallRockBasalt ]
+  id: WallRockBasaltCoal
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_wall
+    - state: rock_coal
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  parent: [ BaseVeinGold, WallRockBasalt ]
+  id: WallRockBasaltGold
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_wall
+    - state: rock_gold
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  parent: [ BaseVeinDiamond, WallRockBasalt ]
+  id: WallRockBasaltDiamond
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_wall
+    - state: rock_diamond
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  parent: [ BaseVeinPlasma, WallRockBasalt ]
+  id: WallRockBasaltPlasma
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_wall
+    - state: rock_phoron
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  parent: [ BaseVeinQuartz, WallRockBasalt ]
+  id: WallRockBasaltQuartz
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_wall
+    - state: rock_quartz
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  parent: [ BaseVeinSilver, WallRockBasalt ]
+  id: WallRockBasaltSilver
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_wall
+    - state: rock_silver
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  parent: [ BaseVeinSteel, WallRockBasalt ]
+  id: WallRockBasaltTin
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_wall
+    - state: rock_tin
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  parent: [ BaseVeinUranium, WallRockBasalt ]
+  id: WallRockBasaltUranium
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_wall
+    - state: rock_uranium
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  parent: [ BaseVeinSalt, WallRockBasalt ]
+  id: WallRockBasaltSalt
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_wall
+    - state: rock_salt
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  parent: [ BaseVeinArtifactFragment, WallRockBasalt ]
+  id: WallRockBasaltArtifactFragment
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_wall
+    - state: rock_artifact_fragment
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
