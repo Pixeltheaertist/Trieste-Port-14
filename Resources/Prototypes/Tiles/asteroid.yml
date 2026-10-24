@@ -1,8 +1,23 @@
 - type: tile
   id: FloorAsteroidSandBorderless
   name: tiles-asteroid-sand-borderless
-  sprite: /Textures/Tiles/Asteroid/asteroid.png
-  variants: 7
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Asteroid/asteroid.png
+  variants: 13
+  placementVariants:
+  - 0.8
+  - 0.0166 #Should be roughly 20%.... I think??? I don't know dude, I'm just a YAML monkey.
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0116
+  - 0.0116
   baseTurf: Space
   isSubfloor: true
   footstepSounds:
@@ -14,24 +29,40 @@
   id: FloorAsteroidSand
   parent: FloorAsteroidSandBorderless
   name: tiles-asteroid-sand
-  sprite: /Textures/Tiles/Asteroid/asteroid.png
-  variants: 7
-  edgeSpritePriority: 6
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Asteroid/asteroid.png
+  variants: 13
+  placementVariants:
+  - 0.8
+  - 0.0166 #Should be roughly 20%.... I think??? I don't know dude, I'm just a YAML monkey.
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0116
+  - 0.0116
   edgeSprites:
-    SouthEast: /Textures/Tiles/Asteroid/single_edge_SE.png
-    NorthEast: /Textures/Tiles/Asteroid/single_edge_NE.png
-    NorthWest: /Textures/Tiles/Asteroid/single_edge_NW.png
-    SouthWest: /Textures/Tiles/Asteroid/single_edge_SW.png
-    South: /Textures/Tiles/Asteroid/double_edge_S.png
-    East: /Textures/Tiles/Asteroid/double_edge_E.png
-    North: /Textures/Tiles/Asteroid/double_edge_N.png
-    West: /Textures/Tiles/Asteroid/double_edge_W.png
+    SouthEast: /Textures/_TP/Tiles/Asteroid/asteroid_single_edge.png
+    NorthEast: /Textures/_TP/Tiles/Asteroid/asteroid_single_edge.png
+    NorthWest: /Textures/_TP/Tiles/Asteroid/asteroid_single_edge.png
+    SouthWest: /Textures/_TP/Tiles/Asteroid/asteroid_single_edge.png
+    South: /Textures/_TP/Tiles/Asteroid/asteroid_double_edge.png
+    East: /Textures/_TP/Tiles/Asteroid/asteroid_double_edge.png
+    North: /Textures/_TP/Tiles/Asteroid/asteroid_double_edge.png
+    West: /Textures/_TP/Tiles/Asteroid/asteroid_double_edge.png
+  edgeSpritePriority: 1
 
 - type: tile
   id: FloorAsteroidTile
   name: tiles-asteroid-tile
-  sprite: /Textures/Tiles/Asteroid/asteroid-tile.png
-  variants: 4
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Asteroid/asteroid_tile.png
+  variants: 1
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]

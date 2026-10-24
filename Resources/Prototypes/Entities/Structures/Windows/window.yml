@@ -101,10 +101,17 @@
   parent: [ BaseWindowStructure, StructureHealthBarrier ]
   id: Window
   components:
-  - type: Sprite
-    sprite: Structures/Windows/window-base.rsi
-  - type: Icon
-    sprite: Structures/Windows/window-base.rsi
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
+    drawdepth: WallTops
+    sprite: _TP/Structures/Windows/window.rsi
+  - type: IconSmooth # TRIESTE: old wall/window sprites, see _TP/Structures
+    key: windows
+    states:
+    - !type:CornerSpriteSmoothing # old-style corner sprites
+      mask: [ windows ]
+      base: window
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Windows/window.rsi
     state: full
   - type: Damageable
     damageModifierSet: GlassMod
@@ -128,35 +135,17 @@
   id: TintedWindow
   name: tinted window
   components:
-  - type: Sprite
-    sprite: Structures/Windows/window-tinted.rsi
-  - type: Icon
-    sprite: Structures/Windows/window-tinted.rsi
-  - type: IconSmooth
-    key: windows-tinted
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
+    drawdepth: WallTops
+    sprite: _TP/Structures/Windows/tinted_window.rsi
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Windows/tinted_window.rsi
+  - type: IconSmooth # TRIESTE: old wall/window sprites, see _TP/Structures
+    key: windows
     states:
-    - !type:CardinalCornerSpriteSmoothing
-      mask: [ windows-tinted ]
-      altMask:
-      - windows
-      - windows-reinf
-      - windows-plasma
-      - windows-plasma-reinf
-      - windows-uranium
-      - windows-uranium-reinf
-      - windows-exo
-      - windows-shuttle
-      - windows-plastitanium
-      - windows-regal
-      - walls-exo
-      - walls-shuttle
-      - walls-plastitanium
-      - walls-material
-      - walls-marble
-      - walls
-      - grilles
-      - doors
-      base: window
+    - !type:CornerSpriteSmoothing # old-style corner sprites
+      mask: [ windows ]
+      base: twindow
   - type: Construction
     graph: Window
     node: tintedWindow
@@ -242,11 +231,12 @@
   parent: [ BaseWindowStructureDirectional, StructureHealthBarrierWeak ]
   id: WindowDirectional
   components:
-  - type: Sprite
-    sprite: Structures/Windows/directional.rsi
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
+    drawdepth: Mobs
+    sprite: _TP/Structures/Windows/directional.rsi
     state: window
-  - type: Icon
-    sprite: Structures/Windows/directional.rsi
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Windows/directional.rsi
     state: window
   - type: Damageable
     damageModifierSet: GlassMod
@@ -311,11 +301,11 @@
     snap:
     - Window
   components:
-  - type: Sprite
-    sprite: Structures/Windows/directional.rsi
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Windows/directional.rsi
     state: frosted_window
-  - type: Icon
-    sprite: Structures/Windows/directional.rsi
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Windows/directional.rsi
     state: frosted_window
   - type: StaticPrice
     price: 35
@@ -357,8 +347,10 @@
     snap:
     - Window
   components:
-  - type: Sprite
-    sprite: Structures/Windows/window-base-diagonal.rsi
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
+    drawdepth: WallTops
+    sprite: _TP/Structures/Windows/window_diagonal.rsi
+    state: state0
   - type: Tag
     tags:
     - Diagonal
@@ -373,8 +365,8 @@
       - marble
       - doors
       base: state
-  - type: Icon
-    sprite: Structures/Windows/window-base-diagonal.rsi
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Windows/window_diagonal.rsi
     state: state0
   - type: Fixtures
     fixtures:

@@ -25,9 +25,8 @@
   - type: Construction
     graph: LightFixture
     node: bulbLight
-  - type: Sprite
-    offset: 0, 1
-    sprite: Structures/Wallmounts/Lighting/strobe_light.rsi
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+    sprite: _TP/Structures/Wallmounts/Lighting/strobe_light.rsi
     drawdepth: WallMountedItems
     layers:
     - map: ["enum.PoweredLightLayers.Base"]
@@ -36,13 +35,13 @@
       state: glow
       shader: unshaded
     state: base
-  - type: PointLight
+  - type: PointLight # TRIESTE: old (pre-respriting) light offset
     lightMask: ConeDouble
     color: "#FFE4CE"
     energy: 5
     radius: 4
     softness: 1
-    offset: "0, 0.25"
+    offset: "0, 0.35"
   - type: RotatingLight
   - type: Physics
     bodyType: Static
@@ -76,8 +75,8 @@
   suffix: Empty
   parent: AlwaysPoweredStrobeLight
   components:
-  - type: Sprite
-    sprite: Structures/Wallmounts/Lighting/strobe_light.rsi
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+    sprite: _TP/Structures/Wallmounts/Lighting/strobe_light.rsi
     state: empty
   - type: AmbientSound
     enabled: false

@@ -4,10 +4,11 @@
   name: firelock frame
   description: That is a firelock frame.
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/firelock-base.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/firelock.rsi
     layers:
-    - state: assembly
+    - state: frame1
+      map: [ "enum.ConstructionVisuals.Layer" ]
   - type: Appearance
   - type: Construction
     graph: Firelock

@@ -18,7 +18,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Mobs/Species/Slime/organs.rsi
+    sprite: _TP/Mobs/Species/Jellids/organs.rsi
 
 - type: entity
   parent: TP14OrganJellid
@@ -83,6 +83,9 @@
   id: TP14OrganJellidCore
   name: jellid core
   components:
+  - type: Sprite
+    layers:
+    - state: brain-jellid
   - type: Metabolizer
     maxReagents: 6
     metabolizerTypes: [ Jellid ]
@@ -93,5 +96,9 @@
   id: TP14OrganJellidLungs
   name: jellid gills
   components:
+  - type: Sprite
+    layers:
+    - state: lung-l-jellid
+    - state: lung-r-jellid
   - type: Lung
     alert: TP14AlertLysis

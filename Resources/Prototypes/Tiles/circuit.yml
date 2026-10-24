@@ -2,8 +2,9 @@
   id: FloorGreenCircuit
   parent: BaseStationTile
   name: tiles-green-circuit-floor
-  sprite: /Textures/Tiles/Circuit/circuit-green.png
-  variants: 2
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/green_circuit.png
+  variants: 1
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemGCircuit
@@ -12,8 +13,9 @@
   id: FloorBlueCircuit
   parent: BaseStationTile
   name: tiles-blue-circuit-floor
-  sprite: /Textures/Tiles/Circuit/circuit-blue.png
-  variants: 2
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/blue_circuit.png
+  variants: 1
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemBCircuit
@@ -22,8 +24,9 @@
   id: FloorRedCircuit
   parent: BaseStationTile
   name: tiles-red-circuit-floor
-  sprite: /Textures/Tiles/Circuit/circuit-red.png
-  variants: 2
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/red_circuit.png
+  variants: 1
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemRCircuit

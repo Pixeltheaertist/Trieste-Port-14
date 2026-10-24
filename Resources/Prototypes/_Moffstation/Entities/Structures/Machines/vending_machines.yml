@@ -6,9 +6,7 @@
   components:
   - type: VendingMachine
     pack: SwimvendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes

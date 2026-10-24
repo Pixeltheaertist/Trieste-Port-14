@@ -9,17 +9,12 @@
   - type: WallMount
     arc: 175
   - type: StationAiWhitelist
-  - type: Sprite
-    offset: 0, -0.25
-    drawdepth: WallMountedItems
-    sprite: Structures/Wallmounts/switch.rsi
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+    drawdepth: SmallObjects
+    sprite: _TP/Structures/Wallmounts/switch.rsi
     layers:
-    - state: base
-    - map: [ "shaded" ]
-      state: off
-    - map: [ "unshaded" ]
-      state: off-unshaded
-      shader: unshaded
+    - state: on
+      map: [ "shaded" ] # TRIESTE: old switch sprite has no unshaded states
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -27,9 +22,6 @@
         shaded:
           True: { state: on }
           False: { state: off }
-        unshaded:
-          True: { state: on-unshaded }
-          False: { state: off-unshaded }
   - type: SignalSwitch
   - type: UseDelay
     delay: 0.5 # prevent light-toggling auto-clickers.
@@ -71,15 +63,12 @@
   - type: WallMount
     arc: 175
   - type: StationAiWhitelist
-  - type: Sprite
-    offset: 0, -0.25
-    drawdepth: WallMountedItems
-    sprite: Structures/Wallmounts/switch.rsi
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+    drawdepth: SmallObjects
+    sprite: _TP/Structures/Wallmounts/switch.rsi
     layers:
-    - state: base
-    - state: button
-    - state: button-unshaded
-      shader: unshaded
+    - state: dead
+      map: [ "shaded" ] # TRIESTE: old switch sprite has no unshaded states
   - type: UseDelay
     delay: 0.5 # prevent light-toggling auto-clickers.
   - type: SignalSwitch
@@ -109,17 +98,12 @@
   name: apc net switch
   description: It's a switch for toggling lights that are connected to the same apc.
   components:
-  - type: Sprite
-    offset: 0, -0.25
-    drawdepth: WallMountedItems
-    sprite: Structures/Wallmounts/switch.rsi
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+    drawdepth: SmallObjects
+    sprite: _TP/Structures/Wallmounts/switch.rsi
     layers:
-    - state: base
-    - map: [ "shaded" ]
-      state: off
-    - map: [ "unshaded" ]
-      state: off-unshaded
-      shader: unshaded
+    - state: on
+      map: [ "shaded" ] # TRIESTE: old switch sprite has no unshaded states
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -127,9 +111,6 @@
         shaded:
           True: { state: on }
           False: { state: off }
-        unshaded:
-          True: { state: on-unshaded }
-          False: { state: off-unshaded }
   - type: WallMount
     arc: 175
   - type: Rotatable
@@ -151,6 +132,7 @@
       - *SoundMetalBreak
 
 #directional
+
 - type: entity
   parent: SignalSwitch
   id: SignalSwitchDirectional
@@ -188,6 +170,7 @@
     node: LightSwitchDirectionalNode
 
 # lockable buttons
+
 - type: entity
   parent: SignalButtonDirectional
   id: LockableButton
@@ -196,30 +179,16 @@
   components:
   - type: Lock
   - type: AccessReader
-  - type: Sprite
-    offset: 0, -0.25
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
     drawdepth: WallMountedItems
-    sprite: Structures/Wallmounts/switch-lockable.rsi
+    sprite: _TP/Structures/Wallmounts/locked_switch.rsi
     layers:
     - state: base
-    - state: button
-    - state: button-unshaded
-      shader: unshaded
-    - map: [ "lock-shaded" ]
-      state: lock-locked
-    - map: [ "lock-unshaded" ]
-      state: lock-locked-unshaded
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
       shader: unshaded
   - type: Appearance
-  - type: GenericVisualizer
-    visuals:
-      enum.LockVisuals.Locked:
-        lock-shaded:
-          True: { state: lock-locked }
-          False: { state: lock-unlocked }
-        lock-unshaded:
-          True: { state: lock-locked-unshaded }
-          False: { state: lock-unlocked-unshaded }
+  - type: LockVisuals # TRIESTE: the old sprite uses locked/unlocked on one layer, not upstream's lock-locked(-unshaded) layers
 
 - type: entity
   parent: LockableButton
@@ -485,10 +454,9 @@
     arc: 175
   - type: Physics
     canCollide: false
-  - type: Sprite
-    offset: 0, -0.25
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
     drawdepth: SmallObjects
-    sprite: Structures/Wallmounts/switch-frame.rsi
+    sprite: _TP/Structures/Wallmounts/switch_frame.rsi
     state: grey
   - type: Rotatable
   - type: Transform
@@ -509,7 +477,9 @@
   parent: ButtonFrame
   suffix: grey
   components:
-  - type: Sprite
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+    drawdepth: SmallObjects
+    sprite: _TP/Structures/Wallmounts/switch_frame.rsi
     state: grey
 
 - type: entity
@@ -517,7 +487,9 @@
   parent: ButtonFrame
   suffix: caution
   components:
-  - type: Sprite
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+    drawdepth: SmallObjects
+    sprite: _TP/Structures/Wallmounts/switch_frame.rsi
     state: caution
 
 - type: entity
@@ -525,8 +497,10 @@
   parent: ButtonFrame
   suffix: caution
   components:
-  - type: Sprite
-    state: caution-security
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+    drawdepth: SmallObjects
+    sprite: _TP/Structures/Wallmounts/switch_frame.rsi
+    state: caution_security
 
 - type: entity
   id: ButtonFrameWhite
@@ -534,12 +508,14 @@
   suffix: white
   components:
   - type: Sprite
-    state: white
+    state: grey # TRIESTE: the old frame sprite has no white state
 
 - type: entity
   id: ButtonFrameJanitor
   parent: ButtonFrame
   suffix: janitor
   components:
-  - type: Sprite
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+    drawdepth: SmallObjects
+    sprite: _TP/Structures/Wallmounts/switch_frame.rsi
     state: janitor

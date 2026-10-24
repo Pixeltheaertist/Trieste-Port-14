@@ -14,7 +14,7 @@
       types:
         Heat: 4 # Burns very easily
   - type: Temperature
-    currentTemperature: 310.15
+    temperature: 310.15
     specificHeat: 46
   - type: TemperatureSpeed
     thresholds:
@@ -39,14 +39,28 @@
     stomachStorageWhitelist:
       components:
       - MobState
-  - type: Hunger
-    baseDecayRate: 0.5
-    starvingSlowdownModifier: 2 # Getting desperate for prey, over-exerting it's host
-    starvationDamage:
-      types:
-        Slash: 3 # Upon starving, begins panicking and damaging the host
-  - type: Thirst
-    baseDecayRate: 0.5 # Uses the Bloodsucker metabolism, meaning it can only drink blood for thirst quenching.
+  # These replace the host's components wholesale, so every satiation type needs to be listed.
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: TP14ThingyHunger
+      Thirst:
+        prototype: TP14ThingyThirst
+  - type: SatiationSpeedModifier
+    satiations:
+      Hunger:
+        thresholds:
+          Starving: 2 # Getting desperate for prey, over-exerting it's host
+      Thirst:
+        thresholds:
+          Parched: 0.75
+  - type: SatiationDamage
+    satiations:
+      Hunger:
+        thresholds:
+          Starving:
+            types:
+              Slash: 3 # Upon starving, begins panicking and damaging the host
   - type: ItemCreator
     action: ActionCreateThingySpine
     charge: 0

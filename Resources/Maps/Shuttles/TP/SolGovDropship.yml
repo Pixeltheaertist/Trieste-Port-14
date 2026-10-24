@@ -19,7 +19,7 @@ tilemap:
   4: FloorLaundry
   7: FloorMetalDiamond
   89: FloorSteel
-  6: FloorTechMaint
+  6: TP14FloorTechMaint
   8: FloorTechMaint2
   2: Lattice
   1: Plating

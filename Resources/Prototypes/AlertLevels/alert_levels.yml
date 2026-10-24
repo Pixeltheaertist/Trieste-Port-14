@@ -67,7 +67,7 @@
 - type: alertLevel
   parent: BaseDelta
   id: DeltaNuke
-  announcement: alert-level-delta-nuke-announcement
+  announcement: alert-level-delta-announcement
   sound:
     path: /Audio/Misc/delta.ogg
     params:

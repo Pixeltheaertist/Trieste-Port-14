@@ -2,6 +2,7 @@ using Content.Server._TP.StationEvents.Components;
 using Content.Server.StationEvents.Events;
 using Content.Shared._TP.Weather;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Light.Components;
 using Content.Shared.Weather;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
@@ -25,14 +26,14 @@ public sealed partial class WeatherChangeRule : StationEventSystem<WeatherChange
     [Dependency] private IPrototypeManager _protoMan = default!;
     [Dependency] private SharedWeatherSystem _weather = default!;
 
-    protected override void Started(EntityUid uid, WeatherChangeRuleComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
+    protected override void Started(Entity<WeatherChangeRuleComponent, GameRuleComponent> ent, ref GameRuleStartedEvent args)
     {
-        base.Started(uid, comp, gameRule, args);
+        base.Started(ent, ref args);
 
         var query = EntityQueryEnumerator<WeatherStatusEffectComponent>();
         while (query.MoveNext(out var weatherUid, out _))
         {
-            if (!_protoMan.TryIndex(comp.TargetWeather, out var targetWeather))
+            if (!_protoMan.TryIndex(ent.Comp1.TargetWeather, out var targetWeather))
                 return;
 
             if (!targetWeather.HasComp<WeatherStatusEffectComponent>(_factory))
@@ -46,13 +47,12 @@ public sealed partial class WeatherChangeRule : StationEventSystem<WeatherChange
 
             _weather.TrySetWeather(mapId, targetWeather, out _, TimeSpan.FromMinutes(99999));
 
-            if (comp.Sunlight)
+            if (ent.Comp1.Sunlight)
             {
                 if (mapUid.HasValue)
                 {
                     var realMapUid = mapUid.Value;
                     EnsureComp<MetaDataComponent>(realMapUid);
-
 
                     if (!TryComp<MetaDataComponent>(mapUid, out var metadata))
                     {
@@ -60,8 +60,11 @@ public sealed partial class WeatherChangeRule : StationEventSystem<WeatherChange
                         return;
                     }
 
+                    if (HasComp<ImplicitRoofComponent>(realMapUid))
+                        RemComp<ImplicitRoofComponent>(realMapUid);
+
                     var light = EnsureComp<MapLightComponent>(realMapUid);
-                    light.AmbientLightColor = comp.SunlightColor;
+                    light.AmbientLightColor = ent.Comp1.SunlightColor;
 
                     Dirty(realMapUid, light, metadata);
                 }
@@ -70,7 +73,7 @@ public sealed partial class WeatherChangeRule : StationEventSystem<WeatherChange
             Log.Info("Weather set");
         }
 
-        if (!comp.Lightning)
+        if (!ent.Comp1.Lightning)
         {
             foreach (var thunder in EntityQuery<LightningMarkerComponent>())
             {
@@ -79,14 +82,15 @@ public sealed partial class WeatherChangeRule : StationEventSystem<WeatherChange
         }
     }
 
-    protected override void Ended(EntityUid uid, WeatherChangeRuleComponent comp, GameRuleComponent gameRule, GameRuleEndedEvent args)
+    protected override void Ended(Entity<WeatherChangeRuleComponent> rule, ref GameRuleEndedEvent args)
     {
-        base.Ended(uid, comp, gameRule, args);
+        base.Ended(rule, ref args);
+
 
         var query = EntityQueryEnumerator<WeatherStatusEffectComponent>();
         while (query.MoveNext(out var weatherUid, out _))
         {
-            if (!_protoMan.TryIndex(comp.ReturnWeather, out var returnWeather))
+            if (!_protoMan.TryIndex(rule.Comp.ReturnWeather, out var returnWeather))
                 return;
 
             if (!returnWeather.HasComp<WeatherStatusEffectComponent>(_factory))
@@ -101,7 +105,7 @@ public sealed partial class WeatherChangeRule : StationEventSystem<WeatherChange
             _weather.TrySetWeather(mapId, returnWeather, out _, TimeSpan.FromMinutes(99999));
             Log.Info("Weather set");
 
-            if (!comp.Sunlight)
+            if (!rule.Comp.Sunlight)
                 continue;
 
             if (!mapUid.HasValue)
@@ -113,7 +117,7 @@ public sealed partial class WeatherChangeRule : StationEventSystem<WeatherChange
             // Dirty(mapUid, light, metadata);
         }
 
-        if (!comp.Lightning)
+        if (!rule.Comp.Lightning)
         {
             foreach (var thunder in EntityQuery<LightningMarkerComponent>())
             {

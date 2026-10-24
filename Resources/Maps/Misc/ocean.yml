@@ -14,15 +14,15 @@ orphans: []
 nullspace: []
 tilemap:
   0: Space
-  4: FloorAsphalt
-  20: FloorBrassFilled
-  21: FloorBrassReebe
+  4: TP14FloorAsphalt
+  20: TP14FloorBrassFilled
+  21: TP14FloorBrassReebe
   22: FloorBrokenWood
-  54: FloorGrayConcrete
+  54: TP14FloorGrayConcrete
   71: FloorMetalFoam
-  78: FloorOldConcrete
-  79: FloorOldConcreteMono
-  87: FloorRockVault
+  78: TP14FloorOldConcrete
+  79: TP14FloorOldConcreteMono
+  87: TP14FloorRockVault
   103: FloorSteelDamaged
   1: FloorTechMaint2
   128: FloorWood

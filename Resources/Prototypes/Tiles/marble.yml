@@ -2,8 +2,9 @@
   id: FloorWhiteMarble
   parent: BaseStationTile
   name: tiles-white-marble
-  sprite: /Textures/Tiles/Marble/white-marble.png
-  variants: 6
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/white_marble.png
+  variants: 8
   footstepSounds:
     collection: FootstepTile
   friction: 0.8
@@ -21,8 +22,9 @@
   id: FloorDarkMarble
   parent: FloorWhiteMarble
   name: tiles-dark-marble
-  sprite: /Textures/Tiles/Marble/dark-marble.png
-  variants: 6
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/dark_marble.png
+  variants: 8
   itemDrop: FloorTileItemDarkMarble
 
 - type: tile

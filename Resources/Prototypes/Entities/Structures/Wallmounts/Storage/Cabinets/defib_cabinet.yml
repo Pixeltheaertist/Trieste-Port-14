@@ -1,4 +1,5 @@
 # TODO: same as other wallmount cabinets they should use a base structure prototype
+
 - type: entity
   parent: [ BaseWallmountCabinet, StructureHealthContainerWeak ]
   id: DefibrillatorCabinet
@@ -7,9 +8,9 @@
   placement:
     mode: SnapgridCenter
   components:
-  - type: Sprite
-    sprite: Structures/Wallmounts/defib-cabinet.rsi
-    offset: 0, -0.25
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+    sprite: _TP/Structures/Wallmounts/defib_cabinet.rsi
+    noRot: false
     layers:
     - state: frame
     - state: fill

@@ -77,7 +77,8 @@
   metabolisms:
     Digestion:
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 0.5
       - !type:ModifyStatusEffect
         effectProto: StatusEffectDrowsiness
@@ -97,7 +98,8 @@
   metabolisms:
     Digestion:
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 2
       - !type:ModifyStatusEffect
         effectProto: StatusEffectDrowsiness

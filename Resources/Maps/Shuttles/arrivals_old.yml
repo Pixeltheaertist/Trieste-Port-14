@@ -14,7 +14,7 @@ orphans:
 nullspace: []
 tilemap:
   3: Space
-  2: FloorMining
+  2: TP14FloorMining
   1: FloorTechMaint3
   0: Plating
   4: PlatingDamaged

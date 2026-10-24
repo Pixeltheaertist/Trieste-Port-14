@@ -25,8 +25,7 @@
       - state: equipped-OUTERCLOTHING-unshaded
         shader: shaded
   - type: TemperatureProtection
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.3
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.3
   - type: Tag
     tags:
     - HiViz

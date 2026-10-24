@@ -84,7 +84,7 @@
     armDelay: 1
     switchSound:
       path: /Audio/Weapons/click.ogg
-  - type: WirelessNetworkConnection
+  - type: WirelessNetwork
     range: 50
   - type: StaticPrice
     price: 60

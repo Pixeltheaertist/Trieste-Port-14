@@ -2,18 +2,19 @@
   id: FloorPlanetGrass
   parent: BaseFloorPlanet
   name: tiles-grass-planet-floor
-  sprite: /Textures/Tiles/Grass/grass.png
-  variants: 6
-  edgeSpritePriority: 5
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Planet/Grass/grass.png
+  variants: 4
   edgeSprites:
-    SouthEast: /Textures/Tiles/Grass/single_edge_SE.png
-    NorthEast: /Textures/Tiles/Grass/single_edge_NE.png
-    NorthWest: /Textures/Tiles/Grass/single_edge_NW.png
-    SouthWest: /Textures/Tiles/Grass/single_edge_SW.png
-    South: /Textures/Tiles/Grass/double_edge_S.png
-    East: /Textures/Tiles/Grass/double_edge_E.png
-    North: /Textures/Tiles/Grass/double_edge_N.png
-    West: /Textures/Tiles/Grass/double_edge_W.png
+    SouthEast: /Textures/_TP/Tiles/Planet/Grass/single_edge.png
+    NorthEast: /Textures/_TP/Tiles/Planet/Grass/single_edge.png
+    NorthWest: /Textures/_TP/Tiles/Planet/Grass/single_edge.png
+    SouthWest: /Textures/_TP/Tiles/Planet/Grass/single_edge.png
+    South: /Textures/_TP/Tiles/Planet/Grass/double_edge.png
+    East: /Textures/_TP/Tiles/Planet/Grass/double_edge.png
+    North: /Textures/_TP/Tiles/Planet/Grass/double_edge.png
+    West: /Textures/_TP/Tiles/Planet/Grass/double_edge.png
+  edgeSpritePriority: 1
   baseTurf: FloorPlanetDirt
   isSubfloor: true
   footstepSounds:
@@ -22,8 +23,9 @@
 - type: tile
   id: FloorGrass
   name: tiles-planet-grass-floor
-  sprite: /Textures/Tiles/Grass/grass.png
-  variants: 6
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/grass.png
+  variants: 1
   baseTurf: FloorDirt
   footstepSounds:
     collection: FootstepGrass
@@ -34,18 +36,10 @@
 - type: tile
   id: FloorGrassJungle
   name: tiles-jungle-grass-floor
-  sprite: /Textures/Tiles/GrassJungle/grass.png
-  variants: 6
-  edgeSpritePriority: 4
-  edgeSprites:
-    SouthEast: /Textures/Tiles/GrassJungle/single_edge_SE.png
-    NorthEast: /Textures/Tiles/GrassJungle/single_edge_NE.png
-    NorthWest: /Textures/Tiles/GrassJungle/single_edge_NW.png
-    SouthWest: /Textures/Tiles/GrassJungle/single_edge_SW.png
-    South: /Textures/Tiles/GrassJungle/double_edge_S.png
-    East: /Textures/Tiles/GrassJungle/double_edge_E.png
-    North: /Textures/Tiles/GrassJungle/double_edge_N.png
-    West: /Textures/Tiles/GrassJungle/double_edge_W.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/grassjungle.png
+  edgeSprites: {}
+  variants: 1
   baseTurf: FloorDirt
   isSubfloor: true
   footstepSounds:
@@ -57,18 +51,10 @@
 - type: tile
   id: FloorGrassDark
   name: tiles-dark-grass-floor
-  sprite: /Textures/Tiles/GrassDark/grass.png
-  variants: 6
-  edgeSpritePriority: 3
-  edgeSprites:
-    SouthEast: /Textures/Tiles/GrassDark/single_edge_SE.png
-    NorthEast: /Textures/Tiles/GrassDark/single_edge_NE.png
-    NorthWest: /Textures/Tiles/GrassDark/single_edge_NW.png
-    SouthWest: /Textures/Tiles/GrassDark/single_edge_SW.png
-    South: /Textures/Tiles/GrassDark/double_edge_S.png
-    East: /Textures/Tiles/GrassDark/double_edge_E.png
-    North: /Textures/Tiles/GrassDark/double_edge_N.png
-    West: /Textures/Tiles/GrassDark/double_edge_W.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/grassdark.png
+  variants: 4
+  edgeSprites: {}
   baseTurf: FloorDirt
   isSubfloor: true
   footstepSounds:
@@ -81,6 +67,19 @@
   parent: [ BaseStationTile, FloorPlanetGrass ]
   id: FloorAstroGrass
   name: tiles-astro-grass
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Planet/Grass/grass.png
+  variants: 4
+  edgeSprites:
+    SouthEast: /Textures/_TP/Tiles/Planet/Grass/single_edge.png
+    NorthEast: /Textures/_TP/Tiles/Planet/Grass/single_edge.png
+    NorthWest: /Textures/_TP/Tiles/Planet/Grass/single_edge.png
+    SouthWest: /Textures/_TP/Tiles/Planet/Grass/single_edge.png
+    South: /Textures/_TP/Tiles/Planet/Grass/double_edge.png
+    East: /Textures/_TP/Tiles/Planet/Grass/double_edge.png
+    North: /Textures/_TP/Tiles/Planet/Grass/double_edge.png
+    West: /Textures/_TP/Tiles/Planet/Grass/double_edge.png
+  edgeSpritePriority: 1
   footstepSounds:
     collection: FootstepGrass
   itemDrop: FloorTileItemAstroGrass
@@ -105,6 +104,9 @@
   parent: [ BaseStationTile, FloorGrassDark ]
   id: FloorDarkAstroGrass
   name: tiles-dark-astro-grass
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/grassdark.png
+  variants: 4
   footstepSounds:
     collection: FootstepGrass
   itemDrop: FloorTileItemDarkAstroGrass

@@ -99,7 +99,7 @@
   - type: Vocal
     emoteSounds: TP14EmoteSoundsJellid
   - type: TemperatureProtection
-    coolingCoefficient: 0.0
+    coefficient: 0.0
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:

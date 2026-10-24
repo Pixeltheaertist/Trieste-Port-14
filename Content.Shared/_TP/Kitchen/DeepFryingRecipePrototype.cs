@@ -1,5 +1,4 @@
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared._TP.Kitchen;
 
@@ -21,8 +20,8 @@ public sealed partial class DeepFryingRecipePrototype : IPrototype
     [DataField("time")]
     public uint CookTime { get; private set; } = 5;
 
-    [DataField("result", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string Result { get; private set; } = string.Empty;
+    [DataField("result")]
+    public EntProtoId Result;
 
     [DataField("ingredient")]
     public EntProtoId Ingredient;

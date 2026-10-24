@@ -74,7 +74,6 @@
   - sprite: _CD/Mobs/Customization/Diona/head.rsi # CD
     state: bracket
     coloring:
-      default:
       type: !type:EyeColoring # CD
 
 - type: marking

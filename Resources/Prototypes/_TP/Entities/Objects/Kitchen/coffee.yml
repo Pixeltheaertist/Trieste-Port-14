@@ -7,6 +7,7 @@
   description: A single-use filter for a boiler.
   components:
   - type: CoffeeFilter
+    dirtyPrototype: TP14CoffeeFilterDirty
   - type: Item
     size: Small
   - type: Sprite
@@ -23,6 +24,9 @@
   name: dirty coffee filter
   description: Smells of old, burnt coffee.
   components:
+  - type: CoffeeFilter
+    isDirty: true
+    dirtyPrototype: null
   - type: Sprite
     sprite: _TP/Objects/Tools/kitchen.rsi
     state: filter-dirty

@@ -36,11 +36,10 @@
     containers:
       board: !type:Container
       key_slots: !type:Container
-  - type: Sprite
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
     noRot: false
     drawdepth: SmallObjects
-    sprite: Structures/Wallmounts/intercom.rsi
-    offset: 0, -0.25
+    sprite: _TP/Structures/Wallmounts/intercom.rsi
     layers:
     - state: base
     - state: unshaded
@@ -112,10 +111,9 @@
   name: intercom assembly
   description: An intercom. It doesn't seem very helpful right now.
   components:
-  - type: Sprite
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
     drawdepth: SmallObjects
-    sprite: Structures/Wallmounts/intercom.rsi
-    offset: 0, -0.25
+    sprite: _TP/Structures/Wallmounts/intercom.rsi
     layers:
     - state: build
     - state: panel
@@ -144,6 +142,7 @@
     node: assembly
 
 # this weird inheritance BS exists for construction shitcode
+
 - type: entity
   id: IntercomConstructed
   parent: BaseIntercom

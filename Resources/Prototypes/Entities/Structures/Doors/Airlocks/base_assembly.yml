@@ -1,4 +1,5 @@
 #Base
+
 - type: entity
   parent: StructureHealthDoorWeak
   id: AirlockAssembly
@@ -7,8 +8,8 @@
   components:
   - type: Clickable
   - type: InteractionOutline
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-base.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/basic.rsi
     state: "assembly"
   - type: Physics
   - type: Fixtures

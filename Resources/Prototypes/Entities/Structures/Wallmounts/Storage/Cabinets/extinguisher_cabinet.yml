@@ -9,9 +9,9 @@
     node: done
     containers:
     - ItemCabinet
-  - type: Sprite
-    sprite: Structures/Wallmounts/extinguisher-cabinet.rsi
-    offset: 0, -0.25
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+    sprite: _TP/Structures/Wallmounts/extinguisher_cabinet.rsi
+    snapCardinals: true
     layers:
     - state: frame
     - state: extinguisher

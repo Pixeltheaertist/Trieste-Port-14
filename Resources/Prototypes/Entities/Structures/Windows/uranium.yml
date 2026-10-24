@@ -3,10 +3,11 @@
   id: UraniumWindow
   name: uranium window
   components:
-  - type: Sprite
-    sprite: Structures/Windows/window-uranium.rsi
-  - type: Icon
-    sprite: Structures/Windows/window-uranium.rsi
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
+    drawdepth: WallTops
+    sprite: _TP/Structures/Windows/uranium_window.rsi
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Windows/uranium_window.rsi
     state: full
   - type: Damageable
     damageModifierSet: GlassMod
@@ -24,31 +25,12 @@
           ShardGlassUranium:
             min: 1
             max: 2
-  - type: IconSmooth
-    key: windows-uranium
+  - type: IconSmooth # TRIESTE: old wall/window sprites, see _TP/Structures
+    key: windows
     states:
-    - !type:CardinalCornerSpriteSmoothing
-      mask: [ windows-uranium ]
-      altMask:
-      - windows
-      - windows-reinf
-      - windows-tinted
-      - windows-plasma
-      - windows-plasma-reinf
-      - windows-uranium-reinf
-      - windows-exo
-      - windows-shuttle
-      - windows-plastitanium
-      - windows-regal
-      - walls-exo
-      - walls-shuttle
-      - walls-plastitanium
-      - walls-material
-      - walls-marble
-      - walls
-      - grilles
-      - doors
-      base: window
+    - !type:CornerSpriteSmoothing # old-style corner sprites
+      mask: [ windows ]
+      base: uwindow
   - type: Construction
     graph: Window
     node: uraniumWindow
@@ -69,11 +51,11 @@
   id: UraniumWindowDirectional
   name: directional uranium window
   components:
-  - type: Sprite
-    sprite: Structures/Windows/directional.rsi
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Windows/directional.rsi
     state: uranium_window
-  - type: Icon
-    sprite: Structures/Windows/directional.rsi
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Windows/directional.rsi
     state: uranium_window
   - type: Construction
     graph: WindowDirectional
@@ -146,9 +128,10 @@
     snap:
     - Window
   components:
-  - type: Sprite
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
     drawdepth: WallTops
-    sprite: Structures/Windows/window-diagonal-uranium.rsi
+    sprite: _TP/Structures/Windows/uranium_window_diagonal.rsi
+    state: state0
   - type: Tag
     tags:
     - Diagonal
@@ -163,8 +146,8 @@
       - marble
       - doors
       base: state
-  - type: Icon
-    sprite: Structures/Windows/window-diagonal-uranium.rsi
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Windows/uranium_window_diagonal.rsi
     state: state0
   - type: Fixtures
     fixtures:

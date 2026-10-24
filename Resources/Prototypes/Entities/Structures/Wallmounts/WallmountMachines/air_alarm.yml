@@ -74,15 +74,14 @@
       board: !type:Container
   - type: Appearance
   - type: WiresVisuals
-  - type: Sprite
-    sprite: Structures/Wallmounts/air-alarm.rsi
-    offset: 0, -0.25
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+    sprite: _TP/Structures/Wallmounts/air_monitors.rsi
     layers:
-    - state: base
+    - state: alarmp
+      map: ["airAlarmBase"]
     - state: alarm0
-      shader: unshaded
       map: ["airAlarmState"] # TODO: fire alarm enum
-    - state: panel
+    - state: alarmx
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: Construction
     graph: AirAlarm

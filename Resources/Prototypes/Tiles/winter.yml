@@ -1,8 +1,9 @@
 - type: tile
   id: FloorIce
   name: tiles-ice
-  sprite: /Textures/Tiles/Ice/ice.png
-  variants: 4
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Planet/Snow/ice.png
+  variants: 1
   isSubfloor: true
   friction: 0.05
   heatCapacity: 10000
@@ -14,18 +15,29 @@
   id: FloorSnow
   parent: BaseFloorPlanet
   name: tiles-snow
-  sprite: /Textures/Tiles/Snow/snow.png
-  variants: 6
-  edgeSpritePriority: 8
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Planet/Snow/snow.png
+  variants: 13
+  placementVariants:
+  - 0.8
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0116
+  - 0.0116
   edgeSprites:
-    SouthEast: /Textures/Tiles/Snow/single_edge_SE.png
-    NorthEast: /Textures/Tiles/Snow/single_edge_NE.png
-    NorthWest: /Textures/Tiles/Snow/single_edge_NW.png
-    SouthWest: /Textures/Tiles/Snow/single_edge_SW.png
-    South: /Textures/Tiles/Snow/double_edge_S.png
-    East: /Textures/Tiles/Snow/double_edge_E.png
-    North: /Textures/Tiles/Snow/double_edge_N.png
-    West: /Textures/Tiles/Snow/double_edge_W.png
+    South: /Textures/_TP/Tiles/Planet/Snow/snow_double_edge_south.png
+    East: /Textures/_TP/Tiles/Planet/Snow/snow_double_edge_east.png
+    North: /Textures/_TP/Tiles/Planet/Snow/snow_double_edge_north.png
+    West: /Textures/_TP/Tiles/Planet/Snow/snow_double_edge_west.png
+  edgeSpritePriority: 2
   footstepSounds:
     collection: FootstepSnow
 
@@ -34,8 +46,9 @@
   parent: BaseStationTile
   id: FloorAstroIce
   name: tiles-astro-ice
-  sprite: /Textures/Tiles/Ice/ice.png
-  variants: 4
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Planet/Snow/ice.png
+  variants: 1
   friction: 0.05
   mobFriction: 0.05
   mobAcceleration: 0.1

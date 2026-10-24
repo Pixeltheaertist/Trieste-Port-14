@@ -3,19 +3,15 @@
   parent: PlastitaniumWindow
   name: mechadermis window
   components:
-  - type: Sprite
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
     drawdepth: WallTops
-    sprite: Structures/Windows/exo-resin-borg.rsi
-  - type: Icon
-    sprite: Structures/Windows/exo-resin-borg.rsi
+    sprite: _TP/Structures/Windows/xenoborg.rsi
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Windows/xenoborg.rsi
     state: full
-  - type: IconSmooth
-    key: windows-exo-borg
+  - type: IconSmooth # TRIESTE: old wall/window sprites, see _TP/Structures
+    key: windows
     states:
-    - !type:CardinalCornerSpriteSmoothing
-      mask: [ windows-exo-borg ]
-      altMask:
-      - walls-exo-borg
-      - grilles
-      - doors
-      base: window
+    - !type:CornerSpriteSmoothing # old-style corner sprites
+      mask: [ windows ]
+      base: xenoborg

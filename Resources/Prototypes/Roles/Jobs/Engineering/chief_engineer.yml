@@ -13,7 +13,6 @@
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 5h # TRIESTE: '10h'
-  weight: 10
   startingGear: ChiefEngineerGear
   icon: "TP14JobIconChiefEngineer" # TRIESTE: 'JobIconChiefEngineer'
   supervisors: job-supervisors-captain

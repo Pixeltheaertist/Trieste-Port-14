@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingMaskClownBase
+  parent: ClothingMaskBase # Not ClothingMaskClownBase: that's foldable now and needs 'opened' sprites this mask doesn't have.
   id: TP14ClothingMaskWearyClown
   suffix: Trieste, Mask, Clown
   name: weary clown mask
@@ -15,7 +15,10 @@
     - ClownMask
     - HamsterWearable
     - WhitelistChameleon
+  - type: IdentityBlocker
   - type: HideLayerClothing
+    slots:
+    - Snout
   - type: BreathMask
     allowedSlots:
     - mask

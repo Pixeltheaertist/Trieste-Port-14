@@ -38,7 +38,7 @@
       prefix: device-address-prefix-vent
       sendBroadcastAttemptEvent: true
       examinableAddress: true
-    - type: WiredNetworkConnection
+    - type: WiredNetwork
     - type: DeviceNetworkRequiresPower
     - type: AtmosDevice
     - type: AtmosMonitor

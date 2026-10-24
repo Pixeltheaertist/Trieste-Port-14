@@ -16,39 +16,39 @@ tilemap:
   0: Space
   2: FloorAsteroidSand
   24: FloorAsteroidSandBorderless
-  1: FloorAsteroidSandDug
+  1: TP14FloorAsteroidSandDug
   10: FloorAstroAsteroidSand
   11: FloorAstroAsteroidSandBorderless
-  6: FloorBrassFilled
+  6: TP14FloorBrassFilled
   22: FloorCave
-  23: FloorCaveDrought
+  23: TP14FloorCaveDrought
   17: FloorDarkMini
-  9: FloorDarkOffset
+  9: TP14FloorDarkOffset
   40: FloorDirt
   8: FloorFlesh
   18: FloorHullReinforced
   7: FloorMetalDiamond
-  66: FloorMining
-  4: FloorMiningDark
-  68: FloorMiningLight
-  71: FloorOldConcreteMono
-  72: FloorOldConcreteSmooth
+  66: TP14FloorMining
+  4: TP14FloorMiningDark
+  68: TP14FloorMiningLight
+  71: TP14FloorOldConcreteMono
+  72: TP14FloorOldConcreteSmooth
   3: FloorShuttleBlack
   27: FloorShuttleGrey
   82: FloorShuttleOrange
   26: FloorShuttleRed
-  14: FloorTechMaint
+  14: TP14FloorTechMaint
   12: FloorTechMaint2
   13: FloorTechMaint3
   15: FloorTechMaintDark
   118: FloorWood
   16: FloorWoodLarge
   21: FloorWoodTile
-  20: FloorXenoMaint
-  25: FloorXenoSteelCorner
+  20: TP14FloorXenoMaint
+  25: TP14FloorXenoSteelCorner
   121: Plating
   19: PlatingAsteroid
-  5: PlatingBrass
+  5: TP14PlatingBrass
   124: PlatingDamaged
 entities:
 - proto: ""

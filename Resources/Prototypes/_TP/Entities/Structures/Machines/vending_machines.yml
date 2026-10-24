@@ -8,9 +8,7 @@
   components:
   - type: VendingMachine
     pack: TP14ClothesVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -39,9 +37,7 @@
   components:
   - type: VendingMachine
     pack: PrideDrobeInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -71,9 +67,7 @@
   components:
   - type: VendingMachine
     pack: TP14PetroVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -105,9 +99,7 @@
   components:
   - type: VendingMachine
     pack: BarVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -139,9 +131,7 @@
   components:
   - type: VendingMachine
     pack: CargoVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -172,9 +162,7 @@
   components:
   - type: VendingMachine
     pack: TP14ExpedVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -205,9 +193,7 @@
   components:
   - type: VendingMachine
     pack: ChapVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -238,9 +224,7 @@
   components:
   - type: VendingMachine
     pack: ChefVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -271,9 +255,7 @@
   components:
   - type: VendingMachine
     pack: ChemClothesVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -304,9 +286,7 @@
   components:
   - type: VendingMachine
     pack: DetVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -338,9 +318,7 @@
   components:
   - type: VendingMachine
     pack: AtmosVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -371,9 +349,7 @@
   components:
   - type: VendingMachine
     pack: EngiClothesVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -405,9 +381,7 @@
   components:
   - type: VendingMachine
     pack: HydroVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -438,9 +412,7 @@
   components:
   - type: VendingMachine
     pack: JaniVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -471,9 +443,7 @@
   components:
   - type: VendingMachine
     pack: MedVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -504,9 +474,7 @@
   components:
   - type: VendingMachine
     pack: RoboVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -537,9 +505,7 @@
   components:
   - type: VendingMachine
     pack: SciVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -570,9 +536,7 @@
   components:
   - type: VendingMachine
     pack: SecVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -603,9 +567,7 @@
   components:
   - type: VendingMachine
     pack: LibrarianVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -636,9 +598,7 @@
   components:
   - type: VendingMachine
     pack: LawVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -669,9 +629,7 @@
   components:
   - type: VendingMachine
     pack: TheaterVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -702,9 +660,7 @@
   components:
   - type: VendingMachine
     pack: HonkClothesVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
@@ -734,9 +690,7 @@
   components:
   - type: VendingMachine
     pack: HonkClothesVendInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
+  - type: VendingMachineVisuals # off/broken/normal states are inherited from VendingMachine
     denyState: deny-unshaded
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes

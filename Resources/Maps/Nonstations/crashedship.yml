@@ -12,18 +12,18 @@ tilemap:
   59: FloorHull
   2: FloorHullReinforced
   5: FloorKitchen
-  69: FloorLowDesert
+  69: TP14FloorLowDesertOld
   70: FloorMetalDiamond
-  74: FloorMiningDark
-  75: FloorMiningLight
+  74: TP14FloorMiningDark
+  75: TP14FloorMiningLight
   83: FloorPlastic
   86: FloorReinforcedHardened
-  87: FloorRockVault
+  87: TP14FloorRockVault
   89: FloorShuttleBlack
   91: FloorShuttleGrey
   101: FloorSteelCheckerDark
   109: FloorSteelMini
-  114: FloorTechMaint
+  114: TP14FloorTechMaint
   116: FloorTechMaint3
   4: FloorWebTile
   128: FloorWood

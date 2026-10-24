@@ -1172,6 +1172,3 @@ hydroponicsSoil: HydroponicsSoil
 hydroponicsTray: HydroponicsTray
 trayScanner: TRayScanner
 voicesensor: VoiceSensor
-
-# 2026-10-22
-FloorPlatformEntity: TP14FloorPlatformChasm

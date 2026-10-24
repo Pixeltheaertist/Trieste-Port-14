@@ -465,35 +465,16 @@
   name: plastitanium wall
   suffix: indestructible
   components:
-  - type: Sprite
-    sprite: Structures/Walls/plastitanium.rsi
-  - type: Icon
-    sprite: Structures/Walls/plastitanium.rsi
-  - type: IconSmooth
-    key: walls-plastitanium
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/plastitanium.rsi
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/plastitanium.rsi
+  - type: IconSmooth # TRIESTE: old wall/window sprites, see _TP/Structures
+    key: walls
     states:
-    - !type:CardinalCornerSpriteSmoothing
-      mask: [ walls-plastitanium ]
-      altMask:
-      - windows
-      - windows-reinf
-      - windows-tinted
-      - windows-plasma
-      - windows-plasma-reinf
-      - windows-uranium
-      - windows-uranium-reinf
-      - windows-exo
-      - windows-shuttle
-      - windows-plastitanium
-      - windows-regal
-      - walls-exo
-      - walls-shuttle
-      - walls-material
-      - walls-marble
-      - walls
-      - grilles
-      - doors
-      base: wall
+    - !type:CornerSpriteSmoothing # old-style corner sprites
+      mask: [ walls ]
+      base: plastitanium
   - type: Fixtures
     fixtures:
       fix1:
@@ -533,11 +514,12 @@
   name: plastitanium wall
   suffix: diagonal, indestructible
   components:
-  - type: Sprite
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
     drawdepth: Walls
-    sprite: Structures/Walls/plastitanium-diagonal.rsi
-  - type: Icon
-    sprite: Structures/Walls/plastitanium-diagonal.rsi
+    sprite: _TP/Structures/Walls/plastitanium_diagonal.rsi
+    state: state0
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/plastitanium_diagonal.rsi
     state: state0
   - type: RadiationBlocker
     resistance: 5
@@ -552,12 +534,12 @@
   name: plastitanium wall
   suffix: diagonal
   components:
-  - type: Sprite
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
     drawdepth: Walls
-    sprite: Structures/Walls/plastitanium-diagonal.rsi
+    sprite: _TP/Structures/Walls/plastitanium_diagonal.rsi
     state: state0
-  - type: Icon
-    sprite: Structures/Walls/plastitanium-diagonal.rsi
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/plastitanium_diagonal.rsi
     state: state0
   - type: Damageable
     damageModifierSet: PlastitaniumMod
@@ -573,11 +555,11 @@
   id: WallReinforced
   name: reinforced wall
   components:
-  - type: Sprite
-    sprite: Structures/Walls/solid-reinforced.rsi
-  - type: Icon
-    sprite: Structures/Walls/solid-reinforced.rsi
-    state: full
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/solid.rsi
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/solid.rsi
+    state: rgeneric
   - type: Construction
     graph: Girder
     node: reinforcedWall
@@ -593,32 +575,12 @@
       - &SpawnPlasteel !type:SpawnEntitiesBehavior
         spawn:
           SheetPlasteel1: *BaseWallSpawn
-  - type: IconSmooth
+  - type: IconSmooth # TRIESTE: old wall/window sprites, see _TP/Structures
     key: walls
     states:
-    - !type:CardinalCornerSpriteSmoothing
+    - !type:CornerSpriteSmoothing # old-style corner sprites
       mask: [ walls ]
-      altMask:
-      - windows
-      - windows-reinf
-      - windows-tinted
-      - windows-plasma
-      - windows-plasma-reinf
-      - windows-uranium
-      - windows-uranium-reinf
-      - windows-exo
-      - windows-shuttle
-      - windows-plastitanium
-      - windows-regal
-      - walls-exo
-      - walls-shuttle
-      - walls-plastitanium
-      - walls-material
-      - walls-marble
-      - walls
-      - grilles
-      - doors
-      base: wall
+      base: reinf_over
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -653,41 +615,20 @@
   id: WallReinforcedRust
   suffix: rusted
   components:
-  - type: Sprite
-    sprite: Structures/Walls/solid-reinforced-rust.rsi
-  - type: Icon
-    sprite: Structures/Walls/solid-reinforced-rust.rsi
-    state: full
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/solid_rust.rsi
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/solid_rust.rsi
+    state: rgeneric
   - type: Construction
     graph: Girder
     node: reinforcedWallRust
-  - type: IconSmooth
+  - type: IconSmooth # TRIESTE: old wall/window sprites, see _TP/Structures
     key: walls
     states:
-    - !type:CardinalCornerSpriteSmoothing
+    - !type:CornerSpriteSmoothing # old-style corner sprites
       mask: [ walls ]
-      altMask:
-      - windows
-      - windows-reinf
-      - windows-tinted
-      - windows-plasma
-      - windows-plasma-reinf
-      - windows-uranium
-      - windows-uranium-reinf
-      - windows-exo
-      - windows-shuttle
-      - windows-plastitanium
-      - windows-regal
-      - walls-exo
-      - walls-shuttle
-      - walls-plastitanium
-      - walls-material
-      - walls-marble
-      - walls
-      - grilles
-      - doors
-      base: wall
-    # Rusted walls should be made weaker through a damage mod status effect.
+      base: reinf_over
   - type: InGas
     damagedByGas: true
     damage:
@@ -699,11 +640,12 @@
   id: WallReinforcedDiagonal
   name: reinforced wall
   components:
-  - type: Sprite
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
     drawdepth: Walls
-    sprite: Structures/Walls/reinforced-diagonal.rsi
-  - type: Icon
-    sprite: Structures/Walls/reinforced-diagonal.rsi
+    sprite: _TP/Structures/Walls/reinforced_diagonal.rsi
+    state: state0
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/reinforced_diagonal.rsi
     state: state0
   - type: Damageable
     damageModifierSet: PlasteelStaticMod
@@ -840,6 +782,7 @@
       base: silver
 
 #shuttle walls
+
 - type: entity
   parent: [ WallDiagonalBase, StructureHealthWallStrong ]
   id: WallShuttleDiagonal
@@ -972,14 +915,14 @@
   id: WallSolid
   name: solid wall
   components:
-  - type: Sprite
-    sprite: Structures/Walls/solid.rsi
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/solid.rsi
   - type: WallReplacementMarker
   - type: Construction
     graph: Girder
     node: wall
-  - type: Icon
-    sprite: Structures/Walls/solid.rsi
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/solid.rsi
   - type: RCDDeconstructable
     cost: 6
     delay: 8
@@ -997,43 +940,24 @@
       - &SpawnSteel !type:SpawnEntitiesBehavior
         spawn:
           SheetSteel1: *BaseWallSpawn
-  - type: IconSmooth
+  - type: IconSmooth # TRIESTE: old wall/window sprites, see _TP/Structures
     key: walls
     states:
-    - !type:CardinalCornerSpriteSmoothing
+    - !type:CornerSpriteSmoothing # old-style corner sprites
       mask: [ walls ]
-      altMask:
-      - windows
-      - windows-reinf
-      - windows-tinted
-      - windows-plasma
-      - windows-plasma-reinf
-      - windows-uranium
-      - windows-uranium-reinf
-      - windows-exo
-      - windows-shuttle
-      - windows-plastitanium
-      - windows-regal
-      - walls-exo
-      - walls-shuttle
-      - walls-plastitanium
-      - walls-material
-      - walls-marble
-      - walls
-      - grilles
-      - doors
-      base: wall
+      base: solid
 
 - type: entity
   parent: [ WallDiagonalBase, StructureHealthWall ]
   id: WallSolidDiagonal
   name: solid wall
   components:
-  - type: Sprite
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
     drawdepth: Walls
-    sprite: Structures/Walls/solid-diagonal.rsi
-  - type: Icon
-    sprite: Structures/Walls/solid-diagonal.rsi
+    sprite: _TP/Structures/Walls/solid_diagonal.rsi
+    state: state0
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/solid_diagonal.rsi
     state: state0
   - type: Destructible
     thresholds:
@@ -1048,10 +972,16 @@
   id: WallSolidRust
   suffix: rusted
   components:
-  - type: Sprite
-    sprite: Structures/Walls/solid-rust.rsi
-  - type: Icon
-    sprite: Structures/Walls/solid-rust.rsi
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/solid_rust.rsi
+  - type: IconSmooth # TRIESTE: old wall/window sprites, see _TP/Structures
+    key: walls
+    states:
+    - !type:CornerSpriteSmoothing # old-style corner sprites
+      mask: [ walls ]
+      base: solid
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/solid_rust.rsi
     state: full
   - type: Construction
     graph: Girder
@@ -1423,10 +1353,14 @@
   id: WallMining
   name: mining wall
   components:
-  - type: Sprite
-    sprite: Structures/Walls/mining.rsi
-  - type: Icon
-    sprite: Structures/Walls/mining.rsi
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/mining.rsi
+  - type: RandomIconSmooth # TRIESTE: old wall/window sprites, see _TP/Structures
+    randomStates:
+    - mining
+    - miningB
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/mining.rsi
   - type: Damageable
     damageModifierSet: SteelStaticMod
   - type: Destructible
@@ -1435,30 +1369,11 @@
       behaviors:
       - *SoundMetalSlam
       - *SpawnGirder
-  - type: IconSmooth
+  - type: IconSmooth # TRIESTE: old wall/window sprites, see _TP/Structures
     key: walls
     states:
-    - !type:CornerSpriteSmoothing
-      mask:
-      - windows
-      - windows-reinf
-      - windows-tinted
-      - windows-plasma
-      - windows-plasma-reinf
-      - windows-uranium
-      - windows-uranium-reinf
-      - windows-exo
-      - windows-shuttle
-      - windows-plastitanium
-      - windows-regal
-      - walls-exo
-      - walls-shuttle
-      - walls-plastitanium
-      - walls-material
-      - walls-marble
-      - walls
-      - grilles
-      - doors
+    - !type:CornerSpriteSmoothing # old-style corner sprites
+      mask: [ walls ]
       base: mining
   - type: Appearance
 
@@ -1467,11 +1382,12 @@
   id: WallMiningDiagonal
   name: mining wall
   components:
-  - type: Sprite
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
     drawdepth: Walls
-    sprite: Structures/Walls/mining-diagonal.rsi
-  - type: Icon
-    sprite: Structures/Walls/mining-diagonal.rsi
+    sprite: _TP/Structures/Walls/mining_diagonal.rsi
+    state: state0
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/mining_diagonal.rsi
     state: state0
   - type: RadiationBlocker
     resistance: 5

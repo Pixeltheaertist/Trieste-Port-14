@@ -7,6 +7,7 @@ using Content.Shared.Climbing.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Ghost;
+using Content.Shared.Ghost.Components;
 using Content.Shared.Gravity;
 using Content.Shared.Inventory;
 using Content.Shared.Medical.SuitSensors;
@@ -203,7 +204,9 @@ public sealed partial class FallSystem : EntitySystem
         _popup.PopupEntity(Loc.GetString("fell-to-seafloor"), owner, PopupType.LargeCaution);
 
         // Raise event for fall monitoring systems if player has sensors on.
-        if (_inventory.TryGetSlotEntity(owner, "jumpsuit", out var suitEntity) && TryComp<SuitSensorComponent>(suitEntity, out var suitSensorComponent) && suitSensorComponent.Mode >= Shared.Medical.SuitSensor.SuitSensorMode.SensorVitals)
+        if (_inventory.TryGetSlotEntity(owner, "jumpsuit", out var suitEntity)
+            && TryComp<SuitSensorComponent>(suitEntity, out var suitSensorComponent)
+            && suitSensorComponent.Mode >= SuitSensorMode.SensorVitals)
         {
             var fallDetectedEv = new FallDetectedEvent(ownerCoords);
             RaiseLocalEvent<FallDetectedEvent>(owner, ref fallDetectedEv);

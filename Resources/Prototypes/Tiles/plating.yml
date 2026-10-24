@@ -14,19 +14,23 @@
   id: Plating
   parent: BasePlating
   name: tiles-plating
-  sprite: /Textures/Tiles/plating.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/plating.png
 
 - type: tile
   id: PlatingDamaged
   parent: BasePlating
   name: tiles-plating
-  sprite: /Textures/Tiles/plating-damaged.png
-  variants: 4
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/plating_damaged.png
+  variants: 3
 
 - type: tile
   id: PlatingRCD
   parent: Plating
   name: tiles-rcd-plating
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/plating.png
   baseWhitelist:
     - Space
     - FloorPlanetDirt
@@ -43,7 +47,8 @@
   id: FloorHullReinforced
   parent: BasePlating
   name: tiles-hull-reinforced
-  sprite: /Textures/Tiles/debug-indestructible.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/hull_reinforced.png
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemSteel
@@ -54,19 +59,23 @@
   id: PlatingAsteroid
   parent: BasePlating
   name: tiles-asteroid-plating
-  sprite: /Textures/Tiles/Asteroid/asteroid-plating.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Asteroid/asteroid_plating.png
 
 - type: tile
   id: PlatingSnow
   name: tiles-snow-plating
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/snow_plating.png #Not in the snow planet RSI because it doesn't have any metadata. Should probably be moved to its own folder later.
   parent: BasePlating
-  sprite: /Textures/Tiles/Snow/snow-plating.png #Not in the snow planet RSI because it doesn't have any metadata. Should probably be moved to its own folder later.
   friction: 0.75 #a little less then actual snow
 
 - type: tile
   id: Lattice
   name: tiles-lattice
-  sprite: /Textures/Tiles/lattice.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/lattice.png
+  variants: 1
   baseTurf: Space
   isSubfloor: true
   deconstructTools: [ Cutting ]
@@ -79,6 +88,5 @@
   indestructible: true
   heatCapacity: 10000
   mass: 200
-  variants: 3
   materialComposition:
     Steel: 50 # 0.5 sheets = 1 rod

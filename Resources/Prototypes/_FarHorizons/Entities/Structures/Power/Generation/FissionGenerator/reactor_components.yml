@@ -51,7 +51,8 @@
         Quantity: 192
       canReact: false
   - type: StealTarget
-    stealGroup: ReactorFuelRodSteal
+    stealGroup:
+    - ReactorFuelRodSteal
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-inanimate
     weight: 0.2

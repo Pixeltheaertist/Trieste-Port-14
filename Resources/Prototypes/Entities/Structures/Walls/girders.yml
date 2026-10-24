@@ -30,8 +30,8 @@
   - type: Construction
     graph: Girder
     node: girder
-  - type: Sprite
-    sprite: Structures/Walls/solid.rsi
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/solid.rsi
     state: wall_girder
   - type: Damageable
     damageModifierSet: SteelStaticMod
@@ -58,8 +58,8 @@
   name: reinforced girder
   description: A large structural assembly made out of metal and plasteel; It requires a layer of plasteel before it can be considered a reinforced wall.
   components:
-  - type: Sprite
-    sprite: Structures/Walls/solid-reinforced.rsi
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Walls/solid.rsi
     state: reinforced_wall_girder
   - type: Construction
     graph: Girder

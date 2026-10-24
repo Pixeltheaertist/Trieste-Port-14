@@ -117,7 +117,7 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
-    - type: FallSystem
+  - type: FallSystem # TRIESTE
 
 - type: entity
   id: MechRipley

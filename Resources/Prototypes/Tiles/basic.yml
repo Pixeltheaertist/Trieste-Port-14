@@ -3,28 +3,36 @@
   id: FloorSteel
   parent: BaseStationTile
   name: tiles-steel-floor
-  sprite: /Textures/Tiles/Basic/Gray/gray.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/steel.png
+  variants: 4
   itemDrop: FloorTileItemSteel
 
 - type: tile
   id: FloorSteelMini
   parent: BaseStationTile
   name: tiles-steel-floor-mini
-  sprite: /Textures/Tiles/Basic/Gray/gray-mini.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/steel_mini.png
+  variants: 4
   itemDrop: FloorTileItemSteelMini
 
 - type: tile
   id: FloorSteelPavement
   parent: BaseStationTile
   name: tiles-steel-floor-pavement
-  sprite: /Textures/Tiles/Basic/Gray/gray-pavement.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/steel_pavement.png
+  variants: 4
   itemDrop: FloorTileItemSteelPavement
 
 - type: tile
   id: FloorSteelMono
   parent: BaseStationTile
   name: tiles-steel-floor-mono
-  sprite: /Textures/Tiles/Basic/Gray/gray-mono.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/steel_mono.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemSteelMono
@@ -33,35 +41,44 @@
   id: FloorSteelPavementVertical
   parent: BaseStationTile
   name: tiles-steel-floor-pavement-vertical
-  sprite: /Textures/Tiles/Basic/Gray/gray-pavement-vertical.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/steel_pavement_vertical.png
+  variants: 4
   itemDrop: FloorTileItemSteelPavementVertical
 
 - type: tile
   id: FloorSteelHerringbone
   parent: BaseStationTile
   name: tiles-steel-floor-herringbone
-  sprite: /Textures/Tiles/Basic/Gray/gray-herringbone.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/steel_herringbone.png
+  variants: 4
   itemDrop: FloorTileItemSteelHerringbone
 
 - type: tile
   parent: BaseStationTile
   id: FloorSteelVerticalSlatsBordered
   name: tiles-steel-floor-vertical-slats-bordered
-  sprite: /Textures/Tiles/Basic/Gray/gray-vertical-slats.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/steel_vertical_slats_bordered.png
+  variants: 4
   itemDrop: FloorTileItemSteelVerticalSlatsBordered
 
 - type: tile
   parent: BaseStationTile
   id: FloorSteelHorizontalSlatsBordered
   name: tiles-steel-floor-horizontal-slats-bordered
-  sprite: /Textures/Tiles/Basic/Gray/gray-horizontal-slats.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/steel_horizontal_slats_bordered.png
+  variants: 4
   itemDrop: FloorTileItemSteelHorizontalSlatsBordered
 
 - type: tile
   id: FloorTechMaint2
   parent: BaseStationTile
   name: tiles-techmaint2-floor
-  sprite: /Textures/Tiles/Basic/Gray/gray-maint.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/steel_maint.png
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemSteelMaint
@@ -70,15 +87,18 @@
   id: FloorPlastic
   parent: BaseStationTile
   name: tiles-plastic-floor
-  sprite: /Textures/Tiles/Basic/Gray/gray-plastic.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/plastic.png
+  variants: 4
   itemDrop: FloorTileItemPlastic
 
 - type: tile
   id: FloorSteelDamaged
   parent: BaseStationTile
   name: tiles-steel-floor
-  sprite: /Textures/Tiles/Basic/Gray/gray-damaged.png
-  variants: 4
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/steel_damaged.png
+  variants: 5
   itemDrop: FloorTileItemSteel #This should probably be made null when it becomes possible to make it such, in SS13 prying destroyed tiles wouldn't give you anything.
 
 #### WHITE
@@ -86,7 +106,9 @@
   id: FloorWhite
   parent: BaseStationTile
   name: tiles-white-floor
-  sprite: /Textures/Tiles/Basic/White/white.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/white.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhite
@@ -95,7 +117,9 @@
   id: FloorWhiteMini
   parent: BaseStationTile
   name: tiles-white-floor-mini
-  sprite: /Textures/Tiles/Basic/White/white-mini.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/white_mini.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteMini
@@ -104,21 +128,27 @@
   parent: BaseStationTile
   id: FloorWhiteVerticalSlatsBordered
   name: tiles-white-floor-vertical-slats-bordered
-  sprite: /Textures/Tiles/Basic/White/white-vertical-slats.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/white_vertical_slats_bordered.png
+  variants: 4
   itemDrop: FloorTileItemWhiteVerticalSlatsBordered
 
 - type: tile
   parent: BaseStationTile
   id: FloorWhiteHorizontalSlatsBordered
   name: tiles-white-floor-horizontal-slats-bordered
-  sprite: /Textures/Tiles/Basic/White/white-horizontal-slats.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/white_horizontal_slats_bordered.png
+  variants: 4
   itemDrop: FloorTileItemWhiteHorizontalSlatsBordered
 
 - type: tile
   id: FloorWhitePavement
   parent: BaseStationTile
   name: tiles-white-floor-pavement
-  sprite: /Textures/Tiles/Basic/White/white-pavement.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/white_pavement.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhitePavement
@@ -127,7 +157,9 @@
   id: FloorWhiteMono
   parent: BaseStationTile
   name: tiles-white-floor-mono
-  sprite: /Textures/Tiles/Basic/White/white-mono.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/white_mono.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteMono
@@ -136,7 +168,9 @@
   id: FloorWhitePavementVertical
   parent: BaseStationTile
   name: tiles-white-floor-pavement-vertical
-  sprite: /Textures/Tiles/Basic/White/white-pavement-vertical.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/white_pavement_vertical.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhitePavementVertical
@@ -145,7 +179,9 @@
   id: FloorWhiteHerringbone
   parent: BaseStationTile
   name: tiles-white-floor-herringbone
-  sprite: /Textures/Tiles/Basic/White/white-herringbone.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/white_herringbone.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteHerringbone
@@ -154,7 +190,9 @@
   id: FloorWhitePlastic
   parent: BaseStationTile
   name: tiles-plastic-white-floor
-  sprite: /Textures/Tiles/Basic/White/white-plastic.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/white_plastic.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhitePlastic
@@ -164,7 +202,9 @@
   id: FloorDark
   parent: BaseStationTile
   name: tiles-dark-floor
-  sprite: /Textures/Tiles/Basic/Dark/dark.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/dark.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDark
@@ -173,7 +213,9 @@
   id: FloorDarkMini
   parent: BaseStationTile
   name: tiles-dark-floor-mini
-  sprite: /Textures/Tiles/Basic/Dark/dark-mini.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/dark_mini.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkMini
@@ -182,21 +224,27 @@
   parent: BaseStationTile
   id: FloorDarkVerticalSlatsBordered
   name: tiles-dark-floor-vertical-slats-bordered
-  sprite: /Textures/Tiles/Basic/Dark/dark-vertical-slats.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/dark_vertical_slats_bordered.png
+  variants: 4
   itemDrop: FloorTileItemDarkVerticalSlatsBordered
 
 - type: tile
   parent: BaseStationTile
   id: FloorDarkHorizontalSlatsBordered
   name: tiles-dark-floor-horizontal-slats-bordered
-  sprite: /Textures/Tiles/Basic/Dark/dark-horizontal-slats.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/dark_horizontal_slats_bordered.png
+  variants: 4
   itemDrop: FloorTileItemDarkHorizontalSlatsBordered
 
 - type: tile
   id: FloorDarkPavement
   parent: BaseStationTile
   name: tiles-dark-floor-pavement
-  sprite: /Textures/Tiles/Basic/Dark/dark-pavement.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/dark_pavement.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkPavement
@@ -205,7 +253,9 @@
   id: FloorDarkMono
   parent: BaseStationTile
   name: tiles-dark-floor-mono
-  sprite: /Textures/Tiles/Basic/Dark/dark-mono.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/dark_mono.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkMono
@@ -214,7 +264,9 @@
   id: FloorDarkPavementVertical
   parent: BaseStationTile
   name: tiles-dark-floor-pavement-vertical
-  sprite: /Textures/Tiles/Basic/Dark/dark-pavement-vertical.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/dark_pavement_vertical.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkPavementVertical
@@ -223,7 +275,9 @@
   id: FloorDarkHerringbone
   parent: BaseStationTile
   name: tiles-dark-floor-herringbone
-  sprite: /Textures/Tiles/Basic/Dark/dark-herringbone.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/dark_herringbone.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkHerringbone
@@ -232,7 +286,9 @@
   id: FloorDarkPlastic
   parent: BaseStationTile
   name: tiles-plastic-dark-floor
-  sprite: /Textures/Tiles/Basic/Dark/dark-plastic.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/dark_plastic.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkPlastic
@@ -241,7 +297,8 @@
   id: FloorTechMaintDark
   parent: BaseStationTile
   name: tiles-techmaint-floor-dark
-  sprite: /Textures/Tiles/Basic/Dark/dark-maint.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/tech_maint_dark.png
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemTechmaintDark

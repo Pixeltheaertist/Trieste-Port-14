@@ -1,4 +1,5 @@
 # Airlocks
+
 - type: entity
   parent: Airlock
   id: AirlockServiceLocked
@@ -9,8 +10,8 @@
       board: [ DoorElectronicsService ]
   - type: Wires
     layoutId: AirlockService
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/service-base.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/basic.rsi
 
 - type: entity
   parent: AirlockServiceLocked
@@ -461,6 +462,7 @@
       board: [ DoorElectronicsEVA ]
 
 # Glass Airlocks
+
 - type: entity
   parent: AirlockGlass
   id: AirlockServiceGlassLocked
@@ -909,6 +911,7 @@
       board: [ DoorElectronicsNukeop ]
 
 # Maintenance Hatches
+
 - type: entity
   parent: AirlockMaint
   id: AirlockMaintLocked
@@ -940,226 +943,226 @@
   parent: AirlockSalvageLocked
   id: AirlockMaintSalvageLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockCargoLocked
   id: AirlockMaintCargoLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockCommandLocked
   id: AirlockMaintCommandLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockEngineeringLocked
   id: AirlockMaintEngiLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockAtmosphericsLocked
   id: AirlockMaintAtmoLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockBarLocked
   id: AirlockMaintBarLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockBarKitchenLocked
   id: AirlockMaintBarKitchenLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockChapelLocked
   id: AirlockMaintChapelLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockHydroponicsLocked
   id: AirlockMaintHydroLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockJanitorLocked
   id: AirlockMaintJanitorLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockLawyerLocked
   id: AirlockMaintLawyerLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockServiceLocked
   id: AirlockMaintServiceLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockTheatreLocked
   id: AirlockMaintTheatreLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockServiceTheatreLocked
   id: AirlockMaintServiceTheatreLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockKitchenLocked
   id: AirlockMaintKitchenLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockFreezerKitchenHydroLocked
   id: AirlockMaintKitchenHydroLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockMedicalLocked
   id: AirlockMaintMedLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockMedicalMorgueLocked
   id: AirlockMedicalMorgueMaintLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockChemistryLocked
   id: AirlockMaintChemLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockScienceLocked
   id: AirlockMaintRnDLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockMedicalScienceLocked
   id: AirlockMaintRnDMedLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockSecurityLocked
   id: AirlockMaintSecLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockDetectiveLocked
   id: AirlockMaintDetectiveLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockHeadOfPersonnelLocked
   id: AirlockMaintHOPLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockCaptainLocked
   id: AirlockMaintCaptainLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockChiefEngineerLocked
   id: AirlockMaintChiefEngineerLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockChiefMedicalOfficerLocked
   id: AirlockMaintChiefMedicalOfficerLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockHeadOfSecurityLocked
   id: AirlockMaintHeadOfSecurityLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockResearchDirectorLocked
   id: AirlockMaintResearchDirectorLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockQuartermasterLocked
   id: AirlockMaintQuartermasterLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockArmoryLocked
   id: AirlockMaintArmoryLocked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockEVALocked
   id: AirlockMaintEVALocked
   suffix: EVA, Locked
   components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockSyndicate
@@ -1191,6 +1194,7 @@
       board: [ DoorElectronicsXenoborg ]
 
 # Shuttle airlocks
+
 - type: entity
   parent: AirlockShuttle
   id: AirlockExternalShuttleLocked
@@ -1313,6 +1317,7 @@
       board: [ DoorElectronicsExternal ]
 
 #HighSecDoors
+
 - type: entity
   parent: HighSecDoor
   id: HighSecCentralCommandLocked

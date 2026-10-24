@@ -1,11 +1,10 @@
+using Content.Server._TP.StationEvents.Components;
 using Content.Server.Administration.Logs;
 using Content.Server.Audio;
 using Content.Server.Ghost;
 using Content.Server.StationEvents.Events;
-using Content.Shared._EmberFall.Bell.Components;
 using Content.Shared._TP.Weather;
 using Content.Shared.Database;
-using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Light.Components;
 using Content.Shared.Weather;
@@ -27,14 +26,13 @@ using Robust.Shared.Random;
 //Summary
 namespace Content.Server._TP.StationEvents.Events;
 
-public sealed partial class FlashStormRule : StationEventSystem<Components.FlashStormRuleComponent>
+public sealed partial class FlashStormRule : StationEventSystem<FlashStormRuleComponent>
 {
     [Dependency] private IAdminLogManager _adminLogger = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private IComponentFactory _factory = default!;
     [Dependency] private GhostSystem _ghost = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;
-    [Dependency] private SharedGameTicker _gameTicker = default!;
     [Dependency] private ServerGlobalSoundSystem _sound = default!;
     [Dependency] private IPrototypeManager _protoMan = default!;
     [Dependency] private IRobustRandom _random = default!;
@@ -42,21 +40,21 @@ public sealed partial class FlashStormRule : StationEventSystem<Components.Flash
     [Dependency] private IEntityManager _entManager = default!;
     [Dependency] private IPlayerManager _playerManager = default!;
 
-    protected override void Started(EntityUid uid, Components.FlashStormRuleComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
+    protected override void Started(Entity<FlashStormRuleComponent, GameRuleComponent> ent, ref GameRuleStartedEvent args)
     {
-        base.Started(uid, comp, gameRule, args);
+        base.Started(ent, ref args);
         Log.Warning("Flash Storm started.");
-        _adminLogger.Add(LogType.EventStarted, LogImpact.Extreme, $"{ToPrettyString(uid)} Flash Storm started.");
+        _adminLogger.Add(LogType.EventStarted, LogImpact.Extreme, $"{ToPrettyString(ent.Owner)} Flash Storm started.");
 
-        _audio.ResolveSound(comp.StormMusic);
+        _audio.ResolveSound(ent.Comp1.StormMusic);
         _entManager.System<ServerGlobalSoundSystem>()
             .PlayAdminGlobal(Filter.Empty()
-                .AddAllPlayers(_playerManager),
+                    .AddAllPlayers(_playerManager),
                 "/Audio/StationEvents/the_approaching_storm.ogg",
                 AudioParams.Default.WithVolume(-2f),
                 false);
 
-        if (!_protoMan.TryIndex(comp.StormWeather, out var stormWeather))
+        if (!_protoMan.TryIndex(ent.Comp1.StormWeather, out var stormWeather))
             return;
 
         if (!stormWeather.HasComp<WeatherStatusEffectComponent>(_factory))
@@ -85,10 +83,10 @@ public sealed partial class FlashStormRule : StationEventSystem<Components.Flash
             thunder.StormMode = true;
         }
 
-        BeginFlicker(comp, gameRule);
+        BeginFlicker(ent.Comp1);
     }
 
-    private void BeginFlicker(Components.FlashStormRuleComponent comp, GameRuleComponent gameRule)
+    private void BeginFlicker(FlashStormRuleComponent comp)
     {
         Log.Error("beginning flicker");
 
@@ -108,27 +106,24 @@ public sealed partial class FlashStormRule : StationEventSystem<Components.Flash
         }
     }
 
-    protected override void Ended(EntityUid uid, Components.FlashStormRuleComponent comp, GameRuleComponent gameRule, GameRuleEndedEvent args)
+    protected override void Ended(Entity<FlashStormRuleComponent> rule, ref GameRuleEndedEvent args)
     {
-        base.Ended(uid, comp, gameRule, args);
+        base.Ended(rule, ref args);
 
         Log.Error("flash storm ended");
-        _adminLogger.Add(LogType.EventStarted, LogImpact.Extreme, $"{ToPrettyString(uid)} Flash Storm ended.");
+        _adminLogger.Add(LogType.EventStarted, LogImpact.Extreme, $"{ToPrettyString(rule.Owner)} Flash Storm ended.");
 
-        foreach (var thunder in EntityQuery<Shared._TP.Weather.LightningMarkerComponent>())
+        foreach (var thunder in EntityQuery<LightningMarkerComponent>())
         {
             thunder.ThunderRange = 70f;
             thunder.ThunderFrequency = 8f;
             thunder.StormMode = false;
         }
 
-        if (!TryGetRandomStation(out var station))
-            return;
+        // Stop flickering before any early returns, so a bad weather prototype can't leave it stuck on.
+        rule.Comp.Flickering = false;
 
-        if (station.HasValue)
-            comp.TrueStation = station.Value;
-
-        if (!_protoMan.TryIndex(comp.NormalWeather, out var normalWeather))
+        if (!_protoMan.TryIndex(rule.Comp.NormalWeather, out var normalWeather))
             return;
 
         if (!normalWeather.HasComp<WeatherStatusEffectComponent>(_factory))
@@ -149,7 +144,5 @@ public sealed partial class FlashStormRule : StationEventSystem<Components.Flash
             _weather.TrySetWeather(mapId, normalWeather, out _, TimeSpan.FromMinutes(99999));
             Log.Error("Weather set");
         }
-
-        comp.Flickering = false;
     }
 }

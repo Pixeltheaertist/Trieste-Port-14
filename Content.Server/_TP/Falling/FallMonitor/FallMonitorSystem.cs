@@ -4,6 +4,7 @@ using Content.Server.Pinpointer;
 using Content.Server.Power.Components;
 using Content.Server.Radio.EntitySystems;
 using Content.Shared.Gravity;
+using Content.Shared.Pinpointer;
 using Content.Shared.Radio.Components;
 using DependencyAttribute = Robust.Shared.IoC.DependencyAttribute;
 

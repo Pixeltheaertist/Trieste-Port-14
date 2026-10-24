@@ -83,11 +83,17 @@
   name: plastitanium window
   parent: PlastitaniumWindowBase
   components:
-  - type: Sprite
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
     drawdepth: WallTops
-    sprite: Structures/Windows/window-plastitanium.rsi
-  - type: Icon
-    sprite: Structures/Windows/window-plastitanium.rsi
+    sprite: _TP/Structures/Windows/plastitanium_window.rsi
+  - type: IconSmooth # TRIESTE: old wall/window sprites, see _TP/Structures
+    key: windows
+    states:
+    - !type:CornerSpriteSmoothing # old-style corner sprites
+      mask: [ windows ]
+      base: ptwindow
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Windows/plastitanium_window.rsi
     state: full
   - type: Airtight
   - type: Fixtures
@@ -155,15 +161,16 @@
   parent: PlastitaniumWindowBase
   suffix: diagonal
   components:
-  - type: Sprite
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
     drawdepth: WallTops
-    sprite: Structures/Windows/window-diagonal-plastitanium.rsi
+    sprite: _TP/Structures/Windows/plastitanium_window_diagonal.rsi
+    state: state0
   - type: Tag
     tags:
     - Diagonal
     - Window
-  - type: Icon
-    sprite: Structures/Windows/window-diagonal-plastitanium.rsi
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Windows/plastitanium_window_diagonal.rsi
     state: state0
   - type: IconSmooth
     states:

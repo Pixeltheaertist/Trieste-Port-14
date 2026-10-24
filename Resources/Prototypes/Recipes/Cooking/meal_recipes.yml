@@ -1618,7 +1618,6 @@
 
 - type: microwaveMealRecipe #TP
   id: RecipePurifiedJonkPocket
-  name: warm donk pocket recipe
   result: TP14FoodJonkpocketBananaPurified
   time: 5
   reagents:

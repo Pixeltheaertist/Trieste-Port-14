@@ -12,13 +12,13 @@
     stackType: Plutonium
     baseLayer: base
     layerStates:
-    - iron # Why iron? Because I haven't gotten a spriter to make better
-    - iron_2
-    - iron_3
+    - silver # Why silver? (was iron, removed upstream) Because I haven't gotten a spriter to make better
+    - silver_2
+    - silver_3
   - type: Sprite
-    state: iron_3
+    state: silver_3
     layers:
-    - state: iron_3
+    - state: silver_3
       map: ["base"]
   - type: Item
     heldPrefix: plutonium
@@ -47,6 +47,6 @@
   suffix: Single
   components:
   - type: Sprite
-    state: iron
+    state: silver
   - type: Stack
     count: 1

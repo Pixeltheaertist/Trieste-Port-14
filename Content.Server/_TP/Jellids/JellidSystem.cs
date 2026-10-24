@@ -251,8 +251,8 @@ public sealed partial class JellidSystem : EntitySystem
             }
         }
 
-        if (TryComp<TemperatureComponent>(heldItem, out var heldTempComp))
-            _temperature.ChangeHeat(heldItem, energy, false, heldTempComp);
+        if (HasComp<TemperatureComponent>(heldItem))
+            _temperature.ChangeHeat(heldItem, energy);
     }
 
     private void UpdateHeldBurnables(EntityUid uid)

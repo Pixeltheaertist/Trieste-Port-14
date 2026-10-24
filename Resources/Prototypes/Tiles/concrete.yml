@@ -2,7 +2,9 @@
   id: FloorConcrete
   parent: BaseStationTile
   name: tiles-concrete-tile
-  sprite: /Textures/Tiles/Concrete/concrete.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Planet/Concrete/concrete.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemConcrete
@@ -11,8 +13,9 @@
   id: FloorConcreteMono
   parent: BaseStationTile
   name: tiles-concrete-slab
-  sprite: /Textures/Tiles/Concrete/concrete-mono.png
-  variants: 2
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Planet/Concrete/concrete_mono.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemConcreteMono
@@ -21,8 +24,9 @@
   id: FloorConcreteSmooth
   parent: BaseStationTile
   name: tiles-concrete-smooth
-  sprite: /Textures/Tiles/Concrete/concrete-smooth.png
-  variants: 2
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Planet/Concrete/concrete_smooth.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemConcreteSmooth

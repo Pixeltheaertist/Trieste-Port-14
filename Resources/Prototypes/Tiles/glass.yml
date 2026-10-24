@@ -2,7 +2,9 @@
   id: FloorGlass
   parent: BaseStationTile
   name: tiles-glass-floor
-  sprite: /Textures/Tiles/Glass/glass.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/glass.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: SheetGlass1
@@ -11,7 +13,9 @@
   id: FloorRGlass
   parent: BaseStationTile
   name: tiles-reinforced-glass-floor
-  sprite: /Textures/Tiles/Glass/glass-reinf.png
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/rglass.png
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: SheetRGlass1

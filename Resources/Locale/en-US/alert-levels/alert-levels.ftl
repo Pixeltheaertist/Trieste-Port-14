@@ -30,7 +30,7 @@ alert-level-gamma-instructions = All civilians are to immediately seek their nea
 
 alert-level-delta = Delta
 alert-level-delta-announcement = The planet is under immediate danger of destruction. All citizens are to do everything possible to prevent this outcome. Godspeed.
-alert-level-delta-instructions = Protect the platform at all costs.
+alert-level-delta-instructions = Protect the planet at all costs.
 
 alert-level-epsilon = Epsilon
 alert-level-epsilon-announcement = *PZZT* NanoTrasen vessels detecte- *PZZT* run.

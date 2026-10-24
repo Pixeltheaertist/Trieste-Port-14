@@ -20,9 +20,6 @@ public sealed partial class FlashStormRuleComponent : Component
    [DataField("flickering")]
    public bool Flickering;
 
-   [DataField("station")]
-   public EntityUid TrueStation = EntityUid.Invalid;
-
      [DataField("stormMusic")]
      public SoundSpecifier StormMusic = new SoundCollectionSpecifier("StormMusic");
 }

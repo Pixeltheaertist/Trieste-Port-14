@@ -1,5 +1,5 @@
 - type: entity
-  parent: PinionAirlock
+  parent: WizPinionAirlock
   id: ExternalClockworkAirlock
   suffix: External, Sweetwater
   components:
@@ -7,7 +7,7 @@
     containers:
       board: [ DoorElectronicsExternal ]
   - type: Wires
-    layoutId: AirlockExternal 
+    layoutId: AirlockExternal
 
 - type: entity
   parent: AirlockMiningLocked

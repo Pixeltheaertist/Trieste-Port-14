@@ -1,0 +1,57 @@
+# Ported from OldWiz. Upstream deleted its clockwork airlocks in the respriting (#44857),
+# so the sprites, assemblies and construction graph now live in _TP under TP14 names.
+- type: entity
+  parent: Airlock
+  id: WizPinionAirlock
+  suffix: Pinion, Clockwork
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Doors/Standard/clockwork_pinion.rsi
+  - type: Construction
+    graph: TP14PinionAirlock
+    node: airlock
+    containers:
+    - board
+  - type: Paintable
+    group: null
+
+- type: entity
+  parent: AirlockGlass
+  id: WizPinionAirlockGlass
+  suffix: Pinion, Clockwork
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Doors/Glass/clockwork_pinion.rsi
+  - type: Construction
+    graph: TP14PinionAirlock
+    node: glassAirlock
+    containers:
+    - board
+  - type: StaticPrice
+    price: 165
+  - type: Paintable
+    group: null
+
+- type: entity
+  parent: AirlockAssembly
+  id: TP14PinionAirlockAssembly
+  name: airlock assembly
+  suffix: Pinion, Clockwork
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Doors/Standard/clockwork_pinion.rsi
+    state: "assembly"
+  - type: Construction
+    graph: TP14PinionAirlock
+    node: assembly
+  placement:
+    mode: SnapgridCenter
+
+- type: entity
+  parent: TP14PinionAirlockAssembly
+  id: TP14PinionAirlockAssemblyGlass
+  suffix: Pinion, Clockwork, Glass
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Doors/Glass/clockwork_pinion.rsi
+    state: "assembly"

@@ -97,7 +97,7 @@
   - type: Transform
     anchored: true
   - type: Sprite
-    sprite: Structures/Machines/traitordm.rsi
+    sprite: _TP/Structures/Machines/traitordm.rsi # deleted upstream in #46276
     state: redemption
 
 - type: entity

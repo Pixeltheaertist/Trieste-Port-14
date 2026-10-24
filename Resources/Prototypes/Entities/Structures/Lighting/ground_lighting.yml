@@ -5,8 +5,8 @@
   suffix: Always Powered
   description: "An always powered light."
   components:
-  - type: Sprite
-    sprite: Structures/Lighting/LightPosts/small_light_post.rsi
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+    sprite: _TP/Structures/Lighting/LightPosts/small_light_post.rsi
     snapCardinals: true
     drawdepth: Objects
     noRot: true
@@ -59,8 +59,8 @@
   suffix: Empty
   description: "A small light post. Draws power and produces light when equipped with a light tube."
   components:
-  - type: Sprite
-    sprite: Structures/Lighting/LightPosts/small_light_post.rsi
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+    sprite: _TP/Structures/Lighting/LightPosts/small_light_post.rsi
     state: empty
   - type: PointLight
     enabled: false

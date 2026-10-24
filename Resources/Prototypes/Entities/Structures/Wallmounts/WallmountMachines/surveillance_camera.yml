@@ -11,13 +11,13 @@
   components:
   - type: Transform
     anchored: true
-  - type: Sprite
+  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
     drawdepth: WallMountedItems
-    sprite: Structures/Wallmounts/camera.rsi
-    offset: 0, -0.5
+    sprite: _TP/Structures/Wallmounts/camera.rsi
     layers:
-    - map: [ "enum.SurveillanceCameraVisualsKey.Layer" ]
-      state: camera
+      - map: [ "enum.SurveillanceCameraVisualsKey.Layer" ]
+        state: camera
+        cycle: true
   - type: Appearance
   - type: Physics
     bodyType: Static

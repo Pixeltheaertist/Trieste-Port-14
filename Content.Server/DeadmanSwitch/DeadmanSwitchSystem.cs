@@ -7,6 +7,8 @@ using Content.Shared.Trigger.Systems;
 using Content.Shared.DeviceLinking;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
+using Content.Shared.DeviceLinking.Components;
+using Content.Shared.DeviceLinking.Systems;
 using Content.Shared.Popups;
 using Robust.Shared.Audio.Systems;
 
@@ -14,8 +16,7 @@ namespace Content.Server.DeadmanSwitch;
 
 public sealed partial class DeadmanSwitchSystem : SharedDeadmanSwitchSystem
 {
-    [Dependency] private SignallerSystem _signal = default!;
-    [Dependency] private SharedDeviceLinkSystem _deviceLink = default!;
+    [Dependency] private DeviceLinkSystem _deviceLink = default!;
     [Dependency] private SharedTransformSystem _transformSystem = default!;
     [Dependency] private TriggerSystem _trigger = default!;
     [Dependency] private ISharedAdminLogManager _adminLogger = default!;
@@ -32,9 +33,6 @@ public sealed partial class DeadmanSwitchSystem : SharedDeadmanSwitchSystem
 
         // Immediately trigger linked timers on networked entities within InstantTriggerRange
         var linkedDevices = _deviceLink.GetLinkedSinks(ent.Owner, signaller.Port);
-        if (linkedDevices.Count == 0)
-            return;
-
         var switchXform = Transform(ent);
         var switchPos = _transformSystem.GetWorldPosition(switchXform);
 
@@ -56,7 +54,7 @@ public sealed partial class DeadmanSwitchSystem : SharedDeadmanSwitchSystem
 
             // Manually call the trigger that would fire when the timer completes
             _trigger.Trigger(linkedUid, user: user, timerTrigger.KeyOut);
-            // Block the _signal.Trigger event from starting a new countdown
+            // Block the signal sent below from starting a new countdown
             timerTrigger.Disabled = true;
 
             if (user != null)
@@ -66,8 +64,10 @@ public sealed partial class DeadmanSwitchSystem : SharedDeadmanSwitchSystem
             }
         }
 
-        // Activate signaller the normal way
-        _signal.Trigger(ent.Owner, user);
+        // Activate signaller the normal way. SignallerSystem.Trigger was removed upstream, and raising UseInHand
+        // would just re-arm the switch (SharedDeadmanSwitchSystem handles it), so invoke the port directly
+        // like SignalOnTrigger does.
+        _deviceLink.InvokePort(ent.Owner, signaller.Port);
 
         // Popup and sound. It would be great if this ran on client, but testing it out indicates
         // that the client fails to raise dropped events when an object is thrown.

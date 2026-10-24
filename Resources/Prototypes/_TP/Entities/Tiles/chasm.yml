@@ -1,9 +1,0 @@
-- type: entity
-  parent: FloorChasmEntity
-  id: TP14FloorPlatformChasm
-  suffix: Platform
-  components:
-  - type: Sprite
-    sprite: _TP/Tiles/TileEntities/platform_chasm.rsi
-  - type: Icon
-    sprite: _TP/Tiles/TileEntities/platform_chasm.rsi

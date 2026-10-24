@@ -252,6 +252,7 @@
     proto: RedLaserMakeshift
     fireCost: 62.5
   - type: PowerCellSlot
+    cellSlotId: cell_slot # TRIESTE: required now, BaseWeaponPowerCell doesn't set it
     fitsInCharger: false
   - type: Tag
     tags:

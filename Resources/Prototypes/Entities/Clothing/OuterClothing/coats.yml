@@ -9,8 +9,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/bomber.rsi
   - type: TemperatureProtection # TRIESTE
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.1
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.1
   - type: Tag # TRIESTE
     tags:
     - ScurretWearable
@@ -35,8 +34,7 @@
   - type: ExplosionResistance # TRIESTE
     damageCoefficient: 1 #its a coat. it doesnt do shit
   - type: TemperatureProtection # TRIESTE
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.1
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.1
 
 - type: entity
   parent: [ClothingOuterCoatDetectiveLoadout]
@@ -49,8 +47,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/detective_grey.rsi
   - type: TemperatureProtection # TRIESTE
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.1
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.1
 
 
 - type: entity
@@ -75,8 +72,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/gentlecoat.rsi
   - type: TemperatureProtection # TRIESTE
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.1
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.1
 
 - type: entity
   abstract: true
@@ -117,8 +113,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/hos_trenchcoat.rsi
   - type: TemperatureProtection # TRIESTE
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.1
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterJacketToggleableBase
@@ -133,8 +128,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodChaplainHood
   - type: TemperatureProtection # TRIESTE
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.1
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterCoatJensen
@@ -157,8 +151,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/trenchcoat.rsi
   - type: TemperatureProtection
-    heatingCoefficient: 1.1 # TRIESTE: '0.1'
-    coolingCoefficient: 0.1
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 # TRIESTE: '0.1' coolingCoefficient: 0.1
   - type: Armor
     modifiers:
       coefficients:
@@ -338,8 +331,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/pirate.rsi
   - type: TemperatureProtection # TRIESTE
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.1
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.1
 
 - type: entity
   parent: [ClothingOuterArmorWarden, BaseSecurityContraband]
@@ -352,8 +344,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/warden.rsi
   - type: TemperatureProtection # TRIESTE
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.1
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -377,8 +368,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/clownpriest.rsi
   - type: TemperatureProtection # TRIESTE
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.1
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.1
 
 - type: entity
   parent: [ClothingOuterStorageBase, BaseMajorContraband]
@@ -408,8 +398,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/windbreaker_paramedic.rsi
   - type: TemperatureProtection # TRIESTE
-    heatingCoefficient: 0.1
-    coolingCoefficient: 0.1
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 0.1 coolingCoefficient: 0.1
 
 - type: entity
   parent: [ClothingOuterStorageBase, BaseSyndicateContraband]
@@ -422,8 +411,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecap.rsi
   - type: TemperatureProtection # TRIESTE
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.1
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.1
 
 - type: entity
   parent: [BaseSyndicateContraband, ClothingOuterCoatHoSTrench] # BaseSyndicateContraband as first parent so contraband system takes that as priority, yeah I know
@@ -436,8 +424,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecaparmored.rsi
   - type: TemperatureProtection # TRIESTE
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.1
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -509,8 +496,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/space_asshole.rsi
   - type: TemperatureProtection # TRIESTE
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.1
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -523,8 +509,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/space_asshole.rsi
   - type: TemperatureProtection # TRIESTE
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.1
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterStorageFoldableBase
@@ -537,8 +522,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/expensive_coat.rsi
   - type: TemperatureProtection # TRIESTE
-    heatingCoefficient: 1.2
-    coolingCoefficient: 0.2
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.2 coolingCoefficient: 0.2
 
 
 - type: entity
