@@ -1,0 +1,23 @@
+- type: tile
+  id: FloorPlanetDirt
+  parent: BaseFloorPlanet
+  name: tiles-dirt-planet-floor
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Planet/dirt.rsi/dirt.png
+  variants: 4
+  placementVariants: null
+  edgeSprites: {}
+
+- type: tile
+  id: FloorDirt
+  name: tiles-dirt-floor
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/dirt.png
+  variants: 4
+  placementVariants: null
+  baseTurf: Plating
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true

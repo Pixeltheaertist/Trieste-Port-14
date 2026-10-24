@@ -1,7 +1,7 @@
 - type: entity
-  parent: BaseStructure
-  id: BaseRailing
   abstract: true
+  parent: [ BaseStructure, StructureHealthBarrierWeak ]
+  id: BaseRailing
   name: railing
   description: Basic railing meant to protect idiots like you from falling.
   components:
@@ -15,9 +15,23 @@
   - type: InteractionOutline
   - type: Repairable
   - type: Damageable
-    damageModifierSet: FlimsyMetallic
-  - type: Injurable
-    damageContainer: StructuralInorganic
+    damageModifierSet: RodMetalMod
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PartRodMetal1:
+            min: 0
+            max: 1
   - type: Climbable
   - type: Construction
     graph: Railing
@@ -44,38 +58,9 @@
         mask:
         - TableMask
         layer:
-        #- MidImpassable
-        - LowImpassable
-  - type: InteractionOutline
-  - type: Repairable
-  - type: Injurable
-    damageContainer: StructuralInorganic
-  - type: Damageable
-    damageModifierSet: FlimsyMetallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 20
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-          params:
-            volume: -6
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          PartRodMetal1:
-            min: 0
-            max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+        - TableLayer
   - type: Construction
     node: railing
-  - type: RCDDeconstructable
-    cost: 2
-    delay: 2
-    fx: EffectRCDDeconstruct2
 
 - type: entity
   parent: BaseRailing
@@ -95,7 +80,7 @@
         mask:
         - TableMask
         layer:
-        - LowImpassable
+        - TableLayer
       fix2:
         shape:
           !type:PhysShapeAabb
@@ -105,30 +90,8 @@
         - TableMask
         layer:
         - TableLayer
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 20
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-          params:
-            volume: -6
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          PartRodMetal1:
-            min: 0
-            max: 2
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: Construction
     node: railingCorner
-  - type: RCDDeconstructable
-    cost: 2
-    delay: 2
-    fx: EffectRCDDeconstruct2
 
 - type: entity
   parent: BaseRailing
@@ -148,37 +111,9 @@
         mask:
         - TableMask
         layer:
-        - LowImpassable
-  - type: InteractionOutline
-  - type: Repairable
-  - type: Injurable
-    damageContainer: StructuralInorganic
-  - type: Damageable
-    damageModifierSet: FlimsyMetallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 20
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-          params:
-            volume: -6
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          PartRodMetal1:
-            min: 0
-            max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+        - TableLayer
   - type: Construction
     node: railingCornerSmall
-  - type: RCDDeconstructable
-    cost: 2
-    delay: 2
-    fx: EffectRCDDeconstruct2
 
 - type: entity
   parent: BaseRailing
@@ -198,7 +133,7 @@
         mask:
           - TableMask
         layer:
-          - LowImpassable
+          - TableLayer
       fix2:
         shape:
           !type:PhysShapeAabb
@@ -216,34 +151,6 @@
         mask:
           - TableMask
         layer:
-          - LowImpassable
-  - type: InteractionOutline
-  - type: Repairable
-  - type: Injurable
-    damageContainer: StructuralInorganic
-  - type: Damageable
-    damageModifierSet: FlimsyMetallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 20
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-          params:
-            volume: -6
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          PartRodMetal1:
-            min: 0
-            max: 2
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+          - TableLayer
   - type: Construction
     node: railingRound
-  - type: RCDDeconstructable
-    cost: 2
-    delay: 2
-    fx: EffectRCDDeconstruct2

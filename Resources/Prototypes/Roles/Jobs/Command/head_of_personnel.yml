@@ -4,27 +4,27 @@
   description: job-description-hop
   playTimeTracker: JobHeadOfPersonnel
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 5h # Platform 2nd in command. Some playtime should be required (also they'll get this for sec anyways)
+    - !type:OverallPlaytimeRequirement # TRIESTE: 2nd in command, so SOME playtime should be required.
+      time: 10h
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 1h
+      time: 2.5h
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 1h
+      time: 2.5h
     - !type:DepartmentTimeRequirement
       department: Science
-      time: 1h
+      time: 2.5h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 1h
+      time: 2.5h
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 1h
-  weight: 20
+      time: 2.5h
   startingGear: HoPGear
   icon: "TP14JobIconHeadOfPersonnel" # TRIESTE: 'JobIconHeadOfPersonnel'
   supervisors: job-supervisors-captain
+  guides: [ Command ] # TODO: should have a more specific guidebook page instead of using the department itself
   access:
   - Command
   - HeadOfPersonnel

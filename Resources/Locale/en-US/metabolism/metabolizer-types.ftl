@@ -10,3 +10,4 @@ metabolizer-type-dwarf = Dwarf
 metabolizer-type-moth = Moth
 metabolizer-type-arachnid = Arachnid
 metabolizer-type-jellid = Jellid
+metabolizer-type-changeling = Changeling

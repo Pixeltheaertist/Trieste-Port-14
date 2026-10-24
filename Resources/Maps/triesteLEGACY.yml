@@ -10,8 +10,8 @@ tilemap:
   30: FloorConcreteMono
   38: FloorConcreteSmooth
   32: FloorDark
-  21: FloorDarkDiagonal
-  34: FloorDarkDiagonalMini
+  21: TP14FloorDarkDiagonal
+  34: TP14FloorDarkDiagonalMini
   20: FloorDarkHerringbone
   36: FloorDarkMini
   37: FloorDarkPavement
@@ -21,42 +21,42 @@ tilemap:
   11: FloorFreezer
   9: FloorGlass
   28: FloorGold
-  54: FloorGrayConcrete
-  55: FloorGrayConcreteMono
-  1: FloorGrayConcreteSmooth
+  54: TP14FloorGrayConcrete
+  55: TP14FloorGrayConcreteMono
+  1: TP14FloorGrayConcreteSmooth
   16: FloorHullReinforced
-  10: FloorHydro
+  10: TP14FloorHydro
   12: FloorKitchen
   68: FloorMetalDiamond
   19: FloorMetalFoam
-  70: FloorMining
-  71: FloorMiningDark
-  72: FloorMiningLight
-  75: FloorOldConcrete
-  76: FloorOldConcreteMono
-  2: FloorOldConcreteSmooth
+  70: TP14FloorMining
+  71: TP14FloorMiningDark
+  72: TP14FloorMiningLight
+  75: TP14FloorOldConcrete
+  76: TP14FloorOldConcreteMono
+  2: TP14FloorOldConcreteSmooth
   25: FloorPlanetGrass
   80: FloorPlastic
-  84: FloorRockVault
-  3: FloorShowroom
+  84: TP14FloorRockVault
+  3: TP14FloorShowroom
   6: FloorShuttleBlack
   31: FloorShuttleGrey
   26: FloorShuttleWhite
   24: FloorSteel
-  103: FloorSteelDirty
+  103: TP14FloorSteelDirty
   18: FloorSteelMini
   39: FloorSteelPavementVertical
-  4: FloorTechMaint
+  4: TP14FloorTechMaint
   112: FloorTechMaint2
   113: FloorTechMaint3
-  23: FloorWhiteDiagonalMini
+  23: TP14FloorWhiteDiagonalMini
   125: FloorWood
   7: FloorWoodLarge
   8: FloorWoodTile
   13: Lattice
   129: Plating
   29: PlatingDamaged
-  40: TrainLattice
+  40: TP14TrainLattice
 entities:
 - proto: ""
   entities:

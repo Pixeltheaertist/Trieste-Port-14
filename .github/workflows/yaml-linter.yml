@@ -12,9 +12,29 @@ concurrency:
   cancel-in-progress: ${{ github.event_name != 'merge_group' }}
 
 jobs:
+  changes:
+    if: github.actor != 'PJBot' && github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    outputs:
+      lint: ${{ github.event_name != 'pull_request' || steps.filter.outputs.lint == 'true' }}
+    steps:
+      - uses: dorny/paths-filter@v3
+        if: github.event_name == 'pull_request'
+        id: filter
+        with:
+          filters: |
+            lint:
+              - 'Resources/**'
+              - 'Content.*/**'
+              - 'RobustToolbox'
+              - '**/*.props'
+              - '*.slnx'
+              - '.github/workflows/yaml-linter.yml'
+
   build:
     name: YAML Linter
-    if: github.actor != 'PJBot' && github.event.pull_request.draft == false
+    needs: changes
+    if: needs.changes.outputs.lint == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -31,9 +51,29 @@ jobs:
         uses: actions/setup-dotnet@v5
         with:
           dotnet-version: 10.0.x
+      - name: Restore build cache
+        id: build-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            bin
+            RobustToolbox/bin
+            **/obj
+          key: yamllinter-${{ runner.os }}-${{ hashFiles('**/*.cs', '**/*.csproj', '**/*.props', '**/*.targets', '**/*.xaml', '*.slnx') }}
       - name: Install dependencies
-        run: dotnet restore
+        if: steps.build-cache.outputs.cache-hit != 'true'
+        run: dotnet restore Content.YAMLLinter/Content.YAMLLinter.csproj
       - name: Build
-        run: dotnet build --configuration Release --no-restore /p:WarningsAsErrors= /m
+        if: steps.build-cache.outputs.cache-hit != 'true'
+        run: dotnet build Content.YAMLLinter/Content.YAMLLinter.csproj --configuration Release --no-restore /p:WarningsAsErrors= /m
+      - name: Save build cache
+        if: steps.build-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            bin
+            RobustToolbox/bin
+            **/obj
+          key: ${{ steps.build-cache.outputs.cache-primary-key }}
       - name: Run Linter
         run: dotnet run --project Content.YAMLLinter/Content.YAMLLinter.csproj --no-build

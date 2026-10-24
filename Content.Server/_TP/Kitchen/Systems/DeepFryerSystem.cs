@@ -384,7 +384,7 @@ public sealed partial class DeepFryerSystem : EntitySystem
 		if (_solutionContainer.TryGetSolution(fryerEntUid, deepFryerComp.SolutionId, out var solutionEnt, out _))
             _solutionContainer.SplitSolution(solutionEnt.Value, FixedPoint2.New(2.5f));
 
-        var recipeResult = Spawn(recipe.Result, Transform(fryerEntUid).Coordinates);
+        var recipeResult = SpawnAtPosition(recipe.Result, Transform(fryerEntUid).Coordinates);
         _container.Insert(recipeResult, container);
 
         _cookingStartTimes.Remove(friedEntUid);

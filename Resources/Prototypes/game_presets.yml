@@ -6,7 +6,7 @@
   showInVote: false # secret
   description: survival-description
   rules:
-  # - MeteorSwarmScheduler
+  # - MeteorSwarmScheduler  # TRIESTE
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
@@ -21,7 +21,7 @@
   showInVote: false # secret
   description: kessler-syndrome-description
   rules:
-  # - KesslerSyndromeScheduler # Trieste: Removed.
+  # - KesslerSyndromeScheduler # TRIESTE
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
@@ -40,7 +40,8 @@
     - Zombie
     - Wizard
     - Xenoborgs
-  # - KesslerSyndromeScheduler # Trieste: Removed.
+    - Changeling
+   # - KesslerSyndromeScheduler # TRIESTE
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
@@ -62,6 +63,7 @@
     - Zombie
     - Wizard
     - Xenoborgs
+    - Changeling
     - BasicStationEventScheduler
 #    - KesslerSyndromeScheduler
 #    - MeteorSwarmMildScheduler
@@ -76,11 +78,11 @@
   - extended
   - shittersafari
   name: extended-title
-  showInVote: true #2boring2vote # Trieste: Enabled.
+  showInVote: true #2boring2vote # Trieste: Enabled. 7000 fucking mothroaches, EAT THAT MAN.
   description: extended-description
   rules:
   - BasicStationEventScheduler
-  - MeteorSwarmScheduler
+#  - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
 
@@ -199,6 +201,22 @@
   - BasicRoundstartVariation
 
 - type: gamePreset
+  id: Wizard
+  alias:
+  - wizard
+  name: wizard-title
+  description: wizard-description
+  showInVote: false
+  rules:
+  - Wizard
+  - DummyNonAntagChance
+  - SubGamemodesRuleNoWizard #No Dual Wizards at the start, midround is fine
+  - BasicStationEventScheduler
+#  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
   id: Xenoborgs
   alias:
     - xenoborgs
@@ -210,7 +228,7 @@
   - DummyNonAntagChance
   - SubGamemodesRuleNoWizardNoXenoborg # no two motherships
   - BasicStationEventScheduler
-  - MeteorSwarmScheduler
+#  - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
 

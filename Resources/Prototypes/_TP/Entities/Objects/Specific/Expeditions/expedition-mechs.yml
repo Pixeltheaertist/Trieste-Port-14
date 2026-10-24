@@ -40,7 +40,7 @@
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellHigh
+      - PowerCellHyper
   - type: Sprite
     drawdepth: Mobs
     noRot: true
@@ -97,13 +97,15 @@
       maxDuration: 2.0
       minDuration: 0.1
       isLooped: true
+  # Single battery: the PowerCellSlot points at the mech's core battery, so the drain, drill and worklight all share it.
+  # Locked so it can only be swapped through the mech's own flow (open panel, insert / pry out with a crowbar).
   - type: PowerCellSlot
-    cellSlotId: cell_slot
+    cellSlotId: mech-battery-slot
   - type: ItemSlots
     slots:
-      cell_slot:
+      mech-battery-slot:
         name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellHigh
+        locked: true
   - type: PointLight
     enabled: false
   - type: MovementSpeedModifier

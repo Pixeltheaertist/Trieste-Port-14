@@ -63,7 +63,7 @@
 - type: loadout
   id: TP14LoadoutFootwearTourist
   equipment:
-    shoes: ClothingShoesTourist
+    shoes: ClothingShoesSandalsBrown # Tourist shoes were split into sandals upstream (#46163)
 
 - type: loadout
   id: TP14LoadoutFootwearWhite

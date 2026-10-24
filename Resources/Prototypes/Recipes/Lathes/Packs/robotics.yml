@@ -11,12 +11,13 @@
 - type: latheRecipePack
   id: BorgModulesStatic
   recipes:
-  - TP14BorgModuleMailRecipe # TP14
-  - BorgModuleTool
+  - BorgModuleArtistry
   - BorgModuleCable
   - BorgModuleFireExtinguisher
   - BorgModuleInflatable
-  - BorgModuleArtistry
+  - BorgModuleMusique
+  - BorgModuleTool
+  - TP14BorgModuleMailRecipe # TRIESTE
 
 - type: latheRecipePack
   id: BorgLimbsStatic

@@ -1,0 +1,32 @@
+- type: tile
+  id: FloorGreenCircuit
+  parent: BaseStationTile
+  name: tiles-green-circuit-floor
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/green_circuit.png
+  variants: 1
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: FloorTileItemGCircuit
+
+- type: tile
+  id: FloorBlueCircuit
+  parent: BaseStationTile
+  name: tiles-blue-circuit-floor
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/blue_circuit.png
+  variants: 1
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: FloorTileItemBCircuit
+
+- type: tile
+  id: FloorRedCircuit
+  parent: BaseStationTile
+  name: tiles-red-circuit-floor
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/red_circuit.png
+  variants: 1
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: FloorTileItemRCircuit

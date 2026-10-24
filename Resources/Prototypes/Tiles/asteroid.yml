@@ -1,0 +1,89 @@
+- type: tile
+  id: FloorAsteroidSandBorderless
+  name: tiles-asteroid-sand-borderless
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Asteroid/asteroid.png
+  variants: 13
+  placementVariants:
+  - 0.8
+  - 0.0166 #Should be roughly 20%.... I think??? I don't know dude, I'm just a YAML monkey.
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0116
+  - 0.0116
+  baseTurf: Space
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: FloorAsteroidSand
+  parent: FloorAsteroidSandBorderless
+  name: tiles-asteroid-sand
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Asteroid/asteroid.png
+  variants: 13
+  placementVariants:
+  - 0.8
+  - 0.0166 #Should be roughly 20%.... I think??? I don't know dude, I'm just a YAML monkey.
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0116
+  - 0.0116
+  edgeSprites:
+    SouthEast: /Textures/_TP/Tiles/Asteroid/asteroid_single_edge.png
+    NorthEast: /Textures/_TP/Tiles/Asteroid/asteroid_single_edge.png
+    NorthWest: /Textures/_TP/Tiles/Asteroid/asteroid_single_edge.png
+    SouthWest: /Textures/_TP/Tiles/Asteroid/asteroid_single_edge.png
+    South: /Textures/_TP/Tiles/Asteroid/asteroid_double_edge.png
+    East: /Textures/_TP/Tiles/Asteroid/asteroid_double_edge.png
+    North: /Textures/_TP/Tiles/Asteroid/asteroid_double_edge.png
+    West: /Textures/_TP/Tiles/Asteroid/asteroid_double_edge.png
+  edgeSpritePriority: 1
+
+- type: tile
+  id: FloorAsteroidTile
+  name: tiles-asteroid-tile
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Asteroid/asteroid_tile.png
+  variants: 1
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+
+### ASTRO TILES
+- type: tile
+  parent: [ BaseStationTile, FloorAsteroidSand ]
+  id: FloorAstroAsteroidSand
+  name: tiles-astro-asteroid-sand
+  footstepSounds:
+    collection: FootstepAsteroid
+  itemDrop: FloorTileItemAstroAsteroidSand
+
+- type: tile
+  parent: [ BaseStationTile, FloorAsteroidSandBorderless ]
+  id: FloorAstroAsteroidSandBorderless
+  name: tiles-astro-asteroid-sand-borderless
+  footstepSounds:
+    collection: FootstepAsteroid
+  itemDrop: FloorTileItemAstroAsteroidSand

@@ -11,12 +11,9 @@ namespace Content.Server._TP.StationEvents.Events;
 /// </summary>
 public sealed partial class WhaleMigrationRule : StationEventSystem<WhaleMigrationRuleComponent>
 {
-    protected override void Started(EntityUid uid,
-        WhaleMigrationRuleComponent comp,
-        GameRuleComponent gameRule,
-        GameRuleStartedEvent args)
+    protected override void Started(Entity<WhaleMigrationRuleComponent, GameRuleComponent> ent, ref GameRuleStartedEvent args)
     {
-        base.Started(uid, comp, gameRule, args);
+        base.Started(ent, ref args);
 
         var query = EntityQueryEnumerator<TriesteAirspaceComponent>();
         while (query.MoveNext(out var triesteUid, out _))
@@ -28,12 +25,9 @@ public sealed partial class WhaleMigrationRule : StationEventSystem<WhaleMigrati
         }
     }
 
-    protected override void Ended(EntityUid uid,
-        WhaleMigrationRuleComponent comp,
-        GameRuleComponent gameRule,
-        GameRuleEndedEvent args)
+    protected override void Ended(Entity<WhaleMigrationRuleComponent> rule, ref GameRuleEndedEvent args)
     {
-        base.Ended(uid, comp, gameRule, args);
+        base.Ended(rule, ref args);
 
         var query = EntityQueryEnumerator<TriesteAirspaceComponent>();
         while (query.MoveNext(out var triesteUid, out _))

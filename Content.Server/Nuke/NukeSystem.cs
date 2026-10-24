@@ -1,10 +1,8 @@
-using Content.Server.AlertLevel;
-using Content.Server.Audio;
 using Content.Server.Chat.Systems;
 using Content.Server.Explosion.EntitySystems;
-using Content.Server.Pinpointer;
 using Content.Server.Popups;
 using Content.Server.Station.Systems;
+using Content.Shared.AlertLevel;
 using Content.Shared.Audio;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Coordinates.Helpers;
@@ -13,6 +11,7 @@ using Content.Shared.Examine;
 using Content.Shared.Kitchen;
 using Content.Shared.Maps;
 using Content.Shared.Nuke;
+using Content.Shared.Pinpointer;
 using Content.Shared.Popups;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
@@ -20,10 +19,8 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
-using Robust.Shared.Utility;
 using Robust.Shared.Timing;
-using Content.Server.Ghost;
-using Content.Shared.Anomaly;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Nuke;
 
@@ -37,19 +34,16 @@ public sealed partial class NukeSystem : EntitySystem
     [Dependency] private NavMapSystem _navMap = default!;
     [Dependency] private PointLightSystem _pointLight = default!;
     [Dependency] private PopupSystem _popups = default!;
-    [Dependency] private ServerGlobalSoundSystem _sound = default!;
+    [Dependency] private GlobalSoundSystem _sound = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SharedMapSystem _map = default!;
-    [Dependency] private StationSystem _station = default!;
+    [Dependency] private ServerStationSystem _station = default!;
     [Dependency] private UserInterfaceSystem _ui = default!;
     [Dependency] private AppearanceSystem _appearance = default!;
     [Dependency] private TurfSystem _turf = default!;
     [Dependency] private IGameTiming _timing = default!;
-
-    // TRIESTE DEPENDENCIES.
-    [Dependency] private GhostSystem _ghost = default!;
 
     /// <summary>
     ///     Used to calculate when the nuke song should start playing for maximum kino with the nuke sfx
@@ -92,9 +86,6 @@ public sealed partial class NukeSystem : EntitySystem
     private void OnInit(EntityUid uid, NukeComponent component, ComponentInit args)
     {
         _itemSlots.AddItemSlot(uid, SharedNukeComponent.NukeDiskSlotId, component.DiskSlot);
-
-        // TRIESTE: Added.
-        _itemSlots.AddItemSlot(uid, SharedNukeComponent.NukeResonanceSlotId, component.ResonanceSlot);
 
         UpdateStatus(uid, component);
         UpdateUserInterface(uid, component);
@@ -153,9 +144,6 @@ public sealed partial class NukeSystem : EntitySystem
     private void OnRemove(EntityUid uid, NukeComponent component, ComponentRemove args)
     {
         _itemSlots.RemoveItemSlot(uid, component.DiskSlot);
-
-        // TRIESTE: Added.
-        _itemSlots.RemoveItemSlot(uid, component.ResonanceSlot);
     }
 
     private void OnItemSlotChanged(EntityUid uid, NukeComponent component, ContainerModifiedMessage args)
@@ -163,8 +151,7 @@ public sealed partial class NukeSystem : EntitySystem
         if (!component.Initialized)
             return;
 
-        // TRIESTE: Added Resonance slot.
-        if (args.Container.ID != component.DiskSlot.ID || args.Container.ID != component.ResonanceSlot.ID)
+        if (args.Container.ID != component.DiskSlot.ID)
             return;
 
         UpdateStatus(uid, component);
@@ -370,13 +357,11 @@ public sealed partial class NukeSystem : EntitySystem
         switch (component.Status)
         {
             case NukeStatus.AWAIT_DISK:
-                if (component.DiskSlot.HasItem && component.ResonanceSlot.HasItem)
-                    {
-                        ArmBomb(uid, component); //Make it so it needs the transmission disk and the Resonance Delaminator to "arm" the artifact.
-                    }
+                if (component.DiskSlot.HasItem)
+                    component.Status = NukeStatus.AWAIT_CODE;
                 break;
             case NukeStatus.AWAIT_CODE:
-                if (!component.DiskSlot.HasItem || !component.ResonanceSlot.HasItem)
+                if (!component.DiskSlot.HasItem)
                 {
                     component.Status = NukeStatus.AWAIT_DISK;
                     component.EnteredCode = "";
@@ -503,7 +488,7 @@ public sealed partial class NukeSystem : EntitySystem
         // let people know that a nuclear bomb was armed in their vicinity instead.
         // Otherwise, you could set every station to whatever AlertLevelOnActivate is.
         if (stationUid != null)
-            _alertLevel.SetLevel(stationUid.Value, component.AlertLevelOnActivate, true, true, true, true);
+            _alertLevel.SetLevel(stationUid.Value, component.AlertLevelOnActivate, true, true, true);
 
         var pos = _transform.GetMapCoordinates(uid, xform: nukeXform);
         var x = (int) pos.X;

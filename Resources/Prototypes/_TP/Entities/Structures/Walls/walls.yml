@@ -11,7 +11,10 @@
     sprite: _TP/Structures/Walls/pressurizedwall.rsi
   - type: IconSmooth
     key: walls
-    base: solid
+    states:
+    - !type:CornerSpriteSmoothing # old-style corner sprites (solid0-7 / reinf_over0-7)
+      mask: [ walls ]
+      base: solid
   - type: Construction
     graph: Girder
     node: pressurizedwall
@@ -30,7 +33,10 @@
     state: rgeneric
   - type: IconSmooth
     key: walls
-    base: reinf_over
+    states:
+    - !type:CornerSpriteSmoothing # old-style corner sprites (solid0-7 / reinf_over0-7)
+      mask: [ walls ]
+      base: reinf_over
   - type: Construction
     graph: Girder
     node: reinforcedpressurizedwall
@@ -48,7 +54,10 @@
     sprite: _TP/Structures/Walls/rustypressurizedwall.rsi
   - type: IconSmooth
     key: walls
-    base: solid
+    states:
+    - !type:CornerSpriteSmoothing # old-style corner sprites (solid0-7 / reinf_over0-7)
+      mask: [ walls ]
+      base: solid
   - type: Construction
     graph: Girder
     node: rustypressurizedwall
@@ -67,7 +76,10 @@
     state: rgeneric
   - type: IconSmooth
     key: walls
-    base: reinf_over
+    states:
+    - !type:CornerSpriteSmoothing # old-style corner sprites (solid0-7 / reinf_over0-7)
+      mask: [ walls ]
+      base: reinf_over
   - type: Construction
     graph: Girder
     node: reinforcedrustypressurizedwall
@@ -134,31 +146,26 @@
 
 
 #Border indestructible wall
+# Pre-respriting rock look with edge smoothing; no health, destruction or gathering, so it can't be broken or mined.
 - type: entity
-  id: TP14WallRockIndestructible
   parent: BaseWall
+  id: TP14WallRockIndestructible
   suffix: Trieste, Indestructible
   name: indestructible rock wall
   description: Born from extreme pressure and never-ending pyroclastic layers, this wall might as well be indestructible.
   components:
   - type: Transform
     noRot: true
-  - type: IconSmooth
-    key: walls
-    mode: NoSprite
-  - type: SmoothEdge
   - type: Icon
-    sprite: Structures/Walls/rock.rsi
+    sprite: _TP/Structures/Walls/rock.rsi
     state: rock_asteroid
   - type: Sprite
-    sprite: Structures/Walls/rock.rsi
+    sprite: _TP/Structures/Walls/rock.rsi
     layers:
     - state: rock_asteroid
-    - map: [ "enum.EdgeLayer.South" ]
-      state: rock_asteroid_south
-    - map: [ "enum.EdgeLayer.East" ]
-      state: rock_asteroid_east
-    - map: [ "enum.EdgeLayer.North" ]
-      state: rock_asteroid_north
-    - map: [ "enum.EdgeLayer.West" ]
-      state: rock_asteroid_west
+  - type: IconSmooth
+    key: walls
+    states:
+    - !type:EdgeSpriteSmoothing
+      mask: [ walls, stone ]
+      base: rock_asteroid_

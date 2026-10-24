@@ -4,25 +4,28 @@
   description: job-description-captain
   playTimeTracker: JobCaptain
   requirements:
-    - !type:OverallPlaytimeRequirement
+    - !type:OverallPlaytimeRequirement # TRIESTE
       time: 10h
     - !type:DepartmentTimeRequirement
-      department: Security
-      time: 2h
+      department: Engineering
+      time: 2h # TRIESTE '4'
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 2h
+      time: 2h # TRIESTE: '4'
     - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 2h
+      department: Science
+      time: 2h # TRIESTE: '4'
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 2h # TRIESTE: '4'
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 2h
-  weight: 20
+      time: 2h # TRIESTE: '4'
   startingGear: CaptainGear
   icon: "TP14JobIconOverseer" # TRIESTE: 'JobIconCaptain'
   joinNotifyCrew: true
   supervisors: job-supervisors-centcom
+  guides: [ Command ] # TODO: should have a more specific guidebook page instead of using the department itself
   accessGroups:
   - AllAccess
   special:
@@ -36,9 +39,9 @@
   id: CaptainGear
   equipment:
     shoes: ClothingShoesBootsLaceup
-    # eyes: ClothingEyesGlassesCommand  # Moffstation - Eyepatches!
-    gloves: TP14ClothingHandsGlovesOverseer #TP14
-    id: TP14OverseerPDA #TP14
+#    eyes: ClothingEyesGlassesCommand   # MOFF: Eyepatches!
+    gloves: ClothingHandsGlovesCaptain  # TRIESTE: 'ClothingHandsGlovesCaptain'
+    id: TP14OverseerPDA                 # TRIESTE: 'CaptainPDA'
     ears: ClothingHeadsetAltCommand
   storage:
     back:

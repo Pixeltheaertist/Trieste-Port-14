@@ -64,7 +64,7 @@
   abstract: true
   components:
   - type: TemperatureProtection
-    coolingCoefficient: 0.0
+    coefficient: 0.0 # mob: no cooling before; inert like the jellid; was coolingCoefficient: 0.0
   - type: Body
   - type: EntityTableContainerFill
     containers:
@@ -82,7 +82,7 @@
   abstract: true
   components:
   - type: TemperatureProtection
-    coolingCoefficient: 0.0
+    coefficient: 0.0 # mob: no cooling before; inert like the jellid; was coolingCoefficient: 0.0
   - type: TemperatureDamage
     heatDamageThreshold: 360
     coldDamageThreshold: -150
@@ -103,7 +103,7 @@
   abstract: true
   components:
   - type: TemperatureProtection
-    coolingCoefficient: 0.0
+    coefficient: 0.0 # mob: no cooling before; inert like the jellid; was coolingCoefficient: 0.0
 
   - type: Body
   - type: EntityTableContainerFill

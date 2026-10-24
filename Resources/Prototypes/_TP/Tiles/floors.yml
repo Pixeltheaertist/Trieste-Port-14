@@ -2,54 +2,168 @@
   parent: FloorAsteroidSandBorderless
   id: TP14FloorSandBorderless
   name: tp14-tiles-sand-borderless
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Asteroid/asteroid.png
+  variants: 13
+  placementVariants:
+  - 0.8
+  - 0.0166 #Should be roughly 20%.... I think??? I don't know dude, I'm just a YAML monkey.
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0116
+  - 0.0116
   isSpace: true
 
 - type: tile
   parent: FloorAsteroidSand
   id: TP14FloorSand
   name: tp14-tiles-sand
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Asteroid/asteroid.png
+  variants: 13
+  placementVariants:
+  - 0.8
+  - 0.0166 #Should be roughly 20%.... I think??? I don't know dude, I'm just a YAML monkey.
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0116
+  - 0.0116
+  edgeSprites:
+    SouthEast: /Textures/_TP/Tiles/Asteroid/asteroid_single_edge.png
+    NorthEast: /Textures/_TP/Tiles/Asteroid/asteroid_single_edge.png
+    NorthWest: /Textures/_TP/Tiles/Asteroid/asteroid_single_edge.png
+    SouthWest: /Textures/_TP/Tiles/Asteroid/asteroid_single_edge.png
+    South: /Textures/_TP/Tiles/Asteroid/asteroid_double_edge.png
+    East: /Textures/_TP/Tiles/Asteroid/asteroid_double_edge.png
+    North: /Textures/_TP/Tiles/Asteroid/asteroid_double_edge.png
+    West: /Textures/_TP/Tiles/Asteroid/asteroid_double_edge.png
+  edgeSpritePriority: 1
   isSpace: true
 
 - type: tile
-  parent: FloorAsteroidSandRedBorderless
+  parent: FloorAsteroidSandBorderless
   id: TP14FloorSandRedBorderless
   name: tp14-tiles-sand-red-borderless
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Asteroid/asteroid_red.png
+  variants: 13
+  placementVariants:
+  - 0.8
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0116
+  - 0.0116
   isSpace: true
 
 - type: tile
-  parent: FloorAsteroidSandRed
+  parent: FloorAsteroidSand
   id: TP14FloorSandRed
   name: tp14-tiles-sand-red
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Asteroid/asteroid_red.png
+  variants: 13
+  placementVariants:
+  - 0.8
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0116
+  - 0.0116
+  edgeSprites:
+    SouthEast: /Textures/_TP/Tiles/Asteroid/asteroid_single_edge.png
+    NorthEast: /Textures/_TP/Tiles/Asteroid/asteroid_single_edge.png
+    NorthWest: /Textures/_TP/Tiles/Asteroid/asteroid_single_edge.png
+    SouthWest: /Textures/_TP/Tiles/Asteroid/asteroid_single_edge.png
+    South: /Textures/_TP/Tiles/Asteroid/asteroid_double_edge.png
+    East: /Textures/_TP/Tiles/Asteroid/asteroid_double_edge.png
+    North: /Textures/_TP/Tiles/Asteroid/asteroid_double_edge.png
+    West: /Textures/_TP/Tiles/Asteroid/asteroid_double_edge.png
+  edgeSpritePriority: 1
   isSpace: true
 
 - type: tile
   parent: FloorAsteroidIronsandBorderless
   id: TP14FloorSandIronBorderless
   name: tp14-tiles-sand-iron-borderless
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Asteroid/ironsand.png
+  variants: 15
   isSpace: true
 
 - type: tile
   parent: FloorAsteroidIronsand
   id: TP14FloorSandIron
   name: tp14-tiles-sand-iron
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Asteroid/ironsand.png
+  variants: 15
+  edgeSprites:
+    SouthEast: /Textures/_TP/Tiles/Asteroid/iron_single_edge.png
+    NorthEast: /Textures/_TP/Tiles/Asteroid/iron_single_edge.png
+    NorthWest: /Textures/_TP/Tiles/Asteroid/iron_single_edge.png
+    SouthWest: /Textures/_TP/Tiles/Asteroid/iron_single_edge.png
+    South: /Textures/_TP/Tiles/Asteroid/iron_double_edge.png
+    East: /Textures/_TP/Tiles/Asteroid/iron_double_edge.png
+    North: /Textures/_TP/Tiles/Asteroid/iron_double_edge.png
+    West: /Textures/_TP/Tiles/Asteroid/iron_double_edge.png
+  edgeSpritePriority: 1
   isSpace: true
 
 - type: tile
   parent: FloorCave
   id: TP14FloorCave
   name: tp14-tiles-cave
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/cave.png
+  variants: 7
+  edgeSprites: {}
   isSpace: true
 
 - type: tile
   parent: FloorBasalt
   id: TP14FloorBasalt
   name: tp14-tiles-basalt
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Planet/basalt.png
+  edgeSprites: {}
   isSpace: true
 
 - type: tile
-  parent: FloorLowDesert
+  parent: FloorDesert
   id: TP14FloorLowDesert
   name: tp14-tiles-desert
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Planet/Desert/low_desert.png
+  variants: 6
   isSpace: true
 
 - type: tile

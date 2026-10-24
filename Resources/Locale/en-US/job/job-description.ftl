@@ -1,48 +1,72 @@
-job-description-technical-assistant = Learn the basics of managing the station's power, as well as repairing the station's hull.
-job-description-atmostech = Optimize the station's atmospherics setup, and synthesize rare gases to use or sell.
-job-description-bartender = Manage the bar and keep it lively, give out drinks, and listen to the crew's stories.
-job-description-botanist = Grow food for the chef, drugs for medbay, and other plants to keep yourself entertained.
-job-description-borg = Half-human, Half-machine. Follow your laws, serve the crew, and hound the science team for upgrades.
-job-description-brigmedic = Fight in the rear of the security service, for the lives of your comrades! You are the first and last hope of your squad. Hippocrates bless you.
-job-description-cadet = Learn the basics of arresting criminals and managing the brig. Listen to your supervisors and feel free to ask them for any help.
-job-description-captain = Keep the platform in one piece. Make sure the other heads are doing their job.
-job-description-cargotech = Deal with requisitions and deliveries, provide the platform with supplies.
-job-description-ce = Manage the engineering department to ensure power, atmospherics, and the hull are in perfect shape. Keep water outside.
-job-description-centcomoff = Act as an ambassador to the newest state-of-the-art space station in Nanotrasen's fleet.
-job-description-chaplain = Preach the good word of your deity and religion, and conduct spiritual healing and miracles with your bible.
-job-description-chef = Keep the platform fed with a variety of food items, butcher dead animals to ensure ammonia doesn't leak.
-job-description-chemist = Produce medicinal drugs for the doctors to use, research ethically dubious rare chemicals, and produce weapons of war when enemies of the platform arrive.
-job-description-clown = Entertain the residents through elaborate slapstick routines or terrible jokes.
-job-description-cmo = Manage the resources and personnel of the medical department to keep the crew alive.
-job-description-paramedic = Rescue critically injured patients all over the platform, sometimes undersea too. Stablize them, give them a ride to medbay, and get back out there!
-job-description-detective = Investigate crime scenes using forensic tools, ensure that the guilty party is found, and have a couple smokes.
-job-description-doctor = Diagnose and heal citizens through medicinal chemicals, advanced medicine, and defibrillators. Make sure the dead don't rot, and that cadavers are in the morgue.
-job-description-engineer = Keep the platofrm's artifact stable, optimize the power network, and make emergency repairs using your pressure suit in flooded areas.
-job-description-ertchaplain = Ensure the station crew's last rights are taken care of.
-job-description-ertengineer = Ensure that the station has power and clean air.
-job-description-ertjanitor = Ensure that the station is properly cleaned--for morale.
-job-description-ertleader = Lead the Emergency Response Team in dealing with threats to Nanotrasen assets.
-job-description-ertmedic = Ensure that the crew of the station is kept alive and healthy.
-job-description-ertsecurity = Ensure that any active threats to the station are put to rest.
-job-description-hop = Reassign citizens to jobs, keep tabs on Sweetwater and report to the Overseer in tandem.
-job-description-hos = Manage your security force and keep them efficient, quell dissent, and keep the other heads of staff safe.
-job-description-intern = Learn the basics of administering medicine, basic chemicals and using medical tools.
-job-description-janitor = Keep the platform clean of any trash or slipping hazards, and help deal with seagull infestations.
-job-description-lawyer = Ensure that every prisoner or criminal receives a fair judgment and trial if necessary.
-job-description-librarian = Manage the library, give out knowledge to any who seek it, and report on activities aboard the platform.
-job-description-mime = Entertain the citizens through non-vocal means, and engage with light rivalry with the clown.
-job-description-musician = Entertain the residents with your unique musical talent, and acquire new instruments to mess around with.
-job-description-passenger = Live out your life on the platform. Slip and fall to your death.
-job-description-psychologist = Provide emotional support to traumatized citizens. Currently available on Box, Marathon and Origin Stations.
-job-description-qm = Keep the Platform's money in check. Supervise your techies. Oversee cargo procurement and selling.
-job-description-rd = Manage the science department, unlocking technologies, acquiring & researching artifacts, and performing experiments.
-job-description-research-assistant = Learn the basics of how to research various artifacts, anomalies and robotics.
-job-description-reporter = Entertain & inform the citizens with your vibrant journalism through wireless cameras, the radio and the news. Currently available on Bagel Station, Core and Origin.
-job-description-salvagespec = Go out into the abyss. Hunt for artifacts and wreckages while fighting the horrors of the deep.
-job-description-scientist = Research alien artifacts, unlock new technologies, build newer and better machines around the platform, and make everything run more efficiently.
-job-description-security = Catch criminals and enemies of freedom, enforce the law, and ensure that the platform does not fall into disarray.
-job-description-serviceworker = Learn the basics of bartending, cooking, and growing plants.
-job-description-station-ai = Follow your laws, serve the crew.
-job-description-visitor = Enjoy your visit to the station.
-job-description-warden = Patrol the security department, ensure that no one is stealing from the armory, and make sure that all prisoners are processed and let out when their time is up.
-job-description-cburn = Your orders are simple. Trieste Port has been infected by an unknown class-IV parasite. Sterilize the site, and any citizens showing signs of infection. No exceptions.
+# Command
+job-description-captain = Manage the resources and citizens of the entire port. Work alongside the other heads of staff to ensure that the port remains operational.
+job-description-ce = Manage the resources and personnel of the Engineering department to ensure that Sweetwater remains intact, functional, and habitable.
+job-description-cmo = Manage the resources and personnel of the Medical facilities to ensure Trieste's citizens remain alive and in good health.
+job-description-hop = Manage the resources and personnel of the Service department, and perform general administrative duties. Handle paperwork, perform job transfers, and keep your pet corgi safe.
+job-description-hos = Manage the resources and personnel of the Security department to ensure the safety of Trieste's citizens from corporate AND native threats.
+job-description-qm = Manage the resources and personnel of the Harbor to ensure that Trieste remains well-supplied and the money keeps flowing. Just remember your taxes!
+job-description-rd = Manage the resources and personnel of the Science department to ensure that research progresses smoothly and the port's silicons function properly.
+
+# Cargo
+job-description-cargotech = Deliver the mail, manage requisition orders, buy and sell goods, and ensure other departments have the supplies they need.
+job-description-salvagespec = Go out and explore the dark depths of the ocean, process ores and scrap into usable materials, find valuable loot, and fight off the horrors of the deep.
+
+# Engineering
+job-description-atmostech = Ensure the station has breathable air, keep the water out, and synthesize rare gases for the station.
+job-description-engineer = Keep the platform's power network online, keep an eye on Sweetwater's Artifact, repair damage to the station, and perform renovations and expansions.
+job-description-technical-assistant = Learn the basics of keeping Sweetwater and Trieste powered and repairing structural damage.
+
+# Medical
+job-description-chemist = Synthesize medicine, botanical supplies, and any other chemicals for citizen's needs.
+job-description-doctor = Diagnose and treat injured citizens, and ensure that cadavers are properly stored in the morgue.
+job-description-intern = Learn the basics of administering medicine, treating injuries, and rescuing injured citizens.
+job-description-paramedic = Rescue critically injured citizens (usually from Waste Water), make sure they're stable, and transport them to the medbay.
+job-description-psychologist = Provide citizens with emotional support and counseling as living underwater has its effects.
+
+# Science
+job-description-research-assistant = Learn the basics of scientific research and technological development.
+job-description-scientist = Research alien artifacts and supernatural anomalies to develop cutting-edge equipment for Trieste and SolGov. Build and upgrade cyborgs to perform various tasks across the port.
+
+# Security
+job-description-cadet = Learn the basics of investigating crime, learn about SolGov's laws, and arrest corporate criminal scum. (Or just rowdy citizens)
+job-description-detective = Investigate crime scenes using forensic tools to ensure that the guilty party is found.
+job-description-security = Uphold the law, arrest criminals, and ensure that Trieste does not fall into disarray.
+job-description-warden = Guard the Security department, manage the armory, and ensure that all prisoners are properly charged and serve their sentence without incident.
+
+# Service
+job-description-bartender = Serve drinks and keep the bar lively.
+job-description-botanist = Grow fresh ingredients, medicinal herbs, and other plant-based supplies.
+job-description-chaplain = Preach the good word of your religion, hold services and funerals, conduct miracles with your holy book, and help citizens find spiritual guidance in time of need.
+job-description-chef = Keep people fed, butcher and dispose of dead animals, and help keep the bar lively.
+job-description-clown = Entertain the people with slapstick routines and terrible jokes, and engage in light rivalry with the mime.
+job-description-janitor = Keep Sweetwater clean, recycle garbage into raw materials, and help exterminate vermin.
+job-description-lawyer = Ensure that criminals receive legal representation and fair judgment. Inform anyone arrested of their rights and help organize trials, lawsuits, and settlements.
+job-description-librarian = Keep the library organized. Provide newer generations with educational materials, entertaining stories, and tabletop games.
+job-description-mime = Entertain people with silent acts of performance art, and engage in light rivalry with the clown.
+job-description-musician = Entertain people with your unique musical talents.
+job-description-reporter = Inform citizens with wireless cameras and news bulletins.
+job-description-serviceworker = Assist the bar and kitchen with providing sustenance to the crew.
+job-description-tram-driver = Drive around a tram from stop to stop.
+
+# Civilian
+job-description-passenger = Just a refugee from corporations.
+
+# Silicon
+job-description-borg = Use your robotic chassis to perform a wide variety of specialized tasks.
+job-description-station-ai = Remotely interface with the cameras, airlocks, radio, and other electronic devices from the safety of your core.
+
+# Central Command
+job-description-centcommoff = Act as liaison to the newest state-of-the-art space station in Nanotrasen's fleet.
+
+# Task Force
+job-description-cburn = Cleanse Trieste of all biological contaminants.
+job=description-deathsquad = Eliminate any and all threats to Nanotrasen assets.
+job-description-ertchaplain = Ensure that Trieste's crew have their last rites performed.
+job-description-ertengineer = Ensure that Trieste's power is sabotaged, their air polluted, and the halls flooded.
+job-description-ertjanitor = Ensure that Trieste will have to hire NT to clear out the rat infestations.
+job-description-ertleader = Lead the Emergency Response Team to destroy and contain SolGov assets.
+job-description-ertmedic = Ensure that the ERT crew have their injuries treated.
+job-description-ertsecurity = Ensure that any SolGov threats to NT are eliminated.
+
+# Misc.
+job-description-visitor = Enjoy your visit to Trieste!

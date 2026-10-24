@@ -168,8 +168,12 @@
     - terrible
     - chewy
     - fishy
-  - type: Hunger
-    baseDecayRate: 0.25
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: TP14SeaCreatureHunger
+      Thirst:
+        prototype: SimpleMobBaseThirst
   - type: Extractable
     grindableSolutionName: food
   - type: Speech
@@ -322,8 +326,12 @@
         Base: fish-0
       Dead:
         Base: splat-0
-  - type: Hunger
-    baseDecayRate: 0.25
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: TP14SeaCreatureHunger
+      Thirst:
+        prototype: SimpleMobBaseThirst
   - type: Extractable
     grindableSolutionName: food
   - type: Speech

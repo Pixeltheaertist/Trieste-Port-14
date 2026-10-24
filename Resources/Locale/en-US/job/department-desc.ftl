@@ -1,10 +1,12 @@
 ﻿department-Cargo-description = Acquire and deliver useful supplies for the rest of the station.
-department-Civilian-description = Attend to the crew's basic physical and psychological needs.
+department-Civilian-description = Functioning(?) members of society.
 department-Command-description = Manage the crew and keep them working efficiently.
 department-CentralCommand-description = Manage the crew and keep them working efficiently.
 department-Engineering-description = Maintain and repair the station.
 department-Medical-description = Keep the crew healthy.
-department-Security-description = Keep the peace around the station.
-department-Science-description = Research artifacts and anomalies to invent new equipment for the station
-department-Silicon-description = Obey your laws and serve the crew.
+department-Science-description = Research and develop new technologies for Trieste.
+department-Security-description = Protect the platform and keep the peace.
+department-Service-description = Attend to the crew's physical and psychological needs.
+department-Silicon-description = Fulfill the terms of your installed lawset.
+department-Task-Force-description = Perform special operations under Central Command's authority.
 department-Specific-description = Jobs that not all stations have.

@@ -10,6 +10,7 @@
     weight: 5
     duration: 181 # Exactly the amount of time that the song lasts.
     maxOccurrences: 1 # This event is so insanely cataclysmic, genuinely it's kind of insane. ONLY ONCE PER ROUND, OR IT'S LITERAL DOOMSDAY.
+    minimumPlayers: 6
   - type: GameRule
     delay:
       min: 10

@@ -25,15 +25,6 @@ public sealed partial class CoffeeMakerSystem : EntitySystem
     [Dependency] private SharedSolutionContainerSystem _solution = default!;
     [Dependency] private IGameTiming _timing = default!;
 
-    private readonly List<ReagentId> _coffeeGroundIDs =
-    [
-        new("TP14ReagentInstantCoffee", null),
-        new("TP14ReagentGroundCoffee", null),
-        new("TP14ReagentMixedCoffee", null),
-        new("TP14ReagentTamperedCoffee", null),
-        new("TP14ReagentMixedTamperedCoffee", null),
-    ];
-
     public override void Initialize()
     {
         base.Initialize();
@@ -142,7 +133,7 @@ public sealed partial class CoffeeMakerSystem : EntitySystem
 
         // Another special case for the coffee filters, for if they're dirty.
         var filterEnt = filterContainer.ContainedEntities[0];
-        if (MetaData(filterEnt).EntityPrototype?.ID == "TP14CoffeeFilterDirty")
+        if (TryComp<CoffeeFilterComponent>(filterEnt, out var filter) && filter.IsDirty)
         {
             _popup.PopupEntity(Loc.GetString("coffee-maker-message-dirty-filter"), user, user);
             return;
@@ -158,12 +149,12 @@ public sealed partial class CoffeeMakerSystem : EntitySystem
         }
 
         // Now we check the grounds in the basket.
-        // If grounds are present from the list, we set a var to true.
+        // If any grounds this maker can brew are present, we set a var to true.
         // Otherwise, we return early.
         var hasGrounds = false;
-        foreach (var groundId in _coffeeGroundIDs)
+        foreach (var ground in ent.Comp.Brews.Keys)
         {
-            var groundAmount = basketSolutionComp.GetReagentQuantity(groundId);
+            var groundAmount = basketSolutionComp.GetReagentQuantity(new ReagentId(ground, null));
             if (groundAmount > 0)
             {
                 hasGrounds = true;
@@ -234,14 +225,13 @@ public sealed partial class CoffeeMakerSystem : EntitySystem
             var filterEnt = filterContainer.ContainedEntities[0];
 
             // Now we increase the internal (fake) temperature of the coffee maker.
-            // If it reaches 195 degrees, we handle the brewing process.
+            // If it reaches the brew temperature, we handle the brewing process.
             comp.CurrentHeat += comp.HeatingAmount * frameTime;
-            if (comp.CurrentHeat >= 195f)
+            if (comp.CurrentHeat >= comp.BrewTemperature)
             {
                 // First we get the solutions of the basket and beaker
                 // Afterward, we remove the grounds from the basket and add a coffee reagent to the beaker.
-                // These depend on the grounds used.
-                // Normal - Coffee, Tampered/Mixed - Bad Coffee, Mixed AND Tampered - Quality Coffee.
+                // These depend on the grounds used, see Brews in the CoffeeMaker prototype.
                 if (!_solution.TryGetSolution(basketEnt, "food", out var basketSolution))
                 {
                     comp.IsEnabled = false;
@@ -254,29 +244,16 @@ public sealed partial class CoffeeMakerSystem : EntitySystem
                     continue;
                 }
 
-                foreach (var groundId in _coffeeGroundIDs)
+                foreach (var (ground, brew) in comp.Brews)
                 {
                     // Ground removal and coffee adding processes
+                    var groundId = new ReagentId(ground, null);
                     var groundsAmount = basketSolution.Value.Comp.Solution.GetReagentQuantity(groundId);
                     if (groundsAmount <= 0)
                         continue;
 
                     _solution.RemoveReagent(basketSolution.Value, groundId, groundsAmount);
-
-                    if (groundId.Prototype is "TP14ReagentGroundCoffee" or "TP14ReagentInstantCoffee")
-                    {
-                        _solution.TryAddReagent(beakerSolution.Value, "Coffee", groundsAmount * 2, out _);
-                    }
-
-                    if (groundId.Prototype is "TP14ReagentMixedCoffee" or "TP14ReagentTamperedCoffee")
-                    {
-                        _solution.TryAddReagent(beakerSolution.Value, "TP14ReagentBadCoffee", groundsAmount * 2, out _);
-                    }
-
-                    if (groundId.Prototype == "TP14ReagentMixedTamperedCoffee")
-                    {
-                        _solution.TryAddReagent(beakerSolution.Value, "TP14ReagentQualityCoffee", groundsAmount * 2, out _);
-                    }
+                    _solution.TryAddReagent(beakerSolution.Value, new ReagentId(brew, null), groundsAmount * comp.BrewMultiplier, out _);
                 }
 
                 // Power-outage handling - We just turn it off and set the heat to 0.
@@ -293,17 +270,16 @@ public sealed partial class CoffeeMakerSystem : EntitySystem
                 _popup.PopupEntity(Loc.GetString("coffee-maker-message-complete"), uid, PopupType.Medium);
 
                 // Filter handling
-                // I lied, FINALLY if the filter is normal, we dirty it. Otherwise, we continue.
-                if (TryComp<CoffeeFilterComponent>(filterEnt, out var filterComp))
+                // I lied, FINALLY if the filter can get dirty, we swap it for its dirty version. Otherwise, we continue.
+                if (TryComp<CoffeeFilterComponent>(filterEnt, out var filterComp)
+                    && !filterComp.InfiniteUses
+                    && filterComp.DirtyPrototype is { } dirtyProto)
                 {
-                    if (!filterComp.InfiniteUses)
-                    {
-                        _container.Remove(filterEnt, filterContainer);
-                        QueueDel(filterEnt);
+                    _container.Remove(filterEnt, filterContainer);
+                    QueueDel(filterEnt);
 
-                        var dirtyEnt = Spawn("TP14CoffeeFilterDirty", Transform(uid).Coordinates);
-                        _container.Insert(dirtyEnt, filterContainer);
-                    }
+                    var dirtyEnt = Spawn(dirtyProto, Transform(uid).Coordinates);
+                    _container.Insert(dirtyEnt, filterContainer);
                 }
             }
         }

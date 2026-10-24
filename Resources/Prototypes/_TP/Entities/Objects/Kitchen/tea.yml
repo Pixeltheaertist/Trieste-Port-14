@@ -10,6 +10,7 @@
   - type: ExaminableSolution
     solution: food
   - type: Solution
+    id: food # explicit id; the default "solution" id broke grinding on the coffee beans
     solution:
       reagents:
       - ReagentId: TeaPowder

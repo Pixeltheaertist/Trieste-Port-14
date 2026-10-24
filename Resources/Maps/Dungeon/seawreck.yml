@@ -15,24 +15,24 @@ nullspace: []
 tilemap:
   0: Space
   2: FloorAsteroidSand
-  1: FloorAsteroidSandDug
+  1: TP14FloorAsteroidSandDug
   9: FloorAstroAsteroidSand
-  6: FloorBrassFilled
+  6: TP14FloorBrassFilled
   22: FloorCave
-  23: FloorCaveDrought
+  23: TP14FloorCaveDrought
   40: FloorDirt
   8: FloorFlesh
   7: FloorMetalDiamond
-  66: FloorMining
-  4: FloorMiningDark
-  68: FloorMiningLight
-  71: FloorOldConcreteMono
-  72: FloorOldConcreteSmooth
+  66: TP14FloorMining
+  4: TP14FloorMiningDark
+  68: TP14FloorMiningLight
+  71: TP14FloorOldConcreteMono
+  72: TP14FloorOldConcreteSmooth
   3: FloorShuttleBlack
   82: FloorShuttleOrange
   118: FloorWood
   121: Plating
-  5: PlatingBrass
+  5: TP14PlatingBrass
   124: PlatingDamaged
 entities:
 - proto: ""

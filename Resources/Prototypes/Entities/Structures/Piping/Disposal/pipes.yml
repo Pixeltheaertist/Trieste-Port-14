@@ -1,8 +1,9 @@
 # Base
 
 - type: entity
-  id: DisposalPipeBase
   abstract: true
+  parent: StructureHealthContainerWeak
+  id: DisposalPipeBase
   placement:
     mode: SnapgridCenter
     snap:
@@ -34,26 +35,16 @@
     anchored: true
   - type: Anchorable
   - type: Damageable
-    damageModifierSet: Metallic
-  - type: Injurable
-    damageContainer: StructuralInorganic
+    damageModifierSet: SteelMod
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100 #excess damage (nuke?). avoid computational cost of spawning entities.
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
+        damage: 60
       behaviors:
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
-      - !type:DoActsBehavior
-        acts: ["Breakage"]
       - !type:ChangeConstructionNodeBehavior
         node: broken
   - type: Rotatable
@@ -180,7 +171,7 @@
   - type: DeviceLinkSource
     ports:
     - ItemDetected
-  - type: WirelessNetworkConnection
+  - type: WirelessNetwork
     range: 200
   - type: GenericVisualizer
     visuals:
@@ -493,7 +484,7 @@
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: BasicDevice
-  - type: WirelessNetworkConnection
+  - type: WirelessNetwork
     range: 200
   - type: GenericVisualizer
     visuals:
@@ -529,3 +520,27 @@
           True: { state: signal-router-flipped }
   - type: Construction
     node: signal_router_flipped
+
+# Specific
+
+- type: entity
+  parent: DisposalRouter
+  id: DisposalRouterWaste
+  suffix: Waste
+  components:
+  - type: DisposalRouter
+    tags:
+    - waste
+  - type: Flippable
+    mirrorEntity: DisposalRouterFlippedWaste
+
+- type: entity
+  parent: DisposalRouterFlipped
+  id: DisposalRouterFlippedWaste
+  suffix: Flipped, Waste
+  components:
+  - type: DisposalRouter
+    tags:
+    - waste
+  - type: Flippable
+    mirrorEntity: DisposalRouterWaste

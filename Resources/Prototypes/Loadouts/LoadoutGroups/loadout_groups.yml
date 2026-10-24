@@ -1,5 +1,18 @@
 # Miscellaneous
 - type: loadoutGroup
+  id: Glasses
+  name: loadout-group-glasses
+  minLimit: 0
+  loadouts:
+  - Glasses
+  - GlassesJamjar
+  - GlassesJensen
+  # Moffstation - Start - Eyepatches!
+  - EyePatch
+  - EyePatchFlipped
+  # Moffstation - End
+
+- type: loadoutGroup
   id: Trinkets
   name: loadout-group-trinkets
   minLimit: 0
@@ -56,19 +69,6 @@
   - OffsetCaneNT
   - Cane
   - TowelColorWhite
-
-- type: loadoutGroup
-  id: Glasses
-  name: loadout-group-glasses
-  minLimit: 0
-  loadouts:
-  - Glasses
-  - GlassesJamjar
-  - GlassesJensen
-  # Moffstation - Start - Eyepatches!
-  - EyePatch
-  - EyePatchFlipped
-  # Moffstation - End
 
 - type: loadoutGroup
   id: GroupTankHarness
@@ -473,6 +473,14 @@
   - ChaplainNeck
 
 - type: loadoutGroup
+  id: ChaplainShoes
+  name: loadout-group-chaplain-shoes
+  loadouts:
+  - BlackShoes
+  - BlackSandals
+  - BrownSandals
+
+- type: loadoutGroup
   id: ChaplainJobTrinkets
   name: loadout-group-jobtrinkets
   minLimit: 0
@@ -746,6 +754,7 @@
   - QuartermasterTurtleneck
   - QuartermasterTurtleneckSkirt
   - QuartermasterFormalSuit
+  - QuartermasterFormalDress
 
 - type: loadoutGroup
   id: QuartermasterNeck
@@ -1428,6 +1437,36 @@
   minLimit: 0
   loadouts:
   - LizardPlushiePsychologist
+
+- type: loadoutGroup
+  id: TramDriverJumpsuit
+  name: loadout-group-tramdriver-jumpsuit
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - TramDriverJumpsuit
+  - TramDriverJumpskirt
+
+- type: loadoutGroup
+  id: TramDriverOuterClothing
+  name: loadout-group-tramdriver-outerclothing
+  minLimit: 0
+  loadouts:
+  - TramDriverSuit
+
+- type: loadoutGroup
+  id: TramDriverHat
+  name: loadout-group-tramdriver-hat
+  loadouts:
+  - TramDriverHat
+
+- type: loadoutGroup
+  id: TramDriverGloves
+  name: loadout-group-tramdriver-gloves
+  minLimit: 0
+  loadouts:
+  - TramDriverGlovesWhite
+  - TramDriverGlovesBlack
 
 # Other
 

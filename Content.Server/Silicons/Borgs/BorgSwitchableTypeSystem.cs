@@ -1,4 +1,3 @@
-using Content.Server.Atmos.Components;
 using Content.Server.Inventory;
 using Content.Shared.Atmos;
 using Content.Shared.Inventory;
@@ -31,6 +30,7 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
             activeRadio.Channels = [.. radioChannels];
 
         // Borg transponder for the robotics console
+        // Trieste: Removed hardcoded sprite path.
         if (TryComp(ent, out BorgTransponderComponent? transponder))
         {
             _borgSystem.SetTransponderSprite(
@@ -81,12 +81,14 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
 
         base.SelectBorgModule(ent, borgType);
 
+        // TRIESTE: Start
         if (borgType == "mining" || borgType == "engineering")
         {
             var inGas = EnsureComp<_TP.Atmos.InGasComponent>(ent);
-            inGas.GasId = Gas.Water; // Water
+            inGas.GasId = Gas.Water;
             inGas.DamagedByGas = false;
             inGas.GasThreshold = 50;
         }
+        // TRIESTE: End
     }
 }

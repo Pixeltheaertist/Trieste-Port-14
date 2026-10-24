@@ -47,8 +47,7 @@
     lowPressureMultiplier: 1000
   - type: AbyssalSuit
   - type: TemperatureProtection
-    heatingCoefficient: 0.001
-    coolingCoefficient: 0.001
+    coefficient: 0.001 # top-end suit, kept as-is like upstream; was heatingCoefficient: 0.001 coolingCoefficient: 0.001
   - type: ExplosionResistance
     damageCoefficient: 0.4 # no idea how prevalent explosions will be in the trench so this may need to be tweaked
   - type: Armor

@@ -1,7 +1,4 @@
-﻿# !! FAR HORIZONS MODIFIED !! #
-# !! TRIESTE PORT MODIFIED !! #
-
-- type: guideEntry
+﻿- type: guideEntry
   id: Engineering
   name: guide-entry-engineering
   text: "/ServerInfo/Guidebook/Engineering/Engineering.xml"
@@ -11,9 +8,9 @@
   - Atmospherics
   - ShuttleCraft
   - Networking
-  - Flooding
-  - TheArtifact # TP
-  - NuclearReactor # FH edit
+  - Flooding        # TRIESTE
+  - TheArtifact     # TRIESTE
+  - NuclearReactor  # FH edit
 
 - type: guideEntry
   id: Construction
@@ -35,17 +32,6 @@
   text: "/ServerInfo/Guidebook/Engineering/Airlocks.xml"
   children:
   - AirlockSecurity
-
-# TP
-- type: guideEntry
-  id: TheArtifact
-  name: guide-entry-the-artifact
-  text: "/ServerInfo/Guidebook/Engineering/TheArtifact.xml"
-
-- type: guideEntry
-  id: Flooding
-  name: guide-entry-flooding
-  text: "/ServerInfo/Guidebook/Engineering/Flooding.xml"
 
 - type: guideEntry
   id: WirePanels
@@ -339,12 +325,7 @@
   - TEG
   - RTG
   - SolarPanels
-  - StormArray
-
-- type: guideEntry
-  id: StormArray
-  name: guide-entry-storm-array
-  text: "/ServerInfo/_TP/Guidebook/Engineering/StormArray.xml"
+  - StormArray # TRIESTE
 
 - type: guideEntry
   id: AME

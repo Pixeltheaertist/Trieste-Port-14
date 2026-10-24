@@ -66,6 +66,7 @@ public sealed partial class GameMapPrototype : IPrototype
             ID = ID,
             MapName = MapName,
             MapPath = mapPath,
+            JobWeights = JobWeights,
             _stations = _stations
         };
 #pragma warning restore RA0039

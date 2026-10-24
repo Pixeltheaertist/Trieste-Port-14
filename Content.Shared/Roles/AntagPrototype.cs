@@ -58,10 +58,23 @@ public sealed partial class AntagPrototype : IPrototype
     public List<ProtoId<GuideEntryPrototype>>? Guides;
 
     /// <summary>
-    /// If this is not null, this antag will be allowed to be displayed on the character customization screen if that
-    /// character has no jobs selected.
-    /// This set of starting gear will be applied to the dummy entity.
+    /// The tags of this antagonist.
+    /// Can be used to specify the type of gameplay loop they follow.
+    /// Used for filtering purposes.
     /// </summary>
     [DataField]
-    public ProtoId<StartingGearPrototype>? PreviewStartingGear;
+    public HashSet<ProtoId<AntagTagPrototype>> Tags = [];
+}
+
+/// <summary>
+/// Used to describe the type of gameplay loop some antagonists follow.
+/// Such as whether they are on-station antags or off-station.
+/// </summary>
+[Prototype]
+public sealed partial class AntagTagPrototype : IPrototype
+{
+    [IdDataField]
+    public string ID { get; private set; } = default!;
+
+    // Can potentially be expanded in the future to show up in things like guidebooks etc.
 }

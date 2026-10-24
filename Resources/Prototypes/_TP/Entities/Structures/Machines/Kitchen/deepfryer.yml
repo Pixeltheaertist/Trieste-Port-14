@@ -16,7 +16,7 @@
       fryer_slots: !type:ContainerSlot
   - type: DeepFryer
   - type: ExaminableSolution
-    solution: reagents
+    solution: solution
   - type: ItemSlots
     slots:
       fryer_slots:
@@ -32,15 +32,15 @@
   - type: Machine
     board: TP14DeepFryerCircuitboard
   - type: DumpableSolution
-    solution: reagents
+    solution: solution
   - type: RefillableSolution
-    solution: reagents
+    solution: solution
   - type: DrainableSolution
-    solution: reagents
+    solution: solution
   - type: DrawableSolution
-    solution: reagents
+    solution: solution
   - type: SolutionItemStatus
-    solution: reagents
+    solution: solution
   - type: SolutionTransfer
     maxTransferAmount: 50
   - type: Transform # FarHorizons - resprite

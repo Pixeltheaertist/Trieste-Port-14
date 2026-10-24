@@ -1,9 +1,9 @@
 <Document>   
 # Standard Guidelines:
 
-  To start, The Rotund Stepfather starts without a core power cell. It uses two separate power cells, due to it being older tech.
-    > The flashlight power cell is the one accessible at any time, and powers the Rotund's powerful worklight.
-    > The core battery allows the Rotund to move and control it's machinery. To access it, use a screwdriver, and then insert the core power cell.
+  The Rotund Stepfather runs off a single core power cell, which powers its movement, drill and worklight.
+    > To access it, open the panel with a screwdriver. Insert a power cell by hand, or pry the old one out with a crowbar.
+    > When the core cell drops to 10% or below, the Rotund moves at half speed. With no cell, it can't move at all.
 
   The Rotund Stepfather is a co-dependent role with a Pilot. They are not supposed to go about on their own unless told to do so by their Pilot.
   The Stepfather controls it's singular hand, as well as movement and communication. The pilot can control any installed modules inside the Stepfather when embarked.

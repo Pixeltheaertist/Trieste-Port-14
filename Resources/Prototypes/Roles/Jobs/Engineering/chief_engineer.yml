@@ -9,16 +9,14 @@
       time: 2.5h
     - !type:RoleTimeRequirement
       role: JobStationEngineer
-      time: 1h
+      time: 2.5h # TRIESTE: '5h'
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 1h
-    - !type:OverallPlaytimeRequirement
-      time: 2h
-  weight: 10
+      time: 5h # TRIESTE: '10h'
   startingGear: ChiefEngineerGear
   icon: "TP14JobIconChiefEngineer" # TRIESTE: 'JobIconChiefEngineer'
   supervisors: job-supervisors-captain
+  guides: [ Command ] # TODO: should have a more specific guidebook page instead of using the department itself
   access:
   - Maintenance
   - Engineering

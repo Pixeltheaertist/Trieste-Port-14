@@ -9,8 +9,8 @@ public sealed partial class PearlScannerComponent : Component
 {
 
 
-    [DataField("pearlReportEntityId", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string PearlReportEntityId = "Paper";
+    [DataField("pearlReportEntityId")]
+    public EntProtoId PearlReportEntityId = "Paper";
 
     [DataField]
     public SoundSpecifier PrintSound = new SoundPathSpecifier("/Audio/Machines/printer.ogg");

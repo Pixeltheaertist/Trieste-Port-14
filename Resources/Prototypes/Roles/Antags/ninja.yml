@@ -2,10 +2,12 @@
   id: SpaceNinja
   name: roles-antag-space-ninja-name
   antagonist: true
-  setPreference: true
+  setPreference: false
   objective: roles-antag-space-ninja-objective
   guides: [ SpaceNinja ]
-  previewStartingGear: SpaceNinjaGear
+  tags:
+  - OffStation
+  - Midround
 
 - type: antagSpecifier
   parent: RestrictedAntag

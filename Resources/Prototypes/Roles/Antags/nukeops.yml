@@ -8,7 +8,9 @@
   - !type:OverallPlaytimeRequirement
     time: 5h
   guides: [ NuclearOperatives ]
-  previewStartingGear: SyndicateOperativeGearFull
+  tags:
+  - OffStation
+  - Roundstart
 
 - type: antag
   id: NukeopsMedic
@@ -23,7 +25,9 @@
     role: JobChemist
     time: 3h
   guides: [ NuclearOperatives ]
-  previewStartingGear: SyndicateOperativeMedicFull
+  tags:
+  - OffStation
+  - Roundstart
 
 - type: antag
   id: NukeopsCommander
@@ -39,7 +43,9 @@
     time: 5h
   # should be changed to nukie playtime when thats tracked (wyci)
   guides: [ NuclearOperatives ]
-  previewStartingGear: SyndicateCommanderGearFull
+  tags:
+  - OffStation
+  - Roundstart
 
 - type: antagSpecifier
   abstract: true
@@ -118,21 +124,21 @@
 - type: startingGear
   id: SyndicateOperativeGearFullNoUplink
   equipment:
-    jumpsuit: ClothingUniformJumpsuitDeathSquad
-    back: ClothingBackpackDuffel
-    mask: ClothingMaskGasERT
+    jumpsuit: ClothingUniformJumpsuitOperative
+    back: ClothingBackpackDuffelSyndicate
+    mask: ClothingMaskGasSyndicate
     eyes: ClothingEyesHudSyndicate
-    ears: TP14ClothingHeadsetAltCaskie
+    ears: ClothingHeadsetAltSyndicate
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterHardsuitERTLeader
-    shoes: ClothingShoesBootsCombatFilled
-    id: NanotrasenPDA
-    pocket1: DoubleEmergencyOxygenTankFilled
-    pocket2: TP14BaseUplinkRadioNT #TP
+    outerClothing: ClothingOuterHardsuitSyndie
+    shoes: ClothingShoesBootsMagSyndie
+    id: SyndiOperativePDA
+    pocket2: PlushieCarp
     belt: ClothingBeltMilitaryWebbing
   storage:
     back:
-    - TP14WeaponNtBlaster #TP
+    - WeaponPistolViper
+    - PinpointerSyndicateNuclear
     - DeathAcidifierImplanter
 
 #Nuclear Operative Gear
@@ -156,7 +162,9 @@
   id: SyndicateCommanderGearFull
   parent: SyndicateOperativeGearFull
   equipment:
-    outerClothing: ClothingOuterHardsuitERTLeader
+    id: SyndiCommanderPDA
+    neck: SyndicateWhistle
+    outerClothing: ClothingOuterHardsuitSyndieCommander
   inhand:
   - NukeOpsDeclarationOfWar
 
@@ -175,9 +183,8 @@
   parent: SyndicateOperativeGearFull
   equipment:
     eyes: ClothingEyesHudSyndicateAgent
-    outerClothing: ClothingOuterHardsuitERTMedical
-    shoes: ClothingShoesBootsMagSyndie
-    id: NanotrasenPDA
+    outerClothing: ClothingOuterHardsuitSyndieMedic
+    id: SyndiCorpsmanPDA
     belt: ClothingBeltMilitaryWebbingMedFilled
   storage:
     back:
@@ -185,7 +192,8 @@
     - SawAdvanced
     - Cautery
     - CombatKnife
-    - TP14WeaponNtBlaster #TP
+    - WeaponPistolViper
+    - PinpointerSyndicateNuclear
     - HandheldHealthAnalyzer
     - CombatMedipen
     - DeathAcidifierImplanter

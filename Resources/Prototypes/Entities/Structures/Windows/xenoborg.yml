@@ -1,14 +1,17 @@
 - type: entity
   id: XenoborgWindow
   parent: PlastitaniumWindow
-  name: xenoborg window
+  name: mechadermis window
   components:
-  - type: Sprite
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
     drawdepth: WallTops
-    sprite: Structures/Windows/xenoborg.rsi
-  - type: Icon
-    sprite: Structures/Windows/xenoborg.rsi
+    sprite: _TP/Structures/Windows/xenoborg.rsi
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Windows/xenoborg.rsi
     state: full
-  - type: IconSmooth
+  - type: IconSmooth # TRIESTE: old wall/window sprites, see _TP/Structures
     key: windows
-    base: xenoborg
+    states:
+    - !type:CornerSpriteSmoothing # old-style corner sprites
+      mask: [ windows ]
+      base: xenoborg

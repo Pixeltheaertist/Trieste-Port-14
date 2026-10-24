@@ -18,7 +18,7 @@ public sealed partial class ForageSystem : EntitySystem
     [Dependency] private TagSystem _tagSystem = default!;
     [Dependency] private TransformSystem _transform = default!;
     [Dependency] private AppearanceSystem _appearance = default!;
-    [Dependency] private SharedGameTicker _gameTicker = default!;
+    [Dependency] private GameTicker _gameTicker = default!;
     [Dependency] private EntityTableSystem _entityTable = default!;
 
 

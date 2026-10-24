@@ -15,6 +15,7 @@ public sealed partial class OpenTriggeredStorageFillSystem : EntitySystem
 {
     [Dependency] private SharedStorageSystem _storage = default!;
     [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private IComponentFactory _factory = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -30,7 +31,8 @@ public sealed partial class OpenTriggeredStorageFillSystem : EntitySystem
         var spawnItems = EntitySpawnCollection.GetSpawns(entity.Comp.Contents);
         foreach (var item in spawnItems)
         {
-            DebugTools.Assert(!EntityPrototypeHelpers.HasComponent<RandomSpawnerComponent>(item, _prototype));
+            // No, you are not allowed to fill a container with entity spawners.
+            DebugTools.Assert(!_prototype.Index<EntityPrototype>(item).HasComp<RandomSpawnerComponent>(_factory));
             var ent = Spawn(item, coordinates);
 
             if (!TryComp<ItemComponent>(ent, out var itemComp))

@@ -1,6 +1,5 @@
 - type: microwaveMealRecipe
   id: TP14RecipeBurritoBowl
-  name: burrito bowl recipe
   result: TP14FoodBurritoBowl
   time: 30
   group: Savory
@@ -142,7 +141,6 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeTaffy
-  name: vanilla saltwater taffy recipe
   group: Dessert
   result: TP14FoodSnackSaltwaterTaffy
   time: 5
@@ -152,7 +150,6 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeTaffyApple
-  name: apple saltwater taffy recipe
   group: Dessert
   result: TP14FoodSnackSaltwaterTaffyApple
   time: 5
@@ -163,7 +160,6 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeTaffyBanana
-  name: banana saltwater taffy recipe
   group: Dessert
   result: TP14FoodSnackSaltwaterTaffyBanana
   time: 5
@@ -173,7 +169,6 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeTaffyBlueRasberry
-  name: blue rasberry saltwater taffy recipe
   group: Dessert
   result: TP14FoodSnackSaltwaterTaffyBlueRasberry
   time: 5
@@ -184,7 +179,6 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeTaffyBungo
-  name: bungo saltwater taffy recipe
   group: Dessert
   result: TP14FoodSnackSaltwaterTaffyBungo
   time: 5
@@ -195,7 +189,6 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeTaffyChocolate
-  name: chocolate saltwater taffy recipe
   group: Dessert
   result: TP14FoodSnackSaltwaterTaffyChocolate
   time: 5
@@ -206,7 +199,6 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeTaffyCinnamon
-  name: cinnamon saltwater taffy recipe
   group: Dessert
   result: TP14FoodSnackSaltwaterTaffyCinnamon
   time: 5
@@ -217,7 +209,6 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeTaffyCreamsicle
-  name: creamsicle saltwater taffy recipe
   group: Dessert
   result: TP14FoodSnackSaltwaterTaffyCreamsicle
   time: 5
@@ -229,7 +220,6 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeTaffyFlyAmanita
-  name: fly amanita saltwater taffy recipe
   group: Dessert
   result: TP14FoodSnackSaltwaterTaffyFlyAmanita
   time: 5
@@ -240,7 +230,6 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeTaffyGrape
-  name: grape saltwater taffy recipe
   group: Dessert
   result: TP14FoodSnackSaltwaterTaffyGrape
   time: 5
@@ -251,7 +240,6 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeTaffyLicorice
-  name: licorice saltwater taffy recipe
   group: Dessert
   result: TP14FoodSnackSaltwaterTaffyLicorice
   time: 5
@@ -262,7 +250,6 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeTaffyNeopolitan
-  name: neopolitan saltwater taffy recipe
   group: Dessert
   result: TP14FoodSnackSaltwaterTaffyNeopolitan
   time: 5
@@ -274,7 +261,6 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeTaffyPeppermint
-  name: peppermint saltwater taffy recipe
   group: Dessert
   result: TP14FoodSnackSaltwaterTaffyPeppermint
   time: 5
@@ -285,7 +271,6 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeTaffySoylentGreen
-  name: soylent green saltwater taffy recipe
   group: Dessert
   result: TP14FoodSnackSaltwaterTaffySoylentGreen
   time: 5
@@ -297,7 +282,6 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeTaffyWatermelon
-  name: watermelon saltwater taffy recipe
   group: Dessert
   result: TP14FoodSnackSaltwaterTaffyWatermelon
   time: 5
@@ -308,7 +292,6 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeTaffyCotton
-  name: cotton saltwater taffy recipe
   group: Dessert
   result: TP14FoodSnackSaltwaterTaffyCotton
   time: 5
@@ -319,7 +302,6 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeSashimi
-  name: sashimi recipe (fish)
   result: FoodMealSashimi
   time: 15
   group: Savory

@@ -90,7 +90,7 @@
   - type: Injurable
     damageContainer: StructuralInorganic
   - type: Temperature
-    currentTemperature: 243.15
+    temperature: 243.15
     specificHeat: 42
   - type: TemperatureDamage
     heatDamageThreshold: 500

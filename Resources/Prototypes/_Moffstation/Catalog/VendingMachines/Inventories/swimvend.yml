@@ -18,7 +18,8 @@
     ClothingHeadHatClownSunhat: 1
     ClothingShoesClownSandals: 1
     ClothingHeadHatSunhat: 2
-    ClothingShoesTourist: 3
+    ClothingShoesSandalsBrown: 2 # was ClothingShoesTourist: 3
+    ClothingShoesSandalsBlack: 2
     # Accessories
     ClothingNeckLifeguardWhistle: 1
     PlushieLifeguardBuoy: 2

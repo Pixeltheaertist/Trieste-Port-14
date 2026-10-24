@@ -40,7 +40,7 @@
       - Welder
       - PowerCell
       - Geiger
-      - TrayScanner
+      - TRayScanner
       - GasAnalyzer
       - HandLabeler
   - type: ItemMapper
@@ -109,7 +109,8 @@
     grid:
     - 0,0,9,1
   - type: StealTarget
-    stealGroup: ChiefEngineerToolBelt
+    stealGroup:
+    - ChiefEngineerToolBelt
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -140,6 +141,13 @@
       - WireBrush
       - LightReplacer
       - CleanerGrenade
+      - Screwdriver
+      - Crowbar
+      - Powerdrill
+      components:
+      - TRayScanner
+      - SprayPainter
+      - SprayPainterAmmo
   - type: ItemMapper
     sprite: *BeltOverlay
     mapLayers:
@@ -261,6 +269,26 @@
     sprite: Clothing/Belt/emt.rsi
   - type: Clothing
     sprite: Clothing/Belt/emt.rsi
+  - type: Storage
+    whitelist:
+      tags:
+      - Bottle
+      - Brutepack
+      - Bloodpack
+      - Gauze
+      - Ointment
+      - Tourniquet
+      - CigPack
+      - PillCanister
+      - Radio
+      - DiscreteHealthAnalyzer
+      - SurgeryTool
+      - Dropper
+      components:
+      - Injector
+      - Pill
+      - Prying
+      - SpraySafety
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -275,19 +303,20 @@
   - type: Storage
     whitelist:
       tags:
-      - PlantSampleTaker
       - BotanyShovel
-      - BotanyHoe
       - BotanyHatchet
-      - PlantBGone
       - Bottle
       - Syringe
       - CigPack
       - Dropper
       components:
+      - PlantAnalyzer
+      - BotanySampleTaker
+      - BotanyHoe
       - Seed
       - Smokable
       - HandLabeler
+      - Spray
   - type: ItemMapper
     sprite: *BeltOverlay
     mapLayers:
@@ -297,7 +326,7 @@
           - BotanyHatchet
       hoe:
         whitelist:
-          tags:
+          components:
           - BotanyHoe
       secateurs: # We don't have secateurs and this looks similar enough.
         whitelist:
@@ -413,10 +442,9 @@
       - MagazinePistol
       - MagazineMagnum
       - CombatKnife
-      - Truncheon
       - HandGrenade
-      components:
       - Stunbaton
+      components:
       - FlashOnTrigger
       - SmokeOnTrigger
       - Flash
@@ -435,7 +463,7 @@
           - FlashOnTrigger
       stunbaton:
         whitelist:
-          components:
+          tags:
           - Stunbaton
       tear_gas_grenade:
         whitelist:

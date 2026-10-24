@@ -7,6 +7,7 @@
   - type: Sprite
     sprite: _TP/Structures/Wallmounts/Lighting/cage_light.rsi
     state: empty
+    offset: 0, 0
 
 - type: entity
   parent: TP14EmptyCageLight

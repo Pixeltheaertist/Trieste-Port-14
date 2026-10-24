@@ -10,8 +10,7 @@
   - type: Clothing
     sprite: _TP/Clothing/OuterClothing/Coats/weary_coat.rsi
   - type: TemperatureProtection
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.5
+    coefficient: 0.8 # TemperatureProtectionMinimal tier; was heatingCoefficient: 1.1 coolingCoefficient: 0.5
   - type: Item
     size: Huge
   - type: Storage
@@ -69,8 +68,7 @@
   - type: Clothing
     sprite: _TP/Clothing/OuterClothing/Coats/lieutenant_coat.rsi
   - type: TemperatureProtection
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.1
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.1
 
 
 - type: entity
@@ -85,8 +83,7 @@
   - type: Clothing
     sprite: _TP/Clothing/OuterClothing/Coats/rain_slicker.rsi
   - type: TemperatureProtection
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.3
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.3
   - type: ToggleableClothing
     clothingPrototype: TP14ClothingHeadHatHoodRainSlicker
     slot: head
@@ -108,8 +105,7 @@
   - type: Clothing
     sprite: _TP/Clothing/OuterClothing/Coats/overseer_heavy_coat.rsi
   - type: TemperatureProtection
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.3
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.3
 
 - type: entity
   parent: ClothingOuterCoatDetective
@@ -123,5 +119,4 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/detective_grey.rsi
   - type: TemperatureProtection
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.1
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.1

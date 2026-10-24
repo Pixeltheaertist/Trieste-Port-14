@@ -6,6 +6,7 @@ using Content.Server.GameTicking.Events;
 using Content.Server.Players.RateLimiting;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
+using Content.Shared.GameTicking.Events;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
@@ -18,8 +19,8 @@ namespace Content.Server._NullLink;
 public sealed partial class HubSystem : EntitySystem
 {
     private static readonly TimeSpan _minInterval = TimeSpan.FromMilliseconds(300);
-    private TimeSpan _lastSent;         
-    private bool _sendScheduled;   
+    private TimeSpan _lastSent;
+    private bool _sendScheduled;
     private int _maxPlayers;
 
     private ServerInfoRequest _serverInfo = new();
@@ -29,7 +30,7 @@ public sealed partial class HubSystem : EntitySystem
         _cfg.OnValueChanged(CCVars.SoftMaxPlayers, OnSoftMaxPlayersChanged, true);
 
         SubscribeLocalEvent<RoundRestartCleanupEvent>(_ => OnLobby());
-        SubscribeLocalEvent<RoundEndTextAppendEvent>(_ => OnRoundEnding());
+        SubscribeLocalEvent((ref RoundEndTextAppendEvent _) => OnRoundEnding());
         SubscribeLocalEvent<RoundStartingEvent>(_ => OnRoundStart());
 
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
@@ -96,11 +97,11 @@ public sealed partial class HubSystem : EntitySystem
             return;
         }
 
-        if (_sendScheduled)              
+        if (_sendScheduled)
             return;
 
         _sendScheduled = true;
-        var delay = nextAllowed - now;   
+        var delay = nextAllowed - now;
 
         Pipe.RunInBackground(async () =>
         {
@@ -111,7 +112,7 @@ public sealed partial class HubSystem : EntitySystem
             }
             finally
             {
-                _sendScheduled = false; 
+                _sendScheduled = false;
             }
         },
         ex => _sawmill.Log(LogLevel.Warning, ex,
@@ -122,8 +123,8 @@ public sealed partial class HubSystem : EntitySystem
     {
         _lastSent = _timing.RealTime;
 
-        return _actors.TryGetServerGrain(out var serverGrain) 
-            ? serverGrain!.UpdateServerInfo(_serverInfo) 
+        return _actors.TryGetServerGrain(out var serverGrain)
+            ? serverGrain!.UpdateServerInfo(_serverInfo)
             : ValueTask.CompletedTask;
     }
 }

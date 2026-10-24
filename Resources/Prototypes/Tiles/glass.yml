@@ -1,0 +1,48 @@
+- type: tile
+  id: FloorGlass
+  parent: BaseStationTile
+  name: tiles-glass-floor
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/glass.png
+  variants: 4
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: SheetGlass1
+
+- type: tile
+  id: FloorRGlass
+  parent: BaseStationTile
+  name: tiles-reinforced-glass-floor
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/rglass.png
+  variants: 4
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: SheetRGlass1
+
+- type: tile
+  id: FloorGlassPlasma
+  parent: BaseStationTile
+  name: tiles-plasma-glass-floor
+  sprite: /Textures/Tiles/Glass/glass-plasma.png
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: SheetPlasma1
+
+- type: tile
+  id: FloorGlassUranium
+  parent: BaseStationTile
+  name: tiles-uranium-glass-floor
+  sprite: /Textures/Tiles/Glass/glass-uranium.png
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: SheetUranium1
+
+- type: tile
+  id: FloorGlassPlastitanium
+  parent: BaseStationTile
+  name: tiles-plastitanium-glass-floor
+  sprite: /Textures/Tiles/Glass/glass-plastitanium.png
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: SheetPlasma1

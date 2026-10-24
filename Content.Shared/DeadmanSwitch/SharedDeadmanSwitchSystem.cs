@@ -1,3 +1,4 @@
+using Content.Shared.DeviceLinking.Systems;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Toggleable;
 using Content.Shared.Examine;
@@ -20,7 +21,8 @@ public abstract partial class SharedDeadmanSwitchSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<DeadmanSwitchComponent, DroppedEvent>(OnDropped);
-        SubscribeLocalEvent<DeadmanSwitchComponent, UseInHandEvent>(OnUseInHand);
+        // Must run before SignallerSystem, or using it in hand just fires the signal like a normal remote signaller.
+        SubscribeLocalEvent<DeadmanSwitchComponent, UseInHandEvent>(OnUseInHand, before: [typeof(SignallerSystem)]);
         SubscribeLocalEvent<DeadmanSwitchComponent, DeadmanSwitchDoAfterEvent>(OnDoAfter);
         SubscribeLocalEvent<DeadmanSwitchComponent, ExaminedEvent>(OnExamined);
     }

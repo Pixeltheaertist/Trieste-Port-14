@@ -3,7 +3,7 @@ meta:
   postmapinit: false
 tilemap:
   0: Space
-  112: FloorTechMaint
+  112: TP14FloorTechMaint
   113: FloorTechMaint2
   114: FloorTechMaint3
   129: Lattice

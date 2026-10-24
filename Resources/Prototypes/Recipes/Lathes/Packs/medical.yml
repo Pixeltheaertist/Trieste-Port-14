@@ -18,6 +18,7 @@
   - ChemistryEmptyVial
   - ChemistryEmptyVialSmall
   - Dropper
+  - CandyBowl
 
 - type: latheRecipePack
   parent: BasicChemistryStatic
@@ -26,7 +27,7 @@
   - Jug
   - ChemistryEmptyBottle01
   - ClothingEyesGlassesChemical
-  - TP14ChemistryHudEyepatchRecipe # Trieste: Added.
+  - TP14ChemistryHudEyepatchRecipe # TRIESTE
 
 - type: latheRecipePack
   id: SurgeryStatic
@@ -50,6 +51,7 @@
   - OffsetCane
   - OffsetCaneWood
   - JetInjector
+  - VehicleWheelchairFolded
   - TP14MedicalHudRecipe # TP14
   - TP14MedicalHudEyepatchRecipe #TP14
 

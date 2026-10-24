@@ -1,0 +1,64 @@
+- type: tile
+  id: FloorIce
+  name: tiles-ice
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Planet/Snow/ice.png
+  variants: 1
+  isSubfloor: true
+  friction: 0.05
+  heatCapacity: 10000
+  weather: true
+  mobAcceleration: 0.1
+  indestructible: true
+
+- type: tile
+  id: FloorSnow
+  parent: BaseFloorPlanet
+  name: tiles-snow
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Planet/Snow/snow.png
+  variants: 13
+  placementVariants:
+  - 0.8
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0166
+  - 0.0116
+  - 0.0116
+  edgeSprites:
+    South: /Textures/_TP/Tiles/Planet/Snow/snow_double_edge_south.png
+    East: /Textures/_TP/Tiles/Planet/Snow/snow_double_edge_east.png
+    North: /Textures/_TP/Tiles/Planet/Snow/snow_double_edge_north.png
+    West: /Textures/_TP/Tiles/Planet/Snow/snow_double_edge_west.png
+  edgeSpritePriority: 2
+  footstepSounds:
+    collection: FootstepSnow
+
+### ASTRO TILES
+- type: tile
+  parent: BaseStationTile
+  id: FloorAstroIce
+  name: tiles-astro-ice
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Planet/Snow/ice.png
+  variants: 1
+  friction: 0.05
+  mobFriction: 0.05
+  mobAcceleration: 0.1
+  footstepSounds: null
+  itemDrop: FloorTileItemAstroIce
+
+- type: tile
+  parent: [ BaseStationTile, FloorSnow ]
+  id: FloorAstroSnow
+  name: tiles-astro-snow
+  footstepSounds:
+    collection: FootstepSnow
+  itemDrop: FloorTileItemAstroSnow

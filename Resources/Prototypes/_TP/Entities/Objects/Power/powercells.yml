@@ -1,35 +1,35 @@
 - type: entity
+  parent: [BasePowerCell, BaseNanotrasenContraband]
+  id: TP14BaseMagCell
   name: NT standard magcell
   description: A rechargeable energy magazine. For use with compatible NT energy weaponry.
-  id: TP14BaseMagCell
   suffix: Trieste, Full, NanoTraitor
-  parent: [BasePowerCell, BaseNanotrasenContraband]
   components:
   - type: Sprite
     sprite: _TP/Objects/Weapons/Guns/Ammunition/Magazine/mag-cell.rsi
-    layers:
-    - state: icon
+    state: icon
   - type: Battery
     maxCharge: 4000
     startingCharge: 4000
   - type: BatteryAmmoProvider
     proto: NtBolt
     fireCost: 400  #10 shots
+  - type: GenericVisualizer
+    visuals:
+      enum.BatteryVisuals.State:
+        enum.PowerCellVisualLayers.Unshaded:
+          Empty: { visible: false }
   - type: Tag
     tags:
     - MagCell
 
 - type: entity
+  parent: TP14BaseMagCell
+  id: TP14MagCellDisabler
   name: NT exhaustion magcell
   description: A rechargeable energy magazine. This one fires energy draining bolts.
-  id: TP14MagCellDisabler
   suffix: Trieste, Full, NanoTraitor
-  parent: TP14BaseMagCell
   components:
-  - type: Sprite
-    sprite: _TP/Objects/Weapons/Guns/Ammunition/Magazine/mag-cell.rsi
-    layers:
-    - state: icon
   - type: Battery
     maxCharge: 4000
     startingCharge: 4000

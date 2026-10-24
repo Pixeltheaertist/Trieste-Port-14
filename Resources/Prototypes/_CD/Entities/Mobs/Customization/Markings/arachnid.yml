@@ -25,8 +25,7 @@
   sprites:
   - sprite: _CD/Mobs/Customization/Arachnid/chest.rsi
     state: mirror
-  shaders:
-    mirror: unshaded
+    shader: unshaded
 
 # Head
 
@@ -95,17 +94,16 @@
   sprites:
   - sprite: _CD/Mobs/Customization/Arachnid/eyes.rsi
     state: jumper1
+    shader: unshaded
   - sprite: _CD/Mobs/Customization/Arachnid/eyes.rsi
     state: jumper2
+    shader: unshaded
   - sprite: _CD/Mobs/Customization/Arachnid/eyes.rsi
     state: jumper3
+    shader: unshaded
   - sprite: _CD/Mobs/Customization/Arachnid/eyes.rsi
     state: jumper4
-  shaders:
-    jumper1: unshaded
-    jumper2: unshaded
-    jumper3: unshaded
-    jumper4: unshaded
+    shader: unshaded
 
 - type: marking
   id: ArachnidEyesRound
@@ -136,17 +134,16 @@
   sprites:
   - sprite: _CD/Mobs/Customization/Arachnid/eyes.rsi
     state: round1
+    shader: unshaded
   - sprite: _CD/Mobs/Customization/Arachnid/eyes.rsi
     state: round2
+    shader: unshaded
   - sprite: _CD/Mobs/Customization/Arachnid/eyes.rsi
     state: round3
+    shader: unshaded
   - sprite: _CD/Mobs/Customization/Arachnid/eyes.rsi
     state: round4
-  shaders:
-    round1: unshaded
-    round2: unshaded
-    round3: unshaded
-    round4: unshaded
+    shader: unshaded
 
 - type: marking
   id: SpiderEyesMulti
@@ -178,8 +175,7 @@
   sprites:
   - sprite: _CD/Mobs/Customization/Arachnid/eyes.rsi
     state: glow
-  shaders:
-    glow: unshaded
+    shader: unshaded
 
 # RArm
 

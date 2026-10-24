@@ -16,7 +16,7 @@ tilemap:
   0: Space
   1: FloorDarkPlastic
   4: FloorMetalDiamond
-  3: FloorMiningDark
+  3: TP14FloorMiningDark
   6: FloorPlastic
   5: FloorShuttleBlack
   2: FloorShuttleOrange

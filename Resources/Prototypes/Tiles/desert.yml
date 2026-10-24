@@ -1,0 +1,20 @@
+- type: tile
+  id: FloorDesert
+  parent: BaseFloorPlanet
+  name: tiles-desert-floor
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Planet/Desert/desert.png
+  variants: 6
+  edgeSprites: {}
+
+### ASTRO TILES
+- type: tile
+  parent: [ BaseStationTile, FloorDesert ]
+  id: FloorDesertAstroSand
+  name: tiles-desert-astro-sand
+  # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
+  sprite: /Textures/_TP/Tiles/Planet/Desert/desert.png
+  variants: 6
+  footstepSounds:
+    collection: FootstepAsteroid
+  itemDrop: FloorTileItemDesertAstroSand

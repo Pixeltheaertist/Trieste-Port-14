@@ -7,20 +7,20 @@ namespace Content.Shared._TP.Weather;
 public sealed partial class LightningMarkerComponent : Component
 {
     // The lightning prototype this marker should spawn
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string LightningPrototype = "AdminInstantEffectThunder";
+    [DataField]
+    public EntProtoId LightningPrototype = "AdminInstantEffectThunder";
 
     // The sound object prototype this marker should spawn
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string LightningSoundPrototype = "AdminInstantEffectThunderSound";
+    [DataField]
+    public EntProtoId LightningSoundPrototype = "AdminInstantEffectThunderSound";
 
     // The lightning prototype this marker should spawn during flash storms
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string StormLightningPrototype = "Eldritch";
+    [DataField]
+    public EntProtoId StormLightningPrototype = "Eldritch";
 
     // The lightning prototype this marker should spawn if the lightning 'strikes' during a flash storm.
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string StormStrikePrototype = "Storm";
+    [DataField]
+    public EntProtoId StormStrikePrototype = "Storm";
 
     // The range in which lightning will occur
     [DataField]

@@ -1,6 +1,4 @@
-﻿# !! TRIESTE MODIFIED !! #
-
-- type: entity
+﻿- type: entity
   id: AutolatheMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: autolathe machine board
@@ -126,7 +124,8 @@
           amount: 2
           defaultPrototype: Beaker
     - type: StealTarget
-      stealGroup: MedicalTechFabCircuitboard
+      stealGroup:
+      - MedicalTechFabCircuitboard
 
 - type: entity
   id: CircuitImprinterMachineCircuitboard
@@ -286,6 +285,21 @@
       Manipulator: 2
       Glass: 1
       Steel: 5
+
+- type: entity
+  id: StationTeleporterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: teleporter machine board
+  description: A machine printed circuit board for a bluespace teleporter.
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: StationTeleporter
+    stackRequirements:
+      Manipulator: 3
+      Cable: 5
+      PlasmaGlass: 10
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -541,8 +555,8 @@
 - type: entity
   id: ChemDispenserMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: chemical dispenser machine board                                  # TRIESTE: "chem dispenser" -> "chemical dispenser
-  description: A machine printed circuit board for a chemical dispenser.  # TRIESTE: "chem dispenser" -> "chemical dispenser"
+  name: chem dispenser machine board
+  description: A machine printed circuit board for a chem dispenser.
   components:
     - type: Sprite
       state: medical
@@ -551,7 +565,7 @@
       stackRequirements:
         Manipulator: 1
         Glass: 1
-        Steel: 3
+        Plastic: 3
       tagRequirements:
         GlassBeaker:
           amount: 2
@@ -683,7 +697,7 @@
       prototype: PowerCageRecharger
       stackRequirements:
         Manipulator: 4
-        Steel: 5
+        Plasteel: 5
         Cable: 10
     - type: PhysicalComposition
       materialComposition:
@@ -843,7 +857,7 @@
     prototype: Thruster
     stackRequirements:
       Manipulator: 4
-      Steel: 5
+      Plasteel: 5
 
 - type: entity
   id: GyroscopeMachineCircuitboard
@@ -1105,6 +1119,7 @@
         Manipulator: 2
         CableHV: 5
         Glass: 2
+        Plasteel: 2
 
 - type: entity
   id: SurveillanceCameraRouterCircuitboard
@@ -1201,7 +1216,7 @@
     - type: MachineBoard
       prototype: BoozeDispenserEmpty
       stackRequirements:
-        Steel: 5
+        Plastic: 5
       tagRequirements:
           GlassBeaker:
             amount: 1
@@ -1233,7 +1248,7 @@
     prototype: CargoMailTeleporter
     stackRequirements:
       Manipulator: 2
-      Steel: 5
+      Plasteel: 5
 
 - type: entity
   id: SodaDispenserMachineCircuitboard
@@ -1246,7 +1261,7 @@
     - type: MachineBoard
       prototype: SodaDispenserEmpty
       stackRequirements:
-        Steel: 5
+        Plastic: 5
       tagRequirements:
           GlassBeaker:
             amount: 1
@@ -1308,7 +1323,7 @@
     prototype: StationAnchor
     stackRequirements:
       Manipulator: 7
-      Steel: 10
+      Plasteel: 10
       Glass: 5
       CableHV: 8
       Uranium: 2

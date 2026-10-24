@@ -16,11 +16,11 @@ tilemap:
   0: Space
   3: FloorDark
   4: FloorDarkMono
-  51: FloorGrayConcrete
-  2: FloorMiningDark
-  1: FloorMiningLight
+  51: TP14FloorGrayConcrete
+  2: TP14FloorMiningDark
+  1: TP14FloorMiningLight
   89: FloorSteel
-  104: FloorTechMaint
+  104: TP14FloorTechMaint
   120: Lattice
   121: Plating
 entities:

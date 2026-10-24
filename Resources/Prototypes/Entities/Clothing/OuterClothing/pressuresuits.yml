@@ -13,8 +13,7 @@
     sprintModifier: 0.9
   - type: HeldSpeedModifier
   - type: TemperatureProtection
-    heatingCoefficient: 0.3
-    coolingCoefficient: 0.3
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 0.3 coolingCoefficient: 0.3
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetEVALarge
     slot: head

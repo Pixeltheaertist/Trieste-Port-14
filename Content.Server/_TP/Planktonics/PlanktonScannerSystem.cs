@@ -1,11 +1,11 @@
 using System.Linq;
-using Content.Server.Planktonics;
 using Content.Server.Popups;
 using Content.Shared._TP.Plankton;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Paper;
-using Content.Shared.Timing;
+using Content.Shared.Timing.Components;
+using Content.Shared.Timing.Systems;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Utility;
@@ -63,7 +63,7 @@ public sealed partial class PlanktonScannerSystem : EntitySystem
         args.Verbs.Add(verb);
     }
 
-    private void AddToggleAnalysisVerb(EntityUid uid, Server.Planktonics.PlanktonScannerComponent component, GetVerbsEvent<ActivationVerb> args)
+    private void AddToggleAnalysisVerb(EntityUid uid, PlanktonScannerComponent component, GetVerbsEvent<ActivationVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract)
             return;
@@ -119,13 +119,13 @@ public sealed partial class PlanktonScannerSystem : EntitySystem
             {
                 if ((species.Characteristics & PlanktonComponent.PlanktonCharacteristics.HyperExoticSpecies) != 0)
                 {
-                    var rewardSuper = Spawn(scanner.PlanktonAdvancedRewardEntityId, Transform(uid).Coordinates);
+                    var rewardSuper = SpawnAtPosition(scanner.PlanktonAdvancedRewardEntityId, Transform(uid).Coordinates);
                     _popupSystem.PopupEntity(rewardPopup, target);
                     _audioSystem.PlayPvs(scanner.PrintSound, uid);
                 }
                 else
                 {
-                    var reward = Spawn(scanner.PlanktonRewardEntityId, Transform(uid).Coordinates);
+                    var reward = SpawnAtPosition(scanner.PlanktonRewardEntityId, Transform(uid).Coordinates);
                     _popupSystem.PopupEntity(rewardPopup, target);
                     _audioSystem.PlayPvs(scanner.PrintSound, uid);
                 }
@@ -145,7 +145,7 @@ public sealed partial class PlanktonScannerSystem : EntitySystem
         {
             _popupSystem.PopupEntity(messagePopup, target);
 
-            var report = Spawn(scanner.PlanktonReportEntityId, Transform(uid).Coordinates);
+            var report = SpawnAtPosition(scanner.PlanktonReportEntityId, Transform(uid).Coordinates);
             _metaSystem.SetEntityName(report, Loc.GetString("plankton-analysis-report-title", ("id", "Plankton Scan Report")));
             _audioSystem.PlayPvs(scanner.PrintSound, uid);
 

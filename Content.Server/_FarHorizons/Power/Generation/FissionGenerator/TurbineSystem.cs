@@ -13,8 +13,10 @@ using Content.Shared.Popups;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Random;
+using Robust.Shared.Prototypes;
 using Content.Server.NodeContainer.Nodes;
 using Content.Shared.DeviceLinking.Events;
+using Content.Shared.DeviceLinking.Payloads;
 using Content.Server.DeviceLinking.Systems;
 using Content.Shared.Construction.Components;
 using Content.Shared.DeviceLinking;
@@ -28,6 +30,7 @@ using Content.Shared.Audio;
 using Robust.Shared.Timing;
 using System.Linq;
 using Content.Shared.Atmos.Components;
+using Content.Shared.DeviceLinking.Systems;
 
 namespace Content.Server._FarHorizons.Power.Generation.FissionGenerator;
 
@@ -90,7 +93,8 @@ public sealed partial class TurbineSystem : SharedTurbineSystem
         SubscribeLocalEvent<TurbineComponent, TurbineChangeStatorLoadMessage>(OnTurbineStatorLoadChanged);
 
         SubscribeLocalEvent<TurbineComponent, SignalReceivedEvent>(OnSignalReceived);
-        SubscribeLocalEvent<TurbineComponent, PortDisconnectedEvent>(OnPortDisconnected);
+        SubscribeLocalEvent<TurbineComponent, SignalReceivedEvent<LogicStatePayload>>(OnLogicSignalReceived);
+        SubscribeLocalEvent<TurbineComponent, SinkPortDisconnectedEvent>(OnPortDisconnected);
 
         SubscribeLocalEvent<TurbineComponent, AnchorStateChangedEvent>(OnAnchorChanged);
         SubscribeLocalEvent<TurbineComponent, UnanchorAttemptEvent>(OnUnanchorAttempt);
@@ -495,12 +499,19 @@ public sealed partial class TurbineSystem : SharedTurbineSystem
 
     private void OnSignalReceived(EntityUid uid, TurbineComponent comp, ref SignalReceivedEvent args)
     {
-        var state = SignalState.Momentary;
-        args.Data?.TryGetValue(DeviceNetworkConstants.LogicState, out state);
+        HandleSignal(uid, comp, args.Port, SignalState.Momentary, args.Trigger);
+    }
 
-        if (args.Port == comp.StatorLoadIncreasePort)
+    private void OnLogicSignalReceived(EntityUid uid, TurbineComponent comp, ref SignalReceivedEvent<LogicStatePayload> args)
+    {
+        HandleSignal(uid, comp, args.Port, args.Data.State, args.Trigger);
+    }
+
+    private void HandleSignal(EntityUid uid, TurbineComponent comp, ProtoId<SinkPortPrototype> port, SignalState state, EntityUid? trigger)
+    {
+        if (port == comp.StatorLoadIncreasePort)
             comp.IncreasePortState = state;
-        else if (args.Port == comp.StatorLoadDecreasePort)
+        else if (port == comp.StatorLoadDecreasePort)
             comp.DecreasePortState = state;
 
         var logtext = "maintain";
@@ -509,10 +520,10 @@ public sealed partial class TurbineSystem : SharedTurbineSystem
         else if (comp.DecreasePortState != SignalState.Low && comp.IncreasePortState == SignalState.Low)
             logtext = "decrease";
 
-        _adminLogger.Add(LogType.Action, $"{ToPrettyString(args.Trigger):trigger} set the stator load on {ToPrettyString(uid):target} to {logtext}");
+        _adminLogger.Add(LogType.Action, $"{ToPrettyString(trigger):trigger} set the stator load on {ToPrettyString(uid):target} to {logtext}");
     }
 
-    private void OnPortDisconnected(EntityUid uid, TurbineComponent comp, ref PortDisconnectedEvent args)
+    private void OnPortDisconnected(EntityUid uid, TurbineComponent comp, ref SinkPortDisconnectedEvent args)
     {
         if (args.Port == comp.StatorLoadIncreasePort)
             comp.IncreasePortState = SignalState.Low;

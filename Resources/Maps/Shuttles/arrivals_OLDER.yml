@@ -15,10 +15,10 @@ nullspace: []
 tilemap:
   0: Space
   60: FloorHullReinforced
-  70: FloorMining
-  84: FloorRockVault
-  103: FloorSteelDirty
-  111: FloorTechMaint
+  70: TP14FloorMining
+  84: TP14FloorRockVault
+  103: TP14FloorSteelDirty
+  111: TP14FloorTechMaint
   112: FloorTechMaint2
   1: Lattice
   129: Plating

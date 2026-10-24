@@ -35,6 +35,12 @@ public sealed partial class HumanoidProfileComponent : Component
     [DataField, AutoNetworkedField]
     public ProtoId<SpeciesPrototype> Species = HumanoidCharacterProfile.DefaultSpecies;
 
+    /// <summary>
+    /// Whether the humanoid profile shows on examine. Such as "They are a young human".
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool Examinable = true;
+
     [DataField]
     public string CustomSpeciesName { get; set; } = string.Empty;
 }

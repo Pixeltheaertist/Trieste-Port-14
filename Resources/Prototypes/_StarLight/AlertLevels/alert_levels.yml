@@ -1,0 +1,10 @@
+- type: alertLevel
+  id: Orange
+  name: alert-level-orange
+  announcement: alert-level-orange-announcement
+  instructions: alert-level-orange-instructions
+  sound: /Audio/_Starlight/misc/orange.ogg
+  color: "#ff8119"
+  emergencyLightColor: Violet
+  forceEnableEmergencyLights: true
+  shuttleTime: 480

@@ -63,6 +63,7 @@ loadout-group-chaplain-mask = Chaplain mask
 loadout-group-chaplain-jumpsuit = Chaplain uniforms
 loadout-group-chaplain-outerclothing = Chaplain outer clothing
 loadout-group-chaplain-neck = Chaplain neckwear
+loadout-group-chaplain-shoes = Chaplain shoes
 loadout-group-chaplain-bible = Holy Book
 
 loadout-group-janitor-head = Janitor headwear
@@ -210,3 +211,8 @@ loadout-group-reporter-head = Journalist headwear
 loadout-group-reporter-outerclothing = Journalist outer clothing
 
 loadout-group-psychologist-jumpsuit = Psychologist uniforms
+
+loadout-group-tramdriver-jumpsuit = Tram driver jumpsuit
+loadout-group-tramdriver-outerclothing = Tram driver suit
+loadout-group-tramdriver-hat = Tram driver hat
+loadout-group-tramdriver-gloves = Tram driver gloves

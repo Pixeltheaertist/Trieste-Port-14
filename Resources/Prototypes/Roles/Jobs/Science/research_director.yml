@@ -6,14 +6,14 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobScientist
-    time: 2h
+    time: 2.5h # TRIESTE: '5h'
   - !type:DepartmentTimeRequirement
     department: Science
-    time: 2h
-  weight: 10
+    time: 5h # TRIESTE: '10h'
   startingGear: ResearchDirectorGear
-  icon: "TP14JobIconResearchDirector" # TRIESTE: 'JobIconResearchDirector'
+  icon: "JobIconResearchDirector"
   supervisors: job-supervisors-captain
+  guides: [ Command ] # TODO: should have a more specific guidebook page instead of using the department itself
   access:
   - Research
   - Command

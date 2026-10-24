@@ -3,16 +3,14 @@ using Content.Server.Silicons.Laws;
 using Content.Shared._TP.Mechs.Components;
 using Content.Shared.Alert;
 using Content.Shared.Emag.Systems;
-using Content.Shared.Mech.EntitySystems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
-using Content.Shared.Power.Components;
 using Content.Shared.PowerCell;
 using Content.Shared.PowerCell.Components;
 using Content.Shared.Silicons.Laws;
+using Content.Shared.Vehicle;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Audio;
-using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._TP;
@@ -24,7 +22,6 @@ public sealed partial class StepfatherSystem : EntitySystem
 {
     [Dependency] private AlertsSystem _alerts = default!;
     [Dependency] private BatterySystem _battery = default!;
-    [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private MovementSpeedModifierSystem _movementSpeedModifier = default!;
     [Dependency] private PowerCellSystem _powerCell = default!;
     [Dependency] private IPrototypeManager _proto = default!;
@@ -37,16 +34,13 @@ public sealed partial class StepfatherSystem : EntitySystem
         SubscribeLocalEvent<StepfatherComponent, PowerCellChangedEvent>(OnPowerCellChanged);
         SubscribeLocalEvent<StepfatherComponent, MeleeAttackEvent>(OnMeleeAttack);
         SubscribeLocalEvent<StepfatherComponent, GotEmaggedEvent>(OnGotEmagged);
-        SubscribeLocalEvent<StepfatherComponent, MechEntryEvent>(OnMechEntry);
-        SubscribeLocalEvent<StepfatherComponent, MechExitEvent>(OnMechExit);
+        SubscribeLocalEvent<StepfatherComponent, VehicleOperatorSetEvent>(OnOperatorSet);
     }
 
-    private void OnMechExit(Entity<StepfatherComponent> ent, ref MechExitEvent args)
-    {
-        UpdateMovementSpeed(ent.Owner);
-    }
-
-    private void OnMechEntry(Entity<StepfatherComponent> ent, ref MechEntryEvent args)
+    /// <summary>
+    ///     Raised when a pilot enters or exits the Rotund.
+    /// </summary>
+    private void OnOperatorSet(Entity<StepfatherComponent> ent, ref VehicleOperatorSetEvent args)
     {
         UpdateMovementSpeed(ent.Owner);
     }
@@ -126,62 +120,49 @@ public sealed partial class StepfatherSystem : EntitySystem
 
     private void UpdateMovementSpeed(EntityUid uid)
     {
-        // First we get the MECH battery container.
-        // If none is found, we set the base speed and sprint speed to 0.
-        if (!_container.TryGetContainer(uid, "mech-battery-slot", out var container) ||
-            container.ContainedEntities.Count == 0)
-        {
-            _movementSpeedModifier.ChangeBaseSpeed(uid, 0f, 0f, 20.0f);
-            return;
-        }
-
-        // Otherwise if it IS NOT a battery component, we also set the speeds to 0.
-        var batteryEntity = container.ContainedEntities[0];
-        if (!TryComp<BatteryComponent>(batteryEntity, out var powerCell))
-        {
-            _movementSpeedModifier.ChangeBaseSpeed(uid, 0f, 0f, 20.0f);
-            return;
-        }
-
-        // Now we check the charge percentage.
+        // No battery means no movement.
         // If it's low (10%), we then halve the speed.
         // Otherwise, set it to full-speed YML values.
-        var chargePercent = powerCell.LastCharge / powerCell.MaxCharge;
-        if (chargePercent <= 0.1f)
-        {
-            _movementSpeedModifier.ChangeBaseSpeed(uid, 1.125f, 1.8f, 20f);
-        }
-        else
-        {
-            _movementSpeedModifier.ChangeBaseSpeed(uid, 2.25f, 3.6f, 20f);
-        }
+        var (walk, sprint) = TryGetChargeLevel(uid, out var chargeLevel)
+            ? chargeLevel <= 0.1f ? (1.125f, 1.8f) : (2.25f, 3.6f)
+            : (0f, 0f);
+
+        // This runs every second, so only dirty the speed when the tier actually changes.
+        if (TryComp<MovementSpeedModifierComponent>(uid, out var speed)
+            && MathHelper.CloseTo(speed.BaseWalkSpeed, walk)
+            && MathHelper.CloseTo(speed.BaseSprintSpeed, sprint))
+            return;
+
+        _movementSpeedModifier.ChangeBaseSpeed(uid, walk, sprint, 20f);
+    }
+
+    /// <summary>
+    ///     Gets the current charge level (0-1) of the Rotund's core battery.
+    ///     The PowerCellSlot points at the mech battery slot, so this is the only battery it has.
+    /// </summary>
+    private bool TryGetChargeLevel(EntityUid uid, out float chargeLevel)
+    {
+        chargeLevel = 0f;
+        if (!_powerCell.TryGetBatteryFromSlot(uid, out var battery))
+            return false;
+
+        chargeLevel = _battery.GetChargeLevel(battery.Value.AsNullable());
+        return true;
     }
 
     private void UpdateBatteryAlert(Entity<StepfatherComponent> ent)
     {
-        // First, we get the mech battery slot container.
         // If we don't have a battery, change the hud display to "No Battery".
-        if (!_container.TryGetContainer(ent, "mech-battery-slot", out var container) ||
-            container.ContainedEntities.Count == 0)
+        if (!TryGetChargeLevel(ent.Owner, out var chargeLevel))
         {
             _alerts.ClearAlert(ent.Owner, ent.Comp.BatteryAlert);
             _alerts.ShowAlert(ent.Owner, ent.Comp.NoBatteryAlert);
             return;
         }
 
-        // Now we set a variable for the first (and only) contained entity.
-        // Then check if IT HAS a battery component. If so,
-        var batteryEntity = container.ContainedEntities[0];
-        if (!TryComp<BatteryComponent>(batteryEntity, out var battery))
-        {
-            _alerts.ClearAlert(ent.Owner, ent.Comp.BatteryAlert);
-            _alerts.ShowAlert(ent.Owner, ent.Comp.NoBatteryAlert);
-            return;
-        }
+        var chargePercent = (short)MathF.Round(chargeLevel * 10f);
 
-        var chargePercent = (short)MathF.Round(battery.LastCharge / battery.MaxCharge * 10f);
-
-        if (chargePercent == 0 && battery.LastCharge > 0)
+        if (chargePercent == 0 && chargeLevel > 0)
             chargePercent = 1;
 
         _alerts.ClearAlert(ent.Owner, ent.Comp.NoBatteryAlert);
@@ -192,26 +173,17 @@ public sealed partial class StepfatherSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<StepfatherComponent, PowerCellDrawComponent>();
-        while (query.MoveNext(out var stepfatherUid, out var stepfather, out var draw))
+        // PowerCellDraw handles the passive drain, so we just keep speed and the battery alert in sync with it.
+        var query = EntityQueryEnumerator<StepfatherComponent>();
+        while (query.MoveNext(out var stepfatherUid, out var stepfather))
         {
             stepfather.DrainAccumulator += frameTime;
-            if (stepfather.DrainAccumulator >= 1f)
-            {
-                stepfather.DrainAccumulator -= 1f;
+            if (stepfather.DrainAccumulator < 1f)
+                continue;
 
-                if (!_container.TryGetContainer(stepfatherUid, "mech-battery-slot", out var container)
-                    || container.ContainedEntities.Count == 0)
-                {
-                    continue;
-                }
-
-                var batteryEntity = container.ContainedEntities[0];
-                if (TryComp<BatteryComponent>(batteryEntity, out _))
-                {
-                    _battery.TryUseCharge(batteryEntity, draw.DrawRate);
-                }
-            }
+            stepfather.DrainAccumulator -= 1f;
+            UpdateBatteryAlert((stepfatherUid, stepfather));
+            UpdateMovementSpeed(stepfatherUid);
         }
     }
 }

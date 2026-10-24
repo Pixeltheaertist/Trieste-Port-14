@@ -10,8 +10,8 @@ public sealed partial class OceanSpawnRuleComponent : Component
     /// <summary>
     /// The entity to be spawned.
     /// </summary>
-    [DataField(required: true, customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string Prototype = string.Empty;
+    [DataField(required: true)]
+    public EntProtoId Prototype;
 
     [DataField]
     public float Amount = 5;

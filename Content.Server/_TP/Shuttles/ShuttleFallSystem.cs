@@ -5,6 +5,7 @@ using Content.Server.Shuttles.Systems;
 using Content.Server.Shuttles.Events;
 using System.Linq;
 using Content.Server._TP.Falling.Components;
+using Content.Shared.Shuttles.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 

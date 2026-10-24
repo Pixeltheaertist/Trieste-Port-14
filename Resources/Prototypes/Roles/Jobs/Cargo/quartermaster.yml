@@ -6,23 +6,17 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobCargoTechnician
-      time: 1h
-      # TP14 - Removed salvage specialist
-#    - !type:RoleTimeRequirement
-#      role: JobSalvageSpecialist
-#      time: 2.5h
-    - !type:DepartmentTimeRequirement # TP14
-      department: Expeditionary
-      time: 1h
+      time: 2.5h # TRIESTE: '5h'
+    - !type:RoleTimeRequirement
+      role: JobSalvageSpecialist
+      time: 2.5h
     - !type:DepartmentTimeRequirement
       department: Cargo
-      time: 1h
-    - !type:OverallPlaytimeRequirement
-      time: 2h
-  weight: 10
+      time: 5h # TRIESTE: '5'
   startingGear: QuartermasterGear
-  icon: "TP14JobIconHarbormaster" # TRIESTE: 'JobIconQuarterMaster'
+  icon: "JobIconQuarterMaster"
   supervisors: job-supervisors-captain
+  guides: [ Command ] # TODO: should have a more specific guidebook page instead of using the department itself
   access:
   - Cargo
   - Salvage

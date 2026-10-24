@@ -15,6 +15,7 @@ using Content.Shared.Examine;
 using Content.Shared.Explosion.Components;
 using Content.Shared.Popups;
 using Content.Shared.Temperature.Components;
+using Content.Shared.Temperature.Systems;
 using Content.Shared.Verbs;
 
 namespace Content.Server._TP.Power.Generation;
@@ -33,6 +34,7 @@ public sealed partial class StormArraySystem : EntitySystem
     [Dependency] private NodeContainerSystem _nodeContainer = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private RadioSystem _radio = default!;
+    [Dependency] private SharedTemperatureSystem _temperature = default!;
 
     public override void Initialize()
     {
@@ -127,9 +129,10 @@ public sealed partial class StormArraySystem : EntitySystem
         }
 
         // Show the internal temperature in both Kelvin and Celsius
-        var tempC = temp.CurrentTemperature - 273.15f;
+        var tempK = temp.Temperature;
+        var tempC = tempK - 273.15f;
         args.PushMarkup(Loc.GetString("storm-array-examine-temperature",
-            ("tempK", temp.CurrentTemperature.ToString("F1")),
+            ("tempK", tempK.ToString("F1")),
             ("tempC", tempC.ToString("F1"))));
 
         // Show a status message if available
@@ -168,7 +171,7 @@ public sealed partial class StormArraySystem : EntitySystem
         // Now we heat the entity based on how much entity it's making.
         // This is always set to 100KW. (for now)
         var selfHeating = Math.Abs(radiantTempComp.EnergyChangedPerSecond) * 0.33f * args.dt;
-        tempComp.CurrentTemperature += selfHeating;
+        _temperature.ChangeHeat((ent.Owner, tempComp), selfHeating * tempComp.HeatCapacity, true);
 
         // Now update the coolant AFTER the heating, in a separate function.
         UpdateCoolant(ent, ref args, inlet, outlet);
@@ -178,26 +181,26 @@ public sealed partial class StormArraySystem : EntitySystem
         // in which case it will explode.
         Announcement(ent,
             Loc.GetString("storm-array-alert-1"),
-            tempComp.CurrentTemperature >= 411,
+            tempComp.Temperature >= 411,
             ref arrayComp.FirstAnnouncement);
 
         Announcement(ent,
             Loc.GetString("storm-array-alert-2"),
-            tempComp.CurrentTemperature >= 822,
+            tempComp.Temperature >= 822,
             ref arrayComp.SecondAnnouncement);
 
         Announcement(ent,
             Loc.GetString("storm-array-alert-3"),
-            tempComp.CurrentTemperature >= 1233,
+            tempComp.Temperature >= 1233,
             ref arrayComp.ThirdAnnouncement);
 
-        if (arrayComp.ThirdAnnouncement && tempComp.CurrentTemperature < 822)
+        if (arrayComp.ThirdAnnouncement && tempComp.Temperature < 822)
             arrayComp.ThirdAnnouncement = false;
 
-        if (arrayComp.SecondAnnouncement && tempComp.CurrentTemperature < 411)
+        if (arrayComp.SecondAnnouncement && tempComp.Temperature < 411)
             arrayComp.SecondAnnouncement = false;
 
-        if (arrayComp.FirstAnnouncement && tempComp.CurrentTemperature < 202)
+        if (arrayComp.FirstAnnouncement && tempComp.Temperature < 202)
             arrayComp.FirstAnnouncement = false;
 
         // This part handles the explosion at 500 degrees.
@@ -205,7 +208,7 @@ public sealed partial class StormArraySystem : EntitySystem
         if (!TryComp<ExplosiveComponent>(ent, out var explComp))
             return;
 
-        if (tempComp.CurrentTemperature >= 1644)
+        if (tempComp.Temperature >= 1644)
             _destructible.ExplosionSystem.TriggerExplosive(ent.Owner, explComp, true, explComp.TotalIntensity);
     }
 
@@ -257,13 +260,14 @@ public sealed partial class StormArraySystem : EntitySystem
 
         // Calculate maximum heat that can be transferred
         // Limited by either the temperature difference or the entity's cooling rate
-        var tempDifference = temp.CurrentTemperature - coolantGas.Temperature;
+        var tempDifference = temp.Temperature - coolantGas.Temperature;
 
         if (tempDifference <= 0)
         {
+            var tempK = temp.Temperature;
             comp.StatusMessage = Loc.GetString("storm-array-status-warmer-coolant",
                 ("temp1", coolantGas.Temperature.ToString("F1")),
-                ("temp2", temp.CurrentTemperature.ToString("F1")));
+                ("temp2", tempK.ToString("F1")));
             _atmosphere.Merge(outlet.Air, coolantGas);
             return;
         }
@@ -283,7 +287,7 @@ public sealed partial class StormArraySystem : EntitySystem
         // Cool the entity
         var entityHeatCapacity = tempDmg.HeatDamageThreshold;
         var entityTempChange = heatTransferred / entityHeatCapacity;
-        temp.CurrentTemperature -= entityTempChange;
+        _temperature.ChangeHeat((ent.Owner, temp), -entityTempChange * temp.HeatCapacity, true);
 
         // Heat the coolant gas
         var coolantTempChange = heatTransferred / coolantHeatCapacity;

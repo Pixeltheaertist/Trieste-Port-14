@@ -42,6 +42,9 @@ public sealed partial class HumanoidProfileSystem : EntitySystem
 
     private void OnExamined(Entity<HumanoidProfileComponent> ent, ref ExaminedEvent args)
     {
+        if (!ent.Comp.Examinable)
+            return;
+
         // STARLIGHT/TRIESTE
         var customSpecies = ent.Comp.CustomSpeciesName != string.Empty
             ? ent.Comp.CustomSpeciesName.ToLower()

@@ -1,0 +1,13 @@
+# Restored from upstream's structures.yml (removed in #44857).
+- type: construction
+  parent: BaseStructureFullTile
+  id: TP14PinionAirlock
+  name: construction-recipe-pinion-airlock
+  graph: TP14PinionAirlock
+  targetNode: airlock
+
+- type: construction
+  parent: TP14PinionAirlock
+  id: TP14PinionAirlockGlass
+  name: construction-recipe-pinion-airlock-glass
+  targetNode: glassAirlock

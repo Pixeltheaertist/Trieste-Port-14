@@ -9,8 +9,8 @@ highlights-research-director = Research Director, "RD", Science, "Sci", Bridge, 
 
 # Security
 highlights-detective = Detective, "Det", Armory, Security, "Sec"
-highlights-security-cadet = Security Cadet, Secoff, Cadet, Armory, Security, "Sec"
-highlights-security-officer = Security Officer, Secoff, Officer, Armory, Security, "Sec"
+highlights-securitycadet = Security Cadet, Secoff, Cadet, Armory, Security, "Sec"
+highlights-securityofficer = Security Officer, Secoff, Officer, Armory, Security, "Sec"
 highlights-warden = Warden, "Ward", Brig, Genpop, Jail, "Prison", Armory, Security, "Sec"
 
 # Cargo
@@ -18,39 +18,53 @@ highlights-cargo-technician = Cargo Technician, Cargo Tech, "Cargo"
 highlights-salvage-specialist = Salvage Specialist, Salvager, Expeditionary, "Exped", Miner
 
 # Engineering
-highlights-atmospheric-technician = Atmospheric Technician, Atmos Tech, Atmospheric, Engineering, "Atmos", "Engi"
-highlights-station-engineer = Station Engineer, Engineering, Engineer, "Engi"
-highlights-technical-assistant = Technical Assistant, Tech Assistant, Engineering, Engineer, "Engi"
+highlights-atmospherictechnician = Atmospheric Technician, Atmos Tech, Atmospheric, Engineering, "Atmos", "Engi"
+highlights-stationengineer = Station Engineer, Engineer, Engineering, "Engi", "Engis"
+highlights-technicalassistant = Technical Assistant, Tech Assistant, "TA", Engineering, "Engi"
 
 # Medical
 highlights-chemist = Chemist, Chemistry, "Chem", Medbay, Medical, "Med"
-highlights-medical-doctor = Medical Doctor, Doctor, "Doc", Medbay, Medical, "Med"
-highlights-medical-intern = Medical Intern, Intern, Medbay, Medical, "Med"
+highlights-medicaldoctor = Medical Doctor, Doctor, "Doc", Medbay, Medical, "Med"
+highlights-medicalintern = Medical Intern, Intern, Medbay, Medical, "Med"
 highlights-paramedic = Paramedic, "Para", "Medic", Medbay, Medical, "Med"
 
 # Science
-highlights-scientist = Scientist, Science, "Sci", "RND", "R&D"
-highlights-research-assistant = Research Assistant, Science, "Sci", "RND", "R&D"
+highlights-researchassistant = Research Assistant, "RA", Science, "Sci"
+highlights-scientist = Scientist, Science, "Sci"
 
-# Civilian
+# Service
 highlights-bartender = Bartender, Barkeeper, Barkeep, "Bar", Service, "Serv"
 highlights-botanist = Botanist, Botany, Hydroponics, Service, "Serv"
-highlights-chaplain = Chaplain, "Chap", Chapel, Service, "Serv"
+highlights-chaplain = Chaplain, Chapel, Service, "Serv"
 highlights-chef = Chef, "Cook", Kitchen, Service, "Serv"
 highlights-clown = Clown, Theatre, Theater, Service, "Serv"
 highlights-janitor = Janitor, "Jani", Service, "Serv"
 highlights-lawyer = Lawyer, Attorney, "Law", Service, "Serv"
 highlights-librarian = Librarian, Library, Service, "Serv"
 highlights-mime = Mime, Theatre, Theater, Service, "Serv"
-highlights-musician = Musician, "Music", Theatre, Theater, Service, "Serv"
-highlights-passenger = Passenger, Greytider, Graytider, "Tider", "Tide"
-highlights-service-worker = Service Worker, Service, "Serv"
+highlights-musician = Musician, Theatre, Theater, Service, "Serv"
+highlights-serviceworker = Service Worker, Service, "Serv"
 
 # Station-specific
-highlights-reporter = Reporter, Journalist, Newsroom, News
 highlights-psychologist = Psychologist, Psychology, "Psych", Medbay, Medical, "Med"
+highlights-reporter = Reporter, Journalist, Newsroom, News, Service, "Serv"
+highlights-tramdriver = Tram Driver, Tram, "Driver", Service, "Serv"
 
 # Silicon
-highlights-personal-ai = Personal AI, "pAI"
-highlights-cyborg = Cyborg, Silicon, Borg, Robotics, "Robot"
-highlights-station-ai = Station AI, Silicon, "AI", "sAI"
+highlights-borg = Cyborg, Silicon, Borg, Robotics, "Robot", "Law", "Laws", "Lawset"
+highlights-stationai = Station AI, Silicon, "AI", "sAI", "Law", "Laws", "Lawset"
+
+# Civilian
+highlights-passenger = Passenger, Greyshirt, Grayshirt, Greytider, Graytider, Tider, Civilian, Civie, Civvie, Civvy
+highlights-visitor = Visitor, Civilian, Civie, Civvie, Civvy
+
+# Central Command
+highlights-centralcommandofficial = Central Command Official, "Official", "Central Command", CentCom, CentComm, "CC"
+highlights-cburn = CBURN
+highlights-deathsquad = Death Squad, Deathsquad
+highlights-ertleader = Leader, "ERT", "Emergency Response Team"
+highlights-ertchaplain = Chaplain, "ERT", "Emergency Response Team"
+highlights-ertengineer = Engineer, "Engi", "ERT", "Emergency Response Team"
+highlights-ertsecurity = Security, "ERT", "Emergency Response Team"
+highlights-ertmedical = "Medic", "ERT", "Emergency Response Team"
+highlights-ertjanitor = Janitor, "Jani", "ERT", "Emergency Response Team"

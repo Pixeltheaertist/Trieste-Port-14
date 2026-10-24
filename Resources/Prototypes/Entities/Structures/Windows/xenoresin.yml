@@ -2,34 +2,16 @@
   parent: ReinforcedWindow
   id: XenoResinWindow
   name: resin window
-  description: Transparent and hardened, yet slightly sticky to the touch. Slightly stronger than a normal reinforced window.
+  description: Transparent and hardened, yet slightly sticky to the touch.
   components:
-  - type: Sprite
+  - type: Sprite # TRIESTE: old wall/window sprites, see _TP/Structures
     drawdepth: WallTops
-    sprite: Structures/Windows/xeno_resin.rsi
-  - type: Icon
-    sprite: Structures/Windows/xeno_resin.rsi
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WindowShatter
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          ShardGlassReinforced:
-            min: 1
-            max: 2
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: IconSmooth
-    base: xwindow
-  - type: DamageVisuals
-    thresholds: [5, 10, 20]
-    damageDivisor: 4
-    trackAllDamage: true
-    damageOverlay:
-      sprite: Structures/Windows/cracks.rsi
+    sprite: _TP/Structures/Windows/xeno_resin.rsi
+  - type: Icon # TRIESTE: old wall/window sprites, see _TP/Structures
+    sprite: _TP/Structures/Windows/xeno_resin.rsi
+  - type: IconSmooth # TRIESTE: old wall/window sprites, see _TP/Structures
+    key: windows
+    states:
+    - !type:CornerSpriteSmoothing # old-style corner sprites
+      mask: [ windows ]
+      base: xwindow

@@ -1,7 +1,8 @@
 - type: entity
   parent: BaseItem
-  id: SprayPainter
+  id: SprayPainterRecharging
   name: spray painter
+  suffix: Admeme
   description: A spray painter for painting airlocks, pipes, and other items.
   components:
   - type: Sprite
@@ -16,6 +17,8 @@
       enum.SprayPainterUiKey.Key:
         type: SprayPainterBoundUserInterface
   - type: SprayPainter
+    pipeChargeCost: 0 # TRIESTE
+    decalChargeCost: 0 # TRIESTE
     colorPalette:
       # TP14 - Upstream colors
       # yellow: '#B3A234FF'
@@ -39,23 +42,21 @@
       mix: '#947507'
   - type: StaticPrice
     price: 40
-  - type: LimitedCharges
-    maxCharges: 15
-    lastCharges: 15
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
 
 - type: entity
-  parent: SprayPainter
-  id: SprayPainterRecharging
-  suffix: Admeme
+  parent: SprayPainterRecharging
+  id: SprayPainter
+  suffix: ""
   components:
   - type: SprayPainter
-    pipeChargeCost: 0
-    decalChargeCost: 0
-  - type: AutoRecharge
-    rechargeDuration: 1
+    pipeChargeCost: 1
+    decalChargeCost: 1
+  - type: LimitedCharges
+    maxCharges: 15
+    lastCharges: 15
 
 - type: entity
   parent: SprayPainter
@@ -74,6 +75,8 @@
   components:
   - type: LimitedCharges
     lastCharges: -1
+
+# Ammo
 
 - type: entity
   parent: BaseItem

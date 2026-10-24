@@ -1,4 +1,4 @@
-﻿using Content.Client.Message;
+using Content.Client.Message;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.CCVar;
 using Content.Shared.Security.Components;

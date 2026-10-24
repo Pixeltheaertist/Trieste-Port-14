@@ -7,7 +7,7 @@
   - type: Sprite
     sprite: _TP/Clothing/Neck/Cloaks/overseercloak.rsi
   - type: StealTarget
-    stealGroup: HeadCloak
+    stealGroup:
+    - HeadCloak
   - type: TemperatureProtection
-    heatingCoefficient: 1.1
-    coolingCoefficient: 0.3
+    coefficient: 0.6 # TemperatureProtection tier (winter-coat level); was heatingCoefficient: 1.1 coolingCoefficient: 0.3
