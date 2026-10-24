@@ -4,6 +4,7 @@ using Content.Shared._TP.Weather;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Light.Components;
 using Content.Shared.Weather;
+using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 
@@ -30,21 +31,19 @@ public sealed partial class WeatherChangeRule : StationEventSystem<WeatherChange
     {
         base.Started(ent, ref args);
 
-        var query = EntityQueryEnumerator<WeatherStatusEffectComponent>();
-        while (query.MoveNext(out var weatherUid, out _))
+        if (!_protoMan.TryIndex(ent.Comp1.TargetWeather, out var targetWeather))
+            return;
+
+        if (!targetWeather.HasComp<WeatherStatusEffectComponent>(_factory))
         {
-            if (!_protoMan.TryIndex(ent.Comp1.TargetWeather, out var targetWeather))
-                return;
+            Log.Error("Weather entity not found!");
+            return;
+        }
 
-            if (!targetWeather.HasComp<WeatherStatusEffectComponent>(_factory))
-            {
-                Log.Error("Weather entity not found!");
-                return;
-            }
-
-            var mapId = Transform(weatherUid).MapID;
-            var mapUid = Transform(weatherUid).MapUid;
-
+        // Collect the maps first: TrySetWeather adds/removes weather status effect entities,
+        // which would modify the collection we're enumerating.
+        foreach (var (mapId, mapUid) in GetWeatherMaps())
+        {
             _weather.TrySetWeather(mapId, targetWeather, out _, TimeSpan.FromMinutes(99999));
 
             if (ent.Comp1.Sunlight)
@@ -87,21 +86,18 @@ public sealed partial class WeatherChangeRule : StationEventSystem<WeatherChange
         base.Ended(rule, ref args);
 
 
-        var query = EntityQueryEnumerator<WeatherStatusEffectComponent>();
-        while (query.MoveNext(out var weatherUid, out _))
+        if (!_protoMan.TryIndex(rule.Comp.ReturnWeather, out var returnWeather))
+            return;
+
+        if (!returnWeather.HasComp<WeatherStatusEffectComponent>(_factory))
         {
-            if (!_protoMan.TryIndex(rule.Comp.ReturnWeather, out var returnWeather))
-                return;
+            Log.Error("Weather entity not found!");
+            return;
+        }
 
-            if (!returnWeather.HasComp<WeatherStatusEffectComponent>(_factory))
-            {
-                Log.Error("Weather entity not found!");
-                return;
-            }
-
-            var mapId = Transform(weatherUid).MapID;
-            var mapUid = Transform(weatherUid).MapUid;
-
+        // See Started: collect first, then change the weather.
+        foreach (var (mapId, mapUid) in GetWeatherMaps())
+        {
             _weather.TrySetWeather(mapId, returnWeather, out _, TimeSpan.FromMinutes(99999));
             Log.Info("Weather set");
 
@@ -124,5 +120,23 @@ public sealed partial class WeatherChangeRule : StationEventSystem<WeatherChange
                 thunder.Cleared = false;
             }
         }
+    }
+
+    /// <summary>
+    /// The maps that currently have weather, one entry per map.
+    /// </summary>
+    private List<(MapId MapId, EntityUid? MapUid)> GetWeatherMaps()
+    {
+        var maps = new List<(MapId, EntityUid?)>();
+        var seen = new HashSet<MapId>();
+        var query = EntityQueryEnumerator<WeatherStatusEffectComponent>();
+        while (query.MoveNext(out var weatherUid, out _))
+        {
+            var xform = Transform(weatherUid);
+            if (seen.Add(xform.MapID))
+                maps.Add((xform.MapID, xform.MapUid));
+        }
+
+        return maps;
     }
 }
