@@ -330,6 +330,7 @@
     tags:
     - Trash
     - TP14TagFish
+  - type: ReproductivePartner
   - type: Solution
     solution:
       reagents:
