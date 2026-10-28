@@ -3,7 +3,7 @@
   parent: BaseFloorPlanet
   name: tiles-dirt-planet-floor
   # TRIESTE: pre-respriting tile look, see /Textures/_TP/Tiles
-  sprite: /Textures/_TP/Tiles/Planet/dirt.rsi/dirt.png
+  sprite: /Textures/_TP/Tiles/Planet/Dirt/dirt.png
   variants: 4
   placementVariants: null
   edgeSprites: {}
