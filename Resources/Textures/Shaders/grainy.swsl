@@ -25,15 +25,8 @@ highp float noise(highp vec2 pos, highp float evolve) {
 void fragment() {
     highp vec2 coords = FRAGCOORD.xy;
 
-    // Increase this number to test performance
-    int intensity = 1;
-
-    highp vec3 colour;
-    for (int i = 0; i < intensity; i++)
-    {
-        // Generate a black to white pixel
-        colour = vec3(noise(coords, TIME));
-    }
+    // Generate a black to white pixel
+    highp vec3 colour = vec3(noise(coords, TIME));
 
     // Output to screen with opacity
     COLOR = vec4(colour, 0.5); // Adjust the alpha value (0.5 for 50% opacity)

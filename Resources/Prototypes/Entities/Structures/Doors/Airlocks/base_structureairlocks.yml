@@ -93,6 +93,7 @@
     time: 3
   - type: Airlock
     openUnlitVisible: false # TRIESTE: old door sprites have no open_unlit state
+    closedUnlitVisible: false # TRIESTE: old door sprites only light up while animating
   - type: NavMapDoor
   - type: DoorBolt
   - type: Appearance

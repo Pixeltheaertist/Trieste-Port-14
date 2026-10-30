@@ -141,8 +141,8 @@
   id: WoodDoor
   name: wooden door
   components:
-  - type: Sprite
-    sprite: Structures/Doors/MaterialDoors/wood-door.rsi
+  - type: Sprite # TRIESTE: old door sprites, see _TP/Structures/Doors
+    sprite: _TP/Structures/Doors/MineralDoors/wood_door.rsi
   - type: Door
     openSound:
       path: /Audio/Effects/door_open.ogg

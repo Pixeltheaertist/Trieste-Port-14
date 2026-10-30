@@ -1,3 +1,4 @@
+using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Overlays;
 using Robust.Client.Graphics;
@@ -13,24 +14,18 @@ public sealed partial class StaticViewerHudSystem : EntitySystem
     [Dependency] private IOverlayManager _overlayMan = default!;
     [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private IPlayerManager _player = default!;
-    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private InventorySystem _inventory = default!;
 
-    private ShaderInstance _staticViewerShader = null!;
     private StaticViewerOverlay _staticViewerOverlay = null!;
 
     private static readonly ProtoId<ShaderPrototype> GrainyShader = "Grainy";
 
-    public StaticViewerHudSystem()
-    {
-        IoCManager.InjectDependencies(this);
-    }
-
     public override void Initialize()
     {
+        // The grain shader only draws noise on top of the screen, it never reads it, so the shared instance is fine.
+        var staticViewerShader = _prototypeManager.Index(GrainyShader).Instance();
 
-        _staticViewerShader = _prototypeManager.Index(GrainyShader).Instance();
-
-        _staticViewerOverlay = new StaticViewerOverlay(_staticViewerShader, _entityManager, _player);
+        _staticViewerOverlay = new StaticViewerOverlay(staticViewerShader, EntityManager, _player);
 
         SubscribeLocalEvent<StaticViewerComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<StaticViewerComponent, ComponentShutdown>(OnShutdown);
@@ -47,7 +42,15 @@ public sealed partial class StaticViewerHudSystem : EntitySystem
 
     private void OnUnequipped(Entity<StaticViewerComponent> ent, ref GotUnequippedEvent args)
     {
-        _entityManager.RemoveComponent<StaticViewerComponent>(args.EquipTarget);
+        // Keep the static if something else worn still has it, e.g. thermal goggles under the abyssal helmet.
+        var slots = _inventory.GetSlotEnumerator(args.EquipTarget, SlotFlags.WITHOUT_POCKET);
+        while (slots.NextItem(out var item))
+        {
+            if (item != args.Equipment && HasComp<StaticViewerComponent>(item))
+                return;
+        }
+
+        RemComp<StaticViewerComponent>(args.EquipTarget);
     }
 
     private void OnPlayerAttached(Entity<StaticViewerComponent> ent, ref LocalPlayerAttachedEvent args)
@@ -91,7 +94,6 @@ public sealed class StaticViewerOverlay : Overlay
     }
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
-    public override bool RequestScreenTexture => true;
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
     {
@@ -111,18 +113,9 @@ public sealed class StaticViewerOverlay : Overlay
 
     protected override void Draw(in OverlayDrawArgs args)
     {
-        if (ScreenTexture == null)
-            return;
-
         var handle = args.WorldHandle;
 
-        // Duplicate the shader instance to make it mutable
-        var mutableShaderInstance = _shaderInstance.Duplicate();
-
-        mutableShaderInstance.SetParameter("SCREEN_TEXTURE", ScreenTexture);
-
-        // Use the duplicated mutable shader
-        handle.UseShader(mutableShaderInstance);
+        handle.UseShader(_shaderInstance);
         handle.DrawRect(args.WorldBounds, Color.White);
         handle.UseShader(null);
     }
