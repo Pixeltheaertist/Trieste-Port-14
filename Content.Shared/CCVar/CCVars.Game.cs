@@ -64,10 +64,11 @@ public sealed partial class CCVars
         GameLobbyFallbackEnabled = CVarDef.Create("game.fallbackenabled", true, CVar.ARCHIVE);
 
     /// <summary>
+    //      TRIESTE: 'Traitor'
     ///     The preset for the game to fall back to if the selected preset could not be used, and fallback is enabled.
     /// </summary>
     public static readonly CVarDef<string>
-        GameLobbyFallbackPreset = CVarDef.Create("game.fallbackpreset", "Traitor,Secret", CVar.ARCHIVE); // TP14 - Changed from Extended to Secret
+        GameLobbyFallbackPreset = CVarDef.Create("game.fallbackpreset", "TP14Traitor,Secret", CVar.ARCHIVE);
 
     /// <summary>
     ///     The preset for the game to fall back to if the selected preset could not be used, and fallback is enabled.
@@ -393,10 +394,11 @@ public sealed partial class CCVars
         CVarDef.Create("game.round_restart_time", 120f, CVar.SERVERONLY);
 
     /// <summary>
+    ///     TRIESTE: 'Secret'
     ///     The prototype to use for secret weights.
     /// </summary>
     public static readonly CVarDef<string> SecretWeightPrototype =
-        CVarDef.Create("game.secret_weight_prototype", "Secret", CVar.SERVERONLY);
+        CVarDef.Create("game.secret_weight_prototype", "TP14Secret", CVar.SERVERONLY);
 
     /// <summary>
     ///     The id of the sound collection to randomly choose a sound from and play when the round ends.
