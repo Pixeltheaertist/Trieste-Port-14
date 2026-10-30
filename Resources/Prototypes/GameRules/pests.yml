@@ -8,7 +8,6 @@
     - id: CockroachMigration
     - id: MouseMigration
     - id: RandomCritterHorde
-    - id: WhaleMigration # TRIESTE: Added.
 
 - type: entityTable
   id: SpicyPestEventsTable
@@ -16,9 +15,6 @@
     children:
     - id: KingRatMigration
     - id: SnailMigration
-    - id: DrifterMigration
-    - id: MimicMigration
-    # - id: DeathWhaleMigration
 
 # events
 

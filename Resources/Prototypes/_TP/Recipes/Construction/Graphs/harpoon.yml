@@ -23,7 +23,7 @@
         doAfter: 3
       - tag: TP14TagPiezoShard
         icon:
-          sprite: Objects/Materials/Shards/piezoshard.rsi
+          sprite: _TP/Objects/Materials/Shards/piezoshard.rsi
           state: icon
         name: construction-graph-tag-piezo-shard
       completed:

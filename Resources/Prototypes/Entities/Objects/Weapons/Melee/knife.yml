@@ -111,7 +111,7 @@
   description: A deadly knife intended for melee confrontations.
   components:
   - type: Contraband # TRIESTE
-    allowedDepartments: [ Security, Expeditionary ]
+    allowedDepartments: [ Security, TP14DepartmentExpeditions ]
   - type: Tag
     tags:
     - CombatKnife

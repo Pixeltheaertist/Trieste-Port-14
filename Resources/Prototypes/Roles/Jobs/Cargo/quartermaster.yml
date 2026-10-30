@@ -7,12 +7,15 @@
     - !type:RoleTimeRequirement
       role: JobCargoTechnician
       time: 2.5h # TRIESTE: '5h'
-    - !type:RoleTimeRequirement
-      role: JobSalvageSpecialist
+   # - !type:RoleTimeRequirement # TRIESTE: Replaced with exped time.
+   #   role: JobSalvageSpecialist
+   #   time: 2.5h
+    - !type:DepartmentTimeRequirement
+      department: TP14DepartmentExpeditions
       time: 2.5h
     - !type:DepartmentTimeRequirement
       department: Cargo
-      time: 5h # TRIESTE: '5'
+      time: 2.5h # TRIESTE: '5'
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
   supervisors: job-supervisors-captain

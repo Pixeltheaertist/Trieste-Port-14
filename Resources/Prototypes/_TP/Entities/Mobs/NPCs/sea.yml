@@ -330,7 +330,6 @@
     tags:
     - Trash
     - TP14TagFish
-  - type: ReproductivePartner
   - type: Solution
     solution:
       reagents:
@@ -493,6 +492,10 @@
   name: sea bunny
   description: An adorable bunny-like creature that lives in.. the sea!
   components:
+  - type: HTN
+    constantlyReplan: false
+    rootTask:
+      task: MouseCompound
   - type: GhostRole
     makeSentient: true
     allowSpeech: true

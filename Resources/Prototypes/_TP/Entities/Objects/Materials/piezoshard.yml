@@ -10,7 +10,7 @@
     - Knife
   - type: Sprite
     layers:
-      - sprite: Objects/Materials/Shards/piezoshard.rsi
+      - sprite: _TP/Objects/Materials/Shards/piezoshard.rsi
         state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -22.5

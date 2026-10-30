@@ -1,9 +1,10 @@
+#For Admin Use: Runs Greenshift but shows "Secret" in lobby.
 - type: gamePreset
-  id: SecretGreenshift #For Admin Use: Runs Greenshift but shows "Secret" in lobby.
+  id: SecretGreenshift
   alias:
   - secretgreenshift
   name: secret-title
-  showInVote: false #Admin Use
+  showInVote: false
   description: secret-description
   rules:
   - BasicRoundstartVariation
@@ -32,4 +33,110 @@
   description: safe-harbor-description
   supportedMaps: SafeHarborPool
   rules:
+  - BasicRoundstartVariation
+
+# TP14 copies of upstream presets, using our own event schedulers (see GameRules/schedulers.yml).
+# Upstream's SpaceTrafficControlEventScheduler and meteor schedulers are left out, since we had those disabled.
+
+- type: gamePreset
+  id: TP14Survival
+  alias:
+  - tp14survival
+  name: survival-title
+  showInVote: false # secret
+  description: survival-description
+  rules:
+  - TP14RampingStationEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: TP14Extended
+  alias:
+  - tp14extended
+  name: extended-title
+  showInVote: false
+  description: extended-description
+  rules:
+  - TP14StationEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: TP14Dynamic
+  alias:
+  - tp14dynamic
+  name: dynamic-title
+  showInVote: false
+  description: dynamic-description
+  rules:
+  - DynamicRule
+  - DummyNonAntag
+  - TP14DynamicStationEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: TP14Traitor
+  alias:
+  - tp14traitor
+  name: traitor-title
+  description: traitor-description
+  showInVote: false
+  rules:
+  - DummyNonAntagChance
+  - Traitor
+  - SubGamemodesRuleNoWizard
+  - TP14StationEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: TP14Nukeops
+  alias:
+  - tp14nukeops
+  name: nukeops-title
+  description: nukeops-description
+  showInVote: false
+  rules:
+  - Nukeops
+  - DummyNonAntagChance
+  - SubGamemodesRuleNoWizard
+  - TP14StationEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: TP14Wizard
+  alias:
+  - tp14wizard
+  name: wizard-title
+  description: wizard-description
+  showInVote: false
+  rules:
+  - Wizard
+  - DummyNonAntagChance
+  - SubGamemodesRuleNoWizard
+  - TP14StationEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: TP14Xenoborgs
+  alias:
+  - tp14xenoborgs
+  name: xenoborgs-title
+  description: xenoborgs-description
+  showInVote: false
+  rules:
+  - Xenoborgs
+  - DummyNonAntagChance
+  - SubGamemodesRuleNoWizardNoXenoborg
+  - TP14StationEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: TP14Zombie
+  alias:
+  - tp14zombie
+  name: zombie-title
+  description: zombie-description
+  showInVote: false
+  rules:
+  - Zombie
+  - TP14StationEventScheduler
   - BasicRoundstartVariation

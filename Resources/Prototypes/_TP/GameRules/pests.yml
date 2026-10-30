@@ -30,6 +30,7 @@
     - id: TP14MobMimic
       prob: 0.3
 
+# This should only play in Sweetwater, but it's apparently "so insanely fucked do not use it for anything holy moly."
 - type: entity
   id: WhaleMigration
   parent: BaseStationEventShortDelay
@@ -46,8 +47,7 @@
     minTimeBetweenIncidents: 10
     maxTimeBetweenIncidents: 60
     maxSoundDistance: 7
-    sweetwaterOnly: false # Makes it so that mass hallucination sounds can only be heard on Sweetwater, (ex. ocean-specific sounds)
-    # SWEETWATER ONLY IS SO INSANELY FUCKED DO NOT USE IT FOR ANYTHING HOLY MOLY
+    sweetwaterOnly: false
     sounds:
       collection: WhaleMigration
   - type: WhaleMigrationRule
@@ -59,7 +59,7 @@
   - type: StationEvent
     earliestStart: 0
     minimumPlayers: 5
-    maxOccurrences: 1 #
+    maxOccurrences: 1
     weight: 5
   - type: OceanSpawnRule
     prototype: MobDeathWhale
