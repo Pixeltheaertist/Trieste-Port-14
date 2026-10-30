@@ -2,6 +2,7 @@ using Content.Shared.Destructible;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Network;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
 
@@ -67,6 +68,10 @@ public sealed partial class GibbingSystem : EntitySystem
 
     private void FlingDroppedEntity(EntityUid target)
     {
+        // TRIESTE: giblets can be deleted mid-gib (e.g. a hardsuit's attached helmet), so there's nothing to fling.
+        if (TerminatingOrDeleted(target) || !HasComp<PhysicsComponent>(target))
+            return;
+
         var impulse = GibletLaunchImpulse + _random.NextFloat(GibletLaunchImpulseVariance);
         var scatterVec = _random.NextAngle().ToVec() * impulse;
         _physics.ApplyLinearImpulse(target, scatterVec);

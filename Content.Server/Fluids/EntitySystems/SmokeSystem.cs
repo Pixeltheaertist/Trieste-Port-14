@@ -87,6 +87,10 @@ public sealed partial class SmokeSystem : EntitySystem
 
     private void OnEndCollide(Entity<SmokeComponent> entity, ref EndCollideEvent args)
     {
+        // TRIESTE: contacts end when the other entity is deleted, don't try to add components to it then.
+        if (TerminatingOrDeleted(args.OtherEntity))
+            return;
+
         // if we are already in smoke, make sure the thing we are exiting is the current smoke we are in.
         if (_smokeAffectedQuery.TryGetComponent(args.OtherEntity, out var smokeAffectedComponent))
         {

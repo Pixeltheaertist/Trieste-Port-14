@@ -209,12 +209,12 @@ public sealed partial class ShuttleFallSystem : EntitySystem
             // Get the parent shuttle
             var shuttle = Transform(thrusterId).GridUid;
 
-            // If it somehow doesn't have the component, return.
-            if (!TryComp<AirFlyingComponent>(shuttle, out var flyingComp))
-            {
-                Log.Error("Parent shuttle does not have AirFlyingComponent.");
-                return; // TO WHENCE YOU CAME
-            }
+            // Not on a grid (e.g. floating loose on a map), nothing to keep in the air.
+            if (shuttle is not { } grid)
+                return;
+
+            // Thrusters can end up on a grid after spawning (built, moved, re-anchored), so mark that grid as flight-capable here too.
+            var flyingComp = EnsureComp<AirFlyingComponent>(grid);
 
             // Temporarily set IsFlying to false
             flyingComp.IsFlying = false;

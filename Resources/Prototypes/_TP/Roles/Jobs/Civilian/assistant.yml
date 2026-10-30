@@ -9,3 +9,12 @@
   access:
   - TP14SettlerAccessLevel
   - Maintenance
+
+- type: chameleonOutfit
+  id: TP14SettlerChameleonOutfit
+  job: TP14Settler
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLoungewear
+    outerClothing: ClothingOuterCoatBomber
+    gloves: ClothingHandsGlovesFingerless
+    shoes: ClothingShoesLeather
