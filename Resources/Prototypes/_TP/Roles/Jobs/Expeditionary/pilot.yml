@@ -12,8 +12,8 @@
   - External
   requirements:
   - !type:DepartmentTimeRequirement
-    department: Expeditionary
-    time: 3600 # 1 hr
+    department: TP14DepartmentExpeditions
+    time: 5h
   special:
   - !type:AddComponentSpecial
     components:

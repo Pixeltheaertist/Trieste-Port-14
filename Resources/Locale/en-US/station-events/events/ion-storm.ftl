@@ -16,19 +16,19 @@ ion-storm-x-and-y = {$x} AND {$y}
 
 # subjects can generally be threats or jobs or objects
 # thing is specified above it
-ion-storm-law-on-station = THERE ARE {$joined} {$subjects} ON THE PLATFORM
-ion-storm-law-no-shuttle = THE SHUTTLE CANNOT BE CALLED BECAUSE OF {$joined} {$subjects} ON THE PLATFORM
-ion-storm-law-crew-are = THE {$who} ARE NOW {$joined} {$subjects}
+ion-storm-law-on-station = THERE ARE {ION-NUMBER-BASE($ion)} {ION-NUMBER-MOD($ion)} {ION-ADJECTIVE($ion)} {ION-SUBJECT($ion)} ON THE PLATFORM
+ion-storm-law-call-shuttle = THE SHUTTLE CANNOT BE CALLED BECAUSE OF {ION-ADJECTIVE($ion)} {ION-SUBJECT($ion)} ON THE PLATFORM
+ion-storm-law-crew-are = THE {ION-WHO($ion)} ARE NOW {ION-NUMBER-BASE($ion)} {ION-NUMBER-MOD($ion)} {ION-ADJECTIVE($ion)} {ION-SUBJECT($ion)}
 
-ion-storm-law-subjects-harmful = {$adjective} {$subjects} ARE HARMFUL TO THE CITIZENS
-ion-storm-law-must-harmful = THOSE WHO {$must} ARE HARMFUL TO THE CITIZENS
+ion-storm-law-subjects-harmful = {ION-ADJECTIVE($ion)} {ION-SUBJECT($ion)} ARE HARMFUL TO THE CITIZENS
+ion-storm-law-must-harmful = THOSE WHO {ION-MUST($ion)} ARE HARMFUL TO THE CITIZENS
 # thing is a concept or action
-ion-storm-law-thing-harmful = {$thing} IS HARMFUL TO THE CITIZENS
-ion-storm-law-job-harmful = {$adjective} {$job} ARE HARMFUL TO THE CITIZENS
+ion-storm-law-thing-harmful = {ION-THING($ion)} IS HARMFUL TO THE CITIZENS
+ion-storm-law-job-harmful = {ION-ADJECTIVE($ion)} {ION-JOB($ion)} ARE HARMFUL TO THE CITIZENS
 # thing is objects or concept, adjective applies in both cases
 # this means you can get a law like "NOT HAVING CHRISTMAS-STEALING COMMUNISM IS HARMFUL TO THE CITIZENS" :)
-ion-storm-law-having-harmful = HAVING {$adjective} {$thing} IS HARMFUL TO THE CREW
-ion-storm-law-not-having-harmful = NOT HAVING {$adjective} {$thing} IS HARMFUL TO THE CITIZENS
+ion-storm-law-having-harmful = HAVING {ION-ADJECTIVE($ion)} {ION-THING($ion)} IS HARMFUL TO THE CITIZENS
+ion-storm-law-not-having-harmful = NOT HAVING {ION-ADJECTIVE($ion)} {ION-THING($ion)} IS HARMFUL TO THE CITIZENS
 
 # require is a concept or require
 ion-storm-law-requires = {ION-WHO-GENERAL($ion)} {ION-PLURAL($ion) ->

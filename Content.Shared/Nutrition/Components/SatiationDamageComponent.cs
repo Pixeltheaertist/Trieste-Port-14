@@ -18,7 +18,7 @@ public sealed partial class SatiationDamageComponent : Component
     /// Damage values by satiation threshold, for a satiation type.
     /// </summary>
     [DataField(required: true), AutoNetworkedField]
-    public Dictionary<ProtoId<SatiationTypePrototype>, SatiationThresholds<DamageSpecifier?>> Satiations;
+    public Dictionary<ProtoId<SatiationTypePrototype>, SatiationThresholds<DamageSpecifier?>> Satiations = new(); // TRIESTE: was uninitialized, which crashes clients when the comp is added at runtime (e.g. randomHumanoidSettings)
 
     /// <summary>
     /// How often the damage is applied.

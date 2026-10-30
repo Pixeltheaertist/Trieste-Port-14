@@ -1,0 +1,220 @@
+# TP14 copies of upstream station events.
+# Each one just parents the upstream event, so it behaves identically until you override something.
+# To tune one, add the component and only the fields you want to change; the rest is inherited. e.g.:
+#   - type: StationEvent
+#     weight: 3
+# Note: maxOccurrences / reoccurrenceDelay count per prototype ID, so never put both the upstream event
+# and its TP14 copy in the same pool.
+
+# Calm events (upstream BasicCalmEventsTable)
+
+- type: entity
+  id: TP14AnomalySpawn
+  parent: AnomalySpawn
+
+- type: entity
+  id: TP14BluespaceArtifact
+  parent: BluespaceArtifact
+
+- type: entity
+  id: TP14BluespaceLocker
+  parent: BluespaceLocker
+
+- type: entity
+  id: TP14BreakerFlip
+  parent: BreakerFlip
+
+- type: entity
+  id: TP14BureaucraticError
+  parent: BureaucraticError
+
+- type: entity
+  id: TP14ClericalError
+  parent: ClericalError
+
+- type: entity
+  id: TP14GasLeak
+  parent: GasLeak
+
+- type: entity
+  id: TP14GreytideVirus
+  parent: GreytideVirus
+
+- type: entity
+  id: TP14IonStorm
+  parent: IonStorm
+
+- type: entity
+  id: TP14KudzuGrowth
+  parent: KudzuGrowth
+
+- type: entity
+  id: TP14MassHallucinations
+  parent: MassHallucinations
+
+- type: entity
+  id: TP14PowerGridCheck
+  parent: PowerGridCheck
+
+- type: entity
+  id: TP14RandomSentience
+  parent: RandomSentience
+
+- type: entity
+  id: TP14SlimesSpawnHorde
+  parent: SlimesSpawnHorde
+
+- type: entity
+  id: TP14SolarFlare
+  parent: SolarFlare
+
+- type: entity
+  id: TP14SnakeSpawnHorde
+  parent: SnakeSpawnHorde
+
+- type: entity
+  id: TP14SpiderClownSpawnHorde
+  parent: SpiderClownSpawnHorde
+
+- type: entity
+  id: TP14SpiderSpawnHorde
+  parent: SpiderSpawnHorde
+
+- type: entity
+  id: TP14VendorMalfunction
+  parent: VendorMalfunction
+
+- type: entity
+  id: TP14VentClog
+  parent: VentClog
+
+# Antag events (upstream BasicAntagEventsTable)
+
+- type: entity
+  id: TP14ClosetSkeleton
+  parent: ClosetSkeleton
+
+- type: entity
+  id: TP14KingRatMigration
+  parent: KingRatMigration
+
+- type: entity
+  id: TP14RevenantSpawn
+  parent: RevenantSpawn
+
+# Moderate antag events (upstream ModerateAntagEventsTable)
+
+- type: entity
+  id: TP14DragonSpawn
+  parent: DragonSpawn
+  components:
+  - type: StationEvent
+    minimumPlayers: 40 # Upstream: 20.
+
+- type: entity
+  id: TP14NinjaSpawn
+  parent: NinjaSpawn
+
+- type: entity
+  id: TP14ParadoxCloneSpawn
+  parent: ParadoxCloneSpawn
+
+- type: entity
+  id: TP14SleeperAgents
+  parent: SleeperAgents
+
+- type: entity
+  id: TP14ZombieOutbreak
+  parent: ZombieOutbreak
+
+- type: entity
+  id: TP14WizardSpawn
+  parent: WizardSpawn
+
+- type: entity
+  id: TP14SpaceChangelingSpawn
+  parent: SpaceChangelingSpawn
+
+# Cargo gifts (upstream CargoGiftsTable)
+
+- type: entity
+  id: TP14GiftsEngineering
+  parent: GiftsEngineering
+
+- type: entity
+  id: TP14GiftsFireProtection
+  parent: GiftsFireProtection
+  components:
+  - type: StationEvent
+    minimumPlayers: 20 # Upstream: 40.
+
+- type: entity
+  id: TP14GiftsJanitor
+  parent: GiftsJanitor
+  components:
+  - type: StationEvent
+    minimumPlayers: 20 # Upstream: 30.
+
+- type: entity
+  id: TP14GiftsMedical
+  parent: GiftsMedical
+  components:
+  - type: StationEvent
+    minimumPlayers: 20 # Upstream: 30.
+
+- type: entity
+  id: TP14GiftsPizzaPartyLarge
+  parent: GiftsPizzaPartyLarge
+  components:
+  - type: StationEvent
+    minimumPlayers: 20 # Upstream: 40.
+
+- type: entity
+  id: TP14GiftsPizzaPartySmall
+  parent: GiftsPizzaPartySmall
+
+- type: entity
+  id: TP14GiftsSecurityGuns
+  parent: GiftsSecurityGuns
+  components:
+  - type: StationEvent
+    minimumPlayers: 20 # Upstream: 50.
+
+- type: entity
+  id: TP14GiftsSecurityRiot
+  parent: GiftsSecurityRiot
+  components:
+  - type: StationEvent
+    minimumPlayers: 20 # Upstream: 50.
+
+- type: entity
+  id: TP14GiftsSpacingSupplies
+  parent: GiftsSpacingSupplies
+  components:
+  - type: StationEvent
+    minimumPlayers: 20 # Upstream: 40.
+
+- type: entity
+  id: TP14GiftsVendingRestock
+  parent: GiftsVendingRestock
+  components:
+  - type: StationEvent
+    minimumPlayers: 20 # Upstream: 40.
+
+# Pests (upstream CalmPestEventsTable)
+
+- type: entity
+  id: TP14CockroachMigration
+  parent: CockroachMigration
+
+- type: entity
+  id: TP14MouseMigration
+  parent: MouseMigration
+
+- type: entity
+  id: TP14SnailMigrationLowPop
+  parent: SnailMigrationLowPop
+
+- type: entity
+  id: TP14RandomCritterHorde
+  parent: RandomCritterHorde

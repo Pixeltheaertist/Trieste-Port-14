@@ -17,5 +17,5 @@ public sealed partial class ExaminableSatiationComponent : Component
     /// Examination localization string IDs per threshold per satiation type.
     /// </summary>
     [DataField(required: true), AutoNetworkedField]
-    public Dictionary<ProtoId<SatiationTypePrototype>, SatiationThresholds<LocId?>> Satiations;
+    public Dictionary<ProtoId<SatiationTypePrototype>, SatiationThresholds<LocId?>> Satiations = new(); // TRIESTE: was uninitialized, which crashes clients when the comp is added at runtime (e.g. randomHumanoidSettings)
 }

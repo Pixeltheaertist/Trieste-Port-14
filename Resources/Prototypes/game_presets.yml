@@ -6,7 +6,7 @@
   showInVote: false # secret
   description: survival-description
   rules:
-  # - MeteorSwarmScheduler  # TRIESTE
+    - MeteorSwarmScheduler
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
@@ -21,7 +21,7 @@
   showInVote: false # secret
   description: kessler-syndrome-description
   rules:
-  # - KesslerSyndromeScheduler # TRIESTE
+    - KesslerSyndromeScheduler
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
@@ -36,12 +36,12 @@
   rules:
     - Nukeops
     - Traitor
-  # - Revolutionary # Trieste: Removed.
+    - Revolutionary
     - Zombie
     - Wizard
     - Xenoborgs
     - Changeling
-   # - KesslerSyndromeScheduler # TRIESTE
+    - KesslerSyndromeScheduler
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
@@ -59,15 +59,15 @@
   rules:
     - Nukeops
     - Traitor
-#    - Revolutionary
+    - Revolutionary
     - Zombie
     - Wizard
     - Xenoborgs
     - Changeling
     - BasicStationEventScheduler
-#    - KesslerSyndromeScheduler
-#    - MeteorSwarmMildScheduler
-#    - MeteorSwarmScheduler
+    - KesslerSyndromeScheduler
+    - MeteorSwarmMildScheduler
+    - MeteorSwarmScheduler
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
@@ -78,11 +78,11 @@
   - extended
   - shittersafari
   name: extended-title
-  showInVote: true #2boring2vote # Trieste: Enabled. 7000 fucking mothroaches, EAT THAT MAN.
+  showInVote: false #2boring2vote
   description: extended-description
   rules:
   - BasicStationEventScheduler
-#  - MeteorSwarmScheduler
+  - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
 
@@ -110,7 +110,7 @@
   - DynamicRule
   - DummyNonAntag
   - DynamicStationEventScheduler
-#  - MeteorSwarmScheduler
+  - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
 
@@ -149,7 +149,7 @@
   - Traitor
   - SubGamemodesRuleNoWizard
   - BasicStationEventScheduler
-#  - MeteorSwarmScheduler
+  - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
 
@@ -178,7 +178,7 @@
   - DummyNonAntagChance
   - SubGamemodesRuleNoWizard
   - BasicStationEventScheduler
-#  - MeteorSwarmScheduler
+  - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
 
@@ -193,10 +193,10 @@
   showInVote: false
   rules:
   - DummyNonAntagChance
-#  - Revolutionary
+  - Revolutionary
   - SubGamemodesRuleNoWizard
   - BasicStationEventScheduler
-#  - MeteorSwarmScheduler
+  - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
 
@@ -212,7 +212,7 @@
   - DummyNonAntagChance
   - SubGamemodesRuleNoWizard #No Dual Wizards at the start, midround is fine
   - BasicStationEventScheduler
-#  - MeteorSwarmScheduler
+  - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
 
@@ -228,7 +228,7 @@
   - DummyNonAntagChance
   - SubGamemodesRuleNoWizardNoXenoborg # no two motherships
   - BasicStationEventScheduler
-#  - MeteorSwarmScheduler
+  - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
 
@@ -246,7 +246,7 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
-# - MeteorSwarmScheduler
+  - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
 
@@ -262,6 +262,6 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
-#  - KesslerSyndromeScheduler
+  - KesslerSyndromeScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation

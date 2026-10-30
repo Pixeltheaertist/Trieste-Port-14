@@ -5,8 +5,8 @@
   playTimeTracker: TP14ExpeditioneerTracker
   requirements:
     - !type:DepartmentTimeRequirement
-      department: Expeditionary
-      time: 1h
+      department: TP14DepartmentExpeditions
+      time: 2.5h
   icon: "JobIconShaftMiner"
   startingGear: TP14ExpeditioneerGear
   supervisors: job-supervisors-qm

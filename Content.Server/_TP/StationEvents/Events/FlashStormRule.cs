@@ -73,7 +73,7 @@ public sealed partial class FlashStormRule : StationEventSystem<FlashStormRuleCo
         foreach (var mapId in mapIds)
         {
             _weather.TrySetWeather(mapId, stormWeather, out _, TimeSpan.FromMinutes(99999));
-            Log.Error("Weather set");
+            Log.Debug("Weather set");
         }
 
         foreach (var thunder in EntityQuery<LightningMarkerComponent>())
@@ -88,7 +88,7 @@ public sealed partial class FlashStormRule : StationEventSystem<FlashStormRuleCo
 
     private void BeginFlicker(FlashStormRuleComponent comp)
     {
-        Log.Error("beginning flicker");
+        Log.Debug("beginning flicker");
 
         var lights = GetEntityQuery<PoweredLightComponent>();
         comp.Flickering = true;
@@ -110,7 +110,7 @@ public sealed partial class FlashStormRule : StationEventSystem<FlashStormRuleCo
     {
         base.Ended(rule, ref args);
 
-        Log.Error("flash storm ended");
+        Log.Debug("flash storm ended");
         _adminLogger.Add(LogType.EventStarted, LogImpact.Extreme, $"{ToPrettyString(rule.Owner)} Flash Storm ended.");
 
         foreach (var thunder in EntityQuery<LightningMarkerComponent>())
@@ -142,7 +142,7 @@ public sealed partial class FlashStormRule : StationEventSystem<FlashStormRuleCo
         foreach (var mapId in mapIds)
         {
             _weather.TrySetWeather(mapId, normalWeather, out _, TimeSpan.FromMinutes(99999));
-            Log.Error("Weather set");
+            Log.Debug("Weather set");
         }
     }
 }

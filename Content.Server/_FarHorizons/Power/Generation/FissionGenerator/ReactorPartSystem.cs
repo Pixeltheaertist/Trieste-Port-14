@@ -196,6 +196,7 @@ public sealed partial class ReactorPartSystem : SharedReactorPartSystem
                 gasMix.Temperature += DeltaT;
 
             var burncomp = EnsureComp<DamageOnInteractComponent>(uid);
+            burncomp.Damage ??= new(); // TRIESTE: EnsureComp leaves this null, which crashes clients when the comp is networked while cold.
 
             burncomp.IsDamageActive = component.Temperature > Atmospherics.T0C + _hotTemp;
 

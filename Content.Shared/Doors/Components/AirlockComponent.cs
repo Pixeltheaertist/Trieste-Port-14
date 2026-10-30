@@ -93,6 +93,13 @@ public sealed partial class AirlockComponent : Component
     public bool OpenUnlitVisible;
 
     /// <summary>
+    ///     TRIESTE SPECIFIC
+    ///     Whether the closed lights are always shown on a powered, closed door.
+    /// </summary>
+    [DataField]
+    public bool ClosedUnlitVisible = true;
+
+    /// <summary>
     /// Whether the door should display emergency access lights.
     /// </summary>
     [DataField]

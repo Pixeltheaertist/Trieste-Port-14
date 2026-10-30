@@ -27,17 +27,19 @@
   description: A heavy helmet designed to withstand indescribable pressure. Utilizes a built-in camera for user vision.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/abyssal.rsi
+    sprite: _TP/Clothing/Head/Hardsuits/abyssal.rsi
     layers: # Old helmet-light layers; the upstream base now expects icon-unshaded / light-overlay states.
     - state: icon
     - state: icon-flash
       visible: false
       map: [ "light" ]
   - type: ToggleableVisuals
-    spriteLayer: light
-    clothingVisuals: {} # The upstream base adds an equipped-head-light overlay this sprite doesn't have.
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/abyssal.rsi
+    sprite: _TP/Clothing/Head/Hardsuits/abyssal.rsi
   - type: AbyssalSuit
   - type: PointLight
     color: orange

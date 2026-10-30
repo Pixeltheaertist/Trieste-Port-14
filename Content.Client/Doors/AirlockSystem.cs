@@ -98,7 +98,10 @@ public sealed partial class AirlockSystem : SharedAirlockSystem
 
             if (!showBolted && !showEmergency)
             {
-                if (state == DoorState.Closing || state == DoorState.Opening || state == DoorState.Denying || state == DoorState.Closed)
+                if (state == DoorState.Closing || state == DoorState.Opening || state == DoorState.Denying)
+                    showBaseUnlit = true;
+
+                if (state == DoorState.Closed && ent.Comp.ClosedUnlitVisible) // TRIESTE: old door sprites, see _TP/Structures/Doors
                     showBaseUnlit = true;
 
                 if (state == DoorState.Open && ent.Comp.OpenUnlitVisible)

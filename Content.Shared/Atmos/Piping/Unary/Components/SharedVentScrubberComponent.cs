@@ -20,6 +20,7 @@ public sealed partial class GasVentScrubberData : BaseAtmosDeviceData
     public bool WideNet { get; set; } = false;
     public bool AirAlarmPanicWireCut { get; set; }
 
+    // TRIESTE: Water.
     public static HashSet<Gas> DefaultFilterGases = new()
     {
         Gas.CarbonDioxide,
@@ -28,7 +29,8 @@ public sealed partial class GasVentScrubberData : BaseAtmosDeviceData
         Gas.WaterVapor,
         Gas.Ammonia,
         Gas.NitrousOxide,
-        Gas.Frezon
+        Gas.Frezon,
+        Gas.Water
     };
 
     // Presets for 'dumb' air alarm modes

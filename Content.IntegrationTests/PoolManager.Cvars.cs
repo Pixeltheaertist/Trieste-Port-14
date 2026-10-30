@@ -35,5 +35,15 @@ public static partial class PoolManager
         (CCVars.InteractionRateLimitPeriod.Name, "0.1"),
         (CCVars.MovementMobPushing.Name, "false"),
         (CCVars.ResourceUploadingStoreDeletionDays.Name, "0"),
+
+        // TRIESTE: our atmos defaults are tuned for gameplay (see CCVars.Atmos.cs), but the atmos tests
+        // are written against upstream's values, so run them with those.
+        (CCVars.SpaceWindMaxVelocity.Name,    "30"),
+        (CCVars.MonstermosEqualization.Name,  "true"),
+        (CCVars.SuperconductionTileLoss.Name, "30"),
+        (CCVars.AtmosMaxProcessTime.Name,     "3"),
+        (CCVars.AtmosTickRate.Name,           "15"),
+        (CCVars.AtmosSpeedup.Name,            "8"),
+        (CCVars.AtmosHeatScale.Name,          "8"),
     };
 }

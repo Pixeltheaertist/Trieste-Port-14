@@ -46,7 +46,7 @@
   - Visitor
 
 - type: department
-  id: Expeditionary
+  id: TP14DepartmentExpeditions
   name: department-Expeditions-name
   description: department-Expeditions-desc
   color: "#846DCF"

@@ -43,6 +43,7 @@
     - electrons
   - type: BadFood
   - type: Solution
+    id: food # TRIESTE
     solution:
       reagents:
       - ReagentId: Uranium
