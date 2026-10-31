@@ -4,23 +4,14 @@ meta:
   engineVersion: 293.0.1
   forkId: ""
   forkVersion: ""
-  time: 10/24/2026 02:02:32
-  entityCount: 13375
+  time: 10/31/2026 00:48:33
+  entityCount: 13384
 maps:
 - 1
 grids:
 - 2
 orphans: []
 nullspace:
-- 3884
-- 6092
-- 7139
-- 7143
-- 11768
-- 11769
-- 11786
-- 12385
-- 12386
 - 12388
 - 12390
 - 12498
@@ -52,6 +43,15 @@ nullspace:
 - 13373
 - 13374
 - 13375
+- 13376
+- 13377
+- 13378
+- 13379
+- 13380
+- 13381
+- 13382
+- 13383
+- 13384
 tilemap:
   0: Space
   5: FloorAsteroidTile
@@ -1566,15 +1566,6 @@ entities:
     - type: GridSplitNode
     - type: ChunkContainer
       chunkEntities:
-      - 3884
-      - 6092
-      - 7139
-      - 7143
-      - 11768
-      - 11769
-      - 11786
-      - 12385
-      - 12386
       - 12388
       - 12390
       - 12498
@@ -1606,6 +1597,15 @@ entities:
       - 13373
       - 13374
       - 13375
+      - 13376
+      - 13377
+      - 13378
+      - 13379
+      - 13380
+      - 13381
+      - 13382
+      - 13383
+      - 13384
 - proto: ActionToggleLight
   entities:
   - uid: 5688
@@ -2169,7 +2169,7 @@ entities:
       pos: 45.5,19.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -63714.55
+      secondsUntilStateChange: -64028.23
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -2182,7 +2182,7 @@ entities:
       pos: 47.5,19.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -162470.78
+      secondsUntilStateChange: -162784.47
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -2228,7 +2228,7 @@ entities:
       pos: 32.5,-31.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -63047.12
+      secondsUntilStateChange: -63360.8
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -2247,7 +2247,7 @@ entities:
       accessListsOriginal: []
     - type: Door
       state: Opening
-      secondsUntilStateChange: -425177.75
+      secondsUntilStateChange: -425491.44
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -2454,7 +2454,7 @@ entities:
       pos: 36.5,17.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -72816.86
+      secondsUntilStateChange: -73130.54
     - type: AccessReader
       accessListsOriginal: []
     - type: DeviceLinkSource
@@ -2613,7 +2613,7 @@ entities:
       pos: 53.5,-8.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -35907.99
+      secondsUntilStateChange: -36221.668
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -2637,7 +2637,7 @@ entities:
       pos: 18.5,23.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -464293.53
+      secondsUntilStateChange: -464607.22
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -2738,7 +2738,7 @@ entities:
       pos: 40.5,-12.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -47936.434
+      secondsUntilStateChange: -48250.113
     - type: AccessReader
       accessListsOriginal: []
     - type: DeviceLinkSource
@@ -2848,7 +2848,7 @@ entities:
       pos: 9.5,-11.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -5025.6895
+      secondsUntilStateChange: -5339.3696
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -3001,7 +3001,7 @@ entities:
       accessListsOriginal: []
     - type: Door
       state: Opening
-      secondsUntilStateChange: -93334.72
+      secondsUntilStateChange: -93648.4
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -3016,7 +3016,7 @@ entities:
       pos: 39.5,-30.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -60165.42
+      secondsUntilStateChange: -60479.1
     - type: AccessReader
       accessListsOriginal: []
     - type: DeviceLinkSource
@@ -3042,7 +3042,7 @@ entities:
       pos: 32.5,-23.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -52622.836
+      secondsUntilStateChange: -52936.516
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -3094,7 +3094,7 @@ entities:
       accessListsOriginal: []
     - type: Door
       state: Opening
-      secondsUntilStateChange: -58775.89
+      secondsUntilStateChange: -59089.57
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -3148,7 +3148,7 @@ entities:
       accessListsOriginal: []
     - type: Door
       state: Opening
-      secondsUntilStateChange: -440875.28
+      secondsUntilStateChange: -441188.97
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -3690,6 +3690,12 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: -17.5,8.5
+  - uid: 2826
+    components:
+    - type: Transform
+      parent: 2
+      rot: 3.141592653589793 rad
+      pos: -18.5,14.5
 - proto: AppraisalTool
   entities:
   - uid: 13055
@@ -5494,11 +5500,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 16.5,1.5
-  - uid: 530
-    components:
-    - type: Transform
-      parent: 2
-      pos: -16.5,12.5
   - uid: 533
     components:
     - type: Transform
@@ -10544,6 +10545,11 @@ entities:
     - type: Transform
       parent: 2
       pos: 54.5,-28.5
+  - uid: 12386
+    components:
+    - type: Transform
+      parent: 2
+      pos: -18.5,14.5
   - uid: 12513
     components:
     - type: Transform
@@ -15205,6 +15211,11 @@ entities:
     - type: Transform
       parent: 2
       pos: 18.5,42.5
+  - uid: 3884
+    components:
+    - type: Transform
+      parent: 2
+      pos: -16.5,11.5
   - uid: 3955
     components:
     - type: Transform
@@ -15380,6 +15391,11 @@ entities:
     - type: Transform
       parent: 2
       pos: 32.5,39.5
+  - uid: 6092
+    components:
+    - type: Transform
+      parent: 2
+      pos: -16.5,12.5
   - uid: 6094
     components:
     - type: Transform
@@ -15390,6 +15406,16 @@ entities:
     - type: Transform
       parent: 2
       pos: 32.5,37.5
+  - uid: 7139
+    components:
+    - type: Transform
+      parent: 2
+      pos: -16.5,14.5
+  - uid: 7143
+    components:
+    - type: Transform
+      parent: 2
+      pos: -16.5,15.5
   - uid: 7562
     components:
     - type: Transform
@@ -16160,6 +16186,21 @@ entities:
     - type: Transform
       parent: 2
       pos: 2.5,-10.5
+  - uid: 11768
+    components:
+    - type: Transform
+      parent: 2
+      pos: -16.5,13.5
+  - uid: 11769
+    components:
+    - type: Transform
+      parent: 2
+      pos: -17.5,15.5
+  - uid: 11786
+    components:
+    - type: Transform
+      parent: 2
+      pos: -18.5,15.5
   - uid: 11943
     components:
     - type: Transform
@@ -16175,6 +16216,11 @@ entities:
     - type: Transform
       parent: 2
       pos: -3.5,-32.5
+  - uid: 12385
+    components:
+    - type: Transform
+      parent: 2
+      pos: -18.5,14.5
   - uid: 12540
     components:
     - type: Transform
@@ -24399,7 +24445,7 @@ entities:
       pos: 58.495705,-13.406763
 - proto: ChunkEntity
   entities:
-  - uid: 3884
+  - uid: 12388
     components:
     - type: ChunkEntity
       root: 2
@@ -24801,7 +24847,7 @@ entities:
             cleanable: True
           decals:
             110: 14,-8
-  - uid: 6092
+  - uid: 12390
     components:
     - type: ChunkEntity
       root: 2
@@ -25059,7 +25105,7 @@ entities:
             4226: 31,-21
             4227: 30,-21
             4228: 30,-23
-  - uid: 7139
+  - uid: 12498
     components:
     - type: ChunkEntity
       root: 2
@@ -25732,7 +25778,7 @@ entities:
             4353: 37,-31
             4354: 37,-29
             4355: 37,-31
-  - uid: 7143
+  - uid: 12548
     components:
     - type: ChunkEntity
       root: 2
@@ -26260,7 +26306,7 @@ entities:
             cleanable: True
           decals:
             4773: 59,-14
-  - uid: 11768
+  - uid: 12766
     components:
     - type: ChunkEntity
       root: 2
@@ -26591,7 +26637,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             929: 26,42
-  - uid: 11769
+  - uid: 12768
     components:
     - type: ChunkEntity
       root: 2
@@ -27067,7 +27113,7 @@ entities:
           decals:
             2707: 5,-18
             2708: 5,-17
-  - uid: 11786
+  - uid: 12794
     components:
     - type: ChunkEntity
       root: 2
@@ -27462,7 +27508,7 @@ entities:
             5073: -14,23
             5074: -14,25
             5075: -13,25
-  - uid: 12385
+  - uid: 12955
     components:
     - type: ChunkEntity
       root: 2
@@ -27535,7 +27581,7 @@ entities:
             color: '#FFD346FF'
           decals:
             4215: -10.007347,32.986153
-  - uid: 12386
+  - uid: 12975
     components:
     - type: ChunkEntity
       root: 2
@@ -27796,7 +27842,7 @@ entities:
             cleanable: True
           decals:
             111: 31,8
-  - uid: 12388
+  - uid: 13005
     components:
     - type: ChunkEntity
       root: 2
@@ -28280,7 +28326,7 @@ entities:
             1731: 40,15
             1732: 40,14
             1733: 40,13
-  - uid: 12390
+  - uid: 13125
     components:
     - type: ChunkEntity
       root: 2
@@ -28343,7 +28389,7 @@ entities:
             1016: -20,11
             1017: -19,11
             1018: -18,11
-  - uid: 12498
+  - uid: 13300
     components:
     - type: ChunkEntity
       root: 2
@@ -28434,7 +28480,7 @@ entities:
           decals:
             73: 0,21
             74: 1,21
-  - uid: 12548
+  - uid: 13357
     components:
     - type: ChunkEntity
       root: 2
@@ -28795,7 +28841,7 @@ entities:
             424: -1.0668488,4.757694
             425: -1.0668488,4.757694
             426: -1.0668488,4.757694
-  - uid: 12766
+  - uid: 13358
     components:
     - type: ChunkEntity
       root: 2
@@ -29263,7 +29309,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             4453: 60,-17
-  - uid: 12768
+  - uid: 13359
     components:
     - type: ChunkEntity
       root: 2
@@ -29320,7 +29366,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             4458: 64,-21
-  - uid: 12794
+  - uid: 13360
     components:
     - type: ChunkEntity
       root: 2
@@ -29658,7 +29704,7 @@ entities:
             2714: -14,-24
             2715: -13,-24
             2716: -12,-24
-  - uid: 12955
+  - uid: 13361
     components:
     - type: ChunkEntity
       root: 2
@@ -29966,7 +30012,7 @@ entities:
             cleanable: True
           decals:
             5280: 49,33
-  - uid: 12975
+  - uid: 13362
     components:
     - type: ChunkEntity
       root: 2
@@ -30277,7 +30323,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             1103: 14,-38
-  - uid: 13005
+  - uid: 13363
     components:
     - type: ChunkEntity
       root: 2
@@ -30302,7 +30348,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             2846: -2,-33
-  - uid: 13125
+  - uid: 13364
     components:
     - type: ChunkEntity
       root: 2
@@ -30994,7 +31040,7 @@ entities:
           decals:
             5281: 46,33
             5282: 46,33
-  - uid: 13300
+  - uid: 13365
     components:
     - type: ChunkEntity
       root: 2
@@ -31162,7 +31208,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             1005: 12,32
-  - uid: 13357
+  - uid: 13366
     components:
     - type: ChunkEntity
       root: 2
@@ -31414,7 +31460,7 @@ entities:
             2704: -10,-16
             2705: -9,-16
             2706: -8,-16
-  - uid: 13358
+  - uid: 13367
     components:
     - type: ChunkEntity
       root: 2
@@ -31715,7 +31761,7 @@ entities:
             4131: 57,14
             4132: 57,15
             4133: 57,15
-  - uid: 13359
+  - uid: 13368
     components:
     - type: ChunkEntity
       root: 2
@@ -31998,7 +32044,7 @@ entities:
             cleanable: True
           decals:
             5226: 40,31
-  - uid: 13360
+  - uid: 13369
     components:
     - type: ChunkEntity
       root: 2
@@ -32555,7 +32601,7 @@ entities:
             cleanable: True
           decals:
             2334: 37,-14
-  - uid: 13361
+  - uid: 13370
     components:
     - type: ChunkEntity
       root: 2
@@ -32604,7 +32650,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             4797: 64,-15
-  - uid: 13362
+  - uid: 13371
     components:
     - type: ChunkEntity
       root: 2
@@ -32784,7 +32830,7 @@ entities:
           decals:
             4153: 63,20
             4154: 63,20
-  - uid: 13363
+  - uid: 13372
     components:
     - type: ChunkEntity
       root: 2
@@ -32810,7 +32856,7 @@ entities:
             cleanable: True
           decals:
             3274: 48,-33
-  - uid: 13364
+  - uid: 13373
     components:
     - type: ChunkEntity
       root: 2
@@ -32899,7 +32945,7 @@ entities:
             2178: 34,-33
             2179: 36,-33
             2180: 37,-33
-  - uid: 13365
+  - uid: 13374
     components:
     - type: ChunkEntity
       root: 2
@@ -32993,7 +33039,7 @@ entities:
             cleanable: True
           decals:
             839: 27,16
-  - uid: 13366
+  - uid: 13375
     components:
     - type: ChunkEntity
       root: 2
@@ -33373,7 +33419,7 @@ entities:
             160: 8,6
             161: 7,6
             162: 6,6
-  - uid: 13367
+  - uid: 13376
     components:
     - type: ChunkEntity
       root: 2
@@ -33554,7 +33600,7 @@ entities:
             cleanable: True
           decals:
             5647: 36.195957,51.781414
-  - uid: 13368
+  - uid: 13377
     components:
     - type: ChunkEntity
       root: 2
@@ -33590,7 +33636,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             4200: -17,29
-  - uid: 13369
+  - uid: 13378
     components:
     - type: ChunkEntity
       root: 2
@@ -33608,7 +33654,7 @@ entities:
             4629: -18,32
             4630: -17,32
             4631: -17,33
-  - uid: 13370
+  - uid: 13379
     components:
     - type: ChunkEntity
       root: 2
@@ -33694,7 +33740,7 @@ entities:
             cleanable: True
           decals:
             2333: 31,-13
-  - uid: 13371
+  - uid: 13380
     components:
     - type: ChunkEntity
       root: 2
@@ -33756,7 +33802,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             1088: 16,-35
-  - uid: 13372
+  - uid: 13381
     components:
     - type: ChunkEntity
       root: 2
@@ -33790,7 +33836,7 @@ entities:
             angle: -1.5707963267948966 rad
           decals:
             2508: 64,17
-  - uid: 13373
+  - uid: 13382
     components:
     - type: ChunkEntity
       root: 2
@@ -33807,7 +33853,7 @@ entities:
             angle: 1.5707963267948966 rad
           decals:
             4139: 64,15
-  - uid: 13374
+  - uid: 13383
     components:
     - type: ChunkEntity
       root: 2
@@ -33839,7 +33885,7 @@ entities:
           decals:
             3832: 12,48
             3833: 12,48
-  - uid: 13375
+  - uid: 13384
     components:
     - type: ChunkEntity
       root: 2
@@ -35228,7 +35274,7 @@ entities:
       pos: -10.5,-11.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -138036.81
+      secondsUntilStateChange: -138350.5
   - uid: 10921
     components:
     - type: Transform
@@ -46275,7 +46321,7 @@ entities:
       pos: 12.5,-1.5
     - type: Door
       state: Closing
-      secondsUntilStateChange: -195046.4
+      secondsUntilStateChange: -195360.1
   - uid: 3844
     components:
     - type: Transform
@@ -48868,47 +48914,63 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: 30.5,-18.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 811
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 25.5,16.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 1003
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 26.5,14.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 2067
     components:
     - type: Transform
       parent: 2
       pos: 32.5,55.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4081
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -14.5,13.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6093
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 32.5,40.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7559
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 35.5,45.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10066
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 60.5,13.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10754
     components:
     - type: Transform
@@ -48916,6 +48978,8 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 4.5,-31.5
       anchored: False
+    - type: PointLight
+      offset: 0,-0.5
     - type: Physics
       bodyType: Dynamic
   - uid: 13121
@@ -48924,41 +48988,55 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 32.5,45.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 13149
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 31.5,57.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 13203
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 36.5,55.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 13258
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 29.5,52.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 13299
     components:
     - type: Transform
       parent: 2
       pos: 32.5,53.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 13316
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 30.5,49.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 13344
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 0.5,-40.5
+    - type: PointLight
+      offset: 0,-0.5
 - proto: PoweredLEDSmallLight
   entities:
   - uid: 10026
@@ -48967,6 +49045,8 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: 57.5,14.5
+    - type: PointLight
+      offset: 0,-0.5
 - proto: Poweredlight
   entities:
   - uid: 4086
@@ -48975,23 +49055,31 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 19.5,44.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4087
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 23.5,46.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4136
     components:
     - type: Transform
       parent: 2
       pos: -17.5,13.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5109
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -10.5,10.5
+    - type: PointLight
+      offset: 0,-0.5
 - proto: PoweredLightPostSmall
   entities:
   - uid: 781
@@ -49042,6 +49130,8 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: 11.5,-36.5
+    - type: PointLight
+      offset: 0,-0.5
 - proto: PoweredSmallLight
   entities:
   - uid: 980
@@ -49049,29 +49139,39 @@ entities:
     - type: Transform
       parent: 2
       pos: 34.5,35.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 1575
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 4.5,46.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 3327
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 38.5,42.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 3330
     components:
     - type: Transform
       parent: 2
       pos: 39.5,35.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 3331
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 48.5,44.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4162
     components:
     - type: Transform
@@ -49079,6 +49179,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 20.5,15.5
     - type: PointLight
+      offset: 0,-0.5
       enabled: False
     - type: ApcPowerReceiver
       powerLoad: 0
@@ -49088,114 +49189,154 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 32.5,19.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4241
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 30.5,14.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4248
     components:
     - type: Transform
       parent: 2
       pos: 14.5,27.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4252
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 16.5,28.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4818
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 13.5,46.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4904
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 21.5,22.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4910
     components:
     - type: Transform
       parent: 2
       pos: 20.5,19.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6251
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 29.5,43.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7534
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 46.5,-27.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7702
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 44.5,33.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7723
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 47.5,-9.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10023
     components:
     - type: Transform
       parent: 2
       pos: 58.5,21.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10024
     components:
     - type: Transform
       parent: 2
       pos: 64.5,20.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10025
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 64.5,15.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10027
     components:
     - type: Transform
       parent: 2
       pos: 73.5,19.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10071
     components:
     - type: Transform
       parent: 2
       pos: -3.5,-6.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10736
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -5.5,-25.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 12195
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 19.5,-25.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 12257
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 15.5,-23.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 12260
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 13.5,-22.5
+    - type: PointLight
+      offset: 0,-0.5
 - proto: PoweredSmallLightWaterProof
   entities:
   - uid: 4267
@@ -49203,6 +49344,8 @@ entities:
     - type: Transform
       parent: 2
       pos: 13.5,24.5
+    - type: PointLight
+      offset: 0,-0.5
 - proto: PoweredWarmSmallLight
   entities:
   - uid: 4270
@@ -49211,64 +49354,88 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 26.5,45.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6918
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 41.5,45.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6927
     components:
     - type: Transform
       parent: 2
       pos: 35.5,40.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6928
     components:
     - type: Transform
       parent: 2
       pos: 35.5,43.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6931
     components:
     - type: Transform
       parent: 2
       pos: 41.5,43.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6932
     components:
     - type: Transform
       parent: 2
       pos: 41.5,40.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6933
     components:
     - type: Transform
       parent: 2
       pos: 45.5,40.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6934
     components:
     - type: Transform
       parent: 2
       pos: 45.5,43.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6935
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 51.5,45.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7134
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 45.5,45.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7135
     components:
     - type: Transform
       parent: 2
       pos: 51.5,43.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 13274
     components:
     - type: Transform
       parent: 2
       pos: 35.5,53.5
+    - type: PointLight
+      offset: 0,-0.5
 - proto: PsychBed
   entities:
   - uid: 3048
@@ -58238,6 +58405,8 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: 48.5,-15.5
+    - type: PointLight
+      offset: 0,-0.5
 - proto: SmartFridgeMedical
   entities:
   - uid: 10401
@@ -61763,879 +61932,1185 @@ entities:
     - type: Transform
       parent: 2
       pos: -1.5,2.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 3267
     components:
     - type: Transform
       parent: 2
       pos: 50.5,-1.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4173
     components:
     - type: Transform
       parent: 2
       pos: 1.5,-22.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4174
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 26.5,29.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4178
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 6.5,-4.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4186
     components:
     - type: Transform
       parent: 2
       pos: -9.5,41.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4188
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 34.5,-0.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4189
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 29.5,-14.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4192
     components:
     - type: Transform
       parent: 2
       pos: -9.5,33.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4193
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -7.5,28.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4194
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 1.5,33.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4195
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 26.5,1.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4196
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 27.5,0.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4197
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 9.5,40.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4198
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 9.5,34.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4200
     components:
     - type: Transform
       parent: 2
       pos: 15.5,32.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4201
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 14.5,42.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4203
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 28.5,29.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4204
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -0.5,-4.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4205
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -1.5,24.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4207
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -2.5,28.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4208
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 35.5,-10.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4209
     components:
     - type: Transform
       parent: 2
       pos: 49.5,24.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4212
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -9.5,43.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4213
     components:
     - type: Transform
       parent: 2
       pos: 2.5,32.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4214
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 34.5,22.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4215
     components:
     - type: Transform
       parent: 2
       pos: 43.5,24.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4216
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 38.5,21.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4218
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 51.5,39.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4224
     components:
     - type: Transform
       parent: 2
       pos: 43.5,37.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4225
     components:
     - type: Transform
       parent: 2
       pos: 35.5,37.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4227
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 13.5,-12.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4229
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 32.5,-18.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4247
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -0.5,-17.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4250
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 38.5,-13.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4260
     components:
     - type: Transform
       parent: 2
       pos: -16.5,1.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4264
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 28.5,35.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4268
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 21.5,36.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4304
     components:
     - type: Transform
       parent: 2
       pos: 11.5,32.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4305
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 22.5,35.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4440
     components:
     - type: Transform
       parent: 2
       pos: 19.5,35.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4441
     components:
     - type: Transform
       parent: 2
       pos: 28.5,38.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4443
     components:
     - type: Transform
       parent: 2
       pos: 22.5,38.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4477
     components:
     - type: Transform
       parent: 2
       pos: 21.5,3.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4727
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 6.5,7.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4750
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -1.5,20.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4759
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -7.5,23.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4765
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -13.5,26.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4766
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -13.5,23.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4771
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -9.5,26.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4776
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -9.5,23.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4808
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 14.5,6.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4814
     components:
     - type: Transform
       parent: 2
       pos: 11.5,8.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4853
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 10.5,4.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4859
     components:
     - type: Transform
       parent: 2
       pos: 8.5,1.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4863
     components:
     - type: Transform
       parent: 2
       pos: 12.5,1.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4869
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 4.5,3.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4905
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 28.5,9.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4912
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 4.5,9.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4919
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 13.5,10.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4920
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 10.5,13.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4942
     components:
     - type: Transform
       parent: 2
       pos: 24.5,3.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5036
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 28.5,4.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5055
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 26.5,10.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5062
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 20.5,10.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5068
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 6.5,5.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5078
     components:
     - type: Transform
       parent: 2
       pos: -21.5,7.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5218
     components:
     - type: Transform
       parent: 2
       pos: -17.5,7.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5292
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -14.5,31.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5314
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -9.5,35.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5431
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 16.5,20.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5438
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 17.5,24.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5468
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -14.5,2.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5584
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -11.5,-0.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5739
     components:
     - type: Transform
       parent: 2
       pos: -16.5,-0.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5740
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -5.5,23.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5741
     components:
     - type: Transform
       parent: 2
       pos: 2.5,26.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5742
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 2.5,28.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5746
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 11.5,36.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5747
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 4.5,-27.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5750
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 22.5,25.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5951
     components:
     - type: Transform
       parent: 2
       pos: 35.5,18.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6015
     components:
     - type: Transform
       parent: 2
       pos: 40.5,18.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6031
     components:
     - type: Transform
       parent: 2
       pos: 44.5,18.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6033
     components:
     - type: Transform
       parent: 2
       pos: 49.5,18.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6035
     components:
     - type: Transform
       parent: 2
       pos: -11.5,3.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6036
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -16.5,3.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6037
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 44.5,-32.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6038
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 30.5,34.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6131
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 39.5,-25.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6255
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 48.5,-20.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6580
     components:
     - type: Transform
       parent: 2
       pos: 48.5,-31.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6913
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 39.5,-28.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6914
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 48.5,-29.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6915
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 46.5,20.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6916
     components:
     - type: Transform
       parent: 2
       pos: 38.5,15.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7136
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 40.5,13.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7137
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 40.5,9.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7274
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 37.5,6.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7334
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 40.5,3.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7704
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 45.5,0.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7707
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 50.5,0.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7708
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 51.5,3.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7709
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 51.5,9.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7710
     components:
     - type: Transform
       parent: 2
       pos: 48.5,15.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7711
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 45.5,11.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7712
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 46.5,6.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7713
     components:
     - type: Transform
       parent: 2
       pos: 46.5,-1.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7714
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 28.5,-13.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7716
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 50.5,-7.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7717
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 34.5,-25.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7718
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 31.5,-27.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7720
     components:
     - type: Transform
       parent: 2
       pos: 48.5,-22.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7721
     components:
     - type: Transform
       parent: 2
       pos: 40.5,-18.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7722
     components:
     - type: Transform
       parent: 2
       pos: -1.5,8.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7754
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 40.5,-33.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7764
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 36.5,-34.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7784
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 0.5,12.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7805
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 1.5,-8.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7808
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 8.5,-7.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7941
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -9.5,-12.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 8447
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -9.5,-16.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 8723
     components:
     - type: Transform
       parent: 2
       pos: 34.5,-3.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 8732
     components:
     - type: Transform
       parent: 2
       pos: 11.5,-4.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 8829
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -5.5,-17.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 8886
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -5.5,-11.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 8887
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 1.5,-11.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 8889
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -3.5,-21.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 8997
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -2.5,-29.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 9244
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 2.5,-29.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 9246
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -1.5,-26.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 9247
     components:
     - type: Transform
       parent: 2
       pos: -8.5,-20.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 9716
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 10.5,-13.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 9718
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 10.5,-9.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10072
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 5.5,13.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10073
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 12.5,25.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10735
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -0.5,3.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10737
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 50.5,-28.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10738
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 51.5,-12.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10739
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 50.5,-21.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10741
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 58.5,-13.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10742
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 62.5,-18.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10743
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 62.5,-22.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10746
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 56.5,-15.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10749
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 41.5,-16.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10751
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 53.5,-25.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10752
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 57.5,-28.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10837
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 53.5,-31.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10883
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 48.5,-5.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10884
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 64.5,-13.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 11120
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 37.5,-18.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 11121
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 37.5,-30.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 11767
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -4.5,22.5
+    - type: PointLight
+      offset: 0,-0.5
 - proto: TP14ChemistryColdplate
   entities:
   - uid: 10846
@@ -62822,6 +63297,8 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: 43.5,-12.5
+    - type: PointLight
+      offset: 0,-0.5
 - proto: TP14CuttingBoard
   entities:
   - uid: 9680
@@ -62837,365 +63314,491 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 28.5,-21.5
+    - type: PointLight
+      offset: 0,-0.5
+  - uid: 530
+    components:
+    - type: Transform
+      parent: 2
+      rot: 3.141592653589793 rad
+      pos: 42.5,-9.5
   - uid: 823
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 29.5,-25.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 1007
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 19.5,23.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 1381
     components:
     - type: Transform
       parent: 2
       pos: 2.5,-35.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 1501
     components:
     - type: Transform
       parent: 2
       pos: -1.5,-35.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 1505
     components:
     - type: Transform
       parent: 2
       pos: 44.5,7.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 1558
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 43.5,0.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 1596
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 42.5,10.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 1717
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 42.5,14.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 1733
     components:
     - type: Transform
       parent: 2
       pos: 25.5,23.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 1798
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -19.5,33.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 1860
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 47.5,26.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 1862
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 40.5,26.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 1946
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 35.5,29.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 2061
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 41.5,22.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 2094
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 43.5,26.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 2095
     components:
     - type: Transform
       parent: 2
       pos: 9.5,19.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 2097
     components:
     - type: Transform
       parent: 2
       pos: 15.5,19.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 2099
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 38.5,24.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 2109
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 45.5,-9.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 2110
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -1.5,-21.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 2113
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -13.5,29.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 2115
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 45.5,15.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 2679
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 37.5,-9.5
-  - uid: 2826
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 42.5,-9.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 2828
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 41.5,-7.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 2829
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 36.5,-7.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 2840
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 54.5,41.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 2906
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 52.5,36.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 3079
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 45.5,31.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 3088
     components:
     - type: Transform
       parent: 2
       pos: 51.5,31.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 3323
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 29.5,-29.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 3324
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 30.5,-33.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 3325
     components:
     - type: Transform
       parent: 2
       pos: 32.5,-37.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 3326
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 39.5,-36.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 3328
     components:
     - type: Transform
       parent: 2
       pos: 41.5,-35.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 3332
     components:
     - type: Transform
       parent: 2
       pos: 47.5,-34.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 3392
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -7.5,10.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 3549
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 54.5,45.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 3564
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 32.5,-7.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 3663
     components:
     - type: Transform
       parent: 2
       pos: 0.5,-19.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 3845
     components:
     - type: Transform
       parent: 2
       pos: -8.5,-18.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4080
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -11.5,-16.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4082
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -6.5,-8.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4103
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -4.5,-4.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4154
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -3.5,-33.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4157
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -13.5,-18.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4166
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -11.5,-12.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4167
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -9.5,-8.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4168
     components:
     - type: Transform
       parent: 2
       pos: -7.5,-30.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4169
     components:
     - type: Transform
       parent: 2
       pos: 7.5,-33.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4170
     components:
     - type: Transform
       parent: 2
       pos: 18.5,-30.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4171
     components:
     - type: Transform
       parent: 2
       pos: 18.5,-27.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4172
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 14.5,-39.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4179
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -4.5,14.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4251
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -22.5,10.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4730
     components:
     - type: Transform
       parent: 2
       pos: -13.5,19.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4903
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 18.5,5.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5067
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 16.5,8.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5504
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 4.5,-31.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7757
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 32.5,-35.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7850
     components:
     - type: Transform
       parent: 2
       pos: -5.5,5.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10069
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 9.5,-26.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 11122
     components:
     - type: Transform
       parent: 2
       pos: -8.5,19.5
+    - type: PointLight
+      offset: 0,-0.5
 - proto: TP14FallMonitorOld
   entities:
   - uid: 13322
@@ -63231,58 +63834,78 @@ entities:
     - type: Transform
       parent: 2
       pos: 32.5,-20.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5744
     components:
     - type: Transform
       parent: 2
       pos: 14.5,40.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 5745
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 18.5,37.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6659
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 46.5,34.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 6675
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 49.5,34.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7725
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 7.5,10.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7845
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 3.5,-15.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 9245
     components:
     - type: Transform
       parent: 2
       pos: -8.5,-25.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10067
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 8.5,-13.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10068
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 8.5,-22.5
+    - type: PointLight
+      offset: 0,-0.5
 - proto: TP14LockerMedicalFilled
   entities:
   - uid: 10548
@@ -78324,49 +78947,49 @@ entities:
       parent: 2
       pos: -18.5,43.5
     - type: LightningMarker
-      nextStrike: 7.076847
+      nextStrike: 8.344715
   - uid: 5110
     components:
     - type: Transform
       parent: 2
       pos: -6.5,26.5
     - type: LightningMarker
-      nextStrike: 6.741491
+      nextStrike: 4.912826
   - uid: 7354
     components:
     - type: Transform
       parent: 2
       pos: 16.5,22.5
     - type: LightningMarker
-      nextStrike: 11.124715
+      nextStrike: 11.926523
   - uid: 7355
     components:
     - type: Transform
       parent: 2
       pos: -18.5,22.5
     - type: LightningMarker
-      nextStrike: 4.228672
+      nextStrike: 6.3627005
   - uid: 7356
     components:
     - type: Transform
       parent: 2
       pos: -9.5,1.5
     - type: LightningMarker
-      nextStrike: 6.07697
+      nextStrike: 5.5391445
   - uid: 7357
     components:
     - type: Transform
       parent: 2
       pos: 26.5,31.5
     - type: LightningMarker
-      nextStrike: 11.951857
+      nextStrike: 9.816669
   - uid: 7359
     components:
     - type: Transform
       parent: 2
       pos: 13.5,-30.5
     - type: LightningMarker
-      nextStrike: 9.100763
+      nextStrike: 5.4147105
   - uid: 12882
     components:
     - type: Transform
@@ -78374,14 +78997,14 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 1.5,3.5
     - type: LightningMarker
-      nextStrike: 7.1176977
+      nextStrike: 5.3109355
   - uid: 13282
     components:
     - type: Transform
       parent: 2
       pos: 34.5,56.5
     - type: LightningMarker
-      nextStrike: 8.520413
+      nextStrike: 4.93988
 - proto: TP14OutdoorGrill
   entities:
   - uid: 5448
@@ -78872,118 +79495,158 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: 20.5,5.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 2111
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 9.5,10.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 2643
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 2.5,-32.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4176
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -20.5,15.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 4177
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -15.5,15.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7535
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 37.5,0.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 7703
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 41.5,-1.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 8749
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 6.5,-19.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10070
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -15.5,28.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10142
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 22.5,5.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10145
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 26.5,7.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10217
     components:
     - type: Transform
       parent: 2
       pos: -13.5,-20.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10727
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -13.5,-24.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10728
     components:
     - type: Transform
       parent: 2
       pos: 56.5,-19.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10729
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -1.5,10.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10730
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 55.5,-9.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10731
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 54.5,-22.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10732
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 59.5,-20.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10733
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 55.5,-6.5
+    - type: PointLight
+      offset: 0,-0.5
   - uid: 10734
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -4.5,7.5
+    - type: PointLight
+      offset: 0,-0.5
 - proto: TP14WaterCanister
   entities:
   - uid: 3053
@@ -86890,7 +87553,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -421394.62
+      secondsUntilStateChange: -421708.3
     - type: Airlock
       autoClose: False
   - uid: 8300
@@ -87723,7 +88386,7 @@ entities:
       pos: 39.5,45.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -118164.23
+      secondsUntilStateChange: -118477.91
   - uid: 6259
     components:
     - type: MetaData

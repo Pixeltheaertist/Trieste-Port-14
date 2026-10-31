@@ -140,6 +140,7 @@
         density: 100
         mask:
         - SmallMobMask
+        - HighImpassable # Doors block HighImpassable.
         layer:
         - SmallMobLayer
   - type: MobState
@@ -299,6 +300,7 @@
         density: 100
         mask:
         - SmallMobMask
+        - HighImpassable # Doors block HighImpassable.
         layer:
         - SmallMobLayer
   - type: MobState
@@ -514,6 +516,7 @@
         density: 120
         mask:
         - SmallMobMask
+        - HighImpassable # Doors block HighImpassable.
         layer:
         - SmallMobLayer
   - type: GhostTakeoverAvailable
