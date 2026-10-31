@@ -86,6 +86,10 @@
   - type: Sprite
     layers:
     - state: brain-jellid
+  - type: SolutionManager
+    solutions:
+    - SolutionStomach
+  - type: Stomach
   - type: Metabolizer
     maxReagents: 6
     metabolizerTypes: [ Jellid ]

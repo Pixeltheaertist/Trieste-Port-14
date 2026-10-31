@@ -1,18 +1,30 @@
 # Trieste satiation presets. See Resources/Prototypes/Body/Satiation for the upstream bases.
 
+## HUNGER ##
 # Sea creatures
 - type: satiation
-  id: TP14SeaCreatureHunger
   parent: SimpleMobBaseHunger
+  id: TP14SeaCreatureHunger
   baseChangeRate: -0.25
 
 # The Thingy
 - type: satiation
-  id: TP14ThingyHunger
   parent: NormalSatiationHunger
+  id: TP14ThingyHunger
   baseChangeRate: -0.5
 
 - type: satiation
-  id: TP14ThingyThirst
+  parent: NormalSatiationHunger
+  id: TP14JellidHunger
+  baseChangeRate: 0.0
+
+## THIRST ##
+- type: satiation
   parent: NormalSatiationThirst
+  id: TP14ThingyThirst
   baseChangeRate: -0.5 # Uses the Bloodsucker metabolism, meaning it can only drink blood for thirst quenching.
+
+- type: satiation
+  parent: NormalSatiationThirst
+  id: TP14JellidThirst
+  baseChangeRate: 0.0

@@ -24,7 +24,7 @@
   name: ghost-role-information-settler-name
   description: ghost-role-information-settler-desc
   rules: ghost-role-information-nonantagonist-rules
-  entityPrototype: TP14MobDionaSettler
+  entityPrototype: TP14MobJellidSettler
 
 - type: ghostRole
   id: TP14SettlerLizard
