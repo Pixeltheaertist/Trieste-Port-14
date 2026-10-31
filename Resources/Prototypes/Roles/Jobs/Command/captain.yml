@@ -8,19 +8,19 @@
       time: 10h
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 2h # TRIESTE '4'
+      time: 2.5h # TRIESTE '4'
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 2h # TRIESTE: '4'
+      time: 2.5h # TRIESTE: '4'
     - !type:DepartmentTimeRequirement
       department: Science
-      time: 2h # TRIESTE: '4'
+      time: 2.5h # TRIESTE: '4'
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 2h # TRIESTE: '4'
+      time: 2.5h # TRIESTE: '4'
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 2h # TRIESTE: '4'
+      time: 2.5h # TRIESTE: '4'
   startingGear: CaptainGear
   icon: "TP14JobIconOverseer" # TRIESTE: 'JobIconCaptain'
   joinNotifyCrew: true

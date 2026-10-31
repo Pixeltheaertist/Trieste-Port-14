@@ -90,6 +90,12 @@
   suffix: Trieste
   name: Urist McJellid
   components:
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: TP14JellidHunger
+      Thirst:
+        prototype: TP14JellidThirst
   - type: Speech
     speechVerb: Slime
     speechSounds: TP14SpeechSoundsJellid

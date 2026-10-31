@@ -22,7 +22,7 @@
   - type: Pullable
   - type: Clickable
   - type: InteractionOutline
-  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+  - type: Sprite # TRIESTE: old sprite
     sprite: _TP/Structures/Wallmounts/Lighting/light_tube.rsi
     drawdepth: WallMountedItems
     layers:
@@ -32,13 +32,12 @@
       state: glow
       shader: unshaded
     state: base
-  - type: PointLight # TRIESTE: old (pre-respriting) light offset
+  - type: PointLight
     color: "#FFE4CE" # 5000K color temp
     energy: 0.8
     radius: 10
     softness: 1
-    offset: "0, -0.5"
-#    offset: "0, 0.25"
+    offset: "0, 0" # TRIESTE: "0, -0.5"
   - type: RCDDeconstructable
     cost: 4
     delay: 2
@@ -46,7 +45,7 @@
   - type: Physics
     bodyType: Static
   - type: InGas
-    damagedByGas: true # Water pressure shatters them
+    damagedByGas: true # TRIESTE: Water pressure shatters them
     gasThreshold: 75
     damage:
         types:
@@ -93,7 +92,7 @@
   - type: Construction
     graph: LightFixture
     node: tubeLight
-  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+  - type: Sprite # TRIESTE: Old sprite.
     sprite: _TP/Structures/Wallmounts/Lighting/light_tube.rsi
     drawdepth: WallMountedItems
     layers:
@@ -120,7 +119,7 @@
   suffix: Empty
   description: "A light fixture. Draws power and produces light when equipped with a light tube."
   components:
-  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+  - type: Sprite # TRIESTE: old sprite
     sprite: _TP/Structures/Wallmounts/Lighting/light_tube.rsi
     state: empty
   - type: PointLight
@@ -326,8 +325,7 @@
     enabled: false
   - type: PointLight # TRIESTE: old (pre-respriting) light offset
     enabled: false
-    offset: "0, -0.5"
-#    offset: "0, 0.25"
+    offset: "0, 0" # TRIESTE: "0, -0.5"
   - type: ContainerContainer
     containers:
       light_bulb: !type:ContainerSlot
@@ -461,7 +459,7 @@
   name: emergency light
   description: A small light with an internal battery that turns on as soon as it stops receiving any power. Nanotrasen technology allows it to adapt its color to alert crew to the conditions of the station.
   components:
-  - type: PointLight # TRIESTE: old (pre-respriting) light offset
+  - type: PointLight # TRIESTE: old light offset
     enabled: false
     radius: 5
     energy: 0.6
@@ -481,7 +479,7 @@
   - type: EmergencyLight
   - type: RotatingLight
     speed: 40
-  - type: Sprite # TRIESTE: old sprite (pre-respriting), see _TP/
+  - type: Sprite # TRIESTE: old sprite
     sprite: _TP/Structures/Wallmounts/Lighting/emergency_light.rsi
     layers:
     - state: base
