@@ -30,7 +30,6 @@ using Robust.Shared.Collections;
 using Robust.Shared.Console;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -66,14 +65,16 @@ public sealed partial class ServerArrivalsSystem : ArrivalsSystem
 
     private readonly List<ProtoId<BiomeTemplatePrototype>> _arrivalsBiomeOptions = new()
     {
-        "OceanWorld", // TRIESTE
+        "Grasslands",
+        "LowDesert",
+        "Snow",
     };
 
     public override void Initialize()
     {
         base.Initialize();
 
-        Cfg.OnValueChanged(CCVars.SweetwaterEnabled, SetArrivals); // TRIESTE: Sweetwater toggles arrivals
+        Cfg.OnValueChanged(CCVars.ArrivalsShuttles, SetArrivals);
 
         // Command so admins can set these for funsies
         _console.RegisterCommand("arrivals", ArrivalsCommand, ArrivalsCompletion);
@@ -125,20 +126,18 @@ public sealed partial class ServerArrivalsSystem : ArrivalsSystem
 
     private void SetupArrivalsStation()
     {
-        // TRIESTE: A check to make sure that Sweetwater and the Ocean don't load FOUR TIMES. -Cookie
-        if (EntityQuery<ArrivalsSourceComponent>().Any())
-            return;
-
-        // TRIESTE: Sweetwater (ArrivalsMap) is loaded as a whole map rather than a single grid.
         var path = new ResPath(Cfg.GetCVar(CCVars.ArrivalsMap));
         _mapSystem.CreateMap(out var mapId, runMapInit: false);
         var mapUid = _mapSystem.GetMap(mapId);
 
-        if (!_loader.TryLoadMap(path, out var map, out _))
+        if (!_loader.TryLoadGrid(mapId, path, out var grid))
             return;
 
-        _metaData.SetEntityName(mapUid, "SWEETWATER");
-        _mapSystem.InitializeMap(map.Value.AsNullable(), true);
+        _metaData.SetEntityName(mapUid, Loc.GetString("map-name-terminal"));
+
+        EnsureComp<ArrivalsSourceComponent>(grid.Value);
+        EnsureComp<ProtectedGridComponent>(grid.Value);
+        EnsureComp<PreventPilotComponent>(grid.Value);
 
         // Setup planet arrivals if relevant
         if (Cfg.GetCVar(CCVars.ArrivalsPlanet))
@@ -152,36 +151,30 @@ public sealed partial class ServerArrivalsSystem : ArrivalsSystem
             AddComp(mapUid, restricted);
         }
 
-        // TRIESTE: The Ocean (Arrivals2Map)
-        var path2 = new ResPath(Cfg.GetCVar(CCVars.Arrivals2Map));
-        _mapSystem.CreateMap(out var mapId2, runMapInit: false);
-        var mapUid2 = _mapSystem.GetMap(mapId2);
+        _mapSystem.InitializeMap(mapId);
 
-        if (!_loader.TryLoadMap(path2, out var map2, out _))
-            return;
+        // Handle roundstart stations.
+        var query = AllEntityQuery<StationArrivalsComponent>();
 
-        _metaData.SetEntityName(mapUid2, "OCEAN");
-        _mapSystem.InitializeMap(map2.Value.AsNullable(), true);
-
-        // TRIESTE: No arrivals shuttle; players travel from Sweetwater themselves.
-        // var query = AllEntityQuery<StationArrivalsComponent>();
-        // while (query.MoveNext(out var uid, out var comp))
-        //     SetupShuttle(uid, comp);
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            SetupShuttle(uid, comp);
+        }
     }
 
     private void SetArrivals(bool obj)
     {
-        // TRIESTE
-        if (obj == Enabled)
-            return;
-
         Enabled = obj;
 
         if (Enabled)
         {
-            // TRIESTE: only load Sweetwater/the Ocean once, and no arrivals shuttle.
-            if (!EntityQuery<ArrivalsSourceComponent>().Any())
-                SetupArrivalsStation();
+            SetupArrivalsStation();
+            var query = AllEntityQuery<StationArrivalsComponent>();
+
+            while (query.MoveNext(out var sUid, out var comp))
+            {
+                SetupShuttle(sUid, comp);
+            }
         }
         else
         {
@@ -243,7 +236,7 @@ public sealed partial class ServerArrivalsSystem : ArrivalsSystem
             return;
 
         // If it's a latespawn station then this will fail but that's okey
-        // SetupShuttle(uid, component); // TRIESTE: no arrivals shuttle
+        SetupShuttle(uid, component);
     }
 
     /// <summary>
@@ -455,10 +448,10 @@ public sealed partial class ServerArrivalsSystem : ArrivalsSystem
         switch (args[0])
         {
             case "enable":
-                Cfg.SetCVar(CCVars.SweetwaterEnabled, true); // TRIESTE
+                Cfg.SetCVar(CCVars.ArrivalsShuttles, true);
                 break;
             case "disable":
-                Cfg.SetCVar(CCVars.SweetwaterEnabled, false); // TRIESTE
+                Cfg.SetCVar(CCVars.ArrivalsShuttles, false);
                 break;
             case "returns":
                 var existing = Cfg.GetCVar(CCVars.ArrivalsReturns);

@@ -37,7 +37,4 @@ public sealed partial class CCVars : CVars
     /// </summary>
     public static readonly CVarDef<bool> DebugPow3rDisableParallel =
         CVarDef.Create("debug.pow3r_disable_parallel", true, CVar.SERVERONLY);
-
-    public static readonly CVarDef<string> Arrivals2Map =
-            CVarDef.Create("shuttle.arrivals2_map", "/Maps/Misc/ocean.yml", CVar.SERVERONLY);
 }

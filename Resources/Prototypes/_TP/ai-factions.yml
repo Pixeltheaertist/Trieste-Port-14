@@ -25,3 +25,19 @@
   - NanoTrasenTraitor # Trieste: Added.
   - Wizard
   - Xenoborg
+
+- type: npcFaction
+  id: TP14NpcFactionSolGov
+  hostile:
+  - NanoTrasen
+  - NanoTrasenTraitor
+  - TP14FactionSeaHostile
+  - SimpleHostile
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Dragon
+  - AllHostile
+  - Wizard
+  - Xenoborg

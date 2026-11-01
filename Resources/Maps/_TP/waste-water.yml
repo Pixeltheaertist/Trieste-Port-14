@@ -4,7 +4,7 @@ meta:
   engineVersion: 293.0.1
   forkId: ""
   forkVersion: ""
-  time: 10/24/2026 02:05:51
+  time: 11/01/2026 05:06:17
   entityCount: 49898
 maps:
 - 1
@@ -125291,175 +125291,175 @@ entities:
       parent: 2
       pos: -32.5,-62.5
     - type: LightningMarker
-      nextStrike: 5.660511
+      nextStrike: 11.806526
   - uid: 9404
     components:
     - type: Transform
       parent: 2
       pos: 59.5,-22.5
     - type: LightningMarker
-      nextStrike: 5.5767736
+      nextStrike: 6.5847726
   - uid: 9405
     components:
     - type: Transform
       parent: 2
       pos: 18.5,-23.5
     - type: LightningMarker
-      nextStrike: 8.96171
+      nextStrike: 11.599967
   - uid: 9406
     components:
     - type: Transform
       parent: 2
       pos: 42.5,-8.5
     - type: LightningMarker
-      nextStrike: 6.2301817
+      nextStrike: 10.622967
   - uid: 9521
     components:
     - type: Transform
       parent: 2
       pos: 66.5,5.5
     - type: LightningMarker
-      nextStrike: 4.0756135
+      nextStrike: 8.340992
   - uid: 9522
     components:
     - type: Transform
       parent: 2
       pos: -3.5,8.5
     - type: LightningMarker
-      nextStrike: 9.914555
+      nextStrike: 9.106066
   - uid: 9523
     components:
     - type: Transform
       parent: 2
       pos: -15.5,-24.5
     - type: LightningMarker
-      nextStrike: 5.264187
+      nextStrike: 11.022724
   - uid: 9676
     components:
     - type: Transform
       parent: 2
       pos: -32.5,1.5
     - type: LightningMarker
-      nextStrike: 10.906916
+      nextStrike: 9.603102
   - uid: 9677
     components:
     - type: Transform
       parent: 2
       pos: -27.5,-48.5
     - type: LightningMarker
-      nextStrike: 9.233758
+      nextStrike: 11.510307
   - uid: 9831
     components:
     - type: Transform
       parent: 2
       pos: 0.5,-47.5
     - type: LightningMarker
-      nextStrike: 5.9716024
+      nextStrike: 10.5277405
   - uid: 11080
     components:
     - type: Transform
       parent: 2
       pos: -15.5,-71.5
     - type: LightningMarker
-      nextStrike: 6.16714
+      nextStrike: 11.7059555
   - uid: 11220
     components:
     - type: Transform
       parent: 2
       pos: 0.5,-88.5
     - type: LightningMarker
-      nextStrike: 11.013157
+      nextStrike: 9.792361
   - uid: 11222
     components:
     - type: Transform
       parent: 2
       pos: -28.5,-98.5
     - type: LightningMarker
-      nextStrike: 7.2303047
+      nextStrike: 4.793337
   - uid: 11233
     components:
     - type: Transform
       parent: 2
       pos: 33.5,-119.5
     - type: LightningMarker
-      nextStrike: 10.787605
+      nextStrike: 9.659113
   - uid: 11369
     components:
     - type: Transform
       parent: 2
       pos: 88.5,-100.5
     - type: LightningMarker
-      nextStrike: 4.961097
+      nextStrike: 9.1523075
   - uid: 11371
     components:
     - type: Transform
       parent: 2
       pos: 99.5,-83.5
     - type: LightningMarker
-      nextStrike: 8.951628
+      nextStrike: 7.119624
   - uid: 11372
     components:
     - type: Transform
       parent: 2
       pos: 82.5,-63.5
     - type: LightningMarker
-      nextStrike: 4.8279433
+      nextStrike: 4.1236076
   - uid: 11373
     components:
     - type: Transform
       parent: 2
       pos: 110.5,-64.5
     - type: LightningMarker
-      nextStrike: 8.146128
+      nextStrike: 7.4863777
   - uid: 11374
     components:
     - type: Transform
       parent: 2
       pos: 78.5,-35.5
     - type: LightningMarker
-      nextStrike: 7.630204
+      nextStrike: 11.725298
   - uid: 12355
     components:
     - type: Transform
       parent: 2
       pos: 45.5,-25.5
     - type: LightningMarker
-      nextStrike: 5.693509
+      nextStrike: 5.7984357
   - uid: 12635
     components:
     - type: Transform
       parent: 2
       pos: 84.5,-0.5
     - type: LightningMarker
-      nextStrike: 7.132403
+      nextStrike: 8.232977
   - uid: 12775
     components:
     - type: Transform
       parent: 2
       pos: 100.5,-10.5
     - type: LightningMarker
-      nextStrike: 6.7217956
+      nextStrike: 4.6194515
   - uid: 15145
     components:
     - type: Transform
       parent: 2
       pos: 97.5,15.5
     - type: LightningMarker
-      nextStrike: 4.758487
+      nextStrike: 4.747592
   - uid: 15146
     components:
     - type: Transform
       parent: 2
       pos: 67.5,16.5
     - type: LightningMarker
-      nextStrike: 5.138588
+      nextStrike: 4.1785274
   - uid: 17832
     components:
     - type: Transform
       parent: 2
       pos: 100.5,-119.5
     - type: LightningMarker
-      nextStrike: 6.7570906
+      nextStrike: 4.1611147
 - proto: TP14SignDirectionalLadder
   entities:
   - uid: 49888
