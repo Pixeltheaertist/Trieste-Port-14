@@ -14,4 +14,10 @@ public sealed partial class BellPortComponent : Component
     /// </summary>
     [DataField]
     public string PortName = string.Empty;
+
+    /// <summary>
+    ///     If true, bells of this type are sent away and locked during a Flash Storm.
+    /// </summary>
+    [DataField]
+    public bool StormShelter;
 }

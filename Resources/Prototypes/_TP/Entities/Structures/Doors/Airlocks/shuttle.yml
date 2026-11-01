@@ -20,6 +20,7 @@
   - type: BellPort
     bellType: TP14BellTypeDivingBell
     portName: bell-type-diving-sweetwater
+    stormShelter: true # Flash Storms send the bell here.
   - type: PriorityDock
     tag: TP14TagDivingBell
 

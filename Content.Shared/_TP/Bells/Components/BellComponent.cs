@@ -14,6 +14,12 @@ public sealed partial class BellComponent : Component
     public EntityUid? CurrentPort;
     public TimeSpan? TransitStartTime;
     public TimeSpan? TransitEndTime;
+
+    /// <summary>
+    ///     Set during a Flash Storm until the bell has been sent to its storm shelter.
+    ///     Kept around if the bell is mid-FTL or cooling down, so it retries once it can leave.
+    /// </summary>
+    public bool StormRecallPending;
 }
 
 public enum BellState : byte

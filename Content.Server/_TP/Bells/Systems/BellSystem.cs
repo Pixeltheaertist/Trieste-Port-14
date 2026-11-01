@@ -153,6 +153,20 @@ public sealed partial class BellSystem : EntitySystem
         if (status.Locked)
             return false;
 
+        return StartTravel(bellUid, Comp<BellComponent>(bellUid), destinationDoor);
+    }
+
+    /// <summary>
+    ///     Sends the bell to a port, ignoring the lock. Fails if the bell is already in FTL (or cooling down).
+    /// </summary>
+    private bool StartTravel(EntityUid bellUid, BellComponent comp, EntityUid destinationDoor)
+    {
+        var bellType = comp.BellType;
+
+        // FTLToDock silently does nothing while the bell still has an FTLComponent, so don't pretend it worked.
+        if (HasComp<FTLComponent>(bellUid))
+            return false;
+
         if (!TryComp<BellPortComponent>(destinationDoor, out var destPort) || destPort.BellType != bellType)
             return false;
 
@@ -168,7 +182,6 @@ public sealed partial class BellSystem : EntitySystem
         if (!ProtoMan.TryIndex(bellType, out var bellProto))
             return false;
 
-        var comp = Comp<BellComponent>(bellUid);
         comp.CurrentPort = destinationDoor;
 
         _shuttle.FTLToDock(
@@ -193,6 +206,88 @@ public sealed partial class BellSystem : EntitySystem
                 comp.Locked = locked;
         }
     }
+
+    #region Flash Storm
+
+    /// <summary>
+    ///     Locks every bell and sends it to its storm shelter port (see <see cref="BellPortComponent.StormShelter"/>).
+    /// </summary>
+    public void StartStormLockdown()
+    {
+        var query = EntityQueryEnumerator<BellComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            comp.Locked = true;
+            comp.StormRecallPending = !TryStormRecall(uid, comp);
+            RefreshConsolesFor(comp.BellType);
+        }
+    }
+
+    /// <summary>
+    ///     Unlocks every bell. They stay wherever they ended up.
+    /// </summary>
+    public void EndStormLockdown()
+    {
+        var query = EntityQueryEnumerator<BellComponent>();
+        while (query.MoveNext(out _, out var comp))
+        {
+            comp.Locked = false;
+            comp.StormRecallPending = false;
+            RefreshConsolesFor(comp.BellType);
+        }
+    }
+
+    /// <summary>
+    ///     Returns true once the bell is at (or heading to) its shelter, or if it has no shelter to go to.
+    /// </summary>
+    private bool TryStormRecall(EntityUid uid, BellComponent comp)
+    {
+        if (FindStormShelter(comp.BellType) is not { } shelter)
+        {
+            Log.Warning($"No storm shelter port for bell type {comp.BellType}; it will only be locked.");
+            return true;
+        }
+
+        if (comp.CurrentPort == shelter && !HasComp<FTLComponent>(uid))
+            return true;
+
+        return StartTravel(uid, comp, shelter);
+    }
+
+    private EntityUid? FindStormShelter(ProtoId<BellTypePrototype> bellType)
+    {
+        if (!_ports.TryGetValue(bellType, out var ports))
+            return null;
+
+        foreach (var port in ports)
+        {
+            if (TryComp<BellPortComponent>(port.Door, out var portComp) && portComp.StormShelter)
+                return port.Door;
+        }
+
+        return null;
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        // Retry bells that were mid-FTL or cooling down when the storm hit.
+        var query = EntityQueryEnumerator<BellComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            if (!comp.StormRecallPending || HasComp<FTLComponent>(uid))
+                continue;
+
+            if (!TryStormRecall(uid, comp))
+                continue;
+
+            comp.StormRecallPending = false;
+            RefreshConsolesFor(comp.BellType);
+        }
+    }
+
+    #endregion
 
     public IReadOnlyList<BellPortEntry> GetDestinations(ProtoId<BellTypePrototype> bellType)
     {

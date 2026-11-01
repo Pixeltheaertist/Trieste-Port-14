@@ -4,15 +4,14 @@ meta:
   engineVersion: 293.0.1
   forkId: ""
   forkVersion: ""
-  time: 11/01/2026 05:01:44
-  entityCount: 13387
+  time: 11/01/2026 06:39:51
+  entityCount: 13388
 maps:
 - 1
 grids:
 - 2
 orphans: []
 nullspace:
-- 12548
 - 12766
 - 12768
 - 12794
@@ -52,6 +51,7 @@ nullspace:
 - 13385
 - 13386
 - 13387
+- 13388
 tilemap:
   0: Space
   5: FloorAsteroidTile
@@ -152,7 +152,6 @@ entities:
           Oxygen: 21.824879
           Nitrogen: 82.10312
         immutable: True
-    - type: BellPlatform
     - type: Trieste
     - type: TriesteAirspace
     - type: ChunkContainer
@@ -1559,14 +1558,12 @@ entities:
         path: /Audio/Effects/alert.ogg
       enabled: True
     - type: NavMap
-    - type: BellPlatform
     - type: TileHistory
       chunkHistory: {}
     - type: ExplosionAirtightGrid
     - type: GridSplitNode
     - type: ChunkContainer
       chunkEntities:
-      - 12548
       - 12766
       - 12768
       - 12794
@@ -1606,6 +1603,7 @@ entities:
       - 13385
       - 13386
       - 13387
+      - 13388
     - type: Roof
       data:
         5,5: 18446744073709551615
@@ -2292,7 +2290,7 @@ entities:
       pos: 45.5,19.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -64343.684
+      secondsUntilStateChange: -64387.496
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -2305,7 +2303,7 @@ entities:
       pos: 47.5,19.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -163099.92
+      secondsUntilStateChange: -163143.73
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -2351,7 +2349,7 @@ entities:
       pos: 32.5,-31.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -63676.254
+      secondsUntilStateChange: -63720.066
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -2370,7 +2368,7 @@ entities:
       accessListsOriginal: []
     - type: Door
       state: Opening
-      secondsUntilStateChange: -425806.9
+      secondsUntilStateChange: -425850.72
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -2500,28 +2498,6 @@ entities:
       pos: 15.5,24.5
     - type: AccessReader
       accessListsOriginal: []
-- proto: AirlockExternalGlassBellFilled
-  entities:
-  - uid: 69
-    components:
-    - type: MetaData
-      name: Diving Bell Dock
-    - type: Transform
-      parent: 2
-      rot: -1.5707963267948966 rad
-      pos: -17.5,1.5
-    - type: AccessReader
-      accessListsOriginal: []
-  - uid: 6119
-    components:
-    - type: Transform
-      parent: 2
-      pos: -24.5,6.5
-  - uid: 6120
-    components:
-    - type: Transform
-      parent: 2
-      pos: -23.5,6.5
 - proto: AirlockExternalShuttleLocked
   entities:
   - uid: 2353
@@ -2577,7 +2553,7 @@ entities:
       pos: 36.5,17.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -73446
+      secondsUntilStateChange: -73489.81
     - type: AccessReader
       accessListsOriginal: []
     - type: DeviceLinkSource
@@ -2736,7 +2712,7 @@ entities:
       pos: 53.5,-8.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -36537.12
+      secondsUntilStateChange: -36580.934
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -2760,7 +2736,7 @@ entities:
       pos: 18.5,23.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -464922.7
+      secondsUntilStateChange: -464966.5
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -2861,7 +2837,7 @@ entities:
       pos: 40.5,-12.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -48565.566
+      secondsUntilStateChange: -48609.38
     - type: AccessReader
       accessListsOriginal: []
     - type: DeviceLinkSource
@@ -2971,7 +2947,7 @@ entities:
       pos: 9.5,-11.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -5654.8247
+      secondsUntilStateChange: -5698.6357
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -3124,7 +3100,7 @@ entities:
       accessListsOriginal: []
     - type: Door
       state: Opening
-      secondsUntilStateChange: -93963.86
+      secondsUntilStateChange: -94007.67
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -3139,7 +3115,7 @@ entities:
       pos: 39.5,-30.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -60794.555
+      secondsUntilStateChange: -60838.367
     - type: AccessReader
       accessListsOriginal: []
     - type: DeviceLinkSource
@@ -3165,7 +3141,7 @@ entities:
       pos: 32.5,-23.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -53251.97
+      secondsUntilStateChange: -53295.78
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -3217,7 +3193,7 @@ entities:
       accessListsOriginal: []
     - type: Door
       state: Opening
-      secondsUntilStateChange: -59405.023
+      secondsUntilStateChange: -59448.836
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -3271,7 +3247,7 @@ entities:
       accessListsOriginal: []
     - type: Door
       state: Opening
-      secondsUntilStateChange: -441504.44
+      secondsUntilStateChange: -441548.25
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -24568,7 +24544,7 @@ entities:
       pos: 58.495705,-13.406763
 - proto: ChunkEntity
   entities:
-  - uid: 12548
+  - uid: 12766
     components:
     - type: ChunkEntity
       root: 2
@@ -24970,7 +24946,7 @@ entities:
             cleanable: True
           decals:
             110: 14,-8
-  - uid: 12766
+  - uid: 12768
     components:
     - type: ChunkEntity
       root: 2
@@ -25228,7 +25204,7 @@ entities:
             4226: 31,-21
             4227: 30,-21
             4228: 30,-23
-  - uid: 12768
+  - uid: 12794
     components:
     - type: ChunkEntity
       root: 2
@@ -25901,7 +25877,7 @@ entities:
             4353: 37,-31
             4354: 37,-29
             4355: 37,-31
-  - uid: 12794
+  - uid: 12955
     components:
     - type: ChunkEntity
       root: 2
@@ -26429,7 +26405,7 @@ entities:
             cleanable: True
           decals:
             4773: 59,-14
-  - uid: 12955
+  - uid: 12975
     components:
     - type: ChunkEntity
       root: 2
@@ -26760,7 +26736,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             929: 26,42
-  - uid: 12975
+  - uid: 13005
     components:
     - type: ChunkEntity
       root: 2
@@ -27236,7 +27212,7 @@ entities:
           decals:
             2707: 5,-18
             2708: 5,-17
-  - uid: 13005
+  - uid: 13125
     components:
     - type: ChunkEntity
       root: 2
@@ -27631,7 +27607,7 @@ entities:
             5073: -14,23
             5074: -14,25
             5075: -13,25
-  - uid: 13125
+  - uid: 13300
     components:
     - type: ChunkEntity
       root: 2
@@ -27704,7 +27680,7 @@ entities:
             color: '#FFD346FF'
           decals:
             4215: -10.007347,32.986153
-  - uid: 13300
+  - uid: 13357
     components:
     - type: ChunkEntity
       root: 2
@@ -27965,7 +27941,7 @@ entities:
             cleanable: True
           decals:
             111: 31,8
-  - uid: 13357
+  - uid: 13358
     components:
     - type: ChunkEntity
       root: 2
@@ -28449,7 +28425,7 @@ entities:
             1731: 40,15
             1732: 40,14
             1733: 40,13
-  - uid: 13358
+  - uid: 13359
     components:
     - type: ChunkEntity
       root: 2
@@ -28512,7 +28488,7 @@ entities:
             1016: -20,11
             1017: -19,11
             1018: -18,11
-  - uid: 13359
+  - uid: 13360
     components:
     - type: ChunkEntity
       root: 2
@@ -28603,7 +28579,7 @@ entities:
           decals:
             73: 0,21
             74: 1,21
-  - uid: 13360
+  - uid: 13361
     components:
     - type: ChunkEntity
       root: 2
@@ -28964,7 +28940,7 @@ entities:
             424: -1.0668488,4.757694
             425: -1.0668488,4.757694
             426: -1.0668488,4.757694
-  - uid: 13361
+  - uid: 13362
     components:
     - type: ChunkEntity
       root: 2
@@ -29432,7 +29408,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             4453: 60,-17
-  - uid: 13362
+  - uid: 13363
     components:
     - type: ChunkEntity
       root: 2
@@ -29489,7 +29465,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             4458: 64,-21
-  - uid: 13363
+  - uid: 13364
     components:
     - type: ChunkEntity
       root: 2
@@ -29827,7 +29803,7 @@ entities:
             2714: -14,-24
             2715: -13,-24
             2716: -12,-24
-  - uid: 13364
+  - uid: 13365
     components:
     - type: ChunkEntity
       root: 2
@@ -30135,7 +30111,7 @@ entities:
             cleanable: True
           decals:
             5280: 49,33
-  - uid: 13365
+  - uid: 13366
     components:
     - type: ChunkEntity
       root: 2
@@ -30446,7 +30422,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             1103: 14,-38
-  - uid: 13366
+  - uid: 13367
     components:
     - type: ChunkEntity
       root: 2
@@ -30471,7 +30447,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             2846: -2,-33
-  - uid: 13367
+  - uid: 13368
     components:
     - type: ChunkEntity
       root: 2
@@ -31163,7 +31139,7 @@ entities:
           decals:
             5281: 46,33
             5282: 46,33
-  - uid: 13368
+  - uid: 13369
     components:
     - type: ChunkEntity
       root: 2
@@ -31331,7 +31307,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             1005: 12,32
-  - uid: 13369
+  - uid: 13370
     components:
     - type: ChunkEntity
       root: 2
@@ -31583,7 +31559,7 @@ entities:
             2704: -10,-16
             2705: -9,-16
             2706: -8,-16
-  - uid: 13370
+  - uid: 13371
     components:
     - type: ChunkEntity
       root: 2
@@ -31884,7 +31860,7 @@ entities:
             4131: 57,14
             4132: 57,15
             4133: 57,15
-  - uid: 13371
+  - uid: 13372
     components:
     - type: ChunkEntity
       root: 2
@@ -32167,7 +32143,7 @@ entities:
             cleanable: True
           decals:
             5226: 40,31
-  - uid: 13372
+  - uid: 13373
     components:
     - type: ChunkEntity
       root: 2
@@ -32724,7 +32700,7 @@ entities:
             cleanable: True
           decals:
             2334: 37,-14
-  - uid: 13373
+  - uid: 13374
     components:
     - type: ChunkEntity
       root: 2
@@ -32773,7 +32749,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             4797: 64,-15
-  - uid: 13374
+  - uid: 13375
     components:
     - type: ChunkEntity
       root: 2
@@ -32953,7 +32929,7 @@ entities:
           decals:
             4153: 63,20
             4154: 63,20
-  - uid: 13375
+  - uid: 13376
     components:
     - type: ChunkEntity
       root: 2
@@ -32979,7 +32955,7 @@ entities:
             cleanable: True
           decals:
             3274: 48,-33
-  - uid: 13376
+  - uid: 13377
     components:
     - type: ChunkEntity
       root: 2
@@ -33068,7 +33044,7 @@ entities:
             2178: 34,-33
             2179: 36,-33
             2180: 37,-33
-  - uid: 13377
+  - uid: 13378
     components:
     - type: ChunkEntity
       root: 2
@@ -33162,7 +33138,7 @@ entities:
             cleanable: True
           decals:
             839: 27,16
-  - uid: 13378
+  - uid: 13379
     components:
     - type: ChunkEntity
       root: 2
@@ -33542,7 +33518,7 @@ entities:
             160: 8,6
             161: 7,6
             162: 6,6
-  - uid: 13379
+  - uid: 13380
     components:
     - type: ChunkEntity
       root: 2
@@ -33723,7 +33699,7 @@ entities:
             cleanable: True
           decals:
             5647: 36.195957,51.781414
-  - uid: 13380
+  - uid: 13381
     components:
     - type: ChunkEntity
       root: 2
@@ -33759,7 +33735,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             4200: -17,29
-  - uid: 13381
+  - uid: 13382
     components:
     - type: ChunkEntity
       root: 2
@@ -33777,7 +33753,7 @@ entities:
             4629: -18,32
             4630: -17,32
             4631: -17,33
-  - uid: 13382
+  - uid: 13383
     components:
     - type: ChunkEntity
       root: 2
@@ -33863,7 +33839,7 @@ entities:
             cleanable: True
           decals:
             2333: 31,-13
-  - uid: 13383
+  - uid: 13384
     components:
     - type: ChunkEntity
       root: 2
@@ -33925,7 +33901,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             1088: 16,-35
-  - uid: 13384
+  - uid: 13385
     components:
     - type: ChunkEntity
       root: 2
@@ -33959,7 +33935,7 @@ entities:
             angle: -1.5707963267948966 rad
           decals:
             2508: 64,17
-  - uid: 13385
+  - uid: 13386
     components:
     - type: ChunkEntity
       root: 2
@@ -33976,7 +33952,7 @@ entities:
             angle: 1.5707963267948966 rad
           decals:
             4139: 64,15
-  - uid: 13386
+  - uid: 13387
     components:
     - type: ChunkEntity
       root: 2
@@ -34008,7 +33984,7 @@ entities:
           decals:
             3832: 12,48
             3833: 12,48
-  - uid: 13387
+  - uid: 13388
     components:
     - type: ChunkEntity
       root: 2
@@ -34594,20 +34570,6 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: 49.5,11.5
-- proto: ComputerBell
-  entities:
-  - uid: 2031
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 51.5,4.5
-  - uid: 3098
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: -14.5,0.5
 - proto: ComputerBroken
   entities:
   - uid: 12148
@@ -35397,7 +35359,7 @@ entities:
       pos: -10.5,-11.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -138665.95
+      secondsUntilStateChange: -138709.77
   - uid: 10921
     components:
     - type: Transform
@@ -46440,7 +46402,7 @@ entities:
       pos: 12.5,-1.5
     - type: Door
       state: Closing
-      secondsUntilStateChange: -195675.55
+      secondsUntilStateChange: -195719.36
   - uid: 3844
     components:
     - type: Transform
@@ -61361,6 +61323,12 @@ entities:
     - type: Transform
       parent: 2
       pos: 35.5,53.5
+  - uid: 3098
+    components:
+    - type: Transform
+      parent: 2
+      rot: 1.5707963267948966 rad
+      pos: -14.5,0.5
   - uid: 3102
     components:
     - type: Transform
@@ -61851,6 +61819,28 @@ entities:
           pitch: 1
           maxDistance: 10
           loop: False
+- proto: TP14AirlockExternalDivingBellTrieste
+  entities:
+  - uid: 69
+    components:
+    - type: MetaData
+      name: Diving Bell Dock
+    - type: Transform
+      parent: 2
+      rot: -1.5707963267948966 rad
+      pos: -17.5,1.5
+    - type: AccessReader
+      accessListsOriginal: []
+  - uid: 6119
+    components:
+    - type: Transform
+      parent: 2
+      pos: -24.5,6.5
+  - uid: 6120
+    components:
+    - type: Transform
+      parent: 2
+      pos: -23.5,6.5
 - proto: TP14AtmosFixWaterMarker
   entities:
   - uid: 5697
@@ -63397,6 +63387,20 @@ entities:
     - type: Transform
       parent: 2
       pos: -13.074722,21.668398
+- proto: TP14ComputerDivingBell
+  entities:
+  - uid: 2031
+    components:
+    - type: Transform
+      parent: 2
+      rot: 3.141592653589793 rad
+      pos: 51.5,4.5
+  - uid: 12548
+    components:
+    - type: Transform
+      parent: 2
+      rot: 1.5707963267948966 rad
+      pos: -14.5,0.5
 - proto: TP14CoolCageLight
   entities:
   - uid: 4237
@@ -79049,49 +79053,49 @@ entities:
       parent: 2
       pos: -18.5,43.5
     - type: LightningMarker
-      nextStrike: 7.5025616
+      nextStrike: 7.406748
   - uid: 5110
     components:
     - type: Transform
       parent: 2
       pos: -6.5,26.5
     - type: LightningMarker
-      nextStrike: 11.760983
+      nextStrike: 7.856676
   - uid: 7354
     components:
     - type: Transform
       parent: 2
       pos: 16.5,22.5
     - type: LightningMarker
-      nextStrike: 5.0216045
+      nextStrike: 8.687423
   - uid: 7355
     components:
     - type: Transform
       parent: 2
       pos: -18.5,22.5
     - type: LightningMarker
-      nextStrike: 5.880509
+      nextStrike: 7.3626413
   - uid: 7356
     components:
     - type: Transform
       parent: 2
       pos: -9.5,1.5
     - type: LightningMarker
-      nextStrike: 6.931267
+      nextStrike: 7.545827
   - uid: 7357
     components:
     - type: Transform
       parent: 2
       pos: 26.5,31.5
     - type: LightningMarker
-      nextStrike: 10.787053
+      nextStrike: 9.784025
   - uid: 7359
     components:
     - type: Transform
       parent: 2
       pos: 13.5,-30.5
     - type: LightningMarker
-      nextStrike: 7.573904
+      nextStrike: 8.646032
   - uid: 12882
     components:
     - type: Transform
@@ -79099,14 +79103,14 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 1.5,3.5
     - type: LightningMarker
-      nextStrike: 9.688884
+      nextStrike: 9.130545
   - uid: 13282
     components:
     - type: Transform
       parent: 2
       pos: 34.5,56.5
     - type: LightningMarker
-      nextStrike: 10.439306
+      nextStrike: 6.721491
 - proto: TP14OutdoorGrill
   entities:
   - uid: 5448
@@ -87655,7 +87659,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -422023.78
+      secondsUntilStateChange: -422067.6
     - type: Airlock
       autoClose: False
   - uid: 8300
@@ -88488,7 +88492,7 @@ entities:
       pos: 39.5,45.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -118793.37
+      secondsUntilStateChange: -118837.18
   - uid: 6259
     components:
     - type: MetaData
