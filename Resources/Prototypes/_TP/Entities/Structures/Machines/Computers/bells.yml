@@ -1,0 +1,90 @@
+- type: entity
+  abstract: true
+  id: TP14BaseStructureBellComputer
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: GravityAffected
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.3,0.4,0.3"
+        density: 190
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+  - type: InteractionOutline
+  - type: Rotatable
+  - type: Anchorable
+    flags:
+    - Anchorable
+  - type: Sprite
+    drawdepth: Objects
+  - type: Pullable
+  - type: Tag
+    tags:
+    - Structure
+
+- type: entity
+  parent: TP14BaseStructureBellComputer
+  id: TP14ComputerDivingBell
+  name: diving bell terminal
+  description: Used to send or request the diving bell.
+  components:
+  - type: Sprite
+    sprite: _TP/Structures/Machines/Computers/bells.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: base
+    - map: ["computerLayerScreen"]
+      state: screen
+      shader: unshaded
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ComputerVisuals.Powered:
+        computerLayerScreen:
+          True: { visible: true, shader: unshaded }
+          False: { visible: false }
+  - type: LitOnPowered
+  - type: PointLight
+    radius: 1.75
+    energy: 4.0
+    enabled: false
+    lightMask: ConeSingle
+    autoRot: true
+    offset: "-0.1, 0.3"
+    color: "#FFA500"
+    castShadows: false
+  - type: EmitSoundOnUIOpen
+    sound:
+      collection: Keyboard
+      params:
+        volume: -1
+        variation: 0.10
+        pitch: 1.10  # a low pitch keyboard sound feel kinda weird
+    blacklist:
+      tags:
+      - NoConsoleSound
+  - type: Electrified
+    enabled: false
+    usesApcPower: true
+  - type: RequireProjectileTarget
+  - type: ActivatableUI
+    key: enum.BellConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.BellConsoleUiKey.Key:
+        type: BellConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: BellConsole
+    bellType: TP14BellTypeDivingBell

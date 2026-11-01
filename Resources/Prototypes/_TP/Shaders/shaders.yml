@@ -2,3 +2,8 @@
   id: Grainy
   kind: source
   path: "/Textures/Shaders/grainy.swsl"
+
+- type: shader
+  id: TP14ShaderScanLines
+  kind: source
+  path: "/Textures/_TP/Shaders/scanlines.swsl"
