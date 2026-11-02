@@ -111,3 +111,10 @@ CrudeOilVial: TP14ChemistryVialCrudeOil
 TP14PoweredCoolSmallLight: TP14CoolCageLight
 TP14PoweredCoolSmallLightWaterproof: TP14CoolWaterproofCageLight
 
+# 2026-10-31
+ComputerBell: TP14ComputerDivingBell
+ComputerTrench: null
+AirlockExternalTrench: AirlockExternal
+AirlockExternalTrenchFilled: AirlockExternal
+AirlockExternalGlassBell: TP14AirlockExternalDivingBellSweetwater
+AirlockExternalGlassBellFilled: TP14AirlockExternalDivingBellTrieste

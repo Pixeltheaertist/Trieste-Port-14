@@ -31,11 +31,7 @@ public sealed partial class FallSystem : EntitySystem
     [Dependency] private ClimbSystem _climb = default!;
     [Dependency] private InventorySystem _inventory = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-        SubscribeLocalEvent<Components.FallSystemComponent, EntParentChangedMessage>(OnEntParentChanged);
-    }
+    private readonly List<(EntityUid, FallSystemComponent)> _toFall = new();
 
     public override void Update(float frameTime)
     {
@@ -59,7 +55,7 @@ public sealed partial class FallSystem : EntitySystem
                 jumpComp is { IsJumping: false, WasJumping: true })
             {
                 if (TryComp<Components.FallSystemComponent>(uid, out var fallSystemComponent))
-                    HandleFall(uid, fallSystemComponent);
+                    _toFall.Add((uid, fallSystemComponent));
             }
 
             if (transform != null && jumpComp.WasJumping != jumpComp.IsJumping)
@@ -70,7 +66,7 @@ public sealed partial class FallSystem : EntitySystem
 
         // This part catches if the player has climbed over the railing
         // and will force them to stop (and fall)!
-        var fallQuery = EntityQueryEnumerator<Components.FallSystemComponent>();
+        var fallQuery = EntityQueryEnumerator<FallSystemComponent>();
         while (fallQuery.MoveNext(out var uid, out var fallComp))
         {
             // Skip if already handled by jumping logic above
@@ -88,20 +84,27 @@ public sealed partial class FallSystem : EntitySystem
                 if (ExemptFromFalling(uid))
                     continue;
 
-                // Now check if they've been knocked down (aka slipped)
-                if (TryComp<KnockedDownComponent>(uid, out _))
-                    HandleFall(uid, fallComp);
-
-                // Force stop climbing if they're in airspace
-                if (TryComp<ClimbingComponent>(uid, out var climbComp) && climbComp.IsClimbing)
-                    _climb.StopClimb(uid, climbComp);
-
-                HandleFall(uid, fallComp);
+                _toFall.Add((uid, fallComp));
             }
         }
+
+        foreach (var (uid, fallComp) in _toFall)
+        {
+            if (TerminatingOrDeleted(uid))
+                continue;
+
+            // Force stop climbing if they're in airspace
+            if (TryComp<ClimbingComponent>(uid, out var climbComp) && climbComp.IsClimbing)
+                _climb.StopClimb(uid, climbComp);
+
+            HandleFall(uid, fallComp);
+        }
+
+        _toFall.Clear();
     }
 
-    private void OnEntParentChanged(EntityUid owner, Components.FallSystemComponent component, EntParentChangedMessage args)
+    [SubscribeLocalEvent]
+    private void OnEntParentChanged(EntityUid owner, FallSystemComponent component, EntParentChangedMessage args)
     {
         // A check that should fix the round-start crash/restart. - Cookie (FatherCheese)
         // If the entity is not initialized, or we're below 10 seconds, return.
@@ -152,7 +155,7 @@ public sealed partial class FallSystem : EntitySystem
                || HasComp<StationAiHeldComponent>(owner);
     }
 
-    private void HandleFall(EntityUid owner, Components.FallSystemComponent component)
+    private void HandleFall(EntityUid owner, FallSystemComponent component)
     {
         var destination = EntityQuery<Components.FallingDestinationComponent>().FirstOrDefault();
         if (destination == null)

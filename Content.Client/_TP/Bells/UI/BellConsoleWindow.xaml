@@ -1,0 +1,56 @@
+<ui:BellConsoleWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      xmlns:ui="clr-namespace:Content.Client._TP.Bells.UI"
+                      SetSize="320, 320"
+                      Resizable="False"
+                      MouseFilter="Stop">
+    <PanelContainer Name="Background" StyleClasses="PdaBackgroundRect" ModulateSelfOverride="#C1B181"/>
+    <PanelContainer Name="Border" StyleClasses="PdaBorderRect" />
+
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+
+        <!--Content-->
+        <Control Margin="18 18, 18, 18" RectClipContent="True" VerticalExpand="true" HorizontalExpand="True">
+            <PanelContainer Name="ContentBorder" StyleClasses="PdaBackground"/>
+            <Control Name="ContentsContainer" Margin="4 4 2 3" Modulate="#FFA500">
+
+                <!-- Screen Background -->
+                <PanelContainer Name="ContentBackground" StyleClasses="PdaContentBackground"/>
+
+                <!-- Screen foreground -->
+                <BoxContainer Orientation="Vertical">
+                    <BoxContainer Orientation="Vertical" Margin="4">
+                        <Label Name="Header" Text="{Loc 'bell-console-title'}" StyleClasses="ConsoleSubHeading" HorizontalAlignment="Center"/>
+
+                               <!-- Status -->
+                        <Label Name="StatusLabel" HorizontalExpand="True" HorizontalAlignment="Center" StyleClasses="ConsoleSubHeading" />
+                        <ProgressBar Name="TransitBar"
+                                     MinValue="0" MaxValue="1"
+                                     Visible="False"
+                                     Margin="16 2 16 2"
+                                     Modulate="Yellow"/>
+
+
+                        <!-- Separator -->
+                        <controls:Separator ColorOverride="#FFFFFF" SetHeight="8"></controls:Separator>
+                    </BoxContainer>
+
+                    <ScrollContainer VerticalExpand="True">
+                        <BoxContainer Name="DestinationList" StyleClasses="ConsoleText" Orientation="Vertical" />
+                    </ScrollContainer>
+                </BoxContainer>
+            </Control>
+
+            <!-- ScanLine Shader -->
+            <TextureRect Name="ScanlineOverlay"
+                         TexturePath="/Textures/_TP/Effects/ScanLines/white.png"
+                         Stretch="Scale"
+                         MouseFilter="Ignore"
+            />
+        </Control>
+        <!--Header-->
+        <BoxContainer SetHeight="26" Margin="4 2 4 16" Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextureButton Name="CloseButton" StyleClasses="windowCloseButton" Modulate="#646464" VerticalAlignment="Center" Margin="0 4 4 0"/>
+        </BoxContainer>
+    </BoxContainer>
+</ui:BellConsoleWindow>

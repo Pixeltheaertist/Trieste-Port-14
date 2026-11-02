@@ -25,13 +25,14 @@ public sealed partial class CCVars
     ///     Whether the arrivals terminal should be on a planet map.
     /// </summary>
     public static readonly CVarDef<bool> ArrivalsPlanet =
-        CVarDef.Create("shuttle.arrivals_planet", false, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.arrivals_planet", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether the arrivals shuttle is enabled.
+    ///     TRIESTE: 'true'. Off by default; maps are loaded by MultiMapManagerSystem instead.
     /// </summary>
     public static readonly CVarDef<bool> ArrivalsShuttles =
-        CVarDef.Create("shuttle.arrivals", true);
+        CVarDef.Create("shuttle.arrivals", false);
 
     /// <summary>
     ///     The map to use for the arrivals station.
@@ -49,7 +50,7 @@ public sealed partial class CCVars
     ///     Are players allowed to return on the arrivals shuttle.
     /// </summary>
     public static readonly CVarDef<bool> ArrivalsReturns =
-        CVarDef.Create("shuttle.arrivals_returns", true, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.arrivals_returns", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     Should all players who spawn at arrivals have godmode until they leave the map?

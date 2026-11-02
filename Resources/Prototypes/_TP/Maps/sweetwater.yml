@@ -1,0 +1,38 @@
+# Used by the Trieste map file for the triple-M system.
+- type: gameMap
+  id: TP14GameMapSweetwater
+  mapName: Sweetwater
+  mapPath: /Maps/_TP/sweetwater.yml
+  minPlayers: 0
+  stations:
+    Sweetwater:
+      stationProto: TP14StandardSolGovStationNoEvac
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Sweetwater"
+        - type: StationJobs
+          availableJobs:
+            # Service
+            Janitor: [ 2, 2 ]
+            Chef: [ 1, 1 ]
+            Bartender: [ 1, 1 ]
+            ServiceWorker: [ 2, 2 ]
+            # Engineering
+            AtmosphericTechnician: [ 2, 2 ]
+            StationEngineer: [ 4, 4 ]
+            TechnicalAssistant: [ 2, 3 ]
+            # Expeditions
+            TP14BasinTech: [ 2, 2 ]
+            TP14Expeditioneer: [ 2, 2 ]
+            TP14Pilot: [ 1, 1 ]
+            # Civilian
+            Passenger: [ -1, -1 ]
+            Librarian: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            #science
+            Scientist: [ 4, 4 ]
+            ResearchAssistant: [ 1, 2 ]
+            #silicon
+            Borg: [ 2, 2 ]

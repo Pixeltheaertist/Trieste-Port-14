@@ -1,0 +1,30 @@
+light_mode unshaded;
+
+// Bezel: Corner roundness.
+const highp float BEZEL_RADIUS = 0.12;
+const highp float BEZEL_INSET = 0.024;
+
+void fragment() {
+     highp vec2 uv = UV;
+     highp float y = FRAGCOORD.y + TIME * 8.0;
+     highp float line = mod(y, 4.0);
+     highp float scanAlpha = line < 2.0 ? 0.35 : 0.0;
+
+     // Vignette: A real CRT curve would need the UI rendered to a texture first,
+     // so we fake it with shadows from the center, plus a rounded bezel below.
+     // This has slightly more fall-off from top to bottom than the sides.
+     highp vec2 centered = uv - vec2(0.5, 0.5);
+     highp float dist = length(centered * vec2(1.0, 1.15));
+     highp float vignette = smoothstep(0.25, 0.7, dist);
+
+     // Bezel: rounded-rectangle distance field. d < 0 inside the glass, d > 0 outside.
+     highp vec2 halfSize = vec2(0.5 - BEZEL_INSET);
+     highp vec2 q = abs(centered) - (halfSize - BEZEL_RADIUS);
+     highp float d = length(max(q, 0.0)) + min(max(q.x, q.y), 0.0) - BEZEL_RADIUS;
+
+     highp float bezel = smoothstep(-0.004, 0.004, d);       // Solid black frame, slightly anti-aliased.
+     highp float rim = smoothstep(-0.06, 0.0, d) * 0.5;      // Inner shadow where the glass meets the frame.
+
+     highp float alpha = max(max(scanAlpha, vignette * 0.85), max(bezel, rim));
+     COLOR = vec4(0.0, 0.0, 0.0, alpha);
+}

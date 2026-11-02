@@ -1,45 +1,38 @@
 - type: entity
   parent: AirlockShuttle
-  id: AirlockExternalGlassBell
-  suffix: Diving Bell, Docking
+  id: TP14AirlockExternalBell
+  suffix: Trieste, Bell
+  name: bell dock
+  description: Necessary for connecting the various bells with an air-tight seal.
   components:
-  - type: PriorityDock
-    tag: DockBell
-  - type: ContainerFill
-    containers:
-      board: [ DoorElectronicsExternal ] # Just so new players don't keep dying.
-
-- type: entity
-  parent: AirlockExternalGlassBell
-  id: AirlockExternalGlassBellFilled
-  suffix: Diving Bell, Filled
-  components:
-  - type: GridFill
-    path: /Maps/Shuttles/arrivals.yml
-    addComponents:
-    - type: IFF
-      flags:
-      - HideLabel
-
-- type: entity
-  parent: AirlockShuttle
-  id: AirlockExternalTrench
-  suffix: Trench Bell, Docking
-  components:
-  - type: PriorityDock
-    tag: DockTrench
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsExternal ]
+  - type: Docking
 
 - type: entity
-  parent: AirlockExternalTrench
-  id: AirlockExternalTrenchFilled
-  suffix: Trench bell, Filled
+  parent: TP14AirlockExternalBell
+  id: TP14AirlockExternalDivingBellSweetwater
+  suffix: Trieste, Diving Bell, Sweetwater
+  name: diving bell dock
+  description: Necessary for connecting the Diving Bell with an air-tight seal.
   components:
-  - type: GridFill
-    path: /Maps/Shuttles/trenchBell.yml
-    addComponents:
-    - type: IFF
-      flags:
-      - HideLabel
+  - type: BellPort
+    bellType: TP14BellTypeDivingBell
+    portName: bell-type-diving-sweetwater
+    stormShelter: true # Flash Storms send the bell here.
+  - type: PriorityDock
+    tag: TP14TagDivingBell
+
+- type: entity
+  parent: TP14AirlockExternalBell
+  id: TP14AirlockExternalDivingBellTrieste
+  suffix: Trieste, Diving Bell, Port
+  name: diving bell dock
+  description: Necessary for connecting the Diving Bell with an air-tight seal.
+  components:
+  - type: BellPort
+    bellType: TP14BellTypeDivingBell
+    portName: bell-type-diving-trieste
+  - type: PriorityDock
+    tag: TP14TagDivingBell

@@ -1,5 +1,9 @@
 # PUT YOUR TAGS IN ALPHABETICAL ORDER - 'TP', 'TP14', and 'Tag' is exempt from this!
 
+# Prototypes/_TP/bell-types.yml
+- type: Tag
+  id: TP14TagCargoBell
+
 - type: Tag
   id: CascadeOpsUplink
 
@@ -14,6 +18,10 @@
 
 - type: Tag
   id: TP14TagDeepFryerBoard
+
+# Prototypes/_TP/bell-types.yml
+- type: Tag
+  id: TP14TagDivingBell
 
 - type: Tag
   id: DockBell
@@ -68,6 +76,10 @@
 
 - type: Tag
   id: TP14TagTeaBag
+
+# Prototypes/_TP/bell-types.yml
+- type: Tag
+  id: TPTagTrenchBell
 
 - type: Tag
   id: Wreck

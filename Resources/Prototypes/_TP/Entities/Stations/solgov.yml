@@ -1,33 +1,73 @@
 - type: entity
-  id: StandardStationEvent
+  abstract: true
+  id: TP14BaseStationSolGov
+  components:
+    - type: NpcFactionMember
+      factions:
+        - TP14NpcFactionSolGov
+
+- type: entity
+  id: TP14StandardStationEvent
   parent:
   - BaseStation
   - BaseStationJobsSpawning
   - BaseStationRecords
-  - BaseStationNanotrasen
+  - TP14BaseStationSolGov
   - BaseStationAlertLevels
   components:
   - type: Transform
 
-# Just a carbon copy of 'StandardNanotrasenStation', minus CentCom.
 - type: entity
-  id: StandardSolGovStation
+  id: TP14StandardSolGovStationMinus
+  parent:
+  - BaseStation
+  - BaseStationNews
+  - BaseStationRecords
+  - BaseStationShuttles
+  - BaseStationEvacuation
+  - BaseStationAlertLevels
+  - BaseStationSiliconLawCrewsimov
+  - TP14BaseStationSolGov
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+
+
+# Just a modified copy of 'StandardNanotrasenStation'.
+- type: entity
+  id: TP14StandardSolGovStation
   parent:
   - BaseStation
   - BaseStationNews
   - BaseStationCargo
   - BaseStationJobsSpawning
   - BaseStationRecords
-  - BaseStationArrivals
+  # - BaseStationArrivals # TRIESTE: no arrivals shuttle
   - BaseStationShuttles
-  - BaseStationEvacuation
+  - BaseStationEvacuation # TODO: needs BaseStationCentcomm (SolGov map) or the emergency shuttle can't spawn
   - BaseStationAlertLevels
-  - BaseStationMagnet
-  - BaseStationExpeditions
-  - BaseStationSalvageJobs
   - BaseStationSiliconLawCrewsimov
   - BaseStationAllEventsEligible
-  - BaseStationNanotrasen
+  - TP14BaseStationSolGov
+  - BaseStationDeliveries
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+
+# Same as 'TP14StandardSolGovStation', minus evac. Only Trieste gets the emergency shuttle.
+- type: entity
+  id: TP14StandardSolGovStationNoEvac
+  parent:
+  - BaseStation
+  - BaseStationNews
+  - BaseStationCargo
+  - BaseStationJobsSpawning
+  - BaseStationRecords
+  - BaseStationShuttles
+  - BaseStationAlertLevels
+  - BaseStationSiliconLawCrewsimov
+  - BaseStationAllEventsEligible
+  - TP14BaseStationSolGov
   - BaseStationDeliveries
   categories: [ HideSpawnMenu ]
   components:

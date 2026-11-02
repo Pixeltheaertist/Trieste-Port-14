@@ -1,0 +1,12 @@
+# Used by the Trieste map file for the triple-M system.
+- type: gameMap
+  id: TP14GameMapWasteWater
+  mapName: Waste Water
+  mapPath: /Maps/_TP/waste-water.yml
+  minPlayers: 0
+  stations:
+    WasteWater:
+      stationProto: TP14StandardSolGovStationNoEvac
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Waste Water"
