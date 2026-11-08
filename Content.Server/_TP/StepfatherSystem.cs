@@ -11,6 +11,7 @@ using Content.Shared.Silicons.Laws;
 using Content.Shared.Vehicle;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._TP;
@@ -21,6 +22,7 @@ namespace Content.Server._TP;
 public sealed partial class StepfatherSystem : EntitySystem
 {
     [Dependency] private AlertsSystem _alerts = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private BatterySystem _battery = default!;
     [Dependency] private MovementSpeedModifierSystem _movementSpeedModifier = default!;
     [Dependency] private PowerCellSystem _powerCell = default!;
@@ -43,6 +45,9 @@ public sealed partial class StepfatherSystem : EntitySystem
     private void OnOperatorSet(Entity<StepfatherComponent> ent, ref VehicleOperatorSetEvent args)
     {
         UpdateMovementSpeed(ent.Owner);
+
+        if (args.NewOperator != null)
+            _audio.PlayPvs(ent.Comp.EnterSound, ent.Owner);
     }
 
     private readonly SoundPathSpecifier _soundSpecifier = new("/Audio/Misc/cryo_warning.ogg");
@@ -77,6 +82,7 @@ public sealed partial class StepfatherSystem : EntitySystem
 
         ent.Comp.PilotWhitelist = null;
         ent.Comp.IsSubverted = true;
+        Dirty(ent);
         _siliconLaw.SetLaws(laws, ent.Owner, _soundSpecifier);
 
         args.Handled = true;

@@ -1,10 +1,12 @@
 using Content.Shared.Alert;
 using Content.Shared.Whitelist;
+using Robust.Shared.Audio;
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._TP.Mechs.Components;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class StepfatherComponent : Component
 {
     [DataField]
@@ -22,9 +24,15 @@ public sealed partial class StepfatherComponent : Component
     [DataField]
     public float DrainAccumulator;
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public EntityWhitelist? PilotWhitelist;
 
     [DataField]
     public float MechToPilotDamageMultiplier;
+
+    /// <summary>
+    ///     Played when a pilot climbs into the Rotund.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? EnterSound = new SoundPathSpecifier("/Audio/Mecha/mechmove03.ogg");
 }

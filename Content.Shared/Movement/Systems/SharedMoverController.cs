@@ -17,6 +17,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Player;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Controllers;
@@ -42,6 +43,7 @@ public abstract partial class SharedMoverController : VirtualController
     [Dependency] private InventorySystem _inventory = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private ISharedPlayerManager _player = default!; // TRIESTE
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedMapSystem _mapSystem = default!;
     [Dependency] private SharedGravitySystem _gravity = default!;
@@ -356,7 +358,10 @@ public abstract partial class SharedMoverController : VirtualController
                 // If we're a relay target then predict the sound for all relays.
                 if (relaySource != null)
                 {
-                    _audio.PlayPredicted(sound, uid, relaySource.Value, audioParams);
+                    // TRIESTE: The server only excludes the relay source, so a player controlling the relay target
+                    //      must not predict this as well, or they hear it twice.
+                    if (_player.LocalEntity != uid)
+                        _audio.PlayPredicted(sound, uid, relaySource.Value, audioParams);
                 }
                 else
                 {

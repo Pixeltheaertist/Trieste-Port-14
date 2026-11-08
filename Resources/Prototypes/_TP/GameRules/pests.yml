@@ -71,7 +71,7 @@
   components:
   - type: StationEvent
     earliestStart: 0
-    minimumPlayers: 15 #10 # need at least a LITTLE prey # That was way too little prey
+    minimumPlayers: 15 # 10 # need at least a LITTLE prey # That was way too little prey
     maxOccurrences: 1
     weight: 6
   - type: OceanSpawnRule

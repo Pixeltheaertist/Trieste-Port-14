@@ -8,9 +8,9 @@
       path: /Audio/Announcements/attention.ogg
     endAnnouncement: station-event-flash-storm-end-announcement
     weight: 1
-    duration: 181 # Exactly the amount of time that the song lasts.
-    maxOccurrences: 1 # This event is so insanely cataclysmic, genuinely it's kind of insane. ONLY ONCE PER ROUND, OR IT'S LITERAL DOOMSDAY.
-    minimumPlayers: 10
+    duration: 181       # Exactly the amount of time that the song lasts.
+    maxOccurrences: 1   # This event is so insanely cataclysmic, genuinely it's kind of insane.
+    minimumPlayers: 10  # Because this running at five people is dumb.
   - type: GameRule
     delay:
       min: 30
@@ -60,7 +60,9 @@
     returnWeather: "WeatherRain"
     lightning: true
 
-# Mass Migration triggers a scaled-up version of DrifterMigration, spawning 3-4x as many drifters. It is a major once-per-round event similar to FlashStorm. The platform fires illumination flares to assist in seeing the hostiles.
+# Mass Migration triggers a scaled-up version of DrifterMigration, spawning 3-4x as many drifters.
+# It is a major once-per-round event similar to FlashStorm but worse.
+# The platform fires illumination flares to assist in seeing the hostiles.
 - type: entity
   id: TP14MassMigration
   parent: BaseStationEventShortDelay
@@ -68,7 +70,7 @@
   - type: StationEvent
     startAnnouncement:
     startAudio:
-      path: /Audio/Effects/alert.ogg # Holy SHIT this is loud.
+      path: /Audio/Effects/alert.ogg # Holy SHIT this is loud. TODO Trieste: Look into adjusting this.
     endAnnouncement: station-event-mass-migration-end-announcement
     weight: 1
     duration: 100
