@@ -1,18 +1,18 @@
+#
 # TP14 station event schedulers, tables, and presets' event plumbing.
-# Mirrors upstream's BasicGameRulesTable / DynamicGameRulesTable, 
-# minus anything we have disabled, but tuned for MRP pacing
-# If you add or modify an odd, run the command: stationevent lsprobtheoretical TP14StationEventScheduler <players> <minutes>
+#
+# Mirrors upstream's BasicGameRulesTable / DynamicGameRulesTable but tuned for MRP,
+#   also minus anything we have disabled.
+#
 
 - type: entityTable
   id: TP14CalmEventsTable
-  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+  table: !type:AllSelector
     children:
     - id: TP14AnomalySpawn
     - id: TP14BluespaceArtifact
     - id: TP14BluespaceLocker
     - id: TP14BreakerFlip
-    - id: TP14BureaucraticError
-    - id: TP14ClericalError
     - id: TP14GasLeak
     - id: TP14GreytideVirus
     - id: TP14IonStorm
@@ -52,7 +52,7 @@
 
 - type: entityTable
   id: TP14CargoGiftsTable
-  table: !type:GroupSelector # Picks one gift, which then competes with everything else in the pool.
+  table: !type:GroupSelector
     children:
     - id: TP14GiftsEngineering
     - id: TP14GiftsFireProtection
@@ -67,7 +67,7 @@
 
 - type: entityTable
   id: TP14PestEventsTable
-  table: !type:AllSelector # Upstream lists cockroaches and mice in both the calm and pest tables (double odds). Once here.
+  table: !type:AllSelector
     children:
     - id: TP14CockroachMigration
     - id: TP14MouseMigration
@@ -83,11 +83,11 @@
       tableId: TP14CalmEventsTable
     - !type:NestedSelector
       tableId: TP14AntagEventsTable
-      prob: 0.5 # Only in the pool for half of all event rolls.
+      prob: 0.5
     - !type:NestedSelector
       tableId: TP14ModerateAntagEventsTable
       prob: 0.25
-    - id: TP14FlashStorm # Was sitting in the upstream antag table.
+    - id: TP14FlashStorm
     - !type:NestedSelector
       tableId: TP14CargoGiftsTable
     - !type:NestedSelector
@@ -95,7 +95,7 @@
     - id: TP14QuietShift
 
 - type: entityTable
-  id: TP14DynamicGameRulesTable # Dynamic handles antags itself, so this is the non-antag stuff only.
+  id: TP14DynamicGameRulesTable
   table: !type:AllSelector
     children:
     - !type:NestedSelector
@@ -106,14 +106,15 @@
 
 # events
 
+# This one does nothing.
 - type: entity
-  id: TP14QuietShift # Does nothing. Its weight is the chance an event roll comes up empty.
+  id: TP14QuietShift
   parent: BaseGameRule
   components:
   - type: StationEvent
     weight: 50
     earliestStart: 0
-    reoccurrenceDelay: 0 # Default is 30 minutes, which would block back-to-back quiet rolls.
+    reoccurrenceDelay: 0
 
 # schedulers
 
@@ -122,11 +123,11 @@
   parent: BaseGameRule
   components:
   - type: BasicStationEventScheduler
-    minimumTimeUntilFirstEvent: 900 # 15 minutes. Upstream: ~3.5.
+    minimumTimeUntilFirstEvent: 900 # 15 minutes.
     maximumSpanUntilFirstEvent: 600 # Plus up to 10 more.
     minMaxEventTiming:
-      min: 600  # 10 minutes. Upstream: 3.
-      max: 1200 # 20 minutes. Upstream: 10.
+      min: 600  # 10 minutes.
+      max: 1200 # 20 minutes.
     scheduledGameRules: !type:NestedSelector
       tableId: TP14GameRulesTable
 
@@ -135,7 +136,7 @@
   parent: BaseGameRule
   components:
   - type: BasicStationEventScheduler
-  
+
     minimumTimeUntilFirstEvent: 900
     maximumSpanUntilFirstEvent: 600
     minMaxEventTiming:
@@ -144,14 +145,14 @@
     scheduledGameRules: !type:NestedSelector
       tableId: TP14DynamicGameRulesTable
 
+# Time between events is (4 to 12 minutes) / chaos.
+# Chaos starts at a tenth of max and climbs linearly until the end time.
+# Upstream (12 chaos over ~90 min) ends up at an event every 16-80 seconds.
 - type: entity
   id: TP14RampingStationEventScheduler
   parent: BaseGameRule
   components:
   - type: RampingStationEventScheduler
-    # Time between events is (4 to 12 minutes) / chaos. Chaos starts at a tenth of max and climbs linearly until the end time.
-    # Upstream (12 chaos over ~90 min) ends up at an event every 16-80 seconds.
-    # This ends up at roughly every 2.5-8 minutes once it peaks.
     averageChaos: 1.5
     averageEndTime: 120 # minutes
     scheduledGameRules: !type:NestedSelector
