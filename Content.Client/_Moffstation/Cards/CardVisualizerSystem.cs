@@ -6,7 +6,7 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client._Moffstation.Cards;
 
-public sealed class CardVisualizerSystem : ManagedLayerVisualizerSystem<PlayingCardComponent>
+public sealed partial class CardVisualizerSystem : ManagedLayerVisualizerSystem<PlayingCardComponent>
 {
     [Dependency] private MetaDataSystem _meta = default!;
 

@@ -4,7 +4,7 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client._Moffstation.Cards;
 
-public sealed class PlayingCardsSystem : SharedPlayingCardsSystem
+public sealed partial class PlayingCardsSystem : SharedPlayingCardsSystem
 {
     [Dependency] private AppearanceSystem _appearance = default!;
 
