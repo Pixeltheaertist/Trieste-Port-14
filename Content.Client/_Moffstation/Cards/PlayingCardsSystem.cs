@@ -6,7 +6,7 @@ namespace Content.Client._Moffstation.Cards;
 
 public sealed class PlayingCardsSystem : SharedPlayingCardsSystem
 {
-    [Dependency] private readonly AppearanceSystem _appearance = default!;
+    [Dependency] private AppearanceSystem _appearance = default!;
 
     protected override void ForceAppearanceUpdate(Entity<PlayingCardComponent> card)
     {
