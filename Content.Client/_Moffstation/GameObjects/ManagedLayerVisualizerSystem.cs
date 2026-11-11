@@ -3,6 +3,8 @@ using Robust.Shared.Utility;
 
 namespace Content.Client._Moffstation.GameObjects;
 
+/// This <see cref="VisualizerSystem{T}"/> extension helps to implement dynamic visuals with lots of added layers by
+/// managing the "lifecycle" of the layers for implementors.
 public abstract class ManagedLayerVisualizerSystem<TComp> : VisualizerSystem<TComp> where TComp : Component
 {
     private static readonly string LayerPrefix = $"{typeof(TComp).Name}-ManagedLayer-";
@@ -12,7 +14,7 @@ public abstract class ManagedLayerVisualizerSystem<TComp> : VisualizerSystem<TCo
         if (args.Sprite == null)
             return;
 
-        ref var layersAdded = ref SpriteLayersAdded(component);
+        ref var layersAdded = ref GetSpriteLayersAdded(component);
 
         // Obliterate existing layers
         var sprite = new Entity<SpriteComponent?>(uid, args.Sprite);
@@ -43,12 +45,23 @@ public abstract class ManagedLayerVisualizerSystem<TComp> : VisualizerSystem<TCo
         layersAdded.UnionWith(addedLayers);
     }
 
-    protected abstract ref HashSet<string> SpriteLayersAdded(TComp component);
+    /// Retrieves a reference to the mutable set of layers added by this visualizer.
+    protected abstract ref HashSet<string> GetSpriteLayersAdded(TComp component);
 
+    /// Analogous to <see cref="OnAppearanceChange"/> for standard <see cref="VisualizerSystem{T}"/>s, this function is
+    /// called when an <see cref="AppearanceChangeEvent"/> is raised on an entity with a <see cref="SpriteComponent"/>
+    /// and <typeparamref name="TComp"/>. Implementors should not directly add layers to <paramref name="sprite"/>, and
+    /// should instead use <paramref name="layerFactory"/> to "instantiate" layers from <see cref="PrototypeLayerData"/>.
     protected abstract void AddLayersOnAppearanceChange(
         TComp component,
         Entity<SpriteComponent?> sprite,
         AppearanceComponent appearance,
-        Func<string, PrototypeLayerData, SpriteComponent.Layer> layerFactory
+        LayerFactory layerFactory
     );
+
+    /// The factory function used by <see cref="AddLayersOnAppearanceChange"/>.
+    /// <param name="layerKey">A unique string used to identify the layer to create. Used for <see cref="SpriteSystem.LayerMapAdd"/></param>
+    /// <param name="layerData">The prototype layer data to use to create the layer.</param>
+    /// <returns>The newly created layer, if further modification is desired.</returns>
+    protected delegate SpriteComponent.Layer LayerFactory(string layerKey, PrototypeLayerData layerData);
 }

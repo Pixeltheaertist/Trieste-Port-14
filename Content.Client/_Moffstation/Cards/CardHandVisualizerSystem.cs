@@ -2,37 +2,40 @@ using System.Linq;
 using System.Numerics;
 using Content.Client._Moffstation.GameObjects;
 using Content.Shared._Moffstation.Cards.Components;
+using Content.Shared._Moffstation.Cards.Systems;
+using Content.Shared._Moffstation.Extensions;
 using Content.Shared._Moffstation.Strip.Components;
 using Robust.Client.GameObjects;
 using Robust.Shared.Utility;
 
 namespace Content.Client._Moffstation.Cards;
 
-public sealed partial class CardHandVisualizerSystem : ManagedLayerVisualizerSystem<CardHandComponent>
+public sealed partial class CardHandVisualizerSystem : ManagedLayerVisualizerSystem<PlayingCardHandComponent>
 {
     [Dependency] private MetaDataSystem _meta = default!;
+    [Dependency] private SharedPlayingCardsSystem _playingCards = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CardHandComponent, GetHideInStripMenuEntityEvent>(HandOnGetHideInStripMenuEntity);
+        SubscribeLocalEvent<PlayingCardHandComponent, GetHideInStripMenuEntityEvent>(HandOnGetHideInStripMenuEntity);
     }
 
-    protected override ref HashSet<string> SpriteLayersAdded(CardHandComponent component) =>
+    protected override ref HashSet<string> GetSpriteLayersAdded(PlayingCardHandComponent component) =>
         ref component.SpriteLayersAdded;
 
     protected override void AddLayersOnAppearanceChange(
-        CardHandComponent component,
+        PlayingCardHandComponent component,
         Entity<SpriteComponent?> sprite,
         AppearanceComponent appearance,
-        Func<string, PrototypeLayerData, SpriteComponent.Layer> layerFactory
+        LayerFactory layerFactory
     )
     {
-        if (!AppearanceSystem.TryGetData<NetEntity[]>(
+        if (!AppearanceSystem.TryGetData<List<PlayingCardInDeck>>(
                 sprite,
-                CardStackVisuals.Cards,
+                PlayingCardStackVisuals.Cards,
                 out var visibleCards,
                 appearance
             ))
@@ -40,15 +43,17 @@ public sealed partial class CardHandVisualizerSystem : ManagedLayerVisualizerSys
 
         // Use the hand's contained cards' CURRENT sprites. This means that if the cards are face up / down, they will
         // appear that way in the hand as well.
-        ApplyContainedCardLayersToHandSprite(component, visibleCards, c => c.CurrentSprite, layerFactory);
+        ApplyContainedCardLayersToHandSprite(component, visibleCards, forceUseReverseSprites: false, layerFactory);
     }
 
     private void HandOnGetHideInStripMenuEntity(
-        Entity<CardHandComponent> entity,
+        Entity<PlayingCardHandComponent> entity,
         ref GetHideInStripMenuEntityEvent args
     )
     {
-        if (!AppearanceSystem.TryGetData<NetEntity[]>(entity, CardStackVisuals.Cards, out var visibleCards))
+        if (!AppearanceSystem.TryGetData<List<PlayingCardInDeck>>(entity,
+                PlayingCardStackVisuals.Cards,
+                out var visibleCards))
             return;
 
         var virtualHand = Spawn(null, args.SpawnAt);
@@ -64,7 +69,7 @@ public sealed partial class CardHandVisualizerSystem : ManagedLayerVisualizerSys
             visibleCards,
             // Use the hand's contained cards' REVERSE sprites. This means that regardless of the cards' facing
             // directions, they will appear face down in the virtual hand.
-            c => c.ReverseSprite,
+            forceUseReverseSprites: true,
             (_, layerData) =>
             {
                 var idx = SpriteSystem.AddLayer(virtHandSprite, layerData, index: null);
@@ -79,33 +84,32 @@ public sealed partial class CardHandVisualizerSystem : ManagedLayerVisualizerSys
     }
 
     private void ApplyContainedCardLayersToHandSprite(
-        CardHandComponent component,
-        NetEntity[] visibleCards,
-        Func<CardComponent, PrototypeLayerData[]> cardLayers,
-        Func<string, PrototypeLayerData, SpriteComponent.Layer> layerFactory
+        PlayingCardHandComponent component,
+        List<PlayingCardInDeck> visibleCards,
+        bool forceUseReverseSprites,
+        LayerFactory layerFactory
     )
     {
+        bool? faceDownOverride = forceUseReverseSprites ? true : null;
         var startingAngle = -(component.Angle / 2);
-        var intervalAngle = visibleCards.Length != 1 ? component.Angle / (visibleCards.Length - 1) : 0;
+        var intervalAngle = visibleCards.Count != 1 ? component.Angle / (visibleCards.Count - 1) : 0;
         var startingXOffset = -(component.XOffset / 2);
-        var intervalOffset = visibleCards.Length != 1 ? component.XOffset / (visibleCards.Length - 1) : 0;
+        var intervalOffset = visibleCards.Count != 1 ? component.XOffset / (visibleCards.Count - 1) : 0;
         var layerScale = new Vector2(component.Scale, component.Scale);
-        foreach (var (cardIndex, cardEnt) in GetEntityArray(visibleCards).Index())
+        foreach (var (cardIndex, cardInDeck) in visibleCards.Index())
         {
-            if (!TryComp<CardComponent>(cardEnt, out var cardComp))
+            if (_playingCards.GetComponent(cardInDeck)?.Sprite(faceDownOverride) is not { } currentLayers)
                 continue;
 
-            foreach (var (layerIndex, layerData) in cardLayers(cardComp).Index())
+            var rotation = -Angle.FromDegrees(startingAngle + cardIndex * intervalAngle);
+            var x = startingXOffset + cardIndex * intervalOffset;
+            var offset = new Vector2(x, -(x * x) + 0.10f);
+            foreach (var (currLayerIndex, currLayerData) in currentLayers.Index())
             {
-                var layer = layerFactory($"{cardIndex}-{layerIndex}", layerData);
-
-                var angle = startingAngle + cardIndex * intervalAngle;
-                var x = startingXOffset + cardIndex * intervalOffset;
-                var y = -(x * x) + 0.10f;
-
-                SpriteSystem.LayerSetRotation(layer, Angle.FromDegrees(-angle));
-                SpriteSystem.LayerSetOffset(layer, new Vector2(x, y));
-                SpriteSystem.LayerSetScale(layer, layerScale);
+                layerFactory(
+                    $"{cardIndex}-{currLayerIndex}",
+                    currLayerData.Plus(layerScale, rotation, offset)
+                );
             }
         }
     }
