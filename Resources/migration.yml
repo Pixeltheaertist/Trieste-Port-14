@@ -771,6 +771,17 @@ FigureSpawner: MechFigurineSpawner50
 ToySpawner: PlushieSpawner50
 SpacemenFigureSpawner: SpacemenFigurineSpawner90
 
+# Moffstation - 2025-12-09
+CardBoxBlack: PlayingCardDeckBoxBlack
+CardDeckBlack: PlayingCardDeckBlack
+CardBoxNanotrasen: PlayingCardDeckBoxNanotrasen
+CardDeckNanotrasen: PlayingCardDeckNanotrasen
+CardBoxSyndicate: PlayingCardDeckBoxSyndicate
+CardDeckSyndicate: PlayingCardDeckSyndicate
+CardBoxNuno: NunoCardDeckBox
+CardDeckNuno: NunoCardDeck
+
+
 # 2026-01-07
 HandheldHealthAnalyzerUnpowered: HandheldHealthAnalyzer
 HandheldHealthAnalyzerEmpty: HandheldHealthAnalyzer
