@@ -1,0 +1,85 @@
+<controls:FancyWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:kitchen="clr-namespace:Content.Client.Kitchen.UI"
+    Title="{Loc 'oven-menu-title'}"
+    MinSize="512 256">
+    <BoxContainer Orientation="Vertical">
+        <BoxContainer Orientation="Horizontal">
+            <!-- Rack of food slots -->
+            <PanelContainer
+                Name="IngredientsPanel"
+                Access="Public"
+                Margin="5 5"
+                VerticalAlignment="Top">
+                <GridContainer
+                    Name="SlotGrid"
+                    Access="Public"
+                    Columns="4"
+                    HSeparationOverride="4"
+                    VSeparationOverride="4"
+                    Margin="6 6">
+                    <!-- Slots are added here by code -->
+                </GridContainer>
+            </PanelContainer>
+            <!-- Controls -->
+            <BoxContainer
+                Orientation="Vertical"
+                MinWidth="170"
+                Margin="10 10"
+                VerticalExpand="True"
+                HorizontalExpand="True">
+                <Label
+                    Name="CookTimeInfoLabel"
+                    Access="Public"
+                    Align="Center"
+                    VAlign="Center" />
+                <BoxContainer Orientation="Vertical" SeparationOverride="1">
+                    <kitchen:MicrowaveCookTimeButton
+                        Name="InstantCookButton"
+                        CookTime="0"
+                        StyleClasses="OpenBoth"/>
+                    <GridContainer
+                        Name="CookTimeButtonVbox"
+                        HSeparationOverride="1"
+                        VSeparationOverride="1"
+                        HorizontalExpand="True"
+                        Columns="3"
+                        Access="Public">
+                        <!-- Cook time buttons are added here by code -->
+                    </GridContainer>
+                    <Control MinSize="0 15" />
+                    <Button
+                        Name="StartButton"
+                        Access="Public"
+                        Text="{Loc 'microwave-menu-start-button'}"
+                        StyleClasses="positive"
+                        TextAlign="Center" />
+                    <Button
+                        Name="EjectButton"
+                        Access="Public"
+                        Text="{Loc 'oven-menu-eject-all-text'}"
+                        ToolTip="{Loc 'microwave-menu-eject-all-tooltip'}"
+                        StyleClasses="negative"
+                        TextAlign="Center" />
+                </BoxContainer>
+            </BoxContainer>
+        </BoxContainer>
+        <!-- Footer -->
+        <BoxContainer Orientation="Vertical">
+            <controls:Separator StyleClasses="LowDivider"/>
+            <BoxContainer Orientation="Horizontal" Margin="10 2 5 0" VerticalAlignment="Bottom">
+                <Label Text="{Loc 'oven-menu-footer-flavor-left'}" StyleClasses="WindowFooterText" />
+                <Label Text="{Loc 'oven-menu-footer-flavor-right'}" StyleClasses="WindowFooterText"
+                       HorizontalAlignment="Right" HorizontalExpand="True" Margin="0 0 5 0" />
+                <TextureRect StyleClasses="NTLogoDark" Stretch="KeepAspectCentered" VerticalAlignment="Center" HorizontalAlignment="Right" SetSize="19 19"/>
+            </BoxContainer>
+        </BoxContainer>
+    </BoxContainer>
+    <PanelContainer Name="DisableCookingPanelOverlay" MouseFilter="Stop">
+        <PanelContainer.PanelOverride>
+            <gfx:StyleBoxFlat BackgroundColor="#1B1B1E66" />
+        </PanelContainer.PanelOverride>
+    </PanelContainer>
+</controls:FancyWindow>
