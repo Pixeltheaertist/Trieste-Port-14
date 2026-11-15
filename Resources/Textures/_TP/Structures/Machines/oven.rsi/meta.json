@@ -1,5 +1,5 @@
 {
-    "copyright": "Created by Cookie (Father Cheese) For Trieste Port 14.",
+    "copyright": "Created by Cookie for Trieste Port.",
     "license": "CC-BY-SA-3.0",
     "version": 1,
     "size": {
@@ -11,22 +11,24 @@
             "name": "blank"
         },
         {
-            "name": "bottom-open"
+            "name": "running",
+            "directions": 4
         },
         {
-            "name": "bottom-running"
+            "name": "icon",
+            "directions": 4
         },
         {
-            "name": "icon"
+            "name": "high",
+            "directions": 4
         },
         {
-            "name": "top-high"
+            "name": "low",
+            "directions": 4
         },
         {
-            "name": "top-low"
-        },
-        {
-            "name": "top-medium"
+            "name": "medium",
+            "directions": 4
         }
     ]
 }
