@@ -34,4 +34,8 @@
     solution: solution
   - type: DrainableSolution
     solution: solution
-
+  - type: AmbientSound
+    volume: -5 
+    range: 10
+    sound:
+      path: /Audio/_TP/Machines/Machines/Pumpjack.ogg
