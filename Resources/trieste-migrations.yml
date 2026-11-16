@@ -118,3 +118,8 @@ AirlockExternalTrench: AirlockExternal
 AirlockExternalTrenchFilled: AirlockExternal
 AirlockExternalGlassBell: TP14AirlockExternalDivingBellSweetwater
 AirlockExternalGlassBellFilled: TP14AirlockExternalDivingBellTrieste
+
+# 2026-11-16
+BluespaceCrystal1: TP14BluespaceCrystal1
+BluespaceCrystal5: TP14BluespaceCrystal5
+BluespaceCrystal10: TP14BluespaceCrystal10

@@ -20,11 +20,11 @@
     price: 200
   - type: Currency
     price:
-      BluespaceCrystal: 1
+      TP14CurrencyBluespaceCrystal: 1
 
 - type: entity
   parent: TP14BluespaceCrystal
-  id: BluespaceCrystal1
+  id: TP14BluespaceCrystal1
   suffix: Trieste, NanoTraitor, 1 BC
   components:
   - type: Stack
@@ -32,7 +32,7 @@
 
 - type: entity
   parent: TP14BluespaceCrystal
-  id: BluespaceCrystal5
+  id: TP14BluespaceCrystal5
   suffix: Trieste, NanoTraitor, 5 BC
   components:
   - type: Stack
@@ -40,7 +40,7 @@
 
 - type: entity
   parent: TP14BluespaceCrystal
-  id: BluespaceCrystal10
+  id: TP14BluespaceCrystal10
   suffix: Trieste, NanoTraitor, 10 BC
   components:
   - type: Stack
@@ -69,7 +69,7 @@
     key: enum.StoreUiKey.Key
   - type: Store
     balance:
-      BluespaceCrystal: 40
+      TP14CurrencyBluespaceCrystal: 40
 
 - type: entity
   parent: BaseUplinkRadio
@@ -78,7 +78,7 @@
   components:
   - type: Store
     balance:
-      BluespaceCrystal: 40
+      TP14CurrencyBluespaceCrystal: 40
   - type: Tag
     tags:
     - CascadeOpsUplink

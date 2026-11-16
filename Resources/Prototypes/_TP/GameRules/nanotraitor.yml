@@ -1,0 +1,32 @@
+# NanoTrasen traitors. Uses the upstream traitor rule for codewords, faction, mind role and objectives,
+# and NanoTraitorRule for the NT uplink and briefing.
+- type: entity
+  parent: [ BaseTraitorRule, BaseRoundstartAntagRule ]
+  id: TP14TraitorRuleNanoTraitor
+  components:
+  - type: GameRule
+    minPlayers: 5
+    delay:
+      min: 240
+      max: 420
+  - type: TraitorRule
+    traitorPrototypeId: NanoTraitor
+    codewordFactionPrototypeId: NanoTrasenTraitor
+    syndicateFaction: NanoTrasenTraitor # Upstream's name for "faction to add".
+    giveUplink: false # TP14NanoTraitorRule handles these.
+    giveBriefing: false
+  - type: NanoTraitorRule
+  - type: AntagRandomObjectives
+    sets:
+    - groups: TP14NanoTraitorObjectiveGroups
+    maxDifficulty: 5
+  - type: AntagSelection
+    agentName: nanotraitor-round-end-agent-name
+    lateJoinAdditional: true
+    antags:
+    - !type:LinearAntagCount
+      proto: TP14AntagSpecNanoTraitor
+      playerRatio: 12 # Runs alongside the Syndicate Traitor rule.
+      range:
+        min: 0
+        max: 4

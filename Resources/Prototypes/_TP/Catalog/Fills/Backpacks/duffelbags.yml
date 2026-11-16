@@ -9,16 +9,16 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: WeaponShotgunDoubleBarreled
+        - id: TP14WeaponShotgunDoubleBarreledIncendiary
         - id: BoxShotgunIncendiary
         - id: CombatMedipen
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateMedicalBundle
   id: TP14ClothingBackpackDuffelSyndicateMedicalBundleFilled
-  suffix: Trieste
   name: medical bundle
   description: All you need to get your comrades back in the fight.
+  suffix: Trieste
   components:
   - type: EntityTableContainerFill
     containers:

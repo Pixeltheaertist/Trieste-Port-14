@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingBackpack
+  id: TP14ClothingBackpackHostageBag
+  suffix: Trieste, Hostage Kit
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: Zipties
+          amount: 3
+        - id: ClothingMaskMuzzle
+        - id: ClothingEyesBlindfold

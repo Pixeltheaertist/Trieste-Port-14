@@ -1,0 +1,12 @@
+- type: entity
+  parent: Jug
+  id: TP14JugSpaceLube
+  suffix: Trieste, Space Lube
+  components:
+  - type: Label
+    localizedLabel: reagent-name-space-lube
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: SpaceLube
+        Quantity: 240

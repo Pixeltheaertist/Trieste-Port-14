@@ -83,6 +83,7 @@
   rules:
   - DummyNonAntagChance
   - Traitor
+  - TP14TraitorRuleNanoTraitor
   - SubGamemodesRuleNoWizard
   - TP14StationEventScheduler
   - BasicRoundstartVariation

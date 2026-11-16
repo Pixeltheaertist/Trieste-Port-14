@@ -1,0 +1,7 @@
+- type: entity
+  parent: WeaponShotgunDoubleBarreled
+  id: TP14WeaponShotgunDoubleBarreledIncendiary
+  suffix: Trieste, Incendiary
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunIncendiary
