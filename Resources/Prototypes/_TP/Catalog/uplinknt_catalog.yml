@@ -563,6 +563,16 @@
   categories:
     - UplinkNtDisruption
 
+- type: listing
+  id: TP14ListingHostageBag
+  name: uplink-hostage-bag-name
+  description: uplink-hostage-bag-desc
+  productEntity: TP14ClothingBackpackHostageBag
+  cost:
+    TP14CurrencyBluespaceCrystal: 2
+  categories:
+  - UplinkNtDisruption
+
 ##DECEPTION
 
 - type: listing
