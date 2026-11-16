@@ -6,7 +6,7 @@
   description: uplink-CaptainSabre-desc
   productEntity: CaptainSabre
   cost:
-    BluespaceCrystal: 8
+    TP14CurrencyBluespaceCrystal: 8
   categories:
   - UplinkNtWeaponry
 
@@ -16,7 +16,7 @@
   description: uplink-NTknuckleduster-desc
   productEntity: TP14ClothingHandsKnuckleDustersNT
   cost:
-    BluespaceCrystal: 6
+    TP14CurrencyBluespaceCrystal: 6
   categories:
   - UplinkNtWeaponry
 
@@ -24,9 +24,9 @@
   id: UplinkRPG7 # SAY HELLO TO MY LITTLE FRIEND # it's a rocket launcher
   name: uplink-rpg-name
   description: uplink-rpg-desc
-  productEntity: WeaponLauncherMultipleRocket
+  productEntity: TP14WeaponLauncherMultipleRocket
   cost:
-    BluespaceCrystal: 16
+    TP14CurrencyBluespaceCrystal: 16
   categories:
   - UplinkNtWeaponry
 
@@ -36,7 +36,7 @@
   description: uplink-atreides-desc
   productEntity: WeaponSubMachineGunAtreides
   cost:
-    BluespaceCrystal: 8
+    TP14CurrencyBluespaceCrystal: 8
   categories:
   - UplinkNtWeaponry
 
@@ -46,7 +46,7 @@
   description: uplink-carbine-desc
   productEntity: TP14WeaponEnergyCarbine
   cost:
-    BluespaceCrystal: 11
+    TP14CurrencyBluespaceCrystal: 11
   categories:
   - UplinkNtWeaponry
 
@@ -56,7 +56,7 @@
   description: uplink-blaster-desc
   productEntity: TP14WeaponNtBlaster
   cost:
-    BluespaceCrystal: 5 # cheap, but modules cost more so it evens out
+    TP14CurrencyBluespaceCrystal: 5 # cheap, but modules cost more so it evens out
   categories:
   - UplinkNtWeaponry
 
@@ -66,7 +66,7 @@
   description: uplink-cburn-desc
   productEntity: ClothingBackpackDuffelNtCburnFilled
   cost:
-    BluespaceCrystal: 8
+    TP14CurrencyBluespaceCrystal: 8
   categories:
   - UplinkNtWeaponry
 
@@ -76,7 +76,7 @@
   description: uplink-pistol-N1984-desc
   productEntity: WeaponPistolN1984
   cost:
-    BluespaceCrystal: 7
+    TP14CurrencyBluespaceCrystal: 7
   categories:
   - UplinkNtWeaponry
 
@@ -86,7 +86,17 @@
   description: uplink-pistol-Mk58-desc
   productEntity: WeaponPistolMk58
   cost:
-    BluespaceCrystal: 3
+    TP14CurrencyBluespaceCrystal: 3
+  categories:
+  - UplinkNtWeaponry
+
+- type: listing
+  id: TP14ListingUplinkDeckard
+  name: uplink-deckard-name
+  description: uplink-deckard-desc
+  productEntity: WeaponRevolverDeckard
+  cost:
+    TP14CurrencyBluespaceCrystal: 7
   categories:
   - UplinkNtWeaponry
 
@@ -100,7 +110,7 @@
   #description: uplink-beachball-desc
   #productEntity: BeachballGrenade
   #cost:
-  #  BluespaceCrystal: 4
+  #  TP14CurrencyBluespaceCrystal: 4
   #categories:
   #- UplinkNtExplosives
 
@@ -111,7 +121,7 @@
   description: uplink-explosive-grenade-desc
   productEntity: ExGrenade
   cost:
-    BluespaceCrystal: 4
+    TP14CurrencyBluespaceCrystal: 4
   categories:
   - UplinkNtExplosives
 
@@ -121,7 +131,7 @@
   description: uplink-flash-grenade-desc
   productEntity: GrenadeFlashBang
   cost:
-    BluespaceCrystal: 1
+    TP14CurrencyBluespaceCrystal: 1
   categories:
   - UplinkNtExplosives
 
@@ -131,7 +141,7 @@
   description: uplink-smoke-grenade-desc
   productEntity: SmokeGrenade
   cost:
-    BluespaceCrystal: 1
+    TP14CurrencyBluespaceCrystal: 1
   categories:
   - UplinkNtExplosives
 
@@ -141,7 +151,7 @@
   description: uplink-mini-bomb-desc
   productEntity: NanoMiniBomb
   cost:
-    BluespaceCrystal: 6
+    TP14CurrencyBluespaceCrystal: 6
   categories:
     - UplinkNtExplosives
 
@@ -151,7 +161,7 @@
   description: uplink-penguin-grenade-desc
   productEntity: MobGrenadePenguin
   cost:
-    BluespaceCrystal: 5
+    TP14CurrencyBluespaceCrystal: 5
   categories:
     - UplinkNtExplosives
 
@@ -161,7 +171,7 @@
   description: uplink-c4-desc
   productEntity: C4
   cost:
-    BluespaceCrystal: 2
+    TP14CurrencyBluespaceCrystal: 2
   categories:
   - UplinkNtExplosives
 
@@ -171,7 +181,7 @@
   description: uplink-firebomb-desc
   productEntity: GrenadeIncendiary # I'm like 90% sure this is the wrong prototype, ngl.
   cost:
-    BluespaceCrystal: 5
+    TP14CurrencyBluespaceCrystal: 5
   categories:
   - UplinkNtExplosives
 
@@ -181,7 +191,7 @@
   description: uplink-energybomb-desc
   productEntity: TP14EnergyBomb # IT'S DIFFERENT BECAUSE IT'S BLUE
   cost:
-    BluespaceCrystal: 15
+    TP14CurrencyBluespaceCrystal: 15
   categories:
   - UplinkNtExplosives
 
@@ -191,9 +201,9 @@
   id: UplinkMagnumMag
   name: uplink-magnum-name
   description: uplink-magnum-desc
-  productEntity: MagazineMagnum
+  productEntity: SpeedLoaderMagnum
   cost:
-    BluespaceCrystal: 4
+    TP14CurrencyBluespaceCrystal: 4
   categories:
   - UplinkNtAmmo
 
@@ -203,7 +213,7 @@
   description: uplink-rocket-desc
   productEntity: CartridgeRocket
   cost:
-    BluespaceCrystal: 4
+    TP14CurrencyBluespaceCrystal: 4
   categories:
   - UplinkNtAmmo
 
@@ -213,7 +223,7 @@
   description: uplink-35auto-desc
   productEntity: BoxMagazinePistolSubMachineGun
   cost:
-    BluespaceCrystal: 5
+    TP14CurrencyBluespaceCrystal: 5
   categories:
   - UplinkNtAmmo
 
@@ -223,7 +233,7 @@
   description: uplink-disabler-desc
   productEntity: TP14MagCellDisabler
   cost:
-    BluespaceCrystal: 5
+    TP14CurrencyBluespaceCrystal: 5
   categories:
   - UplinkNtAmmo
 
@@ -233,7 +243,7 @@
   description: uplink-pistolmag-desc
   productEntity: MagazinePistol
   cost:
-    BluespaceCrystal: 2
+    TP14CurrencyBluespaceCrystal: 2
   categories:
   - UplinkNtAmmo
 
@@ -243,7 +253,7 @@
   description: uplink-magcell-desc
   productEntity: TP14BaseMagCell
   cost:
-    BluespaceCrystal: 2
+    TP14CurrencyBluespaceCrystal: 2
   categories:
   - UplinkNtAmmo
 
@@ -253,7 +263,7 @@
   description: uplink-magcelladv-desc
   productEntity: TP14MagCellAdvanced
   cost:
-    BluespaceCrystal: 6
+    TP14CurrencyBluespaceCrystal: 6
   categories:
   - UplinkNtAmmo
 
@@ -263,7 +273,7 @@
   description: uplink-magcellexp-desc
   productEntity: TP14MagCellExperimental
   cost:
-    BluespaceCrystal: 10
+    TP14CurrencyBluespaceCrystal: 10
   categories:
   - UplinkNtAmmo
 
@@ -275,7 +285,7 @@
   description: uplink-bulletproof-desc
   productEntity: ClothingOuterArmorBulletproof
   cost:
-    BluespaceCrystal: 3
+    TP14CurrencyBluespaceCrystal: 3
   categories:
   - UplinkNtWearables
 
@@ -285,7 +295,7 @@
   description: uplink-voice-mask-desc
   productEntity: ClothingMaskGasVoiceChameleon
   cost:
-    BluespaceCrystal: 2
+    TP14CurrencyBluespaceCrystal: 2
   categories:
   - UplinkNtWearables
 
@@ -295,7 +305,7 @@
   description: uplink-chest-rig-desc
   productEntity: ClothingBeltMilitaryWebbing
   cost:
-    BluespaceCrystal: 1
+    TP14CurrencyBluespaceCrystal: 1
   categories:
   - UplinkNtWearables
 
@@ -306,7 +316,7 @@
   productEntity: ClothingBackpackChameleonFill
   icon: { sprite: /Textures/Clothing/Uniforms/Jumpsuits/Color/rainbow.rsi, state: icon }
   cost:
-    BluespaceCrystal: 4
+    TP14CurrencyBluespaceCrystal: 4
   categories:
     - UplinkNtWearables
 
@@ -316,7 +326,7 @@
   description: uplink-clothing-no-slips-shoes-desc
   productEntity: ClothingShoesChameleonNoSlips
   cost:
-    BluespaceCrystal: 2
+    TP14CurrencyBluespaceCrystal: 2
   categories:
   - UplinkNtWearables
 
@@ -327,7 +337,7 @@
   description: uplink-clothing-chameleon-thieving-gloves-desc
   productEntity: ClothingHandsChameleonThief
   cost:
-    BluespaceCrystal: 5
+    TP14CurrencyBluespaceCrystal: 5
   categories:
   - UplinkNtWearables
 
@@ -337,7 +347,7 @@
   description: uplink-clothing-outer-vest-web-desc
   productEntity: ClothingOuterVestWeb
   cost:
-    BluespaceCrystal: 3
+    TP14CurrencyBluespaceCrystal: 3
   categories:
   - UplinkNtWearables
 
@@ -347,7 +357,7 @@
   description: uplink-clothing-outer-vest-web-elite-desc
   productEntity: ClothingOuterVestWebElite
   cost:
-    BluespaceCrystal: 5
+    TP14CurrencyBluespaceCrystal: 5
   categories:
   - UplinkNtWearables
 
@@ -357,7 +367,7 @@
   description: uplink-bluehardsuit-desc
   productEntity: ClothingOuterHardsuitERTLeader # stats are equal to a bloodred
   cost:
-    BluespaceCrystal: 8
+    TP14CurrencyBluespaceCrystal: 8
   categories:
   - UplinkNtWearables
 
@@ -367,7 +377,7 @@
   description: uplink-clothing-conducting-gloves-desc
   productEntity: ClothingHandsGlovesConducting
   cost:
-    BluespaceCrystal: 2
+    TP14CurrencyBluespaceCrystal: 2
   categories:
   - UplinkNtWearables
 
@@ -381,7 +391,7 @@
   icon: { sprite: /Textures/Objects/Misc/pens.rsi, state: pen }
   productEntity: HypopenBox
   cost:
-    BluespaceCrystal: 6
+    TP14CurrencyBluespaceCrystal: 6
   categories:
   - UplinkNtChemicals
 
@@ -392,7 +402,7 @@
   icon: { sprite: /Textures/Objects/Fun/Darts/dart_red.rsi, state: icon }
   productEntity: HypoDartBox
   cost:
-    BluespaceCrystal: 2
+    TP14CurrencyBluespaceCrystal: 2
   categories:
   - UplinkNtChemicals
 
@@ -402,7 +412,7 @@
   description: uplink-combat-medkit-desc
   productEntity: MedkitCombatFilled
   cost:
-    BluespaceCrystal: 5
+    TP14CurrencyBluespaceCrystal: 5
   categories:
   - UplinkNtChemicals
 
@@ -412,7 +422,7 @@
   description: uplink-combat-medipen-desc
   productEntity: CombatMedipen
   cost:
-    BluespaceCrystal: 4
+    TP14CurrencyBluespaceCrystal: 4
   categories:
   - UplinkNtChemicals
 
@@ -422,7 +432,7 @@
   description: uplink-stimpack-desc
   productEntity: Stimpack
   cost:
-    BluespaceCrystal: 4
+    TP14CurrencyBluespaceCrystal: 4
   categories:
   - UplinkNtChemicals
 
@@ -432,7 +442,7 @@
   description: uplink-stimkit-desc
   productEntity: StimkitFilled
   cost:
-    BluespaceCrystal: 12
+    TP14CurrencyBluespaceCrystal: 12
   categories:
   - UplinkNtChemicals
 
@@ -442,7 +452,7 @@
   description: uplink-vestinehalf-desc
   productEntity: TP14SmallChemistryVialVestineHalf
   cost:
-    BluespaceCrystal: 3
+    TP14CurrencyBluespaceCrystal: 3
   categories:
   - UplinkNtChemicals
 
@@ -452,9 +462,13 @@
   description: uplink-lab-desc
   productEntity: TP14CrateChemicalLabBundle
   cost:
-    BluespaceCrystal: 15
+    TP14CurrencyBluespaceCrystal: 15
   categories:
-  - UplinkNtChemicals
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Chemist
 
 ##DISRUPTION
 
@@ -464,19 +478,20 @@
   description: uplink-access-breaker-desc
   productEntity: NTAccessBreaker
   cost:
-    BluespaceCrystal: 4
+    TP14CurrencyBluespaceCrystal: 4
   categories:
   - UplinkNtDisruption
 
-- type: listing
-  id: UplinkEmagNT
-  name: uplink-emag-name
-  description: uplink-emag-desc
-  productEntity: Emag
-  cost:
-    BluespaceCrystal: 5
-  categories:
-  - UplinkNtDisruption
+# Commented out until we get a new sprite
+#- type: listing
+#  id: UplinkEmagNT
+#  name: uplink-emag-name
+#  description: uplink-emag-desc
+#  productEntity: Emag
+#  cost:
+#    TP14CurrencyBluespaceCrystal: 5
+#  categories:
+#  - UplinkNtDisruption
 
 - type: listing
   id: UplinkRadioJammerNT
@@ -484,7 +499,7 @@
   description: uplink-radio-jammer-desc
   productEntity: RadioJammer
   cost:
-    BluespaceCrystal: 3
+    TP14CurrencyBluespaceCrystal: 3
   categories:
   - UplinkNtDisruption
 
@@ -492,9 +507,9 @@
   id: UplinkLubeBoxNT # heheheheheh
   name: uplink-lube-name
   description: uplink-lube-desc
-  productEntity: LubeBoxNT
+  productEntity: TP14JugSpaceLube # heheheheheh
   cost:
-    BluespaceCrystal: 2
+    TP14CurrencyBluespaceCrystal: 3
   categories:
   - UplinkNtDisruption
 
@@ -504,17 +519,7 @@
   description: uplink-toolboxnt-desc
   productEntity: TP14ToolboxNanoTrasenFilled
   cost:
-    BluespaceCrystal: 3
-  categories:
-  - UplinkNtDisruption
-
-- type: listing
-  id: UplinkNanoTraitorLawBoard
-  name: uplink-lawboard-name
-  description: uplink-lawboard-desc
-  productEntity: TP14NanoTraitorCircuitBoard
-  cost:
-    BluespaceCrystal: 8
+    TP14CurrencyBluespaceCrystal: 3
   categories:
   - UplinkNtDisruption
 
@@ -524,7 +529,7 @@
   description: uplink-announcer-desc
   productEntity: HandHeldAnnouncementPad
   cost:
-    BluespaceCrystal: 7
+    TP14CurrencyBluespaceCrystal: 7
   categories:
   - UplinkNtDisruption
 
@@ -534,7 +539,7 @@
   description: uplink-whitehole-grenade-desc
   productEntity: WhiteholeGrenade
   cost:
-    BluespaceCrystal: 2
+    TP14CurrencyBluespaceCrystal: 2
   categories:
     - UplinkNtDisruption
 
@@ -544,11 +549,19 @@
   description: uplink-singularity-grenade-desc
   productEntity: SingularityGrenade
   cost:
-    BluespaceCrystal: 2
+    TP14CurrencyBluespaceCrystal: 2
   categories:
     - UplinkNtDisruption
 
-# need a retexture of the two syndi borg modules to finish filling this out, ill do that another time,
+- type: listing
+  id: TP14ListingOmegaSoap
+  name: uplink-omega-soap-name
+  description: uplink-omega-soap-desc
+  productEntity: TP14SoapNT
+  cost:
+    TP14CurrencyBluespaceCrystal: 5
+  categories:
+    - UplinkNtDisruption
 
 ##DECEPTION
 
@@ -558,7 +571,7 @@
   description: uplink-agent-id-card-desc
   productEntity: AgentIDCard
   cost:
-    BluespaceCrystal: 3
+    TP14CurrencyBluespaceCrystal: 3
   categories:
   - UplinkNtDeception
 
@@ -568,7 +581,7 @@
   description: uplink-stealth-box-desc
   productEntity: StealthBox
   cost:
-    BluespaceCrystal: 5
+    TP14CurrencyBluespaceCrystal: 5
   categories:
   - UplinkNtDeception
 
@@ -578,7 +591,7 @@
   description: uplink-chameleon-projector-desc
   productEntity: ChameleonProjector
   cost:
-    BluespaceCrystal: 7
+    TP14CurrencyBluespaceCrystal: 7
   categories:
   - UplinkNtDeception
 
@@ -588,7 +601,7 @@
   description: uplink-ultrabright-lantern-desc
   productEntity: LanternFlash
   cost:
-    BluespaceCrystal: 2
+    TP14CurrencyBluespaceCrystal: 2
   categories:
   - UplinkNtDeception
 
@@ -599,7 +612,7 @@
 #   description: uplink-agent-id-card-desc
 #   productEntity: AgentIDCard
 #   cost:
-#     BluespaceCrystal: 3
+#     TP14CurrencyBluespaceCrystal: 3
 #   categories:
 #   - UplinkNtDeception
 
@@ -609,7 +622,7 @@
 #   description: uplink-stealth-box-desc
 #   productEntity: StealthBox
 #   cost:
-#     BluespaceCrystal: 5
+#     TP14CurrencyBluespaceCrystal: 5
 #   categories:
 #   - UplinkNtDeception
 
@@ -619,7 +632,7 @@
 #   description: uplink-chameleon-projector-desc
 #   productEntity: ChameleonProjector
 #   cost:
-#     BluespaceCrystal: 7
+#     TP14CurrencyBluespaceCrystal: 7
 #   categories:
 #   - UplinkNtDeception
 
@@ -629,7 +642,7 @@
   description: uplink-key-desc
   productEntity: BoxEncryptionKeyNanotrasen
   cost:
-    BluespaceCrystal: 2
+    TP14CurrencyBluespaceCrystal: 2
   categories:
   - UplinkNtDeception
 
@@ -639,7 +652,7 @@
   description: uplink-cleaner-desc
   productEntity: CrimeCleanerKit
   cost:
-    BluespaceCrystal: 4
+    TP14CurrencyBluespaceCrystal: 4
   categories:
   - UplinkNtDeception
 
@@ -649,7 +662,7 @@
   description: uplink-binary-desc
   productEntity: EncryptionKeyBinary
   cost:
-    BluespaceCrystal: 1
+    TP14CurrencyBluespaceCrystal: 1
   categories:
   - UplinkNtDeception
 
@@ -659,7 +672,7 @@
   description: uplink-lobbying-desc
   productEntity: BriefcaseNTBribingBundleFilled
   cost:
-    BluespaceCrystal: 5
+    TP14CurrencyBluespaceCrystal: 5
   categories:
   - UplinkNtDeception
 
@@ -671,7 +684,7 @@
   #description: uplink-borging-desc
  # productEntity: CrateBorgingBundle
  # cost:
- #   BluespaceCrystal: 15
+ #   TP14CurrencyBluespaceCrystal: 15
  # categories:
  # - UplinkNtAllies
 
@@ -683,7 +696,7 @@
   description: uplink-pai-desc
   productEntity: PersonalAI
   cost:
-    BluespaceCrystal: 1
+    TP14CurrencyBluespaceCrystal: 1
   categories:
   - UplinkNtPointless
 
@@ -693,7 +706,7 @@
   description: uplink-lottery-desc
   productEntity: CrateCargoGambling
   cost:
-    BluespaceCrystal: 13
+    TP14CurrencyBluespaceCrystal: 13
   categories:
   - UplinkNtPointless
 
@@ -703,7 +716,7 @@
   description: uplink-NTvape-desc
   productEntity: TP14_NTvape
   cost:
-    BluespaceCrystal: 1
+    TP14CurrencyBluespaceCrystal: 1
   categories:
   - UplinkNtPointless
 

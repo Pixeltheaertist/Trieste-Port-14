@@ -23,4 +23,15 @@ traitor-role-codewords-short-nt =
     {$codewords}.
     Remember to keep an eye out for Syndicate agents, we've received reports that they have been sighted here.
 
-traitor-role-uplink-code-short-nt = Remember, your implant allows you to access your gear.
+traitor-role-uplink-code-short-nt = Your uplink code is {$code}. Set it as your PDA ringtone to access your uplink.
+traitor-role-uplink-implant-short-nt = Your uplink was implanted. Access it from the action menu.
+
+nanotraitor-round-end-agent-name = NanoTrasen agent
+
+roles-antag-nanotrasen-agent-name = NanoTrasen Agent
+roles-antag-nanotrasen-agent-objective = Complete your objectives for NanoTrasen without being caught.
+
+role-subtype-nanotraitor = NanoTraitor
+
+admin-verb-text-make-nanotraitor = Make NanoTraitor
+admin-verb-make-nanotraitor = Make the target into a NanoTrasen traitor.

@@ -17,6 +17,17 @@
     - UplinkNtJob
     - UplinkNtPointless
     currencyWhitelist:
-    - BluespaceCrystal
+    - TP14CurrencyBluespaceCrystal
     balance:
-      BluespaceCrystal: 0
+      TP14CurrencyBluespaceCrystal: 0
+
+# Remote store used by NanoTraitor uplinks. Lives in nullspace and is opened by a PDA ringer code or UplinkImplantNT.
+- type: entity
+  parent: StorePresetUplinkNT
+  id: TP14StorePresetRemoteUplinkNT
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Store
+    expectedFaction:
+    - NanoTrasenTraitor
+  - type: RingerAccessUplink

@@ -9,7 +9,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: WeaponShotgunDoubleBarreled
+        - id: TP14WeaponShotgunDoubleBarreledIncendiary
         - id: BoxShotgunIncendiary
         - id: CombatMedipen
 

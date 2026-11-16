@@ -1,0 +1,13 @@
+- type: entity
+  parent: WeaponLauncherMultipleRocket
+  id: TP14WeaponLauncherMultipleRocket
+  suffix: Trieste
+  components:
+  - type: Gun
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+  - type: BallisticAmmoProvider
+    capacity: 10
+  - type: GunRequiresWield

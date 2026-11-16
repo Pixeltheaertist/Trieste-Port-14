@@ -1,0 +1,35 @@
+- type: antag
+  id: NanoTraitor
+  name: roles-antag-nanotrasen-agent-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-nanotrasen-agent-objective
+  guides: [ Traitors ]
+  tags:
+  - OnStation
+  - Roundstart
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 1h
+
+- type: antagSpecifier
+  parent: BaseTraitor
+  id: TP14AntagSpecNanoTraitor
+  prefRoles:
+  - NanoTraitor
+  blacklist:
+    components:
+    - AntagImmune
+  mindRoles:
+  - TP14MindRoleNanoTraitor
+
+# Keeps TraitorRole from MindRoleTraitor so upstream traitor objectives and systems still apply.
+- type: entity
+  parent: MindRoleTraitor
+  id: TP14MindRoleNanoTraitor
+  name: NanoTrasen Traitor Role
+  components:
+  - type: MindRole
+    antagPrototype: NanoTraitor
+    subtype: role-subtype-nanotraitor
+  - type: NanoTraitorRole

@@ -1,6 +1,6 @@
 - type: currency
-  id: BluespaceCrystal
+  id: TP14CurrencyBluespaceCrystal
   displayName: store-currency-display-bluespace-crystal
   cash:
-    1: BluespaceCrystal1
+    1: TP14BluespaceCrystal1
   canWithdraw: true

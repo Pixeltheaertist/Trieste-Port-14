@@ -1,0 +1,182 @@
+- type: objectiveIssuer
+  id: TP14ObjIssuerNanoTrasen
+  name: objective-issuer-NT
+
+# Steal
+
+- type: entity
+  parent: CaptainIDStealObjective
+  id: TP14NanoTraitorCaptainIDStealObjective
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+- type: entity
+  parent: CMOHyposprayStealObjective
+  id: TP14NanoTraitorCMOHyposprayStealObjective
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+- type: entity
+  parent: CMOCrewMonitorStealObjective
+  id: TP14NanoTraitorCMOCrewMonitorStealObjective
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+- type: entity
+  parent: RDHardsuitStealObjective
+  id: TP14NanoTraitorRDHardsuitStealObjective
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+- type: entity
+  parent: NukeDiskStealObjective
+  id: TP14NanoTraitorNukeDiskStealObjective
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+- type: entity
+  parent: MagbootsStealObjective
+  id: TP14NanoTraitorMagbootsStealObjective
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+- type: entity
+  parent: CorgiMeatStealObjective
+  id: TP14NanoTraitorCorgiMeatStealObjective
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+- type: entity
+  parent: ClipboardStealObjective
+  id: TP14NanoTraitorClipboardStealObjective
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+- type: entity
+  parent: KnuckleDustersStealObjective
+  id: TP14NanoTraitorKnuckleDustersStealObjective
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+- type: entity
+  parent: CaptainJetpackStealObjective
+  id: TP14NanoTraitorCaptainJetpackStealObjective
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+- type: entity
+  parent: HandTeleporterStealObjective
+  id: TP14NanoTraitorHandTeleporterStealObjective
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+- type: entity
+  parent: EnergyMagnumStealObjective
+  id: TP14NanoTraitorEnergyMagnumStealObjective
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+# Kill
+
+- type: entity
+  parent: KillRandomPersonObjective
+  id: TP14NanoTraitorKillRandomPersonObjective
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+- type: entity
+  parent: KillRandomHeadObjective
+  id: TP14NanoTraitorKillRandomHeadObjective
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+- type: entity
+  parent: KillStationAiObjective
+  id: TP14NanoTraitorKillStationAiObjective
+  description: Trieste's artificial intelligence knows too much about our operations here. Shut it down for good.
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+# State
+
+- type: entity
+  parent: EscapeShuttleObjective
+  id: TP14NanoTraitorEscapeShuttleObjective
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+- type: entity
+  parent: DieObjective
+  id: TP14NanoTraitorDieObjective
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+# Sabotage
+
+- type: entity
+  parent: SupercritAnomaliesObjective
+  id: TP14NanoTraitorSupercritAnomaliesObjective
+  description: Trieste's researchers are playing with anomalies they don't understand. Show them what happens when they get out of hand.
+  components:
+  - type: Objective
+    issuer: TP14ObjIssuerNanoTrasen
+
+# Groups
+
+- type: weightedRandom
+  id: TP14NanoTraitorObjectiveGroups
+  weights:
+    TP14NanoTraitorObjectiveGroupSteal: 1
+    TP14NanoTraitorObjectiveGroupKill: 1
+    TP14NanoTraitorObjectiveGroupState: 1
+
+- type: weightedRandom
+  id: TP14NanoTraitorObjectiveGroupSteal
+  weights:
+    TP14NanoTraitorCaptainIDStealObjective: 1
+    TP14NanoTraitorCMOHyposprayStealObjective: 1
+    TP14NanoTraitorCMOCrewMonitorStealObjective: 1
+    TP14NanoTraitorRDHardsuitStealObjective: 1
+    TP14NanoTraitorNukeDiskStealObjective: 1
+    TP14NanoTraitorMagbootsStealObjective: 1
+    TP14NanoTraitorCorgiMeatStealObjective: 1
+    TP14NanoTraitorClipboardStealObjective: 1
+    TP14NanoTraitorKnuckleDustersStealObjective: 1
+    TP14NanoTraitorCaptainJetpackStealObjective: 0.5
+    TP14NanoTraitorHandTeleporterStealObjective: 0.5
+    TP14NanoTraitorEnergyMagnumStealObjective: 0.5
+
+- type: weightedRandom
+  id: TP14NanoTraitorObjectiveGroupKill
+  weights:
+    TP14NanoTraitorKillRandomPersonObjective: 1
+    TP14NanoTraitorKillStationAiObjective: 0.25
+    TP14NanoTraitorKillRandomHeadObjective: 0.25
+
+- type: weightedRandom
+  id: TP14NanoTraitorObjectiveGroupState
+  weights:
+    TP14NanoTraitorEscapeShuttleObjective: 1
+    TP14NanoTraitorDieObjective: 0.2
+
+- type: weightedRandom
+  id: TP14NanoTraitorObjectiveGroupSabotage
+  weights:
+    TP14NanoTraitorSupercritAnomaliesObjective: 1
