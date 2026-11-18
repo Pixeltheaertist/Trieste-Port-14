@@ -6,6 +6,7 @@ using Content.Server.EUI;
 using Content.Server.Ghost.Roles;
 using Content.Server.Mind;
 using Content.Server.Prayer;
+using Content.Server.Preferences.Managers; // TRIESTE
 using Content.Server.Silicons.Laws;
 using Content.Shared.Administration;
 using Content.Shared.Administration.Systems;
@@ -67,6 +68,9 @@ namespace Content.Server.Administration.Systems
         [Dependency] private SiliconLawSystem _siliconLawSystem = default!;
         [Dependency] private AfkConfirmSystem _afkConfirm = default!;
         [Dependency] private SharedTransformSystem _transformSystem = default!;
+
+        // TRIESTE
+        [Dependency] private IServerPreferencesManager _prefsManager = default!;
 
         private readonly Dictionary<ICommonSession, List<EditSolutionsEui>> _openSolutionUis = new();
 
@@ -134,31 +138,38 @@ namespace Content.Server.Administration.Systems
                     args.Verbs.Add(prayerVerb);
 
                     // Spawn - Like respawn but on the spot.
-                    args.Verbs.Add(new Verb()
+                    // TRIESTE: We add one entry per character slot under the "Spawn here" submenu.
+                    // TRIESTE: The selected character is sorted first.
+                    var prefs = _prefsManager.GetPreferences(targetActor.PlayerSession.UserId);
+                    foreach (var (slot, profile) in prefs.Characters)
                     {
-                        Text = Loc.GetString("admin-player-actions-spawn"),
-                        Message = Loc.GetString("admin-player-actions-spawn-message"),
-                        Category = VerbCategory.Admin,
-                        Act = () =>
+                        var isSelected = slot == prefs.SelectedCharacterIndex;
+                        args.Verbs.Add(new Verb()
                         {
-                            if (!_transformSystem.TryGetMapOrGridCoordinates(args.Target, out var coords))
+                            Text = profile.Name,
+                            Message = Loc.GetString("admin-player-actions-spawn-message"),
+                            Category = VerbCategory.Spawn,
+                            Priority = isSelected ? 1 : 0,
+                            Act = () =>
                             {
-                                _popup.PopupEntity(Loc.GetString("admin-player-spawn-failed"), args.User, args.User);
-                                return;
-                            }
+                                if (!_transformSystem.TryGetMapOrGridCoordinates(args.Target, out var coords))
+                                {
+                                    _popup.PopupEntity(Loc.GetString("admin-player-spawn-failed"), args.User, args.User);
+                                    return;
+                                }
 
-                            var stationUid = _stations.GetOwningStation(args.Target);
+                                var stationUid = _stations.GetOwningStation(args.Target);
 
-                            var profile = _gameTicker.GetPlayerProfile(targetActor.PlayerSession);
-                            var mobUid = _spawning.SpawnPlayerMob(coords.Value, null, profile, stationUid);
+                                var mobUid = _spawning.SpawnPlayerMob(coords.Value, null, profile, stationUid);
 
-                            if (_mindSystem.TryGetMind(args.Target, out var mindId, out var mindComp))
-                                _mindSystem.TransferTo(mindId, mobUid, true, mind: mindComp);
+                                if (_mindSystem.TryGetMind(args.Target, out var mindId, out var mindComp))
+                                    _mindSystem.TransferTo(mindId, mobUid, true, mind: mindComp);
 
-                        },
-                        ConfirmationPopup = true,
-                        Impact = LogImpact.High,
-                    });
+                            },
+                            ConfirmationPopup = true,
+                            Impact = LogImpact.High,
+                        });
+                    }
 
                     // Clone - Spawn but without the mind transfer, also spawns at the user's coordinates not the target's
                     args.Verbs.Add(new Verb()
