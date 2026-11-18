@@ -37,6 +37,23 @@
   categories:
   - UplinkNtChemicals
 
+## G ##
+- type: listing
+  id: TP14ListingGibbingDartBox
+  name: uplink-gibdart-name
+  description: uplink-gibdart-desc
+  icon: { sprite: /Textures/Objects/Fun/Darts/dart_blue.rsi, state: icon }
+  productEntity: TP14GibbingDartBox
+  cost:
+    TP14CurrencyBluespaceCrystal: 20
+  categories:
+  - UplinkNtChemicals
+  conditions:
+  - !type:BuyerObjectiveWhitelistCondition
+    whitelist:
+      components:
+      - KillPersonCondition
+
 ## H ##
 - type: listing
   id: TP14ListingHyperzineInjector
@@ -55,17 +72,6 @@
   productEntity: StimkitFilled
   cost:
     TP14CurrencyBluespaceCrystal: 12
-  categories:
-  - UplinkNtChemicals
-
-- type: listing
-  id: TP14ListingGibbingDartBox
-  name: uplink-gibdart-name
-  description: uplink-gibdart-desc
-  icon: { sprite: /Textures/Objects/Fun/Darts/dart_blue.rsi, state: icon }
-  productEntity: TP14GibbingDartBox
-  cost:
-    TP14CurrencyBluespaceCrystal: 20
   categories:
   - UplinkNtChemicals
 
@@ -91,13 +97,11 @@
   categories:
   - UplinkNtChemicals
 
-## S ##
-
 ## V ##
 - type: listing
-  id: UplinkVestineChemistryVialHalf
-  name: uplink-vestinehalf-name
-  description: uplink-vestinehalf-desc
+  id: TP14ListingVestineVial
+  name: uplink-vestine-vial-name
+  description: uplink-vestine-vial-desc
   productEntity: TP14SmallChemistryVialVestineHalf
   cost:
     TP14CurrencyBluespaceCrystal: 3

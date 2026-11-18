@@ -1,9 +1,9 @@
 - type: entity
   parent: BoxCardboard
-  id: CrimeCleanerKit
-  suffix: Trieste, NanoTraitor
+  id: TP14CrimeCleaningKit
   name: evidence cleaning kit
   description: A kit designed to clean any evidence of a crime. Contains soap, space cleaner, nitrile gloves and a cleanade.
+  suffix: Trieste, NanoTraitor
   components:
   - type: Storage
     grid:

@@ -1,0 +1,35 @@
+## PLEASE SORT ALPHABETICALLY. NUMBERS FIRST. ##
+## 'TP14Listing' IS EXEMPT - SKIP IT! ##
+
+## L ##
+- type: listing
+  id: TP14ListingLottery
+  name: uplink-lottery-name
+  description: uplink-lottery-desc
+  productEntity: CrateCargoGambling
+  cost:
+    TP14CurrencyBluespaceCrystal: 13
+  categories:
+  - UplinkNtPointless
+
+## P ##
+- type: listing
+  id: TP14ListingPAI
+  name: uplink-pai-name
+  description: uplink-pai-desc
+  productEntity: PersonalAI
+  cost:
+    TP14CurrencyBluespaceCrystal: 1
+  categories:
+  - UplinkNtPointless
+
+## V ##
+- type: listing
+  id: TP14ListingNTVape
+  name: uplink-NT-vape-name
+  description: uplink-NT-vape-desc
+  productEntity: TP14NTVape
+  cost:
+    TP14CurrencyBluespaceCrystal: 1
+  categories:
+  - UplinkNtPointless

@@ -1,7 +1,7 @@
 - type: entity
-  id: BriefcaseNTBribingBundleFilled
+  id: TP14BriefcaseBribingBundle
   parent: BriefcaseSyndie
-  suffix: Trieste, NanoTraitor
+  suffix: Trieste
   components:
   - type: EntityTableContainerFill
     containers:

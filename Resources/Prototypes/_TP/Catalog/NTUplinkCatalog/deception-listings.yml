@@ -1,0 +1,89 @@
+## PLEASE SORT ALPHABETICALLY. NUMBERS FIRST. ##
+## 'TP14Listing' IS EXEMPT - SKIP IT! ##
+
+## A ##
+- type: listing
+  id: TP14ListingAgentID
+  name: uplink-agent-id-name
+  description: uplink-agent-id-desc
+  productEntity: TP14NTAgentIDCard
+  cost:
+    TP14CurrencyBluespaceCrystal: 3
+  categories:
+  - UplinkNtDeception
+
+## B ##
+- type: listing
+  id: TP14ListingBinaryKey
+  name: uplink-binarykey-name
+  description: uplink-binarykey-desc
+  productEntity: EncryptionKeyBinary
+  cost:
+    TP14CurrencyBluespaceCrystal: 1
+  categories:
+  - UplinkNtDeception
+
+## C ##
+- type: listing
+  id: TP14ListingChameleonProjector
+  name: uplink-chameleon-projector-name
+  description: uplink-chameleon-projector-desc
+  productEntity: ChameleonProjector
+  cost:
+    TP14CurrencyBluespaceCrystal: 7
+  categories:
+  - UplinkNtDeception
+
+- type: listing
+  id: TP14ListingCrimeCleanerKit
+  name: uplink-crime-cleaner-name
+  description: uplink-crime-cleaner-desc
+  productEntity: TP14CrimeCleaningKit
+  cost:
+    TP14CurrencyBluespaceCrystal: 4
+  categories:
+  - UplinkNtDeception
+
+## N ##
+- type: listing
+  id: TP14ListingNTEncryptionKeys
+  name: uplink-NT-keys-name
+  description: uplink-NT-keys-desc
+  productEntity: BoxEncryptionKeyNanotrasen
+  cost:
+    TP14CurrencyBluespaceCrystal: 2
+  categories:
+  - UplinkNtDeception
+
+## L ##
+- type: listing
+  id: TP14ListingLobbyingBundle
+  name: uplink-lobbying-bundle-name
+  description: uplink-lobbying-bundle-desc
+  productEntity: TP14BriefcaseBribingBundle
+  cost:
+    TP14CurrencyBluespaceCrystal: 5
+  categories:
+  - UplinkNtDeception
+
+## S ##
+- type: listing
+  id: TP14ListingStealthBox
+  name: uplink-stealth-box-name
+  description: uplink-stealth-box-desc
+  productEntity: StealthBox
+  cost:
+    TP14CurrencyBluespaceCrystal: 5
+  categories:
+  - UplinkNtDeception
+
+## U ##
+- type: listing
+  id: TP14ListingUltrabrightLantern
+  name: uplink-lantern-name
+  description: uplink-lantern-desc
+  productEntity: LanternFlash
+  cost:
+    TP14CurrencyBluespaceCrystal: 2
+  categories:
+  - UplinkNtDeception

@@ -1,9 +1,9 @@
 - type: entity
-  name: nanotrasen encryption key box
-  parent: [ BoxEncryptionKeyPassenger, BaseNanotrasenContraband ]
+  parent: [ BaseNanotrasenContraband, BoxEncryptionKeyPassenger ]
   id: BoxEncryptionKeyNanotrasen
-  suffix: Trieste, Filled, NanoTraitor
+  name: nanotrasen encryption key box
   description: Two Nanotrasen encryption keys for the price of one. What a deal!!
+  suffix: Trieste, NanoTraitor
   components:
   - type: Item
     size: Normal

@@ -55,7 +55,7 @@
 - type: weightedRandom
   id: TraitorObjectiveGroupOther
   weights:
-    HijackTradeStationObjective: 1
+  #  HijackTradeStationObjective: 1 # TRIESTE
     MailFraudObjective: 1
 
 

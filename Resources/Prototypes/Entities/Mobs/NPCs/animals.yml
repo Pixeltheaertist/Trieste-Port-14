@@ -722,6 +722,7 @@
   - type: NpcFactionMember
     factions:
     - Syndicate
+    - NanoTrasenTraitor # TRIESTE
   - type: Sprite
     drawdepth: Mobs
     layers:

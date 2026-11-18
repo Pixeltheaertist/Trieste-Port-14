@@ -1,5 +1,5 @@
 - type: entity
-  parent: [SoapOmega, BaseNanotrasenContraband]
+  parent: [ BaseNanotrasenContraband, SoapOmega ]
   id: TP14SoapNT
   description: A modified bar of omega soap. This one leaves no residue.
   suffix: Trieste

@@ -10,7 +10,7 @@ uplink-35auto-smg-desc = A spare .35 auto SMG magazine for use with the Atreides
 uplink-35auto-smg-box-name = .35-auto SMG Box
 uplink-35auto-smg-box-desc = A box containing 3 .35 auto SMG magazines to use with the Atreides.
 
-uplink-45magnum-name = .45 Magnum
+uplink-45magnum-name = .45 Magnum Magazine
 uplink-45magnum-desc = A spare .45 magnum magazine for use with the N1984.
 
 uplink-45magnum-box-name = .45 Magnum Box

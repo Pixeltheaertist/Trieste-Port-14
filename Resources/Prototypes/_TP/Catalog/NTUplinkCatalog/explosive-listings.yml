@@ -80,11 +80,33 @@
 
 ## S ##
 - type: listing
+  id: TP14ListingSingularityGrenade
+  name: uplink-singularity-grenade-name
+  description: uplink-singularity-grenade-desc
+  productEntity: SingularityGrenade
+  cost:
+    TP14CurrencyBluespaceCrystal: 2
+  categories:
+  - UplinkNtExplosives
+
+- type: listing
   id: TP14ListingSmokeGrenade
   name: uplink-smoke-grenade-name
   description: uplink-smoke-grenade-desc
   productEntity: SmokeGrenade
   cost:
     TP14CurrencyBluespaceCrystal: 1
+  categories:
+  - UplinkNtExplosives
+
+## W ##
+
+- type: listing
+  id: TP14ListingWhiteholeGrenade
+  name: uplink-whitehole-grenade-name
+  description: uplink-whitehole-grenade-desc
+  productEntity: WhiteholeGrenade
+  cost:
+    TP14CurrencyBluespaceCrystal: 2
   categories:
   - UplinkNtExplosives
