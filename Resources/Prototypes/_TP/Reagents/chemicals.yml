@@ -176,7 +176,17 @@
             Blunt: 2000
       - !type:Explosion
         explosionType: Default
-        intensityPerUnit: 150
+        intensityPerUnit: 50
+        intensitySlope: 3
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Blunt: 2000
+      - !type:Explosion
+        explosionType: Default
+        intensityPerUnit: 50
         intensitySlope: 3
 
 - type: reagent

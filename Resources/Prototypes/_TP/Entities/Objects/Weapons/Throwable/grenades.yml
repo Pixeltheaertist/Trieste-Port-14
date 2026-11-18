@@ -40,8 +40,8 @@
     - Grenade
 
 - type: entity
-  name: nanotrasen minibomb
+  parent: [ BaseNanotrasenContraband, SyndieMiniBomb ]
+  id: TP14NanoTrasenMiniBomb
+  name: nanotrasen mini-bomb
   description: A syndicate-manufactured explosive used to stow destruction and cause chaos. A NanoTrasen sticker has been put over the Syndicate logo.
-  parent: [ SyndieMiniBomb, BaseNanotrasenContraband ]
-  id: NanoMiniBomb
-  suffix: Trieste, NanoTraitor
+  suffix: Trieste

@@ -1,0 +1,12 @@
+- type: entity
+  parent: BoxMagazine
+  id: TP14BoxMagazineMagnum
+  name: box of pistol .45 magnum magazines
+  description: A box full of pistol .45 magnum magazines.
+  suffix: Trieste
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: MagazineMagnum
+        amount: 3

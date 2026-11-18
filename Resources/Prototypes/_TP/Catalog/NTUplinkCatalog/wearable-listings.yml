@@ -1,0 +1,111 @@
+## PLEASE SORT ALPHABETICALLY. NUMBERS FIRST. ##
+## 'TP14Listing' IS EXEMPT - SKIP IT! ##
+
+## B ##
+- type: listing
+  id: TP14ListingBulletproofVest
+  name: uplink-bulletproof-vest-name
+  description: uplink-bulletproof-vest-desc
+  productEntity: ClothingOuterArmorBulletproof
+  cost:
+    TP14CurrencyBluespaceCrystal: 3
+  categories:
+  - UplinkNtWearables
+
+## C ##
+- type: listing
+  id: TP14ListingChestRig
+  name: uplink-chest-rig-name
+  description: uplink-chest-rig-desc
+  productEntity: ClothingBeltMilitaryWebbing
+  cost:
+    TP14CurrencyBluespaceCrystal: 1
+  categories:
+  - UplinkNtWearables
+
+- type: listing
+  id: TP14ListingChameleonKit
+  name: uplink-chameleon-name
+  description: uplink-chameleon-desc
+  productEntity: ClothingBackpackChameleonFill
+  icon: { sprite: /Textures/Clothing/Uniforms/Jumpsuits/Color/rainbow.rsi, state: icon }
+  cost:
+    TP14CurrencyBluespaceCrystal: 4
+  categories:
+  - UplinkNtWearables
+
+
+- type: listing
+  id: TP14ListingConductingGloves
+  name: uplink-clothing-conducting-gloves-name
+  description: uplink-clothing-conducting-gloves-desc
+  productEntity: ClothingHandsGlovesConducting
+  cost:
+    TP14CurrencyBluespaceCrystal: 2
+  categories:
+  - UplinkNtWearables
+
+## N ##
+- type: listing
+  id: TP14ListingNoSlipShoes
+  name: uplink-clothing-no-slips-shoes-name
+  description: uplink-clothing-no-slips-shoes-desc
+  productEntity: ClothingShoesChameleonNoSlips
+  cost:
+    TP14CurrencyBluespaceCrystal: 2
+  categories:
+  - UplinkNtWearables
+
+## S ##
+- type: listing
+  id: TP14ListingStormblueHardSuit
+  name: uplink-bluehardsuit-name
+  description: uplink-bluehardsuit-desc
+  productEntity: TP14ClothingOuterHardsuitStormblue
+  cost:
+    TP14CurrencyBluespaceCrystal: 8
+  categories:
+  - UplinkNtWearables
+
+## T ##
+- type: listing
+  id: TP14ListingThievingGloves
+  name: uplink-clothing-thieving-gloves-name
+  description: uplink-clothing-thieving-gloves-desc
+  productEntity: ClothingHandsChameleonThief
+  cost:
+    TP14CurrencyBluespaceCrystal: 5
+  categories:
+  - UplinkNtWearables
+
+## V ##
+- type: listing
+  id: TP14ListingVoiceMask
+  name: uplink-voice-mask-name
+  description: uplink-voice-mask-desc
+  productEntity: ClothingMaskGasVoiceChameleon
+  cost:
+    TP14CurrencyBluespaceCrystal: 2
+  categories:
+  - UplinkNtWearables
+
+## W ##
+- type: listing
+  id: TP14ListingWebVest
+  name: uplink-clothing-outer-vest-web-name
+  description: uplink-clothing-outer-vest-web-desc
+  productEntity: ClothingOuterVestWeb
+  cost:
+    TP14CurrencyBluespaceCrystal: 3
+  categories:
+  - UplinkNtWearables
+
+- type: listing
+  id: TP14ListingWebVestElite
+  name: uplink-clothing-outer-vest-web-elite-name
+  description: uplink-clothing-outer-vest-web-elite-desc
+  productEntity: ClothingOuterVestWebElite
+  cost:
+    TP14CurrencyBluespaceCrystal: 5
+  categories:
+  - UplinkNtWearables

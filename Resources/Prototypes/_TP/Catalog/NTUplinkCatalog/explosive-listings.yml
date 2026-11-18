@@ -1,0 +1,90 @@
+## PLEASE SORT ALPHABETICALLY. NUMBERS FIRST. ##
+## 'TP14Listing' IS EXEMPT - SKIP IT! ##
+
+## C ##
+- type: listing
+  id: TP14ListingC4
+  name: uplink-c4-name
+  description: uplink-c4-desc
+  productEntity: C4
+  cost:
+    TP14CurrencyBluespaceCrystal: 2
+  categories:
+  - UplinkNtExplosives
+
+# Maybe we should make this cascade-ops only?
+- type: listing
+  id: TP14ListingCascadeBomb
+  name: uplink-cascade-bomb-name
+  description: uplink-cascade-bomb-desc
+  productEntity: TP14EnergyBomb
+  cost:
+    TP14CurrencyBluespaceCrystal: 15
+  categories:
+  - UplinkNtExplosives
+
+## E ##
+- type: listing
+  id: TP14ListingExplosiveGrenade
+  name: uplink-explosive-grenade-name
+  description: uplink-explosive-grenade-desc
+  productEntity: ExGrenade
+  cost:
+    TP14CurrencyBluespaceCrystal: 4
+  categories:
+  - UplinkNtExplosives
+
+## F ##
+- type: listing
+  id: TP14ListingFlashGrenade
+  name: uplink-flash-grenade-name
+  description: uplink-flash-grenade-desc
+  productEntity: GrenadeFlashBang
+  cost:
+    TP14CurrencyBluespaceCrystal: 1
+  categories:
+  - UplinkNtExplosives
+
+## I ##
+- type: listing
+  id: TP14ListingIncendiaryGrenade
+  name: uplink-incendiary-grenade-name
+  description: uplink-incendiary-grenade-desc
+  productEntity: GrenadeIncendiary
+  cost:
+    TP14CurrencyBluespaceCrystal: 5
+  categories:
+  - UplinkNtExplosives
+
+## M ##
+- type: listing
+  id: TP14ListingMiniBomb
+  name: uplink-mini-bomb-name
+  description: uplink-mini-bomb-desc
+  productEntity: TP14NanoTrasenMiniBomb
+  cost:
+    TP14CurrencyBluespaceCrystal: 6
+  categories:
+  - UplinkNtExplosives
+
+## P ##
+- type: listing
+  id: TP14ListingPenguinGrenade
+  name: uplink-penguin-grenade-name
+  description: uplink-penguin-grenade-desc
+  productEntity: MobGrenadePenguin
+  cost:
+    TP14CurrencyBluespaceCrystal: 5
+  categories:
+  - UplinkNtExplosives
+
+## S ##
+- type: listing
+  id: TP14ListingSmokeGrenade
+  name: uplink-smoke-grenade-name
+  description: uplink-smoke-grenade-desc
+  productEntity: SmokeGrenade
+  cost:
+    TP14CurrencyBluespaceCrystal: 1
+  categories:
+  - UplinkNtExplosives

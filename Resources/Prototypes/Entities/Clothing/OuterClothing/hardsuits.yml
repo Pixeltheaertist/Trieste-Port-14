@@ -863,8 +863,8 @@
 - type: entity
   parent: [ BaseTaskForceContraband, ClothingOuterHardsuitSyndieCommander ]
   id: ClothingOuterHardsuitERTLeader
-  name: storm-blue pressure suit
-  description: A protective pressure suit tipically worn by Nanotrasen agents.
+  name: ERT leader's hardsuit
+  description: A protective hardsuit worn by the leader of an emergency response team.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi

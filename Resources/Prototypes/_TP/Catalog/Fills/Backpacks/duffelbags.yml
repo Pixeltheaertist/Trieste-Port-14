@@ -1,6 +1,6 @@
 - type: entity
   parent: [ ClothingBackpackDuffelSyndicateBundle, BaseNanotrasenContraband ]
-  id: ClothingBackpackDuffelNtCburnFilled
+  id: TP14ClothingBackpackDuffelNTCburn
   suffix: Trieste, Filled, NanoTraitor
   name: CBURN equipment bundle
   description: "The label on the strap reads 'Turn and burn, Agent.'"

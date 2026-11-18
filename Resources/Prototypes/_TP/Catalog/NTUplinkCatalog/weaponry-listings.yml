@@ -1,0 +1,99 @@
+## PLEASE SORT ALPHABETICALLY. NUMBERS FIRST. ##
+  ## 'TP14Listing' IS EXEMPT - SKIP IT! ##
+
+## 3 ##
+- type: listing
+  id: TP14Listing35Pistol
+  name: uplink-35pistol-name
+  description: uplink-35pistol-desc
+  productEntity: WeaponPistolMk58
+  cost:
+    TP14CurrencyBluespaceCrystal: 3
+  categories:
+  - UplinkNtWeaponry
+
+- type: listing
+  id: TP14Listing35SMG
+  name: uplink-35smg-name
+  description: uplink-35smg-desc
+  productEntity: WeaponSubMachineGunAtreides
+  cost:
+    TP14CurrencyBluespaceCrystal: 8
+  categories:
+  - UplinkNtWeaponry
+
+## 4 ##
+- type: listing
+  id: TP14Listing45Pistol
+  name: uplink-45pistol-name
+  description: uplink-45pistol-desc
+  productEntity: WeaponPistolN1984
+  cost:
+    TP14CurrencyBluespaceCrystal: 7
+  categories:
+  - UplinkNtWeaponry
+
+## C ##
+- type: listing
+  id: TP14ListingCorporateSabre
+  name: uplink-corporate-sabre-name
+  description: uplink-corporate-sabre-desc
+  productEntity: CaptainSabre
+  cost:
+    TP14CurrencyBluespaceCrystal: 8
+  categories:
+  - UplinkNtWeaponry
+
+- type: listing
+  id: TP14ListingCBURNEquipmentBundle
+  name: uplink-cburn-bundle-name
+  description: uplink-cburn-bundle-desc
+  productEntity: TP14ClothingBackpackDuffelNTCburn
+  cost:
+    TP14CurrencyBluespaceCrystal: 8
+  categories:
+  - UplinkNtWeaponry
+
+## E ##
+- type: listing
+  id: TP14ListingEnergyCarbine
+  name: uplink-energy-carbine-name
+  description: uplink-energy-carbine-desc
+  productEntity: TP14WeaponEnergyCarbine
+  cost:
+    TP14CurrencyBluespaceCrystal: 11
+  categories:
+  - UplinkNtWeaponry
+
+## K ##
+- type: listing
+  id: TP14ListingKnuckleDusters
+  name: uplink-knuckle-dusters-name
+  description: uplink-knuckle-dusters-desc
+  productEntity: TP14ClothingHandsKnuckleDustersNT
+  cost:
+    TP14CurrencyBluespaceCrystal: 6
+  categories:
+  - UplinkNtWeaponry
+
+## M ##
+- type: listing
+  id: TP14ListingMultiRPGLauncher # SAY HELLO TO MY LITTLE FRIEND # It's a rocket launcher
+  name: uplink-multi-rpg-launcher-name
+  description: uplink-multi-rpg-launcher-desc
+  productEntity: TP14WeaponLauncherMultipleRocket
+  cost:
+    TP14CurrencyBluespaceCrystal: 16
+  categories:
+  - UplinkNtWeaponry
+
+## P ##
+- type: listing
+  id: TP14ListingPowerBlaster
+  name: uplink-power-blaster-name
+  description: uplink-power-blaster-desc
+  productEntity: TP14WeaponNtBlaster
+  cost:
+    TP14CurrencyBluespaceCrystal: 5 # cheap, but modules cost more so it evens out
+  categories:
+  - UplinkNtWeaponry

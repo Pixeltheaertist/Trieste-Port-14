@@ -2,8 +2,8 @@
   parent: [ BaseHardBomb, BaseNanotrasenContraband ]
   id: TP14EnergyBomb
   name: cascade bomb
-  suffix: Trieste, Bomb, NanoTraitor
-  description: An advanced bomb that can produce a hyper-microscopic resonance cascade.
+  suffix: Trieste
+  description: An advanced NanoTrasen-designed bomb that can produce a microscopic resonance cascade.
   components:
   - type: Wires
     layoutId: Defusable

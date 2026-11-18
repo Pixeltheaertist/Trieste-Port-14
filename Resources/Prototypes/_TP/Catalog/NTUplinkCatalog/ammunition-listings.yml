@@ -1,0 +1,116 @@
+## PLEASE SORT ALPHABETICALLY. NUMBERS FIRST. ##
+## 'TP14Listing' IS EXEMPT - SKIP IT! ##
+
+## 3 ##
+- type: listing
+  id: TP14Listing35AutoPistol
+  name: uplink-35auto-name
+  description: uplink-35auto-desc
+  productEntity: MagazinePistol
+  cost:
+    TP14CurrencyBluespaceCrystal: 2
+  categories:
+  - UplinkNtAmmo
+
+- type: listing
+  id: TP14Listing35AutoPistolBox
+  name: uplink-35auto-pistol-box-name
+  description: uplink-35auto-pistol-box-desc
+  productEntity: BoxMagazinePistol
+  cost:
+    TP14CurrencyBluespaceCrystal: 7
+  categories:
+  - UplinkNtAmmo
+
+- type: listing
+  id: TP14Listing35AutoSMG
+  name: uplink-35auto-smg-name
+  description: uplink-35auto-smg-desc
+  productEntity: MagazinePistolSubMachineGun
+  cost:
+    TP14CurrencyBluespaceCrystal: 3
+  categories:
+  - UplinkNtAmmo
+
+- type: listing
+  id: TP14Listing35AutoSMGBox
+  name: uplink-35auto-smg-box-name
+  description: uplink-35auto-smg-box-desc
+  productEntity: BoxMagazinePistolSubMachineGun
+  cost:
+    TP14CurrencyBluespaceCrystal: 8
+  categories:
+  - UplinkNtAmmo
+
+## 4 ##
+- type: listing
+  id: TP14Listing45Magnum
+  name: uplink-45magnum-name
+  description: uplink-45magnum-desc
+  productEntity: MagazineMagnum
+  cost:
+    TP14CurrencyBluespaceCrystal: 2
+  categories:
+  - UplinkNtAmmo
+
+- type: listing
+  id: TP14Listing45MagnumBox
+  name: uplink-45magnum-box-name
+  description: uplink-45magnum-box-desc
+  productEntity: TP14BoxMagazineMagnum
+  cost:
+    TP14CurrencyBluespaceCrystal: 5
+  categories:
+  - UplinkNtAmmo
+
+## M ##
+- type: listing
+  id: TP14ListingMagCell
+  name: uplink-magcell-name
+  description: uplink-magcell-desc
+  productEntity: TP14BaseMagCell
+  cost:
+    TP14CurrencyBluespaceCrystal: 2
+  categories:
+  - UplinkNtAmmo
+
+- type: listing
+  id: TP14ListingMagCellAdvanced
+  name: uplink-magcell-adv-name
+  description: uplink-magcell-adv-desc
+  productEntity: TP14MagCellAdvanced
+  cost:
+    TP14CurrencyBluespaceCrystal: 6
+  categories:
+  - UplinkNtAmmo
+
+- type: listing
+  id: TP14ListingMagCellDisabler
+  name: uplink-magcell-disabler-name
+  description: uplink-magcell-disabler-desc
+  productEntity: TP14MagCellDisabler
+  cost:
+    TP14CurrencyBluespaceCrystal: 4
+  categories:
+  - UplinkNtAmmo
+
+- type: listing
+  id: TP14ListingMagCellExperimental
+  name: uplink-magcell-expie-name
+  description: uplink-magcell-expie-desc
+  productEntity: TP14MagCellExperimental
+  cost:
+    TP14CurrencyBluespaceCrystal: 10
+  categories:
+  - UplinkNtAmmo
+
+## R ##
+- type: listing
+  id: TP14ListingRocket
+  name: uplink-rocket-name
+  description: uplink-rocket-desc
+  productEntity: CartridgeRocket
+  cost:
+    TP14CurrencyBluespaceCrystal: 4
+  categories:
+  - UplinkNtAmmo

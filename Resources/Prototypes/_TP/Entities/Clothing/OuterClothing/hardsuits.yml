@@ -67,3 +67,11 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetAbyssal
+
+# NanoTraitor
+- type: entity
+  parent: ClothingOuterHardsuitERTLeader
+  id: TP14ClothingOuterHardsuitStormblue
+  name: storm-blue pressure suit
+  description: A protective pressure suit typically worn by NanoTrasen agents.
+  suffix: Trieste
