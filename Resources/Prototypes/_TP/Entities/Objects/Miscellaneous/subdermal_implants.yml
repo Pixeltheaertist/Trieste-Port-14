@@ -1,7 +1,8 @@
+# Opens the NanoTraitor's remote store (TP14StorePresetRemoteUplinkNT), same as upstream's UplinkImplant.
 - type: entity
-  parent: [ BaseSubdermalImplant, StorePresetUplinkNT, BaseNanotrasenContraband ]
+  parent: [ BaseSubdermalImplant, BaseNanotrasenContraband ]
   categories: [ HideSpawnMenu ]
-  id: UplinkImplantNT
+  id: TP14UplinkImplantNT
   name: NT uplink implant
   description: This implant lets the user access a hidden NT uplink at will.
   suffix: Trieste, Implant, NanoTraitor
@@ -11,9 +12,7 @@
     whitelist:
       components:
       - Hands # prevent mouse buying grenade penguin since its not telepathic
-  - type: Store
-    balance:
-      BluespaceCrystal: 20
+  - type: RemoteStore
   - type: UserInterface
     interfaces:
       enum.StoreUiKey.Key:

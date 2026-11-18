@@ -321,9 +321,9 @@
   name: command crate
   components:
   - type: Icon
-    sprite: Structures/Storage/Crates/command.rsi
+    sprite: _TP/Structures/Storage/Crates/command.rsi # TRIESTE: 'Structures/Storage/Crates/command.rsi'
   - type: Sprite
-    sprite: Structures/Storage/Crates/command.rsi
+    sprite: _TP/Structures/Storage/Crates/command.rsi # TRIESTE: 'Structures/Storage/Crates/command.rsi'
   - type: AccessReader
     access: [["Command"]]
 

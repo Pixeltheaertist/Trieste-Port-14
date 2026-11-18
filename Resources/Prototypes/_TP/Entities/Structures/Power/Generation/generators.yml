@@ -86,7 +86,11 @@
         - Delaminator
     alertLevelOnActivate: delta
     alertLevelOnDeactivate: green
-
+  - type: AmbientSound
+    volume: -10
+    range: 10
+    sound:
+      path: /Audio/_TP/Artifactcore/Artifactinactive.ogg
 # Nuclear Reactor
 # This is SOLELY for the Settler Outpost, since they shouldn't have to constantly worry about power.
 # Easily powers an outpost for a long time without needing a refuel.

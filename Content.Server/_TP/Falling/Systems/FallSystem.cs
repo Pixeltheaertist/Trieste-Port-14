@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server._TP.Falling.Components;
+using Content.Server._TP.Falling.Events;
 using Content.Server._TP.Ladder;
 using Content.Server.Popups;
 using Content.Shared.Climbing.Components;
@@ -33,6 +34,49 @@ public sealed partial class FallSystem : EntitySystem
 
     private readonly List<(EntityUid, FallSystemComponent)> _toFall = new();
 
+    [SubscribeLocalEvent]
+    private void OnFallCheck(FallCheckEvent args)
+    {
+        if (!TryComp<FallSystemComponent>(args.Entity, out var fallComp) || !ShouldFall(args.Entity))
+            return;
+
+        if (TryComp<ClimbingComponent>(args.Entity, out var climbComp) && climbComp.IsClimbing)
+            _climb.StopClimb(args.Entity, climbComp);
+
+        HandleFall(args.Entity, fallComp);
+    }
+
+    /// <summary>
+    /// Covers entities spawned or loaded straight into the air, which the parent change skips.
+    /// </summary>
+    [SubscribeLocalEvent]
+    private void OnMapInit(EntityUid uid, FallSystemComponent component, MapInitEvent args)
+    {
+        var xform = Transform(uid);
+        if (xform.GridUid == null && HasComp<TriesteComponent>(xform.ParentUid))
+            QueueLocalEvent(new FallCheckEvent(uid));
+    }
+
+    [SubscribeLocalEvent]
+    private void OnFultonedRemove(EntityUid uid, FultonedComponent component, ComponentRemove args) => QueueFallCheck(uid);
+
+    /// <summary>
+    /// Re-checks at the end of the tick, once the exemption is fully gone.
+    /// </summary>
+    private void QueueFallCheck(EntityUid uid)
+    {
+        if (HasComp<FallSystemComponent>(uid) && !TerminatingOrDeleted(uid))
+            QueueLocalEvent(new FallCheckEvent(uid));
+    }
+
+    private bool ShouldFall(EntityUid uid)
+    {
+        return !TerminatingOrDeleted(uid) &&
+               _transformSystem.GetGrid(uid) == null &&
+               HasComp<TriesteComponent>(_transformSystem.GetParentUid(uid)) &&
+               !ExemptFromFalling(uid);
+    }
+
     public override void Update(float frameTime)
     {
         // First we start with an entity enumerator for the JumpingComponent (aka players)
@@ -61,30 +105,6 @@ public sealed partial class FallSystem : EntitySystem
             if (transform != null && jumpComp.WasJumping != jumpComp.IsJumping)
             {
                 jumpComp.WasJumping = jumpComp.IsJumping;
-            }
-        }
-
-        // This part catches if the player has climbed over the railing
-        // and will force them to stop (and fall)!
-        var fallQuery = EntityQueryEnumerator<FallSystemComponent>();
-        while (fallQuery.MoveNext(out var uid, out var fallComp))
-        {
-            // Skip if already handled by jumping logic above
-            if (HasComp<JumpingComponent>(uid))
-                continue;
-
-            var transform = _transformSystem.GetGrid(uid);
-            if (transform != null)
-                continue; // Still on a grid, don't fall
-
-            var entityParent = _transformSystem.GetParentUid(uid);
-            if (HasComp<TriesteComponent>(entityParent))
-            {
-                // Check if they should be exempt from falling
-                if (ExemptFromFalling(uid))
-                    continue;
-
-                _toFall.Add((uid, fallComp));
             }
         }
 
