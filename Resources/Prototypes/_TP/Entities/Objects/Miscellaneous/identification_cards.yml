@@ -33,3 +33,9 @@
   components:
   - type: PresetIdCard
     job: TP14BasinTech
+
+# Agent
+- type: entity
+  parent: [ BaseNanotrasenContraband, AgentIDCard ]
+  id: TP14NTAgentIDCard
+  suffix: Trieste, NanoTraitor

@@ -1,0 +1,109 @@
+## PLEASE SORT ALPHABETICALLY. NUMBERS FIRST. ##
+## 'TP14Listing' IS EXEMPT - SKIP IT! ##
+
+## C ##
+# Typically this is a job listing but uh... sh.
+- type: listing
+  id: TP14ListingChemistryLabCrate # WALTER. WE NEED TO COOK, WALTER.
+  name: uplink-chemlab-crate-name
+  description: uplink-chemlab-crate-desc
+  productEntity: TP14CrateChemicalLabBundle
+  cost:
+    TP14CurrencyBluespaceCrystal: 12
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Chemist
+
+- type: listing
+  id: TP14ListingCombatMedicalKit
+  name: uplink-combat-medkit-name
+  description: uplink-combat-medkit-desc
+  productEntity: MedkitCombatFilled
+  cost:
+    TP14CurrencyBluespaceCrystal: 5
+  categories:
+  - UplinkNtChemicals
+
+- type: listing
+  id: TP14ListingCombatMedipen
+  name: uplink-combat-medipen-name
+  description: uplink-combat-medipen-desc
+  productEntity: CombatMedipen
+  cost:
+    TP14CurrencyBluespaceCrystal: 4
+  categories:
+  - UplinkNtChemicals
+
+## G ##
+- type: listing
+  id: TP14ListingGibbingDartBox
+  name: uplink-gibdart-name
+  description: uplink-gibdart-desc
+  icon: { sprite: /Textures/Objects/Fun/Darts/dart_blue.rsi, state: icon }
+  productEntity: TP14GibbingDartBox
+  cost:
+    TP14CurrencyBluespaceCrystal: 20
+  categories:
+  - UplinkNtChemicals
+  conditions:
+  - !type:BuyerObjectiveWhitelistCondition
+    whitelist:
+      components:
+      - KillPersonCondition
+
+## H ##
+- type: listing
+  id: TP14ListingHyperzineInjector
+  name: uplink-stimpack-name
+  description: uplink-stimpack-desc
+  productEntity: Stimpack
+  cost:
+    TP14CurrencyBluespaceCrystal: 4
+  categories:
+  - UplinkNtChemicals
+
+- type: listing
+  id: TP14ListingHyperzineInjectorKit # I WANT MY STIMMIES
+  name: uplink-stimkit-name
+  description: uplink-stimkit-desc
+  productEntity: StimkitFilled
+  cost:
+    TP14CurrencyBluespaceCrystal: 12
+  categories:
+  - UplinkNtChemicals
+
+- type: listing
+  id: TP14ListingHypoDartBox
+  name: uplink-hypodart-name
+  description: uplink-hypodart-desc
+  icon: { sprite: /Textures/Objects/Fun/Darts/dart_blue.rsi, state: icon }
+  productEntity: HypoDartBox
+  cost:
+    TP14CurrencyBluespaceCrystal: 2
+  categories:
+  - UplinkNtChemicals
+
+- type: listing
+  id: TP14ListingHypoPenBox
+  name: uplink-hypopen-name
+  description: uplink-hypopen-desc
+  icon: { sprite: /Textures/Objects/Misc/pens.rsi, state: pen }
+  productEntity: HypopenBox
+  cost:
+    TP14CurrencyBluespaceCrystal: 6
+  categories:
+  - UplinkNtChemicals
+
+## V ##
+- type: listing
+  id: TP14ListingVestineVial
+  name: uplink-vestine-vial-name
+  description: uplink-vestine-vial-desc
+  productEntity: TP14SmallChemistryVialVestineHalf
+  cost:
+    TP14CurrencyBluespaceCrystal: 3
+  categories:
+  - UplinkNtChemicals

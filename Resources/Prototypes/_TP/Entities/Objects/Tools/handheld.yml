@@ -1,6 +1,6 @@
 - type: entity
+  parent: [ BaseNanotrasenContraband, BaseHandheldComputer ]
   name: handheld announcement pad
-  parent: BaseHandheldComputer
   id: HandHeldAnnouncementPad
   description: A nifty handheld device that hacks into the Platform's announcement system. Make sure to remove your ID before use.
   components:

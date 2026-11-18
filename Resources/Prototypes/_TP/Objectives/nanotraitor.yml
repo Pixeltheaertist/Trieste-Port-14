@@ -104,14 +104,6 @@
   - type: Objective
     issuer: TP14ObjIssuerNanoTrasen
 
-- type: entity
-  parent: KillStationAiObjective
-  id: TP14NanoTraitorKillStationAiObjective
-  description: Trieste's artificial intelligence knows too much about our operations here. Shut it down for good.
-  components:
-  - type: Objective
-    issuer: TP14ObjIssuerNanoTrasen
-
 # State
 
 - type: entity
@@ -230,7 +222,6 @@
   id: TP14NanoTraitorObjectiveGroupKill
   weights:
     TP14NanoTraitorKillRandomPersonObjective: 1
-    TP14NanoTraitorKillStationAiObjective: 0.25
     TP14NanoTraitorKillRandomHeadObjective: 0.25
 
 - type: weightedRandom

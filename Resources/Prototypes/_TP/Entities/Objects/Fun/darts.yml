@@ -1,0 +1,33 @@
+- type: entity
+  parent: DartBlue
+  id: TP14GibbingDart
+  suffix: Trieste, JUICE THAT MAKES YOU EXPLODE
+  components:
+  - type: Solution
+    solution:
+      maxVol: 1
+      reagents:
+      - ReagentId: JuiceThatMakesYouExplode
+        Quantity: 1
+  - type: SolutionInjectOnEmbed
+    transferAmount: 1
+    blockSlots: NONE
+    solution: melee
+  - type: SolutionTransfer
+    maxTransferAmount: 1
+
+- type: entity
+  parent: [ BaseItem, BaseNanotrasenContraband ]
+  id: TP14GibbingDartBox
+  name: gibdart box
+  description: A small box containing a hypodart. It contains a single drop of explosive oil, refined by our greatest chemists.
+  suffix: Trieste, JUICE THAT MAKES YOU EXPLODE
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Darts/dartbox.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+    - id: TP14GibbingDart
+    sound:
+      path: /Audio/Effects/unwrap.ogg

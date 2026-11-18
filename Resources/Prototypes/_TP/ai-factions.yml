@@ -1,4 +1,19 @@
 - type: npcFaction
+  id: TP14NpcFactionCorporate
+  friendly:
+  - NanoTrasenTraitor
+  - Syndicate
+  hostile:
+  - SimpleHostile
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Dragon
+  - AllHostile
+  - Wizard
+  - Xenoborg
+
+- type: npcFaction
   id: NanoTrasenTraitor
   hostile:
   - SimpleHostile

@@ -1,6 +1,6 @@
 - type: entity
   description: A standard NT-brand beach ball. This one is strangely firm.
-  parent: [ BeachBall ]
+  parent: [ BaseNanotrasenContraband, BeachBall ]
   id: TP14BeachballGrenade
   suffix: Trieste, NanoTraitor
   components:
@@ -20,9 +20,9 @@
     triggerDelay: 0.5
     components:
       - type: GravityWell
-        maxRange: 10
-        baseRadialAcceleration: -200
-        baseTangentialAcceleration: -7
+        maxRange: 6
+        baseRadialAcceleration: -75
+        baseTangentialAcceleration: -5
         gravPulsePeriod: 0.01
       - type: EmitSoundOnTrigger
         keysIn:
@@ -40,8 +40,8 @@
     - Grenade
 
 - type: entity
-  name: nanotrasen minibomb
+  parent: [ BaseNanotrasenContraband, SyndieMiniBomb ]
+  id: TP14NanoTrasenMiniBomb
+  name: nanotrasen mini-bomb
   description: A syndicate-manufactured explosive used to stow destruction and cause chaos. A NanoTrasen sticker has been put over the Syndicate logo.
-  parent: [ SyndieMiniBomb, BaseNanotrasenContraband ]
-  id: NanoMiniBomb
-  suffix: Trieste, NanoTraitor
+  suffix: Trieste

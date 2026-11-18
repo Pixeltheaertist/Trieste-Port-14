@@ -399,7 +399,7 @@
 - type: entity
   parent: ChemistryEmptyVialSmall
   id: TP14SmallChemistryVialVestineHalf
-  suffix: Trieste, Vestine, NanoTraitor
+  suffix: Trieste, NanoTraitor
   components:
   - type: Label
     localizedLabel: reagent-name-vestine
@@ -407,7 +407,7 @@
     solution:
       reagents:
       - ReagentId: Vestine
-        Quantity: 7.5
+        Quantity: 15
   - type: Tag
     tags: *TP14TagVial
 

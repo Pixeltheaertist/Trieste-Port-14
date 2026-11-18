@@ -1,0 +1,104 @@
+## PLEASE SORT ALPHABETICALLY. NUMBERS FIRST. ##
+## 'TP14Listing' IS EXEMPT - SKIP IT! ##
+
+## A ##
+- type: listing
+  id: TP14ListingAccessBreaker
+  name: uplink-access-breaker-name
+  description: uplink-access-breaker-desc
+  productEntity: NTAccessBreaker
+  cost:
+    TP14CurrencyBluespaceCrystal: 4
+  categories:
+  - UplinkNtDisruption
+
+- type: listing
+  id: TP14ListingAnnouncerPad
+  name: uplink-announcementpad-name
+  description: uplink-announcementpad-desc
+  productEntity: HandHeldAnnouncementPad
+  cost:
+    TP14CurrencyBluespaceCrystal: 7
+  categories:
+  - UplinkNtDisruption
+
+## B ##
+- type: listing
+  id: TP14ListingBeachball
+  name: uplink-beachball-name
+  description: uplink-beachball-desc
+  productEntity: TP14BeachballGrenade
+  cost:
+    TP14CurrencyBluespaceCrystal: 4
+  categories:
+  - UplinkNtDisruption
+
+## E ##
+# Commented out until we get a new sprite
+#- type: listing
+#  id: UplinkEmagNT
+#  name: uplink-emag-name
+#  description: uplink-emag-desc
+#  productEntity: Emag
+#  cost:
+#    TP14CurrencyBluespaceCrystal: 5
+#  categories:
+#  - UplinkNtDisruption
+
+## H ##
+- type: listing
+  id: TP14ListingHostageBag
+  name: uplink-hostage-bag-name
+  description: uplink-hostage-bag-desc
+  productEntity: TP14ClothingBackpackHostageBag
+  cost:
+    TP14CurrencyBluespaceCrystal: 2
+  categories:
+  - UplinkNtDisruption
+
+## N ##
+- type: listing
+  id: TP14ListingNTBorgingKit
+  name: uplink-NT-borgingkit-name
+  description: uplink-NT-borgingkit-desc
+  productEntity: TP14ToolboxNanoTrasenFilled
+  cost:
+    TP14CurrencyBluespaceCrystal: 3
+  categories:
+  - UplinkNtDisruption
+
+## O ##
+- type: listing
+  id: TP14ListingOmegaSoap
+  name: uplink-omega-soap-name
+  description: uplink-omega-soap-desc
+  productEntity: TP14SoapNT
+  cost:
+    TP14CurrencyBluespaceCrystal: 7
+  categories:
+  - UplinkNtDisruption
+
+## R ##
+- type: listing
+  id: TP14ListingRadioJammer
+  name: uplink-radio-jammer-name
+  description: uplink-radio-jammer-desc
+  productEntity: RadioJammer
+  cost:
+    TP14CurrencyBluespaceCrystal: 3
+  categories:
+  - UplinkNtDisruption
+
+## S ##
+# heheheheheh
+- type: listing
+  id: TP14ListingSpaceLubeJug
+  name: uplink-lubejug-name
+  description: uplink-lubejug-desc
+  productEntity: TP14JugSpaceLube
+  cost:
+    TP14CurrencyBluespaceCrystal: 5
+  categories:
+  - UplinkNtDisruption
+
+## T ##

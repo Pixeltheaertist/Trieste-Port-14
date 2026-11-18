@@ -157,3 +157,6 @@
     keysIn:
     - OnCollide
     targetUser: true
+  - type: TriggerOnCollide # TRIESTE: bug fix
+    fixtureID: fix1
+    keyOut: OnCollide
