@@ -6,7 +6,6 @@
   suffix: Trieste
   components:
   - type: Microwave
-    cookTimeMultiplier: 0.1 # Faster than a microwave.
     capacity: 12            # THREE grilled cheese... waow.
     canMicrowaveIdsSafely: true
     explosionChance: 0.0
